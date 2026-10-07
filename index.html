@@ -130,7 +130,10 @@ function matchesSearch(p,q){
  if(qc && s.compact.includes(qc)) return true;
  return qs.every(t=>{
    const expanded=[t,...(aliases[t]||[])];
-   return expanded.some(x=>{const nx=norm(x);return s.compact.includes(nx)||s.parts.some(w=>w.startsWith(nx)||nx.startsWith(w));});
+   return expanded.some(x=>{
+     const nx=norm(x);
+     return s.parts.some(w=>w===nx || (nx.length>=4 && w.startsWith(nx)));
+   });
  });
 }
 searchBox.addEventListener("input",render);
