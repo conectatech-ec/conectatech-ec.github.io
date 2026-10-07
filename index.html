@@ -134,6 +134,8 @@ function matchesSearch(p,q){
  });
 }
 searchBox.addEventListener("input",render);
+searchBox.addEventListener("search",render);
+searchBox.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();render();searchBox.blur();document.getElementById("catalogo").scrollIntoView({behavior:"smooth",block:"start"});}});
 function render(){
  const q=searchBox.value;
  const list=products.filter(p=>(selected==="TODOS"||p.commercialCategory===selected)&&matchesSearch(p,q));
