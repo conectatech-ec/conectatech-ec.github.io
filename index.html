@@ -18,15 +18,15 @@ main{max-width:1180px;margin:auto;padding:18px 14px 80px}
 .chip.active{background:var(--ink);color:white;border-color:var(--ink)}
 .meta{display:flex;justify-content:space-between;align-items:center;margin:4px 2px 14px;color:var(--muted);font-size:14px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card{background:var(--card);border-radius:18px;padding:16px;box-shadow:0 4px 16px #17324d10;display:flex;flex-direction:column;min-height:270px}
+.card{background:var(--card);border-radius:20px;padding:16px;box-shadow:0 7px 22px #17324d14;display:flex;flex-direction:column;min-height:270px;border:1px solid #e7edf5;transition:.18s ease}.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #17324d22}
 .icon{height:70px;border-radius:14px;background:linear-gradient(135deg,#eaf2ff,#e9fff5);display:flex;align-items:center;justify-content:center;font-size:34px;margin-bottom:12px}
 .cat{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--blue);font-weight:800}
 .name{font-size:16px;font-weight:800;line-height:1.25;margin:6px 0 8px;min-height:40px}
 .stock{font-size:12px;color:var(--green);font-weight:800;margin-bottom:10px}
-.promo-label{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase}
+.promo-label{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase}.promo-badge{display:inline-flex;align-items:center;gap:5px;background:#fff0f1;color:#c91f31;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;margin-bottom:4px;width:max-content}
 .promo{font-size:27px;font-weight:950;color:var(--red);line-height:1.05}
 .pvp{font-size:13px;color:var(--muted);margin:5px 0 14px}
-.actions{margin-top:auto} .wa{display:block;text-align:center;text-decoration:none;background:var(--green);color:white;font-weight:900;padding:12px;border-radius:12px}
+.actions{margin-top:auto}.wa{box-shadow:0 5px 14px #17b97830}.cardbrand{font-size:10px;color:#718096;margin-top:3px} .wa{display:block;text-align:center;text-decoration:none;background:var(--green);color:white;font-weight:900;padding:12px;border-radius:12px}
 .empty{display:none;text-align:center;padding:50px 10px;color:var(--muted)}
 .notice{background:#fff7df;border:1px solid #f0d58b;border-radius:14px;padding:11px 13px;margin-bottom:14px;font-size:13px;color:#5c4b1b}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
@@ -151,7 +151,7 @@ function render(){
      <div class="cat">${esc(p.commercialCategory)}</div>
      <div class="name">${esc(p.name)}</div>
      <div class="stock">● Disponible</div>
-     <div class="promo-label">Promo contado</div>
+     <div class="promo-badge">⚡ PRECIO PROMO CONTADO</div>
      <div class="promo">${money(p.promo)}</div>
      <div class="pvp">PVP ${money(p.pvp)}</div>
      <div class="actions"><button class="detail" onclick="openProduct('${esc(p.sku)}')">Ver producto</button><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${msg}">Consultar por WhatsApp</a></div>
@@ -168,7 +168,7 @@ function renderFeatured(){
  f.push(...fill.slice(0,Math.max(0,8-f.length)));
  document.getElementById("featured").innerHTML=f.map(p=>{
   const msg=encodeURIComponent("Hola ConectaTech, me interesa "+p.name+" ("+p.sku+"). ¿Está disponible a precio promo contado "+money(p.promo)+"?");
-  return `<div class="featured-card"><div class="product-img">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display=\'none\'">`:`<span class="fallback">${iconFor(p.commercialCategory)}</span>`}</div><div class="cat">${esc(p.commercialCategory)}</div><div class="name">${esc(p.name)}</div><div class="promo-label">Promo contado</div><div class="promo">${money(p.promo)}</div><div class="pvp">PVP ${money(p.pvp)}</div><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${msg}">Consultar</a></div>`;
+  return `<div class="featured-card"><div class="product-img">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display=\'none\'">`:`<span class="fallback">${iconFor(p.commercialCategory)}</span>`}</div><div class="cat">${esc(p.commercialCategory)}</div><div class="name">${esc(p.name)}</div><div class="promo-badge">⚡ PRECIO PROMO CONTADO</div><div class="promo">${money(p.promo)}</div><div class="pvp">PVP ${money(p.pvp)}</div><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${msg}">Consultar</a></div>`;
  }).join("");
 }
 renderFeatured();
