@@ -125,7 +125,7 @@ function render(){
  document.getElementById("grid").innerHTML=list.map(p=>{
    const msg=encodeURIComponent("Hola ConectaTech, me interesa "+p.name+" ("+p.sku+"). ¿Está disponible a precio promo contado "+money(p.promo)+"?");
    return `<article class="card">
-     <div class="product-img">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(p.name)}" loading="lazy" onerror="this.parentElement.innerHTML=`<span class=\'fallback\'>${iconFor(p.commercialCategory)}</span>`">`:`<span class="fallback">${iconFor(p.commercialCategory)}</span>`}</div>
+     <div class="product-img">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display=\'none\'">`:`<span class="fallback">${iconFor(p.commercialCategory)}</span>`}</div>
      <div class="cat">${esc(p.commercialCategory)}</div>
      <div class="name">${esc(p.name)}</div>
      <div class="stock">● Disponible</div>
