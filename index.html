@@ -8,8 +8,8 @@
 <style>
 :root{--blue:#0b56d6;--green:#17b978;--ink:#0d1b2a;--muted:#687386;--bg:#f4f7fb;--card:#fff;--red:#e7333f}
 *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:linear-gradient(135deg,#072b66,#0b56d6);color:white;padding:20px 16px 26px;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #0002}
-.wrap{max-width:1180px;margin:auto} .brand{font-size:28px;font-weight:900;letter-spacing:.5px} .brand span{color:#54e29d}.brand small{display:inline-block;margin-left:10px;font-size:10px;letter-spacing:1px;background:#ffffff20;border:1px solid #ffffff38;border-radius:999px;padding:5px 8px;vertical-align:middle}
+header{background:linear-gradient(135deg,#061b3a,#0b56d6 65%,#0d8f68);color:white;padding:14px 16px 20px;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #0003}
+.wrap{max-width:1180px;margin:auto}.brandrow{display:flex;align-items:center;gap:12px}.brandlogo{width:58px;height:58px;object-fit:contain;border-radius:50%;background:#fff}.brand{font-size:28px;font-weight:900;letter-spacing:.5px} .brand span{color:#54e29d}.brand small{display:inline-block;margin-left:10px;font-size:10px;letter-spacing:1px;background:#ffffff20;border:1px solid #ffffff38;border-radius:999px;padding:5px 8px;vertical-align:middle}
 .tag{font-size:13px;opacity:.9;margin-top:4px} .search{margin-top:16px;display:flex;gap:8px}
 .search input{width:100%;border:0;border-radius:14px;padding:15px 16px;font-size:16px;outline:none}
 main{max-width:1180px;margin:auto;padding:18px 14px 80px}
@@ -34,8 +34,8 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
 @media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr);gap:10px} .card{padding:12px;min-height:260px} .name{font-size:14px} .promo{font-size:23px} .brand{font-size:24px}}
 @media(max-width:390px){.grid{grid-template-columns:1fr}}
 
-.hero{background:linear-gradient(135deg,#071d3d,#0b56d6);color:#fff;border-radius:22px;padding:24px;margin:2px 0 20px;display:flex;justify-content:space-between;gap:20px;align-items:center}
-.hero h1{font-size:30px;margin:5px 0 7px}.hero p{margin:0;opacity:.9}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.4px;color:#6df0ad}
+.hero{background:radial-gradient(circle at 85% 20%,#18b97855,transparent 30%),linear-gradient(135deg,#06172f,#0b56d6);color:#fff;border-radius:22px;padding:24px;margin:2px 0 20px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.hero h1{font-size:32px;margin:5px 0 7px}.hero strong{color:#6df0ad}.trustbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:-8px 0 22px}.trustitem{background:#fff;border:1px solid #e3eaf3;border-radius:14px;padding:12px;text-align:center;font-size:12px;font-weight:800;box-shadow:0 3px 12px #17324d0d}@media(max-width:650px){.trustbar{grid-template-columns:repeat(2,1fr)}.brandlogo{width:46px;height:46px}}.hero p{margin:0;opacity:.9}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.4px;color:#6df0ad}
 .hero-badges{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:800;white-space:nowrap}.section-title{font-size:18px;margin:0 0 10px}
 .featured{margin-bottom:22px}.featured-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .featured-card{background:#fff;border-radius:18px;padding:15px;box-shadow:0 4px 16px #17324d10;border:1px solid #e7edf5}.featured-card .product-img{height:115px}
@@ -61,18 +61,18 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
 </head>
 <body>
 <header><div class="wrap">
-  <div class="brand">CONECTA<span>TECH</span><small>CATÁLOGO OFICIAL</small></div>
+  <div class="brandrow"><img class="brandlogo" src="logo-conectatech.png" alt="ConectaTech" onerror="this.style.display=\'none\'"><div class="brand">CONECTA<span>TECH</span><small>CATÁLOGO OFICIAL</small></div></div>
   <div class="tag">Tecnología en Quito · Factura · Garantía · Entregas</div>
   <div class="topnav"><a href="#catalogo">Productos</a><a href="#beneficios">Comprar en ConectaTech</a><a href="https://wa.me/593998576759" target="_blank">WhatsApp</a></div><div class="search"><input id="q" type="search" placeholder="🔎 Busca por modelo, marca, SKU o categoría: 15c, 15 c, A17..." autocomplete="off"></div>
 </div></header>
 <main>
   <div class="notice"><b>Catálogo V3:</b> precios calculados desde el Precio General de 593 y disponibilidad basada en inventario ConectaTech del 06-10-2026. Confirma disponibilidad por WhatsApp antes de comprar.</div>
-  <section class="hero" id="beneficios"><div><span class="eyebrow">CATÁLOGO CONECTATECH</span><h1>Tecnología lista para llevar</h1><p>Compra con factura, garantía y atención en nuestro local en Quito.</p></div><div class="hero-badges"><span>✓ Local físico</span><span>✓ Contraentrega Quito</span><span>✓ Envíos nacionales</span></div></section><section class="featured"><h2 class="section-title">Destacados</h2><div class="featured-grid" id="featured"></div></section><h2 class="section-title" id="catalogo">Explora el catálogo</h2><div class="chips" id="chips"><button class="chip active" data-cat="TODOS">Todos</button></div>
+  <section class="hero" id="beneficios"><div><span class="eyebrow">CONECTATECH · QUITO</span><h1>Tu tecnología, <strong>lista para llevar</strong></h1><p>Precios claros, stock disponible y atención directa. Compra con factura y garantía.</p></div><div class="hero-badges"><span>✓ Local físico</span><span>✓ Contraentrega Quito</span><span>✓ Envíos nacionales</span></div></section><div class="trustbar"><div class="trustitem">🏪 Local físico en Quito</div><div class="trustitem">🧾 Compra con factura</div><div class="trustitem">🛡️ Garantía</div><div class="trustitem">🛵 Contraentrega en Quito</div></div><section class="featured"><h2 class="section-title">Destacados</h2><div class="featured-grid" id="featured"></div></section><h2 class="section-title" id="catalogo">Explora el catálogo</h2><div class="chips" id="chips"><button class="chip active" data-cat="TODOS">Todos</button></div>
   <div class="meta"><span id="count"></span><span>Promo contado destacada</span></div>
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty">No encontramos productos con esa búsqueda.</div>
 </main>
-<footer>ConectaTech · Quito, Ecuador · Catálogo oficial</footer>
+<footer><b>CONECTATECH</b> · Tecnología · Conectividad · Innovación<br>Quito, Ecuador · Catálogo oficial</footer>
 <div class="modal" id="modal" onclick="if(event.target===this)closeProduct()">
  <div class="sheet">
   <button class="close" onclick="closeProduct()">×</button>
