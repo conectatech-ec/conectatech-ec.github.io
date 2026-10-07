@@ -63,7 +63,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
 <header><div class="wrap">
   <div class="brand">CONECTA<span>TECH</span><small>CATÁLOGO OFICIAL</small></div>
   <div class="tag">Tecnología en Quito · Factura · Garantía · Entregas</div>
-  <div class="topnav"><a href="#catalogo">Productos</a><a href="#beneficios">Comprar en ConectaTech</a><a href="https://wa.me/593998576759" target="_blank">WhatsApp</a></div><div class="search"><input id="q" type="search" placeholder="🔎 Buscar celular, cable, smartwatch, memoria..." autocomplete="off"></div>
+  <div class="topnav"><a href="#catalogo">Productos</a><a href="#beneficios">Comprar en ConectaTech</a><a href="https://wa.me/593998576759" target="_blank">WhatsApp</a></div><div class="search"><input id="q" type="search" placeholder="🔎 Busca por modelo, marca, SKU o categoría: 15c, 15 c, A17..." autocomplete="off"></div>
 </div></header>
 <main>
   <div class="notice"><b>Catálogo V3:</b> precios calculados desde el Precio General de 593 y disponibilidad basada en inventario ConectaTech del 06-10-2026. Confirma disponibilidad por WhatsApp antes de comprar.</div>
@@ -116,10 +116,27 @@ const cats=[...new Set(products.map(p=>p.commercialCategory))].sort();
 const chips=document.getElementById("chips");
 cats.forEach(c=>{const b=document.createElement("button");b.className="chip";b.dataset.cat=c;b.textContent=c;chips.appendChild(b)});
 chips.onclick=e=>{if(!e.target.matches(".chip"))return;document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));e.target.classList.add("active");selected=e.target.dataset.cat;render()};
-document.getElementById("q").addEventListener("input",render);
+const searchBox=document.getElementById("q");
+const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"");
+const tokens=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+const aliases={cel:["celular","telefono","smartphone"],telf:["telefono","celular"],audif:["audifono","auricular"],reloj:["smartwatch"],tv:["televisor"],mem:["memoria","flash"]};
+function searchable(p){
+ const raw=[p.name,p.sku,p.category,p.commercialCategory].join(" ");
+ return {raw:raw.toLowerCase(),compact:norm(raw),parts:tokens(raw)};
+}
+function matchesSearch(p,q){
+ if(!q.trim()) return true;
+ const s=searchable(p), qs=tokens(q), qc=norm(q);
+ if(qc && s.compact.includes(qc)) return true;
+ return qs.every(t=>{
+   const expanded=[t,...(aliases[t]||[])];
+   return expanded.some(x=>{const nx=norm(x);return s.compact.includes(nx)||s.parts.some(w=>w.startsWith(nx)||nx.startsWith(w));});
+ });
+}
+searchBox.addEventListener("input",render);
 function render(){
- const q=document.getElementById("q").value.trim().toLowerCase();
- const list=products.filter(p=>(selected==="TODOS"||p.commercialCategory===selected)&&(!q||(p.name+" "+p.sku+" "+p.category+" "+p.commercialCategory).toLowerCase().includes(q)));
+ const q=searchBox.value;
+ const list=products.filter(p=>(selected==="TODOS"||p.commercialCategory===selected)&&matchesSearch(p,q));
  document.getElementById("count").textContent=list.length+" productos";
  document.getElementById("empty").style.display=list.length?"none":"block";
  document.getElementById("grid").innerHTML=list.map(p=>{
