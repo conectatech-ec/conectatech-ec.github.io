@@ -9,7 +9,7 @@
 :root{--blue:#0b56d6;--green:#17b978;--ink:#0d1b2a;--muted:#687386;--bg:#f4f7fb;--card:#fff;--red:#e7333f}
 *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
 header{background:linear-gradient(135deg,#072b66,#0b56d6);color:white;padding:20px 16px 26px;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #0002}
-.wrap{max-width:1180px;margin:auto} .brand{font-size:28px;font-weight:900;letter-spacing:.5px} .brand span{color:#54e29d}
+.wrap{max-width:1180px;margin:auto} .brand{font-size:28px;font-weight:900;letter-spacing:.5px} .brand span{color:#54e29d}.brand small{display:inline-block;margin-left:10px;font-size:10px;letter-spacing:1px;background:#ffffff20;border:1px solid #ffffff38;border-radius:999px;padding:5px 8px;vertical-align:middle}
 .tag{font-size:13px;opacity:.9;margin-top:4px} .search{margin-top:16px;display:flex;gap:8px}
 .search input{width:100%;border:0;border-radius:14px;padding:15px 16px;font-size:16px;outline:none}
 main{max-width:1180px;margin:auto;padding:18px 14px 80px}
@@ -38,7 +38,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
 .hero h1{font-size:30px;margin:5px 0 7px}.hero p{margin:0;opacity:.9}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.4px;color:#6df0ad}
 .hero-badges{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:800;white-space:nowrap}.section-title{font-size:18px;margin:0 0 10px}
 .featured{margin-bottom:22px}.featured-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.featured-card{background:#fff;border-radius:18px;padding:15px;box-shadow:0 4px 16px #17324d10;border:1px solid #e7edf5}
+.featured-card{background:#fff;border-radius:18px;padding:15px;box-shadow:0 4px 16px #17324d10;border:1px solid #e7edf5}.featured-card .product-img{height:115px}
 .featured-card .promo{font-size:23px}.featured-card .name{min-height:auto}
 @media(max-width:650px){.hero{display:block;padding:19px}.hero h1{font-size:24px}.hero-badges{margin-top:15px;white-space:normal}.featured-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -61,7 +61,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
 </head>
 <body>
 <header><div class="wrap">
-  <div class="brand">CONECTA<span>TECH</span></div>
+  <div class="brand">CONECTA<span>TECH</span><small>CATÁLOGO OFICIAL</small></div>
   <div class="tag">Tecnología en Quito · Factura · Garantía · Entregas</div>
   <div class="topnav"><a href="#catalogo">Productos</a><a href="#beneficios">Comprar en ConectaTech</a><a href="https://wa.me/593998576759" target="_blank">WhatsApp</a></div><div class="search"><input id="q" type="search" placeholder="🔎 Buscar celular, cable, smartwatch, memoria..." autocomplete="off"></div>
 </div></header>
@@ -72,7 +72,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty">No encontramos productos con esa búsqueda.</div>
 </main>
-<footer>ConectaTech · Quito, Ecuador · Catálogo comercial V3</footer>
+<footer>ConectaTech · Quito, Ecuador · Catálogo oficial</footer>
 <div class="modal" id="modal" onclick="if(event.target===this)closeProduct()">
  <div class="sheet">
   <button class="close" onclick="closeProduct()">×</button>
@@ -139,10 +139,14 @@ function render(){
 render();
 
 function renderFeatured(){
- const f=products.filter(p=>p.priority==="ALTA" && p.role==="CAPTADOR").slice(0,8);
+ const wanted=["TELF001","TELF022","TELF019","TELF018","TELF020","TABL005","TABL006","MONI005"];
+ const bySku=new Map(products.map(p=>[p.sku,p]));
+ const f=wanted.map(s=>bySku.get(s)).filter(Boolean);
+ const fill=products.filter(p=>["Celulares","Tablets","TV y Monitores"].includes(p.commercialCategory)&&!f.includes(p)).sort((a,b)=>b.stock-a.stock);
+ f.push(...fill.slice(0,Math.max(0,8-f.length)));
  document.getElementById("featured").innerHTML=f.map(p=>{
   const msg=encodeURIComponent("Hola ConectaTech, me interesa "+p.name+" ("+p.sku+"). ¿Está disponible a precio promo contado "+money(p.promo)+"?");
-  return `<div class="featured-card"><div class="cat">${esc(p.commercialCategory)}</div><div class="name">${esc(p.name)}</div><div class="promo-label">Promo contado</div><div class="promo">${money(p.promo)}</div><div class="pvp">PVP ${money(p.pvp)}</div><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${msg}">Consultar</a></div>`;
+  return `<div class="featured-card"><div class="product-img">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display=\'none\'">`:`<span class="fallback">${iconFor(p.commercialCategory)}</span>`}</div><div class="cat">${esc(p.commercialCategory)}</div><div class="name">${esc(p.name)}</div><div class="promo-label">Promo contado</div><div class="promo">${money(p.promo)}</div><div class="pvp">PVP ${money(p.pvp)}</div><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${msg}">Consultar</a></div>`;
  }).join("");
 }
 renderFeatured();
