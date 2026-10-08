@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Panel comercial | ConectaTech</title>
+<style>
+:root{--navy:#0d213e;--blue:#0b56d6;--lime:#8bd12f;--bg:#f4f7fb;--ink:#18273b;--muted:#63738a}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,Arial,sans-serif;margin:0}header{background:linear-gradient(115deg,var(--navy),#16478d);padding:24px 20px;color:#fff}header .wrap{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}h1{font-size:26px;margin:0}header p{margin:5px 0 0;color:#dce7f9}.brand{color:var(--lime)}.wrap{max-width:1120px;margin:auto}.container{padding:22px 16px 50px}.notice{background:#fff9e9;border:1px solid #edcf8a;border-radius:12px;padding:11px 14px;margin-bottom:16px;font-size:13px}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.panel{background:#fff;border:1px solid #dfe7f0;box-shadow:0 5px 22px #172f4b0d;border-radius:17px;padding:19px;margin-bottom:16px}h2{font-size:18px;margin:0 0 10px}label{display:block;font-weight:700;font-size:13px;margin:10px 0 5px}input,select,textarea{display:block;width:100%;border:1px solid #cfd9e6;border-radius:10px;padding:11px;font:inherit;color:var(--ink);background:#fff}input:focus,select:focus,textarea:focus{outline:2px solid #b3d4ff}input[type=number]{max-width:110px}button,.action{display:inline-flex;justify-content:center;align-items:center;gap:7px;border:0;padding:11px 15px;background:var(--blue);color:white;border-radius:10px;font:700 14px system-ui;cursor:pointer;text-decoration:none}button:hover,.action:hover{filter:brightness(.94)}button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:#eaf1fb;color:var(--navy)}.green{background:#3d8e2a}.small{font-size:12px;color:var(--muted)}.results{max-height:390px;overflow:auto;margin-top:12px}.result{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #eaf0f7;padding:12px 0}.result b{display:block}.result button{align-self:center;flex:none}.muted{color:var(--muted)}.pill{border-radius:999px;background:#eaf6d9;color:#36730a;padding:3px 7px;font-size:11px}.line{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e7eef6;padding:12px 0;gap:9px}.line-info{flex:1;min-width:0}.line strong{display:block}.line input{width:66px;padding:7px}.line .remove{background:#fff0f0;color:#ad2b37;padding:7px}.totals{padding:14px 0}.sum{display:flex;justify-content:space-between;gap:10px;padding:6px 0}.sum.main{font-size:22px;color:#216b13;font-weight:800}.btnrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.full{width:100%}.fields{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.preview{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f8fc;border:1px solid #e1e8f0;border-radius:12px;padding:13px;min-height:130px;font-size:13px}.footer{margin-top:18px;text-align:center;font-size:12px;color:#61748b}.hide{display:none}a{color:inherit}@media(max-width:780px){.layout{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.panel{padding:14px}header{padding:16px}h1{font-size:21px}}
+</style></head><body>
+<header><div class="wrap"><div><h1><span class="brand">CONECTA</span>TECH · Panel comercial</h1><p>Cotizaciones rápidas · Mensajes de cierre · Registro de oportunidades</p></div><a class="action secondary" href="/">Ver catálogo web ↗</a></div></header>
+<main class="wrap container">
+<div class="notice"><b>Herramienta comercial — uso interno.</b> Este enlace no tiene contraseña y no debe compartirse como un CRM privado. Los datos de clientes no se envían al servidor ni se almacenan automáticamente; usa solo un alias, nunca cédula ni información sensible. Stock y precios proceden de una exportación de 593: <b>confírmalos antes de prometer disponibilidad o cerrar una venta.</b> <span id="fecha"></span></div>
+<div class="layout">
+<section>
+<div class="panel"><h2>1 · Buscar productos</h2><input type="search" id="search" autocomplete="off" placeholder="Ej. TELF020, Redmi, cargador, smartwatch..." aria-label="Buscar por SKU o producto"><div id="count" class="small"></div><div id="results" class="results" aria-live="polite"></div></div>
+<div class="panel"><h2>2 · Preparar cotización</h2><div id="cart"><div class="muted">Agrega productos usando el buscador.</div></div><div class="fields"><div><label for="envio">Envío ($) — opcional</label><input id="envio" type="number" value="0" min="0" max="999" step="0.01"></div><div><label for="precio">Precio del mensaje</label><select id="precio"><option value="promo">Promo contado</option><option value="pvp">PVP</option></select></div></div><div id="totals" class="totals"></div></div>
+</section>
+<section>
+<div class="panel"><h2>3 · Preparar mensaje comercial</h2><div class="fields"><div><label for="origen">Canal de origen</label><select id="origen"><option>Marketplace</option><option>WhatsApp</option><option>Facebook</option><option>Instagram</option><option>Web</option><option>Tienda física</option><option>Otro</option></select></div><div><label for="etapa">Etapa de la oportunidad</label><select id="etapa"><option>Consulta</option><option>Cotización enviada</option><option>Interesado</option><option>Pendiente de pago</option><option>Venta cerrada</option><option>Perdida</option></select></div></div><label for="alias">Referencia o alias (opcional)</label><input id="alias" maxlength="60" placeholder="Ej. Cliente Messenger 28, sin datos personales"><label for="tipo">Enfoque del mensaje</label><select id="tipo"><option value="oferta">Cotización y cierre</option><option value="comparacion">Ayuda a decidir</option><option value="seguimiento">Seguimiento solicitado por el cliente</option></select><label for="mensaje">Mensaje propuesto (editable)</label><textarea id="mensaje" rows="10"></textarea><div class="btnrow"><button id="generar" class="secondary">Actualizar texto</button><button id="copiar" class="secondary">Copiar mensaje</button><button id="wa" class="green">Abrir WhatsApp ↗</button></div><p class="small">WhatsApp abre el texto preparado; <b>no envía mensajes por sí solo</b>. Verifica precio, cliente y disponibilidad antes de enviarlo. El seguimiento debe respetar la preferencia del cliente.</p></div>
+<div class="panel"><h2>4 · Registro comercial</h2><p class="small">Genera una fila CSV de la oportunidad para añadir a tu hoja privada. No hay sincronización automática ni guardado en línea en esta versión.</p><div class="btnrow"><button id="descargar" class="secondary">Descargar oportunidad CSV</button><button id="limpiar" class="secondary">Nueva cotización</button></div><div id="status" class="small" role="status" style="margin-top:12px"></div></div>
+</section></div>
+<div class="footer">ConectaTech · Panel comercial inicial · Reglas de venta, no chatbot de IA autónomo. No incluye autorización de descuentos, reservas o envíos.</div></main>
+<script>
+"use strict";
+const WA='593998576759';let catalog=[],cart=new Map(),lastGenerated='';
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Number(n||0).toFixed(2).replace('.',',');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const round=n=>Math.round((Number(n)+1e-9)*100)/100;
+const item=sku=>catalog.find(p=>p.sku===sku);
+const search=()=>{
+ const q=$('search').value.toLocaleLowerCase('es').trim();
+ const found=catalog.filter(p=>(p.sku+' '+p.nombre+' '+p.categoria).toLocaleLowerCase('es').includes(q)).slice(0,25);
+ $('count').textContent=catalog.length+' productos disponibles en el último catálogo · '+(q?'Primeros '+found.length+' resultados':'Escribe un producto para buscar');
+ $('results').replaceChildren();
+ if(!q){$('results').innerHTML='<p class="small">Busca por modelo, código o categoría para añadir productos a una cotización.</p>';return}
+ for(const p of found){
+  const row=document.createElement('div');row.className='result';
+  const txt=document.createElement('div');
+  txt.innerHTML='<b>'+esc(p.nombre)+'</b><span class="small">'+esc(p.sku)+' · Stock registrado: '+esc(p.stock)+' · Promo contado '+money(p.promo)+' · PVP '+money(p.pvp)+'</span>';
+  const btn=document.createElement('button');btn.textContent='Agregar +';btn.onclick=()=>add(p.sku);
+  row.append(txt,btn);$('results').append(row);
+ }
+ if(!found.length)$('results').textContent='No se encontraron productos.';
+};
+function add(sku){const p=item(sku);if(!p)return;cart.set(sku,Math.min(p.stock,(cart.get(sku)||0)+1));render()}
+function remove(sku){cart.delete(sku);render()}
+function setQty(sku,v){const p=item(sku);if(!p)return;const n=Math.max(1,Math.min(p.stock,Math.floor(Number(v)||1)));cart.set(sku,n);render()}
+function amount(){const usePvp=$('precio').value==='pvp';let subtotal=0,reference=0;for(const [sku,qty] of cart){const p=item(sku);if(!p)continue;subtotal+=qty*(usePvp?p.pvp:p.promo);reference+=qty*p.pvp}const envio=Math.max(0,Math.min(999,Number($('envio').value)||0));return {subtotal:round(subtotal),envio:round(envio),total:round(subtotal+envio),reference:round(reference)}}
+function render(){
+ $('cart').replaceChildren();
+ if(!cart.size)$('cart').innerHTML='<p class="small">Todavía no has agregado productos.</p>';
+ for(const [sku,qty] of cart){const p=item(sku);if(!p)continue;
+  const row=document.createElement('div');row.className='line';
+  const info=document.createElement('div');info.className='line-info';info.innerHTML='<strong>'+esc(p.nombre)+'</strong><span class="small">'+esc(sku)+' · Promo '+money(p.promo)+' / PVP '+money(p.pvp)+'</span>';
+  const num=document.createElement('input');num.type='number';num.min=1;num.max=p.stock;num.value=qty;num.setAttribute('aria-label','Cantidad '+p.nombre);num.onchange=()=>setQty(sku,num.value);
+  const del=document.createElement('button');del.className='remove';del.textContent='×';del.title='Quitar producto';del.onclick=()=>remove(sku);
+  row.append(info,num,del);$('cart').append(row)
+ }
+ const t=amount();$('totals').innerHTML='<div class="sum"><span>Productos</span><b>'+money(t.subtotal)+'</b></div><div class="sum"><span>Envío</span><b>'+money(t.envio)+'</b></div><div class="sum main"><span>Total cotización</span><span>'+money(t.total)+'</span></div>'+(t.reference>t.subtotal&&$('precio').value==='promo'?'<div class="small">Referencia PVP productos: '+money(t.reference)+'</div>':'');
+ generate();
+}
+function generate(){
+ const t=amount(),lines=[];
+ for(const [sku,qty] of cart){const p=item(sku);if(p)lines.push('• '+p.nombre+' ('+sku+') x'+qty+' — '+money(qty*($('precio').value==='pvp'?p.pvp:p.promo)))}
+ const choice=$('tipo').value;
+ let intro=choice==='seguimiento'?'¡Hola! 👋 Te escribimos de ConectaTech por la cotización que habíamos conversado.':choice==='comparacion'?'¡Hola! 👋 Gracias por consultar en ConectaTech. Estas son las opciones que podemos ofrecerte:':'¡Hola! 👋 Gracias por comunicarte con ConectaTech. Te comparto tu cotización:';
+ const title=$('precio').value==='pvp'?'PVP':'PROMO CONTADO';
+ let msg=intro+'\n\n'+(lines.length?lines.join('\n')+'\n\n'+title+': '+money(t.subtotal)+(t.envio>0?'\nEnvío: '+money(t.envio):'')+'\nTOTAL: '+money(t.total):'':'Cuéntanos qué producto te interesa y te ayudamos a elegir.');
+ if(choice==='comparacion')msg+='\n\n¿Para qué uso principal necesitas el equipo?';
+ else if(choice==='seguimiento')msg+='\n\n¿Te gustaría continuar con la compra o necesitas aclarar alguna duda?';
+ else msg+='\n\n¿Prefieres retirar en nuestra tienda física o consultar una entrega contraentrega en Quito?';
+ msg+='\n\n📍 ConectaTech Quito · Compra con factura. Garantía según producto y condiciones.\nPrecios y disponibilidad sujetos a confirmación antes de concretar la compra.';
+ $('mensaje').value=msg;lastGenerated=msg;
+}
+function download(){
+ if(!cart.size){$('status').textContent='Añade al menos un producto para registrar la oportunidad.';return}
+ const qty=Array.from(cart.values()).reduce((a,b)=>a+b,0);
+ const t=amount();
+ const vals=[new Date().toISOString(),$('alias').value.trim(),$('origen').value,$('etapa').value,Array.from(cart.keys()).join(' | '),qty,$('precio').value,t.subtotal,t.envio,t.total,'Pendiente de verificar en 593'];
+ const csvLine=arr=>arr.map(x=>'"'+String(x).replace(/"/g,'""').replace(/^[=+\-@\t\r]/,'\'$&')+'"').join(',');
+ const data='\uFEFF'+csvLine(['fecha','referencia','origen','estado','sku','unidades','tipo_precio','subtotal','envio','total','nota'])+'\r\n'+csvLine(vals)+'\r\n';
+ const url=URL.createObjectURL(new Blob([data],{type:'text/csv;charset=utf-8'}));
+ const a=document.createElement('a');a.href=url;a.download='oportunidad-conectatech-'+new Date().toISOString().slice(0,10)+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
+ $('status').textContent='Archivo generado en este dispositivo. Añádelo a tu registro privado para conservarlo.';
+}
+$('search').oninput=search;
+$('envio').oninput=render;
+$('precio').onchange=render;
+$('tipo').onchange=generate;
+$('generar').onclick=generate;
+$('copiar').onclick=async()=>{try{await navigator.clipboard.writeText($('mensaje').value);$('status').textContent='Mensaje copiado.'}catch(e){$('mensaje').select();$('status').textContent='Selecciona y copia el mensaje manualmente.'}};
+$('wa').onclick=()=>{window.open('https://wa.me/'+WA+'?text='+encodeURIComponent($('mensaje').value),'_blank','noopener')};
+$('descargar').onclick=download;
+$('limpiar').onclick=()=>{cart.clear();$('alias').value='';$('envio').value='0';$('etapa').value='Consulta';$('status').textContent='';render();$('search').focus()};
+fetch('../exportaciones/catalogo-ventas.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(data=>{
+ if(!Array.isArray(data.productos)||!data.productos.length)throw Error('Catálogo vacío');
+ catalog=data.productos.filter(x=>x.sku&&x.stock>0&&x.promo>0);
+ $('fecha').textContent='Datos del catálogo: '+new Date(data.fechaCatalogo).toLocaleString('es-EC');
+ search();render();
+}).catch(e=>{$('count').textContent='No se pudo cargar la base de productos: '+e.message+'. Intenta actualizar la página.';$('status').textContent='Sin catálogo no se deben emitir cotizaciones.'});
+</script></body></html>
