@@ -1,5 +1,10 @@
 name: Sincronizar catalogo desde 593
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'datos-593/inventario-publico.csv'
+      - 'scripts/sincronizar-593.cjs'
   workflow_dispatch:
     inputs:
       modo:
