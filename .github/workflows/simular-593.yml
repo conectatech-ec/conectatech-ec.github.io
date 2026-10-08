@@ -1,0 +1,25 @@
+name: Simular sincronizacion 593
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'datos-593/inventario-publico.csv'
+      - 'scripts/simular-593.cjs'
+permissions:
+  contents: read
+jobs:
+  simular:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comparar sin publicar cambios
+        run: node scripts/simular-593.cjs
+      - name: Descargar informe de diferencias
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-comparacion-593
+          path: reportes/sincronizacion-593.json
