@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'seo-contenido.json'
       - 'scripts/generar-seo.cjs'
 permissions:
   contents: write
