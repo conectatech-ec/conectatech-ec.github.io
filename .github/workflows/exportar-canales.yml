@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'index.html'
       - 'seo-contenido.json'
       - 'scripts/exportar-canales.cjs'
       - 'seo-pages.json'
