@@ -28,7 +28,8 @@ const xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sit
 fs.writeFileSync('sitemap.xml',xml);
 fs.writeFileSync('seo-pages.json',JSON.stringify(links,null,2)+'\n');
 const mapLine='const seoPages='+JSON.stringify(links)+';';
-const updated=html.replace(/const seoPages=Object.fromEntries\([^\n]*\);|const seoPages=\{[^\n]*\};/,mapLine);
-if(updated===html)throw Error('No se encontró el mapeo SEO en index.html');
+const seoPagesPattern=/const seoPages=Object.fromEntries\([^\n]*\);|const seoPages=\{[^\n]*\};/;
+if(!seoPagesPattern.test(html))throw Error('No se encontró el mapeo SEO en index.html');
+const updated=html.replace(seoPagesPattern,mapLine);
 if(updated!==html)fs.writeFileSync('index.html',updated);
 console.log('Generadas '+Object.keys(links).length+' fichas y '+urls.length+' URLs.');
