@@ -29,8 +29,8 @@ for(const x of input){
  if(!Number.isFinite(stock)||!Number.isFinite(base)||!Number.isFinite(iva)||stock<-10000||stock>1000000||base<0||base>100000)throw Error('Valores inválidos en '+sku);
  const applicable=x.tipo==='PRODUCTO'&&stock>0&&base>0;
  // Regla comercial de este catálogo: P. General x 1.15 y luego x 1.15.
- const promo=Math.round((base*1.15+Number.EPSILON)*100)/100;
- const pvp=Math.round((promo*1.15+Number.EPSILON)*100)/100;
+ const promo=Math.round((base*1.15+1e-9)*100)/100;
+ const pvp=Math.round((promo*1.15+1e-9)*100)/100;
  const oldP=old[sku];
  if(oldP){
   if(oldP.stock!==stock||Math.abs(oldP.promo-promo)>0.009||Math.abs(oldP.pvp-pvp)>0.009){
