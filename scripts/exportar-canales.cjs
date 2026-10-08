@@ -18,6 +18,8 @@ const rows=products.filter(p=>p.stock>0&&p.promo>0).map(p=>{
     facebook_copy:(o.descripcion||o.descripcionSeo||p.name)+'\nPROMO CONTADO $'+p.promo.toFixed(2)+' · PVP $'+p.pvp.toFixed(2)+'\nConsulta disponibilidad en Quito. '+base+'/productos/'+urls[p.sku]+'/'};
 });
 fs.mkdirSync('exportaciones',{recursive:true});
+const salesProducts=products.filter(p=>p.stock>0&&p.promo>0).map(p=>({sku:p.sku,nombre:p.name,categoria:p.category,stock:p.stock,promo:p.promo,pvp:p.pvp,url:base+'/productos/'+urls[p.sku]+'/'}));
+fs.writeFileSync('exportaciones/catalogo-ventas.json',JSON.stringify({fechaCatalogo:new Date().toISOString(),fuente:'Sistema 593: disponibilidad y precios sujetos a confirmación',productos:salesProducts})+'\n');
 fs.writeFileSync('exportaciones/contenido-multicanal.csv',csv(['sku','title','description','price','pvp','availability','link','image_link','category','stock','facebook_title','facebook_copy'],rows));
 const ready=rows.filter(p=>/^https?:\/\//.test(p.image_link));
 const knownBrand=sku=>{
