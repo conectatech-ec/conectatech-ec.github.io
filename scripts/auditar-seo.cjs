@@ -23,6 +23,7 @@ const rows=products.map(p=>{
  return {sku:p.sku,nombre:p.name,categoria:p.category,stock:p.stock,seo:o.tituloSeo?'personalizado':'básico',imagen:image,caracteristicas:verifiedSpecs,problemas:issues};
 });
 const count=k=>rows.filter(r=>r.problemas.includes(k)).length;
-const summary={fecha:new Date().toISOString(),total:rows.length,seoPersonalizado:rows.filter(r=>r.seo==='personalizado').length,sinFoto:count('Sin fotografía'),sinCaracteristicas:count('Sin características verificadas'),sinDescripcionVisible:count('Sin descripción visible enriquecida'),titulosExtensos:count('Título extenso'),descripcionesExtensas:count('Metadescripción extensa')};
-fs.writeFileSync('reporte-calidad-seo.json',JSON.stringify({resumen:summary,productos:rows},null,2)+'\n');
+const prioridades=rows.filter(r=>r.stock>0).map(r=>({...r,puntaje:(r.problemas.includes('Sin fotografía')?5:0)+(r.problemas.includes('Sin descripción visible enriquecida')?3:0)+(r.problemas.includes('Sin características verificadas')?2:0)+(r.problemas.includes('Título extenso')?1:0)})).sort((a,b)=>b.puntaje-a.puntaje||b.stock-a.stock).slice(0,100);
+const summary={fecha:new Date().toISOString(),total:rows.length,seoPersonalizado:rows.filter(r=>r.seo==='personalizado').length,sinFotoRegistrada:count('Sin fotografía'),sinFoto:count('Sin fotografía'),sinCaracteristicas:count('Sin características verificadas'),sinDescripcionVisible:count('Sin descripción visible enriquecida'),titulosExtensos:count('Título extenso'),descripcionesExtensas:count('Metadescripción extensa')};
+fs.writeFileSync('reporte-calidad-seo.json',JSON.stringify({resumen:summary,prioridades,productos:rows},null,2)+'\n');
 console.log('Auditoría SEO:',JSON.stringify(summary));
