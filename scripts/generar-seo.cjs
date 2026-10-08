@@ -15,7 +15,7 @@ for(const p of products){
  const custom=overrides[p.sku]||{};
  const displayName=custom.nombre||p.name;
  const title=custom.tituloSeo||displayName+' en Quito | ConectaTech';links[p.sku]=id;urls.push(url);
- const desc=custom.descripcionSeo||displayName+' disponible para consultar en ConectaTech Quito. Precio promo contado 
+ const desc=custom.descripcionSeo||displayName+' disponible en ConectaTech Quito. Precio promo contado USD '+p.promo.toFixed(2)+'. Factura, garantía y entregas. Confirma stock por WhatsApp.';
  const schema={'@context':'https://schema.org','@type':'Product',name:displayName,sku:p.sku,description:desc,...(p.imageUrl?{image:[p.imageUrl]}:{}),offers:{'@type':'Offer',url,priceCurrency:'USD',price:p.promo.toFixed(2),availability:'https://schema.org/InStock',itemCondition:'https://schema.org/NewCondition',seller:{'@type':'Organization',name:'ConectaTech'}}};
  const verifiedSpecs=custom.caracteristicas||p.specs;
  const specs=verifiedSpecs?Object.entries(verifiedSpecs).map(([k,v])=>'<div class="spec"><b>'+esc(k)+'</b><span>'+esc(v)+'</span></div>').join(''):'';
