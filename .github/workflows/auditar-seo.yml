@@ -1,0 +1,30 @@
+name: Auditar calidad SEO
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'seo-contenido.json'
+      - 'scripts/auditar-seo.cjs'
+      - 'index.html'
+permissions:
+  contents: write
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Analizar fichas
+        run: node scripts/auditar-seo.cjs
+      - name: Guardar reporte
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reporte-calidad-seo.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar auditoría SEO"
+            git push
+          fi
