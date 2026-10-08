@@ -20,12 +20,19 @@ const rows=products.filter(p=>p.stock>0&&p.promo>0).map(p=>{
 fs.mkdirSync('exportaciones',{recursive:true});
 fs.writeFileSync('exportaciones/contenido-multicanal.csv',csv(['sku','title','description','price','pvp','availability','link','image_link','category','stock','facebook_title','facebook_copy'],rows));
 const ready=rows.filter(p=>/^https?:\/\//.test(p.image_link));
-const meta=ready.map(p=>({id:p.sku,title:p.title,description:p.description,availability:p.availability,condition:p.condition,price:p.price,link:p.link,image_link:p.image_link}));
-fs.writeFileSync('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link'],meta));
+const knownBrand=sku=>{
+  if(['TELF001'].includes(sku))return 'ZTE';
+  if(['TELF017','TELF018','TELF019'].includes(sku))return 'Xiaomi';
+  if(['TELF011','TELF012'].includes(sku))return 'Samsung';
+  return '';
+};
+const meta=ready.map(p=>({id:p.sku,title:p.title,description:p.description,availability:p.availability,condition:p.condition,price:p.price,link:p.link,image_link:p.image_link,brand:knownBrand(p.sku)}));
+fs.writeFileSync('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand'],meta));
 fs.writeFileSync('exportaciones/resumen-canales.json',JSON.stringify({
  generated_at:new Date().toISOString(),total_products:rows.length,
  with_image_url:ready.length,without_image_url:rows.length-ready.length,
  meta_pilot_items:ready.length,
+ with_recognized_brand:meta.filter(p=>p.brand).length,
  note:'Archivo piloto para revisión en Commerce Manager; publicación, elegibilidad, fotografía y políticas requieren validación. No publica anuncios en Marketplace.'
 },null,2)+'\n');
 console.log('Exportaciones creadas: '+rows.length+' productos, '+ready.length+' con URL de imagen.');
