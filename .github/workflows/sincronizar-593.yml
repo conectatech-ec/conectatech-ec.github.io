@@ -1,0 +1,71 @@
+name: Sincronizar catalogo desde 593
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'SIMULAR primero; APLICAR solo tras revisar el inventario'
+        required: true
+        type: choice
+        default: SIMULAR
+        options:
+          - SIMULAR
+          - APLICAR
+      confirmacion:
+        description: 'Para modo APLICAR escribir exactamente APLICAR'
+        required: false
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: sincronizacion-593-main
+  cancel-in-progress: false
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar y comparar contra 593
+        env:
+          APLICAR_CAMBIOS: 'NO'
+        run: node scripts/sincronizar-593.cjs
+      - name: Adjuntar informe de comparacion
+        uses: actions/upload-artifact@v4
+        with:
+          name: comparacion-inventario-593
+          path: reportes/sincronizacion-593.json
+      - name: Publicar solo con autorizacion
+        if: ${{ inputs.modo == 'APLICAR' }}
+        env:
+          CONFIRMAR: ${{ inputs.confirmacion }}
+        run: |
+          if [ "$CONFIRMAR" != "APLICAR" ]; then
+            echo "Error: falta la confirmacion exacta APLICAR"
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for intento in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            APLICAR_CAMBIOS=SI CONFIRMAR=APLICAR node scripts/sincronizar-593.cjs
+            git add index.html
+            if git diff --cached --quiet; then
+              echo "La web ya coincide con la exportacion 593."
+              exit 0
+            fi
+            git commit -m "Sincronizar inventario publico 593 autorizado"
+            if git push origin HEAD:main; then
+              echo "Actualizacion publicada; GitHub generara fichas SEO."
+              exit 0
+            fi
+            echo "Conflicto de rama, reintentando sobre main actualizado"
+            sleep 3
+          done
+          echo "No se pudo guardar la sincronizacion"
+          exit 1
