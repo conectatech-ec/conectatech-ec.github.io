@@ -54,14 +54,16 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             APLICAR_CAMBIOS=SI CONFIRMAR=APLICAR node scripts/sincronizar-593.cjs
-            git add index.html
+            node scripts/generar-seo.cjs
+            node scripts/exportar-canales.cjs
+            git add index.html productos sitemap.xml seo-pages.json exportaciones
             if git diff --cached --quiet; then
-              echo "La web ya coincide con la exportacion 593."
+              echo "Web, fichas SEO y feeds comerciales ya coinciden con 593."
               exit 0
             fi
             git commit -m "Sincronizar inventario publico 593 autorizado"
             if git push origin HEAD:main; then
-              echo "Actualizacion publicada; GitHub generara fichas SEO."
+              echo "Web, SEO, sitemap y exportaciones Meta publicados juntos."
               exit 0
             fi
             echo "Conflicto de rama, reintentando sobre main actualizado"
