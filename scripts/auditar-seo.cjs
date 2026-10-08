@@ -1,0 +1,28 @@
+const fs=require('fs');
+const html=fs.readFileSync('index.html','utf8');
+const match=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
+if(!match)throw Error('No se pudo leer catálogo');
+const products=JSON.parse(match[1]);
+const overrides=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
+const pages=JSON.parse(fs.readFileSync('seo-pages.json','utf8'));
+const rows=products.map(p=>{
+ const o=overrides[p.sku]||{};
+ const title=o.tituloSeo||p.name+' en Quito | ConectaTech';
+ const description=o.descripcionSeo||'';
+ const image=Boolean(p.imageUrl||o.imagen);
+ const verifiedSpecs=Boolean(p.specs&&Object.keys(p.specs).length||o.caracteristicas&&Object.keys(o.caracteristicas).length);
+ const issues=[];
+ if(!o.tituloSeo)issues.push('Sin título SEO personalizado');
+ if(!o.descripcionSeo)issues.push('Sin metadescripción personalizada');
+ if(!o.descripcion)issues.push('Sin descripción visible enriquecida');
+ if(!image)issues.push('Sin fotografía');
+ if(!verifiedSpecs)issues.push('Sin características verificadas');
+ if(title.length>70)issues.push('Título extenso');
+ if(description.length>160)issues.push('Metadescripción extensa');
+ if(!pages[p.sku])issues.push('Sin ficha generada');
+ return {sku:p.sku,nombre:p.name,categoria:p.category,stock:p.stock,seo:o.tituloSeo?'personalizado':'básico',imagen:image,caracteristicas:verifiedSpecs,problemas:issues};
+});
+const count=k=>rows.filter(r=>r.problemas.includes(k)).length;
+const summary={fecha:new Date().toISOString(),total:rows.length,seoPersonalizado:rows.filter(r=>r.seo==='personalizado').length,sinFoto:count('Sin fotografía'),sinCaracteristicas:count('Sin características verificadas'),sinDescripcionVisible:count('Sin descripción visible enriquecida'),titulosExtensos:count('Título extenso'),descripcionesExtensas:count('Metadescripción extensa')};
+fs.writeFileSync('reporte-calidad-seo.json',JSON.stringify({resumen:summary,productos:rows},null,2)+'\n');
+console.log('Auditoría SEO:',JSON.stringify(summary));
