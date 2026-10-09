@@ -1,0 +1,86 @@
+name: Importar fichas e imágenes por SKU
+on:
+  workflow_dispatch:
+    inputs:
+      csv:
+        description: Archivo CSV editorial dentro del repositorio
+        required: true
+        default: importacion/lote-001-repetible.csv
+      imagenes:
+        description: Carpeta de originales dentro del repositorio
+        required: true
+        default: imagenes
+      aplicar:
+        description: Aplicar el lote validado y publicar en main
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: importacion-productos-main
+  cancel-in-progress: false
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -r importacion/requirements.txt
+      - name: Validar rutas del lote
+        env:
+          LOTE_CSV: ${{ inputs.csv }}
+          LOTE_IMAGENES: ${{ inputs.imagenes }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          root=Path.cwd().resolve()
+          for key in ('LOTE_CSV','LOTE_IMAGENES'):
+              path=(root/os.environ[key]).resolve()
+              if not path.is_relative_to(root) or not path.exists():
+                  raise SystemExit('Ruta inválida: '+key)
+          PY
+      - name: Simular o aplicar lote validado
+        env:
+          LOTE_CSV: ${{ inputs.csv }}
+          LOTE_IMAGENES: ${{ inputs.imagenes }}
+          LOTE_APLICAR: ${{ inputs.aplicar }}
+        run: |
+          argumentos=()
+          if [ "$LOTE_APLICAR" = "true" ]; then argumentos+=(--aplicar); fi
+          python scripts/importar-productos.py --csv "$LOTE_CSV" --imagenes "$LOTE_IMAGENES" "${argumentos[@]}"
+      - name: Generar fichas y exportaciones
+        if: inputs.aplicar
+        run: |
+          node scripts/generar-seo.cjs
+          node scripts/exportar-canales.cjs
+      - name: Publicar lote sin sobrescribir cambios concurrentes
+        if: inputs.aplicar
+        run: |
+          git add index.html seo-contenido.json seo-pages.json sitemap.xml productos imagenes exportaciones
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Importar fichas e imágenes verificadas por SKU"
+          git push origin HEAD:main
+      - name: Solicitar reconstrucción de GitHub Pages
+        if: inputs.aplicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reporte-importacion-productos
+          path: reportes/importacion-productos.json
+          if-no-files-found: warn

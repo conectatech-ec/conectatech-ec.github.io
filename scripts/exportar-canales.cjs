@@ -12,7 +12,7 @@ const rows=products.filter(p=>p.stock>0&&p.promo>0).map(p=>{
   const o=content[p.sku]||{};
   return {sku:p.sku,title:o.nombre||p.name,description:o.descripcion||o.descripcionSeo||p.name,
     price:p.promo.toFixed(2)+' USD',pvp:p.pvp.toFixed(2)+' USD',availability:'in stock',condition:'new',
-    link:base+'/productos/'+urls[p.sku]+'/',image_link:o.imagen||p.imageUrl||'',
+    link:base+'/productos/'+urls[p.sku]+'/',image_link:(o.imagen||p.imageUrl)?new URL(o.imagen||p.imageUrl,base).href:'',
     category:p.category,stock:p.stock,
     facebook_title:(o.nombre||p.name).slice(0,150),
     facebook_copy:(o.descripcion||o.descripcionSeo||p.name)+'\nPROMO CONTADO $'+p.promo.toFixed(2)+' · PVP $'+p.pvp.toFixed(2)+'\nConsulta disponibilidad en Quito. '+base+'/productos/'+urls[p.sku]+'/'};
@@ -23,6 +23,9 @@ fs.writeFileSync('exportaciones/catalogo-ventas.json',JSON.stringify({fechaCatal
 fs.writeFileSync('exportaciones/contenido-multicanal.csv',csv(['sku','title','description','price','pvp','availability','link','image_link','category','stock','facebook_title','facebook_copy'],rows));
 const ready=rows.filter(p=>/^https?:\/\//.test(p.image_link));
 const knownBrand=sku=>{
+  const product=products.find(p=>p.sku===sku);
+  const brand=content[sku]?.caracteristicas?.Marca||product?.specs?.Marca;
+  if(brand)return brand;
   if(['TELF001'].includes(sku))return 'ZTE';
   if(['TELF017','TELF018','TELF019'].includes(sku))return 'Xiaomi';
   if(['TELF011','TELF012'].includes(sku))return 'Samsung';
