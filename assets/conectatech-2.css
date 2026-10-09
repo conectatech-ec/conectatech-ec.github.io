@@ -188,3 +188,16 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 @media(max-width:1050px){#grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:750px){#grid{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#grid .ct-compact-card{padding:9px}#grid .ct-compact-card .product-img{height:125px!important}#grid .ct-compact-card .promo{font-size:20px}#grid .ct-compact-card .name{font-size:12px}.ct-pagination{gap:8px}.ct-pagination button{padding:10px}}
+
+/* Corrección explícita de tarjetas destacadas: nunca fichas gigantes */
+#featured.featured{margin:12px 0 18px!important}
+#featured .featured-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important}
+#featured .featured-card{min-width:0!important;min-height:0!important;padding:10px!important;display:flex!important;flex-direction:column!important}
+#featured .featured-card .product-img{height:125px!important;min-height:0!important;margin:0 0 8px!important;padding:5px!important}
+#featured .featured-card .name{font-size:12px!important;min-height:36px!important;line-height:1.3!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#featured .featured-card .promo{font-size:20px!important}
+#featured .featured-card .promo-badge{font-size:9px!important}
+#featured .featured-card .pvp{font-size:11px!important;margin:3px 0 8px!important}
+#featured .featured-card .wa{min-height:36px!important;padding:8px!important;margin-top:auto!important}
+#featured .section-title{margin-bottom:10px!important}
+@media(max-width:650px){#featured .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}#featured .featured-card .product-img{height:110px!important}}
