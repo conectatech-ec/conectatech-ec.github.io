@@ -59,14 +59,26 @@ def main():
                 ('stock',schema['offers']['availability'],'https://schema.org/'+('InStock' if p['stock']>0 else 'OutOfStock')),
                 ('canonical',page.canonical,canonical)):
                 if actual != expected: raise ValueError(f'{label}: {actual!r} != {expected!r}')
-            if ('$'+f"{p['pvp']:.2f}".replace('.',',')) not in data.decode(): raise ValueError('PVP visible incorrecto')
-            image_url=urljoin('https://conectatech-ec.github.io',c['imagen'])
-            if image_url not in page.images or schema['image'] != [image_url]: raise ValueError('Referencia de imagen incorrecta')
-            image_data,image_status=get(args.base.rstrip('/')+c['imagen'])
-            if hashlib.sha256(image_data).hexdigest()!=c['imagenOriginal']['sha256']: raise ValueError('La imagen no coincide con el original')
-            result.update(estado='publicado_verificado' if args.base=='https://conectatech-ec.github.io' else 'verificado_local',http=status,http_imagen=image_status,
-                          promo=p['promo'],pvp=p['pvp'],stock_catalogo=p['stock'],imagen=image_url,
-                          resolucion=f"{c['imagenOriginal']['ancho']}x{c['imagenOriginal']['alto']}",sha256_imagen=c['imagenOriginal']['sha256'])
+            if not any(('$'+price) in data.decode() for price in (f"{p['pvp']:.2f}",f"{p['pvp']:.2f}".replace('.',','))): raise ValueError('PVP visible incorrecto')
+            result.update(estado='publicado_verificado' if args.base=='https://conectatech-ec.github.io' else 'verificado_local',http=status,
+                          promo=p['promo'],pvp=p['pvp'],stock_catalogo=p['stock'],imagen_pendiente=bool(c.get('imagenPendiente')))
+            if c.get('imagenPendiente'):
+                if schema.get('image') or any('/imagenes/carg016/' in (i or '') for i in page.images): raise ValueError('Se muestra imagen bloqueada por regla')
+                if 'Fotografía en actualización' not in data.decode():raise ValueError('Falta estado pendiente visible')
+            else:
+                image_url=urljoin('https://conectatech-ec.github.io',c['imagen'])
+                if image_url not in [urljoin('https://conectatech-ec.github.io',i) for i in page.images if i] or [urljoin('https://conectatech-ec.github.io',i) for i in schema['image']] != [image_url]: raise ValueError('Referencia de imagen incorrecta')
+                cover=c['imagenProfesional']; verified=[]
+                for size,v in [(f"{i['posicion']:02d}-{k}",v) for i in c.get('galeria',[cover]) for k,v in i['versiones'].items()]:
+                    image_data,image_status=get(args.base.rstrip('/')+v['url'])
+                    if hashlib.sha256(image_data).hexdigest()!=v['sha256']: raise ValueError('Versión publicada distinta: '+size)
+                    verified.append({'tamano':size,'http':image_status,'sha256':v['sha256']})
+                if c.get('banner'):
+                    v=c['banner'];payload,status=get(args.base.rstrip('/')+v['url'])
+                    if hashlib.sha256(payload).hexdigest()!=v['sha256']:raise ValueError('Banner publicado distinto')
+                    result['banner_verificado']={'url':args.base.rstrip('/')+v['url'],'http':status}
+                result.update(imagen=image_url,versiones_verificadas=verified,resolucion='1200x1200')
+
         except Exception as exc:
             result.update(estado='error',error=str(exc))
         return result

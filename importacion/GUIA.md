@@ -41,3 +41,7 @@ Verifica respuesta HTTP, SKU, nombre, precios, disponibilidad, canonical y bytes
 `lote-001.csv` documenta los tres productos. Sus originales publicados están en `imagenes/<sku>/original-<hash>.*`; el CSV inicial conserva los nombres de los archivos recibidos como referencia. Para repetirlo desde GitHub, usar `lote-001-repetible.csv` y carpeta `imagenes`.
 
 Para el resto, usar lotes de 50–100 fotos identificadas por SKU. El script procesa también la plantilla completa. No marca como terminadas las 1.162 fichas restantes: conservan lo existente hasta incorporar imágenes y contenido revisados. Las seis imágenes externas que ya existían requieren su propia revisión de calidad y variante.
+
+## Producción profesional vigente
+
+Desde el piloto profesional, el importador editorial ya no publica directamente la foto cruda. Conserva el original y selecciona únicamente medios compatibles con las reglas permanentes. Para tratamiento, excepciones, miniaturas, lotes y banners seguir **[SISTEMA-PROFESIONAL.md](SISTEMA-PROFESIONAL.md)**. Este flujo sustituye la recomendación anterior de copiar fotos sin tratamiento.

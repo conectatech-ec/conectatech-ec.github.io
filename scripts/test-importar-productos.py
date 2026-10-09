@@ -16,7 +16,7 @@ class ImportTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
         self.root=Path(self.tmp.name)
-        for file in ['index.html','seo-contenido.json','seo-pages.json','importacion/alias-sku.json']:
+        for file in ['index.html','seo-contenido.json','seo-pages.json','importacion/alias-sku.json','importacion/reglas-sku.json']:
             target=self.root/file;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy(ROOT/file,target)
         with (ROOT/'importacion/lote-001-repetible.csv').open(encoding='utf-8-sig') as f: self.rows=list(csv.DictReader(f))
         self.before=module.financial(module.read_catalog(self.root)[1])

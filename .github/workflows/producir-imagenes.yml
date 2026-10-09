@@ -1,0 +1,102 @@
+name: Producir catálogo profesional por SKU
+on:
+  workflow_dispatch:
+    inputs:
+      manifiesto:
+        description: Manifiesto revisado del lote dentro del repositorio
+        required: true
+        default: importacion/piloto-imagenes.json
+      reglas_csv:
+        description: Excepciones nuevas (CSV); vacío conserva todas las reglas
+        default: ''
+      aplicar:
+        description: Aplicar y publicar resultados válidos
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: importacion-productos-main
+  cancel-in-progress: false
+jobs:
+  producir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: python -m pip install -r importacion/requirements.txt
+      - name: Registrar reglas y procesar lote
+        env:
+          MANIFIESTO: ${{ inputs.manifiesto }}
+          REGLAS_CSV: ${{ inputs.reglas_csv }}
+          APLICAR: ${{ inputs.aplicar }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          for key in ('MANIFIESTO','REGLAS_CSV'):
+              value=os.environ[key]
+              if value:
+                  path=(Path.cwd()/value).resolve()
+                  if not path.is_relative_to(Path.cwd()) or not path.is_file():raise SystemExit('Ruta no válida')
+          PY
+          if [ -n "$REGLAS_CSV" ]; then
+            # También la simulación usa las reglas propuestas, solo en el checkout efímero.
+            python scripts/reglas_sku.py --csv "$REGLAS_CSV" --aplicar
+          fi
+          argumentos=()
+          if [ "$APLICAR" = "true" ]; then argumentos+=(--aplicar); fi
+          python scripts/procesar-imagenes.py --manifiesto "$MANIFIESTO" "${argumentos[@]}"
+      - name: Aplicar reglas a fichas y exportaciones
+        if: inputs.aplicar
+        run: |
+          node scripts/generar-seo.cjs
+          node scripts/exportar-canales.cjs
+          cp reportes/procesamiento-imagenes.json "reportes/produccion-${GITHUB_RUN_ID}.json"
+      - name: Publicar sin sobrescribir cambios concurrentes
+        if: inputs.aplicar
+        run: |
+          git add index.html seo-contenido.json seo-pages.json sitemap.xml productos imagenes exportaciones importacion/reglas-sku.json importacion/medios.json reportes
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Producir imágenes por SKU con reglas persistentes"
+          git push origin HEAD:main
+      - name: Reconstruir Pages
+        if: inputs.aplicar
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - name: Verificar publicación
+        if: inputs.aplicar
+        run: |
+          python - <<'PY'
+          import json,subprocess,time
+          report=json.load(open('reportes/procesamiento-imagenes.json'))
+          sku=[x['sku'] for x in report['productos'] if x['estado']=='aplicado_local']
+          if not sku:raise SystemExit(0)
+          for attempt in range(8):
+              result=subprocess.run(['python','scripts/verificar-publicacion.py','--sku',*sku])
+              if result.returncode==0:break
+              if attempt==7:raise SystemExit(1)
+              time.sleep(30)
+          PY
+      - name: Conservar verificación HTTP en el repositorio
+        if: inputs.aplicar
+        run: |
+          if [ ! -f reportes/verificacion-publicacion.json ]; then exit 0; fi
+          cp reportes/verificacion-publicacion.json "reportes/verificacion-${GITHUB_RUN_ID}.json"
+          git add reportes/verificacion-publicacion.json "reportes/verificacion-${GITHUB_RUN_ID}.json"
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Registrar verificación HTTP del lote"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reporte-produccion
+          path: reportes/*.json

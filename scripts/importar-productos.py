@@ -51,6 +51,9 @@ def run(args):
     original_html = (root / 'index.html').read_bytes()
     original_seo = (root / 'seo-contenido.json').read_bytes()
     editorial = json.loads(original_seo)
+    from reglas_sku import rule, compatible
+    media_path = root / "importacion/medios.json"
+    media = json.loads(media_path.read_text()) if media_path.exists() else {}
     aliases_path = root / 'importacion/alias-sku.json'
     aliases = json.loads(aliases_path.read_text()) if aliases_path.exists() else {}
     by_sku = {p['sku']: p for p in products}
@@ -155,6 +158,24 @@ def run(args):
             custom['fuenteOficial'] = row['fuente'].strip()
         else:
             custom.pop('fuenteOficial', None)
+        policy = rule(sku, root)
+        managed = media.get(sku, {})
+        cover = next((i for i in managed.get('imagenes', []) if i['posicion']==1 and compatible(policy, i, True)), None)
+        known_sources = {i.get('sha256_original') for i in managed.get('imagenes', [])}
+        known_sources.add(editorial.get(sku, {}).get('imagenOriginal', {}).get('sha256'))
+        if managed.get('revision_regla') != policy['revision'] or digest not in known_sources:
+            cover = None
+            media[sku] = {'revision_regla': policy['revision'], 'regla': policy, 'imagenes': []}
+
+        # La carga editorial y la producción visual son pasos distintos.
+        p['imageUrl'] = cover['versiones']['1200']['url'] if cover else ''
+        custom['imagen'] = p['imageUrl']
+        custom['imagenPendiente'] = not bool(cover)
+        custom['reglaSKU'] = policy
+        if cover: custom['imagenProfesional'] = cover
+        else:
+            for key in ('imagenProfesional','galeria','banner'): custom.pop(key, None)
+            pending.append({'sku': sku, 'motivo': 'Original archivado; ejecutar producción visual contra reglas vigentes'})
         editorial[sku] = custom
         writes[root / relative] = data
         item = {'sku': sku, 'solicitado': raw_sku, 'imagen': image_url,
@@ -182,6 +203,7 @@ def run(args):
         # Tras validar TODO el lote, fotos primero y referencias al final.
         for path, data in writes.items():
             atomic_write(path, data)
+        atomic_write(root/'importacion/medios.json', encode(media))
         atomic_write(root/'seo-contenido.json', encode(editorial))
         atomic_write(root/'index.html', new_html)
         report['aplicados'] = prepared

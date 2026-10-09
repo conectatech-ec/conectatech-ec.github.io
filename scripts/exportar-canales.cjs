@@ -1,3 +1,4 @@
+require('./aplicar-reglas-medios.cjs')();
 const fs=require('fs');
 const html=fs.readFileSync('index.html','utf8');
 const m=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);

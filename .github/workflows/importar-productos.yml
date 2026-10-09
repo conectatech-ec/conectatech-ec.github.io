@@ -67,7 +67,7 @@ jobs:
       - name: Publicar lote sin sobrescribir cambios concurrentes
         if: inputs.aplicar
         run: |
-          git add index.html seo-contenido.json seo-pages.json sitemap.xml productos imagenes exportaciones
+          git add index.html seo-contenido.json seo-pages.json sitemap.xml productos imagenes exportaciones importacion/medios.json
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

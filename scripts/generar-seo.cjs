@@ -1,3 +1,4 @@
+require('./aplicar-reglas-medios.cjs')();
 const fs=require('fs'),path=require('path');
 const fichaComercial=require('./ficha-comercial.cjs');
 const html=fs.readFileSync('index.html','utf8');
