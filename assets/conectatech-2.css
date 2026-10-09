@@ -52,3 +52,22 @@ header{backdrop-filter:saturate(1.1);box-shadow:0 6px 24px #071b3430}
 .grid{align-items:stretch}
 @media(max-width:650px){.card .product-img{height:170px!important;padding:6px}.featured-card .product-img{height:135px!important}.card .name{font-size:13px;min-height:54px}.card .promo{font-size:24px}.card .pvp{font-size:12px}}
 @media(max-width:390px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card .product-img{height:140px!important}.card .name{font-size:12px}.card .promo{font-size:21px}.card{padding:9px}}
+
+/* Portada CONECTATECH 2.0 — identidad original, jerarquía renovada */
+.ct-hero{min-height:350px;padding:38px 42px;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(240px,.75fr);gap:30px;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 78% 48%,#65c54345,transparent 34%),radial-gradient(circle at 30% 100%,#1763b54f,transparent 45%),linear-gradient(115deg,#071529,#0b2b56 62%,#123e45 100%);box-shadow:0 20px 42px #0c244b30}
+.ct-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 55%,#ffffff0a 55.1%,transparent 57%);pointer-events:none}
+.ct-hero-copy,.ct-hero-art{position:relative;z-index:1}
+.ct-hero h1{font-size:clamp(30px,3.5vw,49px);line-height:1.08;letter-spacing:-1.3px;max-width:690px;margin:12px 0 16px}
+.ct-hero h1 strong{color:#9be45e}
+.ct-hero p{font-size:15px;line-height:1.7;max-width:530px;color:#d8e8f8}
+.ct-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
+.ct-hero-actions a{min-height:46px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;padding:12px 17px;font-size:13px;font-weight:900;text-decoration:none}
+.ct-hero-primary{background:#8bd12f;color:#0b1c35}
+.ct-hero-secondary{background:#ffffff14;border:1px solid #ffffff55;color:#fff}
+.ct-hero-proof{display:flex;flex-wrap:wrap;gap:12px;margin-top:23px;color:#c8e7d4;font-size:12px;font-weight:700}
+.ct-hero-art{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.ct-hero-halo{width:215px;height:215px;border:1px solid #a8eb7c66;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#8bd12f24 0%,#ffffff08 56%,transparent 70%);box-shadow:0 0 0 20px #a0d8680a,0 0 0 45px #a0d86807}
+.ct-hero .hero-logo{width:180px;height:180px;margin:0;object-fit:contain}
+.ct-hero-art-label{font-size:10px;letter-spacing:1.3px;font-weight:800;color:#a7d98e}
+@media(max-width:750px){.ct-hero{padding:28px 24px;grid-template-columns:1fr;gap:22px}.ct-hero-art{display:none}.ct-hero h1{font-size:34px}.ct-hero-proof{gap:9px}}
+@media(max-width:390px){.ct-hero{padding:24px 17px}.ct-hero h1{font-size:29px}.ct-hero-actions a{width:100%}}
