@@ -254,3 +254,29 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 .ct-gift-location{display:inline-block;margin-top:6px}
 @media(max-width:800px){.ct-gift-levels{gap:9px;padding:12px 12px 20px}.ct-gift-photo{aspect-ratio:1.08}.ct-gift-threshold strong{font-size:44px}}
 @media(max-width:600px){.ct-gift-levels{grid-template-columns:1fr;gap:16px;padding:12px 14px 20px}.ct-gift-level{max-width:400px;width:100%}.ct-gift-photo{aspect-ratio:1.25;margin-bottom:10px!important}.ct-gift-threshold strong{font-size:51px}.ct-gift-level h3{font-size:19px}}
+
+/* Regalos — composición unificada, sin tarjetas ni fondos superpuestos */
+.ct-gift-unified{background:linear-gradient(140deg,#740b18,#bc1228 60%,#6e0924)!important;padding:0!important;border:1px solid #f4b35a70!important;border-radius:19px!important;overflow:hidden!important}
+.ct-gift-unified-heading{text-align:center;padding:25px 18px 19px;background:radial-gradient(ellipse at 50% 0%,#ffca5c50,transparent 70%);color:#fff}
+.ct-gift-unified-heading>span{font-size:10px;letter-spacing:1.5px;font-weight:900;color:#ffdd8b}
+.ct-gift-unified-heading h2{font-family:Arial Black,Arial,sans-serif;font-size:clamp(25px,3vw,40px);line-height:1.1;letter-spacing:-1px;margin:9px 0 7px;text-transform:uppercase;color:#fff;text-shadow:0 3px 10px #48060c70}
+.ct-gift-unified-heading h2 strong{color:#a9f66d}
+.ct-gift-unified-heading p{font-size:13px;margin:0;color:#ffe9ec}
+.ct-gift-unified-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;align-items:stretch;margin:0 20px;border-radius:14px 14px 0 0;overflow:hidden;background:#170b27}
+.ct-gift-unified-gallery .ct-gift-panel{position:relative;min-width:0;overflow:hidden}
+.ct-gift-unified-gallery .ct-gift-panel img{width:100%;height:100%;aspect-ratio:1.16;object-fit:cover;object-position:center;display:block}
+.ct-gift-unified-gallery .ct-gift-panel:not(:last-child){border-right:2px solid #ffffff25}
+.ct-gift-unified-amounts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 20px;background:#140d26}
+.ct-gift-unified-amounts>div{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:13px 7px 17px;min-width:0}
+.ct-gift-unified-amounts>div:nth-child(1){background:#10295d}.ct-gift-unified-amounts>div:nth-child(2){background:#9c4d0c}.ct-gift-unified-amounts>div:nth-child(3){background:#5b187b}
+.ct-gift-unified-amounts small{font-size:10px;letter-spacing:.8px;font-weight:800;color:#ffe9c6}
+.ct-gift-unified-amounts strong{font-size:clamp(31px,4.2vw,54px);font-family:Arial Black,Arial,sans-serif;line-height:1.05;color:#fff;text-shadow:0 3px 10px #0005}
+.ct-gift-unified-amounts span{font-size:12px;color:#fff;font-weight:800}
+.ct-gift-unified-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#320911;padding:18px 22px;color:#fff}
+.ct-gift-unified-footer strong{font-size:14px;color:#ffe3a2}
+.ct-gift-unified-footer p{font-size:11px;line-height:1.5;margin:4px 0;color:#f7dce2}
+.ct-gift-unified-footer details{margin-top:9px;max-width:780px}
+.ct-gift-unified-footer summary{font-size:12px;font-weight:800;color:#ffe3a2;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.ct-gift-unified-footer details p{font-size:11px;line-height:1.6;margin:8px 0 0}
+.ct-gift-unified-footer>a{display:inline-flex;align-items:center;justify-content:center;text-align:center;flex-shrink:0;min-height:44px;padding:12px 18px;background:#ffdb66;color:#49100a;border-radius:11px;font-size:12px;font-weight:900;text-decoration:none}
+@media(max-width:650px){.ct-gift-unified-heading{padding:19px 12px 14px}.ct-gift-unified-heading h2{font-size:24px}.ct-gift-unified-heading p{font-size:12px}.ct-gift-unified-gallery,.ct-gift-unified-amounts{margin-left:8px;margin-right:8px}.ct-gift-unified-gallery .ct-gift-panel img{aspect-ratio:.9}.ct-gift-unified-amounts>div{padding:10px 3px 13px}.ct-gift-unified-amounts small{font-size:8px;letter-spacing:0}.ct-gift-unified-amounts strong{font-size:30px}.ct-gift-unified-amounts span{font-size:10px}.ct-gift-unified-footer{padding:16px;flex-direction:column;align-items:stretch}.ct-gift-unified-footer>a{width:100%}}
