@@ -12,3 +12,12 @@
 - No marcar lotes pendientes como terminados. El lote de 20 dejó 18 pendientes; continuar desde el reporte y no repetir trabajo ya validado.
 - Banners solo para SKU priorizados. Las nuevas instrucciones invalidan medios con revisión antigua, incluidos banners.
 - Ejecutar controles pertinentes al cambio y actualizar el reporte. No pedir autorización para ajustes técnicos reversibles ya comprendidos en la tarea; consultar si hay ambigüedad comercial o riesgo de identificar mal el producto.
+
+## Prioridad vigente — producción por lotes (2026-10-09)
+
+- Alimentar fotografías y fichas existentes. No rediseñar la web ni crear banners durante esta fase.
+- Leer `importacion/RECEPCION-LOTES.md`. Primer lote de 5 SKU, después 20, 50 y 100 una vez validado el estándar. No ejecutar otra vez el piloto histórico por defecto.
+- Trabajar solo con SKU nuevos o modificados del lote recibido; reutilizar medios aprobados y vigentes, sin regenerarlos. Leer índices existentes para buscar SKU no implica revisar todo el catálogo.
+- Registrar discrepancias de caja/modelo/variante antes de modificar nombres o características. No resolverlas por aproximación.
+- Preferir producto y caja para originales comercialmente confirmados; producto real para genéricos/compatibles. Las reglas individuales vigentes siempre prevalecen. No deducir autenticidad de la foto.
+- Reportar cada SKU con foto recibida, portada, presentación, contado, PVP, URL y estado. Solo marcar publicado después de verificar Pages.
