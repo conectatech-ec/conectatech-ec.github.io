@@ -90,3 +90,21 @@ header .search input{border-radius:13px;min-height:57px;padding:15px 19px;font-s
 header .search input::placeholder{color:#69798d}
 @media(max-width:650px){header{padding:12px 12px 15px}.brandlogo{width:48px;height:48px}.brand{font-size:22px}.ct-header-subtitle{margin:8px 0 10px;font-size:9px;letter-spacing:.5px}.ct-topnav{margin:0 0 10px;overflow-x:auto;gap:2px}.ct-topnav a{padding:9px 10px;font-size:11px}.ct-topnav .ct-nav-wa{margin-left:0}header .search input{min-height:50px;font-size:14px}}
 @media(max-width:390px){.brand{font-size:19px}.brandlogo{width:43px;height:43px}.ct-header-subtitle span{display:none}}
+
+/* CONECTATECH — cabecera editorial premium v3 */
+header{position:sticky;top:0;z-index:30;background:linear-gradient(110deg,#061326 0%,#0a2347 58%,#103d38 100%);border-bottom:1px solid #ffffff21}
+header .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1.25fr);column-gap:26px;align-items:center}
+header .wrap>a:first-child{grid-column:1;grid-row:1;min-width:0}
+header .brandrow{align-items:center}
+header .brandlogo{width:66px;height:66px;flex-shrink:0;box-shadow:0 0 0 3px #8bd12f24,0 8px 24px #0005}
+header .brand{font-size:clamp(21px,2.15vw,30px);white-space:nowrap}
+header .brand small{display:block;width:max-content;margin:6px 0 0;font-size:9px;letter-spacing:1.5px}
+header .ct-header-subtitle{grid-column:1;grid-row:2;margin:3px 0 0 82px;font-size:10px}
+header .ct-topnav{grid-column:2;grid-row:1;margin:0;justify-content:flex-end;flex-wrap:wrap;gap:4px}
+header .ct-topnav a{font-size:12px;font-weight:800;padding:11px 12px}
+header .ct-topnav .ct-nav-wa{margin-left:6px;background:#79c843;color:#071b2b;border:0;box-shadow:0 5px 16px #79c8432e}
+header .search{grid-column:2;grid-row:2;margin:0}
+header .search input{width:100%;height:52px;min-height:52px;border-radius:12px;background:#fff;color:#142842;box-shadow:0 8px 22px #020b1b30}
+header .search input:focus{outline:0;border-color:#8bd12f;box-shadow:0 0 0 4px #8bd12f45}
+@media(max-width:1050px){header .wrap{grid-template-columns:1fr;gap:8px}header .wrap>a:first-child,header .ct-header-subtitle,header .ct-topnav,header .search{grid-column:1;grid-row:auto}header .ct-header-subtitle{margin:0 0 2px 80px}header .ct-topnav{justify-content:flex-start}header .search{width:100%}}
+@media(max-width:650px){header{position:relative}header .wrap{gap:8px}header .brandlogo{width:48px;height:48px}header .brand{font-size:21px}header .brand small{display:none}header .ct-header-subtitle{margin:0;font-size:9px}header .ct-topnav{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}header .ct-topnav a{font-size:11px;padding:9px 10px}header .search input{height:48px;min-height:48px}}
