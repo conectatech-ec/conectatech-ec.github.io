@@ -38,3 +38,17 @@ header{backdrop-filter:saturate(1.1);box-shadow:0 6px 24px #071b3430}
 #catalogo{scroll-margin-top:185px}
 @media(max-width:900px){.ct-shortcuts{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:650px){.ct-section-head h2{font-size:21px}.ct-section-note{display:none}.ct-shortcuts{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.ct-shortcuts button{min-height:85px;padding:9px 3px;font-size:11px}.ct-shortcuts button span{font-size:23px}.ct-commerce-strip{flex-direction:column;align-items:stretch;padding:15px}.ct-commerce-strip a{width:100%}#catalogo{scroll-margin-top:160px}}
+
+/* Fotografía protagonista: estilo de estudio limpio, sin recortar el artículo */
+.card .product-img{height:210px!important;background:#fff!important;border:1px solid #e9edf3;border-radius:16px;padding:10px}
+.card .product-img img{width:100%;height:100%;object-fit:contain}
+.featured-card .product-img{height:175px!important;background:#fff!important;padding:10px;border:1px solid #edf0f5}
+.card{background:#fff;border-radius:19px}
+.card .cat{font-size:10px;letter-spacing:1px}
+.card .name{font-size:15px;min-height:58px}
+.card .stock{font-size:12px}
+.card .promo{font-size:29px}
+.card .pvp{font-size:13px;color:#576476}
+.grid{align-items:stretch}
+@media(max-width:650px){.card .product-img{height:170px!important;padding:6px}.featured-card .product-img{height:135px!important}.card .name{font-size:13px;min-height:54px}.card .promo{font-size:24px}.card .pvp{font-size:12px}}
+@media(max-width:390px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card .product-img{height:140px!important}.card .name{font-size:12px}.card .promo{font-size:21px}.card{padding:9px}}
