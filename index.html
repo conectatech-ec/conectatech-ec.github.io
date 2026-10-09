@@ -194,7 +194,8 @@ function renderFeatured(){
  const bySku=new Map(products.map(p=>[p.sku,p]));
  const f=wanted.map(s=>bySku.get(s)).filter(p=>p&&p.stock>0);
  const fill=products.filter(p=>p.stock>0&&["Celulares","Tablets","TV y Monitores"].includes(p.commercialCategory)&&!f.includes(p)).sort((a,b)=>b.stock-a.stock);
- f.push(...fill.slice(0,Math.max(0,8-f.length)));
+ f.push(...fill.slice(0,Math.max(0,4-f.length)));
+ f.splice(4);
  document.getElementById("featured").innerHTML=f.map(p=>{
   const msg=encodeURIComponent("Hola ConectaTech, me interesa "+p.name+" ("+p.sku+"). ¿Está disponible a precio promo contado "+money(p.promo)+"?");
   return `<div class="featured-card"><div class="product-img">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display=\'none\'">`:`<span class="fallback">${iconFor(p.commercialCategory)}</span>`}</div><div class="cat">${esc(p.commercialCategory)}</div><div class="name">${esc(p.name)}</div><div class="promo-badge">⚡ PRECIO PROMO CONTADO</div><div class="promo">${money(p.promo)}</div><div class="pvp">PVP ${money(p.pvp)}</div><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${msg}">Consultar</a></div>`;
