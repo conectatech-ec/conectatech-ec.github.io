@@ -41,9 +41,39 @@
       "precio_contado": 235.9,
       "pvp": 271.29,
       "url": "https://conectatech-ec.github.io/productos/telf020-telefono-redmi-15-256gb-8gb-8gb/",
-      "estado": "aplicado_local",
+      "estado": "publicado_verificado",
       "pendientes": [],
-      "requiere_verificacion": true
+      "requiere_verificacion": true,
+      "verificacion_http": {
+        "solicitado": "TELF020",
+        "sku": "TELF020",
+        "url": "https://conectatech-ec.github.io/productos/telf020-telefono-redmi-15-256gb-8gb-8gb/",
+        "estado": "publicado_verificado",
+        "http": 200,
+        "promo": 235.9,
+        "pvp": 271.29,
+        "stock_catalogo": 3,
+        "imagen_pendiente": false,
+        "imagen": "https://conectatech-ec.github.io/imagenes/telf020/TELF020-01.webp",
+        "versiones_verificadas": [
+          {
+            "tamano": "01-300",
+            "http": 200,
+            "sha256": "c7fc7c61f65d8e10c29c3446ede9e551d920485b514d263ddd5368a753023013"
+          },
+          {
+            "tamano": "01-600",
+            "http": 200,
+            "sha256": "5e823b2d0fdf2e6c05547c9f4b341fd2f850061b8fa0a75cce73802256563007"
+          },
+          {
+            "tamano": "01-1200",
+            "http": 200,
+            "sha256": "cab422d58824ff1b35c29a989ff2bc81485ec9679a3b7f865aa1a17ecaa1409b"
+          }
+        ],
+        "resolucion": "1200x1200"
+      }
     },
     {
       "sku": "TELF037",
@@ -127,9 +157,39 @@
       "precio_contado": 395.9,
       "pvp": 455.29,
       "url": "https://conectatech-ec.github.io/productos/telf036-telefono-redmi-note-15-pro-512gb-12gb-12gb/",
-      "estado": "aplicado_local",
+      "estado": "publicado_verificado",
       "pendientes": [],
-      "requiere_verificacion": true
+      "requiere_verificacion": true,
+      "verificacion_http": {
+        "solicitado": "TELF036",
+        "sku": "TELF036",
+        "url": "https://conectatech-ec.github.io/productos/telf036-telefono-redmi-note-15-pro-512gb-12gb-12gb/",
+        "estado": "publicado_verificado",
+        "http": 200,
+        "promo": 395.9,
+        "pvp": 455.29,
+        "stock_catalogo": 2,
+        "imagen_pendiente": false,
+        "imagen": "https://conectatech-ec.github.io/imagenes/telf036/TELF036-01.webp",
+        "versiones_verificadas": [
+          {
+            "tamano": "01-300",
+            "http": 200,
+            "sha256": "002a88bbd9bfcbe15858345e1cf71890a230491012f0f2afc9bb6026b2f05ed0"
+          },
+          {
+            "tamano": "01-600",
+            "http": 200,
+            "sha256": "504e7eb20efd059c4eb886cedcdf6935c68560a07e3413d6a1bec847a1165ee7"
+          },
+          {
+            "tamano": "01-1200",
+            "http": 200,
+            "sha256": "ca86c9de8e14ba6a06e0c5568f3acecb724b0d7e0903f08f4725b64aef6ee20e"
+          }
+        ],
+        "resolucion": "1200x1200"
+      }
     },
     {
       "sku": "TELF025",
@@ -410,7 +470,10 @@
     }
   ],
   "errores": [],
-  "publicados": [],
+  "publicados": [
+    "TELF020",
+    "TELF036"
+  ],
   "duplicados": [],
   "similares": [
     {
