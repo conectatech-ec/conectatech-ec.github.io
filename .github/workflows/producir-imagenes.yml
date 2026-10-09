@@ -1,5 +1,12 @@
 name: Producir catálogo profesional por SKU
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/procesar-imagenes.py'
+      - 'scripts/reglas_sku.py'
+      - 'importacion/piloto-imagenes.json'
+      - '.github/workflows/producir-imagenes.yml'
   workflow_dispatch:
     inputs:
       manifiesto:
@@ -32,7 +39,7 @@ jobs:
       - run: python -m pip install -r importacion/requirements.txt
       - name: Registrar reglas y procesar lote
         env:
-          MANIFIESTO: ${{ inputs.manifiesto }}
+          MANIFIESTO: ${{ inputs.manifiesto || 'importacion/piloto-imagenes.json' }}
           REGLAS_CSV: ${{ inputs.reglas_csv }}
           APLICAR: ${{ inputs.aplicar }}
         run: |
