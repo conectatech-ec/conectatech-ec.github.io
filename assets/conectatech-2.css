@@ -1,0 +1,21 @@
+/* CONECTATECH 2.0 — mejora progresiva, sin alterar datos comerciales */
+:root{--ct-ink:#0b1c35;--ct-green:#64b83f}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+header{backdrop-filter:saturate(1.1);box-shadow:0 6px 24px #071b3430}
+.search input{border:2px solid transparent;box-shadow:0 8px 24px #071b3420;transition:border-color .2s,box-shadow .2s}
+.search input:focus{border-color:#8bd12f;box-shadow:0 0 0 4px #8bd12f33}
+.chips{scroll-snap-type:x proximity}
+.chip{scroll-snap-align:start;transition:background .15s,color .15s,border-color .15s}
+.chip:focus-visible,.detail:focus-visible,.wa:focus-visible{outline:3px solid #0b56d6;outline-offset:3px}
+.card,.featured-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card .product-img,.featured-card .product-img{background:#fff;border:1px solid #edf0f5}
+.card .product-img img,.featured-card .product-img img{object-fit:contain;image-rendering:auto}
+.card .name{line-height:1.35;overflow-wrap:anywhere}
+.card .promo{font-variant-numeric:tabular-nums}
+.card .pvp{text-decoration:none!important}
+.detail,.wa{min-height:44px;display:flex;align-items:center;justify-content:center}
+.modal .sheet{box-shadow:0 -18px 50px #07152630}
+@media(min-width:901px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.card .product-img{height:190px}.featured-card .product-img{height:155px}}
+@media(max-width:650px){header{padding:10px 12px 14px}.brandrow{gap:9px}.brand{font-size:21px}.brand small{display:none}.search{margin-top:10px}.search input{padding:13px 14px}.topnav{overflow-x:auto;white-space:nowrap}.card .product-img{height:155px}.card{padding:11px}.card .promo{font-size:24px}.card .name{min-height:52px}.hero{margin-top:0}.modal .sheet{padding:17px}.sheet-icon{height:220px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.featured-card,.wa{transition:none!important}}
