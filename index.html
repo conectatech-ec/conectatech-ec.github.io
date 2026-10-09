@@ -80,6 +80,7 @@ body{background:linear-gradient(180deg,#edf3fa 0,#f7f9fd 470px,#f5f8fc 100%)}
 @media(max-width:650px){.card{border-radius:15px}.card .product-img{height:128px}.section-title{font-size:19px}.hero{border-radius:18px}}
 
 </style>
+<link rel="stylesheet" href="/assets/conectatech-2.css">
 </head>
 <body>
 <header><div class="wrap">
@@ -89,7 +90,7 @@ body{background:linear-gradient(180deg,#edf3fa 0,#f7f9fd 470px,#f5f8fc 100%)}
 </div></header>
 <main>
   <div class="notice"><b>Precios transparentes:</b> descubre nuestra Promo Contado y compara el PVP. Las existencias corresponden a una actualización del 06-10-2026; confirma precio y disponibilidad por WhatsApp antes de comprar.</div>
-  <section class="hero" id="beneficios"><div><span class="eyebrow">CONECTATECH · QUITO</span><h1>Tu tecnología, <strong>lista para llevar</strong></h1><p>Precios claros, stock disponible y atención directa. Compra con factura y garantía.</p></div><div style="display:flex;align-items:center;gap:20px"><div class="hero-badges"><span>✓ Local físico</span><span>✓ Contraentrega Quito</span><span>✓ Envíos nacionales</span></div><img class="hero-logo" src="logo-conectatech.png" alt="Logo ConectaTech"></div></section><div class="trustbar"><div class="trustitem">🏪 Local físico en Quito</div><div class="trustitem">🧾 Compra con factura</div><div class="trustitem">🛡️ Garantía</div><div class="trustitem">🛵 Contraentrega en Quito</div></div><section class="featured"><h2 class="section-title">Destacados</h2><div class="featured-grid" id="featured"></div></section><h2 class="section-title" id="catalogo">Explora el catálogo</h2><div class="chips" id="chips"><button class="chip active" data-cat="TODOS">Todos</button></div>
+  <section class="hero" id="beneficios"><div><span class="eyebrow">CONECTATECH · QUITO</span><h1>Tu tecnología, <strong>lista para llevar</strong></h1><p>Precios claros, stock disponible y atención directa. Compra con factura y garantía.</p></div><div style="display:flex;align-items:center;gap:20px"><div class="hero-badges"><span>✓ Local físico</span><span>✓ Contraentrega Quito</span><span>✓ Envíos nacionales</span></div><img class="hero-logo" src="logo-conectatech.png" alt="Logo ConectaTech"></div></section><div class="trustbar"><div class="trustitem">🏪 Local físico en Quito</div><div class="trustitem">🧾 Compra con factura</div><div class="trustitem">🛡️ Garantía</div><div class="trustitem">🛵 Contraentrega en Quito</div></div><section class="ct-discover" aria-label="Explorar por categorías"><div class="ct-section-head"><div><span class="ct-kicker">ENCUENTRA LO QUE NECESITAS</span><h2>Compra por categoría</h2></div><span class="ct-section-note">Explora nuestro catálogo por tipo de producto</span></div><div class="ct-shortcuts"><button type="button" data-quick-cat="Celulares"><span aria-hidden="true">📱</span> Celulares</button><button type="button" data-quick-cat="Audio"><span aria-hidden="true">🎧</span> Audio</button><button type="button" data-quick-cat="Carga y Energía"><span aria-hidden="true">🔋</span> Carga y energía</button><button type="button" data-quick-cat="Computación"><span aria-hidden="true">💻</span> Computación</button><button type="button" data-quick-cat="Adaptadores"><span aria-hidden="true">🔌</span> Adaptadores</button><button type="button" data-quick-cat="Smartwatch"><span aria-hidden="true">⌚</span> Smartwatch</button></div></section><section class="ct-commerce-strip" aria-label="Servicio de compra"><div><strong>¿Buscas un modelo específico?</strong><span>Escríbenos por WhatsApp y confirma disponibilidad.</span></div><a href="https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20un%20producto" target="_blank" rel="noopener">Asesoría por WhatsApp ↗</a></section><section class="featured"><h2 class="section-title">Destacados</h2><div class="featured-grid" id="featured"></div></section><h2 class="section-title" id="catalogo">Explora el catálogo</h2><div class="chips" id="chips"><button class="chip active" data-cat="TODOS">Todos</button></div>
   <div class="meta"><span id="count"></span><span>Promo contado destacada</span></div>
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty">No encontramos productos con esa búsqueda.</div>
@@ -212,6 +213,7 @@ function closeProduct(){document.getElementById("modal").classList.remove("open"
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeProduct();});
 
 renderFeatured();
+document.querySelectorAll('[data-quick-cat]').forEach(button=>button.addEventListener('click',()=>{const category=button.dataset.quickCat;const chip=Array.from(document.querySelectorAll('#chips .chip')).find(c=>c.dataset.cat===category);if(chip){chip.click();document.getElementById('catalogo').scrollIntoView({behavior:'smooth',block:'start'});}else{document.getElementById('catalogo').scrollIntoView({behavior:'smooth',block:'start'});}}));
 
 </script>
 </body></html>
