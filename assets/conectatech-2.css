@@ -136,3 +136,27 @@ main>.notice{font-size:11px;padding:8px 12px;margin-bottom:10px}
 .ct-discover{margin:14px 0 18px}
 @media(max-width:900px){.ct-hero{grid-template-columns:minmax(0,1fr) 220px;padding:22px}.ct-showcase-product img{height:115px}.ct-showcase-side img{height:100px}}
 @media(max-width:650px){header{padding:9px 12px 11px}header .brandlogo{width:44px;height:44px}header .ct-header-subtitle{margin:0}.ct-hero{display:block;min-height:0;padding:24px 20px}.ct-hero h1{font-size:30px}.ct-hero-showcase{display:none}.ct-hero-proof{font-size:10px}.trustitem{padding:8px 4px;font-size:10px}}
+
+/* Identidad y escaparate animado CONECTATECH */
+header .brandlogo{width:79px;height:79px;object-fit:contain;border-radius:50%;box-shadow:0 0 0 3px #ffffffc7,0 0 20px 4px #9bdf5c6b}
+header .ct-header-subtitle{margin-left:94px}
+header .brandrow{gap:17px}
+header .brand{font-size:clamp(23px,2.3vw,32px)}
+.ct-hero-showcase{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:9px;min-width:0}
+.ct-promo-heading{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:900;letter-spacing:1px;color:#d9f3ca}
+.ct-live-dot{width:8px;height:8px;border-radius:50%;background:#8bd12f;box-shadow:0 0 0 4px #8bd12f26}
+.ct-promo-hint{margin-left:auto;font-size:10px;letter-spacing:0;color:#b9d2ed;font-weight:500}
+.ct-promo-stage{position:relative;height:255px;border-radius:22px;background:linear-gradient(135deg,#ffffff1d,#ffffff08);border:1px solid #ffffff38;box-shadow:0 20px 40px #020a1e55;overflow:hidden;isolation:isolate}
+.ct-promo-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:13px 16px;color:white;text-decoration:none;opacity:0;transform:translateX(18px) scale(.97);animation:ctPromoCycle 15s infinite;pointer-events:none}
+.ct-promo-slide:nth-child(2){animation-delay:5s}.ct-promo-slide:nth-child(3){animation-delay:10s}
+.ct-promo-slide img{height:155px;max-width:88%;width:auto;object-fit:contain;background:white;border-radius:13px;padding:7px;box-shadow:0 9px 24px #0002}
+.ct-promo-name{font-size:12px;font-weight:800;text-align:center;margin-top:8px}
+.ct-promo-slide strong{color:#a8ee65;font-size:22px;margin-top:2px}
+.ct-promo-slide small{font-size:10px;color:#d5e9ff}
+.ct-promo-dots{display:flex;justify-content:center;gap:7px}
+.ct-promo-dots i{height:5px;width:24px;border-radius:5px;background:#ffffff40}
+.ct-promo-dots i:first-child{background:#8bd12f}
+@keyframes ctPromoCycle{0%,3%{opacity:0;transform:translateX(18px) scale(.97);pointer-events:none}7%,29%{opacity:1;transform:translateX(0) scale(1);pointer-events:auto}33%,100%{opacity:0;transform:translateX(-18px) scale(.98);pointer-events:none}}
+@media(max-width:900px){header .brandlogo{width:67px;height:67px}header .ct-header-subtitle{margin-left:81px}.ct-promo-stage{height:230px}.ct-promo-slide img{height:135px}}
+@media(max-width:650px){header .brandlogo{width:57px;height:57px}header .brand{font-size:22px}header .ct-header-subtitle{margin-left:0}.ct-hero-showcase{display:flex;margin-top:18px}.ct-promo-stage{height:230px}.ct-promo-slide img{height:130px}.ct-hero{padding-bottom:22px}}
+@media(prefers-reduced-motion:reduce){.ct-promo-slide{animation:none;opacity:0;transform:none;pointer-events:none}.ct-promo-slide:first-child{opacity:1;pointer-events:auto}}
