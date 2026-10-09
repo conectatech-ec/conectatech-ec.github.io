@@ -71,3 +71,22 @@ header{backdrop-filter:saturate(1.1);box-shadow:0 6px 24px #071b3430}
 .ct-hero-art-label{font-size:10px;letter-spacing:1.3px;font-weight:800;color:#a7d98e}
 @media(max-width:750px){.ct-hero{padding:28px 24px;grid-template-columns:1fr;gap:22px}.ct-hero-art{display:none}.ct-hero h1{font-size:34px}.ct-hero-proof{gap:9px}}
 @media(max-width:390px){.ct-hero{padding:24px 17px}.ct-hero h1{font-size:29px}.ct-hero-actions a{width:100%}}
+
+/* Encabezado comercial premium */
+header{background:linear-gradient(110deg,#071529 0%,#0b2c56 65%,#0c453e 100%);padding:13px 20px 18px;box-shadow:0 9px 28px #06142d33}
+header .wrap{max-width:1240px}.brandrow{gap:14px}
+.brandlogo{width:64px;height:64px;background:#fff;border:2px solid #ffffffbb;box-shadow:0 0 0 4px #8bd12f20,0 5px 16px #0003}
+.brand{font-size:clamp(23px,2.7vw,34px);letter-spacing:.6px}
+.brand small{font-family:Arial,sans-serif;letter-spacing:1.3px;font-size:9px;font-weight:800;background:#ffffff16;padding:7px 11px}
+.ct-header-subtitle{margin:4px 0 12px 80px;font-size:11px;font-weight:800;letter-spacing:1.15px;color:#a7e96b;opacity:1}
+.ct-header-subtitle span{color:#d3e2f5;font-weight:500;letter-spacing:.2px}
+.ct-topnav{display:flex;align-items:center;gap:8px;margin:0 0 13px 78px}
+.ct-topnav a{padding:9px 13px;border-radius:9px;color:#e6f0ff;transition:background .2s;white-space:nowrap}
+.ct-topnav a:hover{background:#ffffff17}
+.ct-topnav .ct-nav-wa{margin-left:auto;background:#1d9c60;color:#fff;border:1px solid #66c28c;padding:10px 15px}
+.ct-topnav .ct-nav-wa:hover{background:#14864e}
+header .search{margin-top:0}
+header .search input{border-radius:13px;min-height:57px;padding:15px 19px;font-size:15px;background:#fff;border:1px solid #e0e8f4}
+header .search input::placeholder{color:#69798d}
+@media(max-width:650px){header{padding:12px 12px 15px}.brandlogo{width:48px;height:48px}.brand{font-size:22px}.ct-header-subtitle{margin:8px 0 10px;font-size:9px;letter-spacing:.5px}.ct-topnav{margin:0 0 10px;overflow-x:auto;gap:2px}.ct-topnav a{padding:9px 10px;font-size:11px}.ct-topnav .ct-nav-wa{margin-left:0}header .search input{min-height:50px;font-size:14px}}
+@media(max-width:390px){.brand{font-size:19px}.brandlogo{width:43px;height:43px}.ct-header-subtitle span{display:none}}
