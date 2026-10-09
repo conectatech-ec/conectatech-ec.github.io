@@ -201,3 +201,26 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 #featured .featured-card .wa{min-height:36px!important;padding:8px!important;margin-top:auto!important}
 #featured .section-title{margin-bottom:10px!important}
 @media(max-width:650px){#featured .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}#featured .featured-card .product-img{height:110px!important}}
+
+/* Campaña de regalos en tienda: comercial, accesible y separada de promo contado */
+.ct-gift-campaign{margin:15px 0 22px;border-radius:23px;overflow:hidden;color:#fff;background:radial-gradient(circle at 90% 0%,#ffdd7550,transparent 34%),linear-gradient(125deg,#650a1a,#ba142b 57%,#7c0d29);box-shadow:0 15px 32px #6c14232a;border:1px solid #e8526580}
+.ct-gift-intro{padding:23px 25px 11px;text-align:center}
+.ct-gift-kicker{display:inline-block;padding:6px 13px;border-radius:99px;background:#ffffff1d;border:1px solid #ffffff55;color:#ffe9a4;font-size:11px;font-weight:900;letter-spacing:.8px}
+.ct-gift-intro h2{font-size:clamp(23px,3vw,35px);line-height:1.13;margin:11px 0 8px;letter-spacing:-.7px}
+.ct-gift-intro h2 strong{color:#aaff58;text-shadow:0 2px 13px #5cff4d55}
+.ct-gift-intro p{font-size:13px;color:#ffe7e9;margin:0 auto 9px;max-width:740px;line-height:1.5}
+.ct-gift-location{font-size:11px;color:#ffedce;font-weight:700}
+.ct-gift-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;padding:14px 24px}
+.ct-gift-level{min-width:0;display:flex;align-items:center;flex-direction:column;text-align:center;padding:15px 9px 17px;border:1px solid #ffffff55;border-radius:17px;background:linear-gradient(155deg,#ffffff25,#ffffff0d);box-shadow:inset 0 1px #ffffff35}
+.ct-gift-icon{font-size:33px;line-height:1.1;margin-bottom:8px}
+.ct-gift-threshold{font-size:12px;color:#fff2de;font-weight:700}
+.ct-gift-threshold strong{display:inline-block;font-size:25px;color:#ffec8d}
+.ct-gift-receive{font-size:10px;letter-spacing:1.5px;font-weight:900;color:#b3f48b;margin:7px 0 3px}
+.ct-gift-level h3{font-size:17px;margin:0;color:white}
+.ct-gift-bottom{background:#39081190;padding:14px 23px;display:flex;align-items:center;gap:18px;justify-content:space-between}
+.ct-gift-terms{display:flex;flex-direction:column;gap:4px;max-width:780px}
+.ct-gift-terms strong{font-size:12px;color:#ffe18e}
+.ct-gift-terms span{font-size:10px;line-height:1.55;color:#f9dfe3}
+.ct-gift-cta{flex-shrink:0;text-decoration:none;color:#11220b;background:#a3ea5c;border-radius:11px;padding:13px 15px;font-size:12px;font-weight:900;text-align:center;min-height:44px}
+.ct-gift-cta:focus-visible{outline:3px solid white;outline-offset:3px}
+@media(max-width:650px){.ct-gift-intro{padding:19px 15px 9px}.ct-gift-intro h2{font-size:25px}.ct-gift-levels{padding:10px 12px;gap:7px}.ct-gift-level{padding:12px 4px}.ct-gift-icon{font-size:26px}.ct-gift-threshold{font-size:10px}.ct-gift-threshold strong{font-size:21px}.ct-gift-level h3{font-size:12px}.ct-gift-bottom{flex-direction:column;align-items:stretch;gap:12px;padding:14px}.ct-gift-cta{width:100%}}
