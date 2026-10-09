@@ -224,3 +224,29 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 .ct-gift-cta{flex-shrink:0;text-decoration:none;color:#11220b;background:#a3ea5c;border-radius:11px;padding:13px 15px;font-size:12px;font-weight:900;text-align:center;min-height:44px}
 .ct-gift-cta:focus-visible{outline:3px solid white;outline-offset:3px}
 @media(max-width:650px){.ct-gift-intro{padding:19px 15px 9px}.ct-gift-intro h2{font-size:25px}.ct-gift-levels{padding:10px 12px;gap:7px}.ct-gift-level{padding:12px 4px}.ct-gift-icon{font-size:26px}.ct-gift-threshold{font-size:10px}.ct-gift-threshold strong{font-size:21px}.ct-gift-level h3{font-size:12px}.ct-gift-bottom{flex-direction:column;align-items:stretch;gap:12px;padding:14px}.ct-gift-cta{width:100%}}
+
+/* Campaña de regalos — versión visual premium */
+.ct-gift-campaign{position:relative;isolation:isolate;background:radial-gradient(ellipse at 50% -30%,#ffb12975,transparent 55%),radial-gradient(ellipse at 10% 65%,#ff294060,transparent 48%),radial-gradient(ellipse at 92% 75%,#db1dcb4d,transparent 45%),linear-gradient(145deg,#8d0711 0%,#e01123 45%,#8c0614 100%);border:2px solid #ffba557a;box-shadow:0 17px 42px #7a091b4a, inset 0 0 70px #ff4c343d}
+.ct-gift-campaign:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:repeating-conic-gradient(from 0deg at 50% -70%,#ffdf3b18 0deg 3deg,transparent 3deg 12deg);opacity:.7}
+.ct-gift-intro{padding:29px 25px 15px}
+.ct-gift-kicker{background:linear-gradient(110deg,#ffe88a,#ffb72b);border:0;color:#691108;box-shadow:0 4px 15px #0003;font-size:11px;letter-spacing:1.3px}
+.ct-gift-intro h2{font-family:Arial Black,Impact,Arial,sans-serif;font-size:clamp(27px,3.6vw,48px);font-weight:950;letter-spacing:-1.2px;line-height:1.06;text-transform:uppercase;text-shadow:0 4px 0 #690c14,0 8px 20px #30040c99}
+.ct-gift-intro h2 strong{display:inline-block;color:#8eff38;text-shadow:0 3px 0 #0e690b,0 0 24px #c4ff57bb}
+.ct-gift-intro p{font-size:14px;font-weight:600}
+.ct-gift-levels{gap:16px;padding:20px 26px 25px}
+.ct-gift-level{position:relative;overflow:hidden;min-height:240px;padding:21px 10px;border:2px solid #ffcf7b8c;box-shadow:0 16px 25px #3d061c66,inset 0 1px #fff7;transition:transform .2s,box-shadow .2s}
+.ct-gift-level:nth-child(1){background:radial-gradient(circle at 50% 65%,#217eea80,transparent 65%),linear-gradient(150deg,#13214e,#0d1644)}
+.ct-gift-level:nth-child(2){background:radial-gradient(circle at 50% 65%,#ffe47788,transparent 65%),linear-gradient(150deg,#9c4207,#e58818)}
+.ct-gift-level:nth-child(3){background:radial-gradient(circle at 50% 65%,#f04fff80,transparent 65%),linear-gradient(150deg,#51146f,#9b1fb5)}
+.ct-gift-level:hover{transform:translateY(-4px);box-shadow:0 22px 35px #3d061c88,inset 0 1px #fff7}
+.ct-gift-icon{font-size:49px;margin:12px 0 14px;filter:drop-shadow(0 6px 6px #0007)}
+.ct-gift-threshold{font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.ct-gift-threshold strong{display:block;font-family:Arial Black,Impact,Arial,sans-serif;font-size:clamp(39px,5vw,65px);line-height:1.03;color:#fff;text-shadow:0 4px 0 #9e151c,0 7px 16px #0008}
+.ct-gift-receive{background:linear-gradient(90deg,#fff0a8,#ffc72c);border-radius:999px;padding:5px 24px;color:#a00c18;font-size:11px;margin:12px 0 8px;box-shadow:0 4px 9px #0004}
+.ct-gift-level h3{font-family:Arial Black,Arial,sans-serif;font-size:clamp(15px,1.6vw,21px);text-transform:uppercase;text-shadow:0 3px 8px #0008}
+.ct-gift-bottom{background:linear-gradient(90deg,#30030be8,#590615e8);border-top:1px solid #ffb45860}
+.ct-gift-terms strong{font-size:13px;color:#ffdc67}
+.ct-gift-terms span{font-size:11px;color:#ffe9ed}
+.ct-gift-cta{background:linear-gradient(110deg,#ffe97d,#ffbd29);color:#481308;box-shadow:0 5px 18px #ffcb5350}
+@media(max-width:650px){.ct-gift-intro{padding:20px 12px 8px}.ct-gift-intro h2{font-size:27px}.ct-gift-levels{gap:7px;padding:11px 8px 17px}.ct-gift-level{min-height:190px;padding:11px 4px}.ct-gift-icon{font-size:32px;margin:8px 0}.ct-gift-threshold{font-size:9px}.ct-gift-threshold strong{font-size:36px}.ct-gift-receive{padding:4px 9px;font-size:9px}.ct-gift-level h3{font-size:11px}.ct-gift-bottom{padding:12px}}
+@media(prefers-reduced-motion:reduce){.ct-gift-level{transition:none}}
