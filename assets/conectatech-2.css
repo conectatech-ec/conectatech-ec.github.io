@@ -108,3 +108,31 @@ header .search input{width:100%;height:52px;min-height:52px;border-radius:12px;b
 header .search input:focus{outline:0;border-color:#8bd12f;box-shadow:0 0 0 4px #8bd12f45}
 @media(max-width:1050px){header .wrap{grid-template-columns:1fr;gap:8px}header .wrap>a:first-child,header .ct-header-subtitle,header .ct-topnav,header .search{grid-column:1;grid-row:auto}header .ct-header-subtitle{margin:0 0 2px 80px}header .ct-topnav{justify-content:flex-start}header .search{width:100%}}
 @media(max-width:650px){header{position:relative}header .wrap{gap:8px}header .brandlogo{width:48px;height:48px}header .brand{font-size:21px}header .brand small{display:none}header .ct-header-subtitle{margin:0;font-size:9px}header .ct-topnav{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}header .ct-topnav a{font-size:11px;padding:9px 10px}header .search input{height:48px;min-height:48px}}
+
+/* Portada visual compacta, fotografía real y acceso inmediato al catálogo */
+header{padding:9px 18px 11px}
+header .brandlogo{width:51px;height:51px}
+header .brand{font-size:clamp(20px,2vw,27px)}
+header .brand small{display:none}
+header .ct-header-subtitle{margin:0 0 0 66px;font-size:9px}
+header .ct-topnav a{padding:8px 10px}
+header .search input{height:46px;min-height:46px}
+main{padding-top:12px}
+main>.notice{font-size:11px;padding:8px 12px;margin-bottom:10px}
+.ct-hero{min-height:285px;padding:26px 35px;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:22px}
+.ct-hero h1{font-size:clamp(29px,3.1vw,42px);margin:8px 0 10px;max-width:620px}
+.ct-hero p{font-size:13px;line-height:1.55}
+.ct-hero-actions{margin-top:16px}
+.ct-hero-proof{margin-top:15px}
+.ct-hero-showcase{display:flex;align-items:center;justify-content:center;gap:12px;position:relative;z-index:1}
+.ct-showcase-product{background:#fff;border:1px solid #ffffffa0;border-radius:19px;box-shadow:0 16px 32px #0004;padding:13px 10px 9px;text-align:center;min-width:0;transform:rotate(3deg)}
+.ct-showcase-main{width:57%;transform:rotate(-5deg) translateY(-5px)}
+.ct-showcase-side{width:43%;transform:rotate(5deg) translateY(14px)}
+.ct-showcase-product img{width:100%;height:155px;object-fit:contain;display:block}
+.ct-showcase-side img{height:122px}
+.ct-showcase-product span{display:block;font-size:10px;font-weight:800;color:#183354;margin-top:6px}
+.trustbar{margin:0 0 12px}
+.trustitem{padding:9px;font-size:11px}
+.ct-discover{margin:14px 0 18px}
+@media(max-width:900px){.ct-hero{grid-template-columns:minmax(0,1fr) 220px;padding:22px}.ct-showcase-product img{height:115px}.ct-showcase-side img{height:100px}}
+@media(max-width:650px){header{padding:9px 12px 11px}header .brandlogo{width:44px;height:44px}header .ct-header-subtitle{margin:0}.ct-hero{display:block;min-height:0;padding:24px 20px}.ct-hero h1{font-size:30px}.ct-hero-showcase{display:none}.ct-hero-proof{font-size:10px}.trustitem{padding:8px 4px;font-size:10px}}
