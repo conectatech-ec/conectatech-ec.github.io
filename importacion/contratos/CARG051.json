@@ -283,11 +283,85 @@
       "sha256_maestro": "4ff4deb4595103cf88e62b4ee83206443c690c228ac16331853ddd2023a6c799",
       "evidencia": "Composición comercial asistida por IA basada exclusivamente en las fotografías propias del empaque PowerCar 100. Se conservaron los dos módulos negros, el cable, el clip, el anillo azul y los seis puertos acreditados. Se eliminaron caja y entorno; no se utilizaron imágenes externas ni se añadieron conectores."
     },
-    "movil": {
-      "estado": "PENDIENTE"
-    },
     "publicacion_http": {
       "estado": "PENDIENTE"
+    },
+    "movil": {
+      "solicitado": "CARG051",
+      "sku": "CARG051",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T20:51:57.784Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
+      "archivo_html": "productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/index.html",
+      "http": 200,
+      "sha256_html": "9ffdad15bb2b8a8e11eeb6ae0905253511f561a99cab9a2ce71545ec19ba77ad",
+      "sha256_html_local": "9ffdad15bb2b8a8e11eeb6ae0905253511f561a99cab9a2ce71545ec19ba77ad",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/carg051/CARG051-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/carg051/CARG051-01-600.webp?v=968a4b23b467358b",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/carg051/CARG051-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-048/qa-local/movil/CARG051-390.png",
+      "sha256": "6bc464217d55035430e8705baa4f0495dc53d424de05b47fd229dda7cbd4cd77",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-048/qa-local/movil/CARG051-1280.png",
+        "sha256": "e11db3555182350d3628243e20cec9607a36892bb824addd028c4ba21b9d7644",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "beneficios": [

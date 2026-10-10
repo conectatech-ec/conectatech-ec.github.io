@@ -315,11 +315,90 @@
       "sha256_maestro": "9982187ecfd3f42f8bdfed8d0702bf908e46aa58e64a5830b83e930c20f6b298",
       "evidencia": "Retoque comercial asistido por IA de la unidad física visible dentro del empaque propio: cuerpo negro, frente textil, marco redondeado, logotipo y cordón verde conservados. Se eliminaron blister, reflejos, polvo y fondo; no se añadieron botones, puertos ni accesorios."
     },
-    "movil": {
-      "estado": "PENDIENTE"
-    },
     "publicacion_http": {
       "estado": "PENDIENTE"
+    },
+    "movil": {
+      "solicitado": "PARL041",
+      "sku": "PARL041",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T20:52:00.606Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/parl041-parlante-bluetooth-portatil-klipxtreme-nitro/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/parl041-parlante-bluetooth-portatil-klipxtreme-nitro/",
+      "archivo_html": "productos/parl041-parlante-bluetooth-portatil-klipxtreme-nitro/index.html",
+      "http": 200,
+      "sha256_html": "c3c78fea8521063c91f3a5121aac9f9451e72d9f2e4fd3bc031fea09a2210b10",
+      "sha256_html_local": "c3c78fea8521063c91f3a5121aac9f9451e72d9f2e4fd3bc031fea09a2210b10",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/parl041/PARL041-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/parl041/PARL041-01-600.webp?v=3463c4827aa455df",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/parl041-parlante-bluetooth-portatil-klipxtreme-nitro/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/parl041/PARL041-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/micr08-microfono-para-pc-laptop-hp-dhp-1100i/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-048/qa-local/movil/PARL041-390.png",
+      "sha256": "9c9cd40d6f23184d0161d7667edf1bf057e76d85ae0ca5171c8c621095df99cd",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-048/qa-local/movil/PARL041-1280.png",
+        "sha256": "c7bd6ab1253022fb3c40630608473cb6ecd9c9a6fbf1606f4b4dd15d70917186",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "beneficios": [
