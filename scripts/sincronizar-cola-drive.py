@@ -3,6 +3,7 @@
 import argparse, hashlib, importlib.util, json, re
 from pathlib import Path
 from datetime import datetime, timezone
+import reglas_sku
 
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('editorial',ROOT/'scripts/importar-productos.py')
@@ -78,10 +79,25 @@ def main():
     state=Path(a.estado);previous=json.loads(state.read_text()) if state.exists() else {}
     result=synchronize(json.loads(Path(a.inventario).read_text()),json.loads(Path(a.registro).read_text()),
         editorial.read_catalog(ROOT)[1],json.loads((ROOT/'importacion/alias-sku.json').read_text()),previous)
+    candidates=result['cambios'][:a.limite]
+    policy=reglas_sku.load(ROOT).get('politica_general',{}).get('autenticidad_registro',{})
+    if policy.get('confirmado_por_propietario') and candidates:
+        eligible=[sku for sku in candidates if not result['productos'][sku]['incidencias']]
+        updates,issues=reglas_sku.registration_rules(json.loads(Path(a.registro).read_text()),eligible,
+            json.loads((ROOT/'importacion/alias-sku.json').read_text()),policy)
+        changes=reglas_sku.apply_rows(updates,apply=True,root=ROOT)
+        for item in updates:
+            entry=result['productos'][item['sku']]
+            entry['autenticidad']=item['autenticidad'];entry['evidencia_autenticidad']=item['evidencia_autenticidad']
+        for issue in issues:
+            entry=result['productos'][issue['sku']];entry['estado']='BLOQUEADO'
+            entry['incidencias'].append(issue['motivo'])
+        result['resumen']['reglas_autenticidad_actualizadas']=len(changes)
+        result['resumen']['autenticidad_requiere_revision']=len(issues)
     result['consultado']=datetime.now(timezone.utc).isoformat()
     editorial.atomic_write(state,editorial.encode(result))
-    editorial.atomic_write(Path(a.lote),editorial.encode({'version':2,'skus':result['cambios'][:a.limite],
-        'imagenes':{},'aprobaciones':{},'nota':'Cola para identificación; no autoriza publicación ni autenticidad.'}))
+    editorial.atomic_write(Path(a.lote),editorial.encode({'version':2,'skus':candidates,
+        'imagenes':{},'aprobaciones':{},'nota':'Autenticidad según política del propietario y Registro; identidad, variante, fotografía y publicación requieren sus controles independientes.'}))
     print(json.dumps(result['resumen'],ensure_ascii=False))
 
 if __name__=='__main__':main()

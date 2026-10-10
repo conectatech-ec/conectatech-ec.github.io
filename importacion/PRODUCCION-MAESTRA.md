@@ -7,7 +7,7 @@ La orden vigente sustituye las presentaciones históricas: **todos los productos
 - Drive: carpeta `1IUpFi6r9e_aURNWpJ7P23XowWphnpAoa`.
 - Registro: documento `1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I`, pestaña `Registro`, A:F. Lectura, nunca escritura automática.
 - 593: `datos-593/inventario-publico.csv`, corte 2026-10-08. No es inventario en tiempo real.
-- Reglas: `reglas-sku.json`; presentación y autenticidad independientes. "Caja original" no acredita originalidad. AAA se clasifica como genérico/compatible; no sustituirlo por la foto de una marca original.
+- Reglas: `reglas-sku.json`; presentación y autenticidad independientes. El propietario confirmó el 2026-10-10 que «Original» y «Caja original» en Tipo acreditan originalidad comercial. Guardar la fila y la confirmación como evidencia. AAA se clasifica como genérico/compatible; no sustituirlo por la foto de una marca original.
 - `APROBADO`: identidad, variante, fotografía, ficha y derecho de uso documentados. `REVISAR`: falta validación. `BLOQUEADO`: discrepancia o fuente insuficiente. Nunca publicar automáticamente los dos últimos.
 
 ## Operación incremental
@@ -24,7 +24,7 @@ La cola permanente `importacion/cola-drive.json` registra huellas por SKU. Una s
 
 4. Consultar todas las fotos del SKU cambiado, contrastar 593 y registrar modelo/variante, fuente y discrepancias. Guardar OCR o lecturas verificadas por SKU para reutilizarlas. La investigación y revisión visual todavía requieren al operador; la cola no inventa esas validaciones.
 5. Recuperar el material autorizado del modelo exacto. Mantener fotos de identificación privadas en Drive, especialmente si contienen números de serie. Conservar fuente, hash y originales del material comercial. Los archivos de revisión local están en `.produccion-privada/` y se excluyen de Git.
-6. Usar manifiesto versión 2 con `aprobaciones[SKU]`: `estado`, `identidad_verificada`, `ficha_verificada`, `uso_comercial_permitido`. No cambiar estos valores solo para desbloquear una publicación. La evidencia comercial de autenticidad se registra mediante `scripts/reglas_sku.py`; el logotipo no es evidencia.
+6. Usar manifiesto versión 2 con `aprobaciones[SKU]`: `estado`, `identidad_verificada`, `ficha_verificada`, `uso_comercial_permitido`. No cambiar estos valores solo para desbloquear una publicación. La evidencia comercial de autenticidad se registra mediante `scripts/reglas_sku.py`; el logotipo no es evidencia. La cola aplica automáticamente la clasificación del Registro a los SKU nuevos/modificados seleccionados para el lote. Para un lote ya preparado: `python scripts/reglas_sku.py --registro /ruta/registro.json --sku SKU1 SKU2 --aplicar`. La columna Tipo es la autoridad comercial confirmada por el propietario; valores ausentes o contradictorios quedan para revisión. La autenticidad no aprueba por sí sola la variante ni los derechos de una fotografía externa.
 7. Procesar:
 
 ```sh
@@ -49,4 +49,4 @@ Para teléfonos separar RAM física/virtual y confirmar variante. Para AAA no in
 
 ## Piloto actual
 
-`lotes/piloto-drive-010/` contiene la trazabilidad y propuestas editoriales. `reportes/piloto-drive-010.json` distingue portadas preparadas, pendientes y publicación real. Los derechos de las imágenes externas y la autenticidad comercial no se deducen de la disponibilidad pública. Las fichas no aprobadas permanecen como propuestas; no se han aplicado al catálogo.
+`lotes/piloto-drive-010/` contiene la trazabilidad y propuestas editoriales. `reportes/piloto-drive-010.json` distingue portadas preparadas, pendientes y publicación real. La autenticidad comercial de los diez SKU quedó confirmada mediante Registro y la instrucción del propietario. Los derechos de las imágenes externas no se deducen de su disponibilidad pública. Las fichas no aprobadas permanecen como propuestas; no se han aplicado al catálogo.
