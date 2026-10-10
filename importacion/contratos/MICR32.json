@@ -282,11 +282,85 @@
       "sha256_maestro": "5e69229eeeb80f08c434543e7ebcb25be7214184430ac64a4ac28ccd396bad4e",
       "evidencia": "Unidad real cotejada con dos fotografías propias: cuerpo negro, rejilla, filtro curvo, anillo de suspensión, base circular, toma y botón visibles y rótulo ENV conservados. Fondo y caja retirados; limpieza de polvo, luz y acabado de producto nuevo mediante edición asistida por IA. No se simula iluminación RGB encendida ni se añaden accesorios."
     },
-    "movil": {
-      "estado": "PENDIENTE"
-    },
     "publicacion_http": {
       "estado": "PENDIENTE"
+    },
+    "movil": {
+      "solicitado": "MICR32",
+      "sku": "MICR32",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T20:21:51.622Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
+      "archivo_html": "productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/index.html",
+      "http": 200,
+      "sha256_html": "2c0e974f97158a2b18100e71656017507b1677f04ed250f1f432eba6b17dca67",
+      "sha256_html_local": "2c0e974f97158a2b18100e71656017507b1677f04ed250f1f432eba6b17dca67",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/micr32/MICR32-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/micr32/MICR32-01-600.webp?v=9cae71d5de10f316",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/micr32/MICR32-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-047/qa-local/movil/MICR32-390.png",
+      "sha256": "84c9f91fd59506615fda03195afc9b8a2cc3d6da792e3ad7647789d485fb6643",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-047/qa-local/movil/MICR32-1280.png",
+        "sha256": "b86e5cbb602e608452379b363ae8b3ecdc4ca7ca6b1bbad0f277f6bb733e190b",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "beneficios": [
