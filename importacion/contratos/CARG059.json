@@ -122,9 +122,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
-  "fecha_verificacion": "2026-10-10T21:15:56.157813+00:00",
+  "fecha_verificacion": "2026-10-10T21:29:22.216329+00:00",
   "descripcion": "Alimenta equipos Mac con carga USB-C mediante un adaptador compatible de 96 W. Su cuerpo compacto concentra la potencia en una salida USB-C para una conexión sencilla.",
   "garantia": {
     "valor": null,
@@ -187,12 +187,15 @@
       "sha256_maestro": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
       "evidencia": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible."
     },
-    "publicacion_http": {},
+    "publicacion_http": {
+      "archivo": "reportes/lote-049-http.json",
+      "sha256": "46cb3fbff66908f37aecc7f9b25fdfb4e7bae672e9d923bf86e05ca0b86c52b4"
+    },
     "movil": {
       "solicitado": "CARG059",
       "sku": "CARG059",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T21:20:27.164Z",
+      "fecha": "2026-10-10T21:29:13.741Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -216,7 +219,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
       "archivo_html": "productos/carg059-cargador-para-mac-usb-c-96w/index.html",
       "http": 200,
       "sha256_html": "93b577cc6f4cbf680eb6ced1ec56d2f5157c4d89b9fb13c3199fc31258cc7836",
@@ -226,7 +229,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg059/CARG059-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/carg059/CARG059-01-600.webp?v=252815d7676e74c6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg059/CARG059-01-600.webp?v=252815d7676e74c6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -234,42 +237,42 @@
       },
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
+          "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/carg059/CARG059-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg059/CARG059-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
+          "url": "https://conectatech-ec.github.io/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/carg058-cargador-para-mac-magsafe-2-85w/",
+          "url": "https://conectatech-ec.github.io/productos/carg058-cargador-para-mac-magsafe-2-85w/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-049/qa-local/movil/CARG059-390.png",
+      "archivo": "reportes/lote-049/qa-publico/movil/CARG059-390.png",
       "sha256": "c4752719a10c7da4c791d5174cf2646e79c683cc3c487726762e64dd8515f374",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-049/qa-local/movil/CARG059-1280.png",
+        "archivo": "reportes/lote-049/qa-publico/movil/CARG059-1280.png",
         "sha256": "431efe092af2775e405fa658175b12e0de4c76d09102210590b2e83dd1f49f2f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

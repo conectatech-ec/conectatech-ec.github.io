@@ -152,9 +152,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl025-parlante-triangular-monster-superstar-e1/",
-  "fecha_verificacion": "2026-10-10T21:15:56.157813+00:00",
+  "fecha_verificacion": "2026-10-10T21:29:22.216329+00:00",
   "descripcion": "Lleva música y llamadas en un parlante compacto con formato triangular y correa de transporte. El Monster Superstar E1 combina Bluetooth, radio FM, emparejamiento TWS y protección IPX7 en un cuerpo portátil.",
   "garantia": {
     "valor": null,
@@ -217,12 +217,15 @@
       "sha256_maestro": "c2b36ca60b614c4fcadef64fb3beffa54bdf89c6cb432ac2469ffd48bd9aec20",
       "evidencia": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se preservaron la marca, la geometría y los detalles visibles de la unidad real."
     },
-    "publicacion_http": {},
+    "publicacion_http": {
+      "archivo": "reportes/lote-049-http.json",
+      "sha256": "46cb3fbff66908f37aecc7f9b25fdfb4e7bae672e9d923bf86e05ca0b86c52b4"
+    },
     "movil": {
       "solicitado": "PARL025",
       "sku": "PARL025",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T21:20:27.922Z",
+      "fecha": "2026-10-10T21:29:14.885Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -246,7 +249,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/parl025-parlante-triangular-monster-superstar-e1/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/parl025-parlante-triangular-monster-superstar-e1/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/parl025-parlante-triangular-monster-superstar-e1/",
       "archivo_html": "productos/parl025-parlante-triangular-monster-superstar-e1/index.html",
       "http": 200,
       "sha256_html": "443e7cd72fbc765d705004119169247589bc08be46bcb2be4aae03d6951c40ae",
@@ -256,7 +259,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/parl025/PARL025-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/parl025/PARL025-01-600.webp?v=87bb5a565fe3bd45",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/parl025/PARL025-01-600.webp?v=87bb5a565fe3bd45",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -264,32 +267,32 @@
       },
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/parl025-parlante-triangular-monster-superstar-e1/",
+          "url": "https://conectatech-ec.github.io/productos/parl025-parlante-triangular-monster-superstar-e1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/parl025/PARL025-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/parl025/PARL025-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-049/qa-local/movil/PARL025-390.png",
+      "archivo": "reportes/lote-049/qa-publico/movil/PARL025-390.png",
       "sha256": "9e34fd2a5566ef97d80b7173b9e383917975f61a783dbd11c25259945be992ae",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-049/qa-local/movil/PARL025-1280.png",
+        "archivo": "reportes/lote-049/qa-publico/movil/PARL025-1280.png",
         "sha256": "3347e19ab376407ef864e536fa3b3720cc9baa00ee7f6ffdb658aa1803573e11",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
