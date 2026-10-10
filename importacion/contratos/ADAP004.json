@@ -121,9 +121,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
-  "fecha_verificacion": "2026-10-10T15:27:31.705473+00:00",
+  "fecha_verificacion": "2026-10-10T15:42:46.164453+00:00",
   "descripcion": "Adaptador de enchufe genérico de color blanco, identificado como Europa a Latino en la base comercial. Comprueba que la forma del enchufe y los requisitos del equipo sean compatibles antes de comprar.",
   "compatibilidad": "Comprobar forma y ajuste para el equipo concreto.",
   "contenido_venta": "1 adaptador",
@@ -186,7 +186,8 @@
       "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE"
+      "archivo": "reportes/lote-042-http.json",
+      "sha256": "92c3ddbf6cb65f509bf620f1a4c2efb25e9833e6afc59d9868b429422f78ac19"
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -198,7 +199,7 @@
       "solicitado": "ADAP004",
       "sku": "ADAP004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T15:32:33.803Z",
+      "fecha": "2026-10-10T15:41:02.655Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -219,7 +220,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/adap004-adaptador-europa-latino-color-blanco/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
       "archivo_html": "productos/adap004-adaptador-europa-latino-color-blanco/index.html",
       "http": 200,
       "sha256_html": "c58b52b1f5262ed3a249d3bbbb58dcd23a1d7fd754c4055be060d385d4f245c6",
@@ -229,7 +230,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/adap004/ADAP004-01-600.webp?v=c8448533d3dd6897",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01-600.webp?v=c8448533d3dd6897",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -237,37 +238,37 @@
       },
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/adap004-adaptador-europa-latino-color-blanco/",
+          "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/adap004/ADAP004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/adap005-adaptador-europa-latino-color-negro/",
+          "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-042/qa-local/movil/ADAP004-390.png",
+      "archivo": "reportes/lote-042/qa-publico/movil/ADAP004-390.png",
       "sha256": "a4d817ff43fdfe4e7fadb8b3850d3b4a8cc216d48586dc421ae7471c110f3b1c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-042/qa-local/movil/ADAP004-1280.png",
+        "archivo": "reportes/lote-042/qa-publico/movil/ADAP004-1280.png",
         "sha256": "91300f4300ce113eb526c1f1714d9c6b8723aee56618e21b4e7d692b63a3d8f0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

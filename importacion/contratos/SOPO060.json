@@ -190,9 +190,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
-  "fecha_verificacion": "2026-10-10T15:27:31.705473+00:00",
+  "fecha_verificacion": "2026-10-10T15:42:46.164453+00:00",
   "descripcion": "Coloca tu celular o tablet en una posición cómoda con el soporte de mesa T8-02. Su estructura articulada permite regular la inclinación y plegarlo cuando necesitas guardarlo. Cuenta con apoyos inferiores y una zona acolchada de contacto para mantener el equipo colocado durante tus consultas, videos o videollamadas. Accesorio genérico; confirma el ajuste para tu dispositivo.",
   "compatibilidad": "Celulares y tablets; confirmar ajuste para el equipo concreto",
   "contenido_venta": "1 soporte",
@@ -272,13 +272,14 @@
       "evidencia": "Retirada localizada del nombre y logotipo YAN TECH de la base por orden expresa del propietario. Cotejo visual: geometría, ranuras, orificios, dos pivotes, almohadilla y apoyos conservados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE"
+      "archivo": "reportes/lote-042-http.json",
+      "sha256": "92c3ddbf6cb65f509bf620f1a4c2efb25e9833e6afc59d9868b429422f78ac19"
     },
     "movil": {
       "solicitado": "SOPO060",
       "sku": "SOPO060",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T15:32:32.093Z",
+      "fecha": "2026-10-10T15:41:00.045Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -299,7 +300,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
       "archivo_html": "productos/sopo060-soporte-para-celular-y-tablet-t8-02/index.html",
       "http": 200,
       "sha256_html": "33108aec738a398d9e18bd311addf0dbdc50a510d9dcb4b9afc1c1e6563a7e31",
@@ -309,7 +310,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo060/SOPO060-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/sopo060/SOPO060-01-600.webp?v=f9261b4dac1552f0",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo060/SOPO060-01-600.webp?v=f9261b4dac1552f0",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -317,37 +318,37 @@
       },
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+          "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/sopo060/SOPO060-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo060/SOPO060-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/sopo023-soporte-de-celular-modelo-t8-04/",
+          "url": "https://conectatech-ec.github.io/productos/sopo023-soporte-de-celular-modelo-t8-04/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-042/qa-local/movil/SOPO060-390.png",
+      "archivo": "reportes/lote-042/qa-publico/movil/SOPO060-390.png",
       "sha256": "5144f45ddb362b68d7e998beeba75b31ee56b00845b5efbea15e0141266f3402",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-042/qa-local/movil/SOPO060-1280.png",
+        "archivo": "reportes/lote-042/qa-publico/movil/SOPO060-1280.png",
         "sha256": "3cf7587c46c0986fd1886ad38c13aeb17e89c6529f86006afbec95e23c452299",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

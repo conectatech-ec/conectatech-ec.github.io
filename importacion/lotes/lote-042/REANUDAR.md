@@ -9,3 +9,7 @@ Política permanente en reglas-sku.json: todas las imágenes comerciales Yantech
 Reanudar según lote-activo. No regenerar los cuatro maestros: manifiesto-aprobados.json enlaza bytes, fuentes y revisión. Ejecutar contrato y QA; tras Pages, verificar-publicacion.py, registrar-actualizaciones.py y registrar-resultados-lote.py. Registrar fecha de publicación sólo mediante HTTP real. Conservar 3 columnas escritorio/2 móvil.
 
 El CSV editorial contiene únicamente ADAP004/005; para reproducir, copiar temporalmente sus maestros del manifiesto a un directorio privado con nombres ADAP004.png y ADAP005.png. No importar imágenes de fuentes externas ni alterar finanzas.
+
+## Cierre verificado
+
+Los cuatro SKU están publicados y verificados por HTTP y Chromium sobre Pages. Evidencia: `reportes/lote-042-resultados.json`, `reportes/lote-042-http.json` y `reportes/lote-042/qa-publico/`. Las fechas efectivas se registraron tras HTTP en `actualizaciones-sku.json`. No repetir este lote ni dar por aprobados los maestros premium-001. Continuar desde la cola permanente; TARJ004 conserva la excepción Yantech y sus pendientes.

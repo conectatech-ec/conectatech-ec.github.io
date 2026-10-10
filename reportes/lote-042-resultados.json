@@ -1,0 +1,112 @@
+{
+  "lote": "lote-042",
+  "fecha": "2026-10-10T15:42:46.164453+00:00",
+  "resumen": {
+    "sku_procesados": 4,
+    "imagenes_comerciales_terminadas": 4,
+    "fichas_enriquecidas_nuevas": 2,
+    "productos_actualizados_publicados": 4,
+    "pendientes_del_lote": 0,
+    "errores_abiertos": 0
+  },
+  "presentacion": {
+    "columnas_escritorio": 3,
+    "columnas_movil": 2,
+    "primeros_sku": [
+      "ADAP004",
+      "ADAP005",
+      "SOPO023",
+      "SOPO060"
+    ],
+    "criterio": "Misma fecha efectiva del lote; desempate estable del catálogo"
+  },
+  "productos": [
+    {
+      "sku": "SOPO060",
+      "nombre_comercial": "Soporte de escritorio plegable T8-02 para celular y tablet",
+      "estado": "publicado_verificado",
+      "revision_regla": 3,
+      "pendientes": [],
+      "imagen": "/imagenes/sopo060/SOPO060-01.webp",
+      "maestro": "/imagenes/sopo060/original-27a0af7a6addd6fc.png",
+      "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+      "precio_contado": 10.84,
+      "pvp": 12.47,
+      "stock": 3,
+      "clasificacion": "genérico/compatible",
+      "presentacion": "sin caja",
+      "fuente": "Fotografías propias de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "modelo": "T8-02",
+      "marca_retirada": "Yantech"
+    },
+    {
+      "sku": "SOPO023",
+      "nombre_comercial": "Soporte plegable T8-04 para celular con base giratoria",
+      "estado": "publicado_verificado",
+      "revision_regla": 3,
+      "pendientes": [],
+      "imagen": "/imagenes/sopo023/SOPO023-01.webp",
+      "maestro": "/imagenes/sopo023/original-e9d9e5ed742dafc2.png",
+      "url": "https://conectatech-ec.github.io/productos/sopo023-soporte-de-celular-modelo-t8-04/",
+      "precio_contado": 5.35,
+      "pvp": 6.15,
+      "stock": 12,
+      "clasificacion": "genérico/compatible",
+      "presentacion": "sin caja",
+      "fuente": "Fotografías propias de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "modelo": "T8-04",
+      "marca_retirada": "Yantech"
+    },
+    {
+      "sku": "ADAP004",
+      "nombre_comercial": "Adaptador de enchufe Europa a Latino blanco",
+      "estado": "publicado_verificado",
+      "revision_regla": 2,
+      "pendientes": [],
+      "imagen": "/imagenes/adap004/ADAP004-01.webp",
+      "maestro": "/imagenes/adap004/original-2cbc47643ce76ef3.png",
+      "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
+      "precio_contado": 3.5,
+      "pvp": 4.03,
+      "stock": 13,
+      "clasificacion": "genérico/compatible",
+      "presentacion": "sin caja",
+      "fuente": "Fotografías propias de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "modelo": null,
+      "marca_retirada": null
+    },
+    {
+      "sku": "ADAP005",
+      "nombre_comercial": "Adaptador de enchufe Europa a Latino negro",
+      "estado": "publicado_verificado",
+      "revision_regla": 2,
+      "pendientes": [],
+      "imagen": "/imagenes/adap005/ADAP005-01.webp",
+      "maestro": "/imagenes/adap005/original-b62be5bdc359eba3.png",
+      "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
+      "precio_contado": 2.5,
+      "pvp": 2.88,
+      "stock": 16,
+      "clasificacion": "genérico/compatible",
+      "presentacion": "sin caja",
+      "fuente": "Fotografías propias de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "modelo": null,
+      "marca_retirada": null
+    }
+  ],
+  "verificacion_http": "reportes/lote-042-http.json",
+  "qa_publico": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38064555836",
+  "reporte_visual": "https://conectatech-ec.github.io/importacion/lotes/lote-042/Resultados-visuales.html",
+  "precios_stock_sku_urls_conservados": true,
+  "sku_comerciales_comprobados": 1165,
+  "propuestas_premium_001_no_aplicadas": true,
+  "pendiente_ajeno_al_lote": {
+    "sku": "TARJ004",
+    "motivo": "Regla Yantech registrada; sin portada comercial y con identificación pendiente. No se ha producido una imagen para este SKU."
+  },
+  "nota": "Las dos correcciones Yantech no aprueban ni reutilizan los maestros pendientes de premium-001. Originales conservados."
+}
