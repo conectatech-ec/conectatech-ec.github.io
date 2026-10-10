@@ -9,6 +9,7 @@ def module(name,file):
  s=importlib.util.spec_from_file_location(name,ROOT/'scripts'/file);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 pipeline=module('pipeline','procesar-imagenes.py');queue=module('queue_drive','sincronizar-cola-drive.py')
 rules=module('rules_registration','reglas_sku.py')
+closure=module('close_lot','registrar-resultados-lote.py')
 
 class IncrementalTests(unittest.TestCase):
  def setUp(self):
@@ -89,9 +90,34 @@ class IncrementalTests(unittest.TestCase):
   # Hasta registrar el resultado, un lote interrumpido sigue en cola sin cambiar reglas.
   self.assertEqual(json.loads((self.root/'lot.json').read_text())['skus'],['TEST001'])
   state=json.loads((self.root/'state.json').read_text());entry=state['productos']['TEST001']
-  entry['produccion']={'huella_revisada':entry['huella'],'estado':'REVISAR'}
+  entry['produccion']={'huella_revisada':entry['huella'],'revision_regla_revisada':entry['revision_regla'],'estado':'REVISAR'}
   (self.root/'state.json').write_text(json.dumps(state))
   with patch.object(queue,'ROOT',self.root),patch('sys.argv',args):queue.main()
   self.assertEqual(json.loads((self.root/'lot.json').read_text())['skus'],[])
+
+ def test_manual_rule_revision_requeues_closed_sku_without_reprocessing_sources(self):
+  files=[{'id':'aaa','nombre':'TEST001.jpg','modificado':'1'}]
+  rows=[['Fecha','SKU','Archivo','URL','Tipo','Presentación'],['','TEST001','TEST001.jpg','https://drive.google.com/file/d/aaa/view','Caja original','Sin caja']]
+  for name,value in [('files.json',files),('rows.json',rows)]: (self.root/name).write_text(json.dumps(value))
+  args=['queue','--inventario',str(self.root/'files.json'),'--registro',str(self.root/'rows.json'),
+        '--estado',str(self.root/'state.json'),'--lote',str(self.root/'lot.json')]
+  def synchronize():
+   with patch.object(queue,'ROOT',self.root),patch('sys.argv',args):queue.main()
+   return json.loads((self.root/'state.json').read_text())
+  state=synchronize()
+  state=closure.close_lot(state,[{'sku':'TEST001','estado':'REVISAR'}],'reportes/test.json')
+  self.assertEqual(state['productos']['TEST001']['produccion']['revision_regla_revisada'],1)
+  (self.root/'state.json').write_text(json.dumps(state));state=synchronize()
+  self.assertEqual(json.loads((self.root/'lot.json').read_text())['skus'],[])
+  registry=rules.load(self.root);registry['productos']['TEST001']['revision']=2
+  registry['productos']['TEST001']['instrucciones']='Nueva revisión de presentación'
+  (self.root/'importacion/reglas-sku.json').write_text(json.dumps(registry))
+  state=synchronize()
+  self.assertEqual(state['cambios'],[]);self.assertEqual(state['cambios_reglas'],['TEST001'])
+  self.assertEqual(json.loads((self.root/'lot.json').read_text())['skus'],['TEST001'])
+  state=closure.close_lot(state,[{'sku':'TEST001','estado':'aplicado_local','revision_regla':2}],'reportes/test.json')
+  (self.root/'state.json').write_text(json.dumps(state));state=synchronize()
+  self.assertEqual(json.loads((self.root/'lot.json').read_text())['skus'],['TEST001'])
+  self.assertEqual(state['productos']['TEST001']['produccion']['revision_regla_revisada'],2)
 
 if __name__=='__main__':unittest.main()

@@ -12,6 +12,25 @@ editorial=importlib.util.module_from_spec(spec);spec.loader.exec_module(editoria
 def digest(value):
     return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 
+def refresh_rule_revisions(state, registry):
+    """Compara revisiones, sin repetir lectura visual ni investigación del catálogo."""
+    changed=[]
+    for sku,entry in state['productos'].items():
+        revision=registry.get('productos',{}).get(sku,{}).get('revision')
+        entry['revision_regla']=revision
+        production=entry.get('produccion',{})
+        if production and production.get('revision_regla_revisada')!=revision:
+            changed.append(sku)
+    state['cambios_reglas']=changed
+    state['resumen']['reglas_con_revision_pendiente']=len(changed)
+
+def needs_work(entry):
+    production=entry.get('produccion',{})
+    return not entry.get('ausente_en_snapshot') and (
+        production.get('huella_revisada')!=entry.get('huella') or
+        production.get('revision_regla_revisada')!=entry.get('revision_regla') or
+        production.get('estado')=='aplicado_local')
+
 def synchronize(files, rows, catalog, aliases, previous):
     known={p['sku'] for p in catalog};groups={};errors=[];seen=set();by_id={};by_name={}
     for n,row in enumerate(rows[1:],2):
@@ -79,22 +98,26 @@ def main():
     state=Path(a.estado);previous=json.loads(state.read_text()) if state.exists() else {}
     result=synchronize(json.loads(Path(a.inventario).read_text()),json.loads(Path(a.registro).read_text()),
         editorial.read_catalog(ROOT)[1],json.loads((ROOT/'importacion/alias-sku.json').read_text()),previous)
+    registry=reglas_sku.load(ROOT)
+    refresh_rule_revisions(result,registry)
     # Los cambios fuera del primer lote no desaparecen al guardar el snapshot.
     # Un SKU ya investigado con la misma huella no se repite hasta nueva evidencia.
-    waiting=[sku for sku,entry in result['productos'].items()
-        if not entry.get('ausente_en_snapshot') and
-        (entry.get('produccion',{}).get('huella_revisada')!=entry.get('huella') or
-         entry.get('produccion',{}).get('estado')=='aplicado_local')]
+    waiting=[sku for sku,entry in result['productos'].items() if needs_work(entry)]
     waiting.sort(key=lambda sku:(not sku.startswith('TELF'),sku))
     candidates=waiting[:a.limite]
     result['por_procesar']=waiting
     result['resumen']['cola_pendiente']=len(waiting)
-    policy=reglas_sku.load(ROOT).get('politica_general',{}).get('autenticidad_registro',{})
+    policy=registry.get('politica_general',{}).get('autenticidad_registro',{})
     if policy.get('confirmado_por_propietario') and candidates:
         eligible=[sku for sku in candidates if not result['productos'][sku]['incidencias']]
         updates,issues=reglas_sku.registration_rules(json.loads(Path(a.registro).read_text()),eligible,
             json.loads((ROOT/'importacion/alias-sku.json').read_text()),policy)
         changes=reglas_sku.apply_rows(updates,apply=True,root=ROOT)
+        # El lote investigará la revisión resultante de la clasificación del Registro.
+        if changes:
+            latest=reglas_sku.load(ROOT)
+            for sku in eligible:
+                result['productos'][sku]['revision_regla']=latest['productos'][sku]['revision']
         for item in updates:
             entry=result['productos'][item['sku']]
             entry['autenticidad']=item['autenticidad'];entry['evidencia_autenticidad']=item['evidencia_autenticidad']

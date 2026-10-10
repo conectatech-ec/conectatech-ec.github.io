@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cierra solo SKU investigados del lote; una fuente nueva vuelve a ponerlos en cola."""
+"""Cierra SKU investigados; nuevas fuentes o revisiones de reglas vuelven a ponerlos en cola."""
 import argparse,json
 from pathlib import Path
 from datetime import datetime,timezone
@@ -14,7 +14,13 @@ def close_lot(state, results, report_path):
         if item['estado'] not in ('publicado_verificado','REVISAR','BLOQUEADO','aplicado_local'):
             raise ValueError('Estado sin evidencia: '+sku)
         entry=state['productos'][sku]
+        revision=entry.get('revision_regla')
+        if not isinstance(revision,int) or isinstance(revision,bool) or revision<1:
+            raise ValueError('Falta la revisión de regla guardada al seleccionar el lote: '+sku)
+        if item.get('revision_regla',revision)!=revision:
+            raise ValueError('Resultado revisado contra otra revisión de regla: '+sku)
         entry['produccion']={'huella_revisada':entry['huella'],'estado':item['estado'],
+            'revision_regla_revisada':revision,
             'reporte':str(report_path),'fecha':datetime.now(timezone.utc).isoformat(),
             'pendientes':item.get('pendientes',[])}
     return state
