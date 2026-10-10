@@ -183,14 +183,11 @@ def run(args):
                 'url': 'https://conectatech-ec.github.io/productos/'+urls[sku]+'/'}
         after = json.dumps([p, custom], sort_keys=True)
         (unchanged if before == after and (root / relative).exists() else prepared).append(item)
-    for p in products:
-        if p['sku'] not in seen:
-            pending.append({'sku': p['sku'], 'motivo': 'Fuera del lote; conserva contenido vigente'})
     if financial(products) != original_financial:
         raise ValueError('Invariante falló: intento de modificar precio o stock')
     report = {'fecha': datetime.now(timezone.utc).isoformat(),
               'modo': 'aplicar' if args.aplicar else 'simular',
-              'total_catalogo': len(products), 'filas_lote': len(rows),
+              'total_catalogo': len(products), 'filas_lote': len(rows), 'fuera_del_lote_sin_revisar': len(products)-len(seen),
               'preparados': prepared, 'sin_cambios': unchanged, 'pendientes': pending, 'errores': errors,
               'aplicados': [], 'publicados': [],
               'nota': 'Aplicar modifica archivos locales. Solo el despliegue y la verificación HTTP confirman publicación.',

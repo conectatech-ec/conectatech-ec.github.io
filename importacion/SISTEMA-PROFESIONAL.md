@@ -1,3 +1,5 @@
+> Actualización 2026-10-10: prevalece [PRODUCCION-MAESTRA.md](PRODUCCION-MAESTRA.md). Todos SIN CAJA; piloto 10, después 50 y 100. Las presentaciones y tamaños de lote anteriores son históricos.
+
 # Producción de imágenes por SKU
 
 Las reglas permanentes viven en `importacion/reglas-sku.json`, versionadas en Git. Hay un registro para cada uno de los 1.165 SKU, con autenticidad, presentación, instrucciones, evidencia y revisión independientes. Los tres SKU prioritarios están **por verificar** en autenticidad. `MICR027` se resuelve a `MICR27`, el código de 593. Identificar modelo o leer un logotipo no certifica originalidad.

@@ -5,6 +5,8 @@ on:
     paths:
       - 'scripts/procesar-imagenes.py'
       - 'scripts/reglas_sku.py'
+      - 'scripts/sincronizar-cola-drive.py'
+      - 'scripts/test-incremental.py'
       - 'importacion/piloto-imagenes.json'
       - '.github/workflows/producir-imagenes.yml'
   workflow_dispatch:
@@ -12,7 +14,7 @@ on:
       manifiesto:
         description: Manifiesto revisado del lote dentro del repositorio
         required: true
-        default: importacion/piloto-imagenes.json
+        default: importacion/lotes/cola-010.json
       reglas_csv:
         description: Excepciones nuevas (CSV); vacío conserva todas las reglas
         default: ''
@@ -37,9 +39,12 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
       - run: python -m pip install -r importacion/requirements.txt
+      - name: Probar protección e incrementalidad
+        run: python scripts/test-incremental.py
       - name: Registrar reglas y procesar lote
+        if: github.event_name == 'workflow_dispatch'
         env:
-          MANIFIESTO: ${{ inputs.manifiesto || 'importacion/piloto-imagenes.json' }}
+          MANIFIESTO: ${{ inputs.manifiesto || 'importacion/lotes/cola-010.json' }}
           REGLAS_CSV: ${{ inputs.reglas_csv }}
           APLICAR: ${{ inputs.aplicar }}
         run: |

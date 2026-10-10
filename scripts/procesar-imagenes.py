@@ -9,6 +9,16 @@ ROOT=Path(__file__).resolve().parents[1]
 _spec=importlib.util.spec_from_file_location('editorial',ROOT/'scripts/importar-productos.py')
 editorial=importlib.util.module_from_spec(_spec);_spec.loader.exec_module(editorial)
 sha=lambda b:hashlib.sha256(b).hexdigest()
+PIPELINE_VERSION=2
+
+def fingerprint(item, r):
+    return sha(json.dumps({'version':PIPELINE_VERSION,'entrada':item,'regla':r},sort_keys=True,ensure_ascii=False).encode())
+
+def intact(root, photo):
+    try:
+        return all(sha(safe(root,v['url'].lstrip('/')).read_bytes())==v['sha256'] for v in photo['versiones'].values())
+    except (OSError,KeyError,ValueError):
+        return False
 
 def safe(root,path):
     p=(root/path).resolve()
@@ -71,7 +81,8 @@ def process(root, sku, item, r):
     result={'posicion':slot,'contiene_caja':item['contiene_caja'],'referencia_fabricante':item.get('referencia_fabricante',False),'referencia_distribuidor':item.get('referencia_distribuidor',False),
             'fuente':item['fuente'],'original':'/'+original,'sha256_original':sha(data),'resolucion_original':original_size,
             'resolucion_util':list(im.size),'versiones':versions,'revision_regla':r['revision'],
-            'revision_visual':item.get('nota_revision',''),'recorte':crop,'silueta_revisada':polygon,'ajustes':params,'dhash':f'{dhash(bg):016x}'}
+            'revision_visual':item.get('nota_revision',''),'recorte':crop,'silueta_revisada':polygon,'ajustes':params,'dhash':f'{dhash(bg):016x}',
+            'huella_proceso':fingerprint(item,r),'version_proceso':PIPELINE_VERSION}
     return result,outputs
 
 def run(args):
@@ -82,7 +93,7 @@ def run(args):
     registry_path=root/'importacion/medios.json';media=json.loads(registry_path.read_text()) if registry_path.exists() else {}
     report={'fecha':datetime.now(timezone.utc).isoformat(),'lote':args.manifiesto,'modo':'aplicar' if args.aplicar else 'simular',
             'productos':[],'errores':[],'publicados':[],'duplicados':[],'similares':[]}
-    writes={};seen=set();hashes={}
+    writes={};seen=set();hashes={};changed_photos=set();reused=0
     for existing_sku,entry in media.items():
         for photo in entry.get('imagenes',[]):hashes.setdefault(photo['sha256_original'],set()).add(existing_sku)
     # Preflight de duplicados cruzados antes de aplicar cualquier SKU.
@@ -94,7 +105,14 @@ def run(args):
         sku=aliases.get(raw,raw)
         if sku not in by or sku in seen:
             report['errores'].append({'sku':raw,'motivo':'SKU desconocido o duplicado'});continue
-        seen.add(sku);p=by[sku];r=rule(sku,root);photos=[];issues=[];rowwrites={};slots=set()
+        seen.add(sku);p=by[sku];r=rule(sku,root);issues=[];rowwrites={};slots=set()
+        old=media.get(sku)
+        photos=[i for i in (old or {}).get('imagenes',[]) if old.get('revision_regla')==r['revision'] and compatible(r,i,i['posicion']==1) and intact(root,i)]
+        approval=manifest.get('aprobaciones',{}).get(sku,{})
+        historic_hashes={i.get('sha256_original') for i in (old or {}).get('imagenes',[])}
+        new_sources=any(i.get('sha256') not in historic_hashes for i in sources.get(sku,sources.get(raw,[])))
+        blocked=(manifest.get('version',1)>=2 or new_sources) and not (approval.get('estado')=='APROBADO' and approval.get('identidad_verificada') is True and approval.get('uso_comercial_permitido') is True and approval.get('ficha_verificada') is True)
+        if blocked:issues.append('Publicación bloqueada: identidad, ficha o permiso de uso pendientes')
         candidates=sources.get(sku,sources.get(raw,[]))
         for item in candidates:
             try:
@@ -104,12 +122,22 @@ def run(args):
                 if duplicates:
                     report['duplicados'].append({'sku':sku,'otros':sorted(duplicates),'sha256':item['sha256']})
                     raise ValueError('Original asignado a otro SKU; revisar coincidencia')
-                photo,out=process(root,sku,item,r);photos.append(photo);rowwrites.update(out)
+                cached=next((i for i in photos if i['posicion']==item.get('posicion') and i.get('huella_proceso')==fingerprint(item,r)),None)
+                if cached and sha(safe(root,item['archivo']).read_bytes())==item['sha256']:
+                    photo=cached;out={};reused+=1
+                else:
+                    photo,out=process(root,sku,item,r)
+                    changed_photos.add((sku,photo['posicion']))
+                if not blocked:
+                    photos=[i for i in photos if i['posicion']!=photo['posicion']]+[photo];rowwrites.update(out)
+                elif getattr(args,'borradores',None):
+                    for rel,data in out.items():
+                        editorial.atomic_write(safe(root,args.borradores)/rel,data)
             except (ValueError,OSError,KeyError,TypeError) as exc:issues.append(str(exc))
+        photos.sort(key=lambda i:i['posicion'])
         cover=next((i for i in photos if i['posicion']==1),None)
         if not candidates:issues.append(manifest.get('pendientes',{}).get(sku,'Sin fotografía original vinculada y revisada'))
         # No sostener imágenes antiguas que contradigan una nueva excepción.
-        old=media.get(sku)
         if old and old.get('revision_regla')!=r['revision']:
             seo.get(sku,{}).pop('banner',None)
             if sku in seo:seo[sku].pop('galeria',None);seo[sku].pop('imagenProfesional',None)
@@ -123,7 +151,7 @@ def run(args):
             p['imageUrl']=cover['versiones']['1200']['url']
             if sku in seo:
                 seo[sku].update(imagen=p['imageUrl'],imagenProfesional=cover,galeria=photos,reglaSKU=r,imagenPendiente=False)
-        elif candidates or (old and old.get('revision_regla')!=r['revision']) or r['presentacion']=='sin caja':
+        elif candidates or (old and old.get('revision_regla')!=r['revision']) or (not old and r['presentacion']=='sin caja'):
             p['imageUrl']=''
             if sku in seo:
                 seo[sku].update(imagen='',imagenPendiente=True,reglaSKU=r)
@@ -134,12 +162,14 @@ def run(args):
             'imagen_profesional':cover['versiones'] if cover else None,'autenticidad':r['autenticidad'],
             'presentacion':r['presentacion'],'precio_contado':p['promo'],'pvp':p['pvp'],
             'url':'https://conectatech-ec.github.io/productos/'+slugs[sku]+'/',
-            'estado':'preparado' if cover else 'pendiente','pendientes':issues,
+            'estado':'preparado' if cover and not blocked and not issues else 'pendiente','pendientes':issues,
+            'control_calidad':approval.get('estado','REVISAR' if issues else 'APROBADO'),
             'requiere_verificacion':r['autenticidad']=='por verificar'})
     # Perceptuales son avisos, nunca una decisión automática de identidad.
     allphotos=[(s,i) for s,m in media.items() for i in m.get('imagenes',[])]
     for n,(s,a) in enumerate(allphotos):
         for t,b in allphotos[:n]:
+            if (s,a['posicion']) not in changed_photos and (t,b['posicion']) not in changed_photos:continue
             if s!=t and (int(a['dhash'],16)^int(b['dhash'],16)).bit_count()<=3:report['similares'].append({'sku':s,'similar_a':t})
     if editorial.financial(products)!=finance:raise ValueError('Precios/existencias alterados')
     if args.aplicar and not report['errores']:
@@ -153,7 +183,8 @@ def run(args):
     report['precios_stock_conservados']=True
     report['resumen']={'total':len(report['productos']),'imagenes_listas':sum(bool(x['imagen_profesional']) for x in report['productos']),
         'pendientes':sum(x['estado']=='pendiente' for x in report['productos']),'errores':len(report['errores']),
-        'por_verificar_autenticidad':sum(x['requiere_verificacion'] for x in report['productos'])}
+        'por_verificar_autenticidad':sum(x['requiere_verificacion'] for x in report['productos']),
+        'imagenes_reutilizadas':reused,'imagenes_procesadas':len(changed_photos)}
     editorial.atomic_write(safe(root,args.reporte),editorial.encode(report));print(json.dumps(report['resumen'],ensure_ascii=False))
     return int(bool(report['errores']))
 
@@ -161,4 +192,5 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--root',default=str(ROOT))
     parser.add_argument('--manifiesto',required=True);parser.add_argument('--aplicar',action='store_true')
     parser.add_argument('--reporte',default='reportes/procesamiento-imagenes.json')
+    parser.add_argument('--borradores',help='Directorio privado local para versiones preparadas de SKU bloqueados; nunca actualiza el catálogo con ellas')
     raise SystemExit(run(parser.parse_args()))

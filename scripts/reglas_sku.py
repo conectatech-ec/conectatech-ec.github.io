@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 AUTH = {'original verificado', 'genérico/compatible', 'por verificar'}
 PRESENT = {'con caja', 'sin caja', 'selección automática'}
-DEFAULT = {'autenticidad': 'por verificar', 'presentacion': 'selección automática',
+DEFAULT = {'autenticidad': 'por verificar', 'presentacion': 'sin caja',
            'instrucciones': '', 'evidencia_autenticidad': '', 'revision': 0}
 
 def load(root=ROOT):
@@ -17,6 +17,8 @@ def load(root=ROOT):
 def rule(sku, root=ROOT):
     registry = load(root)
     value = {**DEFAULT, **registry['productos'].get(sku, {})}
+    if registry.get('politica_general', {}).get('presentacion_obligatoria') == 'sin caja':
+        value['presentacion'] = 'sin caja'
     if value['autenticidad'] not in AUTH or value['presentacion'] not in PRESENT:
         raise ValueError('Regla inválida: '+sku)
     return value
@@ -46,6 +48,8 @@ def main():
             # Vacío conserva la regla anterior. Para borrar instrucciones usar [BORRAR].
             if row[k].strip(): new[k]='' if row[k].strip()=='[BORRAR]' else row[k].strip()
         if new['autenticidad'] not in AUTH or new['presentacion'] not in PRESENT: raise ValueError('Valores inválidos: '+sku)
+        if db.get('politica_general', {}).get('presentacion_obligatoria') == 'sin caja' and new['presentacion'] != 'sin caja':
+            raise ValueError('La política comercial vigente exige SIN CAJA: '+sku)
         if new['autenticidad']=='original verificado' and not new['evidencia_autenticidad']:
             raise ValueError('Original verificado requiere evidencia explícita; un logotipo no es evidencia')
         if new != old:

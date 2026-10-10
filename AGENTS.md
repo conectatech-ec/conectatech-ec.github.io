@@ -6,18 +6,18 @@
 - Aplicar las reglas vigentes a portadas, vistas, catálogo, exportaciones y banners. SIN CAJA excluye empaques; nunca extraer la ilustración de una caja y presentarla como foto real del producto.
 - Los originales son inmutables. No regenerar detalles, texto, conectores, accesorios o proporciones. Conservar el logotipo original. Si la fuente es insuficiente, buscar una referencia auténtica del modelo/variante exactos o dejar el SKU pendiente.
 - MICR027 es alias de MICR27. No crear otro SKU ni otra variante por aproximación.
-- CARG050: foto blanca aportada del cargador y su caja. CARG016: sin caja. MICR27: selección automática. Consultar siempre el registro por posibles actualizaciones posteriores.
+- Política vigente del propietario (2026-10-10): TODOS los SKU SIN CAJA. Sustituye las instrucciones históricas de CARG050 y MICR27. Conservar esas instrucciones en el historial, no aplicarlas a publicaciones nuevas.
 - No cambiar precios, PVP, stock ni información de 593 mediante importaciones editoriales o visuales. Un cambio comercial requiere validación explícita. PROMO CONTADO por encima de PVP, sin tachar PVP y sin precios en la foto principal.
 - Mantener las URLs estables. Publicado significa comprobar HTTP, datos y archivos servidos; generar archivos o hacer commit no basta.
 - No marcar lotes pendientes como terminados. El lote de 20 dejó 18 pendientes; continuar desde el reporte y no repetir trabajo ya validado.
 - Banners solo para SKU priorizados. Las nuevas instrucciones invalidan medios con revisión antigua, incluidos banners.
 - Ejecutar controles pertinentes al cambio y actualizar el reporte. No pedir autorización para ajustes técnicos reversibles ya comprendidos en la tarea; consultar si hay ambigüedad comercial o riesgo de identificar mal el producto.
 
-## Prioridad vigente — producción por lotes (2026-10-09)
+## Prioridad vigente — producción por lotes (2026-10-10)
 
 - Alimentar fotografías y fichas existentes. No rediseñar la web ni crear banners durante esta fase.
-- Leer `importacion/RECEPCION-LOTES.md`. Primer lote de 5 SKU, después 20, 50 y 100 una vez validado el estándar. No ejecutar otra vez el piloto histórico por defecto.
+- Leer `importacion/PRODUCCION-MAESTRA.md`. Piloto actual de 10 SKU desde Drive, después 50 y 100 cuando se supere el control de calidad. No reejecutar pilotos históricos.
 - Trabajar solo con SKU nuevos o modificados del lote recibido; reutilizar medios aprobados y vigentes, sin regenerarlos. Leer índices existentes para buscar SKU no implica revisar todo el catálogo.
 - Registrar discrepancias de caja/modelo/variante antes de modificar nombres o características. No resolverlas por aproximación.
-- Preferir producto y caja para originales comercialmente confirmados; producto real para genéricos/compatibles. Las reglas individuales vigentes siempre prevalecen. No deducir autenticidad de la foto.
+- Mostrar exclusivamente el producto, tanto original como genérico/compatible. La presentación de Sheets es histórica. "Caja original" no equivale a autenticidad comercial confirmada. Registrar evidencia y derechos de uso de material externo; los pendientes no se aprueban automáticamente.
 - Reportar cada SKU con foto recibida, portada, presentación, contado, PVP, URL y estado. Solo marcar publicado después de verificar Pages.

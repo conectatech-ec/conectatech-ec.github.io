@@ -6,7 +6,8 @@ module.exports=function(){
  const products=JSON.parse(html.match(rx)[1]);const seo=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
  for(const p of products){
   const r=registry.productos[p.sku];if(!r)throw Error('Falta registro de reglas para '+p.sku);
-  const m=media[p.sku];if(!m&&!r.revision)continue;
+  if(registry.politica_general?.presentacion_obligatoria==='sin caja')r.presentacion='sin caja';
+  const m=media[p.sku];if(!m)continue; // Un nuevo registro no invalida imágenes heredadas por mera ausencia de metadatos.
   const photos=m?.revision_regla===r.revision?m.imagenes.filter(i=>(r.presentacion!=='sin caja'||i.contiene_caja===false)):[];
   const cover=photos.find(i=>i.posicion===1&&(r.presentacion!=='con caja'||i.contiene_caja===true));
   p.imageUrl=cover?.versiones['1200'].url||'';

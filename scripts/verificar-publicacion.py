@@ -46,25 +46,26 @@ def main():
         sku=aliases.get(raw,raw)
         result={'solicitado':raw,'sku':sku}
         try:
-            p=products[sku]; c=seo[sku]
+            p=products[sku]; c=seo.get(sku,{})
             canonical='https://conectatech-ec.github.io/productos/'+urls[sku]+'/'
             url=args.base.rstrip('/')+'/productos/'+urls[sku]+'/'
             result['url']=url
             data,status=get(url); page=Page(); page.feed(data.decode())
             schema=json.loads(page.schema)
             for label, actual, expected in (
-                ('sku',schema.get('sku'),sku),('nombre',schema.get('name'),c['nombre']),
+                ('sku',schema.get('sku'),sku),('nombre',schema.get('name'),c.get('nombre',p['name'])),
                 ('precio',schema['offers']['price'],f"{p['promo']:.2f}"),
                 ('moneda',schema['offers']['priceCurrency'],'USD'),
                 ('stock',schema['offers']['availability'],'https://schema.org/'+('InStock' if p['stock']>0 else 'OutOfStock')),
                 ('canonical',page.canonical,canonical)):
                 if actual != expected: raise ValueError(f'{label}: {actual!r} != {expected!r}')
             if not any(('$'+price) in data.decode() for price in (f"{p['pvp']:.2f}",f"{p['pvp']:.2f}".replace('.',','))): raise ValueError('PVP visible incorrecto')
-            result.update(estado='publicado_verificado' if args.base=='https://conectatech-ec.github.io' else 'verificado_local',http=status,
-                          promo=p['promo'],pvp=p['pvp'],stock_catalogo=p['stock'],imagen_pendiente=bool(c.get('imagenPendiente')))
-            if c.get('imagenPendiente'):
-                if schema.get('image') or any('/imagenes/carg016/' in (i or '') for i in page.images): raise ValueError('Se muestra imagen bloqueada por regla')
-                if 'Fotografía en actualización' not in data.decode():raise ValueError('Falta estado pendiente visible')
+            result.update(estado=('ficha_existente_imagen_pendiente' if c.get('imagenPendiente') or not c.get('imagen') else 'publicado_verificado') if args.base=='https://conectatech-ec.github.io' else 'verificado_local',http=status,
+                          promo=p['promo'],pvp=p['pvp'],stock_catalogo=p['stock'],imagen_pendiente=bool(c.get('imagenPendiente') or not c.get('imagen')),
+                          sha256_ficha=hashlib.sha256(data).hexdigest())
+            if c.get('imagenPendiente') or not c.get('imagen'):
+                if schema.get('image') or any('/imagenes/'+sku.lower()+'/' in (i or '') for i in page.images): raise ValueError('Se muestra imagen bloqueada por regla')
+                if c.get('comercialVerificado') and 'Fotografía en actualización' not in data.decode():raise ValueError('Falta estado pendiente visible')
             else:
                 image_url=urljoin('https://conectatech-ec.github.io',c['imagen'])
                 if image_url not in [urljoin('https://conectatech-ec.github.io',i) for i in page.images if i] or [urljoin('https://conectatech-ec.github.io',i) for i in schema['image']] != [image_url]: raise ValueError('Referencia de imagen incorrecta')
@@ -85,6 +86,7 @@ def main():
     with ThreadPoolExecutor(max_workers=3) as pool: results=list(pool.map(check,args.sku))
     report={'fecha':datetime.now(timezone.utc).isoformat(),'resultados':results,
             'publicados':sum(x['estado']=='publicado_verificado' for x in results),
+            'pendientes':sum(x['estado']=='ficha_existente_imagen_pendiente' for x in results),
             'errores':sum(x['estado']=='error' for x in results)}
     dest=Path(args.reporte);dest.parent.mkdir(parents=True,exist_ok=True)
     dest.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

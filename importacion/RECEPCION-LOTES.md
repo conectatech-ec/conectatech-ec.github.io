@@ -1,3 +1,5 @@
+> Actualización 2026-10-10: prevalece [PRODUCCION-MAESTRA.md](PRODUCCION-MAESTRA.md). Todos SIN CAJA; piloto 10, después 50 y 100. Las presentaciones y tamaños de lote anteriores son históricos.
+
 # Recepción y producción del catálogo por SKU
 
 Prioridad vigente: fotografías y fichas; sin cambios de diseño ni banners. Se reutiliza el sistema documentado en `SISTEMA-PROFESIONAL.md`.
