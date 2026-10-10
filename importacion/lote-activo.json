@@ -10,7 +10,7 @@
     "MOUS017",
     "SOPO029"
   ],
-  "estado": "QA_LOCAL_VERIFICADA",
+  "estado": "PUBLICACION_HTTP_VERIFICADA_QA_PUBLICA_PENDIENTE",
   "lote_anterior": "lote-049",
   "motivo": "Cinco SKU tecnológicos con fotografías propias y estándar comercial aprobado POWE003/ADAP005.",
   "qa": {
@@ -22,5 +22,14 @@
     "catalogo_movil_columnas": 2,
     "prepublicacion_aprobados": 5,
     "prepublicacion_pendientes": 0
+  },
+  "qa_base_publica": "https://conectatech-ec.github.io",
+  "publicacion": {
+    "commit": "ec283ab0934819a87cc033611a06841c0c0b305f",
+    "pages_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38089975591",
+    "http_reporte": "reportes/lote-050-http.json",
+    "publicados": 5,
+    "pendientes": 0,
+    "errores": 0
   }
 }
