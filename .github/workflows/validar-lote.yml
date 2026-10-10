@@ -1,0 +1,202 @@
+name: Validar lote antes de publicar
+
+on:
+  push:
+    branches:
+      - 'catalogo/**'
+  workflow_dispatch:
+    inputs:
+      manifiesto:
+        description: Manifiesto de SKU aprobados que se comprobará
+        type: string
+        required: false
+        default: importacion/lotes/lote-020/manifiesto-aprobados.json
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validar-lote-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      MANIFIESTO_SOLICITADO: ${{ inputs.manifiesto || '' }}
+      REPORTE_MOVIL: reportes/movil-lote-activo.json
+      REPORTE_CONTRATO: reportes/prepublicacion-lote-activo.json
+    steps:
+      - name: Recuperar exactamente la rama candidata
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Preparar únicamente los SKU aprobados del lote
+        id: preflight
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, re
+          root = pathlib.Path.cwd().resolve()
+          selected = os.environ.get('MANIFIESTO_SOLICITADO', '').strip()
+          if not selected:
+              pointer = root / 'importacion/lote-activo.json'
+              selected = json.loads(pointer.read_text()).get('manifiesto') if pointer.is_file() else 'importacion/lotes/lote-020/manifiesto-aprobados.json'
+          if not isinstance(selected, str) or '\n' in selected or '\r' in selected:
+              raise SystemExit('Referencia de manifiesto inválida.')
+          manifest_path = (root / selected).resolve()
+          if not manifest_path.is_relative_to(root / 'importacion/lotes') or manifest_path.suffix != '.json':
+              raise SystemExit('Manifiesto fuera de importacion/lotes o formato inválido.')
+          selected = manifest_path.relative_to(root).as_posix()
+          with open(os.environ['GITHUB_ENV'], 'a') as env:
+              env.write('MANIFIESTO=' + selected + '\n')
+          manifest = json.loads(manifest_path.read_text())
+          skus = manifest.get('skus', [])
+          if not skus or len(skus) != len(set(skus)) or any(not re.fullmatch(r'[A-Z0-9]+', sku) for sku in skus):
+              raise SystemExit('Lote vacío, SKU inválido o duplicado: no ejecutar una selección implícita.')
+          contracts = manifest.get('contratos', {})
+          for sku in skus:
+              source = contracts.get(sku)
+              if not isinstance(source, str):
+                  raise SystemExit('Contrato sin ruta: ' + sku)
+              contract_path = (root / source).resolve()
+              if not contract_path.is_relative_to(root / 'importacion') or contract_path.suffix != '.json' or not contract_path.is_file():
+                  raise SystemExit('Contrato ausente o ruta inesperada: ' + sku)
+          (pathlib.Path(os.environ['RUNNER_TEMP']) / 'conectatech-skus.txt').write_text('\n'.join(skus) + '\n')
+          # No reutilizar un reporte móvil de una ejecución anterior.
+          (root / os.environ['REPORTE_MOVIL']).unlink(missing_ok=True)
+          (root / os.environ['REPORTE_CONTRATO']).unlink(missing_ok=True)
+          print('SKU seleccionados:', len(skus))
+          PY
+
+      - name: Instalar dependencias declaradas de validación
+        run: |
+          python -m pip install --disable-pip-version-check -r importacion/requirements.txt
+          npm install --prefix "$RUNNER_TEMP/conectatech-playwright" --ignore-scripts --no-audit --no-fund playwright@1.62.1
+          echo "CODEX_PRIMARY_RUNTIME_NODE_MODULES=$RUNNER_TEMP/conectatech-playwright/node_modules" >> "$GITHUB_ENV"
+          node "$RUNNER_TEMP/conectatech-playwright/node_modules/playwright/cli.js" install --with-deps chromium
+
+      - name: Iniciar servidor local del contenido candidato
+        shell: bash
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 > "$RUNNER_TEMP/conectatech-http.log" 2>&1 &
+          echo "$!" > "$RUNNER_TEMP/conectatech-http.pid"
+          python - <<'PY'
+          import time, urllib.request
+          for attempt in range(50):
+              try:
+                  with urllib.request.urlopen('http://127.0.0.1:8765/', timeout=1) as response:
+                      if response.status == 200:
+                          break
+              except OSError:
+                  time.sleep(0.2)
+          else:
+              raise SystemExit('El servidor local no inició.')
+          PY
+
+      - name: Renderizar y comprobar fichas con Chromium real
+        id: movil
+        continue-on-error: true
+        shell: bash
+        run: |
+          mapfile -t skus < "$RUNNER_TEMP/conectatech-skus.txt"
+          node scripts/verificar-movil.cjs --sku "${skus[@]}" --base http://127.0.0.1:8765 --salida "$REPORTE_MOVIL" --capturas reportes/movil --desktop
+
+      - name: Incorporar únicamente evidencia móvil válida
+        id: evidencia
+        if: always() && steps.preflight.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, pathlib
+          from datetime import datetime, timezone
+          root = pathlib.Path.cwd().resolve()
+          manifest_path = root / os.environ['MANIFIESTO']
+          manifest = json.loads(manifest_path.read_text())
+          report_path = root / os.environ['REPORTE_MOVIL']
+          report = json.loads(report_path.read_text()) if report_path.is_file() else {}
+          rows = report.get('resultados', [])
+          by_sku = {row.get('sku'): row for row in rows}
+          duplicate = len(rows) != len(by_sku)
+          target = root / 'reportes/qa-lote-activo'
+          (target / 'contratos').mkdir(parents=True, exist_ok=True)
+          def artifact_ok(file, digest):
+              if not isinstance(file, str) or not file or not isinstance(digest, str):
+                  return False
+              path = (root / file).resolve()
+              return path.is_relative_to(root) and path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == digest
+          accepted, rejected = [], []
+          for sku in manifest['skus']:
+              destination = root / manifest['contratos'][sku]
+              contract = json.loads(destination.read_text())
+              checks = contract.setdefault('validaciones', {})
+              checks.pop('movil', None)
+              row = by_sku.get(sku, {})
+              valid = (not duplicate and not report.get('errores_herramienta') and
+                       report.get('base') == 'http://127.0.0.1:8765' and
+                       row.get('estado') == 'VERIFICADO' and row.get('url') == contract.get('url_publica') and
+                       bool(row.get('verificaciones')) and all(value is True for value in row['verificaciones'].values()) and
+                       not row.get('errores') and
+                       artifact_ok(row.get('archivo'), row.get('sha256')) and
+                       artifact_ok(row.get('archivo_html'), row.get('sha256_html')))
+              if valid:
+                  checks['movil'] = row
+                  accepted.append(sku)
+              else:
+                  rejected.append(sku)
+              text = json.dumps(contract, ensure_ascii=False, indent=2) + '\n'
+              destination.write_text(text)
+              (target / 'contratos' / (sku + '.json')).write_text(text)
+          provenance = {'fecha': datetime.now(timezone.utc).isoformat(), 'commit_candidato': os.environ['GITHUB_SHA'],
+                        'run_id': os.environ['GITHUB_RUN_ID'], 'manifiesto': os.environ['MANIFIESTO'],
+                        'sha256_manifiesto': hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+                        'movil_verificados': accepted, 'movil_pendientes': rejected,
+                        'publica_o_hace_push': False}
+          (target / 'ejecucion.json').write_text(json.dumps(provenance, ensure_ascii=False, indent=2) + '\n')
+          print(json.dumps({'verificados': len(accepted), 'pendientes': rejected}, ensure_ascii=False))
+          if rejected:
+              raise SystemExit(1)
+          PY
+
+      - name: Validar contrato completo antes de publicar
+        id: contrato
+        if: always() && steps.preflight.outcome == 'success'
+        continue-on-error: true
+        run: python scripts/validar-contrato.py --manifiesto "$MANIFIESTO" --fase prepublicacion --reporte "$REPORTE_CONTRATO"
+
+      - name: Guardar contratos revisados, capturas y reportes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: conectatech-lote-qa-${{ github.run_id }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            reportes/qa-lote-activo/
+            reportes/movil-lote-activo.json
+            reportes/movil/
+            reportes/prepublicacion-lote-activo.json
+
+      - name: Exigir todos los controles sin publicar
+        if: always()
+        env:
+          PREFLIGHT: ${{ steps.preflight.outcome }}
+          MOVIL: ${{ steps.movil.outcome }}
+          EVIDENCIA: ${{ steps.evidencia.outcome }}
+          CONTRATO: ${{ steps.contrato.outcome }}
+        run: |
+          test "$PREFLIGHT" = success
+          test "$MOVIL" = success
+          test "$EVIDENCIA" = success
+          test "$CONTRATO" = success

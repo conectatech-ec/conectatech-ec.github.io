@@ -17,14 +17,14 @@ La orden vigente sustituye las presentaciones históricas: **todos los productos
 3. Ejecutar:
 
 ```sh
-python scripts/sincronizar-cola-drive.py --inventario /ruta/drive.json --registro /ruta/registro.json --limite 10
+python scripts/sincronizar-cola-drive.py --inventario /ruta/drive.json --registro /ruta/registro.json --limite 30
 ```
 
-La cola permanente `importacion/cola-drive.json` registra huellas por SKU. Una segunda entrada idéntica genera cero candidatos; un archivo ausente no borra originales. Los nombres `SKU.jpg`, `SKU_YYYYMMDD_HHMMSS.jpg` y `SKU-01.jpg` se vinculan solo al SKU exacto o alias explícito. No rellenar ceros ni crear productos por aproximación. Las vistas de anverso/reverso requieren inspección, no se deducen de una marca de tiempo.
+La cola permanente `importacion/cola-drive.json` registra huellas por SKU. Los SKU no investigados permanecen en cola aunque el snapshot no cambie. El cierre del lote guarda la huella revisada; solo nueva evidencia vuelve a encolar un SKU cerrado. Un archivo ausente no borra originales. Los nombres `SKU.jpg`, `SKU_YYYYMMDD_HHMMSS.jpg` y `SKU-01.jpg` se vinculan solo al SKU exacto o alias explícito. No rellenar ceros ni crear productos por aproximación. Las vistas de anverso/reverso requieren inspección, no se deducen de una marca de tiempo.
 
 4. Consultar todas las fotos del SKU cambiado, contrastar 593 y registrar modelo/variante, fuente y discrepancias. Guardar OCR o lecturas verificadas por SKU para reutilizarlas. La investigación y revisión visual todavía requieren al operador; la cola no inventa esas validaciones.
 5. Recuperar el material autorizado del modelo exacto. Mantener fotos de identificación privadas en Drive, especialmente si contienen números de serie. Conservar fuente, hash y originales del material comercial. Los archivos de revisión local están en `.produccion-privada/` y se excluyen de Git.
-6. Usar manifiesto versión 2 con `aprobaciones[SKU]`: `estado`, `identidad_verificada`, `ficha_verificada`, `uso_comercial_permitido`. No cambiar estos valores solo para desbloquear una publicación. La evidencia comercial de autenticidad se registra mediante `scripts/reglas_sku.py`; el logotipo no es evidencia. La cola aplica automáticamente la clasificación del Registro a los SKU nuevos/modificados seleccionados para el lote. Para un lote ya preparado: `python scripts/reglas_sku.py --registro /ruta/registro.json --sku SKU1 SKU2 --aplicar`. La columna Tipo es la autoridad comercial confirmada por el propietario; valores ausentes o contradictorios quedan para revisión. La autenticidad no aprueba por sí sola la variante ni los derechos de una fotografía externa.
+6. Usar manifiesto versión 3 y contrato persistente por SKU (`CONTRATO-DATOS.md`) con `aprobaciones[SKU]`: `estado`, `identidad_verificada`, `ficha_verificada`, `uso_comercial_permitido`. No cambiar estos valores solo para desbloquear una publicación. La evidencia comercial de autenticidad se registra mediante `scripts/reglas_sku.py`; el logotipo no es evidencia. La cola aplica automáticamente la clasificación del Registro a los SKU nuevos/modificados seleccionados para el lote. Para un lote ya preparado: `python scripts/reglas_sku.py --registro /ruta/registro.json --sku SKU1 SKU2 --aplicar`. La columna Tipo es la autoridad comercial confirmada por el propietario; valores ausentes o contradictorios quedan para revisión. La autenticidad no aprueba por sí sola la variante ni los derechos de una fotografía externa.
 7. Procesar:
 
 ```sh
@@ -37,16 +37,20 @@ El procesador conserva los originales, no amplía el producto, centra sobre blan
 
 Los borradores bloqueados pueden prepararse con `--borradores .produccion-privada/borradores`; ese modo no los convierte en publicables. No subir ese directorio a Pages.
 
-8. Importar únicamente el CSV editorial aprobado con `scripts/importar-productos.py`; no se admiten columnas financieras. Mantener categorías y URLs existentes; guardar categoría comercial propuesta como dato editorial antes de una migración de filtros.
-9. Ejecutar pruebas de protección (`python scripts/test-incremental.py`), generar SEO y exportaciones existentes. Comparar precios/stock y hash de 593 con la base previa. Publicar cambios en `main` sin sobrescribir modificaciones concurrentes.
+8. Importar únicamente el CSV editorial aprobado con `scripts/importar-productos.py`; no se admiten columnas financieras. Conservar categoría original y URL; asignar familia mediante `categorias-comerciales.json`. `--por-sku` permite continuar filas válidas y aísla duplicados o errores.
+9. Ejecutar pruebas de protección (`python scripts/test-incremental.py`), generar SEO y exportaciones existentes. Comparar precios/stock y hash de 593 con la base previa. Preparar cambios en una rama `catalogo/**`: `validar-lote.yml` ejecuta Chromium móvil y el gate de prepublicación. Incorporar capturas y contratos verificados antes de publicar en `main`, sin sobrescribir cambios concurrentes.
 10. Esperar el despliegue de Pages y ejecutar `scripts/verificar-publicacion.py --sku ...`. Solo las fichas con imagen servida y hashes coincidentes cuentan como publicadas; HTTP 200 sin imagen sigue pendiente.
 
 ## Escalado y límites actuales
 
-Piloto de 10, luego 50 y 100 cuando el piloto supere calidad y discrepancias comerciales. No avanzar por cantidad si no hay suficientes fuentes aprobadas. La detección incremental funciona con snapshots reales y está probada. No hay un sondeo desatendido de Drive configurado ni credenciales de Google en GitHub; no afirmar operación continua activa. La consulta conectada genera el próximo snapshot sin descargar otra vez el inventario completo.
+El piloto de 10 se retoma sin regenerarlo. Lote nuevo de 30; seguir con 50 y 100 según cobertura y calidad. No avanzar por cantidad si no hay suficientes fuentes aprobadas. La detección incremental funciona con snapshots reales. El estado de operación continua se registra en `operacion-continua.json` solamente después de confirmar su programación. GitHub no guarda credenciales de Google: la consulta conectada genera el próximo snapshot sin descargar otra vez todas las fotografías.
 
 Para teléfonos separar RAM física/virtual y confirmar variante. Para AAA no inferir autonomía/ANC/IP. Para PILA013 confirmar venta por unidad; un blíster no prueba cantidad vendida. Para juguetes no inventar modelo ni licencia.
 
 ## Piloto actual
 
 `lotes/piloto-drive-010/` contiene la trazabilidad y propuestas editoriales. `reportes/piloto-drive-010.json` distingue portadas preparadas, pendientes y publicación real. La autenticidad comercial de los diez SKU quedó confirmada mediante Registro y la instrucción del propietario. Los derechos de las imágenes externas no se deducen de su disponibilidad pública. Las fichas no aprobadas permanecen como propuestas; no se han aplicado al catálogo.
+
+## Cierre verificable y reanudación
+
+Tras verificar la publicación, guardar el reporte por SKU y ejecutar `python scripts/registrar-resultados-lote.py --reporte reportes/LOTE-resultados.json`. Los pendientes conservan motivo y huella de sus fuentes: no se repite la investigación hasta nueva evidencia. Las capturas móviles y el reporte HTTP deben coincidir con los bytes de la ficha y las tres imágenes, según el contrato v3. Los originales de identificación con datos privados permanecen en Drive; solo maestros propios depurados y autorizados se incorporan a Git.

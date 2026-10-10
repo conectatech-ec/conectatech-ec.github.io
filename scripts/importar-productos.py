@@ -2,6 +2,7 @@
 """Importación editorial por SKU. Nunca escribe precio, PVP, stock ni la base 593."""
 import argparse
 import csv
+from collections import Counter
 import hashlib
 import io
 import json
@@ -84,6 +85,8 @@ def run(args):
         if reader.fieldnames is None or set(reader.fieldnames) != set(FIELDS) or len(reader.fieldnames) != len(FIELDS):
             raise ValueError('Columnas inválidas: usar la plantilla; no se admiten precios/stock/costos ni columnas adicionales')
         rows = list(reader)
+    per_sku=getattr(args,'por_sku',False)
+    counts=Counter(aliases.get((r.get('sku') or '').strip().upper(),(r.get('sku') or '').strip().upper()) for r in rows)
     seen, writes = set(), {}
     for number, row in enumerate(rows, 2):
         raw_sku = (row.get('sku') or '').strip().upper()
@@ -94,6 +97,8 @@ def run(args):
             fail('Número de columnas incorrecto'); continue
         if sku not in by_sku:
             fail('SKU desconocido; altas deben venir de 593'); continue
+        if per_sku and counts[sku]>1:
+            fail('SKU duplicado o alias que representa la misma ficha; se omiten todas sus filas');continue
         if sku in seen:
             fail('SKU duplicado o alias que representa la misma ficha'); continue
         seen.add(sku)
@@ -192,7 +197,7 @@ def run(args):
               'aplicados': [], 'publicados': [],
               'nota': 'Aplicar modifica archivos locales. Solo el despliegue y la verificación HTTP confirman publicación.',
               'precios_stock_conservados': True}
-    if args.aplicar and not errors:
+    if args.aplicar and (per_sku or not errors):
         if original_html != (root/'index.html').read_bytes() or original_seo != (root/'seo-contenido.json').read_bytes():
             raise ValueError('El catálogo cambió durante la validación; vuelva a simular')
         replacement = 'const products='+json.dumps(products, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')+';\n'
@@ -216,6 +221,7 @@ if __name__ == '__main__':
     parser.add_argument('--csv')
     parser.add_argument('--imagenes')
     parser.add_argument('--aplicar', action='store_true')
+    parser.add_argument('--por-sku', action='store_true', help='Aplicar filas válidas aunque otro SKU falle; duplicados nunca se aplican')
     parser.add_argument('--plantilla')
     parser.add_argument('--reporte', default='reportes/importacion-productos.json')
     args = parser.parse_args()

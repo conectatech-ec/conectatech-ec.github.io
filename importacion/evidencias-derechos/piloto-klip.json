@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "fecha_verificacion": "2026-10-10T06:13:36.666076+00:00",
+  "alcance": "Seis portadas existentes del piloto: investigación de derechos, sin modificar catálogo ni manifestar permisos inexistentes.",
+  "resumen": {
+    "portadas_reutilizables_tecnicamente": 6,
+    "permisos_comerciales_acreditados": 0,
+    "alternativas_descargadas_con_permiso": 0
+  },
+  "evidencias": [
+    {
+      "id": "accvent-dam",
+      "url": "https://www.accvent.com/dam/",
+      "tipo": "fuente oficial",
+      "hallazgo": "Accvent anuncia su banco de contenido de marketing y enlaza a dam.accvent.com. No se encontró en la página pública una licencia que cubra los archivos extraídos de las seis fichas técnicas.",
+      "cubre_imagenes_actuales": false
+    },
+    {
+      "id": "dam-acceso",
+      "url": "https://dam.accvent.com/",
+      "tipo": "banco oficial",
+      "hallazgo": "Aplicación oficial de gestión de activos. El cliente público observado redirige la raíz a login y dispone de registro. No se usaron credenciales, no se inició sesión, no se intentó acceder a recursos protegidos.",
+      "condicion_pendiente": "Recibir material desde el banco autorizado para CONECTATECH, con alcance de uso aplicable y archivos o modelos identificados.",
+      "cubre_imagenes_actuales": false
+    },
+    {
+      "id": "accvent-terminos",
+      "url": "https://www.accvent.com/terms-and-conditions/",
+      "tipo": "términos oficiales",
+      "hallazgo": "Los términos del sitio accvent.com permiten visualización y restringen republicación de su material. Su alcance declarado es ese sitio; no se extrapola una prohibición ni licencia al CDN de Klip. No constituyen permiso para estas seis imágenes.",
+      "cubre_imagenes_actuales": false
+    },
+    {
+      "id": "intcomex-ecuador-terminos",
+      "url": "https://store.intcomex.com/es-xec/ServiceClient/TermsOfUse/FooterLink_TermsOfUse?r=True",
+      "tipo": "términos oficiales de distribuidor",
+      "hallazgo": "La licencia general del portal se limita a uso personal/no comercial para realizar órdenes. La publicación o modificación requiere autorización adicional o permiso aplicable. No documenta permiso de CONECTATECH para estas imágenes.",
+      "cubre_imagenes_actuales": false
+    },
+    {
+      "id": "intcomex-iws",
+      "url": "https://iws.intcomex.com/modelos/productos-fisicos.html",
+      "tipo": "integración oficial",
+      "hallazgo": "La integración autorizada de catálogo para e-commerce ofrece DownloadExtendedCatalog con URLs de imágenes y GetCatalog según el portafolio autorizado al cliente. No existe en esta sesión integración acreditada ni respuesta de catálogo correspondiente a CONECTATECH. Es alternativa escalable, no permiso acreditado para los seis PDF.",
+      "cubre_imagenes_actuales": false
+    },
+    {
+      "id": "pista-historica-no-validante",
+      "url": "https://es.scribd.com/document/584619389/Klip-Xtreme-Catalogo-Productos-Junio-07062022-1",
+      "tipo": "copia de tercero de folleto comercial histórico",
+      "hallazgo": "El documento atribuido a Intcomex Perú ofrece descargar imágenes para redes y web, pero no se recuperó una cadena verificable hacia los seis activos actuales ni condiciones aplicables a CONECTATECH. No se utilizó como licencia.",
+      "cubre_imagenes_actuales": false
+    }
+  ],
+  "productos": [
+    {
+      "sku": "MOUS041",
+      "modelo": "KMW-335WH",
+      "fuente_imagen": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KMW-335WH_DS_SPA.pdf",
+      "archivo_maestro": ".produccion-privada/fuentes/KMW-335WH-49.png",
+      "sha256_maestro": "c8ea96a68eb4339b3219cb42ebfe02c7198da059320f428cd436472ef8ec7da2",
+      "sha256_pdf_original": "4cf2fda857a3aa72ce95d6ec3f6ebf96a6dde8329390698d28f28734f2a0cf5b",
+      "estado_derechos": "PENDIENTE",
+      "uso_comercial_permitido": false,
+      "originalidad_comercial_confirmada": true,
+      "calidad_visual_aprobada_por_propietario": true,
+      "portada_preparada": true,
+      "avisos_fuente": "La ficha técnica contiene reserva de derechos; no contiene autorización comercial específica comprobada.",
+      "fuentes_revisadas": [
+        "accvent-dam",
+        "dam-acceso",
+        "accvent-terminos",
+        "intcomex-ecuador-terminos",
+        "intcomex-iws",
+        "pista-historica-no-validante"
+      ],
+      "siguiente_accion": "Usar material autorizado del DAM/integación de distribuidor para el mismo modelo, o foto propia suficiente del producto fuera de la caja. No reconstruir la ilustración del empaque ni regenerar estos borradores."
+    },
+    {
+      "sku": "TECL028",
+      "modelo": "KBK-530S",
+      "fuente_imagen": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/kbk-530s_ds_spa.pdf",
+      "archivo_maestro": ".produccion-privada/fuentes/KBK-530S-40.png",
+      "sha256_maestro": "f6e27252d30a4743405b1c4e715c4b7a9af37ac9e35b7be300e858b7cff94a3a",
+      "sha256_pdf_original": "2476803d291ba5fa82b32c9142f06d7bc72ee7fd8b60fc01ba2762f5538cec10",
+      "estado_derechos": "PENDIENTE",
+      "uso_comercial_permitido": false,
+      "originalidad_comercial_confirmada": true,
+      "calidad_visual_aprobada_por_propietario": true,
+      "portada_preparada": true,
+      "avisos_fuente": "La ficha técnica contiene reserva de derechos; no contiene autorización comercial específica comprobada.",
+      "fuentes_revisadas": [
+        "accvent-dam",
+        "dam-acceso",
+        "accvent-terminos",
+        "intcomex-ecuador-terminos",
+        "intcomex-iws",
+        "pista-historica-no-validante"
+      ],
+      "siguiente_accion": "Usar material autorizado del DAM/integación de distribuidor para el mismo modelo, o foto propia suficiente del producto fuera de la caja. No reconstruir la ilustración del empaque ni regenerar estos borradores."
+    },
+    {
+      "sku": "CABL107",
+      "modelo": "KAC-750",
+      "fuente_imagen": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KAC-750_DS_ENG.pdf",
+      "archivo_maestro": ".produccion-privada/fuentes/KAC-750-48.png",
+      "sha256_maestro": "3731c22a6e648e23eb0f0f2680e1ef4708d83f9cd8d0efd2ca1d9963701d80c8",
+      "sha256_pdf_original": "c454f7fc53aeae39301594163335a71dbeb257960207e7145866100d3bbde683",
+      "estado_derechos": "PENDIENTE",
+      "uso_comercial_permitido": false,
+      "originalidad_comercial_confirmada": true,
+      "calidad_visual_aprobada_por_propietario": true,
+      "portada_preparada": true,
+      "avisos_fuente": "La ficha técnica contiene reserva de derechos; no contiene autorización comercial específica comprobada.",
+      "fuentes_revisadas": [
+        "accvent-dam",
+        "dam-acceso",
+        "accvent-terminos",
+        "intcomex-ecuador-terminos",
+        "intcomex-iws",
+        "pista-historica-no-validante"
+      ],
+      "siguiente_accion": "Usar material autorizado del DAM/integación de distribuidor para el mismo modelo, o foto propia suficiente del producto fuera de la caja. No reconstruir la ilustración del empaque ni regenerar estos borradores."
+    },
+    {
+      "sku": "CARG070",
+      "modelo": "KCC-140",
+      "fuente_imagen": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KCC-140_DS_SPA.pdf",
+      "archivo_maestro": ".produccion-privada/fuentes/KCC-140-84.png",
+      "sha256_maestro": "cf34937a7a03b27d9ffc420b0a7a339881e9ea5f914f0bd58034c2260a215a63",
+      "sha256_pdf_original": "a518bfa18c7bd0770bc0bb7f8f4af221c6a60d084e8769ce6c5012bdd2c8a27e",
+      "estado_derechos": "PENDIENTE",
+      "uso_comercial_permitido": false,
+      "originalidad_comercial_confirmada": true,
+      "calidad_visual_aprobada_por_propietario": true,
+      "portada_preparada": true,
+      "avisos_fuente": "La ficha técnica contiene reserva de derechos; no contiene autorización comercial específica comprobada.",
+      "fuentes_revisadas": [
+        "accvent-dam",
+        "dam-acceso",
+        "accvent-terminos",
+        "intcomex-ecuador-terminos",
+        "intcomex-iws",
+        "pista-historica-no-validante"
+      ],
+      "siguiente_accion": "Usar material autorizado del DAM/integación de distribuidor para el mismo modelo, o foto propia suficiente del producto fuera de la caja. No reconstruir la ilustración del empaque ni regenerar estos borradores."
+    },
+    {
+      "sku": "POWE014",
+      "modelo": "KPB-350",
+      "fuente_imagen": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KPB-350_DS_SPA.pdf",
+      "archivo_maestro": ".produccion-privada/fuentes/KPB-350-29.png",
+      "sha256_maestro": "8cdc645606118af05e26901e2fabe92bb729e44e84030b06fae60f77ce8f9bd0",
+      "sha256_pdf_original": "358f02ed0fd111e40656f25ecfc8146ff638d65c082fadc7a801a075be8abb9d",
+      "estado_derechos": "PENDIENTE",
+      "uso_comercial_permitido": false,
+      "originalidad_comercial_confirmada": true,
+      "calidad_visual_aprobada_por_propietario": true,
+      "portada_preparada": true,
+      "avisos_fuente": "La ficha técnica contiene reserva de derechos; no contiene autorización comercial específica comprobada.",
+      "fuentes_revisadas": [
+        "accvent-dam",
+        "dam-acceso",
+        "accvent-terminos",
+        "intcomex-ecuador-terminos",
+        "intcomex-iws",
+        "pista-historica-no-validante"
+      ],
+      "siguiente_accion": "Usar material autorizado del DAM/integación de distribuidor para el mismo modelo, o foto propia suficiente del producto fuera de la caja. No reconstruir la ilustración del empaque ni regenerar estos borradores."
+    },
+    {
+      "sku": "AUDI108",
+      "modelo": "KCH-915",
+      "fuente_imagen": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KCH-915_DS_ENG.pdf",
+      "archivo_maestro": ".produccion-privada/fuentes/KCH-915-40.png",
+      "sha256_maestro": "80e95f2e706480b184f79aa2395579fbb2aeefac3eac3b7e919152845151516f",
+      "sha256_pdf_original": "19a4e90b9ce550b2630162d9039d83146042112de7e3e6cd8349a1c9ee4f51dd",
+      "estado_derechos": "PENDIENTE",
+      "uso_comercial_permitido": false,
+      "originalidad_comercial_confirmada": true,
+      "calidad_visual_aprobada_por_propietario": true,
+      "portada_preparada": true,
+      "avisos_fuente": "La ficha técnica contiene reserva de derechos; no contiene autorización comercial específica comprobada.",
+      "fuentes_revisadas": [
+        "accvent-dam",
+        "dam-acceso",
+        "accvent-terminos",
+        "intcomex-ecuador-terminos",
+        "intcomex-iws",
+        "pista-historica-no-validante"
+      ],
+      "siguiente_accion": "Usar material autorizado del DAM/integación de distribuidor para el mismo modelo, o foto propia suficiente del producto fuera de la caja. No reconstruir la ilustración del empaque ni regenerar estos borradores."
+    }
+  ],
+  "cache": {
+    "repetir_investigacion_general": false,
+    "reanudar_cuando": "Se reciba una autorización verificable, material del banco oficial o fotografías propias nuevas del producto; comprobar únicamente los activos afectados."
+  }
+}

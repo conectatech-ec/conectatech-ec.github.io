@@ -11,13 +11,17 @@ const overrides=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
 const stable=fs.existsSync('seo-pages.json')?JSON.parse(fs.readFileSync('seo-pages.json','utf8')):{};
 const out=path.join('productos');fs.mkdirSync(out,{recursive:true});
 const links={};const urls=[origin+'/'];
+const skuIndex=process.argv.indexOf('--sku');
+const selected=skuIndex<0?null:new Set(process.argv.slice(skuIndex+1));
 for(const p of products){
  if(!(p.promo>0))continue;
  const id=stable[p.sku]||slug(p),url=origin+'/productos/'+id+'/';
+ links[p.sku]=id;urls.push(url);
+ if(selected&&!selected.has(p.sku))continue;
  const custom=overrides[p.sku]||{};
  const displayName=custom.nombre||p.name;
  const productImage=custom.imagen||p.imageUrl||'';
- const title=custom.tituloSeo||displayName+' en Quito | ConectaTech';links[p.sku]=id;urls.push(url);
+ const title=custom.tituloSeo||displayName+' en Quito | ConectaTech';
  const desc=custom.descripcionSeo||displayName+' en ConectaTech Quito. Precio promo contado USD '+p.promo.toFixed(2)+'. Factura, garantía y entregas. Confirma stock por WhatsApp.';
  const schema={'@context':'https://schema.org','@type':'Product',name:displayName,sku:p.sku,description:desc,...(productImage?{image:[productImage]}:{}),offers:{'@type':'Offer',url,priceCurrency:'USD',price:p.promo.toFixed(2),availability:p.stock>0?'https://schema.org/InStock':'https://schema.org/OutOfStock',itemCondition:'https://schema.org/NewCondition',seller:{'@type':'Organization',name:'ConectaTech'}}};
  const verifiedSpecs=custom.caracteristicas||p.specs;

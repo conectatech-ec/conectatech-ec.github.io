@@ -7,12 +7,15 @@ on:
       - 'scripts/reglas_sku.py'
       - 'scripts/sincronizar-cola-drive.py'
       - 'scripts/test-incremental.py'
+      - 'scripts/validar-contrato.py'
+      - 'scripts/test-contrato.py'
+      - 'scripts/registrar-resultados-lote.py'
       - 'importacion/piloto-imagenes.json'
       - '.github/workflows/producir-imagenes.yml'
   workflow_dispatch:
     inputs:
       manifiesto:
-        description: Manifiesto revisado del lote dentro del repositorio
+        description: Manifiesto revisado del lote; versión 3 obligatoria para aplicar y publicar
         required: true
         default: importacion/lotes/cola-010.json
       reglas_csv:
@@ -40,7 +43,9 @@ jobs:
         with: {node-version: '22'}
       - run: python -m pip install -r importacion/requirements.txt
       - name: Probar protección e incrementalidad
-        run: python scripts/test-incremental.py
+        run: |
+          python scripts/test-incremental.py
+          python scripts/test-contrato.py
       - name: Registrar reglas y procesar lote
         if: github.event_name == 'workflow_dispatch'
         env:
@@ -49,13 +54,19 @@ jobs:
           APLICAR: ${{ inputs.aplicar }}
         run: |
           python - <<'PY'
-          import os
+          import json,os
           from pathlib import Path
           for key in ('MANIFIESTO','REGLAS_CSV'):
               value=os.environ[key]
               if value:
                   path=(Path.cwd()/value).resolve()
                   if not path.is_relative_to(Path.cwd()) or not path.is_file():raise SystemExit('Ruta no válida')
+          if os.environ['APLICAR']=='true':
+              manifest=json.loads(Path(os.environ['MANIFIESTO']).read_text())
+              if manifest.get('version')!=3:
+                  raise SystemExit('Aplicación bloqueada: se exige manifiesto versión 3 con contratos verificables')
+              if not manifest.get('skus'):
+                  raise SystemExit('Aplicación bloqueada: el manifiesto no contiene SKU')
           PY
           if [ -n "$REGLAS_CSV" ]; then
             # También la simulación usa las reglas propuestas, solo en el checkout efímero.
@@ -72,8 +83,14 @@ jobs:
           cp reportes/procesamiento-imagenes.json "reportes/produccion-${GITHUB_RUN_ID}.json"
       - name: Publicar sin sobrescribir cambios concurrentes
         if: inputs.aplicar
+        env:
+          MANIFIESTO: ${{ inputs.manifiesto }}
         run: |
-          git add index.html seo-contenido.json seo-pages.json sitemap.xml productos imagenes exportaciones importacion/reglas-sku.json importacion/medios.json reportes
+          # Este control incluye la evidencia móvil vinculada al HTML e imágenes finales.
+          # Un fallo impide el commit y el push, aunque el procesamiento local haya terminado.
+          python scripts/validar-contrato.py --manifiesto "$MANIFIESTO" --fase prepublicacion --reporte "reportes/contratos-prepublicacion-${GITHUB_RUN_ID}.json"
+          git add index.html seo-contenido.json seo-pages.json sitemap.xml productos imagenes exportaciones importacion/reglas-sku.json importacion/medios.json reportes "$MANIFIESTO"
+          if [ -d importacion/contratos ]; then git add importacion/contratos; fi
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

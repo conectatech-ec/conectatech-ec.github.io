@@ -86,6 +86,12 @@ class IncrementalTests(unittest.TestCase):
   before=(self.root/'importacion/reglas-sku.json').read_bytes()
   with patch.object(queue,'ROOT',self.root),patch('sys.argv',args):queue.main()
   self.assertEqual(before,(self.root/'importacion/reglas-sku.json').read_bytes())
+  # Hasta registrar el resultado, un lote interrumpido sigue en cola sin cambiar reglas.
+  self.assertEqual(json.loads((self.root/'lot.json').read_text())['skus'],['TEST001'])
+  state=json.loads((self.root/'state.json').read_text());entry=state['productos']['TEST001']
+  entry['produccion']={'huella_revisada':entry['huella'],'estado':'REVISAR'}
+  (self.root/'state.json').write_text(json.dumps(state))
+  with patch.object(queue,'ROOT',self.root),patch('sys.argv',args):queue.main()
   self.assertEqual(json.loads((self.root/'lot.json').read_text())['skus'],[])
 
 if __name__=='__main__':unittest.main()

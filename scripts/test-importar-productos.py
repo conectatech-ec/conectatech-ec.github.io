@@ -20,11 +20,11 @@ class ImportTests(unittest.TestCase):
             target=self.root/file;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy(ROOT/file,target)
         with (ROOT/'importacion/lote-001-repetible.csv').open(encoding='utf-8-sig') as f: self.rows=list(csv.DictReader(f))
         self.before=module.financial(module.read_catalog(self.root)[1])
-    def run_batch(self, rows, extra=None, images=None):
+    def run_batch(self, rows, extra=None, images=None, per_sku=False):
         target=self.root/'lote.csv'
         with target.open('w',newline='',encoding='utf-8-sig') as f:
             writer=csv.DictWriter(f,fieldnames=module.FIELDS+(extra or []));writer.writeheader();writer.writerows(rows)
-        result=subprocess.run(['python3',str(ROOT/'scripts/importar-productos.py'),'--root',str(self.root),'--csv',str(target),'--imagenes',str(images or ROOT/'imagenes'),'--aplicar','--reporte',str(self.root/'report.json')],capture_output=True,text=True)
+        result=subprocess.run(['python3',str(ROOT/'scripts/importar-productos.py'),'--root',str(self.root),'--csv',str(target),'--imagenes',str(images or ROOT/'imagenes'),'--aplicar','--reporte',str(self.root/'report.json')]+(['--por-sku'] if per_sku else []),capture_output=True,text=True)
         return result,json.loads((self.root/'report.json').read_text())
     def test_apply_idempotent_preserves_all_1165_prices_and_stock(self):
         result,report=self.run_batch(self.rows);self.assertEqual(result.returncode,0,result.stderr)
@@ -56,5 +56,15 @@ class ImportTests(unittest.TestCase):
         for row,sku in zip(rows,self.before):row.update(sku=sku,verificado='NO')
         result,report=self.run_batch(rows);self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(len(report['pendientes']),1165);self.assertEqual(report['errores'],[])
+    def test_per_sku_keeps_valid_rows_when_another_sku_is_unknown(self):
+        result,report=self.run_batch([self.rows[0],dict(self.rows[1],sku='INEXISTENTE')],per_sku=True)
+        self.assertNotEqual(result.returncode,0)
+        self.assertEqual([p['sku'] for p in report['aplicados']],['CARG050'])
+        self.assertEqual(self.before,module.financial(module.read_catalog(self.root)[1]))
+    def test_per_sku_never_applies_a_duplicate_alias(self):
+        result,report=self.run_batch(self.rows+[dict(self.rows[1],sku='MICR27')],per_sku=True)
+        self.assertNotEqual(result.returncode,0)
+        self.assertNotIn('MICR27',[p['sku'] for p in report['aplicados']])
+        self.assertEqual(len(report['aplicados']),2)
 
 if __name__=='__main__':unittest.main()

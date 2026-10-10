@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "fecha": "2026-10-10T06:17:01.010366+00:00",
+  "alcance": "Resolución incremental de cuatro SKU pendientes del piloto;sin cambios comerciales ni publicación",
+  "resumen": {
+    "sku_revisados": 4,
+    "nuevas_fuentes_profesionales": 2,
+    "portadas_privadas_terminadas": 2,
+    "webp_generados": 6,
+    "variantes_resueltas": 1,
+    "publicados": 0
+  },
+  "productos": [
+    {
+      "sku": "SOPO061",
+      "fecha_verificacion": "2026-10-10T06:17:01.006952+00:00",
+      "autenticidad_comercial": "original verificado",
+      "presentacion": "sin caja",
+      "estado_publicacion": "PENDIENTE",
+      "publicado": false,
+      "fotografias_propias_reutilizadas": [
+        {
+          "id": "1u0vO40kim_9K10ZVNvwuvjFzUXpx-pfl",
+          "nombre": "SOPO061_20261009_162911.jpg",
+          "url": "https://drive.google.com/file/d/1u0vO40kim_9K10ZVNvwuvjFzUXpx-pfl/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "a4d13fcfca10005cee431897fb443ca9d41f1b99c6bf4a9eadb3d40d5d28d614",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        },
+        {
+          "id": "1QsCrrN-HjapEpRqoHSNFu_w6M8A3ZuDU",
+          "nombre": "SOPO061.jpg",
+          "url": "https://drive.google.com/file/d/1QsCrrN-HjapEpRqoHSNFu_w6M8A3ZuDU/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "ecab2383c29aa08972d7db9328b87d867cba1b5b9bd540e3b5e130c7c75a4cbc",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        }
+      ],
+      "fuentes_tecnicas": [
+        {
+          "url": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KMH-100_DS_SPA.pdf",
+          "tipo": "fabricante",
+          "http": 200,
+          "observacion": "Ficha oficial descargada; imagen original incrustada 1356x1314 con alfa, no captura rasterizada ni ampliación."
+        }
+      ],
+      "derechos_imagen": {
+        "estado": "SIN_RESOLVER",
+        "uso_comercial_permitido": false,
+        "fuentes_consultadas": [
+          "https://my.accvent.com/es/component/users/login",
+          "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KMH-100_DS_SPA.pdf"
+        ]
+      },
+      "observaciones": [
+        "Resuelta insuficiencia de resolución: producto útil nativo 683x1204; recorte revisado745x1250; solo reducción, centrado y blanco.",
+        "El PDF reserva derechos; no se halló permiso comercial abierto aplicable. My Accvent requiere inicio de sesión.",
+        "La imagen ambiental599x599 con teléfono no incluido fue descartada.",
+        "Texto suelto65W de la ficha no corresponde a especificación de este soporte; no incorporarlo."
+      ],
+      "modelo": "MagnoVac KMH-100",
+      "variante": "Negro",
+      "identidad_verificada": true,
+      "estado_calidad": "REVISAR_DERECHOS",
+      "portada_terminada_privada": true,
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/sopo061/SOPO061-01.webp",
+          "sha256": "0c332a0a72128f85688a10ef8f4213ddaa0abe18404a63ddf5a3c8a94523beca",
+          "bytes": 39692
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/sopo061/SOPO061-01-600.webp",
+          "sha256": "d6aecc72e4642fce8bf10c8d675659eb9ffeec25f64ed37d93c461b714dfff22",
+          "bytes": 15646
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/sopo061/SOPO061-01-300.webp",
+          "sha256": "94c63e2163c7537d870caf3983db7be6504de8c98728cad6f435cc3fd1eb3a8f",
+          "bytes": 5716
+        }
+      ],
+      "manifiesto_privado": ".produccion-privada/alternativas-pendientes/manifiesto-alternativas.json",
+      "fuente_imagen": {
+        "posicion": 1,
+        "archivo": ".produccion-privada/alternativas-pendientes/SOPO061-KMH100-45.png",
+        "sha256": "6e07cf1caff54944b635615742e3f024ba0641bbd10e0db9fd733a0547844ead",
+        "fuente": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KMH-100_DS_SPA.pdf",
+        "referencia_fabricante": true,
+        "contiene_caja": false,
+        "revision_regla": 2,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fondo_aprobado": true,
+        "recorte": [
+          330,
+          30,
+          1075,
+          1280
+        ],
+        "nota_revision": "Fuente oficial de resolución útil suficiente; recorte y reducción deterministas sin reconstrucción. Borrador privado: derechos de publicación sin resolver."
+      },
+      "maestro": {
+        "archivo_privado": ".produccion-privada/alternativas-pendientes/SOPO061-KMH100-45.png",
+        "sha256": "6e07cf1caff54944b635615742e3f024ba0641bbd10e0db9fd733a0547844ead",
+        "bytes": 677888
+      },
+      "original_fabricante": {
+        "archivo_privado": ".produccion-privada/alternativas-pendientes/KMH-100_DS_SPA.pdf",
+        "sha256": "36cdeeff934a44c4107641cced73d47a15de5fd8b09a651f0d529fead2ef1031",
+        "bytes": 372015
+      },
+      "especificaciones_confirmadas": {
+        "soporte": "magnético articulado",
+        "rotacion": "360°",
+        "inclinacion": "180°",
+        "compatibilidad_tamano": "teléfonos de 4,7 a 6,9 pulgadas",
+        "material": "ABS y aleación de zinc",
+        "color": "Negro",
+        "precaucion_compatibilidad": "Para inclinar teléfonos no magnéticos se requiere aro magnético adhesivo; la ficha recomienda sin funda o con funda delgada. No es cargador."
+      },
+      "contenido_segun_fabricante": [
+        "soporte",
+        "almohadilla adhesiva para base",
+        "aro magnético adhesivo",
+        "herramienta de ajuste de bisagras",
+        "toallitas de limpieza"
+      ]
+    },
+    {
+      "sku": "PARL032",
+      "fecha_verificacion": "2026-10-10T06:17:01.008692+00:00",
+      "autenticidad_comercial": "original verificado",
+      "presentacion": "sin caja",
+      "estado_publicacion": "PENDIENTE",
+      "publicado": false,
+      "fotografias_propias_reutilizadas": [
+        {
+          "id": "1thlUkgi_O7hjSckSOf4BXuNF3dmvFyXr",
+          "nombre": "PARL032_20261009_152004.jpg",
+          "url": "https://drive.google.com/file/d/1thlUkgi_O7hjSckSOf4BXuNF3dmvFyXr/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "fb8d2dad0f7311781ec212a2887c54b72c84b398b0ee5b48ab92f2cea03d6c00",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        },
+        {
+          "id": "1RUZ_oeuUic-4dE9bL4uYKveaaJyfbXkb",
+          "nombre": "PARL032_20261009_152000.jpg",
+          "url": "https://drive.google.com/file/d/1RUZ_oeuUic-4dE9bL4uYKveaaJyfbXkb/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "72f6af20511d449d649592bf9e218d2bcab3d08a01845b333b2517f020d66dba",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        },
+        {
+          "id": "1h1WnpYNoeuRSnWwwUkQUqOOYh-Po1SAG",
+          "nombre": "PARL032.jpg",
+          "url": "https://drive.google.com/file/d/1h1WnpYNoeuRSnWwwUkQUqOOYh-Po1SAG/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "ca80297efacbbf7de7399a3ca86ffc06debdad94efb47f0a652931ab389d3e96",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        }
+      ],
+      "fuentes_tecnicas": [
+        {
+          "url": "https://klip-xtreme-frontend.s3.amazonaws.com/media/docs/KBS-030_DS_ENG.pdf",
+          "tipo": "fabricante",
+          "confirma": "KBS-030GN=verde;6W;Bluetooth5.3;USB-C;TWS con segunda unidad igual."
+        }
+      ],
+      "derechos_imagen": {
+        "estado": "SIN_RESOLVER",
+        "uso_comercial_permitido": false
+      },
+      "observaciones": [
+        "Resuelto sufijoGN con etiqueta real; no se dedujo del color impreso.",
+        "PDF previo tiene imagen662x650 con agua decorativa; alternativas recientesDistriPRONTO800x800 insuficientes y con marca de agua sobre producto. Se conservaron como referencias privadas y NO se retocó la marca de agua.",
+        "Intcomex producto542799 respondió403 en descarga; no se intentó eludirla.",
+        "No se encontró fuente nativa de resolución suficiente y licencia comercial documentada."
+      ],
+      "modelo": "GrooveSplash KBS-030GN",
+      "variante": "Verde",
+      "identidad_verificada": true,
+      "estado_calidad": "BLOQUEADO_FUENTE",
+      "portada_terminada_privada": false,
+      "identidad_evidencia": {
+        "archivo": "PARL032_20261009_152004.jpg",
+        "detalle": "Código KBS-030GN legible en esquina inferior derecha del reverso; también al pie del lateral PARL032_20261009_152000.jpg. UPC 798302092228.",
+        "url": "https://drive.google.com/file/d/1thlUkgi_O7hjSckSOf4BXuNF3dmvFyXr/view?usp=drivesdk"
+      },
+      "alternativas_descartadas": [
+        {
+          "fuente": "https://distripronto.com/wp-content/uploads/2025/04/S01-5223.jpg",
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/PARL032-Distri-S01.jpg",
+          "sha256": "df85d3ad52729cc42bae1f9358fe24d12d81c9fbd2b882a4efcfae0799d6fd1e",
+          "bytes": 179119,
+          "resolucion": [
+            800,
+            800
+          ],
+          "razon": "Marca de agua y/o caja; resolución útil insuficiente"
+        },
+        {
+          "fuente": "https://distripronto.com/wp-content/uploads/2025/04/S02-5223.jpg",
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/PARL032-Distri-S02.jpg",
+          "sha256": "c653cf674d8fc05f63c9cacd9962a515ee44973365d17a861b84dbac46c87a8f",
+          "bytes": 260004,
+          "resolucion": [
+            800,
+            800
+          ],
+          "razon": "Marca de agua y/o caja; resolución útil insuficiente"
+        },
+        {
+          "fuente": "https://distripronto.com/wp-content/uploads/2025/04/S03-5223.jpg",
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/PARL032-Distri-S03.jpg",
+          "sha256": "280617789ba98eb0d11f61a443639327aaaa7de1bd0f0ec6d18e0d9e7a0af0a3",
+          "bytes": 197278,
+          "resolucion": [
+            800,
+            800
+          ],
+          "razon": "Marca de agua y/o caja; resolución útil insuficiente"
+        }
+      ]
+    },
+    {
+      "sku": "CAMA005",
+      "fecha_verificacion": "2026-10-10T06:17:01.009581+00:00",
+      "autenticidad_comercial": "original verificado",
+      "presentacion": "sin caja",
+      "estado_publicacion": "PENDIENTE",
+      "publicado": false,
+      "fotografias_propias_reutilizadas": [
+        {
+          "id": "111RKGGlXCW4qDa-lKvVMQk4gHh4gmKKg",
+          "nombre": "CAMA005_20261009_223259.jpg",
+          "url": "https://drive.google.com/file/d/111RKGGlXCW4qDa-lKvVMQk4gHh4gmKKg/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "21c279a607f15f4887e7fe4772c4ee27f678d35c07eecea01322f9c913e0b611",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        },
+        {
+          "id": "1KV2VKrvZpfIlus8V6bUXTTSeXGc5yvwK",
+          "nombre": "CAMA005_20261009_223254.jpg",
+          "url": "https://drive.google.com/file/d/1KV2VKrvZpfIlus8V6bUXTTSeXGc5yvwK/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "cf273a0ba7d9db0b8f95facb6c2e8fa73ec44076af836565455776f750123876",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        },
+        {
+          "id": "19DS0-EKwg7a8HbFqLep9bvXkql1qC9l_",
+          "nombre": "CAMA005_20261009_223250.jpg",
+          "url": "https://drive.google.com/file/d/19DS0-EKwg7a8HbFqLep9bvXkql1qC9l_/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "8e5ef71a1933cc73b1a5c202c1f30903d3a575a4d2d28b7e96c47918a8d07f13",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        },
+        {
+          "id": "1mWVPmI1BKQkCJ8LER1WFAWvMgllBeOzq",
+          "nombre": "CAMA005.jpg",
+          "url": "https://drive.google.com/file/d/1mWVPmI1BKQkCJ8LER1WFAWvMgllBeOzq/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "e8129b5df70b972a85abd1747f32d70f10ea589c8d1c809259963ac2a3a4035f",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        }
+      ],
+      "fuentes_tecnicas": [
+        {
+          "url": "https://www.mi.com/latin-es/product/xiaomi-smart-camera-c301/specs/",
+          "tipo": "fabricante",
+          "http": 200
+        },
+        {
+          "url": "https://www.mi.com/latin-es/product/xiaomi-smart-camera-c301/",
+          "tipo": "fabricante"
+        }
+      ],
+      "derechos_imagen": {
+        "estado": "SIN_RESOLVER",
+        "uso_comercial_permitido": false,
+        "fuentes_consultadas": [
+          "https://www.mi.com/latin-es/about/agreement/",
+          "https://www.mi.com/global/about/mediakit/"
+        ],
+        "motivo": "Derechos reservados; no existe evidencia de autorización de publicación comercial de este PNG en los recursos revisados."
+      },
+      "observaciones": [
+        "Resuelta fuente de calidad: PNG oficial1600x1600 con alfa de og:image de la página de especificaciones; área producto781x1171; recorte820x1240; portada blanca sin ampliación.",
+        "La composición alfa correcta elimina los píxeles transparentes del borde; no se alteró el producto.",
+        "El adaptador de corriente no está incluido según la página oficial. Garantía aplicable de la tienda sigue sin documento confirmado.",
+        "Acuerdo latinoamericano secciónVI no otorga permiso comercial abierto para reutilizar imágenes; media kit solo facilita contacto de prensa.",
+        "No publicar el dato de giro vertical hasta resolver discrepancia107°documentación/108°en identificación previa."
+      ],
+      "modelo": "Xiaomi Smart Camera C301 / MBC23",
+      "variante": "Blanco",
+      "identidad_verificada": true,
+      "estado_calidad": "REVISAR_DERECHOS",
+      "portada_terminada_privada": true,
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/cama005/CAMA005-01.webp",
+          "sha256": "004b58b46dd8a11034b51ccd75f5337320dd3d9a53ce86ebe974e291844f062d",
+          "bytes": 17970
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/cama005/CAMA005-01-600.webp",
+          "sha256": "1e3e7c321fbc3e8d811a75bd2c443b7d13ad8b49b5c5573a4a260216d056d22b",
+          "bytes": 7022
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/cama005/CAMA005-01-300.webp",
+          "sha256": "bfafd0bc3c0cc0837c11b0bb66a0594cfc924583139fa4891af621b98805806c",
+          "bytes": 2762
+        }
+      ],
+      "manifiesto_privado": ".produccion-privada/alternativas-pendientes/manifiesto-alternativas.json",
+      "fuente_imagen": {
+        "posicion": 1,
+        "archivo": ".produccion-privada/alternativas-pendientes/CAMA005-oficial-share.png",
+        "sha256": "e212f7d1d58b9f376f5363e304d648d7f8d599b63b2d97e7c6019ee9de44aee3",
+        "fuente": "https://i02.appmifile.com/136_operatorx_operatorx_opx/19/06/2024/a01ecdc27fb34e74931c5ecade194011.png",
+        "referencia_fabricante": true,
+        "contiene_caja": false,
+        "revision_regla": 2,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fondo_aprobado": true,
+        "recorte": [
+          390,
+          180,
+          1210,
+          1420
+        ],
+        "nota_revision": "Fuente oficial de resolución útil suficiente; recorte y reducción deterministas sin reconstrucción. Borrador privado: derechos de publicación sin resolver."
+      },
+      "maestro": {
+        "archivo_privado": ".produccion-privada/alternativas-pendientes/CAMA005-oficial-share.png",
+        "sha256": "e212f7d1d58b9f376f5363e304d648d7f8d599b63b2d97e7c6019ee9de44aee3",
+        "bytes": 442443
+      },
+      "especificaciones_confirmadas": {
+        "resolucion": "2304x1296 (3MP)",
+        "alimentacion": "5V/1A",
+        "wifi": "IEEE802.11b/g/n2,4GHz",
+        "sistemas": "Android8.0 o iOS12.0 y posteriores",
+        "microSD": "8 a256GB; no incluida",
+        "aplicacion": "Xiaomi Home",
+        "audio": "bidireccional",
+        "uso": "interiores"
+      },
+      "contenido_segun_fabricante": [
+        "Xiaomi Smart Camera C301",
+        "cable de carga",
+        "manual",
+        "tornillos y base (2 tornillos y2tarugos)",
+        "aviso de garantía",
+        "plantilla adhesiva de montaje"
+      ]
+    },
+    {
+      "sku": "FLAS035",
+      "fecha_verificacion": "2026-10-10T06:17:01.010359+00:00",
+      "autenticidad_comercial": "original verificado",
+      "presentacion": "sin caja",
+      "estado_publicacion": "PENDIENTE",
+      "publicado": false,
+      "fotografias_propias_reutilizadas": [
+        {
+          "id": "1cbCZcxImCq5Scx4kTaastI8VIo58a0ss",
+          "nombre": "FLAS035_20261009_162801.jpg",
+          "url": "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "c538d20b0b671b2b9c0957b26b66fe06c1550a70b1bbdd904ce8f1f1bd43730f",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        },
+        {
+          "id": "1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK",
+          "nombre": "FLAS035.jpg",
+          "url": "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk",
+          "mime": "image/jpeg",
+          "sha256": "e13e98c8996741388e5b8060f3e1a686caf8a3527027bb464ebfb4804c411f21",
+          "resolucion": [
+            1350,
+            1800
+          ]
+        }
+      ],
+      "fuentes_tecnicas": [
+        {
+          "url": "https://www.kingston.com/en/support/technical/products/dtxm",
+          "tipo": "fabricante"
+        }
+      ],
+      "derechos_imagen": {
+        "estado": "CANAL_LEGITIMO_LOCALIZADO_ACTIVO_NO_SELECCIONADO",
+        "uso_comercial_permitido": false,
+        "fuentes_consultadas": [
+          "https://lodasupport.kingston.com/faq",
+          "https://lodasupport.kingston.com/governance",
+          "https://lodasupport.kingston.com/press-images/132/usb",
+          "https://www.kingstonloda.com/asset-management/2NGKT77O9DRP",
+          "https://iceclog.com/kingston-joins-as-open-icecat-sponsor/"
+        ],
+        "motivo": "Kingston publica canal LoDA para descargar materiales de marketing y es patrocinadorOpenIcecat. Esto no selecciona la variante exacta ni documenta automáticamente la licencia de un activo individual. No se descargó imagen de producto para publicación."
+      },
+      "observaciones": [
+        "Las fotos propias muestran el producto real dentro de blíster, con reflejos y resolución útil baja; no fabricar una imagen sin empaque eliminando partes ocultas.",
+        "La originalidad comercial ya confirmada por Registro no resuelve discrepancia de color/modelo. Se necesita aclaración únicamente de este SKU."
+      ],
+      "modelo": "DataTraveler Exodia M 128GB; variante no resuelta",
+      "variante": null,
+      "identidad_verificada": false,
+      "estado_calidad": "BLOQUEADO_VARIANTE",
+      "portada_terminada_privada": false,
+      "discrepancia": {
+        "nombre_base": "Flash Memory 128GB Kingston Exodia 3.2",
+        "familia_en_fotos": "DataTraveler Exodia M",
+        "foto1": {
+          "archivo": "FLAS035.jpg",
+          "apariencia": "cuerpo y cubierta rosados,128GB"
+        },
+        "foto2": {
+          "archivo": "FLAS035_20261009_162801.jpg",
+          "apariencia": "cubierta roja y cuerpo oscuro,128GB"
+        },
+        "accion": "Mantener nombre base y SKU intactos. No seleccionar arbitrariamente uno de los colores ni presentar una variante distinta como producto vendido."
+      }
+    }
+  ]
+}

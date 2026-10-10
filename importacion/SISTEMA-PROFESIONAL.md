@@ -1,4 +1,4 @@
-> Actualización 2026-10-10: prevalece [PRODUCCION-MAESTRA.md](PRODUCCION-MAESTRA.md). Todos SIN CAJA; piloto 10, después 50 y 100. Las presentaciones y tamaños de lote anteriores son históricos.
+> Actualización 2026-10-10: prevalece [PRODUCCION-MAESTRA.md](PRODUCCION-MAESTRA.md). Todos SIN CAJA; piloto retomado, lotes 20–30, después 50 y 100. Las presentaciones y tamaños de lote anteriores son históricos.
 
 # Producción de imágenes por SKU
 

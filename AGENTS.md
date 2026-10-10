@@ -16,7 +16,7 @@
 ## Prioridad vigente — producción por lotes (2026-10-10)
 
 - Alimentar fotografías y fichas existentes. No rediseñar la web ni crear banners durante esta fase.
-- Leer `importacion/PRODUCCION-MAESTRA.md`. Piloto actual de 10 SKU desde Drive, después 50 y 100 cuando se supere el control de calidad. No reejecutar pilotos históricos.
+- Leer `importacion/PRODUCCION-MAESTRA.md`. Continuar piloto existente sin rehacerlo; estándar visual aprobado. Lotes nuevos de 20–30 SKU, después 50 y 100. Fotografías propias de Drive autorizadas para edición/publicación. Las excepciones de un SKU no detienen los demás. Usar contrato v3 y verificación local/móvil/HTTP antes de declarar publicado.
 - Trabajar solo con SKU nuevos o modificados del lote recibido; reutilizar medios aprobados y vigentes, sin regenerarlos. Leer índices existentes para buscar SKU no implica revisar todo el catálogo.
 - Registrar discrepancias de caja/modelo/variante antes de modificar nombres o características. No resolverlas por aproximación.
 - Mostrar exclusivamente el producto, tanto original como genérico/compatible. La presentación de Sheets es histórica. Por confirmación expresa del propietario del 2026-10-10, los valores «Original» y «Caja original» de la columna Tipo del Registro acreditan autenticidad comercial. Guardar la fila y esa confirmación por SKU; no deducirla de la fotografía del empaque. AAA sigue siendo genérico/compatible. Valores contradictorios requieren revisión. Registrar por separado identidad/variante y derechos de uso de material externo.

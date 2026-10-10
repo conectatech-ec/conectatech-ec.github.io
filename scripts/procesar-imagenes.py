@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Producción por SKU: originales inmutables, revisión de identidad y reglas persistentes."""
 import argparse,csv,hashlib,importlib.util,io,json,re,time
+from collections import Counter
 from datetime import datetime,timezone
 from pathlib import Path
 from PIL import Image,ImageOps,ImageEnhance,ImageFilter,ImageDraw,ImageChops
@@ -8,6 +9,8 @@ from reglas_sku import rule,compatible
 ROOT=Path(__file__).resolve().parents[1]
 _spec=importlib.util.spec_from_file_location('editorial',ROOT/'scripts/importar-productos.py')
 editorial=importlib.util.module_from_spec(_spec);_spec.loader.exec_module(editorial)
+_contract_spec=importlib.util.spec_from_file_location('contratos',ROOT/'scripts/validar-contrato.py')
+contracts=importlib.util.module_from_spec(_contract_spec);_contract_spec.loader.exec_module(contracts)
 sha=lambda b:hashlib.sha256(b).hexdigest()
 PIPELINE_VERSION=2
 
@@ -90,6 +93,9 @@ def run(args):
     finance=editorial.financial(products);by={p['sku']:p for p in products};aliases=json.loads((root/'importacion/alias-sku.json').read_text())
     seo=json.loads((root/'seo-contenido.json').read_text());slugs=json.loads((root/'seo-pages.json').read_text())
     manifest=json.loads(safe(root,args.manifiesto).read_text());skus=manifest['skus'];sources=manifest['imagenes']
+    contract_mode=manifest.get('version',1)>=3
+    contract_context=contracts.context(root) if contract_mode else None
+    sku_counts=Counter(aliases.get(raw,raw) for raw in skus)
     registry_path=root/'importacion/medios.json';media=json.loads(registry_path.read_text()) if registry_path.exists() else {}
     report={'fecha':datetime.now(timezone.utc).isoformat(),'lote':args.manifiesto,'modo':'aplicar' if args.aplicar else 'simular',
             'productos':[],'errores':[],'publicados':[],'duplicados':[],'similares':[]}
@@ -103,7 +109,7 @@ def run(args):
             if i.get('sha256'):hashes.setdefault(i['sha256'],set()).add(sku)
     for raw in skus:
         sku=aliases.get(raw,raw)
-        if sku not in by or sku in seen:
+        if sku not in by or sku in seen or (contract_mode and sku_counts[sku]>1):
             report['errores'].append({'sku':raw,'motivo':'SKU desconocido o duplicado'});continue
         seen.add(sku);p=by[sku];r=rule(sku,root);issues=[];rowwrites={};slots=set()
         old=media.get(sku)
@@ -114,6 +120,16 @@ def run(args):
         blocked=(manifest.get('version',1)>=2 or new_sources) and not (approval.get('estado')=='APROBADO' and approval.get('identidad_verificada') is True and approval.get('uso_comercial_permitido') is True and approval.get('ficha_verificada') is True)
         if blocked:issues.append('Publicación bloqueada: identidad, ficha o permiso de uso pendientes')
         candidates=sources.get(sku,sources.get(raw,[]))
+        contract=None;contract_errors=[]
+        if contract_mode:
+            try:
+                contract=contracts.load_contract(root,manifest,sku)
+                contract_errors=contracts.validate(root,contract,sku,r,candidates,contract_context,manifest.get('categorias_comerciales'),require_mobile=False)
+            except (ValueError,OSError,KeyError,TypeError) as exc:
+                contract_errors=[{'codigo':'contrato','motivo':str(exc)}]
+            if contract_errors:
+                blocked=True;issues.extend('Contrato ['+e['codigo']+']: '+e['motivo'] for e in contract_errors)
+        previous_photos=list(photos)
         for item in candidates:
             try:
                 if item.get('posicion') in slots:raise ValueError('Posición duplicada')
@@ -134,6 +150,14 @@ def run(args):
                     for rel,data in out.items():
                         editorial.atomic_write(safe(root,args.borradores)/rel,data)
             except (ValueError,OSError,KeyError,TypeError) as exc:issues.append(str(exc))
+        if contract_mode and not blocked:
+            contract_errors.extend(contracts.validate_images(root,contract,photos,rowwrites))
+            issues.extend('Contrato ['+e['codigo']+']: '+e['motivo'] for e in contract_errors)
+            if issues:
+                blocked=True
+                if getattr(args,'borradores',None):
+                    for rel,data in rowwrites.items():editorial.atomic_write(safe(root,args.borradores)/rel,data)
+                photos=previous_photos;rowwrites={}
         photos.sort(key=lambda i:i['posicion'])
         cover=next((i for i in photos if i['posicion']==1),None)
         if not candidates:issues.append(manifest.get('pendientes',{}).get(sku,'Sin fotografía original vinculada y revisada'))
@@ -143,7 +167,7 @@ def run(args):
             if sku in seo:seo[sku].pop('galeria',None);seo[sku].pop('imagenProfesional',None)
             p['imageUrl']=''
             if sku in seo:seo[sku]['imagen']='';seo[sku]['imagenPendiente']=True
-        if cover:
+        if cover and not (contract_mode and blocked):
             writes.update(rowwrites);entry={'revision_regla':r['revision'],'regla':r,'imagenes':photos}
             # Mantener solo banners revisados contra exactamente las mismas reglas y fuentes.
             if old and old.get('revision_regla')==r['revision'] and old.get('imagenes')==photos and old.get('banner'):entry['banner']=old['banner']
@@ -151,7 +175,7 @@ def run(args):
             p['imageUrl']=cover['versiones']['1200']['url']
             if sku in seo:
                 seo[sku].update(imagen=p['imageUrl'],imagenProfesional=cover,galeria=photos,reglaSKU=r,imagenPendiente=False)
-        elif candidates or (old and old.get('revision_regla')!=r['revision']) or (not old and r['presentacion']=='sin caja'):
+        elif not cover and (not (contract_mode and blocked) or (old and old.get('revision_regla')!=r['revision'])) and (candidates or (old and old.get('revision_regla')!=r['revision']) or (not old and r['presentacion']=='sin caja')):
             p['imageUrl']=''
             if sku in seo:
                 seo[sku].update(imagen='',imagenPendiente=True,reglaSKU=r)
@@ -164,7 +188,9 @@ def run(args):
             'url':'https://conectatech-ec.github.io/productos/'+slugs[sku]+'/',
             'estado':'preparado' if cover and not blocked and not issues else 'pendiente','pendientes':issues,
             'control_calidad':approval.get('estado','REVISAR' if issues else 'APROBADO'),
-            'requiere_verificacion':r['autenticidad']=='por verificar'})
+            'requiere_verificacion':r['autenticidad']=='por verificar',
+            **({'contrato':{'version':3,'estado':'REVISAR' if blocked or issues else 'APROBADO_LOCAL','errores':contract_errors,
+                          'validaciones_posteriores':['prepublicacion: captura móvil del HTML generado','publicacion: HTTP de Pages y hashes']}} if contract_mode else {})})
     # Perceptuales son avisos, nunca una decisión automática de identidad.
     allphotos=[(s,i) for s,m in media.items() for i in m.get('imagenes',[])]
     for n,(s,a) in enumerate(allphotos):
@@ -172,7 +198,8 @@ def run(args):
             if (s,a['posicion']) not in changed_photos and (t,b['posicion']) not in changed_photos:continue
             if s!=t and (int(a['dhash'],16)^int(b['dhash'],16)).bit_count()<=3:report['similares'].append({'sku':s,'similar_a':t})
     if editorial.financial(products)!=finance:raise ValueError('Precios/existencias alterados')
-    if args.aplicar and not report['errores']:
+    # En v3 un SKU desconocido/duplicado no impide aplicar otros SKU con contrato válido.
+    if args.aplicar and (contract_mode or not report['errores']):
         for rel,data in writes.items():editorial.atomic_write(safe(root,rel),data)
         editorial.atomic_write(registry_path,editorial.encode(media));editorial.atomic_write(root/'seo-contenido.json',editorial.encode(seo))
         replacement='const products='+json.dumps(products,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')+';\n'

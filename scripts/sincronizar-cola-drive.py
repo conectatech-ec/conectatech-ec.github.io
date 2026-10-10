@@ -47,7 +47,7 @@ def synchronize(files, rows, catalog, aliases, previous):
     for sku,group in sorted(groups.items()):
         group['fotos'].sort(key=lambda f:f['id'])
         types=sorted({e['tipo'] for f in group['fotos'] for e in f['registro'] if e['tipo']})
-        identity_types=set('generico' if 'AAA' in t or 'genérico' in t.lower() else 'caja_original' if t=='Caja original' else 'sin_clasificar' for t in types)
+        identity_types=set('generico' if 'aaa' in t.lower() or 'genérico' in t.lower() else 'original' if t.strip().lower() in ('original','caja original') else 'sin_clasificar' for t in types)
         if len(identity_types-{'sin_clasificar'})>1:group['incidencias'].append('Clasificaciones comerciales contradictorias')
         fp=digest(group);prior=old.get(sku,{})
         entry={**group,'huella':fp,'clasificacion_registro':types,'presentacion':'sin caja',
@@ -75,11 +75,20 @@ def main():
     p.add_argument('--inventario',required=True);p.add_argument('--registro',required=True)
     p.add_argument('--estado',default='importacion/cola-drive.json');p.add_argument('--limite',type=int,default=10)
     p.add_argument('--lote',default='importacion/lotes/siguiente.json');a=p.parse_args()
-    if a.limite not in (10,50,100):p.error('Lotes vigentes: 10, 50 o 100')
+    if a.limite not in (10,20,30,50,100):p.error('Lotes vigentes: 10, 20, 30, 50 o 100')
     state=Path(a.estado);previous=json.loads(state.read_text()) if state.exists() else {}
     result=synchronize(json.loads(Path(a.inventario).read_text()),json.loads(Path(a.registro).read_text()),
         editorial.read_catalog(ROOT)[1],json.loads((ROOT/'importacion/alias-sku.json').read_text()),previous)
-    candidates=result['cambios'][:a.limite]
+    # Los cambios fuera del primer lote no desaparecen al guardar el snapshot.
+    # Un SKU ya investigado con la misma huella no se repite hasta nueva evidencia.
+    waiting=[sku for sku,entry in result['productos'].items()
+        if not entry.get('ausente_en_snapshot') and
+        (entry.get('produccion',{}).get('huella_revisada')!=entry.get('huella') or
+         entry.get('produccion',{}).get('estado')=='aplicado_local')]
+    waiting.sort(key=lambda sku:(not sku.startswith('TELF'),sku))
+    candidates=waiting[:a.limite]
+    result['por_procesar']=waiting
+    result['resumen']['cola_pendiente']=len(waiting)
     policy=reglas_sku.load(ROOT).get('politica_general',{}).get('autenticidad_registro',{})
     if policy.get('confirmado_por_propietario') and candidates:
         eligible=[sku for sku in candidates if not result['productos'][sku]['incidencias']]
@@ -96,8 +105,8 @@ def main():
         result['resumen']['autenticidad_requiere_revision']=len(issues)
     result['consultado']=datetime.now(timezone.utc).isoformat()
     editorial.atomic_write(state,editorial.encode(result))
-    editorial.atomic_write(Path(a.lote),editorial.encode({'version':2,'skus':candidates,
-        'imagenes':{},'aprobaciones':{},'nota':'Autenticidad según política del propietario y Registro; identidad, variante, fotografía y publicación requieren sus controles independientes.'}))
+    editorial.atomic_write(Path(a.lote),editorial.encode({'version':3,'skus':candidates,
+        'imagenes':{},'aprobaciones':{},'contratos':{},'nota':'Autenticidad según política del propietario y Registro; identidad, variante, fotografía y publicación requieren sus controles independientes.'}))
     print(json.dumps(result['resumen'],ensure_ascii=False))
 
 if __name__=='__main__':main()

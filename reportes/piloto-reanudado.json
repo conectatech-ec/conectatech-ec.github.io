@@ -1,0 +1,605 @@
+{
+  "version": 1,
+  "fecha": "2026-10-10T06:31:30.820263+00:00",
+  "alcance": "Reanudación incremental del piloto previo. Se reutilizan seis portadas aprobadas visualmente y se agregan dos borradores nuevos. Ningún permiso externo se presume ni ningún producto nuevo se publica.",
+  "resumen": {
+    "sku_revisados": 10,
+    "portadas_previas_reutilizadas": 6,
+    "portadas_nuevas_preparadas": 2,
+    "portadas_preparadas_total": 8,
+    "versiones_webp_preparadas": 24,
+    "sku_sin_portada": 2,
+    "estado_revisar": 8,
+    "estado_bloqueado": 2,
+    "productos_nuevos_publicados": 0,
+    "autenticidad_original_confirmada": 10,
+    "variante_resuelta_esta_sesion": [
+      "PARL032"
+    ],
+    "precios_pvp_stock_conservados": true
+  },
+  "productos": [
+    {
+      "sku": "MOUS041",
+      "nombre_comercial_propuesto": "Mouse inalámbrico Klip Xtreme Arrow KMW-335WH blanco",
+      "contrato": "importacion/contratos/MOUS041.json",
+      "estado_calidad": "REVISAR",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": true,
+      "portada_preparada_privada": ".produccion-privada/borradores/imagenes/mous041/MOUS041-01.webp",
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/mous041/MOUS041-01.webp",
+          "sha256": "bc8cce303172149e788acb86b037f340a55e181b3f4ce153f05d70997ab51d14",
+          "bytes": 15516
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/mous041/MOUS041-01-600.webp",
+          "sha256": "45bf6bf4bfea4c494e9884f007156dcd21385598465680c1b7df644bdd153bae",
+          "bytes": 6162
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/mous041/MOUS041-01-300.webp",
+          "sha256": "e86e41a44a8cc415c1c287b68ee31c01b4242c3c38f407bbb8850453370dac06",
+          "bytes": 2370
+        }
+      ],
+      "precio_contado": 14.85,
+      "pvp": 17.08,
+      "stock": 1,
+      "modelo": "KMW-335WH",
+      "variante": "Blanco / KMW-335WH",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/mous041-mouse-klipextreme-arrow-kmw-335wh/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "REVISAR",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar."
+      ]
+    },
+    {
+      "sku": "TECL028",
+      "nombre_comercial_propuesto": "Teclado ergonómico Klip Xtreme Transcend KBK-530S español",
+      "contrato": "importacion/contratos/TECL028.json",
+      "estado_calidad": "REVISAR",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": true,
+      "portada_preparada_privada": ".produccion-privada/borradores/imagenes/tecl028/TECL028-01.webp",
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/tecl028/TECL028-01.webp",
+          "sha256": "05e528db318bcfe38e2cad99a0a27690a22d3ca02aa685e498d3fdf9bfdeea17",
+          "bytes": 38804
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/tecl028/TECL028-01-600.webp",
+          "sha256": "27a6220bb7c4684f82427fdef9677091fb79d29114e6c5b123b56d229867aa07",
+          "bytes": 14112
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/tecl028/TECL028-01-300.webp",
+          "sha256": "61c2828f5d1f73205aff1dd3e8deace49dfe414655c41a23f3c942babb05d4b2",
+          "bytes": 5152
+        }
+      ],
+      "precio_contado": 49.11,
+      "pvp": 56.48,
+      "stock": 1,
+      "modelo": "KBK-530S",
+      "variante": "Distribución español latinoamericano / KBK-530S",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "REVISAR",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar."
+      ]
+    },
+    {
+      "sku": "CABL107",
+      "nombre_comercial_propuesto": "Cable USB-C Klip Xtreme PowerGo 750 240 W — 1,8 m",
+      "contrato": "importacion/contratos/CABL107.json",
+      "estado_calidad": "REVISAR",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": true,
+      "portada_preparada_privada": ".produccion-privada/borradores/imagenes/cabl107/CABL107-01.webp",
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/cabl107/CABL107-01.webp",
+          "sha256": "f9161c0673f0c888b1e5e8b5304bd803d31c5bd8157682b1037a9095a9c054b5",
+          "bytes": 38922
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/cabl107/CABL107-01-600.webp",
+          "sha256": "efc79677ac79c063df76dab2cd3f70bfcec5f52f878b0dee1f86f27e729eb7c5",
+          "bytes": 13982
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/cabl107/CABL107-01-300.webp",
+          "sha256": "815fd17714a6507f52a75ed4dfa5227ae773b7fdbf31084d887d6eb7bc0068e7",
+          "bytes": 4800
+        }
+      ],
+      "precio_contado": 18.15,
+      "pvp": 20.87,
+      "stock": 4,
+      "modelo": "KAC-750-6FT",
+      "variante": "Negro / 1,8 m / KAC-750-6FT",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/cabl107-cable-usb-c-a-usb-c-klipxtreme-1-8m-240w/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "REVISAR",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar."
+      ]
+    },
+    {
+      "sku": "CARG070",
+      "nombre_comercial_propuesto": "Cargador vehicular Klip Xtreme PowerCar 140 — USB-C PD",
+      "contrato": "importacion/contratos/CARG070.json",
+      "estado_calidad": "REVISAR",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": true,
+      "portada_preparada_privada": ".produccion-privada/borradores/imagenes/carg070/CARG070-01.webp",
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/carg070/CARG070-01.webp",
+          "sha256": "eb1040395fc77ed38026547289e07e47b095859350e6778f0f6e579e0ff2e6bf",
+          "bytes": 66330
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/carg070/CARG070-01-600.webp",
+          "sha256": "0b941c7bb1d9166de619db81003474302d4a28600b3041bab8d8d04881088744",
+          "bytes": 16724
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/carg070/CARG070-01-300.webp",
+          "sha256": "057ef645bc02f409b7ada127e30ee992b585cd35f2a1f82d9f6a4f196154b7ec",
+          "bytes": 5850
+        }
+      ],
+      "precio_contado": 36.9,
+      "pvp": 42.44,
+      "stock": 1,
+      "modelo": "KCC-140",
+      "variante": "KCC-140 / 2 USB-C y 1 USB-A",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/carg070-cargador-para-vehiculo-powercar-140-klipxtreme/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar.",
+        "Ficha oficial: 140 W individual y nota de 130 W combinados; no prometer 140 W simultáneos en todos los puertos."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "REVISAR",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar.",
+        "Ficha oficial: 140 W individual y nota de 130 W combinados; no prometer 140 W simultáneos en todos los puertos."
+      ]
+    },
+    {
+      "sku": "POWE014",
+      "nombre_comercial_propuesto": "Batería magnética Klip Xtreme PowerMag 5000 USB-C",
+      "contrato": "importacion/contratos/POWE014.json",
+      "estado_calidad": "REVISAR",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": true,
+      "portada_preparada_privada": ".produccion-privada/borradores/imagenes/powe014/POWE014-01.webp",
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/powe014/POWE014-01.webp",
+          "sha256": "c452016ecf44e1f883dac0366921b73e1eec91b6eb9faccb3ee0531380071d9a",
+          "bytes": 31934
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/powe014/POWE014-01-600.webp",
+          "sha256": "ac76423072fbb69e97ea05f7469fdab5e25f9603c7883d8a5cb3687d12598cee",
+          "bytes": 10706
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/powe014/POWE014-01-300.webp",
+          "sha256": "f52e132e351d9aeaf55e1869fd3263cd4f89d38128e67ffb22ff1d3f5fad8894",
+          "bytes": 3782
+        }
+      ],
+      "precio_contado": 27.15,
+      "pvp": 31.22,
+      "stock": 1,
+      "modelo": "KPB-350",
+      "variante": "Negro / 5000 mAh / KPB-350",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/powe014-powerbank-inalmabrica-klipxtreme-5000mah/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar.",
+        "Ficha oficial contiene datos contradictorios sobre puertos y dimensiones; se omiten esos campos."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "REVISAR",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar.",
+        "Ficha oficial contiene datos contradictorios sobre puertos y dimensiones; se omiten esos campos."
+      ]
+    },
+    {
+      "sku": "SOPO061",
+      "nombre_comercial_propuesto": "Soporte magnético Klip Xtreme MagnoVac KMH-100",
+      "contrato": "importacion/contratos/SOPO061.json",
+      "estado_calidad": "REVISAR",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": true,
+      "portada_preparada_privada": ".produccion-privada/alternativas-pendientes/borradores/imagenes/sopo061/SOPO061-01.webp",
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/sopo061/SOPO061-01.webp",
+          "sha256": "0c332a0a72128f85688a10ef8f4213ddaa0abe18404a63ddf5a3c8a94523beca",
+          "bytes": 39692
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/sopo061/SOPO061-01-600.webp",
+          "sha256": "d6aecc72e4642fce8bf10c8d675659eb9ffeec25f64ed37d93c461b714dfff22",
+          "bytes": 15646
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/sopo061/SOPO061-01-300.webp",
+          "sha256": "94c63e2163c7537d870caf3983db7be6504de8c98728cad6f435cc3fd1eb3a8f",
+          "bytes": 5716
+        }
+      ],
+      "precio_contado": 19.21,
+      "pvp": 22.09,
+      "stock": 1,
+      "modelo": "KMH-100",
+      "variante": "Negro / KMH-100",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/sopo061-soporte-magnetico-para-vehiculo-klip-xtreme/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable de CONECTATECH no confirmada.",
+        "Resuelta insuficiencia de resolución: producto útil nativo 683x1204; recorte revisado745x1250; solo reducción, centrado y blanco.",
+        "El PDF reserva derechos; no se halló permiso comercial abierto aplicable. My Accvent requiere inicio de sesión.",
+        "La imagen ambiental599x599 con teléfono no incluido fue descartada.",
+        "Texto suelto65W de la ficha no corresponde a especificación de este soporte; no incorporarlo."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "REVISAR",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable de CONECTATECH no confirmada.",
+        "Resuelta insuficiencia de resolución: producto útil nativo 683x1204; recorte revisado745x1250; solo reducción, centrado y blanco.",
+        "El PDF reserva derechos; no se halló permiso comercial abierto aplicable. My Accvent requiere inicio de sesión.",
+        "La imagen ambiental599x599 con teléfono no incluido fue descartada.",
+        "Texto suelto65W de la ficha no corresponde a especificación de este soporte; no incorporarlo."
+      ]
+    },
+    {
+      "sku": "AUDI108",
+      "nombre_comercial_propuesto": "Audífonos Klip Xtreme DuoVox KCH-915 mono/estéreo",
+      "contrato": "importacion/contratos/AUDI108.json",
+      "estado_calidad": "REVISAR",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": true,
+      "portada_preparada_privada": ".produccion-privada/borradores/imagenes/audi108/AUDI108-01.webp",
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/audi108/AUDI108-01.webp",
+          "sha256": "bf7ad86a40ee307a16f7ec751dcee567b7ed54a26f3aed4e71151db11a9f5ccb",
+          "bytes": 37036
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/audi108/AUDI108-01-600.webp",
+          "sha256": "0e337507b36d98ce5c78d7c291e1efcc1194b77f47f86abcef7f64404abe1094",
+          "bytes": 14062
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/borradores/imagenes/audi108/AUDI108-01-300.webp",
+          "sha256": "dba9f5926d0c3217a6ac67668f8f7a37efd0cc028577bf5d75de969d18a956b7",
+          "bytes": 5498
+        }
+      ],
+      "precio_contado": 69.4,
+      "pvp": 79.81,
+      "stock": 1,
+      "modelo": "KCH-915",
+      "variante": "Negro / mono-estéreo / KCH-915",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/audi108-audifonos-de-diadema-klipxtreme-duovox-kch-915/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "REVISAR",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable y contenido final de venta por confirmar."
+      ]
+    },
+    {
+      "sku": "PARL032",
+      "nombre_comercial_propuesto": "Parlante Klip Xtreme GrooveSplash KBS-030GN verde — 6 W",
+      "contrato": "importacion/contratos/PARL032.json",
+      "estado_calidad": "BLOQUEADO",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": false,
+      "portada_preparada_privada": null,
+      "versiones": [],
+      "precio_contado": 29,
+      "pvp": 33.35,
+      "stock": 2,
+      "modelo": "KBS-030GN",
+      "variante": "Verde / KBS-030GN",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/parl032-parlante-bluetooth-portatil-klipxtreme-groovesplash/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable de CONECTATECH no confirmada.",
+        "Resuelto sufijoGN con etiqueta real; no se dedujo del color impreso.",
+        "PDF previo tiene imagen662x650 con agua decorativa; alternativas recientesDistriPRONTO800x800 insuficientes y con marca de agua sobre producto. Se conservaron como referencias privadas y NO se retocó la marca de agua.",
+        "Intcomex producto542799 respondió403 en descarga; no se intentó eludirla.",
+        "No se encontró fuente nativa de resolución suficiente y licencia comercial documentada.",
+        "Variante GN resuelta por etiqueta propia; pendiente solo fuente comercial suficiente y derechos."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "BLOQUEADO",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable de CONECTATECH no confirmada.",
+        "Resuelto sufijoGN con etiqueta real; no se dedujo del color impreso.",
+        "PDF previo tiene imagen662x650 con agua decorativa; alternativas recientesDistriPRONTO800x800 insuficientes y con marca de agua sobre producto. Se conservaron como referencias privadas y NO se retocó la marca de agua.",
+        "Intcomex producto542799 respondió403 en descarga; no se intentó eludirla.",
+        "No se encontró fuente nativa de resolución suficiente y licencia comercial documentada.",
+        "Variante GN resuelta por etiqueta propia; pendiente solo fuente comercial suficiente y derechos."
+      ]
+    },
+    {
+      "sku": "CAMA005",
+      "nombre_comercial_propuesto": "Cámara Xiaomi Smart Camera C301 2K para interiores",
+      "contrato": "importacion/contratos/CAMA005.json",
+      "estado_calidad": "REVISAR",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": true,
+      "portada_preparada_privada": ".produccion-privada/alternativas-pendientes/borradores/imagenes/cama005/CAMA005-01.webp",
+      "versiones": [
+        {
+          "ancho": 1200,
+          "alto": 1200,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/cama005/CAMA005-01.webp",
+          "sha256": "004b58b46dd8a11034b51ccd75f5337320dd3d9a53ce86ebe974e291844f062d",
+          "bytes": 17970
+        },
+        {
+          "ancho": 600,
+          "alto": 600,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/cama005/CAMA005-01-600.webp",
+          "sha256": "1e3e7c321fbc3e8d811a75bd2c443b7d13ad8b49b5c5573a4a260216d056d22b",
+          "bytes": 7022
+        },
+        {
+          "ancho": 300,
+          "alto": 300,
+          "archivo_privado": ".produccion-privada/alternativas-pendientes/borradores/imagenes/cama005/CAMA005-01-300.webp",
+          "sha256": "bfafd0bc3c0cc0837c11b0bb66a0594cfc924583139fa4891af621b98805806c",
+          "bytes": 2762
+        }
+      ],
+      "precio_contado": 59.85,
+      "pvp": 68.83,
+      "stock": 1,
+      "modelo": "C301 / MBC23",
+      "variante": "Blanco / C301 / MBC23",
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/cama005-camara-de-seguridad-xiaomi-c301-para-interiores/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable de CONECTATECH no confirmada.",
+        "Resuelta fuente de calidad: PNG oficial1600x1600 con alfa de og:image de la página de especificaciones; área producto781x1171; recorte820x1240; portada blanca sin ampliación.",
+        "La composición alfa correcta elimina los píxeles transparentes del borde; no se alteró el producto.",
+        "El adaptador de corriente no está incluido según la página oficial. Garantía aplicable de la tienda sigue sin documento confirmado.",
+        "Acuerdo latinoamericano secciónVI no otorga permiso comercial abierto para reutilizar imágenes; media kit solo facilita contacto de prensa.",
+        "No publicar el dato de giro vertical hasta resolver discrepancia107°documentación/108°en identificación previa."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "REVISAR",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable de CONECTATECH no confirmada.",
+        "Resuelta fuente de calidad: PNG oficial1600x1600 con alfa de og:image de la página de especificaciones; área producto781x1171; recorte820x1240; portada blanca sin ampliación.",
+        "La composición alfa correcta elimina los píxeles transparentes del borde; no se alteró el producto.",
+        "El adaptador de corriente no está incluido según la página oficial. Garantía aplicable de la tienda sigue sin documento confirmado.",
+        "Acuerdo latinoamericano secciónVI no otorga permiso comercial abierto para reutilizar imágenes; media kit solo facilita contacto de prensa.",
+        "No publicar el dato de giro vertical hasta resolver discrepancia107°documentación/108°en identificación previa."
+      ]
+    },
+    {
+      "sku": "FLAS035",
+      "nombre_comercial_propuesto": "Memoria USB Kingston Exodia M 128 GB — variante en revisión",
+      "contrato": "importacion/contratos/FLAS035.json",
+      "estado_calidad": "BLOQUEADO",
+      "estado_publicacion": "PENDIENTE",
+      "portada_terminada": false,
+      "portada_preparada_privada": null,
+      "versiones": [],
+      "precio_contado": 19.15,
+      "pvp": 22.02,
+      "stock": 2,
+      "modelo": "DataTraveler Exodia M; variantes de color distintas",
+      "variante": null,
+      "url_ficha_existente": "https://conectatech-ec.github.io/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
+      "imagen_nueva_publicada": false,
+      "motivos": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable de CONECTATECH no confirmada.",
+        "Las fotos propias muestran el producto real dentro de blíster, con reflejos y resolución útil baja; no fabricar una imagen sin empaque eliminando partes ocultas.",
+        "La originalidad comercial ya confirmada por Registro no resuelve discrepancia de color/modelo. Se necesita aclaración únicamente de este SKU.",
+        "No cambiar el nombre base ni elegir un color hasta resolver las dos variantes fotografiadas."
+      ],
+      "derechos_imagen_resueltos": false,
+      "gate_preparacion": {
+        "resultado": "BLOQUEADO",
+        "codigos": [
+          "calidad",
+          "derechos",
+          "discrepancia",
+          "ficha",
+          "identidad",
+          "portada",
+          "unidad"
+        ]
+      },
+      "estado": "BLOQUEADO",
+      "pendientes": [
+        "Permiso de uso comercial del material externo no documentado.",
+        "Garantía aplicable de CONECTATECH no confirmada.",
+        "Las fotos propias muestran el producto real dentro de blíster, con reflejos y resolución útil baja; no fabricar una imagen sin empaque eliminando partes ocultas.",
+        "La originalidad comercial ya confirmada por Registro no resuelve discrepancia de color/modelo. Se necesita aclaración únicamente de este SKU.",
+        "No cambiar el nombre base ni elegir un color hasta resolver las dos variantes fotografiadas."
+      ]
+    }
+  ],
+  "registro_fuentes": [
+    "importacion/evidencias-derechos/piloto-klip.json",
+    "importacion/evidencias-derechos/cuatro-pendientes.json"
+  ],
+  "siguiente_accion": "Reanudar solo el SKU que reciba permiso/activo autorizado, material propio suficiente o confirmación de variante. Las fichas existentes HTTP 200 no equivalen a publicación de este lote."
+}
