@@ -12,6 +12,9 @@ on:
       - 'scripts/registrar-resultados-lote.py'
       - 'scripts/registrar-actualizaciones.py'
       - 'scripts/test-actualizaciones.py'
+      - 'scripts/premium_guard.py'
+      - 'scripts/test-premium.py'
+      - 'importacion/premium-activo.json'
       - 'importacion/piloto-imagenes.json'
       - '.github/workflows/producir-imagenes.yml'
   workflow_dispatch:
@@ -49,6 +52,7 @@ jobs:
           python scripts/test-incremental.py
           python scripts/test-contrato.py
           python scripts/test-actualizaciones.py
+          python scripts/test-premium.py
       - name: Registrar reglas y procesar lote
         if: github.event_name == 'workflow_dispatch'
         env:
@@ -71,6 +75,9 @@ jobs:
               if not manifest.get('skus'):
                   raise SystemExit('Aplicación bloqueada: el manifiesto no contiene SKU')
           PY
+          if [ "$APLICAR" = "true" ]; then
+            python scripts/premium_guard.py --manifiesto "$MANIFIESTO"
+          fi
           if [ -n "$REGLAS_CSV" ]; then
             # También la simulación usa las reglas propuestas, solo en el checkout efímero.
             python scripts/reglas_sku.py --csv "$REGLAS_CSV" --aplicar
@@ -91,6 +98,7 @@ jobs:
         run: |
           # Este control incluye la evidencia móvil vinculada al HTML e imágenes finales.
           # Un fallo impide el commit y el push, aunque el procesamiento local haya terminado.
+          python scripts/premium_guard.py --manifiesto "$MANIFIESTO"
           python scripts/validar-contrato.py --manifiesto "$MANIFIESTO" --fase prepublicacion --reporte "reportes/contratos-prepublicacion-${GITHUB_RUN_ID}.json"
           git add index.html seo-contenido.json seo-pages.json sitemap.xml productos imagenes exportaciones importacion/reglas-sku.json importacion/medios.json reportes "$MANIFIESTO"
           if [ -d importacion/contratos ]; then git add importacion/contratos; fi

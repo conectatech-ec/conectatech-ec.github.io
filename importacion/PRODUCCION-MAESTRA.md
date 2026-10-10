@@ -1,5 +1,7 @@
 # Producción por SKU — vigente desde 2026-10-10
 
+**Actualización prioritaria del propietario:** leer `PREMIUM.md` y `premium-activo.json`. Lotes limitados a cinco productos tecnológicos, aprobación visual previa obligatoria y publicación suspendida mientras el primer lote espere aprobación. Sustituye el escalado y autorización automática descritos históricamente abajo.
+
 La orden vigente sustituye las presentaciones históricas: **todos los productos SIN CAJA**. El historial de reglas y los originales se conservan. No rediseñar el sitio, generar banners ni modificar precios, costos, stock o URLs.
 
 ## Fuentes y estados

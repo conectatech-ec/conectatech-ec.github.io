@@ -1,18 +1,22 @@
 {
   "version": 1,
-  "estado": "PROGRAMADA",
+  "estado": "ESPERANDO_APROBACION_VISUAL",
   "automation_id": "6ac9dd11c30c8191acaedf24ef4ffea4",
   "titulo": "Continuar catálogo CONECTATECH",
   "frecuencia": "HOURLY",
   "zona_horaria": "America/Guayaquil",
   "inicio_local": "2026-10-10T02:38:00-05:00",
-  "modo": "sondeo condicional incremental",
+  "modo": "calidad premium, lotes de cinco, sin publicación hasta aprobación",
   "origen": "Automations de ChatGPT con conectores Drive/Sheets/GitHub comprobados",
   "ultima_revision_fuentes": "2026-10-10",
   "cola": "importacion/cola-drive.json",
   "reglas": "importacion/reglas-sku.json",
-  "publicacion": "Solo contratos aprobados y verificados en navegador/Pages; pendientes aislados",
+  "publicacion": "Suspendida por instrucción del propietario hasta aprobación visual vinculada al maestro",
   "limitaciones": "La programación no equivale a una ejecución completada. Identidad, calidad y permisos exigen evidencia por SKU.",
   "presentacion_vigente": "Tarjetas compactas; detalles al abrir ficha; orden predeterminado temporal por cambios reales publicados, con huella y fecha HTTP; QA real del catálogo en móvil/escritorio.",
-  "registro_actualizaciones": "importacion/actualizaciones-sku.json"
+  "registro_actualizaciones": "importacion/actualizaciones-sku.json",
+  "lote_premium": "importacion/premium-activo.json",
+  "cola_premium": "importacion/cola-premium.json",
+  "tamano_maximo_lote": 5,
+  "escalado_automatico": false
 }

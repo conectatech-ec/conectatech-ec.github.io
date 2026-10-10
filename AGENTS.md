@@ -1,5 +1,12 @@
 # CONECTATECH — mantenimiento del catálogo
 
+## Prioridad más reciente — aprobación premium obligatoria
+
+- Leer `importacion/PREMIUM.md` y `importacion/premium-activo.json` antes de producir o publicar. La orden del propietario suspende producción masiva y exige cinco propuestas tecnológicas sin juguetes, con comparación antes/después y aprobación visual explícita antes de sustituir fotos públicas.
+- Esta prioridad prevalece sobre los tamaños de lote y permisos de publicación automática descritos más abajo. Mantener tarjetas compactas, datos comerciales y URLs.
+- No confundir una imagen generada de aspecto nítido con fidelidad demostrada. Revisar hardware, logotipos, microtextos y textura; no cerrar observaciones mediante una bandera sin evidencia.
+- No mezclar `revision/premium-001` completa en main. Conservar maestros y comparación en la rama de revisión. No aplicar hasta aprobación por SKU y SHA-256; `premium_guard.py` debe pasar.
+
 - Leer `importacion/SISTEMA-PROFESIONAL.md` antes de importar fotos o modificar publicaciones.
 - Las excepciones expresadas por el propietario se registran permanentemente en `importacion/reglas-sku.json`. No dejarlas solo en el chat, un prompt o un banner. Usar `scripts/reglas_sku.py`; conservar historial y revisiones.
 - Autenticidad y presentación son atributos independientes. Nunca deducir originalidad de logotipos o cajas. Si no hay evidencia, mantener `por verificar`.

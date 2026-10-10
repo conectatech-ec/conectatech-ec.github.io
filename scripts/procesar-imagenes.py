@@ -6,6 +6,7 @@ from datetime import datetime,timezone
 from pathlib import Path
 from PIL import Image,ImageOps,ImageEnhance,ImageFilter,ImageDraw,ImageChops
 from reglas_sku import rule,compatible
+from premium_guard import validate as validate_premium_approval
 ROOT=Path(__file__).resolve().parents[1]
 _spec=importlib.util.spec_from_file_location('editorial',ROOT/'scripts/importar-productos.py')
 editorial=importlib.util.module_from_spec(_spec);_spec.loader.exec_module(editorial)
@@ -93,6 +94,7 @@ def run(args):
     finance=editorial.financial(products);by={p['sku']:p for p in products};aliases=json.loads((root/'importacion/alias-sku.json').read_text())
     seo=json.loads((root/'seo-contenido.json').read_text());slugs=json.loads((root/'seo-pages.json').read_text())
     manifest=json.loads(safe(root,args.manifiesto).read_text());skus=manifest['skus'];sources=manifest['imagenes']
+    if args.aplicar:validate_premium_approval(root,manifest)
     contract_mode=manifest.get('version',1)>=3
     contract_context=contracts.context(root) if contract_mode else None
     sku_counts=Counter(aliases.get(raw,raw) for raw in skus)

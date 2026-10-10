@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "lote": "premium-001",
+  "estado": "ESPERANDO_APROBACION_VISUAL",
+  "fecha": "2026-10-10T08:15:41.826104+00:00",
+  "tamano_maximo": 5,
+  "estandar_aprobado_por_propietario": false,
+  "publicacion_automatica": false,
+  "rama_revision": "revision/premium-001",
+  "reporte_visual": "revision-premium/lote-001/Comparativa-premium-CONECTATECH.html",
+  "ultimo_lote_publicado": "lote-040",
+  "productos": {
+    "MOUS039": {
+      "sha256_maestro": "be17f86c2c31c9f9e868d9e061c19fd1742d7822ef922c8e796c68c8ae9ec5e4",
+      "fidelidad_resuelta": false,
+      "estado_revision": "REVISAR MICRODETALLES",
+      "aprobacion_visual": {
+        "aprobado_por_propietario": false,
+        "fecha": null,
+        "evidencia": null,
+        "sha256": null
+      },
+      "maestro_propuesto": "revision-premium/lote-001/maestros/MOUS039-premium-v1.png",
+      "estado": "IMAGEN PREPARADA",
+      "motivo": "Carcasa, rueda, dos selectores y receptor cotejados. La edición define serigrafías e iconos internos pequeños: REVISAR esos microdetalles; no se certifica recuperación óptica de detalle."
+    },
+    "SOPO009": {
+      "sha256_maestro": "6d776c030ddc11046fec1a360a1420caaab1672342a1c2ae384e005a25243315",
+      "fidelidad_resuelta": false,
+      "estado_revision": "REVISAR MICRODETALLES",
+      "aprobacion_visual": {
+        "aprobado_por_propietario": false,
+        "fecha": null,
+        "evidencia": null,
+        "sha256": null
+      },
+      "maestro_propuesto": "revision-premium/lote-001/maestros/SOPO009-premium-v1.png",
+      "estado": "IMAGEN PREPARADA",
+      "motivo": "Placa, apoyos, ganchos, bisagra y logotipo cotejados. Se redujo la exageración de la textura de la base en una segunda versión; REVISAR todavía su patrón fino antes de publicar."
+    },
+    "SOPO058": {
+      "sha256_maestro": "235a994d257f9a826a4f73ebebe687c94a672271b3d0114ec2ebefa1c8eafc30",
+      "fidelidad_resuelta": true,
+      "estado_revision": "LISTA PARA APROBACIÓN VISUAL",
+      "aprobacion_visual": {
+        "aprobado_por_propietario": false,
+        "fecha": null,
+        "evidencia": null,
+        "sha256": null
+      },
+      "maestro_propuesto": "revision-premium/lote-001/maestros/SOPO058-premium-v1.png",
+      "estado": "IMAGEN PREPARADA",
+      "motivo": "Anillo con abertura, articulación, pinza, resorte y color negro cotejados. No se añadieron teléfonos, cables ni accesorios. Pendiente aceptación visual del propietario."
+    },
+    "SOPO023": {
+      "sha256_maestro": "67dd7bd0537b646c773e546a624f6233c9d2308b4a794d4561de776bb099393e",
+      "fidelidad_resuelta": true,
+      "estado_revision": "LISTA PARA APROBACIÓN VISUAL",
+      "aprobacion_visual": {
+        "aprobado_por_propietario": false,
+        "fecha": null,
+        "evidencia": null,
+        "sha256": null
+      },
+      "maestro_propuesto": "revision-premium/lote-001/maestros/SOPO023-premium-v1.png",
+      "estado": "IMAGEN PREPARADA",
+      "motivo": "Tres ranuras largas, dos aberturas inferiores, dos ganchos y articulación cotejados. Se conserva el acabado gris. Pendiente aceptación visual del propietario."
+    },
+    "AUDI028": {
+      "sha256_maestro": "3c8b6c45f8c78f03563ec4f18b1c0f6230d0f906a13403cc91407829181717dd",
+      "fidelidad_resuelta": true,
+      "estado_revision": "LISTA PARA APROBACIÓN VISUAL",
+      "aprobacion_visual": {
+        "aprobado_por_propietario": false,
+        "fecha": null,
+        "evidencia": null,
+        "sha256": null
+      },
+      "maestro_propuesto": "revision-premium/lote-001/maestros/AUDI028-premium-v1.png",
+      "estado": "IMAGEN PREPARADA",
+      "motivo": "Dos audífonos dentro de su estuche de carga real; orificios, almohadillas y cavidades cotejados. Rotación del encuadre y luz neutra sobre metal. El estuche de carga pertenece al producto; no es la caja de venta. Pendiente aceptación visual."
+    }
+  },
+  "siguiente_lote": {
+    "estado": "PENDIENTE_APROBACION_ESTANDAR",
+    "tamano": 5,
+    "preseleccion": [
+      "AUDI012",
+      "AUDI076",
+      "POWE003",
+      "CARG035",
+      "CABL145"
+    ],
+    "procesar_ahora": false,
+    "nota": "Candidatos tecnológicos; aún sin nuevas descargas ni validación fotográfica. Sustituir únicamente si fuentes insuficientes."
+  },
+  "reanudacion": "Leer PREMIUM.md. Recuperar rama de revisión, conservar main público. No aplicar, publicar ni escalar hasta aprobación explícita por SKU y SHA-256; resolver microdetalles pendientes."
+}

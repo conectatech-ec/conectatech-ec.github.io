@@ -1,0 +1,26 @@
+name: Revisar comparativa premium sin publicar
+on:
+  push:
+    branches: ['revision/premium-*']
+permissions:
+  contents: read
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Instalar navegador de revisión
+        run: |
+          npm install --prefix "$RUNNER_TEMP/premium-playwright" --ignore-scripts --no-audit --no-fund playwright@1.62.1
+          echo "CODEX_PRIMARY_RUNTIME_NODE_MODULES=$RUNNER_TEMP/premium-playwright/node_modules" >> "$GITHUB_ENV"
+          node "$RUNNER_TEMP/premium-playwright/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Verificar comparativa local, sin Pages
+        run: node scripts/verificar-revision-premium.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: premium-visual-${{ github.run_id }}
+          path: revision-premium/lote-001/qa/
+          retention-days: 30
