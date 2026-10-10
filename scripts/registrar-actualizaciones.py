@@ -166,7 +166,7 @@ def inspect_sku(root, sku, product, custom, slug, row):
         'unidadVenta': custom.get('unidadVenta'),
         'autenticidadPublica': custom.get('reglaSKU', {}).get('autenticidad'),
         'imagenes': image_semantics})
-    image = {'src': image_url, 'srcset': ', '.join(cover['versiones'][s]['url'] + ' ' + s + 'w' for s in ('300', '600', '1200'))}
+    image = {'src': image_url, 'srcset': ', '.join(cover['versiones'][s]['url'] + '?v=' + cover['versiones'][s]['sha256'][:16] + ' ' + s + 'w' for s in ('300', '600', '1200'))}
     return content, image
 
 
