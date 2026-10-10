@@ -148,9 +148,9 @@ async function main() {
         }
         await page.locator('#catalogSort').selectOption('recientes');
         const initial = await snapshot(); row.diseno = initial;
-        check('columnas', initial.columnas === (width === 1280 ? 5 : 2), 'Número de columnas incorrecto: ' + initial.columnas);
+        check('columnas', initial.columnas === (width === 1280 ? 3 : 2), 'Número de columnas incorrecto: ' + initial.columnas);
         check('sin_desbordamiento_catalogo', initial.scrollWidth <= Math.ceil(initial.ancho) + 1, 'El grid presenta desbordamiento horizontal.');
-        check('tarjetas_compactas', initial.tarjetas.every(card => card.altura <= 410 && card.altura > 0 && !card.contenido_largo.length), 'Tarjeta supera410px o contiene ficha técnica/stock/descripción extensa.');
+        check('tarjetas_compactas', initial.tarjetas.every(card => card.altura <= (width === 1280 ? 520 : 410) && card.altura > 0 && !card.contenido_largo.length), 'Tarjeta supera el límite de la presentación 3/2 o contiene ficha técnica/stock/descripción extensa.');
         check('precios_tarjetas', initial.tarjetas.every(card => { const p = bySku.get(card.sku); return p && money(card.promo) === Math.round(p.promo * 100) && money(card.pvp) === Math.round(p.pvp * 100) && card.promo_px > card.pvp_px && card.pvp_tachado === false; }), 'Precios o jerarquía incorrectos en tarjetas.');
         check('enlaces_tarjetas', initial.tarjetas.every(card => Object.values(card.enlaces).every(href => href && new URL(href, PUBLIC).href === PUBLIC + '/productos/' + slugs[card.sku] + '/')), 'Imagen, título o Ver detalles no enlazan a ficha estable.');
         if (initial.ancho_documento > width) report.advertencias_ajenas_al_lote.push({ancho: width, motivo: 'Ancho total del documento supera viewport; revisar zonas ajenas al grid.', ancho_documento: initial.ancho_documento});

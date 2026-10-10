@@ -37,4 +37,29 @@ class PremiumApprovalTests(unittest.TestCase):
         self.manifest['skus']=['SKU001']*6
         with self.assertRaisesRegex(ValueError,'tamaño'): self.check()
 
+    def commercial(self):
+        policy={'estado':'ACTIVA','modo':'FUENTES_AUTENTICAS_Y_RETOQUE_COMERCIAL',
+                'autorizacion_propietario':{'evidencia':'Owner changed strategy; fixture'},'tamano_maximo_lote':30}
+        (self.root/'importacion/estrategia-comercial.json').write_text(json.dumps(policy))
+        self.manifest['version']=3
+        self.manifest['aprobaciones']={'SKU001':{'estado':'APROBADO','identidad_verificada':True,
+                'ficha_verificada':True,'uso_comercial_permitido':True}}
+        self.state['estado']='ESPERANDO_APROBACION_VISUAL'
+        self.state['productos']={}
+    def test_new_valid_batch_can_continue_without_waiting_for_old_batch(self):
+        self.commercial(); self.check()
+    def test_new_strategy_does_not_grant_external_rights(self):
+        self.commercial(); self.manifest['aprobaciones']['SKU001']['uso_comercial_permitido']=False
+        with self.assertRaisesRegex(ValueError,'derechos'): self.check()
+    def test_new_strategy_preserves_pending_old_master(self):
+        old=copy.deepcopy(self.state['productos']['SKU001']);old['aprobacion_visual']['aprobado_por_propietario']=False
+        self.commercial();self.state['productos']['SKU001']=old
+        with self.assertRaisesRegex(ValueError,'premium anterior pendiente'): self.check()
+    def test_new_strategy_rejects_changed_source(self):
+        self.commercial();self.master.write_bytes(b'changed')
+        with self.assertRaisesRegex(ValueError,'bytes'): self.check()
+    def test_new_strategy_requires_v3(self):
+        self.commercial();self.manifest['version']=2
+        with self.assertRaisesRegex(ValueError,'v3'): self.check()
+
 if __name__=='__main__': unittest.main()

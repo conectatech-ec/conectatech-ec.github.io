@@ -80,7 +80,7 @@ body{background:linear-gradient(180deg,#edf3fa 0,#f7f9fd 470px,#f5f8fc 100%)}
 @media(max-width:650px){.card{border-radius:15px}.card .product-img{height:128px}.section-title{font-size:19px}.hero{border-radius:18px}}
 
 </style>
-<link rel="stylesheet" href="/assets/conectatech-2.css?v=regalos-unificado-1">
+<link rel="stylesheet" href="/assets/conectatech-2.css?v=catalogo-tres-columnas-1">
 </head>
 <body>
 <header><div class="wrap">
@@ -132,7 +132,7 @@ function productImage(p,large=false){
  const professional=src===`/imagenes/${p.sku.toLowerCase()}/${p.sku}-01.webp`;
  const srcset=media?.srcset||(professional?`${src.replace(/\.webp$/,"-300.webp")} 300w, ${src.replace(/\.webp$/,"-600.webp")} 600w, ${src} 1200w`:"");
  const thumb=!large&&srcset?srcset.split(",")[0].trim().split(/\s+/)[0]:src;
- const sizes=large?"(max-width:650px) 90vw, 540px":"(max-width:520px) 44vw, (max-width:750px) 29vw, (max-width:1050px) 22vw, 210px";
+ const sizes=large?"(max-width:650px) 90vw, 540px":"(max-width:520px) 44vw, (max-width:1200px) 30vw, 380px";
  return `<img src="${esc(thumb)}"${srcset?` srcset="${esc(srcset)}" sizes="${sizes}"`:""} alt="${esc(p.name)}" width="1200" height="1200" loading="lazy" decoding="async" onerror="this.style.display='none'">`;
 }
 

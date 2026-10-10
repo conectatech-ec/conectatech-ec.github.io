@@ -1,6 +1,6 @@
 # Producción por SKU — vigente desde 2026-10-10
 
-**Actualización prioritaria del propietario:** leer `PREMIUM.md` y `premium-activo.json`. Lotes limitados a cinco productos tecnológicos, aprobación visual previa obligatoria y publicación suspendida mientras el primer lote espere aprobación. Sustituye el escalado y autorización automática descritos históricamente abajo.
+**Actualización prioritaria del propietario:** leer `ESTRATEGIA-COMERCIAL.md` y `estrategia-comercial.json`. Priorizar fuentes auténticas y retoque comercial; saltar las excepciones de permisos sin frenar otros SKU. Tres columnas en escritorio y dos en móvil. Las propuestas premium-001 conservan su revisión pendiente; no bloquean la producción nueva validada.
 
 La orden vigente sustituye las presentaciones históricas: **todos los productos SIN CAJA**. El historial de reglas y los originales se conservan. No rediseñar el sitio, generar banners ni modificar precios, costos, stock o URLs.
 
@@ -59,7 +59,7 @@ Tras verificar la publicación, guardar el reporte por SKU y ejecutar `python sc
 
 ## Presentación compacta y fecha efectiva
 
-Mantener las tarjetas actuales: cinco columnas en escritorio de 1280 px y dos en móvil de 390 px. No introducir especificaciones ni descripciones antes del clic. Foto, nombre y acceso de detalles abren la ficha completa existente. Los nuevos medios se reutilizan mediante el registro publicado y sus tres tamaños; nunca se regeneran sólo para cambiar la tarjeta.
+Mantener las tarjetas actuales: tres columnas en escritorio de 1280 px y dos en móvil de 390 px. No introducir especificaciones ni descripciones antes del clic. Foto, nombre y acceso de detalles abren la ficha completa existente. Los nuevos medios se reutilizan mediante el registro publicado y sus tres tamaños; nunca se regeneran sólo para cambiar la tarjeta.
 
 El selector «Actualizados recientemente» es el orden temporal por defecto; los empates y SKU sin fecha conservan el orden base. También se conservan el orden original, nombre y precios ascendente/descendente. Búsqueda, filtros y paginación operan sobre el mismo conjunto, sin duplicados.
 

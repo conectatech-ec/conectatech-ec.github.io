@@ -169,11 +169,11 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 .featured-card .name{font-size:13px;min-height:38px;line-height:1.35}
 .featured-card .promo{font-size:21px}
 .featured-card .wa{min-height:38px;padding:8px}
-#grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+#grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 #grid .ct-compact-card{min-height:0;padding:11px;border-radius:15px;box-shadow:0 4px 14px #0b245211}
-#grid .ct-compact-card .product-img{height:145px!important;padding:7px;margin-bottom:9px}
+#grid .ct-compact-card .product-img{height:clamp(190px,23vw,280px)!important;padding:10px;margin-bottom:9px;object-fit:contain}
 #grid .ct-compact-card .cat{font-size:9px;letter-spacing:.35px;line-height:1.3}
-#grid .ct-compact-card .name{font-size:12px;line-height:1.35;min-height:49px;margin:5px 0 8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+#grid .ct-compact-card .name{font-size:15px;line-height:1.35;min-height:41px;margin:5px 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 #grid .ct-compact-card .ct-compact-prices{margin-top:auto;margin-bottom:9px;display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:2px}
 #grid .ct-compact-card .promo-label{font-size:9px}
 #grid .ct-compact-card .promo{font-size:22px}
@@ -185,8 +185,7 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 .ct-pagination button{border:1px solid #cbd9e9;border-radius:10px;padding:11px 17px;background:white;color:#14365d;font-weight:800;cursor:pointer}
 .ct-pagination button:disabled{opacity:.4;cursor:not-allowed}
 .ct-pagination span{font-size:13px;color:#53637b;font-weight:800}
-@media(max-width:1050px){#grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:750px){#grid{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:750px){.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#grid .ct-compact-card{padding:9px}#grid .ct-compact-card .product-img{height:125px!important}#grid .ct-compact-card .promo{font-size:20px}#grid .ct-compact-card .name{font-size:12px}.ct-pagination{gap:8px}.ct-pagination button{padding:10px}}
 
 /* Corrección explícita de tarjetas destacadas: nunca fichas gigantes */

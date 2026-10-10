@@ -1,3 +1,5 @@
+> Actualización posterior del propietario: `ESTRATEGIA-COMERCIAL.md` rige la producción nueva. Este documento conserva la revisión pendiente de premium-001; no bloquea los demás SKU aptos. Sus propuestas siguen sin aprobación individual.
+
 # Prioridad vigente: cinco propuestas premium antes de publicar
 
 Orden del propietario del 2026-10-10: calidad y fidelidad antes que cantidad. Sustituye el escalado automático de 30/50/100 SKU y la publicación sin revisión del primer lote. No rehacer el piloto ni modificar el catálogo compacto.

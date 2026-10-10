@@ -1,6 +1,13 @@
 # CONECTATECH — mantenimiento del catálogo
 
-## Prioridad más reciente — aprobación premium obligatoria
+## Prioridad más reciente — estrategia comercial y tres columnas
+
+- Leer `importacion/ESTRATEGIA-COMERCIAL.md` y `estrategia-comercial.json`. Orden posterior del propietario: obtener imágenes auténticas del modelo identificado; retoque más comercial de fotos propias; no detener la cola por permisos externos. Registrar la excepción y seguir otro SKU.
+- Tres columnas en escritorio y dos en móvil. Fotos más protagonistas, detalles únicamente en ficha, cambios reales publicados primero. Precios, existencias, SKU y URLs intactos.
+- La espera del lote premium-001 se limita a sus propuestas sin aprobación: no bloquea nuevos SKU aptos bajo la nueva estrategia. No dar por aprobados sus cinco maestros ni cambiar sus banderas para publicar.
+- Mantener contrato v3 y QA. Flexibilizar iluminación, color y presentación no permite cambiar modelo, variante vendida, puertos, botones ni accesorios.
+
+## Prioridad histórica — aprobación del lote premium-001
 
 - Leer `importacion/PREMIUM.md` y `importacion/premium-activo.json` antes de producir o publicar. La orden del propietario suspende producción masiva y exige cinco propuestas tecnológicas sin juguetes, con comparación antes/después y aprobación visual explícita antes de sustituir fotos públicas.
 - Esta prioridad prevalece sobre los tamaños de lote y permisos de publicación automática descritos más abajo. Mantener tarjetas compactas, datos comerciales y URLs.

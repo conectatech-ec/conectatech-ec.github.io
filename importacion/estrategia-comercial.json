@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "estado": "ACTIVA",
+  "fecha": "2026-10-10",
+  "modo": "FUENTES_AUTENTICAS_Y_RETOQUE_COMERCIAL",
+  "autorizacion_propietario": {
+    "evidencia": "Mensaje del propietario 2026-10-10: cambiar estrategia, buscar imágenes del producto identificado por SKU/593/caja; usar IA con más libertad en color, brillo y contraste; pasar al siguiente SKU si se traba por permisos externos; actualizar catálogo y mostrar actualizados primero en filas de tres.",
+    "alcance": "Nuevos lotes que superen contrato y QA. No convierte propuestas premium-001 en aprobadas ni autoriza alterar elementos físicos o datos comerciales."
+  },
+  "presentacion": {
+    "columnas_escritorio": 3,
+    "columnas_movil": 2,
+    "orden": "recientes",
+    "detalles_solo_en_ficha": true
+  },
+  "edicion_permitida": [
+    "iluminacion",
+    "balance_de_blancos",
+    "brillo",
+    "contraste",
+    "saturacion_natural",
+    "limpieza_de_fondo",
+    "sombras_de_estudio",
+    "encuadre_comercial"
+  ],
+  "conservar": [
+    "modelo",
+    "variante_comercial",
+    "puertos",
+    "conectores",
+    "botones",
+    "camaras",
+    "logotipos",
+    "accesorios_reales",
+    "unidad_de_venta"
+  ],
+  "fuentes": [
+    "oficiales_con_uso_comercial_documentado",
+    "distribuidores_con_permiso_documentado",
+    "fotografias_propias_autorizadas"
+  ],
+  "busqueda": {
+    "max_fuentes_por_sku": 3,
+    "tiempo_objetivo_segundos": 180,
+    "sin_permiso_externo": "PENDIENTE_DERECHOS_Y_CONTINUAR",
+    "sin_identidad": "PENDIENTE_IDENTIFICACION_Y_CONTINUAR",
+    "reintentar_solo_con_nueva_evidencia": true
+  },
+  "tamano_maximo_lote": 30,
+  "lote_visual_previo": "premium-001",
+  "reemplazar_propuestas_previas_sin_aprobacion": false,
+  "finanzas_inmutables": true
+}
