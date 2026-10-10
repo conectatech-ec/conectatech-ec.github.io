@@ -129,6 +129,27 @@ class UpdateTests(unittest.TestCase):
         after, rows = self.register(report, state)
         self.assertEqual(after, state); self.assertTrue(all(r['estado'] == 'pendiente' for r in rows))
 
+    def test_cache_version_changes_only_real_script_src_and_then_is_noop(self):
+        state, _ = self.register(self.http_report()); before = copy.deepcopy(state)
+        js = ('window.CONECTATECH_CATALOGO=' + json.dumps(m.payload(state)) + ';\n').encode()
+        source = ('<!doctype html>\n<!-- <script src="/assets/catalogo-publicado.js"></script> -->\n'
+                  '<h1>Catálogo tecnológico</h1>\n<script src="/assets/catalogo-publicado.js" defer></script>\n'
+                  '<script>const products=[{"sku":"TEST001","promo":9.25,"stock":2}];\n</script>\n').encode()
+        expected_url = '/assets/catalogo-publicado.js?v=' + m.sha(js)[:12]
+        updated, url = m.version_asset_reference(source, js)
+        expected = source.replace(b'<script src="/assets/catalogo-publicado.js" defer>', ('<script src="' + expected_url + '" defer>').encode())
+        self.assertEqual(updated, expected); self.assertEqual(url, expected_url)
+        repeated, repeated_url = m.version_asset_reference(updated, js)
+        self.assertEqual(repeated, updated); self.assertEqual(repeated_url, expected_url)
+        self.assertEqual(state, before)
+        changed, changed_url = m.version_asset_reference(updated, js + b' ')
+        self.assertNotEqual(changed_url, expected_url)
+        self.assertEqual(changed.replace(changed_url.encode(), expected_url.encode()), updated)
+
+    def test_cache_reference_missing_or_duplicated_is_rejected(self):
+        for source in (b'<html>No script</html>', b'<script src="/assets/catalogo-publicado.js"></script>' * 2):
+            with self.assertRaises(ValueError): m.version_asset_reference(source, b'payload')
+
 
 if __name__ == '__main__':
     unittest.main()

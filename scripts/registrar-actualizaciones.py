@@ -213,6 +213,37 @@ def payload(state):
             for sku, row in sorted(state['productos'].items())}}
 
 
+def version_asset_reference(index_data, js_data):
+    """Cambia solo el src real del script del catálogo; mismo JS conserva la query."""
+    source = index_data.decode('utf-8')
+    line_starts = [0] + [m.end() for m in re.finditer('\n', source)]
+    targets = []
+    asset = '/assets/catalogo-publicado.js'
+    class ScriptSource(HTMLParser):
+        def handle_starttag(self, tag, attrs):
+            if tag != 'script': return
+            sources = [value for key, value in attrs if key == 'src']
+            if not any(value and value.split('?', 1)[0] == asset for value in sources): return
+            if len(sources) != 1:
+                raise ValueError('El script del catálogo contiene atributos src duplicados')
+            raw_tag = self.get_starttag_text()
+            matches = list(re.finditer(r'''\bsrc\s*=\s*(["'])(/assets/catalogo-publicado\.js(?:\?v=[a-f0-9]+)?)\1''', raw_tag, re.I))
+            if len(matches) != 1:
+                raise ValueError('Referencia del script no reconocida; no se modifica otro HTML')
+            line, column = self.getpos(); offset = line_starts[line - 1] + column
+            targets.append((offset + matches[0].start(2), offset + matches[0].end(2)))
+    parser = ScriptSource(); parser.feed(source)
+    if len(targets) != 1:
+        raise ValueError('Se requiere exactamente un script /assets/catalogo-publicado.js')
+    start, end = targets[0]; reference = asset + '?v=' + sha(js_data)[:12]
+    updated = (source[:start] + reference + source[end:]).encode('utf-8')
+    # Comprobación byte a byte de toda la parte que no es el atributo src permitido.
+    byte_start = len(source[:start].encode('utf-8')); byte_end = len(source[:end].encode('utf-8'))
+    if index_data[:byte_start] != updated[:byte_start] or index_data[byte_end:] != updated[byte_start + len(reference.encode('utf-8')):]:
+        raise ValueError('La invalidación intentó modificar contenido ajeno al src del script')
+    return updated, reference
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', default=str(ROOT)); parser.add_argument('--reporte-http', required=True)
@@ -232,12 +263,26 @@ def main():
     if args.aplicar:
         if (registry.read_bytes() if registry.exists() else None) != before:
             raise ValueError('Registro modificado concurrentemente; repetir sin sobrescribir')
-        editorial.atomic_write(registry, editorial.encode(state))
+        if safe(root, args.payload) != root / 'assets/catalogo-publicado.js':
+            raise ValueError('La publicación e invalidación de caché requieren assets/catalogo-publicado.js')
         js = 'window.CONECTATECH_CATALOGO=' + json.dumps(payload(state), ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c') + ';\n'
-        editorial.atomic_write(safe(root, args.payload), js.encode())
+        js_data = js.encode()
+        updated_index, reference = version_asset_reference(protected['index.html'], js_data)
+        # Preparar y comprobar el único cambio de HTML antes de escribir cualquier archivo.
+        if (root / 'index.html').read_bytes() != protected['index.html']:
+            raise ValueError('El índice cambió durante la preparación; repetir sin sobrescribir')
+        editorial.atomic_write(safe(root, args.payload), js_data)
+        editorial.atomic_write(registry, editorial.encode(state))
+        editorial.atomic_write(root / 'index.html', updated_index)
+        for path, content in protected.items():
+            expected = updated_index if path == 'index.html' else content
+            if (root / path).read_bytes() != expected:
+                raise ValueError('Un archivo protegido cambió fuera de la referencia autorizada: ' + path)
     counts = Counter(r['estado'] for r in results)
     output = {'modo': 'aplicar' if args.aplicar else 'simular', 'resultados': results, 'resumen': dict(counts),
               'registro_total': len(state['productos']), 'finanzas_stock_originales_conservados': True}
+    if args.aplicar:
+        output['cache_catalogo'] = {'src': reference, 'sha256_js': sha(js_data), 'referencia_modificada': updated_index != protected['index.html']}
     editorial.atomic_write(safe(root, args.reporte), editorial.encode(output))
     print(json.dumps(output['resumen'], ensure_ascii=False))
     return 0

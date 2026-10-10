@@ -19078,7 +19078,18 @@
       ],
       "presentacion": "sin caja",
       "autenticidad": "por verificar",
-      "estado": "BLOQUEADO"
+      "estado": "BLOQUEADO",
+      "revision_regla": 1,
+      "produccion": {
+        "huella_revisada": "aa06f2c0e1bb1693334966cd24ad116f5b3c0689773f740ef65caeb217b0e6b5",
+        "estado": "REVISAR",
+        "revision_regla_revisada": 1,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876745+00:00",
+        "pendientes": [
+          "Clasificación contradictoria en Registro: AAA (filas 100,101,103) y Caja original (835,836,837). No se decide originalidad automáticamente."
+        ]
+      }
     },
     "JUGU041": {
       "fotos": [
@@ -19178,7 +19189,18 @@
       ],
       "presentacion": "sin caja",
       "autenticidad": "por verificar",
-      "estado": "BLOQUEADO"
+      "estado": "BLOQUEADO",
+      "revision_regla": 1,
+      "produccion": {
+        "huella_revisada": "45fe56f643a86fd89768f4758591d91a5a11898ce1e42b335efe7ac4ea732544",
+        "estado": "REVISAR",
+        "revision_regla_revisada": 1,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876770+00:00",
+        "pendientes": [
+          "Clasificación contradictoria en Registro: AAA (109,110,111) y Caja original (840,841). Además aparecen dos colores sin desglose comercial de variante."
+        ]
+      }
     },
     "JUGU042": {
       "fotos": [
@@ -19987,8 +20009,18 @@
         "AAA (genérico)"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "genérico/compatible",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1661,1662,1663; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "c9e6a1f630183ef0e33681dcfda51fd5e4ecde2de7b9eeac84328a266bdd4a80",
+        "estado": "aplicado_local",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876785+00:00",
+        "pendientes": []
+      }
     },
     "JUGU069": {
       "fotos": [
@@ -20333,7 +20365,18 @@
       ],
       "presentacion": "sin caja",
       "autenticidad": "por verificar",
-      "estado": "BLOQUEADO"
+      "estado": "BLOQUEADO",
+      "revision_regla": 1,
+      "produccion": {
+        "huella_revisada": "30456e4d30204865b1314a06a34bfa85d3079b4d1fbe084b0eac250ba4c4a84d",
+        "estado": "REVISAR",
+        "revision_regla_revisada": 1,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876773+00:00",
+        "pendientes": [
+          "Clasificación contradictoria en Registro: AAA (1817,1819,1820) y Caja original (1992,1993). Dos colores sin desglose comercial; no se decide originalidad ni variante."
+        ]
+      }
     },
     "JUGU081": {
       "fotos": [
@@ -20412,8 +20455,18 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1733,1734,1735,1736; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "6ec0c3d5f07352b94fb0e0952d70eaed6bb47cdbf0e79096c4f98f527c44936f",
+        "estado": "aplicado_local",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876776+00:00",
+        "pendientes": []
+      }
     },
     "JUGU082": {
       "fotos": [
@@ -20640,8 +20693,20 @@
         "AAA (genérico)"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "genérico/compatible",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1714,1715,1716,1717,1718,1719,1720; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "1a0baa2f27441aa24d1971cc2832530fe7d6cc29bce89710e8998de10c85e7bf",
+        "estado": "REVISAR",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876777+00:00",
+        "pendientes": [
+          "Fotografías negras y rojas bajo el mismo SKU; la base no confirma venta por colores surtidos ni asigna stock por variante. La portada negra queda en borrador hasta resolver la variante. No se atribuye marca fabricante ni licencia oficial."
+        ]
+      }
     },
     "JUGU087": {
       "fotos": [
@@ -21712,8 +21777,18 @@
         "AAA (genérico)"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "genérico/compatible",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1597,1598,1599; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "c53cebb7dbd71c09ae691a0091e6b984f17ec762a7fcc0a41721c06cc9282df0",
+        "estado": "aplicado_local",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876781+00:00",
+        "pendientes": []
+      }
     },
     "JUGU108": {
       "fotos": [
@@ -22175,8 +22250,20 @@
         "AAA (genérico)"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "genérico/compatible",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1649,1650,1651,1652,1653; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "622b22d204f2d97ed4e6c9e69d50e37e00429f18b0ab80d1d28b7cc7019e4455",
+        "estado": "REVISAR",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876779+00:00",
+        "pendientes": [
+          "Las fotos muestran motos de tanque rojo y amarillo bajo el mismo SKU; la base no confirma venta surtida ni stock por color. La portada roja queda en borrador hasta resolver la variante. No se atribuye Harley-Davidson como fabricante del juguete ni una licencia oficial."
+        ]
+      }
     },
     "JUGU121": {
       "fotos": [
@@ -25875,8 +25962,21 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1282,1283,1284,1285,1286,1287,1288,1289,1290,1291; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "c523cdcbe34ca212973aa71c861a8373927fc29af33695b6f8bbf8ba9c588e99",
+        "estado": "BLOQUEADO",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876797+00:00",
+        "pendientes": [
+          "El mismo SKU tiene fotografías de unidades negras y rosadas. No se confirmó venta de colores surtidos ni color a publicar.",
+          "Portada negra preparada únicamente como borrador privado; no determina la variante comercial."
+        ]
+      }
     },
     "MOUS005": {
       "fotos": [
@@ -26602,8 +26702,21 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1319,1320,1321,1322,1323; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "097a910d5ec0400a90c9bfccfe17f151faad41c5cfb0e87de8bef4e12fad5aa7",
+        "estado": "BLOQUEADO",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876799+00:00",
+        "pendientes": [
+          "La foto cercana del mouse y conector USB tiene dos tramos de cable cortados por el borde de la imagen. La otra foto corta parte del cuerpo del mouse.",
+          "No se recorta para ocultar esas faltas ni se reconstruye el cable; pendiente fuente comercial completa."
+        ]
+      }
     },
     "MOUS022": {
       "fotos": [
@@ -26779,8 +26892,21 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1300,1301,1302,1303,1304; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "ea88ae020cde36aa786f1ef411c66d6f4c7cc1a87d814b63506a86a5f4542f9c",
+        "estado": "BLOQUEADO",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876801+00:00",
+        "pendientes": [
+          "Recorte auténtico útil de 956 × 584 píxeles, inferior al mínimo de lado largo 1000. El pipeline rechazó la portada; no se amplió ni se añadió margen para superar el control.",
+          "No hay información suficiente en fotos para confirmar protocolo inalámbrico, DPI, batería o modo de carga. Las ofertas web de modelos D5/D6 no se usan como equivalentes."
+        ]
+      }
     },
     "MOUS027": {
       "fotos": [
@@ -27279,8 +27405,18 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1139,1140,1141; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "abf7200c86466670cb34f5c415339f2376ed4e9f7f64209514fe3a66a338f8e6",
+        "estado": "aplicado_local",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876802+00:00",
+        "pendientes": []
+      }
     },
     "MOUS040": {
       "fotos": [
@@ -35773,8 +35909,20 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1624,1625,1626; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "46bbd900fc0ad0b6cf7eafcbac8f473b24e8b621298c637af0d9cc26e0ab28f3",
+        "estado": "BLOQUEADO",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876787+00:00",
+        "pendientes": [
+          "Producto parcialmente oculto o fuera del encuadre en las fotografías disponibles."
+        ]
+      }
     },
     "SOPO006": {
       "fotos": [
@@ -35819,8 +35967,20 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 226,227; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "16a47a50183a2a12819449fdf37b7e78ad1b1f957a4146ef10ddf0e8a4bfecec",
+        "estado": "BLOQUEADO",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876795+00:00",
+        "pendientes": [
+          "Solo fotografías de caja y discrepancia aluminio/acero; requiere revisión del material y fuente comercial auténtica sin empaque."
+        ]
+      }
     },
     "SOPO007": {
       "fotos": [
@@ -36195,8 +36355,20 @@
         "AAA (genérico)"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "genérico/compatible",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1118,1119,1120,1121; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "ae657fbf0647d1c544913f850a5bf02506c894f30dee19aaccf7e3dc8232b617",
+        "estado": "BLOQUEADO",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876788+00:00",
+        "pendientes": [
+          "Resolución útil insuficiente; no ampliar ni rellenar lienzo para simular detalle."
+        ]
+      }
     },
     "SOPO017": {
       "fotos": [
@@ -36954,8 +37126,20 @@
         "AAA (genérico)"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "genérico/compatible",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1122,1123,1124,1125; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "0a1f5aff935a667e7cba1a18bed23523ab3a7eb3a53c857cd86ccacad42b9ae2",
+        "estado": "BLOQUEADO",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876790+00:00",
+        "pendientes": [
+          "No existe una fotografía simultáneamente completa y con nitidez comercial suficiente."
+        ]
+      }
     },
     "SOPO036": {
       "fotos": [
@@ -37601,8 +37785,20 @@
         "AAA (genérico)"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "genérico/compatible",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 759,760,761; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "f8dc330dc56442adf23d6a70933740ebc0192c7e428b9078fcb45bd440bc7dca",
+        "estado": "BLOQUEADO",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876794+00:00",
+        "pendientes": [
+          "Solo existen fotografías de empaque; falta material auténtico utilizable del producto sin caja."
+        ]
+      }
     },
     "SOPO058": {
       "fotos": [
@@ -37681,8 +37877,18 @@
         "AAA (genérico)"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "genérico/compatible",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1126,1127,1128,1129; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "d399095a72a0fc0da4f3dd8e0ec9ebf2d31190d7811243e35ae8e30f527b46e3",
+        "estado": "aplicado_local",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876792+00:00",
+        "pendientes": []
+      }
     },
     "SOPO059": {
       "fotos": [
@@ -41375,8 +41581,22 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 787,788; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "03d934794f1cde5c28c941fcbff8c6f6ea973c3bd83b965d68185b73d70fc2a3",
+        "estado": "REVISAR",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876805+00:00",
+        "pendientes": [
+          "Falta portada profesional sin caja con permiso comercial aplicable a CONECTATECH y variante/color exactos.",
+          "Garantía y accesorios incluidos no documentados para esta venta; no prometer plazos ni cargador.",
+          "Resolver cámara principal 13/50 MP; este campo se excluyó de la ficha preparada."
+        ]
+      }
     },
     "TELF024": {
       "fotos": [
@@ -41421,8 +41641,21 @@
         "Caja original"
       ],
       "presentacion": "sin caja",
-      "autenticidad": "por verificar",
-      "estado": "REVISAR"
+      "autenticidad": "original verificado",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 694,695; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+      "produccion": {
+        "huella_revisada": "51b6d7287c4b762e5474e0cc6457be535bdbedd1fa834cff7fd26bf0b7c8a8ec",
+        "estado": "REVISAR",
+        "revision_regla_revisada": 2,
+        "reporte": "reportes/lote-040-resultados.json",
+        "fecha": "2026-10-10T07:13:36.876806+00:00",
+        "pendientes": [
+          "Falta portada profesional sin caja con permiso comercial aplicable a CONECTATECH y variante/color exactos.",
+          "Garantía y accesorios incluidos no documentados para esta venta; no prometer plazos ni cargador."
+        ]
+      }
     },
     "TELF025": {
       "fotos": [
@@ -43880,7 +44113,7 @@
     "errores": 10,
     "cola_pendiente": 695
   },
-  "consultado": "2026-10-10T06:30:46.111147+00:00",
+  "consultado": "2026-10-10T07:05:03.332983+00:00",
   "migracion_revision_regla": {
     "fecha": "2026-10-10T06:44:41.489618+00:00",
     "sku": [
