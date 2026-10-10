@@ -269,6 +269,88 @@
       "fecha": "2026-10-10T17:52:40.904120+00:00",
       "sha256_maestro": "5f410aa5d048f7ba6e3368be958dcdb53ce7423b1e4e6b130f1bd7e1c249f632",
       "evidencia": "Modelo C202 confirmado en el lateral del empaque propio. La portada conserva cuerpo blanco, base circular y módulo óptico negro; no muestra caja, cables ni puertos ocultos. Imagen comercial creada desde referencias propias, con luz, fondo y acabado asistidos por IA."
+    },
+    "movil": {
+      "solicitado": "CAMA008",
+      "sku": "CAMA008",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T19:43:04.369Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/",
+      "archivo_html": "productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/index.html",
+      "http": 200,
+      "sha256_html": "1e8f789a63106950719e7051447ce812e8c2d9dbd86c8bf7077f0c2a3d00f53f",
+      "sha256_html_local": "1e8f789a63106950719e7051447ce812e8c2d9dbd86c8bf7077f0c2a3d00f53f",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/cama008/CAMA008-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/cama008/CAMA008-01-600.webp?v=272ce765ab844a3e",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/cama008/CAMA008-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/cama003-camara-de-seguridad-bw300-xiaomi/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-046/qa-local/movil/CAMA008-390.png",
+      "sha256": "729c4f1c42b80c702b9b4c95df0cea08f49a381ff4c794bb18f7a186af7dcd77",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-046/qa-local/movil/CAMA008-1280.png",
+        "sha256": "aa68a1ea0411dff71295c5e81685e8ab67b6473a6733a9759aa1ff57ac9e186b",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "beneficios": [

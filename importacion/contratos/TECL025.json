@@ -246,6 +246,83 @@
       "fecha": "2026-10-10T17:52:40.904120+00:00",
       "sha256_maestro": "190c1ca14da8d4231a3f1af342f46438696bfcb6781b527845599d27c300fe79",
       "evidencia": "Marca, modelo PKS-093S y controles confirmados con anverso y reverso del empaque propio. La portada conserva formato completo, teclado numérico, tres botones y control circular superior; el RGB se presenta como iluminación, no como función adicional."
+    },
+    "movil": {
+      "solicitado": "TECL025",
+      "sku": "TECL025",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T19:43:07.383Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/tecl025-teclado-primus-ballista-91t/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/tecl025-teclado-primus-ballista-91t/",
+      "archivo_html": "productos/tecl025-teclado-primus-ballista-91t/index.html",
+      "http": 200,
+      "sha256_html": "6bc705374c7e52f2bc3b0bb2c8e1797432eaf386a2ea5bff50f51d21dd95eed4",
+      "sha256_html_local": "6bc705374c7e52f2bc3b0bb2c8e1797432eaf386a2ea5bff50f51d21dd95eed4",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/tecl025/TECL025-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/tecl025/TECL025-01-600.webp?v=bc3ecfc5a548583f",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/tecl025-teclado-primus-ballista-91t/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/tecl025/TECL025-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-046/qa-local/movil/TECL025-390.png",
+      "sha256": "3d8bd5642bf6cc443b2083d19f21d2c5c5574a9f5129d5f321eb78bc1acd4a70",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-046/qa-local/movil/TECL025-1280.png",
+        "sha256": "17b1915bcbf229dbff66e6761d1a962bc364b4985f89ebb5a99527d780264086",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "beneficios": [
