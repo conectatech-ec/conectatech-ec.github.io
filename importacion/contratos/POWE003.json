@@ -264,7 +264,81 @@
       "estado": "PENDIENTE"
     },
     "movil": {
-      "estado": "PENDIENTE"
+      "solicitado": "POWE003",
+      "sku": "POWE003",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T18:49:47.556Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/powe003-powerbank-philco-20000mah/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/powe003-powerbank-philco-20000mah/",
+      "archivo_html": "productos/powe003-powerbank-philco-20000mah/index.html",
+      "http": 200,
+      "sha256_html": "ee3d785fbe642ae787e04f24dd0f264c13a52fc64002517962604262404ae3d2",
+      "sha256_html_local": "ee3d785fbe642ae787e04f24dd0f264c13a52fc64002517962604262404ae3d2",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/powe003/POWE003-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/powe003/POWE003-01-600.webp?v=96b51c630ec239a8",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/powe003-powerbank-philco-20000mah/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/powe003/POWE003-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-045/qa-local/movil/POWE003-390.png",
+      "sha256": "fb73d200a214ad08558a11688e8be0317a40cb6717f07427b68036cc34491c79",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-045/qa-local/movil/POWE003-1280.png",
+        "sha256": "c2b85ea7c30829861faa327855d38ec438c4555dcc425944dd1fe63ff042748e",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "historial_visual": [
