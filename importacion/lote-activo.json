@@ -1,7 +1,7 @@
 {
   "version": 1,
   "lote": "lote-044",
-  "estado": "APLICADO_LOCAL",
+  "estado": "PUBLICADO_VERIFICADO",
   "rama": "catalogo/lote044",
   "manifiesto": "importacion/lotes/lote-044/manifiesto-aprobados.json",
   "skus": [
@@ -11,9 +11,15 @@
     "TECL025",
     "LECT005"
   ],
-  "publicados": [],
+  "publicados": [
+    "CAMA008",
+    "CAMA003",
+    "SWIT002",
+    "TECL025",
+    "LECT005"
+  ],
   "pendientes": [],
   "reporte_resultados": "reportes/lote-044-resultados.json",
   "reporte_http": "reportes/lote-044-http.json",
-  "revision_visual_publica": "PENDIENTE"
+  "revision_visual_publica": "Pendiente de QA público posterior a registrar la fecha efectiva"
 }
