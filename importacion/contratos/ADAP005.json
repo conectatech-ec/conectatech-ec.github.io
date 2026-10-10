@@ -185,9 +185,6 @@
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
       "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos."
     },
-    "movil": {
-      "estado": "PENDIENTE"
-    },
     "publicacion_http": {
       "estado": "PENDIENTE"
     },
@@ -196,6 +193,85 @@
       "fecha": "2026-10-10T15:27:31.705473+00:00",
       "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
       "evidencia": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles."
+    },
+    "movil": {
+      "solicitado": "ADAP005",
+      "sku": "ADAP005",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T15:32:34.709Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/adap005-adaptador-europa-latino-color-negro/",
+      "archivo_html": "productos/adap005-adaptador-europa-latino-color-negro/index.html",
+      "http": 200,
+      "sha256_html": "49af6774304d813d6ce2a09bfe38525e1012a6ffe648d18d7cd6be5be261cc66",
+      "sha256_html_local": "49af6774304d813d6ce2a09bfe38525e1012a6ffe648d18d7cd6be5be261cc66",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/adap005/ADAP005-01-600.webp?v=e18fe8753cb1d0f3",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/adap005-adaptador-europa-latino-color-negro/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/adap005/ADAP005-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap004-adaptador-europa-latino-color-blanco/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-042/qa-local/movil/ADAP005-390.png",
+      "sha256": "4bb205a80d361a364b0802d945b51ea19eded68d8573f469b4f58596350fb227",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-042/qa-local/movil/ADAP005-1280.png",
+        "sha256": "0e75a9c3a17f7629f22095c6a8262bcb3773a8bcb8a869aada9ba2a2b4a609f2",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "historial_visual": [
