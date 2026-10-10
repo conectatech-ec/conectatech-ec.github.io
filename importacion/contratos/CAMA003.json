@@ -172,7 +172,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/cama003-camara-de-seguridad-bw300-xiaomi/",
   "fecha_verificacion": "2026-10-10T17:52:40.904120+00:00",
   "descripcion": "Protege exteriores con la Xiaomi Outdoor Camera BW300. Ofrece imagen 2K de 3 MP, amplio campo de visión, batería integrada y protección IP67 para un monitoreo claro durante el día y la noche. El audio bidireccional permite comunicarte desde la aplicación.",
@@ -246,89 +246,56 @@
       "fecha": "2026-10-10T17:52:40.904120+00:00",
       "sha256_maestro": "4f06f0b44a65e841f0fd77df56c5a8c8b6ee49163cc71001b4057914839de125",
       "evidencia": "Modelo BW300 y código MJSXJ08BY confirmados en la etiqueta del empaque propio. Se preservan carcasa blanca, panel frontal negro, lente, iluminación, sensor PIR y soporte circular observados; sin caja ni accesorios inventados."
-    },
-    "movil": {
-      "solicitado": "CAMA003",
-      "sku": "CAMA003",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-10T17:57:33.016Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "javascript": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "REVISADA: producto completo, encuadre contain, título y precios legibles en móvil y escritorio",
-      "url": "https://conectatech-ec.github.io/productos/cama003-camara-de-seguridad-bw300-xiaomi/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/cama003-camara-de-seguridad-bw300-xiaomi/",
-      "archivo_html": "productos/cama003-camara-de-seguridad-bw300-xiaomi/index.html",
-      "http": 200,
-      "sha256_html": "bfa642107518bf38c480a5fb9fe36afd4650dbb7ee071ecf5ed5138aa4373d33",
-      "sha256_html_local": "bfa642107518bf38c480a5fb9fe36afd4650dbb7ee071ecf5ed5138aa4373d33",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/cama003/CAMA003-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/cama003/CAMA003-01-600.webp?v=8ce5e90dc283572c",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/cama003-camara-de-seguridad-bw300-xiaomi/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/cama003/CAMA003-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-044/qa-local/movil/CAMA003-390.png",
-      "sha256": "202416a212fd2086fac9aab05ae0763f267d6bdc3f5446a69531fa201fe0f36b",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-044/qa-local/movil/CAMA003-1280.png",
-        "sha256": "d1093a39431d385030256a823a785816535e0d9163b04792f1f252958ba0bc46",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-044-http.json",
-      "sha256": "6ba29fe76d5b849a5679a9290c44d9e066efa11ec913e306ecc3a620a670f59c"
     }
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "2K · 3 MP",
+      "titulo": "Mira con más detalle",
+      "descripcion": "Supervisa tu exterior con imágenes de resolución 2K.",
+      "especificaciones": [
+        "Resolución"
+      ],
+      "fuentes": [
+        "https://www.mi.com/global/product/xiaomi-outdoor-camera-bw300/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "130° de visión",
+      "titulo": "Más espacio a la vista",
+      "descripcion": "Un campo de visión amplio para observar el entorno.",
+      "especificaciones": [
+        "Campo de visión"
+      ],
+      "fuentes": [
+        "https://www.mi.com/global/product/xiaomi-outdoor-camera-bw300/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Protección IP67",
+      "titulo": "Preparada para exteriores",
+      "descripcion": "Protección frente al polvo y al agua según su clasificación IP67.",
+      "especificaciones": [
+        "Protección"
+      ],
+      "fuentes": [
+        "https://www.mi.com/global/product/xiaomi-outdoor-camera-bw300/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Noche a color",
+      "titulo": "Conserva el color de noche",
+      "descripcion": "Su visión nocturna a color aporta información visual al oscurecer.",
+      "especificaciones": [
+        "Visión nocturna"
+      ],
+      "fuentes": [
+        "https://www.mi.com/global/product/xiaomi-outdoor-camera-bw300/"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

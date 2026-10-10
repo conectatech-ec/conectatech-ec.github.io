@@ -172,7 +172,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
   "fecha_verificacion": "2026-10-10T17:52:40.904120+00:00",
   "descripcion": "Lee y graba discos ópticos con la unidad externa Dell DW316. Su formato slim facilita transportarla y conectarla por USB a equipos compatibles que no incorporan lector interno. El acabado negro mantiene una presentación sobria y compacta.",
@@ -246,84 +246,45 @@
       "fecha": "2026-10-10T17:52:40.904120+00:00",
       "sha256_maestro": "e71114a6dc0d52f59a392736c8814e592c3991f5d621e476eecfc304cadaad25",
       "evidencia": "Modelo DW316 y modelo regulatorio GP61NB60 confirmados en el empaque propio. La portada conserva forma slim, bandeja frontal, botón de expulsión y logotipo Dell; no añade disco, cable ni software."
-    },
-    "movil": {
-      "solicitado": "LECT005",
-      "sku": "LECT005",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-10T17:57:35.614Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "javascript": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "REVISADA: producto completo, encuadre contain, título y precios legibles en móvil y escritorio",
-      "url": "https://conectatech-ec.github.io/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
-      "archivo_html": "productos/lect005-lector-de-cd-dvd-externo-marca-dell/index.html",
-      "http": 200,
-      "sha256_html": "03074b0456e4f9be2822ff93872561c1e68d198135d2f8e56f17301f0ccb8cd0",
-      "sha256_html_local": "03074b0456e4f9be2822ff93872561c1e68d198135d2f8e56f17301f0ccb8cd0",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/lect005/LECT005-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/lect005/LECT005-01-600.webp?v=efe71c6d12b21ec9",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/lect005/LECT005-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-044/qa-local/movil/LECT005-390.png",
-      "sha256": "2026e7467bf4bbf4710d7805838a98f4c51219e82fe37a468c2d0c3a2c9105bc",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-044/qa-local/movil/LECT005-1280.png",
-        "sha256": "f2ca939783a5d77d4c18cca7731afcf9f12c1ee4577786168841908923f92b0b",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-044-http.json",
-      "sha256": "6ba29fe76d5b849a5679a9290c44d9e066efa11ec913e306ecc3a620a670f59c"
     }
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "Lee y graba CD/DVD",
+      "titulo": "Recupera tus discos",
+      "descripcion": "Accede a tus discos y graba contenido en CD y DVD compatibles.",
+      "especificaciones": [
+        "Formatos"
+      ],
+      "fuentes": [
+        "https://www.dell.com/support/product-details/en-us/product/dell-usb-slim-dvd-drive-dw316/overview"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Conexión USB",
+      "titulo": "Añade un lector externo",
+      "descripcion": "Conéctalo por USB a un equipo compatible.",
+      "especificaciones": [
+        "Conexión",
+        "Tipo"
+      ],
+      "fuentes": [
+        "https://www.dell.com/support/product-details/en-us/product/dell-usb-slim-dvd-drive-dw316/overview"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Diseño slim",
+      "titulo": "Ocupa menos espacio",
+      "descripcion": "Formato delgado para acompañar tu equipo y facilitar el transporte.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://www.dell.com/support/product-details/en-us/product/dell-usb-slim-dvd-drive-dw316/overview"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

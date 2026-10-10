@@ -194,7 +194,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/swit002-switch-de-red-tplink-8-puertos/",
   "fecha_verificacion": "2026-10-10T17:52:40.904120+00:00",
   "descripcion": "Amplía tu red cableada con el switch TP-Link LiteWave LS1008G. Sus ocho puertos Gigabit ofrecen conexión rápida para computadoras, televisores, consolas y otros equipos de red. Su diseño sin ventilador funciona silenciosamente y la instalación es plug and play.",
@@ -269,84 +269,56 @@
       "fecha": "2026-10-10T17:52:40.904120+00:00",
       "sha256_maestro": "90eaba0188b3986adb0ee7d26ca2b366fc281605a6e47f23316b74c3eb91e56d",
       "evidencia": "Modelo LS1008G confirmado en el empaque propio. La portada muestra exactamente ocho puertos RJ45, indicadores alineados y carcasa negra facetada, sin cables, adaptadores ni puertos añadidos."
-    },
-    "movil": {
-      "solicitado": "SWIT002",
-      "sku": "SWIT002",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-10T17:57:33.947Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "javascript": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "REVISADA: producto completo, encuadre contain, título y precios legibles en móvil y escritorio",
-      "url": "https://conectatech-ec.github.io/productos/swit002-switch-de-red-tplink-8-puertos/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/swit002-switch-de-red-tplink-8-puertos/",
-      "archivo_html": "productos/swit002-switch-de-red-tplink-8-puertos/index.html",
-      "http": 200,
-      "sha256_html": "becb4097be8d43c08a1a2021d4633992a7a841740092cbd7e4120fea3dd6a631",
-      "sha256_html_local": "becb4097be8d43c08a1a2021d4633992a7a841740092cbd7e4120fea3dd6a631",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/swit002/SWIT002-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/swit002/SWIT002-01-600.webp?v=2a1b9ed5020f2ab6",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/swit002-switch-de-red-tplink-8-puertos/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/swit002/SWIT002-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-044/qa-local/movil/SWIT002-390.png",
-      "sha256": "5d350e8efd8f70cf2419bf7fe25c3ce20356018f4d7ef4b113e8f3f82f18b57f",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-044/qa-local/movil/SWIT002-1280.png",
-        "sha256": "3918df9b79f7eea1b8bfd5c4bf11efc43b9867bee9a09bd01fa374050c24f064",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-044-http.json",
-      "sha256": "6ba29fe76d5b849a5679a9290c44d9e066efa11ec913e306ecc3a620a670f59c"
     }
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "8 puertos Gigabit",
+      "titulo": "Conecta más equipos",
+      "descripcion": "Amplía tu red con ocho conexiones RJ45 de hasta 1.000 Mbps por puerto.",
+      "especificaciones": [
+        "Puertos"
+      ],
+      "fuentes": [
+        "https://www.tp-link.com/us/home-networking/8-port-switch/ls1008g/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Plug and play",
+      "titulo": "Conecta y empieza",
+      "descripcion": "Instala el switch sin una configuración compleja.",
+      "especificaciones": [
+        "Instalación"
+      ],
+      "fuentes": [
+        "https://www.tp-link.com/us/home-networking/8-port-switch/ls1008g/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Sin ventilador",
+      "titulo": "Trabaja sin ese ruido",
+      "descripcion": "Diseño sin ventilador para una conexión discreta en tu espacio.",
+      "especificaciones": [
+        "Funcionamiento"
+      ],
+      "fuentes": [
+        "https://www.tp-link.com/us/home-networking/8-port-switch/ls1008g/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Auto‑MDI/MDIX",
+      "titulo": "Conexión más sencilla",
+      "descripcion": "Detecta automáticamente el tipo de conexión Ethernet.",
+      "especificaciones": [
+        "Negociación"
+      ],
+      "fuentes": [
+        "https://www.tp-link.com/us/home-networking/8-port-switch/ls1008g/"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

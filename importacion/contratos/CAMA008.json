@@ -194,7 +194,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/",
   "fecha_verificacion": "2026-10-10T17:52:40.904120+00:00",
   "descripcion": "Vigila tus espacios con la cámara TP-Link Tapo C202. Su imagen Full HD 1080p, movimiento horizontal y vertical, visión nocturna y audio bidireccional facilitan el monitoreo desde la aplicación Tapo. También admite conexión Wi‑Fi de 2,4 GHz o Ethernet.",
@@ -269,89 +269,56 @@
       "fecha": "2026-10-10T17:52:40.904120+00:00",
       "sha256_maestro": "5f410aa5d048f7ba6e3368be958dcdb53ce7423b1e4e6b130f1bd7e1c249f632",
       "evidencia": "Modelo C202 confirmado en el lateral del empaque propio. La portada conserva cuerpo blanco, base circular y módulo óptico negro; no muestra caja, cables ni puertos ocultos. Imagen comercial creada desde referencias propias, con luz, fondo y acabado asistidos por IA."
-    },
-    "movil": {
-      "solicitado": "CAMA008",
-      "sku": "CAMA008",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-10T17:57:32.112Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "javascript": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "REVISADA: producto completo, encuadre contain, título y precios legibles en móvil y escritorio",
-      "url": "https://conectatech-ec.github.io/productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/",
-      "archivo_html": "productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/index.html",
-      "http": 200,
-      "sha256_html": "749a3fbc30458f32b2cd0e268e16e2d0cded375668166c5c5e13f7793eb09123",
-      "sha256_html_local": "749a3fbc30458f32b2cd0e268e16e2d0cded375668166c5c5e13f7793eb09123",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/cama008/CAMA008-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/cama008/CAMA008-01-600.webp?v=272ce765ab844a3e",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/cama008-camara-de-seguridad-tp-link-tapo-full-hd-1080/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/cama008/CAMA008-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/cama003-camara-de-seguridad-bw300-xiaomi/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-044/qa-local/movil/CAMA008-390.png",
-      "sha256": "9984900d13c0c36a9bca6c2ca061d6f4614b1341e4633d99664aebabbf671d5b",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-044/qa-local/movil/CAMA008-1280.png",
-        "sha256": "3571ff9604144aa9096e445f1874f61cfaeef5a102c32d73c03140d82cc8b648",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-044-http.json",
-      "sha256": "6ba29fe76d5b849a5679a9290c44d9e066efa11ec913e306ecc3a620a670f59c"
     }
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "Full HD 1080p",
+      "titulo": "Ve lo que importa",
+      "descripcion": "Observa tus espacios con imagen Full HD.",
+      "especificaciones": [
+        "Resolución"
+      ],
+      "fuentes": [
+        "https://www.tapo.com/ec/product/smart-camera/tapo-c202/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "360° horizontal",
+      "titulo": "Amplía tu vista",
+      "descripcion": "Orienta la cámara para recorrer el entorno; también se mueve en vertical.",
+      "especificaciones": [
+        "Movimiento"
+      ],
+      "fuentes": [
+        "https://www.tapo.com/ec/product/smart-camera/tapo-c202/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Hasta 12 m de noche",
+      "titulo": "Sigue atento al oscurecer",
+      "descripcion": "La visión nocturna ayuda a vigilar espacios con poca luz.",
+      "especificaciones": [
+        "Visión nocturna"
+      ],
+      "fuentes": [
+        "https://www.tapo.com/ec/product/smart-camera/tapo-c202/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Audio bidireccional",
+      "titulo": "Escucha y conversa",
+      "descripcion": "Comunícate en ambos sentidos desde la cámara.",
+      "especificaciones": [
+        "Audio"
+      ],
+      "fuentes": [
+        "https://www.tapo.com/ec/product/smart-camera/tapo-c202/"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }
