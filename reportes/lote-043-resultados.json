@@ -1,0 +1,94 @@
+{
+  "lote": "lote-043",
+  "fecha": "2026-10-10T17:17:10.350170+00:00",
+  "resumen": {
+    "sku_procesados": 5,
+    "imagenes_comerciales_terminadas": 2,
+    "fichas_enriquecidas_nuevas": 2,
+    "productos_actualizados_publicados": 2,
+    "pendientes_del_lote": 3,
+    "errores_abiertos": 0
+  },
+  "presentacion": {
+    "columnas_escritorio": 3,
+    "columnas_movil": 2,
+    "primeros_sku": [
+      "AUDI012",
+      "POWE003"
+    ],
+    "criterio": "Misma fecha efectiva del lote; desempate estable del catálogo"
+  },
+  "productos": [
+    {
+      "sku": "POWE003",
+      "nombre_comercial": "Batería portátil Philco FLP8202CV 20.000 mAh",
+      "estado": "publicado_verificado",
+      "revision_regla": 2,
+      "pendientes": [],
+      "imagen": "/imagenes/powe003/POWE003-01.webp",
+      "maestro": "/imagenes/powe003/original-077ce8a7ce05d73e.png",
+      "url": "https://conectatech-ec.github.io/productos/powe003-powerbank-philco-20000mah/",
+      "precio_contado": 33.01,
+      "pvp": 37.96,
+      "stock": 1,
+      "clasificacion": "original",
+      "presentacion": "sin caja",
+      "fuente": "Fotografías propias de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "modelo": "FLP8202CV",
+      "marca_retirada": null
+    },
+    {
+      "sku": "AUDI012",
+      "nombre_comercial": "Audífonos gamer KOMC G306 con micrófono",
+      "estado": "publicado_verificado",
+      "revision_regla": 2,
+      "pendientes": [],
+      "imagen": "/imagenes/audi012/AUDI012-01.webp",
+      "maestro": "/imagenes/audi012/original-9f5959f85b1aebeb.png",
+      "url": "https://conectatech-ec.github.io/productos/audi012-audifonos-de-diadema-gamer-komc-g306/",
+      "precio_contado": 18,
+      "pvp": 20.7,
+      "stock": 1,
+      "clasificacion": "original",
+      "presentacion": "sin caja",
+      "fuente": "Fotografías propias de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "modelo": "G306",
+      "marca_retirada": null
+    },
+    {
+      "sku": "CARG035",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "pendientes": [
+        "Solo se dispone de fotos del empaque; falta fotografía fiel del producto sin caja o fuente externa autorizada.",
+        "Empaque contradictorio: entrada DC 12–24 V frente a AC 100–240 V. No publicar voltaje hasta resolver."
+      ]
+    },
+    {
+      "sku": "CABL145",
+      "estado": "REVISAR",
+      "revision_regla": 2,
+      "pendientes": [
+        "El empaque oculta el cable completo; fuente externa del modelo exacto localizada sin permiso comercial documentado.",
+        "Caja indica 5,1 A en el frente y 5 A en el lateral: no afirmar intensidad sin resolver."
+      ]
+    },
+    {
+      "sku": "AUDI076",
+      "estado": "REVISAR",
+      "revision_regla": 1,
+      "pendientes": [
+        "Registro histórico con Tipo Caja sin clasificación en filas 5–6 y Caja original en filas 1460–1462. El importador requiere resolver las filas no clasificadas; no existe contradicción AAA/Original. No se realizó identificación visual en este lote."
+      ]
+    }
+  ],
+  "verificacion_http": "reportes/lote-043-http.json",
+  "qa_publico": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38070994325",
+  "reporte_visual": "https://conectatech-ec.github.io/importacion/lotes/lote-043/Resultados-visuales.html",
+  "precios_stock_sku_urls_conservados": true,
+  "sku_comerciales_comprobados": 1165,
+  "propuestas_premium_001_no_aplicadas": true,
+  "nota": "Dos portadas desde fotografías propias; cinco propuestas premium-001 conservadas sin aprobación."
+}
