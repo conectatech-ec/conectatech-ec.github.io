@@ -76,9 +76,20 @@ def main():
             metadata['beneficios'] = [{k: b[k] for k in ('valor','titulo','descripcion')} for b in contract['beneficios']]
         else:
             current.pop('beneficios', None)
+        # Conservar ventas cruzadas ya revisadas aunque el nuevo lote sea de otra categoría.
         related = []
+        for item in previous.get('relacionados', []):
+            other = item.get('sku') if isinstance(item, dict) else None
+            candidate = ctx['productos'].get(other)
+            if not candidate or other == sku or other not in ctx['slugs']:
+                continue
+            canonical = 'https://conectatech-ec.github.io/productos/' + ctx['slugs'][other] + '/'
+            if item.get('url') == canonical and item.get('nombre') == candidate.get('name'):
+                related.append(item)
+            if len(related) == 3: break
         for other, candidate in approved.items():
-            if other == sku or candidate['categoria_comercial'] != contract['categoria_comercial']:
+            if len(related) >= 3: break
+            if other == sku or any(x['sku'] == other for x in related) or candidate['categoria_comercial'] != contract['categoria_comercial']:
                 continue
             product = ctx['productos'][other]
             # No enlazar con un nombre todavía sin aplicar o con un nombre histórico cuestionado.
