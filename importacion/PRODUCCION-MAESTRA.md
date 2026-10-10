@@ -54,3 +54,13 @@ Para teléfonos separar RAM física/virtual y confirmar variante. Para AAA no in
 ## Cierre verificable y reanudación
 
 Tras verificar la publicación, guardar el reporte por SKU y ejecutar `python scripts/registrar-resultados-lote.py --reporte reportes/LOTE-resultados.json`. Los pendientes conservan motivo y huella de sus fuentes: no se repite la investigación hasta nueva evidencia. Las capturas móviles y el reporte HTTP deben coincidir con los bytes de la ficha y las tres imágenes, según el contrato v3. Los originales de identificación con datos privados permanecen en Drive; solo maestros propios depurados y autorizados se incorporan a Git.
+
+## Presentación compacta y fecha efectiva
+
+Mantener las tarjetas actuales: cinco columnas en escritorio de 1280 px y dos en móvil de 390 px. No introducir especificaciones ni descripciones antes del clic. Foto, nombre y acceso de detalles abren la ficha completa existente. Los nuevos medios se reutilizan mediante el registro publicado y sus tres tamaños; nunca se regeneran sólo para cambiar la tarjeta.
+
+El selector «Actualizados recientemente» es el orden temporal por defecto; los empates y SKU sin fecha conservan el orden base. También se conservan el orden original, nombre y precios ascendente/descendente. Búsqueda, filtros y paginación operan sobre el mismo conjunto, sin duplicados.
+
+Después de la comprobación HTTP, ejecutar `scripts/registrar-actualizaciones.py` con el reporte real. El registro persistente y `assets/catalogo-publicado.js` sólo renuevan la fecha cuando cambia la huella de contenido publicado. Precios, stock, fuentes, fechas de QA y verificaciones repetidas no generan novedades. Publicar el registro actualizado y comprobar su presencia en Pages; no declarar terminado el orden por fecha antes de ello.
+
+El workflow `validar-lote.yml` añade el navegador real de catálogo mediante `scripts/verificar-catalogo.cjs`, incluyendo escritorio/móvil, acceso a fichas, imágenes, orden, búsqueda, filtros y paginación. Conservar capturas y ejecutar la comprobación del catálogo público al terminar el despliegue.

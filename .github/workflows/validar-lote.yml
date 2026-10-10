@@ -11,6 +11,16 @@ on:
         type: string
         required: false
         default: importacion/lotes/lote-020/manifiesto-aprobados.json
+      base_publica:
+        description: URL de Pages para una segunda comprobación del despliegue; dejar vacía en QA local
+        type: string
+        required: false
+        default: ''
+      manifiesto_qa:
+        description: Selección opcional de SKU para QA del catálogo (anteriores más nuevos)
+        type: string
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -25,8 +35,11 @@ jobs:
     timeout-minutes: 20
     env:
       MANIFIESTO_SOLICITADO: ${{ inputs.manifiesto || '' }}
+      BASE_PUBLICA_SOLICITADA: ${{ inputs.base_publica || '' }}
+      MANIFIESTO_QA_SOLICITADO: ${{ inputs.manifiesto_qa || '' }}
       REPORTE_MOVIL: reportes/movil-lote-activo.json
       REPORTE_CONTRATO: reportes/prepublicacion-lote-activo.json
+      REPORTE_CATALOGO: reportes/catalogo-lote-activo.json
     steps:
       - name: Recuperar exactamente la rama candidata
         uses: actions/checkout@v4
@@ -47,11 +60,13 @@ jobs:
         run: |
           python - <<'PY'
           import json, os, pathlib, re
+          from urllib.parse import urlparse
           root = pathlib.Path.cwd().resolve()
+          pointer = root / 'importacion/lote-activo.json'
+          active = json.loads(pointer.read_text()) if pointer.is_file() else {}
           selected = os.environ.get('MANIFIESTO_SOLICITADO', '').strip()
           if not selected:
-              pointer = root / 'importacion/lote-activo.json'
-              selected = json.loads(pointer.read_text()).get('manifiesto') if pointer.is_file() else 'importacion/lotes/lote-020/manifiesto-aprobados.json'
+              selected = active.get('manifiesto') or 'importacion/lotes/lote-020/manifiesto-aprobados.json'
           if not isinstance(selected, str) or '\n' in selected or '\r' in selected:
               raise SystemExit('Referencia de manifiesto inválida.')
           manifest_path = (root / selected).resolve()
@@ -60,6 +75,16 @@ jobs:
           selected = manifest_path.relative_to(root).as_posix()
           with open(os.environ['GITHUB_ENV'], 'a') as env:
               env.write('MANIFIESTO=' + selected + '\n')
+              public_base = os.environ.get('BASE_PUBLICA_SOLICITADA', '').strip().rstrip('/')
+              if not public_base and active.get('qa_base_publica'):
+                  if not os.environ.get('GITHUB_REF', '').startswith('refs/heads/catalogo/'):
+                      raise SystemExit('qa_base_publica solo se admite en ramas catalogo/**.')
+                  public_base = str(active['qa_base_publica']).strip().rstrip('/')
+              if public_base:
+                  parsed = urlparse(public_base)
+                  if public_base != 'https://conectatech-ec.github.io' or parsed.username or parsed.password:
+                      raise SystemExit('La verificación pública debe usar la URL de Pages de CONECTATECH.')
+              env.write('BASE_QA=' + (public_base or 'http://127.0.0.1:8765') + '\n')
           manifest = json.loads(manifest_path.read_text())
           skus = manifest.get('skus', [])
           if not skus or len(skus) != len(set(skus)) or any(not re.fullmatch(r'[A-Z0-9]+', sku) for sku in skus):
@@ -73,10 +98,24 @@ jobs:
               if not contract_path.is_relative_to(root / 'importacion') or contract_path.suffix != '.json' or not contract_path.is_file():
                   raise SystemExit('Contrato ausente o ruta inesperada: ' + sku)
           (pathlib.Path(os.environ['RUNNER_TEMP']) / 'conectatech-skus.txt').write_text('\n'.join(skus) + '\n')
+          qa_selected = os.environ.get('MANIFIESTO_QA_SOLICITADO', '').strip() or active.get('qa_manifiesto') or selected
+          if not isinstance(qa_selected, str) or '\n' in qa_selected or '\r' in qa_selected:
+              raise SystemExit('Referencia de manifiesto QA inválida.')
+          qa_path = (root / qa_selected).resolve()
+          if not qa_path.is_relative_to(root / 'importacion/lotes') or qa_path.suffix != '.json':
+              raise SystemExit('Manifiesto QA fuera de importacion/lotes o formato inválido.')
+          qa_skus = json.loads(qa_path.read_text()).get('skus', [])
+          if not qa_skus or len(qa_skus) != len(set(qa_skus)) or any(not isinstance(sku, str) or not re.fullmatch(r'[A-Z0-9]+', sku) for sku in qa_skus) or not set(skus).issubset(qa_skus):
+              raise SystemExit('Selección QA inválida o incompleta para el lote actual.')
+          (pathlib.Path(os.environ['RUNNER_TEMP']) / 'conectatech-qa-skus.txt').write_text('\n'.join(qa_skus) + '\n')
+          with open(os.environ['GITHUB_ENV'], 'a') as env:
+              env.write('MANIFIESTO_QA=' + qa_path.relative_to(root).as_posix() + '\n')
           # No reutilizar un reporte móvil de una ejecución anterior.
           (root / os.environ['REPORTE_MOVIL']).unlink(missing_ok=True)
           (root / os.environ['REPORTE_CONTRATO']).unlink(missing_ok=True)
+          (root / os.environ['REPORTE_CATALOGO']).unlink(missing_ok=True)
           print('SKU seleccionados:', len(skus))
+          print('SKU para QA catálogo:', len(qa_skus))
           PY
 
       - name: Instalar dependencias declaradas de validación
@@ -87,6 +126,7 @@ jobs:
           node "$RUNNER_TEMP/conectatech-playwright/node_modules/playwright/cli.js" install --with-deps chromium
 
       - name: Iniciar servidor local del contenido candidato
+        if: env.BASE_QA == 'http://127.0.0.1:8765'
         shell: bash
         run: |
           python -m http.server 8765 --bind 127.0.0.1 > "$RUNNER_TEMP/conectatech-http.log" 2>&1 &
@@ -110,7 +150,16 @@ jobs:
         shell: bash
         run: |
           mapfile -t skus < "$RUNNER_TEMP/conectatech-skus.txt"
-          node scripts/verificar-movil.cjs --sku "${skus[@]}" --base http://127.0.0.1:8765 --salida "$REPORTE_MOVIL" --capturas reportes/movil --desktop
+          node scripts/verificar-movil.cjs --sku "${skus[@]}" --base "$BASE_QA" --salida "$REPORTE_MOVIL" --capturas reportes/movil --desktop
+
+      - name: Comprobar catálogo compacto, novedades, filtros y enlaces
+        id: catalogo
+        if: always() && steps.preflight.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          mapfile -t skus < "$RUNNER_TEMP/conectatech-qa-skus.txt"
+          node scripts/verificar-catalogo.cjs --sku "${skus[@]}" --base "$BASE_QA" --salida "$REPORTE_CATALOGO" --capturas reportes/catalogo
 
       - name: Incorporar únicamente evidencia móvil válida
         id: evidencia
@@ -144,7 +193,7 @@ jobs:
               checks.pop('movil', None)
               row = by_sku.get(sku, {})
               valid = (not duplicate and not report.get('errores_herramienta') and
-                       report.get('base') == 'http://127.0.0.1:8765' and
+                       report.get('base') == os.environ['BASE_QA'] and
                        row.get('estado') == 'VERIFICADO' and row.get('url') == contract.get('url_publica') and
                        bool(row.get('verificaciones')) and all(value is True for value in row['verificaciones'].values()) and
                        not row.get('errores') and
@@ -160,6 +209,8 @@ jobs:
               (target / 'contratos' / (sku + '.json')).write_text(text)
           provenance = {'fecha': datetime.now(timezone.utc).isoformat(), 'commit_candidato': os.environ['GITHUB_SHA'],
                         'run_id': os.environ['GITHUB_RUN_ID'], 'manifiesto': os.environ['MANIFIESTO'],
+                        'base_comprobada': os.environ['BASE_QA'],
+                        'manifiesto_qa': os.environ['MANIFIESTO_QA'],
                         'sha256_manifiesto': hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
                         'movil_verificados': accepted, 'movil_pendientes': rejected,
                         'publica_o_hace_push': False}
@@ -187,6 +238,8 @@ jobs:
             reportes/movil-lote-activo.json
             reportes/movil/
             reportes/prepublicacion-lote-activo.json
+            reportes/catalogo-lote-activo.json
+            reportes/catalogo/
 
       - name: Exigir todos los controles sin publicar
         if: always()
@@ -195,8 +248,10 @@ jobs:
           MOVIL: ${{ steps.movil.outcome }}
           EVIDENCIA: ${{ steps.evidencia.outcome }}
           CONTRATO: ${{ steps.contrato.outcome }}
+          CATALOGO: ${{ steps.catalogo.outcome }}
         run: |
           test "$PREFLIGHT" = success
           test "$MOVIL" = success
           test "$EVIDENCIA" = success
           test "$CONTRATO" = success
+          test "$CATALOGO" = success

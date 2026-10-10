@@ -21,3 +21,11 @@
 - Registrar discrepancias de caja/modelo/variante antes de modificar nombres o características. No resolverlas por aproximación.
 - Mostrar exclusivamente el producto, tanto original como genérico/compatible. La presentación de Sheets es histórica. Por confirmación expresa del propietario del 2026-10-10, los valores «Original» y «Caja original» de la columna Tipo del Registro acreditan autenticidad comercial. Guardar la fila y esa confirmación por SKU; no deducirla de la fotografía del empaque. AAA sigue siendo genérico/compatible. Valores contradictorios requieren revisión. Registrar por separado identidad/variante y derechos de uso de material externo.
 - Reportar cada SKU con foto recibida, portada, presentación, contado, PVP, URL y estado. Solo marcar publicado después de verificar Pages.
+
+## Catálogo compacto y revisión de publicaciones — orden vigente
+
+- Conservar tamaños de tarjetas, columnas y distribución compacta aprobados. Tarjetas: foto, nombre breve, PROMO CONTADO, PVP sin tachar y acceso a ficha; nunca especificaciones ni descripciones extensas antes del clic.
+- Foto, título y «Ver detalles» abren la URL estable de la ficha completa. Reutilizar las portadas aprobadas en tarjetas, búsquedas, filtros y galerías, con `object-fit: contain` y miniaturas responsivas.
+- Orden predeterminado temporal: «Actualizados recientemente». Conservar orden original y demás opciones; el valor predeterminado se configura sin reconstruir el catálogo.
+- Fecha efectiva por SKU únicamente tras un cambio comercial/editorial/fotográfico real publicado y verificado. Registrar huella semántica en `importacion/actualizaciones-sku.json`; una reverificación, importación sin cambios, fecha de creación o modificación financiera no renueva esa fecha.
+- Verificar con `scripts/verificar-catalogo.cjs` en Chromium real móvil/escritorio: tarjetas compactas, ausencia de fichas técnicas antes del clic, orden, filtros, búsqueda, paginación, imagen correcta y navegación a ficha. Repetir comprobación pública tras Pages. No cambiar encabezado, portada ni banners.
