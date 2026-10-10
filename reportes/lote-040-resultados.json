@@ -7,7 +7,7 @@
     "portadas_listas": 5,
     "webp_generados": 15,
     "fichas_enriquecidas": 5,
-    "publicados_verificados": 0,
+    "publicados_verificados": 5,
     "pendientes": 15
   },
   "productos": [
@@ -468,10 +468,11 @@
       "pvp": 29.9,
       "stock": 3,
       "url": "https://conectatech-ec.github.io/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
-      "estado": "aplicado_local",
+      "estado": "publicado_verificado",
       "estado_calidad": "APROBADO",
       "pendientes": [],
-      "revision_regla": 2
+      "revision_regla": 2,
+      "fecha_publicacion_verificada": "2026-10-10T07:30:27.144671+00:00"
     },
     {
       "sku": "JUGU084",
@@ -814,10 +815,11 @@
       "pvp": 22.02,
       "stock": 1,
       "url": "https://conectatech-ec.github.io/productos/jugu106-juguete-moto-enduro-coleccionable/",
-      "estado": "aplicado_local",
+      "estado": "publicado_verificado",
       "estado_calidad": "APROBADO",
       "pendientes": [],
-      "revision_regla": 2
+      "revision_regla": 2,
+      "fecha_publicacion_verificada": "2026-10-10T07:30:27.144671+00:00"
     },
     {
       "sku": "JUGU068",
@@ -890,10 +892,11 @@
       "pvp": 33.75,
       "stock": 1,
       "url": "https://conectatech-ec.github.io/productos/jugu068-juguete-moto-vespa-coleccionable/",
-      "estado": "aplicado_local",
+      "estado": "publicado_verificado",
       "estado_calidad": "APROBADO",
       "pendientes": [],
-      "revision_regla": 2
+      "revision_regla": 2,
+      "fecha_publicacion_verificada": "2026-10-10T07:30:27.144671+00:00"
     },
     {
       "sku": "SOPO005",
@@ -1272,10 +1275,11 @@
       "pvp": 15.93,
       "stock": 1,
       "url": "https://conectatech-ec.github.io/productos/sopo058-soporte-magsafe-tipo-pinza/",
-      "estado": "aplicado_local",
+      "estado": "publicado_verificado",
       "estado_calidad": "APROBADO",
       "pendientes": [],
-      "revision_regla": 2
+      "revision_regla": 2,
+      "fecha_publicacion_verificada": "2026-10-10T07:30:27.144671+00:00"
     },
     {
       "sku": "SOPO057",
@@ -1913,10 +1917,11 @@
       "pvp": 25.13,
       "stock": 1,
       "url": "https://conectatech-ec.github.io/productos/mous039-mouse-meetion-btm005-transparente/",
-      "estado": "aplicado_local",
+      "estado": "publicado_verificado",
       "estado_calidad": "APROBADO",
       "pendientes": [],
-      "revision_regla": 2
+      "revision_regla": 2,
+      "fecha_publicacion_verificada": "2026-10-10T07:30:27.144671+00:00"
     },
     {
       "sku": "TELF023",
@@ -2093,5 +2098,9 @@
       ],
       "revision_regla": 2
     }
-  ]
+  ],
+  "http_verificado": "reportes/lote-040-http.json",
+  "pages_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38034564298",
+  "catalogo_publico_qa": "PENDIENTE_ORDEN_ACTUALIZADO",
+  "registro_actualizaciones": "importacion/actualizaciones-sku.json"
 }
