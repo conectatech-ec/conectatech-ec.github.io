@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "estado": "APROBADO_POR_PROPIETARIO",
+  "fecha": "2026-10-10T14:12:52-05:00",
+  "evidencia": "El propietario confirmó haber visto POWE003 y ADAP005: mantener este formato para todos los SKU y las reglas de imágenes para las siguientes; avanzar más rápido reutilizando el formato.",
+  "alcance": "Estándar de presentación, fichas y acabado fotográfico para producción incremental de todos los SKU. No aprueba productos aún no verificados ni los cinco maestros históricos premium-001.",
+  "referencias": [
+    {
+      "sku": "POWE003",
+      "estado": "APROBADO_VISUAL_POR_PROPIETARIO",
+      "maestro": "/imagenes/powe003/original-008a16a7f1d88316.png",
+      "sha256_maestro": "008a16a7f1d88316eef7589c3ca1b3647a96818e8b9e5ec1cf5345c1bca21477",
+      "portada": "/imagenes/powe003/POWE003-01.webp",
+      "sha256_portada": "39a969281e87e7eb639054a285556b56c8690611e89f322d0882594dc923a6fe",
+      "url": "https://conectatech-ec.github.io/productos/powe003-powerbank-philco-20000mah/",
+      "sha256_ficha": "ee3d785fbe642ae787e04f24dd0f264c13a52fc64002517962604262404ae3d2"
+    },
+    {
+      "sku": "ADAP005",
+      "estado": "APROBADO_VISUAL_POR_PROPIETARIO",
+      "maestro": "/imagenes/adap005/original-e2a26dd2e1a6615d.png",
+      "sha256_maestro": "e2a26dd2e1a6615dda82468865a60c135cc66404386a2e14349b5da641e96873",
+      "portada": "/imagenes/adap005/ADAP005-01.webp",
+      "sha256_portada": "fe2ac0a7848ba74e232fc32608c19b54c236a34f4bd5de7ffbd669975d8b1827",
+      "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
+      "sha256_ficha": "160f79f6deb306ff407a13c4de194ba6cce698e6214fb68896aaffb13ab74b4f"
+    }
+  ],
+  "aplicacion": {
+    "nuevos_sku": "Obligatoria al producir fichas e imágenes; sin nueva aprobación rutinaria por producto.",
+    "existentes": "Migración progresiva por lotes; conservar imágenes que ya cumplen y datos/fuentes validados.",
+    "beneficios": "Características esenciales verificadas con valor visible y beneficio concreto en recuadros azul/verde.",
+    "detalles": "Especificaciones, compatibilidad, contenido y condiciones en desplegables accesibles; no inventar datos faltantes.",
+    "imagenes": "Acabado limpio de producto nuevo, luz de estudio, producto sin caja; ángulo que muestre funciones/puertos sólo cuando las referencias acrediten esas caras.",
+    "limites": "Conservar modelo, variante y hardware; Yantech sin rótulo; precios, stock, SKU y URL intactos.",
+    "eficiencia": "Reutilizar plantilla, fuentes y maestros; preparar varios SKU aptos antes de QA/publicación; cerrar excepciones por huella y seguir otros. No repetir QA salvo riesgo concreto o gate requerido.",
+    "publicacion": "Contrato v3 y QA real móvil/escritorio + HTTP/hashes. No elevar volumen automáticamente por encima del máximo operativo vigente."
+  }
+}

@@ -1,3 +1,9 @@
+## Estándar aprobado para todos los SKU — 10 de octubre de 2026
+
+El propietario inspeccionó POWE003 y ADAP005 publicados y aprobó conservar este formato y las reglas fotográficas para todos los SKU. Referencias por hash en `importacion/estandar-comercial-aprobado.json`. Reutilizar `scripts/ficha-beneficios.cjs`: beneficios concretos y verificados en recuadros azul/verde, especificaciones y detalles desplegables. Acabado fotográfico limpio, atractivo y de producto nuevo; mostrar conexiones y controles sólo con referencias suficientes. Aplicar incrementalmente a las nuevas fichas y al actualizar existentes; no regenerar imágenes que ya cumplen.
+
+Producción autorizada sin pedir nueva aprobación rutinaria: agrupar varios SKU aptos, reutilizar investigaciones cerradas, preparar antes de QA/publicación y continuar con otros cuando haya una excepción. Calidad y contrato v3 se mantienen; no prometer completar todos los SKU sin fuentes. Precios, stock, SKU, URLs, tarjetas 3/2, encabezado y banners intactos. Esta aprobación NO incluye los cinco maestros pendientes de premium-001.
+
 ## Prioridad comercial permanente — producto nuevo y beneficios primero
 
 Orden del propietario 2026-10-10: pensar siempre desde el punto de vista vendedor. Embellecer y pulir fotografías propias para un acabado de producto nuevo: eliminar polvo, huellas, manchas de manipulación y luz pobre; preservar textura real, modelo, color comercial y hardware. Preferir ángulos que expliquen el producto (puertos, entradas/salidas, controles) cuando todas esas caras tengan referencias suficientes. Analizar cajas y vistas adicionales antes de elegir composición. No inventar caras ocultas, especificaciones ni garantías. Si la condición de venta fuese usada, no ocultarla.
