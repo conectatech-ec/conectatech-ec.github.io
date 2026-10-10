@@ -226,10 +226,6 @@
       "verificada": true,
       "fuente": "importacion/lotes/lote-040/juguetes-propuestas.json"
     },
-    "movil": {
-      "estado": "PENDIENTE",
-      "motivo": "Requiere render real de la ficha y los medios aplicados; no afirmar revisión antes de capturar"
-    },
     "publicacion_http": {
       "estado": "PENDIENTE",
       "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
@@ -238,6 +234,90 @@
       "evidencia": "importacion/lotes/lote-040/evidencia-retoque-JUGU068.json",
       "estado": "APROBADO",
       "revision_root": "Revisión de la portada completa 1200 px; fondo exterior retirado, producto real sin reconstrucción ni deformación."
+    },
+    "movil": {
+      "solicitado": "JUGU068",
+      "sku": "JUGU068",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T07:25:00.827Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/jugu068-juguete-moto-vespa-coleccionable/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/jugu068-juguete-moto-vespa-coleccionable/",
+      "archivo_html": "productos/jugu068-juguete-moto-vespa-coleccionable/index.html",
+      "http": 200,
+      "sha256_html": "5612f05a518306f699b61c2225840f54992e9fc08d8d56264ff31785c87c1493",
+      "sha256_html_local": "5612f05a518306f699b61c2225840f54992e9fc08d8d56264ff31785c87c1493",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/jugu068/JUGU068-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/jugu068/JUGU068-01-600.webp",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/jugu068-juguete-moto-vespa-coleccionable/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/jugu068/JUGU068-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/jugu106-juguete-moto-enduro-coleccionable/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/JUGU068-390.png",
+      "sha256": "7bed36b4844b9b0589123369391bf7ac3be3be85b6bd8ea6c004a687ae5ac1cb",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/JUGU068-1280.png",
+        "sha256": "1773d8cd125770d5e750d80f7dc6d4db2bae2111c94a341ed539538a686704d6",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

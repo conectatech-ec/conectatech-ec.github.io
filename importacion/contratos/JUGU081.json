@@ -246,13 +246,93 @@
       "verificada": true,
       "fuente": "importacion/lotes/lote-040/juguetes-propuestas.json"
     },
-    "movil": {
-      "estado": "PENDIENTE",
-      "motivo": "Requiere render real de la ficha y los medios aplicados; no afirmar revisión antes de capturar"
-    },
     "publicacion_http": {
       "estado": "PENDIENTE",
       "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+    },
+    "movil": {
+      "solicitado": "JUGU081",
+      "sku": "JUGU081",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T07:24:59.056Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
+      "archivo_html": "productos/jugu081-juguete-carro-coleccionable-mercedes-benz/index.html",
+      "http": 200,
+      "sha256_html": "963286cb5db01585370d0bfa236203d8038b697f02b93a29a88bd87b7d90881d",
+      "sha256_html_local": "963286cb5db01585370d0bfa236203d8038b697f02b93a29a88bd87b7d90881d",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/jugu081/JUGU081-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/jugu081/JUGU081-01-600.webp",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/jugu081/JUGU081-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/jugu106-juguete-moto-enduro-coleccionable/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/jugu068-juguete-moto-vespa-coleccionable/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/JUGU081-390.png",
+      "sha256": "777ec210f227716fef5361957544b2dfdd3781fc3009427f67498b802b4791b5",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/JUGU081-1280.png",
+        "sha256": "f466db8843e0d0ba0e273d8f082bc6804ad0a0bf7f7eb245dfc028dde44131a7",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

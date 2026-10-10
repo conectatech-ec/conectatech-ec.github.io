@@ -10,6 +10,8 @@ on:
       - 'scripts/validar-contrato.py'
       - 'scripts/test-contrato.py'
       - 'scripts/registrar-resultados-lote.py'
+      - 'scripts/registrar-actualizaciones.py'
+      - 'scripts/test-actualizaciones.py'
       - 'importacion/piloto-imagenes.json'
       - '.github/workflows/producir-imagenes.yml'
   workflow_dispatch:
@@ -46,6 +48,7 @@ jobs:
         run: |
           python scripts/test-incremental.py
           python scripts/test-contrato.py
+          python scripts/test-actualizaciones.py
       - name: Registrar reglas y procesar lote
         if: github.event_name == 'workflow_dispatch'
         env:
@@ -101,10 +104,14 @@ jobs:
         env: {GH_TOKEN: '${{ github.token }}'}
         run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
       - name: Verificar publicación
+        id: verificar_publicacion
         if: inputs.aplicar
         run: |
           python - <<'PY'
-          import json,subprocess,time
+          import json,os,subprocess,time
+          from pathlib import Path
+          with open(os.environ['GITHUB_OUTPUT'],'a') as output:
+              output.write('publicados=false\n')
           report=json.load(open('reportes/procesamiento-imagenes.json'))
           sku=[x['sku'] for x in report['productos'] if x['estado']=='aplicado_local']
           if not sku:raise SystemExit(0)
@@ -113,17 +120,71 @@ jobs:
               if result.returncode==0:break
               if attempt==7:raise SystemExit(1)
               time.sleep(30)
+          path=Path('reportes/verificacion-publicacion.json')
+          if not path.is_file():raise SystemExit(0)
+          verified=json.loads(path.read_text())
+          if any(x.get('sku') in sku and x.get('estado')=='publicado_verificado' for x in verified.get('resultados', [])):
+              with open(os.environ['GITHUB_OUTPUT'],'a') as output:
+                  output.write('publicados=true\n')
           PY
-      - name: Conservar verificación HTTP en el repositorio
-        if: inputs.aplicar
+      - name: Registrar fechas de contenido publicado y verificado
+        if: inputs.aplicar && steps.verificar_publicacion.outputs.publicados == 'true'
         run: |
+          if [ ! -f reportes/verificacion-publicacion.json ]; then exit 0; fi
+          python scripts/registrar-actualizaciones.py --reporte-http reportes/verificacion-publicacion.json --aplicar --reporte "reportes/actualizaciones-${GITHUB_RUN_ID}.json"
+      - name: Conservar verificación HTTP en el repositorio
+        id: guardar_actualizaciones
+        if: inputs.aplicar && steps.verificar_publicacion.outputs.publicados == 'true'
+        run: |
+          echo 'publicado=false' >> "$GITHUB_OUTPUT"
           if [ ! -f reportes/verificacion-publicacion.json ]; then exit 0; fi
           cp reportes/verificacion-publicacion.json "reportes/verificacion-${GITHUB_RUN_ID}.json"
           git add reportes/verificacion-publicacion.json "reportes/verificacion-${GITHUB_RUN_ID}.json"
+          git add importacion/actualizaciones-sku.json assets/catalogo-publicado.js index.html "reportes/actualizaciones-${GITHUB_RUN_ID}.json"
           if git diff --cached --quiet; then exit 0; fi
+          base_publicada=$(git rev-parse HEAD)
           git commit -m "Registrar verificación HTTP del lote"
-          git pull --rebase origin main
+          git fetch origin main
+          if [ "$(git rev-parse origin/main)" != "$base_publicada" ]; then
+            echo 'Publicación detenida: main cambió durante la verificación; repetir sobre la base nueva.' >&2
+            exit 1
+          fi
           git push origin HEAD:main
+          echo 'publicado=true' >> "$GITHUB_OUTPUT"
+      - name: Reconstruir Pages con las fechas verificadas
+        if: inputs.aplicar && steps.guardar_actualizaciones.outputs.publicado == 'true'
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - name: Comprobar el catálogo y su registro servidos por Pages
+        if: inputs.aplicar && steps.guardar_actualizaciones.outputs.publicado == 'true'
+        run: |
+          python - <<'PY'
+          import hashlib,json,os,time,urllib.request
+          from pathlib import Path
+          base='https://conectatech-ec.github.io'
+          files={'index.html':'/', 'assets/catalogo-publicado.js':'/assets/catalogo-publicado.js'}
+          expected={name:hashlib.sha256(Path(name).read_bytes()).hexdigest() for name in files}
+          result=[]
+          for attempt in range(8):
+              result=[]
+              for name,path in files.items():
+                  url=base+path+'?verificacion='+os.environ['GITHUB_RUN_ID']+'-'+str(attempt)
+                  row={'archivo':name,'url':base+path,'sha256_esperado':expected[name]}
+                  try:
+                      request=urllib.request.Request(url,headers={'Cache-Control':'no-cache'})
+                      with urllib.request.urlopen(request,timeout=25) as response:
+                          row.update(http=response.status,sha256_http=hashlib.sha256(response.read()).hexdigest())
+                      row['verificado']=row['http']==200 and row['sha256_http']==expected[name]
+                  except Exception as exc:
+                      row.update(verificado=False,error=str(exc))
+                  result.append(row)
+              if all(row['verificado'] for row in result):break
+              if attempt<7:time.sleep(30)
+          report={'resultados':result,'verificado':all(row['verificado'] for row in result)}
+          Path('reportes/cache-publicado-'+os.environ['GITHUB_RUN_ID']+'.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(report,ensure_ascii=False))
+          if not report['verificado']:raise SystemExit('Pages no sirve aún los hashes esperados del catálogo y sus fechas')
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:

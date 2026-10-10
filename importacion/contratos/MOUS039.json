@@ -244,13 +244,83 @@
       "verificada": true,
       "fuente": "importacion/lotes/lote-040/perifericos-propuestas.json"
     },
-    "movil": {
-      "estado": "PENDIENTE",
-      "motivo": "Requiere render real de la ficha y los medios aplicados; no afirmar revisión antes de capturar"
-    },
     "publicacion_http": {
       "estado": "PENDIENTE",
       "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+    },
+    "movil": {
+      "solicitado": "MOUS039",
+      "sku": "MOUS039",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T07:25:02.681Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/mous039-mouse-meetion-btm005-transparente/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/mous039-mouse-meetion-btm005-transparente/",
+      "archivo_html": "productos/mous039-mouse-meetion-btm005-transparente/index.html",
+      "http": 200,
+      "sha256_html": "83b9b93a6c97599be6c32cefcd822af5a4a114a5cae5eac196925731693dd689",
+      "sha256_html_local": "83b9b93a6c97599be6c32cefcd822af5a4a114a5cae5eac196925731693dd689",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/mous039/MOUS039-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/mous039/MOUS039-01-600.webp",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/mous039-mouse-meetion-btm005-transparente/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/mous039/MOUS039-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/MOUS039-390.png",
+      "sha256": "b5373e236ea1d0f92654749e2ec0141a47b6ac2703ae0bc92ac8b3c6a52ed7fa",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/MOUS039-1280.png",
+        "sha256": "97c6e359f5fc7ce4974c632a626f98a00468263020603a14ad22871ea5d663c7",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }
