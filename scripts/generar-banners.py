@@ -3,7 +3,7 @@
 import argparse,hashlib,json,textwrap
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
-from reglas_sku import ROOT,rule,compatible
+from reglas_sku import ROOT,rule,compatible,image_title
 p=argparse.ArgumentParser(description=__doc__);p.add_argument('--sku',nargs='+',required=True);a=p.parse_args()
 media=json.loads((ROOT/'importacion/medios.json').read_text());seo=json.loads((ROOT/'seo-contenido.json').read_text())
 aliases=json.loads((ROOT/'importacion/alias-sku.json').read_text());report=[]
@@ -18,7 +18,7 @@ for raw in a.sku:
  out=Image.open(ROOT/'imagenes/marca/fondo-promocional-original.png').convert('RGB').resize((1200,1200))
  d=ImageDraw.Draw(out);logo=Image.open(ROOT/'imagenes/marca/logo-original.png').convert('RGBA');logo.thumbnail((150,150));out.paste(logo,(48,38),logo)
  d.text((220,65),'CONECTATECH',font=font(44,True),fill='white');d.text((221,125),'Todo en tecnología en un solo lugar.',font=font(22),fill='#c8e4f4')
- name=seo[sku]['nombre'];title=textwrap.wrap(name,width=19)
+ name=image_title(r,seo[sku]['nombre']);title=textwrap.wrap(name,width=19)
  y=255
  for line in title:d.text((50,y),line,font=font(31,True),fill='white');y+=43
  d.text((50,y+26),'SKU '+sku,font=font(20),fill='#a6eb62')

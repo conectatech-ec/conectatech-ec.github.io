@@ -1,0 +1,71 @@
+{
+  "modo": "aplicar",
+  "resultados": [
+    {
+      "sku": "SOPO060",
+      "estado": "aplicado_local",
+      "campos": [
+        "relacionados"
+      ],
+      "relacionados": [
+        "SOPO023"
+      ]
+    },
+    {
+      "sku": "SOPO023",
+      "estado": "aplicado_local",
+      "campos": [
+        "relacionados"
+      ],
+      "relacionados": [
+        "SOPO060"
+      ]
+    },
+    {
+      "sku": "ADAP004",
+      "estado": "aplicado_local",
+      "campos": [
+        "categoriaComercial",
+        "categoriaOriginal",
+        "clasificacionComercial",
+        "compatibilidad",
+        "contenidoVenta",
+        "fechaInventario",
+        "presentacion",
+        "relacionados",
+        "stockTiempoReal",
+        "tipo",
+        "unidadVenta",
+        "variante"
+      ],
+      "relacionados": [
+        "ADAP005"
+      ]
+    },
+    {
+      "sku": "ADAP005",
+      "estado": "aplicado_local",
+      "campos": [
+        "categoriaComercial",
+        "categoriaOriginal",
+        "clasificacionComercial",
+        "compatibilidad",
+        "contenidoVenta",
+        "fechaInventario",
+        "presentacion",
+        "relacionados",
+        "stockTiempoReal",
+        "tipo",
+        "unidadVenta",
+        "variante"
+      ],
+      "relacionados": [
+        "ADAP004"
+      ]
+    }
+  ],
+  "precios_stock_sku_urls_imagenes_conservados": true,
+  "aprobados": 4,
+  "pendientes": 0,
+  "nota": "Metadatos locales. El importador editorial sigue a cargo de títulos, descripción y características; la publicación requiere verificación móvil y HTTP."
+}

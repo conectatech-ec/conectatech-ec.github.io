@@ -1,3 +1,7 @@
+## Excepción más reciente — imágenes Yantech sin marca
+
+Orden expresa del propietario (2026-10-10): retirar el nombre Yantech / YAN TECH y su logotipo de todas las imágenes comerciales de sus productos. Conservar originales intactos y geometría/hardware. Esta excepción prevalece sobre conservar logotipos exclusivamente para Yantech. Registrar cada SKU identificado con `scripts/reglas_sku.py --marca Yantech --sku SKU --evidencia FUENTE --aplicar`; `reglas-sku.json` conserva la política general y el historial. Revisar cada maestro y guardar `revision_marcas.Yantech` con SHA-256, sin_texto, sin_logotipo y evidencia; el pipeline rechaza medios y banners sin esa revisión. No modificar nombres, precios, stock o URL por esta excepción visual.
+
 # CONECTATECH — mantenimiento del catálogo
 
 ## Prioridad más reciente — estrategia comercial y tres columnas

@@ -13,7 +13,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlparse, urljoin, unquote
 from PIL import Image
-from reglas_sku import rule
+from reglas_sku import rule, compatible
 
 ROOT = Path(__file__).resolve().parents[1]
 CAMPOS = ('sku nombre_original titulo_comercial tipo marca modelo variante categoria_original '
@@ -107,6 +107,9 @@ def artifact(root, evidence):
 def validate(root, contract, sku, r, candidates, ctx, categories=None, require_mobile=True):
     """Prepublicación: devuelve errores de este SKU, nunca modifica el contrato."""
     errors = []
+    for photo in candidates:
+        if not compatible(r, photo, photo.get('posicion') == 1):
+            errors.append({'codigo':'regla_visual', 'motivo':'Medio incompatible con presentación o exclusión de marca vigente'})
     def fail(code, message):
         errors.append({'codigo': code, 'motivo': message})
     if not isinstance(contract, dict):

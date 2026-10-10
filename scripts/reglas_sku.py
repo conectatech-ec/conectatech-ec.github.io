@@ -3,6 +3,7 @@ import argparse
 import csv
 import json
 import re
+from functools import lru_cache
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -15,9 +16,29 @@ DEFAULT = {'autenticidad': 'por verificar', 'presentacion': 'sin caja',
 def load(root=ROOT):
     return json.loads((root/'importacion/reglas-sku.json').read_text())
 
+@lru_cache(maxsize=8)
+def catalog_names(root, stamp):
+    # Índice de nombres; no vuelve a investigar ni descargar el catálogo.
+    path = root/'datos-593/inventario-publico.csv'
+    with path.open(encoding='utf-8-sig', newline='') as stream:
+        return {row['sku']:row.get('nombre','') for row in csv.DictReader(stream)}
+
 def rule(sku, root=ROOT):
     registry = load(root)
     value = {**DEFAULT, **registry['productos'].get(sku, {})}
+    policy = registry.get('politica_general', {}).get('marcas_sin_rotulo', {})
+    base = root/'datos-593/inventario-publico.csv'
+    name = catalog_names(root, base.stat().st_mtime_ns).get(sku, '') if base.exists() else ''
+    contract = root/'importacion/contratos'/f'{sku}.json'
+    if contract.exists():
+        c = json.loads(contract.read_text()); name += ' ' + str(c.get('marca') or '')
+    required = set(value.get('marcas_excluidas_imagen', []))
+    for brand, config in policy.items():
+        if any(re.search(r'(?<!\w)'+re.escape(alias)+r'(?!\w)',name,re.I) for alias in config['variantes']):
+            required.add(brand)
+    if required:
+        value['marcas_excluidas_imagen'] = sorted(required)
+        value['variantes_marcas_excluidas'] = {b:policy[b]['variantes'] for b in required}
     if registry.get('politica_general', {}).get('presentacion_obligatoria') == 'sin caja':
         value['presentacion'] = 'sin caja'
     if value['autenticidad'] not in AUTH or value['presentacion'] not in PRESENT:
@@ -30,7 +51,48 @@ def compatible(rule, photo, cover=False):
         return False
     if cover and presentation == 'con caja' and photo.get('contiene_caja') is not True:
         return False
+    # La excepción del propietario debe acreditarse para los bytes revisados,
+    # tanto en portada como en cualquier vista que vaya a reutilizar un banner.
+    for brand in rule.get('marcas_excluidas_imagen', []):
+        review = photo.get('revision_marcas', {}).get(brand, {})
+        digest = photo.get('sha256') or photo.get('sha256_original')
+        if (review.get('sin_texto') is not True or review.get('sin_logotipo') is not True
+                or not review.get('evidencia') or review.get('sha256_maestro') != digest):
+            return False
     return True
+
+def image_title(rule, title):
+    """Títulos dentro de banners: la excepción también excluye texto decorativo."""
+    for aliases in rule.get('variantes_marcas_excluidas', {}).values():
+        for alias in sorted(aliases,key=len,reverse=True):
+            title = re.sub(re.escape(alias),'',title,flags=re.I)
+    return re.sub(r'\s+',' ',title).strip()
+
+def register_brand(skus, brand, evidence, apply=False, root=ROOT):
+    """Identificación explícita de marca; conserva originales y el historial comercial."""
+    db = load(root)
+    policy = db.get('politica_general', {}).get('marcas_sin_rotulo', {})
+    if brand not in policy or not evidence.strip():
+        raise ValueError('Marca sin política del propietario o sin evidencia de identificación')
+    changes = []
+    for sku in sorted(set(skus)):
+        if sku not in db['productos']:
+            raise ValueError('SKU desconocido: '+sku)
+        old = db['productos'][sku]; new = dict(old)
+        new['marcas_excluidas_imagen'] = sorted(set(old.get('marcas_excluidas_imagen', []) + [brand]))
+        new['evidencia_marca_imagen'] = evidence
+        instruction = policy[brand]['instruccion']
+        if instruction not in new['instrucciones']:
+            new['instrucciones'] = (new['instrucciones']+' '+instruction).strip()
+        if new != old:
+            new['revision'] = old.get('revision', 0)+1
+            db['productos'][sku] = new
+            changes.append({'sku':sku, 'antes':old, 'despues':new})
+    if apply and changes:
+        db.setdefault('historial', []).append({'fecha':datetime.now(timezone.utc).isoformat(), 'cambios':changes})
+        path = root/'importacion/reglas-sku.json'; temp = path.with_suffix('.json.tmp')
+        temp.write_text(json.dumps(db,ensure_ascii=False,indent=2)+'\n'); temp.replace(path)
+    return changes
 
 def registration_rules(rows, skus, aliases, policy):
     """Clasificación comercial explícita del propietario; no aprueba fotos ni variantes."""
@@ -89,8 +151,14 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     source=p.add_mutually_exclusive_group(required=True)
     source.add_argument('--csv');source.add_argument('--registro',help='Snapshot JSON de Registro A:F, con cabecera')
+    source.add_argument('--marca',help='Marca identificada con excepción visual vigente')
+    p.add_argument('--evidencia',default='',help='Fuente de identificación de marca')
     p.add_argument('--sku',nargs='+',help='SKU del lote; obligatorio con --registro')
     p.add_argument('--aplicar',action='store_true');a=p.parse_args();issues=[]
+    if a.marca:
+        if not a.sku:p.error('--marca requiere --sku')
+        changes=register_brand(a.sku,a.marca,a.evidencia,a.aplicar)
+        print(json.dumps({'cambios':len(changes),'modo':'aplicar' if a.aplicar else 'simular'}));return
     if a.registro:
         if not a.sku:p.error('--registro requiere --sku para limitar el lote')
         db=load();aliases=json.loads((ROOT/'importacion/alias-sku.json').read_text())

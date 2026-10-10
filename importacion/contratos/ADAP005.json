@@ -7,7 +7,7 @@
   "modelo": null,
   "variante": "Color: Negro",
   "categoria_original": "Adaptadores",
-  "categoria_comercial": "Cargadores y Energía",
+  "categoria_comercial": "Cables y Conectividad",
   "precio_contado": 2.5,
   "pvp": 2.88,
   "stock": 16,
@@ -66,21 +66,29 @@
     "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
     "datos-593/inventario-publico.csv"
   ],
-  "imagen_principal": null,
+  "imagen_principal": "/imagenes/adap005/ADAP005-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
-    "estado": "PENDIENTE",
+    "estado": "AUTORIZADO",
     "tipo": "propia",
     "titular": "CONECTATECH",
     "fuente": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
-    "evidencia": "Fotografías propias de identificación autorizadas por el propietario el 2026-10-10; aún no existe una imagen comercial apta sin caja. No autoriza fotografías externas.",
-    "fecha_verificacion": "2026-10-10",
-    "archivos": [],
-    "investigacion_previa": {
-      "estado": "resueltos",
-      "titular": "CONECTATECH",
-      "base": "Fotografía propia en Drive; autorización expresa del propietario para procesamiento y publicación en la orden maestra 2026-10-10",
-      "fuente_externa": false
+    "evidencia": "Autorización expresa del propietario para edición comercial asistida por IA de sus fotografías propias; excepción adicional para retirar marca Yantech. No se incorporó material externo.",
+    "fecha_verificacion": "2026-10-10T15:27:31.705473+00:00",
+    "archivos": [
+      {
+        "sha256": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+        "fuente": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk"
+      }
+    ],
+    "material_externo_utilizado": false,
+    "derivacion": {
+      "archivo_maestro": "/imagenes/adap005/original-b62be5bdc359eba3.png",
+      "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+      "fuente_fotografia_propia": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
+      "metodo": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles.",
+      "edicion_asistida_ia": true,
+      "originales_intactos_en_drive": true
     }
   },
   "especificaciones": [
@@ -112,10 +120,10 @@
       "publicar": true
     }
   ],
-  "estado_calidad": "BLOQUEADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_calidad": "APROBADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
-  "fecha_verificacion": "2026-10-10",
+  "fecha_verificacion": "2026-10-10T15:27:31.705473+00:00",
   "descripcion": "Adaptador de enchufe genérico de color negro, identificado como Europa a Latino en la base comercial. Comprueba que la forma del enchufe y los requisitos del equipo sean compatibles antes de comprar.",
   "compatibilidad": "Comprobar forma y ajuste para el equipo concreto.",
   "contenido_venta": "1 adaptador",
@@ -127,9 +135,7 @@
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-08",
   "stock_tiempo_real": false,
-  "pendientes": [
-    "Resolución útil insuficiente; no se amplía ni se sustituye por otro adaptador parecido."
-  ],
+  "pendientes": [],
   "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1473,1474; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
   "revision_regla": 2,
   "propuesta_origen": "importacion/lotes/lote-020/accesorios-propuestas.json",
@@ -139,7 +145,8 @@
     "nota_variante": null,
     "observaciones": [
       "La vista sin mano ocupa aproximadamente 520 × 560 píxeles. La segunda vista está sostenida con la mano y tiene menos detalle útil.",
-      "No se publican potencia, intensidad, certificaciones ni conversión de voltaje."
+      "No se publican potencia, intensidad, certificaciones ni conversión de voltaje.",
+      "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles."
     ],
     "discrepancias_propuesta": []
   },
@@ -162,28 +169,92 @@
       }
     },
     "identidad": {
-      "sku_verificado": false,
+      "sku_verificado": true,
       "fuentes": [
         "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
         "https://drive.google.com/file/d/1_1TjFBkx_YGLFmpBwgQDN4GVdqqDTV1t/view?usp=drivesdk"
       ],
       "discrepancias_pendientes": [],
-      "variante_verificado": false,
+      "variante_verificado": true,
       "marca_no_declarada": true,
       "modelo_no_declarado": true,
       "nota_no_declaracion": "No se acredita marca fabricante o modelo exacto. Se conserva la clasificación comercial del Registro y se describe exclusivamente el producto fotografiado."
     },
     "ficha": {
-      "verificada": false,
-      "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json"
+      "verificada": true,
+      "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
+      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos."
     },
     "movil": {
-      "estado": "PENDIENTE",
-      "motivo": "Requiere render real de la ficha y los medios aplicados; no afirmar revisión antes de capturar"
+      "estado": "PENDIENTE"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "estado": "PENDIENTE"
+    },
+    "revision_visual": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T15:27:31.705473+00:00",
+      "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+      "evidencia": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles."
     }
+  },
+  "historial_visual": [
+    {
+      "fecha": "2026-10-10T15:27:31.705473+00:00",
+      "estado_calidad": "BLOQUEADO",
+      "estado_publicacion": "PENDIENTE",
+      "maestro": null,
+      "pendientes": [
+        "Resolución útil insuficiente; no se amplía ni se sustituye por otro adaptador parecido."
+      ],
+      "validaciones": {
+        "base_593": {
+          "archivo": "datos-593/inventario-publico.csv",
+          "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+          "fila": {
+            "sku": "ADAP005",
+            "nombre": "ADAPTADOR EUROPA - LATINO COLOR NEGRO",
+            "stock": "16",
+            "precio_general": "2.17",
+            "iva": "15",
+            "tipo": "PRODUCTO",
+            "categoria": "ADAPTADORES",
+            "clasificacion": "CONECTIVIDAD"
+          }
+        },
+        "identidad": {
+          "sku_verificado": false,
+          "fuentes": [
+            "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
+            "https://drive.google.com/file/d/1_1TjFBkx_YGLFmpBwgQDN4GVdqqDTV1t/view?usp=drivesdk"
+          ],
+          "discrepancias_pendientes": [],
+          "variante_verificado": false,
+          "marca_no_declarada": true,
+          "modelo_no_declarado": true,
+          "nota_no_declaracion": "No se acredita marca fabricante o modelo exacto. Se conserva la clasificación comercial del Registro y se describe exclusivamente el producto fotografiado."
+        },
+        "ficha": {
+          "verificada": false,
+          "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json"
+        },
+        "movil": {
+          "estado": "PENDIENTE",
+          "motivo": "Requiere render real de la ficha y los medios aplicados; no afirmar revisión antes de capturar"
+        },
+        "publicacion_http": {
+          "estado": "PENDIENTE",
+          "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+        }
+      }
+    }
+  ],
+  "maestro": {
+    "archivo_maestro": "/imagenes/adap005/original-b62be5bdc359eba3.png",
+    "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+    "fuente_fotografia_propia": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
+    "metodo": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles.",
+    "edicion_asistida_ia": true,
+    "originales_intactos_en_drive": true
   }
 }

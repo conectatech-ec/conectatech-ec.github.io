@@ -8,7 +8,12 @@ module.exports=function(){
   const r=registry.productos[p.sku];if(!r)throw Error('Falta registro de reglas para '+p.sku);
   if(registry.politica_general?.presentacion_obligatoria==='sin caja')r.presentacion='sin caja';
   const m=media[p.sku];if(!m)continue; // Un nuevo registro no invalida imágenes heredadas por mera ausencia de metadatos.
-  const photos=m?.revision_regla===r.revision?m.imagenes.filter(i=>(r.presentacion!=='sin caja'||i.contiene_caja===false)):[];
+  const photos=m?.revision_regla===r.revision?m.imagenes.filter(i=>
+   (r.presentacion!=='sin caja'||i.contiene_caja===false)&&
+   (r.marcas_excluidas_imagen||[]).every(brand=>{
+    const v=i.revision_marcas?.[brand];
+    return v?.sin_texto===true&&v?.sin_logotipo===true&&v?.evidencia&&v.sha256_maestro===i.sha256_original;
+   })):[];
   const cover=photos.find(i=>i.posicion===1&&(r.presentacion!=='con caja'||i.contiene_caja===true));
   p.imageUrl=cover?.versiones['1200'].url||'';
   const c=seo[p.sku];if(!c)continue;

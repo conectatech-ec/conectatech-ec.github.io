@@ -87,6 +87,8 @@ def process(root, sku, item, r):
             'resolucion_util':list(im.size),'versiones':versions,'revision_regla':r['revision'],
             'revision_visual':item.get('nota_revision',''),'recorte':crop,'silueta_revisada':polygon,'ajustes':params,'dhash':f'{dhash(bg):016x}',
             'huella_proceso':fingerprint(item,r),'version_proceso':PIPELINE_VERSION}
+    if item.get('revision_marcas'):
+        result['revision_marcas']=item['revision_marcas']
     return result,outputs
 
 def run(args):

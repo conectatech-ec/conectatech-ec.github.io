@@ -510,13 +510,24 @@
     ]
   },
   "SOPO023": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "genérico/compatible",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Ninguna imagen comercial del producto debe mostrar Yantech / YAN TECH ni su logotipo. Retirar visualmente esa marca, conservar el producto y los originales. Aplicar a portada, galería y futuros banners.",
       "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1132,1133,1135,1136; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
-      "revision": 2
+      "revision": 3,
+      "marcas_excluidas_imagen": [
+        "Yantech"
+      ],
+      "evidencia_marca_imagen": "SOPO060 y SOPO023: marca legible en fotos propias y contratos previos; TARJ004: YAN Tech en nombre original de 593/catálogo. Orden expresa del propietario 2026-10-10.",
+      "variantes_marcas_excluidas": {
+        "Yantech": [
+          "Yantech",
+          "YAN TECH",
+          "YAN-TECH"
+        ]
+      }
     },
     "imagenes": [
       {
@@ -525,58 +536,78 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/1krU5abKVwGWw3ASlWZ1J8atVoeE4MSUe/view?usp=drivesdk",
-        "original": "/imagenes/sopo023/original-859feab655ec853d.png",
-        "sha256_original": "859feab655ec853df9dc2c2c1224c9192bde7a451322e990f5ba40caae804d54",
+        "original": "/imagenes/sopo023/original-e9d9e5ed742dafc2.png",
+        "sha256_original": "e9d9e5ed742dafc22b2dc28fe1877479e33711439ca9e68750b5fa987cc3f769",
         "resolucion_original": [
-          852,
-          1251
+          1254,
+          1254
         ],
         "resolucion_util": [
-          687,
+          1008,
           1008
         ],
         "versiones": {
           "1200": {
             "url": "/imagenes/sopo023/SOPO023-01.webp",
-            "sha256": "fd939290abc4e2f28c4f1d9a63abd8e6eab5819421cd078fe97dd9e56e14c628",
-            "bytes": 91818,
+            "sha256": "62e7c1f015b6e624685de7bdd629496efe79fa094643b944f7e9902b72c43fb9",
+            "bytes": 75040,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/sopo023/SOPO023-01-600.webp",
-            "sha256": "3301c0e88ea3b2580695a93c3c83f3e8ccf99e6b502922c7c5e804d34cfd8d54",
-            "bytes": 22008,
+            "sha256": "14b0aa0dd0a371ed5649ce41cac8c5afa3975c49df0470892f0a94afb95ba139",
+            "bytes": 15052,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/sopo023/SOPO023-01-300.webp",
-            "sha256": "752f527eecf817ea9b9e88d03bb7a94a85493a34d9c63ed43c700f492317fcd1",
-            "bytes": 5984,
+            "sha256": "6cffd6c8ee31997934175d5998d3a117567453e3a17ec18639693f71687594bc",
+            "bytes": 5106,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 2,
-        "revision_visual": "Fotografía propia exacta; recorte mediante máscara revisada del fondo, conservando píxeles, logotipos, articulaciones y huecos reales. Sin generación de detalles ni ampliación. Maestro nativo transparente. Original intacto y receta local conservados.",
+        "revision_regla": 3,
+        "revision_visual": "Retirada de la impresión YAN TECH tras la bisagra de la base; acabado de estudio desde fotografía pública y fuente propia. Tres ranuras, dos ventanas, dos apoyos, articulación y base circular conservados. No se reutilizó el maestro pendiente de premium-001.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "0c0e1e0f0e1c1c0c",
-        "huella_proceso": "5e3f478c975d1cf9f7215af2a5a47e474087daa23260b61856bd30fe7f07310f",
-        "version_proceso": 2
+        "dhash": "080f1e0f0e1d1d08",
+        "huella_proceso": "5ae9b10c59270b470ddc48196ba4de3ff006e2997ab4c1022b00326166c3c02a",
+        "version_proceso": 2,
+        "revision_marcas": {
+          "Yantech": {
+            "sha256_maestro": "e9d9e5ed742dafc22b2dc28fe1877479e33711439ca9e68750b5fa987cc3f769",
+            "sin_texto": true,
+            "sin_logotipo": true,
+            "evidencia": "Retirada de la impresión YAN TECH tras la bisagra de la base; acabado de estudio desde fotografía pública y fuente propia. Tres ranuras, dos ventanas, dos apoyos, articulación y base circular conservados. No se reutilizó el maestro pendiente de premium-001.",
+            "fecha": "2026-10-10T15:27:31.705473+00:00"
+          }
+        }
       }
     ]
   },
   "SOPO060": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "genérico/compatible",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Ninguna imagen comercial del producto debe mostrar Yantech / YAN TECH ni su logotipo. Retirar visualmente esa marca, conservar el producto y los originales. Aplicar a portada, galería y futuros banners.",
       "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1109,1110,1111,1112; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
-      "revision": 2
+      "revision": 3,
+      "marcas_excluidas_imagen": [
+        "Yantech"
+      ],
+      "evidencia_marca_imagen": "SOPO060 y SOPO023: marca legible en fotos propias y contratos previos; TARJ004: YAN Tech en nombre original de 593/catálogo. Orden expresa del propietario 2026-10-10.",
+      "variantes_marcas_excluidas": {
+        "Yantech": [
+          "Yantech",
+          "YAN TECH",
+          "YAN-TECH"
+        ]
+      }
     },
     "imagenes": [
       {
@@ -585,8 +616,8 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk",
-        "original": "/imagenes/sopo060/original-284624671c6b5582.png",
-        "sha256_original": "284624671c6b5582076a666730e88a80e605a8e26d4a0099a49fc91bbe90ce1b",
+        "original": "/imagenes/sopo060/original-27a0af7a6addd6fc.png",
+        "sha256_original": "27a0af7a6addd6fcbf6f0ec0d4e1f56d9a04efa75c9daa3063634b015c7f30e6",
         "resolucion_original": [
           1254,
           1254
@@ -598,34 +629,43 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/sopo060/SOPO060-01.webp",
-            "sha256": "08c9ade3f41c3790dc59004219b5d5d0003f0487e8ddf74edb46dd6d72fdd1b6",
-            "bytes": 74768,
+            "sha256": "b09bb8e1ca19ec60a86cdf8c44949925d1decaebbbe2238a4583c5e1f032f511",
+            "bytes": 58530,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/sopo060/SOPO060-01-600.webp",
-            "sha256": "31414bf79d450474ec80fd6e4dbd4a915ba23e832cec2a0c60dee068685f9b01",
-            "bytes": 17016,
+            "sha256": "f9261b4dac1552f04b5705ec1f7f8f572fdd406b6288af9175075a55591485fd",
+            "bytes": 15804,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/sopo060/SOPO060-01-300.webp",
-            "sha256": "dceeba640fea98af14ce33094a4f4bb09b13641f560924716d7ce8f5cdb15908",
-            "bytes": 6344,
+            "sha256": "b6ad350facfac8a6c19920c106d7e748ef635261213ecd00ac1d85224498b51d",
+            "bytes": 6220,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 2,
-        "revision_visual": "Edición asistida por IA de fotografía propia autorizada: iluminación de estudio, limpieza de polvo y fondo blanco, contraste y reflejos. Cotejo visual con las dos fotos del producto: se conservan T8-02, gris oscuro, dos articulaciones circulares, ranuras de brazo/placa/base, dos orificios, dos apoyos, almohadilla y logotipo YAN TECH. Sin caja, sin accesorios agregados. No se presenta como imagen oficial ni como recuperación de detalle óptico.",
+        "revision_regla": 3,
+        "revision_visual": "Retirada localizada del nombre y logotipo YAN TECH de la base por orden expresa del propietario. Cotejo visual: geometría, ranuras, orificios, dos pivotes, almohadilla y apoyos conservados.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "301e070b0b4b4f0c",
-        "huella_proceso": "7ad7e6b63ccfb0799a00aab2ea4515d5918513a32744f130a9b7ef04e070643a",
-        "version_proceso": 2
+        "dhash": "311f070b0b4b4f4c",
+        "huella_proceso": "ed8455fcfb49c5d20fa04c7de271bb0874aa2bafddb381940eae23868f45ce69",
+        "version_proceso": 2,
+        "revision_marcas": {
+          "Yantech": {
+            "sha256_maestro": "27a0af7a6addd6fcbf6f0ec0d4e1f56d9a04efa75c9daa3063634b015c7f30e6",
+            "sin_texto": true,
+            "sin_logotipo": true,
+            "evidencia": "Retirada localizada del nombre y logotipo YAN TECH de la base por orden expresa del propietario. Cotejo visual: geometría, ranuras, orificios, dos pivotes, almohadilla y apoyos conservados.",
+            "fecha": "2026-10-10T15:27:31.705473+00:00"
+          }
+        }
       }
     ]
   },
@@ -1529,6 +1569,126 @@
         },
         "dhash": "00060f1b373f3000",
         "huella_proceso": "74f14ccd7c73dc4b95f6f3294e2f81eee2ca6f127ddc031f25a35e47285d6b9f",
+        "version_proceso": 2
+      }
+    ]
+  },
+  "ADAP004": {
+    "revision_regla": 2,
+    "regla": {
+      "autenticidad": "genérico/compatible",
+      "presentacion": "sin caja",
+      "instrucciones": "",
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 822,823; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "revision": 2
+    },
+    "imagenes": [
+      {
+        "posicion": 1,
+        "contiene_caja": false,
+        "referencia_fabricante": false,
+        "referencia_distribuidor": false,
+        "fuente": "https://drive.google.com/file/d/1p8mn97L4k3s6VV5vR1_svHKC9VCeYMHc/view?usp=drivesdk",
+        "original": "/imagenes/adap004/original-2cbc47643ce76ef3.png",
+        "sha256_original": "2cbc47643ce76ef39da01f492eb5f60d8f1457e0bc7af11c9d0673b68395b68a",
+        "resolucion_original": [
+          1254,
+          1254
+        ],
+        "resolucion_util": [
+          1008,
+          1008
+        ],
+        "versiones": {
+          "1200": {
+            "url": "/imagenes/adap004/ADAP004-01.webp",
+            "sha256": "0e0cc99f614ad55bf099d589363343087848439742ed9c7eca65cc3d2cbe4c32",
+            "bytes": 20414,
+            "ancho": 1200,
+            "alto": 1200
+          },
+          "600": {
+            "url": "/imagenes/adap004/ADAP004-01-600.webp",
+            "sha256": "c8448533d3dd6897d2768e2aa12168683763f3e462caefee684973f2d5b330f8",
+            "bytes": 8216,
+            "ancho": 600,
+            "alto": 600
+          },
+          "300": {
+            "url": "/imagenes/adap004/ADAP004-01-300.webp",
+            "sha256": "7e4ff4f129055db191fcb0141e40731f2d2e4a856902d19447add9ca8a887468",
+            "bytes": 3594,
+            "ancho": 300,
+            "alto": 300
+          }
+        },
+        "revision_regla": 2,
+        "revision_visual": "Edición comercial asistida por IA a partir de las dos fotografías propias: misma silueta blanca, aberturas universales y posición de relieves observados. No se atribuyen certificaciones ni capacidad eléctrica. Revisión comparativa de aberturas y variante. No representa recuperación óptica de detalles.",
+        "recorte": null,
+        "silueta_revisada": null,
+        "ajustes": {},
+        "dhash": "000f0e0e0f170f00",
+        "huella_proceso": "f0137451f98c2944e7ea251a8fb867f9d8be781a403b924e11392be6880a00e1",
+        "version_proceso": 2
+      }
+    ]
+  },
+  "ADAP005": {
+    "revision_regla": 2,
+    "regla": {
+      "autenticidad": "genérico/compatible",
+      "presentacion": "sin caja",
+      "instrucciones": "",
+      "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1473,1474; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
+      "revision": 2
+    },
+    "imagenes": [
+      {
+        "posicion": 1,
+        "contiene_caja": false,
+        "referencia_fabricante": false,
+        "referencia_distribuidor": false,
+        "fuente": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
+        "original": "/imagenes/adap005/original-b62be5bdc359eba3.png",
+        "sha256_original": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+        "resolucion_original": [
+          1254,
+          1254
+        ],
+        "resolucion_util": [
+          1008,
+          1008
+        ],
+        "versiones": {
+          "1200": {
+            "url": "/imagenes/adap005/ADAP005-01.webp",
+            "sha256": "ac6c8cc2ff8b62e8bc160349c253c6e2c3ba7eda5ca8250400e3cfd89ebe2e88",
+            "bytes": 76512,
+            "ancho": 1200,
+            "alto": 1200
+          },
+          "600": {
+            "url": "/imagenes/adap005/ADAP005-01-600.webp",
+            "sha256": "e18fe8753cb1d0f342120b16e10b052c07c842f48da33d475fe47da434952fd7",
+            "bytes": 14432,
+            "ancho": 600,
+            "alto": 600
+          },
+          "300": {
+            "url": "/imagenes/adap005/ADAP005-01-300.webp",
+            "sha256": "e907aeddb6f2e282e8d7e5d6d0b6c4ccf4287c8b2de9a98aea1e17e73005e088",
+            "bytes": 3460,
+            "ancho": 300,
+            "alto": 300
+          }
+        },
+        "revision_regla": 2,
+        "revision_visual": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles.",
+        "recorte": null,
+        "silueta_revisada": null,
+        "ajustes": {},
+        "dhash": "0017172327175500",
+        "huella_proceso": "423aaa01fe7a750d3c61957fd387457fb1b27a995d33a00ed15603e310d2c242",
         "version_proceso": 2
       }
     ]
