@@ -186,7 +186,7 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 .ct-pagination button:disabled{opacity:.4;cursor:not-allowed}
 .ct-pagination span{font-size:13px;color:#53637b;font-weight:800}
 @media(max-width:750px){.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#grid .ct-compact-card{padding:9px}#grid .ct-compact-card .product-img{height:125px!important}#grid .ct-compact-card .promo{font-size:20px}#grid .ct-compact-card .name{font-size:12px}.ct-pagination{gap:8px}.ct-pagination button{padding:10px}}
+@media(max-width:520px){#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#grid .ct-compact-card{padding:9px}#grid .ct-compact-card .product-img{height:125px!important}#grid .ct-compact-card .promo{font-size:20px}#grid .ct-compact-card .name{font-size:12px;min-height:33px;max-height:33px}.ct-pagination{gap:8px}.ct-pagination button{padding:10px}}
 
 /* Corrección explícita de tarjetas destacadas: nunca fichas gigantes */
 #featured.featured{margin:12px 0 18px!important}

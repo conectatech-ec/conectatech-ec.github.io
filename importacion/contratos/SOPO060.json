@@ -115,21 +115,22 @@
     "tipo": "propia",
     "titular": "CONECTATECH",
     "fuente": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk",
-    "evidencia": "Orden maestra del propietario de 2026-10-10: CONECTATECH autoriza el procesamiento y publicación de sus fotografías propias de Drive. Maestro derivado mediante máscara de la fotografía propia indicada; sin material externo.",
+    "evidencia": "Autorización del propietario para procesar y publicar fotografías propias de Drive, ampliada el 2026-10-10 a retoque comercial asistido por IA de luz, brillo, contraste y presentación. Fotografía fuente propia intacta; ningún material externo incorporado.",
     "fecha_verificacion": "2026-10-10",
     "archivos": [
       {
-        "sha256": "69744612417a4dad7ef28fdc0102f65942dcb6d94d2c9908cac9dc51ad3edec4",
+        "sha256": "284624671c6b5582076a666730e88a80e605a8e26d4a0099a49fc91bbe90ce1b",
         "fuente": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk"
       }
     ],
     "material_externo_utilizado": false,
     "derivacion": {
-      "archivo_maestro": "/imagenes/sopo060/original-69744612417a4dad.png",
-      "sha256_maestro": "69744612417a4dad7ef28fdc0102f65942dcb6d94d2c9908cac9dc51ad3edec4",
+      "archivo_maestro": "/imagenes/sopo060/original-284624671c6b5582.png",
+      "sha256_maestro": "284624671c6b5582076a666730e88a80e605a8e26d4a0099a49fc91bbe90ce1b",
       "fuente_fotografia_propia": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk",
-      "metodo": "Fotografía propia exacta; recorte mediante máscara revisada del fondo, conservando píxeles, logotipos, articulaciones y huecos reales. Sin generación de detalles ni ampliación. Maestro nativo transparente. Original intacto y receta local conservados.",
-      "originales_intactos_en_drive": true
+      "metodo": "Edición asistida por IA de fotografía propia autorizada: iluminación de estudio, limpieza de polvo y fondo blanco, contraste y reflejos. Cotejo visual con las dos fotos del producto: se conservan T8-02, gris oscuro, dos articulaciones circulares, ranuras de brazo/placa/base, dos orificios, dos apoyos, almohadilla y logotipo YAN TECH. Sin caja, sin accesorios agregados. No se presenta como imagen oficial ni como recuperación de detalle óptico.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
     }
   },
   "especificaciones": [
@@ -189,9 +190,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
-  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
+  "fecha_verificacion": "2026-10-10",
   "descripcion": "Coloca tu celular o tablet en una posición cómoda con el soporte de mesa T8-02. Su estructura articulada permite regular la inclinación y plegarlo cuando necesitas guardarlo. Cuenta con apoyos inferiores y una zona acolchada de contacto para mantener el equipo colocado durante tus consultas, videos o videollamadas. Accesorio genérico; confirma el ajuste para tu dispositivo.",
   "compatibilidad": "Celulares y tablets; confirmar ajuste para el equipo concreto",
   "contenido_venta": "1 soporte",
@@ -222,11 +223,12 @@
     "color": "Gris oscuro"
   },
   "maestro": {
-    "archivo_maestro": "/imagenes/sopo060/original-69744612417a4dad.png",
-    "sha256_maestro": "69744612417a4dad7ef28fdc0102f65942dcb6d94d2c9908cac9dc51ad3edec4",
+    "archivo_maestro": "/imagenes/sopo060/original-284624671c6b5582.png",
+    "sha256_maestro": "284624671c6b5582076a666730e88a80e605a8e26d4a0099a49fc91bbe90ce1b",
     "fuente_fotografia_propia": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk",
-    "metodo": "Fotografía propia exacta; recorte mediante máscara revisada del fondo, conservando píxeles, logotipos, articulaciones y huecos reales. Sin generación de detalles ni ampliación. Maestro nativo transparente. Original intacto y receta local conservados.",
-    "originales_intactos_en_drive": true
+    "metodo": "Edición asistida por IA de fotografía propia autorizada: iluminación de estudio, limpieza de polvo y fondo blanco, contraste y reflejos. Cotejo visual con las dos fotos del producto: se conservan T8-02, gris oscuro, dos articulaciones circulares, ranuras de brazo/placa/base, dos orificios, dos apoyos, almohadilla y logotipo YAN TECH. Sin caja, sin accesorios agregados. No se presenta como imagen oficial ni como recuperación de detalle óptico.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
   },
   "validaciones": {
     "base_593": {
@@ -261,94 +263,144 @@
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json"
     },
-    "publicacion_http": {
-      "archivo": "reportes/lote-020-http.json",
-      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
-    },
-    "movil": {
-      "solicitado": "SOPO060",
-      "sku": "SOPO060",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-10T06:43:41.950Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "javascript": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
-      "archivo_html": "productos/sopo060-soporte-para-celular-y-tablet-t8-02/index.html",
-      "http": 200,
-      "sha256_html": "fb4086bba14478eda213384b19b0924c4772275fdbcb0f27efd137eec85f5ae5",
-      "sha256_html_local": "fb4086bba14478eda213384b19b0924c4772275fdbcb0f27efd137eec85f5ae5",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/sopo060/SOPO060-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/sopo060/SOPO060-01-600.webp",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/sopo060/SOPO060-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/sopo023-soporte-de-celular-modelo-t8-04/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/sopo009-soporte-base-para-celular-y-tablet-de-mesa-giratorio-marca-monster/",
-          "http": 200,
-          "ok": true
-        }
+    "revision_visual": {
+      "estado": "APROBADO",
+      "fecha": "2026-10-10",
+      "sha256_maestro": "284624671c6b5582076a666730e88a80e605a8e26d4a0099a49fc91bbe90ce1b",
+      "fuentes_cotejadas": [
+        "a492eca02a65c290ddec5df01c785fae66cd432eda6f91e2d2b1854ef7e57c00",
+        "c6c714b25e9f5ed30d76a8d07f29c9d0af6fa29d1f5ba5f311683dc4cefe627f",
+        "9b01851b4edb7374fb72d4cd679cadb324f71e6cb590b39ca77e5a2beba131fc",
+        "4d4f502d80e98ea7a32162809525f5ed030efc8bc07eb82bffb43342d7c490cc"
       ],
-      "archivo": "reportes/movil/SOPO060-390.png",
-      "sha256": "04c479bb41900db8daa7fd4e8037168165d44589760e423cde873d4be361e923",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/movil/SOPO060-1280.png",
-        "sha256": "0088069ce75072410ee2b78c84b27600a13f2dc52c9ba684b196383adc75049c",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
+      "evidencia": "Edición asistida por IA de fotografía propia autorizada: iluminación de estudio, limpieza de polvo y fondo blanco, contraste y reflejos. Cotejo visual con las dos fotos del producto: se conservan T8-02, gris oscuro, dos articulaciones circulares, ranuras de brazo/placa/base, dos orificios, dos apoyos, almohadilla y logotipo YAN TECH. Sin caja, sin accesorios agregados. No se presenta como imagen oficial ni como recuperación de detalle óptico.",
+      "autorizacion": "importacion/ESTRATEGIA-COMERCIAL.md"
     }
   },
-  "pendientes_publicacion": []
+  "pendientes_publicacion": [],
+  "historial_visual": [
+    {
+      "maestro": {
+        "archivo_maestro": "/imagenes/sopo060/original-69744612417a4dad.png",
+        "sha256_maestro": "69744612417a4dad7ef28fdc0102f65942dcb6d94d2c9908cac9dc51ad3edec4",
+        "fuente_fotografia_propia": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk",
+        "metodo": "Fotografía propia exacta; recorte mediante máscara revisada del fondo, conservando píxeles, logotipos, articulaciones y huecos reales. Sin generación de detalles ni ampliación. Maestro nativo transparente. Original intacto y receta local conservados.",
+        "originales_intactos_en_drive": true
+      },
+      "derechos_imagen": {
+        "estado": "AUTORIZADO",
+        "tipo": "propia",
+        "titular": "CONECTATECH",
+        "fuente": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk",
+        "evidencia": "Autorización del propietario para procesar y publicar fotografías propias de Drive, ampliada el 2026-10-10 a retoque comercial asistido por IA de luz, brillo, contraste y presentación. Fotografía fuente propia intacta; ningún material externo incorporado.",
+        "fecha_verificacion": "2026-10-10",
+        "archivos": [
+          {
+            "sha256": "284624671c6b5582076a666730e88a80e605a8e26d4a0099a49fc91bbe90ce1b",
+            "fuente": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk"
+          }
+        ],
+        "material_externo_utilizado": false,
+        "derivacion": {
+          "archivo_maestro": "/imagenes/sopo060/original-284624671c6b5582.png",
+          "sha256_maestro": "284624671c6b5582076a666730e88a80e605a8e26d4a0099a49fc91bbe90ce1b",
+          "fuente_fotografia_propia": "https://drive.google.com/file/d/10g_pbJZfaG6ZWzJ15MFvtCBxhnh6yxR5/view?usp=drivesdk",
+          "metodo": "Edición asistida por IA de fotografía propia autorizada: iluminación de estudio, limpieza de polvo y fondo blanco, contraste y reflejos. Cotejo visual con las dos fotos del producto: se conservan T8-02, gris oscuro, dos articulaciones circulares, ranuras de brazo/placa/base, dos orificios, dos apoyos, almohadilla y logotipo YAN TECH. Sin caja, sin accesorios agregados. No se presenta como imagen oficial ni como recuperación de detalle óptico.",
+          "originales_intactos_en_drive": true,
+          "edicion_asistida_ia": true
+        }
+      },
+      "validaciones_publicacion": {
+        "publicacion_http": {
+          "archivo": "reportes/lote-020-http.json",
+          "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
+        },
+        "movil": {
+          "solicitado": "SOPO060",
+          "sku": "SOPO060",
+          "estado": "VERIFICADO",
+          "fecha": "2026-10-10T06:43:41.950Z",
+          "errores": [],
+          "verificaciones": {
+            "http": true,
+            "html_coincide_local": true,
+            "sin_desbordamiento_horizontal": true,
+            "titulo": true,
+            "sku": true,
+            "canonical": true,
+            "promo_contado": true,
+            "pvp": true,
+            "jerarquia_precio": true,
+            "disponibilidad": true,
+            "imagen_principal": true,
+            "imagenes_cargadas": true,
+            "javascript": true,
+            "enlaces_internos": true,
+            "escritorio": true
+          },
+          "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+          "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+          "url_comprobada": "http://127.0.0.1:8765/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+          "archivo_html": "productos/sopo060-soporte-para-celular-y-tablet-t8-02/index.html",
+          "http": 200,
+          "sha256_html": "fb4086bba14478eda213384b19b0924c4772275fdbcb0f27efd137eec85f5ae5",
+          "sha256_html_local": "fb4086bba14478eda213384b19b0924c4772275fdbcb0f27efd137eec85f5ae5",
+          "ancho_viewport": 390,
+          "ancho_documento": 390,
+          "alto_viewport": 844,
+          "imagen": {
+            "src": "https://conectatech-ec.github.io/imagenes/sopo060/SOPO060-01.webp",
+            "url_cargada": "http://127.0.0.1:8765/imagenes/sopo060/SOPO060-01-600.webp",
+            "naturalWidth": 351,
+            "naturalHeight": 351,
+            "completa": true,
+            "visible": true
+          },
+          "enlaces_internos": [
+            {
+              "url": "http://127.0.0.1:8765/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "http://127.0.0.1:8765/logo-conectatech.png",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "http://127.0.0.1:8765/",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "http://127.0.0.1:8765/imagenes/sopo060/SOPO060-01.webp",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "http://127.0.0.1:8765/productos/sopo023-soporte-de-celular-modelo-t8-04/",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "http://127.0.0.1:8765/productos/sopo009-soporte-base-para-celular-y-tablet-de-mesa-giratorio-marca-monster/",
+              "http": 200,
+              "ok": true
+            }
+          ],
+          "archivo": "reportes/movil/SOPO060-390.png",
+          "sha256": "04c479bb41900db8daa7fd4e8037168165d44589760e423cde873d4be361e923",
+          "escritorio": {
+            "ancho_viewport": 1280,
+            "ancho_documento": 1280,
+            "archivo": "reportes/movil/SOPO060-1280.png",
+            "sha256": "0088069ce75072410ee2b78c84b27600a13f2dc52c9ba684b196383adc75049c",
+            "sin_desbordamiento_horizontal": true,
+            "imagen_cargada": true
+          }
+        }
+      },
+      "estado_anterior": "PUBLICADO_VERIFICADO"
+    }
+  ]
 }

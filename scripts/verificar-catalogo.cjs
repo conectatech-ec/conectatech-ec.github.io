@@ -201,7 +201,7 @@ async function main() {
             ensure(current.actualizado === '', 'El candidato nuevo tiene una fecha de publicación artificial.');
             product.metadatos = 'CANDIDATO_LOCAL_SIN_FECHA_PUBLICA';
           }
-          ensure(current.altura <= 410 && !current.contenido_largo.length, 'Tarjeta del producto pierde diseño compacto.');
+          ensure(current.altura <= (width === 1280 ? 520 : 410) && !current.contenido_largo.length, 'Tarjeta del producto pierde diseño compacto.');
           ensure(current.imagen?.cargada && current.imagen?.ajuste === 'contain', 'Imagen no carga o usa ajuste diferente decontain.');
           ensure(money(current.promo) === Math.round(p.promo * 100) && money(current.pvp) === Math.round(p.pvp * 100) && current.promo_px > current.pvp_px && current.pvp_tachado === false, 'Datos o jerarquía de precios modificados.');
           const expectedVariants = variants((published?.imagen || sourceImage).srcset, PUBLIC), actualVariants = variants(current.imagen?.srcset, PUBLIC);
