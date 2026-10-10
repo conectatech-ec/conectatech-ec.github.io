@@ -274,6 +274,83 @@
       "fecha": "2026-10-10T21:42:45.174331+00:00",
       "sha256_maestro": "437856ccca5cffab0f79a01d5bcff9814f1f085c541ac780eee3c696c13091b3",
       "evidencia": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno; se limpiaron superficies y se compuso un acabado de producto nuevo sin añadir conexiones, controles ni hardware."
+    },
+    "movil": {
+      "solicitado": "POWE004",
+      "sku": "POWE004",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T21:47:52.469Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/powe004-powerbank-66w-30000mah/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/powe004-powerbank-66w-30000mah/",
+      "archivo_html": "productos/powe004-powerbank-66w-30000mah/index.html",
+      "http": 200,
+      "sha256_html": "f6857631beffe3a3fa2069cfff0cf278a3ec76cb881674682f7b5e561de2f7e9",
+      "sha256_html_local": "f6857631beffe3a3fa2069cfff0cf278a3ec76cb881674682f7b5e561de2f7e9",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/powe004/POWE004-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/powe004/POWE004-01-600.webp?v=d7e878610d09e379",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/powe004-powerbank-66w-30000mah/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/powe004/POWE004-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/POWE004-390.png",
+      "sha256": "bfd405e478a3e4f9cd9014b1dba860c84ae1c96df6d084b86788140a8624e24f",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/POWE004-1280.png",
+        "sha256": "d6fe29061c3b0fe5faa4cc4a85081aa412311bfce6d19f1bf3c2a5dd6a4a91b5",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "beneficios": [

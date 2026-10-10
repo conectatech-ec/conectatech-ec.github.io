@@ -228,6 +228,88 @@
       "fecha": "2026-10-10T21:42:45.174331+00:00",
       "sha256_maestro": "359c2ab9b154477769930b1fa901d9146cc427a35a0808bc709a35fab2c8c268",
       "evidencia": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno; se limpiaron superficies y se compuso un acabado de producto nuevo sin añadir conexiones, controles ni hardware."
+    },
+    "movil": {
+      "solicitado": "HUB001",
+      "sku": "HUB001",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T21:47:53.581Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
+      "archivo_html": "productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/index.html",
+      "http": 200,
+      "sha256_html": "1519b1f21a463902b5e248f6379e43241702e8b1fcaadcf956273a0416a704c0",
+      "sha256_html_local": "1519b1f21a463902b5e248f6379e43241702e8b1fcaadcf956273a0416a704c0",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/hub001/HUB001-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/hub001/HUB001-01-600.webp?v=e5c06bdbd8113197",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/hub001/HUB001-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap007-adaptador-lightning-a-3-5mm/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/HUB001-390.png",
+      "sha256": "5a04610e1e34f3b1eb22d488428aea49793575feb6b2e4897c24ef4222fdb570",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/HUB001-1280.png",
+        "sha256": "a4e59e15dc398183f79453ff077847c196642492e2f2142bc8ef18caf58a4508",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "beneficios": [

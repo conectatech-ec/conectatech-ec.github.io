@@ -208,6 +208,88 @@
       "fecha": "2026-10-10T21:42:45.174331+00:00",
       "sha256_maestro": "77d4e6eae4f991d1ef76e66452c540403bfb378e9f0e456710b23497e52e9e94",
       "evidencia": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno; se limpiaron superficies y se compuso un acabado de producto nuevo sin añadir conexiones, controles ni hardware."
+    },
+    "movil": {
+      "solicitado": "ADAP007",
+      "sku": "ADAP007",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T21:47:54.685Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap007-adaptador-lightning-a-3-5mm/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/adap007-adaptador-lightning-a-3-5mm/",
+      "archivo_html": "productos/adap007-adaptador-lightning-a-3-5mm/index.html",
+      "http": 200,
+      "sha256_html": "038650d85ead780732ba2859c3115b2c71c10ef1ac4595a722a9f878d575f7f3",
+      "sha256_html_local": "038650d85ead780732ba2859c3115b2c71c10ef1ac4595a722a9f878d575f7f3",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap007/ADAP007-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/adap007/ADAP007-01-600.webp?v=5d0052e7369b7fec",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/adap007-adaptador-lightning-a-3-5mm/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/adap007/ADAP007-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/ADAP007-390.png",
+      "sha256": "f3909eedeec0f8350055018e53b1a0f349226894c911dc5dc147b99401284f16",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/ADAP007-1280.png",
+        "sha256": "207aa99c2e2858eebfda43edcba101fb17a1659aaa72c453a81b2dc556b8b5c5",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   },
   "beneficios": [
