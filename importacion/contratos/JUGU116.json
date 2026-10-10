@@ -144,9 +144,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu116-juguete-carro-coleccionable-de-metal-lamborghini-mediano-purpura/",
-  "fecha_verificacion": "2026-10-10T06:24:01.530724+00:00",
+  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
   "descripcion": "Miniatura deportiva de color púrpura con alerón posterior prominente y aros oscuros. Las tomas reales permiten apreciar la cabina y las piezas abiertas de la carrocería, creando una presentación llamativa para colección.",
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
@@ -227,8 +227,8 @@
       "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "archivo": "reportes/lote-020-http.json",
+      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
     },
     "movil": {
       "solicitado": "JUGU116",
@@ -319,5 +319,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "pendientes_publicacion": []
 }

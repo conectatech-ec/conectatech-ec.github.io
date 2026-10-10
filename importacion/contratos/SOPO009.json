@@ -232,9 +232,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo009-soporte-base-para-celular-y-tablet-de-mesa-giratorio-marca-monster/",
-  "fecha_verificacion": "2026-10-10",
+  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
   "descripcion": "Dale un lugar cómodo a tu celular o tablet en el escritorio con el Monster Coollife MC800. Su base giratoria y estructura articulada permiten orientar la pantalla para consultar contenido, realizar videollamadas o trabajar. Incorpora zonas de apoyo y un diseño plegable que facilita guardarlo. Producto original, en la variante Green identificada en el empaque.",
   "compatibilidad": "Celulares y tablets; comprobar el ajuste al tamaño del equipo",
   "contenido_venta": "1 soporte",
@@ -304,8 +304,8 @@
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "archivo": "reportes/lote-020-http.json",
+      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
     },
     "movil": {
       "solicitado": "SOPO009",
@@ -391,5 +391,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "pendientes_publicacion": []
 }

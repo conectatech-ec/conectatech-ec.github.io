@@ -144,9 +144,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu036-juguete-carro-de-coleccion-pichirilo-grande/",
-  "fecha_verificacion": "2026-10-10T06:24:01.906368+00:00",
+  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
   "descripcion": "Miniatura de carro clásico estilo pichirilo, con combinación celeste y naranja y número decorativo 67. Sus formas redondeadas y detalles de acabado aportan un toque retro a una colección.",
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
@@ -208,8 +208,8 @@
       "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "archivo": "reportes/lote-020-http.json",
+      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
     },
     "movil": {
       "solicitado": "JUGU036",
@@ -300,5 +300,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "pendientes_publicacion": []
 }

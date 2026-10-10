@@ -180,9 +180,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo023-soporte-de-celular-modelo-t8-04/",
-  "fecha_verificacion": "2026-10-10",
+  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
   "descripcion": "Mantén tu celular a la vista con el soporte de escritorio T8-04. Su estructura plegable permite ajustar la inclinación, mientras la base giratoria facilita orientar la pantalla. Una opción práctica para videollamadas, videos y consultas cotidianas en el escritorio. Accesorio genérico.",
   "compatibilidad": "Comprobar forma y ajuste para el equipo concreto.",
   "contenido_venta": "1 soporte",
@@ -253,8 +253,8 @@
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "archivo": "reportes/lote-020-http.json",
+      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
     },
     "movil": {
       "solicitado": "SOPO023",
@@ -340,5 +340,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "pendientes_publicacion": []
 }

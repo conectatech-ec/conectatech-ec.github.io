@@ -189,9 +189,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
-  "fecha_verificacion": "2026-10-10",
+  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
   "descripcion": "Coloca tu celular o tablet en una posición cómoda con el soporte de mesa T8-02. Su estructura articulada permite regular la inclinación y plegarlo cuando necesitas guardarlo. Cuenta con apoyos inferiores y una zona acolchada de contacto para mantener el equipo colocado durante tus consultas, videos o videollamadas. Accesorio genérico; confirma el ajuste para tu dispositivo.",
   "compatibilidad": "Celulares y tablets; confirmar ajuste para el equipo concreto",
   "contenido_venta": "1 soporte",
@@ -262,8 +262,8 @@
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "archivo": "reportes/lote-020-http.json",
+      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
     },
     "movil": {
       "solicitado": "SOPO060",
@@ -349,5 +349,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "pendientes_publicacion": []
 }

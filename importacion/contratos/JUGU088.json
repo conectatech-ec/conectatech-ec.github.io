@@ -163,9 +163,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu088-juguete-carro-coleccionable-camaro/",
-  "fecha_verificacion": "2026-10-10T06:24:00.298876+00:00",
+  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
   "descripcion": "Carro de colección con carrocería deportiva, alerón posterior y aros oscuros. Su estilo de cupé y los detalles visibles del interior lo convierten en una pieza vistosa para exhibición.",
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
@@ -247,8 +247,8 @@
       "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "archivo": "reportes/lote-020-http.json",
+      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
     },
     "movil": {
       "solicitado": "JUGU088",
@@ -339,5 +339,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "pendientes_publicacion": []
 }

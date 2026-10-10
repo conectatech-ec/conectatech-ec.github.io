@@ -163,9 +163,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
-  "fecha_verificacion": "2026-10-10T06:23:59.110573+00:00",
+  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
   "descripcion": "Miniatura de estilo combi con carrocería bicolor y una tabla decorativa sobre el techo. Su diseño viajero aporta variedad a una colección de vehículos clásicos.",
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
@@ -228,8 +228,8 @@
       "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "archivo": "reportes/lote-020-http.json",
+      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
     },
     "movil": {
       "solicitado": "JUGU042",
@@ -320,5 +320,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "pendientes_publicacion": []
 }
