@@ -4,8 +4,8 @@
   "cantidad_seleccionada": 1,
   "manifiesto": "importacion/lotes/lote-041/manifiesto-aprobados.json",
   "qa_manifiesto": "importacion/lotes/lote-041/seleccion-qa.json",
-  "estado": "PUBLICADO_HTTP_QA_CATALOGO_PUBLICO_PENDIENTE",
-  "reporte": "reportes/lote-041-imagenes.json",
+  "estado": "PUBLICADO_VERIFICADO",
+  "reporte": "reportes/lote-041-resultados.json",
   "lote_anterior": "lote-040",
   "motivo": "Mejora visual de SKU publicado con fotografía propia bajo la nueva estrategia comercial",
   "qa_commit": "3ff3b0824c03d4f5a2bedddb4da8509ee0be215f",
@@ -15,5 +15,10 @@
   "publicacion_http": "reportes/lote-041-http.json",
   "publicados_verificados": 1,
   "pendientes": 0,
-  "fecha_publicacion_http": "2026-10-10T14:54:45.018598+00:00"
+  "fecha_publicacion_http": "2026-10-10T14:54:45.018598+00:00",
+  "qa_publico_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38061671183",
+  "qa_publico_reporte": "reportes/lote-041/qa-publico/catalogo-lote-activo.json",
+  "orden_publicado_verificado": true,
+  "fecha_cierre": "2026-10-10T14:59:49.898852+00:00",
+  "siguiente_accion": "Continuar incrementalmente desde cola-drive con estrategia-comercial; excluir maestros premium-001 pendientes y SKU bloqueados sin evidencia nueva."
 }

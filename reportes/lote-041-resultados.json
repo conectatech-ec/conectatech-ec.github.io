@@ -1,13 +1,45 @@
 {
   "lote": "lote-041",
+  "fecha": "2026-10-10T14:59:49.898852+00:00",
+  "resumen": {
+    "sku_procesados": 1,
+    "imagenes_comerciales_terminadas": 1,
+    "fichas_enriquecidas_nuevas": 0,
+    "productos_actualizados_publicados": 1,
+    "pendientes_del_lote": 0,
+    "errores_abiertos": 0,
+    "sku_comprobados_en_catalogo": 18,
+    "vistas_navegador_real": 2
+  },
+  "presentacion": {
+    "columnas_escritorio": 3,
+    "columnas_movil": 2,
+    "primero": "SOPO060"
+  },
   "productos": [
     {
       "sku": "SOPO060",
-      "estado": "aplicado_local",
+      "nombre_comercial": "Soporte de escritorio plegable T8-02 para celular y tablet",
+      "estado": "publicado_verificado",
       "revision_regla": 2,
-      "pendientes": [
-        "QA móvil/escritorio y publicación HTTP pendientes"
-      ]
+      "pendientes": [],
+      "imagen": "/imagenes/sopo060/SOPO060-01.webp",
+      "imagen_anterior": "importacion/lotes/lote-041/SOPO060-antes.webp",
+      "maestro": "/imagenes/sopo060/original-284624671c6b5582.png",
+      "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+      "precio_contado": 10.84,
+      "pvp": 12.47,
+      "stock": 3,
+      "clasificacion": "genérico/compatible",
+      "presentacion": "sin caja",
+      "fuente": "Fotografía propia de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "comparativa": "https://conectatech-ec.github.io/importacion/lotes/lote-041/Comparativa-SOPO060.html"
     }
-  ]
+  ],
+  "verificacion_http": "reportes/lote-041-http.json",
+  "qa_publico": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38061671183",
+  "precios_stock_sku_urls_conservados": true,
+  "propuestas_premium_001_no_aplicadas": true,
+  "nota": "El cambio de estrategia no se registra como aprobación de los cinco maestros premium anteriores. Los pendientes históricos conservan sus causas."
 }

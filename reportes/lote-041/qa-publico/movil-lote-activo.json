@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "fecha": "2026-10-10T14:58:05.476Z",
+  "base": "https://conectatech-ec.github.io",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "SOPO060",
+      "sku": "SOPO060",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-10T14:58:06.154Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+      "archivo_html": "productos/sopo060-soporte-para-celular-y-tablet-t8-02/index.html",
+      "http": 200,
+      "sha256_html": "5cafac4c7af18ca92d5e681c2de63811f1913e8a1021f9e046bdea07bc7e9c65",
+      "sha256_html_local": "5cafac4c7af18ca92d5e681c2de63811f1913e8a1021f9e046bdea07bc7e9c65",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/sopo060/SOPO060-01.webp",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo060/SOPO060-01-600.webp?v=31414bf79d450474",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/imagenes/sopo060/SOPO060-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/productos/sopo023-soporte-de-celular-modelo-t8-04/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/productos/sopo009-soporte-base-para-celular-y-tablet-de-mesa-giratorio-marca-monster/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/SOPO060-390.png",
+      "sha256": "062ed43946a72a3457a4824fb2773b33e79f75df9ff2534e57398ec94bb537e2",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/SOPO060-1280.png",
+        "sha256": "4367bbc6f5134526db9bbacfbc91f193701a468716408d1311252911a30c5883",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "151.0.7922.34"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
