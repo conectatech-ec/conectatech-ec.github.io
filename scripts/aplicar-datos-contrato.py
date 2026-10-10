@@ -72,6 +72,10 @@ def main():
             # El gate ya exige la ficha revisada y unidad de venta confirmada; no inferir datos faltantes.
             if isinstance(value, str) and value.strip(): metadata[destination] = value
             else: current.pop(destination, None)
+        if contract.get('beneficios'):
+            metadata['beneficios'] = [{k: b[k] for k in ('valor','titulo','descripcion')} for b in contract['beneficios']]
+        else:
+            current.pop('beneficios', None)
         related = []
         for other, candidate in approved.items():
             if other == sku or candidate['categoria_comercial'] != contract['categoria_comercial']:

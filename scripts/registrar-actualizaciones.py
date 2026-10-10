@@ -155,6 +155,10 @@ def inspect_sku(root, sku, product, custom, slug, row):
     for text in [public_category, custom.get('compatibilidad'), custom.get('contenidoVenta'), *specs.keys(), *specs.values()]:
         if text and normalized(str(text)) not in visible:
             raise ValueError('Campo local aún no visible en la ficha comprobada: ' + str(text))
+    for benefit in custom.get('beneficios', []):
+        for text in benefit.values():
+            if normalized(str(text)) not in visible:
+                raise ValueError('Beneficio todavía no visible en la ficha publicada: ' + str(text))
     if custom.get('tituloSeo') and page.title != custom['tituloSeo']:
         raise ValueError('Título SEO no corresponde al HTML publicado')
     if custom.get('descripcionSeo') and page.description_meta != custom['descripcionSeo']:
@@ -166,6 +170,8 @@ def inspect_sku(root, sku, product, custom, slug, row):
         'unidadVenta': custom.get('unidadVenta'),
         'autenticidadPublica': custom.get('reglaSKU', {}).get('autenticidad'),
         'imagenes': image_semantics})
+    if custom.get('beneficios'):
+        content['beneficios'] = normalized(custom['beneficios'])
     image = {'src': image_url, 'srcset': ', '.join(cover['versiones'][s]['url'] + '?v=' + cover['versiones'][s]['sha256'][:16] + ' ' + s + 'w' for s in ('300', '600', '1200'))}
     return content, image
 

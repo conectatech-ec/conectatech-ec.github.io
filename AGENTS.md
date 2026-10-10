@@ -1,3 +1,9 @@
+## Prioridad comercial permanente — producto nuevo y beneficios primero
+
+Orden del propietario 2026-10-10: pensar siempre desde el punto de vista vendedor. Embellecer y pulir fotografías propias para un acabado de producto nuevo: eliminar polvo, huellas, manchas de manipulación y luz pobre; preservar textura real, modelo, color comercial y hardware. Preferir ángulos que expliquen el producto (puertos, entradas/salidas, controles) cuando todas esas caras tengan referencias suficientes. Analizar cajas y vistas adicionales antes de elegir composición. No inventar caras ocultas, especificaciones ni garantías. Si la condición de venta fuese usada, no ocultarla.
+
+Las fichas deben mostrar primero beneficios claros y características esenciales en recuadros legibles azul/verde; detalles técnicos, compatibilidad y contenido en apartados desplegables accesibles. Botones únicamente para acciones reales. Mantener las tarjetas compactas 3/2, encabezado y banners. Los beneficios se guardan con fuentes y especificaciones de respaldo en el contrato; aplicarlos incrementalmente a cada ficha revisada. POWE003: panel USB-A/USB-C/pantalla visible. ADAP005: limpieza y acabado impecable.
+
 ## Excepción más reciente — imágenes Yantech sin marca
 
 Orden expresa del propietario (2026-10-10): retirar el nombre Yantech / YAN TECH y su logotipo de todas las imágenes comerciales de sus productos. Conservar originales intactos y geometría/hardware. Esta excepción prevalece sobre conservar logotipos exclusivamente para Yantech. Registrar cada SKU identificado con `scripts/reglas_sku.py --marca Yantech --sku SKU --evidencia FUENTE --aplicar`; `reglas-sku.json` conserva la política general y el historial. Revisar cada maestro y guardar `revision_marcas.Yantech` con SHA-256, sin_texto, sin_logotipo y evidencia; el pipeline rechaza medios y banners sin esa revisión. No modificar nombres, precios, stock o URL por esta excepción visual.

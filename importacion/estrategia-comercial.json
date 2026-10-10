@@ -11,7 +11,8 @@
     "columnas_escritorio": 3,
     "columnas_movil": 2,
     "orden": "recientes",
-    "detalles_solo_en_ficha": true
+    "detalles_solo_en_ficha": true,
+    "ficha": "Beneficios comerciales verificados primero; recuadros azul/verde y especificaciones desplegables"
   },
   "edicion_permitida": [
     "iluminacion",
@@ -62,5 +63,15 @@
       "instruccion": "Ninguna imagen comercial del producto debe mostrar Yantech / YAN TECH ni su logotipo. Retirar visualmente esa marca, conservar el producto y los originales. Aplicar a portada, galería y futuros banners.",
       "evidencia": "Mensaje del propietario: todo lo que sea de yantech no debe decir yantech por ningun lado de la imagen de ese producto."
     }
+  },
+  "acabado_producto_nuevo": {
+    "obligatorio": true,
+    "quitar": [
+      "polvo",
+      "huellas",
+      "manchas de manipulación"
+    ],
+    "perspectiva": "mostrar conexiones y funciones visibles en referencias reales",
+    "no_ocultar_condicion_usada": true
   }
 }

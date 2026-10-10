@@ -157,6 +157,16 @@ async function main() {
         check('imagen_principal', sameImage && data.imagen?.completa && data.imagen.naturalWidth > 0 && data.imagen.naturalHeight > 0 && data.imagen.visible, 'Portada ausente, incorrecta o no cargada.');
         check('imagenes_cargadas', data.imagenes_fallidas.length === 0, 'Imágenes sin cargar: ' + data.imagenes_fallidas.join(', '));
         check('javascript', pageErrors.length === 0, 'Errores JavaScript: ' + pageErrors.join('; '));
+        if (content.beneficios?.length) {
+          const actual = await page.locator('.benefit').evaluateAll(els => els.map(e => ({valor:e.querySelector('strong')?.textContent,titulo:e.querySelector('span')?.textContent,descripcion:e.querySelector('p')?.textContent})));
+          check('beneficios_verificados', JSON.stringify(actual) === JSON.stringify(content.beneficios), 'Beneficios no coinciden con el contenido revisado.');
+          const accordion = page.locator('#especificaciones');
+          check('detalles_cerrados', await accordion.getAttribute('open') === null, 'Especificaciones deben comenzar recogidas.');
+          await accordion.locator('summary').focus(); await page.keyboard.press('Enter');
+          check('detalles_accesibles', await accordion.getAttribute('open') !== null && await accordion.locator('dl').isVisible(), 'Especificaciones no se abren con teclado.');
+          await page.keyboard.press('Enter');
+          await page.evaluate(() => window.scrollTo(0,0));
+        }
         const internal = new Set(); const syntaxErrors = [];
         for (const href of data.enlaces) {
           if (!href || href.startsWith('#') || /^(mailto:|tel:)/i.test(href)) continue;

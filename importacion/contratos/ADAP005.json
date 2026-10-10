@@ -74,19 +74,19 @@
     "titular": "CONECTATECH",
     "fuente": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
     "evidencia": "Autorización expresa del propietario para edición comercial asistida por IA de sus fotografías propias; excepción adicional para retirar marca Yantech. No se incorporó material externo.",
-    "fecha_verificacion": "2026-10-10T15:27:31.705473+00:00",
+    "fecha_verificacion": "2026-10-10T18:42:44.031759+00:00",
     "archivos": [
       {
-        "sha256": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+        "sha256": "e2a26dd2e1a6615dda82468865a60c135cc66404386a2e14349b5da641e96873",
         "fuente": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk"
       }
     ],
     "material_externo_utilizado": false,
     "derivacion": {
-      "archivo_maestro": "/imagenes/adap005/original-b62be5bdc359eba3.png",
-      "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+      "archivo_maestro": "/imagenes/adap005/original-e2a26dd2e1a6615d.png",
+      "sha256_maestro": "e2a26dd2e1a6615dda82468865a60c135cc66404386a2e14349b5da641e96873",
       "fuente_fotografia_propia": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
-      "metodo": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles.",
+      "metodo": "Dos fotos propias y portada anterior cotejadas: carcasa negra biselada, tres líneas de agarre, dos clavijas planas y entradas europeas compatibles visibles. Acabado negro uniforme limpio, metal iluminado y perspectiva comercial. Panel moldeado discreto sin atribuir certificaciones ni valores ilegibles. Hardware conservado; edición asistida por IA.",
       "edicion_asistida_ia": true,
       "originales_intactos_en_drive": true
     }
@@ -118,13 +118,31 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "Formato",
+      "valor": "Europa a Latino",
+      "fuentes": [
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Diseño",
+      "valor": "Cuerpo compacto con relieves de agarre",
+      "fuentes": [
+        "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
-  "fecha_verificacion": "2026-10-10T15:42:46.164453+00:00",
-  "descripcion": "Adaptador de enchufe genérico de color negro, identificado como Europa a Latino en la base comercial. Comprueba que la forma del enchufe y los requisitos del equipo sean compatibles antes de comprar.",
+  "fecha_verificacion": "2026-10-10T18:42:44.031759+00:00",
+  "descripcion": "Dale a tu enchufe europeo una conexión de dos clavijas planas. Este adaptador negro es una solución sencilla y compacta para conectar equipos con la forma de enchufe compatible. Su cuerpo con relieves facilita sujetarlo al colocarlo o retirarlo. Comprueba el ajuste y la tensión admitida por tu equipo antes de usarlo.",
   "compatibilidad": "Comprobar forma y ajuste para el equipo concreto.",
   "contenido_venta": "1 adaptador",
   "garantia": {
@@ -137,7 +155,7 @@
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1473,1474; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "revision_regla": 3,
   "propuesta_origen": "importacion/lotes/lote-020/accesorios-propuestas.json",
   "notas_internas": {
     "campos_no_confirmados": [],
@@ -183,96 +201,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
-      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos."
+      "evidencia": "Beneficios revisados contra especificaciones y fotos propias: no se añade autonomía, número de recargas ni compatibilidad universal. Datos financieros intactos."
     },
     "publicacion_http": {
-      "archivo": "reportes/lote-042-http.json",
-      "sha256": "92c3ddbf6cb65f509bf620f1a4c2efb25e9833e6afc59d9868b429422f78ac19"
+      "estado": "PENDIENTE"
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T15:27:31.705473+00:00",
-      "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
-      "evidencia": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles."
+      "fecha": "2026-10-10T18:42:44.031759+00:00",
+      "sha256_maestro": "e2a26dd2e1a6615dda82468865a60c135cc66404386a2e14349b5da641e96873",
+      "evidencia": "Dos fotos propias y portada anterior cotejadas: carcasa negra biselada, tres líneas de agarre, dos clavijas planas y entradas europeas compatibles visibles. Acabado negro uniforme limpio, metal iluminado y perspectiva comercial. Panel moldeado discreto sin atribuir certificaciones ni valores ilegibles. Hardware conservado; edición asistida por IA."
     },
     "movil": {
-      "solicitado": "ADAP005",
-      "sku": "ADAP005",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-10T15:41:03.547Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "javascript": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
-      "archivo_html": "productos/adap005-adaptador-europa-latino-color-negro/index.html",
-      "http": 200,
-      "sha256_html": "49af6774304d813d6ce2a09bfe38525e1012a6ffe648d18d7cd6be5be261cc66",
-      "sha256_html_local": "49af6774304d813d6ce2a09bfe38525e1012a6ffe648d18d7cd6be5be261cc66",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01-600.webp?v=e18fe8753cb1d0f3",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-042/qa-publico/movil/ADAP005-390.png",
-      "sha256": "4bb205a80d361a364b0802d945b51ea19eded68d8573f469b4f58596350fb227",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-042/qa-publico/movil/ADAP005-1280.png",
-        "sha256": "0e75a9c3a17f7629f22095c6a8262bcb3773a8bcb8a869aada9ba2a2b4a609f2",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
+      "estado": "PENDIENTE"
     }
   },
   "historial_visual": [
@@ -324,14 +265,186 @@
           "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
         }
       }
+    },
+    {
+      "fecha_verificacion": "2026-10-10T15:42:46.164453+00:00",
+      "maestro": {
+        "archivo_maestro": "/imagenes/adap005/original-b62be5bdc359eba3.png",
+        "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+        "fuente_fotografia_propia": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
+        "metodo": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles.",
+        "edicion_asistida_ia": true,
+        "originales_intactos_en_drive": true
+      },
+      "estado_publicacion": "PUBLICADO_VERIFICADO",
+      "validaciones": {
+        "base_593": {
+          "archivo": "datos-593/inventario-publico.csv",
+          "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+          "fila": {
+            "sku": "ADAP005",
+            "nombre": "ADAPTADOR EUROPA - LATINO COLOR NEGRO",
+            "stock": "16",
+            "precio_general": "2.17",
+            "iva": "15",
+            "tipo": "PRODUCTO",
+            "categoria": "ADAPTADORES",
+            "clasificacion": "CONECTIVIDAD"
+          }
+        },
+        "identidad": {
+          "sku_verificado": true,
+          "fuentes": [
+            "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
+            "https://drive.google.com/file/d/1_1TjFBkx_YGLFmpBwgQDN4GVdqqDTV1t/view?usp=drivesdk"
+          ],
+          "discrepancias_pendientes": [],
+          "variante_verificado": true,
+          "marca_no_declarada": true,
+          "modelo_no_declarado": true,
+          "nota_no_declaracion": "No se acredita marca fabricante o modelo exacto. Se conserva la clasificación comercial del Registro y se describe exclusivamente el producto fotografiado."
+        },
+        "ficha": {
+          "verificada": true,
+          "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
+          "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos."
+        },
+        "publicacion_http": {
+          "archivo": "reportes/lote-042-http.json",
+          "sha256": "92c3ddbf6cb65f509bf620f1a4c2efb25e9833e6afc59d9868b429422f78ac19"
+        },
+        "revision_visual": {
+          "estado": "VERIFICADO",
+          "fecha": "2026-10-10T15:27:31.705473+00:00",
+          "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+          "evidencia": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles."
+        },
+        "movil": {
+          "solicitado": "ADAP005",
+          "sku": "ADAP005",
+          "estado": "VERIFICADO",
+          "fecha": "2026-10-10T15:41:03.547Z",
+          "errores": [],
+          "verificaciones": {
+            "http": true,
+            "html_coincide_local": true,
+            "sin_desbordamiento_horizontal": true,
+            "titulo": true,
+            "sku": true,
+            "canonical": true,
+            "promo_contado": true,
+            "pvp": true,
+            "jerarquia_precio": true,
+            "disponibilidad": true,
+            "imagen_principal": true,
+            "imagenes_cargadas": true,
+            "javascript": true,
+            "enlaces_internos": true,
+            "escritorio": true
+          },
+          "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+          "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
+          "url_comprobada": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
+          "archivo_html": "productos/adap005-adaptador-europa-latino-color-negro/index.html",
+          "http": 200,
+          "sha256_html": "49af6774304d813d6ce2a09bfe38525e1012a6ffe648d18d7cd6be5be261cc66",
+          "sha256_html_local": "49af6774304d813d6ce2a09bfe38525e1012a6ffe648d18d7cd6be5be261cc66",
+          "ancho_viewport": 390,
+          "ancho_documento": 390,
+          "alto_viewport": 844,
+          "imagen": {
+            "src": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01.webp",
+            "url_cargada": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01-600.webp?v=e18fe8753cb1d0f3",
+            "naturalWidth": 351,
+            "naturalHeight": 351,
+            "completa": true,
+            "visible": true
+          },
+          "enlaces_internos": [
+            {
+              "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "https://conectatech-ec.github.io/",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01.webp",
+              "http": 200,
+              "ok": true
+            },
+            {
+              "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
+              "http": 200,
+              "ok": true
+            }
+          ],
+          "archivo": "reportes/lote-042/qa-publico/movil/ADAP005-390.png",
+          "sha256": "4bb205a80d361a364b0802d945b51ea19eded68d8573f469b4f58596350fb227",
+          "escritorio": {
+            "ancho_viewport": 1280,
+            "ancho_documento": 1280,
+            "archivo": "reportes/lote-042/qa-publico/movil/ADAP005-1280.png",
+            "sha256": "0e75a9c3a17f7629f22095c6a8262bcb3773a8bcb8a869aada9ba2a2b4a609f2",
+            "sin_desbordamiento_horizontal": true,
+            "imagen_cargada": true
+          }
+        }
+      }
     }
   ],
   "maestro": {
-    "archivo_maestro": "/imagenes/adap005/original-b62be5bdc359eba3.png",
-    "sha256_maestro": "b62be5bdc359eba3c632ef09dae8f26ed65b1dcae3d2c363d4272e167dae7cc8",
+    "archivo_maestro": "/imagenes/adap005/original-e2a26dd2e1a6615d.png",
+    "sha256_maestro": "e2a26dd2e1a6615dda82468865a60c135cc66404386a2e14349b5da641e96873",
     "fuente_fotografia_propia": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
-    "metodo": "Edición comercial asistida por IA con las dos fotos propias: carcasa negra con hombros biselados, dos clavijas planas, ranuras de agarre y dos entradas delanteras conservadas. No se atribuyen valores eléctricos ni certificaciones; sello moldeado permanece discreto. No representa recuperación óptica de detalles.",
+    "metodo": "Dos fotos propias y portada anterior cotejadas: carcasa negra biselada, tres líneas de agarre, dos clavijas planas y entradas europeas compatibles visibles. Acabado negro uniforme limpio, metal iluminado y perspectiva comercial. Panel moldeado discreto sin atribuir certificaciones ni valores ilegibles. Hardware conservado; edición asistida por IA.",
     "edicion_asistida_ia": true,
     "originales_intactos_en_drive": true
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "Europa → Latino",
+      "titulo": "Adapta tu enchufe",
+      "descripcion": "Para conectar la forma de enchufe compatible.",
+      "especificaciones": [
+        "Formato"
+      ],
+      "fuentes": [
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "2 clavijas planas",
+      "titulo": "Conexión práctica",
+      "descripcion": "Salida con dos clavijas planas visibles.",
+      "especificaciones": [
+        "Conector de salida visible"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Cuerpo compacto",
+      "titulo": "Llévalo contigo",
+      "descripcion": "Pequeño y fácil de guardar entre tus accesorios.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

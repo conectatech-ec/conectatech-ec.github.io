@@ -1,3 +1,4 @@
+const renderBeneficios=require('./ficha-beneficios.cjs');
 const origin='https://conectatech-ec.github.io';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>'$'+Number(n).toFixed(2).replace('.',',');
@@ -11,7 +12,7 @@ module.exports=function ficha(p,c,url){
  const availability=c.fechaInventario?`${available?'Stock registrado':'Sin stock registrado'} al ${c.fechaInventario} · confirma disponibilidad`:available?'Disponible · confirma antes de comprar':'Temporalmente agotado';
  const wa='https://wa.me/593998576759?text='+encodeURIComponent(`Hola ConectaTech, me interesa ${name} (${p.sku}), promo contado ${money(p.promo)}. ¿Está disponible?`);
  const schema={'@context':'https://schema.org','@type':'Product',name,sku:p.sku,description:c.descripcion,...(img?{image:[img]}:{}),...(specs.Marca?{brand:{'@type':'Brand',name:specs.Marca}}:{}),offers:{'@type':'Offer',url,priceCurrency:'USD',price:p.promo.toFixed(2),availability:'https://schema.org/'+(available?'InStock':'OutOfStock'),itemCondition:'https://schema.org/NewCondition',seller:{'@type':'Organization',name:'ConectaTech'}}};
- return `<!doctype html>
+ const result = `<!doctype html>
 <html lang="es-EC"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(c.tituloSeo)}</title><meta name="description" content="${esc(c.descripcionSeo)}"><link rel="canonical" href="${esc(url)}"><link rel="icon" href="/logo-conectatech.png">
 <meta property="og:type" content="product"><meta property="og:title" content="${esc(name)}"><meta property="og:description" content="${esc(c.descripcionSeo)}">${img?`<meta property="og:image" content="${esc(img)}">`:""}<meta property="og:url" content="${esc(url)}">
@@ -29,4 +30,5 @@ module.exports=function ficha(p,c,url){
 <div class="details"><section class="panel"><h2>Conoce tu próximo equipo</h2><p>${esc(c.descripcion)}</p>${c.contenidoVenta?`<p><strong>Contenido de venta:</strong> ${esc(c.contenidoVenta)}</p>`:""}${c.compatibilidad?`<p><strong>Compatibilidad:</strong> ${esc(c.compatibilidad)}</p>`:""}<h2>Compra en ConectaTech</h2><p class="service"><strong>Atención en tienda y entregas</strong>Av. 6 de Diciembre y La Niña, C.C. Multicentro Shopping, subsuelo, local 3. Quito.</p><p class="service">Envíos contraentrega en Quito. Consulta cobertura, costo de envío y condiciones de garantía por WhatsApp.</p>${c.relacionados?.length?`<h2>Productos relacionados</h2><ul>${c.relacionados.map(r=>`<li><a href="${esc(r.url)}">${esc(r.nombre)}</a></li>`).join('')}</ul>`:""}</section>
 <section class="panel"><h2>Características</h2><dl>${Object.entries(specs).map(([k,v])=>`<div class="spec"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>${c.fuenteOficial?`<p class="note" style="margin-top:18px"><a href="${esc(c.fuenteOficial)}" target="_blank" rel="noopener">Ficha oficial del fabricante ↗</a></p>`:''}</section></div>
 <footer>ConectaTech · Todo en tecnología en un solo lugar.</footer></main></body></html>`;
+ return c.beneficios?.length ? renderBeneficios(result,p,c,wa) : result;
 };

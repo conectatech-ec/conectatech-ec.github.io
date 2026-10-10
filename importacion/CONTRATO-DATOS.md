@@ -162,3 +162,7 @@ Solo la última fase puede devolver `PUBLICADO_VERIFICADO`. Ni una captura local
 ## Pruebas
 
 `python scripts/test-contrato.py` verifica datos financieros intactos, aislamiento por SKU, bloqueo de duplicados, falta de permiso, permisos para otro hash, especificaciones no verificadas, cambio de snapshot 593, evidencia móvil, integridad de miniaturas, verificación HTTP y reutilización sin regenerar. Sus archivos sintéticos son fixtures, no evidencia de producción. También ejecutar los tests incremental y de producción para mantener compatibilidad v1/v2.
+
+## Beneficios comerciales (opcional, incremental)
+
+`beneficios` admite hasta cuatro objetos con `valor`, `titulo`, `descripcion`, `especificaciones` (nombres verificados), `fuentes` y `estado: VERIFICADO`. El gate bloquea referencias sin respaldo. Revisión editorial obligatoria: las frases deben expresar beneficios reales sin promesas nuevas. Aplicar-datos-contrato traslada únicamente el texto público a SEO; el generador activa recuadros y apartados desplegables solo en esos SKU. El navegador comprueba coincidencia y apertura con teclado. Registrar-actualizaciones incluye estos textos en la huella semántica, sin renovar SKU no modificados.

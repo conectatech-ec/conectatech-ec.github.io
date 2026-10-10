@@ -241,6 +241,20 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
         if not (nonempty(spec.get('nombre')) and nonempty(spec.get('valor')) and spec.get('estado') == 'VERIFICADO' and
                 isinstance(spec_sources, list) and spec_sources and all(x in technical or x in urls for x in spec_sources)):
             fail('especificaciones', 'Afirmación publicable sin fuente/verificación: ' + str(spec.get('nombre', '?')))
+    benefits = contract.get('beneficios', [])
+    verified_names = {x.get('nombre') for x in specs if isinstance(x, dict) and x.get('estado') == 'VERIFICADO' and x.get('publicar') is not False}
+    if not isinstance(benefits, list) or len(benefits) > 4:
+        fail('beneficios', 'Usar como máximo cuatro beneficios con evidencia')
+    else:
+        for benefit in benefits:
+            if not isinstance(benefit, dict) or not all(nonempty(benefit.get(k)) for k in ('valor','titulo','descripcion')):
+                fail('beneficios', 'Beneficio incompleto'); continue
+            refs = benefit.get('especificaciones', [])
+            sources = benefit.get('fuentes', [])
+            if (benefit.get('estado') != 'VERIFICADO' or not isinstance(refs, list) or not refs or
+                    any(x not in verified_names for x in refs) or not isinstance(sources, list) or not sources or
+                    any(x not in technical and x not in urls for x in sources)):
+                fail('beneficios', 'Beneficio sin especificación verificada y fuente: ' + benefit['titulo'])
     editorial = validation.get('ficha', {})
     if not isinstance(editorial, dict) or editorial.get('verificada') is not True or not reference(editorial.get('fuente')):
         fail('ficha', 'Revisión editorial de título, descripción y afirmaciones pendiente')
