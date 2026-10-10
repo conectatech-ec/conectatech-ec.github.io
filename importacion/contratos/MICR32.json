@@ -206,9 +206,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
-  "fecha_verificacion": "2026-10-10T20:18:15.973492+00:00",
+  "fecha_verificacion": "2026-10-10T20:29:25.537999+00:00",
   "descripcion": "Prepara tu espacio para transmitir, conversar y crear contenido con el ENV GamePod. Su conexión USB, filtro antipop y base de escritorio reúnen lo esencial en un conjunto práctico. El diseño incorpora iluminación RGB y control de volumen indicados en el empaque; la portada muestra la unidad apagada.",
   "garantia": {
     "valor": null,
@@ -283,13 +283,14 @@
       "evidencia": "Unidad real cotejada con dos fotografías propias: cuerpo negro, rejilla, filtro curvo, anillo de suspensión, base circular, toma y botón visibles y rótulo ENV conservados. Fondo y caja retirados; limpieza de polvo, luz y acabado de producto nuevo mediante edición asistida por IA. No se simula iluminación RGB encendida ni se añaden accesorios."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE"
+      "archivo": "reportes/lote-047-http.json",
+      "sha256": "140d131fe842d6d6f25c9a1c4f0c1d509a676063de6cc3562f72174a5f80686b"
     },
     "movil": {
       "solicitado": "MICR32",
       "sku": "MICR32",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T20:21:51.622Z",
+      "fecha": "2026-10-10T20:27:54.774Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -313,7 +314,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
       "archivo_html": "productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/index.html",
       "http": 200,
       "sha256_html": "2c0e974f97158a2b18100e71656017507b1677f04ed250f1f432eba6b17dca67",
@@ -323,7 +324,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr32/MICR32-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/micr32/MICR32-01-600.webp?v=9cae71d5de10f316",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr32/MICR32-01-600.webp?v=9cae71d5de10f316",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -331,32 +332,32 @@
       },
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
+          "url": "https://conectatech-ec.github.io/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/micr32/MICR32-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr32/MICR32-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-047/qa-local/movil/MICR32-390.png",
+      "archivo": "reportes/lote-047/qa-publico/movil/MICR32-390.png",
       "sha256": "84c9f91fd59506615fda03195afc9b8a2cc3d6da792e3ad7647789d485fb6643",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-047/qa-local/movil/MICR32-1280.png",
+        "archivo": "reportes/lote-047/qa-publico/movil/MICR32-1280.png",
         "sha256": "b86e5cbb602e608452379b363ae8b3ecdc4ca7ca6b1bbad0f277f6bb733e190b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

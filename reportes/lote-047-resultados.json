@@ -1,0 +1,117 @@
+{
+  "lote": "lote-047",
+  "fecha": "2026-10-10T20:29:25.537999+00:00",
+  "resumen": {
+    "sku_procesados": 9,
+    "imagenes_nuevas": 3,
+    "imagenes_publicadas": 2,
+    "fichas_enriquecidas": 2,
+    "publicados": 2,
+    "pendientes": 7,
+    "errores_tecnicos": 0
+  },
+  "productos": [
+    {
+      "sku": "TECL030",
+      "nombre_comercial": "Teclado Bluetooth plegable AOAS A-1006",
+      "estado": "publicado_verificado",
+      "revision_regla": 2,
+      "pendientes": [],
+      "imagen": "/imagenes/tecl030/TECL030-01.webp",
+      "url": "https://conectatech-ec.github.io/productos/tecl030-teclado-bluetooth-flexible-aoas/",
+      "precio_contado": 29.35,
+      "pvp": 33.75,
+      "stock": 1,
+      "beneficios": 4,
+      "imagen_reutilizada": false
+    },
+    {
+      "sku": "MICR32",
+      "nombre_comercial": "Micrófono USB ENV GamePod con filtro antipop",
+      "estado": "publicado_verificado",
+      "revision_regla": 2,
+      "pendientes": [],
+      "imagen": "/imagenes/micr32/MICR32-01.webp",
+      "url": "https://conectatech-ec.github.io/productos/micr32-microfono-gamer-env-gamepod-para-pc-laptop/",
+      "precio_contado": 28.6,
+      "pvp": 32.89,
+      "stock": 1,
+      "beneficios": 4,
+      "imagen_reutilizada": false
+    },
+    {
+      "sku": "TECL005",
+      "estado": "REVISAR",
+      "revision_regla": 1,
+      "pendientes": [
+        "Imagen propia retocada preparada, SIN PUBLICAR. Registro filas 1427–1428 Caja original frente a 2041–2044 AAA (genérico). Requiere resolver clasificación comercial."
+      ]
+    },
+    {
+      "sku": "CARG062",
+      "estado": "REVISAR",
+      "revision_regla": 1,
+      "pendientes": [
+        "Fotos nuevas: caja con etiqueta 65 W y trasera que menciona adaptador 90–100 W para salida100W. Foto real muestra puntas DC, no permite confirmar cargador y contenido de venta."
+      ]
+    },
+    {
+      "sku": "MICR33",
+      "estado": "REVISAR",
+      "revision_regla": 1,
+      "pendientes": [
+        "Nombre de base Genuine procede de eslogan de caja; micrófono rotulado AUTNE HTLCA/LCT240. Identidad y marca requieren revisión."
+      ]
+    },
+    {
+      "sku": "PARL035",
+      "estado": "REVISAR",
+      "revision_regla": 1,
+      "pendientes": [
+        "Identificado Blackview AuraBass1 negro. Fotos propias solo de caja; sin permiso externo documentado. Fuente oficial localizada; pendiente fotografía propia útil o licencia comercial."
+      ]
+    },
+    {
+      "sku": "SOPO054",
+      "estado": "REVISAR",
+      "revision_regla": 1,
+      "pendientes": [
+        "Identificado SCS-NH003 negro por empaque. Solo caja, sin fuente visual propia suficiente ni imagen externa autorizada."
+      ]
+    },
+    {
+      "sku": "MOUS037",
+      "estado": "REVISAR",
+      "revision_regla": 1,
+      "pendientes": [
+        "Klip Xtreme KMW-415BK identificado. Fotos nuevas del producto detrás de blíster con reflejos intensos; requiere fuente sin obstrucción o material externo autorizado. No se reconstruyen zonas ocultas.",
+        "Las cajas vinculadas incluyen KMW-415PK rosa (9 de octubre) y KMW-415BK negro (10 de octubre). Confirmar si son variantes del mismo SKU; no asumir un color único."
+      ]
+    },
+    {
+      "sku": "POWE001",
+      "estado": "REVISAR",
+      "revision_regla": 1,
+      "pendientes": [
+        "Fotos nuevas siguen mostrando caja; no acredita aspecto de la unidad genérica ni sus conexiones. No usar imagen de Apple original para sustituirla."
+      ]
+    }
+  ],
+  "qa_publico": {
+    "fecha": "2026-10-10T20:28:00.755730+00:00",
+    "commit_candidato": "e109858ad1246b2e9a1e5ea0e948e48a43d36ee8",
+    "run_id": "38083802185",
+    "manifiesto": "importacion/lotes/lote-047/manifiesto-aprobados.json",
+    "base_comprobada": "https://conectatech-ec.github.io",
+    "manifiesto_qa": "importacion/lotes/lote-047/manifiesto-aprobados.json",
+    "sha256_manifiesto": "6d1eb8e0a43a694446e08f8c716c6a84d6cc34898f7c307cd20b9d086c1bbba4",
+    "movil_verificados": [
+      "TECL030",
+      "MICR32"
+    ],
+    "movil_pendientes": [],
+    "publica_o_hace_push": false
+  },
+  "reporte_visual": "importacion/lotes/lote-047/Resultados-visuales.html",
+  "nota": "TECL005 conserva propuesta sin aplicación ni aprobación por clasificación Original/AAA contradictoria. MICR32 patrón polar omitido por contradicción caja/web."
+}
