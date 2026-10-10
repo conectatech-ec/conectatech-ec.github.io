@@ -1,3 +1,5 @@
-# Lote 045
+# Lote 045 — cerrado
 
-Mejora autorizada de POWE003 y ADAP005. Dos nuevos maestros propios, beneficios trazables y ficha comercial v2 optativa por SKU. Ejecutar QA antes de publicar. Conservar originales y las propuestas premium-001 pendientes. Nueva regla comercial en ESTRATEGIA-COMERCIAL.md.
+POWE003 y ADAP005 publicados y verificados por HTTP, hashes de 1200/600/300 y Chromium móvil/escritorio contra Pages. Evidencia: reportes/lote-045-resultados.json y qa-publico. Las dos fichas usan beneficios trazables y detalles desplegables. Precios, stock y URLs intactos. No regenerar estos maestros sin nueva necesidad visual.
+
+Reanudar la cola incremental desde main, aplicar la regla de acabado nuevo y enfoque vendedor en ESTRATEGIA-COMERCIAL.md. Conservar premium-001 pendiente, no aplicar sus cinco hashes sin aprobación. No hay lote nuevo abierto.

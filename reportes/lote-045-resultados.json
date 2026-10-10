@@ -1,0 +1,81 @@
+{
+  "lote": "lote-045",
+  "fecha": "2026-10-10T19:02:26.057404+00:00",
+  "resumen": {
+    "sku_procesados": 2,
+    "imagenes_comerciales_terminadas": 2,
+    "fichas_enriquecidas_nuevas": 2,
+    "productos_actualizados_publicados": 2,
+    "pendientes_del_lote": 0,
+    "errores_abiertos": 0
+  },
+  "productos": [
+    {
+      "sku": "POWE003",
+      "nombre_comercial": "Batería portátil Philco FLP8202CV 20.000 mAh",
+      "estado": "publicado_verificado",
+      "revision_regla": 3,
+      "pendientes": [],
+      "imagen": "/imagenes/powe003/POWE003-01.webp",
+      "maestro": {
+        "archivo_maestro": "/imagenes/powe003/original-008a16a7f1d88316.png",
+        "sha256_maestro": "008a16a7f1d88316eef7589c3ca1b3647a96818e8b9e5ec1cf5345c1bca21477",
+        "fuente_fotografia_propia": "https://drive.google.com/file/d/16fESmh7tDE4yEeXW-gHW4L3ZnP43m4_g/view?usp=drivesdk",
+        "metodo": "Vista de tres cuartos cotejada con las fotos reales frontal y superior: una salida USB-A naranja, un USB-C y ventana negra de pantalla en ese orden. Se conservan PHILCO, azul, cuerpo estriado y tapas redondeadas; limpieza y luz de estudio. No se añaden accesorios, puertos o dígitos. Edición asistida por IA, no recuperación óptica.",
+        "edicion_asistida_ia": true,
+        "originales_intactos_en_drive": true
+      },
+      "url": "https://conectatech-ec.github.io/productos/powe003-powerbank-philco-20000mah/",
+      "precio_contado": 33.01,
+      "pvp": 37.96,
+      "stock": 1,
+      "clasificacion": "original",
+      "presentacion": "sin caja",
+      "fuente": "Fotografías propias de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "modelo": "FLP8202CV"
+    },
+    {
+      "sku": "ADAP005",
+      "nombre_comercial": "Adaptador de enchufe Europa a Latino negro",
+      "estado": "publicado_verificado",
+      "revision_regla": 3,
+      "pendientes": [],
+      "imagen": "/imagenes/adap005/ADAP005-01.webp",
+      "maestro": {
+        "archivo_maestro": "/imagenes/adap005/original-e2a26dd2e1a6615d.png",
+        "sha256_maestro": "e2a26dd2e1a6615dda82468865a60c135cc66404386a2e14349b5da641e96873",
+        "fuente_fotografia_propia": "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
+        "metodo": "Dos fotos propias y portada anterior cotejadas: carcasa negra biselada, tres líneas de agarre, dos clavijas planas y entradas europeas compatibles visibles. Acabado negro uniforme limpio, metal iluminado y perspectiva comercial. Panel moldeado discreto sin atribuir certificaciones ni valores ilegibles. Hardware conservado; edición asistida por IA.",
+        "edicion_asistida_ia": true,
+        "originales_intactos_en_drive": true
+      },
+      "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
+      "precio_contado": 2.5,
+      "pvp": 2.88,
+      "stock": 16,
+      "clasificacion": "generico",
+      "presentacion": "sin caja",
+      "fuente": "Fotografías propias de Drive; edición comercial asistida por IA",
+      "derechos": "AUTORIZADO_PROPIETARIO",
+      "modelo": null
+    }
+  ],
+  "qa_publico": {
+    "fecha": "2026-10-10T19:01:43.029914+00:00",
+    "commit_candidato": "a72d635419d18fe45d69f8cff5724b1e0d2da009",
+    "run_id": "38077968750",
+    "manifiesto": "importacion/lotes/lote-045/manifiesto-aprobados.json",
+    "base_comprobada": "https://conectatech-ec.github.io",
+    "manifiesto_qa": "importacion/lotes/lote-045/manifiesto-aprobados.json",
+    "sha256_manifiesto": "9e836fee3abf930df048d08bde13941fdd2bfd9eaf384d0fff711d88eae9e816",
+    "movil_verificados": [
+      "POWE003",
+      "ADAP005"
+    ],
+    "movil_pendientes": [],
+    "publica_o_hace_push": false
+  },
+  "reporte_visual": "importacion/lotes/lote-045/Resultados-visuales.html",
+  "regla_permanente": "Acabado de producto nuevo y beneficios verificados visibles antes de detalles técnicos. Datos comerciales intactos."
+}
