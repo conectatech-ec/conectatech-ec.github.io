@@ -1,0 +1,50 @@
+{
+  "base_recuperada": "7e81f4f9cdc8e44e70d3e69b245e710b6ffe6d4c",
+  "rama_final": "catalogo/lote064",
+  "commit_contenido": "ab2cd814b646216c8fdfae49c6fcf7f51512fff9",
+  "productos_catalogo": 1165,
+  "sku_duplicados": 0,
+  "sku_con_medios_registrados": 207,
+  "estados_cola": {
+    "BLOQUEADO": 14,
+    "publicado_verificado": 198,
+    "REVISAR": 90,
+    "SIN_REVISAR": 704
+  },
+  "estados_contrato": {
+    "SIN_CONTRATO": 930,
+    "PUBLICADO_VERIFICADO": 199,
+    "PENDIENTE": 36
+  },
+  "sku_sin_fuentes_en_cola": 159,
+  "trabajo_nuevo": {
+    "investigados": 30,
+    "referencias_inspeccionadas": 99,
+    "sku_publicados_verificados": 9,
+    "imagenes_aprobadas": 10,
+    "propuesta_rechazada_fidelidad": 1,
+    "pendientes_documentados": 21,
+    "lotes": {
+      "lote-063": [
+        "PARL016",
+        "PARL043",
+        "AUDI026",
+        "AUDI065",
+        "AUDI095"
+      ],
+      "lote-064": [
+        "PARL037",
+        "PARL020",
+        "PARL026",
+        "PARL029"
+      ]
+    }
+  },
+  "conservacion": {
+    "precios_pvp_stock_sku_categorias_prioridades_roles_urls": true,
+    "medios_previos_intactos": 198,
+    "originales_previos_intactos": 232
+  },
+  "alcance": "Continuación incremental del catálogo. El catálogo completo aún tiene pendientes; no se declara terminado. Sin desarrollo de WebStore ni integraciones. Los contratos y la cola se muestran por separado: un SKU puede tener portada publicada y variantes pendientes, como JUGU092.",
+  "qa_publica_final": "Pendiente de publicar el registro de fechas de cuatro SKU y repetir QA con ese contenido exacto."
+}
