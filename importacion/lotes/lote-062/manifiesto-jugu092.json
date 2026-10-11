@@ -1,0 +1,86 @@
+{
+  "version": 3,
+  "lote": "lote-062",
+  "cantidad_seleccionada": 1,
+  "skus": [
+    "JUGU092"
+  ],
+  "imagenes": {
+    "JUGU092": [
+      {
+        "archivo": "importacion/lotes/lote-062/editorial-imagenes/JUGU092-01.png",
+        "sha256": "57158c68e115871a48a00c8ce4a55c91363c93e43f2d66b5b59f0f4c879c39c3",
+        "posicion": 1,
+        "contiene_caja": false,
+        "modelo_revisado": true,
+        "revision_regla": 2,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/1fEHEUg6IoFNXw4P18IIFFPmH0Cgwa-rb/view",
+        "fondo_aprobado": true,
+        "nota_revision": "Corrección comercial solicitada: imagen individual, producto grande, acabado nuevo sin desgaste, sin caja, fondo blanco, hardware y color cotejados visualmente con fotografías propias. Corrección de variante verde con techo cerrado respaldada por las dos referencias originales. Se analizaron otras cuatro vistas sin techo, pero no se publican esas variantes por clasificación comercial contradictoria. Se rechazó la primera propuesta por alterar espejos y piezas pequeñas; esta edición mantiene la pose y piezas de la fotografía directa.",
+        "ajustes": {
+          "brillo": 1.08,
+          "contraste": 1.02,
+          "nitidez": 1.04
+        }
+      }
+    ]
+  },
+  "aprobaciones": {
+    "JUGU092": {
+      "estado": "APROBADO",
+      "identidad_verificada": true,
+      "variante_verificada": true,
+      "ficha_verificada": true,
+      "uso_comercial_permitido": true
+    }
+  },
+  "contratos": {
+    "JUGU092": "importacion/contratos/JUGU092.json"
+  },
+  "categorias_comerciales": {
+    "Tablets": {
+      "nombre": "Tablets",
+      "subcategoria": "Tablets",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    },
+    "Discos": {
+      "nombre": "Almacenamiento",
+      "subcategoria": "Discos",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    },
+    "Flash": {
+      "nombre": "Almacenamiento",
+      "subcategoria": "Flash",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    },
+    "Otros": {
+      "nombre": "Hogar y Accesorios",
+      "subcategoria": "Otros",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    },
+    "Relojes": {
+      "nombre": "Smartwatches y Wearables",
+      "subcategoria": "Relojes",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    },
+    "Audifonos": {
+      "nombre": "Audio y Audífonos",
+      "subcategoria": "Audifonos",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    },
+    "Juguetes": {
+      "nombre": "Juguetes y Coleccionables",
+      "subcategoria": "Juguetes",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    }
+  }
+}

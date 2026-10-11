@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "fecha": "2026-10-11T23:09:39.867Z",
+  "base": "http://127.0.0.1:8770",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "JUGU092",
+      "sku": "JUGU092",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T23:09:40.017Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
+      "url_comprobada": "http://127.0.0.1:8770/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
+      "archivo_html": "productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/index.html",
+      "http": 200,
+      "sha256_html": "3e00dda9714f04e6807f139dca359f1c2ce48a833b6e8ab2dbbe9f59a091ba4c",
+      "sha256_html_local": "3e00dda9714f04e6807f139dca359f1c2ce48a833b6e8ab2dbbe9f59a091ba4c",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/jugu092/JUGU092-01.webp",
+        "url_cargada": "http://127.0.0.1:8770/imagenes/jugu092/JUGU092-01-600.webp?v=bdc0f941ab4397a4",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8770/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8770/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8770/imagenes/jugu092/JUGU092-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8770/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8770/productos/jugu106-juguete-moto-enduro-coleccionable/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8770/productos/jugu068-juguete-moto-vespa-coleccionable/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-062/qa-local/jugu092-aclaracion/JUGU092-390.png",
+      "sha256": "e43181b423fc364de12d40214fce0538057bd14ded3bfcafac3646ec30e3e890",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-062/qa-local/jugu092-aclaracion/JUGU092-1280.png",
+        "sha256": "147f47fe24565e11cec4354af8f2f27f3792e9a5372abeeb61e833c1e73fced4",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
