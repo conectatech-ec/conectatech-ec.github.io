@@ -1,46 +1,37 @@
 {
   "version": 1,
-  "lote": "lote-050",
-  "rama": "catalogo/lote050",
-  "manifiesto": "importacion/lotes/lote-050/manifiesto-aprobados.json",
+  "lote": "lote-051",
+  "rama": "catalogo/lote051-reanudacion",
+  "estado": "APLICADO_LOCAL_QA_PENDIENTE",
+  "manifiesto": "importacion/lotes/lote-051/manifiesto-aprobados.json",
   "skus": [
-    "POWE004",
-    "HUB001",
-    "ADAP007",
-    "MOUS017",
-    "SOPO029"
+    "ADAP011",
+    "ADAP016",
+    "ADAP028",
+    "ADAP035",
+    "ADAP024",
+    "ADAP026",
+    "ADAP052"
   ],
-  "estado": "PUBLICADO_VERIFICADO",
-  "lote_anterior": "lote-049",
-  "motivo": "Cinco SKU tecnológicos con fotografías propias y estándar comercial aprobado POWE003/ADAP005.",
-  "qa": {
-    "run_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38089471423",
-    "run_id": 38089471423,
-    "artifact_id": 11683172006,
-    "chromium": "151.0.7922.34",
-    "catalogo_escritorio_columnas": 3,
-    "catalogo_movil_columnas": 2,
-    "prepublicacion_aprobados": 5,
-    "prepublicacion_pendientes": 0
+  "lote_anterior": "lote-050",
+  "fuentes": {
+    "fotografias_drive": 2829,
+    "sku_vinculados": 1006,
+    "paginacion_completa": true,
+    "paginas": 7,
+    "registro": "Registro A:F",
+    "fecha": "2026-10-11T04:37:10.037749+00:00"
   },
-  "qa_publico": {
-    "run_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38090129207",
-    "run_id": 38090129207,
-    "artifact_id": 11682979559,
-    "base": "https://conectatech-ec.github.io",
-    "chromium": "151.0.7922.34",
-    "catalogo_escritorio_columnas": 3,
-    "catalogo_movil_columnas": 2,
-    "productos_verificados": 5,
-    "pendientes": 0
-  },
-  "publicacion": {
-    "commit": "ec283ab0934819a87cc033611a06841c0c0b305f",
-    "pages_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38089975591",
-    "http_reporte": "reportes/lote-050-http.json",
-    "publicados": 5,
-    "pendientes": 0,
-    "errores": 0
-  },
-  "fecha_cierre": "2026-10-10T22:05:18.307544+00:00"
+  "candidatos_revisados": 16,
+  "pendientes": [
+    "ADAP009",
+    "ADAP012",
+    "ADAP017",
+    "ADAP019",
+    "ADAP020",
+    "ADAP029",
+    "ADAP022",
+    "ADAP023",
+    "ADAP025"
+  ]
 }
