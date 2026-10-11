@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "lote-053",
   "rama": "catalogo/lote053",
-  "estado": "EN_PROCESO",
+  "estado": "QA_PREPUBLICACION_APROBADA",
   "manifiesto": "importacion/lotes/lote-053/manifiesto-aprobados.json",
   "skus": [
     "ADAP053",
@@ -21,5 +21,15 @@
   "candidatos_revisados": 30,
   "qa_base_publica": null,
   "qa_manifiesto": "importacion/lotes/lote-053/manifiesto-aprobados.json",
-  "proximo_paso": "Completar pipeline, QA real y publicación HTTP verificada de cuatro SKU; ADAP070 requiere revisión de fidelidad."
+  "proximo_paso": "Publicar los cuatro SKU en main con SHA esperado; esperar Pages y verificar HTTP, hashes, datos comerciales y orden reciente.",
+  "qa_prepublicacion": {
+    "run_id": "38120526176",
+    "commit_candidato": "843815545a44d01ec18130b80f19a7b0a3eb0853",
+    "navegador_movil": 390,
+    "navegador_escritorio": 1280,
+    "skus_visuales_verificados": 4,
+    "columnas_escritorio": 3,
+    "columnas_movil": 2,
+    "reporte": "reportes/lote-053/qa-local/prepublicacion.json"
+  }
 }

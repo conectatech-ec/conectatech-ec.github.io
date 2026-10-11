@@ -193,6 +193,98 @@
       "fecha": "2026-10-11T07:05:24.792948+00:00",
       "sha256_maestro": "2fb3baee06da622a44d2523ae66410e33d3c94b67d28e10c7b445b6421a2804d",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP054",
+      "sku": "ADAP054",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T07:12:02.361Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap054-adaptador-1-4-macho-a-3-5mm-hembra-stereo-dorado/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/adap054-adaptador-1-4-macho-a-3-5mm-hembra-stereo-dorado/",
+      "archivo_html": "productos/adap054-adaptador-1-4-macho-a-3-5mm-hembra-stereo-dorado/index.html",
+      "http": 200,
+      "sha256_html": "fd5713e8311022f6d3dfbf8ca54ad704bc3b3a4528f178e9b1c93ef5dc368ac5",
+      "sha256_html_local": "fd5713e8311022f6d3dfbf8ca54ad704bc3b3a4528f178e9b1c93ef5dc368ac5",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap054/ADAP054-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/adap054/ADAP054-01-600.webp?v=fe36706b3342f783",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/adap054-adaptador-1-4-macho-a-3-5mm-hembra-stereo-dorado/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/adap054/ADAP054-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap053-adaptador-1-4-hembra-a-3-5-macho-stereo-negro/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap073-adaptador-enchufe-110-a-12v-socket-car/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap076-adaptador-union-coupler-de-red-rj45-beige/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/ADAP054-390.png",
+      "sha256": "da295661b1e037744eaaae2b6b690af4e5f16dd9dacb6ea5ea16d75e902cef70",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/ADAP054-1280.png",
+        "sha256": "e22d3d0befcd6c5aeaa516a4493634d89b15ed5d300eb823ac7e87e01cb800e3",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

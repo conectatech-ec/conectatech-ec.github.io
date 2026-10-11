@@ -221,6 +221,98 @@
       "fecha": "2026-10-11T07:05:24.792948+00:00",
       "sha256_maestro": "6b5a870249f695472619c33022eef4370960c6c4621affe0db35c78977d3df76",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP073",
+      "sku": "ADAP073",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T07:12:03.318Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap073-adaptador-enchufe-110-a-12v-socket-car/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/adap073-adaptador-enchufe-110-a-12v-socket-car/",
+      "archivo_html": "productos/adap073-adaptador-enchufe-110-a-12v-socket-car/index.html",
+      "http": 200,
+      "sha256_html": "08840454707505fc66c7936374e83d26e7cc6890a1f913220416d4b12b8f9ab5",
+      "sha256_html_local": "08840454707505fc66c7936374e83d26e7cc6890a1f913220416d4b12b8f9ab5",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap073/ADAP073-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/adap073/ADAP073-01-600.webp?v=9e42c0994e817251",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/adap073-adaptador-enchufe-110-a-12v-socket-car/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/adap073/ADAP073-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap053-adaptador-1-4-hembra-a-3-5-macho-stereo-negro/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap054-adaptador-1-4-macho-a-3-5mm-hembra-stereo-dorado/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap076-adaptador-union-coupler-de-red-rj45-beige/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/ADAP073-390.png",
+      "sha256": "4d8809bcc2459ff460a5e5869d9ee289ebb77f40fba58249f2d0138e2a3dc79e",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/ADAP073-1280.png",
+        "sha256": "28a75a8f8c05da00fcd79f3ec0547e5dccf7b897b51c119a83d17f62dbc52980",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }
