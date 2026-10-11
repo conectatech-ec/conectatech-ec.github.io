@@ -1,10 +1,10 @@
 {
   "sku": "JUGU068",
   "nombre_original": "Juguete Moto Vespa Coleccionable",
-  "titulo_comercial": "Moto scooter de colección celeste",
+  "titulo_comercial": "Miniatura Vespa clásica | scooter celeste de colección",
   "tipo": "generico",
   "marca": null,
-  "modelo": null,
+  "modelo": "Representación Vespa clásica",
   "variante": "Celeste con asiento claro",
   "categoria_original": "Juguetes",
   "categoria_comercial": "Juguetes y Coleccionables",
@@ -150,9 +150,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu068-juguete-moto-vespa-coleccionable/",
-  "fecha_verificacion": "2026-10-11T20:51:00.078340+00:00",
+  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
   "descripcion": "Miniatura de scooter de estilo clásico, con carrocería celeste y asiento claro. Sus formas redondeadas y detalles de acabado plateado aportan un toque retro a una colección de vehículos.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -195,7 +195,14 @@
         "https://drive.google.com/file/d/1YPXfmlVMUETVG6GwBkfcYkcE5GupRE7-/view?usp=drivesdk",
         "https://drive.google.com/file/d/1sovrBYF8GwrsZTLHpTSQ-RunyRnXYCJc/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": [
+      "discrepancias_pendientes": [],
+      "variante_verificado": true,
+      "marca_no_declarada": true,
+      "modelo_no_declarado": false,
+      "nota_no_declaracion": "La marca fabricante del juguete y su licencia no se atribuyen. El modelo describe el vehículo representado, identificado por las vistas propias; no implica fabricación por la automotriz.",
+      "evidencia_titulo": "Inscripción Vespa y silueta clásica visibles; no se declara cilindrada ni submodelo.",
+      "modelo_verificado": true,
+      "discrepancias_resueltas": [
         {
           "campo": "modelo",
           "tratamiento": "NO_DECLARAR",
@@ -205,13 +212,11 @@
             "dato_original": "Juguete Moto Vespa Coleccionable",
             "observacion": "El nombre anterior incluye Vespa; no se confirma fabricante del juguete ni licencia oficial. Se utiliza un título neutral y se conservan los logotipos reales visibles en la fotografía.",
             "resolucion": "Título comercial neutral; modelo y marca no afirmados."
-          }
+          },
+          "resolucion": "La directriz vigente permite nombrar el vehículo representado cuando es identificable. Se verificaron todas las vistas propias, se identifica Representación Vespa clásica. No se atribuye fabricante o licencia del juguete ni material no confirmado.",
+          "evidencia": "Inscripción Vespa y silueta clásica visibles; no se declara cilindrada ni submodelo."
         }
-      ],
-      "variante_verificado": true,
-      "marca_no_declarada": true,
-      "modelo_no_declarado": true,
-      "nota_no_declaracion": "No se acredita marca fabricante o modelo exacto. Se conserva la clasificación comercial del Registro y se describe exclusivamente el producto fotografiado."
+      ]
     },
     "ficha": {
       "verificada": true,
@@ -227,7 +232,7 @@
       "solicitado": "JUGU068",
       "sku": "JUGU068",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T21:25:59.607Z",
+      "fecha": "2026-10-11T22:39:50.542Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,8 +256,8 @@
       "url_comprobada": "http://127.0.0.1:8770/productos/jugu068-juguete-moto-vespa-coleccionable/",
       "archivo_html": "productos/jugu068-juguete-moto-vespa-coleccionable/index.html",
       "http": 200,
-      "sha256_html": "ddba6e8f63c7550b5236c4b4f60950c07f1ac1ff84793e3c912bce455273094d",
-      "sha256_html_local": "ddba6e8f63c7550b5236c4b4f60950c07f1ac1ff84793e3c912bce455273094d",
+      "sha256_html": "f665ab62114a25afb2740388b6f5f036df61be53f140aa28f4364d370c7ee8a2",
+      "sha256_html_local": "f665ab62114a25afb2740388b6f5f036df61be53f140aa28f4364d370c7ee8a2",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -286,6 +291,11 @@
           "ok": true
         },
         {
+          "url": "http://127.0.0.1:8770/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
+          "http": 200,
+          "ok": true
+        },
+        {
           "url": "http://127.0.0.1:8770/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
           "http": 200,
           "ok": true
@@ -294,20 +304,15 @@
           "url": "http://127.0.0.1:8770/productos/jugu106-juguete-moto-enduro-coleccionable/",
           "http": 200,
           "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8770/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
-          "http": 200,
-          "ok": true
         }
       ],
-      "archivo": "reportes/lote-061/qa-local/movil/JUGU068-390.png",
-      "sha256": "8e3625600b288cc9c515181b5559b9080b475aaa03a39fccded54a4f79900adc",
+      "archivo": "reportes/lote-062/qa-local/movil/JUGU068-390.png",
+      "sha256": "0f95a39375a4f9bf39d4e45fe166a0e5ef7045885d7b3d3d4a8cc0c9187a82e3",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-061/qa-local/movil/JUGU068-1280.png",
-        "sha256": "6c9b0d738f9655a23e73c0650e2ce9d368b0a371b8f6d1d900f7942e971e765b",
+        "archivo": "reportes/lote-062/qa-local/movil/JUGU068-1280.png",
+        "sha256": "6c366bb7b90a997b16b7b5f4a5af25bf9bc3ef66a4defc2f47c3720f79a1f35f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

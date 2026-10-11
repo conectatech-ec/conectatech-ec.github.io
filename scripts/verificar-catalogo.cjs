@@ -101,6 +101,25 @@ async function main() {
         const payload = await page.evaluate(() => window.CONECTATECH_CATALOGO || null);
         check('metadatos_publicados', Boolean(payload && payload.productos), 'Falta payload de productos publicados.');
         if (!payload?.productos) throw new Error('No se pueden comprobar novedades sin metadatos.');
+        for (const image of await page.locator('#featured img').all()) {
+          await image.scrollIntoViewIfNeeded();
+        }
+        await page.locator('#featured img').evaluateAll(async images => {
+          await Promise.all(images.map(im => Promise.race([
+            im.decode().catch(() => {}), new Promise(resolve => setTimeout(resolve, 10000))
+          ])));
+        });
+        row.destacados = await page.locator('#featured .featured-card').evaluateAll(cards => cards.map(card => {
+          const im = card.querySelector('img');
+          return {url: card.querySelector('.product-link')?.getAttribute('href'),
+            imagen: im?.getAttribute('src'), cargada: Boolean(im?.complete && im?.naturalWidth > 0)};
+        }));
+        const featuredSkus = row.destacados.map(card => Object.keys(slugs).find(sku =>
+          card.url && new URL(card.url, PUBLIC).pathname === '/productos/' + slugs[sku] + '/'));
+        check('destacados_con_fotos_y_stock', row.destacados.length === 4 &&
+          new Set(featuredSkus).size === 4 && row.destacados.every((card, i) =>
+            card.cargada && card.imagen?.startsWith('/imagenes/') && bySku.get(featuredSkus[i])?.stock > 0),
+          'Destacados debe mostrar cuatro productos disponibles con fotografías locales cargadas y fichas válidas.');
         const assets = await page.evaluate(() => Array.from(document.querySelectorAll('script[src],link[rel="stylesheet"]')).map(el => el.getAttribute('src') || el.getAttribute('href')));
         for (const value of assets) {
           const u = new URL(value, PUBLIC);
@@ -184,6 +203,7 @@ async function main() {
         await page.locator('#chips .chip[data-cat="TODOS"]').click();
         for (const sku of skus) {
           const product = {sku, errores: []}; row.productos.push(product);
+          if (row.productos.length % 10 === 1) console.log(JSON.stringify({viewport: width, revisando: sku, producto: row.productos.length}));
           const ensure = (ok, message) => { if (!ok) product.errores.push(message); };
           const p = bySku.get(sku), published = payload.productos[sku];
           const sourceVersions = enriched[sku]?.imagenProfesional?.versiones || {};
@@ -193,7 +213,9 @@ async function main() {
           await page.locator('#q').fill(sku);
           ensure(equals(await ids(), [sku]), 'La búsqueda porSKU no devuelve solamente el producto esperado.');
           const card = page.locator('#grid .ct-compact-card').first(); await card.scrollIntoViewIfNeeded();
-          await card.locator('img').evaluate(async im => { await im.decode().catch(() => {}); }).catch(() => {});
+          await card.locator('img').evaluate(async im => {
+            await Promise.race([im.decode().catch(() => {}), new Promise(resolve => setTimeout(resolve, 10000))]);
+          }).catch(() => {});
           const current = (await snapshot()).tarjetas.find(item => item.sku === sku);
           if (!current) { product.errores.push('Tarjeta deSKU no localizada.'); continue; }
           product.tarjeta = current;

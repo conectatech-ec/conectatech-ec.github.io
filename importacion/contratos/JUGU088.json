@@ -1,10 +1,10 @@
 {
   "sku": "JUGU088",
   "nombre_original": "Juguete Carro Coleccionable Camaro",
-  "titulo_comercial": "Carro deportivo de colección con alerón",
+  "titulo_comercial": "Miniatura estilo Dodge Challenger | deportivo rojo o blanco",
   "tipo": "original",
   "marca": null,
-  "modelo": null,
+  "modelo": "Representación estilo Dodge Challenger",
   "variante": "Blanco y rojo observados bajo el mismo SKU",
   "categoria_original": "Juguetes",
   "categoria_comercial": "Juguetes y Coleccionables",
@@ -177,9 +177,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu088-juguete-carro-coleccionable-camaro/",
-  "fecha_verificacion": "2026-10-11T20:51:00.078340+00:00",
+  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
   "descripcion": "Carro de colección con carrocería deportiva, alerón posterior y aros oscuros. Su estilo de cupé y los detalles visibles del interior lo convierten en una pieza vistosa para exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -223,7 +223,14 @@
         "https://drive.google.com/file/d/1TUxkDInbzxeBwlVLPZiKkAl7yUsonOGk/view?usp=drivesdk",
         "https://drive.google.com/file/d/1Z5loWl04MTcKz2tt5RFHgyOVZGhPkSl0/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": [
+      "discrepancias_pendientes": [],
+      "variante_verificado": true,
+      "marca_no_declarada": true,
+      "modelo_no_declarado": false,
+      "nota_no_declaracion": "La marca fabricante del juguete y su licencia no se atribuyen. El modelo describe el vehículo representado, identificado por las vistas propias; no implica fabricación por la automotriz.",
+      "evidencia_titulo": "Carrocería Dodge Challenger de dos puertas, ópticas y emblema lateral de referencia; ambas variantes propias.",
+      "modelo_verificado": true,
+      "discrepancias_resueltas": [
         {
           "campo": "modelo",
           "tratamiento": "NO_DECLARAR",
@@ -234,13 +241,11 @@
             "observacion": "El catálogo lo denomina Camaro, pero la forma y los emblemas de las fotos no respaldan ese modelo. Se conserva el nombre anterior en el registro y se propone un título neutral sin atribuir otro modelo.",
             "resolucion": "Título comercial neutral; modelo y marca no afirmados."
           },
-          "valor_catalogo": "Camaro"
+          "valor_catalogo": "Camaro",
+          "resolucion": "La directriz vigente permite nombrar el vehículo representado cuando es identificable. Se verificaron todas las vistas propias, se identifica Representación estilo Dodge Challenger. No se atribuye fabricante o licencia del juguete ni material no confirmado.",
+          "evidencia": "Carrocería Dodge Challenger de dos puertas, ópticas y emblema lateral de referencia; ambas variantes propias."
         }
-      ],
-      "variante_verificado": true,
-      "marca_no_declarada": true,
-      "modelo_no_declarado": true,
-      "nota_no_declaracion": "No se acredita marca fabricante o modelo exacto. Se conserva la clasificación comercial del Registro y se describe exclusivamente el producto fotografiado."
+      ]
     },
     "ficha": {
       "verificada": true,
@@ -256,7 +261,7 @@
       "solicitado": "JUGU088",
       "sku": "JUGU088",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T21:26:01.772Z",
+      "fecha": "2026-10-11T22:39:52.824Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -280,8 +285,8 @@
       "url_comprobada": "http://127.0.0.1:8770/productos/jugu088-juguete-carro-coleccionable-camaro/",
       "archivo_html": "productos/jugu088-juguete-carro-coleccionable-camaro/index.html",
       "http": 200,
-      "sha256_html": "365a3e6508905e7e80686fb584e15f8e53cd2d7505f33f5f2bca019db4b5b053",
-      "sha256_html_local": "365a3e6508905e7e80686fb584e15f8e53cd2d7505f33f5f2bca019db4b5b053",
+      "sha256_html": "db2d94ed17948e1607a17268781d16faec8baa582c21820193797ed53ae3ad9d",
+      "sha256_html_local": "db2d94ed17948e1607a17268781d16faec8baa582c21820193797ed53ae3ad9d",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -325,23 +330,23 @@
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/jugu133-juguete-caminoneta-coleccionable-jeep-grande/",
+          "url": "http://127.0.0.1:8770/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
+          "url": "http://127.0.0.1:8770/productos/jugu106-juguete-moto-enduro-coleccionable/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-061/qa-local/movil/JUGU088-390.png",
-      "sha256": "94b807745460a1098c11e856637dd0d3cc637b8f36c6f1e1fac672b3c9666d14",
+      "archivo": "reportes/lote-062/qa-local/movil/JUGU088-390.png",
+      "sha256": "daa530cd29f117f5cd1be09ee8ecf32272a4068545ebc5e3548a6a6c5e8a0283",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-061/qa-local/movil/JUGU088-1280.png",
-        "sha256": "16765f7b938c677afef7e39f504cb898a75d132b0975c90bef0d0389801d5684",
+        "archivo": "reportes/lote-062/qa-local/movil/JUGU088-1280.png",
+        "sha256": "4377bfbc80fad60ee2d09a922ef17eb783aafdfbc81f594ba8864315bedc4d03",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

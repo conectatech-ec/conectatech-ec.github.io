@@ -1,10 +1,10 @@
 {
   "sku": "JUGU081",
   "nombre_original": "Juguete Carro Coleccionable Mercedes Benz",
-  "titulo_comercial": "Carro de colección tipo sedán rojo con puertas abatibles",
+  "titulo_comercial": "Miniatura Mercedes-Benz Clase C L | sedán rojo de colección",
   "tipo": "original",
   "marca": null,
-  "modelo": null,
+  "modelo": "Representación Mercedes-Benz Clase C L",
   "variante": "Rojo",
   "categoria_original": "Juguetes",
   "categoria_comercial": "Juguetes y Coleccionables",
@@ -171,9 +171,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
-  "fecha_verificacion": "2026-10-11T20:51:00.078340+00:00",
+  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
   "descripcion": "Sedán de colección con acabado rojo y detalles interiores visibles. Las fotografías muestran puertas y compartimento posterior abiertos, ideales para apreciar la presentación de esta miniatura.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -217,7 +217,14 @@
         "https://drive.google.com/file/d/1wrdl3qaBLlaOlClrsRxjDBfsgOpsSA6Q/view?usp=drivesdk",
         "https://drive.google.com/file/d/1yfe-FXVtXNJilrgo2vVGCXvjIIxUVn-V/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": [
+      "discrepancias_pendientes": [],
+      "variante_verificado": true,
+      "marca_no_declarada": true,
+      "modelo_no_declarado": false,
+      "nota_no_declaracion": "La marca fabricante del juguete y su licencia no se atribuyen. El modelo describe el vehículo representado, identificado por las vistas propias; no implica fabricación por la automotriz.",
+      "evidencia_titulo": "Emblema Mercedes-Benz y placa C-Cless L legibles en vista frontal; se identifica la representación Clase C L, sin atribuir fabricación/licencia del juguete.",
+      "modelo_verificado": true,
+      "discrepancias_resueltas": [
         {
           "campo": "modelo",
           "tratamiento": "NO_DECLARAR",
@@ -227,13 +234,11 @@
             "dato_original": "Juguete Carro Coleccionable Mercedes Benz",
             "observacion": "El nombre anterior menciona Mercedes Benz; se conserva como referencia histórica. No se atribuye fabricante del juguete ni licencia oficial, pues no están documentados.",
             "resolucion": "Título comercial neutral; modelo y marca no afirmados."
-          }
+          },
+          "resolucion": "La directriz vigente permite nombrar el vehículo representado cuando es identificable. Se verificaron todas las vistas propias, se identifica Representación Mercedes-Benz Clase C L. No se atribuye fabricante o licencia del juguete ni material no confirmado.",
+          "evidencia": "Emblema Mercedes-Benz y placa C-Cless L legibles en vista frontal; se identifica la representación Clase C L, sin atribuir fabricación/licencia del juguete."
         }
-      ],
-      "variante_verificado": true,
-      "marca_no_declarada": true,
-      "modelo_no_declarado": true,
-      "nota_no_declaracion": "No se acredita marca fabricante o modelo exacto. Se conserva la clasificación comercial del Registro y se describe exclusivamente el producto fotografiado."
+      ]
     },
     "ficha": {
       "verificada": true,
@@ -249,7 +254,7 @@
       "solicitado": "JUGU081",
       "sku": "JUGU081",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T21:25:58.499Z",
+      "fecha": "2026-10-11T22:39:49.339Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -273,8 +278,8 @@
       "url_comprobada": "http://127.0.0.1:8770/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
       "archivo_html": "productos/jugu081-juguete-carro-coleccionable-mercedes-benz/index.html",
       "http": 200,
-      "sha256_html": "02d5d1b2ee600ef0dcda4b06bc30062fd32823534cd2f2ccdd2bcd315bb732be",
-      "sha256_html_local": "02d5d1b2ee600ef0dcda4b06bc30062fd32823534cd2f2ccdd2bcd315bb732be",
+      "sha256_html": "da2abe37b70d458a6fa8d4124492da25561bb019471d48c65f6481069ed1404e",
+      "sha256_html_local": "da2abe37b70d458a6fa8d4124492da25561bb019471d48c65f6481069ed1404e",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -308,6 +313,11 @@
           "ok": true
         },
         {
+          "url": "http://127.0.0.1:8770/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
+          "http": 200,
+          "ok": true
+        },
+        {
           "url": "http://127.0.0.1:8770/productos/jugu106-juguete-moto-enduro-coleccionable/",
           "http": 200,
           "ok": true
@@ -316,20 +326,15 @@
           "url": "http://127.0.0.1:8770/productos/jugu068-juguete-moto-vespa-coleccionable/",
           "http": 200,
           "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8770/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
-          "http": 200,
-          "ok": true
         }
       ],
-      "archivo": "reportes/lote-061/qa-local/movil/JUGU081-390.png",
-      "sha256": "e41d6fc13970359f8fb21072b0c771550d9d209b20b7ee0f7f49c9fa8983d7f0",
+      "archivo": "reportes/lote-062/qa-local/movil/JUGU081-390.png",
+      "sha256": "6194d147c954a09c7bc4a713396283c770a841cf3eab96c7f207c8aef5189c4b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-061/qa-local/movil/JUGU081-1280.png",
-        "sha256": "8c52473ded382241a22eb8adeec7553d2dca39bfd392725e00c46bc0831fd267",
+        "archivo": "reportes/lote-062/qa-local/movil/JUGU081-1280.png",
+        "sha256": "4a47fac641d52ae852cf0b68a97ae8e314d5b827f3d8b49911bc4de2c6fce36c",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

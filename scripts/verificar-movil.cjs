@@ -156,6 +156,17 @@ async function main() {
         const sameImage = expectedImage && data.imagen?.src && new URL(data.imagen.src, canonical).href === new URL(expectedImage, PUBLIC).href;
         check('imagen_principal', sameImage && data.imagen?.completa && data.imagen.naturalWidth > 0 && data.imagen.naturalHeight > 0 && data.imagen.visible, 'Portada ausente, incorrecta o no cargada.');
         check('imagenes_cargadas', data.imagenes_fallidas.length === 0, 'Imágenes sin cargar: ' + data.imagenes_fallidas.join(', '));
+        const contractPath = safe('importacion/contratos/' + sku + '.json');
+        if (fs.existsSync(contractPath)) {
+          const secondary = JSON.parse(fs.readFileSync(contractPath, 'utf8')).imagenes_secundarias || [];
+          row.galeria = await page.locator('.gallery img').evaluateAll(images => images.map(im =>
+            ({ruta: im.closest('a') ? new URL(im.closest('a').href).pathname : null,
+              miniatura: new URL(im.src).pathname, cargada: im.complete && im.naturalWidth > 0})));
+          check('galeria_del_contrato', row.galeria.length === secondary.length &&
+            row.galeria.every((im, i) => im.cargada && im.ruta === secondary[i] &&
+              im.miniatura === secondary[i].replace(/\.webp$/, '-300.webp')),
+            'La galería debe cargar todas las imágenes secundarias aprobadas, por separado y en orden.');
+        }
         check('javascript', pageErrors.length === 0, 'Errores JavaScript: ' + pageErrors.join('; '));
         if (content.beneficios?.length) {
           const actual = await page.locator('.benefit').evaluateAll(els => els.map(e => ({valor:e.querySelector('strong')?.textContent,titulo:e.querySelector('span')?.textContent,descripcion:e.querySelector('p')?.textContent})));

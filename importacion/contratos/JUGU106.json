@@ -1,10 +1,10 @@
 {
   "sku": "JUGU106",
   "nombre_original": "Juguete Moto Enduro Coleccionable",
-  "titulo_comercial": "Moto de colección estilo enduro verde",
+  "titulo_comercial": "Moto de colección estilo Kawasaki | motocross verde",
   "tipo": "generico",
   "marca": null,
-  "modelo": null,
+  "modelo": "Moto de colección estilo Kawasaki",
   "variante": "Verde con detalles negros",
   "categoria_original": "Juguetes",
   "categoria_comercial": "Juguetes y Coleccionables",
@@ -150,9 +150,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu106-juguete-moto-enduro-coleccionable/",
-  "fecha_verificacion": "2026-10-11T20:51:00.078340+00:00",
+  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
   "descripcion": "Miniatura de moto de estilo enduro con carrocería verde, asiento oscuro y ruedas de radios. Una pieza de inspiración todoterreno para exhibir junto a otros modelos de colección.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -195,7 +195,14 @@
         "https://drive.google.com/file/d/1chXQCrUnW4NHZBTqsvavkIgThAJFz-_e/view?usp=drivesdk",
         "https://drive.google.com/file/d/1nO0v49sYxfP7bZvXXEiukj-AAhS1JESq/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": [
+      "discrepancias_pendientes": [],
+      "variante_verificado": true,
+      "marca_no_declarada": true,
+      "modelo_no_declarado": false,
+      "nota_no_declaracion": "La marca fabricante del juguete y su licencia no se atribuyen. El modelo describe el vehículo representado, identificado por las vistas propias; no implica fabricación por la automotriz.",
+      "evidencia_titulo": "Inscripción Kawasaki legible en asiento; no se declara KX250F porque el sufijo no queda confirmado.",
+      "modelo_verificado": true,
+      "discrepancias_resueltas": [
         {
           "campo": "modelo",
           "tratamiento": "NO_DECLARAR",
@@ -205,13 +212,11 @@
             "dato_original": "Juguete Moto Enduro Coleccionable",
             "observacion": "Los textos visibles de la miniatura se conservan en la foto; no se atribuye la marca del vehículo representado como fabricante del juguete ni licencia oficial.",
             "resolucion": "Título comercial neutral; modelo y marca no afirmados."
-          }
+          },
+          "resolucion": "La directriz vigente permite nombrar el vehículo representado cuando es identificable. Se verificaron todas las vistas propias, se identifica Moto de colección estilo Kawasaki. No se atribuye fabricante o licencia del juguete ni material no confirmado.",
+          "evidencia": "Inscripción Kawasaki legible en asiento; no se declara KX250F porque el sufijo no queda confirmado."
         }
-      ],
-      "variante_verificado": true,
-      "marca_no_declarada": true,
-      "modelo_no_declarado": true,
-      "nota_no_declaracion": "No se acredita marca fabricante o modelo exacto. Se conserva la clasificación comercial del Registro y se describe exclusivamente el producto fotografiado."
+      ]
     },
     "ficha": {
       "verificada": true,
@@ -227,7 +232,7 @@
       "solicitado": "JUGU106",
       "sku": "JUGU106",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T21:25:59.048Z",
+      "fecha": "2026-10-11T22:39:50.008Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,8 +256,8 @@
       "url_comprobada": "http://127.0.0.1:8770/productos/jugu106-juguete-moto-enduro-coleccionable/",
       "archivo_html": "productos/jugu106-juguete-moto-enduro-coleccionable/index.html",
       "http": 200,
-      "sha256_html": "6bcc0c05308f0a1699837a5052ca99098b0e558e9953d01dc8acfbede1d4f81b",
-      "sha256_html_local": "6bcc0c05308f0a1699837a5052ca99098b0e558e9953d01dc8acfbede1d4f81b",
+      "sha256_html": "8b713432289c7f93650cc97d5e6524e2fdc03510a6485080725920e9ace62087",
+      "sha256_html_local": "8b713432289c7f93650cc97d5e6524e2fdc03510a6485080725920e9ace62087",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -286,6 +291,11 @@
           "ok": true
         },
         {
+          "url": "http://127.0.0.1:8770/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
+          "http": 200,
+          "ok": true
+        },
+        {
           "url": "http://127.0.0.1:8770/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
           "http": 200,
           "ok": true
@@ -294,20 +304,15 @@
           "url": "http://127.0.0.1:8770/productos/jugu068-juguete-moto-vespa-coleccionable/",
           "http": 200,
           "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8770/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
-          "http": 200,
-          "ok": true
         }
       ],
-      "archivo": "reportes/lote-061/qa-local/movil/JUGU106-390.png",
-      "sha256": "bc6500bad3f758cad7648c5852b48d03f4096b7e1321d4403bead677dbbc3f23",
+      "archivo": "reportes/lote-062/qa-local/movil/JUGU106-390.png",
+      "sha256": "8eb11c5f8a73a0318ff844064c24fc8447abd32e034ba9309130ddaf45a9f2e8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-061/qa-local/movil/JUGU106-1280.png",
-        "sha256": "60962ad0592b2474a77b25ef2369088188d9a9c98d443aa5bfbbb451962f006d",
+        "archivo": "reportes/lote-062/qa-local/movil/JUGU106-1280.png",
+        "sha256": "f7b7082f1d9b1033b3109d6432ae901e34e468507937f7b7d00261ea929fe239",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
