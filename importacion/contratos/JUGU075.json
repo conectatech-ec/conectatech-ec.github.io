@@ -20,46 +20,49 @@
   },
   "fotografias_fuente": [
     {
+      "nombre": "JUGU075_20261009_224542.jpg",
       "drive_id": "1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0",
-      "archivo": "JUGU075_20261009_224542.jpg",
       "url": "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk",
       "sha256": "90fe24bde47b637ab1a76d71e8c52f8cde326fa6d9994f180beb65ca779c134c",
+      "filas_registro": [
+        {
+          "sku": "JUGU075",
+          "tipo": "Caja original",
+          "presentacion_historica": "Sin caja",
+          "fila": 1990
+        }
+      ],
+      "uso": "Identificación y referencia propia para edición",
+      "original_intacto": true,
       "resolucion": [
         1800,
         1350
-      ],
-      "ruta_original_local": ".produccion-privada/lote030-juguetes/originales/JUGU075_20261009_224542.jpg",
-      "fila_registro": [
-        1990
-      ],
-      "tipo_registro": [
-        "Caja original"
-      ],
-      "contiene_caja": false,
-      "revisada": true
+      ]
     },
     {
+      "nombre": "JUGU075.jpg",
       "drive_id": "1u2vSEssI8MlBqP3BRYjx5hXS9sg4PTP8",
-      "archivo": "JUGU075.jpg",
       "url": "https://drive.google.com/file/d/1u2vSEssI8MlBqP3BRYjx5hXS9sg4PTP8/view?usp=drivesdk",
       "sha256": "3a1ce9c0b093f7f7ec1e443a2c715bd950d9666d75d67b6f39df9e082ddb7bec",
+      "filas_registro": [
+        {
+          "sku": "JUGU075",
+          "tipo": "Caja original",
+          "presentacion_historica": "Sin caja",
+          "fila": 1989
+        }
+      ],
+      "uso": "Identificación y referencia propia para edición",
+      "original_intacto": true,
       "resolucion": [
         1800,
         1350
-      ],
-      "ruta_original_local": ".produccion-privada/lote030-juguetes/originales/JUGU075.jpg",
-      "fila_registro": [
-        1989
-      ],
-      "tipo_registro": [
-        "Caja original"
-      ],
-      "contiene_caja": false,
-      "revisada": true
+      ]
     }
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk",
+    "https://drive.google.com/file/d/1u2vSEssI8MlBqP3BRYjx5hXS9sg4PTP8/view?usp=drivesdk",
     "datos-593/inventario-publico.csv"
   ],
   "imagen_principal": "/imagenes/jugu075/JUGU075-01.webp",
@@ -69,20 +72,21 @@
     "tipo": "propia",
     "titular": "CONECTATECH",
     "fuente": "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk",
-    "evidencia": "Orden maestra del propietario de 2026-10-10: CONECTATECH autoriza el procesamiento y publicación de sus fotografías propias de Drive. Maestro derivado mediante máscara de la fotografía propia indicada; sin material externo.",
-    "fecha_verificacion": "2026-10-10",
+    "evidencia": "Fotografías propias autorizadas por el propietario para edición asistida por IA y publicación. No se utilizaron fotografías externas.",
+    "fecha_verificacion": "2026-10-11T20:51:00.078340+00:00",
     "archivos": [
       {
-        "sha256": "a1e9530f0f9014969d177055991ace776f5de0a5d30a5bf530b5834b53e264d9",
+        "sha256": "38c357484653e3d0be19b5f405984786d52f6ede29f94697b141c6ae66d3922c",
         "fuente": "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk"
       }
     ],
     "material_externo_utilizado": false,
     "derivacion": {
-      "archivo_maestro": "/imagenes/jugu075/original-a1e9530f0f901496.png",
-      "sha256_maestro": "a1e9530f0f9014969d177055991ace776f5de0a5d30a5bf530b5834b53e264d9",
+      "archivo_maestro": "/imagenes/jugu075/original-38c357484653e3d0.png",
+      "sha256_maestro": "38c357484653e3d0be19b5f405984786d52f6ede29f94697b141c6ae66d3922c",
       "fuente_fotografia_propia": "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk",
-      "metodo": "Foto propia del producto físico, sin caja. Máscara manual de contorno con ajuste determinista de borde; los píxeles RGB conservados coinciden exactamente con el original. Sin reconstrucción, cambio de color ni ampliación. Fuente útil 1112 × 763. Modelo descrito de forma neutral; no se atribuye licencia automotriz.",
+      "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
+      "edicion_asistida_ia": true,
       "originales_intactos_en_drive": true
     }
   },
@@ -125,37 +129,27 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu075-juguete-camioneta-truck-pickup/",
-  "fecha_verificacion": "2026-10-10T06:49:51.611315+00:00",
+  "fecha_verificacion": "2026-10-11T20:51:00.078340+00:00",
   "descripcion": "Camioneta pickup de inspiración clásica, con cabina verde y guardabarros oscuros. Los detalles de su carrocería y la cubierta posterior de apariencia rústica crean una pieza atractiva para exhibición.",
-  "compatibilidad": null,
-  "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "garantia": null,
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1989,1990; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
-  "propuesta_origen": "importacion/lotes/lote-020/juguetes-propuestas.json",
-  "notas_internas": {
-    "campos_no_confirmados": [
-      "Escala, material, fabricante, licencia oficial, edad recomendada, luces, sonido y funciones motorizadas no documentados: no se publican.",
-      "Garantía sin duración confirmada; conservar consulta comercial."
-    ],
-    "nota_licencia": "La clasificación comercial del registro no acredita licencia oficial de marcas de automóviles. No se atribuye fabricante del juguete ni licencia no documentada.",
-    "nota_variante": "La portada corresponde a la foto real vinculada al SKU. No se asigna stock por color; las variantes fotografiadas se presentan como referencia para consulta.",
-    "observaciones": [],
-    "discrepancias_propuesta": []
-  },
+  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1990,1989; valores: Caja original.",
+  "revision_regla": 3,
   "maestro": {
-    "archivo_maestro": "/imagenes/jugu075/original-a1e9530f0f901496.png",
-    "sha256_maestro": "a1e9530f0f9014969d177055991ace776f5de0a5d30a5bf530b5834b53e264d9",
+    "archivo_maestro": "/imagenes/jugu075/original-38c357484653e3d0.png",
+    "sha256_maestro": "38c357484653e3d0be19b5f405984786d52f6ede29f94697b141c6ae66d3922c",
     "fuente_fotografia_propia": "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk",
-    "metodo": "Foto propia del producto físico, sin caja. Máscara manual de contorno con ajuste determinista de borde; los píxeles RGB conservados coinciden exactamente con el original. Sin reconstrucción, cambio de color ni ampliación. Fuente útil 1112 × 763. Modelo descrito de forma neutral; no se atribuye licencia automotriz.",
+    "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
+    "edicion_asistida_ia": true,
     "originales_intactos_en_drive": true
   },
+  "compatibilidad": null,
+  "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
+  "beneficios": [],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -189,15 +183,17 @@
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
     },
-    "publicacion_http": {
-      "archivo": "reportes/lote-020-http.json",
-      "sha256": "16468b5d7dd77515078c37032e1bd907dfaf3472ddd25b495317746cb35a851d"
+    "revision_visual": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T20:51:00.078340+00:00",
+      "sha256_maestro": "38c357484653e3d0be19b5f405984786d52f6ede29f94697b141c6ae66d3922c",
+      "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
     },
     "movil": {
       "solicitado": "JUGU075",
       "sku": "JUGU075",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T06:43:45.295Z",
+      "fecha": "2026-10-11T20:51:26.635Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -218,17 +214,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu075-juguete-camioneta-truck-pickup/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/jugu075-juguete-camioneta-truck-pickup/",
+      "url_comprobada": "http://127.0.0.1:8770/productos/jugu075-juguete-camioneta-truck-pickup/",
       "archivo_html": "productos/jugu075-juguete-camioneta-truck-pickup/index.html",
       "http": 200,
-      "sha256_html": "40ff0dedbdb432663cb3e678c11f0191d108347fb781c198323003b5408f8b26",
-      "sha256_html_local": "40ff0dedbdb432663cb3e678c11f0191d108347fb781c198323003b5408f8b26",
+      "sha256_html": "8ed51aae9068317261a854327bbd64b6ab2a98923243bbe5f5f396d8ac185ab1",
+      "sha256_html_local": "8ed51aae9068317261a854327bbd64b6ab2a98923243bbe5f5f396d8ac185ab1",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu075/JUGU075-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/jugu075/JUGU075-01-600.webp",
+        "url_cargada": "http://127.0.0.1:8770/imagenes/jugu075/JUGU075-01-600.webp?v=5a5c5ca39d1a0978",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,63 +232,52 @@
       },
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/jugu075-juguete-camioneta-truck-pickup/",
+          "url": "http://127.0.0.1:8770/productos/jugu075-juguete-camioneta-truck-pickup/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "http://127.0.0.1:8770/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "http://127.0.0.1:8770/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/jugu075/JUGU075-01.webp",
+          "url": "http://127.0.0.1:8770/imagenes/jugu075/JUGU075-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
+          "url": "http://127.0.0.1:8770/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/jugu133-juguete-caminoneta-coleccionable-jeep-grande/",
+          "url": "http://127.0.0.1:8770/productos/jugu133-juguete-caminoneta-coleccionable-jeep-grande/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
+          "url": "http://127.0.0.1:8770/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/movil/JUGU075-390.png",
-      "sha256": "9be567a64515378766430e5c0f4c5566be90d7ca7782af2b361150e6504099b2",
+      "archivo": "reportes/lote-059/qa-local/movil/JUGU075-390.png",
+      "sha256": "e6c059f81e1910cb85b5ac0b3db3a980800f156d5fccf984ab8e5e99221f7d94",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/movil/JUGU075-1280.png",
-        "sha256": "412ad2858f8cffb842b741b390604a47e636c5a1408cd1ee26a25314c0ed3aaf",
+        "archivo": "reportes/lote-059/qa-local/movil/JUGU075-1280.png",
+        "sha256": "69831f4e362d6d16322e2363245d38feabf9867b89c24fa419dea3d41d8066ca",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
     }
   },
-  "pendientes_publicacion": [],
-  "actualizacion_593": {
-    "fecha_corte": "2026-10-10",
-    "fuente": "datos-593/corte-2026-10-10.json.gz",
-    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
-    "campos": [
-      "precio_contado",
-      "pvp",
-      "stock"
-    ],
-    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
-  }
+  "garantia": null
 }
