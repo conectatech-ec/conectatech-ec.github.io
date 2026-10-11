@@ -1,8 +1,25 @@
 {
   "lote": "lote-054",
-  "candidatos": ["ADAP040", "ADAP043", "ADAP045", "ADAP046", "ADAP049", "ADAP056", "ADAP059", "ADAP075"],
+  "candidatos": [
+    "ADAP040",
+    "ADAP043",
+    "ADAP045",
+    "ADAP046",
+    "ADAP049",
+    "ADAP056",
+    "ADAP059",
+    "ADAP075"
+  ],
   "fotografias_descargadas": 20,
-  "portadas_revisadas": ["ADAP040", "ADAP043", "ADAP045", "ADAP046", "ADAP049", "ADAP056", "ADAP059"],
+  "portadas_revisadas": [
+    "ADAP040",
+    "ADAP043",
+    "ADAP045",
+    "ADAP046",
+    "ADAP049",
+    "ADAP056",
+    "ADAP059"
+  ],
   "pendientes": [
     {
       "sku": "ADAP075",
@@ -11,7 +28,16 @@
     }
   ],
   "fuentes_externas_utilizadas": false,
-  "referencias_estandar": ["POWE003", "ADAP005"],
-  "estado": "APLICADO_LOCAL",
-  "publicados": 0
+  "referencias_estandar": [
+    "POWE003",
+    "ADAP005"
+  ],
+  "estado": "PUBLICADO_VERIFICADO",
+  "publicados": 7,
+  "qa_prepublicacion": {
+    "run_id": 38126175562,
+    "commit": "d91ca8154885f99bbbd69be80af4db04cf577234",
+    "estado": "success"
+  },
+  "reporte_http": "reportes/lote-054/http-publicacion.json"
 }

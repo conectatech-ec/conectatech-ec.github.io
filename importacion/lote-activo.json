@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "lote-055",
   "rama": "catalogo/lote055",
-  "estado": "APROBADO_LOCAL",
+  "estado": "PUBLICADO_VERIFICADO",
   "manifiesto": "importacion/lotes/lote-055/manifiesto-aprobados.json",
   "skus": [
     "CARG058",
@@ -12,6 +12,19 @@
   "lote_anterior": "lote-054",
   "qa_manifiesto": "importacion/lotes/lote-055/manifiesto-qa.json",
   "qa_base_publica": null,
-  "proximo_paso": "Validar candidato, integrar sin reescribir main y verificar Pages; siguientes candidatos según prioridades-comerciales.json, omitir excepciones ya registradas.",
-  "continuidad": "importacion/lotes/lote-055/continuidad.json"
+  "proximo_paso": "Continuar lotes por prioridad comercial; fuentes adicionales ya descargadas para TABL002, TELE001, MONI005 y tres memorias. Conservar excepciones del lote 055.",
+  "continuidad": "importacion/lotes/lote-055/continuidad.json",
+  "qa_prepublicacion": {
+    "run_id": 38162002959,
+    "commit_candidato": "c915d2261400a121aca33c36c23561392ca0da43",
+    "sku_catalogo": 10
+  },
+  "publicacion": {
+    "commit_aplicacion": "c915d2261400a121aca33c36c23561392ca0da43",
+    "commit_desplegado": "ba1a1f1b577d1737879dc0df06b7d87c87054510",
+    "run_pages": 38162114405,
+    "reporte_http": "reportes/lote-055/http-publicacion.json",
+    "publicados_verificados": 3,
+    "errores": 0
+  }
 }
