@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "lote-052",
   "rama": "catalogo/lote052",
-  "estado": "QA_LOCAL_APROBADO",
+  "estado": "PUBLICADO_VERIFICADO",
   "manifiesto": "importacion/lotes/lote-052/manifiesto-aprobados.json",
   "skus": ["ADAP018", "ADAP030", "ADAP036", "ADAP037", "ADAP038", "ADAP039"],
   "lote_anterior": "lote-051",
@@ -22,5 +22,14 @@
     "gate_contrato_corregido_localmente": true,
     "reporte": "reportes/lote-052/qa-local/prepublicacion.json"
   },
-  "proximo_paso": "Publicar los seis SKU sobre main con SHA esperado; esperar Pages y verificar HTTP, hashes, datos comerciales y navegador público."
+  "publicacion": {
+    "commit": "0f5910f748a26b374473853fb2889b71b573c2ab",
+    "fecha_http": "2026-10-11T06:36:37.547640+00:00",
+    "publicados_verificados": 6,
+    "pendientes": 0,
+    "errores": 0,
+    "reporte_http": "reportes/lote-052/http-publicacion.json",
+    "contrato": "reportes/lote-052/contrato-publicacion.json"
+  },
+  "proximo_paso": "Continuar con un lote incremental nuevo; conservar ADAP014, ADAP031, ADAP032 y ADAP033 como pendientes hasta nueva evidencia."
 }
