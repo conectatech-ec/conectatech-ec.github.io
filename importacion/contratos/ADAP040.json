@@ -365,6 +365,98 @@
       "fecha": "2026-10-11T08:44:39.560170+00:00",
       "sha256_maestro": "fb84ce515959e9c5393cc7d1e9f00cd1335eda2f167c5e464ea9bafa6ddb0c46",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP040",
+      "sku": "ADAP040",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T17:59:58.749Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap040-adaptador-convertidor-hdmi-a-vga-sgl/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/adap040-adaptador-convertidor-hdmi-a-vga-sgl/",
+      "archivo_html": "productos/adap040-adaptador-convertidor-hdmi-a-vga-sgl/index.html",
+      "http": 200,
+      "sha256_html": "574feec3e550244022485dd8955fa516ae34a1eb44cf111752dabbd4ceee6e25",
+      "sha256_html_local": "574feec3e550244022485dd8955fa516ae34a1eb44cf111752dabbd4ceee6e25",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap040/ADAP040-01.webp",
+        "url_cargada": "http://127.0.0.1:8767/imagenes/adap040/ADAP040-01-600.webp?v=e7dd57b82040ab82",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8767/productos/adap040-adaptador-convertidor-hdmi-a-vga-sgl/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/imagenes/adap040/ADAP040-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap043-adaptador-viajero-travel-world-internacional-earldom-3-5a/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap045-adaptador-antena-wifi-doble-banda-600mbps-antena-incorporada/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap046-adaptador-otg-3-en-1/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-055/qa-local/movil/ADAP040-390.png",
+      "sha256": "a8d01a9e64cd506d8ea7c82d632badaa889b9a9074849bc797bc20378ab9756f",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-055/qa-local/movil/ADAP040-1280.png",
+        "sha256": "e494e155171dd384f6f3c35b2146f61532308bf6571f9ae529d9dcbf7ed93412",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

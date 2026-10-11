@@ -265,6 +265,98 @@
       "fecha": "2026-10-11T08:44:39.560170+00:00",
       "sha256_maestro": "809c6daf4078b19273a2d0e4804c95639acaa64d043ae2499c97b0c3903a65f8",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP043",
+      "sku": "ADAP043",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T18:00:00.071Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap043-adaptador-viajero-travel-world-internacional-earldom-3-5a/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/adap043-adaptador-viajero-travel-world-internacional-earldom-3-5a/",
+      "archivo_html": "productos/adap043-adaptador-viajero-travel-world-internacional-earldom-3-5a/index.html",
+      "http": 200,
+      "sha256_html": "e325918e447e3d6982f7dd064c56d031dde66cf06c02c45db197229d33d95112",
+      "sha256_html_local": "e325918e447e3d6982f7dd064c56d031dde66cf06c02c45db197229d33d95112",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap043/ADAP043-01.webp",
+        "url_cargada": "http://127.0.0.1:8767/imagenes/adap043/ADAP043-01-600.webp?v=447ab1fe714c2f29",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8767/productos/adap043-adaptador-viajero-travel-world-internacional-earldom-3-5a/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/imagenes/adap043/ADAP043-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap040-adaptador-convertidor-hdmi-a-vga-sgl/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap045-adaptador-antena-wifi-doble-banda-600mbps-antena-incorporada/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap046-adaptador-otg-3-en-1/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-055/qa-local/movil/ADAP043-390.png",
+      "sha256": "13a41e206cd4d451d959b40d0b9c79dc1ee97df2397b18a113302407255cd908",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-055/qa-local/movil/ADAP043-1280.png",
+        "sha256": "704d571a59a4233c4c3264381e9d0b63a199ab3d40b664404c80d692bb2c7129",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

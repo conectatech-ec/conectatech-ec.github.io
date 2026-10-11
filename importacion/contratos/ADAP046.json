@@ -236,6 +236,98 @@
       "fecha": "2026-10-11T08:44:39.560170+00:00",
       "sha256_maestro": "9ae395ceccd6ef7f83c721d96b3550057fce679a220832e4d1d18957542605ee",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP046",
+      "sku": "ADAP046",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T18:00:01.298Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap046-adaptador-otg-3-en-1/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/adap046-adaptador-otg-3-en-1/",
+      "archivo_html": "productos/adap046-adaptador-otg-3-en-1/index.html",
+      "http": 200,
+      "sha256_html": "3b84d01f32bde92587d61d7927ba396127daab82dbc3443a2e6263a06f7c8942",
+      "sha256_html_local": "3b84d01f32bde92587d61d7927ba396127daab82dbc3443a2e6263a06f7c8942",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap046/ADAP046-01.webp",
+        "url_cargada": "http://127.0.0.1:8767/imagenes/adap046/ADAP046-01-600.webp?v=6dc465714bdbdf77",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8767/productos/adap046-adaptador-otg-3-en-1/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/imagenes/adap046/ADAP046-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap040-adaptador-convertidor-hdmi-a-vga-sgl/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap043-adaptador-viajero-travel-world-internacional-earldom-3-5a/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap045-adaptador-antena-wifi-doble-banda-600mbps-antena-incorporada/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-055/qa-local/movil/ADAP046-390.png",
+      "sha256": "85276384ccc7a06e6042580672a8d2b35a5d7d6c2c5d5f230ce74bd708d8e8a3",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-055/qa-local/movil/ADAP046-1280.png",
+        "sha256": "3f0b498afc9fd216ccfd314a74d266690a230dd97fe421cd7eaabaacbc433d07",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

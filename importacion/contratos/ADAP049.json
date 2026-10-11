@@ -246,6 +246,98 @@
       "fecha": "2026-10-11T08:44:39.560170+00:00",
       "sha256_maestro": "b17a60e2366fe2c5853d9f3d7ce333f5f3f58231b1873184c185afa6da01ba26",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP049",
+      "sku": "ADAP049",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T18:00:01.935Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap049-adaptador-tarjeta-de-sonido-usb-a-a-microfono-audifonos/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/adap049-adaptador-tarjeta-de-sonido-usb-a-a-microfono-audifonos/",
+      "archivo_html": "productos/adap049-adaptador-tarjeta-de-sonido-usb-a-a-microfono-audifonos/index.html",
+      "http": 200,
+      "sha256_html": "31132bfdf73737786c9f3a41799404164ec56e9b4cfea153fbd6d4113acb2fd7",
+      "sha256_html_local": "31132bfdf73737786c9f3a41799404164ec56e9b4cfea153fbd6d4113acb2fd7",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap049/ADAP049-01.webp",
+        "url_cargada": "http://127.0.0.1:8767/imagenes/adap049/ADAP049-01-600.webp?v=4eec23f2ccdc94ba",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8767/productos/adap049-adaptador-tarjeta-de-sonido-usb-a-a-microfono-audifonos/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/imagenes/adap049/ADAP049-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap040-adaptador-convertidor-hdmi-a-vga-sgl/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap043-adaptador-viajero-travel-world-internacional-earldom-3-5a/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap045-adaptador-antena-wifi-doble-banda-600mbps-antena-incorporada/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-055/qa-local/movil/ADAP049-390.png",
+      "sha256": "6a694c4dab81f16ef5b83071151ae81670a0c4e73da0cf41834e4ec0b3e116f2",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-055/qa-local/movil/ADAP049-1280.png",
+        "sha256": "73d585ab46eb68233d3fffb1d72f6a9b0a1017ab4c2d8a35550b314373ad5eaf",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

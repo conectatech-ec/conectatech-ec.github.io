@@ -246,6 +246,98 @@
       "fecha": "2026-10-11T08:44:39.560170+00:00",
       "sha256_maestro": "72bc8858ecfba967096edd5f22cb13256c3f2a8af0b389cd885fbed867600c4b",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP045",
+      "sku": "ADAP045",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T18:00:00.683Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap045-adaptador-antena-wifi-doble-banda-600mbps-antena-incorporada/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/adap045-adaptador-antena-wifi-doble-banda-600mbps-antena-incorporada/",
+      "archivo_html": "productos/adap045-adaptador-antena-wifi-doble-banda-600mbps-antena-incorporada/index.html",
+      "http": 200,
+      "sha256_html": "0893a3c6a323aa315e4e90e2e0026c3a01f95fb97b940599e57d2409c618562d",
+      "sha256_html_local": "0893a3c6a323aa315e4e90e2e0026c3a01f95fb97b940599e57d2409c618562d",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap045/ADAP045-01.webp",
+        "url_cargada": "http://127.0.0.1:8767/imagenes/adap045/ADAP045-01-600.webp?v=ebea580379e792c3",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8767/productos/adap045-adaptador-antena-wifi-doble-banda-600mbps-antena-incorporada/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/imagenes/adap045/ADAP045-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap040-adaptador-convertidor-hdmi-a-vga-sgl/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap043-adaptador-viajero-travel-world-internacional-earldom-3-5a/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/adap046-adaptador-otg-3-en-1/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-055/qa-local/movil/ADAP045-390.png",
+      "sha256": "94d5bc66b061d694e4021c2d23432833d9e6928173fcac6b12a65605707bbefd",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-055/qa-local/movil/ADAP045-1280.png",
+        "sha256": "d85b138a77455b648feb211fe4cd23a9cc1bd70d124aa97b38c8aec4ba67e0ab",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }
