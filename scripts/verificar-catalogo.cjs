@@ -139,7 +139,7 @@ async function main() {
           if (mode === 'nombre') list.sort((a, b) => a.name.localeCompare(b.name, 'es', {sensitivity: 'base', numeric: true}));
           if (mode === 'precio-asc') list.sort((a, b) => a.promo - b.promo);
           if (mode === 'precio-desc') list.sort((a, b) => b.promo - a.promo);
-          return list;
+          return list.filter(hasPhoto).concat(list.filter(p => !hasPhoto(p)));
         };
         const defaultMode = payload.ordenPredeterminado || 'recientes';
         check('orden_inicial', await page.locator('#catalogSort').inputValue() === defaultMode && equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Orden inicial distinto de las novedades publicadas.');

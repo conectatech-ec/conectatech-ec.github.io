@@ -119,12 +119,14 @@ const hasPublishedImage=p=>Boolean(p.imageUrl||catalogMeta[p.sku]?.imagen?.src);
 const productHref=p=>"/productos/"+seoPages[p.sku]+"/";
 function orderedProducts(list){
  const mode=sortSelector.value;
- if(mode==="fotos")return list.sort((a,b)=>Number(hasPublishedImage(b))-Number(hasPublishedImage(a))||updatedTime(b)-updatedTime(a));
- if(mode==="recientes")return list.sort((a,b)=>updatedTime(b)-updatedTime(a));
- if(mode==="nombre")return list.sort((a,b)=>a.name.localeCompare(b.name,"es",{sensitivity:"base",numeric:true}));
- if(mode==="precio-asc")return list.sort((a,b)=>a.promo-b.promo);
- if(mode==="precio-desc")return list.sort((a,b)=>b.promo-a.promo);
- return list;
+ return list.sort((a,b)=>{
+  const photoPriority=Number(hasPublishedImage(b))-Number(hasPublishedImage(a));
+  if(photoPriority)return photoPriority;
+  if(mode==="nombre")return a.name.localeCompare(b.name,"es",{sensitivity:"base",numeric:true});
+  if(mode==="precio-asc")return a.promo-b.promo;
+  if(mode==="precio-desc")return b.promo-a.promo;
+  return mode==="catalogo"?0:updatedTime(b)-updatedTime(a);
+ });
 }
 function productImage(p,large=false){
  const registered=catalogMeta[p.sku]?.imagen;
