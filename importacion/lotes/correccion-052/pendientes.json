@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "lote": "correccion-052",
+  "estado": "CARG059_APROBADO_LOCAL",
+  "solicitud_propietario": "2026-10-11: corrección visual prioritaria y publicación de SKU problemáticos.",
+  "base_commit": "7f9bf6887d0d2fd4c1714d1f1c82e2765c8086c7",
+  "skus": [
+    "CARG058",
+    "CARG059",
+    "MICR08"
+  ],
+  "datos_comerciales": "Conservar títulos, descripciones, precios, stock, SKU y URLs. Clasificación AAA/genérico/compatible visible en la ficha.",
+  "criterios_visuales": [
+    "sin caja",
+    "fondo blanco o transparente",
+    "acabado comercial premium",
+    "producto grande",
+    "luz de estudio",
+    "sombras suaves",
+    "color real",
+    "sin pixelación ni deformación",
+    "sin accesorios inventados",
+    "sin texto decorativo"
+  ],
+  "resultados": [
+    {
+      "sku": "CARG058",
+      "estado": "PENDIENTE_REFERENCIA_LONGITUD",
+      "correccion": "El maestro indicado es la fuente de la imagen actual con cable corto; no acredita longitud correcta. Conservado sin cambios físicos.",
+      "url": "https://conectatech-ec.github.io/productos/carg058-cargador-para-mac-magsafe-2-85w/",
+      "imagen_actual": "/imagenes/carg058/CARG058-01.webp",
+      "sha256_imagen_actual_local": "78fbfb2121a5abdc19c3b757ce8c9087dc33693f617a4f8dcfc69af8484d7d68",
+      "fotografias_fuente": [
+        {
+          "nombre": "CARG058.jpg",
+          "drive_id": "1foVR2NhevstTqRkIA6LvhqeMBGQ5yDja",
+          "url": "https://drive.google.com/file/d/1foVR2NhevstTqRkIA6LvhqeMBGQ5yDja/view?usp=drivesdk",
+          "sha256": "63e8eff26f2d50eb51f4f561af4e7a6bf04035237a0a633aae0123395736c2bb",
+          "resolucion": [
+            1800,
+            1350
+          ],
+          "filas_registro": [
+            {
+              "sku": "CARG058",
+              "tipo": "AAA (genérico)",
+              "presentacion_historica": "Sin caja",
+              "fila": 2060
+            }
+          ],
+          "uso": "Identificación y fotografía propia",
+          "original_intacto": true
+        }
+      ],
+      "titulo_preservar": "Cargador compatible MagSafe 2 de 85 W para Mac",
+      "precio_contado_preservar": 43,
+      "pvp_preservar": 49.45,
+      "stock_preservar": 1,
+      "instruccion_apple": "La presentación de los compatibles debe corresponder al artículo real vendido y al aspecto esperado; mantener la identificación AAA/genérico/compatible en ficha."
+    },
+    {
+      "sku": "CARG059",
+      "estado": "APROBADO_LOCAL_QA_VERIFICADO",
+      "correccion": "Luz, contraste, definición y sombra premium; sin cambio físico frente al maestro suministrado.",
+      "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
+      "imagen_actual": "/imagenes/carg059/CARG059-01.webp",
+      "sha256_imagen_actual_local": "1374adf3c3ef03b9c303b8881f368afef89340e18e2cba57a4dfefd44309c6f3",
+      "fotografias_fuente": [
+        {
+          "nombre": "CARG059.jpg",
+          "drive_id": "17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1",
+          "url": "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk",
+          "sha256": "0c3bd00e7d9ffe16f9c732f772dec6509a1fc19f00c6ef2689402566c6b2a22f",
+          "resolucion": [
+            1350,
+            1800
+          ],
+          "filas_registro": [
+            {
+              "sku": "CARG059",
+              "tipo": "AAA (genérico)",
+              "presentacion_historica": "Sin caja",
+              "fila": 2055
+            }
+          ],
+          "uso": "Identificación y fotografía propia",
+          "original_intacto": true
+        }
+      ],
+      "titulo_preservar": "Cargador compatible USB-C de 96 W para Mac",
+      "precio_contado_preservar": 52.9,
+      "pvp_preservar": 60.84,
+      "stock_preservar": 1,
+      "instruccion_apple": "La presentación de los compatibles debe corresponder al artículo real vendido y al aspecto esperado; mantener la identificación AAA/genérico/compatible en ficha."
+    },
+    {
+      "sku": "MICR08",
+      "estado": "PENDIENTE_REFERENCIA_FORMA",
+      "correccion": "El maestro indicado es la fuente de la forma previamente rechazada; no acredita la forma correcta. Conservado sin cambios.",
+      "url": "https://conectatech-ec.github.io/productos/micr08-microfono-para-pc-laptop-hp-dhp-1100i/",
+      "imagen_actual": "/imagenes/micr08/MICR08-01.webp",
+      "sha256_imagen_actual_local": "f6db1707bff7fb65cd405fd700b35c40eb66c5ae5c477437bd0e407acbcfdebe",
+      "fotografias_fuente": [
+        {
+          "nombre": "MICR08_20261010_141256.jpg",
+          "drive_id": "12YczMVvm5v-ivHAgpHkJzUwykzKJ5Vmj",
+          "url": "https://drive.google.com/file/d/12YczMVvm5v-ivHAgpHkJzUwykzKJ5Vmj/view?usp=drivesdk",
+          "sha256": "2a9dfd1221e6a69555fe199a8923874e525033cd4e8708ce9e1a616c3d08e914",
+          "resolucion": [
+            1350,
+            1800
+          ],
+          "filas_registro": [
+            {
+              "sku": "MICR08",
+              "tipo": "Caja original",
+              "presentacion_historica": "Sin caja",
+              "fila": 2024
+            }
+          ],
+          "uso": "Identificación y fotografía propia",
+          "original_intacto": true
+        },
+        {
+          "nombre": "MICR08_20261010_141252.jpg",
+          "drive_id": "1CRjCseZqs9Kr3JpxCTv-C-Ww7Kc26l7A",
+          "url": "https://drive.google.com/file/d/1CRjCseZqs9Kr3JpxCTv-C-Ww7Kc26l7A/view?usp=drivesdk",
+          "sha256": "8e6e3175bfb8e2a94bb23fa1d139bf14a76ea5406a29cda8e24a924b15c7b729",
+          "resolucion": [
+            1350,
+            1800
+          ],
+          "filas_registro": [
+            {
+              "sku": "MICR08",
+              "tipo": "Caja original",
+              "presentacion_historica": "Sin caja",
+              "fila": 2023
+            }
+          ],
+          "uso": "Identificación y fotografía propia",
+          "original_intacto": true
+        },
+        {
+          "nombre": "MICR08.jpg",
+          "drive_id": "1EIyBtxYcNaHeQOSDVhbWQprpoTlV9-iL",
+          "url": "https://drive.google.com/file/d/1EIyBtxYcNaHeQOSDVhbWQprpoTlV9-iL/view?usp=drivesdk",
+          "sha256": "54ac22b85d800bb65968d678428603c2f8c0538f33ffc910d73f9eac42b9d7f5",
+          "resolucion": [
+            1800,
+            1350
+          ],
+          "filas_registro": [
+            {
+              "sku": "MICR08",
+              "tipo": "Caja original",
+              "presentacion_historica": "Sin caja",
+              "fila": 2022
+            }
+          ],
+          "uso": "Identificación y fotografía propia",
+          "original_intacto": true
+        }
+      ],
+      "titulo_preservar": "Micrófono de escritorio HP DHP-1100i con cuello flexible",
+      "precio_contado_preservar": 19,
+      "pvp_preservar": 21.85,
+      "stock_preservar": 1,
+      "instruccion_apple": null
+    }
+  ],
+  "otros_sku": "Inspeccionadas hojas visuales de lotes 048 y 049. No se añaden otros SKU sin cotejar sus referencias.",
+  "bloqueos": [],
+  "red_propuesta": [
+    "drive.google.com",
+    "drive.usercontent.google.com",
+    "conectatech-ec.github.io",
+    "api.github.com"
+  ],
+  "publicado_en_esta_sesion": false,
+  "nuevos_maestros_generados": true,
+  "verificaciones_acceso": {
+    "pages": "HTTP 200; imágenes CARG058, CARG059 y MICR08 idénticas al checkout",
+    "github_api": "Lectura de permisos confirmada; push habilitado",
+    "git": "HEAD remoto coincide con base local"
+  },
+  "propuestas_generadas": [
+    {
+      "sku": "CARG058",
+      "archivo_local": ".produccion-privada/correccion-052/CARG058-propuesta.png",
+      "sha256": "b2731d52b29c2f28d296a518ed87145c1411abd51149f478e8f76a5dbb29fafc",
+      "estado": "BORRADOR_NO_APTO_PARA_PUBLICAR_SIN_COTEJO",
+      "base": "Maestro comercial anterior, no fotografía real del artículo.",
+      "cambio": "Cable dispuesto en vueltas para corregir visualmente su presentación excesivamente corta.",
+      "pendiente": "Cotejar longitud, cuerpo y conector con foto propia real. No usar este borrador como fuente de identidad.",
+      "versiones_borrador": {
+        "1200": {
+          "archivo": ".produccion-privada/correccion-052/CARG058-propuesta-1200.webp",
+          "sha256": "85546484fab4846e63943ccc356a0b1850f20b9ca98cef01317e557abbbb524b"
+        },
+        "600": {
+          "archivo": ".produccion-privada/correccion-052/CARG058-propuesta-600.webp",
+          "sha256": "33bae5041649e64dbd84f56a612e73bb96ed5f1f990b45e5b45b7a5d63a148ed"
+        },
+        "300": {
+          "archivo": ".produccion-privada/correccion-052/CARG058-propuesta-300.webp",
+          "sha256": "5e6dfea2576a7e265f7d4c56e6e4d1baef4d134903a31dc751da1df35d2631b9"
+        }
+      },
+      "revision_visual": "Cable con varias vueltas y fondo blanco limpio; forma del conector, continuidad y proporciones requieren cotejo físico. No aprobado para producción."
+    }
+  ],
+  "instruccion_propietario_acceso": {
+    "carpeta": "CONECTATECH_FOTOS_SKU",
+    "drive_folder_id": "1IUpFi6r9e_aURNWpJ7P23XowWphnpAoa",
+    "generacion_con_fotos_privadas": "DETENIDA_HASTA_ACCESO",
+    "publicacion": "PROHIBIDA_SIN_VERIFICAR_FIDELIDAD",
+    "originales": "Conservar; no volver a fotografiar ni inventar referencias",
+    "objetivo": "Acceso autenticado permanente, privado y automatizado, sin contraseñas ni tokens personales en chat"
+  },
+  "acceso_drive_requerido_para_este_lote": false,
+  "criterio_actual": "Usar los maestros locales autorizados; no implementar acceso Drive. No inventar correcciones físicas no acreditadas.",
+  "nuevo_maestro_carg059": {
+    "archivo_maestro": "/imagenes/carg059/original-16056f16e40141e8.png",
+    "sha256_maestro": "16056f16e40141e8584a84d7d85a88c922bc6c4075681ab6d12f62b72c5a35ac",
+    "fuente_fotografia_propia": "imagenes/carg059/original-0f1667a14f5d0221.png",
+    "sha256_referencia": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
+    "metodo": "Retoque asistido por IA del maestro local indicado expresamente por el propietario. Se cotejaron ambas imágenes: cuerpo blanco redondeado, tapa superior izquierda y único USB-C lateral conservados; sin cables, enchufes expuestos, marcas ni accesorios añadidos. Mejoras de contraste, iluminación, borde y sombra. La referencia es el maestro derivado anterior, no una nueva fotografía física; no se revisaron fotos privadas ni se añadieron afirmaciones de hardware.",
+    "edicion_asistida_ia": true,
+    "originales_intactos_en_drive": true,
+    "referencia_local_conservada": true
+  }
+}

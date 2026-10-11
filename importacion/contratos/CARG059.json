@@ -51,22 +51,28 @@
     "tipo": "propia",
     "titular": "CONECTATECH",
     "fuente": "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk",
-    "evidencia": "Fotografías propias autorizadas por el propietario; maestro producido mediante edición asistida por IA sin reutilizar imágenes externas.",
-    "fecha_verificacion": "2026-10-10T21:15:56.157813+00:00",
+    "evidencia": "Maestro local de CONECTATECH autorizado como referencia por instrucción expresa del propietario en esta sesión; retoque comercial asistido por IA. Se conserva la procedencia y autorización históricas, sin usar imágenes externas.",
+    "fecha_verificacion": "2026-10-11T05:53:45.091294+00:00",
     "archivos": [
       {
         "sha256": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
         "fuente": "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk"
+      },
+      {
+        "sha256": "16056f16e40141e8584a84d7d85a88c922bc6c4075681ab6d12f62b72c5a35ac",
+        "fuente": "imagenes/carg059/original-0f1667a14f5d0221.png"
       }
     ],
     "material_externo_utilizado": false,
     "derivacion": {
-      "archivo_maestro": "/imagenes/carg059/original-0f1667a14f5d0221.png",
-      "sha256_maestro": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
-      "fuente_fotografia_propia": "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk",
-      "metodo": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible.",
+      "archivo_maestro": "/imagenes/carg059/original-16056f16e40141e8.png",
+      "sha256_maestro": "16056f16e40141e8584a84d7d85a88c922bc6c4075681ab6d12f62b72c5a35ac",
+      "fuente_fotografia_propia": "imagenes/carg059/original-0f1667a14f5d0221.png",
+      "sha256_referencia": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
+      "metodo": "Retoque asistido por IA del maestro local indicado expresamente por el propietario. Se cotejaron ambas imágenes: cuerpo blanco redondeado, tapa superior izquierda y único USB-C lateral conservados; sin cables, enchufes expuestos, marcas ni accesorios añadidos. Mejoras de contraste, iluminación, borde y sombra. La referencia es el maestro derivado anterior, no una nueva fotografía física; no se revisaron fotos privadas ni se añadieron afirmaciones de hardware.",
       "edicion_asistida_ia": true,
-      "originales_intactos_en_drive": true
+      "originales_intactos_en_drive": true,
+      "referencia_local_conservada": true
     }
   },
   "especificaciones": [
@@ -122,9 +128,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
-  "fecha_verificacion": "2026-10-10T21:29:22.216329+00:00",
+  "fecha_verificacion": "2026-10-11T05:53:45.091294+00:00",
   "descripcion": "Alimenta equipos Mac con carga USB-C mediante un adaptador compatible de 96 W. Su cuerpo compacto concentra la potencia en una salida USB-C para una conexión sencilla.",
   "garantia": {
     "valor": null,
@@ -136,7 +142,7 @@
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Registro fotográfico, columna Tipo: AAA (genérico); se publica como producto compatible.",
-  "revision_regla": 2,
+  "revision_regla": 3,
   "notas_internas": {
     "observaciones": [
       "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible."
@@ -144,12 +150,14 @@
     "especificaciones_omitidas": []
   },
   "maestro": {
-    "archivo_maestro": "/imagenes/carg059/original-0f1667a14f5d0221.png",
-    "sha256_maestro": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
-    "fuente_fotografia_propia": "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk",
-    "metodo": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible.",
+    "archivo_maestro": "/imagenes/carg059/original-16056f16e40141e8.png",
+    "sha256_maestro": "16056f16e40141e8584a84d7d85a88c922bc6c4075681ab6d12f62b72c5a35ac",
+    "fuente_fotografia_propia": "imagenes/carg059/original-0f1667a14f5d0221.png",
+    "sha256_referencia": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
+    "metodo": "Retoque asistido por IA del maestro local indicado expresamente por el propietario. Se cotejaron ambas imágenes: cuerpo blanco redondeado, tapa superior izquierda y único USB-C lateral conservados; sin cables, enchufes expuestos, marcas ni accesorios añadidos. Mejoras de contraste, iluminación, borde y sombra. La referencia es el maestro derivado anterior, no una nueva fotografía física; no se revisaron fotos privadas ni se añadieron afirmaciones de hardware.",
     "edicion_asistida_ia": true,
-    "originales_intactos_en_drive": true
+    "originales_intactos_en_drive": true,
+    "referencia_local_conservada": true
   },
   "validaciones": {
     "base_593": {
@@ -185,19 +193,18 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T21:15:56.157813+00:00",
-      "sha256_maestro": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
-      "evidencia": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible."
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-049-http.json",
-      "sha256": "46cb3fbff66908f37aecc7f9b25fdfb4e7bae672e9d923bf86e05ca0b86c52b4"
+      "fecha": "2026-10-11T05:53:45.091294+00:00",
+      "sha256_maestro": "16056f16e40141e8584a84d7d85a88c922bc6c4075681ab6d12f62b72c5a35ac",
+      "evidencia": "Retoque asistido por IA del maestro local indicado expresamente por el propietario. Se cotejaron ambas imágenes: cuerpo blanco redondeado, tapa superior izquierda y único USB-C lateral conservados; sin cables, enchufes expuestos, marcas ni accesorios añadidos. Mejoras de contraste, iluminación, borde y sombra. La referencia es el maestro derivado anterior, no una nueva fotografía física; no se revisaron fotos privadas ni se añadieron afirmaciones de hardware.",
+      "referencia_local": "imagenes/carg059/original-0f1667a14f5d0221.png",
+      "sha256_referencia": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
+      "alcance": "Fidelidad al maestro suministrado; sin nueva verificación física."
     },
     "movil": {
       "solicitado": "CARG059",
       "sku": "CARG059",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T21:29:13.741Z",
+      "fecha": "2026-10-11T05:54:11.507Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -221,17 +228,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
       "archivo_html": "productos/carg059-cargador-para-mac-usb-c-96w/index.html",
       "http": 200,
-      "sha256_html": "93b577cc6f4cbf680eb6ced1ec56d2f5157c4d89b9fb13c3199fc31258cc7836",
-      "sha256_html_local": "93b577cc6f4cbf680eb6ced1ec56d2f5157c4d89b9fb13c3199fc31258cc7836",
+      "sha256_html": "870273be0edb05a7327cc87ff4196aaca9841e678b20bd40f1496dea997e6b18",
+      "sha256_html_local": "870273be0edb05a7327cc87ff4196aaca9841e678b20bd40f1496dea997e6b18",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg059/CARG059-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg059/CARG059-01-600.webp?v=252815d7676e74c6",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/carg059/CARG059-01-600.webp?v=f6ce450fa5551a21",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -239,43 +246,43 @@
       },
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
+          "url": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/carg059/CARG059-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/carg059/CARG059-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
+          "url": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/carg058-cargador-para-mac-magsafe-2-85w/",
+          "url": "http://127.0.0.1:8765/productos/carg058-cargador-para-mac-magsafe-2-85w/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-049/qa-publico/movil/CARG059-390.png",
-      "sha256": "c4752719a10c7da4c791d5174cf2646e79c683cc3c487726762e64dd8515f374",
+      "archivo": "reportes/correccion-052/qa-local/movil/CARG059-390.png",
+      "sha256": "2921e588a0b15af18493581804429f458538a632e90f6fb7a4d2990dc492a939",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-049/qa-publico/movil/CARG059-1280.png",
-        "sha256": "431efe092af2775e405fa658175b12e0de4c76d09102210590b2e83dd1f49f2f",
+        "archivo": "reportes/correccion-052/qa-local/movil/CARG059-1280.png",
+        "sha256": "c85df352692d5c4286e13f3265f900850d4bcf081e15514915c0d529856604cf",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -329,5 +336,31 @@
       "stock"
     ],
     "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
-  }
+  },
+  "historial_correcciones_visuales": [
+    {
+      "fecha": "2026-10-11T05:53:45.091294+00:00",
+      "lote": "correccion-052",
+      "anterior": {
+        "maestro": {
+          "archivo_maestro": "/imagenes/carg059/original-0f1667a14f5d0221.png",
+          "sha256_maestro": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
+          "fuente_fotografia_propia": "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk",
+          "metodo": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible.",
+          "edicion_asistida_ia": true,
+          "originales_intactos_en_drive": true
+        },
+        "revision_visual": {
+          "estado": "VERIFICADO",
+          "fecha": "2026-10-10T21:15:56.157813+00:00",
+          "sha256_maestro": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
+          "evidencia": "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible."
+        },
+        "estado_publicacion": "PUBLICADO_VERIFICADO"
+      },
+      "referencia_local": "imagenes/carg059/original-0f1667a14f5d0221.png",
+      "sha256_referencia": "0f1667a14f5d022190b80ccee224454e6166797f546416080e57c3179a99e65b",
+      "alcance": "Presentación comercial; identidad y texto se conservan."
+    }
+  ]
 }

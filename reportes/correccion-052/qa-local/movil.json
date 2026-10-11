@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "fecha": "2026-10-11T05:54:10.947Z",
+  "base": "http://127.0.0.1:8765",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "CARG059",
+      "sku": "CARG059",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T05:54:11.507Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
+      "archivo_html": "productos/carg059-cargador-para-mac-usb-c-96w/index.html",
+      "http": 200,
+      "sha256_html": "870273be0edb05a7327cc87ff4196aaca9841e678b20bd40f1496dea997e6b18",
+      "sha256_html_local": "870273be0edb05a7327cc87ff4196aaca9841e678b20bd40f1496dea997e6b18",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/carg059/CARG059-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/carg059/CARG059-01-600.webp?v=f6ce450fa5551a21",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/carg059/CARG059-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg058-cargador-para-mac-magsafe-2-85w/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/correccion-052/qa-local/movil/CARG059-390.png",
+      "sha256": "2921e588a0b15af18493581804429f458538a632e90f6fb7a4d2990dc492a939",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/correccion-052/qa-local/movil/CARG059-1280.png",
+        "sha256": "c85df352692d5c4286e13f3265f900850d4bcf081e15514915c0d529856604cf",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
