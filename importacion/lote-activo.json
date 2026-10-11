@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "lote-051",
   "rama": "catalogo/lote051-reanudacion",
-  "estado": "HTTP_VERIFICADO_QA_PUBLICA_PENDIENTE",
+  "estado": "PUBLICADO_VERIFICADO",
   "manifiesto": "importacion/lotes/lote-051/manifiesto-aprobados.json",
   "skus": [
     "ADAP011",
@@ -44,8 +44,30 @@
   },
   "base_main_integrada": "b4744d33d1e2feebeab69d9e80ae01fd497ae10b",
   "commit_publicacion": "64b2d68b35247245917964c098428c0df79e90bf",
-  "qa_base_publica": "https://conectatech-ec.github.io",
   "pages_run": 38113468626,
   "verificacion_http": "reportes/lote-051-http.json",
-  "registro_actualizaciones": "reportes/lote-051/actualizaciones.json"
+  "registro_actualizaciones": "reportes/lote-051/actualizaciones.json",
+  "fecha_cierre": "2026-10-11T05:10:12.824063+00:00",
+  "qa_publica": {
+    "run_id": 38113788746,
+    "resultado": "success",
+    "base": "https://conectatech-ec.github.io",
+    "capturas_revisadas": true,
+    "columnas_escritorio": 3,
+    "columnas_movil": 2,
+    "primeros_siete": [
+      "ADAP052",
+      "ADAP028",
+      "ADAP035",
+      "ADAP011",
+      "ADAP016",
+      "ADAP024",
+      "ADAP026"
+    ]
+  },
+  "publicados": 7,
+  "portadas_terminadas": 7,
+  "fichas_enriquecidas": 7,
+  "versiones_webp": 21,
+  "proximo_paso": "Seleccionar nuevos o modificados desde cola-drive. No repetir lote-051 ni pendientes sin evidencia nueva; hasta 30 candidatos aptos por lote."
 }

@@ -143,9 +143,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap011-adaptador-otg-micro-usb/",
-  "fecha_verificacion": "2026-10-11T04:37:10.037749+00:00",
+  "fecha_verificacion": "2026-10-11T05:10:12.824063+00:00",
   "descripcion": "Conecta accesorios USB-A a un equipo con Micro-USB compatible con OTG. Su formato de una sola pieza ocupa poco espacio y permite llevarlo junto a tus cables.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -233,11 +233,15 @@
       "sha256_maestro": "1f3d60f97600720e7fbf08fd908e2c3c427cebb0e61ceeeba7c7da2dd054d50e",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: eliminación de embalaje y suciedad, luz de estudio y fondo blanco. Revisión visual de forma, conexiones visibles y color; sin añadir caras o puertos ocultos. Originales intactos en Drive."
     },
+    "publicacion_http": {
+      "archivo": "reportes/lote-051-http.json",
+      "sha256": "51d6b57229b50449752f6b31bec11e41517482fa335593051060d1d9185287e8"
+    },
     "movil": {
       "solicitado": "ADAP011",
       "sku": "ADAP011",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T05:00:23.994Z",
+      "fecha": "2026-10-11T05:08:26.308Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -261,7 +265,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap011-adaptador-otg-micro-usb/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/adap011-adaptador-otg-micro-usb/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap011-adaptador-otg-micro-usb/",
       "archivo_html": "productos/adap011-adaptador-otg-micro-usb/index.html",
       "http": 200,
       "sha256_html": "88d7d9d7d3f0897411cf5540debe83e7489020550edc391bc94512642c89afc9",
@@ -271,7 +275,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap011/ADAP011-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/adap011/ADAP011-01-600.webp?v=98f6fd19b8dff7b5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap011/ADAP011-01-600.webp?v=98f6fd19b8dff7b5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -279,37 +283,37 @@
       },
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/adap011-adaptador-otg-micro-usb/",
+          "url": "https://conectatech-ec.github.io/productos/adap011-adaptador-otg-micro-usb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/adap011/ADAP011-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap011/ADAP011-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/adap016-adaptador-receptor-wifi-usb-antena-dual-band-600mbps/",
+          "url": "https://conectatech-ec.github.io/productos/adap016-adaptador-receptor-wifi-usb-antena-dual-band-600mbps/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/adap028-adaptador-bluetooth-dongle-hjx-001-usb-a-tipo-flash/",
+          "url": "https://conectatech-ec.github.io/productos/adap028-adaptador-bluetooth-dongle-hjx-001-usb-a-tipo-flash/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/adap035-adaptador-bluetooth-dongle-usb-a-earldom-m73/",
+          "url": "https://conectatech-ec.github.io/productos/adap035-adaptador-bluetooth-dongle-usb-a-earldom-m73/",
           "http": 200,
           "ok": true
         }
@@ -324,10 +328,11 @@
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-051-http.json",
-      "sha256": "51d6b57229b50449752f6b31bec11e41517482fa335593051060d1d9185287e8"
     }
+  },
+  "qa_publica": {
+    "run_id": 38113788746,
+    "estado": "VERIFICADO",
+    "capturas_revisadas": true
   }
 }
