@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "lote-053",
   "rama": "catalogo/lote053",
-  "estado": "PUBLICACION_HTTP_VERIFICADA",
+  "estado": "PUBLICADO_VERIFICADO",
   "manifiesto": "importacion/lotes/lote-053/manifiesto-aprobados.json",
   "skus": [
     "ADAP053",
@@ -21,7 +21,7 @@
   "candidatos_revisados": 30,
   "qa_base_publica": null,
   "qa_manifiesto": "importacion/lotes/lote-053/manifiesto-aprobados.json",
-  "proximo_paso": "Desplegar el registro de actualizaciones recientes y ejecutar QA final sobre Pages; conservar ADAP070 en revisión.",
+  "proximo_paso": "Abrir un nuevo lote incremental desde main actual; ADAP070 permanece en revisión y no debe reexaminarse sin una edición más fiel o nueva evidencia.",
   "qa_prepublicacion": {
     "run_id": "38120526176",
     "commit_candidato": "843815545a44d01ec18130b80f19a7b0a3eb0853",
@@ -34,12 +34,14 @@
   },
   "publicacion": {
     "commit_aplicacion": "3f3487f6b4fba43a31b04d80835a1180adaec544",
-    "commit_desplegado": "e8546b96240ddb5a2373f05ac9d04c29754ff7fe",
-    "fecha_http": "2026-10-11T07:51:22.895574+00:00",
+    "commit_desplegado": "1710453cd528dc95349bd7a45d9897a798e725e5",
+    "fecha_http": "2026-10-11T07:56:03.137776+00:00",
     "publicados_verificados": 4,
     "pendientes": 0,
     "errores": 0,
     "reporte_http": "reportes/lote-053/http-publicacion.json",
-    "contrato": "reportes/lote-053/contrato-publicacion.json"
+    "contrato": "reportes/lote-053/contrato-publicacion.json",
+    "reporte_http_final": "reportes/lote-053/http-final.json",
+    "qa_publica": "reportes/lote-053/qa-publica.json"
   }
 }
