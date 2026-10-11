@@ -1,0 +1,115 @@
+{
+  "fecha": "2026-10-11T06:52:55.534637+00:00",
+  "estado": "PROPUESTAS_NO_APROBADAS",
+  "web_publica_modificada": false,
+  "fuentes": "reportes/correccion-drive-053/fuentes.json",
+  "resultados": [
+    {
+      "sku": "CARG058",
+      "estado": "NO_APROBADO_NO_PUBLICADO",
+      "maestro_propuesta": "revision-visual/correccion-drive-053/CARG058-propuesta-636b7309a2e0164f.png",
+      "sha256": "636b7309a2e0164f287c796060a0dc6c80fbd44d78edc302041eb4a85391af06",
+      "webp": [
+        {
+          "archivo": "revision-visual/correccion-drive-053/CARG058-propuesta-1200.webp",
+          "sha256": "61bda83cc16b53cc5aa5c9085088eaba7ffb772ba4ec3768630c8beddd03af88",
+          "bytes": 22526,
+          "resolucion": [
+            1200,
+            1200
+          ]
+        },
+        {
+          "archivo": "revision-visual/correccion-drive-053/CARG058-propuesta-600.webp",
+          "sha256": "6f4391b55734f8f51d9b3c58ccc123e57209cd04306e9a574ac3f129a780c412",
+          "bytes": 8188,
+          "resolucion": [
+            600,
+            600
+          ]
+        },
+        {
+          "archivo": "revision-visual/correccion-drive-053/CARG058-propuesta-300.webp",
+          "sha256": "92f08bdb082ac883cb201fb6ac069e971f4c81d5bcea18026f1b42be82f9fa52",
+          "bytes": 3206,
+          "resolucion": [
+            300,
+            300
+          ]
+        }
+      ],
+      "revision": "Cable presentado con vueltas amplias. No aprobado: falta contraste externo del terminal MagSafe 2 y de la variante AAA; no acredita longitud exacta."
+    },
+    {
+      "sku": "MICR08",
+      "estado": "NO_APROBADO_NO_PUBLICADO",
+      "maestro_propuesta": "revision-visual/correccion-drive-053/MICR08-propuesta-81a07d7f4d481247.png",
+      "sha256": "81a07d7f4d48124708ba5b352501676f52ebe9646f2bba55b8393baa4a966083",
+      "webp": [
+        {
+          "archivo": "revision-visual/correccion-drive-053/MICR08-propuesta-1200.webp",
+          "sha256": "726d9cd57a115726a1aa9096e1ef5c3df8276eece238d9c4756249c949b175b3",
+          "bytes": 29630,
+          "resolucion": [
+            1200,
+            1200
+          ]
+        },
+        {
+          "archivo": "revision-visual/correccion-drive-053/MICR08-propuesta-600.webp",
+          "sha256": "7268b7d1e1730d12d7967535c3c2f05dbe993e26f7b896d0bcdf482995a2436d",
+          "bytes": 9352,
+          "resolucion": [
+            600,
+            600
+          ]
+        },
+        {
+          "archivo": "revision-visual/correccion-drive-053/MICR08-propuesta-300.webp",
+          "sha256": "bcfe2387675cf9ce99473c0e5fb308461d8a5064d8fed23ed51184571a0af904",
+          "bytes": 3280,
+          "resolucion": [
+            300,
+            300
+          ]
+        }
+      ],
+      "revision": "Cuello más vertical y base con menor protagonismo. No aprobado: cápsula y base aún difieren de la ilustración de identificación; falta referencia física externa."
+    }
+  ],
+  "datos_comerciales_modificados": false,
+  "verificacion_publica": [
+    {
+      "sku": "CARG058",
+      "url": "https://conectatech-ec.github.io/productos/carg058-cargador-para-mac-magsafe-2-85w/",
+      "http": 200,
+      "imagen_url": "https://conectatech-ec.github.io/imagenes/carg058/CARG058-01.webp",
+      "imagen_http": 200,
+      "sha256_imagen": "78fbfb2121a5abdc19c3b757ce8c9087dc33693f617a4f8dcfc69af8484d7d68",
+      "imagen_coincide_repositorio": true,
+      "estado": "IMAGEN_EXISTENTE_VERIFICADA; SIN SUSTITUCION EN ESTE LOTE"
+    },
+    {
+      "sku": "CARG059",
+      "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
+      "http": 200,
+      "imagen_url": "https://conectatech-ec.github.io/imagenes/carg059/CARG059-01.webp",
+      "imagen_http": 200,
+      "sha256_imagen": "8b5cb6846b5d0fc579a778a303f27c35fa6bd14d92fe49c164923a3e1508011f",
+      "imagen_coincide_repositorio": true,
+      "estado": "IMAGEN_EXISTENTE_VERIFICADA; SIN SUSTITUCION EN ESTE LOTE"
+    },
+    {
+      "sku": "MICR08",
+      "url": "https://conectatech-ec.github.io/productos/micr08-microfono-para-pc-laptop-hp-dhp-1100i/",
+      "http": 200,
+      "imagen_url": "https://conectatech-ec.github.io/imagenes/micr08/MICR08-01.webp",
+      "imagen_http": 200,
+      "sha256_imagen": "f6db1707bff7fb65cd405fd700b35c40eb66c5ae5c477437bd0e407acbcfdebe",
+      "imagen_coincide_repositorio": true,
+      "estado": "IMAGEN_EXISTENTE_VERIFICADA; SIN SUSTITUCION EN ESTE LOTE"
+    }
+  ],
+  "CARG059": "Se conserva el retoque premium ya publicado; no se regenera ni renueva la fecha por esta reverificación.",
+  "limitacion_externa": "El proxy del entorno impide la investigación adicional (HTTP 403). Borrador de red guardado, todavía sin activar; requiere revisión, guardar y publicar en ajustes del entorno."
+}
