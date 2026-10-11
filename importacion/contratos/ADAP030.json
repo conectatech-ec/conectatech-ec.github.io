@@ -249,6 +249,98 @@
       "fecha": "2026-10-11T06:21:22.523681+00:00",
       "sha256_maestro": "842f2ec618dffa38e9e1183893e0c8e1c57009431d0849876039c59dec25598f",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP030",
+      "sku": "ADAP030",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T06:26:45.032Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap030-adaptador-divisor-microfono-audifonos-blanco/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/adap030-adaptador-divisor-microfono-audifonos-blanco/",
+      "archivo_html": "productos/adap030-adaptador-divisor-microfono-audifonos-blanco/index.html",
+      "http": 200,
+      "sha256_html": "4f85be79a652ab5ca58eba8058b92eb769b9d55c584b2e00ec4b8ff018f10a37",
+      "sha256_html_local": "4f85be79a652ab5ca58eba8058b92eb769b9d55c584b2e00ec4b8ff018f10a37",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap030/ADAP030-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/adap030/ADAP030-01-600.webp?v=acbc16b36c331a8d",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/adap030-adaptador-divisor-microfono-audifonos-blanco/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/adap030/ADAP030-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap018-adaptador-union-coupler-hdmi/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap036-adaptador-bluetooth-dongle-5-0-usb-a-para-pc-laptops/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap037-adaptador-convertidor-hdmi-a-vga/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/ADAP030-390.png",
+      "sha256": "e3ab4b84cb410b179db97267b0c83e04b3f7fce546359e5e45a2714b925b2179",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/ADAP030-1280.png",
+        "sha256": "8a26cbe5b86710339e23b289faaf3c995d36eb40f2ab2bb0656d834db26975fd",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

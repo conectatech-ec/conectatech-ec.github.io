@@ -73,7 +73,7 @@
     "titular": "CONECTATECH",
     "fuente": "https://drive.google.com/file/d/1ivM6E2dm3u6UvG9RMuHxz0xXvlG_K3qB/view?usp=drivesdk",
     "evidencia": "Fotografías propias autorizadas por el propietario para edición asistida por IA y publicación. No se utilizaron fotografías externas.",
-    "fecha_verificacion": "2026-10-11T06:30:53.213579+00:00",
+    "fecha_verificacion": "2026-10-11T06:21:22.523681+00:00",
     "archivos": [
       {
         "sha256": "9bf8e8244e9e18887d5bf75fbad013a3c5b80028f4837580b24d3a9c85d9c15f",
@@ -135,7 +135,7 @@
   "estado_calidad": "APROBADO",
   "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap038-adaptador-convertidor-de-minidisplayport-a-hdmi/",
-  "fecha_verificacion": "2026-10-11T06:30:53.213579+00:00",
+  "fecha_verificacion": "2026-10-11T06:21:22.523681+00:00",
   "descripcion": "Conecta un equipo con Mini DisplayPort a una pantalla o proyector con entrada HDMI compatible. Su cable corto facilita orientar la conexión en el escritorio.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -220,9 +220,101 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T06:30:53.213579+00:00",
+      "fecha": "2026-10-11T06:21:22.523681+00:00",
       "sha256_maestro": "9bf8e8244e9e18887d5bf75fbad013a3c5b80028f4837580b24d3a9c85d9c15f",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP038",
+      "sku": "ADAP038",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T06:26:47.592Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap038-adaptador-convertidor-de-minidisplayport-a-hdmi/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/adap038-adaptador-convertidor-de-minidisplayport-a-hdmi/",
+      "archivo_html": "productos/adap038-adaptador-convertidor-de-minidisplayport-a-hdmi/index.html",
+      "http": 200,
+      "sha256_html": "c4c0a78bd1cace67f9001224af1d1467a6a1a076d0d891138993d4846852c242",
+      "sha256_html_local": "c4c0a78bd1cace67f9001224af1d1467a6a1a076d0d891138993d4846852c242",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap038/ADAP038-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/adap038/ADAP038-01-600.webp?v=6800b7973c5c8e81",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/adap038-adaptador-convertidor-de-minidisplayport-a-hdmi/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/adap038/ADAP038-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap018-adaptador-union-coupler-hdmi/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap030-adaptador-divisor-microfono-audifonos-blanco/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap036-adaptador-bluetooth-dongle-5-0-usb-a-para-pc-laptops/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/ADAP038-390.png",
+      "sha256": "72411c9857e69d4058c3ad936df04e7b381c9bc0b97d957003292a6cf7fd6251",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/ADAP038-1280.png",
+        "sha256": "3625895add1c7ec5a05f92ea8769cc0cdd8af2df4169585e87eb4f90d3ae5d73",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

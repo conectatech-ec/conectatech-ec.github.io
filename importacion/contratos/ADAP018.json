@@ -221,6 +221,98 @@
       "fecha": "2026-10-11T06:21:22.523681+00:00",
       "sha256_maestro": "f7daa3f51d11b1543ab7cfdeac8aca24a5d29d311008e6fe51e374c4e4b2827a",
       "evidencia": "Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios."
+    },
+    "movil": {
+      "solicitado": "ADAP018",
+      "sku": "ADAP018",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T06:26:43.910Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/adap018-adaptador-union-coupler-hdmi/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/adap018-adaptador-union-coupler-hdmi/",
+      "archivo_html": "productos/adap018-adaptador-union-coupler-hdmi/index.html",
+      "http": 200,
+      "sha256_html": "8147d43e1856e546374de01b2793a7d73cc815252789435e5380a39ba10954e5",
+      "sha256_html_local": "8147d43e1856e546374de01b2793a7d73cc815252789435e5380a39ba10954e5",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/adap018/ADAP018-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/adap018/ADAP018-01-600.webp?v=fb99d56457955733",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/adap018-adaptador-union-coupler-hdmi/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/adap018/ADAP018-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap030-adaptador-divisor-microfono-audifonos-blanco/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap036-adaptador-bluetooth-dongle-5-0-usb-a-para-pc-laptops/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/adap037-adaptador-convertidor-hdmi-a-vga/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/movil/ADAP018-390.png",
+      "sha256": "505e98dd67de14d1ce2c221649666a6e4627bc3a8a074e423e28424c55a40af6",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/movil/ADAP018-1280.png",
+        "sha256": "17561b1084925f83de0a3c0e02f501ff08bc54e242d467cf1439a8e8b39b33c8",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
   }
 }

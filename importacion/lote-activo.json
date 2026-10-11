@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "lote-052",
   "rama": "catalogo/lote052",
-  "estado": "PREPARADO_QA",
+  "estado": "QA_LOCAL_APROBADO",
   "manifiesto": "importacion/lotes/lote-052/manifiesto-aprobados.json",
   "skus": ["ADAP018", "ADAP030", "ADAP036", "ADAP037", "ADAP038", "ADAP039"],
   "lote_anterior": "lote-051",
@@ -11,5 +11,16 @@
   "pendientes": ["ADAP014", "ADAP031", "ADAP032", "ADAP033"],
   "qa_base_publica": null,
   "qa_manifiesto": "importacion/lotes/lote-052/manifiesto-aprobados.json",
-  "proximo_paso": "Ejecutar validar-lote.yml en la rama; incorporar evidencia móvil/escritorio y publicar sólo los seis SKU si el gate termina correctamente."
+  "qa_prepublicacion": {
+    "run_id": "38118042086",
+    "commit_candidato": "305ac49544dab00a74ff003c6a88899ee0c25f2c",
+    "navegador_movil": 390,
+    "navegador_escritorio": 1280,
+    "skus_visuales_verificados": 6,
+    "columnas_escritorio": 3,
+    "columnas_movil": 2,
+    "gate_contrato_corregido_localmente": true,
+    "reporte": "reportes/lote-052/qa-local/prepublicacion.json"
+  },
+  "proximo_paso": "Publicar los seis SKU sobre main con SHA esperado; esperar Pages y verificar HTTP, hashes, datos comerciales y navegador público."
 }
