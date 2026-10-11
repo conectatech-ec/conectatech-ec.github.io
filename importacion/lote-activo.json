@@ -1,35 +1,25 @@
 {
   "version": 1,
-  "lote": "lote-052",
-  "rama": "catalogo/lote052",
-  "estado": "PUBLICADO_VERIFICADO",
-  "manifiesto": "importacion/lotes/lote-052/manifiesto-aprobados.json",
-  "skus": ["ADAP018", "ADAP030", "ADAP036", "ADAP037", "ADAP038", "ADAP039"],
-  "lote_anterior": "lote-051",
-  "fuentes": {"fotografias_drive":2829,"paginacion_completa":true,"paginas":7,"cambios_metadatos_detectados":12,"registro":"Registro A:F","fecha":"2026-10-11T06:15:00Z"},
-  "candidatos_revisados": 10,
-  "pendientes": ["ADAP014", "ADAP031", "ADAP032", "ADAP033"],
+  "lote": "lote-053",
+  "rama": "catalogo/lote053",
+  "estado": "EN_PROCESO",
+  "manifiesto": "importacion/lotes/lote-053/manifiesto-aprobados.json",
+  "skus": [
+    "ADAP053",
+    "ADAP054",
+    "ADAP073",
+    "ADAP076"
+  ],
+  "lote_anterior": "lote-052",
+  "fuentes": {
+    "fotografias_drive": 2829,
+    "paginacion_completa": true,
+    "paginas": 7,
+    "cambios_metadatos_detectados": 0,
+    "registro": "Registro A:F"
+  },
+  "candidatos_revisados": 30,
   "qa_base_publica": null,
-  "qa_manifiesto": "importacion/lotes/lote-052/manifiesto-aprobados.json",
-  "qa_prepublicacion": {
-    "run_id": "38118042086",
-    "commit_candidato": "305ac49544dab00a74ff003c6a88899ee0c25f2c",
-    "navegador_movil": 390,
-    "navegador_escritorio": 1280,
-    "skus_visuales_verificados": 6,
-    "columnas_escritorio": 3,
-    "columnas_movil": 2,
-    "gate_contrato_corregido_localmente": true,
-    "reporte": "reportes/lote-052/qa-local/prepublicacion.json"
-  },
-  "publicacion": {
-    "commit": "0f5910f748a26b374473853fb2889b71b573c2ab",
-    "fecha_http": "2026-10-11T06:36:37.547640+00:00",
-    "publicados_verificados": 6,
-    "pendientes": 0,
-    "errores": 0,
-    "reporte_http": "reportes/lote-052/http-publicacion.json",
-    "contrato": "reportes/lote-052/contrato-publicacion.json"
-  },
-  "proximo_paso": "Continuar con un lote incremental nuevo; conservar ADAP014, ADAP031, ADAP032 y ADAP033 como pendientes hasta nueva evidencia."
+  "qa_manifiesto": "importacion/lotes/lote-053/manifiesto-aprobados.json",
+  "proximo_paso": "Completar pipeline, QA real y publicación HTTP verificada de cuatro SKU; ADAP070 requiere revisión de fidelidad."
 }
