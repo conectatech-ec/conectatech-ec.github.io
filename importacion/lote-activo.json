@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "lote-051",
   "rama": "catalogo/lote051-reanudacion",
-  "estado": "APLICADO_LOCAL_QA_PENDIENTE",
+  "estado": "APROBADO_QA_PREPUBLICACION",
   "manifiesto": "importacion/lotes/lote-051/manifiesto-aprobados.json",
   "skus": [
     "ADAP011",
@@ -35,13 +35,12 @@
     "ADAP025"
   ],
   "qa_prepublicacion": {
-    "run_id": 38112452720,
-    "commit": "c7fbf94be0efe177a847621491ec20e4f1d71355",
+    "run_id": 38113110635,
+    "commit": "bd8860d9649381cbec5da633110fc68ec46ab724",
     "resultado": "success",
     "capturas_revisadas": true,
     "columnas_escritorio": 3,
-    "columnas_movil": 2,
-    "requiere_repeticion": "Nuevo corte financiero concurrente integrado sin alteraciones."
+    "columnas_movil": 2
   },
   "base_main_integrada": "b4744d33d1e2feebeab69d9e80ae01fd497ae10b"
 }
