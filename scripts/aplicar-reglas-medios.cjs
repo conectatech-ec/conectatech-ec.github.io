@@ -15,9 +15,12 @@ module.exports=function(){
     return v?.sin_texto===true&&v?.sin_logotipo===true&&v?.evidencia&&v.sha256_maestro===i.sha256_original;
    })):[];
   const cover=photos.find(i=>i.posicion===1&&(r.presentacion!=='con caja'||i.contiene_caja===true));
-  p.imageUrl=cover?.versiones['1200'].url||'';
+  const premium={MOUS039:'MOUS039',SOPO009:'SOPO009',SOPO023:'SOPO023',SOPO058:'SOPO058'};
+  const premiumPath=premium[p.sku]?`/imagenes/${p.sku.toLowerCase()}/${p.sku}-premium-v1.png`:null;
+  const premiumReady=!!premiumPath&&fs.existsSync('.'+premiumPath);
+  p.imageUrl=premiumReady?premiumPath:(cover?.versiones['1200'].url||'');
   const c=seo[p.sku];if(!c)continue;
-  c.imagen=p.imageUrl;c.imagenPendiente=!cover;c.reglaSKU=r;c.galeria=photos;
+  c.imagen=p.imageUrl;c.imagenPendiente=!premiumReady&&!cover;c.reglaSKU=r;c.galeria=photos;
   if(cover)c.imagenProfesional=cover;else delete c.imagenProfesional;
   if(m?.banner?.revision_regla===r.revision&&cover)c.banner=m.banner;else delete c.banner;
  }
