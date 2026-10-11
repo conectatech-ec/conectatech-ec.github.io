@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap');
 /* CONECTATECH 2.0 — mejora progresiva, sin alterar datos comerciales */
 :root{--ct-ink:#0b1c35;--ct-green:#64b83f}
 html{scroll-behavior:smooth}
@@ -289,7 +290,7 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 
 
 /* CONECTATECH — tipografía comercial v1. El logotipo mantiene Ethnocentric RG. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap');
+
 :root{--ct-font-ui:'Inter',Arial,Helvetica,sans-serif;--ct-font-product:'Manrope','Inter',Arial,sans-serif}
 body,button,input,select,textarea{font-family:var(--ct-font-ui)}
 .brand,.brand span{font-family:"Ethnocentric RG",Arial,sans-serif!important}
