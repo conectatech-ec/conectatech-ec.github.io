@@ -1,7 +1,7 @@
 {
   "version": 1,
   "lote": "correccion-052",
-  "estado": "CARG059_PUBLICADO_ORDEN_PENDIENTE",
+  "estado": "CERRADO_PARCIAL_CARG059_PUBLICADO_VERIFICADO",
   "solicitud_propietario": "2026-10-11: corrección visual prioritaria y publicación de SKU problemáticos.",
   "base_commit": "7f9bf6887d0d2fd4c1714d1f1c82e2765c8086c7",
   "skus": [
@@ -238,5 +238,100 @@
     "run_id": 38116349936,
     "resultado": "success"
   },
-  "verificacion_http": "reportes/correccion-052/http.json"
+  "verificacion_http": "reportes/correccion-052/http.json",
+  "qa_publica": {
+    "metodo": "Workflow validar-lote.yml con base_publica=https://conectatech-ec.github.io; Chromium real móvil/escritorio.",
+    "run_id": 38116655926,
+    "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38116655926",
+    "commit": "1e82451eb40cbb1bbb23e0a2413c02b0f8671d9c",
+    "resultado": "success",
+    "pasos": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Recuperar exactamente la rama candidata",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Preparar únicamente los SKU aprobados del lote",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Instalar dependencias declaradas de validación",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Iniciar servidor local del contenido candidato",
+        "status": "completed",
+        "conclusion": "skipped"
+      },
+      {
+        "name": "Renderizar y comprobar fichas con Chromium real",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Comprobar catálogo compacto, novedades, filtros y enlaces",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Incorporar únicamente evidencia móvil válida",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validar contrato completo antes de publicar",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Guardar contratos revisados, capturas y reportes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Exigir todos los controles sin publicar",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Recuperar exactamente la rama candidata",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "orden_catalogo": "CARG059 primero, verificado"
 }

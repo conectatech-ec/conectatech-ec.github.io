@@ -1,0 +1,120 @@
+{
+  "fecha": "2026-10-11T06:02:54.770467+00:00",
+  "sku": "CARG059",
+  "estado": "PUBLICADO_VERIFICADO",
+  "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
+  "qa_publica": {
+    "metodo": "Workflow validar-lote.yml con base_publica=https://conectatech-ec.github.io; Chromium real móvil/escritorio.",
+    "run_id": 38116655926,
+    "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38116655926",
+    "commit": "1e82451eb40cbb1bbb23e0a2413c02b0f8671d9c",
+    "resultado": "success",
+    "pasos": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Recuperar exactamente la rama candidata",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Preparar únicamente los SKU aprobados del lote",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Instalar dependencias declaradas de validación",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Iniciar servidor local del contenido candidato",
+        "status": "completed",
+        "conclusion": "skipped"
+      },
+      {
+        "name": "Renderizar y comprobar fichas con Chromium real",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Comprobar catálogo compacto, novedades, filtros y enlaces",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Incorporar únicamente evidencia móvil válida",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validar contrato completo antes de publicar",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Guardar contratos revisados, capturas y reportes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Exigir todos los controles sin publicar",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Recuperar exactamente la rama candidata",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "catalogo_publico": {
+    "index.html": {
+      "http": 200,
+      "sha256": "f9351db476ad734fffd18db3d412b0805b1f5b4328e694e98f468f44c7ce5ddb",
+      "coincide_local": true
+    },
+    "assets/catalogo-publicado.js": {
+      "http": 200,
+      "sha256": "df0dac2129b8a306ce4d4bb803473782e2ea688205588a6753ffb423fd9faaa3",
+      "coincide_local": true
+    }
+  },
+  "posicion": "Primero en fotos y recientes; bytes públicos idénticos a los verificados localmente y gate de catálogo público aprobado.",
+  "originales_conservados": true,
+  "datos_comerciales_intactos": true,
+  "pendientes": {
+    "CARG058": "Maestro suministrado no acredita la longitud correcta del cable.",
+    "MICR08": "Maestro suministrado contiene la forma previamente rechazada; no aporta forma alternativa verificable."
+  },
+  "fuentes_privadas_consultadas": false
+}
