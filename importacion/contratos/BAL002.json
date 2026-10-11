@@ -99,7 +99,7 @@
   "contenido_venta": null,
   "garantia": null,
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [
     "Fotos muestran diseño verde/rojo y otro plateado/verde; variante de venta no confirmada.",
@@ -119,7 +119,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "BAL002",
         "nombre": "BALON DE FUTBOL INDOOR",
@@ -128,7 +128,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "JUGUETES",
-        "clasificacion": ""
+        "clasificacion": "",
+        "promo_contado": "6.35",
+        "pvp_final": "7.30"
       }
     },
     "identidad": {
@@ -160,5 +162,16 @@
       "estado": "PENDIENTE",
       "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
     }
+  },
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }

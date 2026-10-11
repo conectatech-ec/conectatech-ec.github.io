@@ -8,7 +8,7 @@
   "variante": "Negro y rojo fotografiados",
   "categoria_original": "Juguetes",
   "categoria_comercial": "Juguetes y Coleccionables",
-  "precio_contado": 28,
+  "precio_contado": 28.0,
   "pvp": 32.2,
   "stock": 1,
   "unidad_venta": {
@@ -227,7 +227,7 @@
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
   "garantia": null,
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [
     "Fotografías negras y rojas bajo el mismo SKU; la base no confirma venta por colores surtidos ni asigna stock por variante. La portada negra queda en borrador hasta resolver la variante. No se atribuye marca fabricante ni licencia oficial."
@@ -255,7 +255,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "JUGU084",
         "nombre": "JUGUETE CARRO DE COLECCION MERCEDES BENZ DEPORTIVO",
@@ -264,7 +264,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "JUGUETES",
-        "clasificacion": "JUEGOS Y ENTRETENIMIENTO"
+        "clasificacion": "JUEGOS Y ENTRETENIMIENTO",
+        "promo_contado": "28.00",
+        "pvp_final": "32.20"
       }
     },
     "identidad": {
@@ -310,5 +312,16 @@
     "nota_revision": "Foto propia del producto físico, sin caja. Máscara manual de contorno con ajuste determinista de borde; los píxeles RGB conservados coinciden exactamente con el original. Sin reconstrucción, cambio de color ni ampliación. Fuente útil 1660 × 605. Modelo descrito de forma neutral; no se atribuye licencia automotriz.",
     "publicar": false,
     "motivo": "Fotografías negras y rojas bajo el mismo SKU; la base no confirma venta por colores surtidos ni asigna stock por variante. La portada negra queda en borrador hasta resolver la variante. No se atribuye marca fabricante ni licencia oficial."
+  },
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }

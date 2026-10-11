@@ -8,7 +8,7 @@
   "variante": "Azul y negro",
   "categoria_original": "Mouse",
   "categoria_comercial": "Computación y Periféricos",
-  "precio_contado": 13,
+  "precio_contado": 13.0,
   "pvp": 14.95,
   "stock": 1,
   "unidad_venta": {
@@ -257,7 +257,7 @@
     "publicar": "Consulta las condiciones de garantía aplicables antes de comprar."
   },
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): Registro Google Sheets, columna Tipo, filas 1174 y 1177-1180; AAA (genérico).",
@@ -279,7 +279,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "MOUS017",
         "nombre": "MOUSE YELANDAR AN01 ELEGANT",
@@ -288,7 +288,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "MOUSE",
-        "clasificacion": "COMPUTACION"
+        "clasificacion": "COMPUTACION",
+        "promo_contado": "13.00",
+        "pvp_final": "14.95"
       }
     },
     "identidad": {
@@ -465,5 +467,16 @@
     }
   ],
   "compatibilidad": "Equipos compatibles con mouse Bluetooth o receptor inalámbrico de 2,4 GHz, según empaque.",
-  "contenido_venta": "1 mouse Yelandar AN01."
+  "contenido_venta": "1 mouse Yelandar AN01.",
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
+  }
 }

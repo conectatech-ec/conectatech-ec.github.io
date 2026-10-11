@@ -9,7 +9,7 @@
   "categoria_original": "Lectores",
   "categoria_comercial": "Lectores",
   "precio_contado": 69.3,
-  "pvp": 79.7,
+  "pvp": 79.69,
   "stock": 1,
   "unidad_venta": {
     "descripcion": "1 unidad",
@@ -184,7 +184,7 @@
     "publicar": "Consulta las condiciones de garantía aplicables antes de comprar."
   },
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1886,1887,1888; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
@@ -212,7 +212,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "LECT005",
         "nombre": "LECTOR DE CD-DVD EXTERNO MARCA DELL",
@@ -221,7 +221,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "LECTORES EXTERNOS",
-        "clasificacion": "CONECTIVIDAD"
+        "clasificacion": "CONECTIVIDAD",
+        "promo_contado": "69.30",
+        "pvp_final": "79.69"
       }
     },
     "identidad": {
@@ -367,5 +369,16 @@
       ],
       "estado": "VERIFICADO"
     }
-  ]
+  ],
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
+  }
 }

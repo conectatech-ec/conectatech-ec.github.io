@@ -9,7 +9,7 @@
   "categoria_original": "Telefonos",
   "categoria_comercial": "Celulares y Smartphones",
   "precio_contado": 133.89,
-  "pvp": 153.97,
+  "pvp": 167.38,
   "stock": 15,
   "unidad_venta": {
     "descripcion": "1 teléfono",
@@ -311,7 +311,7 @@
     "texto_seguro": "Consulta las condiciones de garantía aplicables con CONECTATECH."
   },
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [
     "Falta portada profesional sin caja con licencia comercial y variante exacta acreditadas.",
@@ -338,7 +338,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "TELF001",
         "nombre": "TELEFONO ZTE A56 PRO 128GB",
@@ -347,7 +347,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "TELEFONOS",
-        "clasificacion": "TELEFONOS"
+        "clasificacion": "TELEFONOS",
+        "promo_contado": "133.89",
+        "pvp_final": "167.38"
       }
     },
     "identidad": {
@@ -392,5 +394,16 @@
     "ficha_accesible_verificada_en_este_lote": false,
     "movil_comprobado": false,
     "sin_enlaces_rotos": false
+  },
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }

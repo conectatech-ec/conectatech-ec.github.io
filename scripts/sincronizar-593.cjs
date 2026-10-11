@@ -24,6 +24,7 @@ function parseCSV(str){
  });
 }
 const input=parseCSV(csv);
+for(const r of input){if(!r.promo_contado||!r.pvp_final||![Number(r.promo_contado),Number(r.pvp_final)].every(Number.isFinite))throw Error('Faltan precios explícitos 593: no recalcular PVP desde Promo Contado');}
 if(input.length<1000)throw Error('Exportación aparentemente incompleta: '+input.length+' filas');
 const html=fs.readFileSync('index.html','utf8');
 const match=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
@@ -45,16 +46,16 @@ for(const raw of input){
  if(current){
   existingSKU.add(sku);
   const nextStock=sellable?stock:0;
-  const nextPromo=base>0?round(base*1.15):current.promo;
-  const nextPvp=base>0?round(nextPromo*1.15):current.pvp;
+  const nextPromo=base>0?Number(raw.promo_contado):current.promo;
+  const nextPvp=base>0?Number(raw.pvp_final):current.pvp;
   if(current.stock!==nextStock||current.promo!==nextPromo||current.pvp!==nextPvp){
    updated.push({sku,antes:{stock:current.stock,promo:current.promo,pvp:current.pvp},despues:{stock:nextStock,promo:nextPromo,pvp:nextPvp}});
    if(current.stock>0&&nextStock<=0)outOfStock.push(sku);
    current.stock=nextStock;current.promo=nextPromo;current.pvp=nextPvp;
   }
- }else if(sellable&&stock>0){
+ }else if(sellable&&stock>0&&process.env.INCLUIR_NUEVOS==='SI'){
   if(!raw.nombre)throw Error('Nombre vacío para '+sku);
-  const promo=round(base*1.15),pvp=round(promo*1.15);
+  const promo=Number(raw.promo_contado),pvp=Number(raw.pvp_final);
   const p={sku,name:raw.nombre,category:safeCategory(raw.categoria),stock,promo,pvp,priority:'MEDIA',role:'CATALOGO'};
   original.push(p);bySKU.set(sku,p);added.push({sku,nombre:p.name,stock,promo,pvp});
  }

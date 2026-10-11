@@ -1,0 +1,114 @@
+name: Aplicar y verificar corte 593 10-10-2026
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/corte-593-2026-10-10.yml'
+      - 'datos-593/corte-2026-10-10/parte-*.b64'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: corte-593-autorizado-20261010
+  cancel-in-progress: false
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Recuperar carga depurada y comprobar integridad
+        shell: bash
+        run: |
+          python - <<'PY'
+          import base64, hashlib, io, zipfile
+          from pathlib import Path
+          text = ''.join(Path(f'datos-593/corte-2026-10-10/parte-{i}.b64').read_text().strip() for i in (1, 2, 3))
+          data = base64.b64decode(text, validate=True)
+          expected = '80c9cd1a9ef0977435ea020c74c0d5aebe05c72c7aee02e06435914edebbd6f9'
+          actual = hashlib.sha256(data).hexdigest()
+          if actual != expected:
+              raise SystemExit('Carga alterada: ' + actual)
+          with zipfile.ZipFile(io.BytesIO(data)) as archive:
+              allowed = {'datos-593/corte-2026-10-10.json.gz', 'scripts/sync-corte-593.py'}
+              if set(archive.namelist()) != allowed:
+                  raise SystemExit('Archivos inesperados en la carga')
+              for name in allowed:
+                  dest = Path(name)
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  dest.write_bytes(archive.read(name))
+          print('Carga 593 depurada verificada. El Excel y los costos no se publican.')
+          PY
+      - name: Aplicar solo datos comerciales autorizados y validar todas las fichas
+        run: python scripts/sync-corte-593.py --apply
+      - name: Guardar cambios validados sin sobrescribir avances concurrentes
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html assets/catalogo-publicado.js datos-593/inventario-publico.csv datos-593/corte-2026-10-10.json.gz datos-593/REFERENCIA-OFICIAL.md GUIA-SINCRONIZACION-593.md scripts/sync-corte-593.py scripts/sincronizar-593.cjs importacion/contratos importacion/actualizaciones-sku.json seo-contenido.json productos exportaciones reportes/sincronizacion-593-2026-10-10.json
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat
+            git commit -m '593: sincronizar precios explícitos y existencias del corte 10-10-2026, conservar contenido visual'
+            git push origin HEAD:main
+          fi
+          git rev-parse HEAD
+      - name: Guardar comprobación y diferencias del corte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comparacion-593-20261010
+          path: reportes/sincronizacion-593-2026-10-10.json
+          if-no-files-found: warn
+      - name: Preparar publicación del catálogo validado
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+  publicar:
+    needs: sincronizar
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar exactamente el catálogo validado
+        id: deployment
+        uses: actions/deploy-pages@v4
+  verificar:
+    needs: publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Verificar precios, PVP y orden en la web pública
+        run: python scripts/sync-corte-593.py --verify-public
+      - name: Guardar evidencia de publicación real
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verificacion-publica-593-20261010
+          path: |
+            reportes/sincronizacion-593-2026-10-10.json
+            reportes/sincronizacion-593-2026-10-10-publico.json
+          if-no-files-found: warn
+      - name: Registrar comprobación pública satisfactoria
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reportes/sincronizacion-593-2026-10-10-publico.json
+          if ! git diff --cached --quiet; then
+            git commit -m '593: verificar 1165 productos y 222 fichas modificadas en GitHub Pages'
+            git push origin HEAD:main
+          fi

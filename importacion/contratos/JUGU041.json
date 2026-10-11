@@ -189,7 +189,7 @@
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
   "garantia": null,
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [
     "Clasificación contradictoria en Registro: AAA (109,110,111) y Caja original (840,841). Además aparecen dos colores sin desglose comercial de variante."
@@ -217,7 +217,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "JUGU041",
         "nombre": "JUGUETE CAMIONETA COMBI COLECCIONABLE SEMI MEDIANA",
@@ -226,7 +226,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "JUGUETES",
-        "clasificacion": "JUEGOS Y ENTRETENIMIENTO"
+        "clasificacion": "JUEGOS Y ENTRETENIMIENTO",
+        "promo_contado": "11.99",
+        "pvp_final": "13.79"
       }
     },
     "identidad": {
@@ -270,5 +272,16 @@
     "nota_revision": "Foto propia del producto físico, sin caja. Máscara manual de contorno con ajuste determinista de borde; los píxeles RGB conservados coinciden exactamente con el original. Sin reconstrucción, cambio de color ni ampliación. Fuente útil 1191 × 689. Modelo descrito de forma neutral; no se atribuye licencia automotriz.",
     "publicar": false,
     "motivo": "Clasificación contradictoria en Registro: AAA (109,110,111) y Caja original (840,841). Además aparecen dos colores sin desglose comercial de variante."
+  },
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }

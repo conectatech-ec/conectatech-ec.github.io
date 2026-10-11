@@ -9,7 +9,7 @@
   "categoria_original": "Mouse",
   "categoria_comercial": "Computación y Periféricos",
   "precio_contado": 2.5,
-  "pvp": 2.88,
+  "pvp": 2.87,
   "stock": 11,
   "unidad_venta": {
     "descripcion": "1 producto",
@@ -90,7 +90,7 @@
   "contenido_venta": null,
   "garantia": null,
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [
     "La única fotografía muestra una bolsa plástica con reflejos sobre el producto. Quitar el empaque exigiría reconstruir una superficie no fotografiada libre.",
@@ -109,7 +109,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "MOUS029",
         "nombre": "MOUSEPAD CUADRADO ESENCIAL",
@@ -118,7 +118,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "MOUSE",
-        "clasificacion": "COMPUTACION"
+        "clasificacion": "COMPUTACION",
+        "promo_contado": "2.50",
+        "pvp_final": "2.87"
       }
     },
     "identidad": {
@@ -144,5 +146,16 @@
       "estado": "PENDIENTE",
       "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
     }
+  },
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }

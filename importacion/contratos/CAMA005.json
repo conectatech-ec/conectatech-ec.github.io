@@ -228,7 +228,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "CAMA005",
         "nombre": "CAMARA DE SEGURIDAD XIAOMI C301 PARA INTERIORES",
@@ -237,7 +237,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "CAMARAS DE SEGURIDAD",
-        "clasificacion": "SEGURIDAD"
+        "clasificacion": "SEGURIDAD",
+        "promo_contado": "59.85",
+        "pvp_final": "68.83"
       }
     },
     "identidad": {
@@ -343,5 +345,17 @@
     "fuente_reanudacion": "importacion/evidencias-derechos/cuatro-pendientes.json",
     "repetir_investigacion_general": false,
     "reanudar_cuando": "Nueva evidencia de derechos, fuente propia suficiente o resolución de la variante afectada"
+  },
+  "stock_fecha_corte": "2026-10-10",
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }

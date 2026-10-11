@@ -8,7 +8,7 @@
   "variante": null,
   "categoria_original": "Mouse",
   "categoria_comercial": "Computación y Periféricos",
-  "precio_contado": 29,
+  "precio_contado": 29.0,
   "pvp": 33.35,
   "stock": 2,
   "unidad_venta": {
@@ -310,7 +310,7 @@
   "contenido_venta": "1 mouse; no se afirman accesorios adicionales sin confirmación",
   "garantia": null,
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [
     "El mismo SKU tiene fotografías de unidades negras y rosadas. No se confirmó venta de colores surtidos ni color a publicar.",
@@ -332,7 +332,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "MOUS003",
         "nombre": "MOUSE ERGONOMICO MEETION BTM010R",
@@ -341,7 +341,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "MOUSE",
-        "clasificacion": "COMPUTACION"
+        "clasificacion": "COMPUTACION",
+        "promo_contado": "29.00",
+        "pvp_final": "33.35"
       }
     },
     "identidad": {
@@ -383,5 +385,16 @@
     "nota_revision": "Fotografía propia del producto real; fondo retirado con máscara de contorno revisada, píxeles RGB originales conservados. Sin caja, sin ampliar. Borrador negro; variante de venta pendiente porque hay fotos negro y rosado para el mismo SKU.",
     "publicar": false,
     "motivo": "El mismo SKU tiene fotografías de unidades negras y rosadas. No se confirmó venta de colores surtidos ni color a publicar.; Portada negra preparada únicamente como borrador privado; no determina la variante comercial."
+  },
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }

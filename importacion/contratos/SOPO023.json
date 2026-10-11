@@ -10,7 +10,7 @@
   "categoria_comercial": "Soportes y Accesorios",
   "precio_contado": 5.35,
   "pvp": 6.15,
-  "stock": 12,
+  "stock": 11,
   "unidad_venta": {
     "descripcion": "1 unidad",
     "cantidad": 1,
@@ -193,7 +193,7 @@
     "publicar": "Consulta las condiciones de garantía aplicables antes de comprar."
   },
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1132,1133,1135,1136; valores: AAA (genérico). No acredita licencia de fotografías externas ni resuelve variantes.",
@@ -225,16 +225,18 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "SOPO023",
         "nombre": "SOPORTE DE CELULAR MODELO T8-04",
-        "stock": "12",
+        "stock": "11",
         "precio_general": "4.65",
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "SOPORTES",
-        "clasificacion": "SOPORTES"
+        "clasificacion": "SOPORTES",
+        "promo_contado": "5.35",
+        "pvp_final": "6.15"
       }
     },
     "identidad": {
@@ -483,5 +485,16 @@
         }
       }
     }
-  ]
+  ],
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
+  }
 }
