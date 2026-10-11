@@ -204,7 +204,11 @@ async function main() {
           ensure(current.altura <= (width === 1280 ? 520 : 410) && !current.contenido_largo.length, 'Tarjeta del producto pierde diseño compacto.');
           ensure(current.imagen?.cargada && current.imagen?.ajuste === 'contain', 'Imagen no carga o usa ajuste diferente decontain.');
           ensure(money(current.promo) === Math.round(p.promo * 100) && money(current.pvp) === Math.round(p.pvp * 100) && current.promo_px > current.pvp_px && current.pvp_tachado === false, 'Datos o jerarquía de precios modificados.');
-          const expectedVariants = variants((published?.imagen || sourceImage).srcset, PUBLIC), actualVariants = variants(current.imagen?.srcset, PUBLIC);
+          // A financial update may register a SKU before it has a photo. Match
+          // productImage(): use registered versions only for the current image.
+          const registeredImage = published?.imagen;
+          const expectedImage = registeredImage?.src === p.imageUrl && registeredImage?.srcset ? registeredImage : sourceImage;
+          const expectedVariants = variants(expectedImage.srcset, PUBLIC), actualVariants = variants(current.imagen?.srcset, PUBLIC);
           ensure(equals(expectedVariants, actualVariants) && equals(expectedVariants.map(v => v.ancho), [300, 600, 1200]), 'Srcset no coincide con versiones300/600/1200 aprobadas.');
           ensure(current.imagen?.src && expectedVariants.some(variant => variant.url === new URL(current.imagen.src, PUBLIC).href), 'Portada ajena a las versiones aprobadas.');
           product.miniaturas = [];
