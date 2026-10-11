@@ -21,8 +21,10 @@
         "sha256": null
       },
       "maestro_propuesto": "revision-premium/lote-001/maestros/MOUS039-premium-v1.png",
-      "estado": "REQUIERE_VERIFICACION_FIDELIDAD",
-      "motivo": "Carcasa, rueda, dos selectores y receptor cotejados. La edición define serigrafías e iconos internos pequeños: REVISAR esos microdetalles; no se certifica recuperación óptica de detalle."
+      "estado": "PUBLICADO_CON_OBSERVACION_FIDELIDAD",
+      "motivo": "Carcasa, rueda, dos selectores y receptor cotejados. La edición define serigrafías e iconos internos pequeños: REVISAR esos microdetalles; no se certifica recuperación óptica de detalle.",
+      "ruta_publicada": "/imagenes/mous039/MOUS039-premium-v1.png",
+      "observacion": "Microdetalles generativos sin fidelidad plenamente resuelta; sustitución solicitada expresamente por propietario. Revisión posterior recomendada."
     },
     "SOPO009": {
       "sha256_maestro": "6d776c030ddc11046fec1a360a1420caaab1672342a1c2ae384e005a25243315",
@@ -35,8 +37,10 @@
         "sha256": null
       },
       "maestro_propuesto": "revision-premium/lote-001/maestros/SOPO009-premium-v1.png",
-      "estado": "REQUIERE_VERIFICACION_FIDELIDAD",
-      "motivo": "Placa, apoyos, ganchos, bisagra y logotipo cotejados. Se redujo la exageración de la textura de la base en una segunda versión; REVISAR todavía su patrón fino antes de publicar."
+      "estado": "PUBLICADO_CON_OBSERVACION_FIDELIDAD",
+      "motivo": "Placa, apoyos, ganchos, bisagra y logotipo cotejados. Se redujo la exageración de la textura de la base en una segunda versión; REVISAR todavía su patrón fino antes de publicar.",
+      "ruta_publicada": "/imagenes/sopo009/SOPO009-premium-v1.png",
+      "observacion": "Microdetalles generativos sin fidelidad plenamente resuelta; sustitución solicitada expresamente por propietario. Revisión posterior recomendada."
     },
     "SOPO058": {
       "sha256_maestro": "235a994d257f9a826a4f73ebebe687c94a672271b3d0114ec2ebefa1c8eafc30",
@@ -97,5 +101,5 @@
     "nota": "Candidatos tecnológicos; aún sin nuevas descargas ni validación fotográfica. Sustituir únicamente si fuentes insuficientes."
   },
   "reanudacion": "Leer PREMIUM.md. Recuperar rama de revisión, conservar main público. No aplicar, publicar ni escalar hasta aprobación explícita por SKU y SHA-256; resolver microdetalles pendientes.",
-  "nota_publicacion": "Aprobación visual del propietario para cuatro SKU excepto AUDI028. SOPO058 y SOPO023 integrados en main; MOUS039 y SOPO009 retenidos por microdetalles de fidelidad pendientes. AUDI028 excluido por instrucción expresa."
+  "nota_publicacion": "Cuatro portadas premium integradas en main: MOUS039, SOPO009, SOPO058, SOPO023. AUDI028 excluido. MOUS039 y SOPO009 con observaciones de microdetalles pendientes; no declarar fidelidad certificada."
 }
