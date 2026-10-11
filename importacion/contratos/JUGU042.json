@@ -108,7 +108,9 @@
     "datos-593/inventario-publico.csv"
   ],
   "imagen_principal": "/imagenes/jugu042/JUGU042-01.webp",
-  "imagenes_secundarias": [],
+  "imagenes_secundarias": [
+    "/imagenes/jugu042/JUGU042-02.webp"
+  ],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
@@ -119,6 +121,10 @@
     "archivos": [
       {
         "sha256": "d51d2db9b653662c8b11ab9450f73255422a3df140c080e8c07dc5136d8d9e07",
+        "fuente": "https://drive.google.com/file/d/1PuF36GkfoPtgYHx1DqsNHBLHlGZOweB8/view?usp=drivesdk"
+      },
+      {
+        "sha256": "bc8a9dc9223b88b2ca588324f60993ebc43f91bbd351ff32e33fa723c66bf708",
         "fuente": "https://drive.google.com/file/d/1PuF36GkfoPtgYHx1DqsNHBLHlGZOweB8/view?usp=drivesdk"
       }
     ],
@@ -171,7 +177,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
   "fecha_verificacion": "2026-10-11T20:51:00.078340+00:00",
   "descripcion": "Miniatura de estilo combi con carrocería bicolor y una tabla decorativa sobre el techo. Su diseño viajero aporta variedad a una colección de vehículos clásicos.",
@@ -237,7 +243,7 @@
       "solicitado": "JUGU042",
       "sku": "JUGU042",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T20:51:26.030Z",
+      "fecha": "2026-10-11T21:12:09.534Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -261,8 +267,8 @@
       "url_comprobada": "http://127.0.0.1:8770/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
       "archivo_html": "productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/index.html",
       "http": 200,
-      "sha256_html": "2c41044edfc0eabf96bdb2e7365256c5bf1b79309fc5d4763b7536b380876a88",
-      "sha256_html_local": "2c41044edfc0eabf96bdb2e7365256c5bf1b79309fc5d4763b7536b380876a88",
+      "sha256_html": "a2c1b61bb95cfc57a338d2a1660cfe45ed7b8c9ec85dc7e155f64638d6e10f17",
+      "sha256_html_local": "a2c1b61bb95cfc57a338d2a1660cfe45ed7b8c9ec85dc7e155f64638d6e10f17",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -296,6 +302,11 @@
           "ok": true
         },
         {
+          "url": "http://127.0.0.1:8770/imagenes/jugu042/JUGU042-02.webp?v=206976d9fbb67e3c",
+          "http": 200,
+          "ok": true
+        },
+        {
           "url": "http://127.0.0.1:8770/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
           "http": 200,
           "ok": true
@@ -311,13 +322,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-059/qa-local/movil/JUGU042-390.png",
-      "sha256": "5b20ff76e3b7046d40db9f3746a41de2645662d32740d58393bf5ea4a637ece9",
+      "archivo": "reportes/lote-060/qa-local/movil/JUGU042-390.png",
+      "sha256": "6d2a4e0ab621864d00ac6d0374b3d4a8fb5262e474666ce1ae78a93b5ea74122",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-059/qa-local/movil/JUGU042-1280.png",
-        "sha256": "2a4aece22ad05296ff9240965356da93a7a6cfa54aaff0b8c5424dec3219ecc6",
+        "archivo": "reportes/lote-060/qa-local/movil/JUGU042-1280.png",
+        "sha256": "954b734dfae2dbec750c19a0f6d6f4606eda53f9eb535f5e25d3e778bacd3007",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

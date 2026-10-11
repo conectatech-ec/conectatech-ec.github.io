@@ -108,7 +108,9 @@
     "datos-593/inventario-publico.csv"
   ],
   "imagen_principal": "/imagenes/jugu088/JUGU088-01.webp",
-  "imagenes_secundarias": [],
+  "imagenes_secundarias": [
+    "/imagenes/jugu088/JUGU088-02.webp"
+  ],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
@@ -119,6 +121,10 @@
     "archivos": [
       {
         "sha256": "8ac3e5160647d7b1e43c4dcbc8bd47c843e405d8d030c8e0a92c8cc01fb9e049",
+        "fuente": "https://drive.google.com/file/d/14b8yA5bmq34YtQKlBfSK6Qyv0NRMmJEW/view?usp=drivesdk"
+      },
+      {
+        "sha256": "b73d7cfd0e9ccf35aac89e089f1ae5b3ee5908651e69de8e6b931b41ef923df0",
         "fuente": "https://drive.google.com/file/d/14b8yA5bmq34YtQKlBfSK6Qyv0NRMmJEW/view?usp=drivesdk"
       }
     ],
@@ -171,7 +177,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu088-juguete-carro-coleccionable-camaro/",
   "fecha_verificacion": "2026-10-11T20:51:00.078340+00:00",
   "descripcion": "Carro de colección con carrocería deportiva, alerón posterior y aros oscuros. Su estilo de cupé y los detalles visibles del interior lo convierten en una pieza vistosa para exhibición.",
@@ -250,7 +256,7 @@
       "solicitado": "JUGU088",
       "sku": "JUGU088",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T20:51:27.856Z",
+      "fecha": "2026-10-11T21:12:10.140Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -274,8 +280,8 @@
       "url_comprobada": "http://127.0.0.1:8770/productos/jugu088-juguete-carro-coleccionable-camaro/",
       "archivo_html": "productos/jugu088-juguete-carro-coleccionable-camaro/index.html",
       "http": 200,
-      "sha256_html": "ff16c8ec60cf5ec602779724a445bf1aea818ca8e9a7b611f7b0ef0e7a1d12ca",
-      "sha256_html_local": "ff16c8ec60cf5ec602779724a445bf1aea818ca8e9a7b611f7b0ef0e7a1d12ca",
+      "sha256_html": "365a3e6508905e7e80686fb584e15f8e53cd2d7505f33f5f2bca019db4b5b053",
+      "sha256_html_local": "365a3e6508905e7e80686fb584e15f8e53cd2d7505f33f5f2bca019db4b5b053",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -309,6 +315,11 @@
           "ok": true
         },
         {
+          "url": "http://127.0.0.1:8770/imagenes/jugu088/JUGU088-02.webp?v=b575bad36be17a7d",
+          "http": 200,
+          "ok": true
+        },
+        {
           "url": "http://127.0.0.1:8770/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
           "http": 200,
           "ok": true
@@ -324,13 +335,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-059/qa-local/movil/JUGU088-390.png",
-      "sha256": "bb499d0b18a91ddeddb55341facb9f81deead57a9b60671da0c7c116194f7c6e",
+      "archivo": "reportes/lote-060/qa-local/movil/JUGU088-390.png",
+      "sha256": "94b807745460a1098c11e856637dd0d3cc637b8f36c6f1e1fac672b3c9666d14",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-059/qa-local/movil/JUGU088-1280.png",
-        "sha256": "7757f5b6ce30bca652ad3fd5dfee38f72dc249c532bc49aa1e91f0d02e633e95",
+        "archivo": "reportes/lote-060/qa-local/movil/JUGU088-1280.png",
+        "sha256": "16765f7b938c677afef7e39f504cb898a75d132b0975c90bef0d0389801d5684",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
