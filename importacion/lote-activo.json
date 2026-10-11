@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "lote-056",
   "rama": "catalogo/lote056",
-  "estado": "APROBADO_LOCAL",
+  "estado": "PUBLICADO_VERIFICADO",
   "manifiesto": "importacion/lotes/lote-056/manifiesto-aprobados.json",
   "skus": [
     "TABL002",
@@ -15,5 +15,19 @@
   "qa_manifiesto": "importacion/lotes/lote-056/manifiesto-qa.json",
   "qa_base_publica": null,
   "continuidad": "importacion/lotes/lote-056/continuidad.json",
-  "proximo_paso": "Validar candidato en GitHub Actions; integrar y cotejar HTTP de Pages antes de registrar novedades. TELE001 permanece en revisión de bases; no detener otros productos."
+  "proximo_paso": "Próximo lote incremental por prioridad comercial: revisar primero celulares/tablets aún sin evaluar, después monitores y almacenamiento. Conservar excepciones y no repetir SKU publicados sin problema visual.",
+  "qa_prepublicacion": {
+    "run_id": 38163121073,
+    "commit_candidato": "d463fc7e518dab1aa9610a5c3f8c3e2990c01c91",
+    "sku_catalogo": 15,
+    "sku_fichas": 5
+  },
+  "publicacion": {
+    "commit_aplicacion": "d463fc7e518dab1aa9610a5c3f8c3e2990c01c91",
+    "commit_desplegado": "2cd57fc5df2a0016686b675bd8fb72d131ed6d32",
+    "run_pages": 38163321987,
+    "reporte_http": "reportes/lote-056/http-publicacion.json",
+    "publicados_verificados": 5,
+    "errores": 0
+  }
 }

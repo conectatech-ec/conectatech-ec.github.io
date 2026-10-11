@@ -1,6 +1,6 @@
 {
   "lote": "lote-056",
-  "estado": "APROBADO_VISUAL",
+  "estado": "PUBLICADO_VERIFICADO",
   "sku_propuestos": [
     "TABL002",
     "MONI005",
@@ -28,6 +28,76 @@
     "MONI005 solo frontal, sin representar puertos o soporte ocultos; modelo no declarado.",
     "Memorias: marcados de capacidad y formato cotejados; no es recuperación óptica ni ensayo de capacidad o velocidad."
   ],
-  "publicados": 0,
-  "autorizacion": "Publicación automática del propietario, condicionada a validación visual y técnica."
+  "publicados": 5,
+  "autorizacion": "Publicación automática del propietario, condicionada a validación visual y técnica.",
+  "fuentes_descargadas": [
+    {
+      "nombre": "MONI005.jpg",
+      "sha256": "671b4887a80c88b7e7d57000e55fa190280e65f712f4404471f25cfc8bacefec",
+      "original_intacto": true
+    },
+    {
+      "nombre": "MONI005_20261009_220403.jpg",
+      "sha256": "1c88bde3f7b7b4bd3fa82dba5641ed4b9eee62384aba03ac458b6d567f288160",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TABL002.jpg",
+      "sha256": "93cf38e1014cbe3cc35f831187bf6b7c43934891df52847ef224a53f520ad199",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TABL002_20261009_175535.jpg",
+      "sha256": "2d514e079d1ae2593e08c2013767a13e3e0563434cbc09140ca0648d143934b3",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TABL002_20261009_175539.jpg",
+      "sha256": "254eded553eb61bc22fc22df06ef8b7874b7b1c19d83448f69fefe3f9af56257",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TARJ001.jpg",
+      "sha256": "e98c9c23e02b38bc3c52702ffd354e575b32ddfab281a7043392fa51fd84c8da",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TARJ007.jpg",
+      "sha256": "a6a45255261d3b05af073c9b8b4644752418cab008e063862085fb468ffaf792",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TARJ010.jpg",
+      "sha256": "fa7f54595576d6638a24db13564d2e4ed87311675f71eb121043c468239da70c",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TELE001.jpg",
+      "sha256": "d4a89c940c4f8798b3dad57d37e6168f95da676f9631e80193d446d2e4336182",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TELE001_20261009_220113.jpg",
+      "sha256": "f0cf6b1d0a5bde8a537b6c430e3fd325f4e35a904e02398b9aa4709ab26ce99a",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TELE001_20261009_220120.jpg",
+      "sha256": "ecd774629c748b59ee785aac526396da987ff802fc8f3997309a87461758c4ac",
+      "original_intacto": true
+    },
+    {
+      "nombre": "TELE001_20261009_220124.jpg",
+      "sha256": "2ec9073e86213dae523254a69899d10f1cf3161b8ef966b60abece32f4287ac2",
+      "original_intacto": true
+    }
+  ],
+  "qa_prepublicacion": {
+    "run_id": 38163121073,
+    "conclusion": "success",
+    "commit": "d463fc7e518dab1aa9610a5c3f8c3e2990c01c91",
+    "sku_catalogo": 15,
+    "sku_fichas": 5
+  },
+  "reporte_http": "reportes/lote-056/http-publicacion.json"
 }
