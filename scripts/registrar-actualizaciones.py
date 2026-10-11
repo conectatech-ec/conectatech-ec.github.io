@@ -233,7 +233,7 @@ def version_asset_reference(index_data, js_data):
             if len(sources) != 1:
                 raise ValueError('El script del catálogo contiene atributos src duplicados')
             raw_tag = self.get_starttag_text()
-            matches = list(re.finditer(r'''\bsrc\s*=\s*(["'])(/assets/catalogo-publicado\.js(?:\?v=[a-f0-9]+)?)\1''', raw_tag, re.I))
+            matches = list(re.finditer(r'''\bsrc\s*=\s*(["'])(/assets/catalogo-publicado\.js(?:\?v=[a-z0-9_-]+)?)\1''', raw_tag, re.I))
             if len(matches) != 1:
                 raise ValueError('Referencia del script no reconocida; no se modifica otro HTML')
             line, column = self.getpos(); offset = line_starts[line - 1] + column
