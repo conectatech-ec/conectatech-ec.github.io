@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "fecha": "2026-10-11T20:51:21.725Z",
+  "fecha": "2026-10-11T20:53:22.038Z",
   "base": "http://127.0.0.1:8770",
   "sku_solicitados": [
     "FLAS009",
@@ -13,15 +13,14 @@
     "JUGU075",
     "JUGU104",
     "JUGU088",
-    "TARJ019",
-    "TELF001"
+    "TARJ019"
   ],
   "alcance": "Renderizado real, navegación y datos del catálogo; no certifica fidelidad visual del producto ni publicación.",
   "resultados": [
     {
       "ancho_viewport": 1280,
       "alto_viewport": 900,
-      "estado": "REVISAR",
+      "estado": "VERIFICADO",
       "verificaciones": {
         "html_exacto": true,
         "metadatos_publicados": true,
@@ -43,13 +42,11 @@
         "paginacion_siguiente": true,
         "paginacion_anterior": true,
         "categoria": true,
-        "productos_del_lote": false,
+        "productos_del_lote": true,
         "busqueda_sin_resultados": true,
         "restaurar_busqueda": true
       },
-      "errores": [
-        "Una o más tarjetas aprobadas fallan carga, enlaces, miniaturas o datos."
-      ],
+      "errores": [],
       "productos": [
         {
           "sku": "FLAS009",
@@ -820,52 +817,6 @@
             "sha256_local": "752e96ea168359ae9aa9338cc2308051b2d92dcc9c77b2961dff41b680458c00"
           },
           "estado": "VERIFICADO"
-        },
-        {
-          "sku": "TELF001",
-          "errores": [
-            "Imagen no carga o usa ajuste diferente decontain.",
-            "Srcset no coincide con versiones300/600/1200 aprobadas.",
-            "Portada ajena a las versiones aprobadas."
-          ],
-          "tarjeta": {
-            "sku": "TELF001",
-            "actualizado": "2026-10-11T04:42:45.065860+00:00",
-            "altura": 505.78125,
-            "ancho": 373.328125,
-            "titulo": "Telefono ZTE A56 PRO 128GB",
-            "categoria": "Celulares y Smartphones · TELF001",
-            "promo": "$133,89",
-            "pvp": "PVP $167,38",
-            "promo_px": 22,
-            "pvp_px": 10,
-            "pvp_tachado": false,
-            "contenido_largo": [],
-            "enlaces": {
-              "imagen": "/productos/telf001-telefono-zte-a56-pro-128gb/",
-              "titulo": "/productos/telf001-telefono-zte-a56-pro-128gb/",
-              "detalles": "/productos/telf001-telefono-zte-a56-pro-128gb/"
-            },
-            "imagen": {
-              "src": "https://advance.com.ec/web/image/product.template/3552/image_1920?unique=42c8e56",
-              "srcset": null,
-              "cargada": false,
-              "naturalWidth": 0,
-              "naturalHeight": 0,
-              "actual": "https://advance.com.ec/web/image/product.template/3552/image_1920?unique=42c8e56",
-              "ajuste": "contain"
-            }
-          },
-          "miniaturas": [],
-          "ficha": {
-            "url": "http://127.0.0.1:8770/productos/telf001-telefono-zte-a56-pro-128gb/",
-            "archivo_local": "productos/telf001-telefono-zte-a56-pro-128gb/index.html",
-            "ok": true,
-            "http": 200,
-            "sha256": "da87c9caa0a59f535f95ebf6361fc53f55d38920a3f22d67f415197cde629ff7",
-            "sha256_local": "da87c9caa0a59f535f95ebf6361fc53f55d38920a3f22d67f415197cde629ff7"
-          },
-          "estado": "REVISAR"
         }
       ],
       "http": 200,
@@ -1722,7 +1673,7 @@
     {
       "ancho_viewport": 390,
       "alto_viewport": 900,
-      "estado": "REVISAR",
+      "estado": "VERIFICADO",
       "verificaciones": {
         "html_exacto": true,
         "metadatos_publicados": true,
@@ -1744,13 +1695,11 @@
         "paginacion_siguiente": true,
         "paginacion_anterior": true,
         "categoria": true,
-        "productos_del_lote": false,
+        "productos_del_lote": true,
         "busqueda_sin_resultados": true,
         "restaurar_busqueda": true
       },
-      "errores": [
-        "Una o más tarjetas aprobadas fallan carga, enlaces, miniaturas o datos."
-      ],
+      "errores": [],
       "productos": [
         {
           "sku": "FLAS009",
@@ -2521,52 +2470,6 @@
             "sha256_local": "752e96ea168359ae9aa9338cc2308051b2d92dcc9c77b2961dff41b680458c00"
           },
           "estado": "VERIFICADO"
-        },
-        {
-          "sku": "TELF001",
-          "errores": [
-            "Imagen no carga o usa ajuste diferente decontain.",
-            "Srcset no coincide con versiones300/600/1200 aprobadas.",
-            "Portada ajena a las versiones aprobadas."
-          ],
-          "tarjeta": {
-            "sku": "TELF001",
-            "actualizado": "2026-10-11T04:42:45.065860+00:00",
-            "altura": 348.375,
-            "ancho": 176.5,
-            "titulo": "Telefono ZTE A56 PRO 128GB",
-            "categoria": "Celulares y Smartphones · TELF001",
-            "promo": "$133,89",
-            "pvp": "PVP $167,38",
-            "promo_px": 20,
-            "pvp_px": 10,
-            "pvp_tachado": false,
-            "contenido_largo": [],
-            "enlaces": {
-              "imagen": "/productos/telf001-telefono-zte-a56-pro-128gb/",
-              "titulo": "/productos/telf001-telefono-zte-a56-pro-128gb/",
-              "detalles": "/productos/telf001-telefono-zte-a56-pro-128gb/"
-            },
-            "imagen": {
-              "src": "https://advance.com.ec/web/image/product.template/3552/image_1920?unique=42c8e56",
-              "srcset": null,
-              "cargada": false,
-              "naturalWidth": 0,
-              "naturalHeight": 0,
-              "actual": "https://advance.com.ec/web/image/product.template/3552/image_1920?unique=42c8e56",
-              "ajuste": "contain"
-            }
-          },
-          "miniaturas": [],
-          "ficha": {
-            "url": "http://127.0.0.1:8770/productos/telf001-telefono-zte-a56-pro-128gb/",
-            "archivo_local": "productos/telf001-telefono-zte-a56-pro-128gb/index.html",
-            "ok": true,
-            "http": 200,
-            "sha256": "da87c9caa0a59f535f95ebf6361fc53f55d38920a3f22d67f415197cde629ff7",
-            "sha256_local": "da87c9caa0a59f535f95ebf6361fc53f55d38920a3f22d67f415197cde629ff7"
-          },
-          "estado": "REVISAR"
         }
       ],
       "http": 200,
@@ -3411,7 +3314,7 @@
       },
       "captura": {
         "archivo": "reportes/lote-059/qa-local/catalogo/catalogo-390.png",
-        "sha256": "0f537a5104c6b65d904975fb742c7fcca30a472bfc59755da7d55a2c727e90cf",
+        "sha256": "d4486dcf33dc2af5bee36720cd5829d04c30ee5a1b88721aefbb146b26dbbfd7",
         "recorte": {
           "x": 14,
           "y": 0,
@@ -3789,14 +3692,6 @@
       "http": 200,
       "sha256": "752e96ea168359ae9aa9338cc2308051b2d92dcc9c77b2961dff41b680458c00",
       "sha256_local": "752e96ea168359ae9aa9338cc2308051b2d92dcc9c77b2961dff41b680458c00"
-    },
-    {
-      "url": "http://127.0.0.1:8770/productos/telf001-telefono-zte-a56-pro-128gb/",
-      "archivo_local": "productos/telf001-telefono-zte-a56-pro-128gb/index.html",
-      "ok": true,
-      "http": 200,
-      "sha256": "da87c9caa0a59f535f95ebf6361fc53f55d38920a3f22d67f415197cde629ff7",
-      "sha256_local": "da87c9caa0a59f535f95ebf6361fc53f55d38920a3f22d67f415197cde629ff7"
     }
   ],
   "advertencias_ajenas_al_lote": [
@@ -3832,8 +3727,8 @@
   },
   "resumen": {
     "vistas_comprobadas": 2,
-    "vistas_verificadas": 0,
-    "sku_solicitados": 12,
-    "errores": 2
+    "vistas_verificadas": 2,
+    "sku_solicitados": 11,
+    "errores": 0
   }
 }
