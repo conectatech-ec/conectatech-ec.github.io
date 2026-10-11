@@ -1,0 +1,311 @@
+{
+  "lote": "lote-055",
+  "fuente_prioridades": "importacion/prioridades-comerciales.json",
+  "avanzados": [
+    "CARG058",
+    "DISC009",
+    "TARJ003"
+  ],
+  "conservados_sin_reprocesar": [
+    "CARG059",
+    "DISC003"
+  ],
+  "pendientes": [
+    {
+      "sku": "MICR08",
+      "motivo": "Propuesta de corrección pendiente de fidelidad física de cápsula y base; conservar rama revision/correccion-drive-053."
+    },
+    {
+      "sku": "TELF012",
+      "motivo": "Cuatro fotos con nombre TELF012 muestran Redmi A7 Pro, distinto de Samsung A17 SM-A175F/DS en caja frontal/etiqueta; no tratar como variantes del mismo SKU."
+    },
+    {
+      "sku": "TABL003",
+      "motivo": "Fotos del mismo SKU muestran Redmi Pad 2 de 11 pulgadas (25040RP0AL) y de 9,7 (2603ARP14G). No afirmar una variante única ni mezclar hardware."
+    },
+    {
+      "sku": "TELF001",
+      "motivo": "Modelo, memoria y color identificados; propuesta preservada pendiente de contraste de acabado y zonas inferiores de carcasa no visibles completamente. Sitio oficial bloqueado HTTP 403; no publicar reconstrucción no comprobada."
+    },
+    {
+      "sku": "TELF018",
+      "motivo": "Modelo, memoria y color identificados; propuesta preservada pendiente de contraste de acabado y zonas inferiores de carcasa no visibles completamente. Sitio oficial bloqueado HTTP 403; no publicar reconstrucción no comprobada."
+    }
+  ],
+  "candidatos_identificados": [
+    "MONI005"
+  ],
+  "referencias_consultadas": {
+    "TELF001": 3,
+    "TELF012": 6,
+    "TABL003": 6,
+    "TELF018": 2,
+    "MONI005": 2,
+    "DISC003": 2,
+    "DISC009": 3,
+    "TARJ003": 2,
+    "CARG058": 2
+  },
+  "aprobaciones_visuales": "CARG058, DISC009 y TARJ003 aprobados visualmente; WebP y capturas móvil/escritorio revisadas. Contratos y QA locales sin pendientes.",
+  "observacion_DISC003": "La cola superficial dice EN PROCESO, pero produccion.estado y contrato acreditan publicación anterior; no aplicar nueva propuesta ni renovar fecha.",
+  "evidencias_referencia": {
+    "DISC003": [
+      {
+        "nombre": "DISC003.jpg",
+        "sha256": "7f15487d14754313a3a76d21e1c6a4ebdc2149d2b41d8e3f3534bccdb7718a9a",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "DISC003_20261010_143050.jpg",
+        "sha256": "e5e5726b9251d339d0b7c60b8529057e27ce0815bb9c05c243c2c749bccbeb99",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      }
+    ],
+    "DISC009": [
+      {
+        "nombre": "DISC009.jpg",
+        "sha256": "b64198dfb3f717f83a6b4552114519042095dc15a60e9872383b6e517a9aa785",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "DISC009_20261010_164811.jpg",
+        "sha256": "6016d3c717bd975d19a7e84ab93fd2cbb935f613cdce50276815f70ffec0c446",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "DISC009_20261010_164816.jpg",
+        "sha256": "0b2a1e60472d650589154f49f49ff5c84041e11190b5ee132f6dc226284286a2",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      }
+    ],
+    "MONI005": [
+      {
+        "nombre": "MONI005.jpg",
+        "sha256": "671b4887a80c88b7e7d57000e55fa190280e65f712f4404471f25cfc8bacefec",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "MONI005_20261009_220403.jpg",
+        "sha256": "1c88bde3f7b7b4bd3fa82dba5641ed4b9eee62384aba03ac458b6d567f288160",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      }
+    ],
+    "TABL003": [
+      {
+        "nombre": "TABL003.jpg",
+        "sha256": "403e1773ae2881d0d6f3dd7cc2e637dd024b0a8af597352c21d9cdfc912e8203",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TABL003_20261009_175342.jpg",
+        "sha256": "6e614d2bdad5d34dad95104aada1406863819af42160dfdb652b26d1947b24b0",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TABL003_20261009_175447.jpg",
+        "sha256": "cf79062d92890b32f609f04e92eb3e0103548d86d0504fc8eb5e16a968e18745",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TABL003_20261009_175619.jpg",
+        "sha256": "bc4350d8a37d807cf8047b195074380a7806d46af47a9cd07f45afe0edcc698c",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TABL003_20261009_175624.jpg",
+        "sha256": "1962c9abbc089b7bed0d4a5c5df9df87827f2056522c0bf2b65798311ba17299",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TABL003_20261009_175628.jpg",
+        "sha256": "0025c442d7d2c56b81fb40c997631273580552b96028b032d2b4b8a63fc909ea",
+        "resolucion": [
+          1800,
+          1350
+        ],
+        "original_intacto": true
+      }
+    ],
+    "TARJ003": [
+      {
+        "nombre": "TARJ003.jpg",
+        "sha256": "1141b95d0422447cd4b0032ae0e3acc575e99be30054b3592c0b8d19313a9648",
+        "resolucion": [
+          1800,
+          1350
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TARJ003_20261009_162426.jpg",
+        "sha256": "4b4ad162d48cca3522cc6a489005c205abe3f9fa07ee1f5a49c51b00069658c6",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      }
+    ],
+    "TELF001": [
+      {
+        "nombre": "TELF001.jpg",
+        "sha256": "c6dd533c703a4d52be641a6245d3e0d5f9a4e3b8b497a554e733d4413da57a3f",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TELF001_20261009_180045.jpg",
+        "sha256": "90e8e08787306dffef8967476b160f17d07e20631a1a417c6a48982a48ac4101",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TELF001_20261009_180050.jpg",
+        "sha256": "144224b4ad92607c8ab523e29e2dd4fd9ed52cfef61d3de4b0982a41f5b685a2",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      }
+    ],
+    "TELF012": [
+      {
+        "nombre": "TELF012.jpg",
+        "sha256": "6f91fa01de0f6c9b8ae3b2efdaa21dffae0230a980f5ae68ef0f054616fdf820",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TELF012_20261009_180309.jpg",
+        "sha256": "d23a600302b0e1f9b1f7d2ed07dc3dead3ece0f72fc5b0705e993de9ab6dafdf",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TELF012_20261009_180345.jpg",
+        "sha256": "926f6b52cdf35ffa1ffacd4704754b08dfcaf0df767e00042ac0362dbb95276e",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TELF012_20261009_180350.jpg",
+        "sha256": "345d860fb22db4b23dd26cf556029ae8bf474835bf77269d06765e791c238797",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TELF012_20261009_180353.jpg",
+        "sha256": "f018c8569c92203df27ee6341494398880cd200424ca490240c28d3e03d9f38b",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TELF012_20261009_180357.jpg",
+        "sha256": "c48ddec0d545a86ac51ac8f0a8e5654d2368f597dca2ffa596425b4df8c58ea5",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      }
+    ],
+    "TELF018": [
+      {
+        "nombre": "TELF018.jpg",
+        "sha256": "a66a83bd9e50740b1f0569f6701d588caeac2a5f72c8345a4478ac566c1d206a",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      },
+      {
+        "nombre": "TELF018_20261009_174713.jpg",
+        "sha256": "5d99ac74af224a02318940637f30c977ba6bab28303f8da13fa1531702c6919a",
+        "resolucion": [
+          1350,
+          1800
+        ],
+        "original_intacto": true
+      }
+    ]
+  },
+  "herramientas": {
+    "drive": "Descarga anónima desde drive.usercontent.google.com, sin sesión; todas las vistas analizadas.",
+    "apple": "Referencia oficial MD506 descargada para contraste del terminal, no republicada.",
+    "busqueda": "Google responde una página de reintento JavaScript sin resultados; no se considera investigación verificada.",
+    "sitios_fabricante_telefonos": "Mi y ZTE devolvieron HTTP 403; pendientes no sustituidos por productos similares.",
+    "imagen_final": "Representaciones comerciales asistidas por IA; no fotografías ópticas recuperadas; evidencia y límites registrados por contrato.",
+    "navegador": "QA local con Chromium; HTTPS público se verificará en GitHub Actions debido al certificado del proxy local."
+  }
+}

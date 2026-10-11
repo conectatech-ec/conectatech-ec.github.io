@@ -1,3 +1,11 @@
+## Continuidad y prioridades comerciales — 11 de octubre de 2026
+
+Orden vigente del propietario: terminar trabajos avanzados que puedan completarse con fidelidad y continuar sin repetir descargas, producción o publicaciones aprobadas. Publicación automática de SKU aptos tras revisión visual, contrato v3, QA de imágenes/datos/navegación y comprobación de Pages; revisión del propietario posterior. No pedir aprobación rutinaria. Esto no resuelve discrepancias físicas de propuestas anteriores ni permite cambiar banderas para eludir controles.
+
+Prioridad: celulares/tablets → televisores/monitores → almacenamiento → smartwatch → audio → cargadores/cables/adaptadores/soportes/accesorios móviles → computación/periféricos/tecnología restante → juguetes/otras categorías. Favorecer disponibilidad, relevancia comercial y referencias completas; una excepción no detiene los siguientes SKU aptos. Drive identifica producto, variantes y especificaciones; no publicar cajas ni fotos básicas sin mejora. Consultar todas las vistas y validar sufijos contra el inventario de códigos reales. No crear SKU para variantes; contradicciones se registran sin explicación inventada.
+
+Conservar diseño compacto, originales, Promo Contado, PVP, stock, SKU, URLs y contenido comercial correcto. Solo mejoras editoriales verificables. Imágenes premium sin cajas, hardware inventado ni adornos; fuentes externas del modelo exacto con uso apropiado. Fechas recientes sólo tras cambio real publicado y verificado. Documentar procedimientos al producir; no desarrollar ahora un sistema nuevo que retrase publicaciones. Política persistente en `importacion/prioridades-comerciales.json`; reusar scripts y QA existentes.
+
 ## Estándar aprobado para todos los SKU — 10 de octubre de 2026
 
 El propietario inspeccionó POWE003 y ADAP005 publicados y aprobó conservar este formato y las reglas fotográficas para todos los SKU. Referencias por hash en `importacion/estandar-comercial-aprobado.json`. Reutilizar `scripts/ficha-beneficios.cjs`: beneficios concretos y verificados en recuadros azul/verde, especificaciones y detalles desplegables. Acabado fotográfico limpio, atractivo y de producto nuevo; mostrar conexiones y controles sólo con referencias suficientes. Aplicar incrementalmente a las nuevas fichas y al actualizar existentes; no regenerar imágenes que ya cumplen.

@@ -1,26 +1,17 @@
 {
   "version": 1,
-  "lote": "lote-054",
-  "rama": "catalogo/lote054",
-  "estado": "APLICADO_LOCAL",
-  "manifiesto": "importacion/lotes/lote-054/manifiesto-aprobados.json",
+  "lote": "lote-055",
+  "rama": "catalogo/lote055",
+  "estado": "APROBADO_LOCAL",
+  "manifiesto": "importacion/lotes/lote-055/manifiesto-aprobados.json",
   "skus": [
-    "ADAP040",
-    "ADAP043",
-    "ADAP045",
-    "ADAP046",
-    "ADAP049",
-    "ADAP056",
-    "ADAP059"
+    "CARG058",
+    "DISC009",
+    "TARJ003"
   ],
-  "lote_anterior": "lote-053",
-  "fuentes": {
-    "fotografias_drive": 19,
-    "paginacion_completa": true,
-    "registro": "Registro A:F"
-  },
-  "candidatos_revisados": 8,
+  "lote_anterior": "lote-054",
+  "qa_manifiesto": "importacion/lotes/lote-055/manifiesto-aprobados.json",
   "qa_base_publica": null,
-  "qa_manifiesto": "importacion/lotes/lote-054/manifiesto-aprobados.json",
-  "proximo_paso": "Ejecutar QA real móvil/escritorio, validar contrato v3 y publicar únicamente si los siete SKU resultan aptos. ADAP075 permanece en revisión por falta de vista completa del producto."
+  "proximo_paso": "Validar candidato, integrar sin reescribir main y verificar Pages; siguientes candidatos según prioridades-comerciales.json, omitir excepciones ya registradas.",
+  "continuidad": "importacion/lotes/lote-055/continuidad.json"
 }
