@@ -7,4 +7,4 @@ Referencia autorizada por el propietario: maestros locales original-*.png. No so
 - MICR08: pendiente de referencia de la forma correcta. El maestro suministrado contiene la forma rechazada; no permite deducir una forma distinta.
 - Trece juguetes: fuera del alcance de esta corrección; empezar únicamente en una tarea posterior.
 
-Siguiente paso: publicar únicamente CARG059 después del gate, verificar HTML y WebP en Pages, registrar su actualización real y verificar catálogo público. Actualizar estados solo con resultados reales.
+CARG059 publicado y verificado: HTTP 200 y hashes de ficha y WebP 1200/600/300 coincidentes. QA GitHub Actions 38116349936 aprobado. Fecha semántica real registrada tras verificación HTTP. Siguiente paso: desplegar el registro actualizado y verificar que CARG059 aparezca primero en el catálogo público.

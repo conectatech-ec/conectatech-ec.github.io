@@ -1,7 +1,7 @@
 {
   "version": 1,
   "lote": "correccion-052",
-  "estado": "CARG059_APROBADO_LOCAL",
+  "estado": "CARG059_PUBLICADO_ORDEN_PENDIENTE",
   "solicitud_propietario": "2026-10-11: corrección visual prioritaria y publicación de SKU problemáticos.",
   "base_commit": "7f9bf6887d0d2fd4c1714d1f1c82e2765c8086c7",
   "skus": [
@@ -60,7 +60,7 @@
     },
     {
       "sku": "CARG059",
-      "estado": "APROBADO_LOCAL_QA_VERIFICADO",
+      "estado": "PUBLICADO_VERIFICADO",
       "correccion": "Luz, contraste, definición y sombra premium; sin cambio físico frente al maestro suministrado.",
       "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
       "imagen_actual": "/imagenes/carg059/CARG059-01.webp",
@@ -91,7 +91,8 @@
       "precio_contado_preservar": 52.9,
       "pvp_preservar": 60.84,
       "stock_preservar": 1,
-      "instruccion_apple": "La presentación de los compatibles debe corresponder al artículo real vendido y al aspecto esperado; mantener la identificación AAA/genérico/compatible en ficha."
+      "instruccion_apple": "La presentación de los compatibles debe corresponder al artículo real vendido y al aspecto esperado; mantener la identificación AAA/genérico/compatible en ficha.",
+      "verificacion_http": "reportes/correccion-052/http.json"
     },
     {
       "sku": "MICR08",
@@ -177,7 +178,7 @@
     "conectatech-ec.github.io",
     "api.github.com"
   ],
-  "publicado_en_esta_sesion": false,
+  "publicado_en_esta_sesion": true,
   "nuevos_maestros_generados": true,
   "verificaciones_acceso": {
     "pages": "HTTP 200; imágenes CARG058, CARG059 y MICR08 idénticas al checkout",
@@ -229,5 +230,13 @@
     "edicion_asistida_ia": true,
     "originales_intactos_en_drive": true,
     "referencia_local_conservada": true
-  }
+  },
+  "sku_publicados": [
+    "CARG059"
+  ],
+  "qa_github": {
+    "run_id": 38116349936,
+    "resultado": "success"
+  },
+  "verificacion_http": "reportes/correccion-052/http.json"
 }
