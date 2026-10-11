@@ -16,7 +16,7 @@ from urllib.parse import urljoin
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://conectatech-ec.github.io'
-ORDERS = ('recientes', 'catalogo', 'nombre', 'precio-asc', 'precio-desc')
+ORDERS = ('fotos', 'recientes', 'catalogo', 'nombre', 'precio-asc', 'precio-desc')
 _spec = importlib.util.spec_from_file_location('editorial_actualizaciones', ROOT / 'scripts/importar-productos.py')
 editorial = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(editorial)
 

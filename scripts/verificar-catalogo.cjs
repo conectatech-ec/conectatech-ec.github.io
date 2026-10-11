@@ -132,7 +132,10 @@ async function main() {
         });
         const order = mode => {
           const list = inStock.slice();
-          if (mode === 'recientes') list.sort((a, b) => (Date.parse(payload.productos[b.sku]?.actualizadoEn || '') || 0) - (Date.parse(payload.productos[a.sku]?.actualizadoEn || '') || 0));
+          const updatedTime = p => Date.parse(payload.productos[p.sku]?.actualizadoEn || '') || 0;
+          const hasPhoto = p => Boolean(p.imageUrl || payload.productos[p.sku]?.imagen?.src);
+          if (mode === 'fotos') list.sort((a, b) => Number(hasPhoto(b)) - Number(hasPhoto(a)) || updatedTime(b) - updatedTime(a));
+          if (mode === 'recientes') list.sort((a, b) => updatedTime(b) - updatedTime(a));
           if (mode === 'nombre') list.sort((a, b) => a.name.localeCompare(b.name, 'es', {sensitivity: 'base', numeric: true}));
           if (mode === 'precio-asc') list.sort((a, b) => a.promo - b.promo);
           if (mode === 'precio-desc') list.sort((a, b) => b.promo - a.promo);
@@ -141,12 +144,12 @@ async function main() {
         const defaultMode = payload.ordenPredeterminado || 'recientes';
         check('orden_inicial', await page.locator('#catalogSort').inputValue() === defaultMode && equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Orden inicial distinto de las novedades publicadas.');
         row.ordenes = {};
-        for (const mode of ['recientes', 'catalogo', 'nombre', 'precio-asc', 'precio-desc']) {
+        for (const mode of ['fotos', 'recientes', 'catalogo', 'nombre', 'precio-asc', 'precio-desc']) {
           await page.locator('#catalogSort').selectOption(mode);
           const actual = await ids(), expected = order(mode).slice(0, pageSize).map(p => p.sku);
           row.ordenes[mode] = actual; check('orden:' + mode, equals(actual, expected), 'Orden incorrecto: ' + mode);
         }
-        await page.locator('#catalogSort').selectOption('recientes');
+        await page.locator('#catalogSort').selectOption(defaultMode);
         const initial = await snapshot(); row.diseno = initial;
         check('columnas', initial.columnas === (width === 1280 ? 3 : 2), 'Número de columnas incorrecto: ' + initial.columnas);
         check('sin_desbordamiento_catalogo', initial.scrollWidth <= Math.ceil(initial.ancho) + 1, 'El grid presenta desbordamiento horizontal.');
@@ -169,14 +172,14 @@ async function main() {
         row.captura = {archivo: file, sha256: sha(await page.screenshot({path: safe(file), clip, animations: 'disabled'})), recorte: clip};
         if (inStock.length > pageSize) {
           await page.locator('#ct-pages button[data-page="next"]').click();
-          check('paginacion_siguiente', equals(await ids(), order('recientes').slice(pageSize, pageSize * 2).map(p => p.sku)), 'Página2 no conserva orden de novedades.');
+          check('paginacion_siguiente', equals(await ids(), order(defaultMode).slice(pageSize, pageSize * 2).map(p => p.sku)), 'Página2 no conserva orden de novedades.');
           await page.locator('#ct-pages button[data-page="prev"]').click();
-          check('paginacion_anterior', equals(await ids(), order('recientes').slice(0, pageSize).map(p => p.sku)), 'Página anterior no restaura resultados.');
+          check('paginacion_anterior', equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Página anterior no restaura resultados.');
         }
         const categoryName = [...new Set(inStock.map(category))].find(name => inStock.filter(p => category(p) === name).length > pageSize) || category(inStock[0]);
         const chip = page.locator('#chips .chip').filter({hasText: categoryName});
         await chip.first().click();
-        const expectedCategory = order('recientes').filter(p => category(p) === categoryName).slice(0, pageSize).map(p => p.sku);
+        const expectedCategory = order(defaultMode).filter(p => category(p) === categoryName).slice(0, pageSize).map(p => p.sku);
         check('categoria', equals(await ids(), expectedCategory), 'Filtro de categoría no corresponde a los productos de ' + categoryName);
         await page.locator('#chips .chip[data-cat="TODOS"]').click();
         for (const sku of skus) {
@@ -222,7 +225,7 @@ async function main() {
         await page.locator('#q').fill('CONECTATECH-SKU-INEXISTENTE-000000');
         check('busqueda_sin_resultados', (await ids()).length === 0 && await page.locator('#empty').isVisible(), 'Búsqueda inexistente no muestra estado vacío.');
         await page.locator('#q').fill('');
-        check('restaurar_busqueda', equals(await ids(), order('recientes').slice(0, pageSize).map(p => p.sku)), 'Borrar búsqueda no restaura ordenreciente.');
+        check('restaurar_busqueda', equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Borrar búsqueda no restaura ordenreciente.');
         const legacy = await page.evaluate(() => Array.from(document.querySelectorAll('#featured img,.ct-promo-stage img')).filter(im => im.complete && im.naturalWidth === 0).map(im => ({src: im.getAttribute('src'), motivo: 'Imagen heredada de destacado/campaña no cargada; fuera del lote del grid.'})));
         report.advertencias_ajenas_al_lote.push(...legacy);
         row.estado = row.errores.length ? 'REVISAR' : 'VERIFICADO';

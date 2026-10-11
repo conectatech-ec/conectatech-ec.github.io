@@ -120,7 +120,9 @@ def apply():
   e.setdefault('imagen',{'src':oldmap[sku].get('imageUrl',''),'srcset':''});e['actualizadoEn']=timestamp
   e['actualizacion_593']={'fuente':DATA,'fecha_corte':x['cutoff'],'antes':c['antes'],'despues':c['despues'],'estado':'APLICADO_PENDIENTE_VERIFICACION_PUBLICA'}
   pub.setdefault('productos',{})[sku]={k:e[k] for k in ('actualizadoEn','huella','imagen')}
- state['ordenPredeterminado']='recientes';pub['ordenPredeterminado']='recientes';out('importacion/actualizaciones-sku.json',state)
+ order=state.get('ordenPredeterminado','fotos')
+ if order not in ('fotos','recientes','catalogo','nombre','precio-asc','precio-desc'):raise ValueError('Orden no reconocido')
+ state['ordenPredeterminado']=order;pub['ordenPredeterminado']=order;out('importacion/actualizaciones-sku.json',state)
  jstext='window.CONECTATECH_CATALOGO='+js(pub).replace('<','\\u003c')+';\n';write('assets/catalogo-publicado.js',jstext)
  updated=RX.sub(lambda m:'const products='+js(products).replace('<','\\u003c')+';\n',original,count=1)
  updated=re.sub(r'/assets/catalogo-publicado\.js(?:\?[^"\s<>]*)?', '/assets/catalogo-publicado.js?v='+sha(jstext.encode())[:12],updated)
