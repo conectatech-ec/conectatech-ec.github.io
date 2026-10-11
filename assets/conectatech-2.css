@@ -286,3 +286,19 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 .product-link,.actions a.detail{color:inherit;text-decoration:none}
 .product-link:focus-visible,.ct-sort select:focus-visible{outline:3px solid #0b56d6;outline-offset:3px}
 @media(max-width:650px){.meta{flex-wrap:wrap;gap:10px}.ct-sort{font-size:11px}}
+
+
+/* CONECTATECH — tipografía comercial v1. El logotipo mantiene Ethnocentric RG. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--ct-font-ui:'Inter',Arial,Helvetica,sans-serif;--ct-font-product:'Manrope','Inter',Arial,sans-serif}
+body,button,input,select,textarea{font-family:var(--ct-font-ui)}
+.brand,.brand span{font-family:"Ethnocentric RG",Arial,sans-serif!important}
+.card .name,.featured-card .name,.sheet h2,.product-link .name{font-family:var(--ct-font-product);font-weight:800;line-height:1.32;letter-spacing:-.28px}
+.card .name,.featured-card .name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.64em}
+.card .cat,.featured-card .cat,.card .cardbrand{font-family:var(--ct-font-ui);font-weight:700;letter-spacing:.45px}
+.card .promo,.featured-card .promo,.sheet .promo{font-family:var(--ct-font-ui);font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:-.65px}
+.card .pvp,.featured-card .pvp,.sheet .pvp{font-family:var(--ct-font-ui);font-weight:500;font-variant-numeric:tabular-nums}
+.card .promo-label,.card .promo-badge,.featured-card .promo-label{font-family:var(--ct-font-ui);font-weight:800;letter-spacing:.35px}
+.card .detail,.card .wa,.featured-card .detail,.featured-card .wa,.sheet .detail{font-family:var(--ct-font-ui);font-weight:800}
+.sheet,.sheet .spec,.sheet .benefits,.sheet details{font-family:var(--ct-font-ui)}
+@media(max-width:650px){.card .name,.featured-card .name{line-height:1.3;min-height:2.6em}}
