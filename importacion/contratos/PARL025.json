@@ -9,7 +9,7 @@
   "categoria_original": "Parlantes",
   "categoria_comercial": "Audio y Audífonos",
   "precio_contado": 25.9,
-  "pvp": 29.79,
+  "pvp": 29.78,
   "stock": 2,
   "unidad_venta": {
     "descripcion": "1 unidad",
@@ -162,7 +162,7 @@
     "publicar": "Consulta las condiciones de garantía aplicables antes de comprar."
   },
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Registro fotográfico, columna Tipo: Caja original; originalidad comercial confirmada por el propietario.",
@@ -184,7 +184,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "PARL025",
         "nombre": "PARLANTE TRIANGULAR MONSTER SUPERSTAR E1",
@@ -193,7 +193,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "PARLANTES",
-        "clasificacion": "AUDIO"
+        "clasificacion": "AUDIO",
+        "promo_contado": "25.90",
+        "pvp_final": "29.78"
       }
     },
     "identidad": {
@@ -348,5 +350,16 @@
       ],
       "estado": "VERIFICADO"
     }
-  ]
+  ],
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
+  }
 }

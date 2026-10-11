@@ -171,7 +171,7 @@
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
   "garantia": null,
   "presentacion": "sin caja",
-  "stock_fecha_corte": "2026-10-08",
+  "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 842,843,1987,1988; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
@@ -197,7 +197,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "4120c63ab157a6bb8d04d5ba6a7fb665c64532f111358dc484265cca25c1ef70",
+      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
       "fila": {
         "sku": "JUGU042",
         "nombre": "JUGUETE CAMIONETA COMBI COLECCIONABLE MEDIANA",
@@ -206,7 +206,9 @@
         "iva": "15",
         "tipo": "PRODUCTO",
         "categoria": "JUGUETES",
-        "clasificacion": "JUEGOS Y ENTRETENIMIENTO"
+        "clasificacion": "JUEGOS Y ENTRETENIMIENTO",
+        "promo_contado": "11.35",
+        "pvp_final": "13.05"
       }
     },
     "identidad": {
@@ -321,5 +323,16 @@
       }
     }
   },
-  "pendientes_publicacion": []
+  "pendientes_publicacion": [],
+  "actualizacion_593": {
+    "fecha_corte": "2026-10-10",
+    "fuente": "datos-593/corte-2026-10-10.json.gz",
+    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+    "campos": [
+      "precio_contado",
+      "pvp",
+      "stock"
+    ],
+    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
+  }
 }

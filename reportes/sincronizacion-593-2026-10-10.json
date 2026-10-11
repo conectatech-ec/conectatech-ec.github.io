@@ -1,0 +1,3824 @@
+{
+  "fuente": "Reporte-Inventario 10-10-2026.xlsx",
+  "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
+  "corte": "2026-10-10",
+  "estado": "APLICADO_VALIDADO_LOCAL",
+  "fecha_aplicacion": "2026-10-11T04:42:45.065860+00:00",
+  "resumen": {
+    "changed": 222,
+    "promo": 2,
+    "pvp": 213,
+    "stock": 15,
+    "precios_modificados": 213,
+    "sku_catalogo": 1165,
+    "sku_fuente": 1549,
+    "altas_publicadas": 0,
+    "contratos_refrescados": 84
+  },
+  "mapping": {
+    "promo": "Q: V. TOTAL",
+    "pvp": "X: PVP + Y: PVP % IVA",
+    "stock": "B: Stock"
+  },
+  "not_added_to_catalog": [
+    "AUDI092",
+    "CABL172"
+  ],
+  "preservado": [
+    "sku",
+    "nombre_comercial",
+    "imagenes",
+    "descripciones",
+    "especificaciones",
+    "URLs",
+    "diseño",
+    "tipografía",
+    "logo"
+  ],
+  "base_csv_sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
+  "financial_sha256": "6cb6f574152fa61c3bc572b96f5fa5f6a19b5697f076ec374ea5fdd764df52fc",
+  "productos": [
+    {
+      "sku": "CORR001",
+      "nombre": "Correa Smartwatch Variadas",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 10
+      },
+      "despues": {
+        "stock": 10,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "REL069",
+      "nombre": "Reloj Smartwatch Series 11 Mini",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 19.9,
+        "pvp": 22.89,
+        "stock": 16
+      },
+      "despues": {
+        "stock": 16,
+        "promo": 19.9,
+        "pvp": 22.88
+      }
+    },
+    {
+      "sku": "TELF001",
+      "nombre": "Telefono ZTE A56 PRO 128GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 133.89,
+        "pvp": 153.97,
+        "stock": 15
+      },
+      "despues": {
+        "stock": 15,
+        "promo": 133.89,
+        "pvp": 167.38
+      }
+    },
+    {
+      "sku": "ADAP004",
+      "nombre": "Adaptador de enchufe Europa a Latino blanco",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 13
+      },
+      "despues": {
+        "stock": 13,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "ADAP005",
+      "nombre": "Adaptador de enchufe Europa a Latino negro",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 16
+      },
+      "despues": {
+        "stock": 16,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "ADAP034",
+      "nombre": "Adaptador OTG Usb-c A Usb-a Hembra Orvesion",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.5,
+        "pvp": 5.18,
+        "stock": 17
+      },
+      "despues": {
+        "stock": 17,
+        "promo": 4.5,
+        "pvp": 5.17
+      }
+    },
+    {
+      "sku": "CABL102",
+      "nombre": "Cable Usb-a A Usb-c Klipxtreme 1.8M 30W Powergo 050",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 10
+      },
+      "despues": {
+        "stock": 10,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "CABL140",
+      "nombre": "Cable Usb-a A Usb-c Reshurk 6A",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 15
+      },
+      "despues": {
+        "stock": 15,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "CABL113",
+      "nombre": "Cable Usb-c A Usb-c 1M 1HORA",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 11
+      },
+      "despues": {
+        "stock": 11,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "CARG018",
+      "nombre": "Cargador Para Vehiculo 4 Puertos Usb-a Match",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 22
+      },
+      "despues": {
+        "stock": 22,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "COBE005",
+      "nombre": "Cobertor - Estuche Airpods PRO 2",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 25
+      },
+      "despues": {
+        "stock": 25,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "COBE004",
+      "nombre": "Cobertor - Estuche Airpods PRO 4",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 20
+      },
+      "despues": {
+        "stock": 20,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "ESTU048",
+      "nombre": "Estuche Silicon Para Android",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 6,
+        "pvp": 6.9,
+        "stock": 19
+      },
+      "despues": {
+        "stock": 17,
+        "promo": 6.0,
+        "pvp": 6.9
+      }
+    },
+    {
+      "sku": "JUGU080",
+      "nombre": "Juguete Carrito Coleccionable F1",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 10
+      },
+      "despues": {
+        "stock": 10,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "JUGU034",
+      "nombre": "Juguete Carro DE Coleccion Pichirilo CON Rayas Pequeo",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 37
+      },
+      "despues": {
+        "stock": 37,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "JUGU054",
+      "nombre": "Juguete Motos Pequeas HOT Wheel Coleccionables Metal",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.5,
+        "pvp": 5.18,
+        "stock": 22
+      },
+      "despues": {
+        "stock": 22,
+        "promo": 4.5,
+        "pvp": 5.17
+      }
+    },
+    {
+      "sku": "JUGU029",
+      "nombre": "Juguete Personajes Animados POP",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 26
+      },
+      "despues": {
+        "stock": 26,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "MICA003",
+      "nombre": "Mica Antihuellas Para Android",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 76
+      },
+      "despues": {
+        "stock": 76,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "MICA006",
+      "nombre": "Mica HD Para Android",
+      "campos": [
+        "pvp",
+        "stock"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 493
+      },
+      "despues": {
+        "stock": 491,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "MOUS029",
+      "nombre": "Mousepad Cuadrado Esencial",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 11
+      },
+      "despues": {
+        "stock": 11,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "PILA040",
+      "nombre": "Pila 192 392 LR41 Murata",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 10
+      },
+      "despues": {
+        "stock": 10,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "PILA013",
+      "nombre": "Pila 2032 RCA",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 16
+      },
+      "despues": {
+        "stock": 16,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "PILA052",
+      "nombre": "Pila 379 AG0 Maxday",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 1.9,
+        "pvp": 2.19,
+        "stock": 10
+      },
+      "despues": {
+        "stock": 10,
+        "promo": 1.9,
+        "pvp": 2.18
+      }
+    },
+    {
+      "sku": "PILA036",
+      "nombre": "Pila 389 - 189 - LR1130 - AG10 T&E",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 1.5,
+        "pvp": 1.73,
+        "stock": 30
+      },
+      "despues": {
+        "stock": 30,
+        "promo": 1.5,
+        "pvp": 1.72
+      }
+    },
+    {
+      "sku": "PILA050",
+      "nombre": "Pila AA RCA Pack 2",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 10
+      },
+      "despues": {
+        "stock": 10,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "PILA027",
+      "nombre": "Pila AAA RCA Pack DE 2",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 24
+      },
+      "despues": {
+        "stock": 24,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "REL043",
+      "nombre": "Reloj Animados Para Ninos Digital Y Analogico",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 14
+      },
+      "despues": {
+        "stock": 14,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "REL032",
+      "nombre": "Reloj Para Animados Nios Tapa Giratoria",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 31
+      },
+      "despues": {
+        "stock": 31,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "SOPO023",
+      "nombre": "Soporte metálico T8-04 plegable con base giratoria 360°",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 5.35,
+        "pvp": 6.15,
+        "stock": 12
+      },
+      "despues": {
+        "stock": 11,
+        "promo": 5.35,
+        "pvp": 6.15
+      }
+    },
+    {
+      "sku": "TRIP026",
+      "nombre": "Tripode Selfie N08S",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 9.55,
+        "pvp": 10.98,
+        "stock": 12
+      },
+      "despues": {
+        "stock": 10,
+        "promo": 9.55,
+        "pvp": 10.98
+      }
+    },
+    {
+      "sku": "ADAP028",
+      "nombre": "Adaptador Bluetooth Dongle HJX-001 Usb-a Tipo Flash",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "ADAP030",
+      "nombre": "Adaptador Divisor Microfono-audifonos Blanco",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 8
+      },
+      "despues": {
+        "stock": 8,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "ADAP049",
+      "nombre": "Adaptador Tarjeta DE Sonido Usb-a A Microfono+audifonos",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "ANTE001",
+      "nombre": "Antena Jupiter Para TV",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "AUDI004",
+      "nombre": "Audifonos Alambricos Basicos Esencial",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 7
+      },
+      "despues": {
+        "stock": 7,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "AUDI116",
+      "nombre": "Audifonos DE Diadema Coon Microfono Usb-c Xtech XTH-245",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 18.7,
+        "pvp": 21.51,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 18.7,
+        "pvp": 21.5
+      }
+    },
+    {
+      "sku": "AUDI104",
+      "nombre": "Audifonos DE Diadema Mono Klipxtreme Voxcom KCH-750",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 39.3,
+        "pvp": 45.2,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 39.3,
+        "pvp": 45.19
+      }
+    },
+    {
+      "sku": "AUDI101",
+      "nombre": "Audifonos Galaxy Buds 5 PRO",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 20.9,
+        "pvp": 24.04,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 20.9,
+        "pvp": 24.03
+      }
+    },
+    {
+      "sku": "AUDI106",
+      "nombre": "Audifonos Gaming JBL Quantum 650 Wireless",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 164.3,
+        "pvp": 188.95,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 164.3,
+        "pvp": 205.38
+      }
+    },
+    {
+      "sku": "AUDI088",
+      "nombre": "Audifonos Inalambricos 1HORA",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 22.9,
+        "pvp": 26.34,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 22.9,
+        "pvp": 26.33
+      }
+    },
+    {
+      "sku": "AUDI103",
+      "nombre": "Audifonos JBL Endurance Pace",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 89.3,
+        "pvp": 102.7,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 89.3,
+        "pvp": 111.63
+      }
+    },
+    {
+      "sku": "CABL070",
+      "nombre": "Cable DE Disco Duro Usb-a A USB 3.0 Micro-b",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.9,
+        "pvp": 6.79,
+        "stock": 5
+      },
+      "despues": {
+        "stock": 5,
+        "promo": 5.9,
+        "pvp": 6.78
+      }
+    },
+    {
+      "sku": "DISC005",
+      "nombre": "Disco Duro Externo Adata 1TB Antishock",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 149.3,
+        "pvp": 171.7,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 149.3,
+        "pvp": 186.63
+      }
+    },
+    {
+      "sku": "DISC003",
+      "nombre": "Disco duro externo ADATA HD710 Pro 2 TB USB 3.2",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 179.4,
+        "pvp": 206.31,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 179.4,
+        "pvp": 224.25
+      }
+    },
+    {
+      "sku": "DISC009",
+      "nombre": "Disco Duro Externo Western Digital 1TB WD Elements",
+      "campos": [
+        "promo",
+        "pvp"
+      ],
+      "antes": {
+        "promo": 135.21,
+        "pvp": 155.49,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 135.9,
+        "pvp": 169.88
+      }
+    },
+    {
+      "sku": "DISC004",
+      "nombre": "Disco Solido Externo SSD Adata 500GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 99.3,
+        "pvp": 114.2,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 99.3,
+        "pvp": 124.13
+      }
+    },
+    {
+      "sku": "TVBO010",
+      "nombre": "Fire TV Stick Amazon 4K 8GB Wifi 6",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 69.2,
+        "pvp": 79.58,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 69.2,
+        "pvp": 86.5
+      }
+    },
+    {
+      "sku": "TVBO007",
+      "nombre": "Fire TV Stick Amazon 4K MAX 16GB Wifi 6E",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 94.3,
+        "pvp": 108.45,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 94.3,
+        "pvp": 117.88
+      }
+    },
+    {
+      "sku": "FLAS013",
+      "nombre": "Flash Memory 128GB Steren Usb-c + Usb-a",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 22.3,
+        "pvp": 25.65,
+        "stock": 5
+      },
+      "despues": {
+        "stock": 5,
+        "promo": 22.3,
+        "pvp": 25.64
+      }
+    },
+    {
+      "sku": "FLAS027",
+      "nombre": "Flash Memory 512GB Kingston 220MB/S",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 95.2,
+        "pvp": 109.48,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 95.2,
+        "pvp": 119.0
+      }
+    },
+    {
+      "sku": "FLAS036",
+      "nombre": "Flash Memory 64GB Sandisk 3.2 GEN 1 100MB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 16.3,
+        "pvp": 18.75,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 16.3,
+        "pvp": 18.74
+      }
+    },
+    {
+      "sku": "FLAS024",
+      "nombre": "Flash Memory 8GB Kingston 3.2 Exodia",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 7.3,
+        "pvp": 8.4,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 7.3,
+        "pvp": 8.4
+      }
+    },
+    {
+      "sku": "FUND006",
+      "nombre": "Funda Cobertora DE Tablet",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.9,
+        "pvp": 5.64,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 4.9,
+        "pvp": 5.63
+      }
+    },
+    {
+      "sku": "MICR01",
+      "nombre": "Microfono Alambrico 3.5MM CON Audifono MC-R5",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "MICR07",
+      "nombre": "Microfono Alambrico Usb-c CON Audifono MC-R6",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 10.5,
+        "pvp": 12.08,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 10.5,
+        "pvp": 12.07
+      }
+    },
+    {
+      "sku": "MONI002",
+      "nombre": "Monitor DE Mesa-escritorio 19 Pulgadas Marca ONE",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 59.9,
+        "pvp": 68.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 59.9,
+        "pvp": 74.88
+      }
+    },
+    {
+      "sku": "MONI004",
+      "nombre": "Monitor Portatil Asus 360 15.6 Pulgadas",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 139.3,
+        "pvp": 160.2,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 139.3,
+        "pvp": 174.88
+      }
+    },
+    {
+      "sku": "MONI005",
+      "nombre": "Monitor Portatil ONE 15.6 Pulgadas",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 99.9,
+        "pvp": 114.89,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 99.9,
+        "pvp": 124.88
+      }
+    },
+    {
+      "sku": "PARL040",
+      "nombre": "Parlante Bluetooth JBL Grip",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 93.1,
+        "pvp": 107.07,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 93.1,
+        "pvp": 116.38
+      }
+    },
+    {
+      "sku": "PARL041",
+      "nombre": "Parlante Bluetooth Klip Xtreme Nitro KBS-025GR",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 32.1,
+        "pvp": 36.92,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 32.1,
+        "pvp": 36.91
+      }
+    },
+    {
+      "sku": "PARL042",
+      "nombre": "Parlante JBL Flip 7",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 132.14,
+        "pvp": 151.96,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 132.14,
+        "pvp": 165.16
+      }
+    },
+    {
+      "sku": "PARL025",
+      "nombre": "Parlante Bluetooth Monster Superstar E1 portátil IPX7",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 25.9,
+        "pvp": 29.79,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 25.9,
+        "pvp": 29.78
+      }
+    },
+    {
+      "sku": "PARL044",
+      "nombre": "Parlante Ultrablaster Klipxtreme",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 139.85,
+        "pvp": 160.83,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 139.85,
+        "pvp": 174.81
+      }
+    },
+    {
+      "sku": "PILA066",
+      "nombre": "Pila Rayovac Para Audifonos Tamano 10",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "PILA065",
+      "nombre": "Pila Rayovac Para Audifonos Tamano 13",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "PILA063",
+      "nombre": "Pila Rayovac Para Audifonos Tamano 312",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "PILA064",
+      "nombre": "Pila Rayovac Para Audifonos Tamano 675",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "REL066",
+      "nombre": "Reloj Smartwatch V19 PRO Redondo",
+      "campos": [
+        "pvp",
+        "stock"
+      ],
+      "antes": {
+        "promo": 19.3,
+        "pvp": 22.2,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 19.3,
+        "pvp": 22.19
+      }
+    },
+    {
+      "sku": "SOPO039",
+      "nombre": "Soporte DE Celular Y Tablet Para Cabecera DE Vehiculo Klip Xtreme",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 19.3,
+        "pvp": 22.2,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 19.3,
+        "pvp": 22.19
+      }
+    },
+    {
+      "sku": "SOPO048",
+      "nombre": "Soporte Para Monitor ENV ARM PRO Lift",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 26.8,
+        "pvp": 30.82,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 26.8,
+        "pvp": 30.82
+      }
+    },
+    {
+      "sku": "TVBO008",
+      "nombre": "TV BOX ONN 4K",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 85.15,
+        "pvp": 97.92,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 85.15,
+        "pvp": 106.44
+      }
+    },
+    {
+      "sku": "TVBO002",
+      "nombre": "TV Stick TV98 5G 8K",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 47.9,
+        "pvp": 55.09,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 47.9,
+        "pvp": 55.08
+      }
+    },
+    {
+      "sku": "TABL004",
+      "nombre": "Tablet K2 Edicion Mario Bros",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 79.9,
+        "pvp": 91.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 79.9,
+        "pvp": 99.88
+      }
+    },
+    {
+      "sku": "TABL001",
+      "nombre": "Tablet Redmi PAD 2 11 Pulgadas 128GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 215.9,
+        "pvp": 248.29,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 215.9,
+        "pvp": 269.88
+      }
+    },
+    {
+      "sku": "TABL002",
+      "nombre": "Tablet Redmi PAD 2 11 Pulgadas 256GB 8GB+8GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 265.9,
+        "pvp": 305.79,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 265.9,
+        "pvp": 332.38
+      }
+    },
+    {
+      "sku": "TARJ013",
+      "nombre": "Tarjeta DE Memoria DE 128GB Adata V10",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 29.35,
+        "pvp": 33.75,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 29.35,
+        "pvp": 36.69
+      }
+    },
+    {
+      "sku": "TARJ019",
+      "nombre": "Tarjeta DE Memoria Kingston 128GB 150MBS",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 39.15,
+        "pvp": 45.02,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 39.15,
+        "pvp": 48.94
+      }
+    },
+    {
+      "sku": "TARJ017",
+      "nombre": "Tarjeta DE Memoria Kingston 128GB 200MBS Canvas GO Plus",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 86.3,
+        "pvp": 99.25,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 86.3,
+        "pvp": 107.88
+      }
+    },
+    {
+      "sku": "TARJ018",
+      "nombre": "Tarjeta DE Memoria Kingston 256GB 150MBS",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 59.9,
+        "pvp": 68.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 59.9,
+        "pvp": 74.88
+      }
+    },
+    {
+      "sku": "TARJ016",
+      "nombre": "Tarjeta DE Memoria Kingston 256GB 200MBS Canvas GO Plus",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 99.15,
+        "pvp": 114.02,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 99.15,
+        "pvp": 123.94
+      }
+    },
+    {
+      "sku": "TARJ015",
+      "nombre": "Tarjeta DE Memoria Kingston 512GB 150MBS V30",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 115.2,
+        "pvp": 132.48,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 115.2,
+        "pvp": 144.0
+      }
+    },
+    {
+      "sku": "TARJ002",
+      "nombre": "Tarjeta DE Memoria Microsd 256GB Kingston 80 Mb/s",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 21.15,
+        "pvp": 24.32,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 21.15,
+        "pvp": 26.44
+      }
+    },
+    {
+      "sku": "TARJ014",
+      "nombre": "Tarjeta DE Memoria Microsd 64GB Kingston Canvas GO Plus",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 42.9,
+        "pvp": 49.34,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 42.9,
+        "pvp": 49.33
+      }
+    },
+    {
+      "sku": "TARJ001",
+      "nombre": "Tarjeta DE Memoria Microsd DE 128GB Kingston",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 19.3,
+        "pvp": 22.2,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 19.3,
+        "pvp": 22.19
+      }
+    },
+    {
+      "sku": "TELF023",
+      "nombre": "Telefono Honor X5C 128GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 145.9,
+        "pvp": 167.79,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 145.9,
+        "pvp": 182.38
+      }
+    },
+    {
+      "sku": "TELF024",
+      "nombre": "Telefono Honor X5C Plus 256GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 159.9,
+        "pvp": 183.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 159.9,
+        "pvp": 199.88
+      }
+    },
+    {
+      "sku": "TELF034",
+      "nombre": "Telefono Honor X5D 128GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 149.9,
+        "pvp": 172.39,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 149.9,
+        "pvp": 187.38
+      }
+    },
+    {
+      "sku": "TELF008",
+      "nombre": "Telefono Infinix Smart 20 128GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 155.91,
+        "pvp": 179.3,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 155.91,
+        "pvp": 194.88
+      }
+    },
+    {
+      "sku": "TELF013",
+      "nombre": "Telefono Poco C71 128GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 129.9,
+        "pvp": 149.39,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 129.9,
+        "pvp": 162.38
+      }
+    },
+    {
+      "sku": "TELF020",
+      "nombre": "Redmi 15 Negro Ocaso 256GB | 16GB RAM total (8+8)",
+      "campos": [
+        "pvp",
+        "stock"
+      ],
+      "antes": {
+        "promo": 235.9,
+        "pvp": 271.29,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 235.9,
+        "pvp": 294.88
+      }
+    },
+    {
+      "sku": "TELF017",
+      "nombre": "Telefono Redmi 15C 128GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 159.9,
+        "pvp": 183.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 159.9,
+        "pvp": 199.88
+      }
+    },
+    {
+      "sku": "TELF018",
+      "nombre": "Telefono Redmi 15C 256GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 175.9,
+        "pvp": 202.29,
+        "stock": 6
+      },
+      "despues": {
+        "stock": 6,
+        "promo": 175.9,
+        "pvp": 219.88
+      }
+    },
+    {
+      "sku": "TELF019",
+      "nombre": "Telefono Redmi 15C 256GB 8GB+8GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 185.9,
+        "pvp": 213.79,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 185.9,
+        "pvp": 232.38
+      }
+    },
+    {
+      "sku": "TELF022",
+      "nombre": "Redmi A7 Pro Verde Palmera 128GB | 8GB RAM total (4+4)",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 145.9,
+        "pvp": 167.79,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 145.9,
+        "pvp": 182.38
+      }
+    },
+    {
+      "sku": "TELF036",
+      "nombre": "Redmi Note 15 Pro Azul Glaciar 512GB | 24GB RAM total (12+12)",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 395.9,
+        "pvp": 455.29,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 395.9,
+        "pvp": 494.88
+      }
+    },
+    {
+      "sku": "TELF037",
+      "nombre": "Redmi Note 17 Morado Celestial 256GB | 12GB RAM total (6+6)",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 269.91,
+        "pvp": 310.4,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 269.91,
+        "pvp": 337.38
+      }
+    },
+    {
+      "sku": "TELF010",
+      "nombre": "Telefono Samsung A07 6GB+128GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 165.9,
+        "pvp": 190.79,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 165.9,
+        "pvp": 207.38
+      }
+    },
+    {
+      "sku": "TELF011",
+      "nombre": "Telefono Samsung A17 4GB+128GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 185.9,
+        "pvp": 213.79,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 185.9,
+        "pvp": 232.38
+      }
+    },
+    {
+      "sku": "TELF012",
+      "nombre": "Telefono Samsung A17 8GB+256GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 239.9,
+        "pvp": 275.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 239.9,
+        "pvp": 299.88
+      }
+    },
+    {
+      "sku": "TELF015",
+      "nombre": "Telefono Tecno Spark GO 2 256GB 4GB+4GB",
+      "campos": [
+        "pvp",
+        "stock"
+      ],
+      "antes": {
+        "promo": 155.91,
+        "pvp": 179.3,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 0,
+        "promo": 155.91,
+        "pvp": 194.88
+      }
+    },
+    {
+      "sku": "TELF026",
+      "nombre": "TECNO Spark Go 3 128GB | 8GB RAM total (4+4)",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 145.9,
+        "pvp": 167.79,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 145.9,
+        "pvp": 182.38
+      }
+    },
+    {
+      "sku": "TELF025",
+      "nombre": "TECNO Spark Go 3 KN3 Negro Tinta 64GB | 8GB RAM total (4+4)",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 125.9,
+        "pvp": 144.79,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 125.9,
+        "pvp": 157.38
+      }
+    },
+    {
+      "sku": "TELF027",
+      "nombre": "Telefono ZTE A35E 64GB 2GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 105.9,
+        "pvp": 121.79,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 105.9,
+        "pvp": 132.38
+      }
+    },
+    {
+      "sku": "TELF002",
+      "nombre": "Telefono ZTE Nubia V80 PRO",
+      "campos": [
+        "promo",
+        "pvp"
+      ],
+      "antes": {
+        "promo": 229.9,
+        "pvp": 264.39,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 235.9,
+        "pvp": 294.88
+      }
+    },
+    {
+      "sku": "TELF003",
+      "nombre": "Telefono ZTE V80 MAX 256GB 4GB+10GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 165.9,
+        "pvp": 190.79,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 165.9,
+        "pvp": 207.38
+      }
+    },
+    {
+      "sku": "TELF004",
+      "nombre": "Telefono ZTE V80 MAX 256GB 8GB+12GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 179.89,
+        "pvp": 206.87,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 179.89,
+        "pvp": 224.88
+      }
+    },
+    {
+      "sku": "TELE001",
+      "nombre": "Televisor ENV 32 Pulgadas",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 139.9,
+        "pvp": 160.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 139.9,
+        "pvp": 174.88
+      }
+    },
+    {
+      "sku": "TELE003",
+      "nombre": "Televisor House TV 43 Pulgadas Fullhd",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 229.9,
+        "pvp": 264.39,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 229.9,
+        "pvp": 287.38
+      }
+    },
+    {
+      "sku": "ADAP086",
+      "nombre": "Adaptador Angulo Hdmi L",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.9,
+        "pvp": 3.34,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 2.9,
+        "pvp": 3.33
+      }
+    },
+    {
+      "sku": "ADAP029",
+      "nombre": "Adaptador Convertidor Hdmi A RCA",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "ADAP050",
+      "nombre": "Adaptador Convertidor RCA A Hdmi ADA618 Aiwa",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "ADAP032",
+      "nombre": "Adaptador DE 3.5MM Macho A Doble 3.5MM Hembra",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "ADAP033",
+      "nombre": "Adaptador DE 3.5MM Macho A Doble RCA Hembra",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "ADAP060",
+      "nombre": "Adaptador Splitter Hdmi A Doble Hdmi Hembra Orvesion",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "ADAP025",
+      "nombre": "Adaptador Union 3.5MM DE Metal Coupler",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.9,
+        "pvp": 3.34,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 2.9,
+        "pvp": 3.33
+      }
+    },
+    {
+      "sku": "ADAP024",
+      "nombre": "Adaptador Union 3.5MM Plastico Negro Coupler",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "ADAP076",
+      "nombre": "Adaptador Union Coupler DE RED RJ45 Beige",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 1.5,
+        "pvp": 1.73,
+        "stock": 9
+      },
+      "despues": {
+        "stock": 9,
+        "promo": 1.5,
+        "pvp": 1.72
+      }
+    },
+    {
+      "sku": "ADAP070",
+      "nombre": "Adaptador Union Coupler Hdmi 4K Gris",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "ADAP022",
+      "nombre": "Adaptador Union RCA DE Audio (doble)",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "ADAP023",
+      "nombre": "Adaptador Union RCA DE Audio Y Video (triple)",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.9,
+        "pvp": 3.34,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 2.9,
+        "pvp": 3.33
+      }
+    },
+    {
+      "sku": "ADAP067",
+      "nombre": "Adaptador Usb-a A Usb-c Hembra Ldnio Star",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "ADAP019",
+      "nombre": "Adaptador Usb-c A 3.5MM",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "ADAP012",
+      "nombre": "Adaptador Usb-c A 3.5MM + Usb-c JH-031",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "ALEX004",
+      "nombre": "Alexa Amazon Echo Show 8 8.7 Pulgadas",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 253.15,
+        "pvp": 291.12,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 253.15,
+        "pvp": 316.44
+      }
+    },
+    {
+      "sku": "ALEX001",
+      "nombre": "Alexa Echo DOT",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 86.91,
+        "pvp": 99.95,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 86.91,
+        "pvp": 108.64
+      }
+    },
+    {
+      "sku": "ALEX002",
+      "nombre": "Alexa Echo POP",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 63.8,
+        "pvp": 73.37,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 63.8,
+        "pvp": 79.75
+      }
+    },
+    {
+      "sku": "BASE002",
+      "nombre": "Base Inalambrica DE Carga Multifuncional 3 EN 1 Monster",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 24.3,
+        "pvp": 27.95,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 24.3,
+        "pvp": 27.94
+      }
+    },
+    {
+      "sku": "CABL090",
+      "nombre": "Cable AV PS2 Play Station 2",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.9,
+        "pvp": 6.79,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 5.9,
+        "pvp": 6.78
+      }
+    },
+    {
+      "sku": "CABL002",
+      "nombre": "Cable Adaptador DE Usb-c A 3.5MM",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "CABL055",
+      "nombre": "Cable Audio 3.5MM A RCA 3M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "CABL051",
+      "nombre": "Cable Audio Y Video AV 3M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.9,
+        "pvp": 4.49,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 3.9,
+        "pvp": 4.48
+      }
+    },
+    {
+      "sku": "CABL079",
+      "nombre": "Cable Auxiliar Earldom 1M AUX08",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "CABL067",
+      "nombre": "Cable Auxiliar Earldom 2M AUX10",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 6
+      },
+      "despues": {
+        "stock": 6,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "CABL080",
+      "nombre": "Cable Auxiliar KIN 1.2M KY-213",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.5,
+        "pvp": 5.18,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 4.5,
+        "pvp": 5.17
+      }
+    },
+    {
+      "sku": "CABL060",
+      "nombre": "Cable DE Audio RCA 1.8M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.9,
+        "pvp": 4.49,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 3.9,
+        "pvp": 4.48
+      }
+    },
+    {
+      "sku": "CABL013",
+      "nombre": "Cable DE Extension Usb-a 1.5M Mindpure",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.9,
+        "pvp": 4.49,
+        "stock": 7
+      },
+      "despues": {
+        "stock": 7,
+        "promo": 3.9,
+        "pvp": 4.48
+      }
+    },
+    {
+      "sku": "CABL121",
+      "nombre": "Cable DE Impresora Usb-c A Usb-a 3M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "CABL017",
+      "nombre": "Cable DE Poder Tipo 8 DE 1.5M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "CABL015",
+      "nombre": "Cable DE Poder Trebol",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "CABL164",
+      "nombre": "Cable DE Poder Trebol Plano",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.9,
+        "pvp": 4.49,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 3.9,
+        "pvp": 4.48
+      }
+    },
+    {
+      "sku": "CABL135",
+      "nombre": "Cable DE RED DE 10M CAT 6 It-blue Cabo Series",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "CABL127",
+      "nombre": "Cable Extension 3.5MM DE 3 Lineas",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "CABL123",
+      "nombre": "Cable Extension Auxiliar 1.5M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.5,
+        "pvp": 5.18,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 4.5,
+        "pvp": 5.17
+      }
+    },
+    {
+      "sku": "CABL076",
+      "nombre": "Cable Hdmi 1.5M Orvesion AWX-1008A",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 7
+      },
+      "despues": {
+        "stock": 7,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "CABL138",
+      "nombre": "Cable Hdmi Belkin 4K 18GBPS 2M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 19.3,
+        "pvp": 22.2,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 19.3,
+        "pvp": 22.19
+      }
+    },
+    {
+      "sku": "CABL024",
+      "nombre": "Cable IIN ZII Micro-usb 2M 8821",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "CABL025",
+      "nombre": "Cable IIN ZII Usb-c 1.20M 8822",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.9,
+        "pvp": 6.79,
+        "stock": 8
+      },
+      "despues": {
+        "stock": 8,
+        "promo": 5.9,
+        "pvp": 6.78
+      }
+    },
+    {
+      "sku": "CABL026",
+      "nombre": "Cable IIN ZII Usb-c 1M 8826",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "CABL074",
+      "nombre": "Cable IPH Usb-a A Lightning 1M",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 8.25,
+        "pvp": 9.49,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 8.25,
+        "pvp": 9.49
+      }
+    },
+    {
+      "sku": "CABL165",
+      "nombre": "Cable Para Rasuradora Corriente Directa",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.9,
+        "pvp": 3.34,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 2.9,
+        "pvp": 3.33
+      }
+    },
+    {
+      "sku": "CABL037",
+      "nombre": "Cable Samsung Usb-c A Usb-c 5A 1.8M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 5
+      },
+      "despues": {
+        "stock": 5,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "CABL071",
+      "nombre": "Cable Usb-a A Mini-usb V3 2M Azul",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "CABL085",
+      "nombre": "Cable Usb-a A Usb-c 2M 8A Braided CB85",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "CABL128",
+      "nombre": "Cable Usb-c A Hdmi 2M Andowl",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 23.9,
+        "pvp": 27.49,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 23.9,
+        "pvp": 27.48
+      }
+    },
+    {
+      "sku": "CABL035",
+      "nombre": "Cable Usb-c A Usb-c 2M Monster Power Flex",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "CABL103",
+      "nombre": "Cable Usb-c A Usb-c Klipxtreme 1.8M 60W",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 13.1,
+        "pvp": 15.07,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 13.1,
+        "pvp": 15.06
+      }
+    },
+    {
+      "sku": "CABL105",
+      "nombre": "Cable Usb-c A Usb-c Klipxtreme 3M 100W",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 15.85,
+        "pvp": 18.23,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 0,
+        "promo": 15.85,
+        "pvp": 18.23
+      }
+    },
+    {
+      "sku": "CABL106",
+      "nombre": "Cable Usb-c A Usb-c Klipxtreme 3M 240W",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 19.3,
+        "pvp": 22.2,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 19.3,
+        "pvp": 22.19
+      }
+    },
+    {
+      "sku": "CABL084",
+      "nombre": "Cable Usb-c A Usb-c Samsung 1.8M 5A",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "CABL052",
+      "nombre": "Cable VGA 1.5M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.5,
+        "pvp": 5.18,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 4.5,
+        "pvp": 5.17
+      }
+    },
+    {
+      "sku": "CAMA003",
+      "nombre": "Cámara exterior Xiaomi BW300 2K",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 73.9,
+        "pvp": 84.99,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 73.9,
+        "pvp": 84.98
+      }
+    },
+    {
+      "sku": "CAMA008",
+      "nombre": "Cámara de seguridad TP-Link Tapo C202 Full HD 1080p",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 36.7,
+        "pvp": 42.21,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 36.7,
+        "pvp": 42.2
+      }
+    },
+    {
+      "sku": "CARG040",
+      "nombre": "Cargador 120W XIA Usb-c + Usb-c + Usb-a",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 24.9,
+        "pvp": 28.64,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 24.9,
+        "pvp": 28.63
+      }
+    },
+    {
+      "sku": "CARG049",
+      "nombre": "Cargador IPH 17PM 40W",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 28,
+        "pvp": 32.2,
+        "stock": 7
+      },
+      "despues": {
+        "stock": 6,
+        "promo": 28.0,
+        "pvp": 32.2
+      }
+    },
+    {
+      "sku": "CARG050",
+      "nombre": "Cargador para carro Klip Xtreme PowerCar 60 · 60 W",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 17.3,
+        "pvp": 19.9,
+        "stock": 7
+      },
+      "despues": {
+        "stock": 7,
+        "promo": 17.3,
+        "pvp": 19.89
+      }
+    },
+    {
+      "sku": "CARG035",
+      "nombre": "Cargador Para Vehiculo IIN ZII IZ-C221 Usb-a Doble",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "COBE001",
+      "nombre": "Cobertor - Estuche Para Cargadores Varios Modelos",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "CORT01",
+      "nombre": "Cortapicos Ldnio Multienchufes 6 Puertos Usb-a CS3604",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 23.9,
+        "pvp": 27.49,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 23.9,
+        "pvp": 27.48
+      }
+    },
+    {
+      "sku": "CUBO013",
+      "nombre": "Cubo Cargador 25W Monster RC252 1A1C",
+      "campos": [
+        "pvp",
+        "stock"
+      ],
+      "antes": {
+        "promo": 19.3,
+        "pvp": 22.2,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 19.3,
+        "pvp": 22.19
+      }
+    },
+    {
+      "sku": "EXTE002",
+      "nombre": "Extensor DE Wifi 2.4GHZ Pix-link Modelo WR41Q",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 19.3,
+        "pvp": 22.2,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 19.3,
+        "pvp": 22.19
+      }
+    },
+    {
+      "sku": "FUND005",
+      "nombre": "Funda Cobertora DE Laptop 10-12 Pulgadas",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "HUB001",
+      "nombre": "Hub USB 3.0 de 4 puertos USB-A",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "HUB004",
+      "nombre": "HUB Usb-c 4 Puertos RCA HB01",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "HUB021",
+      "nombre": "HUB Usb-c A Usb-a X4 C-809",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "HUB009",
+      "nombre": "HUB Usb-c A Usb-a X4 Puertos Yourz MU7",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 5
+      },
+      "despues": {
+        "stock": 5,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "INVE002",
+      "nombre": "Inversor DE Voltaje Para Vehiculo DC 12 A 110V + Usb-a",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 22.9,
+        "pvp": 26.34,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 22.9,
+        "pvp": 26.33
+      }
+    },
+    {
+      "sku": "JUGU101",
+      "nombre": "Juguete Armable DE Auto 244 Piezas NO.33001",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 13.1,
+        "pvp": 15.07,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 13.1,
+        "pvp": 15.06
+      }
+    },
+    {
+      "sku": "JUGU074",
+      "nombre": "Juguete Carrito Rayo Mcqueen Mediano",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 6
+      },
+      "despues": {
+        "stock": 6,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "JUGU076",
+      "nombre": "Juguete Carro Antiguo Lada",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "JUGU093",
+      "nombre": "Juguete Carro Coleccionable Camioneta F150 Pequea",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "JUGU094",
+      "nombre": "Juguete Carro Coleccionable Deportivo Amarillo",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "JUGU005",
+      "nombre": "Juguete Carro Mini Model",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 9
+      },
+      "despues": {
+        "stock": 9,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "JUGU165",
+      "nombre": "Juguete Libro Para Colorear Guerreras Kpop",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.9,
+        "pvp": 3.34,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 2.9,
+        "pvp": 3.33
+      }
+    },
+    {
+      "sku": "JUGU025",
+      "nombre": "Juguete Personajes DE Mario Bros Detallados",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.5,
+        "pvp": 5.18,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 4.5,
+        "pvp": 5.17
+      }
+    },
+    {
+      "sku": "JUGU057",
+      "nombre": "Juguete Pizarra Electronica Para Nios(as) 8.5 LCD Panel Monito",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "JUGU139",
+      "nombre": "Juguete Taxi Coleccionable Deportivo Celeste",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "LECT005",
+      "nombre": "Unidad externa Dell DW316 USB DVD±RW",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 69.3,
+        "pvp": 79.7,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 69.3,
+        "pvp": 79.69
+      }
+    },
+    {
+      "sku": "MICA015",
+      "nombre": "Mica Antiespia Para Iphone 11 Series",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "MICA017",
+      "nombre": "Mica Antiespia Para Iphone Magic Glass",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 11.99,
+        "pvp": 13.79,
+        "stock": 6
+      },
+      "despues": {
+        "stock": 6,
+        "promo": 11.99,
+        "pvp": 13.8
+      }
+    },
+    {
+      "sku": "MICR06",
+      "nombre": "Microfono Alambrico Usb-c MC-R2",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 7.5,
+        "pvp": 8.63,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 7.5,
+        "pvp": 8.62
+      }
+    },
+    {
+      "sku": "MICR27",
+      "nombre": "Micrófono USB JBL Quantum Stream",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 102.01,
+        "pvp": 117.31,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 102.01,
+        "pvp": 127.51
+      }
+    },
+    {
+      "sku": "MICR23",
+      "nombre": "Microfono M6 Usb-c Doble Modulo SET 2",
+      "campos": [
+        "pvp",
+        "stock"
+      ],
+      "antes": {
+        "promo": 21.3,
+        "pvp": 24.5,
+        "stock": 5
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 21.3,
+        "pvp": 24.49
+      }
+    },
+    {
+      "sku": "MOUS043",
+      "nombre": "Mouse Inalambrico ENV Gaming PRO",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 19.9,
+        "pvp": 22.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 19.9,
+        "pvp": 22.88
+      }
+    },
+    {
+      "sku": "MOUS037",
+      "nombre": "Mouse Klipxtreme Slimsurfer",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 16.7,
+        "pvp": 19.21,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 16.7,
+        "pvp": 19.2
+      }
+    },
+    {
+      "sku": "MOUS040",
+      "nombre": "Mouse Meetion Minigo",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 18.3,
+        "pvp": 21.05,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 18.3,
+        "pvp": 21.04
+      }
+    },
+    {
+      "sku": "PILA018",
+      "nombre": "Pila 371 Murata",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 2.5,
+        "pvp": 2.88,
+        "stock": 8
+      },
+      "despues": {
+        "stock": 8,
+        "promo": 2.5,
+        "pvp": 2.87
+      }
+    },
+    {
+      "sku": "PILA028",
+      "nombre": "Pila AAA RCA Pack DE 6",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.5,
+        "pvp": 5.18,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 4.5,
+        "pvp": 5.17
+      }
+    },
+    {
+      "sku": "PILA070",
+      "nombre": "Pila D Maxday",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.9,
+        "pvp": 6.79,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 5.9,
+        "pvp": 6.78
+      }
+    },
+    {
+      "sku": "PILA030",
+      "nombre": "Pila D RCA",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 5.5,
+        "pvp": 6.33,
+        "stock": 8
+      },
+      "despues": {
+        "stock": 8,
+        "promo": 5.5,
+        "pvp": 6.32
+      }
+    },
+    {
+      "sku": "POWE008",
+      "nombre": "Powerbank Inalambrica Monster 22.5W 10000MAH",
+      "campos": [
+        "stock"
+      ],
+      "antes": {
+        "promo": 31.9,
+        "pvp": 36.69,
+        "stock": 5
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 31.9,
+        "pvp": 36.69
+      }
+    },
+    {
+      "sku": "POWE019",
+      "nombre": "Powerbank Klipxtreme Grande 50000MAH 100W",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 135.9,
+        "pvp": 156.29,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 135.9,
+        "pvp": 169.88
+      }
+    },
+    {
+      "sku": "POWE016",
+      "nombre": "Powerbank ONE 30000MAH",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 31.5,
+        "pvp": 36.23,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 31.5,
+        "pvp": 36.22
+      }
+    },
+    {
+      "sku": "PRES001",
+      "nombre": "Presentador DE Diapositivas CON Puntero Laser VER.1",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 24.9,
+        "pvp": 28.64,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 24.9,
+        "pvp": 28.63
+      }
+    },
+    {
+      "sku": "PROY007",
+      "nombre": "Proyector Wanbo Smart",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 249,
+        "pvp": 286.35,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 249.0,
+        "pvp": 311.25
+      }
+    },
+    {
+      "sku": "REL001",
+      "nombre": "Reloj Despertador Modelo DCX-670",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 19.3,
+        "pvp": 22.2,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 19.3,
+        "pvp": 22.19
+      }
+    },
+    {
+      "sku": "REL056",
+      "nombre": "Reloj Smarwatch Kalobee Para Dama SK9 Mini",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 47.3,
+        "pvp": 54.4,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 47.3,
+        "pvp": 54.39
+      }
+    },
+    {
+      "sku": "ROUT001",
+      "nombre": "Sistema Mesh Cudy Fast AX1500 WIFI6",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 95.3,
+        "pvp": 109.6,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 95.3,
+        "pvp": 119.13
+      }
+    },
+    {
+      "sku": "ROUT002",
+      "nombre": "Sistema Mesh Cudy Fast AX1500 WIFI6 3 Modulos",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 129.2,
+        "pvp": 148.58,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 129.2,
+        "pvp": 161.5
+      }
+    },
+    {
+      "sku": "SOPO002",
+      "nombre": "Soporte Para Vehiculo DE Ventosa CAR Mobile Holder",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 5
+      },
+      "despues": {
+        "stock": 5,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "STYL003",
+      "nombre": "Stylus PEN Earldom ET-P7 Solo Para IOS - Ipad",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 24.9,
+        "pvp": 28.64,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 24.9,
+        "pvp": 28.63
+      }
+    },
+    {
+      "sku": "STYL004",
+      "nombre": "Stylus PEN Lapiz Tactil Punta Redonda + Esfero",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 9.5,
+        "pvp": 10.93,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 9.5,
+        "pvp": 10.92
+      }
+    },
+    {
+      "sku": "TECL001",
+      "nombre": "Teclado Flexible S/R",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.5,
+        "pvp": 9.78,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 8.5,
+        "pvp": 9.77
+      }
+    },
+    {
+      "sku": "TELE002",
+      "nombre": "Televisor ENV 40 Pulgadas Fullhd",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 199.9,
+        "pvp": 229.89,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 199.9,
+        "pvp": 249.88
+      }
+    },
+    {
+      "sku": "VENT008",
+      "nombre": "Ventilador Para Celular F5",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 6.5,
+        "pvp": 7.48,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 6.5,
+        "pvp": 7.47
+      }
+    },
+    {
+      "sku": "ADAP091",
+      "nombre": "ADAPTADOR DE 3.5MM A RCA HEMBRA TRIPLE",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "CABL170",
+      "nombre": "CABLE EXTENSION 4 METROS VOLTEK",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 8.45,
+        "pvp": 9.72,
+        "stock": 1
+      },
+      "despues": {
+        "stock": 1,
+        "promo": 8.45,
+        "pvp": 9.71
+      }
+    },
+    {
+      "sku": "CABL149",
+      "nombre": "CABLE LIGHTNING RECCI GRIDE MAGNETICO",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.9,
+        "pvp": 5.64,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 4.9,
+        "pvp": 5.63
+      }
+    },
+    {
+      "sku": "CABL153",
+      "nombre": "CABLE MICRO-USB RECCI 5A SUPER V00C 1M",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 4.5,
+        "pvp": 5.18,
+        "stock": 4
+      },
+      "despues": {
+        "stock": 4,
+        "promo": 4.5,
+        "pvp": 5.17
+      }
+    },
+    {
+      "sku": "CARG067",
+      "nombre": "CARGADORES PARA SMARTWATCH BASE CIRCULAR",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 3.5,
+        "pvp": 4.03,
+        "stock": 6
+      },
+      "despues": {
+        "stock": 6,
+        "promo": 3.5,
+        "pvp": 4.02
+      }
+    },
+    {
+      "sku": "IMAN001",
+      "nombre": "IMAN MAGNETICO PARA CELULARES Y TABLET",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 1.5,
+        "pvp": 1.73,
+        "stock": 3
+      },
+      "despues": {
+        "stock": 3,
+        "promo": 1.5,
+        "pvp": 1.72
+      }
+    },
+    {
+      "sku": "TABL003",
+      "nombre": "TABLET REDMI PAD 2 9.7 PULGADAS 128GB 4GB+4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 195.9,
+        "pvp": 225.29,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 195.9,
+        "pvp": 244.88
+      }
+    },
+    {
+      "sku": "TELF016",
+      "nombre": "TELEFONO DIALN NOVA 64GB + 4GB",
+      "campos": [
+        "pvp"
+      ],
+      "antes": {
+        "promo": 99.9,
+        "pvp": 114.89,
+        "stock": 2
+      },
+      "despues": {
+        "stock": 2,
+        "promo": 99.9,
+        "pvp": 124.88
+      }
+    }
+  ]
+}
