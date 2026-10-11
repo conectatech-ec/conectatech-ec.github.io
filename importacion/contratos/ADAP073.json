@@ -133,7 +133,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap073-adaptador-enchufe-110-a-12v-socket-car/",
   "fecha_verificacion": "2026-10-11T07:05:24.792948+00:00",
   "descripcion": "Una toma para conector vehicular en un formato compacto de enchufe. Antes de conectar un accesorio, confirma que su voltaje, polaridad y consumo sean compatibles con los valores indicados en la etiqueta del adaptador.",
@@ -313,6 +313,10 @@
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "archivo": "reportes/lote-053/http-publicacion.json",
+      "sha256": "687aaa22c51ca7b7b0a896e4cb6d72a8aa228715da0a0c95408a3fa003e04228"
     }
   }
 }
