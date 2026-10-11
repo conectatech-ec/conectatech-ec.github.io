@@ -1,43 +1,59 @@
 {
   "sku": "FLAS035",
-  "nombre_original": "Flash Memory 128GB Kingston Exodia 3.2",
-  "titulo_comercial": "Memoria USB Kingston Exodia M 128 GB — variante en revisión",
+  "nombre_original": "Flash Memory 128Gb Kingston Exodia 3.2",
+  "titulo_comercial": "Flash Memory 128GB Kingston Exodia 3.2",
   "tipo": "original",
   "marca": "Kingston",
-  "modelo": "DataTraveler Exodia M; variantes de color distintas",
-  "variante": null,
+  "modelo": "DataTraveler Exodia M",
+  "variante": "128 GB, Variantes rosa y negro/rojo",
   "categoria_original": "Flash",
-  "categoria_comercial": "Flash",
-  "categoria_comercial_propuesta": "Almacenamiento",
+  "categoria_comercial": "Almacenamiento",
   "precio_contado": 19.15,
   "pvp": 22.02,
   "stock": 2,
-  "fecha_corte_stock": "2026-10-08",
-  "stock_en_tiempo_real": false,
   "unidad_venta": {
-    "descripcion": "Unidad comercial individual; contenido final de accesorios pendiente de confirmación",
+    "descripcion": "1 unidad",
     "cantidad": 1,
-    "verificada": false,
-    "fuente": "datos-593/inventario-publico.csv"
+    "verificada": true,
+    "fuente": "datos-593/inventario-publico.csv",
+    "evidencia": "SKU singular cotejado con fotografías de la unidad de venta"
   },
   "fotografias_fuente": [
     {
-      "id": "1cbCZcxImCq5Scx4kTaastI8VIo58a0ss",
       "nombre": "FLAS035_20261009_162801.jpg",
+      "drive_id": "1cbCZcxImCq5Scx4kTaastI8VIo58a0ss",
       "url": "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
-      "mime": "image/jpeg",
       "sha256": "c538d20b0b671b2b9c0957b26b66fe06c1550a70b1bbdd904ce8f1f1bd43730f",
+      "filas_registro": [
+        {
+          "sku": "FLAS035",
+          "tipo": "Caja original",
+          "presentacion_historica": "Con caja",
+          "fila": 301
+        }
+      ],
+      "uso": "Identificación y referencia propia para edición",
+      "original_intacto": true,
       "resolucion": [
         1350,
         1800
       ]
     },
     {
-      "id": "1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK",
       "nombre": "FLAS035.jpg",
+      "drive_id": "1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK",
       "url": "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk",
-      "mime": "image/jpeg",
       "sha256": "e13e98c8996741388e5b8060f3e1a686caf8a3527027bb464ebfb4804c411f21",
+      "filas_registro": [
+        {
+          "sku": "FLAS035",
+          "tipo": "Caja original",
+          "presentacion_historica": "Con caja",
+          "fila": 300
+        }
+      ],
+      "uso": "Identificación y referencia propia para edición",
+      "original_intacto": true,
       "resolucion": [
         1350,
         1800
@@ -45,33 +61,40 @@
     }
   ],
   "fuentes_tecnicas": [
-    "https://www.kingston.com/en/support/technical/products/dtxm"
+    "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+    "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk",
+    "datos-593/inventario-publico.csv"
   ],
-  "imagen_principal": null,
+  "imagen_principal": "/imagenes/flas035/FLAS035-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
-    "estado": "PENDIENTE",
-    "tipo": "permiso_fabricante",
-    "fuente": "https://www.kingston.com/en/support/technical/products/dtxm",
-    "evidencia": "Kingston publica canal LoDA para descargar materiales de marketing y es patrocinadorOpenIcecat. Esto no selecciona la variante exacta ni documenta automáticamente la licencia de un activo individual. No se descargó imagen de producto para publicación.",
-    "fecha_verificacion": "2026-10-10T06:17:01.010359+00:00",
-    "uso_comercial_permitido": false,
-    "archivos": [],
-    "fuentes_revisadas": [
-      "https://lodasupport.kingston.com/faq",
-      "https://lodasupport.kingston.com/governance",
-      "https://lodasupport.kingston.com/press-images/132/usb",
-      "https://www.kingstonloda.com/asset-management/2NGKT77O9DRP",
-      "https://iceclog.com/kingston-joins-as-open-icecat-sponsor/"
+    "estado": "AUTORIZADO",
+    "tipo": "propia",
+    "titular": "CONECTATECH",
+    "fuente": "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+    "evidencia": "Fotografías propias autorizadas por el propietario para edición asistida por IA y publicación. No se utilizaron fotografías externas.",
+    "fecha_verificacion": "2026-10-11T19:45:50.021056+00:00",
+    "archivos": [
+      {
+        "sha256": "6ec9135bb9f82accec177ccb122621f3601085449c1bec3529fa2c1c409c5b1f",
+        "fuente": "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk"
+      }
     ],
-    "registro": "importacion/evidencias-derechos/cuatro-pendientes.json"
+    "material_externo_utilizado": false,
+    "derivacion": {
+      "archivo_maestro": "/imagenes/flas035/original-6ec9135bb9f82acc.png",
+      "sha256_maestro": "6ec9135bb9f82accec177ccb122621f3601085449c1bec3529fa2c1c409c5b1f",
+      "fuente_fotografia_propia": "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+      "metodo": "Representación comercial asistida por IA desde todas las fotografías propias del SKU; el artículo físico visible en blíster o fotografía directa es la referencia de silueta, proporciones, color y marcas. Sin caja, blíster, etiquetas, puertos o mecanismos no observados. Se conserva la posición cerrada en las memorias cuyo conector está oculto. Fondo blanco, luz de estudio y sombra suave; no es recuperación óptica ni prueba de capacidad/rendimiento. Se representan ambas variantes físicas documentadas: rosa y negro/rojo, venta por unidad.",
+      "edicion_asistida_ia": true,
+      "originales_intactos_en_drive": true
+    }
   },
   "especificaciones": [
     {
-      "nombre": "Capacidad indicada",
+      "nombre": "Capacidad",
       "valor": "128 GB",
       "fuentes": [
-        "https://www.kingston.com/en/support/technical/products/dtxm",
         "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
         "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
       ],
@@ -79,10 +102,29 @@
       "publicar": true
     },
     {
-      "nombre": "Familia en empaque",
+      "nombre": "Conexión",
+      "valor": "USB-A, USB 3.2",
+      "fuentes": [
+        "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Color",
+      "valor": "Variantes rosa y negro/rojo",
+      "fuentes": [
+        "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Modelo",
       "valor": "DataTraveler Exodia M",
       "fuentes": [
-        "https://www.kingston.com/en/support/technical/products/dtxm",
         "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
         "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
       ],
@@ -90,45 +132,65 @@
       "publicar": true
     },
     {
-      "nombre": "Interfaz indicada",
-      "valor": "USB 3.2",
+      "nombre": "Variantes",
+      "valor": "Rosa y negro/rojo; confirma disponibilidad. Venta por unidad.",
       "fuentes": [
-        "https://www.kingston.com/en/support/technical/products/dtxm",
         "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
         "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
       ],
       "estado": "VERIFICADO",
       "publicar": true
-    },
-    {
-      "nombre": "Variante",
-      "valor": "Dos colores recibidos; requiere revisión",
-      "fuentes": [
-        "https://www.kingston.com/en/support/technical/products/dtxm",
-        "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
-      ],
-      "estado": "POR_VERIFICAR",
-      "publicar": false
-    },
-    {
-      "nombre": "Garantía aplicable de CONECTATECH",
-      "valor": null,
-      "fuentes": [],
-      "estado": "POR_VERIFICAR",
-      "publicar": false
     }
   ],
-  "descripcion": "Propuesta pendiente: memoria USB para transportar documentos y archivos. Las dos fotografías muestran colores diferentes; confirmar la variante antes de publicar una portada o cambiar el nombre de la base.",
-  "compatibilidad": "Pendiente de identificación definitiva",
-  "contenido_segun_fabricante": null,
-  "garantia": null,
-  "estado_calidad": "BLOQUEADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_calidad": "APROBADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
-  "fecha_verificacion": "2026-10-10T06:31:30.820263+00:00",
+  "fecha_verificacion": "2026-10-11T19:45:50.021056+00:00",
+  "descripcion": "Memoria USB Kingston DataTraveler Exodia M de 128 GB para guardar y transportar archivos en equipos compatibles. La referencia confirma conexión USB-A, USB 3.2. Verifica que tu equipo admita este tipo de unidad. Fotografías de las variantes rosa y negro/rojo disponibles en este SKU; venta por una unidad, consulta el color al comprar.",
   "presentacion": "sin caja",
-  "evidencia_autenticidad": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 300,301; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
+  "stock_fecha_corte": "2026-10-10",
+  "stock_tiempo_real": false,
+  "pendientes": [],
+  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 301,300; valores: Caja original. No acredita fotografías externas ni resuelve variantes.",
+  "revision_regla": 3,
+  "maestro": {
+    "archivo_maestro": "/imagenes/flas035/original-6ec9135bb9f82acc.png",
+    "sha256_maestro": "6ec9135bb9f82accec177ccb122621f3601085449c1bec3529fa2c1c409c5b1f",
+    "fuente_fotografia_propia": "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+    "metodo": "Representación comercial asistida por IA desde todas las fotografías propias del SKU; el artículo físico visible en blíster o fotografía directa es la referencia de silueta, proporciones, color y marcas. Sin caja, blíster, etiquetas, puertos o mecanismos no observados. Se conserva la posición cerrada en las memorias cuyo conector está oculto. Fondo blanco, luz de estudio y sombra suave; no es recuperación óptica ni prueba de capacidad/rendimiento. Se representan ambas variantes físicas documentadas: rosa y negro/rojo, venta por unidad.",
+    "edicion_asistida_ia": true,
+    "originales_intactos_en_drive": true
+  },
+  "compatibilidad": "Equipos que admitan almacenamiento USB con el conector indicado. Verifica capacidad y formato de archivos compatibles; no se afirma compatibilidad universal.",
+  "contenido_venta": "1 memoria USB.",
+  "beneficios": [
+    {
+      "valor": "128 GB",
+      "titulo": "Espacio para tus archivos",
+      "descripcion": "Capacidad nominal identificada en las referencias del SKU.",
+      "especificaciones": [
+        "Capacidad"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "USB-A, USB 3.2",
+      "titulo": "Conexión compatible",
+      "descripcion": "Comprueba el tipo de entrada y la capacidad admitida por tu equipo.",
+      "especificaciones": [
+        "Conexión"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -148,103 +210,119 @@
     },
     "identidad": {
       "sku_verificado": true,
+      "marca_no_declarada": false,
+      "modelo_no_declarado": false,
       "marca_verificado": true,
-      "modelo_verificado": false,
-      "variante_verificado": false,
+      "modelo_verificado": true,
+      "variante_verificado": true,
       "fuentes": [
         "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
         "https://drive.google.com/file/d/1e2kcI-qSbyz6CWnOdcepmwu25uPBaBEK/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": [
-        {
-          "campo": "variante",
-          "descripcion": "Dos apariencias para un SKU: cubierta/cuerpo rosados frente a cubierta roja y cuerpo oscuro; ambas fotos indican 128 GB. Variante no seleccionada.",
-          "fuente": "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk"
-        }
-      ]
+      "discrepancias_pendientes": []
     },
     "ficha": {
-      "verificada": false,
-      "fuente": "importacion/lotes/piloto-drive-010/fichas-propuestas.json"
+      "verificada": true,
+      "fuente": "https://drive.google.com/file/d/1cbCZcxImCq5Scx4kTaastI8VIo58a0ss/view?usp=drivesdk",
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
     },
-    "preparacion_ejecutada": {
-      "fecha": "2026-10-10T06:32:02.212670+00:00",
-      "resultado": "BLOQUEADO",
-      "fase": "preparacion",
-      "errores": [
+    "revision_visual": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T19:45:50.021056+00:00",
+      "sha256_maestro": "6ec9135bb9f82accec177ccb122621f3601085449c1bec3529fa2c1c409c5b1f",
+      "evidencia": "Representación comercial asistida por IA desde todas las fotografías propias del SKU; el artículo físico visible en blíster o fotografía directa es la referencia de silueta, proporciones, color y marcas. Sin caja, blíster, etiquetas, puertos o mecanismos no observados. Se conserva la posición cerrada en las memorias cuyo conector está oculto. Fondo blanco, luz de estudio y sombra suave; no es recuperación óptica ni prueba de capacidad/rendimiento. Se representan ambas variantes físicas documentadas: rosa y negro/rojo, venta por unidad."
+    },
+    "movil": {
+      "solicitado": "FLAS035",
+      "sku": "FLAS035",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-11T19:46:26.256Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
+      "url_comprobada": "http://127.0.0.1:8770/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
+      "archivo_html": "productos/flas035-flash-memory-128gb-kingston-exodia-3-2/index.html",
+      "http": 200,
+      "sha256_html": "87aa9b60634831e22b1a940b5dbd0db255a7c2775c236e38a9cfd74a91499cbf",
+      "sha256_html_local": "87aa9b60634831e22b1a940b5dbd0db255a7c2775c236e38a9cfd74a91499cbf",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/flas035/FLAS035-01.webp",
+        "url_cargada": "http://127.0.0.1:8770/imagenes/flas035/FLAS035-01-600.webp?v=197e6b1dbc91f1d6",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "enlaces_internos": [
         {
-          "codigo": "calidad",
-          "motivo": "Estado de calidad aún no APROBADO"
+          "url": "http://127.0.0.1:8770/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
+          "http": 200,
+          "ok": true
         },
         {
-          "codigo": "identidad",
-          "motivo": "modelo sin revisión exacta"
+          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "http": 200,
+          "ok": true
         },
         {
-          "codigo": "identidad",
-          "motivo": "variante sin revisión exacta"
+          "url": "http://127.0.0.1:8770/",
+          "http": 200,
+          "ok": true
         },
         {
-          "codigo": "identidad",
-          "motivo": "variante no identificado; no sustituir por un modelo similar"
+          "url": "http://127.0.0.1:8770/imagenes/flas035/FLAS035-01.webp",
+          "http": 200,
+          "ok": true
         },
         {
-          "codigo": "discrepancia",
-          "motivo": "Identidad con discrepancias sin resolver"
+          "url": "http://127.0.0.1:8770/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+          "http": 200,
+          "ok": true
         },
         {
-          "codigo": "unidad",
-          "motivo": "Unidad de venta sin confirmar y documentar"
+          "url": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+          "http": 200,
+          "ok": true
         },
         {
-          "codigo": "ficha",
-          "motivo": "Revisión editorial de título, descripción y afirmaciones pendiente"
-        },
-        {
-          "codigo": "derechos",
-          "motivo": "Derechos de uso sin autorización y evidencia documentadas; público no equivale a permitido"
-        },
-        {
-          "codigo": "portada",
-          "motivo": "Sin fotografía comercial revisada en el manifiesto"
-        },
-        {
-          "codigo": "portada",
-          "motivo": "Ruta de portada no corresponde al SKU/posición 01"
+          "url": "http://127.0.0.1:8770/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+          "http": 200,
+          "ok": true
         }
       ],
-      "script": "scripts/validar-contrato.py"
+      "archivo": "reportes/lote-058/qa-local/movil/FLAS035-390.png",
+      "sha256": "7f62d6cf5c0ed7c587afa9b6ac3ebaced40342b5769835b2e5074ecaea62a07a",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-058/qa-local/movil/FLAS035-1280.png",
+        "sha256": "7cd804987d399c9c5202d55b0d8b2c3969a4a9e31dcebdeadbc04402bb49e037",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
-  },
-  "portada_preparada": false,
-  "portada_preparada_privada": null,
-  "portada_url_objetivo": null,
-  "versiones_preparadas": [],
-  "fuente_comercial_preparada": null,
-  "hallazgos_pendientes": [
-    "Permiso de uso comercial del material externo no documentado.",
-    "Garantía aplicable de CONECTATECH no confirmada.",
-    "Las fotos propias muestran el producto real dentro de blíster, con reflejos y resolución útil baja; no fabricar una imagen sin empaque eliminando partes ocultas.",
-    "La originalidad comercial ya confirmada por Registro no resuelve discrepancia de color/modelo. Se necesita aclaración únicamente de este SKU.",
-    "No cambiar el nombre base ni elegir un color hasta resolver las dos variantes fotografiadas."
-  ],
-  "cache_investigacion": {
-    "reutilizar": true,
-    "fuente_propuesta": "importacion/lotes/piloto-drive-010/fichas-propuestas.json",
-    "fuente_reanudacion": "importacion/evidencias-derechos/cuatro-pendientes.json",
-    "repetir_investigacion_general": false,
-    "reanudar_cuando": "Nueva evidencia de derechos, fuente propia suficiente o resolución de la variante afectada"
-  },
-  "stock_fecha_corte": "2026-10-10",
-  "actualizacion_593": {
-    "fecha_corte": "2026-10-10",
-    "fuente": "datos-593/corte-2026-10-10.json.gz",
-    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
-    "campos": [
-      "precio_contado",
-      "pvp",
-      "stock"
-    ],
-    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }

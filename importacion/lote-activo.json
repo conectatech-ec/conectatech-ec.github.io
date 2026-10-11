@@ -1,34 +1,33 @@
 {
   "version": 1,
-  "lote": "lote-057",
-  "rama": "catalogo/lote057",
-  "estado": "PUBLICADO_VERIFICADO",
-  "manifiesto": "importacion/lotes/lote-057/manifiesto-aprobados.json",
+  "lote": "lote-058",
+  "rama": "catalogo/lote058",
+  "estado": "APROBADO_LOCAL",
+  "manifiesto": "importacion/lotes/lote-058/manifiesto-aprobados.json",
   "skus": [
-    "TARJ019",
-    "TARJ017",
-    "TARJ016",
-    "TARJ015",
-    "TARJ002",
-    "TARJ006",
-    "TARJ014",
-    "TARJ005",
-    "TARJ008",
-    "TARJ012"
+    "FLAS038",
+    "FLAS037",
+    "FLAS013",
+    "FLAS014",
+    "FLAS017",
+    "FLAS016",
+    "FLAS021",
+    "FLAS034",
+    "FLAS027",
+    "FLAS023",
+    "FLAS009",
+    "FLAS032",
+    "FLAS008",
+    "FLAS022",
+    "FLAS036",
+    "FLAS004",
+    "FLAS033",
+    "FLAS035",
+    "TARJ018",
+    "FLAS003"
   ],
-  "lote_anterior": "lote-056",
-  "qa_manifiesto": "importacion/lotes/lote-057/manifiesto-qa.json",
+  "lote_anterior": "lote-057",
+  "qa_manifiesto": "importacion/lotes/lote-058/manifiesto-qa.json",
   "qa_base_publica": null,
-  "proximo_paso": "Publicar primeros 10 y continuar hasta 30 SKU nuevos verificados; productos con imágenes primero en todos los órdenes.",
-  "publicacion": {
-    "run_pages": 38169061809,
-    "commit_desplegado": "7ea0b6fecb8962dbb458bf0e4d6b63ecb26a92e3",
-    "reporte_http": "reportes/lote-057/http-publicacion.json",
-    "publicados_verificados": 10,
-    "errores": 0
-  },
-  "qa_prepublicacion": {
-    "run_id": 38168918451,
-    "commit_candidato": "d362cd56291f1f1371ce68356f3cebf43af2cd10"
-  }
+  "proximo_paso": "Completar 30 SKU nuevos publicados y verificados, conservar originales y las imágenes siempre primero."
 }
