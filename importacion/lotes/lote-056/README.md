@@ -1,0 +1,9 @@
+# Lote 056 — tablet, monitor y memorias
+
+Después de verificar los lotes avanzados 054 y 055 se aplica la prioridad comercial del propietario: TABL002, MONI005 y almacenamiento TARJ001/TARJ007/TARJ010. TELE001 continúa pendiente de una revisión fiable de las bases; no se reconstruyen piezas no comprobadas.
+
+Las doce vistas de seis SKU se revisaron conjuntamente. Diez fueron descargadas de Drive sin iniciar sesión; las dos de MONI005 se reutilizaron. Las ocho vistas de los cinco SKU aptos se vinculan por hashes en sus contratos. Todos los originales anteriores permanecen intactos. TARJ001 es AAA / genérica según Registro fila 264, y así se muestra en la ficha; no se declara original Kingston ni rendimiento medido. Las velocidades de otras tarjetas se presentan como valores anunciados en empaque. TABL002 confirma 8 GB de RAM físicos; se conserva el título del inventario y no se agrega una nueva afirmación de RAM virtual.
+
+Las imágenes son representaciones asistidas por IA, no recuperación óptica. Se limita la tablet al frontal completo respaldado y el monitor al frontal, sin conexiones/bisagras posteriores inventadas. Los adaptadores de las memorias se incluyen porque son visibles físicamente. Las fuentes sirven para identificación y geometría; los empaques no son imágenes finales.
+
+Se reutilizan los procedimientos de los lotes 053/055: contratos y fichas-verificadas.json, importar-productos.py, procesar-imagenes.py, aplicar-datos-contrato.py y generar-seo.cjs. Los manifiestos v3, maestros conservados y hashes hacen revisable la selección. WebP 1200/600/300, revisión visual de capturas, QA de fichas a 390/1280 y QA de catálogo de quince SKU preceden a validar-contrato.py y a integración. Después se exige HTTP real, registrar-actualizaciones.py para novedades efectivas, y navegador público de GitHub Actions. No se desarrolla un sistema ni se añaden servicios.
