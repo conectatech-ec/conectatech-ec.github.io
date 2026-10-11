@@ -1,5 +1,5 @@
 {
-  "estado": "30_PUBLICADOS_VERIFICADOS_HTTP",
+  "estado": "30_PUBLICADOS_VERIFICADOS_HTTP_Y_NAVEGADOR_PUBLICO",
   "cantidad_objetivo": 30,
   "categorias": {
     "tarjetas_memoria": 11,
@@ -140,5 +140,23 @@
     "run": 38169820024,
     "estado": "success",
     "sha": "b95cd30b83c7e5b3f655bdbf6b0a39115343c147"
+  },
+  "orden_publico": "catalogo-publico.json",
+  "pages_catalogo": {
+    "run": 38169990728,
+    "estado": "success",
+    "sha": "c5e87d0da4a441d7e87e0a6e9db3a1e7e3d063df"
+  },
+  "nuevos_30_primero": true,
+  "qa_publico": {
+    "run": 38169976328,
+    "intento": 2,
+    "estado": "success",
+    "base": "https://conectatech-ec.github.io",
+    "fichas_verificadas": 20,
+    "catalogo_sku_incluidos": 45,
+    "movil_y_escritorio": true,
+    "modos_orden": 6,
+    "primer_intento": "Falló control final durante despliegue concurrente; repetido tras Pages completo sin modificar productos."
   }
 }
