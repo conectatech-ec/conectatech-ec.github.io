@@ -36,21 +36,21 @@ FACTS = {
   'specs':[('Entrada','HDMI macho'),('Salida','VGA hembra'),('Conversión','HDMI a VGA'),('Color','Negro')],
   'compatibilidad':'Fuente HDMI y pantalla/proyector VGA compatibles. La conversión indicada es HDMI a VGA.',
   'contenido':'1 convertidor HDMI a VGA.',
-  'beneficios':[('HDMI → VGA','Conecta equipos de distintas generaciones','Lleva la salida HDMI de una fuente a una pantalla VGA compatible.',['Entrada','Salida','Conversión']),('Cable corto','Más flexibilidad en el puerto','Reduce la tensión de un adaptador rígido al acomodar la conexión.',['Formato'])]},
+  'beneficios':[('HDMI → VGA','Conecta equipos de distintas generaciones','Lleva la salida HDMI de una fuente a una pantalla VGA compatible.',['Entrada','Salida','Conversión']),('Cable corto','Más flexibilidad en el puerto','Reduce la tensión de un adaptador rígido al acomodar la conexión.',['Entrada','Salida'])]},
  'ADAP038': {
   'titulo':'Adaptador Mini DisplayPort a HDMI blanco', 'variante':'Blanco',
   'descripcion':'Conecta un equipo con Mini DisplayPort a una pantalla o proyector con entrada HDMI compatible. Su cable corto facilita orientar la conexión en el escritorio.',
   'specs':[('Entrada','Mini DisplayPort macho'),('Salida','HDMI hembra'),('Conversión','Mini DisplayPort a HDMI'),('Color','Blanco')],
   'compatibilidad':'Equipos con salida Mini DisplayPort y pantallas con entrada HDMI; confirma la compatibilidad de video del equipo.',
   'contenido':'1 adaptador Mini DisplayPort a HDMI.',
-  'beneficios':[('Mini DP → HDMI','Conecta tu pantalla HDMI','Convierte la salida Mini DisplayPort del equipo en una conexión HDMI compatible.',['Entrada','Salida','Conversión']),('Cable corto','Acomoda la conexión','El tramo flexible ayuda a orientar el adaptador junto al equipo.',['Formato'])]},
+  'beneficios':[('Mini DP → HDMI','Conecta tu pantalla HDMI','Convierte la salida Mini DisplayPort del equipo en una conexión HDMI compatible.',['Entrada','Salida','Conversión']),('Cable corto','Acomoda la conexión','El tramo flexible ayuda a orientar el adaptador junto al equipo.',['Entrada','Salida'])]},
  'ADAP039': {
   'titulo':'Adaptador DisplayPort a HDMI negro', 'variante':'Negro',
   'descripcion':'Conecta un equipo con salida DisplayPort a una pantalla o proyector con entrada HDMI compatible. El cable corto permite orientar el adaptador con comodidad.',
   'specs':[('Entrada','DisplayPort macho'),('Salida','HDMI hembra'),('Conversión','DisplayPort a HDMI'),('Color','Negro')],
   'compatibilidad':'Equipos con salida DisplayPort y pantallas con entrada HDMI; confirma resolución y compatibilidad del equipo.',
   'contenido':'1 adaptador DisplayPort a HDMI.',
-  'beneficios':[('DP → HDMI','Conecta tu pantalla HDMI','Lleva la salida DisplayPort de tu equipo a una entrada HDMI compatible.',['Entrada','Salida','Conversión']),('Cable corto','Conexión más cómoda','El tramo flexible facilita acomodar el adaptador junto al puerto.',['Formato'])]},
+  'beneficios':[('DP → HDMI','Conecta tu pantalla HDMI','Lleva la salida DisplayPort de tu equipo a una entrada HDMI compatible.',['Entrada','Salida','Conversión']),('Cable corto','Conexión más cómoda','El tramo flexible facilita acomodar el adaptador junto al puerto.',['Entrada','Salida'])]},
 }
 
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -80,10 +80,6 @@ for sku in SKUS:
   photos.append(ph)
  tipo='original' if r['autenticidad']=='original verificado' else 'generico'
  specs=[{'nombre':n,'valor':v,'fuentes':source_urls,'estado':'VERIFICADO','publicar':True} for n,v in fact['specs']]
- # Beneficios que mencionan formato requieren una especificación explícita.
- names={x['nombre'] for x in specs}
- if any('Formato' in b[3] for b in fact['beneficios']) and 'Formato' not in names:
-  specs.append({'nombre':'Formato','valor':'Cable corto flexible','fuentes':source_urls,'estado':'VERIFICADO','publicar':True})
  evidence=r.get('evidencia_autenticidad','')
  url='https://conectatech-ec.github.io/productos/'+urls[sku]+'/'
  method='Edición asistida por IA de fotografías propias autorizadas: retiro de bolsa o blíster, limpieza, luz de estudio y fondo blanco. Revisión visual de conectores, forma y color contra todas las vistas disponibles; sin añadir puertos ni accesorios.'
@@ -104,7 +100,7 @@ for sku in SKUS:
  manifest['aprobaciones'][sku]={'estado':'APROBADO','identidad_verificada':True,'ficha_verificada':True,'uso_comercial_permitido':True}
  manifest['contratos'][sku]=f'importacion/contratos/{sku}.json'
  visual['revision'].append({'sku':sku,'maestro':str(master.relative_to(ROOT)),'sha256':digest,'observacion':method})
- editor.append({'sku':sku,'nombre_comercial':fact['titulo'],'descripcion':fact['descripcion'],'caracteristicas_json':json.dumps({n:v for n,v in fact['specs']},ensure_ascii=False),'fuente':f'importacion/contratos/{sku}.json','imagen_principal':f'{sku}.webp','terminos_busqueda':fact['titulo'],'verificado':'SI'})
+ editor.append({'sku':sku,'nombre_comercial':fact['titulo'],'descripcion':fact['descripcion'],'caracteristicas_json':json.dumps({item['nombre']:item['valor'] for item in specs},ensure_ascii=False),'fuente':f'importacion/contratos/{sku}.json','imagen_principal':f'{sku}.webp','terminos_busqueda':fact['titulo'],'verificado':'SI'})
 
 dump(LOTE/'manifiesto-aprobados.json',manifest); dump(LOTE/'produccion-visual.json',visual)
 with (LOTE/'editorial.csv').open('w',encoding='utf-8-sig',newline='') as f:
