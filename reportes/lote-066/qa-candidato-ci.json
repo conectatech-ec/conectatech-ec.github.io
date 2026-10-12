@@ -1,0 +1,155 @@
+{
+  "run_id": 38202678480,
+  "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38202678480",
+  "head_sha": "b3e74a16887dabf2fbc37dd6f0ab84983b957508",
+  "status": "completed",
+  "conclusion": "success",
+  "base": "candidato local de Actions",
+  "fichas": 47,
+  "catalogo": 236,
+  "jobs": [
+    {
+      "name": "validar",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-12T04:10:09Z",
+          "completed_at": "2026-10-12T04:10:10Z"
+        },
+        {
+          "name": "Recuperar exactamente la rama candidata",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-12T04:10:10Z",
+          "completed_at": "2026-10-12T04:11:02Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-12T04:11:02Z",
+          "completed_at": "2026-10-12T04:11:02Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-12T04:11:02Z",
+          "completed_at": "2026-10-12T04:11:03Z"
+        },
+        {
+          "name": "Preparar únicamente los SKU aprobados del lote",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-12T04:11:03Z",
+          "completed_at": "2026-10-12T04:11:03Z"
+        },
+        {
+          "name": "Instalar dependencias declaradas de validación",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-12T04:11:03Z",
+          "completed_at": "2026-10-12T04:11:33Z"
+        },
+        {
+          "name": "Iniciar servidor local del contenido candidato",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-12T04:11:33Z",
+          "completed_at": "2026-10-12T04:11:33Z"
+        },
+        {
+          "name": "Renderizar y comprobar fichas con Chromium real",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-12T04:11:33Z",
+          "completed_at": "2026-10-12T04:12:19Z"
+        },
+        {
+          "name": "Comprobar catálogo compacto, novedades, filtros y enlaces",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-12T04:12:19Z",
+          "completed_at": "2026-10-12T04:12:54Z"
+        },
+        {
+          "name": "Incorporar únicamente evidencia móvil válida",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-12T04:12:54Z",
+          "completed_at": "2026-10-12T04:12:54Z"
+        },
+        {
+          "name": "Validar contrato completo antes de publicar",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-12T04:12:54Z",
+          "completed_at": "2026-10-12T04:12:57Z"
+        },
+        {
+          "name": "Guardar contratos revisados, capturas y reportes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-12T04:12:57Z",
+          "completed_at": "2026-10-12T04:13:01Z"
+        },
+        {
+          "name": "Exigir todos los controles sin publicar",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-12T04:13:01Z",
+          "completed_at": "2026-10-12T04:13:01Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-10-12T04:13:01Z",
+          "completed_at": "2026-10-12T04:13:01Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-10-12T04:13:01Z",
+          "completed_at": "2026-10-12T04:13:01Z"
+        },
+        {
+          "name": "Post Recuperar exactamente la rama candidata",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 26,
+          "started_at": "2026-10-12T04:13:01Z",
+          "completed_at": "2026-10-12T04:13:01Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 27,
+          "started_at": "2026-10-12T04:13:01Z",
+          "completed_at": "2026-10-12T04:13:01Z"
+        }
+      ]
+    }
+  ]
+}
