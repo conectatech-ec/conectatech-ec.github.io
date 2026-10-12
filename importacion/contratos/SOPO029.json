@@ -105,7 +105,8 @@
     "https://drive.google.com/file/d/1KgEUe6z743MJsGeFxCrrGyGWCykqv7V8/view?usp=drivesdk",
     "https://drive.google.com/file/d/1Nz6XX3FRkrEByQJpEdgo4RE0al1M-mKi/view?usp=drivesdk",
     "https://drive.google.com/file/d/1lJ590qnCMWICL57_Y3G4NzQWLpyyE5E8/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/sopo029/SOPO029-01.webp",
   "imagenes_secundarias": [],
@@ -207,19 +208,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Producto genérico compatible",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/114Yy6V8AZ1y_4s9cDWX4MSKpkpbFgIJd/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1KgEUe6z743MJsGeFxCrrGyGWCykqv7V8/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1Nz6XX3FRkrEByQJpEdgo4RE0al1M-mKi/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1lJ590qnCMWICL57_Y3G4NzQWLpyyE5E8/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo029-soporte-para-vehiculo-con-ventosa-y-magsafe-rt-66s/",
   "fecha_verificacion": "2026-10-10T22:05:18.307544+00:00",
   "descripcion": "Coloca el teléfono en un punto visible del vehículo con un soporte magnético de ventosa y brazo ajustable. El RT-66S permite orientar el cabezal y regular la extensión para adaptar el ángulo de consulta.",
@@ -282,7 +280,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/114Yy6V8AZ1y_4s9cDWX4MSKpkpbFgIJd/view?usp=drivesdk",
-      "evidencia": "Cotejo del SKU 593 con fotografías propias. Solo se publican datos visibles en el empaque o presentes en la base comercial."
+      "evidencia": "Cotejo del SKU 593 con fotografías propias. Solo se publican datos visibles en el empaque o presentes en la base comercial. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -294,7 +292,7 @@
       "solicitado": "SOPO029",
       "sku": "SOPO029",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:42.257Z",
+      "fecha": "2026-10-12T04:37:09.374Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -322,8 +320,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/sopo029-soporte-para-vehiculo-con-ventosa-y-magsafe-rt-66s/",
       "archivo_html": "productos/sopo029-soporte-para-vehiculo-con-ventosa-y-magsafe-rt-66s/index.html",
       "http": 200,
-      "sha256_html": "4e1dab9e73dec1d2f69c58dd9da40ddf2b0561844949c70750b361916b665196",
-      "sha256_html_local": "4e1dab9e73dec1d2f69c58dd9da40ddf2b0561844949c70750b361916b665196",
+      "sha256_html": "be673a3ac3ad5c44f3f6081bfddc4f3a25b149d8662a4466f2deb13cfb95f2fe",
+      "sha256_html_local": "be673a3ac3ad5c44f3f6081bfddc4f3a25b149d8662a4466f2deb13cfb95f2fe",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

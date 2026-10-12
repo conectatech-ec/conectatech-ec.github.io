@@ -64,7 +64,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/adap005/ADAP005-01.webp",
   "imagenes_secundarias": [],
@@ -112,9 +113,9 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Accesorio genérico",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1CAPpUlIxxnQ8r4x9jYz0T-rufjsmeWMV/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -139,7 +140,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
   "fecha_verificacion": "2026-10-10T19:02:26.057404+00:00",
   "descripcion": "Dale a tu enchufe europeo una conexión de dos clavijas planas. Este adaptador negro es una solución sencilla y compacta para conectar equipos con la forma de enchufe compatible. Su cuerpo con relieves facilita sujetarlo al colocarlo o retirarlo. Comprueba el ajuste y la tensión admitida por tu equipo antes de usarlo.",
@@ -203,7 +204,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
-      "evidencia": "Beneficios revisados contra especificaciones y fotos propias: no se añade autonomía, número de recargas ni compatibilidad universal. Datos financieros intactos."
+      "evidencia": "Beneficios revisados contra especificaciones y fotos propias: no se añade autonomía, número de recargas ni compatibilidad universal. Datos financieros intactos. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
@@ -219,7 +220,7 @@
       "solicitado": "ADAP005",
       "sku": "ADAP005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:19.456Z",
+      "fecha": "2026-10-12T04:36:57.471Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -247,8 +248,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/adap005-adaptador-europa-latino-color-negro/",
       "archivo_html": "productos/adap005-adaptador-europa-latino-color-negro/index.html",
       "http": 200,
-      "sha256_html": "76889c64fe11534a82f3ce5aa59e977b5b3fdffbe78b3a04bbb3a624c1d3a83e",
-      "sha256_html_local": "76889c64fe11534a82f3ce5aa59e977b5b3fdffbe78b3a04bbb3a624c1d3a83e",
+      "sha256_html": "fc65defa27d135eb21bf26843b63566d0809bda4eb569048786d97c81bede444",
+      "sha256_html_local": "fc65defa27d135eb21bf26843b63566d0809bda4eb569048786d97c81bede444",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

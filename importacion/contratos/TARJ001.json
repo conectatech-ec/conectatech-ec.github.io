@@ -42,7 +42,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1hygcA3OgKP5DgkxIHtGlrLERif3Sy3Ci/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/tarj001/TARJ001-01.webp",
   "imagenes_secundarias": [],
@@ -99,9 +100,9 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "AAA / genérica",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1hygcA3OgKP5DgkxIHtGlrLERif3Sy3Ci/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -117,7 +118,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/tarj001-tarjeta-de-memoria-microsd-de-128gb-kingston/",
   "fecha_verificacion": "2026-10-11T18:22:01.250336+00:00",
   "descripcion": "Tarjeta microSDXC de 128 GB en producto, con adaptador SD visible en la presentación del producto. Una opción para ampliar el almacenamiento de dispositivos compatibles con esta capacidad. La clasificación AAA está confirmada por el registro comercial del propietario.",
@@ -195,7 +196,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1hygcA3OgKP5DgkxIHtGlrLERif3Sy3Ci/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593 y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593 y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -207,7 +208,7 @@
       "solicitado": "TARJ001",
       "sku": "TARJ001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:07.204Z",
+      "fecha": "2026-10-12T04:37:10.318Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -235,8 +236,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/tarj001-tarjeta-de-memoria-microsd-de-128gb-kingston/",
       "archivo_html": "productos/tarj001-tarjeta-de-memoria-microsd-de-128gb-kingston/index.html",
       "http": 200,
-      "sha256_html": "eeb8fea9be74391b5237dd7bc8d9b26184ef4e0369a74e44997427ef455dcb32",
-      "sha256_html_local": "eeb8fea9be74391b5237dd7bc8d9b26184ef4e0369a74e44997427ef455dcb32",
+      "sha256_html": "1e18233e0e1572164851e8e4f0d7ac23118eb84a2332fac38912c5af91f54b36",
+      "sha256_html_local": "1e18233e0e1572164851e8e4f0d7ac23118eb84a2332fac38912c5af91f54b36",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

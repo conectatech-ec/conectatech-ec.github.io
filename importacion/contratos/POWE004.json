@@ -105,7 +105,8 @@
     "https://drive.google.com/file/d/1U1JeT2VGhnSD72Tg1QFKhKKVsBsTp9qI/view?usp=drivesdk",
     "https://drive.google.com/file/d/1Ue-y35uw5vIpZXNxQwfqHPB0_f8-0heX/view?usp=drivesdk",
     "https://drive.google.com/file/d/1so41tHCvObllUs8itP1Ska0KX0TISvUM/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/powe004/POWE004-01.webp",
   "imagenes_secundarias": [],
@@ -195,19 +196,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Producto genérico compatible",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1-hAoHnVNgMVNhn6gB6Kur5wpGhYBlA19/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1U1JeT2VGhnSD72Tg1QFKhKKVsBsTp9qI/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1Ue-y35uw5vIpZXNxQwfqHPB0_f8-0heX/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1so41tHCvObllUs8itP1Ska0KX0TISvUM/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/powe004-powerbank-66w-30000mah/",
   "fecha_verificacion": "2026-10-10T22:05:18.307544+00:00",
   "descripcion": "Lleva energía de alta capacidad con conexiones listas para usar. Esta batería portátil integra cables Lightning y USB-C, además de puertos visibles para conectar distintos dispositivos sin cargar accesorios sueltos.",
@@ -270,7 +268,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1-hAoHnVNgMVNhn6gB6Kur5wpGhYBlA19/view?usp=drivesdk",
-      "evidencia": "Cotejo del SKU 593 con fotografías propias. Solo se publican datos visibles en el empaque o presentes en la base comercial."
+      "evidencia": "Cotejo del SKU 593 con fotografías propias. Solo se publican datos visibles en el empaque o presentes en la base comercial. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -282,7 +280,7 @@
       "solicitado": "POWE004",
       "sku": "POWE004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:38.621Z",
+      "fecha": "2026-10-12T04:37:07.600Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -310,8 +308,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/powe004-powerbank-66w-30000mah/",
       "archivo_html": "productos/powe004-powerbank-66w-30000mah/index.html",
       "http": 200,
-      "sha256_html": "6daf416094e29e466a81ec63d6813e2e2779dabf085ece4a198c1553be2e6c6d",
-      "sha256_html_local": "6daf416094e29e466a81ec63d6813e2e2779dabf085ece4a198c1553be2e6c6d",
+      "sha256_html": "e5d489131e15e7a066c50932f08360effe2b04f6c327b3228f07cb4bca1cc84e",
+      "sha256_html_local": "e5d489131e15e7a066c50932f08360effe2b04f6c327b3228f07cb4bca1cc84e",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1eaWbD-Q8xhKQlbJypNS-R1qbHcXkz9fh/view?usp=drivesdk",
     "https://drive.google.com/file/d/1qN-W7O2oeNEQMrAWtLer7OIPXlMESTYH/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/adap007/ADAP007-01.webp",
   "imagenes_secundarias": [],
@@ -133,17 +134,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Producto genérico compatible",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1eaWbD-Q8xhKQlbJypNS-R1qbHcXkz9fh/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1qN-W7O2oeNEQMrAWtLer7OIPXlMESTYH/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap007-adaptador-lightning-a-3-5mm/",
   "fecha_verificacion": "2026-10-10T22:05:18.307544+00:00",
   "descripcion": "Conecta audífonos o cables de audio con plug de 3,5 mm a un equipo con puerto Lightning mediante un adaptador corto, limpio y fácil de llevar.",
@@ -204,7 +204,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1eaWbD-Q8xhKQlbJypNS-R1qbHcXkz9fh/view?usp=drivesdk",
-      "evidencia": "Cotejo del SKU 593 con fotografías propias. Solo se publican datos visibles en el empaque o presentes en la base comercial."
+      "evidencia": "Cotejo del SKU 593 con fotografías propias. Solo se publican datos visibles en el empaque o presentes en la base comercial. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -216,7 +216,7 @@
       "solicitado": "ADAP007",
       "sku": "ADAP007",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:40.478Z",
+      "fecha": "2026-10-12T04:36:59.515Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -244,8 +244,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/adap007-adaptador-lightning-a-3-5mm/",
       "archivo_html": "productos/adap007-adaptador-lightning-a-3-5mm/index.html",
       "http": 200,
-      "sha256_html": "a9b25e0598756522d6d0b6003c125da1114ce5e089d18cda92083992f338a896",
-      "sha256_html_local": "a9b25e0598756522d6d0b6003c125da1114ce5e089d18cda92083992f338a896",
+      "sha256_html": "1ce4550733a03ea729160bec398aeede02aa92e0aa0147225e06c47742f10897",
+      "sha256_html_local": "1ce4550733a03ea729160bec398aeede02aa92e0aa0147225e06c47742f10897",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

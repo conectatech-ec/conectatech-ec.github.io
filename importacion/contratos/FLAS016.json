@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1HSTe5ytlCnQGcvxLDFhL1XEr3erXXFaM/view?usp=drivesdk",
     "https://drive.google.com/file/d/1b8u5MP-5lLANFF4eFNTimbhFKgrB5rxH/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/flas016/FLAS016-01.webp",
   "imagenes_secundarias": [],
@@ -113,10 +114,9 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "AAA / genérica",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1HSTe5ytlCnQGcvxLDFhL1XEr3erXXFaM/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1b8u5MP-5lLANFF4eFNTimbhFKgrB5rxH/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -133,7 +133,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/",
   "fecha_verificacion": "2026-10-11T19:45:50.021056+00:00",
   "descripcion": "Memoria USB de 32 GB nominales, producto según clasificación comercial del propietario. Para guardar archivos en equipos con USB-A compatible. No se promete el rendimiento de un producto original.",
@@ -214,7 +214,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1HSTe5ytlCnQGcvxLDFhL1XEr3erXXFaM/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -226,7 +226,7 @@
       "solicitado": "FLAS016",
       "sku": "FLAS016",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:23.562Z",
+      "fecha": "2026-10-12T04:37:11.984Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -254,8 +254,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/",
       "archivo_html": "productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/index.html",
       "http": 200,
-      "sha256_html": "e355bbb6e0edd035eb8bcb90aa0f1c6472416b71a650e922b4bbf684b0519490",
-      "sha256_html_local": "e355bbb6e0edd035eb8bcb90aa0f1c6472416b71a650e922b4bbf684b0519490",
+      "sha256_html": "0ba9ac3ee35695e04c4fbd55df8b199e21116f66e7ca73bfb28714ebc7b6fb24",
+      "sha256_html_local": "0ba9ac3ee35695e04c4fbd55df8b199e21116f66e7ca73bfb28714ebc7b6fb24",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

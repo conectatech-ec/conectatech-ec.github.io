@@ -106,7 +106,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1aJTh3WXI7mo-BKcKXMECVEweuj_OExqQ/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/sopo023/SOPO023-01.webp",
   "imagenes_secundarias": [],
@@ -184,7 +185,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo023-soporte-de-celular-modelo-t8-04/",
   "fecha_verificacion": "2026-10-10T15:42:46.164453+00:00",
-  "descripcion": "Mantén tu celular a la vista con el soporte de escritorio T8-04. Su estructura plegable permite ajustar la inclinación, mientras la base giratoria facilita orientar la pantalla. Una opción práctica para videollamadas, videos y consultas cotidianas en el escritorio. Accesorio genérico.",
+  "descripcion": "Mantén tu celular a la vista con el soporte de escritorio T8-04. Su estructura plegable permite ajustar la inclinación, mientras la base giratoria facilita orientar la pantalla. Una opción práctica para videollamadas, videos y consultas cotidianas en el escritorio.",
   "compatibilidad": "Comprobar forma y ajuste para el equipo concreto.",
   "contenido_venta": "1 soporte",
   "garantia": {
@@ -256,7 +257,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
-      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos."
+      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "publicacion_http": {
       "archivo": "reportes/lote-042-http.json",
@@ -272,7 +273,7 @@
       "solicitado": "SOPO023",
       "sku": "SOPO023",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T15:41:01.934Z",
+      "fecha": "2026-10-12T04:37:05.045Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -287,62 +288,64 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "enlaces_internos": true,
         "escritorio": true
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo023-soporte-de-celular-modelo-t8-04/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo023-soporte-de-celular-modelo-t8-04/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/sopo023-soporte-de-celular-modelo-t8-04/",
       "archivo_html": "productos/sopo023-soporte-de-celular-modelo-t8-04/index.html",
       "http": 200,
-      "sha256_html": "f15b70aed357f1c184fe98f02e461ca3d2b02d3c2c00173faa554fe21c5b09ab",
-      "sha256_html_local": "f15b70aed357f1c184fe98f02e461ca3d2b02d3c2c00173faa554fe21c5b09ab",
+      "sha256_html": "7cf47e12369bf0c3e67bddfb9b840f859a2ff6d5ef8ea22d935a0757c9da8b03",
+      "sha256_html_local": "7cf47e12369bf0c3e67bddfb9b840f859a2ff6d5ef8ea22d935a0757c9da8b03",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/sopo023/SOPO023-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo023/SOPO023-01-600.webp?v=14b0aa0dd0a371ed",
+        "src": "https://conectatech-ec.github.io/imagenes/sopo023/SOPO023-premium-v1.png",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/sopo023/SOPO023-01-600.webp?v=14b0aa0dd0a371ed",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/sopo023-soporte-de-celular-modelo-t8-04/",
+          "url": "http://127.0.0.1:8765/productos/sopo023-soporte-de-celular-modelo-t8-04/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/sopo023/SOPO023-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/sopo023/SOPO023-premium-v1.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
+          "url": "http://127.0.0.1:8765/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-042/qa-publico/movil/SOPO023-390.png",
-      "sha256": "39ba385ce86a88530aa302a011a0c1bc968d19c7dbf85cb33081b0cca3521287",
+      "archivo": "reportes/lote-066/qa-local/movil/SOPO023-390.png",
+      "sha256": "eddc812e7b7a03660af57954cd45e0238ed0e80fb8270681768191c996685b8b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-042/qa-publico/movil/SOPO023-1280.png",
-        "sha256": "f21814c7f1ecf35270612aeb9d6881c133a69129087de45a0fa4aeb76d910848",
+        "archivo": "reportes/lote-066/qa-local/movil/SOPO023-1280.png",
+        "sha256": "aee7f68ca5fc071f0d76a18da8f6685fbe661fc4d52a768ce53730821f0057b9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

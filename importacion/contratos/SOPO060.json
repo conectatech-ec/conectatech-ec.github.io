@@ -106,7 +106,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1xi6vPD0TdHE2xGfDeleUus8_30qz6PZt/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/sopo060/SOPO060-01.webp",
   "imagenes_secundarias": [],
@@ -190,10 +191,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
   "fecha_verificacion": "2026-10-10T15:42:46.164453+00:00",
-  "descripcion": "Coloca tu celular o tablet en una posición cómoda con el soporte de mesa T8-02. Su estructura articulada permite regular la inclinación y plegarlo cuando necesitas guardarlo. Cuenta con apoyos inferiores y una zona acolchada de contacto para mantener el equipo colocado durante tus consultas, videos o videollamadas. Accesorio genérico; confirma el ajuste para tu dispositivo.",
+  "descripcion": "Coloca tu celular o tablet en una posición cómoda con el soporte de mesa T8-02. Su estructura articulada permite regular la inclinación y plegarlo cuando necesitas guardarlo. Cuenta con apoyos inferiores y una zona acolchada de contacto para mantener el equipo colocado durante tus consultas, videos o videollamadas. Confirma el ajuste para tu dispositivo.",
   "compatibilidad": "Celulares y tablets; confirmar ajuste para el equipo concreto",
   "contenido_venta": "1 soporte",
   "garantia": {
@@ -265,7 +266,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
-      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos."
+      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -281,7 +282,7 @@
       "solicitado": "SOPO060",
       "sku": "SOPO060",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:02.336Z",
+      "fecha": "2026-10-12T04:37:05.899Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -306,8 +307,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/sopo060-soporte-para-celular-y-tablet-t8-02/",
       "archivo_html": "productos/sopo060-soporte-para-celular-y-tablet-t8-02/index.html",
       "http": 200,
-      "sha256_html": "465658640f9bc8204f4f6f4a4cdf10f3078e5f0ad485c1536b17c7e5ec33b9fe",
-      "sha256_html_local": "465658640f9bc8204f4f6f4a4cdf10f3078e5f0ad485c1536b17c7e5ec33b9fe",
+      "sha256_html": "c2dc12fc9e191068abf8dc381d18023594367e13159554109cb6c0cf279a16e4",
+      "sha256_html_local": "c2dc12fc9e191068abf8dc381d18023594367e13159554109cb6c0cf279a16e4",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -358,12 +359,12 @@
         }
       ],
       "archivo": "reportes/lote-066/qa-local/movil/SOPO060-390.png",
-      "sha256": "f26ebd4142b0986270505b20e67790dba04f9d7b90860bc1cc0b412241869cee",
+      "sha256": "3a0b61abe3996cec2734066c852aee2fd40b1f6e31cabe1e22d30abfb00c6be3",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/lote-066/qa-local/movil/SOPO060-1280.png",
-        "sha256": "176969dd0696b852f127db303a9276c1b86d5a5e163378418c0bc89f12729abe",
+        "sha256": "8f28a6fb32b0c2027e05f5e083133de3df9b57eecf1b9b37ddf81ebc99ceb2b7",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

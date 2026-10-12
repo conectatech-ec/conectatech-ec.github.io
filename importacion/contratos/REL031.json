@@ -126,7 +126,8 @@
     "https://drive.google.com/file/d/1f859WxwhPTsb-1bVnPhWkomw1qcGaVKy/view?usp=drivesdk",
     "https://drive.google.com/file/d/1w7rW1XK_roo7dqfVpV2xDmXIJl-l1S3c/view?usp=drivesdk",
     "https://drive.google.com/file/d/1z9HaBYzUSOkYqZzWHOFx204oExjdcXSZ/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/rel031/REL031-01.webp",
   "imagenes_secundarias": [],
@@ -208,20 +209,16 @@
     },
     {
       "nombre": "Tipo",
-      "valor": "AAA / genérico, no es un producto Apple original",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1KU0z3qy--X3E80mToJttIwX2i_9BBinE/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1bKVZyqz64bCvIXEZ7UpmkdB6eRFNYjy-/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1f859WxwhPTsb-1bVnPhWkomw1qcGaVKy/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1w7rW1XK_roo7dqfVpV2xDmXIJl-l1S3c/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1z9HaBYzUSOkYqZzWHOFx204oExjdcXSZ/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/rel031-reloj-smartwatch-ultra-9/",
   "fecha_verificacion": "2026-10-11T21:09:24.641263+00:00",
   "descripcion": "Smartwatch Ultra 9 con diseño rectangular con esquinas redondeadas y silicona acanalada. Presentación comercial basada en las fotografías reales del SKU. Consulta compatibilidad y disponibilidad antes de comprar. producto; no es un Apple Watch original.",
@@ -311,7 +308,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1KU0z3qy--X3E80mToJttIwX2i_9BBinE/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -323,7 +320,7 @@
       "solicitado": "REL031",
       "sku": "REL031",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:40.351Z",
+      "fecha": "2026-10-12T04:37:15.401Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -351,8 +348,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/rel031-reloj-smartwatch-ultra-9/",
       "archivo_html": "productos/rel031-reloj-smartwatch-ultra-9/index.html",
       "http": 200,
-      "sha256_html": "f0f92d75d4d7cf1dd34c1a3413052e9e2ec60c51b124cbf1d04a77ca861cb2fa",
-      "sha256_html_local": "f0f92d75d4d7cf1dd34c1a3413052e9e2ec60c51b124cbf1d04a77ca861cb2fa",
+      "sha256_html": "5d92d3a882e7f6537a5d0bebaa452f307099bbd34656920a48e07a69e0d8d0cc",
+      "sha256_html_local": "5d92d3a882e7f6537a5d0bebaa452f307099bbd34656920a48e07a69e0d8d0cc",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

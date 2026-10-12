@@ -84,7 +84,8 @@
     "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk",
     "https://drive.google.com/file/d/1LEHSfuah5r12xdtCEmKmYXSJ3ey9oIKC/view?usp=drivesdk",
     "https://drive.google.com/file/d/1TxDwCuKYwKMtsgCVUXZQU8lgW3LTquAO/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/rel001/REL001-01.webp",
   "imagenes_secundarias": [],
@@ -133,21 +134,10 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
-    },
-    {
-      "nombre": "Diseño",
-      "valor": "versión genérica",
-      "fuentes": [
-        "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1LEHSfuah5r12xdtCEmKmYXSJ3ey9oIKC/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1TxDwCuKYwKMtsgCVUXZQU8lgW3LTquAO/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
   "descripcion": "Despertador digital DCX-670 con pantalla de hora, fecha y temperatura indicada en su empaque. producto; no es un producto original de la marca de referencia.",
@@ -169,11 +159,11 @@
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
   "beneficios": [
     {
-      "valor": "Diseño",
-      "titulo": "Presentación y comodidad",
-      "descripcion": "versión genérica.",
+      "valor": "DCX-670",
+      "titulo": "El modelo que buscas",
+      "descripcion": "Elige este modelo para acompañar tu día a día.",
       "especificaciones": [
-        "Diseño"
+        "Modelo"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk",
@@ -231,7 +221,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -243,7 +233,7 @@
       "solicitado": "REL001",
       "sku": "REL001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:20.175Z",
+      "fecha": "2026-10-12T04:42:09.652Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -271,8 +261,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/rel001-reloj-despertador-modelo-dcx-670/",
       "archivo_html": "productos/rel001-reloj-despertador-modelo-dcx-670/index.html",
       "http": 200,
-      "sha256_html": "8f72afdf9f50290d0049ee56784d3a60e54795859ac2690a0de29875fee65331",
-      "sha256_html_local": "8f72afdf9f50290d0049ee56784d3a60e54795859ac2690a0de29875fee65331",
+      "sha256_html": "b74517d13f9561f176285a0f9fce12000c5b0e50b341c9a01896d79b69a8df7a",
+      "sha256_html_local": "b74517d13f9561f176285a0f9fce12000c5b0e50b341c9a01896d79b69a8df7a",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -323,12 +313,12 @@
         }
       ],
       "archivo": "reportes/lote-066/qa-local/movil/REL001-390.png",
-      "sha256": "9fedfc68c0b09d5720c2c8b48b18deccdb3dbb5d782f33ca4ba65d7f607f26f1",
+      "sha256": "d47cca739a6bc0b9af462247cfc31c3ed0b8db4f3c93bbcfe2112fac898c8efb",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/lote-066/qa-local/movil/REL001-1280.png",
-        "sha256": "daeba3d03a189cac2f2a647844c9a6a6fa0fba44072a7679657cb971067bf32a",
+        "sha256": "0ebea426df58336e7821f154a7ae93bed7e2031c8a98a7d571f992e38e1af35b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

@@ -64,7 +64,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/11k4AADphTk_pm7Tu1Y4lRbBxRgB1PlUZ/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/adap004/ADAP004-01.webp",
   "imagenes_secundarias": [],
@@ -112,16 +113,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Accesorio genérico",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/11k4AADphTk_pm7Tu1Y4lRbBxRgB1PlUZ/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
   "fecha_verificacion": "2026-10-10T15:42:46.164453+00:00",
   "descripcion": "Adaptador de enchufe de color blanco, identificado como Europa a Latino en la base comercial. Comprueba que la forma del enchufe y los requisitos del equipo sean compatibles antes de comprar.",
@@ -185,7 +186,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
-      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos."
+      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
@@ -201,7 +202,7 @@
       "solicitado": "ADAP004",
       "sku": "ADAP004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:18.445Z",
+      "fecha": "2026-10-12T04:36:56.514Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -226,8 +227,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/adap004-adaptador-europa-latino-color-blanco/",
       "archivo_html": "productos/adap004-adaptador-europa-latino-color-blanco/index.html",
       "http": 200,
-      "sha256_html": "d22ea41667ff3fe6faf2830355910ab3ba11ed1cdfb19b6f552628bef493053a",
-      "sha256_html_local": "d22ea41667ff3fe6faf2830355910ab3ba11ed1cdfb19b6f552628bef493053a",
+      "sha256_html": "152b6942543d822fec0704def45a21978d2daa5a80e58eb1d99f91b1902c1fe3",
+      "sha256_html_local": "152b6942543d822fec0704def45a21978d2daa5a80e58eb1d99f91b1902c1fe3",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -278,12 +279,12 @@
         }
       ],
       "archivo": "reportes/lote-066/qa-local/movil/ADAP004-390.png",
-      "sha256": "20c59d78f3173916951ca97a35fa6de5c951f20a7762f8e8dcfdd65ca3861ab2",
+      "sha256": "3a65ba5c6ce2b1b2539e6caa93a519f115fd8000b69a326882786aebb970d597",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/lote-066/qa-local/movil/ADAP004-1280.png",
-        "sha256": "24117aca5f8c9ff098e6ead3c2bdd6fce8e04fd485f4259acc214b91401dce7e",
+        "sha256": "a51cb50780098ae42719b6821b79075d2ac6f5219754c37032161d935699696f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

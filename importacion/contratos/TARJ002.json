@@ -42,7 +42,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1ic8cwGiJEYNBzF8fNeHamR9sdX6hf4_o/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/tarj002/TARJ002-01.webp",
   "imagenes_secundarias": [],
@@ -90,9 +91,9 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "AAA / genérica",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1ic8cwGiJEYNBzF8fNeHamR9sdX6hf4_o/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -117,7 +118,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/tarj002-tarjeta-de-memoria-microsd-256gb-kingston-80-mb-s/",
   "fecha_verificacion": "2026-10-11T19:42:34.509975+00:00",
   "descripcion": "Tarjeta microSDXC de 256 GB nominales en producto, según clasificación comercial confirmada por el propietario. Incluye adaptador SD para lectores compatibles. No se promete el rendimiento de un artículo original.",
@@ -195,7 +196,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1ic8cwGiJEYNBzF8fNeHamR9sdX6hf4_o/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -207,7 +208,7 @@
       "solicitado": "TARJ002",
       "sku": "TARJ002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:13.586Z",
+      "fecha": "2026-10-12T04:37:11.151Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -235,8 +236,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/tarj002-tarjeta-de-memoria-microsd-256gb-kingston-80-mb-s/",
       "archivo_html": "productos/tarj002-tarjeta-de-memoria-microsd-256gb-kingston-80-mb-s/index.html",
       "http": 200,
-      "sha256_html": "d7b3c1a4f9b71cafb957c40c603c7ee755130efbad533604abe2b2bc915aa1b0",
-      "sha256_html_local": "d7b3c1a4f9b71cafb957c40c603c7ee755130efbad533604abe2b2bc915aa1b0",
+      "sha256_html": "56dbf97cdd473f6693c761b303a78c01724766b82f6aed6d716890e311fae098",
+      "sha256_html_local": "56dbf97cdd473f6693c761b303a78c01724766b82f6aed6d716890e311fae098",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

@@ -102,7 +102,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1ZGToXgaWGINpPnozKeqQFbVPNWonP3R1/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/sopo058/SOPO058-01.webp",
   "imagenes_secundarias": [],
@@ -179,7 +180,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo058-soporte-magsafe-tipo-pinza/",
   "fecha_verificacion": "2026-10-10T07:30:27.144671+00:00",
-  "descripcion": "Coloca tu celular a la vista con este soporte magnético de pinza. Su diseño articulado permite orientar el aro de sujeción y fijar el conjunto al borde de una superficie compatible. Una alternativa compacta para consultar contenido y realizar videollamadas sin sostener el teléfono. Accesorio genérico para equipos o fundas con sujeción magnética compatible.",
+  "descripcion": "Coloca tu celular a la vista con este soporte magnético de pinza. Su diseño articulado permite orientar el aro de sujeción y fijar el conjunto al borde de una superficie compatible. Una alternativa compacta para consultar contenido y realizar videollamadas sin sostener el teléfono. Para equipos o fundas con sujeción magnética compatible.",
   "compatibilidad": "Teléfonos o fundas con sujeción magnética compatible; confirmar el ajuste",
   "contenido_venta": "1 soporte",
   "garantia": {
@@ -286,7 +287,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-040/accesorios-propuestas.json"
+      "fuente": "importacion/lotes/lote-040/accesorios-propuestas.json",
+      "evidencia": " Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "publicacion_http": {
       "archivo": "reportes/lote-040-http.json",
@@ -296,7 +298,7 @@
       "solicitado": "SOPO058",
       "sku": "SOPO058",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T07:38:15.434Z",
+      "fecha": "2026-10-12T04:37:06.739Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -311,57 +313,59 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "enlaces_internos": true,
         "escritorio": true
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo058-soporte-magsafe-tipo-pinza/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo058-soporte-magsafe-tipo-pinza/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/sopo058-soporte-magsafe-tipo-pinza/",
       "archivo_html": "productos/sopo058-soporte-magsafe-tipo-pinza/index.html",
       "http": 200,
-      "sha256_html": "b931084775e103aee0461cc8375c5d1605ffaa54586014895b359838093f904e",
-      "sha256_html_local": "b931084775e103aee0461cc8375c5d1605ffaa54586014895b359838093f904e",
+      "sha256_html": "39a0349729fd1601847974a017103dbedf9a6741053be15277a3623adf3bba6c",
+      "sha256_html_local": "39a0349729fd1601847974a017103dbedf9a6741053be15277a3623adf3bba6c",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/sopo058/SOPO058-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo058/SOPO058-01-600.webp",
+        "src": "https://conectatech-ec.github.io/imagenes/sopo058/SOPO058-premium-v1.png",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/sopo058/SOPO058-01-600.webp?v=a98a93bdaedb8c07",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/sopo058-soporte-magsafe-tipo-pinza/",
+          "url": "http://127.0.0.1:8765/productos/sopo058-soporte-magsafe-tipo-pinza/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/sopo058/SOPO058-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/sopo058/SOPO058-premium-v1.png",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/movil/SOPO058-390.png",
-      "sha256": "b2fcb444fc015dd6c5dc786c103189fc8a1f36fa7c7445673a5e123165a157d7",
+      "archivo": "reportes/lote-066/qa-local/movil/SOPO058-390.png",
+      "sha256": "d3bbba551b3c4de678afbb37360d80d1da93e3aa1ff509c9624b095aa4a517e4",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/movil/SOPO058-1280.png",
-        "sha256": "f62f946856ce0fcd7c18b4cdcbef56a37d35dbcd06e8d0556d52629b22317885",
+        "archivo": "reportes/lote-066/qa-local/movil/SOPO058-1280.png",
+        "sha256": "85d09cfd6dda3afd46ed2fcbe7a072ff182bde7c125d59e0fda0a955421bbb79",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

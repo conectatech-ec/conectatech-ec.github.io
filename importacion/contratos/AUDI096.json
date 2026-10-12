@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk",
     "https://drive.google.com/file/d/1UcwLGFWtc0hyla-zRPXdxu3IPcsZyQcb/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/audi096/AUDI096-01.webp",
   "imagenes_secundarias": [],
@@ -112,16 +113,6 @@
       "publicar": true
     },
     {
-      "nombre": "Diseño",
-      "valor": "versión genérica",
-      "fuentes": [
-        "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1UcwLGFWtc0hyla-zRPXdxu3IPcsZyQcb/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
       "nombre": "Micrófono",
       "valor": "Brazo integrado",
       "fuentes": [
@@ -133,7 +124,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
   "descripcion": "Diadema SY440MV. Variante negro con verde, con diseño y presentación cotejados con las fotografías del SKU. producto; no es un producto original de la marca de referencia.",
@@ -155,11 +146,11 @@
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
   "beneficios": [
     {
-      "valor": "Diseño",
-      "titulo": "Presentación y comodidad",
-      "descripcion": "versión genérica.",
+      "valor": "Brazo integrado",
+      "titulo": "Micrófono integrado",
+      "descripcion": "Habla con el micrófono de brazo incorporado.",
       "especificaciones": [
-        "Diseño"
+        "Micrófono"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk",
@@ -214,7 +205,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -226,7 +217,7 @@
       "solicitado": "AUDI096",
       "sku": "AUDI096",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:32.456Z",
+      "fecha": "2026-10-12T04:42:10.539Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -254,8 +245,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
       "archivo_html": "productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/index.html",
       "http": 200,
-      "sha256_html": "4cd0228144366f3a2124eff5439281d8c51f340a6bc358cc8666521c89ab6f6e",
-      "sha256_html_local": "4cd0228144366f3a2124eff5439281d8c51f340a6bc358cc8666521c89ab6f6e",
+      "sha256_html": "57eb1e05b15bdfa6c972c7c8dd9137f079089157e2a83ccec2df4a3184c445c8",
+      "sha256_html_local": "57eb1e05b15bdfa6c972c7c8dd9137f079089157e2a83ccec2df4a3184c445c8",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -306,12 +297,12 @@
         }
       ],
       "archivo": "reportes/lote-066/qa-local/movil/AUDI096-390.png",
-      "sha256": "c974165e7a4e1cac0e5c334637543cabb4b0039f2b4ecfb73cc8aaa1cc936318",
+      "sha256": "7c9665058add1313231a107eaa22254ce5b57ac9010f8c98143c7098cdf48420",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/lote-066/qa-local/movil/AUDI096-1280.png",
-        "sha256": "55dd7a97a296ddf7318677ee78f6124e391ab58eb5e419b875fc7c00a489aab5",
+        "sha256": "261df0ba91f140753f53520e594ba5ea149f027f7fe75a4b5bdd16dad52e5228",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

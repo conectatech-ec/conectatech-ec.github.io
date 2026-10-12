@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1EB4aq5H4AnaRaqSLj27rBlQxHP3LRows/view?usp=drivesdk",
     "https://drive.google.com/file/d/1pt2rUshVqeiy0g8Kbzl6MsluRFLR748u/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/hub001/HUB001-01.webp",
   "imagenes_secundarias": [],
@@ -153,17 +154,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Producto genérico compatible",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1EB4aq5H4AnaRaqSLj27rBlQxHP3LRows/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1pt2rUshVqeiy0g8Kbzl6MsluRFLR748u/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
   "fecha_verificacion": "2026-10-10T22:05:18.307544+00:00",
   "descripcion": "Amplía un puerto USB-A en cuatro conexiones USB 3.0 dentro de un formato compacto. Su cable integrado de 30 cm permite organizar periféricos y memorias con acceso directo.",
@@ -224,7 +224,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1EB4aq5H4AnaRaqSLj27rBlQxHP3LRows/view?usp=drivesdk",
-      "evidencia": "Cotejo del SKU 593 con fotografías propias. Solo se publican datos visibles en el empaque o presentes en la base comercial."
+      "evidencia": "Cotejo del SKU 593 con fotografías propias. Solo se publican datos visibles en el empaque o presentes en la base comercial. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -236,7 +236,7 @@
       "solicitado": "HUB001",
       "sku": "HUB001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:39.540Z",
+      "fecha": "2026-10-12T04:37:03.093Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -264,8 +264,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
       "archivo_html": "productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/index.html",
       "http": 200,
-      "sha256_html": "ab3770cebc4c4dc9ee01c185c3efefaf17ed848bedae370f57abb4c3a47cf96a",
-      "sha256_html_local": "ab3770cebc4c4dc9ee01c185c3efefaf17ed848bedae370f57abb4c3a47cf96a",
+      "sha256_html": "db6a27b45a4f0a3277b52b22913a40d9626d50f4a0fd6b4f150f5b78aeeb7339",
+      "sha256_html_local": "db6a27b45a4f0a3277b52b22913a40d9626d50f4a0fd6b4f150f5b78aeeb7339",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

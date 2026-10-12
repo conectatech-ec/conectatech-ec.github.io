@@ -211,7 +211,7 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
             if not allowed_omission:
                 fail('discrepancia', 'Identidad con discrepancias sin resolver')
             elif nonempty(discrepancy.get('valor_catalogo')):
-                assertions = ' '.join([str(contract.get('titulo_comercial', '')), str(contract.get('descripcion', ''))] +
+                assertions = ' '.join([str(contract.get('titulo_comercial', '')), str((contract.get('descripcion') or ''))] +
                     [str(s.get('valor', '')) for s in contract.get('especificaciones', []) if isinstance(s, dict) and s.get('publicar') is not False])
                 if discrepancy['valor_catalogo'].casefold() in assertions.casefold():
                     fail('discrepancia', 'El modelo omitido aún aparece en una afirmación publicable')
@@ -241,6 +241,14 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
         if not (nonempty(spec.get('nombre')) and nonempty(spec.get('valor')) and spec.get('estado') == 'VERIFICADO' and
                 isinstance(spec_sources, list) and spec_sources and all(x in technical or x in urls for x in spec_sources)):
             fail('especificaciones', 'Afirmación publicable sin fuente/verificación: ' + str(spec.get('nombre', '?')))
+    if expected_type == 'original':
+        for spec in specs:
+            if (isinstance(spec, dict) and spec.get('publicar') is not False and
+                    spec.get('nombre') in ('Clasificación', 'Clasificacion', 'Tipo', 'Diseño') and
+                    re.search(r'gen[eé]ric[oa]', str(spec.get('valor', '')), re.I)):
+                fail('clasificacion_contradictoria', 'Detalle técnico contradice la clasificación original vigente: ' + spec['nombre'])
+        if re.search(r'\b(?:accesorio|producto|modelo|versi[oó]n)\s+(?:AAA\s*/?\s*)?gen[eé]ric[oa]', (contract.get('descripcion') or ''), re.I):
+            fail('clasificacion_contradictoria', 'Descripción contradice la clasificación original vigente')
     benefits = contract.get('beneficios', [])
     verified_names = {x.get('nombre') for x in specs if isinstance(x, dict) and x.get('estado') == 'VERIFICADO' and x.get('publicar') is not False}
     if not isinstance(benefits, list) or len(benefits) > 4:
@@ -255,6 +263,10 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
                     any(x not in verified_names for x in refs) or not isinstance(sources, list) or not sources or
                     any(x not in technical and x not in urls for x in sources)):
                 fail('beneficios', 'Beneficio sin especificación verificada y fuente: ' + benefit['titulo'])
+    if expected_type == 'original' and isinstance(benefits, list):
+        for benefit in benefits:
+            if isinstance(benefit, dict) and re.search(r'\b(?:accesorio|producto|modelo|versi[oó]n|SKU)\s+(?:AAA\s*/?\s*)?gen[eé]ric[oa]', ' '.join(str(benefit.get(k, '')) for k in ('valor', 'titulo', 'descripcion')), re.I):
+                fail('clasificacion_contradictoria', 'Beneficio contradice la clasificación original vigente')
     editorial = validation.get('ficha', {})
     if not isinstance(editorial, dict) or editorial.get('verificada') is not True or not reference(editorial.get('fuente')):
         fail('ficha', 'Revisión editorial de título, descripción y afirmaciones pendiente')

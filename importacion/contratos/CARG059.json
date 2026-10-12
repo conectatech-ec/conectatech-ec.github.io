@@ -42,7 +42,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/carg059/CARG059-01.webp",
   "imagenes_secundarias": [],
@@ -118,17 +119,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Producto genérico compatible",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk",
-        "datos-593/inventario-publico.csv"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
   "fecha_verificacion": "2026-10-11T05:53:45.091294+00:00",
   "descripcion": "Alimenta equipos Mac con carga USB-C mediante un adaptador compatible de 96 W. Su cuerpo compacto concentra la potencia en una salida USB-C para una conexión sencilla.",
@@ -190,7 +190,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk",
-      "evidencia": "Cotejo del SKU 593 con las fotografías propias. Solo se publican datos legibles en el empaque o presentes en la base comercial."
+      "evidencia": "Cotejo del SKU 593 con las fotografías propias. Solo se publican datos legibles en el empaque o presentes en la base comercial. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -205,7 +205,7 @@
       "solicitado": "CARG059",
       "sku": "CARG059",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:36.044Z",
+      "fecha": "2026-10-12T04:37:02.196Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,8 +233,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
       "archivo_html": "productos/carg059-cargador-para-mac-usb-c-96w/index.html",
       "http": 200,
-      "sha256_html": "f25b1996a09b7e8a5db16cda14118e8228e209ce52770b4f47e5459792effbfc",
-      "sha256_html_local": "f25b1996a09b7e8a5db16cda14118e8228e209ce52770b4f47e5459792effbfc",
+      "sha256_html": "3a084df2f600e47ec78ae953f51f85aa6151dd07b1dff5c9bd5be981ec60e13c",
+      "sha256_html_local": "3a084df2f600e47ec78ae953f51f85aa6151dd07b1dff5c9bd5be981ec60e13c",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1foVR2NhevstTqRkIA6LvhqeMBGQ5yDja/view?usp=drivesdk",
     "https://drive.google.com/file/d/1ftMEqMxW0Cpj1iKtyR6saS7TNxDK-his/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/carg058/CARG058-01.webp",
   "imagenes_secundarias": [],
@@ -133,17 +134,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Producto genérico compatible",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1foVR2NhevstTqRkIA6LvhqeMBGQ5yDja/view?usp=drivesdk",
-        "datos-593/inventario-publico.csv"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/carg058-cargador-para-mac-magsafe-2-85w/",
   "fecha_verificacion": "2026-10-11T18:06:09.080807+00:00",
   "descripcion": "Recupera la alimentación de equipos Mac que utilizan conector MagSafe 2 con un adaptador compatible de 85 W. El cable integrado y el conector magnético permiten una conexión directa y ordenada.",
@@ -204,7 +204,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1foVR2NhevstTqRkIA6LvhqeMBGQ5yDja/view?usp=drivesdk",
-      "evidencia": "Cotejo del SKU 593 con las fotografías propias. Solo se publican datos legibles en el empaque o presentes en la base comercial."
+      "evidencia": "Cotejo del SKU 593 con las fotografías propias. Solo se publican datos legibles en el empaque o presentes en la base comercial. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -216,7 +216,7 @@
       "solicitado": "CARG058",
       "sku": "CARG058",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:35.078Z",
+      "fecha": "2026-10-12T04:37:01.331Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -244,8 +244,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/carg058-cargador-para-mac-magsafe-2-85w/",
       "archivo_html": "productos/carg058-cargador-para-mac-magsafe-2-85w/index.html",
       "http": 200,
-      "sha256_html": "8ea19b13d1e567dda251586e20239060310a38e23d539a1bbf10beab4b956d74",
-      "sha256_html_local": "8ea19b13d1e567dda251586e20239060310a38e23d539a1bbf10beab4b956d74",
+      "sha256_html": "d73ad9cc37f1072244c53c07f434259891792fb30a597a5849a1421348f0240c",
+      "sha256_html_local": "d73ad9cc37f1072244c53c07f434259891792fb30a597a5849a1421348f0240c",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

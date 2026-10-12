@@ -105,7 +105,8 @@
     "https://drive.google.com/file/d/18VuH1V083XAj9jHenUw9j7HWy_4qCV7A/view?usp=drivesdk",
     "https://drive.google.com/file/d/1qfoldZCvBuOWwxGU8R7F4El1PrJvFO3t/view?usp=drivesdk",
     "https://drive.google.com/file/d/1uUJ1-oCAKFksl31dMZnRnLrCVoFO3Y1j/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/rel059/REL059-01.webp",
   "imagenes_secundarias": [],
@@ -183,19 +184,16 @@
     },
     {
       "nombre": "Tipo",
-      "valor": "AAA / genérico, no es un producto Apple original",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1-42-BXBrdcF4NTnKTMpBrhPaVy58OnFO/view?usp=drivesdk",
-        "https://drive.google.com/file/d/18VuH1V083XAj9jHenUw9j7HWy_4qCV7A/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1qfoldZCvBuOWwxGU8R7F4El1PrJvFO3t/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1uUJ1-oCAKFksl31dMZnRnLrCVoFO3Y1j/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/rel059-reloj-smartwatch-ultra-2-yy-20/",
   "fecha_verificacion": "2026-10-11T21:09:24.641263+00:00",
   "descripcion": "Smartwatch YY-20 Ultra 2 con diseño rectangular con esquinas redondeadas y silicona acanalada. Presentación comercial basada en las fotografías reales del SKU. Consulta compatibilidad y disponibilidad antes de comprar. producto; no es un Apple Watch original.",
@@ -282,7 +280,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1-42-BXBrdcF4NTnKTMpBrhPaVy58OnFO/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -294,7 +292,7 @@
       "solicitado": "REL059",
       "sku": "REL059",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:39.479Z",
+      "fecha": "2026-10-12T04:37:14.575Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -322,8 +320,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/rel059-reloj-smartwatch-ultra-2-yy-20/",
       "archivo_html": "productos/rel059-reloj-smartwatch-ultra-2-yy-20/index.html",
       "http": 200,
-      "sha256_html": "cf199885669aaf215ea75c15ce07815062f6798e543fbe9d6b630a83b0c37290",
-      "sha256_html_local": "cf199885669aaf215ea75c15ce07815062f6798e543fbe9d6b630a83b0c37290",
+      "sha256_html": "70c31c3b6d9edff9d8fe8c6178573159b5112de8983b93e040c15983a0ef2aac",
+      "sha256_html_local": "70c31c3b6d9edff9d8fe8c6178573159b5112de8983b93e040c15983a0ef2aac",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

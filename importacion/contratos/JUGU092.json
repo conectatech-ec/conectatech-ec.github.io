@@ -141,7 +141,8 @@
     "https://drive.google.com/file/d/18yZ_Q5zb9d7WDTlCm-Ist-dovWGm0c-e/view?usp=drivesdk",
     "https://drive.google.com/file/d/1NoM6RDpaW0RIqrPB2hqDvkm6zLyoy4CT/view?usp=drivesdk",
     "https://drive.google.com/file/d/1bH62oeGLLzLkZSNKvvDp9iHPVeVlcDGP/view?usp=drivesdk",
-    "https://drive.google.com/file/d/1nO8AgxHxko4Y5xGHN90vr81VNsvb5lST/view?usp=drivesdk"
+    "https://drive.google.com/file/d/1nO8AgxHxko4Y5xGHN90vr81VNsvb5lST/view?usp=drivesdk",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/jugu092/JUGU092-01.webp",
   "imagenes_secundarias": [],
@@ -210,10 +211,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
   "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Carro coleccionable de estilo todoterreno, con carrocería de camuflaje verde, techo negro y rueda de repuesto posterior. Una pieza de apariencia robusta para complementar una colección de vehículos en miniatura. La imagen corresponde a la variante verde con techo cerrado. Hay referencias de otras variantes sin techo registradas como AAA/genéricas; confirma la presentación, el color y la clasificación de la unidad disponible antes de comprar.",
+  "descripcion": "Carro coleccionable de estilo todoterreno, con carrocería de camuflaje verde, techo negro y rueda de repuesto posterior. Una pieza de apariencia robusta para complementar una colección de vehículos en miniatura. La imagen corresponde a la variante verde con techo cerrado. Hay referencias de otras variantes sin techo; confirma la presentación y el color de la unidad disponible antes de comprar.",
   "compatibilidad": null,
   "contenido_venta": "1 carro de juguete",
   "garantia": null,
@@ -275,7 +276,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/propias-propuestas.json",
-      "evidencia": " Aclaración editorial de la variante de portada frente a cuatro referencias adicionales registradas AAA/genéricas, sin afirmar la disponibilidad o clasificación de todas las unidades."
+      "evidencia": " Aclaración editorial de la variante de portada frente a cuatro referencias adicionales registradas AAA/genéricas, sin afirmar la disponibilidad o clasificación de todas las unidades. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
@@ -285,7 +286,7 @@
       "solicitado": "JUGU092",
       "sku": "JUGU092",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:00.353Z",
+      "fecha": "2026-10-12T04:37:04.138Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -310,8 +311,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
       "archivo_html": "productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/index.html",
       "http": 200,
-      "sha256_html": "561fef24d972eac0ba9c002a042ffd95f4315b67aff6e044508626d1f03afd9c",
-      "sha256_html_local": "561fef24d972eac0ba9c002a042ffd95f4315b67aff6e044508626d1f03afd9c",
+      "sha256_html": "24f97f549554c38a71e37e61967cc02aa9f0790508ff7017f68d89690a5be0b2",
+      "sha256_html_local": "24f97f549554c38a71e37e61967cc02aa9f0790508ff7017f68d89690a5be0b2",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -362,12 +363,12 @@
         }
       ],
       "archivo": "reportes/lote-066/qa-local/movil/JUGU092-390.png",
-      "sha256": "2ad69413c80ed7e1b0d41d20374c72140ff6db17b8e657c11da519ad308e0be5",
+      "sha256": "109049608ec71a381034321d4a8322b14c8e16fcd161e7ec95f0e3540e438f28",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/lote-066/qa-local/movil/JUGU092-1280.png",
-        "sha256": "aa42709bcf64255b4835c76b299c24a2bc193608035444ae8eda86007100ac6d",
+        "sha256": "67c0d7def52abda88fd5812bcc52b714eac85f604004cd2cef96ea36ef34697e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

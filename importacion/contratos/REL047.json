@@ -84,7 +84,8 @@
     "https://drive.google.com/file/d/11uXsEO2ykqfay2EX4AWtAh4STQKiChPH/view?usp=drivesdk",
     "https://drive.google.com/file/d/19pBJmD8kEmQKnXbxQ1mRB-XlcaOeEmVd/view?usp=drivesdk",
     "https://drive.google.com/file/d/1XObaW0fR9lvcvuSTKbvbYXoXsAhEikPj/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/rel047/REL047-01.webp",
   "imagenes_secundarias": [],
@@ -133,21 +134,10 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
-    },
-    {
-      "nombre": "Diseño",
-      "valor": "versión genérica",
-      "fuentes": [
-        "https://drive.google.com/file/d/11uXsEO2ykqfay2EX4AWtAh4STQKiChPH/view?usp=drivesdk",
-        "https://drive.google.com/file/d/19pBJmD8kEmQKnXbxQ1mRB-XlcaOeEmVd/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1XObaW0fR9lvcvuSTKbvbYXoXsAhEikPj/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
   "descripcion": "Reloj digital GH8018 de dígitos grandes LED; el empaque indica funciones de alarma, calendario y temperatura interior. producto; no es un producto original de la marca de referencia.",
@@ -169,11 +159,11 @@
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
   "beneficios": [
     {
-      "valor": "Diseño",
-      "titulo": "Presentación y comodidad",
-      "descripcion": "versión genérica.",
+      "valor": "GH8018",
+      "titulo": "El modelo que buscas",
+      "descripcion": "Elige este modelo para acompañar tu día a día.",
       "especificaciones": [
-        "Diseño"
+        "Modelo"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/11uXsEO2ykqfay2EX4AWtAh4STQKiChPH/view?usp=drivesdk",
@@ -231,7 +221,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/11uXsEO2ykqfay2EX4AWtAh4STQKiChPH/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -243,7 +233,7 @@
       "solicitado": "REL047",
       "sku": "REL047",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:19.340Z",
+      "fecha": "2026-10-12T04:42:08.410Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -271,8 +261,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
       "archivo_html": "productos/rel047-reloj-de-pared-o-mesa-led-gh8018/index.html",
       "http": 200,
-      "sha256_html": "cd24b18a0aa0e9965ffbe79a68834423e25a123011f9a49f55409a35dde51e4e",
-      "sha256_html_local": "cd24b18a0aa0e9965ffbe79a68834423e25a123011f9a49f55409a35dde51e4e",
+      "sha256_html": "33cc8e34c9b07e55f4f7b0dfc3a643e91a8d49b5129706fd4296ff387082e347",
+      "sha256_html_local": "33cc8e34c9b07e55f4f7b0dfc3a643e91a8d49b5129706fd4296ff387082e347",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -323,12 +313,12 @@
         }
       ],
       "archivo": "reportes/lote-066/qa-local/movil/REL047-390.png",
-      "sha256": "6cce4096fe567aeb218956067d15813f23cbb13fe96e397ff9275972d5c9d10b",
+      "sha256": "5a886014b698e518d66cf5ce3f11649438e312ca33febbc3de4f7e32707b8c50",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/lote-066/qa-local/movil/REL047-1280.png",
-        "sha256": "d3febec8cdf9085ea49945addb3eea1d37e4dae19ca681f450563015dd95ca83",
+        "sha256": "ebf67b61968eb3c94c407f347f893dec4b5223452c480fcd5059ca62148a5df5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

@@ -42,7 +42,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1ObXv32ctP9-oMgsEFOQeMddokh91_x8-/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/carg001/CARG001-01.webp",
   "imagenes_secundarias": [],
@@ -112,17 +113,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Producto genérico compatible",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1ObXv32ctP9-oMgsEFOQeMddokh91_x8-/view?usp=drivesdk",
-        "datos-593/inventario-publico.csv"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
   "fecha_verificacion": "2026-10-10T21:29:22.216329+00:00",
   "descripcion": "Carga dos dispositivos desde un solo tomacorriente y lleva el cable adecuado para equipos con conector Lightning. Este adaptador compatible integra dos salidas USB-C en un cuerpo compacto de 35 W.",
@@ -182,7 +182,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1ObXv32ctP9-oMgsEFOQeMddokh91_x8-/view?usp=drivesdk",
-      "evidencia": "Cotejo del SKU 593 con las fotografías propias. Solo se publican datos legibles en el empaque o presentes en la base comercial."
+      "evidencia": "Cotejo del SKU 593 con las fotografías propias. Solo se publican datos legibles en el empaque o presentes en la base comercial. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -198,7 +198,7 @@
       "solicitado": "CARG001",
       "sku": "CARG001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:34.162Z",
+      "fecha": "2026-10-12T04:37:00.344Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -226,8 +226,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
       "archivo_html": "productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/index.html",
       "http": 200,
-      "sha256_html": "0c8d12bf6ecc0b900f6c82acf8c7b85d334e47f27df3b61e91f09076988495c1",
-      "sha256_html_local": "0c8d12bf6ecc0b900f6c82acf8c7b85d334e47f27df3b61e91f09076988495c1",
+      "sha256_html": "772c3680ee43c77add54ab1560f2d236534ef16e3e8da8a05ce34857afa51265",
+      "sha256_html_local": "772c3680ee43c77add54ab1560f2d236534ef16e3e8da8a05ce34857afa51265",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

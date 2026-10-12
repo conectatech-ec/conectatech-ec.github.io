@@ -42,7 +42,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1hR-iE87I8wS_StYegNps_QGOMJhwDkgH/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/flas003/FLAS003-01.webp",
   "imagenes_secundarias": [],
@@ -90,9 +91,9 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "AAA / genérica",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1hR-iE87I8wS_StYegNps_QGOMJhwDkgH/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -108,7 +109,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
   "fecha_verificacion": "2026-10-11T19:45:50.021056+00:00",
   "descripcion": "Memoria USB de 64 GB nominales, producto según clasificación comercial del propietario. Para guardar archivos en equipos con USB-A compatible. Incluye el llavero visible en la referencia.",
@@ -186,7 +187,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1hR-iE87I8wS_StYegNps_QGOMJhwDkgH/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -198,7 +199,7 @@
       "solicitado": "FLAS003",
       "sku": "FLAS003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:34.921Z",
+      "fecha": "2026-10-12T04:37:13.791Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -226,8 +227,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
       "archivo_html": "productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/index.html",
       "http": 200,
-      "sha256_html": "6eacedbaca977d1039b71e157570cdce1e8d51555ccf344b76e54c799360d841",
-      "sha256_html_local": "6eacedbaca977d1039b71e157570cdce1e8d51555ccf344b76e54c799360d841",
+      "sha256_html": "8adfe11db4fec6552da22c180670b59e94b7acc0b5e06c5405c3327cd0d7fe8a",
+      "sha256_html_local": "8adfe11db4fec6552da22c180670b59e94b7acc0b5e06c5405c3327cd0d7fe8a",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,

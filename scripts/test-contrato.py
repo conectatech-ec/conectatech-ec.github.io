@@ -84,6 +84,16 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(pipeline.editorial.financial(pipeline.editorial.read_catalog(self.root)[1]), pipeline.editorial.financial(self.products))
         self.assertEqual(validator.context(self.root)['sha256_593'], self.ctx['sha256_593'])
 
+    def test_original_classification_rejects_legacy_generic_labels(self):
+        c = self.contracts['TEST001']
+        c['especificaciones'].append({**c['especificaciones'][0], 'nombre': 'Clasificación', 'valor': 'AAA / genérica'})
+        self.assertIn('clasificacion_contradictoria', {e['codigo'] for e in self.errors()})
+        c['especificaciones'].pop()
+        c['descripcion'] = 'Accesorio genérico.'
+        self.assertIn('clasificacion_contradictoria', {e['codigo'] for e in self.errors()})
+        c['descripcion'] = 'Producto original.'
+        self.assertEqual(self.errors(), [])
+
     def test_financial_changes_block_only_affected_sku(self):
         self.manifest['skus'] = ['TEST001', 'TEST002']; self.contracts['TEST001']['precio_contado'] = 7.26
         r = self.runjob(); by = {x['sku']: x for x in r['productos']}

@@ -42,7 +42,8 @@
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1zvIho_7iPP0DQ3yFC0mNzmdTer7VWzFn/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/flas005/FLAS005-01.webp",
   "imagenes_secundarias": [],
@@ -81,9 +82,9 @@
     },
     {
       "nombre": "Tipo",
-      "valor": "AAA / genérico, no original Kingston",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1zvIho_7iPP0DQ3yFC0mNzmdTer7VWzFn/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -108,7 +109,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
   "fecha_verificacion": "2026-10-12T01:41:40.037156+00:00",
   "descripcion": "Memoria USB de 128 GB nominales, producto según clasificación comercial del propietario. Carcasa plateada compacta y llavero incorporado para transportar archivos. Verifica que el equipo admita almacenamiento USB compatible; no es una memoria Kingston original.",
@@ -132,7 +133,7 @@
     {
       "valor": "128 GB",
       "titulo": "Capacidad nominal",
-      "descripcion": "Capacidad comercial indicada para este SKU AAA / genérico.",
+      "descripcion": "Capacidad comercial indicada para este SKU.",
       "especificaciones": [
         "Capacidad nominal"
       ],
@@ -186,7 +187,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1zvIho_7iPP0DQ3yFC0mNzmdTer7VWzFn/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -198,7 +199,7 @@
       "solicitado": "FLAS005",
       "sku": "FLAS005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:51.054Z",
+      "fecha": "2026-10-12T04:42:11.545Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -226,8 +227,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
       "archivo_html": "productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/index.html",
       "http": 200,
-      "sha256_html": "9faaa2dfce95f85ce779cbb885efcbf4d04f613a2dbd5a989b3a9df75894d2c3",
-      "sha256_html_local": "9faaa2dfce95f85ce779cbb885efcbf4d04f613a2dbd5a989b3a9df75894d2c3",
+      "sha256_html": "6b75986ab5ba28ea59b0c0c5fc55fc3b43acac63a330082cbe7176a843f79a06",
+      "sha256_html_local": "6b75986ab5ba28ea59b0c0c5fc55fc3b43acac63a330082cbe7176a843f79a06",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -278,12 +279,12 @@
         }
       ],
       "archivo": "reportes/lote-066/qa-local/movil/FLAS005-390.png",
-      "sha256": "c94f28fc72cb72b8e155851e7eabfccf54271a699df7be1cfc2a0374791cbcbc",
+      "sha256": "a587f4c5f9a7658fa5c8d5d031291bad9d44009b40959da52c64a086c782d63c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/lote-066/qa-local/movil/FLAS005-1280.png",
-        "sha256": "9c3c8a69e98720cebf1f886a8b9f990ca6243c75ccb2e6e439d0cd1b71ed13e1",
+        "sha256": "dd8311bb29f832b305f73b5862da9ee33be8791a009cd2ff52af8970c5393682",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

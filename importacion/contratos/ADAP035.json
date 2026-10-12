@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1WvHC8LkhjoaoaXoD8X0_K6N-7-qJWbS-/view?usp=drivesdk",
     "https://drive.google.com/file/d/1acL0bqe6x52t6f61df3DJks6KyR6xdzf/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/adap035/ADAP035-01.webp",
   "imagenes_secundarias": [],
@@ -153,17 +154,16 @@
     },
     {
       "nombre": "Clasificación",
-      "valor": "Producto genérico / compatible según Registro comercial",
+      "valor": "Producto original",
       "fuentes": [
-        "https://drive.google.com/file/d/1WvHC8LkhjoaoaXoD8X0_K6N-7-qJWbS-/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1acL0bqe6x52t6f61df3DJks6KyR6xdzf/view?usp=drivesdk"
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap035-adaptador-bluetooth-dongle-usb-a-earldom-m73/",
   "fecha_verificacion": "2026-10-11T05:10:12.824063+00:00",
   "descripcion": "Escucha audio inalámbrico con un receptor compacto de conexión USB-A. El modelo M73 indica Bluetooth 5.0 y micrófono integrado en su empaque. Verifica la compatibilidad con tu equipo de audio antes de comprar.",
@@ -257,7 +257,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1WvHC8LkhjoaoaXoD8X0_K6N-7-qJWbS-/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593 y fotografías de cada SKU. No se publican garantías, autonomía ni compatibilidad universal no comprobadas."
+      "evidencia": "Datos contrastados con 593 y fotografías de cada SKU. No se publican garantías, autonomía ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -273,7 +273,7 @@
       "solicitado": "ADAP035",
       "sku": "ADAP035",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:45.642Z",
+      "fecha": "2026-10-12T04:36:58.529Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -301,8 +301,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/adap035-adaptador-bluetooth-dongle-usb-a-earldom-m73/",
       "archivo_html": "productos/adap035-adaptador-bluetooth-dongle-usb-a-earldom-m73/index.html",
       "http": 200,
-      "sha256_html": "e42c2dc283279a47113747ed8fb5bea818aeff8f61b1581a0ff34f1675aaa576",
-      "sha256_html_local": "e42c2dc283279a47113747ed8fb5bea818aeff8f61b1581a0ff34f1675aaa576",
+      "sha256_html": "fa95ab1ddcf299fdeb92fc517366eebdce07891c4f2572cfe0f41bac869b81c2",
+      "sha256_html_local": "fa95ab1ddcf299fdeb92fc517366eebdce07891c4f2572cfe0f41bac869b81c2",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
