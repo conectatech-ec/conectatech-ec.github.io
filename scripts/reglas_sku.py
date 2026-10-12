@@ -61,6 +61,18 @@ def compatible(rule, photo, cover=False):
             return False
     return True
 
+def source_resolution_allowed(width, height, digest, r):
+    """Una PRINCIPAL elegida por el dueño puede conservarse a resolución nativa.
+
+    Excepción por hash de fuente, nunca para una miniatura arbitraria ni para
+    ampliar/inventar detalle: sus píxeles siguen intactos y la ficha mide 490 px.
+    """
+    if min(width,height)>=500 and max(width,height)>=1000:
+        return True
+    principal=r.get('principal_propietario',{})
+    return (principal.get('sha256')==digest and principal.get('usar_pixels_nativos') is True
+            and bool(principal.get('evidencia')) and min(width,height)>=500 and max(width,height)>=600)
+
 def image_title(rule, title):
     """Títulos dentro de banners: la excepción también excluye texto decorativo."""
     for aliases in rule.get('variantes_marcas_excluidas', {}).values():
@@ -94,7 +106,29 @@ def register_brand(skus, brand, evidence, apply=False, root=ROOT):
         temp.write_text(json.dumps(db,ensure_ascii=False,indent=2)+'\n'); temp.replace(path)
     return changes
 
-def registration_rules(rows, skus, aliases, policy):
+def commercial_brand(sku, root=ROOT):
+    """Marca comercial de referencia documentada; no certifica hardware ni derechos."""
+    root = Path(root)
+    explicit = load(root).get('productos', {}).get(sku, {}).get('marca_referencia_excepcion')
+    if explicit in ('JBL','SAMSUNG','APPLE','BOSE','LENOVO'):
+        return explicit
+    base = root/'datos-593/inventario-publico.csv'
+    text = catalog_names(root, base.stat().st_mtime_ns).get(sku, '') if base.exists() else ''
+    contract = root/'importacion/contratos'/f'{sku}.json'
+    if contract.exists():
+        c = json.loads(contract.read_text())
+        text += ' ' + ' '.join(str(c.get(k) or '') for k in ('marca','modelo','titulo_comercial'))
+    names = {
+        'JBL': r'\bJBL\b|\b(?:Tune|Endurance|Soundgear|Flip|Charge)\b',
+        'SAMSUNG': r'\bSamsung\b|\bGalaxy\b',
+        'APPLE': r'\bApple\b|\bAirpods\b|\biPhone\b|\biPad\b',
+        'BOSE': r'\bBose\b|\b(?:Quietcomfort|Quitcomfort)\b|Ultra\s+Open\s+Earbuds',
+        'LENOVO': r'\bLenovo\b|\bThinkplus\b'
+    }
+    matches = [brand for brand, pattern in names.items() if re.search(pattern,text,re.I)]
+    return matches[0] if len(matches) == 1 else None
+
+def registration_rules(rows, skus, aliases, policy, root=ROOT):
     """Clasificación comercial explícita del propietario; no aprueba fotos ni variantes."""
     if not policy.get('confirmado_por_propietario'):
         raise ValueError('Falta confirmación del propietario para usar Registro como evidencia')
@@ -104,9 +138,26 @@ def registration_rules(rows, skus, aliases, policy):
     for number,row in enumerate(rows[1:],2):
         row=(row+['']*6)[:6];sku=aliases.get(str(row[1]).strip().upper(),str(row[1]).strip().upper())
         if sku not in wanted:continue
-        filename=re.fullmatch(r'([A-Za-z]+\d+)(?:_\d{8}_\d{6}|-0[1-4])?\.(?:jpe?g|png|webp)',str(row[2]),re.I)
+        filename=re.fullmatch(r'([A-Za-z]+\d+)(?:_\d{8}_\d{6}|-0[1-4]|\s*(?:-\s*)?PRINCIPAL)?\.(?:jpe?g|png|webp)',str(row[2]),re.I)
         mismatch=filename is None or aliases.get(filename[1].upper(),filename[1].upper())!=sku
         grouped[sku].append((number,str(row[4]).strip(),mismatch))
+    if policy.get('modo') == 'ORIGINAL_POR_DEFECTO_EXCEPTO_MARCAS_AAA':
+        excluded = set(policy['marcas_excepcion_aaa'])
+        for sku, entries in sorted(grouped.items()):
+            brand = commercial_brand(sku, root)
+            aaa = [e for e in entries if re.search(r'\bAAA\b|gen[eé]rico',e[1],re.I)]
+            # El propietario fija la clasificación por SKU: una fila AAA de una
+            # de las cinco marcas activa la excepción. No cambia identidad física.
+            auth = 'genérico/compatible' if brand in excluded and aaa else 'original verificado'
+            evidence = (f"Instrucción comercial explícita del propietario ({policy['fecha_confirmacion']}): "
+                        'original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. '
+                        f"Marca de referencia: {brand or 'fuera de las cinco excepciones'}; "
+                        f"{policy['documento_url']} — Registro, filas {','.join(str(e[0]) for e in entries) or 'sin fila AAA aplicable'}; "
+                        f"Tipo: {', '.join(sorted({e[1] for e in entries})) or 'sin registro'}. "
+                        'No acredita derechos de fotografías externas ni especificaciones técnicas.')
+            updates.append({'sku':sku,'autenticidad':auth,'presentacion':'',
+                            'instrucciones':'','evidencia_autenticidad':evidence})
+        return updates, issues
     for sku,entries in sorted(grouped.items()):
         kinds={mapping.get(kind.casefold()) for _,kind,_ in entries}
         if not entries or None in kinds or len(kinds)!=1 or any(e[2] for e in entries):

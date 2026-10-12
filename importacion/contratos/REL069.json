@@ -229,8 +229,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1251,1255,1253,1252,1254; valores: Caja original.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1251,1252,1253,1254,1255; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/rel069/original-2492bc66a0d8cb9d.png",
     "sha256_maestro": "2492bc66a0d8cb9d8480a113a710b15960a7036943b106bd9a010b5cc8361768",
@@ -323,7 +323,7 @@
       "solicitado": "REL069",
       "sku": "REL069",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T21:26:05.358Z",
+      "fecha": "2026-10-12T01:51:26.475Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -338,6 +338,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -347,66 +348,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rel069-reloj-smartwatch-series-11-mini/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/rel069-reloj-smartwatch-series-11-mini/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/rel069-reloj-smartwatch-series-11-mini/",
       "archivo_html": "productos/rel069-reloj-smartwatch-series-11-mini/index.html",
       "http": 200,
-      "sha256_html": "9404a0506fed268e115a56b54c08f8420e0e18bd85ba9783c88fa283e74c96fe",
-      "sha256_html_local": "9404a0506fed268e115a56b54c08f8420e0e18bd85ba9783c88fa283e74c96fe",
+      "sha256_html": "7d05dd3c31a17b6bb5c93d3634bcaadb2fd3a384075b14b72bb2d74507549f1b",
+      "sha256_html_local": "7d05dd3c31a17b6bb5c93d3634bcaadb2fd3a384075b14b72bb2d74507549f1b",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel069/REL069-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/rel069/REL069-01-600.webp?v=1faea428094bc75f",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/rel069/REL069-01-600.webp?v=1faea428094bc75f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/rel069-reloj-smartwatch-series-11-mini/",
+          "url": "http://127.0.0.1:8765/productos/rel069-reloj-smartwatch-series-11-mini/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/rel069/REL069-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/rel069/REL069-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/rel046-reloj-smarwatch-infinix-h4/",
+          "url": "http://127.0.0.1:8765/productos/rel065-reloj-smartwatch-s11-pro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/rel065-reloj-smartwatch-s11-pro/",
+          "url": "http://127.0.0.1:8765/productos/rel041-reloj-smartwatch-riversong-motive-9-pro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/rel041-reloj-smartwatch-riversong-motive-9-pro/",
+          "url": "http://127.0.0.1:8765/productos/rel001-reloj-despertador-modelo-dcx-670/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-061/qa-local/movil/REL069-390.png",
-      "sha256": "d81a1e92c8092f5befea06e54b67513225e6fae4170802cac5f3e8b954aedd82",
+      "archivo": "reportes/lote-065/qa-local/movil/REL069-390.png",
+      "sha256": "bd6dd4c1114500bf637c42978c88de8ea93f32d19c8bd157b880587012ba9477",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-061/qa-local/movil/REL069-1280.png",
-        "sha256": "f0aadfff7d932cf37ea8f88b3f19f1a25dd27dc9e7243912628b8d4fcd7f6e8d",
+        "archivo": "reportes/lote-065/qa-local/movil/REL069-1280.png",
+        "sha256": "757bf035245ff8c2a9c00a5358ed10bee6cd5aa2dacd161435acf6d7b0313318",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

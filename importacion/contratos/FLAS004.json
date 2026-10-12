@@ -2,8 +2,8 @@
   "sku": "FLAS004",
   "nombre_original": "Flash Memory 32Gb 2.0 Kingston Tipo Llavero",
   "titulo_comercial": "Flash Memory 32GB 2.0 Kingston Tipo Llavero",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "tipo": "original",
+  "marca": null,
   "modelo": "Versión AAA / genérica",
   "variante": "32 GB, Plateado con llavero",
   "categoria_original": "Flash",
@@ -111,13 +111,13 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/flas004-flash-memory-32gb-2-0-kingston-tipo-llavero/",
   "fecha_verificacion": "2026-10-11T19:45:50.021056+00:00",
-  "descripcion": "Memoria USB de 32 GB nominales, versión AAA / genérica según clasificación comercial del propietario. Para guardar archivos en equipos con USB-A compatible. Incluye el llavero visible en la referencia.",
+  "descripcion": "Memoria USB de 32 GB nominales, producto según clasificación comercial del propietario. Para guardar archivos en equipos con USB-A compatible. Incluye el llavero visible en la referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 334; valores: AAA (genérico). No acredita fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 334; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/flas004/original-c167eda76b320ce9.png",
     "sha256_maestro": "c167eda76b320ce988a8c9ac67a2f215722367554e76bef8e3861d98244db2f7",
@@ -173,9 +173,9 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_no_declarada": false,
+      "marca_no_declarada": true,
       "modelo_no_declarado": false,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
@@ -198,7 +198,7 @@
       "solicitado": "FLAS004",
       "sku": "FLAS004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T19:46:25.034Z",
+      "fecha": "2026-10-12T01:50:58.578Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -213,6 +213,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -222,66 +223,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas004-flash-memory-32gb-2-0-kingston-tipo-llavero/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/flas004-flash-memory-32gb-2-0-kingston-tipo-llavero/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/flas004-flash-memory-32gb-2-0-kingston-tipo-llavero/",
       "archivo_html": "productos/flas004-flash-memory-32gb-2-0-kingston-tipo-llavero/index.html",
       "http": 200,
-      "sha256_html": "40a1b1752e554f459351c060b1d36b400df3a05bc996ce3e693c2e7a7fefea27",
-      "sha256_html_local": "40a1b1752e554f459351c060b1d36b400df3a05bc996ce3e693c2e7a7fefea27",
+      "sha256_html": "b6acbab8152b7a54844a6ccb62254d2972693e56f131e73f168b25db998cb855",
+      "sha256_html_local": "b6acbab8152b7a54844a6ccb62254d2972693e56f131e73f168b25db998cb855",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas004/FLAS004-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/flas004/FLAS004-01-600.webp?v=1098a6b30c253c44",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/flas004/FLAS004-01-600.webp?v=1098a6b30c253c44",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/flas004-flash-memory-32gb-2-0-kingston-tipo-llavero/",
+          "url": "http://127.0.0.1:8765/productos/flas004-flash-memory-32gb-2-0-kingston-tipo-llavero/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/flas004/FLAS004-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/flas004/FLAS004-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+          "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+          "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-058/qa-local/movil/FLAS004-390.png",
-      "sha256": "f7a6c162584f6677a22a5416bfbe0816dfb433082cc116125aa08b40dbdc99e0",
+      "archivo": "reportes/lote-065/qa-local/movil/FLAS004-390.png",
+      "sha256": "e81d5398eab453767365450721055a0ab60e8191d401ae19331b878484036c89",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-058/qa-local/movil/FLAS004-1280.png",
-        "sha256": "7d227e4caf2ecc9c4d8009a8cb10b914a1a5a0786996a998a517fd45e42eebb2",
+        "archivo": "reportes/lote-065/qa-local/movil/FLAS004-1280.png",
+        "sha256": "065bf1d01fa08def52a2545c03933ec30fcddf45cbe77505413cbc9c71399d96",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

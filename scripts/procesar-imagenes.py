@@ -5,7 +5,7 @@ from collections import Counter
 from datetime import datetime,timezone
 from pathlib import Path
 from PIL import Image,ImageOps,ImageEnhance,ImageFilter,ImageDraw,ImageChops
-from reglas_sku import rule,compatible
+from reglas_sku import rule,compatible,source_resolution_allowed
 from premium_guard import validate as validate_premium_approval
 ROOT=Path(__file__).resolve().parents[1]
 _spec=importlib.util.spec_from_file_location('editorial',ROOT/'scripts/importar-productos.py')
@@ -62,7 +62,7 @@ def process(root, sku, item, r):
         x,y,x2,y2=crop
         if not(0<=x<x2<=im.width and 0<=y<y2<=im.height):raise ValueError('Recorte fuera de imagen')
         im=im.crop(crop)
-    if min(im.size)<500 or max(im.size)<1000:raise ValueError('Resolución útil insuficiente; no se amplía')
+    if not source_resolution_allowed(im.width,im.height,sha(data),r):raise ValueError('Resolución útil insuficiente; no se amplía')
     # Nunca se agranda el producto. El lienzo uniforme no simula detalle.
     im.thumbnail((1008,1008),Image.Resampling.LANCZOS)
     bg=Image.new('RGB',(1200,1200),'white');bg.paste(im,((1200-im.width)//2,(1200-im.height)//2),im)

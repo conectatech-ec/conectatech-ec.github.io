@@ -1,4 +1,5 @@
 const fs=require('fs');
+const titleCommercial=require('./titulo-comercial.cjs');
 module.exports=function(){
  const registry=JSON.parse(fs.readFileSync('importacion/reglas-sku.json','utf8'));
  const media=fs.existsSync('importacion/medios.json')?JSON.parse(fs.readFileSync('importacion/medios.json','utf8')):{};
@@ -7,6 +8,15 @@ module.exports=function(){
  for(const p of products){
   const r=registry.productos[p.sku];if(!r)throw Error('Falta registro de reglas para '+p.sku);
   if(registry.politica_general?.presentacion_obligatoria==='sin caja')r.presentacion='sin caja';
+  const c=seo[p.sku]||(seo[p.sku]={});
+  c.reglaSKU=r;
+  if(registry.politica_general?.titulos_comerciales?.condicion_en_titulo===false){
+    p.name=titleCommercial(p.name,p.sku,r.autenticidad);
+    if(c.nombre)c.nombre=titleCommercial(c.nombre,p.sku,r.autenticidad);
+    if(c.tituloSeo)c.tituloSeo=titleCommercial(c.tituloSeo,p.sku,r.autenticidad);
+    c.tipo=r.autenticidad==='genérico/compatible'?'generico':'original';
+    c.clasificacionComercial=c.tipo==='generico'?'AAA / genérico':'Producto original';
+  }
   const m=media[p.sku];if(!m)continue; // Un nuevo registro no invalida imágenes heredadas por mera ausencia de metadatos.
   const photos=m?.revision_regla===r.revision?m.imagenes.filter(i=>
    (r.presentacion!=='sin caja'||i.contiene_caja===false)&&
@@ -19,7 +29,6 @@ module.exports=function(){
   const premiumPath=premium[p.sku]?`/imagenes/${p.sku.toLowerCase()}/${p.sku}-premium-v1.png`:null;
   const premiumReady=!!premiumPath&&fs.existsSync('.'+premiumPath);
   p.imageUrl=premiumReady?premiumPath:(cover?.versiones['1200'].url||'');
-  const c=seo[p.sku];if(!c)continue;
   c.imagen=p.imageUrl;c.imagenPendiente=!premiumReady&&!cover;c.reglaSKU=r;c.galeria=photos;
   if(cover)c.imagenProfesional=cover;else delete c.imagenProfesional;
   if(m?.banner?.revision_regla===r.revision&&cover)c.banner=m.banner;else delete c.banner;

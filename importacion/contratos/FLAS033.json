@@ -155,8 +155,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 307,308,306; valores: Caja original. No acredita fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 306,307,308; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/flas033/original-f024654e0a44cdfa.png",
     "sha256_maestro": "f024654e0a44cdfaeab1edd6f9445b413af5ce2fce10966b9474eaf34a17e716",
@@ -243,7 +243,7 @@
       "solicitado": "FLAS033",
       "sku": "FLAS033",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T19:46:25.686Z",
+      "fecha": "2026-10-12T01:51:10.347Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -258,6 +258,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -267,7 +268,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas033-flash-memory-64gb-steren-usb-c-usb-a/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/flas033-flash-memory-64gb-steren-usb-c-usb-a/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/flas033-flash-memory-64gb-steren-usb-c-usb-a/",
       "archivo_html": "productos/flas033-flash-memory-64gb-steren-usb-c-usb-a/index.html",
       "http": 200,
       "sha256_html": "67cbd334716f096e7a3d8389d02f9483ec622d9eb7e6592b707c7792ba0bba97",
@@ -277,55 +278,56 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas033/FLAS033-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/flas033/FLAS033-01-600.webp?v=316837ee3afd2ddf",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/flas033/FLAS033-01-600.webp?v=316837ee3afd2ddf",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/flas033-flash-memory-64gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas033-flash-memory-64gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/flas033/FLAS033-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/flas033/FLAS033-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+          "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+          "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-058/qa-local/movil/FLAS033-390.png",
+      "archivo": "reportes/lote-065/qa-local/movil/FLAS033-390.png",
       "sha256": "2a2957c1983bf66ae623ebe2924a29c57b84947b1878f5de60f8667e0fc92f49",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-058/qa-local/movil/FLAS033-1280.png",
+        "archivo": "reportes/lote-065/qa-local/movil/FLAS033-1280.png",
         "sha256": "a393f74424edbad4927d2f6c38453e3048dbdf684a931b51ec1a8e414eb84b45",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

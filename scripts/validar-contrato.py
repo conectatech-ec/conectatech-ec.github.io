@@ -13,7 +13,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlparse, urljoin, unquote
 from PIL import Image
-from reglas_sku import rule, compatible
+from reglas_sku import rule, compatible, source_resolution_allowed
 
 ROOT = Path(__file__).resolve().parents[1]
 CAMPOS = ('sku nombre_original titulo_comercial tipo marca modelo variante categoria_original '
@@ -368,6 +368,7 @@ def validate_images(root, contract, photos, writes=None):
     """Comprueba bytes de todas las salidas antes de escribir archivos públicos."""
     errors = []
     writes = writes or {}
+    r = rule(contract['sku'], root)
     try:
         if len([p for p in photos if p.get('posicion') == 1]) != 1:
             raise ValueError('Debe existir exactamente una portada')
@@ -384,7 +385,7 @@ def validate_images(root, contract, photos, writes=None):
                 crop = photo.get('recorte')
                 if crop:
                     dimensions = (crop[2] - crop[0], crop[3] - crop[1])
-                if min(dimensions) < 500 or max(dimensions) < 1000:
+                if not source_resolution_allowed(*dimensions,photo.get('sha256_original'),r):
                     raise ValueError('Resolución útil insuficiente; no se amplía')
             versions = photo.get('versiones', {})
             if set(versions) != {'1200', '600', '300'}:

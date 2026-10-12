@@ -2,8 +2,8 @@
   "sku": "FLAS016",
   "nombre_original": "Flash Memory 32Gb Kingston 2.0 3.0 3.1",
   "titulo_comercial": "Flash Memory 32GB Kingston 2.0 3.0 3.1",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "tipo": "original",
+  "marca": null,
   "modelo": "Versión AAA / genérica",
   "variante": "32 GB, Plateado",
   "categoria_original": "Flash",
@@ -136,13 +136,13 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/",
   "fecha_verificacion": "2026-10-11T19:45:50.021056+00:00",
-  "descripcion": "Memoria USB de 32 GB nominales, versión AAA / genérica según clasificación comercial del propietario. Para guardar archivos en equipos con USB-A compatible. No se promete el rendimiento de un producto original.",
+  "descripcion": "Memoria USB de 32 GB nominales, producto según clasificación comercial del propietario. Para guardar archivos en equipos con USB-A compatible. No se promete el rendimiento de un producto original.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 333,332; valores: AAA (genérico). No acredita fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 332,333; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/flas016/original-b66dcbdf8270ed19.png",
     "sha256_maestro": "b66dcbdf8270ed1910d864f636011aa8bc8af8c6e0704e1e11c4b2f9e5e12c5d",
@@ -200,9 +200,9 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_no_declarada": false,
+      "marca_no_declarada": true,
       "modelo_no_declarado": false,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
@@ -226,7 +226,7 @@
       "solicitado": "FLAS016",
       "sku": "FLAS016",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T19:46:18.386Z",
+      "fecha": "2026-10-12T01:51:03.627Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -241,6 +241,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -250,66 +251,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/",
       "archivo_html": "productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/index.html",
       "http": 200,
-      "sha256_html": "2e165ce54d9c76191dd18ed99ef34f1d9a0d8c7c324c78151fe9c21f94b448d1",
-      "sha256_html_local": "2e165ce54d9c76191dd18ed99ef34f1d9a0d8c7c324c78151fe9c21f94b448d1",
+      "sha256_html": "33791c300763dcd51a775869fa56bac7a060217b53e3fc23159a0822738b9a35",
+      "sha256_html_local": "33791c300763dcd51a775869fa56bac7a060217b53e3fc23159a0822738b9a35",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas016/FLAS016-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/flas016/FLAS016-01-600.webp?v=3aef485e2722c0d2",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/flas016/FLAS016-01-600.webp?v=3aef485e2722c0d2",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/",
+          "url": "http://127.0.0.1:8765/productos/flas016-flash-memory-32gb-kingston-2-0-3-0-3-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/flas016/FLAS016-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/flas016/FLAS016-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+          "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+          "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-058/qa-local/movil/FLAS016-390.png",
-      "sha256": "131f2e80cc5d786ed468d1656b6ca193bcd2a3a34a6580108c55f565438937fd",
+      "archivo": "reportes/lote-065/qa-local/movil/FLAS016-390.png",
+      "sha256": "effa1e5f89434c60a62769717d50a7157337321c8652fd68cdcd6a48541ca1be",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-058/qa-local/movil/FLAS016-1280.png",
-        "sha256": "d7a08caa62e8c68e1292e7ccbab55c4fdf6566953c0f49e09edd7bf489c605e6",
+        "archivo": "reportes/lote-065/qa-local/movil/FLAS016-1280.png",
+        "sha256": "fed6106df4ac488c81b98e6234a6c57056a305eb754c3792e395b16b759a0cc8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

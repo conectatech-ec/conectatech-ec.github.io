@@ -141,8 +141,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 330,331; valores: Caja original. No acredita fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 330,331; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/flas021/original-a5bde15cff9570ae.png",
     "sha256_maestro": "a5bde15cff9570ae067e5df8dbf501780b1c13fd1a30397653831c87601fbea7",
@@ -226,7 +226,7 @@
       "solicitado": "FLAS021",
       "sku": "FLAS021",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T19:46:19.020Z",
+      "fecha": "2026-10-12T01:51:05.470Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -241,6 +241,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -250,7 +251,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas021-flash-memory-32gb-monster/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/flas021-flash-memory-32gb-monster/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/flas021-flash-memory-32gb-monster/",
       "archivo_html": "productos/flas021-flash-memory-32gb-monster/index.html",
       "http": 200,
       "sha256_html": "b7bab1dd1f0c52ca4b2e5c0ad2e1901921eff7f229f3ea8346ef1317d13102da",
@@ -260,55 +261,56 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas021/FLAS021-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/flas021/FLAS021-01-600.webp?v=5f10cc9fb8bd384f",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/flas021/FLAS021-01-600.webp?v=5f10cc9fb8bd384f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/flas021-flash-memory-32gb-monster/",
+          "url": "http://127.0.0.1:8765/productos/flas021-flash-memory-32gb-monster/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/flas021/FLAS021-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/flas021/FLAS021-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+          "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+          "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-058/qa-local/movil/FLAS021-390.png",
+      "archivo": "reportes/lote-065/qa-local/movil/FLAS021-390.png",
       "sha256": "8a24235702264726c8da03945f51e26c8b0590d5ae1ad02ab037ddb58e52cdb2",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-058/qa-local/movil/FLAS021-1280.png",
+        "archivo": "reportes/lote-065/qa-local/movil/FLAS021-1280.png",
         "sha256": "716e42e3a583a86655fa723ccb7280e9a1023aed6296b2ba9b635b67fb3781dc",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

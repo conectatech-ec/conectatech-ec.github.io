@@ -69,6 +69,8 @@ def main():
             else: current.pop(key, None)
         for source, destination in [('contenido_venta', 'contenidoVenta'), ('compatibilidad', 'compatibilidad')]:
             value = contract.get(source)
+            if isinstance(value, dict):
+                value = value.get('valor')
             # El gate ya exige la ficha revisada y unidad de venta confirmada; no inferir datos faltantes.
             if isinstance(value, str) and value.strip(): metadata[destination] = value
             else: current.pop(destination, None)

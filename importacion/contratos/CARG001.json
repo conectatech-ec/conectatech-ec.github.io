@@ -2,13 +2,13 @@
   "sku": "CARG001",
   "nombre_original": "Cargador Iph 35W Doble Conector Usb-C + Usb-C Y Cable Usb-C A Lightning",
   "titulo_comercial": "Cargador compatible 35 W de doble USB-C con cable Lightning",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "tipo": "original",
+  "marca": null,
   "modelo": "Adaptador 35 W USB-C + USB-C",
   "variante": "Blanco con cable USB-C a Lightning",
   "categoria_original": "Cargadores",
   "categoria_comercial": "Cargadores y Energía",
-  "precio_contado": 25.0,
+  "precio_contado": 25,
   "pvp": 28.75,
   "stock": 7,
   "unidad_venta": {
@@ -135,8 +135,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Registro fotográfico, columna Tipo: AAA (genérico); se publica como producto compatible.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2053,2054,2754; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "notas_internas": {
     "observaciones": [
       "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible."
@@ -170,13 +170,14 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
         "https://drive.google.com/file/d/1ObXv32ctP9-oMgsEFOQeMddokh91_x8-/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": []
+      "discrepancias_pendientes": [],
+      "marca_no_declarada": true
     },
     "ficha": {
       "verificada": true,
@@ -197,7 +198,7 @@
       "solicitado": "CARG001",
       "sku": "CARG001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T21:29:10.182Z",
+      "fecha": "2026-10-12T01:50:49.992Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -212,6 +213,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -221,61 +223,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
       "archivo_html": "productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/index.html",
       "http": 200,
-      "sha256_html": "49c62e0ce20f791fb8a370e268bb043ecb1d18b5cf0b05ec3659186cf45b59ca",
-      "sha256_html_local": "49c62e0ce20f791fb8a370e268bb043ecb1d18b5cf0b05ec3659186cf45b59ca",
+      "sha256_html": "88c6ca4efdeadd5a108c1133106c93a50a4b9bacd596acdb1117ba3cdbaa8943",
+      "sha256_html_local": "88c6ca4efdeadd5a108c1133106c93a50a4b9bacd596acdb1117ba3cdbaa8943",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg001/CARG001-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg001/CARG001-01-600.webp?v=be7eef2eac56d9fc",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/carg001/CARG001-01-600.webp?v=be7eef2eac56d9fc",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
+          "url": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/carg001/CARG001-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/carg001/CARG001-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/carg058-cargador-para-mac-magsafe-2-85w/",
+          "url": "http://127.0.0.1:8765/productos/carg058-cargador-para-mac-magsafe-2-85w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/carg059-cargador-para-mac-usb-c-96w/",
+          "url": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-049/qa-publico/movil/CARG001-390.png",
-      "sha256": "84f794596c759467b556fd32dbf4dc0d46566a57750747917b6020157366ff0c",
+      "archivo": "reportes/lote-065/qa-local/movil/CARG001-390.png",
+      "sha256": "cc22722b297c0e8e82c9e43a6d0ab119c9f74e25ea8ff3e373f1112559a790f5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-049/qa-publico/movil/CARG001-1280.png",
-        "sha256": "22e4f0c611c4a58823e3228892e1164a188a137c6b6bb018b7ea2ecbac370b86",
+        "archivo": "reportes/lote-065/qa-local/movil/CARG001-1280.png",
+        "sha256": "cc2820eee02d772e259f579146d8cb1b5951e911dfe33d7000708473dc045dcb",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

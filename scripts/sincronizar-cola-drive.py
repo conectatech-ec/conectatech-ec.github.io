@@ -46,7 +46,7 @@ def synchronize(files, rows, catalog, aliases, previous):
             errors.append({'archivo':name,'motivo':'ID de Drive ausente o repetido'});continue
         seen.add(fid)
         # SKU exacto; el sufijo de fecha no crea un SKU ni una vista inventada.
-        match=re.fullmatch(r'([A-Za-z]+\d+)(?:_\d{8}_\d{6}|-0[1-4])?\.(?:jpe?g|png|webp)',name,re.I)
+        match=re.fullmatch(r'([A-Za-z]+\d+)(?:_\d{8}_\d{6}|-0[1-4]|\s*(?:-\s*)?PRINCIPAL)?\.(?:jpe?g|png|webp)',name,re.I)
         if not match:
             errors.append({'archivo':name,'id':fid,'motivo':'Nombre sin SKU exacto reconocido'});continue
         raw=match[1].upper();sku=aliases.get(raw,raw)
@@ -56,7 +56,7 @@ def synchronize(files, rows, catalog, aliases, previous):
         conflicts=[e for e in entries if e['sku']!=sku]
         item={'id':fid,'nombre':name,'url':f.get('url',f'https://drive.google.com/file/d/{fid}/view'),
               'modificado':f.get('modificado',f.get('modifiedTime')),'bytes':f.get('bytes',f.get('size')),
-              'sha256':f.get('sha256'),'registro':entries,'vista':'por identificar'}
+              'sha256':f.get('sha256'),'registro':entries,'vista':'PRINCIPAL elegida por propietario' if re.search(r'PRINCIPAL',name,re.I) else 'por identificar'}
         group=groups.setdefault(sku,{'fotos':[],'incidencias':[]})
         group['fotos'].append(item)
         if conflicts:group['incidencias'].append('SKU de Registro no coincide con nombre: '+name)
@@ -111,7 +111,7 @@ def main():
     if policy.get('confirmado_por_propietario') and candidates:
         eligible=[sku for sku in candidates if not result['productos'][sku]['incidencias']]
         updates,issues=reglas_sku.registration_rules(json.loads(Path(a.registro).read_text()),eligible,
-            json.loads((ROOT/'importacion/alias-sku.json').read_text()),policy)
+            json.loads((ROOT/'importacion/alias-sku.json').read_text()),policy,ROOT)
         changes=reglas_sku.apply_rows(updates,apply=True,root=ROOT)
         # El lote investigará la revisión resultante de la clasificación del Registro.
         if changes:

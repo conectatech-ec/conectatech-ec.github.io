@@ -179,8 +179,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 484,483,481,482; valores: Caja original.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 481,482,483,484; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/carg018/original-96cfc9120f0d8b77.png",
     "sha256_maestro": "96cfc9120f0d8b7729359442ddc183969d063714b811f4cef0429c004872d822",
@@ -270,7 +270,7 @@
       "solicitado": "CARG018",
       "sku": "CARG018",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T21:26:26.458Z",
+      "fecha": "2026-10-12T01:50:50.817Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -285,6 +285,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -294,51 +295,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/",
       "archivo_html": "productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/index.html",
       "http": 200,
-      "sha256_html": "e8d7e2e51f6288fad19e6b153c5bd85e01c76c6feabaa1c76c4dc1d3dd66c567",
-      "sha256_html_local": "e8d7e2e51f6288fad19e6b153c5bd85e01c76c6feabaa1c76c4dc1d3dd66c567",
+      "sha256_html": "7f206864dcde6a764bb88c2663a68ab35f1d7c2b3b6e927bfa76cdacb1e2939c",
+      "sha256_html_local": "7f206864dcde6a764bb88c2663a68ab35f1d7c2b3b6e927bfa76cdacb1e2939c",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg018/CARG018-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/carg018/CARG018-01-600.webp?v=0d410f8577a15968",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/carg018/CARG018-01-600.webp?v=0d410f8577a15968",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/",
+          "url": "http://127.0.0.1:8765/productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/carg018/CARG018-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/carg018/CARG018-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg058-cargador-para-mac-magsafe-2-85w/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-061/qa-local/movil/CARG018-390.png",
-      "sha256": "19f3a258997d1d035035dcccf888b2248874b44bf949dbf238a3c6eac40d0346",
+      "archivo": "reportes/lote-065/qa-local/movil/CARG018-390.png",
+      "sha256": "6d30065345533ae1eab90fe1ce6d2e6417450ac38520e1ada3d9fe72be6a529e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-061/qa-local/movil/CARG018-1280.png",
-        "sha256": "92b0422479da567b9139051f209d48066c97535afb711f0432a63a04d5472072",
+        "archivo": "reportes/lote-065/qa-local/movil/CARG018-1280.png",
+        "sha256": "85707bca36abe892bbdb808f7c24976b06b5766c6dad65fe67564470022fe6e3",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

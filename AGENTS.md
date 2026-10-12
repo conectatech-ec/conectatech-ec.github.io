@@ -1,3 +1,11 @@
+## Orden vigente del propietario — lote de 100 y teléfonos
+
+Instrucción recibida en esta conversación: avanzar con lote de 100, terminar celulares primero. Usar TELEFONOS Y TABLETS CONECTATECH.pdf verificado por el propietario (catálogo al 10-10-2026) como evidencia de modelo/especificaciones; no importar sus precios sobre 593. Las imágenes Drive SKU - PRINCIPAL elegidas por el propietario son las portadas del SKU: embellecer y adaptar manteniendo estrictamente modelo, geometría, cámaras, puertos, color y realidad. No sustituir por otro teléfono ni inventar hardware.
+
+Regla comercial posterior que prevalece sobre la clasificación histórica: todos los productos se consideran originales por instrucción del propietario, excepto JBL, SAMSUNG, APPLE, BOSE y LENOVO cuando el Registro fotos SKU indique AAA (genérico). No inferir ese estado de otras marcas. Las cinco marcas también pueden tener productos originales. Mostrar condición AAA/genérico en lugar visible de la ficha, nunca en el título; sólo cargadores AAA pueden llevar «compatible» en título. Esto es clasificación comercial confirmada por el propietario, independiente de veracidad de especificaciones, fidelidad visual y permiso de imágenes.
+
+Correcciones expresas: AUDI015 Face Change no tiene tapita que se abre; modalidades se cambian con el dedo, rehacer presentación fiel. FLAS005 mejorar llavero e inscripción de marca tomando FLAS004 como referencia. REL023, REL050, REL015 y REL057 requieren fotos más fieles al modelo real, sin reemplazar AAA por hardware de un original diferente. TABL004 no incluye funda protectora; suprimir esa afirmación y usar su PRINCIPAL. Conservar originales, precios, stock, URLs, diseño y demás reglas visuales. Registrar reglas y evidencia por SKU sin regenerar fotografías correctas.
+
 ## Continuidad y prioridades comerciales — 11 de octubre de 2026
 
 Orden vigente del propietario: terminar trabajos avanzados que puedan completarse con fidelidad y continuar sin repetir descargas, producción o publicaciones aprobadas. Publicación automática de SKU aptos tras revisión visual, contrato v3, QA de imágenes/datos/navegación y comprobación de Pages; revisión del propietario posterior. No pedir aprobación rutinaria. Esto no resuelve discrepancias físicas de propuestas anteriores ni permite cambiar banderas para eludir controles.

@@ -1,9 +1,9 @@
 {
   "sku": "PARL029",
   "nombre_original": "Parlante Con Microfono Mini Sing-E Zqs-W3103",
-  "titulo_comercial": "Parlante mini karaoke ZQS-W3103 | negro con micrófono, versión genérica",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "titulo_comercial": "Parlante mini karaoke ZQS-W3103 | negro con micrófono,",
+  "tipo": "original",
+  "marca": null,
   "modelo": "ZQS-W3103",
   "variante": "Negro",
   "categoria_original": "Parlantes",
@@ -150,13 +150,13 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl029-parlante-con-microfono-mini-sing-e-zqs-w3103/",
   "fecha_verificacion": "2026-10-11T23:39:37.540327+00:00",
-  "descripcion": "Parlante mini karaoke negro con asa rectangular y un micrófono. Tiene rejilla frontal perforada y cuatro fijaciones visibles. Producto AAA genérico.",
+  "descripcion": "Parlante mini karaoke negro con asa rectangular y un micrófono. Tiene rejilla frontal perforada y cuatro fijaciones visibles. producto.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 2217,2218,2216; valores: AAA (genérico).",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2216,2217,2218; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/parl029/original-968a6b9af20c8001.png",
     "sha256_maestro": "968a6b9af20c80017758e2932833261301008b9072b7e36203d2d01296111c91",
@@ -216,9 +216,9 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_no_declarada": false,
+      "marca_no_declarada": true,
       "modelo_no_declarado": false,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
@@ -243,7 +243,7 @@
       "solicitado": "PARL029",
       "sku": "PARL029",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T23:39:45.263Z",
+      "fecha": "2026-10-12T01:51:16.855Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -271,8 +271,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/parl029-parlante-con-microfono-mini-sing-e-zqs-w3103/",
       "archivo_html": "productos/parl029-parlante-con-microfono-mini-sing-e-zqs-w3103/index.html",
       "http": 200,
-      "sha256_html": "8d870413ff9995ea880ca59f54f6740be408a621947c5fd052b87372e9da0004",
-      "sha256_html_local": "8d870413ff9995ea880ca59f54f6740be408a621947c5fd052b87372e9da0004",
+      "sha256_html": "3bccd82f93cd8c69f15afef85fd34b3540b9dc54f2a7d24719bf1ef32a9d1016",
+      "sha256_html_local": "3bccd82f93cd8c69f15afef85fd34b3540b9dc54f2a7d24719bf1ef32a9d1016",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -307,28 +307,28 @@
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/parl037-parlante-con-doble-microfono-sing-e-mediano/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/parl020-parlante-con-microfono-modelo-zqs1343w-karaoke/",
-          "http": 200,
-          "ok": true
-        },
-        {
           "url": "http://127.0.0.1:8765/productos/parl026-parlante-sing-e-3-pulgadas-zqs1328s/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-064/qa-local/movil/PARL029-390.png",
-      "sha256": "cf638b57b2114c8986f5f51249b51dc58c6cf10b94830a193da3511da60cf509",
+      "archivo": "reportes/lote-065/qa-local/movil/PARL029-390.png",
+      "sha256": "bc51a439bfd07bf2735fcf92e563295c2a0eb0cbc2215a16f93c019c77114d3e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-064/qa-local/movil/PARL029-1280.png",
-        "sha256": "dd5d515795544da411fd9a19d2cc7b81231d1e8cc6fb29d9af433cd83abfb86e",
+        "archivo": "reportes/lote-065/qa-local/movil/PARL029-1280.png",
+        "sha256": "6b7b6ea22da663b3004016bdfa0ebd71ae1a1b663df8341f5126736c6037af3f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

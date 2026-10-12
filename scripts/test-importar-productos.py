@@ -55,7 +55,7 @@ class ImportTests(unittest.TestCase):
         rows=[dict.fromkeys(module.FIELDS,'') for _ in self.before]
         for row,sku in zip(rows,self.before):row.update(sku=sku,verificado='NO')
         result,report=self.run_batch(rows);self.assertEqual(result.returncode,0,result.stderr)
-        self.assertEqual(len(report['pendientes']),1165);self.assertEqual(report['errores'],[])
+        self.assertEqual(len(report['pendientes']),len(self.before));self.assertEqual(report['errores'],[])
     def test_per_sku_keeps_valid_rows_when_another_sku_is_unknown(self):
         result,report=self.run_batch([self.rows[0],dict(self.rows[1],sku='INEXISTENTE')],per_sku=True)
         self.assertNotEqual(result.returncode,0)

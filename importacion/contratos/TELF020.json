@@ -1,13 +1,13 @@
 {
   "sku": "TELF020",
   "nombre_original": "TELEFONO REDMI 15 256GB 8GB+8GB",
-  "titulo_comercial": "Teléfono Redmi 15 256 GB · 8 GB RAM · Negro Ocaso",
+  "titulo_comercial": "Teléfono Redmi 15 256 GB | 8 GB RAM",
   "tipo": "original",
   "marca": "Redmi",
   "modelo": "15",
-  "variante": "Código: 25062RN2DL; Color: Negro Ocaso; RAM física: 8 GB; RAM virtual: 8 GB; Almacenamiento: 256 GB",
+  "variante": "256 GB de almacenamiento; 8 GB RAM física",
   "categoria_original": "Telefonos",
-  "categoria_comercial": "Celulares y Smartphones",
+  "categoria_comercial": "Telefonos",
   "precio_contado": 235.9,
   "pvp": 294.88,
   "stock": 2,
@@ -15,8 +15,7 @@
     "descripcion": "1 teléfono",
     "cantidad": 1,
     "verificada": true,
-    "fuente": "datos-593/inventario-publico.csv",
-    "evidencia": "datos-593/inventario-publico.csv y SKU existente"
+    "fuente": "datos-593/inventario-publico.csv"
   },
   "fotografias_fuente": [
     {
@@ -77,59 +76,81 @@
           "fila": 705
         }
       ]
+    },
+    {
+      "nombre": "TELF020 - PRINCIPAL.png",
+      "url": "https://drive.google.com/file/d/11yp7MzYRoSY_cfBy0Opb2dG0YPoPWiN2/view?usp=drivesdk",
+      "sha256": "9e4d15144ddaad0a4ec01d15c63b328c60b09ff22e320525e7e1bd976c50a83d",
+      "drive_id": "11yp7MzYRoSY_cfBy0Opb2dG0YPoPWiN2",
+      "original_intacto": true
     }
   ],
   "fuentes_tecnicas": [
     "https://www.mi.com/global/product/redmi-15/specs/",
     "https://drive.google.com/file/d/1gx1wAHIByH0EJLmLtjIyo1Q1tPSyReKm/view?usp=drivesdk",
     "https://drive.google.com/file/d/1BtWaHyBUcOYj3rBCwxj28l1yNN2HSS7g/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "https://drive.google.com/file/d/11yp7MzYRoSY_cfBy0Opb2dG0YPoPWiN2/view?usp=drivesdk"
   ],
-  "imagen_principal": null,
+  "imagen_principal": "/imagenes/telf020/TELF020-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
-    "estado": "PENDIENTE",
-    "tipo": "propia",
+    "estado": "AUTORIZADO",
+    "tipo": "permiso_distribuidor",
     "titular": "CONECTATECH",
-    "fuente": "https://drive.google.com/file/d/1BtWaHyBUcOYj3rBCwxj28l1yNN2HSS7g/view?usp=drivesdk",
-    "evidencia": "Fotografías propias de identificación autorizadas por el propietario el 2026-10-10; aún no existe una imagen comercial apta sin caja. No autoriza fotografías externas.",
-    "fecha_verificacion": "2026-10-10",
-    "archivos": [],
-    "investigacion_previa": {
-      "estado": "pendiente",
-      "uso_comercial_permitido": false,
-      "fotos_propias": {
-        "autorizadas": true,
-        "evidencia": "Orden expresa del propietario de 2026-10-10; fotos Drive CONECTATECH",
-        "limite_visual": "Todas las fotografías recibidas muestran empaques; no se extrae su ilustración como producto real."
-      },
-      "fuentes_externas": "No se identificó licencia oficial comercial aplicable a CONECTATECH para la variante exacta. Se investigaron alternativas y se registran sus límites."
-    }
+    "fuente": "https://drive.google.com/file/d/11yp7MzYRoSY_cfBy0Opb2dG0YPoPWiN2/view?usp=drivesdk",
+    "evidencia": "El propietario suministró y eligió expresamente esta PRINCIPAL para edición y publicación del SKU en la web en esta conversación. No se deduce una licencia del fabricante.",
+    "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
+    "archivos": [
+      {
+        "sha256": "9e4d15144ddaad0a4ec01d15c63b328c60b09ff22e320525e7e1bd976c50a83d",
+        "fuente": "https://drive.google.com/file/d/11yp7MzYRoSY_cfBy0Opb2dG0YPoPWiN2/view?usp=drivesdk"
+      }
+    ]
   },
   "especificaciones": [
     {
       "nombre": "Modelo",
       "valor": "15",
       "fuentes": [
-        "https://drive.google.com/file/d/1gx1wAHIByH0EJLmLtjIyo1Q1tPSyReKm/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     },
     {
-      "nombre": "Código de modelo",
-      "valor": "25062RN2DL",
+      "nombre": "Pantalla",
+      "valor": "6,9 pulgadas FHD+, hasta 144 Hz",
       "fuentes": [
-        "https://drive.google.com/file/d/1gx1wAHIByH0EJLmLtjIyo1Q1tPSyReKm/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     },
     {
-      "nombre": "Color",
-      "valor": "Negro Ocaso",
+      "nombre": "Batería",
+      "valor": "7000 mAh",
       "fuentes": [
-        "https://drive.google.com/file/d/1gx1wAHIByH0EJLmLtjIyo1Q1tPSyReKm/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Carga máxima",
+      "valor": "33 W",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Cámara principal",
+      "valor": "50 MP",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -138,7 +159,7 @@
       "nombre": "Almacenamiento",
       "valor": "256 GB",
       "fuentes": [
-        "https://drive.google.com/file/d/1gx1wAHIByH0EJLmLtjIyo1Q1tPSyReKm/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -147,16 +168,16 @@
       "nombre": "RAM física",
       "valor": "8 GB",
       "fuentes": [
-        "https://drive.google.com/file/d/1gx1wAHIByH0EJLmLtjIyo1Q1tPSyReKm/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     },
     {
-      "nombre": "RAM máxima",
-      "valor": "Hasta 16 GB (8 GB físicos + 8 GB virtuales)",
+      "nombre": "Extensión de RAM",
+      "valor": "Hasta 16 GB (8 GB físicos + 8 GB virtuales; usa almacenamiento)",
       "fuentes": [
-        "https://drive.google.com/file/d/1BtWaHyBUcOYj3rBCwxj28l1yNN2HSS7g/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -169,107 +190,17 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
-    },
-    {
-      "nombre": "Procesador",
-      "valor": "Qualcomm Snapdragon 685",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Pantalla",
-      "valor": "6,9 pulgadas FHD+ 2340 × 1080; hasta 144 Hz en apps compatibles",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Cámara principal",
-      "valor": "50 MP",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Cámara frontal",
-      "valor": "8 MP",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Batería",
-      "valor": "7000 mAh (típica)",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Carga",
-      "valor": "Hasta 33 W; USB-C",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Sistema operativo de referencia",
-      "valor": "Xiaomi HyperOS 2",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Bluetooth",
-      "valor": "5.0",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Seguridad",
-      "valor": "Huella lateral y desbloqueo facial",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Almacenamiento ampliable",
-      "valor": "MicroSD hasta 2 TB; tarjeta no incluida",
-      "fuentes": [
-        "https://www.mi.com/global/product/redmi-15/specs/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
     }
   ],
-  "estado_calidad": "REVISAR",
-  "estado_publicacion": "PENDIENTE",
+  "estado_calidad": "APROBADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf020-telefono-redmi-15-256gb-8gb-8gb/",
-  "fecha_verificacion": "2026-10-10T06:17:55.963733+00:00",
-  "descripcion": "Redmi 15 Negro Ocaso con 256 GB para tus aplicaciones y contenido. Pantalla FHD+ de 6,9 pulgadas y batería de 7000 mAh para una experiencia amplia y cómoda. Admite carga de hasta 33 W y hasta 16 GB de RAM: 8 GB físicos + 8 GB virtuales. La memoria virtual usa almacenamiento disponible.",
+  "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
+  "descripcion": "Redmi 15 con pantalla de 6,9 pulgadas fhd+, hasta 144 hz y batería de 7000 mAh. Cámara principal de 50 MP; admite carga de hasta 33 W. Dispone de 8 GB de RAM física y hasta 8 GB adicionales de memoria virtual, que utiliza almacenamiento disponible.",
   "compatibilidad": {
-    "valor": "Redes 4G LTE; cobertura y bandas según operadora. No se anuncia 5G ni NFC regional sin evidencia.",
+    "valor": "4G LTE",
     "fuentes": [
-      "https://www.mi.com/global/product/redmi-15/specs/"
+      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
     ]
   },
   "contenido_venta": {
@@ -285,12 +216,9 @@
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "pendientes": [
-    "Falta portada profesional sin caja con licencia comercial y variante exacta acreditadas.",
-    "Garantía comercial aplicable aún no documentada; no prometer plazo."
-  ],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 704,705; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "pendientes": [],
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 704,705; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "propuesta_origen": "importacion/lotes/lote-020/telefonos-propuestas.json",
   "notas_internas": {
     "campos_no_confirmados": [],
@@ -330,32 +258,125 @@
     },
     "identidad": {
       "sku_verificado": true,
+      "marca_verificado": true,
+      "marca_no_declarada": false,
+      "modelo_verificado": true,
+      "variante_verificado": true,
       "fuentes": [
-        "https://drive.google.com/file/d/1BtWaHyBUcOYj3rBCwxj28l1yNN2HSS7g/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1gx1wAHIByH0EJLmLtjIyo1Q1tPSyReKm/view?usp=drivesdk"
+        "https://drive.google.com/file/d/11yp7MzYRoSY_cfBy0Opb2dG0YPoPWiN2/view?usp=drivesdk"
       ],
       "discrepancias_pendientes": [],
-      "variante_verificado": true,
-      "marca_verificado": true,
-      "modelo_verificado": true,
-      "discrepancias_resueltas": [
-        {
-          "tipo": "contenido_regional",
-          "detalle": "La ficha global no incluye adaptador; la etiqueta propia 25062RN2DL sí declara adaptador 33 W. Prevalece la etiqueta para esta variante."
-        }
-      ]
+      "evidencia": "PRINCIPAL elegida por el propietario y PDF página 6, memoria física cotejada 593."
     },
     "ficha": {
-      "verificada": false,
-      "fuente": "importacion/lotes/lote-020/telefonos-propuestas.json"
+      "verificada": true,
+      "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+      "pagina": 6,
+      "evidencia": "Revisión visual de la página del catálogo verificado por el propietario; no se importan precios, accesorios promocionales o garantías."
     },
     "movil": {
-      "estado": "PENDIENTE",
-      "motivo": "Requiere render real de la ficha y los medios aplicados; no afirmar revisión antes de capturar"
+      "solicitado": "TELF020",
+      "sku": "TELF020",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-12T01:50:28.844Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/telf020-telefono-redmi-15-256gb-8gb-8gb/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/telf020-telefono-redmi-15-256gb-8gb-8gb/",
+      "archivo_html": "productos/telf020-telefono-redmi-15-256gb-8gb-8gb/index.html",
+      "http": 200,
+      "sha256_html": "e6390300a2e575913dbd241389c015ae3344da2f4b0560f939584561471e637e",
+      "sha256_html_local": "e6390300a2e575913dbd241389c015ae3344da2f4b0560f939584561471e637e",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/telf020/TELF020-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/telf020/TELF020-01-600.webp?v=4b3b225834511127",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/telf020-telefono-redmi-15-256gb-8gb-8gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/telf020/TELF020-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/telf021-telefono-redmi-note-15-pro-4g-256gb-8gb-gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/telf028-telefono-honor-x8d-256gb-8gb-8gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/telf035-honor-x7e-256gb-6gb-6gb/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-065/qa-local/movil/TELF020-390.png",
+      "sha256": "c73de2946742dcfe0d6192f8f002daa8dffe517d54dff672ee4832b9ce26e16a",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-065/qa-local/movil/TELF020-1280.png",
+        "sha256": "aaba19950e31f3113210291efc3f36537ca824a6b6ab9afd4f0bb7b9c5ec7aea",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     },
     "publicacion_http": {
       "estado": "PENDIENTE",
       "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+    },
+    "revision_visual": {
+      "estado": "VERIFICADO",
+      "sha256_maestro": "9e4d15144ddaad0a4ec01d15c63b328c60b09ff22e320525e7e1bd976c50a83d",
+      "fecha": "2026-10-12T01:36:31.403670+00:00",
+      "evidencia": "PRINCIPAL seleccionada expresamente por el propietario; píxeles originales conservados sin reconstrucción IA, sin ampliar el producto. Normalización WebP y lienzo blanco; identidad visual cotejada con el catálogo verificado."
     }
   },
   "validaciones_propuesta": {
@@ -386,5 +407,31 @@
       "stock"
     ],
     "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "7000 mAh",
+      "titulo": "Batería para tu día",
+      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "especificaciones": [
+        "Batería"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "6,9 pulgadas FHD+, hasta 144 Hz",
+      "titulo": "Pantalla amplia",
+      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "especificaciones": [
+        "Pantalla"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

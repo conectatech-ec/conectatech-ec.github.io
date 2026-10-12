@@ -135,8 +135,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Registro fotográfico, columna Tipo: AAA (genérico); se publica como producto compatible.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: APPLE; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2057,2058,2059; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "notas_internas": {
     "observaciones": [
       "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible."
@@ -197,7 +197,7 @@
       "solicitado": "STYL006",
       "sku": "STYL006",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T21:29:16.050Z",
+      "fecha": "2026-10-12T01:51:27.467Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -212,6 +212,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -221,51 +222,52 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/styl006-stylus-pencil-inalambrico-para-iphone-ipad/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/styl006-stylus-pencil-inalambrico-para-iphone-ipad/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/styl006-stylus-pencil-inalambrico-para-iphone-ipad/",
       "archivo_html": "productos/styl006-stylus-pencil-inalambrico-para-iphone-ipad/index.html",
       "http": 200,
-      "sha256_html": "7aafe1e048ecada5648d2d90391b0bdd0cf03fd2aa18936806efb9c221c98a39",
-      "sha256_html_local": "7aafe1e048ecada5648d2d90391b0bdd0cf03fd2aa18936806efb9c221c98a39",
+      "sha256_html": "a5a2e57148c0f8099950bb397a31711dabe4cf04a9f41be9d30977beafc4e731",
+      "sha256_html_local": "a5a2e57148c0f8099950bb397a31711dabe4cf04a9f41be9d30977beafc4e731",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/styl006/STYL006-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/styl006/STYL006-01-600.webp?v=b014b02ce010f8ae",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/styl006/STYL006-01-600.webp?v=b014b02ce010f8ae",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/styl006-stylus-pencil-inalambrico-para-iphone-ipad/",
+          "url": "http://127.0.0.1:8765/productos/styl006-stylus-pencil-inalambrico-para-iphone-ipad/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/styl006/STYL006-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/styl006/STYL006-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-049/qa-publico/movil/STYL006-390.png",
-      "sha256": "722a28af86a65b3a82c2971c711d1853e2d85c7ce500445471ca44e43c208a6f",
+      "archivo": "reportes/lote-065/qa-local/movil/STYL006-390.png",
+      "sha256": "52294bcb6430b27e0b3e770fbc4d5a674e04a4be293df4a6040f907b9299f1cc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-049/qa-publico/movil/STYL006-1280.png",
-        "sha256": "e79c683b65ecf1f42334daec4595159ccf7abf8c6558a9c87ae801528647889c",
+        "archivo": "reportes/lote-065/qa-local/movil/STYL006-1280.png",
+        "sha256": "def94d62c293f5dcaac6626ccfbd85c6df8a313007a16b1a1cd8944a6335f39b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

@@ -228,8 +228,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 437,438,2093,2094; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 437,438,2093,2094; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "notas_internas": {
     "observaciones": [
       "Composición comercial asistida por IA basada exclusivamente en las fotografías propias del empaque PowerCar 100. Se conservaron los dos módulos negros, el cable, el clip, el anillo azul y los seis puertos acreditados. Se eliminaron caja y entorno; no se utilizaron imágenes externas ni se añadieron conectores."
@@ -293,7 +293,7 @@
       "solicitado": "CARG051",
       "sku": "CARG051",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T21:01:41.528Z",
+      "fecha": "2026-10-12T01:50:51.785Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -308,6 +308,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -317,51 +318,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
       "archivo_html": "productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/index.html",
       "http": 200,
-      "sha256_html": "33fad689dd7c7162c88e7996eb4d71e1f32e5c974bcc01ee96faf201fae8e370",
-      "sha256_html_local": "33fad689dd7c7162c88e7996eb4d71e1f32e5c974bcc01ee96faf201fae8e370",
+      "sha256_html": "b9a68f31d7f3353112acfe15cf4ab6af80b6d64a991c614a2f9a6c3212618155",
+      "sha256_html_local": "b9a68f31d7f3353112acfe15cf4ab6af80b6d64a991c614a2f9a6c3212618155",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg051/CARG051-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg051/CARG051-01-600.webp?v=968a4b23b467358b",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/carg051/CARG051-01-600.webp?v=968a4b23b467358b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
+          "url": "http://127.0.0.1:8765/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/carg051/CARG051-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/carg051/CARG051-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg058-cargador-para-mac-magsafe-2-85w/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-048/qa-publico/movil/CARG051-390.png",
-      "sha256": "6bc464217d55035430e8705baa4f0495dc53d424de05b47fd229dda7cbd4cd77",
+      "archivo": "reportes/lote-065/qa-local/movil/CARG051-390.png",
+      "sha256": "9452c76fabbde2b923648874c8dcc96ce5e40b9842b7adc5fc7a9a4052733c00",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-048/qa-publico/movil/CARG051-1280.png",
-        "sha256": "e11db3555182350d3628243e20cec9607a36892bb824addd028c4ba21b9d7644",
+        "archivo": "reportes/lote-065/qa-local/movil/CARG051-1280.png",
+        "sha256": "2f49b6639b7713e4182c1c6577e3b6dc291fb04d9b664259c4af3c70d69f430b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

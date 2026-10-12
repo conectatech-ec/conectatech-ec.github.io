@@ -8,7 +8,7 @@
   "variante": "32 GB, Plateado, cubierta giratoria",
   "categoria_original": "Flash",
   "categoria_comercial": "Almacenamiento",
-  "precio_contado": 13.0,
+  "precio_contado": 13,
   "pvp": 14.95,
   "stock": 2,
   "unidad_venta": {
@@ -155,8 +155,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 327,329,328; valores: Caja original. No acredita fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 327,328,329; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/flas017/original-9bba50f6f107346a.png",
     "sha256_maestro": "9bba50f6f107346a70d7c326ccc88b3a5edca3c6557615b3185a01c22f8cedc7",
@@ -243,7 +243,7 @@
       "solicitado": "FLAS017",
       "sku": "FLAS017",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T19:46:17.636Z",
+      "fecha": "2026-10-12T01:51:04.624Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -258,6 +258,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -267,7 +268,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas017-flash-memory-32gb-steren-32gb-usb-c-usb-a/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/flas017-flash-memory-32gb-steren-32gb-usb-c-usb-a/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/flas017-flash-memory-32gb-steren-32gb-usb-c-usb-a/",
       "archivo_html": "productos/flas017-flash-memory-32gb-steren-32gb-usb-c-usb-a/index.html",
       "http": 200,
       "sha256_html": "be3a150993076610566f03bc560efe760e464335a9a361ee274e7b2c11be3257",
@@ -277,55 +278,56 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas017/FLAS017-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/flas017/FLAS017-01-600.webp?v=46e8c97cf2a64c16",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/flas017/FLAS017-01-600.webp?v=46e8c97cf2a64c16",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/flas017-flash-memory-32gb-steren-32gb-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas017-flash-memory-32gb-steren-32gb-usb-c-usb-a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/flas017/FLAS017-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/flas017/FLAS017-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+          "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+          "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-058/qa-local/movil/FLAS017-390.png",
+      "archivo": "reportes/lote-065/qa-local/movil/FLAS017-390.png",
       "sha256": "a8529fcada8670003a5df6e209087fbfb0849b430213d0f4690b4c800d9aab87",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-058/qa-local/movil/FLAS017-1280.png",
+        "archivo": "reportes/lote-065/qa-local/movil/FLAS017-1280.png",
         "sha256": "7581fd07aeb8d3f9453ed05dfa1a94974d90b59c170eb44982e090f98114c506",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -2,8 +2,8 @@
   "sku": "CARG059",
   "nombre_original": "Cargador Para Mac Usb-C 96W",
   "titulo_comercial": "Cargador compatible USB-C de 96 W para Mac",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "tipo": "original",
+  "marca": null,
   "modelo": "Adaptador USB-C 96 W",
   "variante": "Blanco",
   "categoria_original": "Cargadores",
@@ -141,8 +141,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Registro fotográfico, columna Tipo: AAA (genérico); se publica como producto compatible.",
-  "revision_regla": 3,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2055,2056; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 4,
   "notas_internas": {
     "observaciones": [
       "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno, se limpiaron superficies y se compuso el producto sin añadir hardware. Se retiraron marcas de terceros del producto por tratarse de una versión genérica compatible."
@@ -178,13 +178,14 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
         "https://drive.google.com/file/d/17WTRgM_K_WQe4G9113xxLPvlN1DRkpd1/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": []
+      "discrepancias_pendientes": [],
+      "marca_no_declarada": true
     },
     "ficha": {
       "verificada": true,
@@ -204,7 +205,7 @@
       "solicitado": "CARG059",
       "sku": "CARG059",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T05:54:11.507Z",
+      "fecha": "2026-10-12T01:50:53.406Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -219,6 +220,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -231,8 +233,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
       "archivo_html": "productos/carg059-cargador-para-mac-usb-c-96w/index.html",
       "http": 200,
-      "sha256_html": "870273be0edb05a7327cc87ff4196aaca9841e678b20bd40f1496dea997e6b18",
-      "sha256_html_local": "870273be0edb05a7327cc87ff4196aaca9841e678b20bd40f1496dea997e6b18",
+      "sha256_html": "8eec709c3a2ff63a43c80fa2e91e3a776c1a62b96e42c94fac756ac207980f57",
+      "sha256_html_local": "8eec709c3a2ff63a43c80fa2e91e3a776c1a62b96e42c94fac756ac207980f57",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -244,6 +246,7 @@
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
           "url": "http://127.0.0.1:8765/productos/carg059-cargador-para-mac-usb-c-96w/",
@@ -274,15 +277,20 @@
           "url": "http://127.0.0.1:8765/productos/carg058-cargador-para-mac-magsafe-2-85w/",
           "http": 200,
           "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg018-cargador-para-vehiculo-4-puertos-usb-a-match/",
+          "http": 200,
+          "ok": true
         }
       ],
-      "archivo": "reportes/correccion-052/qa-local/movil/CARG059-390.png",
-      "sha256": "2921e588a0b15af18493581804429f458538a632e90f6fb7a4d2990dc492a939",
+      "archivo": "reportes/lote-065/qa-local/movil/CARG059-390.png",
+      "sha256": "d0ab2d08c42963f88f426c0a5cdb309aeebf442c04787d2ae6bf52d13b29db93",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correccion-052/qa-local/movil/CARG059-1280.png",
-        "sha256": "c85df352692d5c4286e13f3265f900850d4bcf081e15514915c0d529856604cf",
+        "archivo": "reportes/lote-065/qa-local/movil/CARG059-1280.png",
+        "sha256": "3e755031c7538a85aa870196cd3b51dbcbfe9df915fcdc3e3024735f3ac6c2b9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

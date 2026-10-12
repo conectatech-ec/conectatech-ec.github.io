@@ -1,14 +1,14 @@
 {
   "sku": "AUDI017",
   "nombre_original": "Audifonos Inalambricos Signature",
-  "titulo_comercial": "Audífonos inalámbricos Signature | AAA negro y dorado",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "titulo_comercial": "Audífonos inalámbricos Signature negro y dorado",
+  "tipo": "original",
+  "marca": null,
   "modelo": "Signature",
   "variante": "Negro y dorado",
   "categoria_original": "Audifonos",
   "categoria_comercial": "Audio y Audífonos",
-  "precio_contado": 29.0,
+  "precio_contado": 29,
   "pvp": 33.35,
   "stock": 1,
   "unidad_venta": {
@@ -222,13 +222,13 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi017-audifonos-inalambricos-signature/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
-  "descripcion": "Audífonos inalámbricos Signature. Variante negro y dorado, con diseño y presentación cotejados con las fotografías del SKU. Versión AAA / genérica; no es un producto original de Apple, Samsung o JBL. Versión AAA genérica/compatible; no es un producto original de la marca de referencia.",
+  "descripcion": "Audífonos inalámbricos Signature. Variante negro y dorado, con diseño y presentación cotejados con las fotografías del SKU. producto; no es un producto original de Apple, Samsung o JBL. producto; no es un producto original de la marca de referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1014,1011,1016,1015,1013,1012; valores: AAA (genérico).",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1011,1012,1013,1014,1015,1016; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/audi017/original-2561851b7bdfb8b1.png",
     "sha256_maestro": "2561851b7bdfb8b10e45e4b2dbe644145759e6e2e4a92892ac0768a79f10f6af",
@@ -294,9 +294,9 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_no_declarada": false,
+      "marca_no_declarada": true,
       "modelo_no_declarado": false,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
@@ -324,7 +324,7 @@
       "solicitado": "AUDI017",
       "sku": "AUDI017",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:39:45.735Z",
+      "fecha": "2026-10-12T01:50:34.682Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -339,6 +339,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -348,66 +349,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi017-audifonos-inalambricos-signature/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/audi017-audifonos-inalambricos-signature/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/audi017-audifonos-inalambricos-signature/",
       "archivo_html": "productos/audi017-audifonos-inalambricos-signature/index.html",
       "http": 200,
-      "sha256_html": "ee02d0605ef5de58e165a7eda317cbfdf37269f433f61d3d646978ef80dcb583",
-      "sha256_html_local": "ee02d0605ef5de58e165a7eda317cbfdf37269f433f61d3d646978ef80dcb583",
+      "sha256_html": "8d87eb906ffe20ebf12a6b65ccaf88c9d1e3213f920ab9496402469a62393513",
+      "sha256_html_local": "8d87eb906ffe20ebf12a6b65ccaf88c9d1e3213f920ab9496402469a62393513",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi017/AUDI017-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/audi017/AUDI017-01-600.webp?v=5ba4baef213279a2",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/audi017/AUDI017-01-600.webp?v=5ba4baef213279a2",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/audi017-audifonos-inalambricos-signature/",
+          "url": "http://127.0.0.1:8765/productos/audi017-audifonos-inalambricos-signature/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/audi017/AUDI017-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/audi017/AUDI017-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/audi044-audifonos-galaxy-buds-pro-akg/",
+          "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/audi123-airpods-pro-3-con-ai/",
+          "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/audi094-audifonos-airpods-3-3era/",
+          "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-062/qa-local/movil/AUDI017-390.png",
-      "sha256": "c0dab3cb3008dcef6b7110cbfcee2792aff53ec19b4b0a313004c1e1e821b6e9",
+      "archivo": "reportes/lote-065/qa-local/movil/AUDI017-390.png",
+      "sha256": "c4f52cd16c629a1988dad9bde5c04ceb0b95edbdb2bae4b9ca1c4412a4a23f52",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-062/qa-local/movil/AUDI017-1280.png",
-        "sha256": "468244eb6a558ad2602d91634baf33ef04a4c6b659968b5711926923b4237f09",
+        "archivo": "reportes/lote-065/qa-local/movil/AUDI017-1280.png",
+        "sha256": "f20d5386c64e6bc0920184a99dbaa1aa560fcb073ec395a6c7a6ce4caf08d68f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

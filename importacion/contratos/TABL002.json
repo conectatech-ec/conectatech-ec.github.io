@@ -210,8 +210,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 728,730,729; valores: Caja original. Clasificación comercial propia; no acredita licencias externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 728,729,730; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/tabl002/original-57ede3472b497743.png",
     "sha256_maestro": "57ede3472b497743f263d4119aa881aaf96db1d7cd04318caa704a9de8b7ff65",
@@ -311,7 +311,7 @@
       "solicitado": "TABL002",
       "sku": "TABL002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T18:14:37.681Z",
+      "fecha": "2026-10-12T01:51:28.253Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -326,6 +326,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -335,51 +336,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
       "archivo_html": "productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/index.html",
       "http": 200,
-      "sha256_html": "98c3454304909139cb2584c15c0614b28460dd88522ace5bee4b654aa36899d8",
-      "sha256_html_local": "98c3454304909139cb2584c15c0614b28460dd88522ace5bee4b654aa36899d8",
+      "sha256_html": "f5728cc3a2e0964aa28dc047a4c3c1e3b6ee9868e8aa63b569f41760eacf09c0",
+      "sha256_html_local": "f5728cc3a2e0964aa28dc047a4c3c1e3b6ee9868e8aa63b569f41760eacf09c0",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tabl002/TABL002-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/tabl002/TABL002-01-600.webp?v=7d6b0b68904a6766",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/tabl002/TABL002-01-600.webp?v=7d6b0b68904a6766",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
+          "url": "http://127.0.0.1:8765/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/tabl002/TABL002-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/tabl002/TABL002-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/tabl001-tablet-redmi-pad-2-11-pulgadas-128gb-4gb-4gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/tabl003-tablet-redmi-pad-2-9-7-pulgadas-128gb-4gb-4gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/tabl004-tablet-k2-edicion-mario-bros/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-056/qa-local/movil/TABL002-390.png",
-      "sha256": "fb9a7940eedde06d3d94f85e8701056ac1f52e23968cdb5d8061a60e45e3bfa6",
+      "archivo": "reportes/lote-065/qa-local/movil/TABL002-390.png",
+      "sha256": "8c1cffaafdcdb89bb101c5f32627bf780d24cb42b208343f0c940b2e9b07c451",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-056/qa-local/movil/TABL002-1280.png",
-        "sha256": "79474b2c033e73cd1ae0f614925e49b2693cee7faa67b9ad0856cc9df38f77d3",
+        "archivo": "reportes/lote-065/qa-local/movil/TABL002-1280.png",
+        "sha256": "a146fe46ece23c34eeb49b74070bc84f1d28e57c104492e88fee68e857760f82",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

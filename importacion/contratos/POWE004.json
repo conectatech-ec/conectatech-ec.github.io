@@ -2,8 +2,8 @@
   "sku": "POWE004",
   "nombre_original": "Powerbank 66W 30000MAH",
   "titulo_comercial": "Powerbank 66 W de 30000 mAh con cables integrados",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "tipo": "original",
+  "marca": null,
   "modelo": "Powerbank 66 W",
   "variante": "Negro · 30000 mAh",
   "categoria_original": "Powerbanks",
@@ -220,8 +220,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): Registro Google Sheets, columna Tipo, filas 1050-1053; AAA (genérico).",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1050,1051,1052,1053; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "notas_internas": {
     "observaciones": [
       "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno; se limpiaron superficies y se compuso un acabado de producto nuevo sin añadir conexiones, controles ni hardware."
@@ -255,7 +255,7 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
@@ -264,7 +264,8 @@
         "https://drive.google.com/file/d/1Ue-y35uw5vIpZXNxQwfqHPB0_f8-0heX/view?usp=drivesdk",
         "https://drive.google.com/file/d/1so41tHCvObllUs8itP1Ska0KX0TISvUM/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": []
+      "discrepancias_pendientes": [],
+      "marca_no_declarada": true
     },
     "ficha": {
       "verificada": true,

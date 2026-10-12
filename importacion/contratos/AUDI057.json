@@ -3,12 +3,12 @@
   "nombre_original": "Audifonos Deportivos Ows-03",
   "titulo_comercial": "Audífonos abiertos OWS-03 | clip y estuche compacto",
   "tipo": "original",
-  "marca": "Genérico",
+  "marca": null,
   "modelo": "OWS-03",
   "variante": "Negro",
   "categoria_original": "Audifonos",
   "categoria_comercial": "Audio y Audífonos",
-  "precio_contado": 19.0,
+  "precio_contado": 19,
   "pvp": 21.85,
   "stock": 2,
   "unidad_venta": {
@@ -227,8 +227,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 897,902,899,896,895,901; valores: Caja original.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 895,896,897,899,901,902; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/audi057/original-4f8e39a5685a3b7e.png",
     "sha256_maestro": "4f8e39a5685a3b7e7c60e17f4f0a0cafb6ea51125a3c4fdf908dfa0935929a79",
@@ -294,9 +294,9 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_no_declarada": false,
+      "marca_no_declarada": true,
       "modelo_no_declarado": false,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [

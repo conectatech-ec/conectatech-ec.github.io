@@ -177,8 +177,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 2226,2225,2227; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2225,2226,2227; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/disc009/original-2e28518a9f8c264b.png",
     "sha256_maestro": "2e28518a9f8c264b7b667ecaf772d7249e3a1e117ac7945cc38a304a89ec49f6",
@@ -263,7 +263,7 @@
       "solicitado": "DISC009",
       "sku": "DISC009",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T18:00:04.310Z",
+      "fecha": "2026-10-12T01:50:56.851Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -278,6 +278,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -287,56 +288,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/disc009-disco-duro-externo-western-digital-1tb-wd-elements/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/disc009-disco-duro-externo-western-digital-1tb-wd-elements/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/disc009-disco-duro-externo-western-digital-1tb-wd-elements/",
       "archivo_html": "productos/disc009-disco-duro-externo-western-digital-1tb-wd-elements/index.html",
       "http": 200,
-      "sha256_html": "b6eb9ad335600df041c937b22c65809973ca8a22fa7bcdb55b9c2b6e7bcf58cd",
-      "sha256_html_local": "b6eb9ad335600df041c937b22c65809973ca8a22fa7bcdb55b9c2b6e7bcf58cd",
+      "sha256_html": "e15ec843785a68d57a0d13fa64fb3b363b2089d0824ab43bdabd1e17738e4293",
+      "sha256_html_local": "e15ec843785a68d57a0d13fa64fb3b363b2089d0824ab43bdabd1e17738e4293",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/disc009/DISC009-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/disc009/DISC009-01-600.webp?v=d627ecdf80175491",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/disc009/DISC009-01-600.webp?v=d627ecdf80175491",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/disc009-disco-duro-externo-western-digital-1tb-wd-elements/",
+          "url": "http://127.0.0.1:8765/productos/disc009-disco-duro-externo-western-digital-1tb-wd-elements/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/disc009/DISC009-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/disc009/DISC009-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/tarj003-tarjeta-de-memoria-microsd-hp-64gb-100mb-model-mx310/",
+          "url": "http://127.0.0.1:8765/productos/tarj003-tarjeta-de-memoria-microsd-hp-64gb-100mb-model-mx310/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-055/qa-local/movil/DISC009-390.png",
-      "sha256": "f1e86d22f2492cf6e55c3b67c75f5a07f29f298b8a9fadb0e9a193f5ef189bd6",
+      "archivo": "reportes/lote-065/qa-local/movil/DISC009-390.png",
+      "sha256": "dca7d40cdc4f52fd0233b5f490d68905526daa75584f01e176f0cbe649aa71b8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-055/qa-local/movil/DISC009-1280.png",
-        "sha256": "bd538cc1d365ee61b9f5d4f7804e89f094a8fd95a6e7f47d2d28d3b79f84d35b",
+        "archivo": "reportes/lote-065/qa-local/movil/DISC009-1280.png",
+        "sha256": "1b3b62c7c4e9074d282bd2b57a6b0b4829810b51aff57350d96d9dc7f4b6fa13",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

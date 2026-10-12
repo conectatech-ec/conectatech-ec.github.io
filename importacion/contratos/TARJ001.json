@@ -2,8 +2,8 @@
   "sku": "TARJ001",
   "nombre_original": "Tarjeta De Memoria Microsd De 128Gb Kingston",
   "titulo_comercial": "Tarjeta DE Memoria Microsd DE 128GB Kingston",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "tipo": "original",
+  "marca": null,
   "modelo": "microSDXC 128 GB AAA",
   "variante": "Negro, con adaptador SD",
   "categoria_original": "Tarjetas",
@@ -120,13 +120,13 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tarj001-tarjeta-de-memoria-microsd-de-128gb-kingston/",
   "fecha_verificacion": "2026-10-11T18:22:01.250336+00:00",
-  "descripcion": "Tarjeta microSDXC de 128 GB en versión AAA / genérica, con adaptador SD visible en la presentación del producto. Una opción para ampliar el almacenamiento de dispositivos compatibles con esta capacidad. La clasificación AAA está confirmada por el registro comercial del propietario.",
+  "descripcion": "Tarjeta microSDXC de 128 GB en producto, con adaptador SD visible en la presentación del producto. Una opción para ampliar el almacenamiento de dispositivos compatibles con esta capacidad. La clasificación AAA está confirmada por el registro comercial del propietario.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 264; valores: AAA (genérico). Clasificación comercial propia; no acredita licencias externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 264; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/tarj001/original-a7256feff30d84c5.png",
     "sha256_maestro": "a7256feff30d84c5030b5a50a88a3824d58be1c4b859cad78813771573ef87c6",
@@ -182,14 +182,15 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_no_declarado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
         "https://drive.google.com/file/d/1hygcA3OgKP5DgkxIHtGlrLERif3Sy3Ci/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": []
+      "discrepancias_pendientes": [],
+      "marca_no_declarada": true
     },
     "ficha": {
       "verificada": true,

@@ -151,8 +151,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 301,300; valores: Caja original. No acredita fotografías externas ni resuelve variantes.",
-  "revision_regla": 3,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 300,301; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 4,
   "maestro": {
     "archivo_maestro": "/imagenes/flas035/original-6ec9135bb9f82acc.png",
     "sha256_maestro": "6ec9135bb9f82accec177ccb122621f3601085449c1bec3529fa2c1c409c5b1f",
@@ -236,7 +236,7 @@
       "solicitado": "FLAS035",
       "sku": "FLAS035",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T19:46:26.256Z",
+      "fecha": "2026-10-12T01:51:12.183Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,6 +251,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -260,7 +261,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
       "archivo_html": "productos/flas035-flash-memory-128gb-kingston-exodia-3-2/index.html",
       "http": 200,
       "sha256_html": "87aa9b60634831e22b1a940b5dbd0db255a7c2775c236e38a9cfd74a91499cbf",
@@ -270,55 +271,56 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas035/FLAS035-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/flas035/FLAS035-01-600.webp?v=197e6b1dbc91f1d6",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/flas035/FLAS035-01-600.webp?v=197e6b1dbc91f1d6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
+          "url": "http://127.0.0.1:8765/productos/flas035-flash-memory-128gb-kingston-exodia-3-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/flas035/FLAS035-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/flas035/FLAS035-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+          "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+          "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-058/qa-local/movil/FLAS035-390.png",
+      "archivo": "reportes/lote-065/qa-local/movil/FLAS035-390.png",
       "sha256": "7f62d6cf5c0ed7c587afa9b6ac3ebaced40342b5769835b2e5074ecaea62a07a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-058/qa-local/movil/FLAS035-1280.png",
+        "archivo": "reportes/lote-065/qa-local/movil/FLAS035-1280.png",
         "sha256": "7cd804987d399c9c5202d55b0d8b2c3969a4a9e31dcebdeadbc04402bb49e037",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

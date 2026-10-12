@@ -2,13 +2,13 @@
   "sku": "FLAS005",
   "nombre_original": "Flash Memory 128Gb 2.0 Kingston Tipo Llavero",
   "titulo_comercial": "Flash Memory 128GB 2.0 Kingston Tipo Llavero",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "tipo": "original",
+  "marca": null,
   "modelo": "Versión AAA / genérica",
   "variante": "128 GB nominales, plateado con llavero",
   "categoria_original": "Flash",
   "categoria_comercial": "Almacenamiento",
-  "precio_contado": 15.0,
+  "precio_contado": 15,
   "pvp": 17.25,
   "stock": 4,
   "unidad_venta": {
@@ -52,10 +52,10 @@
     "titular": "CONECTATECH",
     "fuente": "https://drive.google.com/file/d/1zvIho_7iPP0DQ3yFC0mNzmdTer7VWzFn/view?usp=drivesdk",
     "evidencia": "Fotografías propias autorizadas por el propietario para edición asistida por IA y publicación. No se utilizaron fotografías externas.",
-    "fecha_verificacion": "2026-10-11T21:25:01.926230+00:00",
+    "fecha_verificacion": "2026-10-12T01:41:40.037156+00:00",
     "archivos": [
       {
-        "sha256": "925aec5cd5b60363c36ae7939ca96f88a0317049e1a1ea9af673672192a173d2",
+        "sha256": "4e0c522ae00539b5ea1b87bd516d339430bcb119d5153bd34035ef352d9cf80f",
         "fuente": "https://drive.google.com/file/d/1zvIho_7iPP0DQ3yFC0mNzmdTer7VWzFn/view?usp=drivesdk"
       }
     ],
@@ -108,16 +108,16 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Memoria USB de 128 GB nominales, versión AAA / genérica según clasificación comercial del propietario. Carcasa plateada compacta y llavero incorporado para transportar archivos. Verifica que el equipo admita almacenamiento USB compatible; no es una memoria Kingston original.",
+  "fecha_verificacion": "2026-10-12T01:41:40.037156+00:00",
+  "descripcion": "Memoria USB de 128 GB nominales, producto según clasificación comercial del propietario. Carcasa plateada compacta y llavero incorporado para transportar archivos. Verifica que el equipo admita almacenamiento USB compatible; no es una memoria Kingston original.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 302; valores: AAA (genérico).",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 302; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/flas005/original-925aec5cd5b60363.png",
     "sha256_maestro": "925aec5cd5b60363c36ae7939ca96f88a0317049e1a1ea9af673672192a173d2",
@@ -173,9 +173,9 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_no_declarada": false,
+      "marca_no_declarada": true,
       "modelo_no_declarado": false,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
@@ -190,15 +190,15 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:35:33.746156+00:00",
-      "sha256_maestro": "925aec5cd5b60363c36ae7939ca96f88a0317049e1a1ea9af673672192a173d2",
-      "evidencia": "Corrección comercial solicitada: imagen individual, producto grande, acabado nuevo sin desgaste, sin caja, fondo blanco, hardware y color cotejados visualmente con fotografías propias. Inscripción editorial USB 2.0 / 128 GB a solicitud del propietario para el formato comercial de FLAS004; datos verificados en referencia y ficha, no se presenta como prueba de grabado de fábrica."
+      "fecha": "2026-10-12T01:41:40.037156+00:00",
+      "sha256_maestro": "4e0c522ae00539b5ea1b87bd516d339430bcb119d5153bd34035ef352d9cf80f",
+      "evidencia": "Edición de fotografía propia: limpieza, iluminación y fondo blanco. Forma, color y controles cotejados contra fotos reales; pantalla apagada; sin hardware añadido. Inscripción Kingston añadida por petición expresa del propietario, como FLAS004; no prueba de fabricación grabada en la unidad."
     },
     "movil": {
       "solicitado": "FLAS005",
       "sku": "FLAS005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:39:46.937Z",
+      "fecha": "2026-10-12T01:50:59.430Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -213,6 +213,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -222,51 +223,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
       "archivo_html": "productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/index.html",
       "http": 200,
-      "sha256_html": "8ce3bb9e7e9c53408c4a4889c92abffc3f2259ca54adbf87a129c9b435abcec8",
-      "sha256_html_local": "8ce3bb9e7e9c53408c4a4889c92abffc3f2259ca54adbf87a129c9b435abcec8",
+      "sha256_html": "6e3bc4dcbdf4c8d59092313fe89a7d2b9905566399dd74c793d09ced6ea64fda",
+      "sha256_html_local": "6e3bc4dcbdf4c8d59092313fe89a7d2b9905566399dd74c793d09ced6ea64fda",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas005/FLAS005-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/flas005/FLAS005-01-600.webp?v=efbcc449370af71d",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/flas005/FLAS005-01-600.webp?v=949a553088f1ce4c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
+          "url": "http://127.0.0.1:8765/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/flas005/FLAS005-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/flas005/FLAS005-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/disc005-disco-duro-externo-adata-1tb-antishock/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-062/qa-local/movil/FLAS005-390.png",
-      "sha256": "d0f7cae417f65fe906e8563c58cd95f51a6160156949f58186018f87de110c49",
+      "archivo": "reportes/lote-065/qa-local/movil/FLAS005-390.png",
+      "sha256": "766008ad0642efbba777ff070883e306829886b739eff3926f50c2ce1afc9ffa",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-062/qa-local/movil/FLAS005-1280.png",
-        "sha256": "98355e59eb07c1e128ce8f7f28f8ea9671a553ccf9cd8592026accb4a0f3c187",
+        "archivo": "reportes/lote-065/qa-local/movil/FLAS005-1280.png",
+        "sha256": "d9bf72cc044ed7ea075538fb7239be98fa20315c21e4ee53512065107148d9cc",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

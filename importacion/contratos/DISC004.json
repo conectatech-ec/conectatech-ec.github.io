@@ -125,8 +125,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 286; valores: Caja original.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 286; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/disc004/original-7e3de3169d069e8c.png",
     "sha256_maestro": "7e3de3169d069e8c05280944ba64eb9f4e443a0e3b5cb070e613b88697c0f1e2",
@@ -207,7 +207,7 @@
       "solicitado": "DISC004",
       "sku": "DISC004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:39:16.543Z",
+      "fecha": "2026-10-12T01:50:55.231Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -222,6 +222,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -231,61 +232,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
       "archivo_html": "productos/disc004-disco-solido-externo-ssd-adata-500gb/index.html",
       "http": 200,
-      "sha256_html": "5f736f98d5a08fcb5b0905cf4870e5325491ded0a4e96c81638b4124c66b5c3d",
-      "sha256_html_local": "5f736f98d5a08fcb5b0905cf4870e5325491ded0a4e96c81638b4124c66b5c3d",
+      "sha256_html": "b0d76536daba7257fbd6a0f4130bd3e66266049600415970e9f37eb557595e79",
+      "sha256_html_local": "b0d76536daba7257fbd6a0f4130bd3e66266049600415970e9f37eb557595e79",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/disc004/DISC004-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/disc004/DISC004-01-600.webp?v=4fff422ee5fb29a7",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/disc004/DISC004-01-600.webp?v=4fff422ee5fb29a7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
+          "url": "http://127.0.0.1:8765/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/disc004/DISC004-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/disc004/DISC004-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/disc005-disco-duro-externo-adata-1tb-antishock/",
+          "url": "http://127.0.0.1:8765/productos/disc005-disco-duro-externo-adata-1tb-antishock/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas024-flash-memory-8gb-kingston-3-2-exodia/",
+          "url": "http://127.0.0.1:8765/productos/flas024-flash-memory-8gb-kingston-3-2-exodia/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-062/qa-local/movil/DISC004-390.png",
-      "sha256": "4e4db38fac165b118a5a9092703e25a16c58c5efbe3fcdb0506b82d45118b856",
+      "archivo": "reportes/lote-065/qa-local/movil/DISC004-390.png",
+      "sha256": "ee4e6e463ad70e43a5e2b32e53954dcc0f76535c7f42ec8034c3a7cc494f5aa3",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-062/qa-local/movil/DISC004-1280.png",
-        "sha256": "64d592146c14710c4cf07c4544791e3ce7e0ea5f09d11f5519d7a317a5271cad",
+        "archivo": "reportes/lote-065/qa-local/movil/DISC004-1280.png",
+        "sha256": "d5b92579cd5e705da5f415c3ed5aca10bdc786e41e3a35e067b0f8d488430fe5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

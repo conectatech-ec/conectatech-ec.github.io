@@ -1,9 +1,9 @@
 {
   "sku": "REL001",
   "nombre_original": "Reloj Despertador Modelo Dcx-670",
-  "titulo_comercial": "Reloj despertador DCX-670 | pantalla LED y temperatura | versión genérica",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "titulo_comercial": "Reloj despertador DCX-670 | pantalla LED y temperatura",
+  "tipo": "original",
+  "marca": null,
   "modelo": "DCX-670",
   "variante": "Negro",
   "categoria_original": "Relojes",
@@ -150,13 +150,13 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
-  "descripcion": "Despertador digital DCX-670 con pantalla de hora, fecha y temperatura indicada en su empaque. Versión AAA genérica/compatible; no es un producto original de la marca de referencia.",
+  "descripcion": "Despertador digital DCX-670 con pantalla de hora, fecha y temperatura indicada en su empaque. producto; no es un producto original de la marca de referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 392,391,390; valores: AAA (genérico).",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 390,391,392; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/rel001/original-1d9df7ba81f51da6.png",
     "sha256_maestro": "1d9df7ba81f51da680b8e4ca0550c0f9c734e11a277d70a1d8d6613694f1e99f",
@@ -216,9 +216,9 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_no_declarada": false,
+      "marca_no_declarada": true,
       "modelo_no_declarado": false,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
@@ -243,7 +243,7 @@
       "solicitado": "REL001",
       "sku": "REL001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:39:24.691Z",
+      "fecha": "2026-10-12T01:51:18.653Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -258,6 +258,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -267,66 +268,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/rel001-reloj-despertador-modelo-dcx-670/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/rel001-reloj-despertador-modelo-dcx-670/",
       "archivo_html": "productos/rel001-reloj-despertador-modelo-dcx-670/index.html",
       "http": 200,
-      "sha256_html": "62668b9ed9e4f446f24557ddb4d511aee718b1e005abf75320572708f63a6cbb",
-      "sha256_html_local": "62668b9ed9e4f446f24557ddb4d511aee718b1e005abf75320572708f63a6cbb",
+      "sha256_html": "f982019c693656c19a30d564445603f0a56e0413951a0f83f15de0b2777f5dae",
+      "sha256_html_local": "f982019c693656c19a30d564445603f0a56e0413951a0f83f15de0b2777f5dae",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/rel001/REL001-01-600.webp?v=8d0cfb81a006d4b6",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/rel001/REL001-01-600.webp?v=8d0cfb81a006d4b6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/rel001-reloj-despertador-modelo-dcx-670/",
+          "url": "http://127.0.0.1:8765/productos/rel001-reloj-despertador-modelo-dcx-670/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/rel001/REL001-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/rel001/REL001-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
+          "url": "http://127.0.0.1:8765/productos/rel011-reloj-smartwatch-caja-flashlight/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/rel011-reloj-smartwatch-caja-flashlight/",
+          "url": "http://127.0.0.1:8765/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/rel023-reloj-smartwatch-galaxy-watch-ultra/",
+          "url": "http://127.0.0.1:8765/productos/rel013-reloj-smartwatch-para-iphone-watch-series-10-46mm/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-062/qa-local/movil/REL001-390.png",
-      "sha256": "57a75b70d990ba394f3d4c8c964d2cd18963534507455dbbaed8d6f4d9fc1231",
+      "archivo": "reportes/lote-065/qa-local/movil/REL001-390.png",
+      "sha256": "e5e602eefd2f26d32488ba0fec7d19bdbf9aec40ed31f58e161c2819f129a136",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-062/qa-local/movil/REL001-1280.png",
-        "sha256": "1be7ce261bfd5477c3a820bde6fa55bec066546f6042a31dcb8c97c788c163b3",
+        "archivo": "reportes/lote-065/qa-local/movil/REL001-1280.png",
+        "sha256": "6d3cb690e42eaec4e11212ab4703c11056580e8084d55b62a22581bc5b41c87f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

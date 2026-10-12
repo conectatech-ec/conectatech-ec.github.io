@@ -13,6 +13,7 @@ import sys
 import tempfile
 from datetime import datetime, timezone
 from PIL import Image
+from reglas_sku import rule, source_resolution_allowed
 
 ROOT = Path(__file__).resolve().parents[1]
 PATTERN = re.compile(r'const products=(\[[\s\S]*?\]);\s*\n')
@@ -135,7 +136,9 @@ def run(args):
                 fmt = im.format
                 if fmt not in ('JPEG', 'PNG', 'WEBP') or getattr(im, 'n_frames', 1) != 1:
                     raise ValueError('Solo fotografías estáticas JPEG, PNG o WebP')
-                if min(width, height) < 500 or max(width, height) < 800:
+                standard_resolution = min(width, height) >= 500 and max(width, height) >= 800
+                principal_native = source_resolution_allowed(width, height, hashlib.sha256(data).hexdigest(), rule(sku, root))
+                if not (standard_resolution or principal_native):
                     raise ValueError(f'Resolución insuficiente: {width}x{height}; no se amplían miniaturas')
                 if width * height > 40_000_000:
                     raise ValueError('Más de 40 megapíxeles')

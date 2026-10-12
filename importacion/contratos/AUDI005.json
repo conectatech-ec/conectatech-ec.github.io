@@ -1,14 +1,14 @@
 {
   "sku": "AUDI005",
   "nombre_original": "Audifonos Diadema Airpods Max",
-  "titulo_comercial": "Audífonos de diadema estilo AirPods Max | AAA plateados",
+  "titulo_comercial": "Audífonos de diadema estilo AirPods Max plateados",
   "tipo": "generico",
   "marca": "Genérico",
   "modelo": "Estilo AirPods Max",
   "variante": "Plateado y gris",
   "categoria_original": "Audifonos",
   "categoria_comercial": "Audio y Audífonos",
-  "precio_contado": 29.0,
+  "precio_contado": 29,
   "pvp": 33.35,
   "stock": 1,
   "unidad_venta": {
@@ -131,8 +131,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 1612,1611; valores: AAA (genérico).",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: APPLE; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1611,1612; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/audi005/original-eb0c4e457b11b47c.png",
     "sha256_maestro": "eb0c4e457b11b47c1a33a9a4ccc6384652f09d6e745cdc03598fecf35a33b356",
@@ -216,7 +216,7 @@
       "solicitado": "AUDI005",
       "sku": "AUDI005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:39:41.470Z",
+      "fecha": "2026-10-12T01:50:31.325Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -231,6 +231,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -240,66 +241,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/audi005-audifonos-diadema-airpods-max/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
       "archivo_html": "productos/audi005-audifonos-diadema-airpods-max/index.html",
       "http": 200,
-      "sha256_html": "243bf80d62fe76022f59eef11390f24797fdc4cf7e0812482d9e2cede7d0e575",
-      "sha256_html_local": "243bf80d62fe76022f59eef11390f24797fdc4cf7e0812482d9e2cede7d0e575",
+      "sha256_html": "ce7fd0e9816b1db94e00ce4ac36bb83f1e01faa9fb8a42ce0d162ec4abe4df85",
+      "sha256_html_local": "ce7fd0e9816b1db94e00ce4ac36bb83f1e01faa9fb8a42ce0d162ec4abe4df85",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi005/AUDI005-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/audi005/AUDI005-01-600.webp?v=4e7b1f7fafe47d11",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/audi005/AUDI005-01-600.webp?v=4e7b1f7fafe47d11",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/audi005-audifonos-diadema-airpods-max/",
+          "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/audi005/AUDI005-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/audi005/AUDI005-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/audi044-audifonos-galaxy-buds-pro-akg/",
+          "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/audi123-airpods-pro-3-con-ai/",
+          "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/audi094-audifonos-airpods-3-3era/",
+          "url": "http://127.0.0.1:8765/productos/audi009-audifonos-alambricos-earpods-tipo-usb-c/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-062/qa-local/movil/AUDI005-390.png",
-      "sha256": "5166f9fb51bc6021d5ad0428540f5e6cd631dbaafe4f1b4a227a2b089e3438cb",
+      "archivo": "reportes/lote-065/qa-local/movil/AUDI005-390.png",
+      "sha256": "7c90b9f2e76d9be5e024442cbbf49c11a58c1d0930daa35f23768ea6c27c7817",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-062/qa-local/movil/AUDI005-1280.png",
-        "sha256": "4e9ee6e89f6d7beb49caea5250dd29ece013312cbd883136eb1d56fc4281ee14",
+        "archivo": "reportes/lote-065/qa-local/movil/AUDI005-1280.png",
+        "sha256": "ab0b900abb9ad15752216e73ff921a32bd9f4fb4a289471930acdcf48ed30dfa",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

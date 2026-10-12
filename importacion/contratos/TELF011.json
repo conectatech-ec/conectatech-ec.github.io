@@ -1,13 +1,13 @@
 {
   "sku": "TELF011",
   "nombre_original": "TELEFONO SAMSUNG A17 4GB+128GB",
-  "titulo_comercial": "Teléfono Samsung Galaxy A17 128 GB · 4 GB RAM · Azul claro",
+  "titulo_comercial": "Teléfono Samsung Galaxy A17 128 GB | 4 GB RAM",
   "tipo": "original",
   "marca": "Samsung",
   "modelo": "Galaxy A17",
-  "variante": "Código: SM-A175F/DS; Color: Azul claro; RAM física: 4 GB; Almacenamiento: 128 GB",
+  "variante": "128 GB de almacenamiento; 4 GB RAM física",
   "categoria_original": "Telefonos",
-  "categoria_comercial": "Celulares y Smartphones",
+  "categoria_comercial": "Telefonos",
   "precio_contado": 185.9,
   "pvp": 232.38,
   "stock": 2,
@@ -15,8 +15,7 @@
     "descripcion": "1 teléfono",
     "cantidad": 1,
     "verificada": true,
-    "fuente": "datos-593/inventario-publico.csv",
-    "evidencia": "datos-593/inventario-publico.csv y SKU existente"
+    "fuente": "datos-593/inventario-publico.csv"
   },
   "fotografias_fuente": [
     {
@@ -74,59 +73,90 @@
           "fila": 762
         }
       ]
+    },
+    {
+      "nombre": "TELF011 PRINCIPAL.png",
+      "url": "https://drive.google.com/file/d/1N5EcSki5KG1Hgg9LpJIzADKp4boeeJHE/view?usp=drivesdk",
+      "sha256": "9723b585649c194a1ca81a5c9109cbf9a840361e0948d5ff25e3209d57b57675",
+      "drive_id": "1N5EcSki5KG1Hgg9LpJIzADKp4boeeJHE",
+      "original_intacto": true
     }
   ],
   "fuentes_tecnicas": [
     "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/",
     "https://news.samsung.com/br/feitos-para-durar-samsung-apresenta-galaxy-a17-e-galaxy-a07-no-brasil-com-armazenamento-robusto-recursos-ai-processador-de-alto-desempenho-e-ate-6-anos-de-atualizacoes",
     "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "https://drive.google.com/file/d/1N5EcSki5KG1Hgg9LpJIzADKp4boeeJHE/view?usp=drivesdk"
   ],
-  "imagen_principal": null,
+  "imagen_principal": "/imagenes/telf011/TELF011-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
-    "estado": "PENDIENTE",
-    "tipo": "propia",
+    "estado": "AUTORIZADO",
+    "tipo": "permiso_distribuidor",
     "titular": "CONECTATECH",
-    "fuente": "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk",
-    "evidencia": "Fotografías propias de identificación autorizadas por el propietario el 2026-10-10; aún no existe una imagen comercial apta sin caja. No autoriza fotografías externas.",
-    "fecha_verificacion": "2026-10-10",
-    "archivos": [],
-    "investigacion_previa": {
-      "estado": "pendiente",
-      "uso_comercial_permitido": false,
-      "fotos_propias": {
-        "autorizadas": true,
-        "evidencia": "Orden expresa del propietario de 2026-10-10; fotos Drive CONECTATECH",
-        "limite_visual": "Todas las fotografías recibidas muestran empaques; no se extrae su ilustración como producto real."
-      },
-      "fuentes_externas": "No se identificó licencia oficial comercial aplicable a CONECTATECH para la variante exacta. Se investigaron alternativas y se registran sus límites."
-    }
+    "fuente": "https://drive.google.com/file/d/1N5EcSki5KG1Hgg9LpJIzADKp4boeeJHE/view?usp=drivesdk",
+    "evidencia": "El propietario suministró y eligió expresamente esta PRINCIPAL para edición y publicación del SKU en la web en esta conversación. No se deduce una licencia del fabricante.",
+    "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
+    "archivos": [
+      {
+        "sha256": "9723b585649c194a1ca81a5c9109cbf9a840361e0948d5ff25e3209d57b57675",
+        "fuente": "https://drive.google.com/file/d/1N5EcSki5KG1Hgg9LpJIzADKp4boeeJHE/view?usp=drivesdk"
+      }
+    ]
   },
   "especificaciones": [
     {
       "nombre": "Modelo",
       "valor": "Galaxy A17",
       "fuentes": [
-        "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     },
     {
-      "nombre": "Código de modelo",
-      "valor": "SM-A175F/DS",
+      "nombre": "Pantalla",
+      "valor": "6,7 pulgadas Super AMOLED",
       "fuentes": [
-        "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     },
     {
-      "nombre": "Color",
-      "valor": "Azul claro",
+      "nombre": "Batería",
+      "valor": "5000 mAh",
       "fuentes": [
-        "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Carga máxima",
+      "valor": "25 W",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Cámara principal",
+      "valor": "50 MP con OIS",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Procesador",
+      "valor": "Helio G99",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -135,7 +165,7 @@
       "nombre": "Almacenamiento",
       "valor": "128 GB",
       "fuentes": [
-        "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -144,7 +174,7 @@
       "nombre": "RAM física",
       "valor": "4 GB",
       "fuentes": [
-        "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -157,116 +187,17 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
-    },
-    {
-      "nombre": "Pantalla",
-      "valor": "Super AMOLED de 6,7 pulgadas; FHD+ 1080 × 2340",
-      "fuentes": [
-        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Cámaras traseras",
-      "valor": "50 + 5 + 2 MP; estabilización óptica OIS",
-      "fuentes": [
-        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Cámara frontal",
-      "valor": "13 MP",
-      "fuentes": [
-        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Batería",
-      "valor": "5000 mAh",
-      "fuentes": [
-        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Bluetooth",
-      "valor": "5.3",
-      "fuentes": [
-        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Conector",
-      "valor": "USB-C",
-      "fuentes": [
-        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Almacenamiento ampliable",
-      "valor": "MicroSD hasta 2 TB; tarjeta no incluida",
-      "fuentes": [
-        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Procesador",
-      "valor": "MediaTek Helio G99",
-      "fuentes": [
-        "https://news.samsung.com/br/feitos-para-durar-samsung-apresenta-galaxy-a17-e-galaxy-a07-no-brasil-com-armazenamento-robusto-recursos-ai-processador-de-alto-desempenho-e-ate-6-anos-de-atualizacoes"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Frecuencia de pantalla",
-      "valor": "Hasta 90 Hz",
-      "fuentes": [
-        "https://news.samsung.com/br/feitos-para-durar-samsung-apresenta-galaxy-a17-e-galaxy-a07-no-brasil-com-armazenamento-robusto-recursos-ai-processador-de-alto-desempenho-e-ate-6-anos-de-atualizacoes"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Carga",
-      "valor": "Hasta 25 W; adaptador compatible requerido",
-      "fuentes": [
-        "https://news.samsung.com/br/feitos-para-durar-samsung-apresenta-galaxy-a17-e-galaxy-a07-no-brasil-com-armazenamento-robusto-recursos-ai-processador-de-alto-desempenho-e-ate-6-anos-de-atualizacoes"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Software de lanzamiento",
-      "valor": "Android 15 con One UI 7",
-      "fuentes": [
-        "https://news.samsung.com/br/feitos-para-durar-samsung-apresenta-galaxy-a17-e-galaxy-a07-no-brasil-com-armazenamento-robusto-recursos-ai-processador-de-alto-desempenho-e-ate-6-anos-de-atualizacoes"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
     }
   ],
-  "estado_calidad": "REVISAR",
-  "estado_publicacion": "PENDIENTE",
+  "estado_calidad": "APROBADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf011-telefono-samsung-a17-4gb-128gb/",
-  "fecha_verificacion": "2026-10-10T06:17:55.963733+00:00",
-  "descripcion": "Samsung Galaxy A17 azul claro con 4 GB de RAM física y 128 GB de almacenamiento. Disfruta de una pantalla Super AMOLED FHD+ de 6,7 pulgadas y captura fotos con su cámara principal de 50 MP con estabilización óptica. Batería de 5000 mAh y conectividad 4G LTE.",
+  "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
+  "descripcion": "Samsung Galaxy A17 con pantalla de 6,7 pulgadas super amoled y batería de 5000 mAh. Cámara principal de 50 MP con OIS; admite carga de hasta 25 W.",
   "compatibilidad": {
-    "valor": "Redes 4G LTE; cobertura y bandas según operadora. No se anuncia 5G ni NFC regional sin evidencia.",
+    "valor": "4G LTE",
     "fuentes": [
-      "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
+      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
     ]
   },
   "contenido_venta": {
@@ -282,13 +213,9 @@
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "pendientes": [
-    "Falta portada profesional sin caja con licencia comercial y variante exacta acreditadas.",
-    "Garantía comercial aplicable aún no documentada; no prometer plazo.",
-    "RAM virtual no comprobada para la variante regional; publicar solo RAM física cuando el SKU supere los demás controles."
-  ],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 762,763; valores: Caja original. No acredita licencia de fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "pendientes": [],
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: SAMSUNG; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 762,763; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "propuesta_origen": "importacion/lotes/lote-020/telefonos-propuestas.json",
   "notas_internas": {
     "campos_no_confirmados": [],
@@ -323,26 +250,125 @@
     },
     "identidad": {
       "sku_verificado": true,
+      "marca_verificado": true,
+      "marca_no_declarada": false,
+      "modelo_verificado": true,
+      "variante_verificado": true,
       "fuentes": [
-        "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1yUSE2B6J3rHi5UtPbFdpHiMIEMqY7_KO/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1N5EcSki5KG1Hgg9LpJIzADKp4boeeJHE/view?usp=drivesdk"
       ],
       "discrepancias_pendientes": [],
-      "variante_verificado": true,
-      "marca_verificado": true,
-      "modelo_verificado": true
+      "evidencia": "PRINCIPAL elegida por el propietario y PDF página 2, memoria física cotejada 593."
     },
     "ficha": {
-      "verificada": false,
-      "fuente": "importacion/lotes/lote-020/telefonos-propuestas.json"
+      "verificada": true,
+      "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+      "pagina": 2,
+      "evidencia": "Revisión visual de la página del catálogo verificado por el propietario; no se importan precios, accesorios promocionales o garantías."
     },
     "movil": {
-      "estado": "PENDIENTE",
-      "motivo": "Requiere render real de la ficha y los medios aplicados; no afirmar revisión antes de capturar"
+      "solicitado": "TELF011",
+      "sku": "TELF011",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-12T01:50:29.766Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/telf011-telefono-samsung-a17-4gb-128gb/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/telf011-telefono-samsung-a17-4gb-128gb/",
+      "archivo_html": "productos/telf011-telefono-samsung-a17-4gb-128gb/index.html",
+      "http": 200,
+      "sha256_html": "1d4431e1c13ff141d5310018d33e0b94073382be7074300c7bd91552ff9c6619",
+      "sha256_html_local": "1d4431e1c13ff141d5310018d33e0b94073382be7074300c7bd91552ff9c6619",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/telf011/TELF011-01-600.webp?v=ea00707688d5033f",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/telf011-telefono-samsung-a17-4gb-128gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/telf011/TELF011-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/telf021-telefono-redmi-note-15-pro-4g-256gb-8gb-gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/telf028-telefono-honor-x8d-256gb-8gb-8gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/telf035-honor-x7e-256gb-6gb-6gb/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-065/qa-local/movil/TELF011-390.png",
+      "sha256": "2a23d063adb027f5d9aee99ee1c80aac3867e0a5c7e7df29bb9c381c3d6860ac",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-065/qa-local/movil/TELF011-1280.png",
+        "sha256": "b4286d8f0d0aea1a5a9e442014bfcce0c4649f7bd212e7bf98f8d181120986d2",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     },
     "publicacion_http": {
       "estado": "PENDIENTE",
       "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+    },
+    "revision_visual": {
+      "estado": "VERIFICADO",
+      "sha256_maestro": "9723b585649c194a1ca81a5c9109cbf9a840361e0948d5ff25e3209d57b57675",
+      "fecha": "2026-10-12T01:36:31.403670+00:00",
+      "evidencia": "PRINCIPAL seleccionada expresamente por el propietario; píxeles originales conservados sin reconstrucción IA, sin ampliar el producto. Normalización WebP y lienzo blanco; identidad visual cotejada con el catálogo verificado."
     }
   },
   "validaciones_propuesta": {
@@ -373,5 +399,31 @@
       "stock"
     ],
     "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "5000 mAh",
+      "titulo": "Batería para tu día",
+      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "especificaciones": [
+        "Batería"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "6,7 pulgadas Super AMOLED",
+      "titulo": "Pantalla amplia",
+      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "especificaciones": [
+        "Pantalla"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

@@ -2,8 +2,8 @@
   "sku": "SOPO029",
   "nombre_original": "Soporte Para Vehiculo CON Ventosa Y Magsafe RT-66S",
   "titulo_comercial": "Soporte magnético vehicular RT-66S con ventosa",
-  "tipo": "generico",
-  "marca": "Genérico",
+  "tipo": "original",
+  "marca": null,
   "modelo": "RT-66S",
   "variante": "Negro",
   "categoria_original": "Soportes",
@@ -232,8 +232,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): Registro Google Sheets, columna Tipo, filas 276-279; AAA (genérico).",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 276,277,278,279; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "notas_internas": {
     "observaciones": [
       "Edición comercial asistida por IA basada exclusivamente en fotografías propias de CONECTATECH. Se retiraron caja y entorno; se limpiaron superficies y se compuso un acabado de producto nuevo sin añadir conexiones, controles ni hardware."
@@ -267,7 +267,7 @@
     },
     "identidad": {
       "sku_verificado": true,
-      "marca_verificado": true,
+      "marca_verificado": false,
       "modelo_verificado": true,
       "variante_verificado": true,
       "fuentes": [
@@ -276,7 +276,8 @@
         "https://drive.google.com/file/d/1Nz6XX3FRkrEByQJpEdgo4RE0al1M-mKi/view?usp=drivesdk",
         "https://drive.google.com/file/d/1lJ590qnCMWICL57_Y3G4NzQWLpyyE5E8/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": []
+      "discrepancias_pendientes": [],
+      "marca_no_declarada": true
     },
     "ficha": {
       "verificada": true,

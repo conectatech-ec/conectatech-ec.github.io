@@ -116,8 +116,8 @@
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
-  "evidencia_clasificacion": "Confirmación comercial del propietario (2026-10-10): https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, columna Tipo, filas 337; valores: Caja original. No acredita fotografías externas ni resuelve variantes.",
-  "revision_regla": 2,
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 337; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+  "revision_regla": 3,
   "maestro": {
     "archivo_maestro": "/imagenes/flas037/original-69efd90fd51d908e.png",
     "sha256_maestro": "69efd90fd51d908e2dcf5207d301b9f9d3f0f0d56b0e3d64ea07845887b9cf18",
@@ -198,7 +198,7 @@
       "solicitado": "FLAS037",
       "sku": "FLAS037",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T19:46:15.153Z",
+      "fecha": "2026-10-12T01:51:13.976Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -213,6 +213,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -222,7 +223,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
-      "url_comprobada": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
       "archivo_html": "productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/index.html",
       "http": 200,
       "sha256_html": "1f3357dd359e4ac9b9692001d4dfbb99ac97e0cbf08d7d5df7a93ba075be4c10",
@@ -232,55 +233,56 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas037/FLAS037-01.webp",
-        "url_cargada": "http://127.0.0.1:8770/imagenes/flas037/FLAS037-01-600.webp?v=a58be32b0b8615ab",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/flas037/FLAS037-01-600.webp?v=a58be32b0b8615ab",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8770/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+          "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/imagenes/flas037/FLAS037-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/flas037/FLAS037-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+          "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8770/productos/flas014-flash-memory-256gb-steren-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8765/productos/flas014-flash-memory-256gb-steren-usb-c-usb-a/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-058/qa-local/movil/FLAS037-390.png",
+      "archivo": "reportes/lote-065/qa-local/movil/FLAS037-390.png",
       "sha256": "a2610c4b548af79fd2b30f20a61978db155ecf6ed5f27d6acc341b1b52d6d1e8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-058/qa-local/movil/FLAS037-1280.png",
+        "archivo": "reportes/lote-065/qa-local/movil/FLAS037-1280.png",
         "sha256": "708e566e612ce7ef4cf637634c7ea09eeab29d0b7f6182d6433a80de10b0d82b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
