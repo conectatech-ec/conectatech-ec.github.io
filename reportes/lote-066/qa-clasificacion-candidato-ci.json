@@ -1,0 +1,174 @@
+{
+  "run_id": 38205146932,
+  "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38205146932",
+  "head_sha": "6501b25d3d2143fae542c1e221dd18d0df481341",
+  "conclusion": "success",
+  "fichas": 71,
+  "catalogo": 236,
+  "jobs": [
+    {
+      "id": 114666867954,
+      "run_id": 38205146932,
+      "workflow_name": "Validar lote antes de publicar",
+      "head_branch": "catalogo/lote066",
+      "run_url": "https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/actions/runs/38205146932",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVABGsc8AAAAasq2M8g",
+      "head_sha": "6501b25d3d2143fae542c1e221dd18d0df481341",
+      "url": "https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/actions/jobs/114666867954",
+      "html_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38205146932/job/114666867954",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-12T04:46:24Z",
+      "started_at": "2026-10-12T04:46:26Z",
+      "completed_at": "2026-10-12T04:49:44Z",
+      "name": "validar",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-12T04:46:27Z",
+          "completed_at": "2026-10-12T04:46:28Z"
+        },
+        {
+          "name": "Recuperar exactamente la rama candidata",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-12T04:46:28Z",
+          "completed_at": "2026-10-12T04:47:21Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-12T04:47:21Z",
+          "completed_at": "2026-10-12T04:47:21Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-12T04:47:21Z",
+          "completed_at": "2026-10-12T04:47:22Z"
+        },
+        {
+          "name": "Preparar únicamente los SKU aprobados del lote",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-12T04:47:22Z",
+          "completed_at": "2026-10-12T04:47:22Z"
+        },
+        {
+          "name": "Instalar dependencias declaradas de validación",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-12T04:47:22Z",
+          "completed_at": "2026-10-12T04:47:47Z"
+        },
+        {
+          "name": "Iniciar servidor local del contenido candidato",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-12T04:47:47Z",
+          "completed_at": "2026-10-12T04:47:47Z"
+        },
+        {
+          "name": "Renderizar y comprobar fichas con Chromium real",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-12T04:47:47Z",
+          "completed_at": "2026-10-12T04:48:57Z"
+        },
+        {
+          "name": "Comprobar catálogo compacto, novedades, filtros y enlaces",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-12T04:48:57Z",
+          "completed_at": "2026-10-12T04:49:32Z"
+        },
+        {
+          "name": "Incorporar únicamente evidencia móvil válida",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-12T04:49:32Z",
+          "completed_at": "2026-10-12T04:49:32Z"
+        },
+        {
+          "name": "Validar contrato completo antes de publicar",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-12T04:49:32Z",
+          "completed_at": "2026-10-12T04:49:36Z"
+        },
+        {
+          "name": "Guardar contratos revisados, capturas y reportes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-12T04:49:36Z",
+          "completed_at": "2026-10-12T04:49:40Z"
+        },
+        {
+          "name": "Exigir todos los controles sin publicar",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-12T04:49:40Z",
+          "completed_at": "2026-10-12T04:49:40Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-10-12T04:49:40Z",
+          "completed_at": "2026-10-12T04:49:40Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-10-12T04:49:40Z",
+          "completed_at": "2026-10-12T04:49:40Z"
+        },
+        {
+          "name": "Post Recuperar exactamente la rama candidata",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 26,
+          "started_at": "2026-10-12T04:49:40Z",
+          "completed_at": "2026-10-12T04:49:40Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 27,
+          "started_at": "2026-10-12T04:49:40Z",
+          "completed_at": "2026-10-12T04:49:40Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/check-runs/114666867954",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000001192,
+      "runner_name": "GitHub Actions 1000001192",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}
