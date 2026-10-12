@@ -1,0 +1,165 @@
+{
+  "run_id": 38206481297,
+  "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38206481297",
+  "head_sha": "a2971e503dbd3f3017f4d4d96b13adef5a324163",
+  "status": "completed",
+  "conclusion": "success",
+  "base": "https://conectatech-ec.github.io",
+  "fichas_publicas_chromium": 71,
+  "sku_catalogo": 236,
+  "errores": 0,
+  "servidor_local_no_usado": true,
+  "jobs": [
+    {
+      "name": "validar",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-12T05:07:02Z",
+          "completed_at": "2026-10-12T05:07:03Z"
+        },
+        {
+          "name": "Recuperar exactamente la rama candidata",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-12T05:07:03Z",
+          "completed_at": "2026-10-12T05:07:58Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-12T05:07:58Z",
+          "completed_at": "2026-10-12T05:07:58Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-12T05:07:58Z",
+          "completed_at": "2026-10-12T05:07:58Z"
+        },
+        {
+          "name": "Preparar únicamente los SKU aprobados del lote",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-12T05:07:58Z",
+          "completed_at": "2026-10-12T05:07:59Z"
+        },
+        {
+          "name": "Instalar dependencias declaradas de validación",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-12T05:07:59Z",
+          "completed_at": "2026-10-12T05:08:23Z"
+        },
+        {
+          "name": "Iniciar servidor local del contenido candidato",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-10-12T05:08:23Z",
+          "completed_at": "2026-10-12T05:08:23Z"
+        },
+        {
+          "name": "Renderizar y comprobar fichas con Chromium real",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-12T05:08:23Z",
+          "completed_at": "2026-10-12T05:09:52Z"
+        },
+        {
+          "name": "Comprobar catálogo compacto, novedades, filtros y enlaces",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-12T05:09:52Z",
+          "completed_at": "2026-10-12T05:11:43Z"
+        },
+        {
+          "name": "Incorporar únicamente evidencia móvil válida",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-12T05:11:43Z",
+          "completed_at": "2026-10-12T05:11:43Z"
+        },
+        {
+          "name": "Validar contrato completo antes de publicar",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-12T05:11:43Z",
+          "completed_at": "2026-10-12T05:11:47Z"
+        },
+        {
+          "name": "Guardar contratos revisados, capturas y reportes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-12T05:11:47Z",
+          "completed_at": "2026-10-12T05:11:50Z"
+        },
+        {
+          "name": "Exigir todos los controles sin publicar",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-12T05:11:50Z",
+          "completed_at": "2026-10-12T05:11:50Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-10-12T05:11:50Z",
+          "completed_at": "2026-10-12T05:11:50Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-10-12T05:11:50Z",
+          "completed_at": "2026-10-12T05:11:50Z"
+        },
+        {
+          "name": "Post Recuperar exactamente la rama candidata",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 26,
+          "started_at": "2026-10-12T05:11:50Z",
+          "completed_at": "2026-10-12T05:11:51Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 27,
+          "started_at": "2026-10-12T05:11:51Z",
+          "completed_at": "2026-10-12T05:11:51Z"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11727786973,
+      "name": "conectatech-lote-qa-38206481297",
+      "size_in_bytes": 50724518,
+      "expired": false
+    }
+  ]
+}
