@@ -12,10 +12,11 @@
   "pvp": 13.79,
   "stock": 3,
   "unidad_venta": {
-    "descripcion": "1 unidad",
+    "descripcion": "1 cargador con 4 pilas AAA incluidas",
     "cantidad": 1,
     "verificada": true,
-    "fuente": "datos-593/inventario-publico.csv"
+    "fuente": "https://drive.google.com/file/d/1KtmhBE_LQdvtnlnjkDAnE21IvYYkQGlr/view?usp=drivesdk",
+    "evidencia": "Blíster propio muestra cuatro pilas; 593 confirma que el cargador incluye AAA."
   },
   "fotografias_fuente": [
     {
@@ -59,10 +60,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "Pilas incluidas",
+      "valor": "4 pilas AAA",
+      "fuentes": [
+        "https://drive.google.com/file/d/1KtmhBE_LQdvtnlnjkDAnE21IvYYkQGlr/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "url_publica": "https://conectatech-ec.github.io/productos/carg007-cargador-para-aa-aaa-incluye-aaa-jb-212-jiabao/",
-  "descripcion": "AA y AAA recargables Ni-Cd/Ni-MH. Cuatro espacios para pilas. Cuatro indicadores luminosos.",
+  "descripcion": "AA y AAA recargables Ni-Cd/Ni-MH. Cuatro espacios para pilas. Cuatro indicadores luminosos. Incluye 4 pilas AAA.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -94,8 +104,8 @@
     }
   ],
   "contenido_venta": {
-    "valor": "1 unidad",
-    "fuente": "datos-593/inventario-publico.csv",
+    "valor": "1 cargador Jiabao JB-212 y 4 pilas AAA incluidas",
+    "fuente": "https://drive.google.com/file/d/1KtmhBE_LQdvtnlnjkDAnE21IvYYkQGlr/view?usp=drivesdk",
     "estado": "verificado"
   },
   "validaciones": {
@@ -143,7 +153,7 @@
       "solicitado": "CARG007",
       "sku": "CARG007",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:56:45.992Z",
+      "fecha": "2026-10-12T04:09:00.029Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -171,8 +181,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/carg007-cargador-para-aa-aaa-incluye-aaa-jb-212-jiabao/",
       "archivo_html": "productos/carg007-cargador-para-aa-aaa-incluye-aaa-jb-212-jiabao/index.html",
       "http": 200,
-      "sha256_html": "b670ea9779a488da85c7e3b5dfa95a198e414bfbb73c64e2e1b02b8ac854c52c",
-      "sha256_html_local": "b670ea9779a488da85c7e3b5dfa95a198e414bfbb73c64e2e1b02b8ac854c52c",
+      "sha256_html": "644361a3de7afd50f83204b741f1c2336ce4ea434c9cb895f7b90a1dcc283721",
+      "sha256_html_local": "644361a3de7afd50f83204b741f1c2336ce4ea434c9cb895f7b90a1dcc283721",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -218,12 +228,12 @@
         }
       ],
       "archivo": "reportes/lote-066/qa-local/movil/CARG007-390.png",
-      "sha256": "a62e60d6a7978d53d635e7df48af28841e42542593278463b7aee46490aef29b",
+      "sha256": "653ae7ac0b2e9f82ea3b1c9f46bf17490598ac3aa022e53891ab096ef55ea13d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/lote-066/qa-local/movil/CARG007-1280.png",
-        "sha256": "a6ff6b82b61a7705a8e190616477dac6552fd43398a50a15d3dd3d64d2579ccb",
+        "sha256": "be217b935d0fe8a333d2d96c7cb78c35eb42e3187e9666073dda918af486a397",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
