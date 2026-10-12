@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/104_995POLWFKoRJwZ_bHrgqt-3Yn1OXH/view?usp=drivesdk",
     "https://drive.google.com/file/d/1gVbMpyNEYpS7e-dlsfe0FKd-9_jk2R_e/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/audi009/AUDI009-01.webp",
   "imagenes_secundarias": [],
@@ -113,10 +114,11 @@
     },
     {
       "nombre": "Diseño",
-      "valor": "versión AAA blanca",
+      "valor": "blanca",
       "fuentes": [
         "https://drive.google.com/file/d/104_995POLWFKoRJwZ_bHrgqt-3Yn1OXH/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1gVbMpyNEYpS7e-dlsfe0FKd-9_jk2R_e/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1gVbMpyNEYpS7e-dlsfe0FKd-9_jk2R_e/view?usp=drivesdk",
+        "importacion/reglas-sku.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -133,10 +135,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/audi009-audifonos-alambricos-earpods-tipo-usb-c/",
-  "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
-  "descripcion": "Audífonos alámbricos producto de diseño tipo EarPods y conector USB-C. Verifica compatibilidad de audio USB-C antes de comprar; no son Apple originales. producto; no es un producto original de la marca de referencia.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Blanco. Un acabado que combina con tu estilo. blanca. Una característica para comparar al elegir este modelo. USB-C. Comprueba que los puertos de tu equipo coincidan con este formato.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -155,11 +157,11 @@
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
   "beneficios": [
     {
-      "valor": "Diseño",
-      "titulo": "Presentación y comodidad",
-      "descripcion": "versión AAA blanca.",
+      "valor": "Blanco",
+      "titulo": "Elige el acabado que te gusta",
+      "descripcion": "Blanco. Un acabado que combina con tu estilo.",
       "especificaciones": [
-        "Diseño"
+        "Color y variante"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/104_995POLWFKoRJwZ_bHrgqt-3Yn1OXH/view?usp=drivesdk",
@@ -168,11 +170,25 @@
       "estado": "VERIFICADO"
     },
     {
-      "valor": "Variante",
-      "titulo": "Elige tu estilo",
-      "descripcion": "Blanco.",
+      "valor": "blanca",
+      "titulo": "Diseño",
+      "descripcion": "blanca. Una característica para comparar al elegir este modelo.",
       "especificaciones": [
-        "Color y variante"
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/104_995POLWFKoRJwZ_bHrgqt-3Yn1OXH/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1gVbMpyNEYpS7e-dlsfe0FKd-9_jk2R_e/view?usp=drivesdk",
+        "importacion/reglas-sku.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "USB-C",
+      "titulo": "La conexión que necesita tu equipo",
+      "descripcion": "USB-C. Comprueba que los puertos de tu equipo coincidan con este formato.",
+      "especificaciones": [
+        "Conector"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/104_995POLWFKoRJwZ_bHrgqt-3Yn1OXH/view?usp=drivesdk",
@@ -214,7 +230,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/104_995POLWFKoRJwZ_bHrgqt-3Yn1OXH/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -226,7 +242,7 @@
       "solicitado": "AUDI009",
       "sku": "AUDI009",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:26.424Z",
+      "fecha": "2026-10-12T14:05:52.550Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -254,8 +270,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/audi009-audifonos-alambricos-earpods-tipo-usb-c/",
       "archivo_html": "productos/audi009-audifonos-alambricos-earpods-tipo-usb-c/index.html",
       "http": 200,
-      "sha256_html": "0d59ade86c318c090d93a0f15431ef220d006acbd1d2ae1a4588cdbde1dc947d",
-      "sha256_html_local": "0d59ade86c318c090d93a0f15431ef220d006acbd1d2ae1a4588cdbde1dc947d",
+      "sha256_html": "c53bfd39fef778bdae75c13543c4d8b5bad14566bcff855023b6961f04f5e99b",
+      "sha256_html_local": "c53bfd39fef778bdae75c13543c4d8b5bad14566bcff855023b6961f04f5e99b",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -305,13 +321,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/AUDI009-390.png",
-      "sha256": "9bd8c433abcf989fede73fa7f13134f3f6d0d70f81dba13667bfbe8a5f6e6152",
+      "archivo": "reportes/lote-067/qa-local/movil/AUDI009-390.png",
+      "sha256": "09a06d6140f0654c782eaeb42c0c79f6bab6f19616bcb5ba241de2cfa5e8e0c6",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/AUDI009-1280.png",
-        "sha256": "475465c49de0e5eca5f3e70594eea1dc3337ec7c1d3ff29e4c1a424ab9906c92",
+        "archivo": "reportes/lote-067/qa-local/movil/AUDI009-1280.png",
+        "sha256": "ae049c78765c49251173b9c269f4a9b5b0b662fd191739ded0d454c8bc879bee",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

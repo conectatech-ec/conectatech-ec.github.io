@@ -150,10 +150,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu104-juguete-camioneta-vans-greddy/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Van de colección con carrocería blanca, gráficos decorativos y portaequipaje de techo. El diseño aventurero y los detalles visibles del interior aportan personalidad a esta miniatura.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Carrocería de van blanca. Para dar personalidad a tu colección o espacio de exhibición. Gráficos decorativos azules y amarillos. Para dar personalidad a tu colección o espacio de exhibición. Portaequipaje sobre el techo. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -170,7 +170,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Carrocería de van blanca",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Carrocería de van blanca. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Carrocería"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1Tu6JKbm-6KZ3wg3I1bieW0PIlTzfgW90/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Gráficos decorativos azules y amarillos",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Gráficos decorativos azules y amarillos. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Decoración"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1Tu6JKbm-6KZ3wg3I1bieW0PIlTzfgW90/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Portaequipaje sobre el techo",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Portaequipaje sobre el techo. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Techo"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1Tu6JKbm-6KZ3wg3I1bieW0PIlTzfgW90/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Asientos interiores visibles",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Asientos interiores visibles. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Interior"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1Tu6JKbm-6KZ3wg3I1bieW0PIlTzfgW90/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -217,7 +266,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -229,7 +279,7 @@
       "solicitado": "JUGU104",
       "sku": "JUGU104",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:07.494Z",
+      "fecha": "2026-10-12T14:05:39.591Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -246,6 +296,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -254,8 +307,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu104-juguete-camioneta-vans-greddy/",
       "archivo_html": "productos/jugu104-juguete-camioneta-vans-greddy/index.html",
       "http": 200,
-      "sha256_html": "4cb78573762c674a0c1593d7aa5eb7f3f9ab5942cba0d33550156db7bc1ce16d",
-      "sha256_html_local": "4cb78573762c674a0c1593d7aa5eb7f3f9ab5942cba0d33550156db7bc1ce16d",
+      "sha256_html": "7325ee8f10bad5268611b691cead4e01cb611f6944b55e079c40a4f06e70d570",
+      "sha256_html_local": "7325ee8f10bad5268611b691cead4e01cb611f6944b55e079c40a4f06e70d570",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -305,13 +358,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU104-390.png",
-      "sha256": "dcb69ae325cd2bdecb6cd6db104b84e75bc842f708e5399e42ed9f9e021e70f0",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU104-390.png",
+      "sha256": "e26a04c636dd817828fc5d3826ec5c34a2493a35408ca084666113e19a1eea2a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU104-1280.png",
-        "sha256": "8320614118c26c3b47e027735e2c0e67d72c2d881cf3ad3c7e4bf5b68aa2a68a",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU104-1280.png",
+        "sha256": "210b618a06c4d8b41537669e7460c3d36a9a82744cc8105a980fb0345fe733b8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

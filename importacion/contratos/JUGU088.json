@@ -177,10 +177,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu088-juguete-carro-coleccionable-camaro/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Carro de colección con carrocería deportiva, alerón posterior y aros oscuros. Su estilo de cupé y los detalles visibles del interior lo convierten en una pieza vistosa para exhibición.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Carrocería de estilo cupé deportivo. Para dar personalidad a tu colección o espacio de exhibición. Alerón posterior. Para dar personalidad a tu colección o espacio de exhibición. Aros de color oscuro. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -197,7 +197,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Carrocería de estilo cupé deportivo",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Carrocería de estilo cupé deportivo. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1QegOvd4paLvWOlEebU-3JM_0-_x2YlkR/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Alerón posterior",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Alerón posterior. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Detalle posterior"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1QegOvd4paLvWOlEebU-3JM_0-_x2YlkR/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Aros de color oscuro",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Aros de color oscuro. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Ruedas"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1QegOvd4paLvWOlEebU-3JM_0-_x2YlkR/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Colores blanco y rojo fotografiados; consultar color disponible",
+      "titulo": "Elige tu combinación",
+      "descripcion": "Colores blanco y rojo fotografiados; consultar color disponible. Consulta la variante disponible antes de elegir.",
+      "especificaciones": [
+        "Colores observados"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1QegOvd4paLvWOlEebU-3JM_0-_x2YlkR/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -249,7 +298,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -261,7 +311,7 @@
       "solicitado": "JUGU088",
       "sku": "JUGU088",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:08.491Z",
+      "fecha": "2026-10-12T14:05:36.774Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -278,6 +328,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -286,8 +339,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu088-juguete-carro-coleccionable-camaro/",
       "archivo_html": "productos/jugu088-juguete-carro-coleccionable-camaro/index.html",
       "http": 200,
-      "sha256_html": "909b53f92ea054ffebdc17803245e4bb044d0bc22b0636ec28aca6910c8fb870",
-      "sha256_html_local": "909b53f92ea054ffebdc17803245e4bb044d0bc22b0636ec28aca6910c8fb870",
+      "sha256_html": "bcabf6ecde75661066419fdc9ca075199fb04642cc8f5b56a4f213d37e2739e2",
+      "sha256_html_local": "bcabf6ecde75661066419fdc9ca075199fb04642cc8f5b56a4f213d37e2739e2",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -348,13 +401,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU088-390.png",
-      "sha256": "3ed196e938ec565da950d296c3366c66f701b755aea633db9369a44ab55b54e7",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU088-390.png",
+      "sha256": "2a2ccff9a52db0cb2671de1b031a11d400e25364dd7c22804b6ee171c486371e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU088-1280.png",
-        "sha256": "53eeb0ba382093311700254eab5f630df1f08a4ef8d65c343c692c7c7efcb325",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU088-1280.png",
+        "sha256": "956f39ef3eed7fd02d6a9286cc6c6bfb89dbd126aa59f0be1e46afdfe19a9af5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

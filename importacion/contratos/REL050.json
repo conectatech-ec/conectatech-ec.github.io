@@ -220,28 +220,19 @@
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "titular": "CONECTATECH",
-    "fuente": "https://drive.google.com/file/d/12aoo4h7sCDST2Dwk6AyVCPQ_Zu70MswD/view?usp=drivesdk",
-    "evidencia": "Fotografías propias autorizadas por el propietario para edición asistida por IA y publicación. No se utilizaron fotografías externas.",
-    "fecha_verificacion": "2026-10-12T01:41:40.037156+00:00",
+    "fuente": "https://drive.google.com/file/d/1QnhImGaFqYlIyeRRc1dlxlh7DRD6SfNJ/view?usp=drivesdk",
+    "evidencia": "Foto propia del propietario, autorizada para edición y publicación comercial. Sin material externo.",
+    "fecha_verificacion": "2026-10-12T13:45:31.062996+00:00",
     "archivos": [
+      {
+        "sha256": "9b1417bced507e435246d2bbfface5fb301ed7e8ec6f18e567b5b07c03a767c3",
+        "fuente": "https://drive.google.com/file/d/1QnhImGaFqYlIyeRRc1dlxlh7DRD6SfNJ/view?usp=drivesdk"
+      },
       {
         "sha256": "09e2d8800c55217260d5d0a36e403a731f488210faa6f94a244dea0d6cfd762f",
         "fuente": "https://drive.google.com/file/d/1A9QqUIjPuDilSdKhXMdKdwuL1uh2s2Qf/view?usp=drivesdk"
-      },
-      {
-        "sha256": "6978ee23b2da6e1b9e10493e79dcc24407077faa301f2588ccb9f178439dec3b",
-        "fuente": "https://drive.google.com/file/d/12aoo4h7sCDST2Dwk6AyVCPQ_Zu70MswD/view?usp=drivesdk"
       }
-    ],
-    "material_externo_utilizado": false,
-    "derivacion": {
-      "archivo_maestro": "/imagenes/rel050/original-3a84972837d266bb.png",
-      "sha256_maestro": "3a84972837d266bb001cc1297d0735ff21c5973927c7c1c79f49f3fe2879bb8a",
-      "fuente_fotografia_propia": "https://drive.google.com/file/d/12aoo4h7sCDST2Dwk6AyVCPQ_Zu70MswD/view?usp=drivesdk",
-      "metodo": "Corrección comercial solicitada: imagen individual, producto grande, acabado nuevo sin desgaste, sin caja, fondo blanco, hardware y color cotejados visualmente con fotografías propias. Cada color ocupa una imagen independiente de la galería, no un montaje; venta por unidad.",
-      "edicion_asistida_ia": true,
-      "originales_intactos_en_drive": true
-    }
+    ]
   },
   "especificaciones": [
     {
@@ -331,9 +322,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/rel050-reloj-smartwatch-riversong-motive-10gt/",
-  "fecha_verificacion": "2026-10-12T01:41:40.037156+00:00",
+  "fecha_verificacion": "2026-10-12T13:45:31.062996+00:00",
   "descripcion": "Smartwatch Riversong Motive 10 GT con diseño redondo y silicona. Presentación comercial basada en las fotografías reales del SKU. Consulta compatibilidad y disponibilidad antes de comprar. La galería muestra variantes del mismo SKU; se vende una unidad, consulta el color disponible.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -437,15 +428,15 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:41:40.037156+00:00",
-      "sha256_maestro": "09e2d8800c55217260d5d0a36e403a731f488210faa6f94a244dea0d6cfd762f",
-      "evidencia": "Edición propia final cotejada con fotografía directa: todos los numerales 60/65/70/75/80/85/90/95/100/110/120/130/140/150/160/170/180/200/225/250/300/350/400/500 y TACHYMETER conservados en orden. Tres coronas, bisel verde/blanco, caja plateada y correa verde exactos. Fondo blanco y limpieza de huellas; pantalla apagada. Propuestas previas descartadas por microtextos; recorte nativo previo rechazado por borde de fondo."
+      "fecha": "2026-10-12T13:45:31.062996+00:00",
+      "sha256_maestro": "9b1417bced507e435246d2bbfface5fb301ed7e8ec6f18e567b5b07c03a767c3",
+      "evidencia": "Nueva portada con el ángulo negro fotografiado por el propietario. Píxeles nativos: normalización, recorte y silueta del pipeline existente; ningún numeral, control, modelo o textura reconstruido. Descartada propuesta IA por numerales alterados; galería verde fiel conservada."
     },
     "movil": {
       "solicitado": "REL050",
       "sku": "REL050",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:41.413Z",
+      "fecha": "2026-10-12T14:05:06.536Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -473,16 +464,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/rel050-reloj-smartwatch-riversong-motive-10gt/",
       "archivo_html": "productos/rel050-reloj-smartwatch-riversong-motive-10gt/index.html",
       "http": 200,
-      "sha256_html": "c70714cff8927b14faa44fb34ce1a934ed377c7d50888f7dd6449d89d6ec378f",
-      "sha256_html_local": "c70714cff8927b14faa44fb34ce1a934ed377c7d50888f7dd6449d89d6ec378f",
+      "sha256_html": "e8fb0a341dbf3696a9f2f11f27c572281085c428a047f7c843c8e6de3bfdbe1c",
+      "sha256_html_local": "e8fb0a341dbf3696a9f2f11f27c572281085c428a047f7c843c8e6de3bfdbe1c",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel050/REL050-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/rel050/REL050-01-600.webp?v=fafa7000dfee17e6",
-        "naturalWidth": 522,
-        "naturalHeight": 522,
+        "url_cargada": "http://127.0.0.1:8765/imagenes/rel050/REL050-01-600.webp?v=d8c6018a0b81af84",
+        "naturalWidth": 358,
+        "naturalHeight": 358,
         "completa": true,
         "visible": true
       },
@@ -515,7 +506,7 @@
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/rel050/REL050-02.webp?v=970ee3a54720a531",
+          "url": "http://127.0.0.1:8765/imagenes/rel050/REL050-02.webp?v=afe76ff23b16bfbb",
           "http": 200,
           "ok": true
         },
@@ -535,13 +526,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/REL050-390.png",
-      "sha256": "701eb253268cb22bfa2e0b86f25a858f152f52bc7e36c7da20eeb4ebe5e36b1e",
+      "archivo": "reportes/lote-067/qa-local/movil/REL050-390.png",
+      "sha256": "f419a177eb1bdc2561dc76cc303438ed9bea24dacdc3ea2893a9c7f65d7965c8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/REL050-1280.png",
-        "sha256": "54521a79d235d47d9d30bc39fd79b82ab2f6ccc5a7a59928383efe5bf126167d",
+        "archivo": "reportes/lote-067/qa-local/movil/REL050-1280.png",
+        "sha256": "a18e6f494878024f088ce2463eee1e43f258bd53de0b415118abe47038e58b01",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

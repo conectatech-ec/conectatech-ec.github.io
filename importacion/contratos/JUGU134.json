@@ -171,10 +171,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu134-juguete-carro-coleccionable-camaro-tornasol/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Miniatura deportiva con acabado tornasol y alerón posterior. Las fotografías muestran puertas abiertas y compartimentos de la carrocería, detalles que permiten apreciar el interior de esta pieza de colección.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Acabado tornasol multicolor. Para dar personalidad a tu colección o espacio de exhibición. Alerón posterior. Para dar personalidad a tu colección o espacio de exhibición. Puertas abiertas visibles en las fotografías. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -191,7 +191,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Acabado tornasol multicolor",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Acabado tornasol multicolor. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Acabado"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/13DjafCiOOOpYnof138h8cMFLx17iAmpM/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Alerón posterior",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Alerón posterior. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Detalle posterior"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/13DjafCiOOOpYnof138h8cMFLx17iAmpM/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Puertas abiertas visibles en las fotografías",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Puertas abiertas visibles en las fotografías. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Puertas"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/13DjafCiOOOpYnof138h8cMFLx17iAmpM/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Vista posterior con compartimento abierto",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Vista posterior con compartimento abierto. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Compartimento posterior"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/13DjafCiOOOpYnof138h8cMFLx17iAmpM/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -243,7 +292,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -255,7 +305,7 @@
       "solicitado": "JUGU134",
       "sku": "JUGU134",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:10.293Z",
+      "fecha": "2026-10-12T14:05:43.328Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -272,6 +322,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -280,8 +333,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu134-juguete-carro-coleccionable-camaro-tornasol/",
       "archivo_html": "productos/jugu134-juguete-carro-coleccionable-camaro-tornasol/index.html",
       "http": 200,
-      "sha256_html": "bd70ff515cbd6a373866a9511e1dafdb63c1a8b61b1e2bc8d0f194bc5a97126d",
-      "sha256_html_local": "bd70ff515cbd6a373866a9511e1dafdb63c1a8b61b1e2bc8d0f194bc5a97126d",
+      "sha256_html": "ddf1121b11324a38953f6bc1f16ece4b1638ad1698696bb63ae398d689e76864",
+      "sha256_html_local": "ddf1121b11324a38953f6bc1f16ece4b1638ad1698696bb63ae398d689e76864",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -331,13 +384,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU134-390.png",
-      "sha256": "a4f1d11339d6d227f02e275bcb39b7f8bf9f1bca15d31c4b72e6c1a9ee57f0bf",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU134-390.png",
+      "sha256": "7eb682b148d47db0e4d48397a75dff6ecc34933b26f7474f564a7adbff1127d7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU134-1280.png",
-        "sha256": "2af6fe8ae3db13d4d749c7d792f6c046de1a78370987eeaa76b2565d61ee456a",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU134-1280.png",
+        "sha256": "1de9b740f06537d1cc352a0109c1e0abcdc20a063b4b7652b4d633164848c2e2",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

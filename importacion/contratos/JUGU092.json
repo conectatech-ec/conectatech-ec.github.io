@@ -211,10 +211,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Carro coleccionable de estilo todoterreno, con carrocería de camuflaje verde, techo negro y rueda de repuesto posterior. Una pieza de apariencia robusta para complementar una colección de vehículos en miniatura. La imagen corresponde a la variante verde con techo cerrado. Hay referencias de otras variantes sin techo; confirma la presentación y el color de la unidad disponible antes de comprar.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Diseño de carro todoterreno estilo Jeep. Para dar personalidad a tu colección o espacio de exhibición. Carrocería con estampado de camuflaje verde y negro. Para dar personalidad a tu colección o espacio de exhibición. Techo negro. Para dar personalidad a tu colección o espacio de exhibición.",
   "compatibilidad": null,
   "contenido_venta": "1 carro de juguete",
   "garantia": null,
@@ -276,7 +276,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/propias-propuestas.json",
-      "evidencia": " Aclaración editorial de la variante de portada frente a cuatro referencias adicionales registradas AAA/genéricas, sin afirmar la disponibilidad o clasificación de todas las unidades. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
@@ -286,7 +286,7 @@
       "solicitado": "JUGU092",
       "sku": "JUGU092",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T04:37:04.138Z",
+      "fecha": "2026-10-12T14:05:37.684Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -303,6 +303,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -311,8 +314,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/",
       "archivo_html": "productos/jugu092-juguete-carro-coleccionable-jeep-pequeo/index.html",
       "http": 200,
-      "sha256_html": "24f97f549554c38a71e37e61967cc02aa9f0790508ff7017f68d89690a5be0b2",
-      "sha256_html_local": "24f97f549554c38a71e37e61967cc02aa9f0790508ff7017f68d89690a5be0b2",
+      "sha256_html": "ac006cbf3e14a4af56594c258d1e9365b3b69b310c15305069829370fc2b2bad",
+      "sha256_html_local": "ac006cbf3e14a4af56594c258d1e9365b3b69b310c15305069829370fc2b2bad",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -362,13 +365,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU092-390.png",
-      "sha256": "109049608ec71a381034321d4a8322b14c8e16fcd161e7ec95f0e3540e438f28",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU092-390.png",
+      "sha256": "c4cfd628129ec652e4b7cb4019d53771ece303a49a4634c5d2561db1e8574027",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU092-1280.png",
-        "sha256": "67c0d7def52abda88fd5812bcc52b714eac85f604004cd2cef96ea36ef34697e",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU092-1280.png",
+        "sha256": "b7070b5346d52b2c6c9469e6e09e4b57100d1b7e9ed8c8898f99ee134bd5186d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -391,5 +394,59 @@
       "stock"
     ],
     "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "Diseño de carro todoterreno estilo Jeep",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Diseño de carro todoterreno estilo Jeep. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1fEHEUg6IoFNXw4P18IIFFPmH0Cgwa-rb/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carrocería con estampado de camuflaje verde y negro",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Carrocería con estampado de camuflaje verde y negro. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Carrocería"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1fEHEUg6IoFNXw4P18IIFFPmH0Cgwa-rb/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Techo negro",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Techo negro. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Techo"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1fEHEUg6IoFNXw4P18IIFFPmH0Cgwa-rb/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Rueda de repuesto posterior",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Rueda de repuesto posterior. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Detalle posterior"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1fEHEUg6IoFNXw4P18IIFFPmH0Cgwa-rb/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

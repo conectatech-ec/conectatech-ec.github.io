@@ -129,10 +129,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu095-juguete-carro-coleccionable-camioneta-toyota-fj/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Camioneta de colección de estilo todoterreno, con carrocería azul y gráficos decorativos. Su defensa frontal y el equipamiento visual de techo destacan en una colección de vehículos de aventura.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Carrocería azul con decoración amarilla. Para dar personalidad a tu colección o espacio de exhibición. Defensa frontal. Para dar personalidad a tu colección o espacio de exhibición. Diseño de neumáticos todoterreno. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -149,7 +149,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Carrocería azul con decoración amarilla",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Carrocería azul con decoración amarilla. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Carrocería"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/16E9ixTRcfxVAlOkKDkkFM94wOmNiuHuy/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Defensa frontal",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Defensa frontal. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Frontal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/16E9ixTRcfxVAlOkKDkkFM94wOmNiuHuy/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Diseño de neumáticos todoterreno",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Diseño de neumáticos todoterreno. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Neumáticos"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/16E9ixTRcfxVAlOkKDkkFM94wOmNiuHuy/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Detalles de equipamiento sobre el techo",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Detalles de equipamiento sobre el techo. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Techo"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/16E9ixTRcfxVAlOkKDkkFM94wOmNiuHuy/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -199,7 +248,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -211,7 +261,7 @@
       "solicitado": "JUGU095",
       "sku": "JUGU095",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:09.366Z",
+      "fecha": "2026-10-12T14:05:38.738Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -228,6 +278,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -236,8 +289,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu095-juguete-carro-coleccionable-camioneta-toyota-fj/",
       "archivo_html": "productos/jugu095-juguete-carro-coleccionable-camioneta-toyota-fj/index.html",
       "http": 200,
-      "sha256_html": "555a2ead1329f701a61b835fd541991008a406e9e3dd25397033995d724c0bfe",
-      "sha256_html_local": "555a2ead1329f701a61b835fd541991008a406e9e3dd25397033995d724c0bfe",
+      "sha256_html": "2be1ed708b64585b4f9148b69c844ae894c91a4dd4feb087ebb3b41bf2615633",
+      "sha256_html_local": "2be1ed708b64585b4f9148b69c844ae894c91a4dd4feb087ebb3b41bf2615633",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -287,13 +340,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU095-390.png",
-      "sha256": "ad7a58037c239c8246840869beaa65034798cb2796f30b43a44feeee83cbeacf",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU095-390.png",
+      "sha256": "8ecedb08fedd02936d888cd2f2333f5b143ae18b8fbe7b4183fc759cfb45911c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU095-1280.png",
-        "sha256": "deb80f2c31ac78dde60edcf43a0acd181f41c9a3a8c3e7714e35387b43773eae",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU095-1280.png",
+        "sha256": "21d4aaa56d6d757410cd2fe1b47e010b40d7d780db02e4d4484ec6933cdabc1c",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

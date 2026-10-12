@@ -1,3 +1,7 @@
+## Orden vigente del propietario — lote 067
+
+Completar y publicar 100 logros reales por SKU; una revisión o pendiente no cuenta. Sustituir candidatos sin fuente apta por otros, conservando fidelidad y todos los controles. AUDI015: pulir como artículo nuevo, sin abrir el estuche Face Change. REL011: mejorar fotografía fiel al producto real. REL050: ángulo más comercial del mismo producto, conservando hardware y microtextos. No desarrollar WebStore ni integraciones.
+
 ## Orden vigente del propietario — lote 066
 
 Continuar con otro lote de 100, ampliable a 200 si las fuentes lo justifican. Priorizar fidelidad, no inflar completados. REL042 debe ajustarse al hardware original; REL050 requiere presentación más comercial. Estandarizar presencia visual con TELF020, TELF036 y TELF025 como referencias, sin distorsionar proporciones ni cortar producto; conservar imágenes correctas. Usar encuadre de presentación y conservar archivos originales.

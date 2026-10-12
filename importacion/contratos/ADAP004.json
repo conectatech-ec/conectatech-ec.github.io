@@ -122,10 +122,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
-  "fecha_verificacion": "2026-10-10T15:42:46.164453+00:00",
-  "descripcion": "Adaptador de enchufe de color blanco, identificado como Europa a Latino en la base comercial. Comprueba que la forma del enchufe y los requisitos del equipo sean compatibles antes de comprar.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Elige el adaptador cuya entrada y salida coincidan con tus enchufes. Acabado blanco para combinar con tus accesorios.",
   "compatibilidad": "Comprobar forma y ajuste para el equipo concreto.",
   "contenido_venta": "1 adaptador",
   "garantia": {
@@ -186,7 +186,7 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
-      "evidencia": "Ficha existente cotejada con 593, fotos propias y Registro; solo hechos visibles. Precios y stock copiados intactos. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
@@ -202,7 +202,7 @@
       "solicitado": "ADAP004",
       "sku": "ADAP004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T04:36:56.514Z",
+      "fecha": "2026-10-12T14:05:07.372Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -219,6 +219,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -227,8 +230,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/adap004-adaptador-europa-latino-color-blanco/",
       "archivo_html": "productos/adap004-adaptador-europa-latino-color-blanco/index.html",
       "http": 200,
-      "sha256_html": "152b6942543d822fec0704def45a21978d2daa5a80e58eb1d99f91b1902c1fe3",
-      "sha256_html_local": "152b6942543d822fec0704def45a21978d2daa5a80e58eb1d99f91b1902c1fe3",
+      "sha256_html": "aa682087e9ac49a3850772e54dfa54bf58e0ebc93f4c90c59f891ce6e1dcf65a",
+      "sha256_html_local": "aa682087e9ac49a3850772e54dfa54bf58e0ebc93f4c90c59f891ce6e1dcf65a",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -278,13 +281,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/ADAP004-390.png",
-      "sha256": "3a65ba5c6ce2b1b2539e6caa93a519f115fd8000b69a326882786aebb970d597",
+      "archivo": "reportes/lote-067/qa-local/movil/ADAP004-390.png",
+      "sha256": "880fa5593d01dc5dd59f2d3fb46c878a94e4a79ff36db4b5c17d4a395c385657",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/ADAP004-1280.png",
-        "sha256": "a51cb50780098ae42719b6821b79075d2ac6f5219754c37032161d935699696f",
+        "archivo": "reportes/lote-067/qa-local/movil/ADAP004-1280.png",
+        "sha256": "9a45d2601cb9d15b97b0ac5ed8594f2aed58105c436c6e3ae0eef9a85ca577bd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -359,5 +362,31 @@
       "stock"
     ],
     "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "Dos clavijas planas",
+      "titulo": "Adapta la forma del enchufe",
+      "descripcion": "Elige el adaptador cuya entrada y salida coincidan con tus enchufes.",
+      "especificaciones": [
+        "Conector de salida visible"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/11k4AADphTk_pm7Tu1Y4lRbBxRgB1PlUZ/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Blanco",
+      "titulo": "Un formato discreto",
+      "descripcion": "Acabado blanco para combinar con tus accesorios.",
+      "especificaciones": [
+        "Color"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/11k4AADphTk_pm7Tu1Y4lRbBxRgB1PlUZ/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

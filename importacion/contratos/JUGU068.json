@@ -150,10 +150,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu068-juguete-moto-vespa-coleccionable/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Miniatura de scooter de estilo clásico, con carrocería celeste y asiento claro. Sus formas redondeadas y detalles de acabado plateado aportan un toque retro a una colección de vehículos.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Diseño de scooter clásico. Para dar personalidad a tu colección o espacio de exhibición. Carrocería celeste. Para dar personalidad a tu colección o espacio de exhibición. Asiento claro con banda oscura. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -170,7 +170,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Diseño de scooter clásico",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Diseño de scooter clásico. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1YPXfmlVMUETVG6GwBkfcYkcE5GupRE7-/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carrocería celeste",
+      "titulo": "Elige tu combinación",
+      "descripcion": "Carrocería celeste. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Color"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1YPXfmlVMUETVG6GwBkfcYkcE5GupRE7-/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Asiento claro con banda oscura",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Asiento claro con banda oscura. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Asiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1YPXfmlVMUETVG6GwBkfcYkcE5GupRE7-/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Detalles de acabado plateado",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Detalles de acabado plateado. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Acabado"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1YPXfmlVMUETVG6GwBkfcYkcE5GupRE7-/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -220,7 +269,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-040/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-040/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -232,7 +282,7 @@
       "solicitado": "JUGU068",
       "sku": "JUGU068",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:15.429Z",
+      "fecha": "2026-10-12T14:05:33.774Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,6 +299,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -257,8 +310,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu068-juguete-moto-vespa-coleccionable/",
       "archivo_html": "productos/jugu068-juguete-moto-vespa-coleccionable/index.html",
       "http": 200,
-      "sha256_html": "261ae603fa25238e980024c5860d77f9fb5d6353724ff704a87d1f18f195200e",
-      "sha256_html_local": "261ae603fa25238e980024c5860d77f9fb5d6353724ff704a87d1f18f195200e",
+      "sha256_html": "80b34515b1b1fa6cd73e54e14c1896b0b88487dae5484a6c0fe213ca3de07e8a",
+      "sha256_html_local": "80b34515b1b1fa6cd73e54e14c1896b0b88487dae5484a6c0fe213ca3de07e8a",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -308,13 +361,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU068-390.png",
-      "sha256": "2205d6748a8872bf52f9d082e025455fe799d880e20f84f1d674059b8615e867",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU068-390.png",
+      "sha256": "484473404e95a3063ba6a75b3447f53708c3ae8070db94e8eed4695665c2cdb4",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU068-1280.png",
-        "sha256": "8b0cad6e9c11a0817952cc71b742990ce565c0a943c43affa5c85430fedc0f4f",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU068-1280.png",
+        "sha256": "5185ae2b0368043d178932560e194eb592286250794d14ad52e06e0634e0e2b2",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

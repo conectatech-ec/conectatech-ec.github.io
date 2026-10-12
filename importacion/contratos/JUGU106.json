@@ -150,10 +150,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu106-juguete-moto-enduro-coleccionable/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Miniatura de moto de estilo enduro con carrocería verde, asiento oscuro y ruedas de radios. Una pieza de inspiración todoterreno para exhibir junto a otros modelos de colección.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Diseño de moto estilo enduro. Para dar personalidad a tu colección o espacio de exhibición. Carrocería verde y asiento oscuro. Para dar personalidad a tu colección o espacio de exhibición. Ruedas de radios. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -170,7 +170,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Diseño de moto estilo enduro",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Diseño de moto estilo enduro. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1chXQCrUnW4NHZBTqsvavkIgThAJFz-_e/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carrocería verde y asiento oscuro",
+      "titulo": "Elige tu combinación",
+      "descripcion": "Carrocería verde y asiento oscuro. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Color"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1chXQCrUnW4NHZBTqsvavkIgThAJFz-_e/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Ruedas de radios",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Ruedas de radios. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Ruedas"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1chXQCrUnW4NHZBTqsvavkIgThAJFz-_e/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Soporte lateral visible",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Soporte lateral visible. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Soporte"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1chXQCrUnW4NHZBTqsvavkIgThAJFz-_e/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -220,7 +269,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-040/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-040/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -232,7 +282,7 @@
       "solicitado": "JUGU106",
       "sku": "JUGU106",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:14.337Z",
+      "fecha": "2026-10-12T14:05:40.575Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,6 +299,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -257,8 +310,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu106-juguete-moto-enduro-coleccionable/",
       "archivo_html": "productos/jugu106-juguete-moto-enduro-coleccionable/index.html",
       "http": 200,
-      "sha256_html": "6f71277bdd51e53d1f3dfa5978112a2fdf29e0b7c4281bbdfbd41e1d317b7355",
-      "sha256_html_local": "6f71277bdd51e53d1f3dfa5978112a2fdf29e0b7c4281bbdfbd41e1d317b7355",
+      "sha256_html": "bda49a44e4405445b3bbc7dcb71071c0a214331a7755384c0da80edfc525e9b1",
+      "sha256_html_local": "bda49a44e4405445b3bbc7dcb71071c0a214331a7755384c0da80edfc525e9b1",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -308,13 +361,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU106-390.png",
-      "sha256": "2ca5a2a61f5a44fdd9d3275b8f9e01f04610910969e4028e7749bbad8364e7e7",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU106-390.png",
+      "sha256": "40bbb1f883a9efb02bb97b42d687af23ac79baf1fd16181f13fa7a33ab6d6c1d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU106-1280.png",
-        "sha256": "3e528d294c5409facdfffbd762af3d30e61ed29d595cece2614882eccc472a25",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU106-1280.png",
+        "sha256": "b637873b5b886bbb283a23bc9b4c955cbcf5fcc8b668e9df50c9cc28dff52221",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

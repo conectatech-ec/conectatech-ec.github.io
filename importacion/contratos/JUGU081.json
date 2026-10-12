@@ -171,10 +171,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Sedán de colección con acabado rojo y detalles interiores visibles. Las fotografías muestran puertas y compartimento posterior abiertos, ideales para apreciar la presentación de esta miniatura.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Carrocería de sedán rojo. Para dar personalidad a tu colección o espacio de exhibición. Puertas abiertas visibles en las fotografías. Para dar personalidad a tu colección o espacio de exhibición. Compartimento posterior abierto en la vista seleccionada. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -191,7 +191,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Carrocería de sedán rojo",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Carrocería de sedán rojo. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1yfe-FXVtXNJilrgo2vVGCXvjIIxUVn-V/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Puertas abiertas visibles en las fotografías",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Puertas abiertas visibles en las fotografías. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Puertas"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1yfe-FXVtXNJilrgo2vVGCXvjIIxUVn-V/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Compartimento posterior abierto en la vista seleccionada",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Compartimento posterior abierto en la vista seleccionada. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Detalle posterior"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1yfe-FXVtXNJilrgo2vVGCXvjIIxUVn-V/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Aros de acabado plateado",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Aros de acabado plateado. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Aros"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1yfe-FXVtXNJilrgo2vVGCXvjIIxUVn-V/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -242,7 +291,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-040/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-040/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -254,7 +304,7 @@
       "solicitado": "JUGU081",
       "sku": "JUGU081",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:13.182Z",
+      "fecha": "2026-10-12T14:05:35.727Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -271,6 +321,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -279,8 +332,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu081-juguete-carro-coleccionable-mercedes-benz/",
       "archivo_html": "productos/jugu081-juguete-carro-coleccionable-mercedes-benz/index.html",
       "http": 200,
-      "sha256_html": "386e49a36900b973e74761ded3fd5e56bfe82dd2f5f375c45d8be21f158904f4",
-      "sha256_html_local": "386e49a36900b973e74761ded3fd5e56bfe82dd2f5f375c45d8be21f158904f4",
+      "sha256_html": "392992bd112d1070ec616d483ee92741fda548bcb40a8cd248dc1fc96b57bbdd",
+      "sha256_html_local": "392992bd112d1070ec616d483ee92741fda548bcb40a8cd248dc1fc96b57bbdd",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -330,13 +383,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU081-390.png",
-      "sha256": "ef6ae1abe78cb2464afe2c49fe201329761c0f6b25a0ad6e6a7ec81721dbc40a",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU081-390.png",
+      "sha256": "c5c5023a8ae720de563908e7658476410973dcea787b615cd39af5bf6bc6c2dc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU081-1280.png",
-        "sha256": "db82bc91131fefb953c3e7066fbbc4c5c85dc0033e243037747c5be9691dcc17",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU081-1280.png",
+        "sha256": "2bed2860be2f7247b03e931099bb546bd90b15f98c61ab20b433746e3aab1ece",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

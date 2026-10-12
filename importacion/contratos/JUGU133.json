@@ -177,10 +177,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu133-juguete-caminoneta-coleccionable-jeep-grande/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Camioneta de colección con carrocería de líneas rectas, neumáticos de aspecto todoterreno y detalles de cabina. Una pieza de presencia robusta para exhibir junto a otros vehículos en miniatura.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Carrocería SUV de cuatro puertas. Para dar personalidad a tu colección o espacio de exhibición. Diseño de neumáticos todoterreno. Para dar personalidad a tu colección o espacio de exhibición. Barras superiores de techo. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -197,7 +197,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Carrocería SUV de cuatro puertas",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Carrocería SUV de cuatro puertas. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Carrocería"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1rbMJCiz-A6QO0HkoODyZjG9e27wA3aLp/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Diseño de neumáticos todoterreno",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Diseño de neumáticos todoterreno. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Neumáticos"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1rbMJCiz-A6QO0HkoODyZjG9e27wA3aLp/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Barras superiores de techo",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Barras superiores de techo. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Techo"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1rbMJCiz-A6QO0HkoODyZjG9e27wA3aLp/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Colores fotografiados: negro y gris; consultar color disponible",
+      "titulo": "Elige tu combinación",
+      "descripcion": "Colores fotografiados: negro y gris; consultar color disponible. Consulta la variante disponible antes de elegir.",
+      "especificaciones": [
+        "Colores observados"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1rbMJCiz-A6QO0HkoODyZjG9e27wA3aLp/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -245,7 +294,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -257,7 +307,7 @@
       "solicitado": "JUGU133",
       "sku": "JUGU133",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:04.246Z",
+      "fecha": "2026-10-12T14:05:42.264Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -274,6 +324,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -282,8 +335,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu133-juguete-caminoneta-coleccionable-jeep-grande/",
       "archivo_html": "productos/jugu133-juguete-caminoneta-coleccionable-jeep-grande/index.html",
       "http": 200,
-      "sha256_html": "2e43dc52d9116a7977705dba92a6fe8aab5bdbbd5d9514952c8f821091d5b5a2",
-      "sha256_html_local": "2e43dc52d9116a7977705dba92a6fe8aab5bdbbd5d9514952c8f821091d5b5a2",
+      "sha256_html": "bce38e283e784dd708cb0db37530684a823d98b6fc959ce054817683551e660c",
+      "sha256_html_local": "bce38e283e784dd708cb0db37530684a823d98b6fc959ce054817683551e660c",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -344,13 +397,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU133-390.png",
-      "sha256": "a4b2122d064ce543f8058d4a0b2c2069928e311ad107a74c6cc634464a61896f",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU133-390.png",
+      "sha256": "525a5f8493da7b01fa5c3114616537c77eeaba992de9d3070364ff68e7d3a22f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU133-1280.png",
-        "sha256": "7173acc2f063e549618ba3c49a8f98a0e2dda45925096501f3885607fe0e59c5",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU133-1280.png",
+        "sha256": "5c7b2f64187df531c7f1830db74a5957fd8c1ce92163bbdb5ff740a2bea5100b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

@@ -129,10 +129,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu075-juguete-camioneta-truck-pickup/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Camioneta pickup de inspiración clásica, con cabina verde y guardabarros oscuros. Los detalles de su carrocería y la cubierta posterior de apariencia rústica crean una pieza atractiva para exhibición.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Diseño de pickup clásica. Para dar personalidad a tu colección o espacio de exhibición. Cabina verde y guardabarros oscuros. Para dar personalidad a tu colección o espacio de exhibición. Cubierta posterior con acabado visual de vetas. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -149,7 +149,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Diseño de pickup clásica",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Diseño de pickup clásica. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Cabina verde y guardabarros oscuros",
+      "titulo": "Elige tu combinación",
+      "descripcion": "Cabina verde y guardabarros oscuros. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Colores"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Cubierta posterior con acabado visual de vetas",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Cubierta posterior con acabado visual de vetas. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Cubierta posterior"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Parachoques y aros de acabado plateado",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Parachoques y aros de acabado plateado. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Detalles exteriores"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1XZpcl4XcKFtA3cWR-bwb7Xg9olZCNVH0/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -182,7 +231,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -194,7 +244,7 @@
       "solicitado": "JUGU075",
       "sku": "JUGU075",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:06.551Z",
+      "fecha": "2026-10-12T14:05:34.738Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -211,6 +261,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -219,8 +272,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu075-juguete-camioneta-truck-pickup/",
       "archivo_html": "productos/jugu075-juguete-camioneta-truck-pickup/index.html",
       "http": 200,
-      "sha256_html": "42f49f4f44e71a1268b2333e9226e554eb1b6f49b7a7df2243a16c57ee90fefb",
-      "sha256_html_local": "42f49f4f44e71a1268b2333e9226e554eb1b6f49b7a7df2243a16c57ee90fefb",
+      "sha256_html": "8ab129780d89500449f58af917593fc67bf44a8f9815d7e0b11ea104ea695326",
+      "sha256_html_local": "8ab129780d89500449f58af917593fc67bf44a8f9815d7e0b11ea104ea695326",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -270,13 +323,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU075-390.png",
-      "sha256": "d71b257685048601495a99365f39a047f202c587c2108de13239f2c9f333550f",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU075-390.png",
+      "sha256": "02281be9ea4e9a52ffc36d4c17049e7dea8ee9755b9d7ae87e87a12345fd7a7e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU075-1280.png",
-        "sha256": "0c46475ee3f75f58aa14cdb08a34181cdf53f4a8d7167196832a738d22d21506",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU075-1280.png",
+        "sha256": "7b44dedf09ce3ed56f35ba5ecaeac5b69f443c9fb601438db9a1f4322427b380",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

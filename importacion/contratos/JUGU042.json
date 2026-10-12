@@ -177,10 +177,10 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
-  "fecha_verificacion": "2026-10-11T22:35:33.746156+00:00",
-  "descripcion": "Miniatura de estilo combi con carrocería bicolor y una tabla decorativa sobre el techo. Su diseño viajero aporta variedad a una colección de vehículos clásicos.",
+  "fecha_verificacion": "2026-10-12T13:50:27.923540+00:00",
+  "descripcion": "Carrocería de minibús estilo combi. Para dar personalidad a tu colección o espacio de exhibición. Detalle de tabla sobre el techo. Para dar personalidad a tu colección o espacio de exhibición. Diseño bicolor. Para dar personalidad a tu colección o espacio de exhibición.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -197,7 +197,56 @@
   },
   "compatibilidad": null,
   "contenido_venta": "1 vehículo de juguete; detalles y color según referencia, consultar disponibilidad",
-  "beneficios": [],
+  "beneficios": [
+    {
+      "valor": "Carrocería de minibús estilo combi",
+      "titulo": "Personaliza tu colección",
+      "descripcion": "Carrocería de minibús estilo combi. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1PuNtJJTja6KUEULzbXEZ_T4e8pu-kEgK/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Detalle de tabla sobre el techo",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Detalle de tabla sobre el techo. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Detalle de techo"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1PuNtJJTja6KUEULzbXEZ_T4e8pu-kEgK/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Diseño bicolor",
+      "titulo": "Un detalle que destaca",
+      "descripcion": "Diseño bicolor. Para dar personalidad a tu colección o espacio de exhibición.",
+      "especificaciones": [
+        "Acabado"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1PuNtJJTja6KUEULzbXEZ_T4e8pu-kEgK/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Dos combinaciones de color fotografiadas; consultar disponibilidad",
+      "titulo": "Elige tu combinación",
+      "descripcion": "Dos combinaciones de color fotografiadas; consultar disponibilidad. Consulta la variante disponible antes de elegir.",
+      "especificaciones": [
+        "Variantes observadas"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1PuNtJJTja6KUEULzbXEZ_T4e8pu-kEgK/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -233,7 +282,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json"
+      "fuente": "importacion/lotes/lote-020/juguetes-propuestas.json",
+      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -245,7 +295,7 @@
       "solicitado": "JUGU042",
       "sku": "JUGU042",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:57:05.518Z",
+      "fecha": "2026-10-12T14:05:32.671Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -262,6 +312,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -270,8 +323,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/",
       "archivo_html": "productos/jugu042-juguete-camioneta-combi-coleccionable-mediana/index.html",
       "http": 200,
-      "sha256_html": "e276eb81124e6b2a1900ac8551d310de1d06e099e3adfc5427e5b545ddaa8894",
-      "sha256_html_local": "e276eb81124e6b2a1900ac8551d310de1d06e099e3adfc5427e5b545ddaa8894",
+      "sha256_html": "6b20cb742ace10bc47c57b49a2349493a12a450e21c00091612b261f5b2d1c0d",
+      "sha256_html_local": "6b20cb742ace10bc47c57b49a2349493a12a450e21c00091612b261f5b2d1c0d",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -332,13 +385,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/JUGU042-390.png",
-      "sha256": "91cbcd148aa5904386b29c63f932f1241a6582df564d352ba78a9ef65cd8474d",
+      "archivo": "reportes/lote-067/qa-local/movil/JUGU042-390.png",
+      "sha256": "4b12e5482fb7b6e3e3bd5411c7b76f8d52f3b55a424997f854d3c5f0368e7880",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/JUGU042-1280.png",
-        "sha256": "bea67bf2eeaf54fa3824b8c2fd2f9e6fc095219ae8483318accee1d2529a7e3f",
+        "archivo": "reportes/lote-067/qa-local/movil/JUGU042-1280.png",
+        "sha256": "e59ba653ee80ea6f7982f4a7b6f98ecb88c7b70e12d8f39ca29bc568d99c3be0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
