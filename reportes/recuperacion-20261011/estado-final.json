@@ -1,7 +1,7 @@
 {
   "base_recuperada": "7e81f4f9cdc8e44e70d3e69b245e710b6ffe6d4c",
   "rama_final": "catalogo/lote064",
-  "commit_contenido": "ab2cd814b646216c8fdfae49c6fcf7f51512fff9",
+  "commit_contenido": "b745fb785f04b826788c2b578d2b395ddfa6f413",
   "productos_catalogo": 1165,
   "sku_duplicados": 0,
   "sku_con_medios_registrados": 207,
@@ -46,5 +46,12 @@
     "originales_previos_intactos": 232
   },
   "alcance": "Continuación incremental del catálogo. El catálogo completo aún tiene pendientes; no se declara terminado. Sin desarrollo de WebStore ni integraciones. Los contratos y la cola se muestran por separado: un SKU puede tener portada publicada y variantes pendientes, como JUGU092.",
-  "qa_publica_final": "Pendiente de publicar el registro de fechas de cuatro SKU y repetir QA con ese contenido exacto."
+  "qa_publica_final": {
+    "run_id": 38186281995,
+    "resultado": "success",
+    "fichas_movil_escritorio": 4,
+    "catalogo_movil_escritorio": 2,
+    "registro_publicado_coincide": true,
+    "reporte": "reportes/lote-064/qa-publico/catalogo-lote-activo.json"
+  }
 }
