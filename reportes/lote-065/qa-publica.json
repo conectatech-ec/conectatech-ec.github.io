@@ -1,0 +1,112 @@
+{
+  "workflow_run": 38195156164,
+  "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38195156164",
+  "commit_revisado": "fa976d4eb1106f80f5576f2940b23eaa5d1f0c2d",
+  "base": "https://conectatech-ec.github.io",
+  "conclusion": "success",
+  "cantidad_sku_manifiesto": 97,
+  "pasos_reales_github": [
+    {
+      "nombre": "Set up job",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Recuperar exactamente la rama candidata",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Run actions/setup-python@v5",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Run actions/setup-node@v4",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Preparar únicamente los SKU aprobados del lote",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Instalar dependencias declaradas de validación",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Iniciar servidor local del contenido candidato",
+      "estado": "completed",
+      "resultado": "skipped"
+    },
+    {
+      "nombre": "Renderizar y comprobar fichas con Chromium real",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Comprobar catálogo compacto, novedades, filtros y enlaces",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Incorporar únicamente evidencia móvil válida",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Validar contrato completo antes de publicar",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Guardar contratos revisados, capturas y reportes",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Exigir todos los controles sin publicar",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Post Run actions/setup-node@v4",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Post Run actions/setup-python@v5",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Post Recuperar exactamente la rama candidata",
+      "estado": "completed",
+      "resultado": "success"
+    },
+    {
+      "nombre": "Complete job",
+      "estado": "completed",
+      "resultado": "success"
+    }
+  ],
+  "catalogo_publico_y_cache_verificados": [
+    {
+      "archivo": "index.html",
+      "http": 200,
+      "sha256": "e1f2ad492883e3c65431da02a48ed3ab5877882c2dcf92d824fa0b694a8a510c",
+      "identico": true
+    },
+    {
+      "archivo": "assets/catalogo-publicado.js",
+      "http": 200,
+      "sha256": "3a2bae2a97537593819a383edf9bd538c055a3dda7e008d96815e2127c02c441",
+      "identico": true
+    }
+  ],
+  "artefacto_github": 11722573727,
+  "capturas_publicas_disponibles_en_artefacto": "conectatech-lote-qa-38195156164",
+  "fuente_evidencia": "Resultado y pasos reales de GitHub Actions obtenidos por API; captura y contrato completos en el artefacto del run."
+}
