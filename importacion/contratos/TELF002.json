@@ -1,7 +1,7 @@
 {
   "sku": "TELF002",
   "nombre_original": "TELEFONO ZTE NUBIA V80 PRO",
-  "titulo_comercial": "Teléfono ZTE Nubia V80 Pro 256 GB",
+  "titulo_comercial": "Teléfono ZTE Nubia V80 Pro 256 GB | 20 GB RAM total",
   "tipo": "original",
   "marca": "ZTE Nubia",
   "modelo": "V80 Pro",
@@ -29,7 +29,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
     "https://drive.google.com/file/d/1_QmtQFXICik0qS-JMxeN6BON0CU2y-85/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf002/TELF002-01.webp",
   "imagenes_secundarias": [],
@@ -110,10 +111,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "20 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf002-telefono-zte-nubia-v80-pro/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "ZTE Nubia V80 Pro con pantalla de 6,77 pulgadas fhd+, hasta 120 hz y batería de 5000 mAh. Cámara principal de 108 MP; admite carga de hasta 22,5 W.",
@@ -125,9 +135,33 @@
   "pendientes": [],
   "beneficios": [
     {
+      "valor": "20 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "256 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "5000 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -138,8 +172,8 @@
     },
     {
       "valor": "6,77 pulgadas FHD+, hasta 120 Hz",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
       ],
@@ -149,12 +183,7 @@
       "estado": "VERIFICADO"
     }
   ],
-  "compatibilidad": {
-    "valor": "Consulta las bandas y cobertura aplicables con tu operadora.",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono",
     "fuente": "datos-593/inventario-publico.csv",
@@ -205,7 +234,7 @@
       "solicitado": "TELF002",
       "sku": "TELF002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:12.543Z",
+      "fecha": "2026-10-12T04:00:07.041Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,16 +262,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf002-telefono-zte-nubia-v80-pro/",
       "archivo_html": "productos/telf002-telefono-zte-nubia-v80-pro/index.html",
       "http": 200,
-      "sha256_html": "884581aa041fc77680c5ece61a479dcc2eee52ef8831ce2b575904dfdaefbae1",
-      "sha256_html_local": "884581aa041fc77680c5ece61a479dcc2eee52ef8831ce2b575904dfdaefbae1",
+      "sha256_html": "04d1f97ed94dcada8b6328723ef90c168c0da8d128400e63e9e0cd143733ca43",
+      "sha256_html_local": "04d1f97ed94dcada8b6328723ef90c168c0da8d128400e63e9e0cd143733ca43",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/telf002/TELF002-01.webp",
         "url_cargada": "http://127.0.0.1:8765/imagenes/telf002/TELF002-01-600.webp?v=b0f56d6266807090",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "naturalWidth": 370,
+        "naturalHeight": 370,
         "completa": true,
         "visible": true
       },
@@ -284,13 +313,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF002-390.png",
-      "sha256": "b0cf44951559e352f1b19ed3b01b36f5ed29017adb0e9297fba0562db52077be",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF002-390.png",
+      "sha256": "536cb595caa4ae35989666fab14f4d86a7e3cad6d2bdde6563a3ee9d26c82a7d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF002-1280.png",
-        "sha256": "9f1a0c7bd0ad6cbd34db02a017de661c5337064a4e59d10bebf1de7e9e595bfa",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF002-1280.png",
+        "sha256": "eaf28a545ddca600421b33281281bd0e707c04ff4ee3ebd79f74a91caaaa4838",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -299,5 +328,39 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 20,
+    "fisica_gb": null,
+    "virtual_gb": null,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": null
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 108 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 22,5 W",
+      "especificaciones": [
+        "Carga máxima"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

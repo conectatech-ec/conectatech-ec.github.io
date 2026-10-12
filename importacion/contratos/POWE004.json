@@ -207,7 +207,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/powe004-powerbank-66w-30000mah/",
   "fecha_verificacion": "2026-10-10T22:05:18.307544+00:00",
   "descripcion": "Lleva energía de alta capacidad con conexiones listas para usar. Esta batería portátil integra cables Lightning y USB-C, además de puertos visibles para conectar distintos dispositivos sin cargar accesorios sueltos.",
@@ -282,7 +282,7 @@
       "solicitado": "POWE004",
       "sku": "POWE004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T22:06:42.321Z",
+      "fecha": "2026-10-12T03:57:38.621Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -297,6 +297,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -306,51 +307,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/powe004-powerbank-66w-30000mah/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/powe004-powerbank-66w-30000mah/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/powe004-powerbank-66w-30000mah/",
       "archivo_html": "productos/powe004-powerbank-66w-30000mah/index.html",
       "http": 200,
-      "sha256_html": "f6857631beffe3a3fa2069cfff0cf278a3ec76cb881674682f7b5e561de2f7e9",
-      "sha256_html_local": "f6857631beffe3a3fa2069cfff0cf278a3ec76cb881674682f7b5e561de2f7e9",
+      "sha256_html": "6daf416094e29e466a81ec63d6813e2e2779dabf085ece4a198c1553be2e6c6d",
+      "sha256_html_local": "6daf416094e29e466a81ec63d6813e2e2779dabf085ece4a198c1553be2e6c6d",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/powe004/POWE004-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/powe004/POWE004-01-600.webp?v=d7e878610d09e379",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "url_cargada": "http://127.0.0.1:8765/imagenes/powe004/POWE004-01-600.webp?v=d7e878610d09e379",
+        "naturalWidth": 339,
+        "naturalHeight": 339,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/powe004-powerbank-66w-30000mah/",
+          "url": "http://127.0.0.1:8765/productos/powe004-powerbank-66w-30000mah/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/powe004/POWE004-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/powe004/POWE004-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/powe003-powerbank-philco-20000mah/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg051-cargador-para-vehiculo-multiple-con-extension-powercar-100w-klipxtreme/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-050/qa-publico/movil/POWE004-390.png",
-      "sha256": "bfd405e478a3e4f9cd9014b1dba860c84ae1c96df6d084b86788140a8624e24f",
+      "archivo": "reportes/lote-066/qa-local/movil/POWE004-390.png",
+      "sha256": "c16ebf04418e9dd7cc73836c89effc3e67b43b4c0258d675c26edcef891ff9d1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-050/qa-publico/movil/POWE004-1280.png",
-        "sha256": "d6fe29061c3b0fe5faa4cc4a85081aa412311bfce6d19f1bf3c2a5dd6a4a91b5",
+        "archivo": "reportes/lote-066/qa-local/movil/POWE004-1280.png",
+        "sha256": "840603effc25b97d3a5902bd9aa5c870793862a26e51902e275a51095157eb4e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

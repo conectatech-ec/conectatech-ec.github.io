@@ -1,0 +1,11 @@
+Lote 066: continuidad desde 16c7db2, sin reiniciar el catálogo.
+100 SKU seleccionados y 7 adaptadores adicionales con fuente física apta.
+47 fichas del lote en manifiesto-aprobados: 30 teléfonos/tablets, 16 portadas nuevas (15 SKU antes sin portada apta + REL042), y REL050 con foto nativa anterior conservada y encuadre mejorado.
+189 fichas adicionales con medios correctos: sólo encuadre CSS, sin regenerar fotografías; divididas en manifiestos de 95 y 94 para conservar los límites y gates existentes.
+236 SKU en QA de presentación. No confundir cantidad de QA/encuadres con 236 productos nuevos.
+61 excepciones en reportes/lote-066/pendientes.json, incluida la nueva foto de REL050. No declarar estos SKU como finalizados por el mero procesamiento del lote.
+REL050: varias propuestas de edición alteraron microtextos, y la última cambió controles/orientación. No se aplican. Se conserva portada real con todos sus números y galería.
+REL032, AUDI039, AUDI046: salida rechazada por la herramienta; no reintentar para eludir rechazo. CARG039: propuesta descartada por fidelidad física.
+Siete casos históricos se conservan sin intervención nueva: SOPO023, SOPO009, SOPO058, MOUS039, CARG050, MICR27, CARG016. No convertir propuestas premium pendientes en aprobadas. No sobrescribir sus fotografías.
+Reglas nuevas persistidas en AGENTS.md y reglas-sku.json. El total RAM se anuncia sólo con respaldo; memoria física/virtual separada en texto pequeño legible. Teléfonos liberados conforme confirmación expresa del propietario; no se inventan bandas o 5G.
+Pruebas: 12 de fechas reales (incluido encuadre publicado y reverificación), 14 de contratos, conservación financiera/URLs/originales, navegador real móvil/escritorio, QA comercial específico de 30 teléfonos/tablets. Publicación se registra sólo tras comprobar Pages/HTTP/bytes.

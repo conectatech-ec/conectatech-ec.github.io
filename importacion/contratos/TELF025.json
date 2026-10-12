@@ -1,7 +1,7 @@
 {
   "sku": "TELF025",
   "nombre_original": "TELEFONO TECNO SPARK GO 3 64GB 4GB+4GB",
-  "titulo_comercial": "Teléfono Tecno Spark Go 3 64 GB | 4 GB RAM",
+  "titulo_comercial": "Teléfono Tecno Spark Go 3 64 GB | 8 GB RAM total",
   "tipo": "original",
   "marca": "Tecno",
   "modelo": "Spark Go 3",
@@ -29,7 +29,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
     "https://drive.google.com/file/d/1tr6NohwNFdIl7FYsU5FUp8XPJY3e-J48/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf025/TELF025-01.webp",
   "imagenes_secundarias": [],
@@ -128,10 +129,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "8 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf025-telefono-tecno-spark-go-3-64gb-4gb-4gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Tecno Spark Go 3 con pantalla de 6,75 pulgadas, hasta 120 hz y batería de 5000 mAh. Cámara principal de 13 MP; admite carga de hasta 15 W. Dispone de 4 GB de RAM física y hasta 4 GB adicionales de memoria virtual, que utiliza almacenamiento disponible.",
@@ -143,9 +153,33 @@
   "pendientes": [],
   "beneficios": [
     {
+      "valor": "8 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "64 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "5000 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -156,8 +190,8 @@
     },
     {
       "valor": "6,75 pulgadas, hasta 120 Hz",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
       ],
@@ -167,12 +201,7 @@
       "estado": "VERIFICADO"
     }
   ],
-  "compatibilidad": {
-    "valor": "Consulta las bandas y cobertura aplicables con tu operadora.",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono",
     "fuente": "datos-593/inventario-publico.csv",
@@ -223,7 +252,7 @@
       "solicitado": "TELF025",
       "sku": "TELF025",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:15.928Z",
+      "fecha": "2026-10-12T03:56:59.431Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,8 +280,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf025-telefono-tecno-spark-go-3-64gb-4gb-4gb/",
       "archivo_html": "productos/telf025-telefono-tecno-spark-go-3-64gb-4gb-4gb/index.html",
       "http": 200,
-      "sha256_html": "1932b179a6c909358a74075a83aad7db7c752dacd5cfb008566944cb7710e201",
-      "sha256_html_local": "1932b179a6c909358a74075a83aad7db7c752dacd5cfb008566944cb7710e201",
+      "sha256_html": "542b78652e03d2b1bfbb83a31f0d90931a557d5d6d7cce6beab0d4b9d65592e6",
+      "sha256_html_local": "542b78652e03d2b1bfbb83a31f0d90931a557d5d6d7cce6beab0d4b9d65592e6",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -302,13 +331,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF025-390.png",
-      "sha256": "86f157dd32103b45f3027c621703e0c3d2bd5baf8d2066032f0db2ebf035deef",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF025-390.png",
+      "sha256": "ed6e92aad8d39d6925d0f38d4dab470aacc9beb3b6e964eb2ce80ffdb12d31d9",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF025-1280.png",
-        "sha256": "76f015057997197872fe64b53a878ea3b29d73ea0519a4631d57f5045d90ad3a",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF025-1280.png",
+        "sha256": "2b15bc180ef2a325c172367a4707a17195f125f795d57a76f09bd3c938a46d30",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -317,5 +346,39 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 8,
+    "fisica_gb": 4,
+    "virtual_gb": 4,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "4 GB físicos + 4 GB virtuales"
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 13 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 15 W",
+      "especificaciones": [
+        "Carga máxima"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

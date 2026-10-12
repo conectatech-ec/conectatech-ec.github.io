@@ -1,7 +1,7 @@
 {
   "sku": "TELF001",
   "nombre_original": "TELEFONO ZTE A56 PRO 128GB",
-  "titulo_comercial": "Teléfono ZTE Blade A56 Pro 128 GB · 4 GB RAM · Gris",
+  "titulo_comercial": "Teléfono ZTE Blade A56 Pro 128 GB · 4 GB RAM · Gris | 12 GB RAM total",
   "tipo": "original",
   "marca": "ZTE",
   "modelo": "Blade A56 Pro",
@@ -120,7 +120,9 @@
     "https://drive.google.com/file/d/1MArN-ghwwT9ZQ7u0vfTaZt1VEGcxQikX/view?usp=drivesdk",
     "https://drive.google.com/file/d/1LZVc5HvOvoYu_qbL-Pefi-3O5cdz9qmS/view?usp=drivesdk",
     "https://drive.google.com/file/d/1_R5FCJkjpqg8ZqQbL2TjiW5utqNiDACw/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": null,
   "imagenes_secundarias": [],
@@ -287,6 +289,15 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "12 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "REVISAR",
@@ -294,12 +305,7 @@
   "url_publica": "https://conectatech-ec.github.io/productos/telf001-telefono-zte-a56-pro-128gb/",
   "fecha_verificacion": "2026-10-10T06:17:55.963733+00:00",
   "descripcion": "ZTE Blade A56 Pro gris con 128 GB para tus aplicaciones, fotos y videos. Su pantalla HD+ de 6,75 pulgadas y 90 Hz ofrece una navegación cómoda; incorpora cámara principal de 50 MP y batería de 5000 mAh. Hasta 12 GB de RAM: 4 GB físicos y 8 GB virtuales mediante expansión de almacenamiento.",
-  "compatibilidad": {
-    "valor": "Redes 4G LTE; cobertura y bandas según operadora. No se anuncia 5G ni NFC regional sin evidencia.",
-    "fuentes": [
-      "https://drive.google.com/file/d/1_R5FCJkjpqg8ZqQbL2TjiW5utqNiDACw/view?usp=drivesdk"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono; accesorios específicos por verificar",
     "fuente": "datos-593/inventario-publico.csv + fotos de identificación",
@@ -405,5 +411,67 @@
       "stock"
     ],
     "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 12,
+    "fisica_gb": 4,
+    "virtual_gb": 8,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "4 GB físicos + 8 GB virtuales"
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "beneficios": [
+    {
+      "valor": "12 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "128 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1MArN-ghwwT9ZQ7u0vfTaZt1VEGcxQikX/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "5000 mAh",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
+      "especificaciones": [
+        "Batería"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1_R5FCJkjpqg8ZqQbL2TjiW5utqNiDACw/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "IPS 6,75 pulgadas; HD+ 720 × 1600; 90 Hz",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
+      "especificaciones": [
+        "Pantalla"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1_R5FCJkjpqg8ZqQbL2TjiW5utqNiDACw/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

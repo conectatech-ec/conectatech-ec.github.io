@@ -1,7 +1,7 @@
 {
   "sku": "TABL002",
   "nombre_original": "Tablet Redmi Pad 2 11 Pulgadas 256Gb 8Gb+8Gb",
-  "titulo_comercial": "Tablet Redmi PAD 2 11 Pulgadas 256GB 8GB+8GB",
+  "titulo_comercial": "Tablet Redmi PAD 2 11 Pulgadas 256GB 8GB+8GB | 8 GB RAM total",
   "tipo": "original",
   "marca": "Redmi",
   "modelo": "Redmi Pad 2, 25040RP0AL",
@@ -84,7 +84,9 @@
     "https://drive.google.com/file/d/1C4w4e6xNKUD1SHi_eHoZzvSYqQNpSy9V/view?usp=drivesdk",
     "https://drive.google.com/file/d/1I0CzpVOjIl77WFPi4ntrrYnpRER8BWpB/view?usp=drivesdk",
     "https://drive.google.com/file/d/1I1_qHwaEEQqLUOqYW_Uv1R1yWtHFEps6/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/tabl002/TABL002-01.webp",
   "imagenes_secundarias": [],
@@ -199,10 +201,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "8 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
   "fecha_verificacion": "2026-10-11T18:22:01.250336+00:00",
   "descripcion": "La Redmi Pad 2 de 11 pulgadas ofrece una pantalla 2.5K para ver contenido y trabajar con amplitud. Esta variante Gris Grafito incorpora 256 GB de almacenamiento y 8 GB de RAM físicos, según la etiqueta. El empaque confirma batería de 9000 mAh, procesador Helio G100-Ultra y cuatro altavoces.",
@@ -224,23 +235,21 @@
   "contenido_venta": "1 tablet; la etiqueta indica adaptador de corriente, cable USB Tipo-C, guía y llave para SD Card. La imagen principal muestra solo la tablet.",
   "beneficios": [
     {
-      "valor": "11 pulgadas",
-      "titulo": "Más espacio para tu contenido",
-      "descripcion": "Pantalla 2.5K indicada en el empaque.",
+      "valor": "8 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
       "especificaciones": [
-        "Pantalla"
+        "RAM total comercial"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/1C4w4e6xNKUD1SHi_eHoZzvSYqQNpSy9V/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1I0CzpVOjIl77WFPi4ntrrYnpRER8BWpB/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1I1_qHwaEEQqLUOqYW_Uv1R1yWtHFEps6/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
       ],
       "estado": "VERIFICADO"
     },
     {
       "valor": "256 GB",
-      "titulo": "Almacenamiento amplio",
-      "descripcion": "Capacidad identificada en la etiqueta de esta variante.",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
       "especificaciones": [
         "Almacenamiento"
       ],
@@ -252,11 +261,25 @@
       "estado": "VERIFICADO"
     },
     {
-      "valor": "9000 mAh",
-      "titulo": "Batería de gran capacidad",
-      "descripcion": "Valor típico indicado en el empaque; autonomía según uso.",
+      "valor": "9000 mAh típicos, según empaque",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1C4w4e6xNKUD1SHi_eHoZzvSYqQNpSy9V/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1I0CzpVOjIl77WFPi4ntrrYnpRER8BWpB/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1I1_qHwaEEQqLUOqYW_Uv1R1yWtHFEps6/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "11 pulgadas, 2.5K según empaque",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
+      "especificaciones": [
+        "Pantalla"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/1C4w4e6xNKUD1SHi_eHoZzvSYqQNpSy9V/view?usp=drivesdk",
@@ -311,7 +334,7 @@
       "solicitado": "TABL002",
       "sku": "TABL002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:51:28.253Z",
+      "fecha": "2026-10-12T03:58:05.473Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -339,16 +362,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
       "archivo_html": "productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/index.html",
       "http": 200,
-      "sha256_html": "f5728cc3a2e0964aa28dc047a4c3c1e3b6ee9868e8aa63b569f41760eacf09c0",
-      "sha256_html_local": "f5728cc3a2e0964aa28dc047a4c3c1e3b6ee9868e8aa63b569f41760eacf09c0",
+      "sha256_html": "d0eaaddafd01e764f5c5364c54643dd9e6ffb098007ce5a2747db30bc7172774",
+      "sha256_html_local": "d0eaaddafd01e764f5c5364c54643dd9e6ffb098007ce5a2747db30bc7172774",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tabl002/TABL002-01.webp",
         "url_cargada": "http://127.0.0.1:8765/imagenes/tabl002/TABL002-01-600.webp?v=7d6b0b68904a6766",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "naturalWidth": 331,
+        "naturalHeight": 331,
         "completa": true,
         "visible": true
       },
@@ -390,13 +413,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TABL002-390.png",
-      "sha256": "8c1cffaafdcdb89bb101c5f32627bf780d24cb42b208343f0c940b2e9b07c451",
+      "archivo": "reportes/lote-066/qa-local/movil/TABL002-390.png",
+      "sha256": "783668e4deb8988a65c6c1b79ca24216a1f8ea7d188eacb5b24f6db6692fb258",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TABL002-1280.png",
-        "sha256": "a146fe46ece23c34eeb49b74070bc84f1d28e57c104492e88fee68e857760f82",
+        "archivo": "reportes/lote-066/qa-local/movil/TABL002-1280.png",
+        "sha256": "f53e5a6af3bafd760d56e0ac34342604af1c2d49bd7caea49807faf7d3c17c53",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -405,5 +428,12 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
+  },
+  "ram_comercial": {
+    "total_gb": 8,
+    "fisica_gb": 8,
+    "virtual_gb": 0,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": null
   }
 }

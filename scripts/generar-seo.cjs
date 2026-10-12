@@ -1,4 +1,8 @@
 require('./aplicar-reglas-medios.cjs')();
+const frameFs=require('fs');
+const frameFile='importacion/encuadres-producto.json';
+if(frameFs.existsSync(frameFile)){const frames=JSON.parse(frameFs.readFileSync(frameFile)).productos;let page=frameFs.readFileSync('index.html','utf8');const line='const productFrames='+JSON.stringify(frames)+';\n';page=/const productFrames=.*?;\n/.test(page)?page.replace(/const productFrames=.*?;\n/,()=>line):page.replace('const products=',line+'const products=');frameFs.writeFileSync('index.html',page);}
+
 const fs=require('fs'),path=require('path');
 const fichaComercial=require('./ficha-comercial.cjs');
 const html=fs.readFileSync('index.html','utf8');

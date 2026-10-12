@@ -1,7 +1,7 @@
 {
   "sku": "TELF027",
   "nombre_original": "TELEFONO ZTE A35E 64GB 2GB+4GB",
-  "titulo_comercial": "Teléfono ZTE Blade A35e 64 GB | 2 GB RAM",
+  "titulo_comercial": "Teléfono ZTE Blade A35e 64 GB | 6 GB RAM total",
   "tipo": "original",
   "marca": "ZTE",
   "modelo": "Blade A35e",
@@ -29,7 +29,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
     "https://drive.google.com/file/d/1yq5UlCJaoxEvWv8CS1k1PgrpxTiPq03O/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf027/TELF027-01.webp",
   "imagenes_secundarias": [],
@@ -119,10 +120,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "6 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf027-telefono-zte-a35e-64gb-2gb-4gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "ZTE Blade A35e con pantalla de 6,52 pulgadas y batería de 5000 mAh. Cámara principal de 8 MP; admite carga de hasta 10 W. Dispone de 2 GB de RAM física y hasta 4 GB adicionales de memoria virtual, que utiliza almacenamiento disponible.",
@@ -134,9 +144,33 @@
   "pendientes": [],
   "beneficios": [
     {
+      "valor": "6 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "64 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "5000 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -147,8 +181,8 @@
     },
     {
       "valor": "6,52 pulgadas",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
       ],
@@ -158,12 +192,7 @@
       "estado": "VERIFICADO"
     }
   ],
-  "compatibilidad": {
-    "valor": "Consulta las bandas y cobertura aplicables con tu operadora.",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono",
     "fuente": "datos-593/inventario-publico.csv",
@@ -214,7 +243,7 @@
       "solicitado": "TELF027",
       "sku": "TELF027",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:20.232Z",
+      "fecha": "2026-10-12T04:00:12.547Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -242,16 +271,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf027-telefono-zte-a35e-64gb-2gb-4gb/",
       "archivo_html": "productos/telf027-telefono-zte-a35e-64gb-2gb-4gb/index.html",
       "http": 200,
-      "sha256_html": "e96d140f74887117d0f01bff2c8fed423fb1d1a53b69db655cdaea081932d53a",
-      "sha256_html_local": "e96d140f74887117d0f01bff2c8fed423fb1d1a53b69db655cdaea081932d53a",
+      "sha256_html": "8989036ad0b7da0d9fabbd1fbf902f6c3e39b207442f0db9d2ab262ac449dc2e",
+      "sha256_html_local": "8989036ad0b7da0d9fabbd1fbf902f6c3e39b207442f0db9d2ab262ac449dc2e",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/telf027/TELF027-01.webp",
         "url_cargada": "http://127.0.0.1:8765/imagenes/telf027/TELF027-01-600.webp?v=8ab1a2efcc19c075",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "naturalWidth": 354,
+        "naturalHeight": 354,
         "completa": true,
         "visible": true
       },
@@ -293,13 +322,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF027-390.png",
-      "sha256": "a2d17493be503fb84e39e50171cafbdcb0cd09affd5d73a2936b3ecc4ddf78c5",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF027-390.png",
+      "sha256": "7efff4cbbd0bc673993b647c28ae0839113b1ae6294b999929c94307033a3a58",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF027-1280.png",
-        "sha256": "70281d3fce495abbf3c36428d0b32692596fb5e94d640a84990b2f3f426ee8a6",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF027-1280.png",
+        "sha256": "91ef01582fd5dd271821c1060bc0bc14e16f737f4063ff5a8f2b78db1c0d07cb",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -308,5 +337,39 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 6,
+    "fisica_gb": 2,
+    "virtual_gb": 4,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "2 GB físicos + 4 GB virtuales"
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 8 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 10 W",
+      "especificaciones": [
+        "Carga máxima"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

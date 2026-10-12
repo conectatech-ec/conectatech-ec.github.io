@@ -1,7 +1,7 @@
 {
   "sku": "TELF011",
   "nombre_original": "TELEFONO SAMSUNG A17 4GB+128GB",
-  "titulo_comercial": "Teléfono Samsung Galaxy A17 128 GB | 4 GB RAM",
+  "titulo_comercial": "Teléfono Samsung Galaxy A17 128 GB | 4 GB RAM total",
   "tipo": "original",
   "marca": "Samsung",
   "modelo": "Galaxy A17",
@@ -88,7 +88,8 @@
     "https://drive.google.com/file/d/13PnZB8aA9MkucfOKK1l49rTr0ihxWB1q/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
-    "https://drive.google.com/file/d/1N5EcSki5KG1Hgg9LpJIzADKp4boeeJHE/view?usp=drivesdk"
+    "https://drive.google.com/file/d/1N5EcSki5KG1Hgg9LpJIzADKp4boeeJHE/view?usp=drivesdk",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf011/TELF011-01.webp",
   "imagenes_secundarias": [],
@@ -187,19 +188,23 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "4 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf011-telefono-samsung-a17-4gb-128gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Samsung Galaxy A17 con pantalla de 6,7 pulgadas super amoled y batería de 5000 mAh. Cámara principal de 50 MP con OIS; admite carga de hasta 25 W.",
-  "compatibilidad": {
-    "valor": "4G LTE",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono; accesorios específicos por verificar",
     "fuente": "datos-593/inventario-publico.csv + fotos de identificación",
@@ -270,7 +275,7 @@
       "solicitado": "TELF011",
       "sku": "TELF011",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:29.766Z",
+      "fecha": "2026-10-12T04:00:20.896Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -298,16 +303,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf011-telefono-samsung-a17-4gb-128gb/",
       "archivo_html": "productos/telf011-telefono-samsung-a17-4gb-128gb/index.html",
       "http": 200,
-      "sha256_html": "1d4431e1c13ff141d5310018d33e0b94073382be7074300c7bd91552ff9c6619",
-      "sha256_html_local": "1d4431e1c13ff141d5310018d33e0b94073382be7074300c7bd91552ff9c6619",
+      "sha256_html": "3961a6887f909686caa6aef4fe991f13c554d16419c7f6f419365107d4c26805",
+      "sha256_html_local": "3961a6887f909686caa6aef4fe991f13c554d16419c7f6f419365107d4c26805",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
         "url_cargada": "http://127.0.0.1:8765/imagenes/telf011/TELF011-01-600.webp?v=ea00707688d5033f",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "naturalWidth": 347,
+        "naturalHeight": 347,
         "completa": true,
         "visible": true
       },
@@ -349,13 +354,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF011-390.png",
-      "sha256": "2a23d063adb027f5d9aee99ee1c80aac3867e0a5c7e7df29bb9c381c3d6860ac",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF011-390.png",
+      "sha256": "1fc7b4a9f346d83429788adc6dbfcbf7bfa75680268238549c171e19b35a8fae",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF011-1280.png",
-        "sha256": "b4286d8f0d0aea1a5a9e442014bfcce0c4649f7bd212e7bf98f8d181120986d2",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF011-1280.png",
+        "sha256": "df6eae70f8082078b9a054bdcfc2286ca98f28e89cffd230630c27e50a4fa972",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -402,9 +407,33 @@
   },
   "beneficios": [
     {
+      "valor": "4 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "128 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "5000 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -415,10 +444,44 @@
     },
     {
       "valor": "6,7 pulgadas Super AMOLED",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
+  "ram_comercial": {
+    "total_gb": 4,
+    "fisica_gb": 4,
+    "virtual_gb": 0,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": null
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 50 MP con OIS",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 25 W",
+      "especificaciones": [
+        "Carga máxima"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"

@@ -1,7 +1,7 @@
 {
   "sku": "TELF012",
   "nombre_original": "TELEFONO SAMSUNG A17 8GB+256GB",
-  "titulo_comercial": "Teléfono Samsung Galaxy A17 256 GB · 8 GB RAM · Gris",
+  "titulo_comercial": "Teléfono Samsung Galaxy A17 256 GB · 8 GB RAM · Gris | 8 GB RAM total",
   "tipo": "original",
   "marca": "Samsung",
   "modelo": "Galaxy A17",
@@ -196,7 +196,9 @@
     "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/",
     "https://news.samsung.com/br/feitos-para-durar-samsung-apresenta-galaxy-a17-e-galaxy-a07-no-brasil-com-armazenamento-robusto-recursos-ai-processador-de-alto-desempenho-e-ate-6-anos-de-atualizacoes",
     "https://drive.google.com/file/d/1I7CrTaN6PA1BkIj4bP5nHGPtrOQ4-hCe/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": null,
   "imagenes_secundarias": [],
@@ -372,6 +374,15 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "8 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "BLOQUEADO",
@@ -379,12 +390,7 @@
   "url_publica": "https://conectatech-ec.github.io/productos/telf012-telefono-samsung-a17-8gb-256gb/",
   "fecha_verificacion": "2026-10-10T06:17:55.963733+00:00",
   "descripcion": "Samsung Galaxy A17 gris con 8 GB de RAM física y 256 GB de almacenamiento. Disfruta de una pantalla Super AMOLED FHD+ de 6,7 pulgadas y captura fotos con su cámara principal de 50 MP con estabilización óptica. Batería de 5000 mAh y conectividad 4G LTE.",
-  "compatibilidad": {
-    "valor": "Redes 4G LTE; cobertura y bandas según operadora. No se anuncia 5G ni NFC regional sin evidencia.",
-    "fuentes": [
-      "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono; accesorios específicos por verificar",
     "fuente": "datos-593/inventario-publico.csv + fotos de identificación",
@@ -522,5 +528,67 @@
       "stock"
     ],
     "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 8,
+    "fisica_gb": 8,
+    "virtual_gb": 0,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": null
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "beneficios": [
+    {
+      "valor": "8 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "256 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1I7CrTaN6PA1BkIj4bP5nHGPtrOQ4-hCe/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "5000 mAh",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
+      "especificaciones": [
+        "Batería"
+      ],
+      "fuentes": [
+        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Super AMOLED de 6,7 pulgadas; FHD+ 1080 × 2340",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
+      "especificaciones": [
+        "Pantalla"
+      ],
+      "fuentes": [
+        "https://www.samsung.com/latin/smartphones/galaxy-a/galaxy-a17-gray-128gb-sm-a175fzafgto/"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

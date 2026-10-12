@@ -1,7 +1,7 @@
 {
   "sku": "TELF021",
   "nombre_original": "TELEFONO REDMI NOTE 15 PRO 4G 256GB 8GB+GB",
-  "titulo_comercial": "Teléfono Redmi Note 15 Pro 4G 256 GB | 8 GB RAM",
+  "titulo_comercial": "Teléfono Redmi Note 15 Pro 4G 256 GB | 16 GB RAM total",
   "tipo": "original",
   "marca": "Redmi",
   "modelo": "Note 15 Pro 4G",
@@ -29,7 +29,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
     "https://drive.google.com/file/d/1bNIPlTEBS1JWPvQ88FafS2NNA0xCCLdw/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf021/TELF021-01.webp",
   "imagenes_secundarias": [],
@@ -128,10 +129,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "16 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf021-telefono-redmi-note-15-pro-4g-256gb-8gb-gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Redmi Note 15 Pro 4G con pantalla de 6,77 pulgadas amoled y batería de 6500 mAh. Cámara principal de 200 MP; admite carga de hasta 45 W.",
@@ -143,9 +153,33 @@
   "pendientes": [],
   "beneficios": [
     {
+      "valor": "16 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "256 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "6500 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -156,8 +190,8 @@
     },
     {
       "valor": "6,77 pulgadas AMOLED",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
       ],
@@ -167,12 +201,7 @@
       "estado": "VERIFICADO"
     }
   ],
-  "compatibilidad": {
-    "valor": "4G LTE",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono",
     "fuente": "datos-593/inventario-publico.csv",
@@ -223,7 +252,7 @@
       "solicitado": "TELF021",
       "sku": "TELF021",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:08.362Z",
+      "fecha": "2026-10-12T04:00:02.015Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,16 +280,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf021-telefono-redmi-note-15-pro-4g-256gb-8gb-gb/",
       "archivo_html": "productos/telf021-telefono-redmi-note-15-pro-4g-256gb-8gb-gb/index.html",
       "http": 200,
-      "sha256_html": "7ca8c19dfe4c01421dce06687fc652c788c486119a76875683fbe3ce2ec5407d",
-      "sha256_html_local": "7ca8c19dfe4c01421dce06687fc652c788c486119a76875683fbe3ce2ec5407d",
+      "sha256_html": "eb293966d6633bf26c874521653b616bfa598c13d805637fbd5f9faad207bf0d",
+      "sha256_html_local": "eb293966d6633bf26c874521653b616bfa598c13d805637fbd5f9faad207bf0d",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/telf021/TELF021-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/telf021/TELF021-01-600.webp?v=b2b584c4fb41875e",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "url_cargada": "http://127.0.0.1:8765/imagenes/telf021/TELF021-01.webp?v=335e059a3cbff45e",
+        "naturalWidth": 620,
+        "naturalHeight": 620,
         "completa": true,
         "visible": true
       },
@@ -302,13 +331,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF021-390.png",
-      "sha256": "8d5b085d5a191d851ebc8dbb389295a1ec0c50fb580b942a0da465eec5bad0e3",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF021-390.png",
+      "sha256": "cf7f6a4dce8685bfdd5ceb71958d6bf64fcbc20cc3032e315375d5da2a016768",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF021-1280.png",
-        "sha256": "504c4360bf20971f600a152dfd1499ed48073ec50e34e3724b64f2da320730cb",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF021-1280.png",
+        "sha256": "2f061351814ce661b881ca3c14dd0c6c9073774f5075bca21437f29950266b99",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -317,5 +346,39 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 16,
+    "fisica_gb": 8,
+    "virtual_gb": 8,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "8 GB físicos + 8 GB virtuales"
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 200 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 45 W",
+      "especificaciones": [
+        "Carga máxima"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

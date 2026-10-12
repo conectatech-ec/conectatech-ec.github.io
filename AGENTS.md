@@ -1,3 +1,9 @@
+## Orden vigente del propietario — lote 066
+
+Continuar con otro lote de 100, ampliable a 200 si las fuentes lo justifican. Priorizar fidelidad, no inflar completados. REL042 debe ajustarse al hardware original; REL050 requiere presentación más comercial. Estandarizar presencia visual con TELF020, TELF036 y TELF025 como referencias, sin distorsionar proporciones ni cortar producto; conservar imágenes correctas. Usar encuadre de presentación y conservar archivos originales.
+
+Teléfonos: mejorar beneficios debajo del precio con datos comprobados; suprimir sección Compatibilidad. El propietario confirma que TODOS los teléfonos son liberados y disponibles para cualquier operadora; informar esto de forma comercial, sin inventar cobertura/bandas 5G. Teléfonos/tablets: destacar la mayor RAM total comercial documentada, por ejemplo 16 GB RAM total, y desglose 8 GB físicos + 8 GB virtuales en texto pequeño legible. No presentar RAM virtual como física ni inventar sumas o capacidades no documentadas. Conservar política de originalidad, precios, stock, SKU, URLs, diseño compacto y prioridades anteriores.
+
 ## Orden vigente del propietario — lote de 100 y teléfonos
 
 Instrucción recibida en esta conversación: avanzar con lote de 100, terminar celulares primero. Usar TELEFONOS Y TABLETS CONECTATECH.pdf verificado por el propietario (catálogo al 10-10-2026) como evidencia de modelo/especificaciones; no importar sus precios sobre 593. Las imágenes Drive SKU - PRINCIPAL elegidas por el propietario son las portadas del SKU: embellecer y adaptar manteniendo estrictamente modelo, geometría, cámaras, puertos, color y realidad. No sustituir por otro teléfono ni inventar hardware.

@@ -196,6 +196,9 @@ async function main() {
         row.sha256 = sha(await page.screenshot({path: safe(row.archivo), fullPage: true, animations: 'disabled'}));
         if (opt.desktop) {
           await page.setViewportSize({width: 1280, height: 900});
+          // Esperar el nuevo srcset después del cambio de viewport, antes de inspeccionar.
+          await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+          await page.waitForFunction(() => { const im = document.querySelector('img.photo'); return im && im.complete && im.naturalWidth > 0; });
           await page.evaluate(async () => { await Promise.all(Array.from(document.images).map(im => im.decode().catch(() => {}))); });
           const desk = await inspect(), file = relative(path.join(opt.capturas, sku + '-1280.png'));
           row.escritorio = {ancho_viewport: 1280, ancho_documento: desk.ancho_documento, archivo: file,

@@ -75,6 +75,25 @@ class UpdateTests(unittest.TestCase):
         self.assertEqual(after, original); self.assertTrue(all(x['estado'] == 'sin_cambios' for x in rows))
         self.assertEqual(m.payload(after)['ordenPredeterminado'], 'recientes')
 
+    def test_framing_requires_visible_published_style_and_reverification_keeps_date(self):
+        state, _ = self.register(self.http_report())
+        cover = self.seo['TEST001']['imagenProfesional']['versiones']['1200']
+        self.seo['TEST001']['encuadreProducto'] = {**cover, 'escala': 1.8, 'dx': 2.0, 'dy': -3.0}
+        report = self.http_report('2026-10-11T08:00:00+00:00')
+        held, rows = self.register(report, state)
+        self.assertEqual(held, state)
+        self.assertEqual(rows[0]['estado'], 'pendiente')
+        def rendered(receipt):
+            path = self.root / 'productos/test001/index.html'
+            path.write_text(path.read_text().replace('<img ', '<img style="transform:translate(-50%,-50%) scale(1.8) translate(2%,-3%)" '))
+            receipt['resultados'][0]['sha256_ficha'] = m.sha(path.read_bytes())
+            return receipt
+        changed, rows = self.register(rendered(report), state)
+        self.assertEqual(rows[0]['estado'], 'actualizado')
+        self.assertEqual(changed['productos']['TEST002'], state['productos']['TEST002'])
+        after, _ = self.register(rendered(self.http_report('2026-10-11T09:00:00+00:00')), changed)
+        self.assertEqual(after, changed)
+
     def test_real_title_update_changes_only_one_sku_and_keeps_history(self):
         state, _ = self.register(self.http_report()); self.products['TEST001']['name'] = 'Título nuevo'
         self.seo['TEST001']['nombre'] = 'Título nuevo'; self.seo['TEST001']['tituloSeo'] = 'Título nuevo | Tienda'

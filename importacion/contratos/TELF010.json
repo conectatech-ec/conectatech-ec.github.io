@@ -1,7 +1,7 @@
 {
   "sku": "TELF010",
   "nombre_original": "TELEFONO SAMSUNG A07 6GB+128GB",
-  "titulo_comercial": "Teléfono Samsung Galaxy A07 128 GB | 6 GB RAM",
+  "titulo_comercial": "Teléfono Samsung Galaxy A07 128 GB | 6 GB RAM total",
   "tipo": "original",
   "marca": "Samsung",
   "modelo": "Galaxy A07",
@@ -88,7 +88,8 @@
     "https://drive.google.com/file/d/1-HNg7-GIdtGUpMBnKkhoEOv8nk2_TIpJ/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
-    "https://drive.google.com/file/d/11y5uW64jSI6X8VKOVd3ullUQg7S-fRZH/view?usp=drivesdk"
+    "https://drive.google.com/file/d/11y5uW64jSI6X8VKOVd3ullUQg7S-fRZH/view?usp=drivesdk",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf010/TELF010-01.webp",
   "imagenes_secundarias": [],
@@ -187,19 +188,23 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "6 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf010-telefono-samsung-a07-6gb-128gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Samsung Galaxy A07 con pantalla de 6,7 pulgadas y batería de 5000 mAh. Cámara principal de 50 MP; admite carga de hasta 25 W.",
-  "compatibilidad": {
-    "valor": "4G LTE",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono; accesorios específicos por verificar",
     "fuente": "datos-593/inventario-publico.csv + fotos de identificación",
@@ -270,7 +275,7 @@
       "solicitado": "TELF010",
       "sku": "TELF010",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:26.373Z",
+      "fecha": "2026-10-12T04:00:19.608Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -298,8 +303,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf010-telefono-samsung-a07-6gb-128gb/",
       "archivo_html": "productos/telf010-telefono-samsung-a07-6gb-128gb/index.html",
       "http": 200,
-      "sha256_html": "07355e565d56c646b2f46c6bc17f703260cda9595f1e29f9be09c6ae14af8bb6",
-      "sha256_html_local": "07355e565d56c646b2f46c6bc17f703260cda9595f1e29f9be09c6ae14af8bb6",
+      "sha256_html": "9bc9d920caff8554a894d62e52adb61791dc14aa22cd192c8e53011111159c2d",
+      "sha256_html_local": "9bc9d920caff8554a894d62e52adb61791dc14aa22cd192c8e53011111159c2d",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -349,13 +354,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF010-390.png",
-      "sha256": "223c7cc45ea749cc41b2a86c20ec5d8210db9411b5f878209a11f362a71ff702",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF010-390.png",
+      "sha256": "9f30413c45185fffacbf828b3422c56ad45d12dbaa18fac931b53c96b07174da",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF010-1280.png",
-        "sha256": "0a5ef5491158a9ffe41ccb86c76705ec0483a9a28dac91e26908192538a6ae6c",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF010-1280.png",
+        "sha256": "a4c585c3556be8d6032fb9a1f4583c86c2c1d4ae210c968c21ec092d68e25186",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -402,9 +407,33 @@
   },
   "beneficios": [
     {
+      "valor": "6 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "128 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "5000 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -415,10 +444,44 @@
     },
     {
       "valor": "6,7 pulgadas",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
+  "ram_comercial": {
+    "total_gb": 6,
+    "fisica_gb": 6,
+    "virtual_gb": 0,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": null
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 50 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 25 W",
+      "especificaciones": [
+        "Carga máxima"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"

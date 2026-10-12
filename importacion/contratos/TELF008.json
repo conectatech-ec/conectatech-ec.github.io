@@ -1,7 +1,7 @@
 {
   "sku": "TELF008",
   "nombre_original": "TELEFONO INFINIX SMART 20 128GB 4GB+4GB",
-  "titulo_comercial": "Teléfono Infinix Smart 20 128 GB | 4 GB RAM",
+  "titulo_comercial": "Teléfono Infinix Smart 20 128 GB | 8 GB RAM total",
   "tipo": "original",
   "marca": "Infinix",
   "modelo": "Smart 20",
@@ -29,7 +29,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
     "https://drive.google.com/file/d/1UcGdjUN6YItgZRlZnERI-CEbmuCBvp1q/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf008/TELF008-01.webp",
   "imagenes_secundarias": [],
@@ -128,10 +129,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "8 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf008-telefono-infinix-smart-20-128gb-4gb-4gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Infinix Smart 20 con pantalla de 6,78 pulgadas, hasta 120 hz y batería de 5200 mAh. Cámara principal de 8 MP; admite carga de hasta 15 W. Dispone de 4 GB de RAM física y hasta 4 GB adicionales de memoria virtual, que utiliza almacenamiento disponible.",
@@ -143,9 +153,33 @@
   "pendientes": [],
   "beneficios": [
     {
+      "valor": "8 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "128 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "5200 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -156,8 +190,8 @@
     },
     {
       "valor": "6,78 pulgadas, hasta 120 Hz",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
       ],
@@ -167,12 +201,7 @@
       "estado": "VERIFICADO"
     }
   ],
-  "compatibilidad": {
-    "valor": "Consulta las bandas y cobertura aplicables con tu operadora.",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono",
     "fuente": "datos-593/inventario-publico.csv",
@@ -223,7 +252,7 @@
       "solicitado": "TELF008",
       "sku": "TELF008",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:16.686Z",
+      "fecha": "2026-10-12T04:00:09.834Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,16 +280,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf008-telefono-infinix-smart-20-128gb-4gb-4gb/",
       "archivo_html": "productos/telf008-telefono-infinix-smart-20-128gb-4gb-4gb/index.html",
       "http": 200,
-      "sha256_html": "764158f178d193c455bf91ac033bdc7380557b2e1468314fc193edf85a0876de",
-      "sha256_html_local": "764158f178d193c455bf91ac033bdc7380557b2e1468314fc193edf85a0876de",
+      "sha256_html": "5010930d888173326d72ae4dd4edbfa9d27b1363521a873a9002ac2f8e791bc6",
+      "sha256_html_local": "5010930d888173326d72ae4dd4edbfa9d27b1363521a873a9002ac2f8e791bc6",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/telf008/TELF008-01.webp",
         "url_cargada": "http://127.0.0.1:8765/imagenes/telf008/TELF008-01-600.webp?v=89e1dfc758a4c34f",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "naturalWidth": 397,
+        "naturalHeight": 397,
         "completa": true,
         "visible": true
       },
@@ -302,13 +331,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF008-390.png",
-      "sha256": "53310f1bc1a398e36abd6a00341b36f60dbb3ea607bbd97ed81675e577f7361b",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF008-390.png",
+      "sha256": "dcf8f77efc8b4d7734943f9d2317a9372e964441ad885bb78d38a58d1c9aaf15",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF008-1280.png",
-        "sha256": "2ae5e18a850707f2c97f72379e734465aff4f758e032c600e0515bcd773f6b5d",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF008-1280.png",
+        "sha256": "3852119193d30c306b4f70afeca17dbf89f56ba7dd57fbafdd9b9434fd619ebb",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -317,5 +346,39 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 8,
+    "fisica_gb": 4,
+    "virtual_gb": 4,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "4 GB físicos + 4 GB virtuales"
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 8 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 15 W",
+      "especificaciones": [
+        "Carga máxima"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

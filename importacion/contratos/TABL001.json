@@ -1,7 +1,7 @@
 {
   "sku": "TABL001",
   "nombre_original": "TABLET REDMI PAD 2 11 PULGADAS 128GB 4GB+4GB",
-  "titulo_comercial": "Tablet Redmi Pad 2 128 GB | 4 GB RAM",
+  "titulo_comercial": "Tablet Redmi Pad 2 128 GB | 8 GB RAM total",
   "tipo": "original",
   "marca": "Redmi",
   "modelo": "Pad 2",
@@ -29,7 +29,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
     "https://drive.google.com/file/d/1AzAyjXnTaS5e8rFSEp6VyqNuwRQsur2E/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/tabl001/TABL001-01.webp",
   "imagenes_secundarias": [],
@@ -137,10 +138,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "8 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/tabl001-tablet-redmi-pad-2-11-pulgadas-128gb-4gb-4gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Redmi Pad 2 con pantalla de 11 pulgadas, 2.5k y batería de 9000 mAh. Cámara principal de 8 MP; admite carga de hasta 15 W. Dispone de 4 GB de RAM física y hasta 4 GB adicionales de memoria virtual, que utiliza almacenamiento disponible.",
@@ -152,9 +162,33 @@
   "pendientes": [],
   "beneficios": [
     {
+      "valor": "8 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "128 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "9000 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -165,8 +199,8 @@
     },
     {
       "valor": "11 pulgadas, 2.5K",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
       ],
@@ -232,7 +266,7 @@
       "solicitado": "TABL001",
       "sku": "TABL001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:05.821Z",
+      "fecha": "2026-10-12T04:00:00.203Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -260,16 +294,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/tabl001-tablet-redmi-pad-2-11-pulgadas-128gb-4gb-4gb/",
       "archivo_html": "productos/tabl001-tablet-redmi-pad-2-11-pulgadas-128gb-4gb-4gb/index.html",
       "http": 200,
-      "sha256_html": "6a681410be6794eece3e5cadb17bcfc5ba77df4944de0b9014f5b0c480802247",
-      "sha256_html_local": "6a681410be6794eece3e5cadb17bcfc5ba77df4944de0b9014f5b0c480802247",
+      "sha256_html": "bba66532d7e1ea5369d9b8fdab23010678ebad57b2844e524676db165a6aa598",
+      "sha256_html_local": "bba66532d7e1ea5369d9b8fdab23010678ebad57b2844e524676db165a6aa598",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tabl001/TABL001-01.webp",
         "url_cargada": "http://127.0.0.1:8765/imagenes/tabl001/TABL001-01-600.webp?v=19e202068db7884d",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "naturalWidth": 425,
+        "naturalHeight": 425,
         "completa": true,
         "visible": true
       },
@@ -311,13 +345,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TABL001-390.png",
-      "sha256": "8faa37958c4fb6dbf726250b8ac02d03a5a13a1a064e63e0f8cd5a460ca55971",
+      "archivo": "reportes/lote-066/qa-local/movil/TABL001-390.png",
+      "sha256": "f965553299c3c016807174012c2d93fffb273b1a853792a7bdfb2aa08c06071d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TABL001-1280.png",
-        "sha256": "3e7f6cdd569e0e96482a04bcd308e3264de086b16c73f3786758cfad2fc04766",
+        "archivo": "reportes/lote-066/qa-local/movil/TABL001-1280.png",
+        "sha256": "d6e8d99cd3e471f0b5c38f31c02cb6391e2035abad8228bcd7bc95c3bd632216",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -326,5 +360,12 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
+  },
+  "ram_comercial": {
+    "total_gb": 8,
+    "fisica_gb": 4,
+    "virtual_gb": 4,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "4 GB físicos + 4 GB virtuales"
   }
 }

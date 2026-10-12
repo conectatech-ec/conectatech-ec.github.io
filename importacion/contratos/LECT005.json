@@ -172,7 +172,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
   "fecha_verificacion": "2026-10-10T19:49:21.079106+00:00",
   "descripcion": "Lee y graba discos ópticos con la unidad externa Dell DW316. Su formato slim facilita transportarla y conectarla por USB a equipos compatibles que no incorporan lector interno. El acabado negro mantiene una presentación sobria y compacta.",
@@ -257,7 +257,7 @@
       "solicitado": "LECT005",
       "sku": "LECT005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T19:48:52.482Z",
+      "fecha": "2026-10-12T03:57:26.803Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -272,6 +272,7 @@
         "disponibilidad": true,
         "imagen_principal": true,
         "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
         "javascript": true,
         "beneficios_verificados": true,
         "detalles_cerrados": true,
@@ -281,51 +282,52 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
       "archivo_html": "productos/lect005-lector-de-cd-dvd-externo-marca-dell/index.html",
       "http": 200,
-      "sha256_html": "ab56b93cadf2e67e39b88972f36fe6bc1fe4c32ed363286a199d94de3d5fc03b",
-      "sha256_html_local": "ab56b93cadf2e67e39b88972f36fe6bc1fe4c32ed363286a199d94de3d5fc03b",
+      "sha256_html": "8ef15bad625b6555b544e7fdc8c3ab639948c8fd1cc60f239c0093783429b491",
+      "sha256_html_local": "8ef15bad625b6555b544e7fdc8c3ab639948c8fd1cc60f239c0093783429b491",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lect005/LECT005-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/lect005/LECT005-01-600.webp?v=efe71c6d12b21ec9",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "url_cargada": "http://127.0.0.1:8765/imagenes/lect005/LECT005-01-600.webp?v=efe71c6d12b21ec9",
+        "naturalWidth": 331,
+        "naturalHeight": 331,
         "completa": true,
         "visible": true
       },
+      "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
+          "url": "http://127.0.0.1:8765/productos/lect005-lector-de-cd-dvd-externo-marca-dell/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8765/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/lect005/LECT005-01.webp",
+          "url": "http://127.0.0.1:8765/imagenes/lect005/LECT005-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-046/qa-publico/movil/LECT005-390.png",
-      "sha256": "51e5f32de44b38f8cd07d034c241902b2a1e2d8c9766068594fe306e809c3aff",
+      "archivo": "reportes/lote-066/qa-local/movil/LECT005-390.png",
+      "sha256": "5e417d07d84de4b6adbf8294c4e35a09f0118576fbd64922cf09bf5586290e10",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-046/qa-publico/movil/LECT005-1280.png",
-        "sha256": "d0a200da5dcdabec7295e242426e7350ea6c731688a73b81d21a9f3d22692cce",
+        "archivo": "reportes/lote-066/qa-local/movil/LECT005-1280.png",
+        "sha256": "e79169749401c9e2cbcfbc86c9385c0a70c4befbf81ddf729e3d1530f9377f0e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

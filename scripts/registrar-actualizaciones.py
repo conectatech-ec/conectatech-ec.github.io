@@ -172,6 +172,25 @@ def inspect_sku(root, sku, product, custom, slug, row):
         'imagenes': image_semantics})
     if custom.get('beneficios'):
         content['beneficios'] = normalized(custom['beneficios'])
+    frame = custom.get('encuadreProducto')
+    if frame:
+        if frame.get('sha256') != cover['versiones']['1200']['sha256']:
+            raise ValueError('Encuadre asociado a otra versión de la portada')
+        rendered_number = lambda x: '0' if float(x) == 0 else format(float(x), '.15g')
+        expected_style = f"scale({rendered_number(frame['escala'])}) translate({rendered_number(frame['dx'])}%,{rendered_number(frame['dy'])}%)"
+        if expected_style not in data.decode():
+            raise ValueError('Encuadre local aún no visible en el HTML comprobado')
+        content['encuadrePublico'] = {k: frame[k] for k in ('escala','dx','dy','sha256')}
+    if custom.get('ramComercial'):
+        content['ramPublica'] = normalized({k: custom['ramComercial'].get(k) for k in ('total_gb','fisica_gb','virtual_gb','desglose')})
+    if custom.get('telefonoLiberado'):
+        if 'Liberado para tu operadora' not in visible:
+            raise ValueError('Confirmación de teléfono liberado aún no visible')
+        content['telefonoLiberado'] = True
+    if custom.get('destacadosComerciales'):
+        if any(normalized(x) not in visible for x in custom['destacadosComerciales']):
+            raise ValueError('Características destacadas todavía no visibles')
+        content['destacadosComerciales'] = normalized(custom['destacadosComerciales'])
     image = {'src': image_url, 'srcset': ', '.join(cover['versiones'][s]['url'] + '?v=' + cover['versiones'][s]['sha256'][:16] + ' ' + s + 'w' for s in ('300', '600', '1200'))}
     return content, image
 

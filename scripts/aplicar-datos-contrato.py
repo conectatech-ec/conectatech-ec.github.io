@@ -78,6 +78,12 @@ def main():
             metadata['beneficios'] = [{k: b[k] for k in ('valor','titulo','descripcion')} for b in contract['beneficios']]
         else:
             current.pop('beneficios', None)
+        if contract.get('ram_comercial'):
+            metadata['ramComercial'] = contract['ram_comercial']
+        if contract.get('telefonia_liberada'):
+            metadata['telefonoLiberado'] = contract['telefonia_liberada'].get('confirmado') is True
+        if contract.get('destacados_comerciales'):
+            metadata['destacadosComerciales'] = [b['valor'] for b in contract['destacados_comerciales']]
         # Conservar ventas cruzadas ya revisadas aunque el nuevo lote sea de otra categoría.
         related = []
         for item in previous.get('relacionados', []):

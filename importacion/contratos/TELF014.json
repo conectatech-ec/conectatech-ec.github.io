@@ -1,7 +1,7 @@
 {
   "sku": "TELF014",
   "nombre_original": "TELEFONO TECNO SPARK 50 256GB 4GB+8GB",
-  "titulo_comercial": "Teléfono Tecno Spark 50 256 GB | 4 GB RAM",
+  "titulo_comercial": "Teléfono Tecno Spark 50 256 GB | 12 GB RAM total",
   "tipo": "original",
   "marca": "Tecno",
   "modelo": "Spark 50",
@@ -29,7 +29,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
     "https://drive.google.com/file/d/1dWOwIEsLoDFcbeQtB6bUE91nql6drDBn/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf014/TELF014-01.webp",
   "imagenes_secundarias": [],
@@ -128,10 +129,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "12 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf014-telefono-tecno-spark-50-256gb-4gb-8gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Tecno Spark 50 con pantalla de 6,78 pulgadas y batería de 6700 mAh. Cámara principal de 50 MP; admite carga de hasta 18 W. Dispone de 4 GB de RAM física y hasta 8 GB adicionales de memoria virtual, que utiliza almacenamiento disponible.",
@@ -143,9 +153,33 @@
   "pendientes": [],
   "beneficios": [
     {
+      "valor": "12 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "256 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "6700 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -156,8 +190,8 @@
     },
     {
       "valor": "6,78 pulgadas",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
       ],
@@ -167,12 +201,7 @@
       "estado": "VERIFICADO"
     }
   ],
-  "compatibilidad": {
-    "valor": "Consulta las bandas y cobertura aplicables con tu operadora.",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono",
     "fuente": "datos-593/inventario-publico.csv",
@@ -223,7 +252,7 @@
       "solicitado": "TELF014",
       "sku": "TELF014",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:10.850Z",
+      "fecha": "2026-10-12T04:00:05.017Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,16 +280,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf014-telefono-tecno-spark-50-256gb-4gb-8gb/",
       "archivo_html": "productos/telf014-telefono-tecno-spark-50-256gb-4gb-8gb/index.html",
       "http": 200,
-      "sha256_html": "cad41abc5907a2bfc047273b0258c654292a2495ddc907c9d37acb84b2f717f8",
-      "sha256_html_local": "cad41abc5907a2bfc047273b0258c654292a2495ddc907c9d37acb84b2f717f8",
+      "sha256_html": "b5a71b11896f8f92c74dfad84a8800152366162cdd3ae805f175287077635ba0",
+      "sha256_html_local": "b5a71b11896f8f92c74dfad84a8800152366162cdd3ae805f175287077635ba0",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/telf014/TELF014-01.webp",
         "url_cargada": "http://127.0.0.1:8765/imagenes/telf014/TELF014-01-600.webp?v=2fafda7da5eeaa94",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "naturalWidth": 487,
+        "naturalHeight": 487,
         "completa": true,
         "visible": true
       },
@@ -302,13 +331,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF014-390.png",
-      "sha256": "a67bcc072785e25d90f29feb13a321af9867098a63171a8a9a833f3021205c50",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF014-390.png",
+      "sha256": "bb9b84bd67d9c2708b8c2f756d31ee8cc25e9c742c9cce19a60f6647ea13874d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF014-1280.png",
-        "sha256": "b6e9a21528458f40821b2c74cf18ada9c5a43cae5d4fae0758da549b1a12c74d",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF014-1280.png",
+        "sha256": "1c62aab01b695b69e4c1a0a9ad6a6fcee1e1ffadba9832ba5899a9fece90209b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -317,5 +346,39 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 12,
+    "fisica_gb": 4,
+    "virtual_gb": 8,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "4 GB físicos + 8 GB virtuales"
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 50 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 18 W",
+      "especificaciones": [
+        "Carga máxima"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

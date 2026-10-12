@@ -1,7 +1,7 @@
 {
   "sku": "TELF023",
   "nombre_original": "TELEFONO HONOR X5C 128GB 4GB+4GB",
-  "titulo_comercial": "Teléfono Honor X5c 128 GB | 4 GB RAM",
+  "titulo_comercial": "Teléfono Honor X5c 128 GB | 8 GB RAM total",
   "tipo": "original",
   "marca": "Honor",
   "modelo": "X5c",
@@ -71,7 +71,8 @@
     "https://drive.google.com/file/d/17TDmIG4YrItyl9Gc0N8tbg6rqwOT4o5Z/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
-    "https://drive.google.com/file/d/1clvKUwRMjSqiUigEuhzlZCEyS6tYCY0f/view?usp=drivesdk"
+    "https://drive.google.com/file/d/1clvKUwRMjSqiUigEuhzlZCEyS6tYCY0f/view?usp=drivesdk",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf023/TELF023-01.webp",
   "imagenes_secundarias": [],
@@ -170,10 +171,19 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "8 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf023-telefono-honor-x5c-128gb-4gb-4gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Honor X5c con pantalla de 6,74 pulgadas, hasta 90 hz y batería de 5260 mAh. Cámara principal de 50 MP; admite carga de hasta 15 W. Dispone de 4 GB de RAM física y hasta 4 GB adicionales de memoria virtual, que utiliza almacenamiento disponible.",
@@ -191,18 +201,37 @@
     "edicion_asistida_ia": true,
     "originales_intactos_en_drive": true
   },
-  "compatibilidad": {
-    "valor": "Consulta las bandas y cobertura aplicables con tu operadora.",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": "1 teléfono. Consulta los accesorios incluidos y condiciones de garantía al comprar.",
   "beneficios": [
     {
+      "valor": "8 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "128 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "5260 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -213,8 +242,8 @@
     },
     {
       "valor": "6,74 pulgadas, hasta 90 Hz",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
       ],
@@ -269,7 +298,7 @@
       "solicitado": "TELF023",
       "sku": "TELF023",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:18.465Z",
+      "fecha": "2026-10-12T03:58:49.264Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -297,16 +326,16 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf023-telefono-honor-x5c-128gb-4gb-4gb/",
       "archivo_html": "productos/telf023-telefono-honor-x5c-128gb-4gb-4gb/index.html",
       "http": 200,
-      "sha256_html": "c1d49ee6791af7c32205413af3c8a357cdf14da3960e0226654c2456867193c8",
-      "sha256_html_local": "c1d49ee6791af7c32205413af3c8a357cdf14da3960e0226654c2456867193c8",
+      "sha256_html": "d7b0af76fc5bd792e6c8838c95fb214e478cb48a1937aab88eea5b4119534c0d",
+      "sha256_html_local": "d7b0af76fc5bd792e6c8838c95fb214e478cb48a1937aab88eea5b4119534c0d",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/telf023/TELF023-01.webp",
         "url_cargada": "http://127.0.0.1:8765/imagenes/telf023/TELF023-01-600.webp?v=f5d0ac55c27c4fb8",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "naturalWidth": 386,
+        "naturalHeight": 386,
         "completa": true,
         "visible": true
       },
@@ -348,13 +377,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF023-390.png",
-      "sha256": "a3cb6fc66d99f41962d2a0ffba1c1e34bcbb4ce1bebe3fb1c6296d8c56dd24dc",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF023-390.png",
+      "sha256": "45f9ceb4e26908f8fcfb0e0b1a4c31ab7e6a9ba2119b1d05f44792cec0e3da17",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF023-1280.png",
-        "sha256": "5509f257eb8432a8840823b6d54b6f4b2e7e3d86c4a75121d332aacd0ef56f27",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF023-1280.png",
+        "sha256": "922909007234cddb37dbfe2b09bf189677c2caa42718a6f981871e49cf5a6a06",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -363,5 +392,39 @@
       "archivo": "reportes/lote-065/http-publicacion.json",
       "sha256": "60f9501b60632f187cfc7ed02aba11100fdd4a20c1a10e707d337719bad5bbb9"
     }
-  }
+  },
+  "ram_comercial": {
+    "total_gb": 8,
+    "fisica_gb": 4,
+    "virtual_gb": 4,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "4 GB físicos + 4 GB virtuales"
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 50 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 15 W",
+      "especificaciones": [
+        "Carga máxima"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

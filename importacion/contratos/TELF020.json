@@ -1,7 +1,7 @@
 {
   "sku": "TELF020",
   "nombre_original": "TELEFONO REDMI 15 256GB 8GB+8GB",
-  "titulo_comercial": "Teléfono Redmi 15 256 GB | 8 GB RAM",
+  "titulo_comercial": "Teléfono Redmi 15 256 GB | 16 GB RAM total",
   "tipo": "original",
   "marca": "Redmi",
   "modelo": "15",
@@ -91,7 +91,8 @@
     "https://drive.google.com/file/d/1BtWaHyBUcOYj3rBCwxj28l1yNN2HSS7g/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
-    "https://drive.google.com/file/d/11yp7MzYRoSY_cfBy0Opb2dG0YPoPWiN2/view?usp=drivesdk"
+    "https://drive.google.com/file/d/11yp7MzYRoSY_cfBy0Opb2dG0YPoPWiN2/view?usp=drivesdk",
+    "importacion/reglas-sku.json"
   ],
   "imagen_principal": "/imagenes/telf020/TELF020-01.webp",
   "imagenes_secundarias": [],
@@ -190,19 +191,23 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "RAM total comercial",
+      "valor": "16 GB RAM total",
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/telf020-telefono-redmi-15-256gb-8gb-8gb/",
   "fecha_verificacion": "2026-10-12T01:36:31.403670+00:00",
   "descripcion": "Redmi 15 con pantalla de 6,9 pulgadas fhd+, hasta 144 hz y batería de 7000 mAh. Cámara principal de 50 MP; admite carga de hasta 33 W. Dispone de 8 GB de RAM física y hasta 8 GB adicionales de memoria virtual, que utiliza almacenamiento disponible.",
-  "compatibilidad": {
-    "valor": "4G LTE",
-    "fuentes": [
-      "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
-    ]
-  },
+  "compatibilidad": null,
   "contenido_venta": {
     "valor": "1 teléfono; adaptador 33 W; cable USB-C; herramienta SIM; funda protectora; guía y tarjeta de garantía",
     "fuente": "https://drive.google.com/file/d/1gx1wAHIByH0EJLmLtjIyo1Q1tPSyReKm/view?usp=drivesdk",
@@ -278,7 +283,7 @@
       "solicitado": "TELF020",
       "sku": "TELF020",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T01:50:28.844Z",
+      "fecha": "2026-10-12T03:56:55.299Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -306,8 +311,8 @@
       "url_comprobada": "http://127.0.0.1:8765/productos/telf020-telefono-redmi-15-256gb-8gb-8gb/",
       "archivo_html": "productos/telf020-telefono-redmi-15-256gb-8gb-8gb/index.html",
       "http": 200,
-      "sha256_html": "e6390300a2e575913dbd241389c015ae3344da2f4b0560f939584561471e637e",
-      "sha256_html_local": "e6390300a2e575913dbd241389c015ae3344da2f4b0560f939584561471e637e",
+      "sha256_html": "0b4b686ec8f25ff47c2e350b25b63029af5103ccbf5e8fc83cb0cf502b4eb1cd",
+      "sha256_html_local": "0b4b686ec8f25ff47c2e350b25b63029af5103ccbf5e8fc83cb0cf502b4eb1cd",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -357,13 +362,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-065/qa-local/movil/TELF020-390.png",
-      "sha256": "c73de2946742dcfe0d6192f8f002daa8dffe517d54dff672ee4832b9ce26e16a",
+      "archivo": "reportes/lote-066/qa-local/movil/TELF020-390.png",
+      "sha256": "8f491de9832e41d6169dc16f0d1b42bb687726ed96e618626fdf76329b35c94f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-065/qa-local/movil/TELF020-1280.png",
-        "sha256": "aaba19950e31f3113210291efc3f36537ca824a6b6ab9afd4f0bb7b9c5ec7aea",
+        "archivo": "reportes/lote-066/qa-local/movil/TELF020-1280.png",
+        "sha256": "0c6a2f2c4a1c97639e159a4eddbf4ee826b4e73afe0f861bee3598d25992f1b6",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -410,9 +415,33 @@
   },
   "beneficios": [
     {
+      "valor": "16 GB RAM total",
+      "titulo": "Memoria para tus aplicaciones",
+      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "especificaciones": [
+        "RAM total comercial"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "256 GB",
+      "titulo": "Espacio para lo que te importa",
+      "descripcion": "Tus fotos, videos y aplicaciones, siempre a mano.",
+      "especificaciones": [
+        "Almacenamiento"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
       "valor": "7000 mAh",
-      "titulo": "Batería para tu día",
-      "descripcion": "Capacidad de batería declarada en el catálogo del propietario.",
+      "titulo": "Energía para tu rutina",
+      "descripcion": "Conversa, mira tus series y sigue conectado en tu día a día.",
       "especificaciones": [
         "Batería"
       ],
@@ -423,10 +452,44 @@
     },
     {
       "valor": "6,9 pulgadas FHD+, hasta 144 Hz",
-      "titulo": "Pantalla amplia",
-      "descripcion": "Consulta contenido y aplicaciones en la pantalla de este modelo.",
+      "titulo": "Disfruta cada contenido",
+      "descripcion": "Más espacio visual para tus series, redes y videollamadas.",
       "especificaciones": [
         "Pantalla"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ],
+  "ram_comercial": {
+    "total_gb": 16,
+    "fisica_gb": 8,
+    "virtual_gb": 8,
+    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
+    "desglose": "8 GB físicos + 8 GB virtuales"
+  },
+  "telefonia_liberada": {
+    "confirmado": true,
+    "fuente": "importacion/reglas-sku.json",
+    "evidencia": "Confirmación expresa del propietario: todos los teléfonos liberados, cualquier operadora."
+  },
+  "destacados_comerciales": [
+    {
+      "valor": "Cámara 50 MP",
+      "especificaciones": [
+        "Cámara principal"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Carga hasta 33 W",
+      "especificaciones": [
+        "Carga máxima"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
