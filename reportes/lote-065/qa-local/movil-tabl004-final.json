@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "fecha": "2026-10-12T01:55:57.520Z",
+  "base": "http://127.0.0.1:8765",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "TABL004",
+      "sku": "TABL004",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-12T01:55:57.964Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/tabl004-tablet-k2-edicion-mario-bros/",
+      "url_comprobada": "http://127.0.0.1:8765/productos/tabl004-tablet-k2-edicion-mario-bros/",
+      "archivo_html": "productos/tabl004-tablet-k2-edicion-mario-bros/index.html",
+      "http": 200,
+      "sha256_html": "8e175adf831b88e1fa286308ef7954e1babf6f221b309876ee0846e342cbb9c9",
+      "sha256_html_local": "8e175adf831b88e1fa286308ef7954e1babf6f221b309876ee0846e342cbb9c9",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/tabl004/TABL004-01.webp",
+        "url_cargada": "http://127.0.0.1:8765/imagenes/tabl004/TABL004-01-600.webp?v=9f7067d189335ebd",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8765/productos/tabl004-tablet-k2-edicion-mario-bros/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/imagenes/tabl004/TABL004-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/tabl001-tablet-redmi-pad-2-11-pulgadas-128gb-4gb-4gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/tabl003-tablet-redmi-pad-2-9-7-pulgadas-128gb-4gb-4gb/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/lote-065/qa-local/movil-tabl004-final/TABL004-390.png",
+      "sha256": "996dd9b4076e8ed714f1e420c5e388a271fdd8535a4bd035700852b3939d7a3f",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/lote-065/qa-local/movil-tabl004-final/TABL004-1280.png",
+        "sha256": "ed21e5f2d10fe7c152c353676ee5e11dc458f83479d09d167a802b404f38ae32",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
