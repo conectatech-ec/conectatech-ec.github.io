@@ -1,3 +1,7 @@
+## Navegación y orden expresos del propietario — 13 de octubre de 2026
+
+Mostrar primero las nuevas publicaciones reales y verificadas, después los productos actualizados; ordenar por fecha efectiva dentro de cada grupo. No confundir la incorporación al registro con una publicación nueva, ni renovar fechas mediante reverificación. Conservar evidencia del catálogo público anterior. Añadir números de página y acceso directo a cualquier página, incluyendo retroceso de 5 a 2. Mantener precios, stock, 1170 SKU, 593, fotografías aprobadas y URLs. El propietario pregunta si conviene mantener la protección de main; no ha confirmado que terminó la sesión antigua ni ha revocado expresamente la restricción de producción del 12 de octubre.
+
 ## Solicitud de continuidad desde esta sesión — 13 de octubre de 2026
 
 El propietario pidió finalizar la sesión antigua y continuar todas las operaciones desde este chat. No existe control disponible para cancelar otra conversación de Codex y la sesión antigua no es un proceso identificado en este entorno. NO registrar su terminación ni exclusividad como hechos. Continuar preparación de lotes controlados desde el checkpoint 6b337eae, conservar avances y repetir deduplicación frente a main/web. La restricción previa de no modificar main o producción mientras siga activa permanece pendiente de resolución; la falta de nuevos commits no demuestra que terminó.

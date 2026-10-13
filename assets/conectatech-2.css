@@ -181,7 +181,14 @@ header .brand{font-size:clamp(23px,2.3vw,32px)}
 #grid .ct-compact-card .pvp{font-size:10px;margin:0}
 #grid .ct-compact-card .actions{display:grid;grid-template-columns:1fr;gap:5px}
 #grid .ct-compact-card .detail,#grid .ct-compact-card .wa{margin:0;min-height:36px;padding:8px 6px;font-size:11px;border-radius:9px}
-.ct-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin:25px 0}
+.ct-pagination{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;margin:25px 0}
+.ct-page-controls,.ct-page-numbers{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;max-width:100%}
+.ct-page-numbers{max-width:680px}
+.ct-page-numbers button{min-width:44px;min-height:44px;padding:8px}
+.ct-page-numbers button[aria-current="page"]{background:#14365d;color:white;border-color:#14365d}
+.ct-page-jump{color:#53637b;font-size:13px;font-weight:800;white-space:nowrap}
+.ct-page-jump select{font:inherit;color:#14365d;background:white;border:1px solid #cbd9e9;border-radius:8px;min-height:40px;padding:5px}
+.ct-pagination button:focus-visible,.ct-page-jump select:focus-visible{outline:3px solid #1480e8;outline-offset:2px}
 .ct-pagination[hidden]{display:none}
 .ct-pagination button{border:1px solid #cbd9e9;border-radius:10px;padding:11px 17px;background:white;color:#14365d;font-weight:800;cursor:pointer}
 .ct-pagination button:disabled{opacity:.4;cursor:not-allowed}

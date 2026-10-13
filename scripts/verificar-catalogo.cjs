@@ -153,8 +153,8 @@ async function main() {
           const list = inStock.slice();
           const updatedTime = p => Date.parse(payload.productos[p.sku]?.actualizadoEn || '') || 0;
           const hasPhoto = p => Boolean(p.imageUrl || payload.productos[p.sku]?.imagen?.src);
-          if (mode === 'fotos') list.sort((a, b) => Number(hasPhoto(b)) - Number(hasPhoto(a)) || updatedTime(b) - updatedTime(a));
-          if (mode === 'recientes') list.sort((a, b) => updatedTime(b) - updatedTime(a));
+          const priority = p => ({nuevo: 0, actualizado: 1}[payload.productos[p.sku]?.tipoCambio] ?? 2);
+          if (mode === 'fotos' || mode === 'recientes') list.sort((a, b) => priority(a) - priority(b) || updatedTime(b) - updatedTime(a));
           if (mode === 'nombre') list.sort((a, b) => a.name.localeCompare(b.name, 'es', {sensitivity: 'base', numeric: true}));
           if (mode === 'precio-asc') list.sort((a, b) => a.promo - b.promo);
           if (mode === 'precio-desc') list.sort((a, b) => b.promo - a.promo);
@@ -194,6 +194,15 @@ async function main() {
           check('paginacion_siguiente', equals(await ids(), order(defaultMode).slice(pageSize, pageSize * 2).map(p => p.sku)), 'Página2 no conserva orden de novedades.');
           await page.locator('#ct-pages button[data-page="prev"]').click();
           check('paginacion_anterior', equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Página anterior no restaura resultados.');
+          if (inStock.length > pageSize * 4) {
+            await page.locator('#ct-pages select[data-page-select]').selectOption('5');
+            check('paginacion_5', equals(await ids(), order(defaultMode).slice(pageSize * 4, pageSize * 5).map(p => p.sku)), 'No se puede ir directamente a la página5.');
+            await page.locator('#ct-pages button[data-page="2"]').click();
+            check('paginacion_5_a_2', equals(await ids(), order(defaultMode).slice(pageSize, pageSize * 2).map(p => p.sku)), 'No se puede regresar de5 a2 mediante número.');
+            check('pagina_activa', await page.locator('#ct-pages button[aria-current="page"]').getAttribute('data-page') === '2', 'La página activa no queda indicada.');
+            check('paginacion_sin_desbordamiento', await page.locator('#ct-pages').evaluate(nav => nav.scrollWidth <= nav.clientWidth), 'Los números de página desbordan el móvil.');
+            await page.locator('#ct-pages button[data-page="1"]').click();
+          }
         }
         const categoryName = [...new Set(inStock.map(category))].find(name => inStock.filter(p => category(p) === name).length > pageSize) || category(inStock[0]);
         const chip = page.locator('#chips .chip').filter({hasText: categoryName});

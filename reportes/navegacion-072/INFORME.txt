@@ -1,0 +1,21 @@
+CONECTATECH — avance verificable, 13 de octubre de 2026
+
+Estado público comprobado: main 25933d79e529a2cbc531c3db15837a31165d2b1f, catálogo público idéntico a esa versión. 1170 SKU, 280 con imagen y 890 sin imagen. Esta continuación publicó 0 SKU nuevos y 0 mejoras; sus candidatos aún están en la rama catalogo/continuacion-cierre067-20261012. No existe herramienta para cancelar otro chat de Codex y no se afirma exclusividad.
+
+Lote067 recuperado: las 100 fichas ya públicas fueron verificadas por HTTP y Chromium. Se conservan las 36 primeras portadas, 3 correcciones y 61 mejoras existentes. Su registro recuperado todavía necesita integración; no son 100 publicaciones nuevas de este chat.
+
+Cinco publicaciones nuevas listas para integración: MICR09, MICR23, PARL003, AROD001 y COBE004. Contratos, fotos aprobadas, precios, stock y QA guardados en los checkpoints anteriores. No repetir producción de sus imágenes.
+
+14 de las 16 correcciones solicitadas listas y verificadas localmente: AUDI108 y AUDI114 erguidos; AUDI015 acabado nuevo sin tapa inventada; AUDI017 AAA; AUDI018 sin gomas; AUDI098 vista cerrada con JBL real; REL071 correa negra y título sin color de correa; REL038 curvatura ligera de cristal; TABL002 16 GB total (8 física + 8 virtual); JUGU134 mejor ángulo; ADAP060 cable hasta dos salidas; JUGU135 dorado adicional conservando blanco; JUGU138 nueva presentación; SOPO037 completo. Evidencia individual: reportes/correcciones-069/cierre.json.
+
+Dos correcciones pendientes: REL050 requiere una referencia más nítida/fiel (se descartaron propuestas que alteraban el bisel); CARG016 sólo tiene referencias propias de empaque y no se obtuvo otra fuente apta. Se mantienen sus imágenes anteriores. Otros pendientes de producción están individualizados en reportes/continuacion-070/resultados-produccion.json.
+
+Navegación implementada: botones numerados, página activa indicada y selector con las 49 páginas. Comprobados 5→2, 12→2, salto a17 y última página, límites Anterior/Siguiente, búsqueda y reinicio de orden; sin desbordamiento a390px ni1280px. Capturas en qa-local/paginas-390.png y paginas-1280.png.
+
+Orden predeterminado: publicaciones nuevas verificadas primero, después productos actualizados; fecha efectiva dentro de cada grupo. La primera incorporación al registro no acredita publicación nueva. Se agregó clasificación con evidencia de historial o del catálogo anterior al lote067, sin cambiar fechas, huellas, historial o datos. Las cinco publicaciones candidatas sólo obtendrán tipoCambio=nuevo después de desplegar y comprobar HTTP contra un snapshot público anterior; las14 correcciones serán actualizaciones. Fixture aislado comprobó que una actualización con fecha posterior no desplaza a un producto nuevo; fechas sintéticas no se guardaron en el catálogo.
+
+Verificaciones locales: 15 pruebas de registro aprobadas; 111 SKU del catálogo revisados en móvil y escritorio, cero errores; navegación adicional y prioridad de novedades aprobadas. Precios, stock,1170 SKU,593, URLs, reglas, fichas, contratos y fotos intactos frente al checkpoint a54de865. Código JavaScript validado y git diff --check sin errores. CI de rama comprobará nuevamente el candidato; su estado se consulta en GitHub.
+
+Recomendación: integrar este avance controlado antes de iniciar otro lote de12 SKU, favoreciendo nuevas publicaciones reales con referencias completas. La restricción expresa del propietario del12 de octubre (no modificar main o producción mientras no se descarte actividad simultánea) sigue vigente. La pregunta actual solicita consejo y no confirma el fin del otro chat. Se requiere su autorización expresa para publicar bajo concurrencia incierta.
+
+Procedimiento de integración tras esa autorización: volver a consultar main y deduplicar contra web/ramas; incorporar cualquier avance concurrente antes de integrar; usar actualización normal sin force push, que rechaza una historia divergente; comprobar Pages y recursos de los19 candidatos; sólo entonces actualizar contratos/registro de publicación y repetir QA pública. Usar un snapshot público previo actualizado y --catalogo-anterior en scripts/registrar-actualizaciones.py. No modificar precios, stock o datos593, ni dar por cerrado REL050/CARG016. La comprobación reciente sin actividad GitHub no demuestra terminación de la sesión antigua.

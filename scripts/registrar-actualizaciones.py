@@ -195,12 +195,22 @@ def inspect_sku(root, sku, product, custom, slug, row):
     return content, image
 
 
-def register(root, report, previous, report_path, report_sha):
+def register(root, report, previous, report_path, report_sha, previous_catalog=None):
     _, products = editorial.read_catalog(root)
     by_sku = {p['sku']: p for p in products}
     seo = json.loads((Path(root) / 'seo-contenido.json').read_text())
     slugs = json.loads((Path(root) / 'seo-pages.json').read_text())
     when = stamp(report['fecha']); date = when.isoformat()
+    if previous_catalog is not None:
+        if (previous_catalog.get('url') != ORIGIN + '/' or
+                not re.fullmatch(r'[a-f0-9]{64}', str(previous_catalog.get('sha256', ''))) or
+                stamp(previous_catalog['fecha']) >= when):
+            raise ValueError('El catálogo anterior debe proceder de la web pública y preceder a la verificación HTTP')
+        known = previous_catalog.get('skus', [])
+        covered = previous_catalog.get('sku_con_imagen', [])
+        if (not known or len(known) != len(set(known)) or len(covered) != len(set(covered)) or
+                not set(covered).issubset(known) or any(sku not in by_sku for sku in known)):
+            raise ValueError('Snapshot anterior desconocido, duplicado o incoherente')
     state = copy.deepcopy(previous) if previous else {'version': 1, 'criterio': 'Cambios semánticos publicados y verificados por HTTP; precios, stock, fuentes y fechas de revisión no alteran la fecha.', 'productos': {}}
     if state.get('version') != 1 or not isinstance(state.get('productos'), dict):
         raise ValueError('Registro de actualizaciones incompatible; no se sustituye')
@@ -223,9 +233,17 @@ def register(root, report, previous, report_path, report_sha):
             if old:
                 history.append({k: copy.deepcopy(old[k]) for k in ('actualizadoEn', 'huella', 'imagen', 'publicacion') if k in old})
             entry = dict(old or {})
+            # No confundir incorporación al registro con una publicación nueva:
+            # sólo el snapshot público anterior acredita ausencia de portada.
+            kind = 'actualizado' if old and (old.get('imagen') or {}).get('src') else 'catalogo'
+            if previous_catalog is not None and sku in previous_catalog['skus']:
+                kind = 'actualizado' if sku in previous_catalog['sku_con_imagen'] else 'nuevo'
             entry.update(actualizadoEn=date, huella=fingerprint, imagen=image, contenido=content, historial=history,
+                tipoCambio=kind,
                 publicacion={'fecha_http': date, 'reporte': str(report_path), 'sha256_reporte': report_sha,
                              'sha256_ficha': row['sha256_ficha'], 'url': row['url']})
+            if previous_catalog is not None:
+                entry['publicacion']['catalogo_anterior'] = {k: previous_catalog[k] for k in ('url', 'fecha', 'sha256')}
             state['productos'][sku] = entry
             results.append({'sku': sku, 'estado': 'actualizado' if old else 'incorporado', 'actualizadoEn': date})
         except (ValueError, OSError, KeyError, TypeError) as exc:
@@ -234,7 +252,7 @@ def register(root, report, previous, report_path, report_sha):
 
 
 def payload(state):
-    return {'ordenPredeterminado': state.get('ordenPredeterminado', 'recientes'), 'productos': {sku: {key: row[key] for key in ('actualizadoEn', 'huella', 'imagen')}
+    return {'ordenPredeterminado': state.get('ordenPredeterminado', 'recientes'), 'productos': {sku: {**{key: row[key] for key in ('actualizadoEn', 'huella', 'imagen')}, 'tipoCambio': row.get('tipoCambio', 'catalogo')}
             for sku, row in sorted(state['productos'].items())}}
 
 
@@ -274,13 +292,15 @@ def main():
     parser.add_argument('--root', default=str(ROOT)); parser.add_argument('--reporte-http', required=True)
     parser.add_argument('--registro', default='importacion/actualizaciones-sku.json')
     parser.add_argument('--payload', default='assets/catalogo-publicado.js')
+    parser.add_argument('--catalogo-anterior', help='Snapshot público previo al despliegue para distinguir portadas nuevas de actualizaciones')
     parser.add_argument('--orden-predeterminado', choices=ORDERS, help='Cambio explícito de configuración; conserva fechas y huellas por SKU')
     parser.add_argument('--reporte', default='reportes/actualizaciones-sku.json'); parser.add_argument('--aplicar', action='store_true')
     args = parser.parse_args(); root = Path(args.root).resolve()
     protected = {p: (root / p).read_bytes() for p in ('index.html', 'seo-contenido.json', 'datos-593/inventario-publico.csv', 'seo-pages.json')}
     report_data = safe(root, args.reporte_http).read_bytes()
     registry = safe(root, args.registro); before = registry.read_bytes() if registry.exists() else None
-    state, results = register(root, json.loads(report_data), json.loads(before) if before else {}, args.reporte_http, sha(report_data))
+    previous_catalog = json.loads(safe(root, args.catalogo_anterior).read_text()) if args.catalogo_anterior else None
+    state, results = register(root, json.loads(report_data), json.loads(before) if before else {}, args.reporte_http, sha(report_data), previous_catalog)
     set_default_order(state, args.orden_predeterminado)
     for path, content in protected.items():
         if (root / path).read_bytes() != content:

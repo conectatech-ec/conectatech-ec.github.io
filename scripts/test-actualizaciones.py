@@ -170,5 +170,39 @@ class UpdateTests(unittest.TestCase):
             with self.assertRaises(ValueError): m.version_asset_reference(source, b'payload')
 
 
+    def test_new_photo_requires_previous_public_catalog_evidence(self):
+        receipt = self.http_report()
+        previous_catalog = {'url': m.ORIGIN + '/', 'fecha': '2026-10-09T07:00:00+00:00',
+            'sha256': 'a' * 64, 'skus': list(self.products), 'sku_con_imagen': ['TEST002']}
+        state, rows = m.register(self.root, receipt, {}, 'reportes/prueba.json', m.sha(json.dumps(receipt).encode()), previous_catalog)
+        self.assertEqual(state['productos']['TEST001']['tipoCambio'], 'nuevo')
+        self.assertEqual(state['productos']['TEST002']['tipoCambio'], 'actualizado')
+        self.assertEqual(m.payload(state)['productos']['TEST001']['tipoCambio'], 'nuevo')
+        self.products['TEST001']['promo'] = 10.5
+        repeated, _ = m.register(self.root, self.http_report('2026-10-11T07:00:00+00:00'), state,
+            'reportes/relectura.json', 'b' * 64, previous_catalog)
+        self.assertEqual(repeated, state)
+        self.seo['TEST001']['descripcion'] = 'Otro uso revisado.'
+        covered = {**previous_catalog, 'fecha': '2026-10-10T07:00:00+00:00', 'sku_con_imagen': list(self.products)}
+        updated, _ = m.register(self.root, self.http_report('2026-10-11T08:00:00+00:00'), state,
+            'reportes/cambio.json', 'c' * 64, covered)
+        self.assertEqual(updated['productos']['TEST001']['tipoCambio'], 'actualizado')
+        self.assertEqual(state['productos']['TEST001']['tipoCambio'], 'nuevo')
+
+    def test_first_registration_is_not_proof_of_new_publication(self):
+        state, _ = self.register(self.http_report())
+        self.assertTrue(all(row['tipoCambio'] == 'catalogo' for row in state['productos'].values()))
+
+    def test_snapshot_cannot_come_from_future_or_other_site(self):
+        receipt = self.http_report()
+        snapshot = {'url': m.ORIGIN + '/', 'fecha': '2026-10-11T07:00:00+00:00',
+            'sha256': 'a' * 64, 'skus': list(self.products), 'sku_con_imagen': []}
+        with self.assertRaises(ValueError):
+            m.register(self.root, receipt, {}, 'reportes/prueba.json', 'b' * 64, snapshot)
+        snapshot.update(fecha='2026-10-09T07:00:00+00:00', url='http://127.0.0.1/')
+        with self.assertRaises(ValueError):
+            m.register(self.root, receipt, {}, 'reportes/prueba.json', 'b' * 64, snapshot)
+
+
 if __name__ == '__main__':
     unittest.main()
