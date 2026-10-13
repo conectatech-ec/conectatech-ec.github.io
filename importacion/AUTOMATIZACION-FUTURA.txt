@@ -1,0 +1,25 @@
+CONECTATECH — notas para automatización futura, 13 de octubre de 2026
+
+Prioridad actual: publicar progresivamente el catálogo y atender correcciones del propietario. Este documento conserva aprendizaje; no agrega servicios, WebStore, SEO avanzado ni integraciones.
+
+Unidad de trabajo: SKU existente, huella de fuentes, revisión de reglas y hash de imagen aprobada. Un mismo SKU no vuelve a producirse si esos valores y los archivos coinciden. Una corrección del propietario abre una nueva revisión sólo para el SKU afectado, conservando originales, decisiones anteriores y fotografías correctas.
+
+Fuentes: usar metadatos actuales y descargar sólo cambios. Mantener bytes fuente privados en Drive y copia local ignorada por Git; guardar ID, procedencia, tamaño, fecha y SHA-256, nunca enlaces firmados de descarga ni datos privados. Distinguir fotografía física, producto visible bajo ventana, empaque e ilustración; esta decisión no se deduce del nombre del archivo. Si una cubierta oculta hardware o resulta dudosa, pedir otra vista y continuar los otros SKU.
+
+Reglas comerciales: precios, PVP, stock, información de 593 y 1.170 SKU son protegidos. Autenticidad, identidad física, derechos de imágenes y fidelidad son verificaciones independientes. Una excepción como AUDI017 AAA, diademas verticales, JBL físico o RAM total se registra permanentemente y se aplica a portada, galería, catálogo y exportaciones. No afirmar un modelo histórico contradicho por las referencias actuales; documentar el caso y omitir el dato dudoso cuando el contrato permita hacerlo.
+
+Revisión humana conservada: geometría, logos, conectores, botones, microtextos, color y unidad vendida. La generación comercial mejora limpieza/luz/presentación, pero no acredita identidad. Una imagen nítida no prueba que sea fiel. No activar banderas de aprobación para saltarse una discrepancia ni repetir propuestas descartadas con fuentes sin cambios.
+
+Contrato vigente: validaciones de 593, identidad, contenido, unidad, derechos, revisión visual y capturas vinculadas al HTML. Reutilizar el pipeline actual y sus WebP 1200/600/300. El mismo medio mantiene su hash y una reverificación no renueva fecha de novedad. Categorías por SKU pueden necesitar excepciones; no sustituir una familia completa por la clasificación de un solo producto.
+
+Publicación progresiva: preparar un lote pequeño en rama independiente y guardar checkpoint. Comprobar main y la web antes de cada integración; si cambia el historial, conservarlo y revisar la selección antes de escribir. Usar avance normal, nunca forzar una rama divergente. No inferir exclusividad porque falten nuevos commits.
+
+Promoción al catálogo: publicar y verificar primero fichas/archivos aptos, conservando el catálogo visible anterior. Tras comprobar HTTP, preparar simultáneamente las tarjetas, clasificación nuevo/actualizado y fechas reales de los SKU verificados; publicar esa promoción en un único cambio. Así las nuevas portadas aparecen al principio desde su primera aparición en el catálogo. El lote074 prueba esta secuencia manual con herramientas existentes; no se desarrolla ahora un coordinador nuevo.
+
+Evidencia previa: snapshot público anterior con fecha, URL, hash, SKU conocidos y SKU con portada. Sólo ausencia previa de portada y cambio real servido permiten contar una nueva publicación. La primera incorporación al registro técnico no equivale a producto nuevo publicado. Los nuevos van primero, seguidos de actualizados; fecha efectiva dentro de cada grupo.
+
+Cierre verificable: HTTP de fichas y de todos los tamaños, datos comerciales y hashes exactos; Chromium público en móvil/escritorio, tarjetas, filtros, búsqueda, orden, enlaces y páginas numeradas. Un HTTP 200 sin foto o una imagen distinta sigue pendiente. Separar publicados nuevos, mejorados, bloqueados, revisión y errores; no inflar totales con consultas o intentos fallidos.
+
+Operación recuperable: guardar el manifiesto, contratos, fuentes verificadas, causas concretas de pendientes, evidencia y selección siguiente. Conservar una fotografía correcta al fallar una mejora. Acotar producción y esperas a un lote, entregar un cierre y continuar desde su checkpoint. Futuro coordinador: reintentos limitados por fase, pausa ante conflictos reales, bloqueo de escritura compartida y reanudación desde evidencia válida; nunca sesiones sin límite.
+
+Correcciones todavía abiertas: REL050 necesita una vista nítida del mismo reloj con numeración del bisel legible; CARG016 necesita fotografías físicas del BATEN CX-305 y sus conexiones. No regenerar con referencias idénticas a las ya descartadas. Instrucciones detalladas y revisiones en reglas-sku.json y reportes de correcciones.
