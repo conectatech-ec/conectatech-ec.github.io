@@ -1,3 +1,7 @@
+## Solicitud de continuidad desde esta sesión — 13 de octubre de 2026
+
+El propietario pidió finalizar la sesión antigua y continuar todas las operaciones desde este chat. No existe control disponible para cancelar otra conversación de Codex y la sesión antigua no es un proceso identificado en este entorno. NO registrar su terminación ni exclusividad como hechos. Continuar preparación de lotes controlados desde el checkpoint 6b337eae, conservar avances y repetir deduplicación frente a main/web. La restricción previa de no modificar main o producción mientras siga activa permanece pendiente de resolución; la falta de nuevos commits no demuestra que terminó.
+
 ## Correcciones más recientes del propietario — 13 de octubre de 2026
 
 Nuevos SKU publicados y verificados siempre primero: orden predeterminado recientes y fechas efectivas únicamente tras cambio real publicado. La sesión antigua continúa activa y no puede detenerse: no modificar main ni producción; guardar avances en rama independiente.

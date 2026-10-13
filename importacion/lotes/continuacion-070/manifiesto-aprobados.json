@@ -1,0 +1,77 @@
+{
+  "version": 3,
+  "lote": "continuacion-070",
+  "cantidad_seleccionada": 2,
+  "skus": [
+    "AROD001",
+    "COBE004"
+  ],
+  "imagenes": {
+    "AROD001": [
+      {
+        "archivo": "importacion/lotes/continuacion-070/editorial-imagenes/AROD001.png",
+        "sha256": "77bab22ca7a57af60dbce83af97a116b4844076008e4ff77a8449da3e3b62e6e",
+        "posicion": 1,
+        "revision_regla": 2,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/1MzR-CMnooAUDZfOTuC_U6Mntnxj4plva/view?usp=drivesdk",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "referencia_fabricante": false,
+        "nota_revision": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Panel físico cuadrado, frontal apagado, cuerpo negro, ranura superior, puerto USB-C lateral y pinza con articulación cotejados con las dos fotos propias. Modelo y modos leídos en empaque; la imagen procede del producto físico, no de la ilustración.",
+        "ajustes": {}
+      }
+    ],
+    "COBE004": [
+      {
+        "archivo": "importacion/lotes/continuacion-070/editorial-imagenes/COBE004.png",
+        "sha256": "815d61434906ddfaff0855c99ad2be707b8febb3c4a0a4b23923ebb7613fa675",
+        "posicion": 1,
+        "revision_regla": 2,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/14cAn3vGBzmQ1nHvPOHcnDhTqCEd_JhMH/view?usp=drivesdk",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "referencia_fabricante": false,
+        "nota_revision": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Objeto físico visible dentro de bolsa transparente. Mantener geometría, botones decorativos de colores, cruceta, círculos y argolla, retirando bolsa y etiquetas. La etiqueta propia dice AirPods4; no publicar el nombre histórico PRO4 ni inventar compatibilidad universal, electrónica, marcas o licencia.",
+        "ajustes": {}
+      }
+    ]
+  },
+  "aprobaciones": {
+    "AROD001": {
+      "estado": "APROBADO",
+      "identidad_verificada": true,
+      "ficha_verificada": true,
+      "uso_comercial_permitido": true
+    },
+    "COBE004": {
+      "estado": "APROBADO",
+      "identidad_verificada": true,
+      "ficha_verificada": true,
+      "uso_comercial_permitido": true
+    }
+  },
+  "contratos": {
+    "AROD001": "importacion/contratos/AROD001.json",
+    "COBE004": "importacion/contratos/COBE004.json"
+  },
+  "categorias_comerciales": {
+    "Audifonos": {
+      "nombre": "Fotografía y Creación de Contenido",
+      "subcategoria": "Audifonos",
+      "verificada": true,
+      "fuente": "importacion/lotes/continuacion-070/fichas-verificadas.json"
+    },
+    "Cobertores": {
+      "nombre": "Protección para Dispositivos",
+      "subcategoria": "Cobertores",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    }
+  }
+}
