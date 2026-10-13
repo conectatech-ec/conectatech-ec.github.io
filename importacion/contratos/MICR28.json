@@ -123,7 +123,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr28-microfono-m6-set-1/",
   "fecha_verificacion": "2026-10-13T20:23:57.917739+00:00",
   "descripcion": "Kit M6 negro para captar voz sin un cable entre el micrófono y su receptor. Incluye un micrófono compacto con clip y un receptor USB-C para equipos compatibles con entrada de audio externa.",
@@ -207,8 +207,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Vista posterior física del micrófono: clip largo, abertura y carcasa preservados; receptor con USB-C metálico y abertura oval. Un micrófono, un receptor; no se trasladan los dos micrófonos ilustrados en la caja ni se inventa vista frontal."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/continuacion-074/http-publicacion.json",
+      "sha256": "715c4d06d2287bde4c76f98b8f4f0bed15fdb4e3e3ba1befb06c064177dd02f4",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-13T20:37:23.910019+00:00",
+      "sku": "MICR28"
     },
     "movil": {
       "solicitado": "MICR28",
@@ -289,5 +292,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T20:37:23.910019+00:00"
 }

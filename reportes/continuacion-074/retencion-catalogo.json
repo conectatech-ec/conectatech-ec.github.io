@@ -10,5 +10,9 @@
     "PARL002",
     "PARL011"
   ],
-  "criterio": "Mantener catálogo público previo mientras se verifican por HTTP las cuatro fichas y sus fotos. Promover tarjetas y estados juntos sólo después de comprobar los recursos; no renovar fechas anticipadamente."
+  "criterio": "Mantener catálogo público previo mientras se verifican por HTTP las cuatro fichas y sus fotos. Promover tarjetas y estados juntos sólo después de comprobar los recursos; no renovar fechas anticipadamente.",
+  "resultado": "AUTOGENERADOR_REINCORPORA_PORTADAS_DESDE_MEDIOS",
+  "commit_auto": "675b1da83c4c864ca1e5b21330e287dac7aabab1",
+  "hallazgo": "aplicar-reglas-medios.cjs asigna imageUrl en generar-seo.cjs, por lo que restaurar el índice anterior no basta para separar ficha y catálogo. No se modificó el código automático. Se alinean las cuatro filas con el candidato aprobado y se registran fechas/tipos sólo después de HTTP.",
+  "automatizacion_futura": "Separar promoción visible del catálogo de la preparación de medios con control explícito de publicación comprobada."
 }

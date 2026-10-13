@@ -112,7 +112,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl002-parlante-luces-ms2676bt/",
   "fecha_verificacion": "2026-10-13T20:23:57.917739+00:00",
   "descripcion": "Parlante portátil gris grafito con dos altavoces frontales y conexión Bluetooth. Presentación limpia de la unidad real para acompañar tu música, con los conos y sus protectores visibles.",
@@ -204,8 +204,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Unidad física gris/negra, dos conos con protectores SPEAKER, ranuras laterales centrales, borde redondeado y placa MS-2675BT preservados. Nombre histórico MS2676BT discrepante: se omite modelo comercial del título y especificaciones, sin borrar la placa real ni afirmar luces encendidas."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/continuacion-074/http-publicacion.json",
+      "sha256": "715c4d06d2287bde4c76f98b8f4f0bed15fdb4e3e3ba1befb06c064177dd02f4",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-13T20:37:23.910019+00:00",
+      "sku": "PARL002"
     },
     "movil": {
       "solicitado": "PARL002",
@@ -286,5 +289,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T20:37:23.910019+00:00"
 }

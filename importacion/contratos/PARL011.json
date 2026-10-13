@@ -123,7 +123,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl011-parlante-abs-4109/",
   "fecha_verificacion": "2026-10-13T20:23:57.917739+00:00",
   "descripcion": "Parlante portátil ABS-4109 con conexión Bluetooth y rejilla frontal oscura. Su cuerpo de esquinas redondeadas y acabado negro con grafito ofrece una presentación compacta para reproducir tu música.",
@@ -207,8 +207,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Producto físico erguido con marco gris grafito redondeado, rejilla oscura fina y altavoz circular central visible; acabado limpio. Se retiran caja y fondo de tienda, sin generar luces, puertos, logos o controles no observados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/continuacion-074/http-publicacion.json",
+      "sha256": "715c4d06d2287bde4c76f98b8f4f0bed15fdb4e3e3ba1befb06c064177dd02f4",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-13T20:37:23.910019+00:00",
+      "sku": "PARL011"
     },
     "movil": {
       "solicitado": "PARL011",
@@ -289,5 +292,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T20:37:23.910019+00:00"
 }

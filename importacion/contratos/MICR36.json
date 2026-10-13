@@ -123,7 +123,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr36-microfono-jbl-quantum-stream-wireless-usb-c/",
   "fecha_verificacion": "2026-10-13T20:23:57.917739+00:00",
   "descripcion": "Quantum Stream Wireless de JBL en versión con receptor USB-C. Un conjunto compacto de micrófono y receptor para grabar voz con un dispositivo compatible, conservando el formato negro del kit fotografiado.",
@@ -209,8 +209,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Dos piezas físicas visibles bajo ventana transparente: caras estriadas, rejilla del micrófono, zona lisa superior del receptor, logos JBL horizontal/vertical y USB-C lateral cotejados. Sin caja, blister, estuche ilustrado o accesorios no visibles; sólo las caras reales observadas."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/continuacion-074/http-publicacion.json",
+      "sha256": "715c4d06d2287bde4c76f98b8f4f0bed15fdb4e3e3ba1befb06c064177dd02f4",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-13T20:37:23.910019+00:00",
+      "sku": "MICR36"
     },
     "movil": {
       "solicitado": "MICR36",
@@ -291,5 +294,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T20:37:23.910019+00:00"
 }
