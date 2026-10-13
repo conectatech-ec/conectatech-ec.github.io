@@ -1,0 +1,100 @@
+{
+  "version": 3,
+  "lote": "continuacion-068",
+  "cantidad_seleccionada": 3,
+  "skus": [
+    "MICR09",
+    "MICR23",
+    "PARL003"
+  ],
+  "imagenes": {
+    "MICR09": [
+      {
+        "archivo": "importacion/lotes/continuacion-068/editorial-imagenes/MICR09.png",
+        "sha256": "59f42a29b1e20ce5cd921f5bf4d0ca0f9c3973a2f334a096bf860aeaaa2d5c71",
+        "posicion": 1,
+        "revision_regla": 2,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/1p6YbIwH_ysjOvxPfvXUr9m1__vIbPe-Y/view?usp=drivesdk",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "referencia_fabricante": false,
+        "nota_revision": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Dos TX negros, cinco indicadores y sus iconos, marcas TX y un receptor USB-C: cotejados contra producto físico. Sin caras nuevas, accesorios añadidos ni cajas.",
+        "ajustes": {}
+      }
+    ],
+    "MICR23": [
+      {
+        "archivo": "importacion/lotes/continuacion-068/editorial-imagenes/MICR23.png",
+        "sha256": "f222a70a98ff9244415ada0e7ed855ef0405d946a717eb8a2922990255851e14",
+        "posicion": 1,
+        "revision_regla": 2,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/1FKTgZBHCqxBDy6q0_DOO2FK5ysXC27L2/view?usp=drivesdk",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "referencia_fabricante": false,
+        "nota_revision": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Dos micrófonos blancos con panel frontal e indicador, un receptor blanco USB-C con indicador: formas, posiciones y color cotejados contra producto físico. Sin cajas, puertos inventados ni estuche añadido.",
+        "ajustes": {}
+      }
+    ],
+    "PARL003": [
+      {
+        "archivo": "importacion/lotes/continuacion-068/editorial-imagenes/PARL003.png",
+        "sha256": "10666e01b954159363608a7bac2242fd172862ba4433ae0f277c4ca471dcc7d7",
+        "posicion": 1,
+        "revision_regla": 2,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/1X-iDW2qZoB7XDyJEk8Ikwiibvkby8yPC/view?usp=drivesdk",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "referencia_fabricante": false,
+        "nota_revision": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Parlante de frente azul perforado, marco ahumado, asa marrón, controles superiores observados y micrófono azul con rejilla negra: cotejados con foto real. Se mantiene la variante física, sin usar la ilustración multicolor del empaque.",
+        "ajustes": {}
+      }
+    ]
+  },
+  "aprobaciones": {
+    "MICR09": {
+      "estado": "APROBADO",
+      "identidad_verificada": true,
+      "ficha_verificada": true,
+      "uso_comercial_permitido": true
+    },
+    "MICR23": {
+      "estado": "APROBADO",
+      "identidad_verificada": true,
+      "ficha_verificada": true,
+      "uso_comercial_permitido": true
+    },
+    "PARL003": {
+      "estado": "APROBADO",
+      "identidad_verificada": true,
+      "ficha_verificada": true,
+      "uso_comercial_permitido": true
+    }
+  },
+  "contratos": {
+    "MICR09": "importacion/contratos/MICR09.json",
+    "MICR23": "importacion/contratos/MICR23.json",
+    "PARL003": "importacion/contratos/PARL003.json"
+  },
+  "categorias_comerciales": {
+    "Microfonos": {
+      "nombre": "Audio y Audífonos",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    },
+    "Parlantes": {
+      "nombre": "Audio y Audífonos",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    }
+  }
+}

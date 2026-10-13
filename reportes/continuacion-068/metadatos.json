@@ -1,0 +1,45 @@
+{
+  "modo": "aplicar",
+  "resultados": [
+    {
+      "sku": "MICR09",
+      "estado": "aplicado_local",
+      "campos": [
+        "beneficios",
+        "contenidoVenta"
+      ],
+      "relacionados": [
+        "MICR23",
+        "PARL003"
+      ]
+    },
+    {
+      "sku": "MICR23",
+      "estado": "aplicado_local",
+      "campos": [
+        "beneficios",
+        "contenidoVenta"
+      ],
+      "relacionados": [
+        "MICR09",
+        "PARL003"
+      ]
+    },
+    {
+      "sku": "PARL003",
+      "estado": "aplicado_local",
+      "campos": [
+        "beneficios",
+        "contenidoVenta"
+      ],
+      "relacionados": [
+        "MICR09",
+        "MICR23"
+      ]
+    }
+  ],
+  "precios_stock_sku_urls_imagenes_conservados": true,
+  "aprobados": 3,
+  "pendientes": 0,
+  "nota": "Metadatos locales. El importador editorial sigue a cargo de títulos, descripción y características; la publicación requiere verificación móvil y HTTP."
+}

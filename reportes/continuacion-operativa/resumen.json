@@ -1,0 +1,79 @@
+{
+  "fecha_utc": "2026-10-13T03:20:56.373573+00:00",
+  "rama": "catalogo/continuacion-cierre067-20261012",
+  "base_main": "25933d79e529a2cbc531c3db15837a31165d2b1f",
+  "actividad_simultanea": "NO_DESCARTADA",
+  "produccion_modificada": false,
+  "publicaciones_nuevas_de_esta_sesion": 0,
+  "lote067": {
+    "sku_publicos_verificados": 100,
+    "portadas_nuevas_ya_publicadas": 36,
+    "correcciones_ya_publicadas": 3,
+    "mejoras_comerciales_ya_publicadas": 61,
+    "http_errores": 0,
+    "qa_publica_movil_escritorio": 100,
+    "contratos_publicacion_verificados": 100,
+    "correccion_registro": {
+      "incorporados": 30,
+      "actualizados": 70,
+      "estado": "VERIFICADO_CANDIDATO_PENDIENTE_INTEGRACION_PRODUCCION"
+    },
+    "ci_cierre": {
+      "run_id": 38340189506,
+      "conclusion": "success"
+    }
+  },
+  "continuacion068": {
+    "candidatos_revisados": 6,
+    "fotografias_fuente_revisadas": 22,
+    "aprobados_locales": [
+      "MICR09",
+      "MICR23",
+      "PARL003"
+    ],
+    "pendientes": [
+      "MICR12",
+      "MICR13",
+      "MICR24"
+    ],
+    "retenido_por_microdetalle": "MICR12",
+    "sin_foto_fisica": [
+      "MICR13",
+      "MICR24"
+    ],
+    "contratos_prepublicacion": 3,
+    "qa_local_movil_escritorio": 3,
+    "qa_catalogo_final": {
+      "vistas_comprobadas": 2,
+      "vistas_verificadas": 2,
+      "sku_solicitados": 103,
+      "errores": 0
+    },
+    "publicados": 0
+  },
+  "catalogo_publico": {
+    "sku_unicos": 1170,
+    "fichas_con_foto_ya_auditadas": 278,
+    "pendientes_de_portada": 892,
+    "candidatos_locales_dentro_de_pendientes": 3
+  },
+  "conservacion": {
+    "sku_precios_pvp_stock": 1170,
+    "originales_y_medios_anteriores_intactos": true,
+    "urls_estables": 1170,
+    "inventario_593_intacto": true,
+    "reglas_comerciales_intactas": true,
+    "fotografias_lote067_regeneradas": 0
+  },
+  "pruebas": {
+    "test_incremental": {
+      "casos": 9,
+      "resultado": "OK"
+    },
+    "test_produccion": {
+      "casos": 6,
+      "resultado": "OK"
+    }
+  },
+  "paso_pendiente": "Descartar o coordinar actividad de sesión antigua; reconciliar main por SHA esperado; integrar cierre067 y candidatos aptos; comprobar Pages y QA público antes de contar nuevas publicaciones."
+}

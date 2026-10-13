@@ -1,3 +1,9 @@
+## Continuación operativa del propietario — 12 de octubre de 2026
+
+Prioridad: finalizar catálogo por lotes controlados y checkpoints verificables. Mientras no se descarte actividad de la sesión antigua, trabajar únicamente en rama independiente; no modificar main ni desplegar producción. La ausencia de commits o workflows no demuestra que la otra sesión haya terminado. Recuperar el cierre de lote067, reutilizar fotos correctas, comprobar publicación por HTTP y Chromium y conservar 1170 SKU, precios, PVP, stock, 593, URLs, originales y reglas previas. No desarrollar WebStore, SEO avanzado ni integraciones nuevas. No contar preparación local como publicación.
+
+El cierre candidato está en reportes/lote-067/cierre-recuperado.json: las 100 fichas están públicas y verificadas; la corrección del registro de catálogo requiere integración y QA público posterior. Continuación 068: tres SKU candidatos y tres excepciones documentadas; reutilizar sus fuentes y maestros.
+
 ## Orden vigente del propietario — lote 067
 
 Completar y publicar 100 logros reales por SKU; una revisión o pendiente no cuenta. Sustituir candidatos sin fuente apta por otros, conservando fidelidad y todos los controles. AUDI015: pulir como artículo nuevo, sin abrir el estuche Face Change. REL011: mejorar fotografía fiel al producto real. REL050: ángulo más comercial del mismo producto, conservando hardware y microtextos. No desarrollar WebStore ni integraciones.
