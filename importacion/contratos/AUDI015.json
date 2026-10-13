@@ -105,7 +105,8 @@
     "https://drive.google.com/file/d/1KAGLp72yDq3YhMKLihMwDb_0eDs_FdR9/view?usp=drivesdk",
     "https://drive.google.com/file/d/1WYHERQQEhCHdJ1dc-yMGqGZDhSmTU9tv/view?usp=drivesdk",
     "https://drive.google.com/file/d/1th4_dB3WuzchQTOSW75I_lEhuHO54uMc/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/lotes/correcciones-069/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/audi015/AUDI015-01.webp",
   "imagenes_secundarias": [],
@@ -120,8 +121,20 @@
       {
         "sha256": "9a7275c6e5bc946db1f7df9a9766d5f6a8e1e18de596a5a95fe3bede21e89bb9",
         "fuente": "https://drive.google.com/file/d/152Qgc_FIWgHwARAdVZLz37xjmTBKly6h/view?usp=drivesdk"
+      },
+      {
+        "sha256": "9e6cf7407e10f2ac00827af0881d3e7fc165ec2d49336f425fc9680f44bcb2f0",
+        "fuente": "https://drive.google.com/file/d/152Qgc_FIWgHwARAdVZLz37xjmTBKly6h/view?usp=drivesdk"
       }
-    ]
+    ],
+    "derivacion": {
+      "archivo_maestro": "/importacion/lotes/correcciones-069/editorial-imagenes/AUDI015.png",
+      "sha256_maestro": "9e6cf7407e10f2ac00827af0881d3e7fc165ec2d49336f425fc9680f44bcb2f0",
+      "fuente_fotografia_propia": "https://drive.google.com/file/d/152Qgc_FIWgHwARAdVZLz37xjmTBKly6h/view?usp=drivesdk",
+      "metodo": "Estuche cerrado Face Change pulido nuevo marfil limpio; rostro y NUEBISHTV conservados, sin apertura o bisagra inventadas.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
+    }
   },
   "especificaciones": [
     {
@@ -162,23 +175,23 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/audi015-audifonos-inalambricos-face-change-g05d/",
-  "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
+  "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "descripcion": "Audífonos Face Change G05D con estuche azul de expresiones intercambiables. Cambia la modalidad del diseño con el dedo: el estuche no tiene una tapita abatible que se abre.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 857,858,859,860; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 3,
+  "revision_regla": 4,
   "maestro": {
-    "archivo_maestro": "/imagenes/audi015/original-33d71f8ceb1bf003.png",
-    "sha256_maestro": "33d71f8ceb1bf00348a9a086ce43cc73470ed8c9d97c4e8bf5ec96275efd1dff",
+    "archivo_maestro": "/importacion/lotes/correcciones-069/editorial-imagenes/AUDI015.png",
+    "sha256_maestro": "9e6cf7407e10f2ac00827af0881d3e7fc165ec2d49336f425fc9680f44bcb2f0",
     "fuente_fotografia_propia": "https://drive.google.com/file/d/152Qgc_FIWgHwARAdVZLz37xjmTBKly6h/view?usp=drivesdk",
-    "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-    "edicion_asistida_ia": true,
-    "originales_intactos_en_drive": true
+    "metodo": "Estuche cerrado Face Change pulido nuevo marfil limpio; rostro y NUEBISHTV conservados, sin apertura o bisagra inventadas.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
   },
   "compatibilidad": "Verifica la compatibilidad con tu equipo antes de comprar. No se declara compatibilidad universal.",
   "contenido_venta": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
@@ -218,19 +231,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/152Qgc_FIWgHwARAdVZLz37xjmTBKly6h/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T13:45:31.062996+00:00",
-      "sha256_maestro": "9a7275c6e5bc946db1f7df9a9766d5f6a8e1e18de596a5a95fe3bede21e89bb9",
-      "evidencia": "Fotografía propia editada: limpieza, iluminación y fondo blanco. Geometría, color, conexiones, controles y rótulos comparados con el objeto real. Sin caja ni hardware añadido. Face Change cerrado; no bisagra ni tapa abatible; acabado de producto nuevo."
+      "fecha": "2026-10-13T04:28:24.715621+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-069/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "9e6cf7407e10f2ac00827af0881d3e7fc165ec2d49336f425fc9680f44bcb2f0"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "AUDI015",
       "sku": "AUDI015",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:58:51.937Z",
+      "fecha": "2026-10-13T04:34:29.545Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -252,74 +269,70 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi015-audifonos-inalambricos-face-change-g05d/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi015-audifonos-inalambricos-face-change-g05d/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/audi015-audifonos-inalambricos-face-change-g05d/",
       "archivo_html": "productos/audi015-audifonos-inalambricos-face-change-g05d/index.html",
       "http": 200,
-      "sha256_html": "13c7e154621bc8ddc40bb2a6e885c7c0eca1acfe0b8b1bae84465a8cfe6ed2b3",
-      "sha256_html_local": "13c7e154621bc8ddc40bb2a6e885c7c0eca1acfe0b8b1bae84465a8cfe6ed2b3",
+      "sha256_html": "067ff6851f7a7caa3db42648a05cb01ce577e9870fee9ab6d4320f02ce75c355",
+      "sha256_html_local": "067ff6851f7a7caa3db42648a05cb01ce577e9870fee9ab6d4320f02ce75c355",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi015/AUDI015-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi015/AUDI015-01-600.webp?v=8dbec69e9fec5032",
-        "naturalWidth": 370,
-        "naturalHeight": 370,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/audi015/AUDI015-01-600.webp?v=f37b860414f2e952",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/audi015-audifonos-inalambricos-face-change-g05d/",
+          "url": "http://127.0.0.1:8767/productos/audi015-audifonos-inalambricos-face-change-g05d/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/audi015/AUDI015-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/audi015/AUDI015-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
+          "url": "http://127.0.0.1:8767/productos/audi001-audifonos-airpods-pro-2-anc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
+          "url": "http://127.0.0.1:8767/productos/audi005-audifonos-diadema-airpods-max/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
+          "url": "http://127.0.0.1:8767/productos/audi008-audifonos-alambricos-earpods-lightning/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI015-390.png",
-      "sha256": "c18094ac36220bd09ca043885517f9150405adaee709b852347b9cba346b34a7",
+      "archivo": "reportes/correcciones-069/qa-local/movil/AUDI015-390.png",
+      "sha256": "cf80ef7692496c4e9d8d0531a4279a4960dcdf85f0a6726615b90e1560b43e81",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI015-1280.png",
-        "sha256": "7867c05ed9b481f1572f49efbfe4623efc4cf6191c4813c4057f77ac41f6de4d",
+        "archivo": "reportes/correcciones-069/qa-local/movil/AUDI015-1280.png",
+        "sha256": "866de3909b18a53cb6a5d7b97e8754b5ee861808cfe9c3b2e90e082728c7e4e8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
-      "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
   }
 }

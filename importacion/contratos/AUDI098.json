@@ -24,14 +24,53 @@
       "sha256": "817827d86fb69bf0251b64c656ef60c5d6df5f79e57c6de0071c331ff4321826",
       "drive_id": "1-EHTaOnpWB_DYclxgjTCcD_mHCXstGqO",
       "original_intacto": true
+    },
+    {
+      "nombre": "AUDI098.jpg",
+      "url": "https://drive.google.com/file/d/14E52fSuzxnRZPKEoQTB-i6tHVNr3WeC_/view?usp=drivesdk",
+      "drive_id": "14E52fSuzxnRZPKEoQTB-i6tHVNr3WeC_",
+      "sha256": "6e9a3df4331cf8b6cc7df9cebb4d5bf437f23f1eada6949e44524ff6bc12e6c7",
+      "original_intacto": true,
+      "uso": "Referencia propia; original privado conservado"
+    },
+    {
+      "nombre": "AUDI098_20261009_183405.jpg",
+      "url": "https://drive.google.com/file/d/141IqFOTThTOZzP6UI4mlefqmZISC2evY/view?usp=drivesdk",
+      "drive_id": "141IqFOTThTOZzP6UI4mlefqmZISC2evY",
+      "sha256": "8775c577b7e40faac5cc6a4c4f06af447aeee8c479b541e257442f7ca7a8c05c",
+      "original_intacto": true,
+      "uso": "Referencia propia; original privado conservado"
+    },
+    {
+      "nombre": "AUDI098_20261009_183409.jpg",
+      "url": "https://drive.google.com/file/d/1NyykjWMF7nBtJkD1Z6i9FC4yZwcA0gKI/view?usp=drivesdk",
+      "drive_id": "1NyykjWMF7nBtJkD1Z6i9FC4yZwcA0gKI",
+      "sha256": "dfda6ada9c87faba7a5dfc507dc8324873f748cf066e1654881db6ef8ff72241",
+      "original_intacto": true,
+      "uso": "Referencia propia; original privado conservado"
+    },
+    {
+      "nombre": "AUDI098_20261009_183413.jpg",
+      "url": "https://drive.google.com/file/d/1zK4Xefe30W7-vBuetjTdD9xQ3km2l76K/view?usp=drivesdk",
+      "drive_id": "1zK4Xefe30W7-vBuetjTdD9xQ3km2l76K",
+      "sha256": "16e2bf4984b4be6ba8a2c823463651e1af2bc1b1bad737ad1f4cc9e8b0a66d3d",
+      "original_intacto": true,
+      "uso": "Referencia propia; original privado conservado"
     }
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1-EHTaOnpWB_DYclxgjTCcD_mHCXstGqO/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/lotes/correcciones-069/instrucciones-propietario.json",
+    "https://drive.google.com/file/d/14E52fSuzxnRZPKEoQTB-i6tHVNr3WeC_/view?usp=drivesdk",
+    "https://drive.google.com/file/d/141IqFOTThTOZzP6UI4mlefqmZISC2evY/view?usp=drivesdk",
+    "https://drive.google.com/file/d/1NyykjWMF7nBtJkD1Z6i9FC4yZwcA0gKI/view?usp=drivesdk",
+    "https://drive.google.com/file/d/1zK4Xefe30W7-vBuetjTdD9xQ3km2l76K/view?usp=drivesdk"
   ],
   "imagen_principal": "/imagenes/audi098/AUDI098-01.webp",
-  "imagenes_secundarias": [],
+  "imagenes_secundarias": [
+    "/imagenes/audi098/AUDI098-02.webp"
+  ],
   "especificaciones": [
     {
       "nombre": "Formato",
@@ -122,19 +161,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1-EHTaOnpWB_DYclxgjTCcD_mHCXstGqO/view?usp=drivesdk",
-      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:54:05.743334+00:00",
-      "sha256_maestro": "69fb1fc8834df7ab620e34c348bbe946de0383425af707238bbc3b41d8501fd2",
-      "evidencia": "Edición comercial de fotografía propia: limpieza, iluminación y fondo blanco; geometría, conectores, controles, color y logotipos cotejados con la referencia real. Sin caja, accesorios añadidos ni pantalla inventada."
+      "fecha": "2026-10-13T04:28:24.715621+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-069/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "69fb1fc8834df7ab620e34c348bbe946de0383425af707238bbc3b41d8501fd2"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "AUDI098",
       "sku": "AUDI098",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:59:17.968Z",
+      "fecha": "2026-10-13T04:34:27.023Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -159,75 +202,82 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi098-audifonos-inalambricos-tune-beam-150/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi098-audifonos-inalambricos-tune-beam-150/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/audi098-audifonos-inalambricos-tune-beam-150/",
       "archivo_html": "productos/audi098-audifonos-inalambricos-tune-beam-150/index.html",
       "http": 200,
-      "sha256_html": "41633f0df428b8d5656f59fdbf1143ffd4dd88d5a4745ea801557b910641bc18",
-      "sha256_html_local": "41633f0df428b8d5656f59fdbf1143ffd4dd88d5a4745ea801557b910641bc18",
+      "sha256_html": "5f61e102b755c6487922e92ff08369d91ff8363fcca6142de51c789ac78fb8e2",
+      "sha256_html_local": "5f61e102b755c6487922e92ff08369d91ff8363fcca6142de51c789ac78fb8e2",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi098/AUDI098-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi098/AUDI098-01-600.webp?v=942878cac78771d5",
+        "url_cargada": "http://127.0.0.1:8767/imagenes/audi098/AUDI098-01-600.webp?v=942878cac78771d5",
         "naturalWidth": 421,
         "naturalHeight": 421,
         "completa": true,
         "visible": true
       },
-      "galeria": [],
+      "galeria": [
+        {
+          "ruta": "/imagenes/audi098/AUDI098-02.webp",
+          "miniatura": "/imagenes/audi098/AUDI098-02-300.webp",
+          "cargada": true
+        }
+      ],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/audi098-audifonos-inalambricos-tune-beam-150/",
+          "url": "http://127.0.0.1:8767/productos/audi098-audifonos-inalambricos-tune-beam-150/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/audi098/AUDI098-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/audi098/AUDI098-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/audi036-audifonos-ultra-open-earbuds/",
+          "url": "http://127.0.0.1:8767/imagenes/audi098/AUDI098-02.webp?v=400ce83091d21c14",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/audi018-audifonos-inalambricos-tune-flex/",
+          "url": "http://127.0.0.1:8767/productos/audi036-audifonos-ultra-open-earbuds/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8767/productos/audi018-audifonos-inalambricos-tune-flex/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI098-390.png",
-      "sha256": "291c803386b88dfc888836d38e85b5f456624b13734563a4ace6a42befde540c",
+      "archivo": "reportes/correcciones-069/qa-local/movil/AUDI098-390.png",
+      "sha256": "b73e7c858e06ebe1a9783043e6ed1903186f6745c4c113a5d4f13e66ee25a620",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI098-1280.png",
-        "sha256": "4bb09afcf187203c29c9c48ede88fb36b17a563a1a87e8cc1c0b463683fa27cf",
+        "archivo": "reportes/correcciones-069/qa-local/movil/AUDI098-1280.png",
+        "sha256": "deea6b9c0fd124e4cf7bb42b1eb5e7e00bfd4f7d8825a282618242792d5b0a35",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
-      "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
-  "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
-  "revision_regla": 2,
+  "estado_publicacion": "APROBADO_LOCAL",
+  "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
+  "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: JBL; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 956,957,958,959,960; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "derechos_imagen": {
     "estado": "AUTORIZADO",
@@ -240,6 +290,10 @@
       {
         "sha256": "69fb1fc8834df7ab620e34c348bbe946de0383425af707238bbc3b41d8501fd2",
         "fuente": "https://drive.google.com/file/d/1-EHTaOnpWB_DYclxgjTCcD_mHCXstGqO/view?usp=drivesdk"
+      },
+      {
+        "sha256": "6b5597f699cb0da24889df80d60bcdbe3299bcfdbdfbc3badf0fdc6f3e151ece",
+        "fuente": "https://drive.google.com/file/d/1NyykjWMF7nBtJkD1Z6i9FC4yZwcA0gKI/view?usp=drivesdk"
       }
     ]
   }

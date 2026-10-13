@@ -24,11 +24,21 @@
       "sha256": "db8f19e1cedc33268beee3d9dea25de23244327922f34b7727576244666a130a",
       "drive_id": "14Aa6-w1k1jqAYYvdQ8iM9XGV-NPB4gxS",
       "original_intacto": true
+    },
+    {
+      "nombre": "JUGU138_20261009_181841.jpg",
+      "url": "https://drive.google.com/file/d/1CwdFT5byaiioZm2r5rv5UidQzo4-jyRG/view?usp=drivesdk",
+      "drive_id": "1CwdFT5byaiioZm2r5rv5UidQzo4-jyRG",
+      "sha256": "5f235f398f8f9b29a8f4303e9bee0e6263bc608429e90ab43dda62c000aef9b0",
+      "original_intacto": true,
+      "uso": "Referencia propia; original privado conservado"
     }
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/14Aa6-w1k1jqAYYvdQ8iM9XGV-NPB4gxS/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/lotes/correcciones-069/instrucciones-propietario.json",
+    "https://drive.google.com/file/d/1CwdFT5byaiioZm2r5rv5UidQzo4-jyRG/view?usp=drivesdk"
   ],
   "imagen_principal": "/imagenes/jugu138/JUGU138-01.webp",
   "imagenes_secundarias": [],
@@ -126,19 +136,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/14Aa6-w1k1jqAYYvdQ8iM9XGV-NPB4gxS/view?usp=drivesdk",
-      "evidencia": "Hechos físicos visibles y denominación comprobada en 593; sin prestaciones, licencias, accesorios o medidas inventados."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T13:45:31.062996+00:00",
-      "sha256_maestro": "fd3cc9593ad57bb56c579a5c8b13e07a3639cfac85747af2b2fde25957a3e3c3",
-      "evidencia": "Fotografía propia editada: limpieza, iluminación y fondo blanco. Geometría, color, conexiones, controles y rótulos comparados con el objeto real. Sin caja ni hardware añadido."
+      "fecha": "2026-10-13T04:28:24.715621+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-069/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "e3b9b5af34c6559cc1afa0462968dd0b6622a94990f9c882e4345e132b0d0b1d"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "JUGU138",
       "sku": "JUGU138",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:58:48.315Z",
+      "fecha": "2026-10-13T04:34:35.456Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -163,80 +177,76 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu138-juguete-taxi-coleccionable-amarillo-antiguo/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu138-juguete-taxi-coleccionable-amarillo-antiguo/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/jugu138-juguete-taxi-coleccionable-amarillo-antiguo/",
       "archivo_html": "productos/jugu138-juguete-taxi-coleccionable-amarillo-antiguo/index.html",
       "http": 200,
-      "sha256_html": "05169c959fa8d6c3020897017ec9dc8c71266e0dc44fb6af61b60d33443419a6",
-      "sha256_html_local": "05169c959fa8d6c3020897017ec9dc8c71266e0dc44fb6af61b60d33443419a6",
+      "sha256_html": "18bed93cb738bff4c5e7f71f5de0b5e5a61f05d4b928843016948df85ecb1b84",
+      "sha256_html_local": "18bed93cb738bff4c5e7f71f5de0b5e5a61f05d4b928843016948df85ecb1b84",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu138/JUGU138-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu138/JUGU138-01-600.webp?v=e80cfa547e217c7f",
-        "naturalWidth": 339,
-        "naturalHeight": 339,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/jugu138/JUGU138-01-600.webp?v=c465b08c67803d88",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/jugu138-juguete-taxi-coleccionable-amarillo-antiguo/",
+          "url": "http://127.0.0.1:8767/productos/jugu138-juguete-taxi-coleccionable-amarillo-antiguo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/jugu138/JUGU138-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/jugu138/JUGU138-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/jugu002-juguete-bicicleta-hyper-realista-coleccionable/",
+          "url": "http://127.0.0.1:8767/productos/jugu002-juguete-bicicleta-hyper-realista-coleccionable/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/jugu087-juguete-moto-coleccionable-mediana-ver-2/",
+          "url": "http://127.0.0.1:8767/productos/jugu087-juguete-moto-coleccionable-mediana-ver-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/jugu091-juguete-carro-coleccionable-deportivo-semi-mediano-varios-modelos/",
+          "url": "http://127.0.0.1:8767/productos/jugu091-juguete-carro-coleccionable-deportivo-semi-mediano-varios-modelos/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/JUGU138-390.png",
-      "sha256": "2a9b1c9724e13dca163b2959c575fecd5e9360407610ef9c0d747628335c489d",
+      "archivo": "reportes/correcciones-069/qa-local/movil/JUGU138-390.png",
+      "sha256": "54d66732d2be14598c7be0e7a006324cc3e2ee59a1f5d1be810f372f3aab0a2f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/JUGU138-1280.png",
-        "sha256": "b0f5206cbb01085f674be302e045be98c0c2b5ecb359f35083dab68daa73bb20",
+        "archivo": "reportes/correcciones-069/qa-local/movil/JUGU138-1280.png",
+        "sha256": "a9ea7d7f179d8a8aea9d20fa344504ef12e0d490fffd015843f1c8249a7206f4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
-      "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
-  "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
-  "revision_regla": 2,
+  "estado_publicacion": "APROBADO_LOCAL",
+  "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
+  "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 846,847; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "derechos_imagen": {
     "estado": "AUTORIZADO",
@@ -249,7 +259,27 @@
       {
         "sha256": "fd3cc9593ad57bb56c579a5c8b13e07a3639cfac85747af2b2fde25957a3e3c3",
         "fuente": "https://drive.google.com/file/d/14Aa6-w1k1jqAYYvdQ8iM9XGV-NPB4gxS/view?usp=drivesdk"
+      },
+      {
+        "sha256": "e3b9b5af34c6559cc1afa0462968dd0b6622a94990f9c882e4345e132b0d0b1d",
+        "fuente": "https://drive.google.com/file/d/14Aa6-w1k1jqAYYvdQ8iM9XGV-NPB4gxS/view?usp=drivesdk"
       }
-    ]
+    ],
+    "derivacion": {
+      "archivo_maestro": "/importacion/lotes/correcciones-069/editorial-imagenes/JUGU138.png",
+      "sha256_maestro": "e3b9b5af34c6559cc1afa0462968dd0b6622a94990f9c882e4345e132b0d0b1d",
+      "fuente_fotografia_propia": "https://drive.google.com/file/d/14Aa6-w1k1jqAYYvdQ8iM9XGV-NPB4gxS/view?usp=drivesdk",
+      "metodo": "Taxi naranja nuevo limpio, ángulo delantero lateral; TAXI, WELCOME TO THE CITY, silueta ciudad, cuadros y ruedas cotejados con fuentes propias.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
+    }
+  },
+  "maestro": {
+    "archivo_maestro": "/importacion/lotes/correcciones-069/editorial-imagenes/JUGU138.png",
+    "sha256_maestro": "e3b9b5af34c6559cc1afa0462968dd0b6622a94990f9c882e4345e132b0d0b1d",
+    "fuente_fotografia_propia": "https://drive.google.com/file/d/14Aa6-w1k1jqAYYvdQ8iM9XGV-NPB4gxS/view?usp=drivesdk",
+    "metodo": "Taxi naranja nuevo limpio, ángulo delantero lateral; TAXI, WELCOME TO THE CITY, silueta ciudad, cuadros y ruedas cotejados con fuentes propias.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
   }
 }

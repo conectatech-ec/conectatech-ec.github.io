@@ -1,7 +1,7 @@
 {
   "sku": "TABL002",
   "nombre_original": "Tablet Redmi Pad 2 11 Pulgadas 256Gb 8Gb+8Gb",
-  "titulo_comercial": "Tablet Redmi PAD 2 11 Pulgadas 256GB 8GB+8GB | 8 GB RAM total",
+  "titulo_comercial": "Tablet Redmi Pad 2 | 256 GB y 16 GB RAM total",
   "tipo": "original",
   "marca": "Redmi",
   "modelo": "Redmi Pad 2, 25040RP0AL",
@@ -86,7 +86,8 @@
     "https://drive.google.com/file/d/1I1_qHwaEEQqLUOqYW_Uv1R1yWtHFEps6/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
-    "importacion/reglas-sku.json"
+    "importacion/reglas-sku.json",
+    "importacion/lotes/correcciones-069/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/tabl002/TABL002-01.webp",
   "imagenes_secundarias": [],
@@ -204,25 +205,25 @@
     },
     {
       "nombre": "RAM total comercial",
-      "valor": "8 GB RAM total",
+      "valor": "16 GB RAM total (8 GB físicos + 8 GB virtuales)",
       "fuentes": [
-        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+        "importacion/lotes/correcciones-069/instrucciones-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
-  "fecha_verificacion": "2026-10-11T18:22:01.250336+00:00",
-  "descripcion": "La Redmi Pad 2 de 11 pulgadas ofrece una pantalla 2.5K para ver contenido y trabajar con amplitud. Esta variante Gris Grafito incorpora 256 GB de almacenamiento y 8 GB de RAM físicos, según la etiqueta. El empaque confirma batería de 9000 mAh, procesador Helio G100-Ultra y cuatro altavoces.",
+  "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
+  "descripcion": "La Redmi Pad 2 de 11 pulgadas ofrece una pantalla 2.5K para ver contenido y trabajar con amplitud. Esta variante Gris Grafito incorpora 256 GB de almacenamiento y 8 GB de RAM físicos, según la etiqueta. El empaque confirma batería de 9000 mAh, procesador Helio G100-Ultra y cuatro altavoces. RAM total comercial: 16 GB (8 GB físicos + 8 GB virtuales).",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 728,729,730; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 3,
+  "revision_regla": 4,
   "maestro": {
     "archivo_maestro": "/imagenes/tabl002/original-57ede3472b497743.png",
     "sha256_maestro": "57ede3472b497743f263d4119aa881aaf96db1d7cd04318caa704a9de8b7ff65",
@@ -235,14 +236,14 @@
   "contenido_venta": "1 tablet; la etiqueta indica adaptador de corriente, cable USB Tipo-C, guía y llave para SD Card. La imagen principal muestra solo la tablet.",
   "beneficios": [
     {
-      "valor": "8 GB RAM total",
+      "valor": "16 GB RAM total",
       "titulo": "Memoria para tus aplicaciones",
-      "descripcion": "Abre tus apps y alterna tus tareas con la RAM total de este equipo.",
+      "descripcion": "Memoria total para abrir tus aplicaciones y alternar tareas.",
       "especificaciones": [
         "RAM total comercial"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view"
+        "importacion/lotes/correcciones-069/instrucciones-propietario.json"
       ],
       "estado": "VERIFICADO"
     },
@@ -322,19 +323,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1C4w4e6xNKUD1SHi_eHoZzvSYqQNpSy9V/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593 y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T18:14:05.777340+00:00",
-      "sha256_maestro": "57ede3472b497743f263d4119aa881aaf96db1d7cd04318caa704a9de8b7ff65",
-      "evidencia": "Representación comercial asistida por IA de la vista frontal completa impresa en el empaque propio, cotejada con las tres referencias de la variante Gris Grafito 25040RP0AL, 8 GB RAM y 256 GB. Marco, esquinas, proporciones y frontal contrastados; fondo blanco y papel tapiz abstracto basado en la ilustración, sin sus textos promocionales. Sin mostrar trasera, conexiones ni accesorios no observables. No es una fotografía óptica recuperada."
+      "fecha": "2026-10-13T04:28:24.715621+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-069/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "57ede3472b497743f263d4119aa881aaf96db1d7cd04318caa704a9de8b7ff65"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "TABL002",
       "sku": "TABL002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:05.473Z",
+      "fecha": "2026-10-13T04:34:38.203Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -359,17 +364,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
       "archivo_html": "productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/index.html",
       "http": 200,
-      "sha256_html": "d0eaaddafd01e764f5c5364c54643dd9e6ffb098007ce5a2747db30bc7172774",
-      "sha256_html_local": "d0eaaddafd01e764f5c5364c54643dd9e6ffb098007ce5a2747db30bc7172774",
+      "sha256_html": "f580de784794cec017c56c8524b86de2deab69045be5a51c862adc2f3005d272",
+      "sha256_html_local": "f580de784794cec017c56c8524b86de2deab69045be5a51c862adc2f3005d272",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tabl002/TABL002-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/tabl002/TABL002-01-600.webp?v=7d6b0b68904a6766",
+        "url_cargada": "http://127.0.0.1:8767/imagenes/tabl002/TABL002-01-600.webp?v=7d6b0b68904a6766",
         "naturalWidth": 331,
         "naturalHeight": 331,
         "completa": true,
@@ -378,62 +383,58 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
+          "url": "http://127.0.0.1:8767/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/tabl002/TABL002-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/tabl002/TABL002-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/tabl001-tablet-redmi-pad-2-11-pulgadas-128gb-4gb-4gb/",
+          "url": "http://127.0.0.1:8767/productos/tabl001-tablet-redmi-pad-2-11-pulgadas-128gb-4gb-4gb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/tabl003-tablet-redmi-pad-2-9-7-pulgadas-128gb-4gb-4gb/",
+          "url": "http://127.0.0.1:8767/productos/tabl003-tablet-redmi-pad-2-9-7-pulgadas-128gb-4gb-4gb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/tabl004-tablet-k2-edicion-mario-bros/",
+          "url": "http://127.0.0.1:8767/productos/tabl004-tablet-k2-edicion-mario-bros/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/TABL002-390.png",
-      "sha256": "783668e4deb8988a65c6c1b79ca24216a1f8ea7d188eacb5b24f6db6692fb258",
+      "archivo": "reportes/correcciones-069/qa-local/movil/TABL002-390.png",
+      "sha256": "8475b91a665092a02c396bd07e8eb3dc920eb17724d39a9297710e954d2e92e5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/TABL002-1280.png",
-        "sha256": "f53e5a6af3bafd760d56e0ac34342604af1c2d49bd7caea49807faf7d3c17c53",
+        "archivo": "reportes/correcciones-069/qa-local/movil/TABL002-1280.png",
+        "sha256": "239bc8ec45346e333bdbee05db904991338709588cc68b6e081548b58c6eca15",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-066/http-publicacion.json",
-      "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
   },
   "ram_comercial": {
-    "total_gb": 8,
+    "total_gb": 16,
     "fisica_gb": 8,
-    "virtual_gb": 0,
-    "fuente": "https://drive.google.com/file/d/1czjk-eb--thLQzAhFD_t0MOg69oH_b4Q/view",
-    "desglose": null
+    "virtual_gb": 8,
+    "fuente": "importacion/lotes/correcciones-069/instrucciones-propietario.json",
+    "desglose": "8 GB de RAM física + 8 GB de ampliación virtual"
   }
 }

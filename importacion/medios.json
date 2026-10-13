@@ -132,13 +132,13 @@
     }
   },
   "CARG016": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "SIN CAJA en catálogo y banners. Conservar originales. No extraer el dibujo impreso como si fuera una fotografía del producto.",
+      "instrucciones": "SIN CAJA en catálogo y banners. Conservar originales. No extraer el dibujo impreso como si fuera una fotografía del producto. Mejorar fotografía premium a partir del cargador físico exacto y su cable; preservar conectores, rotulado, proporciones y unidad.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 348,2742,2743; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "imagenes": [
       {
@@ -180,7 +180,7 @@
             "alto": 300
           }
         },
-        "revision_regla": 2,
+        "revision_regla": 3,
         "revision_visual": "Foto real de cargador y cable fuera de caja; galería explícita CX-305; cotejada con foto de empaque aportada. Referencia del distribuidor, autenticidad de unidad no certificada. Recorte de margen superior sin tocar producto.",
         "recorte": [
           0,
@@ -230,7 +230,7 @@
             "alto": 300
           }
         },
-        "revision_regla": 2,
+        "revision_regla": 3,
         "revision_visual": "Foto real de cargador y cable fuera de caja; galería explícita CX-305; cotejada con foto de empaque aportada. Referencia del distribuidor, autenticidad de unidad no certificada. Recorte de margen superior sin tocar producto.",
         "recorte": [
           0,
@@ -250,6 +250,18 @@
       "ancho": 1200,
       "alto": 1200,
       "precios_incrustados": false
+    },
+    "estado_correccion": "PENDIENTE",
+    "evidencia_conservacion": {
+      "sku": "CARG016",
+      "revision_anterior": 2,
+      "revision_actual": 3,
+      "estado": "CONSERVADO_HISTORICO_PENDIENTE_MEJORA",
+      "sha256_originales": [
+        "a03603a64b6ef585e53a7909ec456287b711613479651bc16eb75d3006d31a6b",
+        "281a4fd26421849ef6e44c81d06063131e0859281012012ed4bccec8a5dcafff"
+      ],
+      "evidencia": "Se conserva la fotografía previamente servida, contrastada contra fuentes existentes en esta auditoría. NO se certifica una mejora nueva ni derechos nuevos. La corrección solicitada sigue pendiente; fuente y bytes históricos intactos."
     }
   },
   "TELF020": {
@@ -1376,13 +1388,13 @@
     ]
   },
   "JUGU134": {
-    "revision_regla": 4,
+    "revision_regla": 5,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Ángulo más atractivo que destaque el color real; conservar vehículo, ruedas, detalles y proporciones.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1755,1757,1758,1760; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 4
+      "revision": 5
     },
     "imagenes": [
       {
@@ -1390,9 +1402,9 @@
         "contiene_caja": false,
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
-        "fuente": "https://drive.google.com/file/d/13DjafCiOOOpYnof138h8cMFLx17iAmpM/view?usp=drivesdk",
-        "original": "/imagenes/jugu134/original-a94b694282b90a24.png",
-        "sha256_original": "a94b694282b90a24c5015e0ad265a9bedc21210f5cb8e2ab2a70365408d21ffb",
+        "fuente": "https://drive.google.com/file/d/1Q5-88a5NGSj8ES5LeSZLDooc2QkdZWvm/view?usp=drivesdk",
+        "original": "/imagenes/jugu134/original-93aaae214d2913e6.png",
+        "sha256_original": "93aaae214d2913e6acaf86741bc657b8a5d5e61a2a8284224619f8fac1ba8e83",
         "resolucion_original": [
           1254,
           1254
@@ -1404,33 +1416,33 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/jugu134/JUGU134-01.webp",
-            "sha256": "03f276b7047b8e90e4e82c5aeae7cd61235a20e1de9d465a5d492283fd9c527c",
-            "bytes": 102946,
+            "sha256": "4ac86b6286899ec5b5960b684f90e1bbf31248e0fc64de082354f5b74a915749",
+            "bytes": 83164,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/jugu134/JUGU134-01-600.webp",
-            "sha256": "284b2c1f3e57d4d6c43ba70897bbbeba259682224b334756feefebf2f54f73b1",
-            "bytes": 38570,
+            "sha256": "37c1b3786ed5525d2efd35c880f8ba7e6a740be604ee2bebd6bc2b57e610d2b5",
+            "bytes": 26512,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/jugu134/JUGU134-01-300.webp",
-            "sha256": "1fb425139dc0b6f558e9325ea965ae0b2fc446093d74bba6355fef5718e83b91",
-            "bytes": 13766,
+            "sha256": "a05129eade4e4adc487561748ef1e4cf887ea86df62cf7d24c7898c7aadc86f5",
+            "bytes": 8442,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 4,
-        "revision_visual": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
+        "revision_regla": 5,
+        "revision_visual": "Nueva vista lateral más baja con puertas cerradas y acabado iridiscente violeta/turquesa/oro; techo, ruedas, alerón y carrocería cotejados con vistas físicas.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "080f1e1f0b230e00",
-        "huella_proceso": "e3d26ee86338aa93eb4f26183ffa84f67ce50b86f0e2fab129d60e907e6f34d1",
+        "dhash": "000003230f062100",
+        "huella_proceso": "fa942a6b87c609f9c219cae6236af4ec7d0dea530d5d71b08b92013abf536744",
         "version_proceso": 2
       }
     ]
@@ -4985,13 +4997,13 @@
     ]
   },
   "TABL002": {
-    "revision_regla": 3,
+    "revision_regla": 4,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "RAM comercial total confirmada por propietario: 16 GB. Conservar desglose documentado de RAM física frente a virtual; nunca presentar total como RAM física.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 728,729,730; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "revision": 4
     },
     "imagenes": [
       {
@@ -5033,13 +5045,13 @@
             "alto": 300
           }
         },
-        "revision_regla": 3,
-        "revision_visual": "Representación comercial asistida por IA de la vista frontal completa impresa en el empaque propio, cotejada con las tres referencias de la variante Gris Grafito 25040RP0AL, 8 GB RAM y 256 GB. Marco, esquinas, proporciones y frontal contrastados; fondo blanco y papel tapiz abstracto basado en la ilustración, sin sus textos promocionales. Sin mostrar trasera, conexiones ni accesorios no observables. No es una fotografía óptica recuperada.",
+        "revision_regla": 4,
+        "revision_visual": "Representación comercial asistida por IA de la vista frontal completa impresa en el empaque propio, cotejada con las tres referencias de la variante Gris Grafito 25040RP0AL, 8 GB RAM y 256 GB. Marco, esquinas, proporciones y frontal contrastados; fondo blanco y papel tapiz abstracto basado en la ilustración, sin sus textos promocionales. Sin mostrar trasera, conexiones ni accesorios no observables. No es una fotografía óptica recuperada. Revalidado contra instrucciones actuales: vista correcta conservada byte a byte; la nueva vista satisface la corrección solicitada.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
         "dhash": "0033096d71393300",
-        "huella_proceso": "3b4076ce7a88d61f6b2b2a994930734320a51d89c127e419726c6e48380aba63",
+        "huella_proceso": "a9458e7cb1032f5d9d46e23e3c453de1d73445797be39a2c210a5dbf7c1aca93",
         "version_proceso": 2
       }
     ]
@@ -7493,13 +7505,13 @@
     ]
   },
   "REL050": {
-    "revision_regla": 3,
+    "revision_regla": 4,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Sustituir portada borrosa por imagen premium nítida y fiel al producto original; no inventar microtextos, botones ni variantes.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1368,1369,1370,1371,1372,1373,1374,1375,1376; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "revision": 4
     },
     "imagenes": [
       {
@@ -7541,7 +7553,7 @@
             "alto": 300
           }
         },
-        "revision_regla": 3,
+        "revision_regla": 4,
         "revision_visual": "Nueva portada con el ángulo negro fotografiado por el propietario. Píxeles nativos: normalización, recorte y silueta del pipeline existente; ningún numeral, control, modelo o textura reconstruido. Descartada propuesta IA por numerales alterados; galería verde fiel conservada.",
         "recorte": [
           100,
@@ -7771,7 +7783,7 @@
             "alto": 300
           }
         },
-        "revision_regla": 3,
+        "revision_regla": 4,
         "revision_visual": "Edición propia final cotejada con fotografía directa: todos los numerales 60/65/70/75/80/85/90/95/100/110/120/130/140/150/160/170/180/200/225/250/300/350/400/500 y TACHYMETER conservados en orden. Tres coronas, bisel verde/blanco, caja plateada y correa verde exactos. Fondo blanco y limpieza de huellas; pantalla apagada. Propuestas previas descartadas por microtextos; recorte nativo previo rechazado por borde de fondo.",
         "recorte": null,
         "silueta_revisada": null,
@@ -7780,7 +7792,19 @@
         "huella_proceso": "28d67e35c88cdf802e9db34230df4788d49d3abae333980ee1184a48c875a743",
         "version_proceso": 2
       }
-    ]
+    ],
+    "estado_correccion": "PENDIENTE",
+    "evidencia_conservacion": {
+      "sku": "REL050",
+      "revision_anterior": 3,
+      "revision_actual": 4,
+      "estado": "CONSERVADO_HISTORICO_PENDIENTE_MEJORA",
+      "sha256_originales": [
+        "9b1417bced507e435246d2bbfface5fb301ed7e8ec6f18e567b5b07c03a767c3",
+        "09e2d8800c55217260d5d0a36e403a731f488210faa6f94a244dea0d6cfd762f"
+      ],
+      "evidencia": "Se conserva la fotografía previamente servida, contrastada contra fuentes existentes en esta auditoría. NO se certifica una mejora nueva ni derechos nuevos. La corrección solicitada sigue pendiente; fuente y bytes históricos intactos."
+    }
   },
   "REL012": {
     "revision_regla": 3,
@@ -8517,13 +8541,13 @@
     ]
   },
   "REL038": {
-    "revision_regla": 3,
+    "revision_regla": 4,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Mostrar la curvatura ligera real del cristal/pantalla mediante ángulo y reflejo naturales, sin exagerar geometría ni crear pantalla distinta.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1263,1264,1265,1266,1267; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "revision": 4
     },
     "imagenes": [
       {
@@ -8532,8 +8556,8 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/19hpFcYqGa9nmfM1g0O2q6NBycoxSQbLb/view?usp=drivesdk",
-        "original": "/imagenes/rel038/original-3a667cbc945d6b32.png",
-        "sha256_original": "3a667cbc945d6b32d3b7b6f1fcad041fcf06d37c8c6102874ff01d436d01b3f7",
+        "original": "/imagenes/rel038/original-b25a3e3f554dcc97.png",
+        "sha256_original": "b25a3e3f554dcc97d4e5781ff7a6fc6fd1513709e26a3aec6b4e84362a494832",
         "resolucion_original": [
           1254,
           1254
@@ -8545,33 +8569,33 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/rel038/REL038-01.webp",
-            "sha256": "209a8e8827442419b488710180780b44fefbaaa67f624ba195939d86107d2f6b",
-            "bytes": 54216,
+            "sha256": "c7dfc000bd866a8c57315b7f308fc121074a9d043a9ac290979dff6562bd2da5",
+            "bytes": 50692,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/rel038/REL038-01-600.webp",
-            "sha256": "6ca541aafb947e8e585719a2dde0a143dd0a92f3c9e34e4f4701912c3fe198b0",
-            "bytes": 20780,
+            "sha256": "e468c030f920eac40272e6b1fe3854f7143709fa7970b0939f5ba0ede42ecf1e",
+            "bytes": 19770,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/rel038/REL038-01-300.webp",
-            "sha256": "bbcc88ed1cc79edbad11bbc606fcdfa18eb94b3efecb2c687e7986a35b34b2d9",
-            "bytes": 8176,
+            "sha256": "fe06233c5ad59a14c42d988ad934455200b4014480651414553a117cdb1bbfc6",
+            "bytes": 7802,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 3,
-        "revision_visual": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
+        "revision_regla": 4,
+        "revision_visual": "Cristal de curvatura sutil y reflejo sobre borde; corona roja y botón largo negro cotejados con vista física lateral; descartada franja naranja inventada en primera propuesta.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "0c0e272b2f2f0e1c",
-        "huella_proceso": "6ae8efbf391e300b8b000b69f1e55588b393a133274a6eff7a841c8c50ece5f5",
+        "dhash": "4c0e1707272f0e09",
+        "huella_proceso": "34d7ca9c8971c6e0c8cfea2a54208d4d50e66b5f6aa166582b6a25d0952c9efa",
         "version_proceso": 2
       }
     ]
@@ -9724,13 +9748,13 @@
     ]
   },
   "REL071": {
-    "revision_regla": 3,
+    "revision_regla": 4,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "La correa es negra. Quitar el color de la correa del título; mantener variante negra en foto y especificaciones.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1418,1419,1420,1422; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "revision": 4
     },
     "imagenes": [
       {
@@ -9739,8 +9763,8 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/10W-AsGBp2IfHW-fTJWh6BW9J155P0-18/view?usp=drivesdk",
-        "original": "/imagenes/rel071/original-f78cee28b5218819.png",
-        "sha256_original": "f78cee28b5218819c67530cdee512cf50c43f9d90041e7986bec31cb4064b25d",
+        "original": "/imagenes/rel071/original-44bf737fdc23f1ec.png",
+        "sha256_original": "44bf737fdc23f1ecab1d17a3d4a405cdab095bbcdb3238effbb9da8158f6b2ae",
         "resolucion_original": [
           1254,
           1254
@@ -9752,33 +9776,33 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/rel071/REL071-01.webp",
-            "sha256": "0fc54e4618fc29bc8eb583ff0ad5c0a16e6983b1d274ff449ef61608a4d95816",
-            "bytes": 63402,
+            "sha256": "92ac7ba4dc5a119dc4c85368693540f8bc99dec176ad92880f647de68b5cf868",
+            "bytes": 62472,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/rel071/REL071-01-600.webp",
-            "sha256": "055bb4bf2a6ad4edc1cd014c44745172bee8666a452da167ee2fb39c7db1ac83",
-            "bytes": 18730,
+            "sha256": "9b4f46d50299e7f8d02246c8fc339b7bdb45952f79c1c3eefc1bb4e7903db2d1",
+            "bytes": 17992,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/rel071/REL071-01-300.webp",
-            "sha256": "475ba9958d9c6ca7fc3cc27a10435e92cfc49d91c0a553cfad068475bd6c9da4",
-            "bytes": 7028,
+            "sha256": "216c59abf86fe6dede7ba112b9bc240661653fbc5e4ddf6a86c18272586e7c36",
+            "bytes": 6930,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 3,
-        "revision_visual": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
+        "revision_regla": 4,
+        "revision_visual": "Correa negra corregida con geometría corrugada y caja dorada conservadas; no confundir plástico protector con material de correa.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "0c1e372727271e1c",
-        "huella_proceso": "502753fd5e390611f8f415dd93891328864a5417603d1cf18653d16d98369dd1",
+        "dhash": "0c1e372327271e1c",
+        "huella_proceso": "ba1bec0b6967cca9f25936fe4a0cc57a631b6e9c8159198c571bacb9f1392bbc",
         "version_proceso": 2
       }
     ]
@@ -10866,13 +10890,13 @@
     ]
   },
   "AUDI108": {
-    "revision_regla": 4,
+    "revision_regla": 5,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Audífonos de diadema en posición vertical y natural, nunca acostados. Referencias de presentación AUDI090 y AUDI005; libertad en ángulo atractivo sin inventar hardware.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 68,69; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 4
+      "revision": 5
     },
     "imagenes": [
       {
@@ -10881,8 +10905,8 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/15xExOHt9v1Oj9klBIXfUa75xXZ20jLuv/view?usp=drivesdk",
-        "original": "/imagenes/audi108/original-3efecd0edbb73408.png",
-        "sha256_original": "3efecd0edbb73408f878765a4de5595f6fda65c28c9c6470faad2457439eac70",
+        "original": "/imagenes/audi108/original-589d124f21c16f84.png",
+        "sha256_original": "589d124f21c16f847890c25d8357cfb4c5b65d42d69fba91b6ef6f166bcab8a9",
         "resolucion_original": [
           1254,
           1254
@@ -10894,33 +10918,33 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/audi108/AUDI108-01.webp",
-            "sha256": "13f4fc68c3552872eef1a59ec18b9760d4a3fd3f1506baad2da3cc062fb45f8c",
-            "bytes": 62354,
+            "sha256": "e8b4be9a5e8f9b147942725204d895cd274f336068c18d6e081767317bcca959",
+            "bytes": 69584,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/audi108/AUDI108-01-600.webp",
-            "sha256": "27b0a606c05758b06ffd0441c256cf6d0721e4eaf2a0a86e52553b9b12e0b997",
-            "bytes": 18928,
+            "sha256": "6f498b15a0db5e3f9141cf6a922f6709038679c349d28b8393af37cad8d4ad05",
+            "bytes": 20348,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/audi108/AUDI108-01-300.webp",
-            "sha256": "cd72de21d33b4138ee34271eb26e521dfd2e3c76f7089cc56417b0d9b7906819",
-            "bytes": 6836,
+            "sha256": "6537ee5444fe429bb958f1eae1dde8bc974cf0ba43ad76b27308da08393190e8",
+            "bytes": 7030,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 4,
-        "revision_visual": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
+        "revision_regla": 5,
+        "revision_visual": "Diadema erguida natural; geometría, brazo de micrófono, logo y controles +/− cotejados con maestro aprobado; signo menos corregido en segunda propuesta.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "001e2f3931334f00",
-        "huella_proceso": "2488ab463f276acd029def6a0d82ec257001df90cbe1c35867d8e309be60ec71",
+        "dhash": "581717133333064d",
+        "huella_proceso": "17f3fed54e2f6f03d9050c37bb248f54f6cbbdd655e2ca718be861abd11e2c68",
         "version_proceso": 2
       }
     ]
@@ -11106,13 +11130,13 @@
     ]
   },
   "AUDI114": {
-    "revision_regla": 3,
+    "revision_regla": 4,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Audífonos de diadema en posición vertical y natural, nunca acostados. Referencias AUDI090 y AUDI005; mantener lila y hardware real.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 74,75; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "revision": 4
     },
     "imagenes": [
       {
@@ -11121,8 +11145,8 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/1FV79QxJ5-RsMw0WapKDmPsk6XwNwP_vs/view?usp=drivesdk",
-        "original": "/imagenes/audi114/original-61dc8eb419099ed9.png",
-        "sha256_original": "61dc8eb419099ed927449db9ef215930ffe988a11e501d10d05c8969bc2bf45c",
+        "original": "/imagenes/audi114/original-65d7cbf9f7eea260.png",
+        "sha256_original": "65d7cbf9f7eea260a77f872ddf1f343eec45a082470700ab4b5598228c251ab9",
         "resolucion_original": [
           1254,
           1254
@@ -11134,33 +11158,33 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/audi114/AUDI114-01.webp",
-            "sha256": "402e498e6c3d268ef8d1cafa62871fe30009933a2634991bc044927a6811b244",
-            "bytes": 52106,
+            "sha256": "87377cf74e4bd5ff607cbbc36b9589545fa9a3f57b33e05b3c77033a5e587ca2",
+            "bytes": 55254,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/audi114/AUDI114-01-600.webp",
-            "sha256": "a49c5f998eb8f2a8b242dec707cd1f8a0b8ccc4c85e62097a281e5e5a3f7fb89",
-            "bytes": 14480,
+            "sha256": "2006c7d17eb56c53ee4a8ae694e8081803e280c37e1c446a1139113b790dc84f",
+            "bytes": 14404,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/audi114/AUDI114-01-300.webp",
-            "sha256": "3e8f2bef0a1487df51584ab82e0719cd33573a5012270567a8c97f0724a2ec6c",
-            "bytes": 5494,
+            "sha256": "af9e6562859a7395ddc80f48b58b1f4b67ac868ae224ba29fa937cb82f9c39fb",
+            "bytes": 5052,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 3,
-        "revision_visual": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
+        "revision_regla": 4,
+        "revision_visual": "Diadema erguida natural; lila, almohadillas y tres rayas de copa conservados contra maestro aprobado.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "103d1e33393d0f06",
-        "huella_proceso": "3172a7ef25c4faf7dac0650d2c97855c4ff925ea23568d914b8d328b852153c7",
+        "dhash": "161727373332174d",
+        "huella_proceso": "7c34e4b5eb5dad95c82ff9164bc3602d9939f1f9779277afa1fb100c35a505ba",
         "version_proceso": 2
       }
     ]
@@ -12006,13 +12030,13 @@
     ]
   },
   "AUDI015": {
-    "revision_regla": 3,
+    "revision_regla": 4,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Pulir para apariencia impecable de producto nuevo; conservar Face Change y cuerpo cerrado, sin tapa abatible.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 857,858,859,860; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "revision": 4
     },
     "imagenes": [
       {
@@ -12021,8 +12045,8 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/152Qgc_FIWgHwARAdVZLz37xjmTBKly6h/view?usp=drivesdk",
-        "original": "/imagenes/audi015/original-9a7275c6e5bc946d.png",
-        "sha256_original": "9a7275c6e5bc946db1f7df9a9766d5f6a8e1e18de596a5a95fe3bede21e89bb9",
+        "original": "/imagenes/audi015/original-9e6cf7407e10f2ac.png",
+        "sha256_original": "9e6cf7407e10f2ac00827af0881d3e7fc165ec2d49336f425fc9680f44bcb2f0",
         "resolucion_original": [
           1254,
           1254
@@ -12034,33 +12058,33 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/audi015/AUDI015-01.webp",
-            "sha256": "dd6ceaa3a2a3ac663686190192c4bc0d3489b67b51b08603949c68a092cb5113",
-            "bytes": 63776,
+            "sha256": "218526e1380d1de07a878880887bae3c18530045f643cae9f62fcb196f1ceeb1",
+            "bytes": 64410,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/audi015/AUDI015-01-600.webp",
-            "sha256": "8dbec69e9fec5032e992fe23fecf9b96ffb1498ebac66bdc68e20b8fa4d5d361",
-            "bytes": 26680,
+            "sha256": "f37b860414f2e9524dab6bed31f443eb4381acdab2c05c735ed554a989e4d684",
+            "bytes": 27334,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/audi015/AUDI015-01-300.webp",
-            "sha256": "bbacde4ba1402bbccb5f69777ab15ced4d6197caf718ca699e6cbd22e8251531",
-            "bytes": 11158,
+            "sha256": "ea93ed5119dd8e467ae32f9529f94e2084ba53af7e66dde97bcfb3f727aa2a4c",
+            "bytes": 11162,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 3,
-        "revision_visual": "Fotografía propia editada: limpieza, iluminación y fondo blanco. Geometría, color, conexiones, controles y rótulos comparados con el objeto real. Sin caja ni hardware añadido. Face Change cerrado; no bisagra ni tapa abatible; acabado de producto nuevo.",
+        "revision_regla": 4,
+        "revision_visual": "Estuche cerrado Face Change pulido nuevo marfil limpio; rostro y NUEBISHTV conservados, sin apertura o bisagra inventadas.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "000f1707170e4d00",
-        "huella_proceso": "98520502dcd9fefd45ea68027373182bf3e24f530535cd3d602a98fb1281c833",
+        "dhash": "000f170f170e4d00",
+        "huella_proceso": "eb046ce9bc5cf434f2d2bea23b05835cbd3754b63e87c705c5ee954e4477909d",
         "version_proceso": 2
       }
     ]
@@ -12366,13 +12390,19 @@
     ]
   },
   "AUDI017": {
-    "revision_regla": 3,
+    "revision_regla": 4,
     "regla": {
-      "autenticidad": "original verificado",
+      "autenticidad": "genérico/compatible",
       "presentacion": "sin caja",
-      "instrucciones": "",
-      "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1011,1012,1013,1014,1015,1016; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "instrucciones": "Excepción expresa del propietario: este SKU es AAA/genérico. Mostrarlo claramente en ficha, nunca en título. Esta excepción por SKU prevalece sobre original por defecto.",
+      "evidencia_autenticidad": "Confirmación comercial expresa del propietario en este chat: AUDI017 es AAA; excepción por SKU sobre regla general. importacion/lotes/correcciones-069/instrucciones-propietario.json",
+      "revision": 4,
+      "marca_referencia_excepcion": "JBL",
+      "excepcion_explicita_propietario": {
+        "autenticidad": "genérico/compatible",
+        "evidencia": "importacion/lotes/correcciones-069/instrucciones-propietario.json",
+        "motivo": "AUDI017 es AAA por confirmación expresa; etiqueta y audífonos reales llevan JBL."
+      }
     },
     "imagenes": [
       {
@@ -12414,13 +12444,13 @@
             "alto": 300
           }
         },
-        "revision_regla": 3,
-        "revision_visual": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
+        "revision_regla": 4,
+        "revision_visual": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas. Revalidado contra instrucciones actuales: vista correcta conservada byte a byte; la nueva vista satisface la corrección solicitada.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
         "dhash": "000f3b33173b0f00",
-        "huella_proceso": "5b534fa2debbdf0573511e3c1ac87f99d3fe408aeca94fd73f6bfaa2593aaeb8",
+        "huella_proceso": "75a07e975cd590e92c6f4036eab52a45e8dc8bdaacf318123e52d1c5325ee101",
         "version_proceso": 2
       }
     ]
@@ -14601,13 +14631,13 @@
     ]
   },
   "AUDI098": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "genérico/compatible",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Conservar el logotipo JBL real en el estuche/powerbank; comprobar referencia y posición exacta. AAA permanece independiente de logotipo.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: JBL; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 956,957,958,959,960; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "imagenes": [
       {
@@ -14649,13 +14679,61 @@
             "alto": 300
           }
         },
-        "revision_regla": 2,
-        "revision_visual": "Edición comercial de fotografía propia: limpieza, iluminación y fondo blanco; geometría, conectores, controles, color y logotipos cotejados con la referencia real. Sin caja, accesorios añadidos ni pantalla inventada.",
+        "revision_regla": 3,
+        "revision_visual": "Edición comercial de fotografía propia: limpieza, iluminación y fondo blanco; geometría, conectores, controles, color y logotipos cotejados con la referencia real. Sin caja, accesorios añadidos ni pantalla inventada. Revalidado contra instrucciones actuales: vista correcta conservada byte a byte; la nueva vista satisface la corrección solicitada.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
         "dhash": "0006161f07171e00",
-        "huella_proceso": "c49a91286ba53fded14cb7fcaed57c38847229972ce5ea2ccab164cd53ee1d2e",
+        "huella_proceso": "ad29cadc0f96fc8e4c7a6a0b27433c363b5b03a9be1849d60b8aaa18e9ef5ad9",
+        "version_proceso": 2
+      },
+      {
+        "posicion": 2,
+        "contiene_caja": false,
+        "referencia_fabricante": false,
+        "referencia_distribuidor": false,
+        "fuente": "https://drive.google.com/file/d/1NyykjWMF7nBtJkD1Z6i9FC4yZwcA0gKI/view?usp=drivesdk",
+        "original": "/imagenes/audi098/original-6b5597f699cb0da2.png",
+        "sha256_original": "6b5597f699cb0da24889df80d60bcdbe3299bcfdbdfbc3badf0fdc6f3e151ece",
+        "resolucion_original": [
+          1254,
+          1254
+        ],
+        "resolucion_util": [
+          1008,
+          1008
+        ],
+        "versiones": {
+          "1200": {
+            "url": "/imagenes/audi098/AUDI098-02.webp",
+            "sha256": "400ce83091d21c14bc8e7a9d343789ca560cea7e6a34358739818a365105c745",
+            "bytes": 100496,
+            "ancho": 1200,
+            "alto": 1200
+          },
+          "600": {
+            "url": "/imagenes/audi098/AUDI098-02-600.webp",
+            "sha256": "211866936cf495ed10283b2ed6c4bef41c537f45810774944e93ccb5aaa6d847",
+            "bytes": 15556,
+            "ancho": 600,
+            "alto": 600
+          },
+          "300": {
+            "url": "/imagenes/audi098/AUDI098-02-300.webp",
+            "sha256": "ff20345d81bf25c1d8935ef76d72e949e2764c207ebb635aa1c3defb2c5dae84",
+            "bytes": 3728,
+            "ancho": 300,
+            "alto": 300
+          }
+        },
+        "revision_regla": 3,
+        "revision_visual": "Vista secundaria cerrada muestra el logo JBL físico en la parte superior de la tapa; portada abierta correcta conservada.",
+        "recorte": null,
+        "silueta_revisada": null,
+        "ajustes": {},
+        "dhash": "000607032b330e00",
+        "huella_proceso": "2f9470ce05aaedf81cb76d71910e85ee7bf39a4ef6991f89d983143e130634f7",
         "version_proceso": 2
       }
     ]
@@ -14781,13 +14859,13 @@
     ]
   },
   "AUDI018": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "genérico/compatible",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Audífonos sin gomas ni puntas de silicona: comprobar foto física y mantener su forma real.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: JBL; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1067,1069,1071,1073; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "imagenes": [
       {
@@ -14796,46 +14874,46 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/1KWTMfxbUuiR9hbmp9h99dzm3nuWkaoBZ/view?usp=drivesdk",
-        "original": "/imagenes/audi018/original-8da8145e1a093c57.png",
-        "sha256_original": "8da8145e1a093c579fe9c16f8a17aa40894d5c3770890b4da5f65c7f60c97a48",
+        "original": "/imagenes/audi018/original-a3ccc0de37666a5b.png",
+        "sha256_original": "a3ccc0de37666a5bcf4a9278dcab91f4419275f91de3369a3d66b02bc4d48a30",
         "resolucion_original": [
-          1086,
-          1448
+          1254,
+          1254
         ],
         "resolucion_util": [
-          756,
+          1008,
           1008
         ],
         "versiones": {
           "1200": {
             "url": "/imagenes/audi018/AUDI018-01.webp",
-            "sha256": "9873cc70663519ca4a627a8beb9a2aabfd314c766f50b42a59c556a2166238bf",
-            "bytes": 66942,
+            "sha256": "fff1b57ee7d068142ba3a3f610547407fa7f0991b3f917c2bf1e209a61e682ac",
+            "bytes": 78904,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/audi018/AUDI018-01-600.webp",
-            "sha256": "9bb83df8ca2f27fb1711ac04e47e13fc80489c31f8a4395d6a94c9897d7befcb",
-            "bytes": 25102,
+            "sha256": "60c29ebaedbf152eacf87b5116bdb30f4df4d8010b4c71b7fac78f6111b61813",
+            "bytes": 30162,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/audi018/AUDI018-01-300.webp",
-            "sha256": "dccfb12c4997259b61e2c2e1b3d5bd4e9c18a07192dea98484abb18e7e5bf524",
-            "bytes": 9024,
+            "sha256": "9764d7510125b44d6fed6f246bf074ba97f95836fe5741ca49ea96667d3cb8c4",
+            "bytes": 10982,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 2,
-        "revision_visual": "Edición comercial de fotografía propia: limpieza, iluminación y fondo blanco; geometría, conectores, controles, color y logotipos cotejados con la referencia real. Sin caja, accesorios añadidos ni pantalla inventada.",
+        "revision_regla": 3,
+        "revision_visual": "Auriculares rígidos transparentes violeta SIN gomas, internals y estuche real JBL cotejados contra unidad propia.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "000e0e0616060e00",
-        "huella_proceso": "eb160665bdec635e0891708296af5333fb95068ccaa08e4b1204c6f4f794c39d",
+        "dhash": "0c0e0e0613070f0c",
+        "huella_proceso": "5f9ad341b8eb562a4b46ce47d1f98db1e0497c7d11461c63c7b4d748a8d44dc0",
         "version_proceso": 2
       }
     ]
@@ -15441,13 +15519,13 @@
     ]
   },
   "ADAP060": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "La pieza física tiene un cable entre la entrada HDMI y el cuerpo con dos salidas HDMI. Mantener cable, conectores y topología reales.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2354,2355,2513,2514; Tipo: AAA (genérico), Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "imagenes": [
       {
@@ -15455,9 +15533,9 @@
         "contiene_caja": false,
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
-        "fuente": "https://drive.google.com/file/d/1qw4SpvpUEB4F0XYoIJzrvmGSvl_18Lqn/view?usp=drivesdk",
-        "original": "/imagenes/adap060/original-073b6bf6217b1791.png",
-        "sha256_original": "073b6bf6217b179189bf9369bd8f75794aa0f1cd9dd826530dfd3e2c61852627",
+        "fuente": "https://drive.google.com/file/d/1j7hj34FQb1yEfX5XM12OJgfdaV0lIHoE/view?usp=drivesdk",
+        "original": "/imagenes/adap060/original-abdcf1dd1a1b6f32.png",
+        "sha256_original": "abdcf1dd1a1b6f320f0268e697f2c026a50ed2c95d0a08401f94fb51c514e47c",
         "resolucion_original": [
           1254,
           1254
@@ -15469,33 +15547,33 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/adap060/ADAP060-01.webp",
-            "sha256": "8580d3f98980155f753fe0336c4ada25deb8694730e22e11a35eea5d69ea44cc",
-            "bytes": 79416,
+            "sha256": "800b7daa004446310533285d7f5d35c7345afe114a70a9a3e610cde185a491d2",
+            "bytes": 62582,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/adap060/ADAP060-01-600.webp",
-            "sha256": "8783646f7a9258baaa16b69d960581817e49b3844384a11b82d516d2f67434a5",
-            "bytes": 18054,
+            "sha256": "8ac87de342686dc4fa10cd8c9a39b5f09ea3bda76ae84bb1cf9c6a637273afa0",
+            "bytes": 15350,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/adap060/ADAP060-01-300.webp",
-            "sha256": "f276209f49de5f579bc6f165f589a384b3bb886facda38e2692374dabbb4340d",
-            "bytes": 4912,
+            "sha256": "e0e4daaeb53c919e375060205aa47944d8810899c5747762cb619ba4a4335726",
+            "bytes": 5054,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 2,
-        "revision_visual": "Fotografía propia editada: limpieza, iluminación y fondo blanco. Geometría, color, conexiones, controles y rótulos comparados con el objeto real. Sin caja ni hardware añadido.",
+        "revision_regla": 3,
+        "revision_visual": "Variante confirmada por propietario: HDMI macho, cable corto en U y carcasa con dos salidas HDMI hembra. Geometría cotejada con unidad dentro de bolsa, retirando empaque.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "000d0e0f2b2b0000",
-        "huella_proceso": "74effe4268fbd3316fe156945c033b2d090ce99ee5a64f843a1dd1322461229a",
+        "dhash": "00363b7141333e00",
+        "huella_proceso": "a1491d388dd9a27ea3f09c21efe6dfb2c68b28e4e9ec0cc622cfb7d6d54edbe9",
         "version_proceso": 2
       }
     ]
@@ -16360,13 +16438,13 @@
     ]
   },
   "SOPO037": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Mostrar el soporte completo, incluida base/cuerpo/articulación que acrediten las fuentes; evitar vista solamente frontal.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 340,341,342,343,345,346,347; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "imagenes": [
       {
@@ -16374,47 +16452,47 @@
         "contiene_caja": false,
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
-        "fuente": "https://drive.google.com/file/d/14E-5WDMYMMat0lqRyW0C_vtg3NepdyiT/view?usp=drivesdk",
-        "original": "/imagenes/sopo037/original-cd72731c799b2697.png",
-        "sha256_original": "cd72731c799b269723694cc94b12230cf0d149b7de2ae6ec8b4fc61f92d831f6",
+        "fuente": "https://drive.google.com/file/d/1lILrPhnO0W-0Wb3C599qzUDdwWWKQk2f/view?usp=drivesdk",
+        "original": "/imagenes/sopo037/original-151bb33b0f9d0220.png",
+        "sha256_original": "151bb33b0f9d02208119fce5ef06a6e2e82abceda4ca05fa0e565aea2429ec94",
         "resolucion_original": [
-          1086,
-          1448
+          1254,
+          1254
         ],
         "resolucion_util": [
-          756,
+          1008,
           1008
         ],
         "versiones": {
           "1200": {
             "url": "/imagenes/sopo037/SOPO037-01.webp",
-            "sha256": "306a3120cd1c73745fb800b8ef664b15e8ad6c5f752d36879e477aa89986d927",
-            "bytes": 70614,
+            "sha256": "404f91f5862184553316ee88dbf3002a10d10192b6df02365669ad6dd97c5992",
+            "bytes": 46870,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/sopo037/SOPO037-01-600.webp",
-            "sha256": "177cac37c612a25740d75f6d0a658116456c5087591d2b14a12082690c4643f6",
-            "bytes": 14446,
+            "sha256": "e668cc2382d4c827fefd2a8202587ca1ea87d45415227599034b0bfa210f94d0",
+            "bytes": 15652,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/sopo037/SOPO037-01-300.webp",
-            "sha256": "6b1b3cbbf2d5074e0e2e2ffd8928f18220a38b0bcb3596bebffb5206964ce99c",
-            "bytes": 5044,
+            "sha256": "16b2648c029b4d650d6db97cd5a598c49e0e99661d91048550423680755cba7e",
+            "bytes": 6006,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 2,
-        "revision_visual": "Fotografía propia editada: limpieza, iluminación y fondo blanco. Geometría, color, conexiones, controles y rótulos comparados con el objeto real. Sin caja ni hardware añadido.",
+        "revision_regla": 3,
+        "revision_visual": "Soporte completo: cabezal MAGICMOUNT/SCOSCHE, articulación, brazo y ventosa enteros; geometría cotejada con unidad física.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "0c0e160e06160e08",
-        "huella_proceso": "bd45b15bb1c817557fe43c6346894de3dd5a265d00af1c17e650178c4ccd90b1",
+        "dhash": "064707063e1e0704",
+        "huella_proceso": "79dcb0e960f3d875100fa1f3d2a050f1eb493682635aa9cab3efa05ee92403bb",
         "version_proceso": 2
       }
     ]
@@ -17260,13 +17338,13 @@
     ]
   },
   "JUGU135": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Incluir variante dorada únicamente si existe y se verifica en Drive; no recolorear por aproximación ni crear SKU. Venta por una unidad, consultar color.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1767,1768,1769,1770,1777,1778,1779,1780; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "imagenes": [
       {
@@ -17308,13 +17386,61 @@
             "alto": 300
           }
         },
-        "revision_regla": 2,
-        "revision_visual": "Comparación física: carrocería, ruedas, franja, número36 y rótulos conservados. Corregida inscripción BFGoodrich frente a la propuesta anterior. Luz de estudio, sin fondo distractor ni accesorios añadidos.",
+        "revision_regla": 3,
+        "revision_visual": "Comparación física: carrocería, ruedas, franja, número36 y rótulos conservados. Corregida inscripción BFGoodrich frente a la propuesta anterior. Luz de estudio, sin fondo distractor ni accesorios añadidos. Revalidado contra instrucciones actuales: vista correcta conservada byte a byte; la nueva vista satisface la corrección solicitada.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
         "dhash": "00315e490d032300",
-        "huella_proceso": "074a4087c15643234936b6a453d7a0b36e244a3fd63a5f6f5571f45014ab990e",
+        "huella_proceso": "b53e5436715146fcd05bce016ff54cb1f911be4d324d599690f3a8e935c1752b",
+        "version_proceso": 2
+      },
+      {
+        "posicion": 2,
+        "contiene_caja": false,
+        "referencia_fabricante": false,
+        "referencia_distribuidor": false,
+        "fuente": "https://drive.google.com/file/d/1hU_RQ2bDSTqJ2OVN4FgF_-j1KIL5lama/view?usp=drivesdk",
+        "original": "/imagenes/jugu135/original-a9c4da8208676ccc.png",
+        "sha256_original": "a9c4da8208676ccc5867c75bb7b1ef25c034877359dce42bb7b6abb3ff70aab6",
+        "resolucion_original": [
+          1254,
+          1254
+        ],
+        "resolucion_util": [
+          1008,
+          1008
+        ],
+        "versiones": {
+          "1200": {
+            "url": "/imagenes/jugu135/JUGU135-02.webp",
+            "sha256": "716577d8d1afc35fbe46abb87223e207b13655b9c0cf2e980fd9687db14f63ab",
+            "bytes": 127292,
+            "ancho": 1200,
+            "alto": 1200
+          },
+          "600": {
+            "url": "/imagenes/jugu135/JUGU135-02-600.webp",
+            "sha256": "3f0b249921e335b80c44eae4d0fce5c78116baea6600b2fc6040e688189d6a8a",
+            "bytes": 42658,
+            "ancho": 600,
+            "alto": 600
+          },
+          "300": {
+            "url": "/imagenes/jugu135/JUGU135-02-300.webp",
+            "sha256": "c1c9ba0f0a9c4bc03c19be8077782f171cfc089cb377958b1341b8e98784df84",
+            "bytes": 13802,
+            "ancho": 300,
+            "alto": 300
+          }
+        },
+        "revision_regla": 3,
+        "revision_visual": "Variante dorada real agregada a galería; número36, HTSEPRO, KAROL LOHSE y rótulo lightamTEQ revisados en segunda propuesta; carro blanco conserva bytes.",
+        "recorte": null,
+        "silueta_revisada": null,
+        "ajustes": {},
+        "dhash": "00386f3707074300",
+        "huella_proceso": "d05c9633294462804aff73ac38836b9641c5959c12665398766b8fbe1aa08437",
         "version_proceso": 2
       }
     ]
@@ -17380,13 +17506,13 @@
     ]
   },
   "JUGU138": {
-    "revision_regla": 2,
+    "revision_regla": 3,
     "regla": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Mejorar ángulo y acabado de producto nuevo, conservando todo el hardware y color reales.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 846,847; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "imagenes": [
       {
@@ -17395,8 +17521,8 @@
         "referencia_fabricante": false,
         "referencia_distribuidor": false,
         "fuente": "https://drive.google.com/file/d/14Aa6-w1k1jqAYYvdQ8iM9XGV-NPB4gxS/view?usp=drivesdk",
-        "original": "/imagenes/jugu138/original-fd3cc9593ad57bb5.png",
-        "sha256_original": "fd3cc9593ad57bb56c579a5c8b13e07a3639cfac85747af2b2fde25957a3e3c3",
+        "original": "/imagenes/jugu138/original-e3b9b5af34c6559c.png",
+        "sha256_original": "e3b9b5af34c6559cc1afa0462968dd0b6622a94990f9c882e4345e132b0d0b1d",
         "resolucion_original": [
           1254,
           1254
@@ -17408,33 +17534,33 @@
         "versiones": {
           "1200": {
             "url": "/imagenes/jugu138/JUGU138-01.webp",
-            "sha256": "d5f2db0d3038a673e50f74d2be0f6b2a20a561a8a0260085dce3355fe62aa1a8",
-            "bytes": 113706,
+            "sha256": "98b8230d6d0ef1c9f6996e0f4ae2004368239bcaa71c544cc7a5a6adf85af920",
+            "bytes": 96464,
             "ancho": 1200,
             "alto": 1200
           },
           "600": {
             "url": "/imagenes/jugu138/JUGU138-01-600.webp",
-            "sha256": "e80cfa547e217c7fe988259fd9536a0875d70d39c7221f9a99a3d33d197bf45d",
-            "bytes": 40274,
+            "sha256": "c465b08c67803d88be8a2f33ee6da3d03ab0da6082bd2b38a7ed88d662586dd9",
+            "bytes": 34834,
             "ancho": 600,
             "alto": 600
           },
           "300": {
             "url": "/imagenes/jugu138/JUGU138-01-300.webp",
-            "sha256": "f79c94844ae6e535c61feb1dd5102c6b35b23f08a1bccbabd2265bc109cd00b0",
-            "bytes": 13804,
+            "sha256": "34015f058fad6dc861f360ad563fa2a95f29942bc67c03304944b012fd5e6e07",
+            "bytes": 12056,
             "ancho": 300,
             "alto": 300
           }
         },
-        "revision_regla": 2,
-        "revision_visual": "Fotografía propia editada: limpieza, iluminación y fondo blanco. Geometría, color, conexiones, controles y rótulos comparados con el objeto real. Sin caja ni hardware añadido.",
+        "revision_regla": 3,
+        "revision_visual": "Taxi naranja nuevo limpio, ángulo delantero lateral; TAXI, WELCOME TO THE CITY, silueta ciudad, cuadros y ruedas cotejados con fuentes propias.",
         "recorte": null,
         "silueta_revisada": null,
         "ajustes": {},
-        "dhash": "032347070b2e1910",
-        "huella_proceso": "337bebe398dba5270fe64ca4a96c5116aa4d9dc2850b5117fcda139dd93859c1",
+        "dhash": "0003072f1f0c0900",
+        "huella_proceso": "e69ddb6c210ec95d98ef663bffc134ff3248be3fdbba7a4157a057bed097941e",
         "version_proceso": 2
       }
     ]

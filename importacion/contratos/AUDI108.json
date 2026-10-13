@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/15xExOHt9v1Oj9klBIXfUa75xXZ20jLuv/view?usp=drivesdk",
     "https://drive.google.com/file/d/17rTAmvs-Sh2Hr0x4uq2CXKp4-5Ps9wvS/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/lotes/correcciones-069/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/audi108/AUDI108-01.webp",
   "imagenes_secundarias": [],
@@ -78,16 +79,20 @@
       {
         "sha256": "3efecd0edbb73408f878765a4de5595f6fda65c28c9c6470faad2457439eac70",
         "fuente": "https://drive.google.com/file/d/15xExOHt9v1Oj9klBIXfUa75xXZ20jLuv/view?usp=drivesdk"
+      },
+      {
+        "sha256": "589d124f21c16f847890c25d8357cfb4c5b65d42d69fba91b6ef6f166bcab8a9",
+        "fuente": "https://drive.google.com/file/d/15xExOHt9v1Oj9klBIXfUa75xXZ20jLuv/view?usp=drivesdk"
       }
     ],
     "material_externo_utilizado": false,
     "derivacion": {
-      "archivo_maestro": "/imagenes/audi108/original-3efecd0edbb73408.png",
-      "sha256_maestro": "3efecd0edbb73408f878765a4de5595f6fda65c28c9c6470faad2457439eac70",
+      "archivo_maestro": "/importacion/lotes/correcciones-069/editorial-imagenes/AUDI108.png",
+      "sha256_maestro": "589d124f21c16f847890c25d8357cfb4c5b65d42d69fba91b6ef6f166bcab8a9",
       "fuente_fotografia_propia": "https://drive.google.com/file/d/15xExOHt9v1Oj9klBIXfUa75xXZ20jLuv/view?usp=drivesdk",
-      "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-      "edicion_asistida_ia": true,
-      "originales_intactos_en_drive": true
+      "metodo": "Diadema erguida natural; geometría, brazo de micrófono, logo y controles +/− cotejados con maestro aprobado; signo menos corregido en segunda propuesta.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
     }
   },
   "especificaciones": [
@@ -133,23 +138,23 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/audi108-audifonos-de-diadema-klipxtreme-duovox-kch-915/",
-  "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
+  "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "descripcion": "Audífonos Klip Xtreme DuoVox KCH-915. Variante negro, con diseño y presentación cotejados con las fotografías del SKU.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 68,69; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 4,
+  "revision_regla": 5,
   "maestro": {
-    "archivo_maestro": "/imagenes/audi108/original-3efecd0edbb73408.png",
-    "sha256_maestro": "3efecd0edbb73408f878765a4de5595f6fda65c28c9c6470faad2457439eac70",
+    "archivo_maestro": "/importacion/lotes/correcciones-069/editorial-imagenes/AUDI108.png",
+    "sha256_maestro": "589d124f21c16f847890c25d8357cfb4c5b65d42d69fba91b6ef6f166bcab8a9",
     "fuente_fotografia_propia": "https://drive.google.com/file/d/15xExOHt9v1Oj9klBIXfUa75xXZ20jLuv/view?usp=drivesdk",
-    "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-    "edicion_asistida_ia": true,
-    "originales_intactos_en_drive": true
+    "metodo": "Diadema erguida natural; geometría, brazo de micrófono, logo y controles +/− cotejados con maestro aprobado; signo menos corregido en segunda propuesta.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
   },
   "compatibilidad": "Verifica la compatibilidad con tu equipo antes de comprar. No se declara compatibilidad universal.",
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
@@ -214,19 +219,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/15xExOHt9v1Oj9klBIXfUa75xXZ20jLuv/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:34:26.108292+00:00",
-      "sha256_maestro": "3efecd0edbb73408f878765a4de5595f6fda65c28c9c6470faad2457439eac70",
-      "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
+      "fecha": "2026-10-13T04:28:24.715621+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-069/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "589d124f21c16f847890c25d8357cfb4c5b65d42d69fba91b6ef6f166bcab8a9"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "AUDI108",
       "sku": "AUDI108",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:28.162Z",
+      "fecha": "2026-10-13T04:34:27.934Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,74 +260,70 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi108-audifonos-de-diadema-klipxtreme-duovox-kch-915/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/audi108-audifonos-de-diadema-klipxtreme-duovox-kch-915/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/audi108-audifonos-de-diadema-klipxtreme-duovox-kch-915/",
       "archivo_html": "productos/audi108-audifonos-de-diadema-klipxtreme-duovox-kch-915/index.html",
       "http": 200,
-      "sha256_html": "15575761ec5eb2410f839872eb6d3a5d93d24077f30f1d32d166c05294ed6312",
-      "sha256_html_local": "15575761ec5eb2410f839872eb6d3a5d93d24077f30f1d32d166c05294ed6312",
+      "sha256_html": "81558e794e166fcbb4d8d16c532d05e0d7fa26abc880573619bd87c5fc7175c9",
+      "sha256_html_local": "81558e794e166fcbb4d8d16c532d05e0d7fa26abc880573619bd87c5fc7175c9",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi108/AUDI108-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/audi108/AUDI108-01-600.webp?v=27b0a606c05758b0",
-        "naturalWidth": 343,
-        "naturalHeight": 343,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/audi108/AUDI108-01-600.webp?v=6f498b15a0db5e3f",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/audi108-audifonos-de-diadema-klipxtreme-duovox-kch-915/",
+          "url": "http://127.0.0.1:8767/productos/audi108-audifonos-de-diadema-klipxtreme-duovox-kch-915/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/audi108/AUDI108-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/audi108/AUDI108-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/audi044-audifonos-galaxy-buds-pro-akg/",
+          "url": "http://127.0.0.1:8767/productos/audi044-audifonos-galaxy-buds-pro-akg/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/audi123-airpods-pro-3-con-ai/",
+          "url": "http://127.0.0.1:8767/productos/audi123-airpods-pro-3-con-ai/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/audi094-audifonos-airpods-3-3era/",
+          "url": "http://127.0.0.1:8767/productos/audi094-audifonos-airpods-3-3era/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/AUDI108-390.png",
-      "sha256": "20391b52f4e89cc8ad411499489f6ae67a88a03fa4510e67f213c5ce98f6ed68",
+      "archivo": "reportes/correcciones-069/qa-local/movil/AUDI108-390.png",
+      "sha256": "a0cded7133c4c5faa8ff00e43900522df0733f4d2b8c0fc58655d5eb1a2adae1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/AUDI108-1280.png",
-        "sha256": "b0b63a029072e7eb5117ffd5c2e24267a18bef7fbe58f0173fd81adce6c1b7ca",
+        "archivo": "reportes/correcciones-069/qa-local/movil/AUDI108-1280.png",
+        "sha256": "cd707b91736ba4a6fdd014dc72ae73aa581bbfb0836a2126fd5fdab62fe4c134",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-066/http-publicacion.json",
-      "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
   }
 }
