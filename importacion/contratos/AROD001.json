@@ -164,7 +164,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/arod001-aro-de-luz-led-cuadrado-mj-88/",
   "fecha_verificacion": "2026-10-13T18:58:19.914751+00:00",
   "descripcion": "Luz LED MJ-88 con panel cuadrado de esquinas redondeadas y pinza de sujeción. Ofrece modos RGB y CCT indicados en el empaque y conexión de carga USB-C. La imagen muestra la luz apagada. Consulta el montaje adecuado para tu equipo antes de comprar.",
@@ -253,8 +253,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Panel físico cuadrado, frontal apagado, cuerpo negro, ranura superior, puerto USB-C lateral y pinza con articulación cotejados con las dos fotos propias. Modelo y modos leídos en empaque; la imagen procede del producto físico, no de la ilustración."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "AROD001",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "AROD001",
@@ -335,5 +338,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

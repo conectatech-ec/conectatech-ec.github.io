@@ -112,7 +112,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr23-microfono-m6-usb-c-doble-modulo-set-2/",
   "fecha_verificacion": "2026-10-13T03:15:53.421751+00:00",
   "descripcion": "Kit M6 blanco con dos micrófonos compactos y un receptor USB-C. Una presentación discreta para preparar tus grabaciones. Consulta los requisitos de conexión de tu equipo antes de comprar.",
@@ -195,8 +195,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Dos micrófonos blancos con panel frontal e indicador, un receptor blanco USB-C con indicador: formas, posiciones y color cotejados contra producto físico. Sin cajas, puertos inventados ni estuche añadido."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "MICR23",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "MICR23",
@@ -287,5 +290,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

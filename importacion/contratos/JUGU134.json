@@ -176,7 +176,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu134-juguete-carro-coleccionable-camaro-tornasol/",
   "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "descripcion": "Acabado tornasol multicolor. Para dar personalidad a tu colección o espacio de exhibición. Alerón posterior. Para dar personalidad a tu colección o espacio de exhibición. Puertas abiertas visibles en las fotografías. Para dar personalidad a tu colección o espacio de exhibición.",
@@ -307,8 +307,11 @@
       "sha256_maestro": "93aaae214d2913e6acaf86741bc657b8a5d5e61a2a8284224619f8fac1ba8e83"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "JUGU134",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "JUGU134",
@@ -405,5 +408,6 @@
       }
     }
   },
-  "garantia": null
+  "garantia": null,
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

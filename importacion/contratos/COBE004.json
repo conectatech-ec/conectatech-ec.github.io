@@ -190,7 +190,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cobe004-cobertor-estuche-airpods-pro-4/",
   "fecha_verificacion": "2026-10-13T18:58:19.914751+00:00",
   "descripcion": "Funda decorativa para estuche AirPods 4 con diseño blanco y negro de control de videojuegos. Dale otro estilo a tu estuche con sus botones decorativos de colores. Se vende una funda; consulta el diseño disponible. No incluye audífonos, estuche de carga ni un control electrónico.",
@@ -299,8 +299,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Objeto físico visible dentro de bolsa transparente. Mantener geometría, botones decorativos de colores, cruceta, círculos y argolla, retirando bolsa y etiquetas. La etiqueta propia dice AirPods4; no publicar el nombre histórico PRO4 ni inventar compatibilidad universal, electrónica, marcas o licencia."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "COBE004",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "COBE004",
@@ -381,5 +384,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

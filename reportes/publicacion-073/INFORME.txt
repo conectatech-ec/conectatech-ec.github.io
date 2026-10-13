@@ -1,0 +1,17 @@
+CONECTATECH — publicación controlada autorizada, 13 de octubre de 2026
+
+PR #3 integrado mediante avance normal de main 25933d79→68b23d26. Se conservaron los cambios automáticos posteriores 3eb33311 y 215169db. El propietario autorizó expresamente publicar bajo incertidumbre de otra sesión; no se afirma que el otro chat terminó.
+
+HTTP público comprobado después de Pages: 19 fichas verificadas, cero errores. Los contratos de 14 correcciones, 3 candidatos del lote068 y 2 del lote070 superaron fase publicacion. Nuevas publicaciones con portada: MICR09, MICR23, PARL003, AROD001 y COBE004. Productos mejorados: AUDI114, AUDI098, AUDI108, REL071, AUDI015, AUDI018, REL038, JUGU135, JUGU134, ADAP060, JUGU138, SOPO037, AUDI017 y TABL002. No se regeneraron imágenes correctas durante esta integración.
+
+El catálogo público pasó de 280 a 285 SKU con imagen; permanecen 885 sin imagen dentro de 1.170 SKU. REL050 y CARG016 siguen pendientes de referencias suficientes; sus imágenes se conservaron. El lote067 queda recuperado e integrado: 100 fichas previamente públicas, con 36 primeras portadas, 3 correcciones y 61 mejoras conservadas; no se cuentan como 100 publicaciones nuevas de este chat.
+
+Los estados de publicación y producción de 19 SKU se actualizaron únicamente después de HTTP real. Se conservó el estado anterior de sus entradas de cola y se resolvieron sus revisiones actuales de reglas. El snapshot público anterior acredita cinco primeras portadas y distingue 14 actualizaciones. Una reverificación da 19 sin_cambios; no renueva fechas ni crea publicaciones duplicadas.
+
+El registro detectó diez referencias de encuadre asociadas a portadas antiguas. El renderizador ya las ignoraba por no coincidir con el hash actual. Se retiraron sólo esos metadatos inactivos; se verificó que la salida HTML, fotografías y encuadres actuales del catálogo permanecen idénticos. Evidencia completa en encuadres-inactivos-retirados.json.
+
+Nuevo orden de publicaciones nuevas antes de actualizadas y navegación numerada verificados localmente con 111 SKU a 390/1280 px. Este checkpoint registra los metadatos después de comprobar la publicación de productos; la comprobación final del orden y navegación en web pública se guardará al completar el siguiente despliegue de Pages. No se considera terminada esa última comprobación todavía.
+
+Integridad: 1.170 SKU, Promo Contado, PVP, stock, información de 593, URLs, originales, imágenes aprobadas y reglas preservados. La cola y el registro semántico cambian sólo para 19 SKU. Los demás productos y sus fechas permanecen intactos.
+
+Siguiente lote controlado: 12 SKU sin imagen, disponibles y sin investigación de producción previa; selección en siguiente-lote-12.json. MICR03, MICR10, MICR19, MICR21, MICR28, MICR34, MICR35, MICR36, MICR037, PARL001, PARL002 y PARL011. Requieren revisar sus fotografías antes de aprobar producción. No se ha regenerado ni publicado ninguno de esos 12.

@@ -112,7 +112,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl003-parlante-mini-con-microfono-para-nios-karaoke/",
   "fecha_verificacion": "2026-10-13T03:15:53.421751+00:00",
   "descripcion": "Parlante compacto azul claro con rejilla frontal perforada, marco ahumado y asa marrón. Incluye un micrófono con cuerpo azul claro y rejilla negra. Un conjunto cómodo de llevar para tu espacio de karaoke.",
@@ -195,8 +195,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Parlante de frente azul perforado, marco ahumado, asa marrón, controles superiores observados y micrófono azul con rejilla negra: cotejados con foto real. Se mantiene la variante física, sin usar la ilustración multicolor del empaque."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "PARL003",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "PARL003",
@@ -287,5 +290,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

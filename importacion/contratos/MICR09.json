@@ -125,7 +125,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr09-microfono-inalambrico-nk11/",
   "fecha_verificacion": "2026-10-13T03:15:53.421751+00:00",
   "descripcion": "Kit NK11 con dos transmisores negros identificados TX y un receptor USB-C. Reúne los componentes de tu equipo de grabación en un conjunto compacto. Consulta los requisitos de conexión de tu dispositivo antes de comprar.",
@@ -211,8 +211,11 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Dos TX negros, cinco indicadores y sus iconos, marcas TX y un receptor USB-C: cotejados contra producto físico. Sin caras nuevas, accesorios añadidos ni cajas."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "MICR09",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "MICR09",
@@ -303,5 +306,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

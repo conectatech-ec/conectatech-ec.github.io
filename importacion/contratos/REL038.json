@@ -213,7 +213,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel038-reloj-smartwatch-saiva-sy10-ultra/",
   "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "descripcion": "Smartwatch SAYA SY10 Ultra con diseño rectangular con esquinas redondeadas y silicona acanalada. Presentación comercial basada en las fotografías reales del SKU. Consulta compatibilidad y disponibilidad antes de comprar.",
@@ -312,8 +312,11 @@
       "sha256_maestro": "b25a3e3f554dcc97d4e5781ff7a6fc6fd1513709e26a3aec6b4e84362a494832"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "REL038",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "REL038",
@@ -409,5 +412,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

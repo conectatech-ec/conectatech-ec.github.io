@@ -182,7 +182,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel071-reloj-smartwatch-aurafit-nexa-6/",
   "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "descripcion": "Smartwatch AuraFit Nexa 6 con pantalla AMOLED de 1,75 pulgadas indicada en la caja. Correa negra, confirmada por el propietario.",
@@ -280,8 +280,11 @@
       "sha256_maestro": "44bf737fdc23f1ecab1d17a3d4a405cdab095bbcdb3238effbb9da8158f6b2ae"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "REL071",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "REL071",
@@ -372,5 +375,6 @@
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

@@ -214,7 +214,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tabl002-tablet-redmi-pad-2-11-pulgadas-256gb-8gb-8gb/",
   "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "descripcion": "La Redmi Pad 2 de 11 pulgadas ofrece una pantalla 2.5K para ver contenido y trabajar con amplitud. Esta variante Gris Grafito incorpora 256 GB de almacenamiento y 8 GB de RAM físicos, según la etiqueta. El empaque confirma batería de 9000 mAh, procesador Helio G100-Ultra y cuatro altavoces. RAM total comercial: 16 GB (8 GB físicos + 8 GB virtuales).",
@@ -332,8 +332,11 @@
       "sha256_maestro": "57ede3472b497743f263d4119aa881aaf96db1d7cd04318caa704a9de8b7ff65"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "TABL002",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "TABL002",
@@ -436,5 +439,6 @@
     "virtual_gb": 8,
     "fuente": "importacion/lotes/correcciones-069/instrucciones-propietario.json",
     "desglose": "8 GB de RAM física + 8 GB de ampliación virtual"
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

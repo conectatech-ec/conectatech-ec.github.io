@@ -226,8 +226,11 @@
       "sha256_maestro": "151bb33b0f9d02208119fce5ef06a6e2e82abceda4ca05fa0e565aea2429ec94"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "SOPO037",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "SOPO037",
@@ -325,7 +328,7 @@
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 340,341,342,343,345,346,347; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
@@ -362,5 +365,6 @@
     "metodo": "Soporte completo: cabezal MAGICMOUNT/SCOSCHE, articulación, brazo y ventosa enteros; geometría cotejada con unidad física.",
     "originales_intactos_en_drive": true,
     "edicion_asistida_ia": true
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

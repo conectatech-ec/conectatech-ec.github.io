@@ -165,8 +165,11 @@
       "sha256_maestro": "abdcf1dd1a1b6f320f0268e697f2c026a50ed2c95d0a08401f94fb51c514e47c"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "ADAP060",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "ADAP060",
@@ -264,7 +267,7 @@
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2354,2355,2513,2514; Tipo: AAA (genérico), Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
@@ -301,5 +304,6 @@
     "metodo": "Variante confirmada por propietario: HDMI macho, cable corto en U y carcasa con dos salidas HDMI hembra. Geometría cotejada con unidad dentro de bolsa, retirando empaque.",
     "originales_intactos_en_drive": true,
     "edicion_asistida_ia": true
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

@@ -203,8 +203,11 @@
       "sha256_maestro": "ab058dac231bfc0d6297974356b2e08f7358ffdd7f7d788bcaaf6327f053904f"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "archivo": "reportes/publicacion-073/http-publicacion.json",
+      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
+      "estado": "VERIFICADO",
+      "sku": "JUGU135",
+      "fecha": "2026-10-13T19:50:33.477266+00:00"
     },
     "movil": {
       "solicitado": "JUGU135",
@@ -313,7 +316,7 @@
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
   "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1767,1768,1769,1770,1777,1778,1779,1780; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
@@ -334,5 +337,6 @@
         "fuente": "https://drive.google.com/file/d/1hU_RQ2bDSTqJ2OVN4FgF_-j1KIL5lama/view?usp=drivesdk"
       }
     ]
-  }
+  },
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
 }

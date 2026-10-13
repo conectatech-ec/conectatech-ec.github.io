@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "continuacion-070",
   "rama": "catalogo/continuacion-cierre067-20261012",
-  "estado": "CANDIDATO_LOCAL_SIN_DESPLIEGUE",
+  "estado": "PUBLICADO_VERIFICADO",
   "manifiesto": "importacion/lotes/continuacion-070/manifiesto-aprobados.json",
   "skus": [
     "AROD001",
@@ -11,5 +11,7 @@
   "qa_manifiesto": "importacion/lotes/continuacion-070/manifiesto-qa.json",
   "qa_base_publica": null,
   "cierre_lote067": "reportes/lote-067/cierre-recuperado.json",
-  "restriccion_produccion": "main bloqueado por actividad simultánea no descartada"
+  "restriccion_produccion": "Lote aprobado expresamente con controles por propietario; no se afirma terminación de otro chat.",
+  "cierre_consolidado": "reportes/publicacion-073/resultados-produccion.json",
+  "verificacion_publica": "reportes/publicacion-073/http-publicacion.json"
 }
