@@ -10,7 +10,7 @@ Los estados de publicación y producción de 19 SKU se actualizaron únicamente 
 
 El registro detectó diez referencias de encuadre asociadas a portadas antiguas. El renderizador ya las ignoraba por no coincidir con el hash actual. Se retiraron sólo esos metadatos inactivos; se verificó que la salida HTML, fotografías y encuadres actuales del catálogo permanecen idénticos. Evidencia completa en encuadres-inactivos-retirados.json.
 
-Nuevo orden de publicaciones nuevas antes de actualizadas y navegación numerada verificados localmente con 111 SKU a 390/1280 px. Este checkpoint registra los metadatos después de comprobar la publicación de productos; la comprobación final del orden y navegación en web pública se guardará al completar el siguiente despliegue de Pages. No se considera terminada esa última comprobación todavía.
+Orden de publicaciones nuevas antes de actualizadas y navegación numerada verificados en la web pública con 111 SKU a 390/1280 px, cero errores. Los cinco primeros son AROD001, COBE004, PARL003, MICR09 y MICR23. Comprobados saltos 5→2 y 12→2 mediante números, además del selector de cualquier página. Evidencia y capturas en qa-publica. Validación de rama 38458823481 y despliegue Pages 38458960319 aprobados. Lote cerrado con publicación y navegación públicas comprobadas.
 
 Integridad: 1.170 SKU, Promo Contado, PVP, stock, información de 593, URLs, originales, imágenes aprobadas y reglas preservados. La cola y el registro semántico cambian sólo para 19 SKU. Los demás productos y sus fechas permanecen intactos.
 
