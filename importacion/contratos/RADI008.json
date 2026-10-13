@@ -194,9 +194,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/radi008-radio-portail-lp-con-panel-solar/",
-  "fecha_verificacion": "2026-10-13T21:59:12.499349+00:00",
+  "fecha_verificacion": "2026-10-13T22:09:58.240359+00:00",
   "descripcion": "Radio portátil LP V52 con panel solar posterior y reproducción de FM, USB y tarjeta TF. Su formato negro compacto incorpora pantalla y teclado numérico para manejar la reproducción.",
   "contenido_venta": "1 radio portátil LP V52 con panel solar integrado. No se añaden accesorios no comprobados.",
   "compatibilidad": "Reproducción desde dispositivos Bluetooth y medios USB o tarjeta TF; los formatos concretos deben comprobarse antes de usar.",
@@ -309,14 +309,17 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Pantalla apagada y teclado numérico real 1–9/0/M/candado/reproducción/+/-; emblema LP intacto. Panel solar confirmado por fotografía posterior, sin reconstruir cara oculta en portada."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/continuacion-075/http-publicacion.json",
+      "sha256": "65349718417af62d9df93bb4a9b95f19375cd5280061d34361b9262af1dbe8d4",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-13T22:09:58.240359+00:00",
+      "sku": "RADI008"
     },
     "movil": {
       "solicitado": "RADI008",
       "sku": "RADI008",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T22:02:02.430Z",
+      "fecha": "2026-10-13T22:10:20.001Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -341,7 +344,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/radi008-radio-portail-lp-con-panel-solar/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/radi008-radio-portail-lp-con-panel-solar/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/radi008-radio-portail-lp-con-panel-solar/",
       "archivo_html": "productos/radi008-radio-portail-lp-con-panel-solar/index.html",
       "http": 200,
       "sha256_html": "ef4cb198ffbcbe65ef77d2255203f09c96a2f30c153e3b15529fbd699f3516cb",
@@ -351,7 +354,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/radi008/RADI008-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/radi008/RADI008-01-600.webp?v=db2558006e0dd7ae",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/radi008/RADI008-01-600.webp?v=db2558006e0dd7ae",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -360,32 +363,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/radi008-radio-portail-lp-con-panel-solar/",
+          "url": "https://conectatech-ec.github.io/productos/radi008-radio-portail-lp-con-panel-solar/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/radi008/RADI008-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/radi008/RADI008-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-075/qa-local/movil/RADI008-390.png",
+      "archivo": "reportes/continuacion-075/qa-publica/movil/RADI008-390.png",
       "sha256": "917f8cc0d88345e1c441e73f1a307cb6163fd858330c7d086da64da3719d5593",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-075/qa-local/movil/RADI008-1280.png",
+        "archivo": "reportes/continuacion-075/qa-publica/movil/RADI008-1280.png",
         "sha256": "80e189813902ec0086d3d3c6e5a274302027d2c4c0bc39dc7329ac0fe6d9a64d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

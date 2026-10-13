@@ -193,9 +193,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/radi007-radio-tipo-vintage-antiguo-meier-md-1318bt/",
-  "fecha_verificacion": "2026-10-13T21:59:12.499349+00:00",
+  "fecha_verificacion": "2026-10-13T22:09:58.240359+00:00",
   "descripcion": "Radio Meier MD-1318BT con presencia decorativa de gramófono y acabado borgoña con detalles dorados. Ofrece sintonización FM, AM y onda corta, además de entradas USB, TF y AUX. Modelo decorativo; no se ofrece como reproductor de vinilos.",
   "contenido_venta": "1 radio decorativo Meier MD-1318BT.",
   "compatibilidad": "Fuentes de audio por AUX y reproducción desde USB o tarjeta TF; no se promete reproducción de vinilos.",
@@ -311,14 +311,17 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Trompeta, soporte, plato ornamental, brazo dorado, rejilla y escala física cotejados en vistas nativas. No se afirma reproducción de vinilo ni función no observada."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/continuacion-075/http-publicacion.json",
+      "sha256": "65349718417af62d9df93bb4a9b95f19375cd5280061d34361b9262af1dbe8d4",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-13T22:09:58.240359+00:00",
+      "sku": "RADI007"
     },
     "movil": {
       "solicitado": "RADI007",
       "sku": "RADI007",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T22:02:01.454Z",
+      "fecha": "2026-10-13T22:10:18.837Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -343,7 +346,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/radi007-radio-tipo-vintage-antiguo-meier-md-1318bt/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/radi007-radio-tipo-vintage-antiguo-meier-md-1318bt/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/radi007-radio-tipo-vintage-antiguo-meier-md-1318bt/",
       "archivo_html": "productos/radi007-radio-tipo-vintage-antiguo-meier-md-1318bt/index.html",
       "http": 200,
       "sha256_html": "927e7a8cd71439b51296d578239a29e515383673b712ba2b42c3cac0122bbfac",
@@ -353,7 +356,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/radi007/RADI007-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/radi007/RADI007-01-600.webp?v=26ce3eabd1257418",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/radi007/RADI007-01-600.webp?v=26ce3eabd1257418",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -362,32 +365,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/radi007-radio-tipo-vintage-antiguo-meier-md-1318bt/",
+          "url": "https://conectatech-ec.github.io/productos/radi007-radio-tipo-vintage-antiguo-meier-md-1318bt/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/radi007/RADI007-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/radi007/RADI007-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-075/qa-local/movil/RADI007-390.png",
+      "archivo": "reportes/continuacion-075/qa-publica/movil/RADI007-390.png",
       "sha256": "f77a20cbd2f76be561c9d891c8e9df8fff78c3e38c76a693ba61b4d602d94087",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-075/qa-local/movil/RADI007-1280.png",
+        "archivo": "reportes/continuacion-075/qa-publica/movil/RADI007-1280.png",
         "sha256": "9f01bcc463937fc371fee6d5951506fdab408b3972dface5272ad3225d3d614a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

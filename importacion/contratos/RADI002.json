@@ -165,9 +165,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/radi002-radio-parlante-lenovo-ts13-con-despertador/",
-  "fecha_verificacion": "2026-10-13T21:59:12.499349+00:00",
+  "fecha_verificacion": "2026-10-13T22:09:58.240359+00:00",
   "descripcion": "Parlante compacto Lenovo thinkplus TS13 con Bluetooth 5.0 y función de reloj. Su acabado verde menta y frente de espejo acompañan el escritorio o la mesa de noche.",
   "contenido_venta": "1 parlante reloj Lenovo TS13. No se prometen accesorios no fotografiados.",
   "compatibilidad": "Reproducción desde dispositivos con Bluetooth; comprobar las funciones disponibles en el dispositivo fuente.",
@@ -275,14 +275,17 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Frente espejo apagado, logo thinkplus y tres botones superiores exactos; eliminados reflejos personales, sin inventar dígitos ni hardware."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/continuacion-075/http-publicacion.json",
+      "sha256": "65349718417af62d9df93bb4a9b95f19375cd5280061d34361b9262af1dbe8d4",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-13T22:09:58.240359+00:00",
+      "sku": "RADI002"
     },
     "movil": {
       "solicitado": "RADI002",
       "sku": "RADI002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T22:01:59.433Z",
+      "fecha": "2026-10-13T22:10:16.046Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -307,7 +310,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/radi002-radio-parlante-lenovo-ts13-con-despertador/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/radi002-radio-parlante-lenovo-ts13-con-despertador/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/radi002-radio-parlante-lenovo-ts13-con-despertador/",
       "archivo_html": "productos/radi002-radio-parlante-lenovo-ts13-con-despertador/index.html",
       "http": 200,
       "sha256_html": "2c4abb6853620691d1ea5151975453578942f2bce3397ce57afe87c2eeeda178",
@@ -317,7 +320,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/radi002/RADI002-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/radi002/RADI002-01-600.webp?v=3e3cd68cbd9eb181",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/radi002/RADI002-01-600.webp?v=3e3cd68cbd9eb181",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -326,32 +329,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/radi002-radio-parlante-lenovo-ts13-con-despertador/",
+          "url": "https://conectatech-ec.github.io/productos/radi002-radio-parlante-lenovo-ts13-con-despertador/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/radi002/RADI002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/radi002/RADI002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-075/qa-local/movil/RADI002-390.png",
+      "archivo": "reportes/continuacion-075/qa-publica/movil/RADI002-390.png",
       "sha256": "0bc75ead168c8102bc201dd28007f16db2ef09589fce2a7d634f7a034e745ce8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-075/qa-local/movil/RADI002-1280.png",
+        "archivo": "reportes/continuacion-075/qa-publica/movil/RADI002-1280.png",
         "sha256": "fabd41bafd90afe68d2d0aabc2f20bd48cde945e1ffcc06ba062dfed48bdc491",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

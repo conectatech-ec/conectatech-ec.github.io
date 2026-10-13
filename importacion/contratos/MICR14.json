@@ -109,9 +109,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr14-microfono-inalambrico-f15-2/",
-  "fecha_verificacion": "2026-10-13T21:59:12.499349+00:00",
+  "fecha_verificacion": "2026-10-13T22:09:58.240359+00:00",
   "descripcion": "Conjunto F15-2 de micrófonos inalámbricos con dos transmisores y un receptor de conexiones Lightning y USB-C. Los paravientos grises acompañan ambos transmisores para grabaciones móviles.",
   "contenido_venta": "2 transmisores, 2 paravientos y 1 receptor con conexiones Lightning y USB-C, según conjunto físico fotografiado.",
   "compatibilidad": "Dispositivos con conexión Lightning o USB-C y soporte para micrófono externo. Verifica el soporte del equipo y la aplicación antes de comprar.",
@@ -202,14 +202,17 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Conjunto físico de dos TX con paravientos y receptor con Lightning/USB-C, piezas visibles en bandeja abierta; sin extraer ilustraciones, inventar clips o estuche."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "archivo": "reportes/continuacion-075/http-publicacion.json",
+      "sha256": "65349718417af62d9df93bb4a9b95f19375cd5280061d34361b9262af1dbe8d4",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-13T22:09:58.240359+00:00",
+      "sku": "MICR14"
     },
     "movil": {
       "solicitado": "MICR14",
       "sku": "MICR14",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T22:02:03.379Z",
+      "fecha": "2026-10-13T22:10:21.297Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -234,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr14-microfono-inalambrico-f15-2/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/micr14-microfono-inalambrico-f15-2/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr14-microfono-inalambrico-f15-2/",
       "archivo_html": "productos/micr14-microfono-inalambrico-f15-2/index.html",
       "http": 200,
       "sha256_html": "9f54b2b3fe9be3ec2b53d3086c1179e673f750108e58c8c10856e0b46c9e7429",
@@ -244,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr14/MICR14-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/micr14/MICR14-01-600.webp?v=d8a38060b07caab4",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr14/MICR14-01-600.webp?v=d8a38060b07caab4",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -253,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/micr14-microfono-inalambrico-f15-2/",
+          "url": "https://conectatech-ec.github.io/productos/micr14-microfono-inalambrico-f15-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/micr14/MICR14-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr14/MICR14-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-075/qa-local/movil/MICR14-390.png",
+      "archivo": "reportes/continuacion-075/qa-publica/movil/MICR14-390.png",
       "sha256": "4c69a595c5193288b10dca47c6f43b86a5791a5205505bdaceb57f105704397d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-075/qa-local/movil/MICR14-1280.png",
+        "archivo": "reportes/continuacion-075/qa-publica/movil/MICR14-1280.png",
         "sha256": "f46c6a455b4792c280417b579f5511d25dfe0b5893117096ffcd55196bdf9c66",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
