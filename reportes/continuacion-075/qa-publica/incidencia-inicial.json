@@ -1,0 +1,26 @@
+{
+  "estado": "RESUELTO_EN_REINTENTO",
+  "incidencia": [
+    {
+      "ancho": 1280,
+      "sku": "REL071",
+      "errores": [
+        "Imagen no carga o usa ajuste diferente decontain."
+      ],
+      "imagen": {
+        "src": "/imagenes/rel071/REL071-01-300.webp?v=216c59abf86fe6de",
+        "srcset": "/imagenes/rel071/REL071-01-300.webp?v=216c59abf86fe6de 300w, /imagenes/rel071/REL071-01-600.webp?v=9b4f46d50299e7f8 600w, /imagenes/rel071/REL071-01.webp?v=92ac7ba4dc5a119d 1200w",
+        "cargada": false,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "actual": "https://conectatech-ec.github.io/imagenes/rel071/REL071-01-600.webp?v=9b4f46d50299e7f8",
+        "ajuste": "contain"
+      }
+    }
+  ],
+  "todos_los_recursos_http_y_hash_ok": true,
+  "accion": "Repetir QA y comprobar carga del mismo archivo; conservar fotografía y reglas.",
+  "reporte_final": "reportes/continuacion-075/qa-publica/catalogo.json",
+  "foto_reglas_y_datos_sin_cambios": true,
+  "qa_final_cero_errores": true
+}
