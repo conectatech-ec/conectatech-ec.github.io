@@ -1,3 +1,9 @@
+## Correcciones más recientes del propietario — 13 de octubre de 2026
+
+Nuevos SKU publicados y verificados siempre primero: orden predeterminado recientes y fechas efectivas únicamente tras cambio real publicado. La sesión antigua continúa activa y no puede detenerse: no modificar main ni producción; guardar avances en rama independiente.
+
+Diademas verticales y naturales, con flexibilidad comercial como AUDI090 y AUDI005; aplicar a AUDI108 y AUDI114. AUDI015 impecable como nuevo, sin tapa abatible. AUDI017 AAA confirmado por propietario, excepción persistente. AUDI018 sin gomas; AUDI098 conserva JBL real en estuche. REL071 correa negra, sin color de correa en título. REL050 premium nítido y fiel; REL038 curvatura ligera real del cristal. TABL002: 16 GB RAM total, distinguir física y virtual. JUGU134 mejor ángulo/color; ADAP060 versión con cable HDMI hacia dos salidas; CARG016 mejor imagen fiel. JUGU135 añadir dorado sólo con foto Drive verificada; JUGU138 ángulo nuevo y acabado nuevo; SOPO037 soporte completo. Instrucciones y evidencias en importacion/lotes/correcciones-069/instrucciones-propietario.json y reglas-sku.json. No regenerar imágenes correctas ni cambiar finanzas, SKU, 593 o URLs.
+
 ## Continuación operativa del propietario — 12 de octubre de 2026
 
 Prioridad: finalizar catálogo por lotes controlados y checkpoints verificables. Mientras no se descarte actividad de la sesión antigua, trabajar únicamente en rama independiente; no modificar main ni desplegar producción. La ausencia de commits o workflows no demuestra que la otra sesión haya terminado. Recuperar el cierre de lote067, reutilizar fotos correctas, comprobar publicación por HTTP y Chromium y conservar 1170 SKU, precios, PVP, stock, 593, URLs, originales y reglas previas. No desarrollar WebStore, SEO avanzado ni integraciones nuevas. No contar preparación local como publicación.
