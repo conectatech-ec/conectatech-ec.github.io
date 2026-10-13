@@ -1,0 +1,44 @@
+{
+  "lote": "lote-067",
+  "base": "25933d79e529a2cbc531c3db15837a31165d2b1f",
+  "rama": "catalogo/continuacion-cierre067-20261012",
+  "estado": "FICHAS_PUBLICAS_VERIFICADAS_CIERRE_CANDIDATO_VERIFICADO_PENDIENTE_INTEGRACION",
+  "sku_fichas_publicadas_verificadas": 100,
+  "nuevas_portadas_publicadas_previamente": 36,
+  "correcciones_publicadas_previamente": 3,
+  "mejoras_comerciales_publicadas_previamente": 61,
+  "publicaciones_nuevas_realizadas_en_esta_sesion": 0,
+  "http_errores": 0,
+  "qa_publica_movil_escritorio": 100,
+  "contratos_publicacion_aprobados": 100,
+  "qa_catalogo_candidato": {
+    "vistas_comprobadas": 2,
+    "vistas_verificadas": 2,
+    "sku_solicitados": 100,
+    "errores": 0
+  },
+  "qa_catalogo_publico": {
+    "vistas_comprobadas": 2,
+    "vistas_verificadas": 0,
+    "sku_solicitados": 100,
+    "errores": 2
+  },
+  "sku_sin_registro_en_produccion": 30,
+  "registro_candidato": {
+    "incorporados": 30,
+    "actualizados": 70
+  },
+  "restriccion": "No modificar main ni producción mientras no se descarte sesión simultánea. La ausencia de commits recientes no demuestra inactividad.",
+  "integracion_pendiente": [
+    "Actualizar registro de actualizaciones y payload de catálogo desde rama independiente tras reconciliar HEAD actual.",
+    "Repetir QA del catálogo público después de despliegue y comprobar hash del nuevo payload."
+  ],
+  "fotografias_regeneradas": 0,
+  "evidencias": [
+    "reportes/lote-067/http-publicacion-recuperada.json",
+    "reportes/lote-067/contratos-publicacion-recuperada.json",
+    "reportes/lote-067/qa-publica-recuperada/movil.json",
+    "reportes/lote-067/qa-publica-recuperada/catalogo.json",
+    "reportes/lote-067/qa-cierre-candidato/catalogo.json"
+  ]
+}
