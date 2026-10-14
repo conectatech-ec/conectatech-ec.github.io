@@ -1,0 +1,30 @@
+CONECTATECH — AVANCE 078
+13 de octubre de 2026 · America/Guayaquil
+
+Se publicaron y verificaron 4 SKU nuevos y 3 correcciones. El catálogo conserva 1.170 códigos: 299 tienen imagen y 871 siguen sin portada.
+
+Correcciones publicadas:
+AUDI100: AAA / genérico, visible en la ficha y fuera del título. Se conservó la foto correcta. La confirmación está protegida contra futuras importaciones, junto con AUDI017.
+DISC003: imagen menos ancha, conservando el modelo ADATA HD710 Pro, marca, diseño rojo/negro y cable. Las especificaciones físicas no cambiaron.
+CARG016: nueva representación premium sobre fondo blanco, con ligera variación de posición del cargador y cable. La foto histórica quedó intacta; cuenta como actualización.
+
+Nuevas publicaciones:
+SOPO012: https://conectatech-ec.github.io/productos/sopo012-soporte-de-mesa-para-tablet-l3t-l-363/
+SOPO043: https://conectatech-ec.github.io/productos/sopo043-soporte-base-para-laptop-metallico-flexible/
+ADAP042: https://conectatech-ec.github.io/productos/adap042-adaptador-viajero-travel-world-internacional/
+ADAP064: https://conectatech-ec.github.io/productos/adap064-adaptador-usb-c-a-hdmi-marca-monster/
+
+Los cuatro nuevos aparecen primero, seguidos de los actualizados. Se comprobaron saltos de página 5→2 y 12→2 en móvil y escritorio.
+
+Tu regla quedó registrada: usar la imagen existente, caja y modelo identificado como referencia y variar ligeramente la posición. Se aplica a los demás SKU sin repetir consultas rutinarias de permiso del distribuidor. Se conserva la procedencia real; no se afirma una licencia externa inexistente.
+SOPO012 y SOPO043 parten de fotos físicas propias. ADAP042 y ADAP064 usan caja/modelo como referencia de representación asistida, conforme a la nueva instrucción. CARG016 parte del recurso histórico ya proporcionado. La imagen final siempre muestra el producto sin caja y sin componentes inventados.
+
+Verificación: 7 fichas públicas, todos los hashes de sus fotografías y 132 SKU del catálogo comprobados en móvil/escritorio. 0 errores finales. Pasaron 44 pruebas locales de contrato, política, incrementalidad y actualizaciones, más CI de candidato y promoción.
+Precios, PVP, stock, información de 593, URLs y originales intactos. Ningún SKU ajeno al lote recibió una fecha nueva. El registro suma 441 entradas: se incorporaron 4 publicaciones nuevas y el historial de CARG016 como actualización, porque ya tenía foto pública.
+Incidencias resueltas: servidor local detenido, reiniciado; respuesta 503 temporal de SOPO043, resuelta mediante recomprobación completa. Evidencias iniciales conservadas.
+
+Pendientes: REL050 mantiene la observación de fidelidad del bisel y controles. SOPO020 mezcla referencias T7-01/T7-02: confirmar la variante antes de representarlo.
+Siguiente grupo controlado: 8 candidatos con referencias ya revisadas y descargadas (POWE008, POWE010, POWE020, ADAP014, ADAP044, ADAP099, SOPO028, SOPO036). Aún no se cuentan como publicaciones.
+
+No se detectaron conflictos durante este avance. Se conservó el trabajo en rama y respaldo, se revalidó main antes de integrar y se usó push normal sin force. No se afirma que la otra sesión haya sido cancelada.
+Evidencia: cierre.json, revision-visual.json, integridad.json, contrato-publicacion.json, http-publicacion.json, catalogo-publico-final.json y qa-publica/.
