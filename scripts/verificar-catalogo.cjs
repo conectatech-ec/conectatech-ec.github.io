@@ -154,7 +154,7 @@ async function main() {
           const updatedTime = p => Date.parse(payload.productos[p.sku]?.actualizadoEn || '') || 0;
           const hasPhoto = p => Boolean(p.imageUrl || payload.productos[p.sku]?.imagen?.src);
           const priority = p => ({nuevo: 0, actualizado: 1}[payload.productos[p.sku]?.tipoCambio] ?? 2);
-          if (mode === 'fotos' || mode === 'recientes') list.sort((a, b) => priority(a) - priority(b) || updatedTime(b) - updatedTime(a));
+          if (mode === 'fotos' || mode === 'recientes') list.sort((a, b) => Number(priority(a) === 2) - Number(priority(b) === 2) || updatedTime(b) - updatedTime(a) || priority(a) - priority(b));
           if (mode === 'nombre') list.sort((a, b) => a.name.localeCompare(b.name, 'es', {sensitivity: 'base', numeric: true}));
           if (mode === 'precio-asc') list.sort((a, b) => a.promo - b.promo);
           if (mode === 'precio-desc') list.sort((a, b) => b.promo - a.promo);
