@@ -1,6 +1,6 @@
 ## Orden vigente del propietario — enlaces de categorías084 y avance085
 
-Habilitar enlaces directos compartibles por categoría real,como sóloMicrófonos con todos sus modelos; preservar los grupos comerciales amplios yel catálogo compacto. Selector,copiar enlace,historial yacceso directo probados en móvil/escritorio. Sin renovar fechas deSKU por este cambio global. Continuar producción por lote controlado de40 candidatos nuevos deduplicados frente a main/web,fuentes propias,calidad premium yreglas anteriores. Correcciones previas conservadas para después. Main fresco,rama independiente,sinforce yrecursos/HTTP/Chromium antes de fechas;feedMeta existente intacto.
+Habilitar enlaces directos compartibles por categoría real,como sóloMicrófonos con todos sus modelos; preservar los grupos comerciales amplios yel catálogo compacto. Selector,copiar enlace,historial yacceso directo probados en móvil/escritorio. Sin renovar fechas deSKU por este cambio global. Continuar producción por lote controlado de40 candidatos nuevos,39 aptos yCARG062 reservado por contenido de venta no confirmado; deduplicados frente a main/web,fuentes propias,calidad premium yreglas anteriores. Correcciones previas conservadas para después. Main fresco,rama independiente,sinforce yrecursos/HTTP/Chromium antes de fechas;feedMeta existente intacto.
 
 ## Orden vigente del propietario — avance083
 
