@@ -137,9 +137,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap042-adaptador-viajero-travel-world-internacional/",
-  "fecha_verificacion": "2026-10-14T01:26:23.963324+00:00",
+  "fecha_verificacion": "2026-10-14T01:41:14.079760+00:00",
   "descripcion": "Adaptador de viaje blanco 931A con toma de formato internacional indicada en el empaque. Comprueba que sus entradas y clavijas coincidan con los enchufes del destino y los requisitos de tu equipo. Un adaptador de enchufe no equivale a un convertidor de voltaje.",
   "contenido_venta": "1 adaptador de viaje. No se afirma bolsa incluida ni accesorios adicionales sin comprobar.",
   "compatibilidad": "Comprueba formato de enchufe, tensión y requisitos eléctricos del equipo y del destino. No se afirma conversión de voltaje ni cobertura de todos los países.",
@@ -240,14 +240,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida desde empaque/modelo931A, autorizada expresamente por propietario. Cuerpo blanco, indicador rojo, toma universal combinada, marcasTRAVEL UNIVERSAL ADAPTOR/SURGE PROTECTOR/CE observadas. Sin inventar USB, cable o clavijas ocultas."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T01:41:14.079760+00:00",
+      "reporte": "reportes/continuacion-078/http-publicacion.json",
+      "archivo": "reportes/continuacion-078/http-publicacion.json",
+      "sha256": "2ec92453c920e79b39b7d021557db4b3b3d9b6105115d1aa9c4b0757b02abf8c",
+      "sku": "ADAP042"
     },
     "movil": {
       "solicitado": "ADAP042",
       "sku": "ADAP042",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T01:31:19.760Z",
+      "fecha": "2026-10-14T01:40:05.975Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -272,7 +276,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap042-adaptador-viajero-travel-world-internacional/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap042-adaptador-viajero-travel-world-internacional/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap042-adaptador-viajero-travel-world-internacional/",
       "archivo_html": "productos/adap042-adaptador-viajero-travel-world-internacional/index.html",
       "http": 200,
       "sha256_html": "2923d8f5233d4dc744ee05340edd0e40e7fab553d4dc3530ed7c5e331967239b",
@@ -282,7 +286,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap042/ADAP042-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap042/ADAP042-01-600.webp?v=733f2c460ce4346c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap042/ADAP042-01-600.webp?v=733f2c460ce4346c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -291,32 +295,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap042-adaptador-viajero-travel-world-internacional/",
+          "url": "https://conectatech-ec.github.io/productos/adap042-adaptador-viajero-travel-world-internacional/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap042/ADAP042-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap042/ADAP042-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-078/qa-local/movil/ADAP042-390.png",
+      "archivo": "reportes/continuacion-078/qa-publica/movil/ADAP042-390.png",
       "sha256": "e27f806aa1b6e5715977beec08d99482dd875968999863ec775d7b129d946430",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-078/qa-local/movil/ADAP042-1280.png",
+        "archivo": "reportes/continuacion-078/qa-publica/movil/ADAP042-1280.png",
         "sha256": "764b18b4622f278abcfac7f436b206190bc28782bf0529cf3a323ac72246adc9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

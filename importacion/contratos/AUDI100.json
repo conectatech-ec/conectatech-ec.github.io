@@ -172,9 +172,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
-  "fecha_verificacion": "2026-10-14T01:27:50.724655+00:00",
+  "fecha_verificacion": "2026-10-14T01:41:14.079760+00:00",
   "descripcion": "Audífonos de diadema inalámbricos AAA / genéricos de diseño plegable negro, con almohadillas acolchadas. Clasificación AAA confirmada por el propietario; no es un producto original Sony.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -268,14 +268,18 @@
       "sha256_maestro": "05014ca79ab643acd84e363a9ed28d190d58d97abf53816eb5ffb81584e39694"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T01:41:14.079760+00:00",
+      "reporte": "reportes/continuacion-078/http-publicacion.json",
+      "archivo": "reportes/continuacion-078/http-publicacion.json",
+      "sha256": "2ec92453c920e79b39b7d021557db4b3b3d9b6105115d1aa9c4b0757b02abf8c",
+      "sku": "AUDI100"
     },
     "movil": {
       "solicitado": "AUDI100",
       "sku": "AUDI100",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T01:31:13.641Z",
+      "fecha": "2026-10-14T01:39:58.406Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -300,7 +304,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/audi100-audifonos-de-diadema-ult-powersound/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
       "archivo_html": "productos/audi100-audifonos-de-diadema-ult-powersound/index.html",
       "http": 200,
       "sha256_html": "635f03e280bbcca5fc7a7ccdea801a7a60a6860703c0f39b9fb522a2934f21b1",
@@ -310,7 +314,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/audi100/AUDI100-01-600.webp?v=01d6065ce69830fe",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01-600.webp?v=01d6065ce69830fe",
         "naturalWidth": 335,
         "naturalHeight": 335,
         "completa": true,
@@ -319,47 +323,47 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/audi100-audifonos-de-diadema-ult-powersound/",
+          "url": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/audi100/AUDI100-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi001-audifonos-airpods-pro-2-anc/",
+          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi005-audifonos-diadema-airpods-max/",
+          "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi008-audifonos-alambricos-earpods-lightning/",
+          "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-078/qa-local/movil/AUDI100-390.png",
+      "archivo": "reportes/continuacion-078/qa-publica/movil/AUDI100-390.png",
       "sha256": "c40135e4a84d18cecf0433a0ac60eb83fc747884326dfdeaa6a7c74d71f34097",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-078/qa-local/movil/AUDI100-1280.png",
+        "archivo": "reportes/continuacion-078/qa-publica/movil/AUDI100-1280.png",
         "sha256": "4e7282d88d63687db2a681936e85184bba9df7f25a408a21938857653f8eb621",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

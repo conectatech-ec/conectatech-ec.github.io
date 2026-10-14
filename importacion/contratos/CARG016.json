@@ -154,9 +154,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg016-cargador-baten-25w-cx-305/",
-  "fecha_verificacion": "2026-10-14T01:26:23.963324+00:00",
+  "fecha_verificacion": "2026-10-14T01:41:14.079760+00:00",
   "descripcion": "Cargador Baten CX-305 blanco con potencia nominal de 25 W indicada en el empaque y conexión USB-C. Incluye cable USB-C a USB-C. La velocidad de carga depende del equipo, el cable y los protocolos compatibles.",
   "contenido_venta": "1 cargador y 1 cable USB-C a USB-C.",
   "compatibilidad": "Equipos compatibles con carga por USB-C y con las condiciones eléctricas del cargador. La potencia anunciada no garantiza la misma velocidad en todos los dispositivos.",
@@ -253,14 +253,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Nueva representación comercial del recurso fotográfico histórico ya proporcionado, por instrucción expresa del propietario, con ligera variación de posición y fondo blanco. Cargador con unaUSB-C ymarcas25W/PD3.0, cable blanco trenzado con dos extremosUSB-C; sin inventar clavijas ocultas. No se declara fotografía propia ni licencia del distribuidor."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T01:41:14.079760+00:00",
+      "reporte": "reportes/continuacion-078/http-publicacion.json",
+      "archivo": "reportes/continuacion-078/http-publicacion.json",
+      "sha256": "2ec92453c920e79b39b7d021557db4b3b3d9b6105115d1aa9c4b0757b02abf8c",
+      "sku": "CARG016"
     },
     "movil": {
       "solicitado": "CARG016",
       "sku": "CARG016",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T01:31:16.557Z",
+      "fecha": "2026-10-14T01:40:02.291Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -285,7 +289,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg016-cargador-baten-25w-cx-305/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/carg016-cargador-baten-25w-cx-305/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg016-cargador-baten-25w-cx-305/",
       "archivo_html": "productos/carg016-cargador-baten-25w-cx-305/index.html",
       "http": 200,
       "sha256_html": "09fec7a8a06849fe54697027a9db4bc72c94ef015db374a5f354a5402e630dc1",
@@ -295,7 +299,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg016/CARG016-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/carg016/CARG016-01-600.webp?v=1ad7744c71ebeea0",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg016/CARG016-01-600.webp?v=1ad7744c71ebeea0",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -304,32 +308,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/carg016-cargador-baten-25w-cx-305/",
+          "url": "https://conectatech-ec.github.io/productos/carg016-cargador-baten-25w-cx-305/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/carg016/CARG016-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg016/CARG016-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-078/qa-local/movil/CARG016-390.png",
+      "archivo": "reportes/continuacion-078/qa-publica/movil/CARG016-390.png",
       "sha256": "ef49294b4de27dbeb33de38af20be9a8242678ea4263e014df6d64ff9c0f44f4",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-078/qa-local/movil/CARG016-1280.png",
+        "archivo": "reportes/continuacion-078/qa-publica/movil/CARG016-1280.png",
         "sha256": "1146bb1cab5d2697ef6ae9f678aadb71c5ebdfacae273b9032bdc14421d819bd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

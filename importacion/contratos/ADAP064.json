@@ -137,9 +137,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap064-adaptador-usb-c-a-hdmi-marca-monster/",
-  "fecha_verificacion": "2026-10-14T01:26:23.963324+00:00",
+  "fecha_verificacion": "2026-10-14T01:41:14.079760+00:00",
   "descripcion": "Adaptador Monster K-00202 con conector USB-C y salida HDMI para conectar un equipo compatible a una pantalla. Cuerpo azul y cable corto negro. El puerto USB-C del equipo debe admitir salida de vídeo; no todos los USB-C tienen esa función.",
   "contenido_venta": "1 adaptador USB-C a HDMI. No incluye cable HDMI, pantalla ni equipo conectado.",
   "compatibilidad": "Requiere un equipo con USB-C que admita salida de vídeo y una pantalla con HDMI. Confirma compatibilidad antes de comprar; no se afirma una resolución no comprobada.",
@@ -241,14 +241,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida desde empaque/modelo identificado, autorizada por propietario. Una salidaHDMI hembra frontal, cable corto negro, unUSB-C macho, cuerpo azul yMONSTER real. No puertos adicionales ni equipos incluidos."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T01:41:14.079760+00:00",
+      "reporte": "reportes/continuacion-078/http-publicacion.json",
+      "archivo": "reportes/continuacion-078/http-publicacion.json",
+      "sha256": "2ec92453c920e79b39b7d021557db4b3b3d9b6105115d1aa9c4b0757b02abf8c",
+      "sku": "ADAP064"
     },
     "movil": {
       "solicitado": "ADAP064",
       "sku": "ADAP064",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T01:31:20.762Z",
+      "fecha": "2026-10-14T01:40:07.196Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -273,7 +277,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap064-adaptador-usb-c-a-hdmi-marca-monster/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap064-adaptador-usb-c-a-hdmi-marca-monster/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap064-adaptador-usb-c-a-hdmi-marca-monster/",
       "archivo_html": "productos/adap064-adaptador-usb-c-a-hdmi-marca-monster/index.html",
       "http": 200,
       "sha256_html": "a0fbacdb8583e46431424c32ef450c0f68959c34609cf9390d2443e224462eae",
@@ -283,7 +287,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap064/ADAP064-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap064/ADAP064-01-600.webp?v=d34e08e7b2b9f4b6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap064/ADAP064-01-600.webp?v=d34e08e7b2b9f4b6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -292,32 +296,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap064-adaptador-usb-c-a-hdmi-marca-monster/",
+          "url": "https://conectatech-ec.github.io/productos/adap064-adaptador-usb-c-a-hdmi-marca-monster/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap064/ADAP064-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap064/ADAP064-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-078/qa-local/movil/ADAP064-390.png",
+      "archivo": "reportes/continuacion-078/qa-publica/movil/ADAP064-390.png",
       "sha256": "0309ddf52597d7330620d891b58e0ed831dde20e7866c8df6e2e31ab0566ebd1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-078/qa-local/movil/ADAP064-1280.png",
+        "archivo": "reportes/continuacion-078/qa-publica/movil/ADAP064-1280.png",
         "sha256": "99ebe02f9d3e6c90a1166c66b7e77918f5b81302d6389df67b13e26ccf48894f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -165,9 +165,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo012-soporte-de-mesa-para-tablet-l3t-l-363/",
-  "fecha_verificacion": "2026-10-14T01:26:23.963324+00:00",
+  "fecha_verificacion": "2026-10-14T01:41:14.079760+00:00",
   "descripcion": "Soporte articulado L3T L-363 plateado y naranja para colocar tu equipo sobre el escritorio. Su placa incorpora zonas de apoyo y una estructura metálica ajustable con base rectangular. Comprueba que el tamaño y peso de tu equipo sean adecuados para el soporte.",
   "contenido_venta": "1 soporte. No incluye laptop, tablet ni teléfono.",
   "compatibilidad": "Equipos cuyo tamaño y peso se ajusten al soporte. Consulta el ajuste antes de comprar; no se afirma compatibilidad universal ni carga máxima no verificada.",
@@ -275,14 +275,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Retoque de fotos FÍSICAS propias: placa plata/naranja con tres recortes geométricos naranjas, cuatro aberturas inferiores, cuatro pads grises, dos apoyos, brazos con tornillos naranjas y base circular naranja. Sin dispositivos incluidos."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T01:41:14.079760+00:00",
+      "reporte": "reportes/continuacion-078/http-publicacion.json",
+      "archivo": "reportes/continuacion-078/http-publicacion.json",
+      "sha256": "2ec92453c920e79b39b7d021557db4b3b3d9b6105115d1aa9c4b0757b02abf8c",
+      "sku": "SOPO012"
     },
     "movil": {
       "solicitado": "SOPO012",
       "sku": "SOPO012",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T01:31:17.665Z",
+      "fecha": "2026-10-14T01:40:03.573Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -307,7 +311,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo012-soporte-de-mesa-para-tablet-l3t-l-363/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/sopo012-soporte-de-mesa-para-tablet-l3t-l-363/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo012-soporte-de-mesa-para-tablet-l3t-l-363/",
       "archivo_html": "productos/sopo012-soporte-de-mesa-para-tablet-l3t-l-363/index.html",
       "http": 200,
       "sha256_html": "db418c1cbd9b511851b9d74b34d30e2bd757f4a1c4a1ab4cdb770528f8e2b99a",
@@ -317,7 +321,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo012/SOPO012-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/sopo012/SOPO012-01-600.webp?v=b60b8f3357618a76",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo012/SOPO012-01-600.webp?v=b60b8f3357618a76",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -326,32 +330,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/sopo012-soporte-de-mesa-para-tablet-l3t-l-363/",
+          "url": "https://conectatech-ec.github.io/productos/sopo012-soporte-de-mesa-para-tablet-l3t-l-363/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/sopo012/SOPO012-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo012/SOPO012-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-078/qa-local/movil/SOPO012-390.png",
+      "archivo": "reportes/continuacion-078/qa-publica/movil/SOPO012-390.png",
       "sha256": "345c6a1dc4d7acc636765f5f860b28f4c94bb1c46506d716fc28439e014db81d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-078/qa-local/movil/SOPO012-1280.png",
+        "archivo": "reportes/continuacion-078/qa-publica/movil/SOPO012-1280.png",
         "sha256": "aa2cf16091a99f2d4a30ca6db8440144fe83b6309b5bf908b942e7255d789a41",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

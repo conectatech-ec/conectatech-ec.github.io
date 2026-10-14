@@ -178,9 +178,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
-  "fecha_verificacion": "2026-10-14T01:27:50.724655+00:00",
+  "fecha_verificacion": "2026-10-14T01:41:14.079760+00:00",
   "descripcion": "Lleva tus archivos en una unidad externa de 2 TB con diseño reforzado. El ADATA HD710 Pro combina una carcasa robusta, interfaz USB 3.2 Gen 1 y almacenamiento portátil en un formato de 2,5 pulgadas. Su cable USB puede guardarse alrededor del propio cuerpo para mantenerlo organizado.",
   "garantia": {
     "valor": null,
@@ -247,14 +247,18 @@
       "sha256_maestro": "47cc5d032ff052e11265302c2d1e414d9d0dedbf7a429d6cfd27150b2f0fd42c"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T01:41:14.079760+00:00",
+      "reporte": "reportes/continuacion-078/http-publicacion.json",
+      "archivo": "reportes/continuacion-078/http-publicacion.json",
+      "sha256": "2ec92453c920e79b39b7d021557db4b3b3d9b6105115d1aa9c4b0757b02abf8c",
+      "sku": "DISC003"
     },
     "movil": {
       "solicitado": "DISC003",
       "sku": "DISC003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T01:31:15.484Z",
+      "fecha": "2026-10-14T01:40:00.592Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -279,7 +283,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
       "archivo_html": "productos/disc003-disco-duro-externo-adata-2tb-antishock/index.html",
       "http": 200,
       "sha256_html": "b9df9d669cafdd66f4946ca5bbef7d7e2fb5494027d628f0c31c5db2261d4170",
@@ -289,7 +293,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/disc003/DISC003-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/disc003/DISC003-01-600.webp?v=9e05cedef899b046",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/disc003/DISC003-01-600.webp?v=9e05cedef899b046",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -298,47 +302,47 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
+          "url": "https://conectatech-ec.github.io/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/disc003/DISC003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/disc003/DISC003-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
+          "url": "https://conectatech-ec.github.io/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/disc005-disco-duro-externo-adata-1tb-antishock/",
+          "url": "https://conectatech-ec.github.io/productos/disc005-disco-duro-externo-adata-1tb-antishock/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/disc009-disco-duro-externo-western-digital-1tb-wd-elements/",
+          "url": "https://conectatech-ec.github.io/productos/disc009-disco-duro-externo-western-digital-1tb-wd-elements/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-078/qa-local/movil/DISC003-390.png",
+      "archivo": "reportes/continuacion-078/qa-publica/movil/DISC003-390.png",
       "sha256": "7c6088aeb8446a241586514ac0c7f0a92e86218cac591303778f36de50c22031",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-078/qa-local/movil/DISC003-1280.png",
+        "archivo": "reportes/continuacion-078/qa-publica/movil/DISC003-1280.png",
         "sha256": "01c58913ac9e6e224b6b7fc7dee02190b64e24831bfa0023b4c1a5d735e92465",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
