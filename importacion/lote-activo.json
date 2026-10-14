@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "continuacion-080",
   "rama": "catalogo/continuacion-080-20261014",
-  "estado": "APROBADO_LOCAL",
+  "estado": "PUBLICADO_VERIFICADO",
   "manifiesto": "importacion/lotes/continuacion-080/manifiesto-aprobados.json",
   "skus": [
     "ADAP051",
@@ -31,5 +31,8 @@
     "SOPO001"
   ],
   "qa_manifiesto": "importacion/lotes/continuacion-080/manifiesto-qa.json",
-  "qa_base_publica": null
+  "qa_base_publica": null,
+  "verificacion_publica": "reportes/continuacion-080/http-publicacion.json",
+  "qa_publica": "reportes/continuacion-080/qa-publica/catalogo.json",
+  "cierre_consolidado": "reportes/continuacion-080/cierre.json"
 }
