@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap047-adaptador-usb-a-a-usb-c-hembra-earldom-0t91a/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Adaptador Earldom ET-OT91A de USB-A macho a USB-C hembra, con cuerpo metálico compacto y cordón de sujeción. Consulta el uso requerido antes de comprar.",
   "contenido_venta": "1 adaptador. No incluye dispositivos ni otros cables.",
   "compatibilidad": "Comprueba compatibilidad de carga y datos del equipo y cable; no se afirma salida de video ni compatibilidad universal.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "ADAP047"
     },
     "movil": {
       "solicitado": "ADAP047",
       "sku": "ADAP047",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:05:08.428Z",
+      "fecha": "2026-10-14T03:16:00.534Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap047-adaptador-usb-a-a-usb-c-hembra-earldom-0t91a/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap047-adaptador-usb-a-a-usb-c-hembra-earldom-0t91a/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap047-adaptador-usb-a-a-usb-c-hembra-earldom-0t91a/",
       "archivo_html": "productos/adap047-adaptador-usb-a-a-usb-c-hembra-earldom-0t91a/index.html",
       "http": 200,
       "sha256_html": "3de6b24628f9492e3155bcfaf655f150be9ccb3bfd01b6eeb238d1ab6ccafd10",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap047/ADAP047-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap047/ADAP047-01-600.webp?v=b8974e314c01b7d5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap047/ADAP047-01-600.webp?v=b8974e314c01b7d5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap047-adaptador-usb-a-a-usb-c-hembra-earldom-0t91a/",
+          "url": "https://conectatech-ec.github.io/productos/adap047-adaptador-usb-a-a-usb-c-hembra-earldom-0t91a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap047/ADAP047-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap047/ADAP047-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/ADAP047-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/ADAP047-390.png",
       "sha256": "0de9541d209561cf7ebec0bbf2b7a10c7f5d3a95cf54579e144f00cd36ddac4b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/ADAP047-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/ADAP047-1280.png",
         "sha256": "a8c9c8e82b0fe60a2137174902f79cb9f38b698d348e4251e1b91254aac2a355",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

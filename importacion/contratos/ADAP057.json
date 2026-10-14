@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap057-adaptador-convertidor-de-vga-a-hdmi-treqa-hdv-552/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Convertidor Treqa HDV-552 para llevar una señal de origen VGA hacia una pantalla HDMI. Dispone de conexión de audio independiente; la dirección de conversión es VGA a HDMI.",
   "contenido_venta": "1 adaptador. No incluye dispositivos ni otros cables.",
   "compatibilidad": "Requiere equipo con salida VGA y pantalla con entrada HDMI. Consulta alimentación y cables necesarios; no realiza la conversión inversa.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "ADAP057"
     },
     "movil": {
       "solicitado": "ADAP057",
       "sku": "ADAP057",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:04:58.928Z",
+      "fecha": "2026-10-14T03:15:51.650Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap057-adaptador-convertidor-de-vga-a-hdmi-treqa-hdv-552/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap057-adaptador-convertidor-de-vga-a-hdmi-treqa-hdv-552/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap057-adaptador-convertidor-de-vga-a-hdmi-treqa-hdv-552/",
       "archivo_html": "productos/adap057-adaptador-convertidor-de-vga-a-hdmi-treqa-hdv-552/index.html",
       "http": 200,
       "sha256_html": "029bd6b196dba6c99667a65e41856ed29c34dda1e2320dfaf264435e6e2b42f3",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap057/ADAP057-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap057/ADAP057-01-600.webp?v=f480662f5c41037c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap057/ADAP057-01-600.webp?v=f480662f5c41037c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap057-adaptador-convertidor-de-vga-a-hdmi-treqa-hdv-552/",
+          "url": "https://conectatech-ec.github.io/productos/adap057-adaptador-convertidor-de-vga-a-hdmi-treqa-hdv-552/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap057/ADAP057-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap057/ADAP057-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/ADAP057-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/ADAP057-390.png",
       "sha256": "d635c45974b9b587d0ebcb6fcd724849a43ec5808f65383696020264bccb9537",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/ADAP057-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/ADAP057-1280.png",
         "sha256": "61cad05b5e8dfff0abe8a9ff46da10212df925c12d41bc9cfa00299baef18a1a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap058-adaptador-otg-micro-usb-xtech/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Adaptador OTG Xtech XTC360 con conector Micro-USB macho y USB-A hembra, unido por cable corto. Permite conectar un accesorio USB compatible a equipos que admitan OTG.",
   "contenido_venta": "1 adaptador. No incluye dispositivos ni otros cables.",
   "compatibilidad": "El equipo debe admitir OTG por Micro-USB. No es USB-C y no se garantiza compatibilidad con todos los periféricos.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "ADAP058"
     },
     "movil": {
       "solicitado": "ADAP058",
       "sku": "ADAP058",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:05:07.417Z",
+      "fecha": "2026-10-14T03:15:59.451Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap058-adaptador-otg-micro-usb-xtech/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap058-adaptador-otg-micro-usb-xtech/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap058-adaptador-otg-micro-usb-xtech/",
       "archivo_html": "productos/adap058-adaptador-otg-micro-usb-xtech/index.html",
       "http": 200,
       "sha256_html": "1222ce40291e15166a78afebe620606fd3328eab58cd22310ddbf56ba40b49ff",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap058/ADAP058-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap058/ADAP058-01-600.webp?v=f9842134e3ec55db",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap058/ADAP058-01-600.webp?v=f9842134e3ec55db",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap058-adaptador-otg-micro-usb-xtech/",
+          "url": "https://conectatech-ec.github.io/productos/adap058-adaptador-otg-micro-usb-xtech/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap058/ADAP058-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap058/ADAP058-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/ADAP058-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/ADAP058-390.png",
       "sha256": "790acd2cfdd902ffffd831bb003a46910c3e7377363e33bb41c8656bff43150a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/ADAP058-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/ADAP058-1280.png",
         "sha256": "4da9f44dfc00b6556b1abfc02f8f7b18435eaeaf33aa201aacd498899326d913",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

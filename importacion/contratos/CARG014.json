@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg014-cargador-para-vehiculo-marca-monster-38w-usb-c-usb-a/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Cargador vehicular Monster PowerRocket con puertos USB-C y USB-A, potencia nominal de hasta38W indicada en empaque y cuerpo metálico gris. La potencia efectiva depende de la conexión y del dispositivo.",
   "contenido_venta": "1 cargador para vehículo. No incluye cables ni dispositivos.",
   "compatibilidad": "Verifica toma del vehículo y protocolos de carga. No se ofrece38W simultáneamente por cada puerto.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "CARG014"
     },
     "movil": {
       "solicitado": "CARG014",
       "sku": "CARG014",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:05:17.776Z",
+      "fecha": "2026-10-14T03:16:10.966Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg014-cargador-para-vehiculo-marca-monster-38w-usb-c-usb-a/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/carg014-cargador-para-vehiculo-marca-monster-38w-usb-c-usb-a/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg014-cargador-para-vehiculo-marca-monster-38w-usb-c-usb-a/",
       "archivo_html": "productos/carg014-cargador-para-vehiculo-marca-monster-38w-usb-c-usb-a/index.html",
       "http": 200,
       "sha256_html": "8d20906fc6e05eb01ccf81ddd3b976fae1d7e0fb43846f3f1bd54e4b206c96f5",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg014/CARG014-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/carg014/CARG014-01-600.webp?v=d844f1aeff2dc7f6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg014/CARG014-01-600.webp?v=d844f1aeff2dc7f6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/carg014-cargador-para-vehiculo-marca-monster-38w-usb-c-usb-a/",
+          "url": "https://conectatech-ec.github.io/productos/carg014-cargador-para-vehiculo-marca-monster-38w-usb-c-usb-a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/carg014/CARG014-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg014/CARG014-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/CARG014-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/CARG014-390.png",
       "sha256": "1ccd1ba3797c024ec8ea34034144acacca06a1749608309193f93e08823d1863",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/CARG014-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/CARG014-1280.png",
         "sha256": "403ae82929f643d5d3f32eed29a2a1a1a79bb62d9f1973ae77c4958f8d0be725",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

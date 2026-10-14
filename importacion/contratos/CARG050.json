@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg050-cargador-para-vehiculo-60w-klipxtreme-powercar-060/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Cargador vehicular Klipxtreme PowerCar60 con dos puertos USB-C y un USB-A. Potencia nominal combinada de hasta60W según empaque; la distribución depende de los equipos conectados.",
   "contenido_venta": "1 cargador para vehículo. No incluye cables ni dispositivos.",
   "compatibilidad": "Comprueba toma del vehículo, cable y protocolo del dispositivo. No se ofrecen60W por cada puerto.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "CARG050"
     },
     "movil": {
       "solicitado": "CARG050",
       "sku": "CARG050",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:05:16.801Z",
+      "fecha": "2026-10-14T03:16:09.784Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg050-cargador-para-vehiculo-60w-klipxtreme-powercar-060/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/carg050-cargador-para-vehiculo-60w-klipxtreme-powercar-060/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg050-cargador-para-vehiculo-60w-klipxtreme-powercar-060/",
       "archivo_html": "productos/carg050-cargador-para-vehiculo-60w-klipxtreme-powercar-060/index.html",
       "http": 200,
       "sha256_html": "79f4895c5ee2c1374c864badfe4e07bec6d0f1a185356b0c51aed44a22808bbf",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg050/CARG050-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/carg050/CARG050-01-600.webp?v=934c18b9701c74eb",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg050/CARG050-01-600.webp?v=934c18b9701c74eb",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/carg050-cargador-para-vehiculo-60w-klipxtreme-powercar-060/",
+          "url": "https://conectatech-ec.github.io/productos/carg050-cargador-para-vehiculo-60w-klipxtreme-powercar-060/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/carg050/CARG050-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg050/CARG050-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/CARG050-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/CARG050-390.png",
       "sha256": "8ae00473edb46ba3d0a0ac41e8125249eeff0bb65696b981dc922af3a795f100",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/CARG050-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/CARG050-1280.png",
         "sha256": "19d20e2e7f22376e647820f313c628a657019a74642de20f20584fd8cd50c70e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

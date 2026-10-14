@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo039-soporte-de-celular-y-tablet-para-cabecera-de-vehiculo-klip-xtreme/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Soporte Klipxtreme para cabecera de asiento con barra de fijación, brazo articulado y pinza ajustable para dispositivos compatibles. Consulta las medidas de tu cabecera y equipo.",
   "contenido_venta": "1 soporte. No incluye asiento, teléfono ni tablet.",
   "compatibilidad": "Verifica separación de postes, tamaño y peso del dispositivo antes de comprar; no es compatible con todas las cabeceras.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "SOPO039"
     },
     "movil": {
       "solicitado": "SOPO039",
       "sku": "SOPO039",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:05:02.304Z",
+      "fecha": "2026-10-14T03:15:55.001Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo039-soporte-de-celular-y-tablet-para-cabecera-de-vehiculo-klip-xtreme/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/sopo039-soporte-de-celular-y-tablet-para-cabecera-de-vehiculo-klip-xtreme/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo039-soporte-de-celular-y-tablet-para-cabecera-de-vehiculo-klip-xtreme/",
       "archivo_html": "productos/sopo039-soporte-de-celular-y-tablet-para-cabecera-de-vehiculo-klip-xtreme/index.html",
       "http": 200,
       "sha256_html": "749d1d04fafae5deaa1492b52e48742ba2addfe3c2dbd650a1d2338b770e0655",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo039/SOPO039-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/sopo039/SOPO039-01-600.webp?v=14cc6dcb477bce79",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo039/SOPO039-01-600.webp?v=14cc6dcb477bce79",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/sopo039-soporte-de-celular-y-tablet-para-cabecera-de-vehiculo-klip-xtreme/",
+          "url": "https://conectatech-ec.github.io/productos/sopo039-soporte-de-celular-y-tablet-para-cabecera-de-vehiculo-klip-xtreme/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/sopo039/SOPO039-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo039/SOPO039-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/SOPO039-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/SOPO039-390.png",
       "sha256": "33a9e115cd09462b8b332a7380da61725e1b5b2d82a0d2b19551a4f7e6f55d59",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/SOPO039-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/SOPO039-1280.png",
         "sha256": "c8e73cba45a6072202e99fa2178d3343e0ee206759560921b3111aab529289fa",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

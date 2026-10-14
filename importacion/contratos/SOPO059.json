@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo059-soporte-de-celular-para-vehiculo-con-magsafe-y-ventosa-t6-05/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Soporte magnético T6-05 con cabeza circular, brazo metálico articulado y base compacta. Consulta la superficie y el sistema de fijación de la base antes de instalar.",
   "contenido_venta": "1 soporte. No incluye teléfono. Consulta componentes de montaje al comprar.",
   "compatibilidad": "Requiere teléfono o funda compatible con la sujeción magnética y un punto de fijación adecuado. No incorpora carga inalámbrica. Consulta el sistema de fijación de la base y la superficie requerida.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "SOPO059"
     },
     "movil": {
       "solicitado": "SOPO059",
       "sku": "SOPO059",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:05:20.301Z",
+      "fecha": "2026-10-14T03:16:14.204Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo059-soporte-de-celular-para-vehiculo-con-magsafe-y-ventosa-t6-05/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/sopo059-soporte-de-celular-para-vehiculo-con-magsafe-y-ventosa-t6-05/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo059-soporte-de-celular-para-vehiculo-con-magsafe-y-ventosa-t6-05/",
       "archivo_html": "productos/sopo059-soporte-de-celular-para-vehiculo-con-magsafe-y-ventosa-t6-05/index.html",
       "http": 200,
       "sha256_html": "e8a5cb7f3a3f716368a43586466800e42daeba3fe2c0fdcfd695bceec4dbd5d3",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo059/SOPO059-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/sopo059/SOPO059-01-600.webp?v=f8cdd384c87f2a71",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo059/SOPO059-01-600.webp?v=f8cdd384c87f2a71",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/sopo059-soporte-de-celular-para-vehiculo-con-magsafe-y-ventosa-t6-05/",
+          "url": "https://conectatech-ec.github.io/productos/sopo059-soporte-de-celular-para-vehiculo-con-magsafe-y-ventosa-t6-05/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/sopo059/SOPO059-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo059/SOPO059-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/SOPO059-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/SOPO059-390.png",
       "sha256": "83c82bfb1fc1d432306a5a94370ab7c61e05e161fdb0ee4fab190936a79b7790",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/SOPO059-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/SOPO059-1280.png",
         "sha256": "7511199a78008b8a975a781723418d5bbc0df3779f018dc635fa19b95c34482e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

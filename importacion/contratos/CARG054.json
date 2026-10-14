@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg054-cargador-65w-usb-c-usb-c-usb-a-1hora/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Cargador 1HORA GaN de potencia nominal de hasta 65 W con 2 USB-C y 1 USB-A y cable USB-C a USB-C indicado en el empaque. La potencia efectiva depende del dispositivo, protocolo y conexiones utilizadas.",
   "contenido_venta": "1 cargador y 1 cable USB-C a USB-C. No incluye dispositivo.",
   "compatibilidad": "Comprueba protocolo y potencia admitidos por el equipo. En modelos multipuerto la potencia se distribuye; no se garantiza la potencia máxima simultánea por puerto.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "CARG054"
     },
     "movil": {
       "solicitado": "CARG054",
       "sku": "CARG054",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:05:14.946Z",
+      "fecha": "2026-10-14T03:16:07.661Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg054-cargador-65w-usb-c-usb-c-usb-a-1hora/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/carg054-cargador-65w-usb-c-usb-c-usb-a-1hora/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg054-cargador-65w-usb-c-usb-c-usb-a-1hora/",
       "archivo_html": "productos/carg054-cargador-65w-usb-c-usb-c-usb-a-1hora/index.html",
       "http": 200,
       "sha256_html": "43c9d40574f692c8c366080bb8cf0d200c0643751feb358a6a94a45d7fe5ce5f",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg054/CARG054-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/carg054/CARG054-01-600.webp?v=1a15d1ebade5f17d",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg054/CARG054-01-600.webp?v=1a15d1ebade5f17d",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/carg054-cargador-65w-usb-c-usb-c-usb-a-1hora/",
+          "url": "https://conectatech-ec.github.io/productos/carg054-cargador-65w-usb-c-usb-c-usb-a-1hora/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/carg054/CARG054-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg054/CARG054-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/CARG054-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/CARG054-390.png",
       "sha256": "e6991ea8dac6ce34f585e646de32a2a90693e59b665c5582fe47b00dc34992b9",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/CARG054-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/CARG054-1280.png",
         "sha256": "045f7d0219dbbbd35eddc8aacec00bee1cc4653532e5fa2a242de8eaa97458af",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

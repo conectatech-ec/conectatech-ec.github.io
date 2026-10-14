@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap087-adaptador-usb-a-a-usb-c-ldnio/",
-  "fecha_verificacion": "2026-10-14T03:03:54.449656+00:00",
+  "fecha_verificacion": "2026-10-14T03:15:53.139896+00:00",
   "descripcion": "Adaptador Ldnio compacto con conector USB-A macho y USB-C hembra. Presentación metálica basada en la referencia principal del SKU; se vende una unidad.",
   "contenido_venta": "1 adaptador. No incluye dispositivos ni otros cables.",
   "compatibilidad": "Verifica compatibilidad de carga y datos. No se ofrece salida de video ni una velocidad de transferencia garantizada para todos los equipos.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida o limpieza de foto física propia con acabado nuevo, modelo y hardware cotejados con todas las referencias. Referencia de empaque identificada cuando corresponde; no se presenta como fotografía física directa. Sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T03:15:53.139896+00:00",
+      "reporte": "reportes/continuacion-080/http-publicacion.json",
+      "archivo": "reportes/continuacion-080/http-publicacion.json",
+      "sha256": "ae3950ca0806adeb25c4d29c82f67b56b428c43647e68fbfda233fae7215a7fb",
+      "sku": "ADAP087"
     },
     "movil": {
       "solicitado": "ADAP087",
       "sku": "ADAP087",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T03:05:09.505Z",
+      "fecha": "2026-10-14T03:16:01.655Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap087-adaptador-usb-a-a-usb-c-ldnio/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap087-adaptador-usb-a-a-usb-c-ldnio/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap087-adaptador-usb-a-a-usb-c-ldnio/",
       "archivo_html": "productos/adap087-adaptador-usb-a-a-usb-c-ldnio/index.html",
       "http": 200,
       "sha256_html": "e5e5ecbe1a148f2fa179c0b5589794984261a1c41c874dab2967927d523401cd",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap087/ADAP087-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap087/ADAP087-01-600.webp?v=1af90b3337f0dbf1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap087/ADAP087-01-600.webp?v=1af90b3337f0dbf1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap087-adaptador-usb-a-a-usb-c-ldnio/",
+          "url": "https://conectatech-ec.github.io/productos/adap087-adaptador-usb-a-a-usb-c-ldnio/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap087/ADAP087-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap087/ADAP087-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-080/qa-local/fichas/ADAP087-390.png",
+      "archivo": "reportes/continuacion-080/qa-publica/fichas/ADAP087-390.png",
       "sha256": "810b7759021dea1c80cf04a62d121528de8433eecb2cedf70da97d587b521381",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-080/qa-local/fichas/ADAP087-1280.png",
+        "archivo": "reportes/continuacion-080/qa-publica/fichas/ADAP087-1280.png",
         "sha256": "4f486bbb9af642695dd175bacd17ecacdc3fe4b62a91eefcb3fa59b547b7a3c7",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
