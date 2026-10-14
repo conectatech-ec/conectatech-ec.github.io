@@ -22,6 +22,13 @@ class OwnerPolicy(unittest.TestCase):
    updates,issues=registration_rules(rows,list(products),{},policy,root);result={x['sku']:x['autenticidad'] for x in updates};self.assertFalse(issues)
    for s in list(products)[:5]:self.assertEqual(result[s],'genérico/compatible')
    for s in list(products)[5:]:self.assertEqual(result[s],'original verificado')
+   # Una confirmación individual posterior prevalece sobre caja/defecto y marca.
+   policy['confirmaciones_sku_propietario']={'AUDI006':{'autenticidad':'genérico/compatible','evidencia_autenticidad':'Confirmación expresa: Sony de esteSKU esAAA.'}}
+   updates,_=registration_rules(rows,list(products),{},policy,root)
+   result={x['sku']:x for x in updates}
+   self.assertEqual(result['AUDI006']['autenticidad'],'genérico/compatible')
+   self.assertEqual(result['AUDI006']['evidencia_autenticidad'],policy['confirmaciones_sku_propietario']['AUDI006']['evidencia_autenticidad'])
+   self.assertEqual(result['TELF001']['autenticidad'],'original verificado')
  def test_unknown_brand_is_not_assumed_protected(self):
   with tempfile.TemporaryDirectory() as tmp:
    root=Path(tmp);(root/'importacion').mkdir();(root/'importacion/reglas-sku.json').write_text('{"productos":{"TEST001":{}}}')

@@ -273,9 +273,29 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
     rights = contract.get('derechos_imagen', {})
     if not isinstance(rights, dict):
         rights = {}
-    if not (rights.get('estado') == 'AUTORIZADO' and rights.get('tipo') in ('propia', 'licencia', 'permiso_fabricante', 'permiso_distribuidor') and
+    rights_type = rights.get('tipo')
+    accepted_types = ('propia', 'licencia', 'permiso_fabricante', 'permiso_distribuidor', 'edicion_autorizada_propietario')
+    if not (rights.get('estado') == 'AUTORIZADO' and rights_type in accepted_types and
             nonempty(rights.get('evidencia')) and reference(rights.get('fuente')) and dated(rights.get('fecha_verificacion'))):
         fail('derechos', 'Derechos de uso sin autorización y evidencia documentadas; público no equivale a permitido')
+    if rights_type == 'edicion_autorizada_propietario':
+        # Orden posterior: editar referencias ya proporcionadas, sin afirmar una
+        # licencia externa. Exige instrucción y referencia materializadas por hash.
+        try:
+            instruction = json.loads(artifact(root, rights.get('autorizacion_propietario')))
+            authorization = instruction.get('autorizacion_edicion_existente', {})
+            if (authorization.get('confirmada') is not True or
+                    authorization.get('no_afirma_permiso_distribuidor') is not True or
+                    not nonempty(authorization.get('mensaje')) or
+                    not (authorization.get('aplica_a_todos_sku') is True or sku in authorization.get('skus', []))):
+                raise ValueError('Falta instrucción expresa del propietario para esta representación')
+            original = artifact(root, rights.get('referencia_proporcionada'))
+            with Image.open(io.BytesIO(original)) as image:
+                image.verify()
+            if rights.get('edicion_asistida_ia') is not True:
+                raise ValueError('Representación asistida no documentada; no autoriza una copia externa sin edición')
+        except (ValueError, OSError, TypeError, KeyError) as exc:
+            fail('derechos', str(exc))
     covered = rights.get('archivos', [])
     if not isinstance(covered, list):
         covered = []

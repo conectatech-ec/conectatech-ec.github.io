@@ -144,6 +144,14 @@ def registration_rules(rows, skus, aliases, policy, root=ROOT):
     if policy.get('modo') == 'ORIGINAL_POR_DEFECTO_EXCEPTO_MARCAS_AAA':
         excluded = set(policy['marcas_excepcion_aaa'])
         for sku, entries in sorted(grouped.items()):
+            override = policy.get('confirmaciones_sku_propietario', {}).get(sku)
+            if override:
+                if override.get('autenticidad') not in AUTH or not override.get('evidencia_autenticidad'):
+                    raise ValueError('Confirmación individual incompleta: '+sku)
+                updates.append({'sku':sku, 'autenticidad':override['autenticidad'],
+                                'presentacion':'', 'instrucciones':'',
+                                'evidencia_autenticidad':override['evidencia_autenticidad']})
+                continue
             brand = commercial_brand(sku, root)
             aaa = [e for e in entries if re.search(r'\bAAA\b|gen[eé]rico',e[1],re.I)]
             # El propietario fija la clasificación por SKU: una fila AAA de una

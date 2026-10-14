@@ -102,6 +102,26 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(pipeline.editorial.financial(after), pipeline.editorial.financial(self.products))
         self.assertNotIn('imageUrl', after[0])
 
+    def test_owner_authorized_reference_requires_instruction_and_intact_input(self):
+        evidence = self.root / 'owner.json'
+        evidence.write_text(json.dumps({'autorizacion_edicion_existente': {
+            'confirmada': True, 'aplica_a_todos_sku': True,
+            'no_afirma_permiso_distribuidor': True, 'mensaje': 'Fixture: editar referencia proporcionada.'}}))
+        rights = self.contracts['TEST001']['derechos_imagen']
+        rights.update(tipo='edicion_autorizada_propietario', edicion_asistida_ia=True,
+            autorizacion_propietario={'archivo': evidence.name, 'sha256': validator.sha(evidence.read_bytes())},
+            referencia_proporcionada={'archivo': 'TEST001.png', 'sha256': validator.sha((self.root / 'TEST001.png').read_bytes())})
+        self.assertEqual(self.errors(), [])
+        evidence.write_text('{}')
+        self.assertIn('derechos', {e['codigo'] for e in self.errors()})
+        rights['autorizacion_propietario']['sha256'] = validator.sha(evidence.read_bytes())
+        self.assertIn('derechos', {e['codigo'] for e in self.errors()})
+
+    def test_owner_reference_without_existing_image_is_not_a_permission_flag(self):
+        rights = self.contracts['TEST001']['derechos_imagen']
+        rights.update(tipo='edicion_autorizada_propietario', edicion_asistida_ia=True)
+        self.assertIn('derechos', {e['codigo'] for e in self.errors()})
+
     def test_duplicate_sku_never_applies_first_occurrence(self):
         self.manifest['skus'] = ['TEST001', 'TEST001', 'TEST002']; r = self.runjob()
         self.assertEqual(len(r['errores']), 2)

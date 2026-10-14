@@ -941,11 +941,11 @@
       "revision": 2
     },
     "AUDI100": {
-      "autenticidad": "original verificado",
+      "autenticidad": "genérico/compatible",
       "presentacion": "sin caja",
-      "instrucciones": "",
-      "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1532,1533,1534,1535; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "instrucciones": "AAA confirmado expresamente por propietario. Mantener foto correcta; condición genérica visible en ficha y fuera del título. Excepción porSKU que prevalece sobre original por defecto.",
+      "evidencia_autenticidad": "Confirmación expresa del propietario2026-10-13: AUDI100 esAAA. importacion/lotes/continuacion-078/instrucciones-propietario.json",
+      "revision": 4
     },
     "AUDI080": {
       "autenticidad": "original verificado",
@@ -1397,9 +1397,9 @@
     "DISC003": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "El disco es menos ancho: corregir proporciones visuales ligeramente conservando modelo ADATA HD710 Pro, marca, detalles y cables.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2049,2050; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "revision": 4
     },
     "DISC009": {
       "autenticidad": "original verificado",
@@ -4347,9 +4347,9 @@
     "CARG016": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "SIN CAJA en catálogo y banners. Conservar originales. No extraer el dibujo impreso como si fuera una fotografía del producto. Mejorar fotografía premium a partir del cargador físico exacto y su cable; preservar conectores, rotulado, proporciones y unidad.",
+      "instrucciones": "SIN CAJA en catálogo y banners. Conservar originales. No extraer el dibujo impreso como si fuera una fotografía del producto. Mejorar fotografía premium a partir del cargador físico exacto y su cable; preservar conectores, rotulado, proporciones y unidad. Quitar fondo gris, blanco limpio y acabado premium; usar imagen actual y modelo/caja, pequeña variación de posición; conservar componentes.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 348,2742,2743; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 3
+      "revision": 4
     },
     "CARG033": {
       "autenticidad": "original verificado",
@@ -53747,6 +53747,62 @@
           }
         }
       ]
+    },
+    {
+      "fecha": "2026-10-14T01:25:47.085842+00:00",
+      "cambios": [
+        {
+          "sku": "AUDI100",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1532,1533,1534,1535; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 3
+          },
+          "despues": {
+            "autenticidad": "genérico/compatible",
+            "presentacion": "sin caja",
+            "instrucciones": "AAA confirmado expresamente por propietario. Mantener foto correcta; condición genérica visible en ficha y fuera del título. Excepción porSKU que prevalece sobre original por defecto.",
+            "evidencia_autenticidad": "Confirmación expresa del propietario2026-10-13: AUDI100 esAAA. importacion/lotes/continuacion-078/instrucciones-propietario.json",
+            "revision": 4
+          }
+        },
+        {
+          "sku": "DISC003",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2049,2050; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 3
+          },
+          "despues": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "El disco es menos ancho: corregir proporciones visuales ligeramente conservando modelo ADATA HD710 Pro, marca, detalles y cables.",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2049,2050; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 4
+          }
+        },
+        {
+          "sku": "CARG016",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "SIN CAJA en catálogo y banners. Conservar originales. No extraer el dibujo impreso como si fuera una fotografía del producto. Mejorar fotografía premium a partir del cargador físico exacto y su cable; preservar conectores, rotulado, proporciones y unidad.",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 348,2742,2743; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 3
+          },
+          "despues": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "SIN CAJA en catálogo y banners. Conservar originales. No extraer el dibujo impreso como si fuera una fotografía del producto. Mejorar fotografía premium a partir del cargador físico exacto y su cable; preservar conectores, rotulado, proporciones y unidad. Quitar fondo gris, blanco limpio y acabado premium; usar imagen actual y modelo/caja, pequeña variación de posición; conservar componentes.",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 348,2742,2743; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 4
+          }
+        }
+      ]
     }
   ],
   "politica_general": {
@@ -53783,7 +53839,17 @@
         "BOSE",
         "LENOVO"
       ],
-      "evidencia": "Mensaje del propietario en esta conversación: TODOS LOS PRODUCTOS ORIGINALES salvo esas cinco marcas con AAA (genérico) en Registro. No colocar condición en títulos, excepto compatible para cargadores AAA."
+      "evidencia": "Mensaje del propietario en esta conversación: TODOS LOS PRODUCTOS ORIGINALES salvo esas cinco marcas con AAA (genérico) en Registro. No colocar condición en títulos, excepto compatible para cargadores AAA.",
+      "confirmaciones_sku_propietario": {
+        "AUDI017": {
+          "autenticidad": "genérico/compatible",
+          "evidencia_autenticidad": "Confirmación comercial expresa del propietario en este chat: AUDI017 es AAA; excepción por SKU sobre regla general. importacion/lotes/correcciones-069/instrucciones-propietario.json"
+        },
+        "AUDI100": {
+          "autenticidad": "genérico/compatible",
+          "evidencia_autenticidad": "Confirmación expresa del propietario2026-10-13: AUDI100 esAAA. importacion/lotes/continuacion-078/instrucciones-propietario.json"
+        }
+      }
     },
     "produccion": {
       "fecha": "2026-10-10",

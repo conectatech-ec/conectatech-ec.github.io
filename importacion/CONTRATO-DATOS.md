@@ -1,3 +1,7 @@
+## Autorización posterior de representación — 13oct2026,Guayaquil
+
+El propietario permite usar imagen actual/caja/modelo identificado como referencia de una nueva representación comercial asistida con leve variación de posición, sin nueva consulta rutinaria de permiso del distribuidor. Para una referencia externa histórica ya proporcionada, `derechos_imagen.tipo=edicion_autorizada_propietario` conserva procedencia y requiere `edicion_asistida_ia=true`, `autorizacion_propietario` y `referencia_proporcionada` materializadas por archivo/SHA. La instrucción debe confirmar alcance y declarar que no afirma permiso del distribuidor; no es una licencia externa ficticia. Los demás controles de identidad, modelo, fidelidad visual, finanzas, originales, revisión y publicación continúan vigentes. La referencia de empaque se registra honestamente; la imagen final sigue SIN CAJA.
+
 # Contrato verificable por SKU — manifiesto versión 3
 
 El contrato conserva la identidad, las fuentes y los valores comerciales por SKU. No sustituye la investigación ni genera autorizaciones. `Original`/`Caja original` del Registro acreditan originalidad comercial conforme a la confirmación del propietario; la regla guardada en `reglas-sku.json` debe coincidir. Todos los medios comerciales son SIN CAJA. Las versiones 1 y 2 históricas conservan su comportamiento; utilizar versión 3 para los nuevos lotes.

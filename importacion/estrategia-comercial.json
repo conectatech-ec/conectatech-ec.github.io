@@ -43,7 +43,7 @@
   "busqueda": {
     "max_fuentes_por_sku": 3,
     "tiempo_objetivo_segundos": 180,
-    "sin_permiso_externo": "PENDIENTE_DERECHOS_Y_CONTINUAR",
+    "sin_permiso_externo": "PARA_RECURSO_YA_PROPORCIONADO_APLICAR_EDICION_AUTORIZADA_PROPIETARIO_SIN_DECLARAR_LICENCIA_EXTERNA",
     "sin_identidad": "PENDIENTE_IDENTIFICACION_Y_CONTINUAR",
     "reintentar_solo_con_nueva_evidencia": true
   },
@@ -84,5 +84,13 @@
     "alcance": "Todos los SKU por actualización incremental",
     "aprobacion_rutinaria_requerida": false
   },
-  "evidencia_lote_100": "Instrucción expresa del propietario en esta conversación: avanzar con un lote de 100, teléfonos primero."
+  "evidencia_lote_100": "Instrucción expresa del propietario en esta conversación: avanzar con un lote de 100, teléfonos primero.",
+  "autorizacion_representacion_20261013": {
+    "confirmada": true,
+    "aplica_a_todos_sku": true,
+    "mensaje": "pero no necesitamos ese permiso, tienes la caja y le modelo, toma la foto que ya tenemos y varia un poco la posicion, no te compliques, y esta regla aplica con los demas y asi podriamos agilizar los resultados.",
+    "alcance": "Representación comercial asistida porIA y retoque de imágenes proporcionadas en repositorio/catálogo o Drive, apoyada en caja y modelo identificado; ligera variación de posición. No exigir nueva confirmación rutinaria de permiso de distribuidor; no afirmar que existe una licencia del material original externo. Conservar fidelidad, procedencia, originales y datos comerciales.",
+    "no_afirma_permiso_distribuidor": true,
+    "archivo_evidencia": "importacion/lotes/continuacion-078/instrucciones-propietario.json"
+  }
 }
