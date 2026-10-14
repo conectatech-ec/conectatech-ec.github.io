@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/powe008-powerbank-inalambrica-monster-22-5w-10000mah/",
-  "fecha_verificacion": "2026-10-14T02:18:17.205777+00:00",
+  "fecha_verificacion": "2026-10-14T02:27:24.008357+00:00",
   "descripcion": "Powerbank Monster de 10.000 mAh con carga magnética inalámbrica y potencia nominal de hasta 22,5 W indicada en el empaque. La potencia efectiva depende del modo de carga y del dispositivo; no se atribuyen 22,5 W al modo inalámbrico.",
   "contenido_venta": "1 powerbank. No incluye el teléfono mostrado en el empaque.",
   "compatibilidad": "Requiere equipo compatible para carga inalámbrica y alineación magnética; consulta la compatibilidad antes de comprar.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación nueva asistida desde fotografías propias del empaque/modelo identificado por orden del propietario; no es fotografía física extraída del empaque. Geometría, conectores y componentes visibles cotejados; fondo blanco, sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T02:27:24.008357+00:00",
+      "reporte": "reportes/continuacion-079/http-publicacion.json",
+      "archivo": "reportes/continuacion-079/http-publicacion.json",
+      "sha256": "ce9d477756072339f89e96268b5578f40f9f67eef95dc63933793a8f27c13793",
+      "sku": "POWE008"
     },
     "movil": {
       "solicitado": "POWE008",
       "sku": "POWE008",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T02:19:49.322Z",
+      "fecha": "2026-10-14T02:27:22.789Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/powe008-powerbank-inalambrica-monster-22-5w-10000mah/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/powe008-powerbank-inalambrica-monster-22-5w-10000mah/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/powe008-powerbank-inalambrica-monster-22-5w-10000mah/",
       "archivo_html": "productos/powe008-powerbank-inalambrica-monster-22-5w-10000mah/index.html",
       "http": 200,
       "sha256_html": "3f46670d5ceddd2b88a0905ceb599c7f240c4cf4e53f657f90082d6d29eae7b5",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/powe008/POWE008-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/powe008/POWE008-01-600.webp?v=30857a5da52aeffd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/powe008/POWE008-01-600.webp?v=30857a5da52aeffd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/powe008-powerbank-inalambrica-monster-22-5w-10000mah/",
+          "url": "https://conectatech-ec.github.io/productos/powe008-powerbank-inalambrica-monster-22-5w-10000mah/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/powe008/POWE008-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/powe008/POWE008-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-079/qa-local/fichas/POWE008-390.png",
+      "archivo": "reportes/continuacion-079/qa-publica/fichas/POWE008-390.png",
       "sha256": "d1d58ce48f671c19de4dae056e84579cf532ef79e6b1ae3bad116d9bd5d2a5eb",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-079/qa-local/fichas/POWE008-1280.png",
+        "archivo": "reportes/continuacion-079/qa-publica/fichas/POWE008-1280.png",
         "sha256": "5cd9222da3da88ddade729af0cf63cbae6e9623e9ab3b299bc3965bcc79572d5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

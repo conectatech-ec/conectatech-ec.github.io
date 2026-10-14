@@ -101,9 +101,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap014-adaptador-usb-c-a-hdmi-hp-3-1-dhc-ct202/",
-  "fecha_verificacion": "2026-10-14T02:18:17.205777+00:00",
+  "fecha_verificacion": "2026-10-14T02:27:24.008357+00:00",
   "descripcion": "Adaptador HP DHC-CT202 con entrada USB-C y salida HDMI, carcasa azul y cable corto integrado. Conecta un equipo compatible con salida de video USB-C a una pantalla HDMI.",
   "contenido_venta": "1 adaptador con cable USB-C integrado. No incluye cable HDMI ni pantalla.",
   "compatibilidad": "El puerto USB-C del equipo debe admitir salida de video. No todos los puertos USB-C permiten conexión a pantallas.",
@@ -198,14 +198,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación nueva asistida desde fotografías propias del empaque/modelo identificado por orden del propietario; no es fotografía física extraída del empaque. Geometría, conectores y componentes visibles cotejados; fondo blanco, sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T02:27:24.008357+00:00",
+      "reporte": "reportes/continuacion-079/http-publicacion.json",
+      "archivo": "reportes/continuacion-079/http-publicacion.json",
+      "sha256": "ce9d477756072339f89e96268b5578f40f9f67eef95dc63933793a8f27c13793",
+      "sku": "ADAP014"
     },
     "movil": {
       "solicitado": "ADAP014",
       "sku": "ADAP014",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T02:19:52.827Z",
+      "fecha": "2026-10-14T02:27:27.239Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -230,7 +234,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap014-adaptador-usb-c-a-hdmi-hp-3-1-dhc-ct202/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap014-adaptador-usb-c-a-hdmi-hp-3-1-dhc-ct202/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap014-adaptador-usb-c-a-hdmi-hp-3-1-dhc-ct202/",
       "archivo_html": "productos/adap014-adaptador-usb-c-a-hdmi-hp-3-1-dhc-ct202/index.html",
       "http": 200,
       "sha256_html": "e3c2d3e7cc6ca268cc2c16906a623d413a6018be4ea5ac59b52778ddd2183228",
@@ -240,7 +244,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap014/ADAP014-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap014/ADAP014-01-600.webp?v=d69ff30a5d54fd50",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap014/ADAP014-01-600.webp?v=d69ff30a5d54fd50",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -249,32 +253,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap014-adaptador-usb-c-a-hdmi-hp-3-1-dhc-ct202/",
+          "url": "https://conectatech-ec.github.io/productos/adap014-adaptador-usb-c-a-hdmi-hp-3-1-dhc-ct202/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap014/ADAP014-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap014/ADAP014-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-079/qa-local/fichas/ADAP014-390.png",
+      "archivo": "reportes/continuacion-079/qa-publica/fichas/ADAP014-390.png",
       "sha256": "0aa560b7b99356cff4757f7585313491d7a88d535c464debd174a1ba756c13b6",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-079/qa-local/fichas/ADAP014-1280.png",
+        "archivo": "reportes/continuacion-079/qa-publica/fichas/ADAP014-1280.png",
         "sha256": "ce0b3d2a6e0618fd0e0866e14cedf3ae783aec7287d68ceae5ae65e236b0413f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

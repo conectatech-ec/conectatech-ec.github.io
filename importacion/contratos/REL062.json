@@ -239,9 +239,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel062-reloj-smartwatch-kalobee-para-cabellero-sk43/",
-  "fecha_verificacion": "2026-10-14T02:19:15.672704+00:00",
+  "fecha_verificacion": "2026-10-14T02:27:24.008357+00:00",
   "descripcion": "Smartwatch Kalobee SK43 con diseño redondo y brazalete metálico de eslabones. Presentación comercial basada en las fotografías reales del SKU. Consulta compatibilidad y disponibilidad antes de comprar.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -341,14 +341,18 @@
       "sha256_maestro": "267cd7a8cd93ea6db533b5be4981a4c1d74fceda1dcf6fdf3b2117c4a551e9ca"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T02:27:24.008357+00:00",
+      "reporte": "reportes/continuacion-079/http-publicacion.json",
+      "archivo": "reportes/continuacion-079/http-publicacion.json",
+      "sha256": "ce9d477756072339f89e96268b5578f40f9f67eef95dc63933793a8f27c13793",
+      "sku": "REL062"
     },
     "movil": {
       "solicitado": "REL062",
       "sku": "REL062",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T02:19:57.727Z",
+      "fecha": "2026-10-14T02:27:32.856Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -373,7 +377,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rel062-reloj-smartwatch-kalobee-para-cabellero-sk43/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/rel062-reloj-smartwatch-kalobee-para-cabellero-sk43/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/rel062-reloj-smartwatch-kalobee-para-cabellero-sk43/",
       "archivo_html": "productos/rel062-reloj-smartwatch-kalobee-para-cabellero-sk43/index.html",
       "http": 200,
       "sha256_html": "15d9405b3601dac42368309028b3208e7cb650eb6bd371b1efdfe7ec352f8482",
@@ -383,7 +387,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel062/REL062-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/rel062/REL062-01-600.webp?v=afb9325455da6619",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/rel062/REL062-01-600.webp?v=afb9325455da6619",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -392,47 +396,47 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/rel062-reloj-smartwatch-kalobee-para-cabellero-sk43/",
+          "url": "https://conectatech-ec.github.io/productos/rel062-reloj-smartwatch-kalobee-para-cabellero-sk43/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/rel062/REL062-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/rel062/REL062-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/rel069-reloj-smartwatch-series-11-mini/",
+          "url": "https://conectatech-ec.github.io/productos/rel069-reloj-smartwatch-series-11-mini/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/rel046-reloj-smarwatch-infinix-h4/",
+          "url": "https://conectatech-ec.github.io/productos/rel046-reloj-smarwatch-infinix-h4/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/rel065-reloj-smartwatch-s11-pro/",
+          "url": "https://conectatech-ec.github.io/productos/rel065-reloj-smartwatch-s11-pro/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-079/qa-local/fichas/REL062-390.png",
+      "archivo": "reportes/continuacion-079/qa-publica/fichas/REL062-390.png",
       "sha256": "3cf71158dfb4b9cdbe2d526fb8ec467722ea1b1c2dbc4bc748bcfa2a29f2bb08",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-079/qa-local/fichas/REL062-1280.png",
+        "archivo": "reportes/continuacion-079/qa-publica/fichas/REL062-1280.png",
         "sha256": "f5686de9512a63c668f5bcfe9a23fc32859ddbe4de9e2b0bf62abfb6f85be1ed",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

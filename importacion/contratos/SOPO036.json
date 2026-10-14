@@ -125,9 +125,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo036-soporte-para-vehiculo-magnetico-con-ventosa-dashmag-marca-premier/",
-  "fecha_verificacion": "2026-10-14T02:18:17.205777+00:00",
+  "fecha_verificacion": "2026-10-14T02:27:24.008357+00:00",
   "descripcion": "Soporte magnético Premier DashMag para tablero o parabrisas, con cabeza circular y brazo curvo compacto. Consulta la superficie y los componentes de montaje necesarios para una fijación adecuada.",
   "contenido_venta": "1 soporte DashMag. No incluye teléfono. Consulta los componentes de montaje al comprar.",
   "compatibilidad": "Requiere superficie adecuada y limpia y fijación magnética compatible con el teléfono o funda. No incorpora carga inalámbrica.",
@@ -226,14 +226,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación nueva asistida desde fotografías propias del empaque/modelo identificado por orden del propietario; no es fotografía física extraída del empaque. Geometría, conectores y componentes visibles cotejados; fondo blanco, sin caja ni accesorios no confirmados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T02:27:24.008357+00:00",
+      "reporte": "reportes/continuacion-079/http-publicacion.json",
+      "archivo": "reportes/continuacion-079/http-publicacion.json",
+      "sha256": "ce9d477756072339f89e96268b5578f40f9f67eef95dc63933793a8f27c13793",
+      "sku": "SOPO036"
     },
     "movil": {
       "solicitado": "SOPO036",
       "sku": "SOPO036",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T02:19:56.929Z",
+      "fecha": "2026-10-14T02:27:31.712Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -258,7 +262,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo036-soporte-para-vehiculo-magnetico-con-ventosa-dashmag-marca-premier/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/sopo036-soporte-para-vehiculo-magnetico-con-ventosa-dashmag-marca-premier/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo036-soporte-para-vehiculo-magnetico-con-ventosa-dashmag-marca-premier/",
       "archivo_html": "productos/sopo036-soporte-para-vehiculo-magnetico-con-ventosa-dashmag-marca-premier/index.html",
       "http": 200,
       "sha256_html": "7ec7103a4c807e250abc159add52cedafacce48842cfd22ac40072f3863183f0",
@@ -268,7 +272,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo036/SOPO036-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/sopo036/SOPO036-01-600.webp?v=04e4a4c1dc084862",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo036/SOPO036-01-600.webp?v=04e4a4c1dc084862",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -277,32 +281,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/sopo036-soporte-para-vehiculo-magnetico-con-ventosa-dashmag-marca-premier/",
+          "url": "https://conectatech-ec.github.io/productos/sopo036-soporte-para-vehiculo-magnetico-con-ventosa-dashmag-marca-premier/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/sopo036/SOPO036-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo036/SOPO036-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-079/qa-local/fichas/SOPO036-390.png",
+      "archivo": "reportes/continuacion-079/qa-publica/fichas/SOPO036-390.png",
       "sha256": "36b4407999b89f76cc60a95b2023dda90b38ac77bbc11868540783f6f89c7fb4",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-079/qa-local/fichas/SOPO036-1280.png",
+        "archivo": "reportes/continuacion-079/qa-publica/fichas/SOPO036-1280.png",
         "sha256": "9765ab3037bf045507bbfc10abf93fc284eec9983b5ed77fc3bd557e8e765d73",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
