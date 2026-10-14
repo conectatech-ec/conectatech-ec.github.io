@@ -1,0 +1,463 @@
+{
+  "fecha": "2026-10-14T20:49:18.555461+00:00",
+  "nuevos_publicados": [
+    "CABL153",
+    "CABL157",
+    "CABL156",
+    "CABL152",
+    "CABL154",
+    "CABL155",
+    "CABL151",
+    "CABL160",
+    "CARG037",
+    "CARG029",
+    "CARG066",
+    "CARG061",
+    "CARG036",
+    "CARG040",
+    "CARG010",
+    "CARG015",
+    "CARG033",
+    "CARG028",
+    "CARG048",
+    "CARG049",
+    "CARG034",
+    "CARG046",
+    "CARG056",
+    "CARG057",
+    "CARG006",
+    "CARG063",
+    "CARG068",
+    "CARG038",
+    "CARG044",
+    "CARG067",
+    "ADAP031",
+    "ADAP032",
+    "ADAP084",
+    "ADAP085",
+    "ADAP082",
+    "ADAP083",
+    "ADAP075",
+    "ADAP065",
+    "ADAP009"
+  ],
+  "cantidad_nuevos": 39,
+  "actualizados_previos": 0,
+  "categorias": {
+    "Cables": 8,
+    "Cargadores": 22,
+    "Adaptadores": 9
+  },
+  "total_sku": 1170,
+  "sku_con_portada": 514,
+  "sku_sin_portada": 656,
+  "registro_total": 608,
+  "qa_sku": 56,
+  "errores_finales": 0,
+  "primeros_39_verificados": true,
+  "orden": "Cambios reales por fecha efectiva descendente; empate nuevos primero. Sin renovar fechas por QA o enlaces globales.",
+  "integridad": {
+    "total_sku": 1170,
+    "finanzas_stock_categorias_intactos": true,
+    "datos593_intactos": true,
+    "urls_intactas": true,
+    "originales_intactos": 557,
+    "fotografias_previas_archivos_intactos": 2021,
+    "registros_ajenos_intactos": true,
+    "portadas": 514,
+    "sin_portada": 656,
+    "base": "8903c9cf3b12abe39de5a01037c3f4aaeb0d701c"
+  },
+  "meta": {
+    "fecha": "2026-10-14T20:47:10.136442+00:00",
+    "estado": "VERIFICADO_HTTP_CONTENIDO",
+    "url": "https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv",
+    "sha256": "df6d6c22e871d5e8f37392fd4a5d44ecef3015a70c540415aa15d668aaa939aa",
+    "filas": 509,
+    "filas_anteriores": 470,
+    "filas_nuevas": 39,
+    "filas_previas_todas_columnas_intactas": true,
+    "categoria_desde593": true,
+    "telf_celulares": 23,
+    "telf_skus": [
+      "TELF001",
+      "TELF023",
+      "TELF024",
+      "TELF034",
+      "TELF008",
+      "TELF013",
+      "TELF020",
+      "TELF017",
+      "TELF018",
+      "TELF019",
+      "TELF022",
+      "TELF036",
+      "TELF037",
+      "TELF010",
+      "TELF011",
+      "TELF012",
+      "TELF026",
+      "TELF025",
+      "TELF027",
+      "TELF002",
+      "TELF003",
+      "TELF004",
+      "TELF016"
+    ],
+    "con_categoria": 502,
+    "sin_categoria_maestra": [
+      "AUDI115",
+      "REL071",
+      "CABL163",
+      "CABL159",
+      "CAND001",
+      "CABL170",
+      "CABL171"
+    ],
+    "sin_clasificaciones_inventadas": true,
+    "misma_url": true,
+    "otro_catalogo_creado": false,
+    "verificacion_interna_meta": false
+  },
+  "despliegues": {
+    "ci_candidato": {
+      "conclusion": "success",
+      "headSha": "dc459f359c7ace6afc617d2a2ace65806525e6d4",
+      "name": "Validar lote antes de publicar",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38631583569",
+      "run_id": 38631583569
+    },
+    "pages_recursos": {
+      "conclusion": "success",
+      "headSha": "a3c008c5fc102d6db51cf3256192339d6e0cc85e",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38632278631",
+      "run_id": 38632278631
+    },
+    "ci_promocion": {
+      "conclusion": "success",
+      "headSha": "c65cde825854d0a8484a600ef8689ee73311bc8b",
+      "name": "Validar lote antes de publicar",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38633475890",
+      "run_id": 38633475890
+    },
+    "pages_catalogo_final": {
+      "conclusion": "success",
+      "headSha": "d370cf28e9d3050b8fb8c0436fc5447dff4e6b5e",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38634153771",
+      "run_id": 38634153771
+    }
+  },
+  "pendientes_historicos": [
+    {
+      "sku": "REL050",
+      "motivo": "Fidelidad del bisel/controles; conservar foto histórica y observación, no declarar corregido."
+    },
+    {
+      "sku": "SOPO020",
+      "motivo": "Fuentes T7-01/T7-02 contradictorias."
+    },
+    {
+      "sku": "RADI005",
+      "motivo": "Unidad de venta uno o par no confirmada."
+    }
+  ],
+  "reservados": [
+    {
+      "sku": "CABL114",
+      "motivo": "Varias variantes de color en empaque; pendiente de referencia física o confirmación del color, sustituido por CABL032."
+    },
+    {
+      "sku": "CARG062",
+      "estado": "PENDIENTE_IDENTIDAD_CONTENIDO",
+      "motivo": "El nombre593 indica cargador universal65W, pero las fotos propias muestran15 puntas y empaque Type-C to Universal DC interface. No se acredita una fuente de red ni cable AC incluidos; no representar un cargador completo inventado. Conservar593 y foto vigente sin modificar.",
+      "requiere": "Verificar físicamente contenido de venta y si incluye fuente o sólo interfaz USB-C/DC y puntas.",
+      "referencias": [
+        "https://drive.google.com/file/d/19u7mM4XTOfYClMIgz6tt15OISKww2O2V/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1DDQIohbZx1qkRGLyYfJiCBh9G6ng8p-5/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1hvorlPJBrZwVPMLraBIHABZnR91ru_pQ/view?usp=drivesdk"
+      ]
+    }
+  ],
+  "propuestas_descartadas": [
+    {
+      "sku": "CARG015",
+      "motivo": "El empaque muestra dos vistas;propuesta representaba dos cuerpos de cargador. Corregido a una unidad con3puertos.",
+      "sha256": "6d0d9bf8fe7432ed9b506f87a85cd3187cc8ee009d1cbfb88f825ecd326f3e69",
+      "nunca_publicada": true
+    },
+    {
+      "sku": "CARG046",
+      "motivo": "Trenzado indebido:corregido a cable blanco liso.",
+      "sha256": "7d54051738f67f0e6c21f8e77cd3fcc5ce86304d06d7656da0ff88b6d5d629ec",
+      "nunca_publicada": true
+    },
+    {
+      "sku": "ADAP085",
+      "motivo": "Cable fijo adicional inventado:retirado,una salidaDC y cableAC separado.",
+      "sha256": "b2b018e1a14508484d716198c77b34db5d0f86d42dc9676d673284f7e6fc89f1",
+      "nunca_publicada": true
+    }
+  ],
+  "siguiente_lote": {
+    "fecha": "2026-10-14T20:23:59.916240+00:00",
+    "estado": "SOLO_PRESELECCION_NO_PRODUCIDA_NI_PUBLICADA",
+    "cantidad": 40,
+    "regla": "Repetir deduplicación contra main/web e inspección de referencias/identidad/unidad antes de generar. Micrófonos prioritarios para enriquecer la categoría compartible. No se da por correcta una foto por existir en Drive.",
+    "candidatos": [
+      {
+        "sku": "MICR13",
+        "titulo_maestro": "Microfono Inalambrico CON Powerbank SX21",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "MICR01",
+        "titulo_maestro": "Microfono Alambrico 3.5MM CON Audifono MC-R5",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "MICR02",
+        "titulo_maestro": "Microfono Alambrico 3.5MM MC-R1",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "MICR03",
+        "titulo_maestro": "Microfono Inalambrico Doble Para Iphone K9",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "MICR037",
+        "titulo_maestro": "MICROFONO LAVALIER M1 ALAMBRICO",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "MICR06",
+        "titulo_maestro": "Microfono Alambrico Usb-c MC-R2",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "MICR07",
+        "titulo_maestro": "Microfono Alambrico Usb-c CON Audifono MC-R6",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "MICR10",
+        "titulo_maestro": "Microfono K35",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "MICR12",
+        "titulo_maestro": "Microfono Inalambrico Triple Conector S/R",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "MICR19",
+        "titulo_maestro": "Microfonos SET 2 Para Parlante Sing-e ZQS-2M502 Vocal Karaoke",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "MICR20",
+        "titulo_maestro": "Microfono Alambrico Modelo PGA58",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "MICR21",
+        "titulo_maestro": "Microfono F9 Doble CON Conector Lightning",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "MICR24",
+        "titulo_maestro": "Microfono Primus VOX01",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "MICR25",
+        "titulo_maestro": "Microfono Vocal Thunder Sound 53HS472",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "MICR30",
+        "titulo_maestro": "Microfono Inalambrico Vocal Profesional UHF",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "MICR33",
+        "titulo_maestro": "Microfono Genuine Para Pc-laptop",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 5
+      },
+      {
+        "sku": "MICR34",
+        "titulo_maestro": "Microfono Inalambrico SET 2 Sagapu TTD-M12",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "MICR35",
+        "titulo_maestro": "Microfono Lavalier ANC Magnetico",
+        "categoria_real": "Microfonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "CAMA007",
+        "titulo_maestro": "Camara DE Seguridad Nexxt Indoor 2K",
+        "categoria_real": "Camaras",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "CAMA001",
+        "titulo_maestro": "Camara DE Seguridad Mini Webcam HD",
+        "categoria_real": "Camaras",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "CAMA002",
+        "titulo_maestro": "Camara DE Seguridad HD Tipo Foco",
+        "categoria_real": "Camaras",
+        "referencias_indexadas": 5
+      },
+      {
+        "sku": "CAMA005",
+        "titulo_maestro": "Camara DE Seguridad Xiaomi C301 Para Interiores",
+        "categoria_real": "Camaras",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "CAMA009",
+        "titulo_maestro": "Camara DE Seguridad Vigi BY TP Link Outdoor Fullcolor Easycam C320",
+        "categoria_real": "Camaras",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "ADAP022",
+        "titulo_maestro": "Adaptador Union RCA DE Audio (doble)",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "ADAP067",
+        "titulo_maestro": "Adaptador Usb-a A Usb-c Hembra Ldnio Star",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "ADAP080",
+        "titulo_maestro": "Adaptador OTG Mini-usb V3",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "ADAP093",
+        "titulo_maestro": "ADAPTADOR DE USB-A A PLUG MINI",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "ADAP019",
+        "titulo_maestro": "Adaptador Usb-c A 3.5MM",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "ADAP020",
+        "titulo_maestro": "Adaptador Usb-c A 3.5MM Negro",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "ADAP025",
+        "titulo_maestro": "Adaptador Union 3.5MM DE Metal Coupler",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "ADAP062",
+        "titulo_maestro": "Adaptador Usb-a Antena Wifi Alfa UW06",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "ADAP088",
+        "titulo_maestro": "ADAPTADOR DE LIGHTNING A DOBLE LIGHTNING AUDIFONOS + CARGA RECCI RDS-A01",
+        "categoria_real": "Adaptadores",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "AUDI111",
+        "titulo_maestro": "AUDIFONOS INALAMBRICOS AIRPODS",
+        "categoria_real": "Audifonos",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "AUDI112",
+        "titulo_maestro": "AUDIFONOS ALAMBRICOS HONOR EARPHONES",
+        "categoria_real": "Audifonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "AUDI004",
+        "titulo_maestro": "Audifonos Alambricos Basicos Esencial",
+        "categoria_real": "Audifonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "AUDI039",
+        "titulo_maestro": "Audifonos DE Diadema Animados Para Ninos",
+        "categoria_real": "Audifonos",
+        "referencias_indexadas": 16
+      },
+      {
+        "sku": "AUDI002",
+        "titulo_maestro": "Audifonos AKG 3.5MM",
+        "categoria_real": "Audifonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "AUDI003",
+        "titulo_maestro": "Audifonos AKG Usb-c",
+        "categoria_real": "Audifonos",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "AUDI016",
+        "titulo_maestro": "Audifonos DE Diadema Tune A6",
+        "categoria_real": "Audifonos",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "AUDI062",
+        "titulo_maestro": "Audifonos Inalambricos Airpods XFT-01",
+        "categoria_real": "Audifonos",
+        "referencias_indexadas": 2
+      }
+    ]
+  },
+  "enlaces_categoria": {
+    "estado": "PUBLICADO_VERIFICADO",
+    "categorias": 76,
+    "microfonos": "https://conectatech-ec.github.io/?categoria=microfonos#catalogo",
+    "evidencia": "reportes/continuacion-085/qa-publica/categorias.json"
+  },
+  "main_comprobado": "d370cf28e9d3050b8fb8c0436fc5447dff4e6b5e",
+  "sesion_antigua": "No existe control para detener otro chat; main fresco, rama independiente, respaldos e integración normal sinforce conservando concurrencia."
+}
