@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg038-cargador-turbopower-moto/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Cargador Motorola TurboPower | kit USB-A a USB-C. Puertos: 1 USB-A hembra. Conexiones: USB-A macho a USB-C macho. Presentación: Cargador de pared con dos patas planas fijas y cable separado.",
   "contenido_venta": "1 cargador de pared y 1 cable USB-A macho a USB-C macho. No incluye teléfono ni adaptador de enchufe.",
   "compatibilidad": "Comprueba conector, protocolo y potencia admitidos por cargador, cable y dispositivo. La potencia indicada en la referencia es nominal; el rendimiento depende del conjunto y no se garantiza carga rápida en todos los equipos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados. Empaque con serie TurboPower30+ y texto15W: se omite potencia por discrepancia; no se garantiza30W."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "CARG038"
     },
     "movil": {
       "solicitado": "CARG038",
       "sku": "CARG038",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:24.880Z",
+      "fecha": "2026-10-14T20:34:46.754Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg038-cargador-turbopower-moto/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/carg038-cargador-turbopower-moto/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg038-cargador-turbopower-moto/",
       "archivo_html": "productos/carg038-cargador-turbopower-moto/index.html",
       "http": 200,
       "sha256_html": "1e1b91bd59d2e59be0c6864852d24b3a11b8ebcbc8b848f1dce47aae468ede54",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg038/CARG038-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/carg038/CARG038-01-600.webp?v=d2b8791f06b6f591",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg038/CARG038-01-600.webp?v=d2b8791f06b6f591",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/carg038-cargador-turbopower-moto/",
+          "url": "https://conectatech-ec.github.io/productos/carg038-cargador-turbopower-moto/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/carg038/CARG038-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg038/CARG038-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/CARG038-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/CARG038-390.png",
       "sha256": "08d4fb2c610518b0e2225bdcac432623bf22b19bdd1f4379ce035a8b27f1c9fc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/CARG038-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/CARG038-1280.png",
         "sha256": "ee0eddf131ee37d45034bd0b7897f97b58a01aadcd20ae143cded338de21eff2",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

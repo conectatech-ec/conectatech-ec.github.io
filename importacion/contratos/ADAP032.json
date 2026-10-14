@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap032-adaptador-de-3-5mm-macho-a-doble-3-5mm-hembra/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Divisor de audio | 3,5 mm a doble salida. Conexiones: 3,5 mm TRS macho a 2 tomas de 3,5 mm hembra. Diseño: Bloque compacto en Y sin cable. Presentación: Un adaptador de dos salidas.",
   "contenido_venta": "1 adaptador divisor. No incluye equipos.",
   "compatibilidad": "Verifica conexiones de audio del equipo. No se declara función de micrófono ni dos canales independientes.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "ADAP032"
     },
     "movil": {
       "solicitado": "ADAP032",
       "sku": "ADAP032",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:28.798Z",
+      "fecha": "2026-10-14T20:34:51.768Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap032-adaptador-de-3-5mm-macho-a-doble-3-5mm-hembra/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/adap032-adaptador-de-3-5mm-macho-a-doble-3-5mm-hembra/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap032-adaptador-de-3-5mm-macho-a-doble-3-5mm-hembra/",
       "archivo_html": "productos/adap032-adaptador-de-3-5mm-macho-a-doble-3-5mm-hembra/index.html",
       "http": 200,
       "sha256_html": "e23e50569573dbfbcf64ac95d548a531f92a4c47f3134b25bee60e133c20db8c",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap032/ADAP032-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/adap032/ADAP032-01-600.webp?v=70eb0b86a6ffd07e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap032/ADAP032-01-600.webp?v=70eb0b86a6ffd07e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/adap032-adaptador-de-3-5mm-macho-a-doble-3-5mm-hembra/",
+          "url": "https://conectatech-ec.github.io/productos/adap032-adaptador-de-3-5mm-macho-a-doble-3-5mm-hembra/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/adap032/ADAP032-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap032/ADAP032-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/ADAP032-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/ADAP032-390.png",
       "sha256": "2704f9cbfc324871b59bc5f97e04079651bdd450298aafcad09b9c07fff6c7e7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/ADAP032-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/ADAP032-1280.png",
         "sha256": "42d3875d3a9c8d7277adab4f2b2f4624704e4aefd2cfe036d1fc11f1324f93ae",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

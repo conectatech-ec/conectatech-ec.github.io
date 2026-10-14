@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg036-cargador-120w-xia-gan-charger-set/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Cargador GaN de la referencia BHR7525CN con cable de carga de terminación USB-C. Presentación en kit, con dos patas planas fijas.",
   "contenido_venta": "1 cargador de pared y 1 cable de carga con terminación USB-C para el dispositivo. No incluye teléfono ni adaptador de enchufe.",
   "compatibilidad": "Comprueba conector, protocolo y potencia admitidos por cargador, cable y dispositivo. La potencia indicada en la referencia es nominal; el rendimiento depende del conjunto y no se garantiza carga rápida en todos los equipos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados. Referencia de empaque GaN120W; cara de salida oculta: representar ángulo de carcasa y patas documentado, sin añadir puertos. No se ofrece potencia verificada por laboratorio."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "CARG036"
     },
     "movil": {
       "solicitado": "CARG036",
       "sku": "CARG036",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:09.437Z",
+      "fecha": "2026-10-14T20:34:24.853Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg036-cargador-120w-xia-gan-charger-set/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/carg036-cargador-120w-xia-gan-charger-set/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg036-cargador-120w-xia-gan-charger-set/",
       "archivo_html": "productos/carg036-cargador-120w-xia-gan-charger-set/index.html",
       "http": 200,
       "sha256_html": "674cad6459f0efd21e0d57bb5d5aeb2433125ed0dcd1a42264da452b4f4591a1",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg036/CARG036-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/carg036/CARG036-01-600.webp?v=12b9a42ac0f0c45a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg036/CARG036-01-600.webp?v=12b9a42ac0f0c45a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/carg036-cargador-120w-xia-gan-charger-set/",
+          "url": "https://conectatech-ec.github.io/productos/carg036-cargador-120w-xia-gan-charger-set/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/carg036/CARG036-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg036/CARG036-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/CARG036-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/CARG036-390.png",
       "sha256": "df40cfd025d77210a3a52fb59ffe218b5909830327c18ff6adda8b5027785b67",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/CARG036-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/CARG036-1280.png",
         "sha256": "83892ed6940069049a46d28f3a78e0d848dcc86ace6beb45c41de03743c5d023",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

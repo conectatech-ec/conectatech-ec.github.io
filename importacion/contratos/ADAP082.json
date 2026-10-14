@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap082-adaptador-de-corriente-5v-2a-orvesion/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Fuente de alimentación 5 V | 2 A. Salida: 5 V / 2 A nominales según referencia maestra. Conexiones: Conector de salida DC cilíndrico macho. Diseño: Adaptador de pared con dos patas planas y cable fijo.",
   "contenido_venta": "1 fuente con su cable de salida fijo. No incluye equipo receptor.",
   "compatibilidad": "Comprueba voltaje, corriente requerida, polaridad y medidas exactas del conector antes de usar. No se declaran medidas del conector ni compatibilidad universal.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados. Empaque propio no acredita marcaOrvesion del nombre histórico: marca omitida en ficha y representación, CSV593 intacto."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "ADAP082"
     },
     "movil": {
       "solicitado": "ADAP082",
       "sku": "ADAP082",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:31.359Z",
+      "fecha": "2026-10-14T20:34:55.660Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap082-adaptador-de-corriente-5v-2a-orvesion/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/adap082-adaptador-de-corriente-5v-2a-orvesion/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap082-adaptador-de-corriente-5v-2a-orvesion/",
       "archivo_html": "productos/adap082-adaptador-de-corriente-5v-2a-orvesion/index.html",
       "http": 200,
       "sha256_html": "a2d720ab357298fb45f658072cad196bdb4df973d20d64f53032022095bea705",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap082/ADAP082-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/adap082/ADAP082-01-600.webp?v=16593d19f4eb7aec",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap082/ADAP082-01-600.webp?v=16593d19f4eb7aec",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/adap082-adaptador-de-corriente-5v-2a-orvesion/",
+          "url": "https://conectatech-ec.github.io/productos/adap082-adaptador-de-corriente-5v-2a-orvesion/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/adap082/ADAP082-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap082/ADAP082-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/ADAP082-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/ADAP082-390.png",
       "sha256": "e62b9d67671cba8683d0a627a31ef27a4436ba1fe19a57257aca6d246b0d9da3",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/ADAP082-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/ADAP082-1280.png",
         "sha256": "3ec401d7b8c2a2e9afc2468ae7299ad9df53273572cc182001c280a1297b23f9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

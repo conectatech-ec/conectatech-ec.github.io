@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl155-cable-micro-usb-recci-instant-2m/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Cable Recci Instant | Micro-USB 2 m. Conexiones: USB-A macho a Micro-USB 2.0 macho. Longitud: 2 m. Diseño: Cubierta trenzada y cabezales metálicos.",
   "contenido_venta": "1 cable. No incluye cargador ni equipos.",
   "compatibilidad": "Comprueba los conectores y requisitos de carga/datos del equipo y cargador. No se garantiza potencia ni carga rápida universal.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "CABL155"
     },
     "movil": {
       "solicitado": "CABL155",
       "sku": "CABL155",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:01.801Z",
+      "fecha": "2026-10-14T20:34:16.387Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl155-cable-micro-usb-recci-instant-2m/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cabl155-cable-micro-usb-recci-instant-2m/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl155-cable-micro-usb-recci-instant-2m/",
       "archivo_html": "productos/cabl155-cable-micro-usb-recci-instant-2m/index.html",
       "http": 200,
       "sha256_html": "828aeb85468fccd9a4ba6013ae49627ea3884b1dab33a1843c21c47a9a0f09a9",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl155/CABL155-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cabl155/CABL155-01-600.webp?v=9a6dd9a444a5ea66",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl155/CABL155-01-600.webp?v=9a6dd9a444a5ea66",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cabl155-cable-micro-usb-recci-instant-2m/",
+          "url": "https://conectatech-ec.github.io/productos/cabl155-cable-micro-usb-recci-instant-2m/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cabl155/CABL155-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl155/CABL155-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/CABL155-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/CABL155-390.png",
       "sha256": "f2be9493d386ca7b0680bb7062a3551ac4c5d5b36ed54cc2dda96d906545207a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/CABL155-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/CABL155-1280.png",
         "sha256": "1c4ecb6636ac5ccb72a3557138738de876951622e7720d3ec0dc46c299dd111a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

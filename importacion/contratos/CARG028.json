@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Cargador 20 W | kit USB-C a Lightning. Puertos: 1 USB-C hembra. Conexiones: USB-C macho a Lightning macho. Presentación: Cargador de pared con dos patas planas fijas y cable separado.",
   "contenido_venta": "1 cargador de pared y 1 cable USB-C macho a Lightning macho. No incluye teléfono ni adaptador de enchufe.",
   "compatibilidad": "Comprueba conector, protocolo y potencia admitidos por cargador, cable y dispositivo. La potencia indicada en la referencia es nominal; el rendimiento depende del conjunto y no se garantiza carga rápida en todos los equipos.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "CARG028"
     },
     "movil": {
       "solicitado": "CARG028",
       "sku": "CARG028",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:14.638Z",
+      "fecha": "2026-10-14T20:34:31.079Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/",
       "archivo_html": "productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/index.html",
       "http": 200,
       "sha256_html": "330b1ac5b892dd66d01731d1519645d8545d15d267c9919774451133c636510d",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg028/CARG028-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/carg028/CARG028-01-600.webp?v=930047c9f9893488",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg028/CARG028-01-600.webp?v=930047c9f9893488",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/",
+          "url": "https://conectatech-ec.github.io/productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/carg028/CARG028-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg028/CARG028-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/CARG028-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/CARG028-390.png",
       "sha256": "92559dd14d83228b589ccf726d39a28e3570f5dfbf768dd047a0448574acfe71",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/CARG028-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/CARG028-1280.png",
         "sha256": "95becac9dfdd3e0024b2daf78acaffa12f79b4562d91748272beffbe3cb16ed6",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

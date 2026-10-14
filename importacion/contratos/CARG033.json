@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg033-cargador-iin-zii-c536-con-cable-usb-c/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Cargador IIN&ZII IZ-C536 | kit USB-A a USB-C. Puertos: 1 USB-A hembra. Conexiones: USB-A macho a USB-C macho. Presentación: Cargador de pared con dos patas planas fijas y cable separado.",
   "contenido_venta": "1 cargador de pared y 1 cable USB-A macho a USB-C macho. No incluye teléfono ni adaptador de enchufe.",
   "compatibilidad": "Comprueba conector, protocolo y potencia admitidos por cargador, cable y dispositivo. La potencia indicada en la referencia es nominal; el rendimiento depende del conjunto y no se garantiza carga rápida en todos los equipos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados. Puerto de cargador USB-A naranja cotejado en empaque; USB-C del nombre593 corresponde al extremo del cable."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "CARG033"
     },
     "movil": {
       "solicitado": "CARG033",
       "sku": "CARG033",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:13.626Z",
+      "fecha": "2026-10-14T20:34:29.973Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg033-cargador-iin-zii-c536-con-cable-usb-c/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/carg033-cargador-iin-zii-c536-con-cable-usb-c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg033-cargador-iin-zii-c536-con-cable-usb-c/",
       "archivo_html": "productos/carg033-cargador-iin-zii-c536-con-cable-usb-c/index.html",
       "http": 200,
       "sha256_html": "d9fd3100d9870da08776ad8826fe06c38fc944ee1dd6c9947dc70f573f06223a",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg033/CARG033-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/carg033/CARG033-01-600.webp?v=e01681fbba2fea37",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg033/CARG033-01-600.webp?v=e01681fbba2fea37",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/carg033-cargador-iin-zii-c536-con-cable-usb-c/",
+          "url": "https://conectatech-ec.github.io/productos/carg033-cargador-iin-zii-c536-con-cable-usb-c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/carg033/CARG033-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg033/CARG033-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/CARG033-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/CARG033-390.png",
       "sha256": "db7bde87d8003dc54f2539bede34cd4e8dc44e4df70fc692f987edad1a66f0cc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/CARG033-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/CARG033-1280.png",
         "sha256": "484978087fcfdaff1c3e7036198ac15aa9ce4d6bc4ea1a7d2f71e306627bede0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

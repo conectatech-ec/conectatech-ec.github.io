@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap075-adaptador-de-red-rj45-de-1-a-2-salidas/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Divisor RJ45 | 1 a 2 tomas. Conexiones: 1 toma RJ45 hembra a 2 tomas RJ45 hembra. Diseño: Bloque compacto sin cables ni alimentación. Uso: Divisor pasivo para instalaciones con cableado apropiado.",
   "contenido_venta": "1 divisor RJ45. No incluye cables ni equipos de red.",
   "compatibilidad": "No es un switch Ethernet activo ni duplica por sí solo una conexión de red en dos conexiones independientes. Requiere configuración y cableado apropiados; comprueba la instalación antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "ADAP075"
     },
     "movil": {
       "solicitado": "ADAP075",
       "sku": "ADAP075",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:33.094Z",
+      "fecha": "2026-10-14T20:34:58.430Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap075-adaptador-de-red-rj45-de-1-a-2-salidas/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/adap075-adaptador-de-red-rj45-de-1-a-2-salidas/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap075-adaptador-de-red-rj45-de-1-a-2-salidas/",
       "archivo_html": "productos/adap075-adaptador-de-red-rj45-de-1-a-2-salidas/index.html",
       "http": 200,
       "sha256_html": "ce5bf005c7b882fc6e79ccb7b9eece6de60703f993b674ac1e796a34954ca664",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap075/ADAP075-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/adap075/ADAP075-01-600.webp?v=99c02155cb9fe16c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap075/ADAP075-01-600.webp?v=99c02155cb9fe16c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/adap075-adaptador-de-red-rj45-de-1-a-2-salidas/",
+          "url": "https://conectatech-ec.github.io/productos/adap075-adaptador-de-red-rj45-de-1-a-2-salidas/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/adap075/ADAP075-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap075/ADAP075-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/ADAP075-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/ADAP075-390.png",
       "sha256": "c1f8a0dfcae09ef4bd5148458dea8cfbba156aeb3831085c24f7527c7ac00b85",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/ADAP075-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/ADAP075-1280.png",
         "sha256": "1d463eb3df4c88f4a1df536cbdf2b3be3ee703918cd499e01dcd2ab6e7751727",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

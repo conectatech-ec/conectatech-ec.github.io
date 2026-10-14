@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg067-cargadores-para-smartwatch-base-circular/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Cable de carga para smartwatch | base circular. Conexiones: USB-A macho a base de carga para reloj. Diseño: Base circular azul oscuro con contactos. Presentación: Una base con cable integrado.",
   "contenido_venta": "1 cable de carga con base circular azul oscuro. No incluye reloj ni segunda variante de color.",
   "compatibilidad": "Comprueba la geometría, los contactos y los requisitos eléctricos de tu reloj. No se garantiza carga inalámbrica ni compatibilidad universal.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados. Sólo variante física azul de la fuente principal; foto blanca de otra variante excluida de la representación y contenido de venta."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "CARG067"
     },
     "movil": {
       "solicitado": "CARG067",
       "sku": "CARG067",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:26.839Z",
+      "fecha": "2026-10-14T20:34:49.234Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg067-cargadores-para-smartwatch-base-circular/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/carg067-cargadores-para-smartwatch-base-circular/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg067-cargadores-para-smartwatch-base-circular/",
       "archivo_html": "productos/carg067-cargadores-para-smartwatch-base-circular/index.html",
       "http": 200,
       "sha256_html": "e40fefda96bb75bcaaf64ec255cae300122cb31f6ecd45a2d9881c443e2622ec",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg067/CARG067-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/carg067/CARG067-01-600.webp?v=76f596de18619bdf",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg067/CARG067-01-600.webp?v=76f596de18619bdf",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/carg067-cargadores-para-smartwatch-base-circular/",
+          "url": "https://conectatech-ec.github.io/productos/carg067-cargadores-para-smartwatch-base-circular/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/carg067/CARG067-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg067/CARG067-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/CARG067-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/CARG067-390.png",
       "sha256": "f19d2a8f2ed61d5918be12831493c3233a65d8ed0bfcd8859de8737b56868157",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/CARG067-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/CARG067-1280.png",
         "sha256": "575975da033123957871182ee3936af91f654638e019313cf55a016686d29529",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

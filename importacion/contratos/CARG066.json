@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg066-cargador-para-smartwatch-de-pines/",
-  "fecha_verificacion": "2026-10-14T20:20:14.845687+00:00",
+  "fecha_verificacion": "2026-10-14T20:34:13.248875+00:00",
   "descripcion": "Cable de carga para smartwatch | 2 pines. Conexiones: USB-A macho a cabezal magnético de 2 contactos. Diseño: Cabezal alargado con dos discos metálicos. Presentación: Cable con cabezal integrado.",
   "contenido_venta": "1 cable de carga. No incluye reloj ni cargador USB.",
   "compatibilidad": "Comprueba forma, distancia entre pines y polaridad del cabezal con tu reloj. No es cargador universal ni se garantiza compatibilidad por apariencia.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto completo y nuevo, sin caja ni etiquetas privadas; geometría, conectores, piezas y variante cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T20:34:13.248875+00:00",
+      "reporte": "reportes/continuacion-085/http-publicacion.json",
+      "archivo": "reportes/continuacion-085/http-publicacion.json",
+      "sha256": "d6b6899ae55520c05fcf4bbdce0231748fac3d2c679b778b65fdf2150f739e48",
+      "sku": "CARG066"
     },
     "movil": {
       "solicitado": "CARG066",
       "sku": "CARG066",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T20:21:07.513Z",
+      "fecha": "2026-10-14T20:34:22.347Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg066-cargador-para-smartwatch-de-pines/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/carg066-cargador-para-smartwatch-de-pines/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg066-cargador-para-smartwatch-de-pines/",
       "archivo_html": "productos/carg066-cargador-para-smartwatch-de-pines/index.html",
       "http": 200,
       "sha256_html": "6a83130752cd11c1ab87d011595138f848a02b20c3a4848387224d3f7c031813",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg066/CARG066-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/carg066/CARG066-01-600.webp?v=6d6dba501b7cd04c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg066/CARG066-01-600.webp?v=6d6dba501b7cd04c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/carg066-cargador-para-smartwatch-de-pines/",
+          "url": "https://conectatech-ec.github.io/productos/carg066-cargador-para-smartwatch-de-pines/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/carg066/CARG066-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg066/CARG066-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-085/qa-local/movil/CARG066-390.png",
+      "archivo": "reportes/continuacion-085/qa-publica/movil/CARG066-390.png",
       "sha256": "321e9a4f7896d0b690c0eedeb8477f06c516942345fcadd2a71038b4a69b1cdc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-085/qa-local/movil/CARG066-1280.png",
+        "archivo": "reportes/continuacion-085/qa-publica/movil/CARG066-1280.png",
         "sha256": "dea2fc1c3199d83a294a93f4d5baa67b8c5d63bc3369e3f56ac40856662f7cbf",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
