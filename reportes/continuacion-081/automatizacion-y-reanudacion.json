@@ -1,0 +1,27 @@
+{
+  "fecha": "2026-10-14T04:32:10.652380+00:00",
+  "lote": "continuacion-081",
+  "objetivo_nuevos": 48,
+  "refs_verificadas": 116,
+  "refs_reutilizadas_sin_descarga": 61,
+  "maestros_aprobados": 48,
+  "propuestas_no_publicadas_corregidas": 2,
+  "http_verificados": 48,
+  "chromium_publico_fichas": 48,
+  "proceso_reutilizado": true,
+  "desarrollo_adicional": false,
+  "siguiente_lote_candidatos": 32,
+  "reinicio": [
+    "Revisar main,ramas y web; no asumir exclusividad de otro chat.",
+    "Leer lote-activo,cierre e integridad; contar sólo cambios reales con HTTP/Chromium.",
+    "Reusar fuentes por SHA-256/fecha y fotos correctas; no regenerar ni descargar intactos.",
+    "Revalidar identidad y conectores de candidatos nuevos, no duplicar SKU con portada.",
+    "Si cambia main trasCI,revalidar nueva combinación antes de integración normal sinforce.",
+    "Publicar recursos,verificarHTTP/Chromium,registrarfecha real,promover catálogo y cerrar QA."
+  ],
+  "prioridades_pendientes": [
+    "REL050:fidelidad bisel/controles.",
+    "SOPO020:varianteT7-01/T7-02.",
+    "RADI005:venta por uno/par."
+  ]
+}
