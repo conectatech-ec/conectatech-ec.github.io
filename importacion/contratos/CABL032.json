@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl032-cable-iin-zii-micro-usb-c8901/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable IIN&ZII Micro-USB | C8901. USB-A macho a Micro-USB 2.0 macho. Conectores alargados con detalle rojo.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica conectores y requisitos de tus equipos. No convierte formatos ni garantiza funciones o velocidades que no admitan los dispositivos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL032"
     },
     "movil": {
       "solicitado": "CABL032",
       "sku": "CABL032",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:14:12.951Z",
+      "fecha": "2026-10-14T14:35:37.571Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl032-cable-iin-zii-micro-usb-c8901/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl032-cable-iin-zii-micro-usb-c8901/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl032-cable-iin-zii-micro-usb-c8901/",
       "archivo_html": "productos/cabl032-cable-iin-zii-micro-usb-c8901/index.html",
       "http": 200,
       "sha256_html": "45b9251260f3b522a9aa782e436f52e11ff85a10994285c784be0c896ff6c871",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl032/CABL032-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl032/CABL032-01-600.webp?v=ad96499cba6df3da",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl032/CABL032-01-600.webp?v=ad96499cba6df3da",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl032-cable-iin-zii-micro-usb-c8901/",
+          "url": "https://conectatech-ec.github.io/productos/cabl032-cable-iin-zii-micro-usb-c8901/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl032/CABL032-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl032/CABL032-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL032-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL032-390.png",
       "sha256": "cb43aab5ea3fe79a548e5717be52ab716b5b77deedbcdc0f75182db78f7011b5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL032-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL032-1280.png",
         "sha256": "ae6bc6aec63d7aa41a8e504b3bdeb4769fc8a6ff92ff51dc7dfd289c8630c7f4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

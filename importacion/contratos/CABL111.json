@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl111-cable-hdmi-3m-orvesion-2k-y-4k/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable HDMI Orvesion | 3 m. HDMI-A macho a HDMI-A macho. Longitud nominal de 3 m. Cubierta plana/ribeteada.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica resolución, frecuencia y requisitos del conjunto de origen/pantalla. Las denominaciones del empaque no garantizan rendimiento en todas las instalaciones.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL111"
     },
     "movil": {
       "solicitado": "CABL111",
       "sku": "CABL111",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:14:15.512Z",
+      "fecha": "2026-10-14T14:35:40.939Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl111-cable-hdmi-3m-orvesion-2k-y-4k/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl111-cable-hdmi-3m-orvesion-2k-y-4k/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl111-cable-hdmi-3m-orvesion-2k-y-4k/",
       "archivo_html": "productos/cabl111-cable-hdmi-3m-orvesion-2k-y-4k/index.html",
       "http": 200,
       "sha256_html": "bc9aa3f9160f7f5372842ebbc273cbc02633b1eff30faa7ad142d06a78874c10",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl111/CABL111-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl111/CABL111-01-600.webp?v=80c82bb7e6f320b2",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl111/CABL111-01-600.webp?v=80c82bb7e6f320b2",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl111-cable-hdmi-3m-orvesion-2k-y-4k/",
+          "url": "https://conectatech-ec.github.io/productos/cabl111-cable-hdmi-3m-orvesion-2k-y-4k/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl111/CABL111-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl111/CABL111-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL111-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL111-390.png",
       "sha256": "3b4737d12bcb3f029d5e823f291b3ea56a8640ef7fe30cd60a20674524c9ec5d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL111-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL111-1280.png",
         "sha256": "2a378a5fd518a563af3693208f33fddb0d2b03bec5e266677beeadbc7579f306",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

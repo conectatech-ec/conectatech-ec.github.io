@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl127-cable-extension-3-5mm-de-3-lineas/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Extensión de audio Case Logic | 3,5 mm. 3,5 mm macho de cuatro contactos a hembra. Longitud nominal de 3 pies (aprox. 0,9 m). Conectores compactos rectangulares.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica número y distribución de contactos para audio/micrófono; no se garantiza compatibilidad universal.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL127"
     },
     "movil": {
       "solicitado": "CABL127",
       "sku": "CABL127",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:14:08.606Z",
+      "fecha": "2026-10-14T14:35:31.332Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl127-cable-extension-3-5mm-de-3-lineas/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl127-cable-extension-3-5mm-de-3-lineas/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl127-cable-extension-3-5mm-de-3-lineas/",
       "archivo_html": "productos/cabl127-cable-extension-3-5mm-de-3-lineas/index.html",
       "http": 200,
       "sha256_html": "29cb4b3634be9fbd1c64e629750d024e9b069a030c2560b5d0decc3ef2f180d1",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl127/CABL127-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl127/CABL127-01-600.webp?v=ce42ee2448184765",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl127/CABL127-01-600.webp?v=ce42ee2448184765",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl127-cable-extension-3-5mm-de-3-lineas/",
+          "url": "https://conectatech-ec.github.io/productos/cabl127-cable-extension-3-5mm-de-3-lineas/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl127/CABL127-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl127/CABL127-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL127-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL127-390.png",
       "sha256": "030e9efeb60bd6bd28d028d7c88c2120200f0154330035a75e9e52321c72ea82",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL127-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL127-1280.png",
         "sha256": "49dc221cd6343e7dc27dd93a50cec26c1a8dba47da69ca06029eba170ce348f4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

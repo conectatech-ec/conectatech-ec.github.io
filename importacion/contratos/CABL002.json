@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl002-cable-adaptador-de-usb-c-a-3-5mm/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable de audio USB-C a 3,5 mm. USB-C macho a plug estéreo 3,5 mm macho. Cable con conectores machos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica soporte de audio digital y requisitos del dispositivo. No se garantiza funcionamiento con todos los puertos USB-C.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL002"
     },
     "movil": {
       "solicitado": "CABL002",
       "sku": "CABL002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:13:51.319Z",
+      "fecha": "2026-10-14T14:35:09.774Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl002-cable-adaptador-de-usb-c-a-3-5mm/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl002-cable-adaptador-de-usb-c-a-3-5mm/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl002-cable-adaptador-de-usb-c-a-3-5mm/",
       "archivo_html": "productos/cabl002-cable-adaptador-de-usb-c-a-3-5mm/index.html",
       "http": 200,
       "sha256_html": "d7935d5abaa27edd8380b835a37174b7cc5553d9bbec1f3e30ba2189ec638b6c",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl002/CABL002-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl002/CABL002-01-600.webp?v=8f57a8c7e39033b2",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl002/CABL002-01-600.webp?v=8f57a8c7e39033b2",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl002-cable-adaptador-de-usb-c-a-3-5mm/",
+          "url": "https://conectatech-ec.github.io/productos/cabl002-cable-adaptador-de-usb-c-a-3-5mm/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl002/CABL002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl002/CABL002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL002-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL002-390.png",
       "sha256": "3c9eb68d1742a741853495b2cd81b15f6afbd5ed4b7dd0b5834f972dc088991a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL002-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL002-1280.png",
         "sha256": "07139e0e59b90c372f0874bb3af15ccc49bc8c73da3953c3a2a605146d46986a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl132-cable-adaptador-divisor-microfono-audifono-3-5mm-hembra-a-doble-3-5mm-macho-ro/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Divisor de audio 3,5 mm | hembra a 2 machos. 3,5 mm hembra a dos conectores 3,5 mm macho. Derivación en Y.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica distribución de contactos, función de cada conexión y compatibilidad del equipo. No se garantiza compatibilidad universal con micrófono y audífonos.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL132"
     },
     "movil": {
       "solicitado": "CABL132",
       "sku": "CABL132",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:13:45.373Z",
+      "fecha": "2026-10-14T14:35:01.011Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl132-cable-adaptador-divisor-microfono-audifono-3-5mm-hembra-a-doble-3-5mm-macho-ro/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl132-cable-adaptador-divisor-microfono-audifono-3-5mm-hembra-a-doble-3-5mm-macho-ro/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl132-cable-adaptador-divisor-microfono-audifono-3-5mm-hembra-a-doble-3-5mm-macho-ro/",
       "archivo_html": "productos/cabl132-cable-adaptador-divisor-microfono-audifono-3-5mm-hembra-a-doble-3-5mm-macho-ro/index.html",
       "http": 200,
       "sha256_html": "fe9113435c2b18e4f908f5aba5d521a65d1f52af43eceec42fa9891568d681ad",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl132/CABL132-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl132/CABL132-01-600.webp?v=d3bf6bdba9885b75",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl132/CABL132-01-600.webp?v=d3bf6bdba9885b75",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl132-cable-adaptador-divisor-microfono-audifono-3-5mm-hembra-a-doble-3-5mm-macho-ro/",
+          "url": "https://conectatech-ec.github.io/productos/cabl132-cable-adaptador-divisor-microfono-audifono-3-5mm-hembra-a-doble-3-5mm-macho-ro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl132/CABL132-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl132/CABL132-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL132-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL132-390.png",
       "sha256": "422c0784b6fccf4d8bf1fdc9540de1383154bea9b43f060405fe044d585d6cc0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL132-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL132-1280.png",
         "sha256": "1105d353c4aa8b78f57023ca10af6fab775e9436b66e342eccc917515b63f57b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

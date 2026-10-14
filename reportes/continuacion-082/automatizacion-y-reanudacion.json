@@ -1,0 +1,28 @@
+{
+  "fecha": "2026-10-14T14:28:54.149667+00:00",
+  "lote": "continuacion-082",
+  "objetivo_nuevos": 48,
+  "refs_verificadas": 86,
+  "refs_vinculadas_lote": 84,
+  "maestros_aprobados": 48,
+  "propuestas_no_publicadas_corregidas": [
+    "CABL057",
+    "CABL073"
+  ],
+  "reservado_sustituido": {
+    "CABL114": "CABL032"
+  },
+  "meta": "product_type desde categoría593;Celulares sólo TELF de categoríaTELEFONOS;conservar columnas previas yURL existente.",
+  "prueba_feed": "scripts/test-exportar-canales.cjs",
+  "proceso_reutilizado": true,
+  "siguiente_lote_candidatos": 32,
+  "reinicio": [
+    "Leer main,lote-activo,cierre y pendientes;no asumir exclusividad.",
+    "Reusar fuentes porSHA y portadas correctas;deduplicar frente aweb.",
+    "Revisar modelo,variante,conectores y unidad de candidatos nuevos.",
+    "Integrar recursos;HTTP/Chromium antes defechas;promover catálogo/feed ycerrar QA.",
+    "Si cambia main después deCI,revalidar nueva combinación antes depushnormal sinforce."
+  ],
+  "sin_nueva_integracion": true,
+  "sin_nuevo_catalogo_Meta": true
+}

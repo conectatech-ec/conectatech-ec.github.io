@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl031-cable-usb-c-a-lightning-1m/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable compatible USB-C a Lightning | 1 m. USB-C macho a Lightning macho. Longitud nominal de 1 m. Cubierta lisa.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica conectores y requisitos de tus equipos. No convierte formatos ni garantiza funciones o velocidades que no admitan los dispositivos.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL031"
     },
     "movil": {
       "solicitado": "CABL031",
       "sku": "CABL031",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:13:44.516Z",
+      "fecha": "2026-10-14T14:34:59.846Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl031-cable-usb-c-a-lightning-1m/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl031-cable-usb-c-a-lightning-1m/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl031-cable-usb-c-a-lightning-1m/",
       "archivo_html": "productos/cabl031-cable-usb-c-a-lightning-1m/index.html",
       "http": 200,
       "sha256_html": "213d22cd6ca37c2f6548f2646046007a32d6bde96101600c7927767cfe593d8d",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl031/CABL031-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl031/CABL031-01-600.webp?v=e604550ca7dc42cf",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl031/CABL031-01-600.webp?v=e604550ca7dc42cf",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl031-cable-usb-c-a-lightning-1m/",
+          "url": "https://conectatech-ec.github.io/productos/cabl031-cable-usb-c-a-lightning-1m/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl031/CABL031-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl031/CABL031-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL031-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL031-390.png",
       "sha256": "f0b10609c9392b47b3dfedc0118354f9ca23934303936e90d13c5a5db51981ce",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL031-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL031-1280.png",
         "sha256": "920080e261e120cb8826b249bdd4f4e512c32d041ca6f5bc983e5420a6c2b909",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

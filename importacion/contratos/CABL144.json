@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl144-cable-hdmi-2m-orvesion-plano/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable HDMI Orvesion | 2 m. HDMI-A macho a HDMI-A macho. Longitud nominal de 2 m. Cubierta plana.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica resolución, frecuencia y requisitos del conjunto de origen/pantalla. Las denominaciones del empaque no garantizan rendimiento en todas las instalaciones.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL144"
     },
     "movil": {
       "solicitado": "CABL144",
       "sku": "CABL144",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:14:13.860Z",
+      "fecha": "2026-10-14T14:35:38.678Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl144-cable-hdmi-2m-orvesion-plano/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl144-cable-hdmi-2m-orvesion-plano/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl144-cable-hdmi-2m-orvesion-plano/",
       "archivo_html": "productos/cabl144-cable-hdmi-2m-orvesion-plano/index.html",
       "http": 200,
       "sha256_html": "bbcc73a1edc06bf4807414ebc2b3586c828182a784a7356586581834ec00a8f3",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl144/CABL144-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl144/CABL144-01-600.webp?v=586173684b4daf04",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl144/CABL144-01-600.webp?v=586173684b4daf04",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl144-cable-hdmi-2m-orvesion-plano/",
+          "url": "https://conectatech-ec.github.io/productos/cabl144-cable-hdmi-2m-orvesion-plano/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl144/CABL144-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl144/CABL144-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL144-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL144-390.png",
       "sha256": "154b2b5356905b4141be29e3bca78e5b071aefc37d34a48f398f20bb6e0836e7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL144-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL144-1280.png",
         "sha256": "981144887221daf2acd50fc82913c70a3e3403f7a69cab8d09f0cedb86d934e7",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

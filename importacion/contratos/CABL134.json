@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl134-cable-de-red-de-10m-cat-5-cabo-series/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable de red Cabo Series | 10 m. RJ45 macho a RJ45 macho. Longitud nominal de 10 m. Cubierta redonda con conectores protegidos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica conectores y requisitos de tus equipos. No convierte formatos ni garantiza funciones o velocidades que no admitan los dispositivos.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado. Categoría técnica no declarada por etiqueta e inventario no coincidentes/no corroborados; se conservan conectores, longitud y color documentados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL134"
     },
     "movil": {
       "solicitado": "CABL134",
       "sku": "CABL134",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:14:06.932Z",
+      "fecha": "2026-10-14T14:35:28.897Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl134-cable-de-red-de-10m-cat-5-cabo-series/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl134-cable-de-red-de-10m-cat-5-cabo-series/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl134-cable-de-red-de-10m-cat-5-cabo-series/",
       "archivo_html": "productos/cabl134-cable-de-red-de-10m-cat-5-cabo-series/index.html",
       "http": 200,
       "sha256_html": "4af76dc0a30643bc235592e13bda150e1a6175cf8995184a4767ea5c08bc3218",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl134/CABL134-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl134/CABL134-01-600.webp?v=ca5c48cc7e13e3f9",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl134/CABL134-01-600.webp?v=ca5c48cc7e13e3f9",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl134-cable-de-red-de-10m-cat-5-cabo-series/",
+          "url": "https://conectatech-ec.github.io/productos/cabl134-cable-de-red-de-10m-cat-5-cabo-series/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl134/CABL134-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl134/CABL134-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL134-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL134-390.png",
       "sha256": "6f17f6a983801e7c3b3180348163b41a9684246fd9e5372a6d37db909a65b83e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL134-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL134-1280.png",
         "sha256": "5dd7ddc5d370287a44cff56c427a5f7886d4a81feda44f6721c3a176849a3561",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

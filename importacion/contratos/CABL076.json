@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl076-cable-hdmi-1-5m-orvesion-awx-1008a/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable HDMI Orvesion | 1,5 m. HDMI-A macho a HDMI-A macho. Longitud nominal de 1,5 m. Cubierta plana/ribeteada.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica resolución, frecuencia y requisitos del conjunto de origen/pantalla. Las denominaciones del empaque no garantizan rendimiento en todas las instalaciones.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL076"
     },
     "movil": {
       "solicitado": "CABL076",
       "sku": "CABL076",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:14:12.121Z",
+      "fecha": "2026-10-14T14:35:36.360Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl076-cable-hdmi-1-5m-orvesion-awx-1008a/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl076-cable-hdmi-1-5m-orvesion-awx-1008a/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl076-cable-hdmi-1-5m-orvesion-awx-1008a/",
       "archivo_html": "productos/cabl076-cable-hdmi-1-5m-orvesion-awx-1008a/index.html",
       "http": 200,
       "sha256_html": "719b495b34358018f850e5e1cbd69992acd0dc6414a8a2274cf85419d7a95760",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl076/CABL076-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl076/CABL076-01-600.webp?v=1ca5ad3ac70072a1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl076/CABL076-01-600.webp?v=1ca5ad3ac70072a1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl076-cable-hdmi-1-5m-orvesion-awx-1008a/",
+          "url": "https://conectatech-ec.github.io/productos/cabl076-cable-hdmi-1-5m-orvesion-awx-1008a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl076/CABL076-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl076/CABL076-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL076-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL076-390.png",
       "sha256": "55d73de9e8218fe5918b2581ec8c4641653a627df35df830e4aca990c67a07b7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL076-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL076-1280.png",
         "sha256": "c60ed1ce9dacbd1535c29a68100820d17b708fa02587bdd28607776e7448becc",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

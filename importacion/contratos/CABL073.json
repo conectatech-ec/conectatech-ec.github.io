@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl073-cable-hdmi-a-dvi-hp/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable HP HDMI a DVI. HDMI-A macho a DVI-D macho. Conector DVI con tornillos de sujeción.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Requiere señales digitales compatibles HDMI/DVI. No convierte video analógico ni garantiza transmisión de audio por DVI.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL073"
     },
     "movil": {
       "solicitado": "CABL073",
       "sku": "CABL073",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:14:17.993Z",
+      "fecha": "2026-10-14T14:35:44.465Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl073-cable-hdmi-a-dvi-hp/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl073-cable-hdmi-a-dvi-hp/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl073-cable-hdmi-a-dvi-hp/",
       "archivo_html": "productos/cabl073-cable-hdmi-a-dvi-hp/index.html",
       "http": 200,
       "sha256_html": "8a8649c47940c184f1dc4b8f1b354d4c6f074053608af34f0ef771d9a2c48561",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl073/CABL073-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl073/CABL073-01-600.webp?v=86e2bec194d91e0f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl073/CABL073-01-600.webp?v=86e2bec194d91e0f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl073-cable-hdmi-a-dvi-hp/",
+          "url": "https://conectatech-ec.github.io/productos/cabl073-cable-hdmi-a-dvi-hp/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl073/CABL073-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl073/CABL073-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL073-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL073-390.png",
       "sha256": "c09f475fcb12f34d737cde0c549121a7908a0c6d542382940accb57d73f345dc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL073-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL073-1280.png",
         "sha256": "ecab836419a4f59a3dd8c88f0ffdc9f4503cc1640719967256c36ea3de9e6f87",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

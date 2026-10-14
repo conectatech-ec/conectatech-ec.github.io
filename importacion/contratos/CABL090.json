@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl090-cable-av-ps2-play-station-2/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable AV compatible para PS2 | 1,8 m. Conector AV para PS2 a tres RCA macho. Longitud nominal de 1,8 m. RCA rojo, blanco y amarillo.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Requiere consola y pantalla con conexiones AV compatibles. No es un cable HDMI ni mejora la resolución original de la consola.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL090"
     },
     "movil": {
       "solicitado": "CABL090",
       "sku": "CABL090",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:13:49.645Z",
+      "fecha": "2026-10-14T14:35:07.453Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl090-cable-av-ps2-play-station-2/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl090-cable-av-ps2-play-station-2/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl090-cable-av-ps2-play-station-2/",
       "archivo_html": "productos/cabl090-cable-av-ps2-play-station-2/index.html",
       "http": 200,
       "sha256_html": "1d88c2dd6eea98f1cdb09e698e96347fb0c6a7bece71150f73e190a1eb6f76a2",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl090/CABL090-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl090/CABL090-01-600.webp?v=d3750f4926b5d98e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl090/CABL090-01-600.webp?v=d3750f4926b5d98e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl090-cable-av-ps2-play-station-2/",
+          "url": "https://conectatech-ec.github.io/productos/cabl090-cable-av-ps2-play-station-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl090/CABL090-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl090/CABL090-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL090-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL090-390.png",
       "sha256": "42f7560c79f0870684fceebefec702abe1362431d949caa314c5f8a11151a0e5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL090-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL090-1280.png",
         "sha256": "870266c5cb32238f82a03ebbeed597114aa2a639ceeff3a48cdfefb0b450b268",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl069-cable-hdmi-a-vga-sgl/",
-  "fecha_verificacion": "2026-10-14T14:09:43.301023+00:00",
+  "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable SGL HDMI a VGA | 1,5 m. HDMI-A macho a VGA macho de 15 pines. Longitud nominal de 1,5 m. Cuerpo de conversión integrado con tornillos VGA.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Requiere salida HDMI compatible y pantalla VGA. Verifica formato y alimentación necesarios; no convierte VGA a HDMI ni ofrece audio adicional no confirmado.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T14:35:03.809564+00:00",
+      "reporte": "reportes/continuacion-082/http-publicacion.json",
+      "archivo": "reportes/continuacion-082/http-publicacion.json",
+      "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
+      "sku": "CABL069"
     },
     "movil": {
       "solicitado": "CABL069",
       "sku": "CABL069",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:14:21.733Z",
+      "fecha": "2026-10-14T14:35:49.046Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl069-cable-hdmi-a-vga-sgl/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl069-cable-hdmi-a-vga-sgl/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl069-cable-hdmi-a-vga-sgl/",
       "archivo_html": "productos/cabl069-cable-hdmi-a-vga-sgl/index.html",
       "http": 200,
       "sha256_html": "b2d171f78f14512b88779d4abb904456de85c21b92c8b51dc9f387f90c236d37",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl069/CABL069-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl069/CABL069-01-600.webp?v=64d375c2f9a62790",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl069/CABL069-01-600.webp?v=64d375c2f9a62790",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl069-cable-hdmi-a-vga-sgl/",
+          "url": "https://conectatech-ec.github.io/productos/cabl069-cable-hdmi-a-vga-sgl/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl069/CABL069-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl069/CABL069-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-082/qa-local/fichas/CABL069-390.png",
+      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL069-390.png",
       "sha256": "83d149e6c2bb61f00355260dbb3f6b4e1733de44847c132af296a0a514953a6c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-local/fichas/CABL069-1280.png",
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL069-1280.png",
         "sha256": "809240a54fc12575d59ad5d3f4b4b0b27e1a0f91fbb1b5c059f0a633a86b1422",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
