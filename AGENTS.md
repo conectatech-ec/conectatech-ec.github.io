@@ -1,3 +1,7 @@
+## Orden vigente del propietario — avance083
+
+Continuar producción de nuevos SKU; las correcciones se harán después por instrucción expresa del propietario. Lote controlado de48 candidatos con fuentes propias ya indexadas, sin rehacer fotografías correctas. Preservar1170,finanzas,stock,593,URLs,originales y pendientes históricos. Reutilizar flujo automatizado con revisión visual,contratos,QA/CI,recursos primero,HTTP/Chromium antes de fechas y prioridad reciente079. Main fresco y rama independiente; integrar sinforce conservando cualquier avance concurrente. Mantenerproduct_type yURL del feedMeta existente con categorías maestras; no abrir nuevas integraciones/desarrollos.
+
 ## Orden vigente del propietario — avance082 y feed Meta
 
 Continuar publicaciones masivas progresivas; preparar lote controlado de48 candidatos nuevos con fuentes de Drive, sin rehacer portadas correctas. Añadirproduct_type al feedexistente exportaciones/meta-catalogo-piloto.csv desde categoría real de datos593; los TELF de categoríaTELEFONOS deben exportarsecomo Celulares. Preservar todas las demás columnas,SKU,precios,stock,imágenes yURL de sincronización; no crear otrocatálogo. No inferir categorías ausentes del título/prefijo:documentar sincategoría y seguir. Comprobar conservación y clasificación con test del exportador. Recursos primero,HTTP/Chromium antes defechas,ordenreciente079 y ramaindependiente conmainfresco sinforce. La mejoraMeta acompaña al próximo feed yno detiene el lote. Conservar1170,593,fotografías,URLs ypendientesREL050/SOPO020/RADI005.
