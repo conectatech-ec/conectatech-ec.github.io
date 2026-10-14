@@ -24,11 +24,39 @@
       "sha256": "cee928f77e92fffe89cdd771729cd2fe594b94cc1beadc149a4b9d777d51c48b",
       "drive_id": "1-plGP24VB7S8zhOb9V6Cn333s5QkvvRj",
       "original_intacto": true
+    },
+    {
+      "nombre": "SOPO015_20261009_190701.jpg",
+      "url": "https://drive.google.com/file/d/1wSVxgtCE5xaj2NNgP5ChEH5xCZcOr8a7/view?usp=drivesdk",
+      "drive_id": "1wSVxgtCE5xaj2NNgP5ChEH5xCZcOr8a7",
+      "sha256": "848a332aab85dc258fe84301485a881665ac8671e1bd56f43e11493a76b8c386",
+      "original_intacto": true,
+      "uso": "Referencia propia; original privado conservado"
+    },
+    {
+      "nombre": "SOPO015_20261009_190705.jpg",
+      "url": "https://drive.google.com/file/d/1cQxac-Q8KAdwmwiJSXL8r1FRfvgxDkCz/view?usp=drivesdk",
+      "drive_id": "1cQxac-Q8KAdwmwiJSXL8r1FRfvgxDkCz",
+      "sha256": "9365d1a0d089bf6b33a4204297ce52d43b5558173813a9751aa33b9f6cb9d73d",
+      "original_intacto": true,
+      "uso": "Referencia propia; original privado conservado"
+    },
+    {
+      "nombre": "SOPO015.jpg",
+      "url": "https://drive.google.com/file/d/1qKw3QdDTE-hIvXRFqWTOn9ygEArB73Hp/view?usp=drivesdk",
+      "drive_id": "1qKw3QdDTE-hIvXRFqWTOn9ygEArB73Hp",
+      "sha256": "8634c855e762035002b32b97c095b066f1c3094805387b1b98a31aa51115bcef",
+      "original_intacto": true,
+      "uso": "Referencia propia; original privado conservado"
     }
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1-plGP24VB7S8zhOb9V6Cn333s5QkvvRj/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json",
+    "https://drive.google.com/file/d/1wSVxgtCE5xaj2NNgP5ChEH5xCZcOr8a7/view?usp=drivesdk",
+    "https://drive.google.com/file/d/1cQxac-Q8KAdwmwiJSXL8r1FRfvgxDkCz/view?usp=drivesdk",
+    "https://drive.google.com/file/d/1qKw3QdDTE-hIvXRFqWTOn9ygEArB73Hp/view?usp=drivesdk"
   ],
   "imagen_principal": "/imagenes/sopo015/SOPO015-01.webp",
   "imagenes_secundarias": [],
@@ -43,8 +71,20 @@
       {
         "sha256": "c211fc6e0b54fd7c2618150c256d6a0c1a779af41e9f59c288c351c70db9dc35",
         "fuente": "https://drive.google.com/file/d/1-plGP24VB7S8zhOb9V6Cn333s5QkvvRj/view?usp=drivesdk"
+      },
+      {
+        "sha256": "ff9dec79c03c06144c4abc448c052a72cbb086d5f39ce18f84dc76b900d194ed",
+        "fuente": "https://drive.google.com/file/d/1cQxac-Q8KAdwmwiJSXL8r1FRfvgxDkCz/view?usp=drivesdk"
       }
-    ]
+    ],
+    "derivacion": {
+      "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/SOPO015.png",
+      "sha256_maestro": "ff9dec79c03c06144c4abc448c052a72cbb086d5f39ce18f84dc76b900d194ed",
+      "fuente_fotografia_propia": "https://drive.google.com/file/d/1cQxac-Q8KAdwmwiJSXL8r1FRfvgxDkCz/view?usp=drivesdk",
+      "metodo": "Presentar el soporte completo desde un mejor ángulo comercial, apoyado en su foto física; aro, articulación y base visibles. Mantener excepción general Yantech sin nombre ni logotipo. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
+    }
   },
   "especificaciones": [
     {
@@ -79,9 +119,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/",
-  "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
+  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
   "descripcion": "Cabezal magnético con base circular para accesorios que admitan este tipo de sujeción. Aro magnético con base circular. Celulares y accesorios compatibles con sujeción magnética.",
   "compatibilidad": "Sujeción magnética compatible; algunos equipos necesitan una placa magnética adicional, sin inclusión confirmada",
   "contenido_venta": {
@@ -99,7 +139,7 @@
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1118,1119,1120,1121; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 4,
+  "revision_regla": 5,
   "propuesta_origen": "importacion/lotes/lote-040/accesorios-propuestas.json",
   "notas_internas": {
     "campos_no_confirmados": [],
@@ -149,19 +189,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1-plGP24VB7S8zhOb9V6Cn333s5QkvvRj/view?usp=drivesdk",
-      "evidencia": "Hechos físicos visibles y denominación comprobada en 593; sin prestaciones, licencias, accesorios o medidas inventados."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T13:45:31.062996+00:00",
-      "sha256_maestro": "c211fc6e0b54fd7c2618150c256d6a0c1a779af41e9f59c288c351c70db9dc35",
-      "evidencia": "Fotografía propia editada: limpieza, iluminación y fondo blanco. Geometría, color, conexiones, controles y rótulos comparados con el objeto real. Sin caja ni hardware añadido."
+      "fecha": "2026-10-14T00:03:43.493657+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-076/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "ff9dec79c03c06144c4abc448c052a72cbb086d5f39ce18f84dc76b900d194ed"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "SOPO015",
       "sku": "SOPO015",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:58:24.886Z",
+      "fecha": "2026-10-14T00:05:18.389Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -186,74 +230,70 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/",
       "archivo_html": "productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/index.html",
       "http": 200,
-      "sha256_html": "44a9ef9df3c4b9ae2fab8a1246ad112f50c37b56696cf44100f120688b8ca9aa",
-      "sha256_html_local": "44a9ef9df3c4b9ae2fab8a1246ad112f50c37b56696cf44100f120688b8ca9aa",
+      "sha256_html": "bb2a5bb964fefcca3e18279376a9acde8a9739502819534d477e4217c114f5a3",
+      "sha256_html_local": "bb2a5bb964fefcca3e18279376a9acde8a9739502819534d477e4217c114f5a3",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo015/SOPO015-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo015/SOPO015-01-600.webp?v=5ad6522fd4a61a8d",
-        "naturalWidth": 323,
-        "naturalHeight": 323,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/sopo015/SOPO015-01-600.webp?v=509666b37dbd61b0",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/",
+          "url": "http://127.0.0.1:8767/productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/sopo015/SOPO015-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/sopo015/SOPO015-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/sopo025-soporte-para-guitarra-instrumento-musical/",
+          "url": "http://127.0.0.1:8767/productos/sopo025-soporte-para-guitarra-instrumento-musical/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/sopo053-soporte-para-laptop-360-aluminio-hq/",
+          "url": "http://127.0.0.1:8767/productos/sopo053-soporte-para-laptop-360-aluminio-hq/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/sopo030-soporte-para-celular-by-558-magnetico/",
+          "url": "http://127.0.0.1:8767/productos/sopo030-soporte-para-celular-by-558-magnetico/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/SOPO015-390.png",
-      "sha256": "48aad1d607bae40b571b1a7053b92894191bfba02a2b3258bbc62f3e17fa56a9",
+      "archivo": "reportes/correcciones-076/qa-local/movil/SOPO015-390.png",
+      "sha256": "9f2fe2cd2595b5d63f34e2b120cd42bf1fb41ad33ec1b11a2d7529a875b58b81",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/SOPO015-1280.png",
-        "sha256": "e0dbbf2e3274d85cf495dc862a705e33008763366bc1507e25ab857acbdc3f76",
+        "archivo": "reportes/correcciones-076/qa-local/movil/SOPO015-1280.png",
+        "sha256": "653859a08ee0fdef79f29c41c8af7d017467304c6574d59f92b38851048b85eb",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
-      "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
   },
   "actualizacion_593": {
@@ -309,5 +349,13 @@
       ],
       "estado": "VERIFICADO"
     }
-  ]
+  ],
+  "maestro": {
+    "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/SOPO015.png",
+    "sha256_maestro": "ff9dec79c03c06144c4abc448c052a72cbb086d5f39ce18f84dc76b900d194ed",
+    "fuente_fotografia_propia": "https://drive.google.com/file/d/1cQxac-Q8KAdwmwiJSXL8r1FRfvgxDkCz/view?usp=drivesdk",
+    "metodo": "Presentar el soporte completo desde un mejor ángulo comercial, apoyado en su foto física; aro, articulación y base visibles. Mantener excepción general Yantech sin nombre ni logotipo. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
+  }
 }

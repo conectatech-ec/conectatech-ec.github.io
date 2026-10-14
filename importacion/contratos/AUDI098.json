@@ -65,7 +65,8 @@
     "https://drive.google.com/file/d/14E52fSuzxnRZPKEoQTB-i6tHVNr3WeC_/view?usp=drivesdk",
     "https://drive.google.com/file/d/141IqFOTThTOZzP6UI4mlefqmZISC2evY/view?usp=drivesdk",
     "https://drive.google.com/file/d/1NyykjWMF7nBtJkD1Z6i9FC4yZwcA0gKI/view?usp=drivesdk",
-    "https://drive.google.com/file/d/1zK4Xefe30W7-vBuetjTdD9xQ3km2l76K/view?usp=drivesdk"
+    "https://drive.google.com/file/d/1zK4Xefe30W7-vBuetjTdD9xQ3km2l76K/view?usp=drivesdk",
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/audi098/AUDI098-01.webp",
   "imagenes_secundarias": [
@@ -165,22 +166,19 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T04:28:24.715621+00:00",
-      "evidencia": "Revisión física documentada en reportes/correcciones-069/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
-      "sha256_maestro": "69fb1fc8834df7ab620e34c348bbe946de0383425af707238bbc3b41d8501fd2"
+      "fecha": "2026-10-14T00:03:43.493657+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-076/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "fa878033537c0988c7b8104dc5b2da1a53454736acd7f7477f438db6fee5b3b9"
     },
     "publicacion_http": {
-      "archivo": "reportes/publicacion-073/http-publicacion.json",
-      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
-      "estado": "VERIFICADO",
-      "sku": "AUDI098",
-      "fecha": "2026-10-13T19:50:33.477266+00:00"
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "AUDI098",
       "sku": "AUDI098",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T04:34:27.023Z",
+      "fecha": "2026-10-14T00:05:21.142Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -208,16 +206,16 @@
       "url_comprobada": "http://127.0.0.1:8767/productos/audi098-audifonos-inalambricos-tune-beam-150/",
       "archivo_html": "productos/audi098-audifonos-inalambricos-tune-beam-150/index.html",
       "http": 200,
-      "sha256_html": "5f61e102b755c6487922e92ff08369d91ff8363fcca6142de51c789ac78fb8e2",
-      "sha256_html_local": "5f61e102b755c6487922e92ff08369d91ff8363fcca6142de51c789ac78fb8e2",
+      "sha256_html": "fcc464fcc050c0c10cd13dbd93ce3920a42b489a78535a551c854e79f459ad3d",
+      "sha256_html_local": "fcc464fcc050c0c10cd13dbd93ce3920a42b489a78535a551c854e79f459ad3d",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi098/AUDI098-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/audi098/AUDI098-01-600.webp?v=942878cac78771d5",
-        "naturalWidth": 421,
-        "naturalHeight": 421,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/audi098/AUDI098-01-600.webp?v=9771d9807c78db04",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
@@ -265,22 +263,22 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-069/qa-local/movil/AUDI098-390.png",
-      "sha256": "b73e7c858e06ebe1a9783043e6ed1903186f6745c4c113a5d4f13e66ee25a620",
+      "archivo": "reportes/correcciones-076/qa-local/movil/AUDI098-390.png",
+      "sha256": "46e8100141793e5a5528ab2bc1212b8629cec540fbd8bc01df52fa0f7f0e4f68",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-069/qa-local/movil/AUDI098-1280.png",
-        "sha256": "deea6b9c0fd124e4cf7bb42b1eb5e7e00bfd4f7d8825a282618242792d5b0a35",
+        "archivo": "reportes/correcciones-076/qa-local/movil/AUDI098-1280.png",
+        "sha256": "f852807cea0e601e862c167936c123c592f462483649683699a8bd1776a551d4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
-  "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
-  "revision_regla": 3,
+  "estado_publicacion": "APROBADO_LOCAL",
+  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "revision_regla": 4,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: JBL; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 956,957,958,959,960; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "derechos_imagen": {
     "estado": "AUTORIZADO",
@@ -297,8 +295,28 @@
       {
         "sha256": "6b5597f699cb0da24889df80d60bcdbe3299bcfdbdfbc3badf0fdc6f3e151ece",
         "fuente": "https://drive.google.com/file/d/1NyykjWMF7nBtJkD1Z6i9FC4yZwcA0gKI/view?usp=drivesdk"
+      },
+      {
+        "sha256": "fa878033537c0988c7b8104dc5b2da1a53454736acd7f7477f438db6fee5b3b9",
+        "fuente": "https://drive.google.com/file/d/1-EHTaOnpWB_DYclxgjTCcD_mHCXstGqO/view?usp=drivesdk"
       }
-    ]
+    ],
+    "derivacion": {
+      "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/AUDI098.png",
+      "sha256_maestro": "fa878033537c0988c7b8104dc5b2da1a53454736acd7f7477f438db6fee5b3b9",
+      "fuente_fotografia_propia": "https://drive.google.com/file/d/1-EHTaOnpWB_DYclxgjTCcD_mHCXstGqO/view?usp=drivesdk",
+      "metodo": "Los dos audífonos sí llevan el logo JBL en sus caras externas, confirmado expresamente por propietario; añadirlo fielmente sin modificar hardware ni crear etiquetas añadidas. Conservar JBL real del estuche en su vista cerrada. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
+    }
   },
-  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00",
+  "maestro": {
+    "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/AUDI098.png",
+    "sha256_maestro": "fa878033537c0988c7b8104dc5b2da1a53454736acd7f7477f438db6fee5b3b9",
+    "fuente_fotografia_propia": "https://drive.google.com/file/d/1-EHTaOnpWB_DYclxgjTCcD_mHCXstGqO/view?usp=drivesdk",
+    "metodo": "Los dos audífonos sí llevan el logo JBL en sus caras externas, confirmado expresamente por propietario; añadirlo fielmente sin modificar hardware ni crear etiquetas añadidas. Conservar JBL real del estuche en su vista cerrada. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
+  }
 }

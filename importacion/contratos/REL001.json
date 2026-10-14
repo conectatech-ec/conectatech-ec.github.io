@@ -85,7 +85,8 @@
     "https://drive.google.com/file/d/1LEHSfuah5r12xdtCEmKmYXSJ3ey9oIKC/view?usp=drivesdk",
     "https://drive.google.com/file/d/1TxDwCuKYwKMtsgCVUXZQU8lgW3LTquAO/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
-    "importacion/reglas-sku.json"
+    "importacion/reglas-sku.json",
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/rel001/REL001-01.webp",
   "imagenes_secundarias": [],
@@ -100,16 +101,20 @@
       {
         "sha256": "1d9df7ba81f51da680b8e4ca0550c0f9c734e11a277d70a1d8d6613694f1e99f",
         "fuente": "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk"
+      },
+      {
+        "sha256": "45ee073bd19b0c7e0722ae2a1564dc5a1bd1cf672061ef31cee52b01e6823f40",
+        "fuente": "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk"
       }
     ],
     "material_externo_utilizado": false,
     "derivacion": {
-      "archivo_maestro": "/imagenes/rel001/original-1d9df7ba81f51da6.png",
-      "sha256_maestro": "1d9df7ba81f51da680b8e4ca0550c0f9c734e11a277d70a1d8d6613694f1e99f",
+      "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/REL001.png",
+      "sha256_maestro": "45ee073bd19b0c7e0722ae2a1564dc5a1bd1cf672061ef31cee52b01e6823f40",
       "fuente_fotografia_propia": "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk",
-      "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-      "edicion_asistida_ia": true,
-      "originales_intactos_en_drive": true
+      "metodo": "Todos los números del reloj son BLANCOS, ninguno verde. Corregir sólo color de dígitos, conservando valores, posición y carcasa. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
     }
   },
   "especificaciones": [
@@ -137,23 +142,23 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
-  "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
+  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
   "descripcion": "Despertador digital DCX-670 con pantalla de hora, fecha y temperatura indicada en su empaque. producto; no es un producto original de la marca de referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 390,391,392; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 3,
+  "revision_regla": 4,
   "maestro": {
-    "archivo_maestro": "/imagenes/rel001/original-1d9df7ba81f51da6.png",
-    "sha256_maestro": "1d9df7ba81f51da680b8e4ca0550c0f9c734e11a277d70a1d8d6613694f1e99f",
+    "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/REL001.png",
+    "sha256_maestro": "45ee073bd19b0c7e0722ae2a1564dc5a1bd1cf672061ef31cee52b01e6823f40",
     "fuente_fotografia_propia": "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk",
-    "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-    "edicion_asistida_ia": true,
-    "originales_intactos_en_drive": true
+    "metodo": "Todos los números del reloj son BLANCOS, ninguno verde. Corregir sólo color de dígitos, conservando valores, posición y carcasa. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
   },
   "compatibilidad": "Verifica la compatibilidad con tu equipo antes de comprar. No se declara compatibilidad universal.",
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
@@ -221,19 +226,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:34:26.108292+00:00",
-      "sha256_maestro": "1d9df7ba81f51da680b8e4ca0550c0f9c734e11a277d70a1d8d6613694f1e99f",
-      "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
+      "fecha": "2026-10-14T00:03:43.493657+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-076/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "45ee073bd19b0c7e0722ae2a1564dc5a1bd1cf672061ef31cee52b01e6823f40"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "REL001",
       "sku": "REL001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T04:42:09.652Z",
+      "fecha": "2026-10-14T00:05:26.866Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -258,74 +267,70 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/rel001-reloj-despertador-modelo-dcx-670/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/rel001-reloj-despertador-modelo-dcx-670/",
       "archivo_html": "productos/rel001-reloj-despertador-modelo-dcx-670/index.html",
       "http": 200,
-      "sha256_html": "b74517d13f9561f176285a0f9fce12000c5b0e50b341c9a01896d79b69a8df7a",
-      "sha256_html_local": "b74517d13f9561f176285a0f9fce12000c5b0e50b341c9a01896d79b69a8df7a",
+      "sha256_html": "ad15059d7179b4130441419bcd98a8f304d62d00cb2156504a083ff226495f40",
+      "sha256_html_local": "ad15059d7179b4130441419bcd98a8f304d62d00cb2156504a083ff226495f40",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/rel001/REL001-01-600.webp?v=8d0cfb81a006d4b6",
-        "naturalWidth": 343,
-        "naturalHeight": 343,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/rel001/REL001-01-600.webp?v=5bbe3198adace927",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/rel001-reloj-despertador-modelo-dcx-670/",
+          "url": "http://127.0.0.1:8767/productos/rel001-reloj-despertador-modelo-dcx-670/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/rel001/REL001-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/rel001/REL001-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/rel011-reloj-smartwatch-caja-flashlight/",
+          "url": "http://127.0.0.1:8767/productos/rel011-reloj-smartwatch-caja-flashlight/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
+          "url": "http://127.0.0.1:8767/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/rel013-reloj-smartwatch-para-iphone-watch-series-10-46mm/",
+          "url": "http://127.0.0.1:8767/productos/rel013-reloj-smartwatch-para-iphone-watch-series-10-46mm/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/REL001-390.png",
-      "sha256": "d47cca739a6bc0b9af462247cfc31c3ed0b8db4f3c93bbcfe2112fac898c8efb",
+      "archivo": "reportes/correcciones-076/qa-local/movil/REL001-390.png",
+      "sha256": "9861a2c4481839c6c93dc2891e9755a6714f1ef92c886c2a5feb3f7edff4edfa",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/REL001-1280.png",
-        "sha256": "0ebea426df58336e7821f154a7ae93bed7e2031c8a98a7d571f992e38e1af35b",
+        "archivo": "reportes/correcciones-076/qa-local/movil/REL001-1280.png",
+        "sha256": "1220e3eae4801dc80c4174ddcbdbcd23efcbeb44305c660355201df4a52315e1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-066/http-publicacion.json",
-      "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
   }
 }

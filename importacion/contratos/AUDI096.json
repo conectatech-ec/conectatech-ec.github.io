@@ -64,7 +64,8 @@
     "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk",
     "https://drive.google.com/file/d/1UcwLGFWtc0hyla-zRPXdxu3IPcsZyQcb/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
-    "importacion/reglas-sku.json"
+    "importacion/reglas-sku.json",
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/audi096/AUDI096-01.webp",
   "imagenes_secundarias": [],
@@ -79,16 +80,20 @@
       {
         "sha256": "82d154f0cc69f48d2ac0471328f8db369157ebf436ea99a0ea64cd673780bfae",
         "fuente": "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk"
+      },
+      {
+        "sha256": "8d8a40dc8631aee851be35a8fc1692f262d349c0d8c36ecaa30aa03f33f4deb6",
+        "fuente": "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk"
       }
     ],
     "material_externo_utilizado": false,
     "derivacion": {
-      "archivo_maestro": "/imagenes/audi096/original-82d154f0cc69f48d.png",
-      "sha256_maestro": "82d154f0cc69f48d2ac0471328f8db369157ebf436ea99a0ea64cd673780bfae",
+      "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/AUDI096.png",
+      "sha256_maestro": "8d8a40dc8631aee851be35a8fc1692f262d349c0d8c36ecaa30aa03f33f4deb6",
       "fuente_fotografia_propia": "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk",
-      "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-      "edicion_asistida_ia": true,
-      "originales_intactos_en_drive": true
+      "metodo": "Mejor ángulo/presentación vendedora, diadema en vertical/natural como instrucciones generales; conservar hardware y geometría de la imagen aprobada, sin inventar caras ocultas a partir de ilustraciones de empaque. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
     }
   },
   "especificaciones": [
@@ -124,23 +129,23 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
-  "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
+  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
   "descripcion": "Diadema SY440MV. Variante negro con verde, con diseño y presentación cotejados con las fotografías del SKU. producto; no es un producto original de la marca de referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 70,71; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 3,
+  "revision_regla": 4,
   "maestro": {
-    "archivo_maestro": "/imagenes/audi096/original-82d154f0cc69f48d.png",
-    "sha256_maestro": "82d154f0cc69f48d2ac0471328f8db369157ebf436ea99a0ea64cd673780bfae",
+    "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/AUDI096.png",
+    "sha256_maestro": "8d8a40dc8631aee851be35a8fc1692f262d349c0d8c36ecaa30aa03f33f4deb6",
     "fuente_fotografia_propia": "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk",
-    "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-    "edicion_asistida_ia": true,
-    "originales_intactos_en_drive": true
+    "metodo": "Mejor ángulo/presentación vendedora, diadema en vertical/natural como instrucciones generales; conservar hardware y geometría de la imagen aprobada, sin inventar caras ocultas a partir de ilustraciones de empaque. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
   },
   "compatibilidad": "Verifica la compatibilidad con tu equipo antes de comprar. No se declara compatibilidad universal.",
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
@@ -205,19 +210,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1OJpgDlSXsD3RAOHYx3Rgdn-nvPbwboJO/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T22:34:26.108292+00:00",
-      "sha256_maestro": "82d154f0cc69f48d2ac0471328f8db369157ebf436ea99a0ea64cd673780bfae",
-      "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
+      "fecha": "2026-10-14T00:03:43.493657+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-076/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "8d8a40dc8631aee851be35a8fc1692f262d349c0d8c36ecaa30aa03f33f4deb6"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "AUDI096",
       "sku": "AUDI096",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T04:42:10.539Z",
+      "fecha": "2026-10-14T00:05:25.805Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -242,74 +251,70 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
       "archivo_html": "productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/index.html",
       "http": 200,
-      "sha256_html": "57eb1e05b15bdfa6c972c7c8dd9137f079089157e2a83ccec2df4a3184c445c8",
-      "sha256_html_local": "57eb1e05b15bdfa6c972c7c8dd9137f079089157e2a83ccec2df4a3184c445c8",
+      "sha256_html": "7a3871fa99a5e5daa3fdabd76d88b9dca3a75ca8d902d238491ca157fbc210db",
+      "sha256_html_local": "7a3871fa99a5e5daa3fdabd76d88b9dca3a75ca8d902d238491ca157fbc210db",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi096/AUDI096-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/audi096/AUDI096-01-600.webp?v=5a9e15575f5e5815",
-        "naturalWidth": 347,
-        "naturalHeight": 347,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/audi096/AUDI096-01-600.webp?v=001142b6ab6aa207",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
+          "url": "http://127.0.0.1:8767/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/audi096/AUDI096-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/audi096/AUDI096-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
+          "url": "http://127.0.0.1:8767/productos/audi001-audifonos-airpods-pro-2-anc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
+          "url": "http://127.0.0.1:8767/productos/audi005-audifonos-diadema-airpods-max/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
+          "url": "http://127.0.0.1:8767/productos/audi008-audifonos-alambricos-earpods-lightning/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/AUDI096-390.png",
-      "sha256": "7c9665058add1313231a107eaa22254ce5b57ac9010f8c98143c7098cdf48420",
+      "archivo": "reportes/correcciones-076/qa-local/movil/AUDI096-390.png",
+      "sha256": "9212878265b6ee0aa497c4942fafe37f81311fb97ac0b25bc8b63c1c6395e6ac",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/AUDI096-1280.png",
-        "sha256": "261df0ba91f140753f53520e594ba5ea149f027f7fe75a4b5bdd16dad52e5228",
+        "archivo": "reportes/correcciones-076/qa-local/movil/AUDI096-1280.png",
+        "sha256": "52ce833e908ec4f36458d7c6026b46704ec47cd80886e98904c725cee7e4ddbd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-066/http-publicacion.json",
-      "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
   }
 }

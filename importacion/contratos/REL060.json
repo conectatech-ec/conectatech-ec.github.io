@@ -189,7 +189,8 @@
     "https://drive.google.com/file/d/1ajo2cXnX4XQRYiluO99DDMd_04PS0BcM/view?usp=drivesdk",
     "https://drive.google.com/file/d/1cW3CIleH_Cpas6GqQ7PCA7zrx46QvS2V/view?usp=drivesdk",
     "https://drive.google.com/file/d/1iKsjkzWZx6Sq8fwtIlyVh1RbMQJk6VMp/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/rel060/REL060-01.webp",
   "imagenes_secundarias": [],
@@ -204,16 +205,20 @@
       {
         "sha256": "006a0bdcc52f5736cde106bf1b80d06fba15c9ad8f8f13de9464e13880fdb6a8",
         "fuente": "https://drive.google.com/file/d/13nExHe5w-fMN0LuxPZ4CZIeFQ2TlQ1xF/view?usp=drivesdk"
+      },
+      {
+        "sha256": "6c79d68a4969d91fe773eb2086ae52f4d2c793484c4616b8488038b489d58a72",
+        "fuente": "https://drive.google.com/file/d/1CzDRI4q4Fae0QVD8zCoIWhmuRGQD-lcu/view?usp=drivesdk"
       }
     ],
     "material_externo_utilizado": false,
     "derivacion": {
-      "archivo_maestro": "/imagenes/rel060/original-006a0bdcc52f5736.png",
-      "sha256_maestro": "006a0bdcc52f5736cde106bf1b80d06fba15c9ad8f8f13de9464e13880fdb6a8",
-      "fuente_fotografia_propia": "https://drive.google.com/file/d/13nExHe5w-fMN0LuxPZ4CZIeFQ2TlQ1xF/view?usp=drivesdk",
-      "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-      "edicion_asistida_ia": true,
-      "originales_intactos_en_drive": true
+      "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/REL060.png",
+      "sha256_maestro": "6c79d68a4969d91fe773eb2086ae52f4d2c793484c4616b8488038b489d58a72",
+      "fuente_fotografia_propia": "https://drive.google.com/file/d/1CzDRI4q4Fae0QVD8zCoIWhmuRGQD-lcu/view?usp=drivesdk",
+      "metodo": "Imagen más fiel al Kieslect Lora3 físico; respetar pantalla circular apagada, lugs reales, correa rosa, corona y botón inferior alargado real. No sustituir botón alargado por segunda corona redonda. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+      "originales_intactos_en_drive": true,
+      "edicion_asistida_ia": true
     }
   },
   "especificaciones": [
@@ -283,23 +288,23 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/rel060-reloj-smartwatch-kieslect-lora-3/",
-  "fecha_verificacion": "2026-10-11T21:09:24.641263+00:00",
+  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
   "descripcion": "Smartwatch Kieslect Lora 3 con diseño redondo y silicona lisa. Presentación comercial basada en las fotografías reales del SKU. Consulta compatibilidad y disponibilidad antes de comprar.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1379,1381,1382,1383,1384,1385,1386,1387; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 3,
+  "revision_regla": 4,
   "maestro": {
-    "archivo_maestro": "/imagenes/rel060/original-006a0bdcc52f5736.png",
-    "sha256_maestro": "006a0bdcc52f5736cde106bf1b80d06fba15c9ad8f8f13de9464e13880fdb6a8",
-    "fuente_fotografia_propia": "https://drive.google.com/file/d/13nExHe5w-fMN0LuxPZ4CZIeFQ2TlQ1xF/view?usp=drivesdk",
-    "metodo": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas.",
-    "edicion_asistida_ia": true,
-    "originales_intactos_en_drive": true
+    "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/REL060.png",
+    "sha256_maestro": "6c79d68a4969d91fe773eb2086ae52f4d2c793484c4616b8488038b489d58a72",
+    "fuente_fotografia_propia": "https://drive.google.com/file/d/1CzDRI4q4Fae0QVD8zCoIWhmuRGQD-lcu/view?usp=drivesdk",
+    "metodo": "Imagen más fiel al Kieslect Lora3 físico; respetar pantalla circular apagada, lugs reales, correa rosa, corona y botón inferior alargado real. No sustituir botón alargado por segunda corona redonda. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
+    "originales_intactos_en_drive": true,
+    "edicion_asistida_ia": true
   },
   "compatibilidad": "Consulta los requisitos de sistema y la aplicación del modelo al comprar; no se garantiza compatibilidad universal. Las funciones de bienestar no sustituyen una evaluación médica.",
   "contenido_venta": "1 smartwatch con la correa o brazalete mostrado. Consulta otros componentes del empaque al comprar.",
@@ -382,19 +387,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/13nExHe5w-fMN0LuxPZ4CZIeFQ2TlQ1xF/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-11T21:09:24.641263+00:00",
-      "sha256_maestro": "006a0bdcc52f5736cde106bf1b80d06fba15c9ad8f8f13de9464e13880fdb6a8",
-      "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
+      "fecha": "2026-10-14T00:03:43.493657+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-076/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "6c79d68a4969d91fe773eb2086ae52f4d2c793484c4616b8488038b489d58a72"
+    },
+    "publicacion_http": {
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "REL060",
       "sku": "REL060",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:58:45.675Z",
+      "fecha": "2026-10-14T00:05:28.761Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -419,74 +428,70 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rel060-reloj-smartwatch-kieslect-lora-3/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/rel060-reloj-smartwatch-kieslect-lora-3/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/rel060-reloj-smartwatch-kieslect-lora-3/",
       "archivo_html": "productos/rel060-reloj-smartwatch-kieslect-lora-3/index.html",
       "http": 200,
-      "sha256_html": "bd925c588b92ccdd5e512890955a6077411c6b9db57a759c308e214d190caf4f",
-      "sha256_html_local": "bd925c588b92ccdd5e512890955a6077411c6b9db57a759c308e214d190caf4f",
+      "sha256_html": "e858413ffae13a61f1e884f0d79888254b974dcd8450405f91427e7244f338a9",
+      "sha256_html_local": "e858413ffae13a61f1e884f0d79888254b974dcd8450405f91427e7244f338a9",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel060/REL060-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/rel060/REL060-01-600.webp?v=6d9562e4a134b0c9",
-        "naturalWidth": 335,
-        "naturalHeight": 335,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/rel060/REL060-01-600.webp?v=e08fff876b8e98ee",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8765/productos/rel060-reloj-smartwatch-kieslect-lora-3/",
+          "url": "http://127.0.0.1:8767/productos/rel060-reloj-smartwatch-kieslect-lora-3/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/imagenes/rel060/REL060-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/rel060/REL060-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/rel069-reloj-smartwatch-series-11-mini/",
+          "url": "http://127.0.0.1:8767/productos/rel069-reloj-smartwatch-series-11-mini/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/rel046-reloj-smarwatch-infinix-h4/",
+          "url": "http://127.0.0.1:8767/productos/rel046-reloj-smarwatch-infinix-h4/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8765/productos/rel065-reloj-smartwatch-s11-pro/",
+          "url": "http://127.0.0.1:8767/productos/rel065-reloj-smartwatch-s11-pro/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-066/qa-local/movil/REL060-390.png",
-      "sha256": "8a3585977645fd26af94a6bda550d9940aeeda5d89a35f544e1b48384dfccbd2",
+      "archivo": "reportes/correcciones-076/qa-local/movil/REL060-390.png",
+      "sha256": "5a14c9620f16ab416867c432a601fa5e8012d3dcd9d28726d583e6e3f78627de",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/REL060-1280.png",
-        "sha256": "40aebb070d89866449d45bd0d93d2d9188dd0a4fb46080b82b02bfa9d51ea6b2",
+        "archivo": "reportes/correcciones-076/qa-local/movil/REL060-1280.png",
+        "sha256": "8ddda51a32a78afdf0539b24ef68fa8ef4ebefbbf17319beb9f7a72d3be6d1b7",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/lote-066/http-publicacion.json",
-      "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
   }
 }

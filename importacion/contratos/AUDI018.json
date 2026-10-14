@@ -56,7 +56,8 @@
     "importacion/lotes/correcciones-069/instrucciones-propietario.json",
     "https://drive.google.com/file/d/1E4w0F9r6k2X3UueMclj53rZtppLUf-wI/view?usp=drivesdk",
     "https://drive.google.com/file/d/12CPhnrVzmse0dRp6vrQ4N9TYcPQMT2hj/view?usp=drivesdk",
-    "https://drive.google.com/file/d/1Pj6p9js2_z2XJo4PS0WEReLoMZSZQt5S/view?usp=drivesdk"
+    "https://drive.google.com/file/d/1Pj6p9js2_z2XJo4PS0WEReLoMZSZQt5S/view?usp=drivesdk",
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/audi018/AUDI018-01.webp",
   "imagenes_secundarias": [],
@@ -154,22 +155,19 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T04:28:24.715621+00:00",
-      "evidencia": "Revisión física documentada en reportes/correcciones-069/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
-      "sha256_maestro": "a3ccc0de37666a5bcf4a9278dcab91f4419275f91de3369a3d66b02bc4d48a30"
+      "fecha": "2026-10-14T00:03:43.493657+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-076/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "d4560b0ec0ab8a3136e5cd6d3d2570b15da214cf01db536c537e1f2d99206e25"
     },
     "publicacion_http": {
-      "archivo": "reportes/publicacion-073/http-publicacion.json",
-      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
-      "estado": "VERIFICADO",
-      "sku": "AUDI018",
-      "fecha": "2026-10-13T19:50:33.477266+00:00"
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "AUDI018",
       "sku": "AUDI018",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T04:34:30.370Z",
+      "fecha": "2026-10-14T00:05:22.086Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -197,14 +195,14 @@
       "url_comprobada": "http://127.0.0.1:8767/productos/audi018-audifonos-inalambricos-tune-flex/",
       "archivo_html": "productos/audi018-audifonos-inalambricos-tune-flex/index.html",
       "http": 200,
-      "sha256_html": "78b81fd95001d91e4c4f5991b156545ffd3039012684ca8a4f9a2f829e47b2e6",
-      "sha256_html_local": "78b81fd95001d91e4c4f5991b156545ffd3039012684ca8a4f9a2f829e47b2e6",
+      "sha256_html": "3376e5bc4fd7b08d631140edcb9801e75ee09ea6f6405a657ff18733e30005c8",
+      "sha256_html_local": "3376e5bc4fd7b08d631140edcb9801e75ee09ea6f6405a657ff18733e30005c8",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi018/AUDI018-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/audi018/AUDI018-01-600.webp?v=60c29ebaedbf152e",
+        "url_cargada": "http://127.0.0.1:8767/imagenes/audi018/AUDI018-01-600.webp?v=007cd8be7520b261",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -243,22 +241,22 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-069/qa-local/movil/AUDI018-390.png",
-      "sha256": "5cd43287564e655dda92137a96c67bd2cd73d82d69cb59e739615ab79263a461",
+      "archivo": "reportes/correcciones-076/qa-local/movil/AUDI018-390.png",
+      "sha256": "9ffb75e32b7106499045a7b2233702b5525e599394a564452bd85b1f522d3dd5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-069/qa-local/movil/AUDI018-1280.png",
-        "sha256": "80cc968a99629cd8143472dbea159aad59a61ca59019ec734a5f2ac0c1b8d4fa",
+        "archivo": "reportes/correcciones-076/qa-local/movil/AUDI018-1280.png",
+        "sha256": "f332092f8337968061698f8e0453e4eac4c71fce9d7518c0235b3d9ad137e0b0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
-  "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
-  "revision_regla": 3,
+  "estado_publicacion": "APROBADO_LOCAL",
+  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "revision_regla": 4,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: JBL; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1067,1069,1071,1073; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "derechos_imagen": {
     "estado": "AUTORIZADO",
@@ -275,22 +273,26 @@
       {
         "sha256": "a3ccc0de37666a5bcf4a9278dcab91f4419275f91de3369a3d66b02bc4d48a30",
         "fuente": "https://drive.google.com/file/d/1KWTMfxbUuiR9hbmp9h99dzm3nuWkaoBZ/view?usp=drivesdk"
+      },
+      {
+        "sha256": "d4560b0ec0ab8a3136e5cd6d3d2570b15da214cf01db536c537e1f2d99206e25",
+        "fuente": "https://drive.google.com/file/d/1KWTMfxbUuiR9hbmp9h99dzm3nuWkaoBZ/view?usp=drivesdk"
       }
     ],
     "derivacion": {
-      "archivo_maestro": "/importacion/lotes/correcciones-069/editorial-imagenes/AUDI018.png",
-      "sha256_maestro": "a3ccc0de37666a5bcf4a9278dcab91f4419275f91de3369a3d66b02bc4d48a30",
+      "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/AUDI018.png",
+      "sha256_maestro": "d4560b0ec0ab8a3136e5cd6d3d2570b15da214cf01db536c537e1f2d99206e25",
       "fuente_fotografia_propia": "https://drive.google.com/file/d/1KWTMfxbUuiR9hbmp9h99dzm3nuWkaoBZ/view?usp=drivesdk",
-      "metodo": "Auriculares rígidos transparentes violeta SIN gomas, internals y estuche real JBL cotejados contra unidad propia.",
+      "metodo": "Los audífonos NO llevan gomas, puntas ni tapones de silicona; sólo cabezales rígidos transparentes originales. No inventar accesorios ni partes ocultas. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
       "originales_intactos_en_drive": true,
       "edicion_asistida_ia": true
     }
   },
   "maestro": {
-    "archivo_maestro": "/importacion/lotes/correcciones-069/editorial-imagenes/AUDI018.png",
-    "sha256_maestro": "a3ccc0de37666a5bcf4a9278dcab91f4419275f91de3369a3d66b02bc4d48a30",
+    "archivo_maestro": "/importacion/lotes/correcciones-076/editorial-imagenes/AUDI018.png",
+    "sha256_maestro": "d4560b0ec0ab8a3136e5cd6d3d2570b15da214cf01db536c537e1f2d99206e25",
     "fuente_fotografia_propia": "https://drive.google.com/file/d/1KWTMfxbUuiR9hbmp9h99dzm3nuWkaoBZ/view?usp=drivesdk",
-    "metodo": "Auriculares rígidos transparentes violeta SIN gomas, internals y estuche real JBL cotejados contra unidad propia.",
+    "metodo": "Los audífonos NO llevan gomas, puntas ni tapones de silicona; sólo cabezales rígidos transparentes originales. No inventar accesorios ni partes ocultas. Comparación de fuentes propias y maestro: modelo, geometría y componentes cotejados; instrucciones del propietario conservadas.",
     "originales_intactos_en_drive": true,
     "edicion_asistida_ia": true
   },

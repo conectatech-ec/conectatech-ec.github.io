@@ -102,7 +102,8 @@
     "https://drive.google.com/file/d/1sszfy83c0AG8nEwiHXNOmQBaxrJU-5ww/view?usp=drivesdk",
     "https://drive.google.com/file/d/1nb9ql-9F3OMCSkN-hWSwOIH5lp1f542i/view?usp=drivesdk",
     "https://drive.google.com/file/d/14cAn3vGBzmQ1nHvPOHcnDhTqCEd_JhMH/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json"
   ],
   "imagen_principal": "/imagenes/cobe004/COBE004-01.webp",
   "imagenes_secundarias": [],
@@ -190,16 +191,16 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/cobe004-cobertor-estuche-airpods-pro-4/",
-  "fecha_verificacion": "2026-10-13T18:58:19.914751+00:00",
+  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
   "descripcion": "Funda decorativa para estuche AirPods 4 con diseño blanco y negro de control de videojuegos. Dale otro estilo a tu estuche con sus botones decorativos de colores. Se vende una funda; consulta el diseño disponible. No incluye audífonos, estuche de carga ni un control electrónico.",
   "contenido_venta": "1 funda decorativa en el diseño elegido. No incluye audífonos, estuche de carga ni control electrónico.",
   "compatibilidad": "Para estuche AirPods 4. Comprueba la forma de tu estuche y confirma el diseño antes de comprar; no se afirma ajuste para otros modelos.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 2,
+  "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: APPLE; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2776,2777,2778,2779,2782,2783,2784,2786,2787; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "beneficios": [
     {
@@ -290,26 +291,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/14cAn3vGBzmQ1nHvPOHcnDhTqCEd_JhMH/view?usp=drivesdk",
-      "evidencia": "Revisión del título, descripción, unidad y beneficios contra todas las fuentes del SKU; no se trasladan afirmaciones del empaque no comprobadas."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T18:58:19.914751+00:00",
-      "sha256_maestro": "815d61434906ddfaff0855c99ad2be707b8febb3c4a0a4b23923ebb7613fa675",
-      "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Objeto físico visible dentro de bolsa transparente. Mantener geometría, botones decorativos de colores, cruceta, círculos y argolla, retirando bolsa y etiquetas. La etiqueta propia dice AirPods4; no publicar el nombre histórico PRO4 ni inventar compatibilidad universal, electrónica, marcas o licencia."
+      "fecha": "2026-10-14T00:03:43.493657+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-076/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "815d61434906ddfaff0855c99ad2be707b8febb3c4a0a4b23923ebb7613fa675"
     },
     "publicacion_http": {
-      "archivo": "reportes/publicacion-073/http-publicacion.json",
-      "sha256": "521c6163c1cfd423299e88505654948bd1eb58d4f56ff7d87bf364c881b1f4f2",
-      "estado": "VERIFICADO",
-      "sku": "COBE004",
-      "fecha": "2026-10-13T19:50:33.477266+00:00"
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "movil": {
       "solicitado": "COBE004",
       "sku": "COBE004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T19:04:43.326Z",
+      "fecha": "2026-10-14T00:05:15.457Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -337,16 +335,16 @@
       "url_comprobada": "http://127.0.0.1:8767/productos/cobe004-cobertor-estuche-airpods-pro-4/",
       "archivo_html": "productos/cobe004-cobertor-estuche-airpods-pro-4/index.html",
       "http": 200,
-      "sha256_html": "556623e019c4fc45e6a2c027d83c5c998efd62deae1e4e81cd2d2b64345ff47c",
-      "sha256_html_local": "556623e019c4fc45e6a2c027d83c5c998efd62deae1e4e81cd2d2b64345ff47c",
+      "sha256_html": "d4f6ee43723aad9ccfe98136ecbbd694b1ab72f0487253b34c173f27b55f53ec",
+      "sha256_html_local": "d4f6ee43723aad9ccfe98136ecbbd694b1ab72f0487253b34c173f27b55f53ec",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cobe004/COBE004-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cobe004/COBE004-01-600.webp?v=c9bfeea283d600f4",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/cobe004/COBE004-01-300.webp?v=23a5ecb90d15b588",
+        "naturalWidth": 276,
+        "naturalHeight": 276,
         "completa": true,
         "visible": true
       },
@@ -373,13 +371,13 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-070/qa-local/movil/COBE004-390.png",
-      "sha256": "52ce28d1941c21f2d1bdbc0e6807997e19c477bebc254551092feecd8f2da3ec",
+      "archivo": "reportes/correcciones-076/qa-local/movil/COBE004-390.png",
+      "sha256": "9e6824ec8caf4f8aaed7a2ba41488986d2f417e8922a948116de9460c603aad7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-070/qa-local/movil/COBE004-1280.png",
-        "sha256": "666c91e52cac0ab0735038b7b9e6e3706b0ef2115d25d5fa4d0de645475e4b4d",
+        "archivo": "reportes/correcciones-076/qa-local/movil/COBE004-1280.png",
+        "sha256": "8dcf0f65fad4381b92db1c36557b7e01319c32a391e7f0702dbfd32bc0dcd24d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }

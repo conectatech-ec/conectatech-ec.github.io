@@ -65,7 +65,9 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/11k4AADphTk_pm7Tu1Y4lRbBxRgB1PlUZ/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
-    "importacion/reglas-sku.json"
+    "importacion/reglas-sku.json",
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json",
+    "https://drive.google.com/file/d/1p8mn97L4k3s6VV5vR1_svHKC9VCeYMHc/view?usp=drivesdk"
   ],
   "imagen_principal": "/imagenes/adap004/ADAP004-01.webp",
   "imagenes_secundarias": [],
@@ -122,9 +124,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
-  "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
+  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
   "descripcion": "Elige el adaptador cuya entrada y salida coincidan con tus enchufes. Acabado blanco para combinar con tus accesorios.",
   "compatibilidad": "Comprobar forma y ajuste para el equipo concreto.",
   "contenido_venta": "1 adaptador",
@@ -138,7 +140,7 @@
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 822,823; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 3,
+  "revision_regla": 4,
   "propuesta_origen": "importacion/lotes/lote-020/accesorios-propuestas.json",
   "notas_internas": {
     "campos_no_confirmados": [],
@@ -186,23 +188,23 @@
     "ficha": {
       "verificada": true,
       "fuente": "importacion/lotes/lote-020/accesorios-propuestas.json",
-      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
+      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "publicacion_http": {
-      "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
-      "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
+      "estado": "PENDIENTE",
+      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-10T15:27:31.705473+00:00",
-      "sha256_maestro": "2cbc47643ce76ef39da01f492eb5f60d8f1457e0bc7af11c9d0673b68395b68a",
-      "evidencia": "Edición comercial asistida por IA a partir de las dos fotografías propias: misma silueta blanca, aberturas universales y posición de relieves observados. No se atribuyen certificaciones ni capacidad eléctrica. Revisión comparativa de aberturas y variante. No representa recuperación óptica de detalles."
+      "fecha": "2026-10-14T00:03:43.493657+00:00",
+      "evidencia": "Revisión física documentada en reportes/correcciones-076/revision-visual.json; fuentes propias, instrucciones y geometría contrastadas.",
+      "sha256_maestro": "2cbc47643ce76ef39da01f492eb5f60d8f1457e0bc7af11c9d0673b68395b68a"
     },
     "movil": {
       "solicitado": "ADAP004",
       "sku": "ADAP004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:58:56.110Z",
+      "fecha": "2026-10-14T00:05:24.809Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -227,67 +229,67 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
+      "url_comprobada": "http://127.0.0.1:8767/productos/adap004-adaptador-europa-latino-color-blanco/",
       "archivo_html": "productos/adap004-adaptador-europa-latino-color-blanco/index.html",
       "http": 200,
-      "sha256_html": "aa682087e9ac49a3850772e54dfa54bf58e0ebc93f4c90c59f891ce6e1dcf65a",
-      "sha256_html_local": "aa682087e9ac49a3850772e54dfa54bf58e0ebc93f4c90c59f891ce6e1dcf65a",
+      "sha256_html": "246ca2d940285e5660b04dc96c2d3220427054ffa582c830bc7686c5a3280c85",
+      "sha256_html_local": "246ca2d940285e5660b04dc96c2d3220427054ffa582c830bc7686c5a3280c85",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01-600.webp?v=c8448533d3dd6897",
-        "naturalWidth": 436,
-        "naturalHeight": 436,
+        "url_cargada": "http://127.0.0.1:8767/imagenes/adap004/ADAP004-01-600.webp?v=c8448533d3dd6897",
+        "naturalWidth": 335,
+        "naturalHeight": 335,
         "completa": true,
         "visible": true
       },
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
+          "url": "http://127.0.0.1:8767/productos/adap004-adaptador-europa-latino-color-blanco/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8767/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8767/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01.webp",
+          "url": "http://127.0.0.1:8767/imagenes/adap004/ADAP004-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
+          "url": "http://127.0.0.1:8767/productos/adap005-adaptador-europa-latino-color-negro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
+          "url": "http://127.0.0.1:8767/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/adap007-adaptador-lightning-a-3-5mm/",
+          "url": "http://127.0.0.1:8767/productos/adap007-adaptador-lightning-a-3-5mm/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/ADAP004-390.png",
-      "sha256": "880fa5593d01dc5dd59f2d3fb46c878a94e4a79ff36db4b5c17d4a395c385657",
+      "archivo": "reportes/correcciones-076/qa-local/movil/ADAP004-390.png",
+      "sha256": "167f34c0b0ea22fb9ef470e144389647cf1b615713ea85ef80d73d04e0b36927",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/ADAP004-1280.png",
-        "sha256": "9a45d2601cb9d15b97b0ac5ed8594f2aed58105c436c6e3ae0eef9a85ca577bd",
+        "archivo": "reportes/correcciones-076/qa-local/movil/ADAP004-1280.png",
+        "sha256": "e8fafde6c30f29bbc859c9a8d9317318f3c192c7328c50c4b5e8ad95d1f7be8a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
