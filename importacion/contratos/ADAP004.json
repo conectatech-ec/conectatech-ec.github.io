@@ -124,9 +124,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Elige el adaptador cuya entrada y salida coincidan con tus enchufes. Acabado blanco para combinar con tus accesorios.",
   "compatibilidad": "Comprobar forma y ajuste para el equipo concreto.",
   "contenido_venta": "1 adaptador",
@@ -191,8 +191,12 @@
       "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "ADAP004"
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -204,7 +208,7 @@
       "solicitado": "ADAP004",
       "sku": "ADAP004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:24.809Z",
+      "fecha": "2026-10-14T00:13:38.793Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -229,7 +233,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap004-adaptador-europa-latino-color-blanco/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
       "archivo_html": "productos/adap004-adaptador-europa-latino-color-blanco/index.html",
       "http": 200,
       "sha256_html": "246ca2d940285e5660b04dc96c2d3220427054ffa582c830bc7686c5a3280c85",
@@ -239,7 +243,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap004/ADAP004-01-600.webp?v=c8448533d3dd6897",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01-600.webp?v=c8448533d3dd6897",
         "naturalWidth": 335,
         "naturalHeight": 335,
         "completa": true,
@@ -248,47 +252,47 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap004-adaptador-europa-latino-color-blanco/",
+          "url": "https://conectatech-ec.github.io/productos/adap004-adaptador-europa-latino-color-blanco/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap004/ADAP004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap004/ADAP004-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/adap005-adaptador-europa-latino-color-negro/",
+          "url": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
+          "url": "https://conectatech-ec.github.io/productos/hub001-hub-3-0-usb-a-a-usb-a-x4-puertos/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/adap007-adaptador-lightning-a-3-5mm/",
+          "url": "https://conectatech-ec.github.io/productos/adap007-adaptador-lightning-a-3-5mm/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/ADAP004-390.png",
+      "archivo": "reportes/correcciones-076/qa-publica/movil/ADAP004-390.png",
       "sha256": "167f34c0b0ea22fb9ef470e144389647cf1b615713ea85ef80d73d04e0b36927",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/ADAP004-1280.png",
+        "archivo": "reportes/correcciones-076/qa-publica/movil/ADAP004-1280.png",
         "sha256": "e8fafde6c30f29bbc859c9a8d9317318f3c192c7328c50c4b5e8ad95d1f7be8a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

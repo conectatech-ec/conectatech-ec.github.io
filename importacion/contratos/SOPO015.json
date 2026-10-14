@@ -119,9 +119,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Cabezal magnético con base circular para accesorios que admitan este tipo de sujeción. Aro magnético con base circular. Celulares y accesorios compatibles con sujeción magnética.",
   "compatibilidad": "Sujeción magnética compatible; algunos equipos necesitan una placa magnética adicional, sin inclusión confirmada",
   "contenido_venta": {
@@ -198,14 +198,18 @@
       "sha256_maestro": "ff9dec79c03c06144c4abc448c052a72cbb086d5f39ce18f84dc76b900d194ed"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "SOPO015"
     },
     "movil": {
       "solicitado": "SOPO015",
       "sku": "SOPO015",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:18.389Z",
+      "fecha": "2026-10-14T00:15:00.144Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,8 +237,8 @@
       "url_comprobada": "http://127.0.0.1:8767/productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/",
       "archivo_html": "productos/sopo015-soporte-para-celular-magnetico-con-magsafe-modelo-t6-02/index.html",
       "http": 200,
-      "sha256_html": "bb2a5bb964fefcca3e18279376a9acde8a9739502819534d477e4217c114f5a3",
-      "sha256_html_local": "bb2a5bb964fefcca3e18279376a9acde8a9739502819534d477e4217c114f5a3",
+      "sha256_html": "3b1243dd14ba5aece422bbfaab41187e7baab964ee9cf523e7bba4322c92570b",
+      "sha256_html_local": "3b1243dd14ba5aece422bbfaab41187e7baab964ee9cf523e7bba4322c92570b",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -284,12 +288,12 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/SOPO015-390.png",
+      "archivo": "reportes/correcciones-076/qa-local/contenido-corregido/SOPO015-390.png",
       "sha256": "9f2fe2cd2595b5d63f34e2b120cd42bf1fb41ad33ec1b11a2d7529a875b58b81",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/SOPO015-1280.png",
+        "archivo": "reportes/correcciones-076/qa-local/contenido-corregido/SOPO015-1280.png",
         "sha256": "653859a08ee0fdef79f29c41c8af7d017467304c6574d59f92b38851048b85eb",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

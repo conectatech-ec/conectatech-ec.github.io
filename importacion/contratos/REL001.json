@@ -142,9 +142,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Despertador digital DCX-670 con pantalla de hora, fecha y temperatura indicada en su empaque. producto; no es un producto original de la marca de referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -235,14 +235,18 @@
       "sha256_maestro": "45ee073bd19b0c7e0722ae2a1564dc5a1bd1cf672061ef31cee52b01e6823f40"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "REL001"
     },
     "movil": {
       "solicitado": "REL001",
       "sku": "REL001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:26.866Z",
+      "fecha": "2026-10-14T00:13:41.176Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -267,7 +271,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/rel001-reloj-despertador-modelo-dcx-670/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
       "archivo_html": "productos/rel001-reloj-despertador-modelo-dcx-670/index.html",
       "http": 200,
       "sha256_html": "ad15059d7179b4130441419bcd98a8f304d62d00cb2156504a083ff226495f40",
@@ -277,7 +281,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/rel001/REL001-01-600.webp?v=5bbe3198adace927",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01-600.webp?v=5bbe3198adace927",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -286,47 +290,47 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/rel001-reloj-despertador-modelo-dcx-670/",
+          "url": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/rel001/REL001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/rel011-reloj-smartwatch-caja-flashlight/",
+          "url": "https://conectatech-ec.github.io/productos/rel011-reloj-smartwatch-caja-flashlight/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
+          "url": "https://conectatech-ec.github.io/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/rel013-reloj-smartwatch-para-iphone-watch-series-10-46mm/",
+          "url": "https://conectatech-ec.github.io/productos/rel013-reloj-smartwatch-para-iphone-watch-series-10-46mm/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/REL001-390.png",
+      "archivo": "reportes/correcciones-076/qa-publica/movil/REL001-390.png",
       "sha256": "9861a2c4481839c6c93dc2891e9755a6714f1ef92c886c2a5feb3f7edff4edfa",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/REL001-1280.png",
+        "archivo": "reportes/correcciones-076/qa-publica/movil/REL001-1280.png",
         "sha256": "1220e3eae4801dc80c4174ddcbdbcd23efcbeb44305c660355201df4a52315e1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

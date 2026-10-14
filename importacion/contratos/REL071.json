@@ -187,9 +187,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel071-reloj-smartwatch-aurafit-nexa-6/",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Smartwatch AuraFit Nexa 6 con pantalla AMOLED de 1,75 pulgadas indicada en la caja. Correa negra y borde gris/plomo confirmados por el propietario.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -285,14 +285,18 @@
       "sha256_maestro": "7392814843b7e19febaeb05ee58bb9bae3093f7f463d9450b951e8f31964e111"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "REL071"
     },
     "movil": {
       "solicitado": "REL071",
       "sku": "REL071",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:23.012Z",
+      "fecha": "2026-10-14T00:13:35.984Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -317,7 +321,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rel071-reloj-smartwatch-aurafit-nexa-6/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/rel071-reloj-smartwatch-aurafit-nexa-6/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/rel071-reloj-smartwatch-aurafit-nexa-6/",
       "archivo_html": "productos/rel071-reloj-smartwatch-aurafit-nexa-6/index.html",
       "http": 200,
       "sha256_html": "c804795c69b74b80b44ad1e600f288cdfb408ca9e7c001d8d19bfbcb811bb4cd",
@@ -327,7 +331,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel071/REL071-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/rel071/REL071-01-600.webp?v=9bd40764c2c14905",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/rel071/REL071-01-600.webp?v=9bd40764c2c14905",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -336,42 +340,42 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/rel071-reloj-smartwatch-aurafit-nexa-6/",
+          "url": "https://conectatech-ec.github.io/productos/rel071-reloj-smartwatch-aurafit-nexa-6/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/rel071/REL071-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/rel071/REL071-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi115-audifonos-inalambricos-lmn-x02/",
+          "url": "https://conectatech-ec.github.io/productos/audi115-audifonos-inalambricos-lmn-x02/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/cand001-candado-para-laptop-blot-c-klip-xtreme/",
+          "url": "https://conectatech-ec.github.io/productos/cand001-candado-para-laptop-blot-c-klip-xtreme/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/REL071-390.png",
+      "archivo": "reportes/correcciones-076/qa-publica/movil/REL071-390.png",
       "sha256": "4c55a873582efb6c2d741d8259c9fb8718c79c00ec56188838fc9f5f456c0843",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/REL071-1280.png",
+        "archivo": "reportes/correcciones-076/qa-publica/movil/REL071-1280.png",
         "sha256": "cd50a46b33050428b4dc75ea1f7d597c5d03f199896638146c1f22d663e6eec1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

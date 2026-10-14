@@ -191,9 +191,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cobe004-cobertor-estuche-airpods-pro-4/",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Funda decorativa para estuche AirPods 4 con diseño blanco y negro de control de videojuegos. Dale otro estilo a tu estuche con sus botones decorativos de colores. Se vende una funda; consulta el diseño disponible. No incluye audífonos, estuche de carga ni un control electrónico.",
   "contenido_venta": "1 funda decorativa en el diseño elegido. No incluye audífonos, estuche de carga ni control electrónico.",
   "compatibilidad": "Para estuche AirPods 4. Comprueba la forma de tu estuche y confirma el diseño antes de comprar; no se afirma ajuste para otros modelos.",
@@ -300,14 +300,18 @@
       "sha256_maestro": "815d61434906ddfaff0855c99ad2be707b8febb3c4a0a4b23923ebb7613fa675"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "COBE004"
     },
     "movil": {
       "solicitado": "COBE004",
       "sku": "COBE004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:15.457Z",
+      "fecha": "2026-10-14T00:13:25.477Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -332,7 +336,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cobe004-cobertor-estuche-airpods-pro-4/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cobe004-cobertor-estuche-airpods-pro-4/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cobe004-cobertor-estuche-airpods-pro-4/",
       "archivo_html": "productos/cobe004-cobertor-estuche-airpods-pro-4/index.html",
       "http": 200,
       "sha256_html": "d4f6ee43723aad9ccfe98136ecbbd694b1ab72f0487253b34c173f27b55f53ec",
@@ -342,7 +346,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cobe004/COBE004-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cobe004/COBE004-01-300.webp?v=23a5ecb90d15b588",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cobe004/COBE004-01-300.webp?v=23a5ecb90d15b588",
         "naturalWidth": 276,
         "naturalHeight": 276,
         "completa": true,
@@ -351,32 +355,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cobe004-cobertor-estuche-airpods-pro-4/",
+          "url": "https://conectatech-ec.github.io/productos/cobe004-cobertor-estuche-airpods-pro-4/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cobe004/COBE004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cobe004/COBE004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/COBE004-390.png",
+      "archivo": "reportes/correcciones-076/qa-publica/movil/COBE004-390.png",
       "sha256": "9e6824ec8caf4f8aaed7a2ba41488986d2f417e8922a948116de9460c603aad7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/COBE004-1280.png",
+        "archivo": "reportes/correcciones-076/qa-publica/movil/COBE004-1280.png",
         "sha256": "8dcf0f65fad4381b92db1c36557b7e01319c32a391e7f0702dbfd32bc0dcd24d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

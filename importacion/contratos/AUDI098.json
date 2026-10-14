@@ -171,14 +171,18 @@
       "sha256_maestro": "fa878033537c0988c7b8104dc5b2da1a53454736acd7f7477f438db6fee5b3b9"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "AUDI098"
     },
     "movil": {
       "solicitado": "AUDI098",
       "sku": "AUDI098",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:21.142Z",
+      "fecha": "2026-10-14T00:15:01.892Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -206,8 +210,8 @@
       "url_comprobada": "http://127.0.0.1:8767/productos/audi098-audifonos-inalambricos-tune-beam-150/",
       "archivo_html": "productos/audi098-audifonos-inalambricos-tune-beam-150/index.html",
       "http": 200,
-      "sha256_html": "fcc464fcc050c0c10cd13dbd93ce3920a42b489a78535a551c854e79f459ad3d",
-      "sha256_html_local": "fcc464fcc050c0c10cd13dbd93ce3920a42b489a78535a551c854e79f459ad3d",
+      "sha256_html": "c0d23e1d081ebea517a55dcdca79d43c9b0e8b2263548889cff45f9ecd448282",
+      "sha256_html_local": "c0d23e1d081ebea517a55dcdca79d43c9b0e8b2263548889cff45f9ecd448282",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -263,12 +267,12 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/AUDI098-390.png",
+      "archivo": "reportes/correcciones-076/qa-local/contenido-corregido/AUDI098-390.png",
       "sha256": "46e8100141793e5a5528ab2bc1212b8629cec540fbd8bc01df52fa0f7f0e4f68",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/AUDI098-1280.png",
+        "archivo": "reportes/correcciones-076/qa-local/contenido-corregido/AUDI098-1280.png",
         "sha256": "f852807cea0e601e862c167936c123c592f462483649683699a8bd1776a551d4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
@@ -276,8 +280,8 @@
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "revision_regla": 4,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: JBL; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 956,957,958,959,960; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "derechos_imagen": {

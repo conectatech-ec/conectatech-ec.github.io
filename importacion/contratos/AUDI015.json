@@ -183,9 +183,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi015-audifonos-inalambricos-face-change-g05d/",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Audífonos Face Change G05D con estuche azul de expresiones intercambiables. Cambia la modalidad del diseño con el dedo: el estuche no tiene una tapita abatible que se abre.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -248,14 +248,18 @@
       "sha256_maestro": "4f25ade3a421a3a578bd4527c7ebc7926fce68a78d53de0e80ec88bc8e2a92ad"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "AUDI015"
     },
     "movil": {
       "solicitado": "AUDI015",
       "sku": "AUDI015",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:20.202Z",
+      "fecha": "2026-10-14T00:13:32.117Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -277,7 +281,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi015-audifonos-inalambricos-face-change-g05d/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/audi015-audifonos-inalambricos-face-change-g05d/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi015-audifonos-inalambricos-face-change-g05d/",
       "archivo_html": "productos/audi015-audifonos-inalambricos-face-change-g05d/index.html",
       "http": 200,
       "sha256_html": "c2552341e0ebdef7752df0729d6f558bca32b864f628a357bd8861c0e6bc4be4",
@@ -287,7 +291,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi015/AUDI015-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/audi015/AUDI015-01-600.webp?v=c0cac49fb8248f0b",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi015/AUDI015-01-600.webp?v=c0cac49fb8248f0b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -302,52 +306,52 @@
       ],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/audi015-audifonos-inalambricos-face-change-g05d/",
+          "url": "https://conectatech-ec.github.io/productos/audi015-audifonos-inalambricos-face-change-g05d/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/audi015/AUDI015-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi015/AUDI015-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/audi015/AUDI015-02.webp?v=0135b75c4aa50b6b",
+          "url": "https://conectatech-ec.github.io/imagenes/audi015/AUDI015-02.webp?v=0135b75c4aa50b6b",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi001-audifonos-airpods-pro-2-anc/",
+          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi005-audifonos-diadema-airpods-max/",
+          "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi008-audifonos-alambricos-earpods-lightning/",
+          "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/AUDI015-390.png",
+      "archivo": "reportes/correcciones-076/qa-publica/movil/AUDI015-390.png",
       "sha256": "ce586eceb78153ac92a04c922ed04074479a6190865601722b4f649611d4ccc1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/AUDI015-1280.png",
+        "archivo": "reportes/correcciones-076/qa-publica/movil/AUDI015-1280.png",
         "sha256": "86045f71fbfaaa9a1f905d198d2ad28d8fb9c50629f3d67f8ad667063f56bb44",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

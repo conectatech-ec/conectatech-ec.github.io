@@ -129,9 +129,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Diadema SY440MV. Variante negro con verde, con diseño y presentación cotejados con las fotografías del SKU. producto; no es un producto original de la marca de referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
@@ -219,14 +219,18 @@
       "sha256_maestro": "8d8a40dc8631aee851be35a8fc1692f262d349c0d8c36ecaa30aa03f33f4deb6"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "AUDI096"
     },
     "movil": {
       "solicitado": "AUDI096",
       "sku": "AUDI096",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:25.805Z",
+      "fecha": "2026-10-14T00:13:40.124Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -251,7 +255,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
       "archivo_html": "productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/index.html",
       "http": 200,
       "sha256_html": "7a3871fa99a5e5daa3fdabd76d88b9dca3a75ca8d902d238491ca157fbc210db",
@@ -261,7 +265,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi096/AUDI096-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/audi096/AUDI096-01-600.webp?v=001142b6ab6aa207",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi096/AUDI096-01-600.webp?v=001142b6ab6aa207",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -270,47 +274,47 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
+          "url": "https://conectatech-ec.github.io/productos/audi096-audifonos-de-diadema-para-pc-laptops-sy440mv/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/audi096/AUDI096-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi096/AUDI096-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi001-audifonos-airpods-pro-2-anc/",
+          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi005-audifonos-diadema-airpods-max/",
+          "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/audi008-audifonos-alambricos-earpods-lightning/",
+          "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/AUDI096-390.png",
+      "archivo": "reportes/correcciones-076/qa-publica/movil/AUDI096-390.png",
       "sha256": "9212878265b6ee0aa497c4942fafe37f81311fb97ac0b25bc8b63c1c6395e6ac",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/AUDI096-1280.png",
+        "archivo": "reportes/correcciones-076/qa-publica/movil/AUDI096-1280.png",
         "sha256": "52ce833e908ec4f36458d7c6026b46704ec47cd80886e98904c725cee7e4ddbd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

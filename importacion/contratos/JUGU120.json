@@ -125,9 +125,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu120-juguete-moto-coleccionable-harley-davison-mediana/",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Moto de colección. Miniatura de motocicleta. Dos retrovisores y faro frontal. Negro con detalles dorados.",
   "compatibilidad": null,
   "contenido_venta": {
@@ -202,14 +202,18 @@
       "sha256_maestro": "3f51027337bf7dee1fd6224d3dbc3962d3efddc6ec543ece6f9cda0d5bb49f07"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "JUGU120"
     },
     "movil": {
       "solicitado": "JUGU120",
       "sku": "JUGU120",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:17.462Z",
+      "fecha": "2026-10-14T00:14:59.226Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -237,8 +241,8 @@
       "url_comprobada": "http://127.0.0.1:8767/productos/jugu120-juguete-moto-coleccionable-harley-davison-mediana/",
       "archivo_html": "productos/jugu120-juguete-moto-coleccionable-harley-davison-mediana/index.html",
       "http": 200,
-      "sha256_html": "ce6c3fbfa2340c0b090a06ed1d274c94e797afa313dbe6b7294cc59d8ea046d4",
-      "sha256_html_local": "ce6c3fbfa2340c0b090a06ed1d274c94e797afa313dbe6b7294cc59d8ea046d4",
+      "sha256_html": "6bf2ccf3bc5bd45d76a0f6cb39e5da8ce435cd505d9ce4ee4d0ea61dffd8276d",
+      "sha256_html_local": "6bf2ccf3bc5bd45d76a0f6cb39e5da8ce435cd505d9ce4ee4d0ea61dffd8276d",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -288,12 +292,12 @@
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/JUGU120-390.png",
+      "archivo": "reportes/correcciones-076/qa-local/contenido-corregido/JUGU120-390.png",
       "sha256": "edf71729dd77305863e0a037c5103ac0a163f23a5e2d4f28f27a0620eab322ba",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/JUGU120-1280.png",
+        "archivo": "reportes/correcciones-076/qa-local/contenido-corregido/JUGU120-1280.png",
         "sha256": "9d7243cdbc725a666423a2c9fbb82eea6afb87725baa3a0a8fe2563834b21e85",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

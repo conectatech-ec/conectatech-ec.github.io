@@ -161,9 +161,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/powe015-powerbank-treqa-multiples-cables/",
-  "fecha_verificacion": "2026-10-14T00:04:05.677191+00:00",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "descripcion": "Powerbank TR-967 negro con capacidad nominal impresa de 20.000 mAh y cuatro cables integrados. Su panel reúne conexiones USB-A, USB-C y micro-USB, dos luces LED y botón. Confirma el conector adecuado para tu dispositivo.",
   "contenido_venta": "1 powerbank con cuatro cables integrados. No se afirma cargador de pared incluido.",
   "compatibilidad": "Dispositivos compatibles con los conectores disponibles; confirma los requisitos de carga de tu equipo. No se afirma una potencia ni protocolo no verificado.",
@@ -263,14 +263,18 @@
       "evidencia": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Vista superior propia completa: pantalla apagada con FAST CHARGING, dos LED, entradas MICRO/TYPE-C, dos salidas USB-A (naranja/negro) y botón, conservados; no se inventa porcentaje de carga. El maestro de cuerpo/cables se reserva por microtextos insuficientemente fieles."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "POWE015"
     },
     "movil": {
       "solicitado": "POWE015",
       "sku": "POWE015",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:29.647Z",
+      "fecha": "2026-10-14T00:13:45.144Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -295,7 +299,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/powe015-powerbank-treqa-multiples-cables/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/powe015-powerbank-treqa-multiples-cables/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/powe015-powerbank-treqa-multiples-cables/",
       "archivo_html": "productos/powe015-powerbank-treqa-multiples-cables/index.html",
       "http": 200,
       "sha256_html": "ee5ea1331df38937aa8f4a19a040181809c67b552a48a6cf84f95d21a4cc7214",
@@ -305,7 +309,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/powe015/POWE015-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/powe015/POWE015-01-600.webp?v=6e21fa364a874a8e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/powe015/POWE015-01-600.webp?v=6e21fa364a874a8e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -314,32 +318,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/powe015-powerbank-treqa-multiples-cables/",
+          "url": "https://conectatech-ec.github.io/productos/powe015-powerbank-treqa-multiples-cables/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/powe015/POWE015-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/powe015/POWE015-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/POWE015-390.png",
+      "archivo": "reportes/correcciones-076/qa-publica/movil/POWE015-390.png",
       "sha256": "4f96cf2222c1e515866cab0e4e2812de5f08c04bf5e4a85eeb475c0057a5e969",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/POWE015-1280.png",
+        "archivo": "reportes/correcciones-076/qa-publica/movil/POWE015-1280.png",
         "sha256": "794460ab5f4c0a11b1b42757cb51a2ca153023f2f6ca5bdbba9f4bc282eef9ca",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

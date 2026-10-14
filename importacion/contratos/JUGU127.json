@@ -209,14 +209,18 @@
       "sha256_maestro": "1180b65e944d94ca251762bc8f491a4d51ef21301982a23d3d7f79585fe58c04"
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Corrección candidata en rama independiente; sesión antigua activa. La evidencia pública histórica no valida estos cambios."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T00:13:28.213633+00:00",
+      "reporte": "reportes/correcciones-076/http-publicacion.json",
+      "archivo": "reportes/correcciones-076/http-publicacion.json",
+      "sha256": "8e33ab7c3c399dfffed41af204a409c04c4e3867da9f012f2842f473acf9ae14",
+      "sku": "JUGU127"
     },
     "movil": {
       "solicitado": "JUGU127",
       "sku": "JUGU127",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:05:16.483Z",
+      "fecha": "2026-10-14T00:13:27.234Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -241,7 +245,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu127-juguete-camara-instantanea-para-nios-as/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/jugu127-juguete-camara-instantanea-para-nios-as/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu127-juguete-camara-instantanea-para-nios-as/",
       "archivo_html": "productos/jugu127-juguete-camara-instantanea-para-nios-as/index.html",
       "http": 200,
       "sha256_html": "2e672fbd58d16b10347a1ddc1aa58825d0fc09124c36624c79e4725702f83de5",
@@ -251,7 +255,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu127/JUGU127-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/jugu127/JUGU127-01-600.webp?v=851dddcbc7f6c293",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu127/JUGU127-01-600.webp?v=851dddcbc7f6c293",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -260,47 +264,47 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/jugu127-juguete-camara-instantanea-para-nios-as/",
+          "url": "https://conectatech-ec.github.io/productos/jugu127-juguete-camara-instantanea-para-nios-as/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/jugu127/JUGU127-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu127/JUGU127-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/jugu002-juguete-bicicleta-hyper-realista-coleccionable/",
+          "url": "https://conectatech-ec.github.io/productos/jugu002-juguete-bicicleta-hyper-realista-coleccionable/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/jugu087-juguete-moto-coleccionable-mediana-ver-2/",
+          "url": "https://conectatech-ec.github.io/productos/jugu087-juguete-moto-coleccionable-mediana-ver-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/productos/jugu091-juguete-carro-coleccionable-deportivo-semi-mediano-varios-modelos/",
+          "url": "https://conectatech-ec.github.io/productos/jugu091-juguete-carro-coleccionable-deportivo-semi-mediano-varios-modelos/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-076/qa-local/movil/JUGU127-390.png",
+      "archivo": "reportes/correcciones-076/qa-publica/movil/JUGU127-390.png",
       "sha256": "750370a42b6ca19c567ba826e8b3c05a114db7ae7ddf2712e1f05eab0f303dc2",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-local/movil/JUGU127-1280.png",
+        "archivo": "reportes/correcciones-076/qa-publica/movil/JUGU127-1280.png",
         "sha256": "9bb0358782a36bceded4bdf62ab5f1e0d7c1d3a535f3c344e257d3f3f861cd43",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
@@ -308,8 +312,8 @@
     }
   },
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
-  "fecha_verificacion": "2026-10-14T00:03:43.493657+00:00",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "fecha_verificacion": "2026-10-14T00:13:28.213633+00:00",
   "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2127,2128,2129,2130,2131,2132,2133; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "derechos_imagen": {
