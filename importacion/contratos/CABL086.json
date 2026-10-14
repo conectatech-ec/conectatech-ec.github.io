@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl086-cable-1-4-mono-a-xlr-canon-para-microfono/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Cable para micrófono | XLR hembra a plug mono 6,35 mm. XLR hembra de 3 contactos a plug mono TS macho de 6,35 mm. Cable con conectores metálicos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Comprueba que los conectores de ambos equipos coincidan. No convierte formatos ni garantiza funciones que no admita el equipo.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "CABL086"
     },
     "movil": {
       "solicitado": "CABL086",
       "sku": "CABL086",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:19:00.551Z",
+      "fecha": "2026-10-14T04:27:54.394Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl086-cable-1-4-mono-a-xlr-canon-para-microfono/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl086-cable-1-4-mono-a-xlr-canon-para-microfono/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl086-cable-1-4-mono-a-xlr-canon-para-microfono/",
       "archivo_html": "productos/cabl086-cable-1-4-mono-a-xlr-canon-para-microfono/index.html",
       "http": 200,
       "sha256_html": "34a2ddf52c23cbc797b243df345a0c3fea558f14a8e202f227a8f668af109075",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl086/CABL086-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl086/CABL086-01-600.webp?v=fb21518704019b3c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl086/CABL086-01-600.webp?v=fb21518704019b3c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl086-cable-1-4-mono-a-xlr-canon-para-microfono/",
+          "url": "https://conectatech-ec.github.io/productos/cabl086-cable-1-4-mono-a-xlr-canon-para-microfono/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl086/CABL086-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl086/CABL086-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/CABL086-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL086-390.png",
       "sha256": "58fc10f533d4bbc758569508391a3caa8a2b455427275b67a0b2d5d26ee9d139",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/CABL086-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL086-1280.png",
         "sha256": "dcfe211e028f28b557d6390cd4d29c5b9cec5ed7daf0694b7f5b4c6d7b077f32",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

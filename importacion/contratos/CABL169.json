@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl169-cable-de-red-10m-monster-cat-6/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Cable de red Monster CAT6 | 10 m. RJ45 macho a RJ45 macho. Longitud nominal de 10 m. Cable UTP de categoría 6 según empaque.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Comprueba que los conectores de ambos equipos coincidan. No convierte formatos ni garantiza funciones que no admita el equipo.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "CABL169"
     },
     "movil": {
       "solicitado": "CABL169",
       "sku": "CABL169",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:19:11.837Z",
+      "fecha": "2026-10-14T04:28:09.269Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl169-cable-de-red-10m-monster-cat-6/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl169-cable-de-red-10m-monster-cat-6/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl169-cable-de-red-10m-monster-cat-6/",
       "archivo_html": "productos/cabl169-cable-de-red-10m-monster-cat-6/index.html",
       "http": 200,
       "sha256_html": "27f6ee9cdd5cd52d91ebeb68b92a3eed2785d9286ac765c211b239d28f4888d8",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl169/CABL169-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl169/CABL169-01-600.webp?v=e3cfec6324fd421a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl169/CABL169-01-600.webp?v=e3cfec6324fd421a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl169-cable-de-red-10m-monster-cat-6/",
+          "url": "https://conectatech-ec.github.io/productos/cabl169-cable-de-red-10m-monster-cat-6/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl169/CABL169-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl169/CABL169-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/CABL169-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL169-390.png",
       "sha256": "047ff02b2b0cae2ed51df2e9a133d652d360118937f523253a0ea6f11b0a1d44",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/CABL169-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL169-1280.png",
         "sha256": "3bb8c7bb6b33d69a4e79d1e1681a7494b486a8b1dbf9c5c9074143c2a2a9ba41",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

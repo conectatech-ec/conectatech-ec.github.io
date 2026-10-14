@@ -125,9 +125,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg039-cargador-para-vehiculo-multiple-4-en-1/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Cargador vehicular de cuerpo negro con cables retráctiles USB-C y Lightning integrados, además de un puerto USB-A y un USB-C. Su conexión a la toma dispone de articulación; consulta los requisitos de tu equipo.",
   "contenido_venta": "1 cargador con sus 2 cables integrados. No incluye dispositivos.",
   "compatibilidad": "Verifica la toma del vehículo, el protocolo del dispositivo y el cable requerido. No se garantiza la potencia máxima por puerto ni compatibilidad universal.",
@@ -230,14 +230,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "CARG039"
     },
     "movil": {
       "solicitado": "CARG039",
       "sku": "CARG039",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:18:44.044Z",
+      "fecha": "2026-10-14T04:27:34.416Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -262,7 +266,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg039-cargador-para-vehiculo-multiple-4-en-1/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/carg039-cargador-para-vehiculo-multiple-4-en-1/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg039-cargador-para-vehiculo-multiple-4-en-1/",
       "archivo_html": "productos/carg039-cargador-para-vehiculo-multiple-4-en-1/index.html",
       "http": 200,
       "sha256_html": "b084e8a14e02c727ecd6d2a0e7ce224b12ba83f68a6eb0935290d9c6e4b02180",
@@ -272,7 +276,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg039/CARG039-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/carg039/CARG039-01-600.webp?v=fdc38ead84bc0698",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg039/CARG039-01-600.webp?v=fdc38ead84bc0698",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -281,32 +285,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/carg039-cargador-para-vehiculo-multiple-4-en-1/",
+          "url": "https://conectatech-ec.github.io/productos/carg039-cargador-para-vehiculo-multiple-4-en-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/carg039/CARG039-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg039/CARG039-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/CARG039-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/CARG039-390.png",
       "sha256": "a474849bf44cce7d434e872bccae60d979cf49933c2d465a41e529e42d90e7b2",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/CARG039-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/CARG039-1280.png",
         "sha256": "48daa766df5433430bd301f444bfacc6c04897c8c54e6e19128e7d427eba53eb",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

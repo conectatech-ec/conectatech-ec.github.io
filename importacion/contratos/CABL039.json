@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl039-cable-de-red-hp-cat-6-3m/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Cable de red HP CAT6 | 3 m. RJ45 macho a RJ45 macho. Longitud nominal de 3 m. Cubierta plana según fotografía física.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Comprueba que los conectores de ambos equipos coincidan. No convierte formatos ni garantiza funciones que no admita el equipo.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "CABL039"
     },
     "movil": {
       "solicitado": "CABL039",
       "sku": "CABL039",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:19:16.423Z",
+      "fecha": "2026-10-14T04:28:15.153Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl039-cable-de-red-hp-cat-6-3m/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl039-cable-de-red-hp-cat-6-3m/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl039-cable-de-red-hp-cat-6-3m/",
       "archivo_html": "productos/cabl039-cable-de-red-hp-cat-6-3m/index.html",
       "http": 200,
       "sha256_html": "ebd991b106a2c9acbd2aead384f8c613077ca354820b09405c06753584b46376",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl039/CABL039-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl039/CABL039-01-600.webp?v=938f0e154a3e5085",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl039/CABL039-01-600.webp?v=938f0e154a3e5085",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl039-cable-de-red-hp-cat-6-3m/",
+          "url": "https://conectatech-ec.github.io/productos/cabl039-cable-de-red-hp-cat-6-3m/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl039/CABL039-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl039/CABL039-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/CABL039-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL039-390.png",
       "sha256": "ca54dc6feb9c14b9f0c8d6cb7f82cf22a0c8d127f2c0ba985e2fb89ccf1131f4",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/CABL039-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL039-1280.png",
         "sha256": "0ff7b66be0b1c1fbf3facf74405f5d83c9ce5549ea3028d9616bcff785466489",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

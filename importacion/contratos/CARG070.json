@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg070-cargador-para-vehiculo-powercar-140-klipxtreme/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Cargador para vehículo Klipxtreme PowerCar 140 con 2 USB-C y 1 USB-A. Potencia nominal de hasta 140 w combinados según empaque; depende del protocolo y conexiones utilizadas. Presentación compacta para equipos compatibles.",
   "contenido_venta": "1 cargador. No incluye cables ni dispositivos.",
   "compatibilidad": "Verifica la toma del vehículo, el protocolo del dispositivo y el cable requerido. No se garantiza la potencia máxima por puerto ni compatibilidad universal.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "CARG070"
     },
     "movil": {
       "solicitado": "CARG070",
       "sku": "CARG070",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:18:39.093Z",
+      "fecha": "2026-10-14T04:27:28.821Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg070-cargador-para-vehiculo-powercar-140-klipxtreme/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/carg070-cargador-para-vehiculo-powercar-140-klipxtreme/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg070-cargador-para-vehiculo-powercar-140-klipxtreme/",
       "archivo_html": "productos/carg070-cargador-para-vehiculo-powercar-140-klipxtreme/index.html",
       "http": 200,
       "sha256_html": "589535cfa647e9855396487d61513e8ee35dc67e8d8fa68d201debe4850446cd",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg070/CARG070-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/carg070/CARG070-01-600.webp?v=9bef52d3d08eac5c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg070/CARG070-01-600.webp?v=9bef52d3d08eac5c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/carg070-cargador-para-vehiculo-powercar-140-klipxtreme/",
+          "url": "https://conectatech-ec.github.io/productos/carg070-cargador-para-vehiculo-powercar-140-klipxtreme/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/carg070/CARG070-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg070/CARG070-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/CARG070-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/CARG070-390.png",
       "sha256": "92c00bae4f5b2aac70e9ad5faece98c3e042770a2efd88acbc034fb15e54aa7f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/CARG070-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/CARG070-1280.png",
         "sha256": "a2c0a86a5e2e0ca36cb922b543d3db875115c7f8bff6f37cd4a587c3b8730193",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

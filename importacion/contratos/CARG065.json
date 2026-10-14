@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg065-cargador-para-vehiculo-ugreen-52-5w/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Cargador para vehículo Ugreen 52,5 W con 1 USB-A y 1 USB-C. Potencia nominal de hasta 52,5 w combinados según empaque; depende del protocolo y conexiones utilizadas. Presentación compacta para equipos compatibles.",
   "contenido_venta": "1 cargador. No incluye cables ni dispositivos.",
   "compatibilidad": "Verifica la toma del vehículo, el protocolo del dispositivo y el cable requerido. No se garantiza la potencia máxima por puerto ni compatibilidad universal.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "CARG065"
     },
     "movil": {
       "solicitado": "CARG065",
       "sku": "CARG065",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:18:38.120Z",
+      "fecha": "2026-10-14T04:27:27.625Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg065-cargador-para-vehiculo-ugreen-52-5w/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/carg065-cargador-para-vehiculo-ugreen-52-5w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg065-cargador-para-vehiculo-ugreen-52-5w/",
       "archivo_html": "productos/carg065-cargador-para-vehiculo-ugreen-52-5w/index.html",
       "http": 200,
       "sha256_html": "10bcb179875f69ad14de1b7fe9d6b28960da388f0a74c1d92d548c3a0471f0c5",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg065/CARG065-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/carg065/CARG065-01-600.webp?v=f16399e5cccef79b",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg065/CARG065-01-600.webp?v=f16399e5cccef79b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/carg065-cargador-para-vehiculo-ugreen-52-5w/",
+          "url": "https://conectatech-ec.github.io/productos/carg065-cargador-para-vehiculo-ugreen-52-5w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/carg065/CARG065-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg065/CARG065-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/CARG065-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/CARG065-390.png",
       "sha256": "839097b1a595cd710e71e66612083696016db6613fbbbd92b1c92118b69e8d70",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/CARG065-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/CARG065-1280.png",
         "sha256": "70dca8cffba58a0bef094cee7b4b00de69fde810a89d42911f9199f4744d1d9d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -101,9 +101,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/powe017-powerbank-pinleyou-y415-10000mah/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Powerbank Pinleyou Y415 de capacidad nominal de 10000 mAh con cuatro cables integrados y pantalla circular. Presentación negra basada en la referencia principal del modelo.",
   "contenido_venta": "1 powerbank con sus 4 cables integrados. No incluye teléfono.",
   "compatibilidad": "Comprueba conexión y protocolo de carga de tu equipo. Capacidad nominal distinta de la energía efectiva entregada; no se garantiza un número de cargas. No se declara potencia máxima porque el empaque presenta cifras incompatibles.",
@@ -198,14 +198,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "POWE017"
     },
     "movil": {
       "solicitado": "POWE017",
       "sku": "POWE017",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:18:47.105Z",
+      "fecha": "2026-10-14T04:27:37.538Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -230,7 +234,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/powe017-powerbank-pinleyou-y415-10000mah/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/powe017-powerbank-pinleyou-y415-10000mah/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/powe017-powerbank-pinleyou-y415-10000mah/",
       "archivo_html": "productos/powe017-powerbank-pinleyou-y415-10000mah/index.html",
       "http": 200,
       "sha256_html": "bfc8c2a9ee367180e12c0febbd9595be7a6882b44415d38b6a31a5bdb0a1d8d8",
@@ -240,7 +244,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/powe017/POWE017-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/powe017/POWE017-01-600.webp?v=64129ac534e3b707",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/powe017/POWE017-01-600.webp?v=64129ac534e3b707",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -249,32 +253,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/powe017-powerbank-pinleyou-y415-10000mah/",
+          "url": "https://conectatech-ec.github.io/productos/powe017-powerbank-pinleyou-y415-10000mah/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/powe017/POWE017-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/powe017/POWE017-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/POWE017-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/POWE017-390.png",
       "sha256": "3777706c36bcbd11c72964e0aefd18bde608e28a46deb9be3e48fb031ce6dd24",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/POWE017-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/POWE017-1280.png",
         "sha256": "d0234a6e02cecc58c0659ac7213987213140d11f09e07053f4ee6327bc420567",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

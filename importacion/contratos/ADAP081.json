@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap081-adaptador-splitter-switch-hdmi-bidireccional-env/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Switch HDMI ENV con selección manual y tres conexiones. Permite alternar dos fuentes hacia una pantalla o seleccionar una de dos pantallas desde una fuente; no ofrece dos salidas simultáneas.",
   "contenido_venta": "1 adaptador. No incluye dispositivos ni cables adicionales mostrados.",
   "compatibilidad": "Verifica formato de señal y cables. En modo 1 a 2 se selecciona una salida, no se duplica simultáneamente en ambas pantallas.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "ADAP081"
     },
     "movil": {
       "solicitado": "ADAP081",
       "sku": "ADAP081",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:18:54.418Z",
+      "fecha": "2026-10-14T04:27:46.304Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap081-adaptador-splitter-switch-hdmi-bidireccional-env/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/adap081-adaptador-splitter-switch-hdmi-bidireccional-env/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap081-adaptador-splitter-switch-hdmi-bidireccional-env/",
       "archivo_html": "productos/adap081-adaptador-splitter-switch-hdmi-bidireccional-env/index.html",
       "http": 200,
       "sha256_html": "96fd91d73ad0a9930f861d30a3c0415d49c6933bccc70e95fa19785437fabc34",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap081/ADAP081-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/adap081/ADAP081-01-600.webp?v=268129c71397a1ce",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap081/ADAP081-01-600.webp?v=268129c71397a1ce",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/adap081-adaptador-splitter-switch-hdmi-bidireccional-env/",
+          "url": "https://conectatech-ec.github.io/productos/adap081-adaptador-splitter-switch-hdmi-bidireccional-env/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/adap081/ADAP081-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap081/ADAP081-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/ADAP081-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/ADAP081-390.png",
       "sha256": "6f1aeee265b859692b74b4c9e91eccfd01a1214c68f8b0fe0214ab6095c812f1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/ADAP081-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/ADAP081-1280.png",
         "sha256": "bd957cda8a227dbcfcd80f7b7ce40fde4060bbc080e341cc8bd53f07b567d9aa",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

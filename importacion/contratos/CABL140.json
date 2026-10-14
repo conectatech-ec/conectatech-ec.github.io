@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl140-cable-usb-a-a-usb-c-reshurk-6a/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Cable Reshurk RE-161 | USB-A a USB-C 1 m. USB-A macho a USB-C macho. Longitud nominal de 1 m. Cubierta trenzada.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Comprueba que los conectores de ambos equipos coincidan. No convierte formatos ni garantiza funciones que no admita el equipo.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "CABL140"
     },
     "movil": {
       "solicitado": "CABL140",
       "sku": "CABL140",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:18:57.856Z",
+      "fecha": "2026-10-14T04:27:50.718Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl140-cable-usb-a-a-usb-c-reshurk-6a/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl140-cable-usb-a-a-usb-c-reshurk-6a/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl140-cable-usb-a-a-usb-c-reshurk-6a/",
       "archivo_html": "productos/cabl140-cable-usb-a-a-usb-c-reshurk-6a/index.html",
       "http": 200,
       "sha256_html": "127e496ed2f6cb685beb289860e083eb06a2295490e2637a7b90ba415b106688",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl140/CABL140-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl140/CABL140-01-600.webp?v=b88d0e2723cfaad3",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl140/CABL140-01-600.webp?v=b88d0e2723cfaad3",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl140-cable-usb-a-a-usb-c-reshurk-6a/",
+          "url": "https://conectatech-ec.github.io/productos/cabl140-cable-usb-a-a-usb-c-reshurk-6a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl140/CABL140-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl140/CABL140-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/CABL140-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL140-390.png",
       "sha256": "3771d58394d536fb712d614feab17f7641d11691cdafa5f9552e787e58ee2281",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/CABL140-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL140-1280.png",
         "sha256": "3b927462dec8df69c41d6df368ddf1f85857b6de93fc0437a7b075274eec4da7",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

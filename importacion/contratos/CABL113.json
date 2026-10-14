@@ -89,9 +89,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl113-cable-usb-c-a-usb-c-1m-1hora/",
-  "fecha_verificacion": "2026-10-14T04:17:13.306366+00:00",
+  "fecha_verificacion": "2026-10-14T04:27:27.476918+00:00",
   "descripcion": "Cable 1HORA CAB272 | USB-C a USB-C 1 m. USB-C macho a USB-C macho. Longitud nominal de 1 m. Cable de carga y datos según empaque.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Comprueba que los conectores de ambos equipos coincidan. No convierte formatos ni garantiza funciones que no admita el equipo.",
@@ -182,14 +182,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Referencia propia física o de empaque/modelo identificado: representación comercial asistida autorizada, no se declara fotografía física directa si procede de ilustración. Geometría, modelo, color, conectores y número de piezas contrastados. Producto completo, fondo blanco y acabado nuevo; sin caja, datos privados ni accesorios inventados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T04:27:27.476918+00:00",
+      "reporte": "reportes/continuacion-081/http-publicacion.json",
+      "archivo": "reportes/continuacion-081/http-publicacion.json",
+      "sha256": "45a47cf54295ca169afbc85b95bb552bba0adedea9abb9e256ff7a7da514bd7a",
+      "sku": "CABL113"
     },
     "movil": {
       "solicitado": "CABL113",
       "sku": "CABL113",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T04:18:58.770Z",
+      "fecha": "2026-10-14T04:27:51.816Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -214,7 +218,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl113-cable-usb-c-a-usb-c-1m-1hora/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/cabl113-cable-usb-c-a-usb-c-1m-1hora/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl113-cable-usb-c-a-usb-c-1m-1hora/",
       "archivo_html": "productos/cabl113-cable-usb-c-a-usb-c-1m-1hora/index.html",
       "http": 200,
       "sha256_html": "f0a21e53d9e1d0104f27e873ae858066df0cde47d713fbd237e55c2679690e8e",
@@ -224,7 +228,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl113/CABL113-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/cabl113/CABL113-01-600.webp?v=5820eeeed8ee9f0c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl113/CABL113-01-600.webp?v=5820eeeed8ee9f0c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -233,32 +237,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8767/productos/cabl113-cable-usb-c-a-usb-c-1m-1hora/",
+          "url": "https://conectatech-ec.github.io/productos/cabl113-cable-usb-c-a-usb-c-1m-1hora/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8767/imagenes/cabl113/CABL113-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl113/CABL113-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-081/qa-local/fichas/CABL113-390.png",
+      "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL113-390.png",
       "sha256": "54a8eb8634b986dac7b6586cc031d9cf180c4e143c031e8d4e6383692b93222e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-081/qa-local/fichas/CABL113-1280.png",
+        "archivo": "reportes/continuacion-081/qa-publica/fichas/CABL113-1280.png",
         "sha256": "62ab53b92eb658d9796a7b594ddb532513a66d1cfc36f5c1e20132e5faf66fcb",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
