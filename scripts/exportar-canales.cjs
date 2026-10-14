@@ -7,6 +7,32 @@ const products=JSON.parse(m[1]);
 const content=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
 const urls=JSON.parse(fs.readFileSync('seo-pages.json','utf8'));
 const base='https://conectatech-ec.github.io';
+// Categorías del mismo inventario público593; no inferirlas del título o del SKU.
+function parseMasterCSV(str){
+ const records=[];let record=[],cell='',quoted=false;
+ for(let i=0;i<str.length;i++){
+  const c=str[i];
+  if(c==='"'){if(quoted&&str[i+1]==='"'){cell+='"';i++;}else quoted=!quoted;}
+  else if(c===','&&!quoted){record.push(cell);cell='';}
+  else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&str[i+1]==='\n')i++;record.push(cell);cell='';if(record.some(x=>x!==''))records.push(record);record=[];}
+  else cell+=c;
+ }
+ if(quoted)throw Error('Inventario593: comillas sin cerrar');
+ if(record.length||cell){record.push(cell);records.push(record);}
+ const headers=(records.shift()||[]).map(h=>h.replace(/^\uFEFF/,'').trim());
+ if(!headers.includes('sku')||!headers.includes('categoria'))throw Error('Inventario593 sin SKU/categoría');
+ return records.map((r,i)=>{if(r.length!==headers.length)throw Error('Inventario593: columnas inconsistentes en fila '+(i+2));return Object.fromEntries(headers.map((h,j)=>[h,r[j].trim()]));});
+}
+const masterCategories=new Map();
+for(const row of parseMasterCSV(fs.readFileSync('datos-593/inventario-publico.csv','utf8'))){
+ if(masterCategories.has(row.sku))throw Error('SKU duplicado en inventario593: '+row.sku);
+ masterCategories.set(row.sku,row.categoria);
+}
+const productType=sku=>{
+ if(!masterCategories.has(sku))throw Error('SKU ausente en inventario593: '+sku);
+ const category=masterCategories.get(sku);
+ return sku.startsWith('TELF')&&category==='TELEFONOS'?'Celulares':category;
+};
 const csvField=x=>'"'+String(x??'').replace(/"/g,'""').replace(/\r?\n/g,' ').trim()+'"';
 const csv=(columns,rows)=>[columns.join(','),...rows.map(row=>columns.map(key=>csvField(row[key])).join(','))].join('\n')+'\n';
 const rows=products.filter(p=>p.stock>0&&p.promo>0).map(p=>{
@@ -32,13 +58,15 @@ const knownBrand=sku=>{
   if(['TELF011','TELF012'].includes(sku))return 'Samsung';
   return '';
 };
-const meta=ready.map(p=>({id:p.sku,title:p.title,description:p.description,availability:p.availability,condition:p.condition,price:p.price,link:p.link,image_link:p.image_link,brand:knownBrand(p.sku)}));
-fs.writeFileSync('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand'],meta));
+const meta=ready.map(p=>({id:p.sku,title:p.title,description:p.description,availability:p.availability,condition:p.condition,price:p.price,link:p.link,image_link:p.image_link,brand:knownBrand(p.sku),product_type:productType(p.sku)}));
+fs.writeFileSync('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand','product_type'],meta));
 fs.writeFileSync('exportaciones/resumen-canales.json',JSON.stringify({
  generated_at:new Date().toISOString(),total_products:rows.length,
  with_image_url:ready.length,without_image_url:rows.length-ready.length,
  meta_pilot_items:ready.length,
  with_recognized_brand:meta.filter(p=>p.brand).length,
+ with_product_type:meta.filter(p=>p.product_type).length,
+ without_master_category:meta.filter(p=>!p.product_type).map(p=>p.id),
  note:'Archivo piloto para revisión en Commerce Manager; publicación, elegibilidad, fotografía y políticas requieren validación. No publica anuncios en Marketplace.'
 },null,2)+'\n');
 console.log('Exportaciones creadas: '+rows.length+' productos, '+ready.length+' con URL de imagen.');
