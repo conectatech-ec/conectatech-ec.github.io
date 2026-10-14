@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl128-cable-usb-c-a-hdmi-2m-andowl/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable Andowl Q-HD613 | USB-C a HDMI 2 m. USB-C macho a HDMI-A macho. Longitud nominal de 2 m. Conectores metálicos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Requiere salida de video por USB-C compatible y pantalla HDMI. Resolución y frecuencia dependen del equipo; no se garantiza video desde un puerto sólo de carga.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL128"
     },
     "movil": {
       "solicitado": "CABL128",
       "sku": "CABL128",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:47.535Z",
+      "fecha": "2026-10-14T18:32:28.878Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl128-cable-usb-c-a-hdmi-2m-andowl/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl128-cable-usb-c-a-hdmi-2m-andowl/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl128-cable-usb-c-a-hdmi-2m-andowl/",
       "archivo_html": "productos/cabl128-cable-usb-c-a-hdmi-2m-andowl/index.html",
       "http": 200,
       "sha256_html": "8d7dd0b09afb1a46abd582770f4c0a8551a02a867501c7b9c2a624c46368dee9",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl128/CABL128-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl128/CABL128-01-600.webp?v=b73112326758e265",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl128/CABL128-01-600.webp?v=b73112326758e265",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl128-cable-usb-c-a-hdmi-2m-andowl/",
+          "url": "https://conectatech-ec.github.io/productos/cabl128-cable-usb-c-a-hdmi-2m-andowl/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl128/CABL128-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl128/CABL128-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL128-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL128-390.png",
       "sha256": "4cac6cdd2925cde0caa9c26ae5699ae8c11a1828476744efcaa4f449492e2a08",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL128-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL128-1280.png",
         "sha256": "cffb224507cf87aed1bd57c4a7878b940adb24a803ffa4f6d636e481b9397211",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl009-cable-usb-c-a-usb-c-gerlax-gd-46t/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable Gerlax GD-46T | USB-C a USB-C 1 m. USB-C macho a USB-C macho. Longitud nominal de 1 m. Cubierta trenzada y conectores metálicos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica conectores y requisitos de tus equipos. No convierte formatos ni garantiza funciones o velocidades que no admitan los dispositivos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL009"
     },
     "movil": {
       "solicitado": "CABL009",
       "sku": "CABL009",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:52.180Z",
+      "fecha": "2026-10-14T18:32:34.859Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl009-cable-usb-c-a-usb-c-gerlax-gd-46t/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl009-cable-usb-c-a-usb-c-gerlax-gd-46t/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl009-cable-usb-c-a-usb-c-gerlax-gd-46t/",
       "archivo_html": "productos/cabl009-cable-usb-c-a-usb-c-gerlax-gd-46t/index.html",
       "http": 200,
       "sha256_html": "4d36fddfe43040d33b07925f2f4b7546c813f35762fdde2cc65d6c8cae0f5a00",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl009/CABL009-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl009/CABL009-01-600.webp?v=97f88ca041a99c59",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl009/CABL009-01-600.webp?v=97f88ca041a99c59",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl009-cable-usb-c-a-usb-c-gerlax-gd-46t/",
+          "url": "https://conectatech-ec.github.io/productos/cabl009-cable-usb-c-a-usb-c-gerlax-gd-46t/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl009/CABL009-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl009/CABL009-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL009-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL009-390.png",
       "sha256": "e79b4cf4e9afa477ba038bfd7fa8667d24eb31612e97123b6262182213ae2714",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL009-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL009-1280.png",
         "sha256": "053d61cafa0be0a612ee21eec16098e53783d7226d08228a558c07eab0c82d3c",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

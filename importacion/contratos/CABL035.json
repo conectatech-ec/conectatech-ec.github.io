@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl035-cable-usb-c-a-usb-c-2m-monster-power-flex/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable Monster PowerFlex | USB-C a USB-C 2 m. USB-C macho a USB-C macho. Longitud nominal de 2 m. Cubierta lisa flexible.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica conectores y requisitos de tus equipos. No convierte formatos ni garantiza funciones o velocidades que no admitan los dispositivos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL035"
     },
     "movil": {
       "solicitado": "CABL035",
       "sku": "CABL035",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:50.320Z",
+      "fecha": "2026-10-14T18:32:32.453Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl035-cable-usb-c-a-usb-c-2m-monster-power-flex/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl035-cable-usb-c-a-usb-c-2m-monster-power-flex/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl035-cable-usb-c-a-usb-c-2m-monster-power-flex/",
       "archivo_html": "productos/cabl035-cable-usb-c-a-usb-c-2m-monster-power-flex/index.html",
       "http": 200,
       "sha256_html": "cd055d84cc1a4c9f750870cd1e2e405554290255b0dbbe4dfe9e90e9deeadac5",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl035/CABL035-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl035/CABL035-01-600.webp?v=0e2a1aec1dda8c85",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl035/CABL035-01-600.webp?v=0e2a1aec1dda8c85",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl035-cable-usb-c-a-usb-c-2m-monster-power-flex/",
+          "url": "https://conectatech-ec.github.io/productos/cabl035-cable-usb-c-a-usb-c-2m-monster-power-flex/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl035/CABL035-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl035/CABL035-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL035-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL035-390.png",
       "sha256": "c1e891ee583ae703b0f4ceb64261463824cefe71cd7a26a6ccdc87f189406cd0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL035-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL035-1280.png",
         "sha256": "552d9f02c97eb7f8b83718ded4219768c09b17782910d0cf119eaffd3c1570d4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

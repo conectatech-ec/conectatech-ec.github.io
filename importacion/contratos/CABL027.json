@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl027-cable-iin-zii-usb-c-1m-8827/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable IIN&ZII Micro-USB | cinta plana 1 m. USB-A macho a Micro-USB 2.0 macho. Longitud nominal de 1 m. Cubierta plana y conectores metálicos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica conectores y requisitos de tus equipos. No convierte formatos ni garantiza funciones o velocidades que no admitan los dispositivos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado. Tipo Micro-USB cotejado en ilustración y texto MICRO del modelo exacto; nombre histórico593 dice USB-C y no se usa como prueba de conector. CSV593 intacto; nueva ficha presenta referencia comprobada."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL027"
     },
     "movil": {
       "solicitado": "CABL027",
       "sku": "CABL027",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:23.069Z",
+      "fecha": "2026-10-14T18:31:56.348Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl027-cable-iin-zii-usb-c-1m-8827/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl027-cable-iin-zii-usb-c-1m-8827/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl027-cable-iin-zii-usb-c-1m-8827/",
       "archivo_html": "productos/cabl027-cable-iin-zii-usb-c-1m-8827/index.html",
       "http": 200,
       "sha256_html": "88fbf4a91135fd76d77ceaad6b943c38108a138f6f76da7b77958b77a2db7551",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl027/CABL027-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl027/CABL027-01-600.webp?v=2f5ac93bbf883c17",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl027/CABL027-01-600.webp?v=2f5ac93bbf883c17",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl027-cable-iin-zii-usb-c-1m-8827/",
+          "url": "https://conectatech-ec.github.io/productos/cabl027-cable-iin-zii-usb-c-1m-8827/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl027/CABL027-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl027/CABL027-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL027-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL027-390.png",
       "sha256": "071d0d2120388c5909611485029b05884cb04eb0639dc2af16e380019a559c90",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL027-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL027-1280.png",
         "sha256": "a2c7c7deb1377ca52af600bd7046aa30758da596b186fedefd99c31afa40ac76",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

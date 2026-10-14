@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl108-cable-usb-c-a-usb-c-klipxtreme-1-8m-100w/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable Klipxtreme PowerGo 550 | USB-C 1,8 m. USB-C macho a USB-C macho. Longitud nominal de 1,8 m. Cubierta trenzada y cabezales metálicos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Comprueba potencia y protocolo del cargador, cable y dispositivo. El rendimiento depende del conjunto; el marcado del empaque no garantiza todas las funciones de USB-C.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL108"
     },
     "movil": {
       "solicitado": "CABL108",
       "sku": "CABL108",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:53.073Z",
+      "fecha": "2026-10-14T18:32:36.082Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl108-cable-usb-c-a-usb-c-klipxtreme-1-8m-100w/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl108-cable-usb-c-a-usb-c-klipxtreme-1-8m-100w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl108-cable-usb-c-a-usb-c-klipxtreme-1-8m-100w/",
       "archivo_html": "productos/cabl108-cable-usb-c-a-usb-c-klipxtreme-1-8m-100w/index.html",
       "http": 200,
       "sha256_html": "1bfe16ef696ffc61665d471fc8784ae1ad9879c3eb3bbef684f7651592b7b1a2",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl108/CABL108-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl108/CABL108-01-600.webp?v=a7af554021dbd833",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl108/CABL108-01-600.webp?v=a7af554021dbd833",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl108-cable-usb-c-a-usb-c-klipxtreme-1-8m-100w/",
+          "url": "https://conectatech-ec.github.io/productos/cabl108-cable-usb-c-a-usb-c-klipxtreme-1-8m-100w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl108/CABL108-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl108/CABL108-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL108-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL108-390.png",
       "sha256": "d7c10b7a932a2f8e6b74b1c72fd4a12d8b5469f2c8665243c6426949afc74ff0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL108-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL108-1280.png",
         "sha256": "0563f6728a729f2abf19661c4f8ff88aef9a9844f63a9c500ad6bc53d79b183f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

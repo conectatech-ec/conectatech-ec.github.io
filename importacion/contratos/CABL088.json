@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl088-cable-xlr-macho-a-xlr-hembra-canon/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable de micrófono XLR | macho a hembra. XLR macho de tres pines a XLR hembra de tres contactos. Conectores metálicos con alivio de tensión.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Requiere conexiones XLR de tres contactos y equipo compatible. No sustituye interfaces de audio ni adapta señales USB.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL088"
     },
     "movil": {
       "solicitado": "CABL088",
       "sku": "CABL088",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:16:00.369Z",
+      "fecha": "2026-10-14T18:32:46.173Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl088-cable-xlr-macho-a-xlr-hembra-canon/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl088-cable-xlr-macho-a-xlr-hembra-canon/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl088-cable-xlr-macho-a-xlr-hembra-canon/",
       "archivo_html": "productos/cabl088-cable-xlr-macho-a-xlr-hembra-canon/index.html",
       "http": 200,
       "sha256_html": "cd33b3604b78a9f76fc0e526284e322ac831f4a8418c8c4706efa4fb88ed21b7",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl088/CABL088-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl088/CABL088-01-600.webp?v=ee04324876fc5f13",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl088/CABL088-01-600.webp?v=ee04324876fc5f13",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl088-cable-xlr-macho-a-xlr-hembra-canon/",
+          "url": "https://conectatech-ec.github.io/productos/cabl088-cable-xlr-macho-a-xlr-hembra-canon/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl088/CABL088-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl088/CABL088-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL088-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL088-390.png",
       "sha256": "d6a9bc0e23c4452a263e471bcee9eac28a0527ba0651b68865df6a2df05edb81",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL088-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL088-1280.png",
         "sha256": "f5e351952b9cce8ba33eba64f51d55569988de4fdc90d9081cce12320af93086",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

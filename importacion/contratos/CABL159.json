@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl159-cable-multiple-4-en-1-65w-27w/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable plano | kit 4 en 1. USB-C a USB-C; adaptadores de entrada USB-A y salida Lightning. Cable plano con adaptadores sujetos.",
   "contenido_venta": "1 cable USB-C a USB-C con adaptadores sujetos: USB-C hembra a USB-A macho y USB-C hembra a Lightning macho.",
   "compatibilidad": "Comprueba combinación de conectores y requisitos de carga/datos. La denominación4en1 corresponde a combinaciones; no son cuatro salidas simultáneas.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL159"
     },
     "movil": {
       "solicitado": "CABL159",
       "sku": "CABL159",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:33.606Z",
+      "fecha": "2026-10-14T18:32:09.847Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl159-cable-multiple-4-en-1-65w-27w/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl159-cable-multiple-4-en-1-65w-27w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl159-cable-multiple-4-en-1-65w-27w/",
       "archivo_html": "productos/cabl159-cable-multiple-4-en-1-65w-27w/index.html",
       "http": 200,
       "sha256_html": "e387356a976bf32731d126a086f7e930ffb70344f0fe838fa5b870a6f91bfc9c",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl159/CABL159-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl159/CABL159-01-600.webp?v=b8325609bb20ace4",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl159/CABL159-01-600.webp?v=b8325609bb20ace4",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl159-cable-multiple-4-en-1-65w-27w/",
+          "url": "https://conectatech-ec.github.io/productos/cabl159-cable-multiple-4-en-1-65w-27w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl159/CABL159-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl159/CABL159-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL159-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL159-390.png",
       "sha256": "222a484f7b9e1fa9d043777475848c298799657c7216007c1d4f12dcfe657661",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL159-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL159-1280.png",
         "sha256": "c3bb8b90f5a6d44c47588d371b75f0f98154f440ce936bf2e6b01964b107f426",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

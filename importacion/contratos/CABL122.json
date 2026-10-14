@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl122-cable-usb-a-a-hdmi/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable USB-A a HDMI. USB-A macho a HDMI-A macho. Conectores moldeados.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "La salida de video requiere hardware/software y controladores compatibles. No convierte cualquier puerto USB-A en HDMI de forma universal; comprueba sistema y equipo antes de comprar.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL122"
     },
     "movil": {
       "solicitado": "CABL122",
       "sku": "CABL122",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:37.457Z",
+      "fecha": "2026-10-14T18:32:14.793Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl122-cable-usb-a-a-hdmi/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl122-cable-usb-a-a-hdmi/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl122-cable-usb-a-a-hdmi/",
       "archivo_html": "productos/cabl122-cable-usb-a-a-hdmi/index.html",
       "http": 200,
       "sha256_html": "cfaa3928165a0295371db8c567f14855ac919ebe3f3b60065abf2227e0804a26",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl122/CABL122-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl122/CABL122-01-600.webp?v=aa402963d76e3c7e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl122/CABL122-01-600.webp?v=aa402963d76e3c7e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl122-cable-usb-a-a-hdmi/",
+          "url": "https://conectatech-ec.github.io/productos/cabl122-cable-usb-a-a-hdmi/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl122/CABL122-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl122/CABL122-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL122-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL122-390.png",
       "sha256": "f9eb9834a497cf1c437e3c810fd9e83d6d493258706da14af1dfa46dc30654d4",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL122-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL122-1280.png",
         "sha256": "2a765a4f1d2811fdfd1573b8616edeb8fa3209300c8cc76d9b4cced48adb59cf",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

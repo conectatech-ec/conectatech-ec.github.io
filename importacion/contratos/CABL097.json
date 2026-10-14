@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable USB-C | con adaptador Lightning 1 m. USB-C macho a USB-C macho; adaptador USB-C hembra a Lightning macho. Longitud nominal de 1 m. Cable trenzado con adaptador sujeto.",
   "contenido_venta": "1 cable USB-C a USB-C y1 adaptador Lightning sujeto. No incluye cargador ni dispositivos.",
   "compatibilidad": "Verifica conectores y requisitos de carga de cada equipo. No se garantiza potencia60W al usar el adaptador Lightning.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL097"
     },
     "movil": {
       "solicitado": "CABL097",
       "sku": "CABL097",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:49.482Z",
+      "fecha": "2026-10-14T18:32:31.325Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/",
       "archivo_html": "productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/index.html",
       "http": 200,
       "sha256_html": "50eca8cd83186bd668591d87a3139511d4a3cbcbf179d10ffc625965ee9a5fbb",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl097/CABL097-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl097/CABL097-01-600.webp?v=ba44b936ece28365",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl097/CABL097-01-600.webp?v=ba44b936ece28365",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/",
+          "url": "https://conectatech-ec.github.io/productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl097/CABL097-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl097/CABL097-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL097-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL097-390.png",
       "sha256": "a31e5be0d32bc2aa94057d2387b73937876c536c377444f21bacf2ffe893fc3c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL097-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL097-1280.png",
         "sha256": "e94e3133551a90c50b24f10920eb344953a8efbb50d43a7c09469d873574d1f1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

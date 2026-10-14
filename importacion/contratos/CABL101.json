@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl101-cable-ven-dens-60w-rgb-con-luz-modelo-vd-dcf05/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable Ven-Dens VD-DCF05 | USB-C con indicador. USB-C macho a USB-C macho. Longitud nominal de 1 m. Cubierta trenzada e indicador luminoso en conector.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Comprueba protocolos y requisitos de carga. No se ofrece iluminación a lo largo de todo el cable ni controlRGB por software.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL101"
     },
     "movil": {
       "solicitado": "CABL101",
       "sku": "CABL101",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:59.531Z",
+      "fecha": "2026-10-14T18:32:45.014Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl101-cable-ven-dens-60w-rgb-con-luz-modelo-vd-dcf05/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl101-cable-ven-dens-60w-rgb-con-luz-modelo-vd-dcf05/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl101-cable-ven-dens-60w-rgb-con-luz-modelo-vd-dcf05/",
       "archivo_html": "productos/cabl101-cable-ven-dens-60w-rgb-con-luz-modelo-vd-dcf05/index.html",
       "http": 200,
       "sha256_html": "30185e367b5693812bda73104cd80a05898bc2e42289554c6d08ddd07ec4b12b",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl101/CABL101-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl101/CABL101-01-600.webp?v=10905f9a147cccf9",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl101/CABL101-01-600.webp?v=10905f9a147cccf9",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl101-cable-ven-dens-60w-rgb-con-luz-modelo-vd-dcf05/",
+          "url": "https://conectatech-ec.github.io/productos/cabl101-cable-ven-dens-60w-rgb-con-luz-modelo-vd-dcf05/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl101/CABL101-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl101/CABL101-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL101-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL101-390.png",
       "sha256": "ed60cb855b9733b5e60937e64661868fc2651520b649ef6aa605fe3f8f2e0146",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL101-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL101-1280.png",
         "sha256": "d905eadfa33a49179851ee617e942cfeebed207f33d192d935235334fabc2cf1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl063-cable-mini-hdmi-a-hdmi/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable Mini-HDMI a HDMI. Mini-HDMI tipo C macho a HDMI tipo A macho. Conectores moldeados de tamaños distintos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica la conexión Mini-HDMI del dispositivo. No es Micro-HDMI, Micro-USB ni USB-C.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL063"
     },
     "movil": {
       "solicitado": "CABL063",
       "sku": "CABL063",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:28.391Z",
+      "fecha": "2026-10-14T18:32:03.489Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl063-cable-mini-hdmi-a-hdmi/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl063-cable-mini-hdmi-a-hdmi/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl063-cable-mini-hdmi-a-hdmi/",
       "archivo_html": "productos/cabl063-cable-mini-hdmi-a-hdmi/index.html",
       "http": 200,
       "sha256_html": "bed60cbe3ad2e4357f5728e821561f5683657c8f9365869cf69d503dd317ef51",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl063/CABL063-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl063/CABL063-01-600.webp?v=de54ad48edfd85c8",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl063/CABL063-01-600.webp?v=de54ad48edfd85c8",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl063-cable-mini-hdmi-a-hdmi/",
+          "url": "https://conectatech-ec.github.io/productos/cabl063-cable-mini-hdmi-a-hdmi/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl063/CABL063-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl063/CABL063-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL063-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL063-390.png",
       "sha256": "1743399239907b45261991ff45fedffe4fc4c9e4c2b14e98b33d586876a8e946",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL063-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL063-1280.png",
         "sha256": "d2e012dd7e9035386d3f3af660833e9a426b72dba84747ab3d49b4b639fffd75",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl046-cable-multiple-3-en-1-120w-6a-s219/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable múltiple S219 | 3 en 1. USB-A macho a Micro-USB, Lightning y USB-C macho. Tres ramales y cabezales metálicos.",
   "contenido_venta": "1 cable de tres salidas. No incluye cargador ni dispositivos.",
   "compatibilidad": "Verifica conectores y potencia admitida por cargador y dispositivos. No se garantiza carga simultánea ni potencia nominal de120W en todas las conexiones.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL046"
     },
     "movil": {
       "solicitado": "CABL046",
       "sku": "CABL046",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:31.648Z",
+      "fecha": "2026-10-14T18:32:07.403Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl046-cable-multiple-3-en-1-120w-6a-s219/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl046-cable-multiple-3-en-1-120w-6a-s219/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl046-cable-multiple-3-en-1-120w-6a-s219/",
       "archivo_html": "productos/cabl046-cable-multiple-3-en-1-120w-6a-s219/index.html",
       "http": 200,
       "sha256_html": "eefd914863a6f0ac39d0f30bcc2038a5d5b603e3620861983730da1d4ec883cf",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl046/CABL046-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl046/CABL046-01-600.webp?v=a7b411c99ebbef8a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl046/CABL046-01-600.webp?v=a7b411c99ebbef8a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl046-cable-multiple-3-en-1-120w-6a-s219/",
+          "url": "https://conectatech-ec.github.io/productos/cabl046-cable-multiple-3-en-1-120w-6a-s219/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl046/CABL046-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl046/CABL046-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL046-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL046-390.png",
       "sha256": "3df8f9cc8bf40ebed5ac331272618c3db78ea7f571556a0098cb94b4f1525125",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL046-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL046-1280.png",
         "sha256": "95d9ddf4ca8b9008dde755f4e6f35b42d41fa20853b8320931b186b1392a8a5a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

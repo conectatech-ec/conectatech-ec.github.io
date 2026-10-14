@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl137-cable-usb-a-a-usb-c-3m-klipxtreme-powergo-050-kac-050-10ft/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable Klipxtreme PowerGo 050 | USB-C 3 m. USB-A macho a USB-C macho. Longitud nominal de 3 m. Cubierta trenzada y cabezales metálicos.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica conectores y requisitos de tus equipos. No convierte formatos ni garantiza funciones o velocidades que no admitan los dispositivos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL137"
     },
     "movil": {
       "solicitado": "CABL137",
       "sku": "CABL137",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:42.861Z",
+      "fecha": "2026-10-14T18:32:22.347Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl137-cable-usb-a-a-usb-c-3m-klipxtreme-powergo-050-kac-050-10ft/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl137-cable-usb-a-a-usb-c-3m-klipxtreme-powergo-050-kac-050-10ft/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl137-cable-usb-a-a-usb-c-3m-klipxtreme-powergo-050-kac-050-10ft/",
       "archivo_html": "productos/cabl137-cable-usb-a-a-usb-c-3m-klipxtreme-powergo-050-kac-050-10ft/index.html",
       "http": 200,
       "sha256_html": "9a690d06d332086774fddd6fad588d7865cb0c4be844fed271457dce1ca540c8",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl137/CABL137-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl137/CABL137-01-600.webp?v=0ce796110af20006",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl137/CABL137-01-600.webp?v=0ce796110af20006",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl137-cable-usb-a-a-usb-c-3m-klipxtreme-powergo-050-kac-050-10ft/",
+          "url": "https://conectatech-ec.github.io/productos/cabl137-cable-usb-a-a-usb-c-3m-klipxtreme-powergo-050-kac-050-10ft/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl137/CABL137-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl137/CABL137-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL137-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL137-390.png",
       "sha256": "93e22776076740fa7100248379b00af95ce572375c2fbb6a9f227c7ac16a4d50",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL137-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL137-1280.png",
         "sha256": "d14eabd2ea9e3ee95c4735a58078336fe3469b0372b91fc856ea97e546d70b19",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

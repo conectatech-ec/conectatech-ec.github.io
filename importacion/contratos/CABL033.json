@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl033-cable-stark-usb-c-a-usb-c-lc121c/",
-  "fecha_verificacion": "2026-10-14T18:14:11.624909+00:00",
+  "fecha_verificacion": "2026-10-14T18:31:55.727853+00:00",
   "descripcion": "Cable Stark LC121C | USB-C a USB-C 1 m. USB-C macho a USB-C macho. Longitud nominal de 1 m. Conectores metálicos y cubierta lisa.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
   "compatibilidad": "Verifica conectores y requisitos de tus equipos. No convierte formatos ni garantiza funciones o velocidades que no admitan los dispositivos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde fotografías propias físicas o de empaque/modelo; procedencia real registrada sin afirmar fotografía física directa si procede de empaque. Fondo blanco, producto nuevo y completo; conectores, piezas y color cotejados. Sin caja, manos, etiquetas ni hardware inventado."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-14T18:31:55.727853+00:00",
+      "reporte": "reportes/continuacion-083/http-publicacion.json",
+      "archivo": "reportes/continuacion-083/http-publicacion.json",
+      "sha256": "d3b002092832e469098fa74d3931d1543ad9f5e5f1ccbac1489db1e30147af2c",
+      "sku": "CABL033"
     },
     "movil": {
       "solicitado": "CABL033",
       "sku": "CABL033",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-14T18:15:36.537Z",
+      "fecha": "2026-10-14T18:32:13.580Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl033-cable-stark-usb-c-a-usb-c-lc121c/",
-      "url_comprobada": "http://127.0.0.1:8783/productos/cabl033-cable-stark-usb-c-a-usb-c-lc121c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl033-cable-stark-usb-c-a-usb-c-lc121c/",
       "archivo_html": "productos/cabl033-cable-stark-usb-c-a-usb-c-lc121c/index.html",
       "http": 200,
       "sha256_html": "fdb2acfdf0a34643d9c5e7d7a53782fe243f2e733021a36a2434fcd0a5a7dc9c",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl033/CABL033-01.webp",
-        "url_cargada": "http://127.0.0.1:8783/imagenes/cabl033/CABL033-01-600.webp?v=75677dc921b92944",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl033/CABL033-01-600.webp?v=75677dc921b92944",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8783/productos/cabl033-cable-stark-usb-c-a-usb-c-lc121c/",
+          "url": "https://conectatech-ec.github.io/productos/cabl033-cable-stark-usb-c-a-usb-c-lc121c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8783/imagenes/cabl033/CABL033-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl033/CABL033-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-083/qa-local/movil/CABL033-390.png",
+      "archivo": "reportes/continuacion-083/qa-publica/movil/CABL033-390.png",
       "sha256": "ae1498a9d6ea56ecc5c3d4c9234486171c6e834d01e07e3409fa0e128b578af6",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-083/qa-local/movil/CABL033-1280.png",
+        "archivo": "reportes/continuacion-083/qa-publica/movil/CABL033-1280.png",
         "sha256": "c3a4b3521c460f999cd1cb05b0616ea2aa6dabb81300aa833221d48f856a0214",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
