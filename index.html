@@ -80,6 +80,7 @@ body{background:linear-gradient(180deg,#edf3fa 0,#f7f9fd 470px,#f5f8fc 100%)}
 @media(max-width:650px){.card{border-radius:15px}.card .product-img{height:128px}.section-title{font-size:19px}.hero{border-radius:18px}}
 
 
+body.ct-category-view .ct-hero,body.ct-category-view .ct-gift-campaign,body.ct-category-view .ct-discover,body.ct-category-view .ct-commerce-strip,body.ct-category-view .featured{display:none}
 .ct-category-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0;color:#17344f}
 .ct-category-controls label{display:flex;align-items:center;gap:8px;min-width:0}
 .ct-category-controls select{max-width:100%;min-width:0;border:1px solid #cbdced;border-radius:10px;padding:10px;background:#fff;color:#17344f;font:inherit}
@@ -257,6 +258,10 @@ function categoryShareUrl(){
  url.hash="catalogo";return url;
 }
 function syncCategoryControls(){
+ const focused=!!selectedExactCategory||selected!=="TODOS";
+ document.body.classList.toggle("ct-category-view",focused);
+ document.getElementById("catalogo").textContent=selectedExactCategory?(categoryLabels[selectedExactCategory]||selectedExactCategory):focused?selected:"Explora el catálogo";
+ document.querySelectorAll(".topnav a").forEach(link=>{const original=link.dataset.originalHref||link.getAttribute("href");link.dataset.originalHref=original;if(["#destacados","#beneficios"].includes(original))link.setAttribute("href",focused?"/"+original:original)});
  categorySelect.value=selectedExactCategory||"TODOS";
  chips.querySelectorAll(".chip").forEach(chip=>chip.classList.toggle("active",chip.dataset.cat===selected));
  categoryLink.href=categoryShareUrl().href;
