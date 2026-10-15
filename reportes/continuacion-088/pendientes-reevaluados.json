@@ -1,0 +1,133 @@
+{
+  "fecha": "2026-10-15T14:47:25.589927+00:00",
+  "instruccion": "Correcciones conocidas activas; sólo correcciones todavía no comunicadas se difieren.",
+  "pendientes_historicos": [
+    {
+      "sku": "REL050",
+      "motivo": "Fidelidad del bisel/controles; conservar foto histórica y observación, no declarar corregido."
+    },
+    {
+      "sku": "SOPO020",
+      "motivo": "Fuentes T7-01/T7-02 contradictorias."
+    },
+    {
+      "sku": "RADI005",
+      "motivo": "Unidad de venta uno o par no confirmada."
+    }
+  ],
+  "reservados_previos": [
+    {
+      "sku": "CABL114",
+      "motivo": "Varias variantes de color en empaque; pendiente de referencia física o confirmación del color, sustituido por CABL032."
+    },
+    {
+      "sku": "CARG062",
+      "estado": "PENDIENTE_IDENTIDAD_CONTENIDO",
+      "motivo": "El nombre593 indica cargador universal65W, pero las fotos propias muestran15 puntas y empaque Type-C to Universal DC interface. No se acredita una fuente de red ni cable AC incluidos; no representar un cargador completo inventado. Conservar593 y foto vigente sin modificar.",
+      "requiere": "Verificar físicamente contenido de venta y si incluye fuente o sólo interfaz USB-C/DC y puntas.",
+      "referencias": [
+        "https://drive.google.com/file/d/19u7mM4XTOfYClMIgz6tt15OISKww2O2V/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1DDQIohbZx1qkRGLyYfJiCBh9G6ng8p-5/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1hvorlPJBrZwVPMLraBIHABZnR91ru_pQ/view?usp=drivesdk"
+      ]
+    },
+    {
+      "sku": "AUDI039",
+      "estado": "REVISAR_PREVIO_CONSERVADO",
+      "motivo": "La producción066 registra rechazo de la herramienta de imágenes. No reintentar esa misma salida ni sustituir una foto aprobada; continuar con PILA027."
+    },
+    {
+      "sku": "MICR13",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "EmpaqueSX21 tiene opcionesType-C/Lightning sin seleccionar; falta confirmar la variante real del receptor.",
+      "sustituido_por": "PILA026"
+    },
+    {
+      "sku": "MICR30",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Las dos fotos duplican frente de caja con cabeza de micrófono recortada; no acreditan cuerpo completo, receptor ni cantidad de venta.",
+      "sustituido_por": "PILA069"
+    },
+    {
+      "sku": "MICR33",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Referencia física rotulaLCT240 yel nombreGenuine es eslogan; no se confirma si el soporte mostrado de demostración forma parte de la venta.",
+      "sustituido_por": "PILA050"
+    },
+    {
+      "sku": "AUDI111",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Una sola vista de empaque no identifica modelo ni diseño/contenido del estuche; no representar un kit inventado.",
+      "sustituido_por": "PILA039"
+    },
+    {
+      "sku": "AUDI004",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Las dos fotos de bolsa/etiqueta ocultan la geometría de los auriculares yconector; falta detalle de la referenciaJ5.",
+      "sustituido_por": "PILA023"
+    },
+    {
+      "sku": "PILA030",
+      "motivo": "La referencia muestra paquete2 de tipoD; confirmar si593 corresponde a una o al paquete. No afecta pilas de botón confirmadas.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "PILA071",
+      "motivo": "Pila cilíndrica27A: la confirmación recibida cubre pilas de botón, no esta presentación de tira5. Confirmar unidad comercial.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "PILA074",
+      "motivo": "Pila cilíndrica27A: confirmar precio por una o por tira5; no extender regla de botón sin confirmación.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "SOPO048",
+      "motivo": "Sólo esquema lineal en caja; falta vista del acabado y cuerpo real del brazo para una portada fiel.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "SOPO051",
+      "motivo": "Las tres referencias muestran el soporte tapado por un teléfono; no acreditan el cuerpo completo ni la unión del anclaje. Conservar fuentes y avanzar otroSKU.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "JUGU085",
+      "estado": "RECHAZO_HERRAMIENTA_IMAGEN",
+      "motivo": "La herramienta rechazó la salida por su sistema de seguridad sin detallar motivo. No reintentar la misma solicitud ni publicar borrador; continuar con otrosSKU."
+    },
+    {
+      "sku": "JUGU156",
+      "estado": "RECHAZO_HERRAMIENTA_IMAGEN",
+      "motivo": "La herramienta rechazó la salida por su sistema de seguridad sin detallar motivo. No reintentar la misma solicitud ni publicar borrador; continuar con otrosSKU."
+    }
+  ],
+  "accion_REL050": "Revisión y nueva propuesta desde fotos físicas originales. No declarada corregida todavía.",
+  "REL050_revision088": {
+    "fuentes_fisicas_revisadas": 3,
+    "propuestas": [
+      {
+        "sha256": "091b200693357a507b2010c1933aa31f75ff217fdf7f767dc4716481c9edad10",
+        "estado": "DESCARTADA_NO_PUBLICADA",
+        "motivo": "Nitidez muy superior pero escala del bisel sigue alterando numerales; no aprobar ni sustituir foto histórica."
+      },
+      {
+        "sha256": "bec193f88eb3c67af0d354cd5df7a6656f7bc01efb28b41bbdaed0094872acac",
+        "estado": "DESCARTADA_NO_PUBLICADA",
+        "motivo": "Nitidez muy superior pero escala del bisel sigue alterando numerales; no aprobar ni sustituir foto histórica."
+      },
+      {
+        "sha256": "5b8348921e0c16676fe92725c841ffd3854727754f11b47db968d586b3269222",
+        "estado": "DESCARTADA_NO_PUBLICADA",
+        "motivo": "Nitidez muy superior pero escala del bisel sigue alterando numerales; no aprobar ni sustituir foto histórica."
+      },
+      {
+        "sha256": "a7d5625cf31027f3c872d8765ccddd736e96d89a64d2fa45c126840e373a691d",
+        "estado": "DESCARTADA_NO_PUBLICADA",
+        "motivo": "Nitidez muy superior pero escala del bisel sigue alterando numerales; no aprobar ni sustituir foto histórica."
+      }
+    ],
+    "estado": "PENDIENTE_FIDELIDAD_MICROTEXTO",
+    "accion": "No se congela el lote por unSKU. Nueva foto nítida preparada pero no aprobada si85 se transforma en95; conservar foto pública yoriginales."
+  }
+}
