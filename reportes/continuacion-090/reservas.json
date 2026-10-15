@@ -1,0 +1,31 @@
+{
+  "fecha": "2026-10-15T20:00:12.580595+00:00",
+  "reservas": [
+    {
+      "sku": "PADM006",
+      "estado": "RESERVADO_FIDELIDAD",
+      "motivo": "No hay vista completa legible del diseño del mousepad; el empaque muestra sólo miniaturas/fragmentos y no se inventa el estampado."
+    },
+    {
+      "sku": "MOUS016",
+      "estado": "RESERVADO_CONEXION",
+      "motivo": "Maestro indica micro-USB/USB-A y Bluetooth; empaque genérico muestra opciones sin selección y no permite confirmar receptor, interfaz ni variante."
+    },
+    {
+      "sku": "TRIP002",
+      "estado": "RESERVADO_VARIANTE",
+      "motivo": "Sólo dibujo de línea y variantes Black/Gun/Pink sin seleccionar; no se inventa color ni acabado del soporte real."
+    },
+    {
+      "sku": "BILL004",
+      "estado": "RESERVADO_HERRAMIENTA",
+      "motivo": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 273d5280-bef9-4ecf-85d2-b501289521c6.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")"
+    }
+  ],
+  "estados_anteriores": {
+    "PADM006": null,
+    "MOUS016": null,
+    "TRIP002": null,
+    "BILL004": null
+  }
+}
