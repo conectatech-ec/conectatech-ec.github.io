@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-10-15T00:41:37.016720+00:00",
+  "test_incremental": {
+    "pruebas": 9,
+    "resultado": "OK"
+  },
+  "busqueda_sku": {
+    "incidencia_detectada": "MICR02/MICR03 coincidían también con códigos más largos.",
+    "correccion": "Si la consulta corresponde a un SKU completo, se muestra sólo ese SKU; se conserva búsqueda parcial para las demás consultas.",
+    "verificado_en": "qa-local/catalogo.json",
+    "sin_renovar_fechas_por_cambio_global": true
+  }
+}

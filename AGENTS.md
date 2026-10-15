@@ -1,3 +1,7 @@
+## Orden vigente del propietario — avance086
+
+Continuar producción progresiva de40 SKU nuevos:15 micrófonos,5 cámaras,9 adaptadores,5 audífonos y6 pilas. Referencias propias completas revisadas; seis candidatos reservados sustituidos sin inventar variantes ni kits. Preservar todas las fotos anteriores,1170 SKU,finanzas,593,categorías yURLs. Correcciones anteriores diferidas por propietario. Rama independiente,main fresco,CI yrecursos primero; HTTP yChromium público antes de estados/fechas. Orden reciente079 y enlaces directos084 conservados. Mantenerproduct_type yel feedMeta existente sin nuevas integraciones. No afirmar exclusividad ni cancelación deotra sesión.
+
 ## Orden vigente del propietario — enlaces de categorías084 y avance085
 
 Habilitar enlaces directos compartibles por categoría real,como sóloMicrófonos con todos sus modelos; preservar los grupos comerciales amplios yel catálogo compacto. Selector,copiar enlace,historial yacceso directo probados en móvil/escritorio. Sin renovar fechas deSKU por este cambio global. Continuar producción por lote controlado de40 candidatos nuevos,39 aptos yCARG062 reservado por contenido de venta no confirmado; deduplicados frente a main/web,fuentes propias,calidad premium yreglas anteriores. Correcciones previas conservadas para después. Main fresco,rama independiente,sinforce yrecursos/HTTP/Chromium antes de fechas;feedMeta existente intacto.

@@ -1,0 +1,115 @@
+[
+  {
+    "sku": "AUDI039",
+    "produccion_anterior": {
+      "huella_revisada": "5ad9598465de5da7c8dc90b3c83e247ec009fe5d9b3ef2c19df89284bbd21d20",
+      "estado": "REVISAR",
+      "revision_regla_revisada": 2,
+      "reporte": "reportes/lote-066/resultados-produccion.json",
+      "fecha": "2026-10-12T04:59:07.754269+00:00",
+      "pendientes": [
+        "Fotografía real disponible, pero la herramienta de imágenes rechazó la salida. No se aprobó una propuesta ni se sustituyó la portada."
+      ]
+    },
+    "evaluacion": {
+      "sku": "AUDI039",
+      "estado": "REVISAR_PREVIO_CONSERVADO",
+      "motivo": "La producción066 registra rechazo de la herramienta de imágenes. No reintentar esa misma salida ni sustituir una foto aprobada; continuar con PILA027."
+    }
+  },
+  {
+    "sku": "MICR13",
+    "produccion_anterior": {
+      "huella_revisada": "4b95faed6eb2fd7610767c207c082f58779e24f33c0c859d53df32c112147b30",
+      "estado": "REVISAR",
+      "revision_regla_revisada": 1,
+      "reporte": "reportes/continuacion-068/resultados-produccion.json",
+      "fecha": "2026-10-13T03:18:33.514198+00:00",
+      "pendientes": [
+        "Todas las vistas disponibles muestran empaque e ilustraciones; falta fotografía del producto físico sin caja."
+      ]
+    },
+    "evaluacion": {
+      "sku": "MICR13",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "EmpaqueSX21 tiene opcionesType-C/Lightning sin seleccionar; falta confirmar la variante real del receptor.",
+      "sustituido_por": "PILA026"
+    }
+  },
+  {
+    "sku": "MICR30",
+    "produccion_anterior": {
+      "huella_revisada": "e82ec4f17fac935be3b9fa1fffd2378649c053134ff27ec7228e919c90c471a6",
+      "estado": "BLOQUEADO",
+      "revision_regla_revisada": 2,
+      "reporte": "reportes/continuacion-075/resultados-sku.json",
+      "fecha": "2026-10-13T22:11:21.170283+00:00",
+      "pendientes": [
+        "Todas las vistas disponibles son caja/ilustración; falta fotografía física suficiente del SKU."
+      ]
+    },
+    "evaluacion": {
+      "sku": "MICR30",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Las dos fotos duplican frente de caja con cabeza de micrófono recortada; no acreditan cuerpo completo, receptor ni cantidad de venta.",
+      "sustituido_por": "PILA069"
+    }
+  },
+  {
+    "sku": "MICR33",
+    "produccion_anterior": {
+      "huella_revisada": "f26be5b72c572ab9b28c0c537333b9f2f8bcb8ff8328fc5daea035dfd1579cf0",
+      "estado": "REVISAR",
+      "revision_regla_revisada": 1,
+      "reporte": "reportes/lote-047-resultados.json",
+      "fecha": "2026-10-10T20:29:25.745695+00:00",
+      "pendientes": [
+        "Nombre de base Genuine procede de eslogan de caja; micrófono rotulado AUTNE HTLCA/LCT240. Identidad y marca requieren revisión."
+      ]
+    },
+    "evaluacion": {
+      "sku": "MICR33",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Referencia física rotulaLCT240 yel nombreGenuine es eslogan; no se confirma si el soporte mostrado de demostración forma parte de la venta.",
+      "sustituido_por": "PILA050"
+    }
+  },
+  {
+    "sku": "AUDI111",
+    "produccion_anterior": {
+      "huella_revisada": "f44798bf99f52fe4d38d1a17fb651ee1689be4073639b8b13ba6cdeea0cd27e9",
+      "estado": "REVISAR",
+      "revision_regla_revisada": 2,
+      "reporte": "reportes/lote-066/resultados-produccion.json",
+      "fecha": "2026-10-12T04:59:07.754264+00:00",
+      "pendientes": [
+        "Las vistas revisadas no permiten una portada fiel sin caja: empaque cerrado/ilustración impresa, sin foto física suficientemente visible del producto. No se usa la ilustración como fotografía real."
+      ]
+    },
+    "evaluacion": {
+      "sku": "AUDI111",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Una sola vista de empaque no identifica modelo ni diseño/contenido del estuche; no representar un kit inventado.",
+      "sustituido_por": "PILA039"
+    }
+  },
+  {
+    "sku": "AUDI004",
+    "produccion_anterior": {
+      "huella_revisada": "cbdd737adf89ae9a2b5d09f42ace7a2fcb26e53757a20caeb39dc5128b766abd",
+      "estado": "REVISAR",
+      "revision_regla_revisada": 1,
+      "reporte": "reportes/lote-063/pendientes.json",
+      "fecha": "2026-10-11T23:32:29.774091+00:00",
+      "pendientes": [
+        "Producto dentro de bolsa; no se ven conectores y audífonos completos sin empaque."
+      ]
+    },
+    "evaluacion": {
+      "sku": "AUDI004",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Las dos fotos de bolsa/etiqueta ocultan la geometría de los auriculares yconector; falta detalle de la referenciaJ5.",
+      "sustituido_por": "PILA023"
+    }
+  }
+]
