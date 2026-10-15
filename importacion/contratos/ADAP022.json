@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap022-adaptador-union-rca-de-audio-doble/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Uniones RCA hembra a hembra | juego de 2. Conexiones: RCA hembra a RCA hembra. Presentación: Juego de 2 uniones. Diseño: Cuerpo cilíndrico con extremos metálicos.",
   "contenido_venta": "2 uniones RCA hembra a hembra en una unidad comercial. No incluye cables.",
   "compatibilidad": "Para unir conectores RCA admitidos por el equipo. No convierte señales entre formatos ni incluye electrónica de amplificación.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados. Dos uniones físicas en una bolsa con etiquetaSKU; corroboradas por nombre593(doble). Sin añadir textura de agarre no cotejada."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "ADAP022"
     },
     "movil": {
       "solicitado": "ADAP022",
       "sku": "ADAP022",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:22.042Z",
+      "fecha": "2026-10-15T00:53:27.011Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap022-adaptador-union-rca-de-audio-doble/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/adap022-adaptador-union-rca-de-audio-doble/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap022-adaptador-union-rca-de-audio-doble/",
       "archivo_html": "productos/adap022-adaptador-union-rca-de-audio-doble/index.html",
       "http": 200,
       "sha256_html": "145ce7907c0ee5e1eb174de605cc46f788aa560bd25d43218d49e44a1b15fde3",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap022/ADAP022-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/adap022/ADAP022-01-600.webp?v=e83703c4c1cd21e1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap022/ADAP022-01-600.webp?v=e83703c4c1cd21e1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/adap022-adaptador-union-rca-de-audio-doble/",
+          "url": "https://conectatech-ec.github.io/productos/adap022-adaptador-union-rca-de-audio-doble/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/adap022/ADAP022-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap022/ADAP022-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/ADAP022-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/ADAP022-390.png",
       "sha256": "92c21686b7048aa7190b994cb011bda547e15485c737f2c1245e6aca65db1b21",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/ADAP022-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/ADAP022-1280.png",
         "sha256": "f013c867c2086ea7101659929c968ddb3cbff000110664878990d9edf9cb9d87",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

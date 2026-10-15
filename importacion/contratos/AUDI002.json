@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi002-audifonos-akg-3-5mm/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Audífonos AKG | 3,5 mm. Conexiones: 3,5 mm TRRS macho. Formato: Audífonos alámbricos in-ear. Diseño: Dos auriculares con puntas de silicona.",
   "contenido_venta": "1 par de audífonos con cable. No incluye estuche inalámbrico ni adaptadores.",
   "compatibilidad": "Comprueba soporte de audio, pinout y controles del dispositivo. No se garantiza compatibilidad con todos los puertos de 3,5 mm.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "AUDI002"
     },
     "movil": {
       "solicitado": "AUDI002",
       "sku": "AUDI002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:32.810Z",
+      "fecha": "2026-10-15T00:53:42.780Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi002-audifonos-akg-3-5mm/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/audi002-audifonos-akg-3-5mm/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi002-audifonos-akg-3-5mm/",
       "archivo_html": "productos/audi002-audifonos-akg-3-5mm/index.html",
       "http": 200,
       "sha256_html": "4c0d174066fadef844a5c50666299759bb0c5eb291775dd09aff286f24ee4eca",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi002/AUDI002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/audi002/AUDI002-01-600.webp?v=773ba5a880fbc38a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi002/AUDI002-01-600.webp?v=773ba5a880fbc38a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/audi002-audifonos-akg-3-5mm/",
+          "url": "https://conectatech-ec.github.io/productos/audi002-audifonos-akg-3-5mm/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/audi002/AUDI002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi002/AUDI002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/AUDI002-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI002-390.png",
       "sha256": "518d6fb3d47205cc5df4950eb38d821344211eb9c8f0661323535824f62e08d1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/AUDI002-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI002-1280.png",
         "sha256": "ccd9678a01bf63c0280bc21b0a7bc08fdc4523979eb5632b1d7dfcaeed819482",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

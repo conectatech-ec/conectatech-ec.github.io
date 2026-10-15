@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr24-microfono-primus-vox01/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Micrófonos Primus VOX01 | kit con estuche. Presentación: 2 micrófonos, receptor y estuche. Conexiones: Receptor USB-C macho. Diseño: Micrófonos de solapa con espuma y pinza.",
   "contenido_venta": "2 micrófonos, 1 receptor USB-C y 1 estuche de carga; componentes principales del kit. No incluye teléfono ni computadora.",
   "compatibilidad": "Comprueba soporte de micrófono USB-C y versión del sistema/aplicación. No se garantiza funcionamiento en puertos sólo de carga ni alcance o autonomía universales.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "MICR24"
     },
     "movil": {
       "solicitado": "MICR24",
       "sku": "MICR24",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:11.653Z",
+      "fecha": "2026-10-15T00:53:14.012Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr24-microfono-primus-vox01/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/micr24-microfono-primus-vox01/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr24-microfono-primus-vox01/",
       "archivo_html": "productos/micr24-microfono-primus-vox01/index.html",
       "http": 200,
       "sha256_html": "5503d6d40d9bdccef01baa8fb4302578e44998e1fcd92b364f698590765f424c",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr24/MICR24-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/micr24/MICR24-01-600.webp?v=6c26a65606411c14",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr24/MICR24-01-600.webp?v=6c26a65606411c14",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/micr24-microfono-primus-vox01/",
+          "url": "https://conectatech-ec.github.io/productos/micr24-microfono-primus-vox01/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/micr24/MICR24-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr24/MICR24-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/MICR24-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/MICR24-390.png",
       "sha256": "766b0d879dfa34e9bcd22424b0a76bfcf7e323cea6a700ae00133d3a734dc27f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/MICR24-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/MICR24-1280.png",
         "sha256": "0d8d6f0e29caeb22e8ec4cd6a8e4b73e3e6b8c6a4ef36ec942d3c54b811f4ba0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi003-audifonos-akg-usb-c/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Audífonos AKG | USB-C. Conexiones: USB-C macho. Formato: Audífonos alámbricos in-ear. Diseño: Dos auriculares con puntas de silicona.",
   "contenido_venta": "1 par de audífonos con cable. No incluye estuche inalámbrico ni adaptadores.",
   "compatibilidad": "Comprueba soporte de audio, pinout y controles del dispositivo. No se garantiza compatibilidad con todos los puertos USB-C ni conversión DAC universal.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "AUDI003"
     },
     "movil": {
       "solicitado": "AUDI003",
       "sku": "AUDI003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:33.759Z",
+      "fecha": "2026-10-15T00:53:43.915Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi003-audifonos-akg-usb-c/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/audi003-audifonos-akg-usb-c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi003-audifonos-akg-usb-c/",
       "archivo_html": "productos/audi003-audifonos-akg-usb-c/index.html",
       "http": 200,
       "sha256_html": "fc33b17bc6a38ca38855ea75d0d95e1752db33ee961870581d7f3879c2f8bd99",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi003/AUDI003-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/audi003/AUDI003-01-600.webp?v=4d44ba8b33224de6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi003/AUDI003-01-600.webp?v=4d44ba8b33224de6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/audi003-audifonos-akg-usb-c/",
+          "url": "https://conectatech-ec.github.io/productos/audi003-audifonos-akg-usb-c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/audi003/AUDI003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi003/AUDI003-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/AUDI003-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI003-390.png",
       "sha256": "94266219544dd5b7877bb93420ff69d7bfd223c25340257cdd183d8f9cf8f248",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/AUDI003-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI003-1280.png",
         "sha256": "40c62d14b6bdb35ae3a1a17764a9afb612ec48f349e02518341f2c1cf3903af8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

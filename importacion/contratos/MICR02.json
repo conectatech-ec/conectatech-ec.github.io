@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr02-microfono-alambrico-3-5mm-mc-r1/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Micrófono Jmary MC-R1 | 3,5 mm. Conexiones: 3,5 mm TRRS macho. Longitud: 2 m. Presentación: Micrófono de solapa con pinza de sujeción.",
   "contenido_venta": "1 micrófono de solapa con cable y pinza. No incluye teléfono, cámara ni adaptadores.",
   "compatibilidad": "Comprueba soporte de micrófono, conector y requisitos de audio del dispositivo y aplicación. No se garantiza funcionamiento universal por coincidir la forma del puerto.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "MICR02"
     },
     "movil": {
       "solicitado": "MICR02",
       "sku": "MICR02",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:01.363Z",
+      "fecha": "2026-10-15T00:53:00.817Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr02-microfono-alambrico-3-5mm-mc-r1/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/micr02-microfono-alambrico-3-5mm-mc-r1/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr02-microfono-alambrico-3-5mm-mc-r1/",
       "archivo_html": "productos/micr02-microfono-alambrico-3-5mm-mc-r1/index.html",
       "http": 200,
       "sha256_html": "324582b595d3c188582cb4ad57564890d098dd54d3de8f4e4a5234296cb29823",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr02/MICR02-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/micr02/MICR02-01-600.webp?v=090bb81c7b1c1893",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr02/MICR02-01-600.webp?v=090bb81c7b1c1893",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/micr02-microfono-alambrico-3-5mm-mc-r1/",
+          "url": "https://conectatech-ec.github.io/productos/micr02-microfono-alambrico-3-5mm-mc-r1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/micr02/MICR02-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr02/MICR02-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/MICR02-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/MICR02-390.png",
       "sha256": "ee0f1b2e2e37efa216033d0df01e6712e71c8250db4472e93ceacde981904328",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/MICR02-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/MICR02-1280.png",
         "sha256": "3942f4db014d85822e8652d1c8951157561a81b26be8f31a9813ab7e9824d6ad",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

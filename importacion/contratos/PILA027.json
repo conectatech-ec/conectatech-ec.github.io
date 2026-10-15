@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila027-pila-aaa-rca-pack-de-2/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Pilas RCA AAA | paquete de 2. Formato: AAA. Voltaje: 1,5 V nominal por pila. Contenido: 2 pilas.",
   "contenido_venta": "2 pilas AAA en una unidad comercial. No incluye cargador.",
   "compatibilidad": "Usa el formato y voltaje requeridos por el equipo y respeta la polaridad. Pilas primarias: no recargar. No se declara capacidad ni duración no verificadas.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "PILA027"
     },
     "movil": {
       "solicitado": "PILA027",
       "sku": "PILA027",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:32.028Z",
+      "fecha": "2026-10-15T00:53:41.614Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila027-pila-aaa-rca-pack-de-2/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila027-pila-aaa-rca-pack-de-2/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila027-pila-aaa-rca-pack-de-2/",
       "archivo_html": "productos/pila027-pila-aaa-rca-pack-de-2/index.html",
       "http": 200,
       "sha256_html": "045b0ae1c54d15753c84ad0fae0aa8fea4bd660900b1d612f63f72f6d862febb",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila027/PILA027-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila027/PILA027-01-600.webp?v=8ab7320f0938cdd0",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila027/PILA027-01-600.webp?v=8ab7320f0938cdd0",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila027-pila-aaa-rca-pack-de-2/",
+          "url": "https://conectatech-ec.github.io/productos/pila027-pila-aaa-rca-pack-de-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila027/PILA027-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila027/PILA027-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/PILA027-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/PILA027-390.png",
       "sha256": "d84f9879a106a983a328aa989fc02f60dfa1738d44b21de6f7492307267dffec",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/PILA027-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/PILA027-1280.png",
         "sha256": "72cb441666179da89efda0b07972c0ed2f42869a237b1b2f769438a53b6fc32d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

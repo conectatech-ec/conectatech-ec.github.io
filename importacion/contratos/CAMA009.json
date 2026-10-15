@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cama009-camara-de-seguridad-vigi-by-tp-link-outdoor-fullcolor-easycam-c320/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Cámara VIGI EasyCam C320 | exterior 2 MP. Resolución: 2 MP nominal según empaque. Alimentación: PoE IEEE 802.3af. Uso: Exterior, protección IP67 indicada por el modelo.",
   "contenido_venta": "1 cámara con base y accesorios de montaje indicados por empaque. No incluye inyector PoE, switch, NVR ni teléfono.",
   "compatibilidad": "Requiere red y alimentación PoE apropiadas, configuración y equipo de grabación compatibles. La protección depende de instalación y sellado adecuados.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "CAMA009"
     },
     "movil": {
       "solicitado": "CAMA009",
       "sku": "CAMA009",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:21.257Z",
+      "fecha": "2026-10-15T00:53:25.772Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cama009-camara-de-seguridad-vigi-by-tp-link-outdoor-fullcolor-easycam-c320/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cama009-camara-de-seguridad-vigi-by-tp-link-outdoor-fullcolor-easycam-c320/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cama009-camara-de-seguridad-vigi-by-tp-link-outdoor-fullcolor-easycam-c320/",
       "archivo_html": "productos/cama009-camara-de-seguridad-vigi-by-tp-link-outdoor-fullcolor-easycam-c320/index.html",
       "http": 200,
       "sha256_html": "71b1719c7b56de52ea69a24e447b89f21a608b45a6c67b30b181b02f10732313",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cama009/CAMA009-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cama009/CAMA009-01-600.webp?v=0fabec00e833f4f7",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cama009/CAMA009-01-600.webp?v=0fabec00e833f4f7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cama009-camara-de-seguridad-vigi-by-tp-link-outdoor-fullcolor-easycam-c320/",
+          "url": "https://conectatech-ec.github.io/productos/cama009-camara-de-seguridad-vigi-by-tp-link-outdoor-fullcolor-easycam-c320/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cama009/CAMA009-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cama009/CAMA009-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/CAMA009-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/CAMA009-390.png",
       "sha256": "bf8c8d8a0651e7aedf062f6b03432b4dfc2de9722c74b24babb426324c516b74",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/CAMA009-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/CAMA009-1280.png",
         "sha256": "ef2ea39f8516b35353f7b3b832e96d59d37acc82ad395e3afa0bf26d07044eb2",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

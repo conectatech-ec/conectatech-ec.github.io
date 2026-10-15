@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr34-microfono-inalambrico-set-2-sagapu-ttd-m12/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Micrófonos TTD-M12 | kit inalámbrico doble. Presentación: 2 micrófonos de mano y 1 receptor. Formato: Sistema inalámbrico UHF. Diseño: Receptor con antena externa.",
   "contenido_venta": "2 micrófonos y 1 receptor; componentes principales del kit. No incluye amplificador ni parlante.",
   "compatibilidad": "Comprueba conexiones del receptor, alimentación y entrada del equipo de audio. No se ofrece enlace Bluetooth universal ni frecuencias o alcance medidos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados. ModeloTTD-M12 verificado en ambas fuentes. MarcaSagapu del nombre histórico no se reafirma: grafía de empaque distinta; CSV593 intacto."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "MICR34"
     },
     "movil": {
       "solicitado": "MICR34",
       "sku": "MICR34",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:15.986Z",
+      "fecha": "2026-10-15T00:53:18.703Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr34-microfono-inalambrico-set-2-sagapu-ttd-m12/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/micr34-microfono-inalambrico-set-2-sagapu-ttd-m12/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr34-microfono-inalambrico-set-2-sagapu-ttd-m12/",
       "archivo_html": "productos/micr34-microfono-inalambrico-set-2-sagapu-ttd-m12/index.html",
       "http": 200,
       "sha256_html": "ed05db3793e7973d5ab1cf2e4413015b32d5847e9e9c9de613702778cb76f957",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr34/MICR34-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/micr34/MICR34-01-600.webp?v=6f2c77756e3c02a7",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr34/MICR34-01-600.webp?v=6f2c77756e3c02a7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/micr34-microfono-inalambrico-set-2-sagapu-ttd-m12/",
+          "url": "https://conectatech-ec.github.io/productos/micr34-microfono-inalambrico-set-2-sagapu-ttd-m12/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/micr34/MICR34-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr34/MICR34-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/MICR34-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/MICR34-390.png",
       "sha256": "f74bc09ec597ff87f91e95333e44e1742de1b1a3d2ac43f94176bc6628ecf005",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/MICR34-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/MICR34-1280.png",
         "sha256": "4bcb3f6f289b8b380a5d97be3a57c61784bbe9da9ca9116e55a9c6071dd32201",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap093-adaptador-de-usb-a-a-plug-mini/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Cable adaptador USB-A | plug mini. Conexiones: USB-A macho a plug mini cilíndrico. Formato: Cable corto. Presentación: Una unidad de cable adaptador.",
   "contenido_venta": "1 cable adaptador. No incluye equipos.",
   "compatibilidad": "Comprueba medidas, disposición del plug y requisitos eléctricos de tu equipo. No se declara diámetro, interfaz de audio USB ni conversión universal.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "ADAP093"
     },
     "movil": {
       "solicitado": "ADAP093",
       "sku": "ADAP093",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:24.595Z",
+      "fecha": "2026-10-15T00:53:30.603Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap093-adaptador-de-usb-a-a-plug-mini/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/adap093-adaptador-de-usb-a-a-plug-mini/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap093-adaptador-de-usb-a-a-plug-mini/",
       "archivo_html": "productos/adap093-adaptador-de-usb-a-a-plug-mini/index.html",
       "http": 200,
       "sha256_html": "99b03c3a723fdbf9e3bafc095fc770728ed80aec4f0194d8d01210659a16adae",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap093/ADAP093-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/adap093/ADAP093-01-600.webp?v=d486f9b6382af996",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap093/ADAP093-01-600.webp?v=d486f9b6382af996",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/adap093-adaptador-de-usb-a-a-plug-mini/",
+          "url": "https://conectatech-ec.github.io/productos/adap093-adaptador-de-usb-a-a-plug-mini/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/adap093/ADAP093-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap093/ADAP093-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/ADAP093-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/ADAP093-390.png",
       "sha256": "038bebb0dfbe2afb3110c0636069025455b171e8ae0af3e1e05d8400e5d49c7b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/ADAP093-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/ADAP093-1280.png",
         "sha256": "701a9cec769450d52b0642ffc5d39d54376625d8b891308607677837380f612b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

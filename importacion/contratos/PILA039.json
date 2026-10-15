@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila039-pila-aaa-sony-pack-4/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Pilas Sony AAA | paquete de 4. Formato: AAA. Voltaje: 1,5 V nominal por pila. Contenido: 4 pilas.",
   "contenido_venta": "4 pilas AAA en una unidad comercial. No incluye cargador.",
   "compatibilidad": "Usa el formato y voltaje requeridos por el equipo y respeta la polaridad. Pilas primarias: no recargar. No se declara capacidad ni duración no verificadas.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "PILA039"
     },
     "movil": {
       "solicitado": "PILA039",
       "sku": "PILA039",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:29.547Z",
+      "fecha": "2026-10-15T00:53:38.093Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila039-pila-aaa-sony-pack-4/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila039-pila-aaa-sony-pack-4/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila039-pila-aaa-sony-pack-4/",
       "archivo_html": "productos/pila039-pila-aaa-sony-pack-4/index.html",
       "http": 200,
       "sha256_html": "e4f14ef345bf94cda64e6f7992a2d73fca17a9176253c1abd457ebdea4fe789b",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila039/PILA039-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila039/PILA039-01-600.webp?v=5756474384cac16c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila039/PILA039-01-600.webp?v=5756474384cac16c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila039-pila-aaa-sony-pack-4/",
+          "url": "https://conectatech-ec.github.io/productos/pila039-pila-aaa-sony-pack-4/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila039/PILA039-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila039/PILA039-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/PILA039-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/PILA039-390.png",
       "sha256": "ee580df302b451fb34f16db29bf069150a8accad3f4bed89db272bbec224d93b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/PILA039-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/PILA039-1280.png",
         "sha256": "99829f9319ccc476f976c35dfa8b9fc58f4fe8943dad60b050c0dadf29a26361",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

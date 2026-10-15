@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr19-microfonos-set-2-para-parlante-sing-e-zqs-2m502-vocal-karaoke/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Micrófonos Sing-e ZQS-2M502 | kit doble. Presentación: 2 micrófonos de mano y 1 receptor. Conexiones: Receptor con plug de 6,35 mm macho. Diseño: Micrófonos con rejilla e indicador frontal.",
   "contenido_venta": "2 micrófonos y 1 receptor; componentes principales del kit. No incluye parlante ni equipo de amplificación.",
   "compatibilidad": "Requiere entrada de micrófono adecuada para el receptor y equipo de amplificación. Comprueba modelo y alimentación; no se ofrece enlace Bluetooth directo ni alcance garantizado.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "MICR19"
     },
     "movil": {
       "solicitado": "MICR19",
       "sku": "MICR19",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:08.574Z",
+      "fecha": "2026-10-15T00:53:10.227Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr19-microfonos-set-2-para-parlante-sing-e-zqs-2m502-vocal-karaoke/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/micr19-microfonos-set-2-para-parlante-sing-e-zqs-2m502-vocal-karaoke/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr19-microfonos-set-2-para-parlante-sing-e-zqs-2m502-vocal-karaoke/",
       "archivo_html": "productos/micr19-microfonos-set-2-para-parlante-sing-e-zqs-2m502-vocal-karaoke/index.html",
       "http": 200,
       "sha256_html": "23e2b10b8e1f4b39e333364472c08baa6a0848e888e92a67d633f59d1694b4bd",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr19/MICR19-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/micr19/MICR19-01-600.webp?v=982392300ee65ff6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr19/MICR19-01-600.webp?v=982392300ee65ff6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/micr19-microfonos-set-2-para-parlante-sing-e-zqs-2m502-vocal-karaoke/",
+          "url": "https://conectatech-ec.github.io/productos/micr19-microfonos-set-2-para-parlante-sing-e-zqs-2m502-vocal-karaoke/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/micr19/MICR19-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr19/MICR19-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/MICR19-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/MICR19-390.png",
       "sha256": "bedfb6b6a605c4b571cf60c1442357ebf3a5431410abb67d8e9333dd90c795ec",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/MICR19-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/MICR19-1280.png",
         "sha256": "bfe9a4a8d8f3d424b9b041bab2caaa457042cce5697637e0196fc9c89cd22b42",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

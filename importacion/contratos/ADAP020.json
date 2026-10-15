@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap020-adaptador-usb-c-a-3-5mm-negro/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Adaptador de audio | USB-C a 3,5 mm. Conexiones: USB-C macho a 3,5 mm hembra. Formato: Cable corto para audio. Diseño: Dos cabezales unidos por cable flexible.",
   "contenido_venta": "1 adaptador de audio con cable. No incluye audífonos ni dispositivo.",
   "compatibilidad": "Verifica soporte de audio USB-C del dispositivo y requisitos del adaptador. No se garantiza función de micrófono, controles ni conversión DAC universal.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "ADAP020"
     },
     "movil": {
       "solicitado": "ADAP020",
       "sku": "ADAP020",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:26.216Z",
+      "fecha": "2026-10-15T00:53:33.197Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap020-adaptador-usb-c-a-3-5mm-negro/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/adap020-adaptador-usb-c-a-3-5mm-negro/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap020-adaptador-usb-c-a-3-5mm-negro/",
       "archivo_html": "productos/adap020-adaptador-usb-c-a-3-5mm-negro/index.html",
       "http": 200,
       "sha256_html": "c65bf007e029f266a8462c631c727e9112ff9a1ddf707dc33b77a37ef70ad086",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap020/ADAP020-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/adap020/ADAP020-01-600.webp?v=f750ea23c3501fdd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap020/ADAP020-01-600.webp?v=f750ea23c3501fdd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/adap020-adaptador-usb-c-a-3-5mm-negro/",
+          "url": "https://conectatech-ec.github.io/productos/adap020-adaptador-usb-c-a-3-5mm-negro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/adap020/ADAP020-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap020/ADAP020-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/ADAP020-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/ADAP020-390.png",
       "sha256": "fc59618e951d45d34eed80e1d01d25f0d84fe58c995b34f02668bafa3dcab516",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/ADAP020-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/ADAP020-1280.png",
         "sha256": "345619fee4578e945fb5be2569a0220b58945ed0e2f8bdca56a41cfaae0bea94",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

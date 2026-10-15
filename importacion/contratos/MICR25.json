@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr25-microfono-vocal-thunder-sound-53hs472/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Micrófono Thunder Sound 53HS472 | con cable. Formato: Micrófono de mano alámbrico. Conexiones: Cable con plug de 6,35 mm macho. Presentación: Micrófono con cable incorporado a la presentación.",
   "contenido_venta": "1 micrófono con cable y plug de 6,35 mm. No incluye amplificador ni receptor inalámbrico.",
   "compatibilidad": "Requiere entrada de micrófono adecuada en equipo de amplificación. No se conecta directamente a USB ni sustituye un sistema inalámbrico.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "MICR25"
     },
     "movil": {
       "solicitado": "MICR25",
       "sku": "MICR25",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:12.844Z",
+      "fecha": "2026-10-15T00:53:15.169Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr25-microfono-vocal-thunder-sound-53hs472/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/micr25-microfono-vocal-thunder-sound-53hs472/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr25-microfono-vocal-thunder-sound-53hs472/",
       "archivo_html": "productos/micr25-microfono-vocal-thunder-sound-53hs472/index.html",
       "http": 200,
       "sha256_html": "534a2d47bfa22ab0a82f2a2d6661763d4c287533af50b59e95f26fd950af8d3c",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr25/MICR25-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/micr25/MICR25-01-600.webp?v=fb4b33698ecbf7e3",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr25/MICR25-01-600.webp?v=fb4b33698ecbf7e3",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/micr25-microfono-vocal-thunder-sound-53hs472/",
+          "url": "https://conectatech-ec.github.io/productos/micr25-microfono-vocal-thunder-sound-53hs472/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/micr25/MICR25-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr25/MICR25-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/MICR25-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/MICR25-390.png",
       "sha256": "a7a78dd4804cbc3854793b8556d41cbe861f66cfec10eeb65227f9b57f11a750",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/MICR25-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/MICR25-1280.png",
         "sha256": "a5063c0f6bae602e91c494dacb09ed128b656e3ef88ec65559e7684d3bf0dac6",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr10-microfono-k35/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Micrófono K35 Pro | kit con receptor de 3,5 mm. Presentación: 1 micrófono y 1 receptor. Conexiones: Receptor con plug de 3,5 mm TRRS macho. Diseño: Micrófono de solapa con pinza y espuma.",
   "contenido_venta": "1 micrófono y 1 receptor de 3,5 mm. No incluye cámara, teléfono ni estuche.",
   "compatibilidad": "Comprueba entrada de micrófono, pinout y requisitos de grabación de tu equipo. No es conexión USB-C ni se garantiza uso en cualquier salida de audífonos.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "MICR10"
     },
     "movil": {
       "solicitado": "MICR10",
       "sku": "MICR10",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:06.484Z",
+      "fecha": "2026-10-15T00:53:07.676Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr10-microfono-k35/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/micr10-microfono-k35/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr10-microfono-k35/",
       "archivo_html": "productos/micr10-microfono-k35/index.html",
       "http": 200,
       "sha256_html": "8a1d661259e769c9c5b29cf1f06d97f1791a9a643ff846aa0f5cfe294c864b72",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr10/MICR10-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/micr10/MICR10-01-600.webp?v=83e17c0026a74a0e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr10/MICR10-01-600.webp?v=83e17c0026a74a0e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/micr10-microfono-k35/",
+          "url": "https://conectatech-ec.github.io/productos/micr10-microfono-k35/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/micr10/MICR10-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr10/MICR10-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/MICR10-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/MICR10-390.png",
       "sha256": "ed6dc73093949c1a8063d5cd07b09277a8e553ac778253c67fe671d42cb32de2",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/MICR10-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/MICR10-1280.png",
         "sha256": "a5d886212a58907a092dca7d7bea2ed5bf2571f2a2ec79e693e998c821d9e553",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr20-microfono-alambrico-modelo-pga58/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Micrófono Shure PGA58 | con cable XLR. Formato: Micrófono de mano alámbrico. Conexiones: Cable XLR macho a XLR hembra de 3 contactos. Presentación: Micrófono con cable XLR indicado por empaque.",
   "contenido_venta": "1 micrófono y 1 cable XLR a XLR. No incluye soporte ni amplificador.",
   "compatibilidad": "Requiere entrada y equipo de audio adecuados para micrófono XLR. No se conecta directamente por USB ni incorpora receptor inalámbrico.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "MICR20"
     },
     "movil": {
       "solicitado": "MICR20",
       "sku": "MICR20",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:09.619Z",
+      "fecha": "2026-10-15T00:53:11.428Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr20-microfono-alambrico-modelo-pga58/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/micr20-microfono-alambrico-modelo-pga58/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr20-microfono-alambrico-modelo-pga58/",
       "archivo_html": "productos/micr20-microfono-alambrico-modelo-pga58/index.html",
       "http": 200,
       "sha256_html": "5e6d79d6275d7e480c2a84924fd3d3275b98231cba9df9fd888ca7b3f1cb7834",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr20/MICR20-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/micr20/MICR20-01-600.webp?v=52d8820dfc20e005",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr20/MICR20-01-600.webp?v=52d8820dfc20e005",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/micr20-microfono-alambrico-modelo-pga58/",
+          "url": "https://conectatech-ec.github.io/productos/micr20-microfono-alambrico-modelo-pga58/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/micr20/MICR20-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr20/MICR20-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/MICR20-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/MICR20-390.png",
       "sha256": "960223d3cadf6e8af928cd8954ab8f36af9bc423e4206862d00113de09fbedc9",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/MICR20-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/MICR20-1280.png",
         "sha256": "be3f82b8e867685f18d81fbafd074089c7ee7237c36372012d21e815fd95482a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

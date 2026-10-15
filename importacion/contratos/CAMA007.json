@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cama007-camara-de-seguridad-nexxt-indoor-2k/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Cámara Nexxt Indoor | 2K. Resolución: 2K / 3 MP nominales según empaque. Conexiones: Wi-Fi del modelo. Uso: Interior, cámara fija con base.",
   "contenido_venta": "1 cámara con su base; componente principal de la presentación. No incluye teléfono ni tarjeta de memoria.",
   "compatibilidad": "Requiere red Wi-Fi y configuración mediante la aplicación del fabricante. Comprueba alimentación, versión del sistema y accesorios de la presentación disponible.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "CAMA007"
     },
     "movil": {
       "solicitado": "CAMA007",
       "sku": "CAMA007",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:17.769Z",
+      "fecha": "2026-10-15T00:53:21.150Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cama007-camara-de-seguridad-nexxt-indoor-2k/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cama007-camara-de-seguridad-nexxt-indoor-2k/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cama007-camara-de-seguridad-nexxt-indoor-2k/",
       "archivo_html": "productos/cama007-camara-de-seguridad-nexxt-indoor-2k/index.html",
       "http": 200,
       "sha256_html": "5c12237cf242bf91161fee35726d8eb15ac1e5841b7b3b12eddbce81bcd1b9d4",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cama007/CAMA007-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cama007/CAMA007-01-600.webp?v=841716b5884c752c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cama007/CAMA007-01-600.webp?v=841716b5884c752c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cama007-camara-de-seguridad-nexxt-indoor-2k/",
+          "url": "https://conectatech-ec.github.io/productos/cama007-camara-de-seguridad-nexxt-indoor-2k/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cama007/CAMA007-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cama007/CAMA007-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/CAMA007-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/CAMA007-390.png",
       "sha256": "3fa68bf1cfb08a1cb57b35721f6a06c9cc899368d71aa771fb6aa517356f5eff",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/CAMA007-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/CAMA007-1280.png",
         "sha256": "e3f124f2d48d7b899db81dd9bbfeef169c47d0be75b1b43adcb6dfea99d52d44",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

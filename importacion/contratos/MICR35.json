@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr35-microfono-lavalier-anc-magnetico/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Micrófonos M2 | kit doble con estuche. Presentación: 2 micrófonos, receptor y estuche. Formato: Micrófonos compactos con sujeción de aro. Diseño: Estuche con interior amarillo e indicador frontal.",
   "contenido_venta": "2 micrófonos, 1 receptor y 1 estuche de carga; componentes principales del kit. No incluye teléfono.",
   "compatibilidad": "Confirma conector del receptor y soporte de audio del dispositivo antes de comprar. No se garantizan autonomía, cancelación de ruido ni compatibilidad universales.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "MICR35"
     },
     "movil": {
       "solicitado": "MICR35",
       "sku": "MICR35",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:16.859Z",
+      "fecha": "2026-10-15T00:53:19.926Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr35-microfono-lavalier-anc-magnetico/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/micr35-microfono-lavalier-anc-magnetico/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr35-microfono-lavalier-anc-magnetico/",
       "archivo_html": "productos/micr35-microfono-lavalier-anc-magnetico/index.html",
       "http": 200,
       "sha256_html": "f787db1b569c1d466db2e9de67b6aee7c96a87cc3804afeafc78ba2f2cc55bcd",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr35/MICR35-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/micr35/MICR35-01-600.webp?v=cf1edb6073524945",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr35/MICR35-01-600.webp?v=cf1edb6073524945",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/micr35-microfono-lavalier-anc-magnetico/",
+          "url": "https://conectatech-ec.github.io/productos/micr35-microfono-lavalier-anc-magnetico/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/micr35/MICR35-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr35/MICR35-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/MICR35-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/MICR35-390.png",
       "sha256": "aaeca9541b5dea975e0538c50232464d3ee659356de47e8b5cdf50f7638da6fa",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/MICR35-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/MICR35-1280.png",
         "sha256": "1b968e085c27e70cc0b9c9e1c8507085ca581da7deed426a05f73d1f656a7095",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap080-adaptador-otg-mini-usb-v3/",
-  "fecha_verificacion": "2026-10-15T00:39:28.768832+00:00",
+  "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Adaptador OTG V3 | Mini-USB a toma USB-A. Conexiones: Mini-USB macho a USB-A hembra. Formato: Cable corto OTG. Diseño: Conectores moldeados.",
   "contenido_venta": "1 adaptador con cable. No incluye dispositivos.",
   "compatibilidad": "Requiere equipo Mini-USB con soporte OTG/USB host y accesorio admitido. No es Micro-USB ni USB-C, ni garantiza compatibilidad por forma de conector solamente.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo. Procedencia real yhashes registrados sin afirmar foto física directa cuando la fuente es empaque. Producto nuevo ycompleto, fondo blanco, sin caja ni datos privados; modelo, variante, conectores ycomponentes principales cotejados."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T00:52:59.700219+00:00",
+      "reporte": "reportes/continuacion-086/http-publicacion.json",
+      "archivo": "reportes/continuacion-086/http-publicacion.json",
+      "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
+      "sku": "ADAP080"
     },
     "movil": {
       "solicitado": "ADAP080",
       "sku": "ADAP080",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:40:23.746Z",
+      "fecha": "2026-10-15T00:53:29.444Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap080-adaptador-otg-mini-usb-v3/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/adap080-adaptador-otg-mini-usb-v3/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap080-adaptador-otg-mini-usb-v3/",
       "archivo_html": "productos/adap080-adaptador-otg-mini-usb-v3/index.html",
       "http": 200,
       "sha256_html": "9582645d3795239f765429b727418bc99282e5ece29953642770e61cc7872b02",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap080/ADAP080-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/adap080/ADAP080-01-600.webp?v=abe701abcf92d8f8",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap080/ADAP080-01-600.webp?v=abe701abcf92d8f8",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/adap080-adaptador-otg-mini-usb-v3/",
+          "url": "https://conectatech-ec.github.io/productos/adap080-adaptador-otg-mini-usb-v3/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/adap080/ADAP080-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap080/ADAP080-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-086/qa-local/movil/ADAP080-390.png",
+      "archivo": "reportes/continuacion-086/qa-publica/movil/ADAP080-390.png",
       "sha256": "d9b09bf4d0ba9e68647d4c8f2c5239ad905a48fa0965067eab73f938eb11f1cc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-local/movil/ADAP080-1280.png",
+        "archivo": "reportes/continuacion-086/qa-publica/movil/ADAP080-1280.png",
         "sha256": "0577023b80e047257b6ff752dd1651f8a24523e1da94c1e109d98b66888b0f6f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
