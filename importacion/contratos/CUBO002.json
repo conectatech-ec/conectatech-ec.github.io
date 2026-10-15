@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo002-cubo-cargador-marca-ventev/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Cargador Ventev Wallport rq1300 de 18 W. Potencia: Hasta 18 W según empaque. Protocolo: Quick Charge 3.0 según empaque. Salida: Un puerto USB-A.",
   "contenido_venta": "Un cargador de pared.",
   "compatibilidad": "Equipos USB compatibles; Quick Charge requiere equipo y cable compatibles. No incluye cable no verificado.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact Ventev Wallport rq1300 BLACK slim wallcharger shown inside clear package. Elongated slightly curved black rounded rectangularbody, ORANGE recessed face with ONE USB-A female socket and actual small VENTEV marking. Physical US flatprongs only if visible source, not invented EUplug. Whole singlecharger mild3/4matching actual product in package, remove entire clearcase/printedretailbase, no cable,phone,4xgraphics,boxor inventedsecondport. Preserve black/orange design."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "CUBO002"
     },
     "movil": {
       "solicitado": "CUBO002",
       "sku": "CUBO002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:16.575Z",
+      "fecha": "2026-10-15T18:56:08.549Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo002-cubo-cargador-marca-ventev/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cubo002-cubo-cargador-marca-ventev/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo002-cubo-cargador-marca-ventev/",
       "archivo_html": "productos/cubo002-cubo-cargador-marca-ventev/index.html",
       "http": 200,
       "sha256_html": "914ca46a0c55f5380477d0b56eac1e483dd84face0a748ab19c22654fa868f1a",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo002/CUBO002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cubo002/CUBO002-01-600.webp?v=f988f4d47db1dea1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo002/CUBO002-01-600.webp?v=f988f4d47db1dea1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cubo002-cubo-cargador-marca-ventev/",
+          "url": "https://conectatech-ec.github.io/productos/cubo002-cubo-cargador-marca-ventev/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cubo002/CUBO002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo002/CUBO002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/CUBO002-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/CUBO002-390.png",
       "sha256": "60662be1afffad612acbab598ab1368ebe81d8457090fa80409506be3f6abefb",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/CUBO002-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/CUBO002-1280.png",
         "sha256": "de9c5a5d2636332d73f997ca5f9e2f903190463fc79625e3240771ec0ea58f48",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

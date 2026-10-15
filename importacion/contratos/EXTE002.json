@@ -128,9 +128,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/exte002-extensor-de-wifi-2-4ghz-pix-link-modelo-wr41q/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Extensor Wi-Fi Pix-Link WR41Q de 2,4 GHz. Banda: Wi-Fi de 2,4 GHz. Conexión: Dos puertos Ethernet. Recepción: Cuatro antenas externas.",
   "contenido_venta": "Un extensor Wi-Fi.",
   "compatibilidad": "Redes de 2,4 GHz compatibles; requiere configuración y toma eléctrica adecuada.",
@@ -233,14 +233,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical WHITE four-antenna Pix-Link mini wireless repeater in photos, shown side/underside3/4 matching first source so actual TWO YELLOW RJ45 sockets are visible side-by-side, small dark reset hole right, grey lower vented surface and TWO FLAT US power prongs below. Four white antennas, two tall and two angled as source. Preserve all exact body angles and socket layout; no invented front screen, blueports, brand text, LEDs or box. Entire one unit on white, do not show unsupported unseen top design."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "EXTE002"
     },
     "movil": {
       "solicitado": "EXTE002",
       "sku": "EXTE002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:00.344Z",
+      "fecha": "2026-10-15T18:55:47.733Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -265,7 +269,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/exte002-extensor-de-wifi-2-4ghz-pix-link-modelo-wr41q/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/exte002-extensor-de-wifi-2-4ghz-pix-link-modelo-wr41q/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/exte002-extensor-de-wifi-2-4ghz-pix-link-modelo-wr41q/",
       "archivo_html": "productos/exte002-extensor-de-wifi-2-4ghz-pix-link-modelo-wr41q/index.html",
       "http": 200,
       "sha256_html": "d9436d968d3c11dbd974657592f750161b927698d6742d2a01915472b5539559",
@@ -275,7 +279,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/exte002/EXTE002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/exte002/EXTE002-01-600.webp?v=b977b81192cf701b",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/exte002/EXTE002-01-600.webp?v=b977b81192cf701b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -284,32 +288,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/exte002-extensor-de-wifi-2-4ghz-pix-link-modelo-wr41q/",
+          "url": "https://conectatech-ec.github.io/productos/exte002-extensor-de-wifi-2-4ghz-pix-link-modelo-wr41q/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/exte002/EXTE002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/exte002/EXTE002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/EXTE002-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/EXTE002-390.png",
       "sha256": "6d7730332efedd2f90ad1612400ae4e0ed3a5862b92936a1a6eafeb1f5f57482",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/EXTE002-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/EXTE002-1280.png",
         "sha256": "f49678340036137b4145610a032cc527c88009011032a59302b5e8c55d3784f1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

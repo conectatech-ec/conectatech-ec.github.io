@@ -142,9 +142,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/alex001-alexa-echo-dot/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Amazon Echo Dot 5.ª generación con Alexa. Asistente: Alexa por voz. Conectividad: Bluetooth según empaque. Privacidad: Botón para desactivar micrófonos. Generación: Echo Dot de 5.ª generación.",
   "contenido_venta": "Un Echo Dot y adaptador de corriente según empaque.",
   "compatibilidad": "Requiere conexión Wi-Fi, aplicación Alexa y cuenta; disponibilidad de funciones y servicios según región.",
@@ -247,14 +247,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Owner-authorized exact Amazon Echo Dot5thgeneration Deep Sea BLUE colour explicitly identified on sticker, spherical compact speaker with navy woven fabric, dark blue lower base and thin subtle cyan ring at bottom as box. Whole ONE speaker on white, front mildly elevated just enough to see existing top controls only where source corroborates. Preserve curved fabric weave, no clock/display,numbers,newports,added Amazon logo,room,cord or retail box. Use dark navy blue source variant not charcoal alternate photo."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "ALEX001"
     },
     "movil": {
       "solicitado": "ALEX001",
       "sku": "ALEX001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:39:56.252Z",
+      "fecha": "2026-10-15T18:55:41.870Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -279,7 +283,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/alex001-alexa-echo-dot/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/alex001-alexa-echo-dot/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/alex001-alexa-echo-dot/",
       "archivo_html": "productos/alex001-alexa-echo-dot/index.html",
       "http": 200,
       "sha256_html": "209363fda883c82e2641786ddcaa28b7cfad00fc957f69920f3dae48e0d9dad0",
@@ -289,7 +293,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/alex001/ALEX001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/alex001/ALEX001-01-600.webp?v=896433068aa66da0",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/alex001/ALEX001-01-600.webp?v=896433068aa66da0",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -298,32 +302,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/alex001-alexa-echo-dot/",
+          "url": "https://conectatech-ec.github.io/productos/alex001-alexa-echo-dot/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/alex001/ALEX001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/alex001/ALEX001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/ALEX001-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/ALEX001-390.png",
       "sha256": "99a1a168464bac28ff246a706f6cfe4bfd37bb8f2e74040624fd829293b3e878",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/ALEX001-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/ALEX001-1280.png",
         "sha256": "24777c69a5884ee85184224886da6172655972dd2beabcdb69bfb6d6b47d816f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

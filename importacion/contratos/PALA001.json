@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pala001-palanca-para-play-station-4-ps4/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Control inalámbrico para PlayStation 4. Conexión: Control inalámbrico según empaque. Manejo: Dos palancas analógicas. Interacción: Panel táctil central.",
   "contenido_venta": "Un control inalámbrico.",
   "compatibilidad": "PlayStation 4; verificar compatibilidad y emparejamiento antes de usar.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact physical PS4-type controller in package, GREY/BLACK camouflage central body with BLACK grips and controls. Preserve exact symmetric low analog sticks, upperLEFT D-pad, upperRIGHT4circle/triangle/cross/square keys, large black central touchpad and smallPSroundkey. Show whole controller near-front mild3/4 angle with actual top shoulder outline, no cable, console, retail box/window, hands or new labels. Do not replace camo with plainblack or PS5 hardware."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "PALA001"
     },
     "movil": {
       "solicitado": "PALA001",
       "sku": "PALA001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:08.040Z",
+      "fecha": "2026-10-15T18:55:57.305Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pala001-palanca-para-play-station-4-ps4/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pala001-palanca-para-play-station-4-ps4/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pala001-palanca-para-play-station-4-ps4/",
       "archivo_html": "productos/pala001-palanca-para-play-station-4-ps4/index.html",
       "http": 200,
       "sha256_html": "9b822a33cb08eb40f94191896b7001c8dcb9e0858c2a445dcbbe09b90c334d76",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pala001/PALA001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pala001/PALA001-01-600.webp?v=3fdd1413aa6c8e71",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pala001/PALA001-01-600.webp?v=3fdd1413aa6c8e71",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pala001-palanca-para-play-station-4-ps4/",
+          "url": "https://conectatech-ec.github.io/productos/pala001-palanca-para-play-station-4-ps4/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pala001/PALA001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pala001/PALA001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/PALA001-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/PALA001-390.png",
       "sha256": "c433b2c5031526c143cff8a747dba2e0296084b0d17d0c6e261371673dda51fc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/PALA001-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/PALA001-1280.png",
         "sha256": "098fdf2e6250104a952fd08664be319f5f4e82477146441b60ff6bf294035400",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

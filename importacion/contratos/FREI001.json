@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/frei001-freidora-de-aire-env-3-litros-1000w-envase-de-vidrio/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Freidora ENV Air-Nova de vidrio de 3 litros. Capacidad: Cesta de vidrio de 3 litros. Potencia: 1000 W según empaque. Control: Temporizador de hasta 60 minutos según empaque.",
   "contenido_venta": "Una freidora de aire con cesta de vidrio.",
   "compatibilidad": "Alimentación de 110 V según empaque; seguir instrucciones del fabricante.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Owner-authorized exact ENV AIR-NOVA3L1000W airfryer shown onbox. White upright roundedcylindrical upperbody, round beige/silver mechanical timer dial at upperfront, GLASS lowerbowl with thick BLACK vertical handle atfront, blackbottomring/base. Match exact source front3/4angle and actual ENVsmallmark, lidventpattern only as source. Empty bowl with nofood, whole assembled unit, soft realisticglass translucency, no separate bowl, invented digitalscreen/knob/secondhandle, food,cloth,box or advertisingtext."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "FREI001"
     },
     "movil": {
       "solicitado": "FREI001",
       "sku": "FREI001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:17.441Z",
+      "fecha": "2026-10-15T18:56:09.786Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/frei001-freidora-de-aire-env-3-litros-1000w-envase-de-vidrio/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/frei001-freidora-de-aire-env-3-litros-1000w-envase-de-vidrio/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/frei001-freidora-de-aire-env-3-litros-1000w-envase-de-vidrio/",
       "archivo_html": "productos/frei001-freidora-de-aire-env-3-litros-1000w-envase-de-vidrio/index.html",
       "http": 200,
       "sha256_html": "9e9e499e62b1a5d82098668ddbc24624218c6212676aabdbf61511ad6bf9ed79",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/frei001/FREI001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/frei001/FREI001-01-600.webp?v=bada1580627c15ea",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/frei001/FREI001-01-600.webp?v=bada1580627c15ea",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/frei001-freidora-de-aire-env-3-litros-1000w-envase-de-vidrio/",
+          "url": "https://conectatech-ec.github.io/productos/frei001-freidora-de-aire-env-3-litros-1000w-envase-de-vidrio/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/frei001/FREI001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/frei001/FREI001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/FREI001-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/FREI001-390.png",
       "sha256": "4ffc49296d3da14e643805ddbed2299b76e7cfce9da864ddcd97b52546568e16",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/FREI001-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/FREI001-1280.png",
         "sha256": "eef9c3713d230147f142082de323a115bef8ddbfafca5e3b0ba1296caeeda19a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

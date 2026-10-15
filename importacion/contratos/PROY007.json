@@ -128,9 +128,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/proy007-proyector-wanbo-smart/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Proyector Wanbo Cube 2 Pro con base giratoria. Modelo: Wanbo Cube 2 Pro. Orientación: Base giratoria de 230° según empaque. Diseño: Cuerpo verde con frente acanalado.",
   "contenido_venta": "Un proyector Wanbo Cube 2 Pro.",
   "compatibilidad": "Usar alimentación y fuentes compatibles; verificar las funciones necesarias del equipo antes de comprar.",
@@ -233,14 +233,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact muted SAGE GREEN Wanbo Cube2Pro WPC024 projector physically shown. Cuboid body with ribbed front and top, actual large central dark circular glass lens in round matching-green faceplate, tiny dark slot left of lens and small round sensor below. Tall green U-shaped bracket/base pivoted slightly upwards. Show exact first source elevated front3/4 view with whole rectangular base and lens; no made-up vents/ports/remote/projection or box. Preserve actual sagegreen muted tone, genuine small Wanbo side label only if visible from angle."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "PROY007"
     },
     "movil": {
       "solicitado": "PROY007",
       "sku": "PROY007",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:01.264Z",
+      "fecha": "2026-10-15T18:55:48.900Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -265,7 +269,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/proy007-proyector-wanbo-smart/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/proy007-proyector-wanbo-smart/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/proy007-proyector-wanbo-smart/",
       "archivo_html": "productos/proy007-proyector-wanbo-smart/index.html",
       "http": 200,
       "sha256_html": "09b9d103afae5def1f8e46430c82ae97d912e9fec327fa81689e1e044395c18b",
@@ -275,7 +279,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/proy007/PROY007-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/proy007/PROY007-01-600.webp?v=4b8a051eaa99ea0f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/proy007/PROY007-01-600.webp?v=4b8a051eaa99ea0f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -284,32 +288,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/proy007-proyector-wanbo-smart/",
+          "url": "https://conectatech-ec.github.io/productos/proy007-proyector-wanbo-smart/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/proy007/PROY007-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/proy007/PROY007-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/PROY007-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/PROY007-390.png",
       "sha256": "2f98cef03bf2c8b80ff103eda4831b3a63ded5b328600d130a0e05b3086a0894",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/PROY007-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/PROY007-1280.png",
         "sha256": "33bf07b303eac51a077b57396e3a61cce6635ed0beb8f746d2941ef28678d027",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

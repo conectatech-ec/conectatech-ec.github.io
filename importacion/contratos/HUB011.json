@@ -198,9 +198,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub011-hub-usb-11-en-1-fast/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Hub USB-C 11 en 1 con HDMI, VGA y Ethernet. Conexión: Cable USB-C integrado. Vídeo: HDMI y VGA. Expansión: Cuatro puertos USB-A. Lectura: Ranuras SD y microSD. Red: Puerto Ethernet RJ45.",
   "contenido_venta": "Un hub con cable USB-C integrado.",
   "compatibilidad": "Equipo con USB-C compatible con las funciones requeridas; vídeo sujeto a salida de vídeo del equipo. HDMI y VGA no se usan simultáneamente según empaque.",
@@ -315,14 +315,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact grey metallic USB-C11in1 hub from physical references. Flat rounded rectangular body; near long side USB-C female,3.5mm round jack,SD and microSD slots stacked,HDMI. Short end VGA15pin plus RJ45. Opposite long side four BLUE USB-A. Fixed black cable ending grey USB-C male. Show whole one hub at same elevated 3/4 angle as first reference, short nose and card/HDMI side visible; do not relocate/repeat ports or invent USB sockets on top. No box or extra adapters."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "HUB011"
     },
     "movil": {
       "solicitado": "HUB011",
       "sku": "HUB011",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:39:45.179Z",
+      "fecha": "2026-10-15T18:55:27.821Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -347,7 +351,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub011-hub-usb-11-en-1-fast/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub011-hub-usb-11-en-1-fast/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub011-hub-usb-11-en-1-fast/",
       "archivo_html": "productos/hub011-hub-usb-11-en-1-fast/index.html",
       "http": 200,
       "sha256_html": "4d4e5cf48871e3d8694e24e8543bc8feeac4b3a6be9611c11054d5e436b565c9",
@@ -357,7 +361,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub011/HUB011-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub011/HUB011-01-600.webp?v=5ba4e69f96f9d54d",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub011/HUB011-01-600.webp?v=5ba4e69f96f9d54d",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -366,32 +370,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub011-hub-usb-11-en-1-fast/",
+          "url": "https://conectatech-ec.github.io/productos/hub011-hub-usb-11-en-1-fast/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub011/HUB011-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub011/HUB011-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/HUB011-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/HUB011-390.png",
       "sha256": "e4172c1bb8634d8db63c4e8e8b4c081ea3445f99653dd287e083576097de81ce",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/HUB011-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/HUB011-1280.png",
         "sha256": "e2205d25c226df16a5f03dbf32b6da6ed235df3f976d5c00918836850fb577a4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

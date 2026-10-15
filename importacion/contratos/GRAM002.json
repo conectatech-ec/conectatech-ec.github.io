@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/gram002-gramera-para-comida-con-envase/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Gramera digital DM602 con envase. Capacidad: Hasta 5 kg según selección de empaque. Precisión: Graduación de 1 g según empaque. Manejo: Botones Mode, On/Off y Tare.",
   "contenido_venta": "Una gramera con envase según base maestra.",
   "compatibilidad": "Uso doméstico; colocar sobre una superficie estable y respetar capacidad indicada.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact RED/BLACK DM602 household kitchen digital scale physically shown. Large circular brushed STAINLESS STEEL shallow platform atop red housing, sloped front BLACK control panel with rectangular LCD OFF, THREE pale buttons labelled MODE left,ON/OFF centre,TAREright; actual DIGITALSCALEmark above LCD. Show entire actual platform scale at same elevatedfront3/4angle, no invented deep bowl or colourchange, no food,weightreadings,box,extra buttonsorcable. Preserve physicalredfinish and reflection controlled."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "GRAM002"
     },
     "movil": {
       "solicitado": "GRAM002",
       "sku": "GRAM002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:19.297Z",
+      "fecha": "2026-10-15T18:56:12.217Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/gram002-gramera-para-comida-con-envase/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/gram002-gramera-para-comida-con-envase/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/gram002-gramera-para-comida-con-envase/",
       "archivo_html": "productos/gram002-gramera-para-comida-con-envase/index.html",
       "http": 200,
       "sha256_html": "b117a246afd3a8924c16750a59dd86141d0ad195140b5d7d78d8b5600f3213af",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/gram002/GRAM002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/gram002/GRAM002-01-600.webp?v=8c4b33277119a73d",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/gram002/GRAM002-01-600.webp?v=8c4b33277119a73d",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/gram002-gramera-para-comida-con-envase/",
+          "url": "https://conectatech-ec.github.io/productos/gram002-gramera-para-comida-con-envase/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/gram002/GRAM002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/gram002/GRAM002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/GRAM002-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/GRAM002-390.png",
       "sha256": "1a05069f442da2cc693d1199101b1e3c9d135b35380637daf9d7bb1c7ddcb5e0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/GRAM002-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/GRAM002-1280.png",
         "sha256": "3df74858d2d6af1259dc00570153db7b7b000178593127158dcf2aa45b56b99f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

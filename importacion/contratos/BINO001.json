@@ -128,9 +128,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/bino001-binoculares-8x40/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Binoculares 8×40 con enfoque central. Óptica: Formato 8×40. Enfoque: Rueda central de ajuste. Agarre: Cuerpo negro texturizado.",
   "contenido_venta": "Un binocular.",
   "compatibilidad": "Observación óptica; no mirar directamente al sol.",
@@ -233,14 +233,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact BLACK binocular from physical references, two broad objective barrels, smaller eyepieces at back, ribbed/textured rubber armour and large ribbed central focus wheel, actual bridging hinge. Show same elevated front3/4 angle as first physical photo with both objectives uncovered and entire binocular crisp. Remove price sticker, no invented brand/text/spec engravings, no neckstrap/case/box or lens caps floating. Preserve correct barrel dimensions, optical lens reflections subtle."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "BINO001"
     },
     "movil": {
       "solicitado": "BINO001",
       "sku": "BINO001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:39:58.295Z",
+      "fecha": "2026-10-15T18:55:44.778Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -265,7 +269,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/bino001-binoculares-8x40/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/bino001-binoculares-8x40/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/bino001-binoculares-8x40/",
       "archivo_html": "productos/bino001-binoculares-8x40/index.html",
       "http": 200,
       "sha256_html": "4aa8879f59d88a4bb0e6e39df3e1bfa688e4fe25964ecacd111af405fc23e6ae",
@@ -275,7 +279,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/bino001/BINO001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/bino001/BINO001-01-600.webp?v=de972073ff930023",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/bino001/BINO001-01-600.webp?v=de972073ff930023",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -284,32 +288,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/bino001-binoculares-8x40/",
+          "url": "https://conectatech-ec.github.io/productos/bino001-binoculares-8x40/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/bino001/BINO001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/bino001/BINO001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/BINO001-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/BINO001-390.png",
       "sha256": "f07e5be8535c05cedb0fd1c8f4c422b40944c55e1cb005458476a7353c8f3bfd",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/BINO001-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/BINO001-1280.png",
         "sha256": "0b5f9411046464cdd52d2eea581b5b2c82a5a356f359062e814df909636be5df",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -140,9 +140,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/esta002-estacion-de-carga-gan-pro-6-puertos-usb-c-x3-usb-a-x3/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Estación de carga GaN Pro de 6 puertos. Conexiones: Tres USB-C y tres USB-A. Organización: Base para escritorio. Diseño: Estación vertical compacta.",
   "contenido_venta": "Una estación de carga con base de apoyo.",
   "compatibilidad": "Dispositivos USB compatibles con la potencia y protocolo de cada puerto; no sumar las potencias individuales como salida simultánea.",
@@ -249,14 +249,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact vertical grey desktop GaNPro charger in black U cradle. Front narrow rounded-rectangle BLACK face with blue indicator at TOP then THREE blue USB-C female vertically, labels45W,20W,20W, then THREE ORANGE USB-A female labels22.5W each. Preserve physical six ports, exact sequence, grey metal housing and black cradle. Show whole single charger same 3/4 angle as first physical source with front all sockets legible. No invented cable, phone, box, extra sockets or changed ratings."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "ESTA002"
     },
     "movil": {
       "solicitado": "ESTA002",
       "sku": "ESTA002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:39:50.990Z",
+      "fecha": "2026-10-15T18:55:35.581Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -281,7 +285,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/esta002-estacion-de-carga-gan-pro-6-puertos-usb-c-x3-usb-a-x3/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/esta002-estacion-de-carga-gan-pro-6-puertos-usb-c-x3-usb-a-x3/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/esta002-estacion-de-carga-gan-pro-6-puertos-usb-c-x3-usb-a-x3/",
       "archivo_html": "productos/esta002-estacion-de-carga-gan-pro-6-puertos-usb-c-x3-usb-a-x3/index.html",
       "http": 200,
       "sha256_html": "1e07d214eff1b095af162424d91b593237384cb58a98359bb58487cc5ac9c424",
@@ -291,7 +295,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/esta002/ESTA002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/esta002/ESTA002-01-600.webp?v=07752a5fef23a538",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/esta002/ESTA002-01-600.webp?v=07752a5fef23a538",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -300,32 +304,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/esta002-estacion-de-carga-gan-pro-6-puertos-usb-c-x3-usb-a-x3/",
+          "url": "https://conectatech-ec.github.io/productos/esta002-estacion-de-carga-gan-pro-6-puertos-usb-c-x3-usb-a-x3/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/esta002/ESTA002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/esta002/ESTA002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/ESTA002-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/ESTA002-390.png",
       "sha256": "75a2638dbef13282c8ea345a436d58ea824483a24817b9a67886ad7281f9adc1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/ESTA002-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/ESTA002-1280.png",
         "sha256": "d02849483f171b4687d8135ade28333e45fd9f272ba75aab813320caffff142b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

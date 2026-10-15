@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/alex002-alexa-echo-pop/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Amazon Echo Pop con Alexa. Asistente: Alexa por voz. Conectividad: Bluetooth según empaque. Privacidad: Control para desactivar micrófonos.",
   "contenido_venta": "Un Echo Pop con adaptador de corriente según empaque.",
   "compatibilidad": "Requiere Wi-Fi, aplicación Alexa y cuenta; funciones y servicios sujetos a región y disponibilidad.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Owner-authorized exact Amazon Echo Pop1stgeneration MIDNIGHT TEAL as package sticker. Compact HALF-SPHERE with FLAT circular forward fabric grille, deep muted blue-green/teal casing, subtle cyan short top light strip as source. Mild front3/4show round grille and halfdomeback; one complete speaker onwhite. Do not substitute EchoDot fullsphere or blue-white colour, no clock,screen,numbers,added logos,cables,roomprops or box. Preserve fabricweave and exact form."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "ALEX002"
     },
     "movil": {
       "solicitado": "ALEX002",
       "sku": "ALEX002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:13.792Z",
+      "fecha": "2026-10-15T18:56:05.001Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/alex002-alexa-echo-pop/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/alex002-alexa-echo-pop/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/alex002-alexa-echo-pop/",
       "archivo_html": "productos/alex002-alexa-echo-pop/index.html",
       "http": 200,
       "sha256_html": "07d9bfa1ab871ea0a80ef27682a4869b0ea164d74123188362f23453342fd9e2",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/alex002/ALEX002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/alex002/ALEX002-01-600.webp?v=849d707ad0bd5f10",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/alex002/ALEX002-01-600.webp?v=849d707ad0bd5f10",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/alex002-alexa-echo-pop/",
+          "url": "https://conectatech-ec.github.io/productos/alex002-alexa-echo-pop/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/alex002/ALEX002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/alex002/ALEX002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/ALEX002-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/ALEX002-390.png",
       "sha256": "4a7fa23a8411c3a577042ca6a6bb22aabc354ff666de144411866499b348d72a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/ALEX002-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/ALEX002-1280.png",
         "sha256": "ce9ef2f22383fff219855d71d4d594e9e8acbf02533e8cd1f0f473d84ee22b41",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

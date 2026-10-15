@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub006-hub-usb-c-a-usb-a-x3-ethernet-orvesion/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Hub USB-C con tres USB-A y Ethernet. Expansión: Tres puertos USB-A. Red: Un puerto Ethernet RJ45. Entrada: Cable USB-C integrado.",
   "contenido_venta": "Un hub con cable USB-C integrado.",
   "compatibilidad": "Equipos USB-C compatibles; disponibilidad de red sujeta a controladores y sistema operativo.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical SILVER unbranded longrectangular hub with THREE blue USB-A onlongside and ONE RJ45 onshortend. White fixedshortcord with silver USB-C male. Show whole hub front3/4so both3USBrow andEthernetnosevisible, consistentphysicaltwoangles; no addedARWEIXUN/Orvesionlogos or copiedlabel, noHDMI/SD/extraports,card,box or accessories. Preserve actual proportions, satinmetalandwhitesleeve."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "HUB006"
     },
     "movil": {
       "solicitado": "HUB006",
       "sku": "HUB006",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:20.308Z",
+      "fecha": "2026-10-15T18:56:13.424Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub006-hub-usb-c-a-usb-a-x3-ethernet-orvesion/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub006-hub-usb-c-a-usb-a-x3-ethernet-orvesion/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub006-hub-usb-c-a-usb-a-x3-ethernet-orvesion/",
       "archivo_html": "productos/hub006-hub-usb-c-a-usb-a-x3-ethernet-orvesion/index.html",
       "http": 200,
       "sha256_html": "bd8f9a94a649036c97c0efa29d45b8ba33a35673b57ad5821ed9bdab40b2f116",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub006/HUB006-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub006/HUB006-01-600.webp?v=fd08591bea51dc9a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub006/HUB006-01-600.webp?v=fd08591bea51dc9a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub006-hub-usb-c-a-usb-a-x3-ethernet-orvesion/",
+          "url": "https://conectatech-ec.github.io/productos/hub006-hub-usb-c-a-usb-a-x3-ethernet-orvesion/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub006/HUB006-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub006/HUB006-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/HUB006-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/HUB006-390.png",
       "sha256": "b3b6ca085501ed7bec66f343f0f4a513e3ffeb57ba6c31d09af7427293c4309f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/HUB006-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/HUB006-1280.png",
         "sha256": "467847f0d4dee1e81310c340b3e7f4119d6e142224679a2a2c6a27727ff18e48",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

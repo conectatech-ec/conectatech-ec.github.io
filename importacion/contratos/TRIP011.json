@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip011-tripode-p180/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Trípode selfie P180 extensible. Alcance: Altura de hasta 1,8 m según empaque. Versatilidad: Palo selfie y trípode. Sujeción: Pinza orientable para teléfono.",
   "contenido_venta": "Un trípode selfie P180 con control según empaque.",
   "compatibilidad": "Teléfonos que se ajusten a la pinza; funciones del control sujetas a compatibilidad.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact BLACK P1801.8m selfie tripod in box references, slim long telescopic mast, BLACK round cylindrical handle and compact hinged phone clamp top with same small side articulated bracket,3foldout legs at bottom. Whole tripod standing moderately extended and EMPTY clamp; small actual removable control seated in handle if illustrated, not floating. No phone, person, camera, second folded unit, extra ringlight or retailbox. Faithful exact top bracket and base fromsource."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "TRIP011"
     },
     "movil": {
       "solicitado": "TRIP011",
       "sku": "TRIP011",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:09.976Z",
+      "fecha": "2026-10-15T18:55:59.841Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip011-tripode-p180/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/trip011-tripode-p180/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip011-tripode-p180/",
       "archivo_html": "productos/trip011-tripode-p180/index.html",
       "http": 200,
       "sha256_html": "c51f2fc1153d2e961acb76487782b74d948c488fdeb26e2a44c27325c60393be",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip011/TRIP011-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/trip011/TRIP011-01-600.webp?v=1c125c0c2e412c15",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip011/TRIP011-01-600.webp?v=1c125c0c2e412c15",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/trip011-tripode-p180/",
+          "url": "https://conectatech-ec.github.io/productos/trip011-tripode-p180/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/trip011/TRIP011-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip011/TRIP011-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/TRIP011-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/TRIP011-390.png",
       "sha256": "85749e75fb8d81b0d1a1182c8c65747b961c05acc33aa2d051f05833a64322bd",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/TRIP011-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/TRIP011-1280.png",
         "sha256": "0a4b8444ec7ea826ee76a70e95034182d80523d0a12699a4522d343fc417b8e3",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -128,9 +128,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/base002-base-inalambrica-de-carga-multifuncional-3-en-1-monster/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Base Monster multifuncional de carga 3 en 1. Carga: Tres superficies de carga. Organización: Soporte vertical de escritorio. Orientación: Placa frontal inclinada.",
   "contenido_venta": "Una base de carga 3 en 1.",
   "compatibilidad": "Dispositivos compatibles con cada zona inalámbrica; verificar el modelo de reloj.",
@@ -233,14 +233,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact BLACK Monster three-in-one charging station from actual physical photos. Tall central rectangular column with actual MONSTER logo, sloped front top phone pad with grey circular ring and dotted lightning centre, horizontal top rounded-square pad with small raised round puck, lower broad rectangular base with printed grey ring. Show whole unit from exact first physical3/4 angle, all three areas visible. No phone/watch/case, cable, extra arm, LEDs or packaging. Preserve exact genuine logo/hardware."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "BASE002"
     },
     "movil": {
       "solicitado": "BASE002",
       "sku": "BASE002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:39:57.317Z",
+      "fecha": "2026-10-15T18:55:43.259Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -265,7 +269,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/base002-base-inalambrica-de-carga-multifuncional-3-en-1-monster/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/base002-base-inalambrica-de-carga-multifuncional-3-en-1-monster/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/base002-base-inalambrica-de-carga-multifuncional-3-en-1-monster/",
       "archivo_html": "productos/base002-base-inalambrica-de-carga-multifuncional-3-en-1-monster/index.html",
       "http": 200,
       "sha256_html": "0091b170e30647ac5b5fe2648d7c2538a60baf4d1c8e1f4bcd2edf4a1c5fa088",
@@ -275,7 +279,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/base002/BASE002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/base002/BASE002-01-600.webp?v=5b617a7728926495",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/base002/BASE002-01-600.webp?v=5b617a7728926495",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -284,32 +288,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/base002-base-inalambrica-de-carga-multifuncional-3-en-1-monster/",
+          "url": "https://conectatech-ec.github.io/productos/base002-base-inalambrica-de-carga-multifuncional-3-en-1-monster/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/base002/BASE002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/base002/BASE002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/BASE002-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/BASE002-390.png",
       "sha256": "7949132fb2ef3912af88403793fb7e611e291c16d79c31f3578aa5b5bc24c0ae",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/BASE002-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/BASE002-1280.png",
         "sha256": "e091d79ad211e2c7f60163b24fc0106a1a4239b0dbec8501d0ec91b95e42e7b1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

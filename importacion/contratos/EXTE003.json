@@ -128,9 +128,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/exte003-extensor-de-wifi-1200mbps-6-antenas/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Extensor Wi-Fi 1200 Mbps de seis antenas. Recepción: Seis antenas orientables. Modos: Repetidor, AP y router según empaque. Diseño: Cuerpo blanco compacto.",
   "contenido_venta": "Un extensor Wi-Fi.",
   "compatibilidad": "Requiere red y configuración compatibles; 1200 Mbps es la cifra nominal del empaque, no velocidad garantizada de Internet.",
@@ -233,14 +233,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact WHITE six-antenna wireless repeater physical sources. SIX long slim external white antenna rods arranged exactly: two tall central vertical, two taller upper diagonal toward back, two lower outward diagonals left/right; preserve actual hinge arrangement from first photo. Rectangular rounded white body with front vertical LED label column high right, wifi emblem and oval WPS button below, real side vent grille. Whole unit no crop, same mild front-side3/4 angle, antenna count6 not4/8. No cables/router/phone/packaging or invented ports."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "EXTE003"
     },
     "movil": {
       "solicitado": "EXTE003",
       "sku": "EXTE003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:39:59.394Z",
+      "fecha": "2026-10-15T18:55:46.365Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -265,7 +269,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/exte003-extensor-de-wifi-1200mbps-6-antenas/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/exte003-extensor-de-wifi-1200mbps-6-antenas/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/exte003-extensor-de-wifi-1200mbps-6-antenas/",
       "archivo_html": "productos/exte003-extensor-de-wifi-1200mbps-6-antenas/index.html",
       "http": 200,
       "sha256_html": "37e854accedab1c2390f4010853ada3f206919dc1b8ce5927316c864d347ebf8",
@@ -275,7 +279,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/exte003/EXTE003-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/exte003/EXTE003-01-600.webp?v=ea0279e4a7536fdb",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/exte003/EXTE003-01-600.webp?v=ea0279e4a7536fdb",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -284,32 +288,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/exte003-extensor-de-wifi-1200mbps-6-antenas/",
+          "url": "https://conectatech-ec.github.io/productos/exte003-extensor-de-wifi-1200mbps-6-antenas/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/exte003/EXTE003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/exte003/EXTE003-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/EXTE003-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/EXTE003-390.png",
       "sha256": "20a2e44c7a8a330003e56a62ba02abf52a2ae689c56830a7ba019e0a1b956b09",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/EXTE003-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/EXTE003-1280.png",
         "sha256": "c019234546fdb81fb869ab63de7ff296bea5cf5a6d1e001cd71244585709f2d6",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

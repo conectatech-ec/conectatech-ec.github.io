@@ -152,9 +152,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/arod03-aro-de-luz-selfie-mini/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Luz selfie mini C03 con pinza. Iluminación: Difusor blanco compacto. Sujeción: Pinza integrada. Orientación: Cabezal articulado.",
   "contenido_venta": "Una luz selfie con pinza integrada.",
   "compatibilidad": "Pinza para montaje en superficies o accesorios compatibles con su apertura.",
@@ -265,14 +265,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact compact square-with-rounded-corners C03 selfie fill light, white diffusing rounded-square rim around black circular centre, BLACK side/back and hinged black clamp with circular hole. Upright at mild front-side angle showing whole light and clip below unfolded exactly as actual sources. No phone, extra arm, invented power cable or text, no lighting halos. Preserve genuine form and proportions, not circular ring light."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "AROD03"
     },
     "movil": {
       "solicitado": "AROD03",
       "sku": "AROD03",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:39:47.782Z",
+      "fecha": "2026-10-15T18:55:31.527Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -297,7 +301,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/arod03-aro-de-luz-selfie-mini/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/arod03-aro-de-luz-selfie-mini/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/arod03-aro-de-luz-selfie-mini/",
       "archivo_html": "productos/arod03-aro-de-luz-selfie-mini/index.html",
       "http": 200,
       "sha256_html": "1db4abb9ceb449e836f0d078a0c3bedbdebf1c94b75f7fb57595193872aba984",
@@ -307,7 +311,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/arod03/AROD03-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/arod03/AROD03-01-600.webp?v=3a6678a08770f7cc",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/arod03/AROD03-01-600.webp?v=3a6678a08770f7cc",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -316,32 +320,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/arod03-aro-de-luz-selfie-mini/",
+          "url": "https://conectatech-ec.github.io/productos/arod03-aro-de-luz-selfie-mini/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/arod03/AROD03-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/arod03/AROD03-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/AROD03-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/AROD03-390.png",
       "sha256": "f87ca4e120573ea779c4d55447eef1c31ec5c006ac74e97db706a60ad215e081",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/AROD03-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/AROD03-1280.png",
         "sha256": "e4a03395e23369315c69c90e5c0bc0a2371e7210116c967c663d108cb636ebee",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

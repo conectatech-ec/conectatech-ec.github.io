@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/capt002-capturadora-de-video-usb-a-a-audio-y-video-av/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Capturadora USB de video AV y audio. Entrada: Video RCA amarillo y S-Video. Audio: RCA blanco y rojo. Salida: USB-A para computadora.",
   "contenido_venta": "Una capturadora USB con entradas AV y S-Video.",
   "compatibilidad": "Fuentes de video compuesto o S-Video y equipo USB compatible; software y sistema operativo deben ser compatibles.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact BLACK USB-A video capture dongle physically shown. Rectangular body with actual dotted triangle perforation pattern and small greenLED; USB-A male at shortend. Fixed black cable at otherend divides into FOUR female connectors: YELLOW RCA video,RED RCA audio,WHITE RCA audio,BLACK round4pin S-Video. Preserve exactcount4,femalejacks and actual layout. Arrange whole cable and body elegantly3/4flat, no addedHDMI,secondUSB,disc,cap,hand,manualorretailbag. Clean accurate sourcehardware."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "CAPT002"
     },
     "movil": {
       "solicitado": "CAPT002",
       "sku": "CAPT002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:15.676Z",
+      "fecha": "2026-10-15T18:56:07.378Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/capt002-capturadora-de-video-usb-a-a-audio-y-video-av/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/capt002-capturadora-de-video-usb-a-a-audio-y-video-av/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/capt002-capturadora-de-video-usb-a-a-audio-y-video-av/",
       "archivo_html": "productos/capt002-capturadora-de-video-usb-a-a-audio-y-video-av/index.html",
       "http": 200,
       "sha256_html": "b02b3d926bd150b676d3b1040d337ab9850c06e8ca67c043015a9133cce0898d",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/capt002/CAPT002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/capt002/CAPT002-01-600.webp?v=8a8ca4e5906ea943",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/capt002/CAPT002-01-600.webp?v=8a8ca4e5906ea943",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/capt002-capturadora-de-video-usb-a-a-audio-y-video-av/",
+          "url": "https://conectatech-ec.github.io/productos/capt002-capturadora-de-video-usb-a-a-audio-y-video-av/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/capt002/CAPT002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/capt002/CAPT002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/CAPT002-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/CAPT002-390.png",
       "sha256": "1010284847c2080e9b7d770c6b263941d9a14e786ed70aa0fe9c3d9cbd1f6bfd",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/CAPT002-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/CAPT002-1280.png",
         "sha256": "498e4ee7611c9ba46fd97631dfa6686fcc38ea49a231915b5b1704147c2c02e3",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/lint010-linterna-de-cabeza-nf-611/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Linterna frontal NF-611 con doble luz. Iluminación: Foco circular y dos barras COB. Uso: Soporte de linterna frontal. Recarga: Carga USB según empaque.",
   "contenido_venta": "Una linterna frontal NF-611.",
   "compatibilidad": "Alimentación y recarga compatibles con el modelo; seguir instrucciones del fabricante.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK NF-611 headlamp physical source, horizontallyelongated roundedhousing. LEFTlarge circularclearreflector, RIGHTtwo parallel YELLOW pillshaped COBbars insidewhiteoutlines, blackrearrectangular batterybackplate, actualtilthinge. Same mildfront3/4angle as physicalphoto withwholebody. No unshownstrap reconstruction, additionalbattery,box,cable,beams,graphictexts or inventedadditionalLED. CleanpristinesatinblackandbrightyellowCOB."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "LINT010"
     },
     "movil": {
       "solicitado": "LINT010",
       "sku": "LINT010",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:22.159Z",
+      "fecha": "2026-10-15T18:56:15.844Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lint010-linterna-de-cabeza-nf-611/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/lint010-linterna-de-cabeza-nf-611/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/lint010-linterna-de-cabeza-nf-611/",
       "archivo_html": "productos/lint010-linterna-de-cabeza-nf-611/index.html",
       "http": 200,
       "sha256_html": "29bbfddb7994f1b51ca8050ea3519193afcba7f3094afe2568a85876d7dd1652",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lint010/LINT010-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/lint010/LINT010-01-600.webp?v=ddc756b2e4a50257",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/lint010/LINT010-01-600.webp?v=ddc756b2e4a50257",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/lint010-linterna-de-cabeza-nf-611/",
+          "url": "https://conectatech-ec.github.io/productos/lint010-linterna-de-cabeza-nf-611/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/lint010/LINT010-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/lint010/LINT010-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/LINT010-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/LINT010-390.png",
       "sha256": "ff9852f5b1882ba07b514a516e2f5800809acf0b0eaa26fd4e618edfe745522e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/LINT010-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/LINT010-1280.png",
         "sha256": "bbf151d55352939b6edd7dd5a4841d3e59dc5152f2ad40c888ae1fd5e2a5f6dd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -155,9 +155,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub005-hub-3-0-8-in-2-usb-c-usb-a-adapter/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Hub 8 en 2 con conexión USB-C y USB-A. Entrada: USB-C con adaptador USB-A. Lectura: Ranuras SD y microSD. Audio: Conector de 3,5 mm. Expansión: Puertos USB-A y USB-C.",
   "contenido_venta": "Un hub con cable y adaptador USB-C/USB-A.",
   "compatibilidad": "Conectar a un puerto de datos compatible; funciones sujetas al equipo.",
@@ -264,14 +264,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact grey long rectangular8in2hub from box rendering. Integrated short black USB-C cable plus tethered grey USB-A adapter attached near its end. Short nose has one BLUE USB-A; long front side has USB-C female,3.5mm jack, stacked SD/microSD slots and three USB-A ports towards rear as shown. Preserve exact diagram/source number and order; do not add HDMI or Ethernet. Whole single hub on white at same 3/4 angle as box, cable visible, no cards/adapters inserted, no retail packaging."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "HUB005"
     },
     "movil": {
       "solicitado": "HUB005",
       "sku": "HUB005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:39:48.819Z",
+      "fecha": "2026-10-15T18:55:32.876Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -296,7 +300,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub005-hub-3-0-8-in-2-usb-c-usb-a-adapter/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub005-hub-3-0-8-in-2-usb-c-usb-a-adapter/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub005-hub-3-0-8-in-2-usb-c-usb-a-adapter/",
       "archivo_html": "productos/hub005-hub-3-0-8-in-2-usb-c-usb-a-adapter/index.html",
       "http": 200,
       "sha256_html": "63eb08e0cb06ffaee3b59808a6f43091ad3c28c47795cb43f6fdbb44f4991357",
@@ -306,7 +310,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub005/HUB005-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub005/HUB005-01-600.webp?v=8e2329b4d09c6d4b",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub005/HUB005-01-600.webp?v=8e2329b4d09c6d4b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -315,32 +319,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub005-hub-3-0-8-in-2-usb-c-usb-a-adapter/",
+          "url": "https://conectatech-ec.github.io/productos/hub005-hub-3-0-8-in-2-usb-c-usb-a-adapter/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub005/HUB005-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub005/HUB005-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/HUB005-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/HUB005-390.png",
       "sha256": "44d223c66c0168e8adc107f8925f8103989d7e2add639cf0e860030ed8e882d2",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/HUB005-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/HUB005-1280.png",
         "sha256": "67bb6c9eaed141fe71e4b773fd840f56a72d56b1dfe61edec070fe0603f141dc",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

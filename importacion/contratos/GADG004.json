@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/gadg004-gadget-odometro-para-bicicleta-sunding/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Ciclocomputador Sunding SD-563A con cable. Lectura: Pantalla LCD. Funciones: Velocidad, distancia y tiempo según empaque. Iluminación: Retroiluminación según empaque.",
   "contenido_venta": "Un ciclocomputador. Contenido adicional de montaje sujeto a referencia del fabricante.",
   "compatibilidad": "Instalación en bicicleta y configuración del perímetro de rueda según manual.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact Sunding SD-563A BLACK bicycle computer visible in package window. Rounded tall body, large pale grey LCD with faint horizontal divider bars but OFF no invented readings, actual SUNDING logo above screen, bottommiddle rectangular MODEkey and TWO small oval sidebuttons. Show only actual main device from nearfrontal mild3/4angle, no invented wire/sensor/handlebar/mount/bike, no box/window. Match screenproportions and3buttons, clean glossyblacknew finish."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "GADG004"
     },
     "movil": {
       "solicitado": "GADG004",
       "sku": "GADG004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:18.289Z",
+      "fecha": "2026-10-15T18:56:10.937Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/gadg004-gadget-odometro-para-bicicleta-sunding/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/gadg004-gadget-odometro-para-bicicleta-sunding/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/gadg004-gadget-odometro-para-bicicleta-sunding/",
       "archivo_html": "productos/gadg004-gadget-odometro-para-bicicleta-sunding/index.html",
       "http": 200,
       "sha256_html": "f523da7aa99a40c17b0b1cf927d88428960cf3ffb7c250ddef791f4563e074e8",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/gadg004/GADG004-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/gadg004/GADG004-01-600.webp?v=35e7cb3fc1376ae5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/gadg004/GADG004-01-600.webp?v=35e7cb3fc1376ae5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/gadg004-gadget-odometro-para-bicicleta-sunding/",
+          "url": "https://conectatech-ec.github.io/productos/gadg004-gadget-odometro-para-bicicleta-sunding/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/gadg004/GADG004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/gadg004/GADG004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/GADG004-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/GADG004-390.png",
       "sha256": "b637efac14639da0b58e90f3730d84d12476315e5d6395c10c6534e8365e3f0f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/GADG004-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/GADG004-1280.png",
         "sha256": "0dfeb745e84de74c2bf3c7fbd669a639fecad6e6ecfca29df223c7659ab69237",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

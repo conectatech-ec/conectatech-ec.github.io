@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/repr002-reproductor-mp3-mini-s-r/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Reproductor MP3 mini con controles circulares. Formato: Cuerpo mini portátil. Manejo: Controles circulares frontales. Audio: Salida para audífonos de 3,5 mm.",
   "contenido_venta": "Un reproductor MP3.",
   "compatibilidad": "Comprobar formato y capacidad de memoria compatibles; no se incluye memoria ni audífonos no verificados.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact GREEN small rectangular clip-style MP3 player physically shown. Brushed green metal face, round WHITE control wheel with plus atRIGHT,minusLEFT,forwardBACK symbols upper/lower and triangleplay/pause centre; silver white side face with actual ON/OFF slider and round3.5mm socket only if visible in photos. Whole single green player at mild front angle, no display, cable, headphones, extra memory, black variant or clear retail case. Do not invent model names."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "REPR002"
     },
     "movil": {
       "solicitado": "REPR002",
       "sku": "REPR002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:05.268Z",
+      "fecha": "2026-10-15T18:55:53.709Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/repr002-reproductor-mp3-mini-s-r/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/repr002-reproductor-mp3-mini-s-r/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/repr002-reproductor-mp3-mini-s-r/",
       "archivo_html": "productos/repr002-reproductor-mp3-mini-s-r/index.html",
       "http": 200,
       "sha256_html": "f7f27e6fa90857501907ad70cb84be31596429a25efd139bd8db14517acb0e27",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/repr002/REPR002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/repr002/REPR002-01-600.webp?v=fb05159fadbcb6c5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/repr002/REPR002-01-600.webp?v=fb05159fadbcb6c5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/repr002-reproductor-mp3-mini-s-r/",
+          "url": "https://conectatech-ec.github.io/productos/repr002-reproductor-mp3-mini-s-r/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/repr002/REPR002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/repr002/REPR002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/REPR002-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/REPR002-390.png",
       "sha256": "ca7aee889aec3805b10ab7e17e319741375c731c45089035107c670e63a7cdc8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/REPR002-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/REPR002-1280.png",
         "sha256": "fc0e881f508ab70af898e2efa21aae66fd2394e62e9bc89ea32ec0e4e2981130",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

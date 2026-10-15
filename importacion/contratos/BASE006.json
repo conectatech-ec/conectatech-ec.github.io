@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/base006-base-inalambrica-de-carga-3-en-1-metal-flexible/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Base metálica plegable de carga 3 en 1. Carga: Tres zonas inalámbricas. Formato: Estructura metálica plegable. Orientación: Panel frontal ajustable.",
   "contenido_venta": "Una base de carga plegable.",
   "compatibilidad": "Dispositivos compatibles con cada zona de carga; verificar el modelo de reloj.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact SILVER/GREY metal foldable3in1charger physical references, angled rectangular silver front panel with actual large circular WHITE and COPPER/ORANGE coil design and white central lightning symbol. Cylindrical silver top hinge joins small horizontal top watch pad with raised silvercircle; lower silver back support/base and bottom cylindricalhinge. Exact same elevated3/4 angle as source, no added device, logo, cable or retailbox. Preserve real orange visible coil and hinge count, no generic black replacement."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "BASE006"
     },
     "movil": {
       "solicitado": "BASE006",
       "sku": "BASE006",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:11.821Z",
+      "fecha": "2026-10-15T18:56:02.386Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/base006-base-inalambrica-de-carga-3-en-1-metal-flexible/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/base006-base-inalambrica-de-carga-3-en-1-metal-flexible/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/base006-base-inalambrica-de-carga-3-en-1-metal-flexible/",
       "archivo_html": "productos/base006-base-inalambrica-de-carga-3-en-1-metal-flexible/index.html",
       "http": 200,
       "sha256_html": "59a584464e44ec49479f7bafca8b216ff2c6a21865068383a86b39c8a8fb7f49",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/base006/BASE006-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/base006/BASE006-01-600.webp?v=9290b0c2454c83bd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/base006/BASE006-01-600.webp?v=9290b0c2454c83bd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/base006-base-inalambrica-de-carga-3-en-1-metal-flexible/",
+          "url": "https://conectatech-ec.github.io/productos/base006-base-inalambrica-de-carga-3-en-1-metal-flexible/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/base006/BASE006-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/base006/BASE006-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/BASE006-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/BASE006-390.png",
       "sha256": "d98f2ac0f0947ba30e55eff143e747991bf68cba58e70e3219926181af0c2fe5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/BASE006-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/BASE006-1280.png",
         "sha256": "80732f9dc0b134f3a7bf16a71d11ba087604bb1b8de07146c75df488ca78ec66",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/gadg001-gadget-taza-game-over-blanca/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Taza gamer Game Over con asa de control. Diseño: Estampado gamer multicolor. Agarre: Asa azul con forma de control. Acabado: Cuerpo blanco brillante.",
   "contenido_venta": "Una taza decorada.",
   "compatibilidad": "Uso como taza; no se declara aptitud para microondas o lavavajillas sin confirmación.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. ONE exact WHITE ceramic tall mug with BLUE videogame-controller-shaped handle physically shown. Preserve actual pixel4ghosts white/red/yellow/green and OVER black pixelword front, red heart and tiny console art below. Blue handle has actual embossed D-pad above,4coloured circles below. Full mug at same mild front/side3/4 so opening and handlevisible, whiteglaze pristine. Remove price sticker and surroundings; no new artwork, invented logos, coffee, steam, coaster, props or package."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "GADG001"
     },
     "movil": {
       "solicitado": "GADG001",
       "sku": "GADG001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:07.042Z",
+      "fecha": "2026-10-15T18:55:56.059Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/gadg001-gadget-taza-game-over-blanca/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/gadg001-gadget-taza-game-over-blanca/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/gadg001-gadget-taza-game-over-blanca/",
       "archivo_html": "productos/gadg001-gadget-taza-game-over-blanca/index.html",
       "http": 200,
       "sha256_html": "0b1d91731f6051fc6fde2adf02d87a255c09eee703cda7bb110079e4e52995b5",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/gadg001/GADG001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/gadg001/GADG001-01-600.webp?v=6b05a2d71bdc74d6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/gadg001/GADG001-01-600.webp?v=6b05a2d71bdc74d6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/gadg001-gadget-taza-game-over-blanca/",
+          "url": "https://conectatech-ec.github.io/productos/gadg001-gadget-taza-game-over-blanca/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/gadg001/GADG001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/gadg001/GADG001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/GADG001-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/GADG001-390.png",
       "sha256": "4282974ff8e68833b02c5a8a4c2782b675bdc065da9b57b12af4796870b94983",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/GADG001-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/GADG001-1280.png",
         "sha256": "33778658ba7dd68d3b1cd82efcfbe2aa415df96bb7e281a23a2de73e3d841b4a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

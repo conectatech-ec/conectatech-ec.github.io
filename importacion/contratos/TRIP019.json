@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip019-tripode-selfie-f01-con-ia/",
-  "fecha_verificacion": "2026-10-15T18:37:22.916435+00:00",
+  "fecha_verificacion": "2026-10-15T18:55:32.621892+00:00",
   "descripcion": "Trípode selfie F01 con seguimiento automático. Seguimiento: Seguimiento automático según empaque. Uso: Funciones sin aplicación según empaque. Sujeción: Pinza orientable para teléfono.",
   "contenido_venta": "Un trípode selfie F01.",
   "compatibilidad": "Teléfonos que se ajusten al soporte; seguimiento y controles según condiciones de uso indicadas por fabricante.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK F01 automatic tracking selfie tripod shown on box. Slim telescopic vertical centre pole, THREE actual fold-out long legs at bottom, compact swivelling rectangular top tracking head and empty black phone clamp matching illustration. Owner-authorized representation of same hardware, entire unit standing moderately extended with complete3feet. No actual phone/screen/person, second tripod, invented light/camera attachments, arrows or packaging. Match clamp/head shape from source, no substituted standard camera panhead."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T18:55:32.621892+00:00",
+      "reporte": "reportes/continuacion-089/http-publicacion.json",
+      "archivo": "reportes/continuacion-089/http-publicacion.json",
+      "sha256": "5d1cce19bc99467ab4c266debabb8f5b64fdadcde9fcf6dea7f23334b6c2244d",
+      "sku": "TRIP019"
     },
     "movil": {
       "solicitado": "TRIP019",
       "sku": "TRIP019",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T18:40:06.200Z",
+      "fecha": "2026-10-15T18:55:54.917Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip019-tripode-selfie-f01-con-ia/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/trip019-tripode-selfie-f01-con-ia/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip019-tripode-selfie-f01-con-ia/",
       "archivo_html": "productos/trip019-tripode-selfie-f01-con-ia/index.html",
       "http": 200,
       "sha256_html": "370cc11a8840da490bb80a43c61f86fb8d43b1eb0114ff1d0d5f63d483661228",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip019/TRIP019-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/trip019/TRIP019-01-600.webp?v=b61712c65d1c01b3",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip019/TRIP019-01-600.webp?v=b61712c65d1c01b3",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/trip019-tripode-selfie-f01-con-ia/",
+          "url": "https://conectatech-ec.github.io/productos/trip019-tripode-selfie-f01-con-ia/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/trip019/TRIP019-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip019/TRIP019-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-089/qa-local/movil/TRIP019-390.png",
+      "archivo": "reportes/continuacion-089/qa-publica/movil/TRIP019-390.png",
       "sha256": "ebac7ea7fd43186d93253100f917d4eb35f8b5fa4a9c456c104b4550a4052efc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-089/qa-local/movil/TRIP019-1280.png",
+        "archivo": "reportes/continuacion-089/qa-publica/movil/TRIP019-1280.png",
         "sha256": "aa716d4624895dbfe6adb85e21bcc1eddd465087a59053d66f3ab53437492803",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
