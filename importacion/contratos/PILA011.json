@@ -81,9 +81,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila011-pila-2025-sony/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Pila Sony CR2025 | unidad. Referencia: CR2025. Unidad de venta: Una sola pila. Tipo: Litio, 3 V.",
   "contenido_venta": "1 pila de botón de la referencia indicada. Venta por unidad.",
   "compatibilidad": "Compara la referencia exacta, formato, voltaje requerido y polaridad con la pila de tu equipo antes de comprar.",
@@ -171,8 +171,12 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente. Una única celda; el blíster de identificación no es la unidad de venta. Confirmación expresa enimportacion/politica-venta-pilas-boton.json. No se añaden marcas del cartón a un cuerpo que no las trae."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "PILA011"
     },
     "confirmacion_unidad_propietario": {
       "estado": "VERIFICADO",
@@ -183,7 +187,7 @@
       "solicitado": "PILA011",
       "sku": "PILA011",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:08.190Z",
+      "fecha": "2026-10-15T03:49:02.242Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -208,7 +212,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila011-pila-2025-sony/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila011-pila-2025-sony/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila011-pila-2025-sony/",
       "archivo_html": "productos/pila011-pila-2025-sony/index.html",
       "http": 200,
       "sha256_html": "947136e278c297d79d5cc159fbd8d509be5c23e1dd9ed3682a674dd75d7f6c30",
@@ -218,7 +222,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila011/PILA011-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila011/PILA011-01-600.webp?v=c1fe7fb09ea50b64",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila011/PILA011-01-600.webp?v=c1fe7fb09ea50b64",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -227,32 +231,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila011-pila-2025-sony/",
+          "url": "https://conectatech-ec.github.io/productos/pila011-pila-2025-sony/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila011/PILA011-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila011/PILA011-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/PILA011-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/PILA011-390.png",
       "sha256": "16596ecd93c4e1c9d293d4164ba7a1cad67362127169523dd9bc60bf0fca62eb",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/PILA011-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/PILA011-1280.png",
         "sha256": "830e1e0973494cfdbb0371f6179ec16f0d5270b163b7209afc8ed8f53e0fd40c",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

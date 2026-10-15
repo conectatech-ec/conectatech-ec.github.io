@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo002-soporte-para-vehiculo-de-ventosa-car-mobile-holder/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Soporte para celular | ventosa compacta. Fijación: Base con ventosa. Sujeción: Cuna con apoyos laterales. Diseño: Pedestal compacto orientable.",
   "contenido_venta": "1 soporte para celular con su base de ventosa.",
   "compatibilidad": "Comprueba la superficie de fijación y el tamaño del teléfono. Confirma el color disponible.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "SOPO002"
     },
     "movil": {
       "solicitado": "SOPO002",
       "sku": "SOPO002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:33:59.213Z",
+      "fecha": "2026-10-15T03:48:52.231Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo002-soporte-para-vehiculo-de-ventosa-car-mobile-holder/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/sopo002-soporte-para-vehiculo-de-ventosa-car-mobile-holder/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo002-soporte-para-vehiculo-de-ventosa-car-mobile-holder/",
       "archivo_html": "productos/sopo002-soporte-para-vehiculo-de-ventosa-car-mobile-holder/index.html",
       "http": 200,
       "sha256_html": "73d0a7ad451a12fd0c5c30e9ace597ee330fc45030639d9a2ea18cb62b2d5fc6",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo002/SOPO002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/sopo002/SOPO002-01-600.webp?v=ced95dea74e1cc6b",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo002/SOPO002-01-600.webp?v=ced95dea74e1cc6b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/sopo002-soporte-para-vehiculo-de-ventosa-car-mobile-holder/",
+          "url": "https://conectatech-ec.github.io/productos/sopo002-soporte-para-vehiculo-de-ventosa-car-mobile-holder/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/sopo002/SOPO002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo002/SOPO002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/SOPO002-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO002-390.png",
       "sha256": "01ffec9ef2bbd52169b5a420a4a74019c963150f9865ec2bd68b1b3a709064d5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/SOPO002-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO002-1280.png",
         "sha256": "137266ad431373d3425dc244a1c5dfc2127166ba29f40f2c0f33e956b50b40d9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

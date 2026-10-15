@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo014-soporte-para-vehiculo-magnetic-car-holder-q5/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Soporte magnético Q5 | base compacta. Sujeción: Cabezal magnético circular. Diseño: Pedestal corto con base circular. Ajuste: Cabezal orientable.",
   "contenido_venta": "1 soporte magnético de base compacta.",
   "compatibilidad": "Comprueba la superficie de montaje y la configuración magnética necesaria para tu teléfono o funda.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "SOPO014"
     },
     "movil": {
       "solicitado": "SOPO014",
       "sku": "SOPO014",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:02.417Z",
+      "fecha": "2026-10-15T03:48:55.898Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo014-soporte-para-vehiculo-magnetic-car-holder-q5/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/sopo014-soporte-para-vehiculo-magnetic-car-holder-q5/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo014-soporte-para-vehiculo-magnetic-car-holder-q5/",
       "archivo_html": "productos/sopo014-soporte-para-vehiculo-magnetic-car-holder-q5/index.html",
       "http": 200,
       "sha256_html": "66df78f26ddc54dd67fd512f94e170c9b35e79900522f7ea96da6f6c10abc9d7",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo014/SOPO014-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/sopo014/SOPO014-01-600.webp?v=2d0307028a9a9c8c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo014/SOPO014-01-600.webp?v=2d0307028a9a9c8c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/sopo014-soporte-para-vehiculo-magnetic-car-holder-q5/",
+          "url": "https://conectatech-ec.github.io/productos/sopo014-soporte-para-vehiculo-magnetic-car-holder-q5/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/sopo014/SOPO014-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo014/SOPO014-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/SOPO014-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO014-390.png",
       "sha256": "e8658eab28b5419fea4e324e2db0caafb4cf60a0037f62a284a8175cae4cae15",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/SOPO014-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO014-1280.png",
         "sha256": "eac7787c4016b58787b09fd65f7802026ef10654f9782e6701c560afe1491176",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

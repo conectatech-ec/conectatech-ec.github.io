@@ -81,9 +81,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila049-pila-1616-suncom/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Pila Suncom CR1616 | unidad. Referencia: CR1616. Unidad de venta: Una sola pila. Tipo: Litio, 3 V.",
   "contenido_venta": "1 pila de botón de la referencia indicada. Venta por unidad.",
   "compatibilidad": "Compara la referencia exacta, formato, voltaje requerido y polaridad con la pila de tu equipo antes de comprar.",
@@ -171,8 +171,12 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente. Una única celda; el blíster de identificación no es la unidad de venta. Confirmación expresa enimportacion/politica-venta-pilas-boton.json. No se añaden marcas del cartón a un cuerpo que no las trae."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "PILA049"
     },
     "confirmacion_unidad_propietario": {
       "estado": "VERIFICADO",
@@ -183,7 +187,7 @@
       "solicitado": "PILA049",
       "sku": "PILA049",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:09.189Z",
+      "fecha": "2026-10-15T03:49:03.387Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -208,7 +212,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila049-pila-1616-suncom/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila049-pila-1616-suncom/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila049-pila-1616-suncom/",
       "archivo_html": "productos/pila049-pila-1616-suncom/index.html",
       "http": 200,
       "sha256_html": "26f720b96bbaf13342327c8225ccb0db973b1f72b0c56c736f65521ff417d710",
@@ -218,7 +222,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila049/PILA049-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila049/PILA049-01-600.webp?v=842f796e776de395",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila049/PILA049-01-600.webp?v=842f796e776de395",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -227,32 +231,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila049-pila-1616-suncom/",
+          "url": "https://conectatech-ec.github.io/productos/pila049-pila-1616-suncom/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila049/PILA049-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila049/PILA049-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/PILA049-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/PILA049-390.png",
       "sha256": "1fd276a3528f54dc074db01a3ecb148a8e03093047c032926562e18d0b6b0220",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/PILA049-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/PILA049-1280.png",
         "sha256": "24c6b85286d402ab03d6d178567d7867a22a48751f18dd76179d1ff1396ea250",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

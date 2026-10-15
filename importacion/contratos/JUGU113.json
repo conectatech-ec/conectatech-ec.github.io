@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu113-juguete-cubo-rubik/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Cubo MoYu MeiLong 3 | rompecabezas 3×3. Formato: Cubo de rompecabezas 3×3×3. Diseño: Paneles oscuros con bordes de colores. Presentación: Un cubo MoYu MeiLong 3.",
   "contenido_venta": "1 cubo de rompecabezas MoYu MeiLong 3.",
   "compatibilidad": "Producto de juguete o colección. Confirma tamaño y presentación disponibles; no es un vehículo ni equipo de tamaño real.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "JUGU113"
     },
     "movil": {
       "solicitado": "JUGU113",
       "sku": "JUGU113",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:29.305Z",
+      "fecha": "2026-10-15T03:49:30.107Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu113-juguete-cubo-rubik/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu113-juguete-cubo-rubik/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu113-juguete-cubo-rubik/",
       "archivo_html": "productos/jugu113-juguete-cubo-rubik/index.html",
       "http": 200,
       "sha256_html": "567a064e6c7c81351863daca54cefad3188076761aa1618b548b2cf49bf7d1c5",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu113/JUGU113-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu113/JUGU113-01-600.webp?v=f8da585cfa94c6df",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu113/JUGU113-01-600.webp?v=f8da585cfa94c6df",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu113-juguete-cubo-rubik/",
+          "url": "https://conectatech-ec.github.io/productos/jugu113-juguete-cubo-rubik/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu113/JUGU113-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu113/JUGU113-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/JUGU113-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/JUGU113-390.png",
       "sha256": "aa31f2c36922a8b189d1fe6cae17841a5b89886b2664ec85380162e350155d40",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/JUGU113-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/JUGU113-1280.png",
         "sha256": "ca2b9fc214d46fbea724605cfefd77ef4c903738102f1b93f8c559bc4ad51e7d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

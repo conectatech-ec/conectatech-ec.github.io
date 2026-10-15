@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo046-soporte-de-escritorio-para-dos-monitores-klipxtreme/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Soporte KlipXtreme | doble monitor de escritorio. Capacidad de pantallas: Dos monitores. Montaje: Dos cabezales con placas VESA. Base: Pedestal de escritorio con columna y brazos articulados.",
   "contenido_venta": "1 soporte de escritorio para dos monitores.",
   "compatibilidad": "Comprueba patrón VESA, peso y tamaño admitidos por la presentación del soporte y espacio de la mesa.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "SOPO046"
     },
     "movil": {
       "solicitado": "SOPO046",
       "sku": "SOPO046",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:04.668Z",
+      "fecha": "2026-10-15T03:48:58.617Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo046-soporte-de-escritorio-para-dos-monitores-klipxtreme/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/sopo046-soporte-de-escritorio-para-dos-monitores-klipxtreme/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo046-soporte-de-escritorio-para-dos-monitores-klipxtreme/",
       "archivo_html": "productos/sopo046-soporte-de-escritorio-para-dos-monitores-klipxtreme/index.html",
       "http": 200,
       "sha256_html": "6e13eebb49b4bf8c8ee41367d645c5142dd59933aba57ea3364b50633c547a72",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo046/SOPO046-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/sopo046/SOPO046-01-600.webp?v=d3e470e461935189",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo046/SOPO046-01-600.webp?v=d3e470e461935189",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/sopo046-soporte-de-escritorio-para-dos-monitores-klipxtreme/",
+          "url": "https://conectatech-ec.github.io/productos/sopo046-soporte-de-escritorio-para-dos-monitores-klipxtreme/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/sopo046/SOPO046-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo046/SOPO046-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/SOPO046-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO046-390.png",
       "sha256": "a4cb5228c0c1c1e55e7168a3b68e3443d6ba8d4d9e2705e3b1f9fe470858a633",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/SOPO046-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO046-1280.png",
         "sha256": "52f0832cc298b2919029b83b7e70f2dc161a84b8f6453869b2d6e1df830d4004",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

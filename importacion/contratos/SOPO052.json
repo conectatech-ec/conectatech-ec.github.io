@@ -140,9 +140,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo052-soporte-de-celular-para-vehiculo-de-ventosa-inversor-suction-cup/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Soporte para celular | brazo y ventosa. Fijación: Ventosa circular con mecanismo de bloqueo. Sujeción: Brazos laterales y dos apoyos inferiores. Diseño: Brazo articulado de alcance ajustable.",
   "contenido_venta": "1 soporte para celular con brazo y base de ventosa.",
   "compatibilidad": "Comprueba la superficie de instalación, el espacio disponible y las dimensiones del teléfono.",
@@ -249,14 +249,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "SOPO052"
     },
     "movil": {
       "solicitado": "SOPO052",
       "sku": "SOPO052",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:33:58.074Z",
+      "fecha": "2026-10-15T03:48:51.100Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -281,7 +285,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo052-soporte-de-celular-para-vehiculo-de-ventosa-inversor-suction-cup/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/sopo052-soporte-de-celular-para-vehiculo-de-ventosa-inversor-suction-cup/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo052-soporte-de-celular-para-vehiculo-de-ventosa-inversor-suction-cup/",
       "archivo_html": "productos/sopo052-soporte-de-celular-para-vehiculo-de-ventosa-inversor-suction-cup/index.html",
       "http": 200,
       "sha256_html": "4ed2e0d602b8d8902f3a97a25c316b1fdbaa92b66c2f9d7ce487910c540258b2",
@@ -291,7 +295,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo052/SOPO052-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/sopo052/SOPO052-01-600.webp?v=03d79a1cf65889b8",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo052/SOPO052-01-600.webp?v=03d79a1cf65889b8",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -300,32 +304,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/sopo052-soporte-de-celular-para-vehiculo-de-ventosa-inversor-suction-cup/",
+          "url": "https://conectatech-ec.github.io/productos/sopo052-soporte-de-celular-para-vehiculo-de-ventosa-inversor-suction-cup/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/sopo052/SOPO052-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo052/SOPO052-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/SOPO052-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO052-390.png",
       "sha256": "cd2a808d9b30488337f963fe313e576b0490db0e1c23c8a8aa5b13d6778f1d2d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/SOPO052-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO052-1280.png",
         "sha256": "68e292e5480b2ef587ef431c03d647e80a4e0131d374ce6304bcb07d7c5e565d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

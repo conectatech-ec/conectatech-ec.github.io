@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu108-juguete-bicicleta-montanera-coleccionable/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Bicicleta montañera coleccionable | verde. Formato: Miniatura de bicicleta montañera. Detalles: Cuadro, ruedas, manillar y pedales. Acabado: Variante verde de la referencia fotografiada.",
   "contenido_venta": "1 bicicleta de juguete. La imagen corresponde a la variante verde; consulta el color disponible.",
   "compatibilidad": "Producto de juguete o colección. Confirma tamaño y presentación disponibles; no es un vehículo ni equipo de tamaño real.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "JUGU108"
     },
     "movil": {
       "solicitado": "JUGU108",
       "sku": "JUGU108",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:32.734Z",
+      "fecha": "2026-10-15T03:49:34.979Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu108-juguete-bicicleta-montanera-coleccionable/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu108-juguete-bicicleta-montanera-coleccionable/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu108-juguete-bicicleta-montanera-coleccionable/",
       "archivo_html": "productos/jugu108-juguete-bicicleta-montanera-coleccionable/index.html",
       "http": 200,
       "sha256_html": "e47f15872a4a1b8fbd975271a7799001a85a6e548bc996601bf5fb95aea43d2f",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu108/JUGU108-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu108/JUGU108-01-600.webp?v=9979e9c8978a5881",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu108/JUGU108-01-600.webp?v=9979e9c8978a5881",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu108-juguete-bicicleta-montanera-coleccionable/",
+          "url": "https://conectatech-ec.github.io/productos/jugu108-juguete-bicicleta-montanera-coleccionable/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu108/JUGU108-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu108/JUGU108-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/JUGU108-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/JUGU108-390.png",
       "sha256": "90c0c63a7096e16bd5c577290413522572973db9709b63ba363dcfb3da555eb2",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/JUGU108-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/JUGU108-1280.png",
         "sha256": "0ee0dedc761adec8a610e0de7e42b6c32d564dae44776e4944eb7b84ddeac545",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

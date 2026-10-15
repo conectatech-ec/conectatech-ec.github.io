@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu070-juguete-set-carritos-maleta-pack-4-unidades/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Maleta de carritos | cuatro unidades. Contenido: Cuatro carritos. Estuche: Maleta de transporte transparente. Diseño: Asa naranja y compartimentos interiores.",
   "contenido_venta": "1 maleta con 4 carritos. Los diseños y colores corresponden a la presentación disponible.",
   "compatibilidad": "Producto de juguete o colección. Confirma tamaño y presentación disponibles; no es un vehículo ni equipo de tamaño real.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "JUGU070"
     },
     "movil": {
       "solicitado": "JUGU070",
       "sku": "JUGU070",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:34.348Z",
+      "fecha": "2026-10-15T03:49:37.342Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu070-juguete-set-carritos-maleta-pack-4-unidades/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu070-juguete-set-carritos-maleta-pack-4-unidades/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu070-juguete-set-carritos-maleta-pack-4-unidades/",
       "archivo_html": "productos/jugu070-juguete-set-carritos-maleta-pack-4-unidades/index.html",
       "http": 200,
       "sha256_html": "3659c060828b213c6607b343a6381508b2daf8cc389f08d1336e96463de1dc9e",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu070/JUGU070-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu070/JUGU070-01-600.webp?v=23524bc3735b2078",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu070/JUGU070-01-600.webp?v=23524bc3735b2078",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu070-juguete-set-carritos-maleta-pack-4-unidades/",
+          "url": "https://conectatech-ec.github.io/productos/jugu070-juguete-set-carritos-maleta-pack-4-unidades/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu070/JUGU070-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu070/JUGU070-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/JUGU070-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/JUGU070-390.png",
       "sha256": "4c14268bc5a4c6b4fa63aba67991bddfd279da6351a7e1f4a0f94716021a646a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/JUGU070-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/JUGU070-1280.png",
         "sha256": "feebc0ff685f95babde2b3a88b28ddf4871230aff67a6bdbe417b62465015e2e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

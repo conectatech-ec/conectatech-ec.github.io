@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo027-soporte-magnetico-de-rejilla-para-vehiculo-modelo-pz-a003/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Soporte magnético de rejilla | PZ-A003. Sujeción: Cabezal magnético rectangular. Fijación: Gancho para rejilla con apoyos. Ajuste: Articulación orientable.",
   "contenido_venta": "1 soporte magnético para celular.",
   "compatibilidad": "Comprueba la rejilla del vehículo y los requisitos de fijación magnética del teléfono o funda.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "SOPO027"
     },
     "movil": {
       "solicitado": "SOPO027",
       "sku": "SOPO027",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:01.316Z",
+      "fecha": "2026-10-15T03:48:54.688Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo027-soporte-magnetico-de-rejilla-para-vehiculo-modelo-pz-a003/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/sopo027-soporte-magnetico-de-rejilla-para-vehiculo-modelo-pz-a003/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo027-soporte-magnetico-de-rejilla-para-vehiculo-modelo-pz-a003/",
       "archivo_html": "productos/sopo027-soporte-magnetico-de-rejilla-para-vehiculo-modelo-pz-a003/index.html",
       "http": 200,
       "sha256_html": "074cd54c9b2faa5f26b4994d44434dc7e42276cff0597c42f204e33ea36be7ca",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo027/SOPO027-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/sopo027/SOPO027-01-600.webp?v=5af0f0cc6e3daf8d",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo027/SOPO027-01-600.webp?v=5af0f0cc6e3daf8d",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/sopo027-soporte-magnetico-de-rejilla-para-vehiculo-modelo-pz-a003/",
+          "url": "https://conectatech-ec.github.io/productos/sopo027-soporte-magnetico-de-rejilla-para-vehiculo-modelo-pz-a003/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/sopo027/SOPO027-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo027/SOPO027-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/SOPO027-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO027-390.png",
       "sha256": "a73aa1867c41018a856e8193febde484c6e3d8f767eddf3ff0c86e59f1382749",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/SOPO027-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/SOPO027-1280.png",
         "sha256": "5025f36735b67cff522a97862cfc4620975610358da91bf7daf67337727e3422",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

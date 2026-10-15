@@ -81,9 +81,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila055-pila-1625-tianqui/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Pila Tianqiu CR1625 | unidad. Referencia: CR1625. Unidad de venta: Una sola pila. Tipo: Litio, 3 V.",
   "contenido_venta": "1 pila de botón de la referencia indicada. Venta por unidad.",
   "compatibilidad": "Compara la referencia exacta, formato, voltaje requerido y polaridad con la pila de tu equipo antes de comprar.",
@@ -171,8 +171,12 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente. Una única celda; el blíster de identificación no es la unidad de venta. Confirmación expresa enimportacion/politica-venta-pilas-boton.json. No se añaden marcas del cartón a un cuerpo que no las trae."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "PILA055"
     },
     "confirmacion_unidad_propietario": {
       "estado": "VERIFICADO",
@@ -183,7 +187,7 @@
       "solicitado": "PILA055",
       "sku": "PILA055",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:10.158Z",
+      "fecha": "2026-10-15T03:49:04.501Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -208,7 +212,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila055-pila-1625-tianqui/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila055-pila-1625-tianqui/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila055-pila-1625-tianqui/",
       "archivo_html": "productos/pila055-pila-1625-tianqui/index.html",
       "http": 200,
       "sha256_html": "a904243cce6031845dd219255bfd9c11d1705f29a68214a9c929931221eaeba0",
@@ -218,7 +222,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila055/PILA055-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila055/PILA055-01-600.webp?v=7463040586998566",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila055/PILA055-01-600.webp?v=7463040586998566",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -227,32 +231,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila055-pila-1625-tianqui/",
+          "url": "https://conectatech-ec.github.io/productos/pila055-pila-1625-tianqui/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila055/PILA055-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila055/PILA055-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/PILA055-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/PILA055-390.png",
       "sha256": "c2bedc9162cb0ee3fd0e4d6f0d9238f39739a2ee1e1ac81e23dd1c7bfbe3d2d7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/PILA055-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/PILA055-1280.png",
         "sha256": "15e00cedae0f7ab38966485237d9a27eeee93a7e8d730b48e7b532d24cd75f24",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

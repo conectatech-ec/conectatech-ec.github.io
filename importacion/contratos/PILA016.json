@@ -81,9 +81,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila016-pila-364-murata/",
-  "fecha_verificacion": "2026-10-15T03:30:48.253841+00:00",
+  "fecha_verificacion": "2026-10-15T03:48:50.315955+00:00",
   "descripcion": "Pila Murata 364 / SR621SW | unidad. Referencia: 364 / SR621SW. Unidad de venta: Una sola pila. Tipo: Óxido de plata, 1,55 V.",
   "contenido_venta": "1 pila de botón de la referencia indicada. Venta por unidad.",
   "compatibilidad": "Compara la referencia exacta, formato, voltaje requerido y polaridad con la pila de tu equipo antes de comprar.",
@@ -171,8 +171,12 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida autorizada desde referencias propias físicas o de empaque/modelo; procedencia yhashes registrados. Producto completo,nuevo,sin caja,fondo blanco; geometría,color,componentes yunidad deventa cotejados. No se afirma fotografía oficial ni licencia externa inexistente. Una única celda; el blíster de identificación no es la unidad de venta. Confirmación expresa enimportacion/politica-venta-pilas-boton.json. No se añaden marcas del cartón a un cuerpo que no las trae."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T03:48:50.315955+00:00",
+      "reporte": "reportes/continuacion-087/http-publicacion.json",
+      "archivo": "reportes/continuacion-087/http-publicacion.json",
+      "sha256": "bb2115b7bc1bfc11378c77e840286c0a5b072feb7e006106b6a3b5cf26a791f0",
+      "sku": "PILA016"
     },
     "confirmacion_unidad_propietario": {
       "estado": "VERIFICADO",
@@ -183,7 +187,7 @@
       "solicitado": "PILA016",
       "sku": "PILA016",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T03:34:26.688Z",
+      "fecha": "2026-10-15T03:49:26.779Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -208,7 +212,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila016-pila-364-murata/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila016-pila-364-murata/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila016-pila-364-murata/",
       "archivo_html": "productos/pila016-pila-364-murata/index.html",
       "http": 200,
       "sha256_html": "c2a0485b0f03bd57fc617e869d99a1c8f5d1e413459c5b0ed593b3df2bdb0499",
@@ -218,7 +222,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila016/PILA016-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila016/PILA016-01-600.webp?v=fdb2ceb0ddad2afc",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila016/PILA016-01-600.webp?v=fdb2ceb0ddad2afc",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -227,32 +231,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila016-pila-364-murata/",
+          "url": "https://conectatech-ec.github.io/productos/pila016-pila-364-murata/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila016/PILA016-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila016/PILA016-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-087/qa-local/movil/PILA016-390.png",
+      "archivo": "reportes/continuacion-087/qa-publica/movil/PILA016-390.png",
       "sha256": "217af9ebbafbbf0f7a0be242503dc186bc6bb1398b506f85bcf8089e99af8a16",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-087/qa-local/movil/PILA016-1280.png",
+        "archivo": "reportes/continuacion-087/qa-publica/movil/PILA016-1280.png",
         "sha256": "3833446fe8fb415c071036f352e60d5eb9cc557c5ccbc010ed8ec0d87916fe87",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
