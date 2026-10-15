@@ -144,9 +144,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu043-juguete-camioneta-combi-coleccionable-pequea/",
-  "fecha_verificacion": "2026-10-15T17:20:40.241666+00:00",
+  "fecha_verificacion": "2026-10-15T17:37:10.320834+00:00",
   "descripcion": "Combi coleccionable | número 5. Diseño: Camioneta clásica tipo Combi. Acabado: Carrocería bicolor con número 5. Detalles: Ventanillas, ruedas y parachoques.",
   "contenido_venta": "1 carrito coleccionable de la referencia. La fotografía representa la variante indicada.",
   "compatibilidad": "Producto de juguete o colección. Confirma tamaño, modelo y color disponibles; se vende una unidad de la referencia, no todos los diseños de las fotografías.",
@@ -244,14 +244,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida desde referencias propias inspeccionadas; se conserva producto completo,modelo,componentes,marcas reales yunidad comercial. Imagen final nueva,nítida,sin empaque,fondo blanco. Variantes alternativas son referencias distintas,no componentes deun conjunto. Originales yproveniencia conservados; no se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T17:37:10.320834+00:00",
+      "reporte": "reportes/continuacion-088/http-publicacion.json",
+      "archivo": "reportes/continuacion-088/http-publicacion.json",
+      "sha256": "fb7fd370bdf6f30a1368951d532bea6be0fd82a00fb92078bc8d46f2ada871c1",
+      "sku": "JUGU043"
     },
     "movil": {
       "solicitado": "JUGU043",
       "sku": "JUGU043",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T17:22:31.273Z",
+      "fecha": "2026-10-15T17:37:09.869Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -276,7 +280,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu043-juguete-camioneta-combi-coleccionable-pequea/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu043-juguete-camioneta-combi-coleccionable-pequea/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu043-juguete-camioneta-combi-coleccionable-pequea/",
       "archivo_html": "productos/jugu043-juguete-camioneta-combi-coleccionable-pequea/index.html",
       "http": 200,
       "sha256_html": "1f126519703e712c4202cada1a3ae8f0ee904037d545a54acd029255a3fd7049",
@@ -286,7 +290,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu043/JUGU043-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu043/JUGU043-01-600.webp?v=49c40f3743ece1bd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu043/JUGU043-01-600.webp?v=49c40f3743ece1bd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -295,32 +299,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu043-juguete-camioneta-combi-coleccionable-pequea/",
+          "url": "https://conectatech-ec.github.io/productos/jugu043-juguete-camioneta-combi-coleccionable-pequea/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu043/JUGU043-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu043/JUGU043-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-088/qa-local/movil/JUGU043-390.png",
+      "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU043-390.png",
       "sha256": "70b79b5af556987ae023bb03e0ade3180a8ee02e9f40125e8c6495b217d5939c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-088/qa-local/movil/JUGU043-1280.png",
+        "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU043-1280.png",
         "sha256": "da670db0e1d03e99880c68c9e3e4cabc972ab14ce1f1550b6b33c4ec4a9b2c66",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

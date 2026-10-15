@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu151-juguetes-carrito-pequeno-en-contenedor-naranja/",
-  "fecha_verificacion": "2026-10-15T17:20:40.241666+00:00",
+  "fecha_verificacion": "2026-10-15T17:37:10.320834+00:00",
   "descripcion": "Carrito deportivo coleccionable | plateado. Diseño: Coupé de carrocería angular. Acabado: Plateado con cristales oscuros. Detalles: Ruedas oscuras con borde rojo.",
   "contenido_venta": "1 carrito coleccionable de la referencia. La fotografía representa la variante indicada.",
   "compatibilidad": "Producto de juguete o colección. Confirma tamaño, modelo y color disponibles; se vende una unidad de la referencia, no todos los diseños de las fotografías.",
@@ -212,14 +212,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida desde referencias propias inspeccionadas; se conserva producto completo,modelo,componentes,marcas reales yunidad comercial. Imagen final nueva,nítida,sin empaque,fondo blanco. Variantes alternativas son referencias distintas,no componentes deun conjunto. Originales yproveniencia conservados; no se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T17:37:10.320834+00:00",
+      "reporte": "reportes/continuacion-088/http-publicacion.json",
+      "archivo": "reportes/continuacion-088/http-publicacion.json",
+      "sha256": "fb7fd370bdf6f30a1368951d532bea6be0fd82a00fb92078bc8d46f2ada871c1",
+      "sku": "JUGU151"
     },
     "movil": {
       "solicitado": "JUGU151",
       "sku": "JUGU151",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T17:22:38.664Z",
+      "fecha": "2026-10-15T17:37:18.495Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -244,7 +248,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu151-juguetes-carrito-pequeno-en-contenedor-naranja/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu151-juguetes-carrito-pequeno-en-contenedor-naranja/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu151-juguetes-carrito-pequeno-en-contenedor-naranja/",
       "archivo_html": "productos/jugu151-juguetes-carrito-pequeno-en-contenedor-naranja/index.html",
       "http": 200,
       "sha256_html": "92141529040e7a174efda40bda376ae4496dfaa455451610c824cf5aeed6a1b7",
@@ -254,7 +258,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu151/JUGU151-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu151/JUGU151-01-600.webp?v=075dc4ddc9dd24cc",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu151/JUGU151-01-600.webp?v=075dc4ddc9dd24cc",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -263,32 +267,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu151-juguetes-carrito-pequeno-en-contenedor-naranja/",
+          "url": "https://conectatech-ec.github.io/productos/jugu151-juguetes-carrito-pequeno-en-contenedor-naranja/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu151/JUGU151-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu151/JUGU151-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-088/qa-local/movil/JUGU151-390.png",
+      "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU151-390.png",
       "sha256": "7e542484f7af58b9e6d75c0bc92f50debbe1dfc52eb2a8777dd6a7bf4e410e0d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-088/qa-local/movil/JUGU151-1280.png",
+        "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU151-1280.png",
         "sha256": "42ce825d983aeb9f53e1c6eda242140a48b0f1a2cb7a2d135a8c413c7f75a8e6",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

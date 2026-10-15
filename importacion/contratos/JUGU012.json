@@ -96,9 +96,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu012-juguete-mini-consola-de-videojuegos-f5/",
-  "fecha_verificacion": "2026-10-15T17:20:40.241666+00:00",
+  "fecha_verificacion": "2026-10-15T17:37:10.320834+00:00",
   "descripcion": "Miniconsola F5 | diseño espacial. Formato: Consola vertical de bordes redondeados. Controles: Cruceta y botones integrados. Diseño: Gráficos de astronautas y planetas.",
   "contenido_venta": "1 consola portátil de la referencia. Confirma cables y accesorios de la presentación disponible.",
   "compatibilidad": "Confirma alimentación, accesorios y requisitos de la presentación disponible. No se garantiza un catálogo de juegos concreto ni licencias de títulos por la ilustración del empaque.",
@@ -188,14 +188,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida desde referencias propias inspeccionadas; se conserva producto completo,modelo,componentes,marcas reales yunidad comercial. Imagen final nueva,nítida,sin empaque,fondo blanco. Variantes alternativas son referencias distintas,no componentes deun conjunto. Originales yproveniencia conservados; no se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T17:37:10.320834+00:00",
+      "reporte": "reportes/continuacion-088/http-publicacion.json",
+      "archivo": "reportes/continuacion-088/http-publicacion.json",
+      "sha256": "fb7fd370bdf6f30a1368951d532bea6be0fd82a00fb92078bc8d46f2ada871c1",
+      "sku": "JUGU012"
     },
     "movil": {
       "solicitado": "JUGU012",
       "sku": "JUGU012",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T17:22:53.441Z",
+      "fecha": "2026-10-15T17:37:37.949Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -220,7 +224,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu012-juguete-mini-consola-de-videojuegos-f5/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu012-juguete-mini-consola-de-videojuegos-f5/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu012-juguete-mini-consola-de-videojuegos-f5/",
       "archivo_html": "productos/jugu012-juguete-mini-consola-de-videojuegos-f5/index.html",
       "http": 200,
       "sha256_html": "73db730a2f5297f9455038cd166d82f122d6ef929b3fab11cd3c5985e3b6f69b",
@@ -230,7 +234,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu012/JUGU012-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu012/JUGU012-01-600.webp?v=ee4d66eaa510ceaf",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu012/JUGU012-01-600.webp?v=ee4d66eaa510ceaf",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -239,32 +243,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu012-juguete-mini-consola-de-videojuegos-f5/",
+          "url": "https://conectatech-ec.github.io/productos/jugu012-juguete-mini-consola-de-videojuegos-f5/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu012/JUGU012-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu012/JUGU012-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-088/qa-local/movil/JUGU012-390.png",
+      "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU012-390.png",
       "sha256": "cb6540b3c96fddaa0c5ab7b6236250696933ab4d4cca304c0ff41a9100ff29cf",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-088/qa-local/movil/JUGU012-1280.png",
+        "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU012-1280.png",
         "sha256": "3a1a00682fdde587c3c857c4a844dbfdd7ad459dd7b803a4b76f05631e9a48dc",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

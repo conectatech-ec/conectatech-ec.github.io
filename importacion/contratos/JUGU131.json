@@ -96,9 +96,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu131-juguete-mini-consola-de-videojuegos-m26/",
-  "fecha_verificacion": "2026-10-15T17:20:40.241666+00:00",
+  "fecha_verificacion": "2026-10-15T17:37:10.320834+00:00",
   "descripcion": "Consola portátil M26 | formato horizontal. Formato: Consola de uso horizontal. Controles: Dos joysticks y botones integrados. Diseño: Cruceta y mandos a ambos lados de pantalla.",
   "contenido_venta": "1 consola portátil de la referencia. Confirma cables y accesorios de la presentación disponible.",
   "compatibilidad": "Confirma alimentación, accesorios y requisitos de la presentación disponible. No se garantiza un catálogo de juegos concreto ni licencias de títulos por la ilustración del empaque.",
@@ -188,14 +188,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida desde referencias propias inspeccionadas; se conserva producto completo,modelo,componentes,marcas reales yunidad comercial. Imagen final nueva,nítida,sin empaque,fondo blanco. Variantes alternativas son referencias distintas,no componentes deun conjunto. Originales yproveniencia conservados; no se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T17:37:10.320834+00:00",
+      "reporte": "reportes/continuacion-088/http-publicacion.json",
+      "archivo": "reportes/continuacion-088/http-publicacion.json",
+      "sha256": "fb7fd370bdf6f30a1368951d532bea6be0fd82a00fb92078bc8d46f2ada871c1",
+      "sku": "JUGU131"
     },
     "movil": {
       "solicitado": "JUGU131",
       "sku": "JUGU131",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T17:22:55.691Z",
+      "fecha": "2026-10-15T17:37:40.854Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -220,7 +224,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu131-juguete-mini-consola-de-videojuegos-m26/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu131-juguete-mini-consola-de-videojuegos-m26/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu131-juguete-mini-consola-de-videojuegos-m26/",
       "archivo_html": "productos/jugu131-juguete-mini-consola-de-videojuegos-m26/index.html",
       "http": 200,
       "sha256_html": "e3d887c4cc43d796e7a9ec2f1219f143407d6c0a2421dbad0f0f88fcf4982cb0",
@@ -230,7 +234,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu131/JUGU131-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu131/JUGU131-01-600.webp?v=07b1cb6b9c48ce4e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu131/JUGU131-01-600.webp?v=07b1cb6b9c48ce4e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -239,32 +243,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu131-juguete-mini-consola-de-videojuegos-m26/",
+          "url": "https://conectatech-ec.github.io/productos/jugu131-juguete-mini-consola-de-videojuegos-m26/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu131/JUGU131-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu131/JUGU131-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-088/qa-local/movil/JUGU131-390.png",
+      "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU131-390.png",
       "sha256": "a1052bc50bcb4b48b70fb0108923d0213aaf37da8bb17b4165a8ce74af8f0780",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-088/qa-local/movil/JUGU131-1280.png",
+        "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU131-1280.png",
         "sha256": "0bd3b655e2ce0373d6986ef340a75a37eb8fe3b0c07d41caf62252d670cb2d6d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

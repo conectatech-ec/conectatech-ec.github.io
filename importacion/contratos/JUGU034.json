@@ -176,9 +176,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu034-juguete-carro-de-coleccion-pichirilo-con-rayas-pequeo/",
-  "fecha_verificacion": "2026-10-15T17:20:40.241666+00:00",
+  "fecha_verificacion": "2026-10-15T17:37:10.320834+00:00",
   "descripcion": "Carrito clásico con rayas | número 67. Diseño: Coupé clásico redondeado. Acabado: Franjas naranjas y número 67. Detalles: Parachoques y ruedas de la miniatura.",
   "contenido_venta": "1 carrito coleccionable de la referencia. La fotografía representa la variante indicada.",
   "compatibilidad": "Producto de juguete o colección. Confirma tamaño, modelo y color disponibles; se vende una unidad de la referencia, no todos los diseños de las fotografías.",
@@ -276,14 +276,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida desde referencias propias inspeccionadas; se conserva producto completo,modelo,componentes,marcas reales yunidad comercial. Imagen final nueva,nítida,sin empaque,fondo blanco. Variantes alternativas son referencias distintas,no componentes deun conjunto. Originales yproveniencia conservados; no se afirma fotografía oficial ni licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T17:37:10.320834+00:00",
+      "reporte": "reportes/continuacion-088/http-publicacion.json",
+      "archivo": "reportes/continuacion-088/http-publicacion.json",
+      "sha256": "fb7fd370bdf6f30a1368951d532bea6be0fd82a00fb92078bc8d46f2ada871c1",
+      "sku": "JUGU034"
     },
     "movil": {
       "solicitado": "JUGU034",
       "sku": "JUGU034",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T17:22:21.381Z",
+      "fecha": "2026-10-15T17:37:00.934Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -308,7 +312,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu034-juguete-carro-de-coleccion-pichirilo-con-rayas-pequeo/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu034-juguete-carro-de-coleccion-pichirilo-con-rayas-pequeo/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu034-juguete-carro-de-coleccion-pichirilo-con-rayas-pequeo/",
       "archivo_html": "productos/jugu034-juguete-carro-de-coleccion-pichirilo-con-rayas-pequeo/index.html",
       "http": 200,
       "sha256_html": "1decb11347dd4dc198168c439ca34183de8df88f56517a627a8e2dce53373b5a",
@@ -318,7 +322,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu034/JUGU034-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu034/JUGU034-01-600.webp?v=d7f70f31e13537ac",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu034/JUGU034-01-600.webp?v=d7f70f31e13537ac",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -327,32 +331,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu034-juguete-carro-de-coleccion-pichirilo-con-rayas-pequeo/",
+          "url": "https://conectatech-ec.github.io/productos/jugu034-juguete-carro-de-coleccion-pichirilo-con-rayas-pequeo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu034/JUGU034-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu034/JUGU034-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-088/qa-local/movil/JUGU034-390.png",
+      "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU034-390.png",
       "sha256": "4b6d9d74ffa0db5478389f7cee94205c0ad72f146825c9b3358330cd67c290f5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-088/qa-local/movil/JUGU034-1280.png",
+        "archivo": "reportes/continuacion-088/qa-publica/movil/JUGU034-1280.png",
         "sha256": "5e3f5cf7977994802d8839e44d6ae0c580d18fd59bad8ff9ade9240b63f9892f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous027-mouse-inalambrico-zornwee-ch002/",
-  "fecha_verificacion": "2026-10-15T17:20:40.241666+00:00",
+  "fecha_verificacion": "2026-10-15T17:37:10.320834+00:00",
   "descripcion": "Mouse Zornwee CH002 | inalámbrico recargable. Conectividad: Inalámbrica de 2,4 GHz según empaque. Alimentación: Batería recargable según fabricante. Diseño: Carcasa segmentada con estructura lateral plateada.",
   "contenido_venta": "1 mouse de la referencia. Confirma alimentación y accesorios de conexión de la presentación disponible.",
   "compatibilidad": "Comprueba las conexiones y requisitos del sistema de tu equipo antes de comprar. No se garantiza compatibilidad universal ni efectos médicos por su diseño.",
@@ -212,14 +212,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación comercial asistida desde fotos físicas propias ymodelo/empaque cotejados. Mouse completo,nuevo y nítido,fondo blanco; forma,botones,rueda,marcas reales yvariante preservados. Sin cajas,receptores oaccesorios no fotografiados. Fuentes originales intactas; no se afirma licencia externa inexistente."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T17:37:10.320834+00:00",
+      "reporte": "reportes/continuacion-088/http-publicacion.json",
+      "archivo": "reportes/continuacion-088/http-publicacion.json",
+      "sha256": "fb7fd370bdf6f30a1368951d532bea6be0fd82a00fb92078bc8d46f2ada871c1",
+      "sku": "MOUS027"
     },
     "movil": {
       "solicitado": "MOUS027",
       "sku": "MOUS027",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T17:23:03.177Z",
+      "fecha": "2026-10-15T17:37:50.377Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -244,7 +248,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous027-mouse-inalambrico-zornwee-ch002/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/mous027-mouse-inalambrico-zornwee-ch002/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous027-mouse-inalambrico-zornwee-ch002/",
       "archivo_html": "productos/mous027-mouse-inalambrico-zornwee-ch002/index.html",
       "http": 200,
       "sha256_html": "f1e55e13ffd9bac723eefe16c50238867c7b3a50635b74b2555c6a78392bab7d",
@@ -254,7 +258,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous027/MOUS027-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/mous027/MOUS027-01-600.webp?v=c43ae3e4365c11ab",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous027/MOUS027-01-600.webp?v=c43ae3e4365c11ab",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -263,32 +267,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/mous027-mouse-inalambrico-zornwee-ch002/",
+          "url": "https://conectatech-ec.github.io/productos/mous027-mouse-inalambrico-zornwee-ch002/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/mous027/MOUS027-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous027/MOUS027-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-088/qa-local/movil/MOUS027-390.png",
+      "archivo": "reportes/continuacion-088/qa-publica/movil/MOUS027-390.png",
       "sha256": "81b50e9484094642ea3e4d857e196463259d960989973df92bce0a37a29614c9",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-088/qa-local/movil/MOUS027-1280.png",
+        "archivo": "reportes/continuacion-088/qa-publica/movil/MOUS027-1280.png",
         "sha256": "7e87baafd22becf8064b2cee77039cbc5b266bdf7b687a7b4045a91654fadff6",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
