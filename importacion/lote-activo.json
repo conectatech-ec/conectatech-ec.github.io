@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "continuacion-090",
   "rama": "catalogo/continuacion-090-20261015",
-  "estado": "APROBADO_LOCAL",
+  "estado": "PUBLICADO_VERIFICADO",
   "manifiesto": "importacion/lotes/continuacion-090/manifiesto-aprobados.json",
   "skus": [
     "LINT005",
@@ -51,5 +51,8 @@
     "COBE010"
   ],
   "qa_manifiesto": "importacion/lotes/continuacion-090/manifiesto-qa.json",
-  "qa_base_publica": null
+  "qa_base_publica": null,
+  "verificacion_publica": "reportes/continuacion-090/http-publicacion.json",
+  "qa_publica": "reportes/continuacion-090/qa-publica/catalogo.json",
+  "cierre_consolidado": "reportes/continuacion-090/cierre.json"
 }
