@@ -1,0 +1,503 @@
+{
+  "fecha": "2026-10-15T01:08:01.227390+00:00",
+  "nuevos_publicados": [
+    "PILA026",
+    "MICR01",
+    "MICR02",
+    "MICR03",
+    "MICR037",
+    "MICR06",
+    "MICR07",
+    "MICR10",
+    "MICR12",
+    "MICR19",
+    "MICR20",
+    "MICR21",
+    "MICR24",
+    "MICR25",
+    "PILA069",
+    "PILA050",
+    "MICR34",
+    "MICR35",
+    "CAMA007",
+    "CAMA001",
+    "CAMA002",
+    "CAMA005",
+    "CAMA009",
+    "ADAP022",
+    "ADAP067",
+    "ADAP080",
+    "ADAP093",
+    "ADAP019",
+    "ADAP020",
+    "ADAP025",
+    "ADAP062",
+    "ADAP088",
+    "PILA039",
+    "AUDI112",
+    "PILA023",
+    "PILA027",
+    "AUDI002",
+    "AUDI003",
+    "AUDI016",
+    "AUDI062"
+  ],
+  "cantidad_nuevos": 40,
+  "actualizados_previos": 0,
+  "categorias": {
+    "Pilas": 6,
+    "Microfonos": 15,
+    "Camaras": 5,
+    "Adaptadores": 9,
+    "Audifonos": 5
+  },
+  "total_sku": 1170,
+  "sku_con_portada": 554,
+  "sku_sin_portada": 616,
+  "registro_total": 639,
+  "qa_sku": 57,
+  "errores_finales": 0,
+  "primeros_40_verificados": true,
+  "orden": "Cambios reales por fecha efectiva descendente; empate nuevos primero. Sin renovar fechas por QA o enlaces globales.",
+  "integridad": {
+    "total_sku": 1170,
+    "finanzas_stock_categorias_intactos": true,
+    "datos593_intactos": true,
+    "urls_intactas": true,
+    "originales_intactos": 596,
+    "fotografias_previas_archivos_intactos": 2177,
+    "registros_ajenos_intactos": true,
+    "portadas": 554,
+    "sin_portada": 616,
+    "base": "6bdb00686a7497f97b7dd7d2d2d0e8287aba9eb2"
+  },
+  "meta": {
+    "fecha": "2026-10-15T01:07:46.351304+00:00",
+    "estado": "VERIFICADO_HTTP_CONTENIDO",
+    "url": "https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv",
+    "sha256": "ce7bf07c3c5e15a835841f4a6dcc94cfc0a33eeb691e694e8968a9f6085169b3",
+    "filas": 549,
+    "filas_anteriores": 509,
+    "filas_nuevas": 40,
+    "filas_previas_todas_columnas_intactas": true,
+    "categoria_desde593": true,
+    "telf_celulares": 23,
+    "telf_skus": [
+      "TELF001",
+      "TELF023",
+      "TELF024",
+      "TELF034",
+      "TELF008",
+      "TELF013",
+      "TELF020",
+      "TELF017",
+      "TELF018",
+      "TELF019",
+      "TELF022",
+      "TELF036",
+      "TELF037",
+      "TELF010",
+      "TELF011",
+      "TELF012",
+      "TELF026",
+      "TELF025",
+      "TELF027",
+      "TELF002",
+      "TELF003",
+      "TELF004",
+      "TELF016"
+    ],
+    "con_categoria": 542,
+    "sin_categoria_maestra": [
+      "AUDI115",
+      "REL071",
+      "CABL163",
+      "CABL159",
+      "CAND001",
+      "CABL170",
+      "CABL171"
+    ],
+    "sin_clasificaciones_inventadas": true,
+    "misma_url": true,
+    "otro_catalogo_creado": false,
+    "verificacion_interna_meta": false
+  },
+  "despliegues": {
+    "ci_candidato": {
+      "conclusion": "success",
+      "headSha": "05012234cd102f6dfd5060b41821eb3fb768bfcf",
+      "name": "Validar lote antes de publicar",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38661541466",
+      "run_id": 38661541466
+    },
+    "pages_recursos": {
+      "conclusion": "success",
+      "headSha": "1f961d4a9d578336f5a3b6962feb730ea68c5752",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38662022288",
+      "run_id": 38662022288
+    },
+    "ci_promocion": {
+      "conclusion": "success",
+      "headSha": "c5b7531f42741eec0d4a61e465c9239da7edcd77",
+      "name": "Validar lote antes de publicar",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38662684657",
+      "run_id": 38662684657
+    },
+    "pages_catalogo_final": {
+      "conclusion": "success",
+      "headSha": "1326cf3005fb5e5f56202e6c130731cc09f1e29b",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38663189346",
+      "run_id": 38663189346
+    }
+  },
+  "pendientes_historicos": [
+    {
+      "sku": "REL050",
+      "motivo": "Fidelidad del bisel/controles; conservar foto histórica y observación, no declarar corregido."
+    },
+    {
+      "sku": "SOPO020",
+      "motivo": "Fuentes T7-01/T7-02 contradictorias."
+    },
+    {
+      "sku": "RADI005",
+      "motivo": "Unidad de venta uno o par no confirmada."
+    }
+  ],
+  "reservados": [
+    {
+      "sku": "CABL114",
+      "motivo": "Varias variantes de color en empaque; pendiente de referencia física o confirmación del color, sustituido por CABL032."
+    },
+    {
+      "sku": "CARG062",
+      "estado": "PENDIENTE_IDENTIDAD_CONTENIDO",
+      "motivo": "El nombre593 indica cargador universal65W, pero las fotos propias muestran15 puntas y empaque Type-C to Universal DC interface. No se acredita una fuente de red ni cable AC incluidos; no representar un cargador completo inventado. Conservar593 y foto vigente sin modificar.",
+      "requiere": "Verificar físicamente contenido de venta y si incluye fuente o sólo interfaz USB-C/DC y puntas.",
+      "referencias": [
+        "https://drive.google.com/file/d/19u7mM4XTOfYClMIgz6tt15OISKww2O2V/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1DDQIohbZx1qkRGLyYfJiCBh9G6ng8p-5/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1hvorlPJBrZwVPMLraBIHABZnR91ru_pQ/view?usp=drivesdk"
+      ]
+    },
+    {
+      "sku": "AUDI039",
+      "estado": "REVISAR_PREVIO_CONSERVADO",
+      "motivo": "La producción066 registra rechazo de la herramienta de imágenes. No reintentar esa misma salida ni sustituir una foto aprobada; continuar con PILA027."
+    },
+    {
+      "sku": "MICR13",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "EmpaqueSX21 tiene opcionesType-C/Lightning sin seleccionar; falta confirmar la variante real del receptor.",
+      "sustituido_por": "PILA026"
+    },
+    {
+      "sku": "MICR30",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Las dos fotos duplican frente de caja con cabeza de micrófono recortada; no acreditan cuerpo completo, receptor ni cantidad de venta.",
+      "sustituido_por": "PILA069"
+    },
+    {
+      "sku": "MICR33",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Referencia física rotulaLCT240 yel nombreGenuine es eslogan; no se confirma si el soporte mostrado de demostración forma parte de la venta.",
+      "sustituido_por": "PILA050"
+    },
+    {
+      "sku": "AUDI111",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Una sola vista de empaque no identifica modelo ni diseño/contenido del estuche; no representar un kit inventado.",
+      "sustituido_por": "PILA039"
+    },
+    {
+      "sku": "AUDI004",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Las dos fotos de bolsa/etiqueta ocultan la geometría de los auriculares yconector; falta detalle de la referenciaJ5.",
+      "sustituido_por": "PILA023"
+    }
+  ],
+  "propuestas_descartadas": [
+    {
+      "sku": "CAMA002",
+      "motivo": "Rosca superior inventada eliminada; conservar una sola rosca inferior documentada.",
+      "borrador_no_publicado": true
+    },
+    {
+      "sku": "AUDI112",
+      "motivo": "Eliminar empaque yconservar sólo audífonos limpios.",
+      "borrador_no_publicado": true
+    },
+    {
+      "sku": "CAMA001",
+      "motivo": "Usar cara MODE documentada, sin marca contradictoria no identificada.",
+      "borrador_no_publicado": true
+    },
+    {
+      "sku": "MICR12",
+      "motivo": "Eliminar puerto lateral no documentado; preservar iconos reales yconectores.",
+      "borrador_no_publicado": true
+    }
+  ],
+  "siguiente_lote": {
+    "fecha": "2026-10-15T00:43:19.938906+00:00",
+    "estado": "SOLO_PRESELECCION_NO_PRODUCIDA_NI_PUBLICADA",
+    "cantidad": 40,
+    "regla": "Deduplicar nuevamente contra main/web e inspeccionar todas las referencias del SKU. No repetir pendientes con huella intacta ni regenerar imágenes correctas; sustituir candidatos con identidad/contenido insuficiente.",
+    "candidatos": [
+      {
+        "sku": "SOPO017",
+        "titulo_maestro": "Soporte DE Celular Para Vehiculo Inalambrico 15W Electronico Componentes Transparente",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 6
+      },
+      {
+        "sku": "SOPO022",
+        "titulo_maestro": "Soporte DE Celular Para Vehiculo CON Carga Inalambrica Monster 15W",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 6
+      },
+      {
+        "sku": "SOPO052",
+        "titulo_maestro": "Soporte DE Celular Para Vehiculo DE Ventosa Inversor Suction CUP",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 6
+      },
+      {
+        "sku": "SOPO002",
+        "titulo_maestro": "Soporte Para Vehiculo DE Ventosa CAR Mobile Holder",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "SOPO056",
+        "titulo_maestro": "Soporte Para Laptop 9 EN 1 Klipxtreme Dockstar",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "SOPO027",
+        "titulo_maestro": "Soporte Magnetico DE Rejilla Para Vehiculo Modelo PZ-A003",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "SOPO051",
+        "titulo_maestro": "Soporte DE Celular Para Bicicleta-moto",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "SOPO014",
+        "titulo_maestro": "Soporte Para Vehiculo Magnetic CAR Holder Q5",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "VENT009",
+        "titulo_maestro": "Ventilador Soporte Laptop Ventilado Cooling Station Klip Xtreme",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "SOPO048",
+        "titulo_maestro": "Soporte Para Monitor ENV ARM PRO Lift",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "SOPO046",
+        "titulo_maestro": "Soporte DE Escritorio Para DOS Monitores Klipxtreme",
+        "categoria_real": "Soportes",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA021",
+        "titulo_maestro": "Pila 377 AG4 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA036",
+        "titulo_maestro": "Pila 389 - 189 - LR1130 - AG10 T&E",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA011",
+        "titulo_maestro": "Pila 2025 Sony",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA049",
+        "titulo_maestro": "Pila 1616 Suncom",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA055",
+        "titulo_maestro": "Pila 1625 Tianqui",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA013",
+        "titulo_maestro": "Pila 2032 RCA",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA010",
+        "titulo_maestro": "Pila 2016 Sony",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA048",
+        "titulo_maestro": "Pila 1632 Suncom",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA033",
+        "titulo_maestro": "Pila 357 LR44 AG13 Pikcell",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA017",
+        "titulo_maestro": "Pila 364 Suncom",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA019",
+        "titulo_maestro": "Pila 371 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA022",
+        "titulo_maestro": "Pila 377 Suncom",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA037",
+        "titulo_maestro": "Pila 389 - 189 - LR1130 - AG10SUNCOM",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA038",
+        "titulo_maestro": "Pila 389 - 189 - LR1130 - AG10 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA040",
+        "titulo_maestro": "Pila 192 392 LR41 Murata",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA042",
+        "titulo_maestro": "Pila 192 392 LR41 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA052",
+        "titulo_maestro": "Pila 379 AG0 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA054",
+        "titulo_maestro": "Pila 2430 Murata",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA056",
+        "titulo_maestro": "Pila 396 - 397 - AG2 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA057",
+        "titulo_maestro": "Pila 393- 193 - AG5 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA059",
+        "titulo_maestro": "Pila 391 - AG8 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA060",
+        "titulo_maestro": "Pila 362 - AG11 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA062",
+        "titulo_maestro": "Pila 386 - AG12 Maxday",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA071",
+        "titulo_maestro": "Pila 27A Soeiniy",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA074",
+        "titulo_maestro": "Pila 27A GP",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA068",
+        "titulo_maestro": "Pila 1632 Murata",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA016",
+        "titulo_maestro": "Pila 364 Murata",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA018",
+        "titulo_maestro": "Pila 371 Murata",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      },
+      {
+        "sku": "PILA030",
+        "titulo_maestro": "Pila D RCA",
+        "categoria_real": "Pilas",
+        "referencias_indexadas": 1
+      }
+    ]
+  },
+  "enlaces_categoria": {
+    "estado": "PUBLICADO_VERIFICADO",
+    "categorias": 76,
+    "microfonos": "https://conectatech-ec.github.io/?categoria=microfonos#catalogo",
+    "evidencia": "reportes/continuacion-086/qa-publica/categorias.json"
+  },
+  "main_comprobado": "1326cf3005fb5e5f56202e6c130731cc09f1e29b",
+  "sesion_antigua": "No existe control para detener otro chat; main fresco, rama independiente, respaldos e integración normal sinforce conservando concurrencia."
+}
