@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl019-teclado-numerico-alambrico-andowl/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Teclado numérico USB Andowl Q-813 de 19 teclas. Entrada: 19 teclas según empaque. Conexión: Cable USB-A. Formato: Teclado numérico compacto.",
   "contenido_venta": "Un teclado numérico con cable USB-A integrado.",
   "compatibilidad": "Equipos compatibles con teclado USB Plug and Play según empaque.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK AndowlQ81319keynumericpad from box. Tallroundedrectangularbody with raisedtopband genuine WHITE Andowlwordmark, fixedblackcable exitsTOP endingUSB-A male clearlyshown. CopyEXACT19keylayout/legends: top NumLock,/ ,* ,- ; next7,8,9,+ ; next4,5,6,BackSpace ; next1,2,3,tallEnter spanninglast2rows ; bottom0,000,decimal. Wholeunit modesttopfront3/4with cablecurvedbehind, no added/droppedkeys, RGB, laptop, loose dongle, boxorlabels."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "TECL019"
     },
     "movil": {
       "solicitado": "TECL019",
       "sku": "TECL019",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:49.131Z",
+      "fecha": "2026-10-15T20:17:33.499Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl019-teclado-numerico-alambrico-andowl/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/tecl019-teclado-numerico-alambrico-andowl/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl019-teclado-numerico-alambrico-andowl/",
       "archivo_html": "productos/tecl019-teclado-numerico-alambrico-andowl/index.html",
       "http": 200,
       "sha256_html": "4e0555a16c27345ab65b128b019de78c94ae7b558f3eb95fb976ab687821da36",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl019/TECL019-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/tecl019/TECL019-01-600.webp?v=e327d63ff8759ac4",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl019/TECL019-01-600.webp?v=e327d63ff8759ac4",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/tecl019-teclado-numerico-alambrico-andowl/",
+          "url": "https://conectatech-ec.github.io/productos/tecl019-teclado-numerico-alambrico-andowl/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/tecl019/TECL019-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl019/TECL019-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/TECL019-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/TECL019-390.png",
       "sha256": "79b888f672f6792d0ab3ee6a52598d2fedc09d52ba0f86da4c1422de825f9463",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/TECL019-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/TECL019-1280.png",
         "sha256": "810fc2802052119f62e0bc1b6096683413e8d480467e56bafa77f960ee8789e2",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

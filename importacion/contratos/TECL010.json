@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl010-teclado-gaming-rca-5rca556/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Teclado gamer RCA 5RCA556 con cable. Conexión: Cable USB. Formato: Teclado completo con bloque numérico. Diseño: Carcasa negra con teclas elevadas.",
   "contenido_venta": "Un teclado con cable USB integrado.",
   "compatibilidad": "Equipos compatibles con teclado USB; confirmar distribución requerida antes de comprar.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical BLACK RCA5RCA556 wiredfullsizekeyboard. EXACT reference SpanishISOkeycaplayout, numpadRIGHT, navigation/arrowclusters and narrowrectangularangularbody, actualsmallRCAlogo overarrowzone; three smallindicatorpositions topRIGHT. Show samewholekeyboard longsidehorizontal frommildelevatedfront3/4. Copy realprinted keycapsandkeyspacing EXACTLY; do not invent extra rows, RGB, mechanicalswitchtype, knobs, phoneholder, wristrest or deletekeys. Blackcordloosebehind withendhidden; no box, stickers, floor or hands. Premiumnewfinish."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "TECL010"
     },
     "movil": {
       "solicitado": "TECL010",
       "sku": "TECL010",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:46.419Z",
+      "fecha": "2026-10-15T20:17:30.040Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl010-teclado-gaming-rca-5rca556/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/tecl010-teclado-gaming-rca-5rca556/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl010-teclado-gaming-rca-5rca556/",
       "archivo_html": "productos/tecl010-teclado-gaming-rca-5rca556/index.html",
       "http": 200,
       "sha256_html": "ebdee87cb2b252484523eaa115131ff41babad49448dc93c06a170afbe3c48c9",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl010/TECL010-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/tecl010/TECL010-01-600.webp?v=63d603a1deee8ae1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl010/TECL010-01-600.webp?v=63d603a1deee8ae1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/tecl010-teclado-gaming-rca-5rca556/",
+          "url": "https://conectatech-ec.github.io/productos/tecl010-teclado-gaming-rca-5rca556/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/tecl010/TECL010-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl010/TECL010-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/TECL010-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/TECL010-390.png",
       "sha256": "e6eb4a23f963a6cab64f64fd56e7bae27adae576fbd3dc7ec3372cb12b4d0acc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/TECL010-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/TECL010-1280.png",
         "sha256": "cf5cc9129ae83a50defbdb106eeea36fb3a04ffd2741e303d926bd090b460f4f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

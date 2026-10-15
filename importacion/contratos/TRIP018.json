@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip018-tripode-k28p/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Trípode selfie K28P con doble luz. Versatilidad: Trípode y palo selfie. Iluminación: Dos luces de relleno según empaque. Ajuste: Columna telescópica.",
   "contenido_venta": "Un trípode selfie K28P.",
   "compatibilidad": "Teléfonos que se ajusten a la pinza; funciones del control sujetas a compatibilidad.",
@@ -217,14 +217,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK K28P selfie tripod from owner box. Faithfully reproduce main source model FOLDED compact, matching long cylindrical handle with seated oval remote front and telescopic shaft retracted, actual top folded clamp/bracket. Full folded unit upright slightly3/4like frontboxphoto with no retailbox/phone/person. Lights folded/hidden as actual source, do NOT unfold hidden unreferenced faces or invent LEDring. Preserve exact handle/grip and existing hinges, single unit, pristine black."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "TRIP018"
     },
     "movil": {
       "solicitado": "TRIP018",
       "sku": "TRIP018",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:15.822Z",
+      "fecha": "2026-10-15T20:16:51.963Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -249,7 +253,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip018-tripode-k28p/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/trip018-tripode-k28p/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip018-tripode-k28p/",
       "archivo_html": "productos/trip018-tripode-k28p/index.html",
       "http": 200,
       "sha256_html": "d4e4bc95e32d812295ba978db1a62a7eb61e279c1859bd1d0a2079784e17ca5d",
@@ -259,7 +263,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip018/TRIP018-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/trip018/TRIP018-01-600.webp?v=0c81b87ff0de4bd4",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip018/TRIP018-01-600.webp?v=0c81b87ff0de4bd4",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -268,32 +272,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/trip018-tripode-k28p/",
+          "url": "https://conectatech-ec.github.io/productos/trip018-tripode-k28p/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/trip018/TRIP018-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip018/TRIP018-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/TRIP018-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/TRIP018-390.png",
       "sha256": "84b50c5360773b6daf39b1813e377e26376978457afe352cc0746257a9eafd99",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/TRIP018-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/TRIP018-1280.png",
         "sha256": "7198fb36c017046ef102cd35a0c0b5e6e46de52aead5b3bee1b17a576f0fc251",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

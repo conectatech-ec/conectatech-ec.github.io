@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/webc003-webcam-fullhd-1080-x13/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Webcam X13 Full HD 1080p. Video: Full HD 1080p según empaque. Audio: Micrófono integrado según empaque. Colocación: Clip para monitor.",
   "contenido_venta": "Una webcam con cable integrado.",
   "compatibilidad": "Equipo y software compatibles con la webcam; comprobar requisitos antes de comprar.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical BLACK X13 webcam. Broad horizontallyroundedrectangle with shinyblackfrontoval and ONEroundcentral lens, patternedsmallmicperforations atLEFT/RIGHTends, thinblackbodyrim, articulatedBLACK monitorclip/base with smallsilver footpad visibleactualsource. Attachedblackcordloopsbehindwithendhidden. Wholefront3/4samephysicalsource, preserveexactlens/body/clipgeometry, clean newglosscontrolledreflections no store, no inventedbrand/shutter/LEDs/ports, monitor, box or people."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "WEBC003"
     },
     "movil": {
       "solicitado": "WEBC003",
       "sku": "WEBC003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:53.490Z",
+      "fecha": "2026-10-15T20:17:39.864Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/webc003-webcam-fullhd-1080-x13/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/webc003-webcam-fullhd-1080-x13/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/webc003-webcam-fullhd-1080-x13/",
       "archivo_html": "productos/webc003-webcam-fullhd-1080-x13/index.html",
       "http": 200,
       "sha256_html": "4423f2a308eb1bac33654570c9d1ffeeb48273bb3b6e80f51b78a1eb0269ac8e",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/webc003/WEBC003-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/webc003/WEBC003-01-600.webp?v=136cd9f925b81799",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/webc003/WEBC003-01-600.webp?v=136cd9f925b81799",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/webc003-webcam-fullhd-1080-x13/",
+          "url": "https://conectatech-ec.github.io/productos/webc003-webcam-fullhd-1080-x13/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/webc003/WEBC003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/webc003/WEBC003-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/WEBC003-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/WEBC003-390.png",
       "sha256": "4050084fd475d6688c5c16eccfb94d9ac5db1cf403250fcc7b4669f59e7cc049",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/WEBC003-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/WEBC003-1280.png",
         "sha256": "4bf70cc72f9e67108d70963d346f73c7d6e948fe30d63a19802dacdd7a1c7775",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pres001-presentador-de-diapositivas-con-puntero-laser-ver-1/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Presentador inalámbrico de diapositivas versión 1. Presentación: Avance y retroceso de diapositivas. Conexión: Inalámbrica de 2,4 GHz según empaque. Apoyo: Puntero láser según empaque.",
   "contenido_venta": "Un presentador con receptor integrado según empaque.",
   "compatibilidad": "Equipo USB y software de presentaciones compatibles; verificar requisitos de uso.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK version1 wireless presenter from box. Long smoothlytapered curved remote, small GREEN verticalindicator atTOP, broad squareupperbutton then two distinct LEFT/RIGHT arrowbuttons beneath, two small screen/fullscreen iconkeys atbottomcontrolarea and tiny integratedreceiveroutline bottomhandle. Whole one remote upright frontmild3/4exactsource, laserOFF, no beam, hand, laptop, separateinventeddongle,box or logos. Preserve exactfivekeylayout/geometry."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "PRES001"
     },
     "movil": {
       "solicitado": "PRES001",
       "sku": "PRES001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:21.156Z",
+      "fecha": "2026-10-15T20:16:58.438Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pres001-presentador-de-diapositivas-con-puntero-laser-ver-1/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pres001-presentador-de-diapositivas-con-puntero-laser-ver-1/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pres001-presentador-de-diapositivas-con-puntero-laser-ver-1/",
       "archivo_html": "productos/pres001-presentador-de-diapositivas-con-puntero-laser-ver-1/index.html",
       "http": 200,
       "sha256_html": "a4fe23f3cab3216dc5fc104aa0b922e7c8f695489186d06d1f5ecfeb844ff3f2",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pres001/PRES001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pres001/PRES001-01-600.webp?v=ff53765381f37263",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pres001/PRES001-01-600.webp?v=ff53765381f37263",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pres001-presentador-de-diapositivas-con-puntero-laser-ver-1/",
+          "url": "https://conectatech-ec.github.io/productos/pres001-presentador-de-diapositivas-con-puntero-laser-ver-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pres001/PRES001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pres001/PRES001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/PRES001-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/PRES001-390.png",
       "sha256": "6b6235b3ceb91e96a90f7c538bed9f4523ca9a368d4438619fcb1150ee88734d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/PRES001-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/PRES001-1280.png",
         "sha256": "b2fd671edf3966ae6e371a869093ec68582afd32fe09ebaa496898ca91c02f09",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

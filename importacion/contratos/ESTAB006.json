@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/estab006-estabilizador-q18/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Estabilizador Q18 con luz de relleno. Estabilización: Gimbal según empaque. Iluminación: Luz de relleno integrada. Colocación: Función de trípode según empaque.",
   "contenido_venta": "Un estabilizador Q18 con control según empaque.",
   "compatibilidad": "Teléfonos que se ajusten al soporte y condiciones de uso del fabricante; funciones automáticas sujetas a compatibilidad.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK Q18gimbal/selfiestick folded model illustratedonownerbox. Cylindrical textureribbedgrip lowerhalf with actual smallseatedremote/ovalrecess, upperfolded motorarm with silver roundpivotRIGHT and tallwhite rectangularfill-lightdiffuserLEFT, foldedphoneclamp inexactshownpositiontop. Wholeonecompactfoldedunit upright mild3/4source, whitepadunlitnotbloom. No actualphone, 360promosticker, extra lightbar, invented screen/arms, cable orbox. Matchactual illustratedshape/hardware."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "ESTAB006"
     },
     "movil": {
       "solicitado": "ESTAB006",
       "sku": "ESTAB006",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:34.984Z",
+      "fecha": "2026-10-15T20:17:15.366Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/estab006-estabilizador-q18/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/estab006-estabilizador-q18/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/estab006-estabilizador-q18/",
       "archivo_html": "productos/estab006-estabilizador-q18/index.html",
       "http": 200,
       "sha256_html": "e3a14d67adc80c8141555869a02a149f7fe71ce3148b15f730afae7ff8920220",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/estab006/ESTAB006-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/estab006/ESTAB006-01-600.webp?v=65d3dbcf99eb2cbf",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/estab006/ESTAB006-01-600.webp?v=65d3dbcf99eb2cbf",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/estab006-estabilizador-q18/",
+          "url": "https://conectatech-ec.github.io/productos/estab006-estabilizador-q18/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/estab006/ESTAB006-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/estab006/ESTAB006-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/ESTAB006-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/ESTAB006-390.png",
       "sha256": "ff316491204359afc62d73f3264ac0688187814359286995bc8d766feeb5dfca",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/ESTAB006-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/ESTAB006-1280.png",
         "sha256": "fe6cd3f797044f1aa565ddb109486379c3d5d85e842623ac6989c42a83f3e77b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

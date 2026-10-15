@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl023-teclado-inalambrico-con-trackpad-rca-5rca55k/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Teclado Bluetooth RCA 5RCA55K con touchpad. Conexión: Bluetooth según empaque. Manejo: Touchpad lateral integrado. Formato: Teclado compacto.",
   "contenido_venta": "Un teclado con panel táctil integrado.",
   "compatibilidad": "Equipos compatibles con teclado Bluetooth y funciones del touchpad; comprobar compatibilidad antes de comprar.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical BLACK RCA compact Bluetoothkeyboard5RCA55K. Preserve fullactual smallSpanishkeylayout onLEFT and rectangularflat TOUCHPAD onRIGHT with separatebottomLEFT/RIGHTclickline; roundedrectangularthinbody and actualwhiteRCAlogo nearspacebar. Wholeonekeyboard mildtopfront3/4longsidehorizontal, copy EVERYsourcekeycap andrealrowspacing faithfully, no invented numpad, extra touchscreens, newlogos, cable,dongleorbacklitRGB. Cleannewblack withsharpwhitelegends, no box/floor/labels."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "TECL023"
     },
     "movil": {
       "solicitado": "TECL023",
       "sku": "TECL023",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:47.470Z",
+      "fecha": "2026-10-15T20:17:31.215Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl023-teclado-inalambrico-con-trackpad-rca-5rca55k/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/tecl023-teclado-inalambrico-con-trackpad-rca-5rca55k/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl023-teclado-inalambrico-con-trackpad-rca-5rca55k/",
       "archivo_html": "productos/tecl023-teclado-inalambrico-con-trackpad-rca-5rca55k/index.html",
       "http": 200,
       "sha256_html": "cfce6aaed8acc8420f554a0f7d8d040ffb74e5e8eca8eab4fe0df0b1f58cd46d",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl023/TECL023-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/tecl023/TECL023-01-600.webp?v=defde01794843654",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl023/TECL023-01-600.webp?v=defde01794843654",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/tecl023-teclado-inalambrico-con-trackpad-rca-5rca55k/",
+          "url": "https://conectatech-ec.github.io/productos/tecl023-teclado-inalambrico-con-trackpad-rca-5rca55k/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/tecl023/TECL023-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl023/TECL023-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/TECL023-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/TECL023-390.png",
       "sha256": "ec57cd9acb1da4bc1320f8dc17a5c5614e06e4fc3404b8d4aca4a9f3d43b2848",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/TECL023-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/TECL023-1280.png",
         "sha256": "96624ca3ca41935afe3903f3b4fe317ca95e9060d9296c6d63b5b85542595b63",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

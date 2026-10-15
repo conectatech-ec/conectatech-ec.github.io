@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous013-mouse-inalambrico-rca200/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Mouse inalámbrico RCA200 de perfil delgado. Conexión: Inalámbrica de 2,4 GHz. Diseño: Perfil delgado. Manejo: Rueda central de desplazamiento.",
   "contenido_venta": "Un mouse inalámbrico.",
   "compatibilidad": "Equipo compatible con la conexión inalámbrica de 2,4 GHz indicada en el empaque.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact BLACK RCA slimwirelessmouse physicalsources, softlyroundedrectangular thinbody, matteblacktop, blackscrollwheel and small SILVER/clearcentrebutton behindwheel, actual WHITE RCAlogo onpalmarea, subtlesilvergreyedge. Same elevated front3/4source, show full mouse moreupright/natural sellingpose. Physical mouse colourwins over RED boxillustrationbutton: do not addredstripe/LED/cable, dongle, extra thumbkeys orbox. Preservegenuinelogo and exactshape."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "MOUS013"
     },
     "movil": {
       "solicitado": "MOUS013",
       "sku": "MOUS013",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:31.121Z",
+      "fecha": "2026-10-15T20:17:10.172Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous013-mouse-inalambrico-rca200/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/mous013-mouse-inalambrico-rca200/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous013-mouse-inalambrico-rca200/",
       "archivo_html": "productos/mous013-mouse-inalambrico-rca200/index.html",
       "http": 200,
       "sha256_html": "6cecb51f8fadcb82b7232034f3cc8441cc8ed70cf43416551d0a2d30f0d2eb9e",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous013/MOUS013-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/mous013/MOUS013-01-600.webp?v=9871571a8bb8ff42",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous013/MOUS013-01-600.webp?v=9871571a8bb8ff42",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/mous013-mouse-inalambrico-rca200/",
+          "url": "https://conectatech-ec.github.io/productos/mous013-mouse-inalambrico-rca200/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/mous013/MOUS013-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous013/MOUS013-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/MOUS013-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/MOUS013-390.png",
       "sha256": "9ecb6ca64cceaf3a185e794a1f0dd2ba020c09e0515482087983a9131a02b72c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/MOUS013-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/MOUS013-1280.png",
         "sha256": "e7da43e7c4ca2e2dacaa81b15618b9a2e7765eb8ea5f361b4f556efb6831ef5d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

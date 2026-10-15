@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/proy001-proyector-led-source-ultra-hd/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Proyector LED compacto con base orientable. Proyección: Fuente de luz LED según empaque. Orientación: Base con pivote lateral. Diseño: Cuerpo cilíndrico compacto.",
   "contenido_venta": "Un proyector con base orientable.",
   "compatibilidad": "Verificar entradas y funciones del modelo; el texto Ultra HD del empaque no acredita resolución nativa 4K.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical WHITE cylindrical mini projector. BLACK roundfrontface with diagonal parallelventslats and actual large dark circularlens lowercentralinface, roundedwhitetubularbody onWHITEU-shapedpivotstand with roundflatwhitebase. Same slightlyupwardfront3/4 angleas first physicalsource, wholeunit. Removebarcode/regulatorystickers,dust,room; no inventedbrand, remote, projectionbeam, apps, screen, rearportsunseen orbox. Preserve correctslantedventorientation, lenspositionandpivot."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "PROY001"
     },
     "movil": {
       "solicitado": "PROY001",
       "sku": "PROY001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:43.589Z",
+      "fecha": "2026-10-15T20:17:26.541Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/proy001-proyector-led-source-ultra-hd/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/proy001-proyector-led-source-ultra-hd/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/proy001-proyector-led-source-ultra-hd/",
       "archivo_html": "productos/proy001-proyector-led-source-ultra-hd/index.html",
       "http": 200,
       "sha256_html": "79c5b78f0fd656bf54e5ca9a9dab4fe19e42c83907a1496874871648b7fa5070",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/proy001/PROY001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/proy001/PROY001-01-600.webp?v=24d3d47bde0a4da7",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/proy001/PROY001-01-600.webp?v=24d3d47bde0a4da7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/proy001-proyector-led-source-ultra-hd/",
+          "url": "https://conectatech-ec.github.io/productos/proy001-proyector-led-source-ultra-hd/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/proy001/PROY001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/proy001/PROY001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/PROY001-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/PROY001-390.png",
       "sha256": "10348c56de3c10957f6fab0531a68f71d0d34657a3c404898824aa47580a8067",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/PROY001-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/PROY001-1280.png",
         "sha256": "3793f03575f4cf25de902776d9a2c31eef8e9d3fb4fa3b733e8dcd7ff164c1e0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/webc001-webcam-fullhd-1080p-x7/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Webcam X7 Full HD 1080p. Imagen: Full HD 1920×1080 según empaque. Audio: Micrófono integrado según empaque. Colocación: Clip articulado para monitor.",
   "contenido_venta": "Una webcam con cable integrado.",
   "compatibilidad": "Equipo compatible con conexión USB y software de videollamadas; requisitos según fabricante.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK X7 webcam physical source. Broad horizontallyrounded rectangle with fine textured faces LEFT/RIGHT of central lens, actual shiny silver circularlensrim and small white icon/power symbol as source only, black articulated twohinge folding monitorclip with flat rectangularfoot. Whole front3/4matching physical photo, short visible attached black cord coiledbehind with ends outofview, no invented plug/brand/shutter, screen, box or people. Preserve exactface/buttonhole layout."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "WEBC001"
     },
     "movil": {
       "solicitado": "WEBC001",
       "sku": "WEBC001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:26.829Z",
+      "fecha": "2026-10-15T20:17:04.960Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/webc001-webcam-fullhd-1080p-x7/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/webc001-webcam-fullhd-1080p-x7/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/webc001-webcam-fullhd-1080p-x7/",
       "archivo_html": "productos/webc001-webcam-fullhd-1080p-x7/index.html",
       "http": 200,
       "sha256_html": "8f4508fd1195e79210ad9e3cd10b483a04b817c25c7b9d08c11767fa8d4389b3",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/webc001/WEBC001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/webc001/WEBC001-01-600.webp?v=29814dfbf9f571da",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/webc001/WEBC001-01-600.webp?v=29814dfbf9f571da",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/webc001-webcam-fullhd-1080p-x7/",
+          "url": "https://conectatech-ec.github.io/productos/webc001-webcam-fullhd-1080p-x7/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/webc001/WEBC001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/webc001/WEBC001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/WEBC001-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/WEBC001-390.png",
       "sha256": "4d1ba7e03764f2862a5c865204f65230193d6cd3d77683a2e591456652d47758",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/WEBC001-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/WEBC001-1280.png",
         "sha256": "1acc0ae8e485365e497002391b12e61ae2350513c4aa32df2c7196f923c7d0a6",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

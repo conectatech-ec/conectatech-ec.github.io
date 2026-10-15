@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip017-tripode-k50/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Trípode selfie estabilizador K50. Versatilidad: Trípode y palo selfie. Ajuste: Columna extensible. Sujeción: Soporte articulado para teléfono.",
   "contenido_venta": "Un trípode selfie K50.",
   "compatibilidad": "Teléfonos que se ajusten a la pinza; verificar requisitos de estabilización y control del modelo.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK K50 selfiestick stabilizer shown onbox. Long textured cylindricalgrip with actual seated ovalroundcontrol onfront, telescopicshaft retracted, top articulated phoneclamp/bracket with same small lateral motor/pivot outline. Show FOLDEDcompact oneunit upright slight3/4matching frontbox model so no hiddenopenfaces invented. No phone, person, tripodeduplicate, light, extendedunknownarm, box or madeupbranding. Keep actual griptexture andmodelgeometry."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "TRIP017"
     },
     "movil": {
       "solicitado": "TRIP017",
       "sku": "TRIP017",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:25.718Z",
+      "fecha": "2026-10-15T20:17:03.722Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip017-tripode-k50/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/trip017-tripode-k50/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip017-tripode-k50/",
       "archivo_html": "productos/trip017-tripode-k50/index.html",
       "http": 200,
       "sha256_html": "2d0ce0de20fb515e0fda1ca65c36c0c9cc1ea2be2e36d52d4c8ff059f1f30e33",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip017/TRIP017-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/trip017/TRIP017-01-600.webp?v=3df18db046ce2c2a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip017/TRIP017-01-600.webp?v=3df18db046ce2c2a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/trip017-tripode-k50/",
+          "url": "https://conectatech-ec.github.io/productos/trip017-tripode-k50/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/trip017/TRIP017-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip017/TRIP017-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/TRIP017-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/TRIP017-390.png",
       "sha256": "43c80c5f8aeca949378ffb5b5d21f04fe9723365a97f79296f1efa0470769b92",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/TRIP017-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/TRIP017-1280.png",
         "sha256": "841ce787fd751e9abcdc84a1f89eb3c03eb6dac3671072df2b09a393cbaeec24",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

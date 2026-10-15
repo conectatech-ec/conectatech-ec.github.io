@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/alex004-alexa-amazon-echo-show-8-8-7-pulgadas/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Amazon Echo Show 8 con pantalla de 8,7 pulgadas. Pantalla: 8,7 pulgadas según empaque. Asistente: Alexa por voz. Conexión: Wi-Fi según empaque.",
   "contenido_venta": "Un Echo Show con adaptador de corriente según empaque.",
   "compatibilidad": "Requiere Wi-Fi y cuenta Amazon; funciones, idiomas y servicios según región y disponibilidad.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Owner-authorized exact Amazon EchoShow8 with8.7inchdisplay as currentbox, BLACK roundedrectangular landscape screenfront and matching darkfabriclowerhousing visiblebelow as source. Show one entire device nearfrontal mild3/4angle without inventing hiddenrearfaces, screenOFFuniformdarkgrey subtle neutralreflection, actualcameraaperture topbezel only wherepictured. Preserve exactsource bezel, screenratio, smallbaseprofile; no invented clock/weather/apps, text, cables,phone, room or retailbox."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "ALEX004"
     },
     "movil": {
       "solicitado": "ALEX004",
       "sku": "ALEX004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:33.167Z",
+      "fecha": "2026-10-15T20:17:12.647Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/alex004-alexa-amazon-echo-show-8-8-7-pulgadas/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/alex004-alexa-amazon-echo-show-8-8-7-pulgadas/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/alex004-alexa-amazon-echo-show-8-8-7-pulgadas/",
       "archivo_html": "productos/alex004-alexa-amazon-echo-show-8-8-7-pulgadas/index.html",
       "http": 200,
       "sha256_html": "7facabd947a6cff3c90439d021a162c04d914b0f722b12b8f5ff03dc291497aa",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/alex004/ALEX004-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/alex004/ALEX004-01-600.webp?v=c200f31cd344da55",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/alex004/ALEX004-01-600.webp?v=c200f31cd344da55",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/alex004-alexa-amazon-echo-show-8-8-7-pulgadas/",
+          "url": "https://conectatech-ec.github.io/productos/alex004-alexa-amazon-echo-show-8-8-7-pulgadas/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/alex004/ALEX004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/alex004/ALEX004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/ALEX004-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/ALEX004-390.png",
       "sha256": "656100e96e365a25cd960b63b0b729913b78085540523bab610716f5770f11da",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/ALEX004-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/ALEX004-1280.png",
         "sha256": "1004c8e19d254ce7ff83c4b13080b93c2b64920eb2777971566e1a2a1c34a8e4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

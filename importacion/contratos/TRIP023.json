@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip023-tripode-selfie-mini-k03/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Trípode selfie mini K03 extensible. Transporte: Plegado de 15 cm según empaque. Extensión: Hasta 70 cm según empaque. Uso: Control inalámbrico según empaque.",
   "contenido_venta": "Un trípode selfie mini K03 con control según empaque.",
   "compatibilidad": "Teléfonos que se ajusten a la pinza; comprobar compatibilidad del control.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK MINI K03 selfie tripod physicalmodel illustratedbox. Compact folded cylindrical shortgrip with actual small rectangular seatedremote and hinged oblique phoneclamp atTOP, matching actualfoldedsilhouette. Whole one folded unit uprightmild3/4 source angle, do not invent opened bracket/backside, extendedlegs or additionalcontrols notpictured. No phone, extra remote, lights, box, hand or advertisingtext; accurate compact proportionsandnewblackfinish."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "TRIP023"
     },
     "movil": {
       "solicitado": "TRIP023",
       "sku": "TRIP023",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:32.151Z",
+      "fecha": "2026-10-15T20:17:11.388Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip023-tripode-selfie-mini-k03/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/trip023-tripode-selfie-mini-k03/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip023-tripode-selfie-mini-k03/",
       "archivo_html": "productos/trip023-tripode-selfie-mini-k03/index.html",
       "http": 200,
       "sha256_html": "849864ef3b09e85f4a92c3a308ce2147ef37c0c2dfd72e89ae4968c93d986cac",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip023/TRIP023-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/trip023/TRIP023-01-600.webp?v=6059e2be536ca328",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip023/TRIP023-01-600.webp?v=6059e2be536ca328",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/trip023-tripode-selfie-mini-k03/",
+          "url": "https://conectatech-ec.github.io/productos/trip023-tripode-selfie-mini-k03/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/trip023/TRIP023-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip023/TRIP023-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/TRIP023-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/TRIP023-390.png",
       "sha256": "5d94a5055af2ba6aea6606e3d73b6b19900ff3104076d1fc6608ffc7a9727d96",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/TRIP023-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/TRIP023-1280.png",
         "sha256": "4104526e9c597f28bc68b5629e6be356f0be77327376b88e8d4e4ee56bccddb8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

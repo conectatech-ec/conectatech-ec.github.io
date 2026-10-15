@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/foco002-foco-recargable-de-mano-con-panel-solar-astro/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Lámpara portátil Astro recargable con panel solar. Recarga: Panel solar integrado. Iluminación: Foco circular lateral. Transporte: Asa plegable superior.",
   "contenido_venta": "Una lámpara portátil.",
   "compatibilidad": "Recarga y uso según instrucciones del modelo; no se declara autonomía ni potencia no documentadas.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. One exact WHITE/lightGREY shortcylindrical portable solar lantern physical source. Flat top has inset square darkblue SOLAR PANEL with real two-cell dividinglines, white hingedcarryhandle foldedalongtoprim. Rounded ribbed whitebody with large circular silver reflector lens onfrontside, lightgrey lowerband/diffuser. Whole closedlantern at same elevated3/4source shows panelANDfrontlens; no expansion/cutaway, invented additionalpanels,cable,plug,brandtext, beam, box or background. Pristinewhite sourceform."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "FOCO002"
     },
     "movil": {
       "solicitado": "FOCO002",
       "sku": "FOCO002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:28.925Z",
+      "fecha": "2026-10-15T20:17:07.600Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/foco002-foco-recargable-de-mano-con-panel-solar-astro/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/foco002-foco-recargable-de-mano-con-panel-solar-astro/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/foco002-foco-recargable-de-mano-con-panel-solar-astro/",
       "archivo_html": "productos/foco002-foco-recargable-de-mano-con-panel-solar-astro/index.html",
       "http": 200,
       "sha256_html": "33794cd5983d2f65076ea74162f3c7e69b1d573232a6ad25a8a2c693ae49c49c",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/foco002/FOCO002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/foco002/FOCO002-01-600.webp?v=41b1823cee37c043",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/foco002/FOCO002-01-600.webp?v=41b1823cee37c043",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/foco002-foco-recargable-de-mano-con-panel-solar-astro/",
+          "url": "https://conectatech-ec.github.io/productos/foco002-foco-recargable-de-mano-con-panel-solar-astro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/foco002/FOCO002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/foco002/FOCO002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/FOCO002-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/FOCO002-390.png",
       "sha256": "0529ab5d55ebc751f438c8c864de246ffb476b44755861a1f36063d45306e2e5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/FOCO002-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/FOCO002-1280.png",
         "sha256": "bd893dd39154090d090286785cc11f62059fd8669bf0d0728e40ccadd420d8e9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

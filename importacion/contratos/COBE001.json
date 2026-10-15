@@ -104,9 +104,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cobe001-cobertor-estuche-para-cargadores-varios-modelos/",
-  "fecha_verificacion": "2026-10-15T20:00:12.420388+00:00",
+  "fecha_verificacion": "2026-10-15T20:16:51.104205+00:00",
   "descripcion": "Cobertor decorativo para cargador. Diseño: Motivo Pepsi-Cola. Acabado: Color azul. Formato: Protector compacto para cargador.",
   "contenido_venta": "Un cobertor decorativo. No incluye cargador eléctrico.",
   "compatibilidad": "Verificar la forma y dimensiones del cargador antes de comprar; no se declara un modelo concreto no documentado.",
@@ -201,14 +201,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact one BLUE Pepsi-Cola decorative charger COVER inside bag source. Compact rounded rectangular blue shell, actual red/white/blue circle and white Pepsi-Cola text front. Render only exact protective shell at same nearfrontmildangle, preserve source size/proportions. No electrical chargerprongs, USBsockets, madeupchargingfeatures, cableends, secondHelloKitty/Minnievariant, bag/sticker orpackage. Whole single smallcover with generous margins, pristine actualblue."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T20:16:51.104205+00:00",
+      "reporte": "reportes/continuacion-090/http-publicacion.json",
+      "archivo": "reportes/continuacion-090/http-publicacion.json",
+      "sha256": "62581bdf62ac60b0a1ec8139d1b68c1da3fe9fdf350afcf0550b3cd7c04ad2a8",
+      "sku": "COBE001"
     },
     "movil": {
       "solicitado": "COBE001",
       "sku": "COBE001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T20:01:20.115Z",
+      "fecha": "2026-10-15T20:16:57.126Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +237,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cobe001-cobertor-estuche-para-cargadores-varios-modelos/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cobe001-cobertor-estuche-para-cargadores-varios-modelos/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cobe001-cobertor-estuche-para-cargadores-varios-modelos/",
       "archivo_html": "productos/cobe001-cobertor-estuche-para-cargadores-varios-modelos/index.html",
       "http": 200,
       "sha256_html": "e001df654ada9b1efafcdf3e62cd87f8bd31378cb14b09cc5d2ec3b63500aabe",
@@ -243,7 +247,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cobe001/COBE001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cobe001/COBE001-01-600.webp?v=db6d490d8f1f6905",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cobe001/COBE001-01-600.webp?v=db6d490d8f1f6905",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,32 +256,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cobe001-cobertor-estuche-para-cargadores-varios-modelos/",
+          "url": "https://conectatech-ec.github.io/productos/cobe001-cobertor-estuche-para-cargadores-varios-modelos/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cobe001/COBE001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cobe001/COBE001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-090/qa-local/movil/COBE001-390.png",
+      "archivo": "reportes/continuacion-090/qa-publica/movil/COBE001-390.png",
       "sha256": "25f3949fcf07269684b28bbecc753ca3f868fe96bbed4f7fad7a25ca2a839385",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-090/qa-local/movil/COBE001-1280.png",
+        "archivo": "reportes/continuacion-090/qa-publica/movil/COBE001-1280.png",
         "sha256": "ba5321914b2f455b73ba6c86b310d1099ef7c55962fd31189189ad910434f2c0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
