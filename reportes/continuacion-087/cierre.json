@@ -1,0 +1,586 @@
+{
+  "fecha": "2026-10-15T04:02:29.517615+00:00",
+  "cantidad_nuevos": 46,
+  "nuevos_publicados": [
+    "SOPO017",
+    "SOPO022",
+    "SOPO052",
+    "SOPO002",
+    "SOPO056",
+    "SOPO027",
+    "SOPO014",
+    "VENT009",
+    "SOPO046",
+    "PILA021",
+    "PILA036",
+    "PILA011",
+    "PILA049",
+    "PILA055",
+    "PILA010",
+    "PILA048",
+    "PILA033",
+    "PILA017",
+    "PILA019",
+    "PILA022",
+    "PILA037",
+    "PILA038",
+    "PILA040",
+    "PILA042",
+    "PILA052",
+    "PILA054",
+    "PILA056",
+    "PILA057",
+    "PILA059",
+    "PILA060",
+    "PILA062",
+    "PILA068",
+    "PILA016",
+    "PILA018",
+    "JUGU094",
+    "JUGU113",
+    "JUGU154",
+    "JUGU080",
+    "JUGU079",
+    "JUGU108",
+    "JUGU109",
+    "JUGU070",
+    "PILA013",
+    "JUGU149",
+    "JUGU114",
+    "JUGU009"
+  ],
+  "actualizados_previos": 0,
+  "categorias": {
+    "Soportes": 9,
+    "Pilas": 26,
+    "Juguetes": 11
+  },
+  "total_sku": 1170,
+  "sku_con_portada": 600,
+  "sku_sin_portada": 570,
+  "registro_total": 677,
+  "qa_sku": 63,
+  "errores_finales": 0,
+  "primeros_46_verificados": true,
+  "integridad": {
+    "total_sku": 1170,
+    "finanzas_stock_categorias_intactos": true,
+    "datos593_intactos": true,
+    "urls_intactas": true,
+    "originales_intactos": 636,
+    "fotografias_previas_archivos_intactos": 2337,
+    "registros_ajenos_intactos": true,
+    "portadas": 600,
+    "sin_portada": 570,
+    "base": "e3e236023b31d155d6c01595d0a21509a0c47c96"
+  },
+  "meta": {
+    "fecha": "2026-10-15T04:02:29.019619+00:00",
+    "estado": "VERIFICADO_HTTP_CONTENIDO",
+    "url": "https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv",
+    "sha256": "1c9d8d7c47b1d09023665b3e40e8ffc2cdc1123dd4e49e7db784ef252e365966",
+    "filas": 595,
+    "filas_anteriores": 549,
+    "filas_nuevas": 46,
+    "filas_previas_todas_columnas_intactas": true,
+    "categoria_desde593": true,
+    "telf_celulares": 23,
+    "telf_skus": [
+      "TELF001",
+      "TELF023",
+      "TELF024",
+      "TELF034",
+      "TELF008",
+      "TELF013",
+      "TELF020",
+      "TELF017",
+      "TELF018",
+      "TELF019",
+      "TELF022",
+      "TELF036",
+      "TELF037",
+      "TELF010",
+      "TELF011",
+      "TELF012",
+      "TELF026",
+      "TELF025",
+      "TELF027",
+      "TELF002",
+      "TELF003",
+      "TELF004",
+      "TELF016"
+    ],
+    "con_categoria": 588,
+    "sin_categoria_maestra": [
+      "AUDI115",
+      "REL071",
+      "CABL163",
+      "CABL159",
+      "CAND001",
+      "CABL170",
+      "CABL171"
+    ],
+    "sin_clasificaciones_inventadas": true,
+    "misma_url": true,
+    "otro_catalogo_creado": false,
+    "verificacion_interna_meta": false
+  },
+  "despliegues": {
+    "ci_candidato": {
+      "conclusion": "success",
+      "headSha": "7968d2ea9289e4a96a783cd8545f60a957d4c9c7",
+      "name": "Validar lote antes de publicar",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38677196312",
+      "run_id": 38677196312
+    },
+    "pages_recursos": {
+      "conclusion": "success",
+      "headSha": "c75a91e3bf10426a3c692e3b2334fea59f6eecb6",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38677589328",
+      "run_id": 38677589328
+    },
+    "ci_promocion": {
+      "conclusion": "success",
+      "headSha": "6e73d33e812805bdb2750e8a5a78ba112f727295",
+      "name": "Validar lote antes de publicar",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38678307359",
+      "run_id": 38678307359
+    },
+    "pages_catalogo_final": {
+      "conclusion": "success",
+      "headSha": "6fd8529cfe478b8be898fef93b584d7119bd5c7f",
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38678761060",
+      "run_id": 38678761060
+    }
+  },
+  "pendientes_historicos": [
+    {
+      "sku": "REL050",
+      "motivo": "Fidelidad del bisel/controles; conservar foto histórica y observación, no declarar corregido."
+    },
+    {
+      "sku": "SOPO020",
+      "motivo": "Fuentes T7-01/T7-02 contradictorias."
+    },
+    {
+      "sku": "RADI005",
+      "motivo": "Unidad de venta uno o par no confirmada."
+    }
+  ],
+  "reservados": [
+    {
+      "sku": "CABL114",
+      "motivo": "Varias variantes de color en empaque; pendiente de referencia física o confirmación del color, sustituido por CABL032."
+    },
+    {
+      "sku": "CARG062",
+      "estado": "PENDIENTE_IDENTIDAD_CONTENIDO",
+      "motivo": "El nombre593 indica cargador universal65W, pero las fotos propias muestran15 puntas y empaque Type-C to Universal DC interface. No se acredita una fuente de red ni cable AC incluidos; no representar un cargador completo inventado. Conservar593 y foto vigente sin modificar.",
+      "requiere": "Verificar físicamente contenido de venta y si incluye fuente o sólo interfaz USB-C/DC y puntas.",
+      "referencias": [
+        "https://drive.google.com/file/d/19u7mM4XTOfYClMIgz6tt15OISKww2O2V/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1DDQIohbZx1qkRGLyYfJiCBh9G6ng8p-5/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1hvorlPJBrZwVPMLraBIHABZnR91ru_pQ/view?usp=drivesdk"
+      ]
+    },
+    {
+      "sku": "AUDI039",
+      "estado": "REVISAR_PREVIO_CONSERVADO",
+      "motivo": "La producción066 registra rechazo de la herramienta de imágenes. No reintentar esa misma salida ni sustituir una foto aprobada; continuar con PILA027."
+    },
+    {
+      "sku": "MICR13",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "EmpaqueSX21 tiene opcionesType-C/Lightning sin seleccionar; falta confirmar la variante real del receptor.",
+      "sustituido_por": "PILA026"
+    },
+    {
+      "sku": "MICR30",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Las dos fotos duplican frente de caja con cabeza de micrófono recortada; no acreditan cuerpo completo, receptor ni cantidad de venta.",
+      "sustituido_por": "PILA069"
+    },
+    {
+      "sku": "MICR33",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Referencia física rotulaLCT240 yel nombreGenuine es eslogan; no se confirma si el soporte mostrado de demostración forma parte de la venta.",
+      "sustituido_por": "PILA050"
+    },
+    {
+      "sku": "AUDI111",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Una sola vista de empaque no identifica modelo ni diseño/contenido del estuche; no representar un kit inventado.",
+      "sustituido_por": "PILA039"
+    },
+    {
+      "sku": "AUDI004",
+      "estado": "PENDIENTE_REFERENCIA_IDENTIDAD_CONTENIDO",
+      "motivo": "Las dos fotos de bolsa/etiqueta ocultan la geometría de los auriculares yconector; falta detalle de la referenciaJ5.",
+      "sustituido_por": "PILA023"
+    },
+    {
+      "sku": "PILA030",
+      "motivo": "La referencia muestra paquete2 de tipoD; confirmar si593 corresponde a una o al paquete. No afecta pilas de botón confirmadas.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "PILA071",
+      "motivo": "Pila cilíndrica27A: la confirmación recibida cubre pilas de botón, no esta presentación de tira5. Confirmar unidad comercial.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "PILA074",
+      "motivo": "Pila cilíndrica27A: confirmar precio por una o por tira5; no extender regla de botón sin confirmación.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "SOPO048",
+      "motivo": "Sólo esquema lineal en caja; falta vista del acabado y cuerpo real del brazo para una portada fiel.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "SOPO051",
+      "motivo": "Las tres referencias muestran el soporte tapado por un teléfono; no acreditan el cuerpo completo ni la unión del anclaje. Conservar fuentes y avanzar otroSKU.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "JUGU085",
+      "estado": "RECHAZO_HERRAMIENTA_IMAGEN",
+      "motivo": "La herramienta rechazó la salida por su sistema de seguridad sin detallar motivo. No reintentar la misma solicitud ni publicar borrador; continuar con otrosSKU."
+    },
+    {
+      "sku": "JUGU156",
+      "estado": "RECHAZO_HERRAMIENTA_IMAGEN",
+      "motivo": "La herramienta rechazó la salida por su sistema de seguridad sin detallar motivo. No reintentar la misma solicitud ni publicar borrador; continuar con otrosSKU."
+    }
+  ],
+  "reservados_este_lote": [
+    {
+      "sku": "PILA030",
+      "motivo": "La referencia muestra paquete2 de tipoD; confirmar si593 corresponde a una o al paquete. No afecta pilas de botón confirmadas.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "PILA071",
+      "motivo": "Pila cilíndrica27A: la confirmación recibida cubre pilas de botón, no esta presentación de tira5. Confirmar unidad comercial.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "PILA074",
+      "motivo": "Pila cilíndrica27A: confirmar precio por una o por tira5; no extender regla de botón sin confirmación.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "SOPO048",
+      "motivo": "Sólo esquema lineal en caja; falta vista del acabado y cuerpo real del brazo para una portada fiel.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "SOPO051",
+      "motivo": "Las tres referencias muestran el soporte tapado por un teléfono; no acreditan el cuerpo completo ni la unión del anclaje. Conservar fuentes y avanzar otroSKU.",
+      "estado": "PENDIENTE_REFERENCIA_O_UNIDAD"
+    },
+    {
+      "sku": "JUGU085",
+      "estado": "RECHAZO_HERRAMIENTA_IMAGEN",
+      "motivo": "La herramienta rechazó la salida por su sistema de seguridad sin detallar motivo. No reintentar la misma solicitud ni publicar borrador; continuar con otrosSKU."
+    },
+    {
+      "sku": "JUGU156",
+      "estado": "RECHAZO_HERRAMIENTA_IMAGEN",
+      "motivo": "La herramienta rechazó la salida por su sistema de seguridad sin detallar motivo. No reintentar la misma solicitud ni publicar borrador; continuar con otrosSKU."
+    }
+  ],
+  "pilas_boton": {
+    "fecha_registro_utc": "2026-10-15T03:04:03.554676+00:00",
+    "fecha_propietario_guayaquil": "2026-10-14",
+    "pregunta": "En las pilas de botón (377,2032,LR44,etc.),¿el precio593 corresponde al blíster completo o a una sola pila?",
+    "respuesta_literal": "A una sola pila",
+    "regla": "Las pilas de botón se venden por una sola pila al precio registrado en593. Portada:una sola celda,sin blíster ni caja. Conservar precios,stock yotros formatos/paquetes sin cambio.",
+    "skus_aplicados": [
+      "PILA021",
+      "PILA036",
+      "PILA011",
+      "PILA049",
+      "PILA055",
+      "PILA010",
+      "PILA048",
+      "PILA033",
+      "PILA017",
+      "PILA019",
+      "PILA022",
+      "PILA037",
+      "PILA038",
+      "PILA040",
+      "PILA042",
+      "PILA052",
+      "PILA054",
+      "PILA056",
+      "PILA057",
+      "PILA059",
+      "PILA060",
+      "PILA062",
+      "PILA068",
+      "PILA016",
+      "PILA018",
+      "PILA013"
+    ],
+    "fuente": "Respuesta explícita del propietario en esta conversación; confirmación posterior al cierre086."
+  },
+  "siguiente_lote": {
+    "fecha": "2026-10-15T03:35:21.427106+00:00",
+    "estado": "SOLO_PRESELECCION_NO_PRODUCIDA_NI_PUBLICADA",
+    "cantidad": 40,
+    "regla": "Deduplicar contra main/web e inspeccionar fuentes del modelo. Reusar metadatos/lecturas yfuentes intactas. Pilas de botón por una sola pila confirmada; no extender a otros formatos. Excluir rechazos ypendientes con huella intacta.",
+    "candidatos": [
+      {
+        "sku": "JUGU029",
+        "titulo_maestro": "Juguete Personajes Animados POP",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 16
+      },
+      {
+        "sku": "JUGU034",
+        "titulo_maestro": "Juguete Carro DE Coleccion Pichirilo CON Rayas Pequeo",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 12
+      },
+      {
+        "sku": "JUGU166",
+        "titulo_maestro": "Juguete Carro Coleccionable CON Parlante Varios Modelos",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 9
+      },
+      {
+        "sku": "JUGU017",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos Mario Q8 520 IN 1",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 9
+      },
+      {
+        "sku": "JUGU051",
+        "titulo_maestro": "Juguete Moto Mediana Coleccionable Varios Modelos",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 9
+      },
+      {
+        "sku": "JUGU126",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos XF40H",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 9
+      },
+      {
+        "sku": "JUGU043",
+        "titulo_maestro": "Juguete Camioneta Combi Coleccionable Pequea",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 8
+      },
+      {
+        "sku": "JUGU039",
+        "titulo_maestro": "Juguete Carrito Avengers Varios Modelos",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 8
+      },
+      {
+        "sku": "JUGU065",
+        "titulo_maestro": "Juguete Cuadro CON Brillos Personajes Animados Varios Modelos",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 8
+      },
+      {
+        "sku": "JUGU121",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos J36 Ultra",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 7
+      },
+      {
+        "sku": "JUGU054",
+        "titulo_maestro": "Juguete Motos Pequeas HOT Wheel Coleccionables Metal",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 6
+      },
+      {
+        "sku": "JUGU082",
+        "titulo_maestro": "Juguete Carro DE Coleccion Mercedes AM30",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 6
+      },
+      {
+        "sku": "JUGU005",
+        "titulo_maestro": "Juguete Carro Mini Model",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 5
+      },
+      {
+        "sku": "JUGU151",
+        "titulo_maestro": "Juguetes Carrito Pequeno EN Contenedor Naranja",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 5
+      },
+      {
+        "sku": "JUGU150",
+        "titulo_maestro": "Juguete Moto Coleccionable EN Contenedor Naranja",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 5
+      },
+      {
+        "sku": "JUGU072",
+        "titulo_maestro": "Juguete Carro Coleccionable Mercedes Benz Pequeo",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 5
+      },
+      {
+        "sku": "JUGU003",
+        "titulo_maestro": "Juguete Carrito Mario Kart",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "JUGU074",
+        "titulo_maestro": "Juguete Carrito Rayo Mcqueen Mediano",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "JUGU037",
+        "titulo_maestro": "Juguete Carro DE Coleccion Tamao Mercedes Benz Antiguo Grande",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "JUGU020",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos Gameboy G620",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "JUGU022",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos Portatil Mini 500 Games",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 4
+      },
+      {
+        "sku": "JUGU141",
+        "titulo_maestro": "Juguete Parlante Karaoke Para Nios K52",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU129",
+        "titulo_maestro": "Juguete Consola DE Videojuegos Game 2.4GHZ Hdmi Para TV",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU097",
+        "titulo_maestro": "Juguete SET KIT Para Nios(as) Audifonos Inalambricos - Reloj - Consola",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU101",
+        "titulo_maestro": "Juguete Armable DE Auto 244 Piezas NO.33001",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU112",
+        "titulo_maestro": "Juguete Bicicleta Armable",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU018",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos SUP CON Control",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU146",
+        "titulo_maestro": "Juguete Carro A Control Remoto Verde Xuda RC CAR",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU122",
+        "titulo_maestro": "Juguete Mario Kart Grande Personaje Mario",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU021",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos D20S 500 IN 1 CON Control",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU014",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos F4",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU012",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos F5",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU015",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos K36",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU131",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos M26",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU125",
+        "titulo_maestro": "Juguete Mini Consola DE Videojuegos R36XX",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU048",
+        "titulo_maestro": "Juguete Moto Coleccionable Grande",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 3
+      },
+      {
+        "sku": "JUGU050",
+        "titulo_maestro": "Juguete Armable DE Personajes Variados - Varios Modelos",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "JUGU143",
+        "titulo_maestro": "Juguete KIT Escolar Funda Kpop",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "JUGU165",
+        "titulo_maestro": "Juguete Libro Para Colorear Guerreras Kpop",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 2
+      },
+      {
+        "sku": "JUGU164",
+        "titulo_maestro": "Juguete SET DE Maquillaje Guerreras Kpop",
+        "categoria_real": "Juguetes",
+        "referencias_indexadas": 2
+      }
+    ]
+  },
+  "main_comprobado": "6fd8529cfe478b8be898fef93b584d7119bd5c7f",
+  "sesion_antigua": "Sin control para detener otro chat; main fresco,rama independiente,respaldos e integración normal sinforce conservando concurrencia."
+}
