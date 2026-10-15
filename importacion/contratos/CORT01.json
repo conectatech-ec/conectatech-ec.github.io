@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cort01-cortapicos-ldnio-multienchufes-6-puertos-usb-a-cs3604/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Regleta LDNIO SC3604 con tres tomas y seis USB-A. Conexiones: Tres tomas universales según empaque. Carga: Seis puertos USB-A. Cable: 2 metros según empaque.",
   "contenido_venta": "Una regleta con cable integrado.",
   "compatibilidad": "Verificar tensión, corriente y carga máximas del fabricante; potencia de USB compartida y no se garantiza carga rápida individual.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact LDNIO SC3604 powerstrip onownerbox. Thickshortroundedrectangular WHITEedgebody withDARKGREYtexturedtopface. THREEBLACKuniversalsocketsverticalalongRIGHT, SIXGREENUSB-A socketsverticalalongLEFT, realcircularWHITEpowerbuttonupperLEFT and genuinewhiteLDNIOwordmarkbeneathbutton, POWERFOREVERYONEsmallbottomtextasreference. FixedWHITEcordexitsTOPcurvesbehindwithfarendhidden(noinventplug). Entireunit modesttopfront3/4samebox, no seventhUSB/fourthAC, RGB, inserteddevices, inventedlogos/specs, boxorprops. Sockets andspacing faithful."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "CORT01"
     },
     "movil": {
       "solicitado": "CORT01",
       "sku": "CORT01",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:54.071Z",
+      "fecha": "2026-10-15T22:28:02.068Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cort01-cortapicos-ldnio-multienchufes-6-puertos-usb-a-cs3604/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cort01-cortapicos-ldnio-multienchufes-6-puertos-usb-a-cs3604/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cort01-cortapicos-ldnio-multienchufes-6-puertos-usb-a-cs3604/",
       "archivo_html": "productos/cort01-cortapicos-ldnio-multienchufes-6-puertos-usb-a-cs3604/index.html",
       "http": 200,
       "sha256_html": "c1ac0eef6d7b4ce024f539fbf187bc98bb71d49e5c7932f8e442d37335cc9778",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cort01/CORT01-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cort01/CORT01-01-600.webp?v=dcb4d737f48d62eb",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cort01/CORT01-01-600.webp?v=dcb4d737f48d62eb",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cort01-cortapicos-ldnio-multienchufes-6-puertos-usb-a-cs3604/",
+          "url": "https://conectatech-ec.github.io/productos/cort01-cortapicos-ldnio-multienchufes-6-puertos-usb-a-cs3604/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cort01/CORT01-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cort01/CORT01-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/CORT01-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/CORT01-390.png",
       "sha256": "8c0ab0692af94e6a2c4836e44cdd27849a42fe4ff0b2e00d4c99b2634db42511",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/CORT01-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/CORT01-1280.png",
         "sha256": "5cc4c7351e0c1d1b807d9408b6f795f44935aefb78c17379f021bf4f5fefa1b6",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

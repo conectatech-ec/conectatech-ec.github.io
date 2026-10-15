@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub022-hub-usb-a-a-usb-a-x4-a-809/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Hub USB-A 3.0 A-809 de cuatro puertos. Expansión: Cuatro puertos USB-A. Conexión: Entrada USB-A. Interfaz: USB 3.0 según empaque.",
   "contenido_venta": "Un hub con cable USB-A integrado.",
   "compatibilidad": "Equipos con puerto USB-A compatible; rendimiento compartido según equipo y periféricos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact SILVER A809 slimbar USB3hub illustratedbox. Long slimrectangularaluminiumbody, THREE blueUSB-Afemales evenlyalong LONGfrontedge and FOURTHblueUSB-A at LEFTshortEND; fourtotal. FixedshortWHITEcord exitsRIGHTend and curvesbackup terminatingoneUSB-A male blueinsert. Entireonehubandcord at same modesttopfront3/4asprimarybox. No LEDstrip, extraCport, addedfifthsocket, laptop, inserteddevices, branding, box or captions. Preserve exactportpositions andthinlinearshape."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "HUB022"
     },
     "movil": {
       "solicitado": "HUB022",
       "sku": "HUB022",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:29.485Z",
+      "fecha": "2026-10-15T22:27:29.142Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub022-hub-usb-a-a-usb-a-x4-a-809/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub022-hub-usb-a-a-usb-a-x4-a-809/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub022-hub-usb-a-a-usb-a-x4-a-809/",
       "archivo_html": "productos/hub022-hub-usb-a-a-usb-a-x4-a-809/index.html",
       "http": 200,
       "sha256_html": "01713bb384e800faca592b2ecd51e0ba30f5ae3c6739647eee919d190f5849d1",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub022/HUB022-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub022/HUB022-01-600.webp?v=24f6de115089c241",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub022/HUB022-01-600.webp?v=24f6de115089c241",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub022-hub-usb-a-a-usb-a-x4-a-809/",
+          "url": "https://conectatech-ec.github.io/productos/hub022-hub-usb-a-a-usb-a-x4-a-809/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub022/HUB022-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub022/HUB022-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/HUB022-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/HUB022-390.png",
       "sha256": "0e1197117fdaf43c5e204217a20588008ab671e71b0e669b5fee1228fcfa159f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/HUB022-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/HUB022-1280.png",
         "sha256": "491e0e7f70b1f72cf0e68f10fd44481abf719fe15c544c6e6b44919313f761fd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

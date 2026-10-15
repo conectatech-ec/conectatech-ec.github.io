@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub021-hub-usb-c-a-usb-a-x4-c-809/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Hub USB-C C-809 de cuatro puertos USB-A. Expansión: Cuatro puertos USB-A. Entrada: Cable USB-C integrado. Diseño: Cuerpo compacto de aluminio según empaque.",
   "contenido_venta": "Un hub con cable USB-C integrado.",
   "compatibilidad": "Equipo USB-C compatible con transferencia de datos; no se declara velocidad no confirmada.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact SILVER C809 TYPE-C4porthub onprimarybox. Longroundedrectangularsilverbar, THREE BLACKUSB-AfemalesalongLONGfrontedge andONE BLACKUSB-AonLEFTshortEND, fourTOTAL, matchingreference. ShortWHITEcordfromRIGHTendcurvesabove tooneUSB-CMALE silverhousing. Same modesttopfront3/4asbox, doNOTsubstitute blueUSB3oraddfifthsocket. Wholeunitandcord, no addedlogos, devices, powerbrick, RGB, retailbox, propsorprintedcaption."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "HUB021"
     },
     "movil": {
       "solicitado": "HUB021",
       "sku": "HUB021",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:41.637Z",
+      "fecha": "2026-10-15T22:27:45.040Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub021-hub-usb-c-a-usb-a-x4-c-809/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub021-hub-usb-c-a-usb-a-x4-c-809/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub021-hub-usb-c-a-usb-a-x4-c-809/",
       "archivo_html": "productos/hub021-hub-usb-c-a-usb-a-x4-c-809/index.html",
       "http": 200,
       "sha256_html": "eba993793cc15fc536e4adde9d0dbd37bbd4724b98355d9cdf47ce6f59f96c49",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub021/HUB021-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub021/HUB021-01-600.webp?v=472db4d02b9ce82c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub021/HUB021-01-600.webp?v=472db4d02b9ce82c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub021-hub-usb-c-a-usb-a-x4-c-809/",
+          "url": "https://conectatech-ec.github.io/productos/hub021-hub-usb-c-a-usb-a-x4-c-809/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub021/HUB021-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub021/HUB021-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/HUB021-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/HUB021-390.png",
       "sha256": "a564623a4401ea91c82647e736e639108e7e2b9dc6375461ef70f015321222df",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/HUB021-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/HUB021-1280.png",
         "sha256": "d9320b07d32f0181bf62e938a72627b270e7f3754bdd85168bcc4482371f329b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

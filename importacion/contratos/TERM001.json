@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/term001-termo-parlante-tomatodo/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Termo de 473 ml con parlante Bluetooth. Capacidad: 473 ml según empaque. Audio: Parlante Bluetooth según empaque. Material: Acero inoxidable 304 según empaque.",
   "contenido_venta": "Un termo con parlante integrado.",
   "compatibilidad": "Uso y limpieza conforme al fabricante; verificar conexión Bluetooth. No se declara autonomía ni resistencia al agua no comprobada.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact RED wirelessmusictravelcup fromownerbox. TallcylindricalREDtaperedtumbler, SILVERmetalbandaroundtop, actualREDflatlidwithsmallraiseddrinkingtab, lowerREDcylindricalspeakersectionwithTWOthinblackhorizontalringsandactualsmallredrectangularcontrolarea onfrontlowerRIGHT. ShowwholeONEcup uprightfront3/4sameboxproportions. No liquids, ice, splash, musicnotes, phone, Bluetoothicon, box, inventedhandle/straw/display/buttons. Richcleanexactrednewfinish, realmetalrim."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "TERM001"
     },
     "movil": {
       "solicitado": "TERM001",
       "sku": "TERM001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:48.760Z",
+      "fecha": "2026-10-15T22:27:55.208Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/term001-termo-parlante-tomatodo/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/term001-termo-parlante-tomatodo/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/term001-termo-parlante-tomatodo/",
       "archivo_html": "productos/term001-termo-parlante-tomatodo/index.html",
       "http": 200,
       "sha256_html": "09cded18087bb5a0227095f239047d3fb62f7c54a2541e0307affde25c631f3e",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/term001/TERM001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/term001/TERM001-01-600.webp?v=e08b8dd56d94719c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/term001/TERM001-01-600.webp?v=e08b8dd56d94719c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/term001-termo-parlante-tomatodo/",
+          "url": "https://conectatech-ec.github.io/productos/term001-termo-parlante-tomatodo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/term001/TERM001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/term001/TERM001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/TERM001-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/TERM001-390.png",
       "sha256": "332b7d9b208d40a80ea4be74410a390407c8fdc1e0181e793333f4268d3511ed",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/TERM001-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/TERM001-1280.png",
         "sha256": "5ae4c7caf4f8e5c394eccdce8df73018c62d320ee7a372c49dcb26f4f532a631",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

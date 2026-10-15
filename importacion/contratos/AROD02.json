@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/arod02-aro-de-luz-3d-26/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Aro de luz RGB 3D-26. Iluminación: Luz RGB según empaque. Formato: Aro circular. Ajuste: Orientación mediante soporte según empaque.",
   "contenido_venta": "Un aro de luz. No incluye teléfono ni trípode de piso.",
   "compatibilidad": "Montaje y alimentación adecuados para el modelo; verificar dimensiones de accesorios antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact ownerbox3D-26 RGB ringlight. One circular annularwhitediffuser withBLACKthinouterhousing, actualshortblacktiltmount/stemattheBOTTOM. Showwhole ringfront slightly3/4matchingbox, ringOFFneutralwhite (notrainbowanimation), centreEMPTY. Remove displayPHONE/person andanyobscuredphoneholder ratherthaninventclamp; no floortripod, extra poles, controller, inventedbuttons/ports,box or graphics. Faithfulannuluswidth/circulargeometry, pristinewhiteandblack."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "AROD02"
     },
     "movil": {
       "solicitado": "AROD02",
       "sku": "AROD02",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:36.104Z",
+      "fecha": "2026-10-15T22:27:37.752Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/arod02-aro-de-luz-3d-26/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/arod02-aro-de-luz-3d-26/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/arod02-aro-de-luz-3d-26/",
       "archivo_html": "productos/arod02-aro-de-luz-3d-26/index.html",
       "http": 200,
       "sha256_html": "eb568b8ffd6a991c7af8d1406d615106306d502400b83bdcf092bbcbab28bd46",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/arod02/AROD02-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/arod02/AROD02-01-600.webp?v=3310bc8aa848ed42",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/arod02/AROD02-01-600.webp?v=3310bc8aa848ed42",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/arod02-aro-de-luz-3d-26/",
+          "url": "https://conectatech-ec.github.io/productos/arod02-aro-de-luz-3d-26/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/arod02/AROD02-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/arod02/AROD02-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/AROD02-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/AROD02-390.png",
       "sha256": "de9d77222ae34c083c0f0078ffa70df79cba3904535c3623fdaf19b3515d2d5a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/AROD02-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/AROD02-1280.png",
         "sha256": "3fbbe2f7adbb0a56c9b276aafad76b25ee42eeb7af482d142ac1e0f0d3bba08c",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

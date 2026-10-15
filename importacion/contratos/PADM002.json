@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/padm002-padmouse-mousepad-xtech-pequeos/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Mousepad Xtech Colonist compacto. Uso: Superficie para mouse óptico. Diseño: Estampado azul multicolor. Acabado: Borde negro redondeado.",
   "contenido_venta": "Un mousepad.",
   "compatibilidad": "Para mouse óptico compatible; no se declara tamaño numérico sin verificar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact XTECH COLONIST mousepad in primary JPG. One flat rectangularfabricpadwithroundedcorners and BLACK stitchededge, genuinewhiteXtechlogo upperLEFT, exact reference BLUE/PURPLE abstracttunnel and diagonal neonbluegrid/lightpattern withthinORANGE/redribbon acrossRIGHTupperarea. Show wholepad flatmildtop3/4, removeclearplastic and blueheadercard, meticulouslypreservepatternlayout ratherthaninventnewgraphics. No mouse, keyboard, accessories, extra variant, blister or caption. Surface cleannew, sameportraitorientation as primaryphoto."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "PADM002"
     },
     "movil": {
       "solicitado": "PADM002",
       "sku": "PADM002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:27.342Z",
+      "fecha": "2026-10-15T22:27:26.860Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/padm002-padmouse-mousepad-xtech-pequeos/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/padm002-padmouse-mousepad-xtech-pequeos/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/padm002-padmouse-mousepad-xtech-pequeos/",
       "archivo_html": "productos/padm002-padmouse-mousepad-xtech-pequeos/index.html",
       "http": 200,
       "sha256_html": "984b2a91abab30b2ba3df5d8a94eab4d57d142ac1d282503db77e03557777f2a",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/padm002/PADM002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/padm002/PADM002-01-600.webp?v=49b2ab84f09e3643",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/padm002/PADM002-01-600.webp?v=49b2ab84f09e3643",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/padm002-padmouse-mousepad-xtech-pequeos/",
+          "url": "https://conectatech-ec.github.io/productos/padm002-padmouse-mousepad-xtech-pequeos/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/padm002/PADM002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/padm002/PADM002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/PADM002-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/PADM002-390.png",
       "sha256": "0f0fbf1532edb47e3989a3bf96ed8f13d6f7fc166a7b009775a5bf8eb2563b4f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/PADM002-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/PADM002-1280.png",
         "sha256": "823938f9d1bce466cb47fba92cbe6b50aa0194578492c4f2af9ae6abe3ebefbe",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub010-hub-usb-c-3-en-1-salida-c-usb/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Hub USB-C 3 en 1 con HDMI, USB-A y PD. Expansión: Tres conexiones. Video: Salida HDMI hasta 4K según empaque. Conexiones: USB-A 3.0 y USB-C PD según empaque.",
   "contenido_venta": "Un hub con cable USB-C integrado.",
   "compatibilidad": "El equipo USB-C debe admitir salida de video; resolución y carga dependen del equipo, cable y alimentación.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact silver compact USB-C 3in1 rectangular hub from boxfront: low roundedrectangular ALUMINIUM body, same front3/4 view with THREE front sockets in order LEFTblue USB-A, CENTREblackHDMI, RIGHTsmallUSB-C. FixedshortWHITEcable exitsrear, curvesabove terminatingSILVER USB-Cmale. Wholehub+cord, actualproportions/portcounts. No laptop, inserteddevices, logo, invented rearports, fourthsocket or retailbox."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "HUB010"
     },
     "movil": {
       "solicitado": "HUB010",
       "sku": "HUB010",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:23.388Z",
+      "fecha": "2026-10-15T22:27:22.278Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub010-hub-usb-c-3-en-1-salida-c-usb/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub010-hub-usb-c-3-en-1-salida-c-usb/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub010-hub-usb-c-3-en-1-salida-c-usb/",
       "archivo_html": "productos/hub010-hub-usb-c-3-en-1-salida-c-usb/index.html",
       "http": 200,
       "sha256_html": "202ddc5e0f78edf6d93316031b5d58136e2e1208aeff78fbdba80fb168031ab0",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub010/HUB010-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub010/HUB010-01-600.webp?v=abe64355c449be00",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub010/HUB010-01-600.webp?v=abe64355c449be00",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub010-hub-usb-c-3-en-1-salida-c-usb/",
+          "url": "https://conectatech-ec.github.io/productos/hub010-hub-usb-c-3-en-1-salida-c-usb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub010/HUB010-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub010/HUB010-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/HUB010-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/HUB010-390.png",
       "sha256": "6028cea73e322aaa0883aa8e6a6de3e66ec98b7b702ce741378ec3aef6168b32",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/HUB010-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/HUB010-1280.png",
         "sha256": "39eec627d12cdea09741e7b8b3fef6085dbb4c1ebf04eada625ec8e6da13e2f4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

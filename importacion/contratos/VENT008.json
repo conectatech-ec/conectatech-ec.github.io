@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/vent008-ventilador-para-celular-f5/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Ventilador F5 para celular. Uso: Ventilación para celular. Diseño: Ventilador circular central. Alimentación: Conexión USB según empaque.",
   "contenido_venta": "Un ventilador para celular. No incluye teléfono.",
   "compatibilidad": "Verificar ajuste al teléfono y alimentación USB requerida; no se garantiza una temperatura determinada.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact F5 cellphonecooler from boxfront. One darkGREY compacthourglass/elongatedridgedbody withlargecircular CENTRAL fan, realradialblackbladesandsilvergreycirculargrille, subtlepurpleinnerfantrimassource (NO neon effect). SameBACKfacing view asbox, naturallyblackcordexitsbottomcontinuesloopbehindendhidden. Remove displayPHONE, ice, frozenenvironment, mountains, printedtext andbox. No inventedrearclamp/hiddenports or accessories; wholecoolerfacewithfaithfulgrille/bodyprofile."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "VENT008"
     },
     "movil": {
       "solicitado": "VENT008",
       "sku": "VENT008",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:33.219Z",
+      "fecha": "2026-10-15T22:27:33.873Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/vent008-ventilador-para-celular-f5/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/vent008-ventilador-para-celular-f5/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/vent008-ventilador-para-celular-f5/",
       "archivo_html": "productos/vent008-ventilador-para-celular-f5/index.html",
       "http": 200,
       "sha256_html": "9c25e0b2913e5619437641f5938da830ed690b1f893cc2badac06656321b9abc",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/vent008/VENT008-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/vent008/VENT008-01-600.webp?v=5a6c65a603198287",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/vent008/VENT008-01-600.webp?v=5a6c65a603198287",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/vent008-ventilador-para-celular-f5/",
+          "url": "https://conectatech-ec.github.io/productos/vent008-ventilador-para-celular-f5/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/vent008/VENT008-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/vent008/VENT008-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/VENT008-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/VENT008-390.png",
       "sha256": "4f5187489c1596bde446a83216ad3e5ec48c2badf1c1062817f4fcb97f79281f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/VENT008-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/VENT008-1280.png",
         "sha256": "1fa06e09dc9c6776b2e4d295cdcf2d282e286174d5330c2a21b759a984da3589",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

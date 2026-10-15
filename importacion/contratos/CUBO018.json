@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo018-cubo-cargador-20w-monster-usbc-usb-a/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Cargador Monster de 20 W con USB-C y USB-A. Potencia: Hasta 20 W según empaque. Conexiones: USB-C y USB-A. Formato: Adaptador de pared compacto.",
   "contenido_venta": "Un cargador de pared. No incluye cable.",
   "compatibilidad": "Equipos compatibles; potencia efectiva y reparto dependen de los dispositivos y cables.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact WHITE Monster20W1A1CPDcharger frombox. RoundedSQUARE thickwhiteblockwithtwoflatUSprongsprojectingLEFTrear (onepartiallyhiddenbybodyassource), actualsmallGREY MONSTERwordmarktopfrontflatface, TWO portsverticallyonRIGHTfrontedge: smallblackUSB-CaboveORANGEUSB-A. Wholeoneunit atsame3/4asprimarybox, preserveprongshape, actualports+wordmark, no cable, extra outputs, blackvariant, inventedcertifications, retailbox orcaptions."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "CUBO018"
     },
     "movil": {
       "solicitado": "CUBO018",
       "sku": "CUBO018",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:38.110Z",
+      "fecha": "2026-10-15T22:27:40.250Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo018-cubo-cargador-20w-monster-usbc-usb-a/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cubo018-cubo-cargador-20w-monster-usbc-usb-a/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo018-cubo-cargador-20w-monster-usbc-usb-a/",
       "archivo_html": "productos/cubo018-cubo-cargador-20w-monster-usbc-usb-a/index.html",
       "http": 200,
       "sha256_html": "801e5d139a4fd6d1cefe53fb3c5dcba4b20c36f2ca4150689340e90083370aed",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo018/CUBO018-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cubo018/CUBO018-01-600.webp?v=7c65d91782d6648f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo018/CUBO018-01-600.webp?v=7c65d91782d6648f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cubo018-cubo-cargador-20w-monster-usbc-usb-a/",
+          "url": "https://conectatech-ec.github.io/productos/cubo018-cubo-cargador-20w-monster-usbc-usb-a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cubo018/CUBO018-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo018/CUBO018-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/CUBO018-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/CUBO018-390.png",
       "sha256": "31da69da7faf06943b43874900db6a58b2e08912289a67d8a2d919b1ef8648ab",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/CUBO018-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/CUBO018-1280.png",
         "sha256": "bf29bc585f784acc264a44fd7563a3fc95e558cb693df57be6fdaffca5e7f89a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

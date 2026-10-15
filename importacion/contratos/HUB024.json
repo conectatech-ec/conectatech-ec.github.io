@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub024-hub-usb-c-ugreen-con-ethernet-rj45-1000mbps/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Hub UGREEN USB-C con tres USB-A y Ethernet Gigabit. Expansión: Tres puertos USB-A 3.0. Red: Ethernet hasta 1000 Mbps según empaque. Entrada: Cable USB-C integrado.",
   "contenido_venta": "Un hub con cable USB-C integrado.",
   "compatibilidad": "Equipo USB-C compatible con datos y red Ethernet; velocidad teórica compartida según equipo y periféricos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact UGREEN grey3USBA+GigabitEthernetUSBChub onboxfront. LongroundedGREYmetalbarwithauthenticBLACKUGREENwordmarknearcentre, BLACKnarrowendcaps, fixedshortBLACKcordatTOPcurveddownRIGHTtoGREYUSB-CmalehousingwithgenuineUGREENsmallmark. ReproduceSAMEFRONT3/4viewassource: smooth broadfrontfaceandonlyleft/thinloweredgesvisible, outputssideHIDDEN, noinventingvisibleportarray. Wholeoneunitandcord, no extraUSB, cardreader, blueindicators, externaladapters, box, laptoporprops. Pristinebrushedgreyfinish."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "HUB024"
     },
     "movil": {
       "solicitado": "HUB024",
       "sku": "HUB024",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:58.368Z",
+      "fecha": "2026-10-15T22:28:08.297Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub024-hub-usb-c-ugreen-con-ethernet-rj45-1000mbps/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub024-hub-usb-c-ugreen-con-ethernet-rj45-1000mbps/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub024-hub-usb-c-ugreen-con-ethernet-rj45-1000mbps/",
       "archivo_html": "productos/hub024-hub-usb-c-ugreen-con-ethernet-rj45-1000mbps/index.html",
       "http": 200,
       "sha256_html": "7e0a283fef5970efdc53aaee038e1eacc997468017022ceb63174c919deaeb20",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub024/HUB024-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub024/HUB024-01-600.webp?v=904b9802f7b62d68",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub024/HUB024-01-600.webp?v=904b9802f7b62d68",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub024-hub-usb-c-ugreen-con-ethernet-rj45-1000mbps/",
+          "url": "https://conectatech-ec.github.io/productos/hub024-hub-usb-c-ugreen-con-ethernet-rj45-1000mbps/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub024/HUB024-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub024/HUB024-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/HUB024-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/HUB024-390.png",
       "sha256": "5a53138c731a60258078a27c3fdb3727ddefd205ff530985330d6083e80fccc7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/HUB024-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/HUB024-1280.png",
         "sha256": "06916440ccf648cc3d834060b410b43738f467d70068900c017f1185558ed88b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

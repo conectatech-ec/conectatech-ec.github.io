@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/ante002-antena-digital-hdtv-3-5dbi-sg-3002/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Antena digital HDTV SG-3002 de base magnética. Recepción: Televisión digital HDTV según empaque. Diseño: Antena vertical compacta. Colocación: Base circular.",
   "contenido_venta": "Una antena con cable integrado.",
   "compatibilidad": "Para entrada de antena compatible y señal de televisión disponible; recepción depende de ubicación y cobertura.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact one BLACK compact HDTV SG-3002 antenna physicalblister. Tall thin short roundedblackrod mountedvertically on circular domedblackbase, attached fineblackcoaxialcable coiledneatlybehind base as source with connector only if clearlyvisible. Whole antenna frontmild3/4 at exact proportions, bottomcircle is BLACK product base; REDround Antena printedcard is PACKAGING and MUSTexclude. No box/card/blister, television, added telescopic segments, twin rods, USB ports or invented fittings."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "ANTE002"
     },
     "movil": {
       "solicitado": "ANTE002",
       "sku": "ANTE002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:21.118Z",
+      "fecha": "2026-10-15T22:27:19.654Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/ante002-antena-digital-hdtv-3-5dbi-sg-3002/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/ante002-antena-digital-hdtv-3-5dbi-sg-3002/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/ante002-antena-digital-hdtv-3-5dbi-sg-3002/",
       "archivo_html": "productos/ante002-antena-digital-hdtv-3-5dbi-sg-3002/index.html",
       "http": 200,
       "sha256_html": "93d13d4709524cae7c1a7a82d9d2c254cbe003205b755fae3eb64686cb49ad18",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/ante002/ANTE002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/ante002/ANTE002-01-600.webp?v=f173d541cdb02b4e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/ante002/ANTE002-01-600.webp?v=f173d541cdb02b4e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/ante002-antena-digital-hdtv-3-5dbi-sg-3002/",
+          "url": "https://conectatech-ec.github.io/productos/ante002-antena-digital-hdtv-3-5dbi-sg-3002/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/ante002/ANTE002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/ante002/ANTE002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/ANTE002-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/ANTE002-390.png",
       "sha256": "6167b436386d49b1faa04a08857153fe6e9c268ce7c0b7add8952318a299a6f6",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/ANTE002-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/ANTE002-1280.png",
         "sha256": "0b5814566b4358a07b130a930b0b431f7ed2bdb95b11e7a73e52d6f64e0087f5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

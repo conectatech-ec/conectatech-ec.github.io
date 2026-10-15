@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/prot002-protector-de-voltaje-century-3-enchufes/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Protector de voltaje Century de tres tomas. Conexiones: Tres tomas. Control: Indicadores frontales de estado. Uso: Protección por alto y bajo voltaje según empaque.",
   "contenido_venta": "Un protector de voltaje de tres tomas.",
   "compatibilidad": "Para equipos y red compatibles con límites eléctricos del fabricante; comprobar requisitos antes de conectar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Representación desde foto física de frente: carcasa blanca horizontal, etiqueta amarilla real sin logo Century del cartón, CUATRO indicadores (rojo bajo voltaje, rojo sobre voltaje, amarillo ciclo de espera, verde normal) y TRES tomas US en el borde largo inferior. Cotejada a resolución original; fuera todo empaque."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "PROT002"
     },
     "movil": {
       "solicitado": "PROT002",
       "sku": "PROT002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:15:26.381Z",
+      "fecha": "2026-10-15T22:28:13.855Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/prot002-protector-de-voltaje-century-3-enchufes/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/prot002-protector-de-voltaje-century-3-enchufes/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/prot002-protector-de-voltaje-century-3-enchufes/",
       "archivo_html": "productos/prot002-protector-de-voltaje-century-3-enchufes/index.html",
       "http": 200,
       "sha256_html": "702cb493a3f9e80cc2ba358546c658d3d5f01c067e0821193881912f65ddfe27",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/prot002/PROT002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/prot002/PROT002-01-600.webp?v=c95fdb9185cc054f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/prot002/PROT002-01-600.webp?v=c95fdb9185cc054f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/prot002-protector-de-voltaje-century-3-enchufes/",
+          "url": "https://conectatech-ec.github.io/productos/prot002-protector-de-voltaje-century-3-enchufes/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/prot002/PROT002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/prot002/PROT002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/PROT002-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/PROT002-390.png",
       "sha256": "5c3d88ad06017b0782cbd270701c293091889c63a63e1af6d643fda04c1dd3f8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/PROT002-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/PROT002-1280.png",
         "sha256": "642060ca890a7c35b0baa56d19a2cdafe4560c5b729d26dd051daf0b9eb16ff2",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip020-tripode-selfie-c11/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Palo selfie C11 con base de cuatro patas. Apoyo: Base de cuatro patas según empaque. Extensión: Hasta 185 cm según empaque. Formato: Diseño plegable.",
   "contenido_venta": "Un palo selfie C11.",
   "compatibilidad": "Teléfonos compatibles con las pinzas del modelo; verificar funciones del control.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK C11 QUADRIPOD185cm selfie-stick onownerfrontbox. ShowONE FOLDED compactunit uprightmildfront3/4matchingfrontillustration, longdarkmetallicslimhandlewithgeometricdiagonalvent/ribpattern alonglowerhalf, seatedovalfrontremoteupperhalf andactualsmalltopfoldedbracket/screwgeometry. DoNOTinvent deployedclamp/fourlegview notfullyshown. Entireunit no phone, hands, lights, captions, box or extra remote. Preservethinlongphysicalshape, authenticcontrolsandhinges."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "TRIP020"
     },
     "movil": {
       "solicitado": "TRIP020",
       "sku": "TRIP020",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:32.375Z",
+      "fecha": "2026-10-15T22:27:32.749Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip020-tripode-selfie-c11/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/trip020-tripode-selfie-c11/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip020-tripode-selfie-c11/",
       "archivo_html": "productos/trip020-tripode-selfie-c11/index.html",
       "http": 200,
       "sha256_html": "3c56658c42bff8084397a845b28c49a568944c88068a2cbe1e492d51e410e180",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip020/TRIP020-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/trip020/TRIP020-01-600.webp?v=28bab439774a8f5c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip020/TRIP020-01-600.webp?v=28bab439774a8f5c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/trip020-tripode-selfie-c11/",
+          "url": "https://conectatech-ec.github.io/productos/trip020-tripode-selfie-c11/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/trip020/TRIP020-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip020/TRIP020-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/TRIP020-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/TRIP020-390.png",
       "sha256": "57776e0afeec170ad76d39a932a00ac89e6e3a28b19dee4f14735d1d09af27e2",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/TRIP020-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/TRIP020-1280.png",
         "sha256": "39730a05a6b354a694cfffbc45674da498cbee5d5708215b5e0574e6e902319d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

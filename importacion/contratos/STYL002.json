@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/styl002-stylus-pen-lapiz-tactil-targus/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Lápiz táctil Targus Smooth Glide. Uso: Pantallas capacitivas. Punta: Redonda de contacto. Transporte: Formato tipo lápiz.",
   "contenido_venta": "Un lápiz táctil.",
   "compatibilidad": "Pantallas táctiles capacitivas según empaque; no se declara compatibilidad con digitalizadores activos ni funciones de presión.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact Targus Smooth Glide black capacitive stylus physically shown inside clearbox. Long slim BLACK cylindrical pen body, SILVER short ring just below rounded BLACK rubber capacitive tip, small BLACK pen clip near oppositeend as reference. Show one entirepen diagonal slightly3/4, realproportions. No packaging, cap not shown, USB port, button, Apple pencil point, tablet, handwriting or invented text. Crisp premiumnewblackandmetal, round dome tip preserved."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "STYL002"
     },
     "movil": {
       "solicitado": "STYL002",
       "sku": "STYL002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:20.155Z",
+      "fecha": "2026-10-15T22:27:18.329Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/styl002-stylus-pen-lapiz-tactil-targus/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/styl002-stylus-pen-lapiz-tactil-targus/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/styl002-stylus-pen-lapiz-tactil-targus/",
       "archivo_html": "productos/styl002-stylus-pen-lapiz-tactil-targus/index.html",
       "http": 200,
       "sha256_html": "c3d00643e1ae9dccae82c02e3499f11aa26558121612d7b565e8c5e71909961a",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/styl002/STYL002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/styl002/STYL002-01-600.webp?v=9e4f1fac577976f2",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/styl002/STYL002-01-600.webp?v=9e4f1fac577976f2",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/styl002-stylus-pen-lapiz-tactil-targus/",
+          "url": "https://conectatech-ec.github.io/productos/styl002-stylus-pen-lapiz-tactil-targus/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/styl002/STYL002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/styl002/STYL002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/STYL002-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/STYL002-390.png",
       "sha256": "74333d01a3983d7eaad543cb603aa9d1e5b113cf0d14da493289847c77c4caee",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/STYL002-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/STYL002-1280.png",
         "sha256": "58ca616c28e2b0df9bc270b2c95f347298368435e0935d8170c8579cd51643bd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

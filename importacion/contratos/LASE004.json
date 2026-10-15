@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/lase004-laser-puntero-tipo-esfero/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Puntero láser tipo esfero telescópico. Transporte: Formato tipo esfero. Versatilidad: Cuerpo telescópico según foto. Diseño: Clip lateral.",
   "contenido_venta": "Un puntero tipo esfero con estuche según referencia.",
   "compatibilidad": "Usar conforme a las instrucciones del producto; no se declara alcance, potencia ni color del láser sin verificación.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact SILVER pen-stylepointer physicalownerphotos. Show ONE whole pen RETRACTED like primaryphoto: longslimsilvercylinder, two smallrounddarkbuttonsverticallynearupperfront, slimmetalclipalongleft, smallroundedBLACKrubbertipattop, polishedsilverlowercap andverythinred/blackauthenticcautionband nearbodyjoin ONLYasreference. No elongatedsecondcopy, sparebatteries, case, box, beam, inventedbrand/laserpowerlabels orprops. Whitebackground, crispnewmetal, preserveexact2buttonandclipgeometry."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "LASE004"
     },
     "movil": {
       "solicitado": "LASE004",
       "sku": "LASE004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:42.424Z",
+      "fecha": "2026-10-15T22:27:46.468Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lase004-laser-puntero-tipo-esfero/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/lase004-laser-puntero-tipo-esfero/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/lase004-laser-puntero-tipo-esfero/",
       "archivo_html": "productos/lase004-laser-puntero-tipo-esfero/index.html",
       "http": 200,
       "sha256_html": "e2c75dd7cb8f617e3845a7fa38d15828496f5fd3c2268696fe8668f4255482be",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lase004/LASE004-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/lase004/LASE004-01-600.webp?v=078e3da929580444",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/lase004/LASE004-01-600.webp?v=078e3da929580444",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/lase004-laser-puntero-tipo-esfero/",
+          "url": "https://conectatech-ec.github.io/productos/lase004-laser-puntero-tipo-esfero/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/lase004/LASE004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/lase004/LASE004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/LASE004-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/LASE004-390.png",
       "sha256": "59f249b81d66572ac37da272a331987fe48a0156a35d5ecd3daf3169cd6f9e29",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/LASE004-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/LASE004-1280.png",
         "sha256": "2a95e88fdf6b012f370e70a50f906a0e107bbc09d400ee423497dafb29033d10",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

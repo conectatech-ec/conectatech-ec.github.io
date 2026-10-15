@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo019-cubo-cargador-samsung-25w/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Cargador USB-C Samsung de 25 W. Potencia: Hasta 25 W según empaque. Conexión: Un puerto USB-C. Diseño: Adaptador compacto de pared.",
   "contenido_venta": "Un cargador de pared. No incluye cable.",
   "compatibilidad": "Equipos USB-C compatibles con el protocolo requerido; potencia efectiva depende del equipo y cable.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK Samsung EP-TA80025W USB-C adapter depictedownerbox. One roundedrectangular blackbody, short steppedupperneck and TWO flatparallelUSmetalprongs perbox, topview insetconfirms ONE USB-Coutput centredonoppositeEND. Show oneunit slightfront3/4matching boxmainpicture withprongsup, actualdarklightningchargingicon/bodymarkingsonlywherepictured. Preserve thickshortproportions/USprongs; no cable, secondadapter, whitevariant, box, labels, inventedports or extra certificationprint."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "CUBO019"
     },
     "movil": {
       "solicitado": "CUBO019",
       "sku": "CUBO019",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:25.342Z",
+      "fecha": "2026-10-15T22:27:24.649Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo019-cubo-cargador-samsung-25w/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cubo019-cubo-cargador-samsung-25w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo019-cubo-cargador-samsung-25w/",
       "archivo_html": "productos/cubo019-cubo-cargador-samsung-25w/index.html",
       "http": 200,
       "sha256_html": "23e95a2089cc44dedaad06577986185bad0beeefa0142369043cc8bce1769421",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo019/CUBO019-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cubo019/CUBO019-01-600.webp?v=3ad0098c27b1b06b",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo019/CUBO019-01-600.webp?v=3ad0098c27b1b06b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cubo019-cubo-cargador-samsung-25w/",
+          "url": "https://conectatech-ec.github.io/productos/cubo019-cubo-cargador-samsung-25w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cubo019/CUBO019-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo019/CUBO019-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/CUBO019-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/CUBO019-390.png",
       "sha256": "2dc85d0e8c22dc204a80ab001221aa48088abceb02b567435cd1e53617f6b948",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/CUBO019-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/CUBO019-1280.png",
         "sha256": "d197650d1731862e9b4c54f4a3be339799b74224e4c86c6c6e96b5bed648fe64",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

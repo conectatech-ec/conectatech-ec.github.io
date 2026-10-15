@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/lint001-linterna-de-cabeza-ym-308/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Linterna frontal YEMAO YM-308 recargable. Iluminación: Panel frontal COB. Recarga: Puerto USB-C según empaque. Colocación: Formato de cabeza con cinta.",
   "contenido_venta": "Una linterna frontal con cinta según empaque.",
   "compatibilidad": "Verificar alimentación de recarga compatible; autonomía e impermeabilidad no declaradas sin comprobación.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact YEMAO YM308 headlamp fromownphysicalphoto. LargeCIRCULARfrontwithORANGEthickribbedouterbezel, white/silvercircularinnerreflectorandflatYELLOWCOBdisccentre. BLACKcylindricalrearbatterybody and realBLACKheadstrapfoldedbehindasphysicalreference, notinventcolourfulbrandstrapfrombox. Wholeoneheadlamp modestfront3/4 showingactualbuckleandheadshape, LEDOFF with no beam. No hands/shop/box/case/cable, addedbluebuttons, extraLEDs orlogosnotvisible. BrandYEMAO isNOTYantech; preserveactualphysicalmarkingsonly."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "LINT001"
     },
     "movil": {
       "solicitado": "LINT001",
       "sku": "LINT001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:43.362Z",
+      "fecha": "2026-10-15T22:27:47.697Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lint001-linterna-de-cabeza-ym-308/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/lint001-linterna-de-cabeza-ym-308/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/lint001-linterna-de-cabeza-ym-308/",
       "archivo_html": "productos/lint001-linterna-de-cabeza-ym-308/index.html",
       "http": 200,
       "sha256_html": "811d4598a84d942806cbfe4d7aeb6a5c58b466ab82287cebb92ad3181125d531",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lint001/LINT001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/lint001/LINT001-01-600.webp?v=e38d89b5a1dea290",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/lint001/LINT001-01-600.webp?v=e38d89b5a1dea290",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/lint001-linterna-de-cabeza-ym-308/",
+          "url": "https://conectatech-ec.github.io/productos/lint001-linterna-de-cabeza-ym-308/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/lint001/LINT001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/lint001/LINT001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/LINT001-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/LINT001-390.png",
       "sha256": "8a0f504ac2a1f499f2c92390f196b4c045d83be54cd67421742ffa88c4df4370",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/LINT001-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/LINT001-1280.png",
         "sha256": "8c4b48f1d65630bed4521602b7c9efbb1f5b2ea19064b8b36e5a885e57a270dd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

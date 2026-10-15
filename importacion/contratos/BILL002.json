@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/bill002-billetera-magsafe-iph-silicon-wallet/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Billetera magnética de silicona para iPhone. Uso: Almacenamiento de tarjetas. Colocación: Fijación magnética según empaque. Acabado: Silicona azul según empaque.",
   "contenido_venta": "Una billetera magnética. No incluye teléfono.",
   "compatibilidad": "iPhone o funda con ajuste magnético compatible; verificar sujeción antes de usar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLUE siliconeMAGSAFEwallet picturedownerfrontbox. Smallroundedrectangularflatcardpouch, genuineBLUEAPPLElogo centred, nearTOPactualnarrowhorizontalcardopening/seam withroundedinnercornersandthinraisededge, softbluefullbody. ShowONEwholewallet nearfrontmild3/4samebox, no AppleboxprintediphoneSiliconeWalletwords onbody (packagingonly!), no phone, insertedcards, coins, extras, box, inventedcutouts or logos. Pristinenewsoftmatteblue, correctsmallaccessoryproportions."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "BILL002"
     },
     "movil": {
       "solicitado": "BILL002",
       "sku": "BILL002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:52.326Z",
+      "fecha": "2026-10-15T22:27:59.816Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/bill002-billetera-magsafe-iph-silicon-wallet/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/bill002-billetera-magsafe-iph-silicon-wallet/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/bill002-billetera-magsafe-iph-silicon-wallet/",
       "archivo_html": "productos/bill002-billetera-magsafe-iph-silicon-wallet/index.html",
       "http": 200,
       "sha256_html": "efa21f62550f0fd61db9f5b64280a7a268f49bb8c6e88755e6a303602cbe2a19",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/bill002/BILL002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/bill002/BILL002-01-600.webp?v=b991308388720071",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/bill002/BILL002-01-600.webp?v=b991308388720071",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/bill002-billetera-magsafe-iph-silicon-wallet/",
+          "url": "https://conectatech-ec.github.io/productos/bill002-billetera-magsafe-iph-silicon-wallet/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/bill002/BILL002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/bill002/BILL002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/BILL002-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/BILL002-390.png",
       "sha256": "002c652d928d17aa671df11878342bc520e3ee473409c55257ec4b00a1bf8916",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/BILL002-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/BILL002-1280.png",
         "sha256": "095ca604af8c0fbc9ea2aa531be4035c4af1e0037df08c7db2ca8c39d5bbf868",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

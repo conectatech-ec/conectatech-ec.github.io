@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/airt002-airtag-de-billetera-loshall/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Localizador Loshall Card para billetera. Localización: Compatible con Apple Find My. Formato: Tarjeta para billetera. Transporte: Diseño delgado.",
   "contenido_venta": "Un localizador tipo tarjeta. No incluye billetera ni teléfono.",
   "compatibilidad": "Compatible con Apple Find My según empaque; requiere dispositivo y cuenta compatibles. No equivale a un GPS autónomo.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact LOSHALL CARD finder fromboxfront. One extremelyTHINdarkNAVYrectangularcreditcardshapewithsmallroundedcorners, slimraisedblackborder atTOPandtinyrealcircularbuttonoutline nearuppercentre. Same gentlefront3/4tiltedportraitasprimarybox, actualthinflatbody notPHONE: no screen, cameras, phoneframe/buttons, wallet, coins, keychain, box, extraaccessories or inventedLoshallwordmarkifnotvisible. WholeONEflatnavycard, pristinefinefinishandsoftshadow."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "AIRT002"
     },
     "movil": {
       "solicitado": "AIRT002",
       "sku": "AIRT002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:49.537Z",
+      "fecha": "2026-10-15T22:27:56.390Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/airt002-airtag-de-billetera-loshall/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/airt002-airtag-de-billetera-loshall/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/airt002-airtag-de-billetera-loshall/",
       "archivo_html": "productos/airt002-airtag-de-billetera-loshall/index.html",
       "http": 200,
       "sha256_html": "f85caac8fa903cdcf2b9261549672dbf73ef49c4e95dbd5f710c769841e49727",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/airt002/AIRT002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/airt002/AIRT002-01-600.webp?v=cb415d6c38e84749",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/airt002/AIRT002-01-600.webp?v=cb415d6c38e84749",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/airt002-airtag-de-billetera-loshall/",
+          "url": "https://conectatech-ec.github.io/productos/airt002-airtag-de-billetera-loshall/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/airt002/AIRT002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/airt002/AIRT002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/AIRT002-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/AIRT002-390.png",
       "sha256": "fca72bf346e9e6db4cd8422e1629e69746be285a15bb46d7d2621aa121b8a61d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/AIRT002-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/AIRT002-1280.png",
         "sha256": "3b2b4204a0686e64541999db0052334c7ce2396f14c6fefa722c8ecade6dc93f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

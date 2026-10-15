@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub014-hub-usb-targus-2-0-usb-a-x4/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Hub Targus USB 2.0 de cuatro puertos. Expansión: Cuatro puertos USB-A. Interfaz: USB 2.0 según empaque. Transporte: Cable corto integrado.",
   "contenido_venta": "Un hub con cable USB-A integrado.",
   "compatibilidad": "Equipos USB-A compatibles; alimentación desde el puerto según empaque y ancho de banda compartido.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical TARGUS ACH214 4portUSB2hub inblister. CompactroundedlongovalBLACKbody, genuineGREY Targuswordmarkcenteredontop, fixedSHORTblackcordloopsaroundBOTTOMlefttoUSB-A MALEsilvermetalplug. ReproduceNEARTOPfrontviewEXACTLYlikeblistertopbody, so hiddenedgeportsremainHIDDEN anddoNOTinventplacement; all4portsstatedonlyintext. Wholeonehubandcord/pristinebody, no extraUSB-C/ports, receiver, packaging/card, boxorprops. Cleansemiglosssatinblackandactualshape."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "HUB014"
     },
     "movil": {
       "solicitado": "HUB014",
       "sku": "HUB014",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:55.665Z",
+      "fecha": "2026-10-15T22:28:04.364Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub014-hub-usb-targus-2-0-usb-a-x4/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub014-hub-usb-targus-2-0-usb-a-x4/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub014-hub-usb-targus-2-0-usb-a-x4/",
       "archivo_html": "productos/hub014-hub-usb-targus-2-0-usb-a-x4/index.html",
       "http": 200,
       "sha256_html": "cce9052db0d71eba4cabf2b5ed08cccd51b158f38639c5592961dcf7553bbc0a",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub014/HUB014-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub014/HUB014-01-600.webp?v=36488e52051b9b21",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub014/HUB014-01-600.webp?v=36488e52051b9b21",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub014-hub-usb-targus-2-0-usb-a-x4/",
+          "url": "https://conectatech-ec.github.io/productos/hub014-hub-usb-targus-2-0-usb-a-x4/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub014/HUB014-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub014/HUB014-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/HUB014-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/HUB014-390.png",
       "sha256": "b479c464205f89a12b11111abeade1205227d0c790ab1d5babb39ac794505cb0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/HUB014-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/HUB014-1280.png",
         "sha256": "86557d3735d6e0c88d53ee957b2ded311085a5fc5a07464cc300268dd01a1757",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

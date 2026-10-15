@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/styl003-stylus-pen-earldom-et-p7-solo-para-ios-ipad/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Lápiz táctil Earldom ET-P7 para iPad. Uso: Escritura y dibujo en iPad compatible. Recarga: USB-C según empaque. Punta: Fina intercambiable según empaque.",
   "contenido_venta": "Un lápiz táctil recargable; accesorios según empaque.",
   "compatibilidad": "Sólo para modelos de iPad compatibles según maestro y empaque; confirmar modelo antes de comprar. No se declara sensibilidad a la presión.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact Earldom ET-P7 WHITE active stylus onboxfront. One slenderwhiteflat-sidedpencilwithveryfinepointedWHITEtipbottom, actualtinyLEDdotandrectangularbutton/touchpatchneartipbodyquarter, genuineEarldomgreywordmarknearupperhalf, realrecessedUSB-CovalnearTOPasboxshown. Entirepen diagonalclosefront3/4, faithfullycopypositions/lengthratio, no Applelogo, tablet, hands, retailbox, extratips/cable, inventedports or multiplepens. Pristinenewwhitewithsubtleshadow."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "STYL003"
     },
     "movil": {
       "solicitado": "STYL003",
       "sku": "STYL003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:45.268Z",
+      "fecha": "2026-10-15T22:27:50.541Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/styl003-stylus-pen-earldom-et-p7-solo-para-ios-ipad/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/styl003-stylus-pen-earldom-et-p7-solo-para-ios-ipad/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/styl003-stylus-pen-earldom-et-p7-solo-para-ios-ipad/",
       "archivo_html": "productos/styl003-stylus-pen-earldom-et-p7-solo-para-ios-ipad/index.html",
       "http": 200,
       "sha256_html": "81304ed030755be80a1ec8f9e5ccfae567863573be6315366e016b920728e553",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/styl003/STYL003-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/styl003/STYL003-01-600.webp?v=e4c59e41a38ef24c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/styl003/STYL003-01-600.webp?v=e4c59e41a38ef24c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/styl003-stylus-pen-earldom-et-p7-solo-para-ios-ipad/",
+          "url": "https://conectatech-ec.github.io/productos/styl003-stylus-pen-earldom-et-p7-solo-para-ios-ipad/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/styl003/STYL003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/styl003/STYL003-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/STYL003-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/STYL003-390.png",
       "sha256": "dcb18a68bd0412549de1635dacbe84435d89cbc4dbb7b15899515d3cffadeaf6",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/STYL003-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/STYL003-1280.png",
         "sha256": "d5cc8e6d47bd6f3d73e3726d36f0a0ca42e3fa62b39fd55d36b5a8fc914f9e4f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous036-mouse-klipxtreme-lightflex/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Mouse inalámbrico plegable Klipxtreme Lightflex. Transporte: Diseño plegable. Conexión: Inalámbrica de 2,4 GHz. Manejo: Tres botones según empaque.",
   "contenido_venta": "Un mouse con receptor según referencia.",
   "compatibilidad": "Equipo USB compatible con enlace de 2,4 GHz según empaque.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact DARKGREY Klipxtreme Lightflex KMW375GR physicalmousefromblister. Smoothsmallroundedrectangularupperbodywithtwofrontbuttonseamlines, genuinecentralblack/silverscrollwheel and actualfoldablecurvedlowerBLACKhingedbase, sameusepositionillustrationwherebodyisgentlyarched(notflatnormalmouse). Showonewholemouse fronttop3/4matchingphysicalupperviewwithonlysupportedsidecurve. No secondfoldedcopy, cable, receiver (omitfromcover), addedDPIbutton/RGB/logo, blister orretailcard. Cleannewsemiglossdarkgrey, controlsandfoldpositionfaithful."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "MOUS036"
     },
     "movil": {
       "solicitado": "MOUS036",
       "sku": "MOUS036",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:44.331Z",
+      "fecha": "2026-10-15T22:27:49.249Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous036-mouse-klipxtreme-lightflex/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/mous036-mouse-klipxtreme-lightflex/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous036-mouse-klipxtreme-lightflex/",
       "archivo_html": "productos/mous036-mouse-klipxtreme-lightflex/index.html",
       "http": 200,
       "sha256_html": "133850c49e0f7e1abda5b8f00101d933c728154f8b907a1123e8abedb3a5f00d",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous036/MOUS036-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/mous036/MOUS036-01-600.webp?v=72486da5fd5d54ad",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous036/MOUS036-01-600.webp?v=72486da5fd5d54ad",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/mous036-mouse-klipxtreme-lightflex/",
+          "url": "https://conectatech-ec.github.io/productos/mous036-mouse-klipxtreme-lightflex/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/mous036/MOUS036-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous036/MOUS036-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/MOUS036-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/MOUS036-390.png",
       "sha256": "1c3ee60922cdf026b21921ff07f8a0deb492b44efefffb1f75b3d62a2be31b14",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/MOUS036-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/MOUS036-1280.png",
         "sha256": "7b451036531c35ba72430aa08e533a287e3feeb2740021102787d522d9f2aa10",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

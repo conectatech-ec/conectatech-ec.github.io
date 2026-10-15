@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub015-hub-usb-hp-2-0-usb-a-x4/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Hub HP USB 2.0 de cuatro puertos. Expansión: Cuatro puertos USB-A. Interfaz: USB 2.0 según empaque. Formato: Cable corto integrado.",
   "contenido_venta": "Un hub con cable USB-A integrado.",
   "compatibilidad": "Equipo con puerto USB-A compatible; las conexiones comparten alimentación y ancho de banda.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK HP USB2.0 4portconnector onboxfront. Longflatroundedrectangularblackbarwithgenuine subtleHPcirclelogo centeredontop. FOURmetalrimmedUSB-Afemales inonestraightrow alongLONGfrontedge asreference, smallactualroundpowerjackonLEFTshortENDonlyifsourceclearlyshowsit, fixedshortBLACKcordexitsRIGHTendloopsabove intoUSB-A MALEmetalplug. Sameelevatedfront3/4wholeunitwithcorrect4ports, no fifthUSB/socket/bluecolour/RGB, externaladapter, computer, boxorprops. Pristinenewblackbody."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "HUB015"
     },
     "movil": {
       "solicitado": "HUB015",
       "sku": "HUB015",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:56.583Z",
+      "fecha": "2026-10-15T22:28:05.544Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub015-hub-usb-hp-2-0-usb-a-x4/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub015-hub-usb-hp-2-0-usb-a-x4/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub015-hub-usb-hp-2-0-usb-a-x4/",
       "archivo_html": "productos/hub015-hub-usb-hp-2-0-usb-a-x4/index.html",
       "http": 200,
       "sha256_html": "b4a355f171bbbeac168d02d20261c69c41d70c027d5343b32a7ca984ee55941d",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub015/HUB015-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub015/HUB015-01-600.webp?v=b545c34e3f953ed6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub015/HUB015-01-600.webp?v=b545c34e3f953ed6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub015-hub-usb-hp-2-0-usb-a-x4/",
+          "url": "https://conectatech-ec.github.io/productos/hub015-hub-usb-hp-2-0-usb-a-x4/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub015/HUB015-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub015/HUB015-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/HUB015-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/HUB015-390.png",
       "sha256": "59e601be5733292d55df4276e1d7f5f4ae4ef92a47b786c7bd156db5f4ab11a4",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/HUB015-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/HUB015-1280.png",
         "sha256": "e108c15198ae58d33f15f8634cd68af09dae815ca1bffa8a9a6e560bcac8014b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

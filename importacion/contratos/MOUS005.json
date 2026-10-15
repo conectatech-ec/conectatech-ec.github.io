@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous005-mouse-genius/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Mouse inalámbrico Genius GM-U6. Conexión: Inalámbrica según empaque. Control: Rueda central de desplazamiento. Diseño: Cuerpo azul con laterales negros.",
   "contenido_venta": "Un mouse inalámbrico.",
   "compatibilidad": "Equipo USB compatible con el receptor del mouse; verificar sistema y requisitos antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical GENIUS GM-U6 BLUE/BLACKwirelessmouse inownerblister. AngularmediumblueupperLEFTandRIGHTmainbuttons, BLACKcentralstrip withrealscrollwheel andredGENIUSemblembuttonbelowwheel, BLACKtexturedangularsidegrips. MatchphysicalsidebuttonsONLYwherevisible, doNOTaddDPIkeysunseen. Onewholemouse fronttop3/4samephysicalangle, authenticbluefinishcleannew, no wiredcable, secondmouse, RGB, receiver, packaging or captions. Preserveactualwheel/redmark/sidecontour."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "MOUS005"
     },
     "movil": {
       "solicitado": "MOUS005",
       "sku": "MOUS005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:59.237Z",
+      "fecha": "2026-10-15T22:28:09.397Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous005-mouse-genius/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/mous005-mouse-genius/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous005-mouse-genius/",
       "archivo_html": "productos/mous005-mouse-genius/index.html",
       "http": 200,
       "sha256_html": "8b383964f6e7d42c845ef8f0acd8d434b2e580939aa46caed06ad5c8b42ef3f1",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous005/MOUS005-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/mous005/MOUS005-01-600.webp?v=7b4ce224ad5250b7",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous005/MOUS005-01-600.webp?v=7b4ce224ad5250b7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/mous005-mouse-genius/",
+          "url": "https://conectatech-ec.github.io/productos/mous005-mouse-genius/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/mous005/MOUS005-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous005/MOUS005-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/MOUS005-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/MOUS005-390.png",
       "sha256": "db3c33b19639b837f461f6527baf9e5c1f7cb429c669daa48de1310d65cab78f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/MOUS005-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/MOUS005-1280.png",
         "sha256": "0ecfa569e63dcc3bfda70f46bf2e38e528b8cd5c3ec05e1630baec7d4d4de3c3",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

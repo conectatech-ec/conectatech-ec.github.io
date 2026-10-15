@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub025-hub-usb-a-a-red-ethernet-rj45/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Adaptador USB-A a Ethernet Gigabit. Red: Ethernet de 10/100/1000 Mbps según empaque. Conexión: USB-A según foto física. Formato: Adaptador compacto con cable.",
   "contenido_venta": "Un adaptador con cable USB-A integrado.",
   "compatibilidad": "Equipo USB-A y red Ethernet compatibles; velocidad depende del equipo, cable y red.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physical BLACK USB-AtoGigabitEthernetadapter insideownerblister. ElongatedlowroundedrectangularblackbodywithactualWHITEwirednetworkicon nearTOPand realsmallUSB3.0/1000MbpslabelnearBOTTOM perphysical. FixedSHORTBLACKcordexitsBOTTOMcurvesupRIGHTtoUSB-A MALE (NOTUSB-C). Reproducefrontmildtop3/4matchingactualphoto, RJ45onoppositeENDonlywhereactualsourcevisible; doNOTinventhiddenports oropenbody. Wholeoneunitandcord, no networkcable/device, box, blister, inventedlogos or captions. Crispblackmattefinish."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "HUB025"
     },
     "movil": {
       "solicitado": "HUB025",
       "sku": "HUB025",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:57.470Z",
+      "fecha": "2026-10-15T22:28:06.733Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub025-hub-usb-a-a-red-ethernet-rj45/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub025-hub-usb-a-a-red-ethernet-rj45/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub025-hub-usb-a-a-red-ethernet-rj45/",
       "archivo_html": "productos/hub025-hub-usb-a-a-red-ethernet-rj45/index.html",
       "http": 200,
       "sha256_html": "354f3b21ef9355fc51bbe651321cd12d14301593f3ad964bc21263f19163afc2",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub025/HUB025-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub025/HUB025-01-600.webp?v=531080a891bffd71",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub025/HUB025-01-600.webp?v=531080a891bffd71",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub025-hub-usb-a-a-red-ethernet-rj45/",
+          "url": "https://conectatech-ec.github.io/productos/hub025-hub-usb-a-a-red-ethernet-rj45/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub025/HUB025-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub025/HUB025-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/HUB025-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/HUB025-390.png",
       "sha256": "4c4ebab7798ab54b6f99cfdf9a8418689ea229d2ab61501b12793da0eeb6cf78",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/HUB025-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/HUB025-1280.png",
         "sha256": "cf27535eb717ab6a598735af795eb6107062b8e59b02a4db67842c7d833692ae",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

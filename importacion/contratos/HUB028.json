@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub028-hub-usb-c-a-usb-a-x4-orvesion/",
-  "fecha_verificacion": "2026-10-15T22:09:47.671956+00:00",
+  "fecha_verificacion": "2026-10-15T22:27:22.046333+00:00",
   "descripcion": "Hub USB-C Orvesion de cuatro puertos USB-A. Expansión: Cuatro puertos USB-A. Interfaz: Un USB 3.0 y tres USB 2.0 según empaque. Entrada: Cable USB-C integrado.",
   "contenido_venta": "Un hub con cable USB-C integrado.",
   "compatibilidad": "Equipo USB-C con transferencia de datos; compatibilidad de periféricos y velocidad dependen del equipo.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact ORVESION TPC-HUB SILVER slim4porthub frombox. Longthin roundedrectangularaluminiumbody, THREE USB-A socketsalonglongfrontedge plusONE USB-A onleftshortEND, fourtotal. FixedshortLIGHTGREYcordatrightendcurvesabove terminatingUSB-CMALE, noAinput. Samefront3/4asbox, wholebodyandcord, authenticblueinnerportcolourwherepictured; no addedfourthlongedgesocket/fifthtotal, inserteddevices, inventedbrandtext,box,decororprops."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-15T22:27:22.046333+00:00",
+      "reporte": "reportes/continuacion-091/http-publicacion.json",
+      "archivo": "reportes/continuacion-091/http-publicacion.json",
+      "sha256": "ca94efc967a737303134fb6b3442746bf6b622ae1dc7a0cf81e1ff8b5c367a48",
+      "sku": "HUB028"
     },
     "movil": {
       "solicitado": "HUB028",
       "sku": "HUB028",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-15T22:11:30.544Z",
+      "fecha": "2026-10-15T22:27:30.328Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub028-hub-usb-c-a-usb-a-x4-orvesion/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub028-hub-usb-c-a-usb-a-x4-orvesion/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub028-hub-usb-c-a-usb-a-x4-orvesion/",
       "archivo_html": "productos/hub028-hub-usb-c-a-usb-a-x4-orvesion/index.html",
       "http": 200,
       "sha256_html": "bf6a60d9b9706aa15d11fc8fd50c311cad7f8bbc55c4aa5e504383b18daadd84",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub028/HUB028-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub028/HUB028-01-600.webp?v=0e52a1755e27e317",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub028/HUB028-01-600.webp?v=0e52a1755e27e317",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub028-hub-usb-c-a-usb-a-x4-orvesion/",
+          "url": "https://conectatech-ec.github.io/productos/hub028-hub-usb-c-a-usb-a-x4-orvesion/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub028/HUB028-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub028/HUB028-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-091/qa-local/movil/HUB028-390.png",
+      "archivo": "reportes/continuacion-091/qa-publica/movil/HUB028-390.png",
       "sha256": "d558227f1431aeafec043af6f829555257af5f2e4a915e04673cc5458d34af9e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-091/qa-local/movil/HUB028-1280.png",
+        "archivo": "reportes/continuacion-091/qa-publica/movil/HUB028-1280.png",
         "sha256": "f2079a5b7f2946d4425a28ea198d693ec3bec9027bf229b2478fa702445e650c",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
