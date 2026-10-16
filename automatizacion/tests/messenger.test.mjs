@@ -77,7 +77,7 @@ test('Receipts sanitize data, retain valid signature evidence against invalid fl
 test('Operator shell exposes no credentials; all enrollment and receipt data requires bearer authorization',async()=>{
  const env={PILOT_TOKEN:'synthetic-private-fixture-key-000001'};
  for(const path of ['/messenger/receipts','/messenger/pairing/start','/messenger/pairing/status','/messenger/pairing/consume'])assert.equal((await worker.fetch(new Request('https://p'+path),env)).status,401);
- const r=await worker.fetch(new Request('https://p/messenger/setup'),env);assert.equal(r.status,200);assert.match(r.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);assert.equal(r.headers.get('Cache-Control'),'no-store');assert.ok(!(await r.text()).includes(env.PILOT_TOKEN));
+ const r=await worker.fetch(new Request('https://p/messenger/setup'),env);assert.equal(r.status,200);assert.match(r.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);assert.equal(r.headers.get('Cache-Control'),'no-store');const html=await r.text();assert.ok(!html.includes(env.PILOT_TOKEN));new Function(html.match(/<script nonce="[^"]+">([\s\S]*?)<\/script>/)[1]);
 });
 test('Cloudflare tail exports only Worker webhook status and sanitized audit fields',()=>{
  const sensitive='synthetic-sensitive-credential-and-message';

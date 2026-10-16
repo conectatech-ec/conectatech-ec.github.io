@@ -40,7 +40,7 @@ try {
  const identity=await call('/messenger/pairing/consume?scope=ci',{});assert.ok(identity.psid==='100000000000002','Synthetic enrollment identity mismatch; values withheld');
  const consumed=await fetch(base+'/messenger/pairing/consume?scope=ci',{method:'POST',headers,body:'{}'});assert.equal(consumed.status,409);
  const audit=await call('/messenger/receipts?scope=ci');assert.ok(audit.receipts.some(r=>r.reason==='pairing_claimed'&&r.signature_valid&&r.source==='synthetic_ci'));assert.ok(!JSON.stringify(audit).includes('100000000000002'));assert.ok(!JSON.stringify(audit).includes(pairing.phrase));report.secure_tester_pairing_and_receipts='passed_synthetic_ci_only';
- const panel=await fetch(base+'/messenger/setup');assert.equal(panel.status,200);assert.match(panel.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);assert.ok(!(await panel.text()).includes(token));report.operator_panel_http=200;
+ const panel=await fetch(base+'/messenger/setup');assert.equal(panel.status,200);assert.match(panel.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);const html=await panel.text();assert.ok(!html.includes(token));new Function(html.match(/<script nonce="[^"]+">([\s\S]*?)<\/script>/)[1]);report.operator_panel_http=200;
  if(process.env.META_VERIFY_TOKEN) {
   const url=new URL(base+'/webhooks/meta');url.searchParams.set('hub.mode','subscribe');url.searchParams.set('hub.verify_token',process.env.META_VERIFY_TOKEN);url.searchParams.set('hub.challenge','ct-meta-dev-challenge');
   let r;try{r=await fetch(url,{signal:AbortSignal.timeout(10000)});}catch{throw Error('Configured verification HTTPS request failed; URL withheld');}
