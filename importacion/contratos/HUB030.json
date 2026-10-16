@@ -103,9 +103,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub030-hub-usb-belkin-4k-5-puertos-100w/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Hub Belkin USB-C de cinco puertos con HDMI 4K. Expansión: Cinco conexiones. Video: HDMI hasta 4K a 60 Hz. Carga: USB-C PD de paso. Datos: Hasta 5 Gbps teóricos.",
   "contenido_venta": "Un hub con cable USB-C integrado. No incluye cargador.",
   "compatibilidad": "USB-C compatible con video y datos. PD admite entrada de hasta 100 W menos el consumo del hub; con fuente de 60 W el fabricante indica hasta 45 W de paso al equipo.",
@@ -196,14 +196,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BELKIN Connect5portUSB-Chub onownerbox, DARKGREYPLASTICbody withlightgreyouterrim (NOTbaremetal/aluminium). Longroundedbar, EXACT5outputs alongONElongside inthisorderfromLEFTendawayfromfixedcord: USBA,USBA,USB-Cdata,USB-CPD,HDMIatRIGHTnearcord; backdiagramverifieslayout. FixedshortBLACKcordexitsRIGHTendloopsabovetoterminateblackUSB-Cmale. Showwholeoneunit sameelevatedfront3/4primaryboxview, all5outputstotal, smoothauthenticmatteplastic. No sixthport, logo notactuallyonvisiblebody, externalcharger, box, computerorprops."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "HUB030"
     },
     "movil": {
       "solicitado": "HUB030",
       "sku": "HUB030",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:09.995Z",
+      "fecha": "2026-10-16T00:37:39.043Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -228,7 +232,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub030-hub-usb-belkin-4k-5-puertos-100w/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub030-hub-usb-belkin-4k-5-puertos-100w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub030-hub-usb-belkin-4k-5-puertos-100w/",
       "archivo_html": "productos/hub030-hub-usb-belkin-4k-5-puertos-100w/index.html",
       "http": 200,
       "sha256_html": "1820cb450ce8c7ac6a9e29f3235a000f2843316dd7c492ba25e2d4948ae5b7c3",
@@ -238,7 +242,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub030/HUB030-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub030/HUB030-01-600.webp?v=829e626a57927c1c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub030/HUB030-01-600.webp?v=829e626a57927c1c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -247,32 +251,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub030-hub-usb-belkin-4k-5-puertos-100w/",
+          "url": "https://conectatech-ec.github.io/productos/hub030-hub-usb-belkin-4k-5-puertos-100w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub030/HUB030-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub030/HUB030-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/HUB030-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/HUB030-390.png",
       "sha256": "307b84bf76f70b307b794ec3961403d19d4ae9321056bf9a4f5fe50cf333b62e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/HUB030-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/HUB030-1280.png",
         "sha256": "d6eaff6de865e221baf3c18c353f0c37e7e95824fd73e8d3fd4c55ec03a3a410",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous018-mouse-weibo-model-w07/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Mouse inalámbrico Weibo W07. Conexión: Inalámbrica según empaque. Manejo: Rueda y selector central. Diseño: Perfil delgado.",
   "contenido_venta": "Un mouse inalámbrico. Accesorios no confirmados no se declaran incluidos.",
   "compatibilidad": "Equipo compatible con la conexión del modelo; verificar interfaz antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physicalWEIBOW07 LIGHTSKYBLUE mouse inPRIMARYphoto, notdarkboxvariant. ThinlongroundedovalBLUEbodywithBLACKcentralstraightseam, actualelongatedWHITEscrollwheelnearFRONTwithnarrowgreyrubbercentreandONEsmallGREYovalDPIkeybehindwheel, no extrasidekeys. Samephysicalslimlozengeproportions, modesttopfront3/4. ONEwholeunit, no fabricatedWeibologoontop(noactualvisiblebrand), RGBlights, cord, dongle, box, paperorprops. Pristinecleanblueandwhite."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "MOUS018"
     },
     "movil": {
       "solicitado": "MOUS018",
       "sku": "MOUS018",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:15.930Z",
+      "fecha": "2026-10-16T00:37:46.328Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous018-mouse-weibo-model-w07/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/mous018-mouse-weibo-model-w07/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous018-mouse-weibo-model-w07/",
       "archivo_html": "productos/mous018-mouse-weibo-model-w07/index.html",
       "http": 200,
       "sha256_html": "bf52124146c4875bd97a696905db72eb59ceb689555f4b7afff98aa5e801cc7e",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous018/MOUS018-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/mous018/MOUS018-01-600.webp?v=9c4bb02f286d0339",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous018/MOUS018-01-600.webp?v=9c4bb02f286d0339",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/mous018-mouse-weibo-model-w07/",
+          "url": "https://conectatech-ec.github.io/productos/mous018-mouse-weibo-model-w07/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/mous018/MOUS018-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous018/MOUS018-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/MOUS018-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/MOUS018-390.png",
       "sha256": "663f83365bc9115db61150ea86c5017edcd088b914c78015c842acadab52e249",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/MOUS018-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/MOUS018-1280.png",
         "sha256": "b952d8848360b1bf4905a24ac41e58f305ec53b83ced39e6b272ba3963e41709",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

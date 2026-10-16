@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo008-cubo-cargador-35w-usb-c-usb-c-doble/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Cargador de 35 W con doble USB-C. Potencia: Hasta 35 W. Conexiones: Dos puertos USB-C. Formato: Diseño compacto de pared.",
   "contenido_venta": "Un cargador de pared. No incluye cables.",
   "compatibilidad": "Dispositivos USB-C compatibles; los dos puertos comparten la potencia disponible según el uso.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact WHITE35W DualUSB-Cadapter fromownerbox. Smallrounded-squareWHITEcube, TWO USB-C femaleopeningssidebysidehorizontally onfrontface, realshallowOVALfingerrecess onRIGHTside, TWOflatUSprongsprojectUPfromtopwithactualsmallholes. Sameprimaryfront3/4showfronttwoports/rightrecess/prongs, correctcompactwideproportions. No Applelogo onbody unlessphysicallypictured (logo on BOXmustNOTtransfer), no cable, thirdport, powertext/certifications, boxorprops. Wholeonepristinenewadapter."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "CUBO008"
     },
     "movil": {
       "solicitado": "CUBO008",
       "sku": "CUBO008",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:24:58.341Z",
+      "fecha": "2026-10-16T00:37:24.815Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo008-cubo-cargador-35w-usb-c-usb-c-doble/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cubo008-cubo-cargador-35w-usb-c-usb-c-doble/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo008-cubo-cargador-35w-usb-c-usb-c-doble/",
       "archivo_html": "productos/cubo008-cubo-cargador-35w-usb-c-usb-c-doble/index.html",
       "http": 200,
       "sha256_html": "385619028f048ebbc5627c1ac830cdbea38b84e26d265987a70af8d34c35da43",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo008/CUBO008-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cubo008/CUBO008-01-600.webp?v=0c2254d479fdb520",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo008/CUBO008-01-600.webp?v=0c2254d479fdb520",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cubo008-cubo-cargador-35w-usb-c-usb-c-doble/",
+          "url": "https://conectatech-ec.github.io/productos/cubo008-cubo-cargador-35w-usb-c-usb-c-doble/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cubo008/CUBO008-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo008/CUBO008-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/CUBO008-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/CUBO008-390.png",
       "sha256": "bcc361db9da04e474a42a09da01cf1e9337f1a75c892af8da2146fb6683b4296",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/CUBO008-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/CUBO008-1280.png",
         "sha256": "4f24bc091dbe9c69253c504091c0340942d08a2464692fba45ec79991960759a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/estab002-estabilizador-m1/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Estabilizador Merak One M1 de tres ejes. Estabilización: Tres ejes según empaque. Control: Panel de mando integrado. Uso: Grabación con celular.",
   "contenido_venta": "Un estabilizador con trípode y cable USB según empaque. No incluye teléfono.",
   "compatibilidad": "Teléfono compatible con las dimensiones y carga útil del fabricante; la aplicación y sus funciones requieren compatibilidad.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact LIGHTGREY MERAKONE M1 3axisgimbal fromownerbox. Oneuprightlightgreyroundedhandle, actualroundGREYjoystickupperfrontwithtinyblackleft/rightfunctionicons andTWOroundkeysbelow, articulatedS/L-shapedupperarmwithrealroundsidejointandTOProundmotorbehindEMPTYhorizontalphoneclamp. RemoveonlydisplayPHONE, usebackpackinglisttinygimbaldiagramforsupportedemptyclamp, noinventedshutter/touchscreen. Wholeunitfront3/4matchingprimary, no additionaltripodrender(notshowngeometry), cord, person, boxorprops. Newcleanmattegrey, preserveexactcontrols/joints."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "ESTAB002"
     },
     "movil": {
       "solicitado": "ESTAB002",
       "sku": "ESTAB002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:06.753Z",
+      "fecha": "2026-10-16T00:37:35.236Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/estab002-estabilizador-m1/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/estab002-estabilizador-m1/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/estab002-estabilizador-m1/",
       "archivo_html": "productos/estab002-estabilizador-m1/index.html",
       "http": 200,
       "sha256_html": "7ca2809c2aa6e9081a8662b6e4571286ef6aaae42edf134c74fff7ad1e170ca7",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/estab002/ESTAB002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/estab002/ESTAB002-01-600.webp?v=e61ccbfb3d5f4882",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/estab002/ESTAB002-01-600.webp?v=e61ccbfb3d5f4882",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/estab002-estabilizador-m1/",
+          "url": "https://conectatech-ec.github.io/productos/estab002-estabilizador-m1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/estab002/ESTAB002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/estab002/ESTAB002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/ESTAB002-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/ESTAB002-390.png",
       "sha256": "a2741836dd8f4a96e3fd6c3b70ca22f404d703468f6a432231d0e27a6fdae625",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/ESTAB002-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/ESTAB002-1280.png",
         "sha256": "59b0a1a4b2d03a41026665698b94d8f9a0bcc2ccac313cbb91daf623f335c804",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

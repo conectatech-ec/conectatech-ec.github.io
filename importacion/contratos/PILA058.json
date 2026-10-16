@@ -91,9 +91,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila058-pila-395-399-ag7-maxday/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Pila Maxday AG7. Modelo: AG7. Voltaje: 1,55 V según empaque. Unidad de venta: Una sola pila. Formato: Botón.",
   "contenido_venta": "Una sola pila, sin blíster. Precio por unidad.",
   "compatibilidad": "Equipo que requiera exactamente el modelo, dimensiones y voltaje indicados.",
@@ -181,8 +181,12 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact owner's AG7 physicalcell: 9.5mmdiameter2.7mmthickbutton. ONE SINGLECELLONLY removedfromretailblister, notpack. Lyingflatgentleelevated3/4allowsWHOLEsilvercircularfaceandtrueTHINrim/gasket/steppedreverseedge, realisticmetalshortsoftshadow. ShowactualSMOOTHunmarkedreverseface visibleinsource(unmarkedcellsonownerstrip), NOinventedengraving, brand, model orplus-symbol. Noextraoverlaidreverseview, secondcell, pile, scale, coins, packaging, colouredtabs. Tinyitemoccupies55%framewidth, pristinepureWHITE."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "PILA058"
     },
     "confirmacion_unidad_propietario": {
       "estado": "VERIFICADO",
@@ -193,7 +197,7 @@
       "solicitado": "PILA058",
       "sku": "PILA058",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:27.417Z",
+      "fecha": "2026-10-16T00:38:08.582Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -218,7 +222,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila058-pila-395-399-ag7-maxday/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila058-pila-395-399-ag7-maxday/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila058-pila-395-399-ag7-maxday/",
       "archivo_html": "productos/pila058-pila-395-399-ag7-maxday/index.html",
       "http": 200,
       "sha256_html": "25098874c7cc2939472ad702a5c153ded0b8ebd425ed6a53cb566199a0cf9bd1",
@@ -228,7 +232,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila058/PILA058-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila058/PILA058-01-600.webp?v=7f630560d16dd7c9",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila058/PILA058-01-600.webp?v=7f630560d16dd7c9",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -237,32 +241,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila058-pila-395-399-ag7-maxday/",
+          "url": "https://conectatech-ec.github.io/productos/pila058-pila-395-399-ag7-maxday/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila058/PILA058-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila058/PILA058-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/PILA058-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/PILA058-390.png",
       "sha256": "c1003f096408c6abc9dd7267d8f51bf6c04fd878c95e29da8855da9b4923b23d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/PILA058-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/PILA058-1280.png",
         "sha256": "aaf7041550b3b2e817d8ec0daaca363dea55e56061376479b133ea4c5c634260",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

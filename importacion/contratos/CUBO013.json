@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo013-cubo-cargador-25w-monster-rc252-1a1c/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Cargador Monster RC252 de 25 W con USB-C y USB-A. Potencia: Hasta 25 W. Conexiones: USB-C y USB-A. Formato: Adaptador compacto.",
   "contenido_venta": "Un cargador de pared. No incluye cable.",
   "compatibilidad": "Equipos compatibles con las conexiones y protocolos de carga; potencia compartida según uso.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact WHITE MONSTER RC25225W1A1C onboxfront. RoundedcuboidWHITEbody, realGREYMONSTERwordmarkonbroadLEFT/frontface, actualTWO flatUSmetalprongsprojectrearLEFTasbox(onecanbepartlyhidden). NarrowRIGHToutputface hasONEsmallUSB-CABOVEoneUSB-A, bothactualdarkinserts, smallrealUSB-CandUSB-Alabelsasreference. Oneentireunit samefront3/4asprimarybox. NO extra thirdport, cord, blackvariant, inventedwattprint, certificationtext, boxorprops."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "CUBO013"
     },
     "movil": {
       "solicitado": "CUBO013",
       "sku": "CUBO013",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:24:57.074Z",
+      "fecha": "2026-10-16T00:37:23.619Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo013-cubo-cargador-25w-monster-rc252-1a1c/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cubo013-cubo-cargador-25w-monster-rc252-1a1c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo013-cubo-cargador-25w-monster-rc252-1a1c/",
       "archivo_html": "productos/cubo013-cubo-cargador-25w-monster-rc252-1a1c/index.html",
       "http": 200,
       "sha256_html": "31bffe1c872168bc24c48322fd7679d72b4655b156cea7e0cdaa71a62c136ecc",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo013/CUBO013-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cubo013/CUBO013-01-600.webp?v=5393ccff8ff043ae",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo013/CUBO013-01-600.webp?v=5393ccff8ff043ae",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cubo013-cubo-cargador-25w-monster-rc252-1a1c/",
+          "url": "https://conectatech-ec.github.io/productos/cubo013-cubo-cargador-25w-monster-rc252-1a1c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cubo013/CUBO013-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo013/CUBO013-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/CUBO013-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/CUBO013-390.png",
       "sha256": "086fc9b586936f7d145cffb7df4b7637f47f4cd99aa83fa857e003d25daba93f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/CUBO013-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/CUBO013-1280.png",
         "sha256": "67f4f2855f269fbdb6a4a9a0159a82953c7aaf1cb3925ce361af3f6efb75b574",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

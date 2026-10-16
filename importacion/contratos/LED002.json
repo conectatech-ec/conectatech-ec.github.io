@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/led002-led-tira-led-rgb-5m/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Tira LED RGB de 5 metros. Longitud: 5 metros. Iluminación: RGB. Alimentación: 5 V según empaque.",
   "contenido_venta": "Un conjunto de tira LED RGB de 5 metros. No se declaran accesorios no confirmados.",
   "compatibilidad": "Alimentación de 5 V según empaque; verificar controlador y fuente necesarios. Uso interior según instrucciones.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact5M RGB flexibleLEDstrip frombox. ShowONE neatflatcoil of WHITEflexiblecircuitribbonwithactualrepeatedsmallSQUARELEDpackages/contactpads/cutlines matchingboxstrip, UNLITneutralwhiteLEDs. Wholecoil removedfromallretailpackaging, no plasticreel (numberofreelsnotconfirmed), no powersupply/controller/remote/phone/USBendsnotpictured, no box/captions/colourbeams. Productrepresentsstriponly, correctthinflexiblewidthandregularpackagespacing, pristinewhitewithsoftshadow."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "LED002"
     },
     "movil": {
       "solicitado": "LED002",
       "sku": "LED002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:13.051Z",
+      "fecha": "2026-10-16T00:37:42.749Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/led002-led-tira-led-rgb-5m/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/led002-led-tira-led-rgb-5m/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/led002-led-tira-led-rgb-5m/",
       "archivo_html": "productos/led002-led-tira-led-rgb-5m/index.html",
       "http": 200,
       "sha256_html": "2d5d1e74d812876eb6a10b65c5951e7739677016cca3800d41117c6beb1feef7",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/led002/LED002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/led002/LED002-01-600.webp?v=feed7326c0a8107f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/led002/LED002-01-600.webp?v=feed7326c0a8107f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/led002-led-tira-led-rgb-5m/",
+          "url": "https://conectatech-ec.github.io/productos/led002-led-tira-led-rgb-5m/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/led002/LED002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/led002/LED002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/LED002-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/LED002-390.png",
       "sha256": "d9a715f44e1afe466a3b24477e86a5414da59694305af64592ac2d7e9d144a57",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/LED002-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/LED002-1280.png",
         "sha256": "3cae9b70a426575c1c70a2a191eae5c5468f9f164792311ff037540bf07ebd7b",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

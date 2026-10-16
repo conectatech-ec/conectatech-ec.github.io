@@ -91,9 +91,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila053-pila-1220-murata/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Pila Murata CR1220. Modelo: CR1220. Voltaje: 3 V. Unidad de venta: Una sola pila. Formato: Litio.",
   "contenido_venta": "Una sola pila, sin blíster. Precio por unidad.",
   "compatibilidad": "Equipo que requiera exactamente el modelo, dimensiones y voltaje indicados.",
@@ -181,8 +181,12 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Revisión visual ampliada: una sola celda metálica, modelo y proporciones cotejados con fuente propia; cara grabada muRata CR1220 3V LITHIUM JAPAN del modelo visible, sin empaque. No se traslada contenido del blíster ni cifras ajenas a la ficha."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "PILA053"
     },
     "confirmacion_unidad_propietario": {
       "estado": "VERIFICADO",
@@ -193,7 +197,7 @@
       "solicitado": "PILA053",
       "sku": "PILA053",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:28.371Z",
+      "fecha": "2026-10-16T00:38:09.685Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -218,7 +222,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila053-pila-1220-murata/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila053-pila-1220-murata/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila053-pila-1220-murata/",
       "archivo_html": "productos/pila053-pila-1220-murata/index.html",
       "http": 200,
       "sha256_html": "3454b0eaf91cb1b3fb8e3853e6686a761f033fd2d8d8cf04466d517eb39c66a2",
@@ -228,7 +232,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila053/PILA053-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila053/PILA053-01-600.webp?v=e078645245d9cedf",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila053/PILA053-01-600.webp?v=e078645245d9cedf",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -237,32 +241,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila053-pila-1220-murata/",
+          "url": "https://conectatech-ec.github.io/productos/pila053-pila-1220-murata/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila053/PILA053-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila053/PILA053-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/PILA053-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/PILA053-390.png",
       "sha256": "0cbd3c4dfd578fedd793538657badebdad317bee39d010c3c9b6f9c81fcfe635",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/PILA053-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/PILA053-1280.png",
         "sha256": "c1c809248d6aa858fe1a87ec3e62afb2bcdf6cc9787481d2b139eb84a1b5713f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

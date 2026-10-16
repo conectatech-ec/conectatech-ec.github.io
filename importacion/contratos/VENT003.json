@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/vent003-ventilador-para-laptop-878/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Base ventiladora 878 para laptop. Alimentación: USB. Ventilación: Ventilador de 14 cm según empaque. Compatibilidad: Laptop de 10 a 15 pulgadas.",
   "contenido_venta": "Una base ventiladora. No incluye laptop.",
   "compatibilidad": "Laptop de 10 a 15 pulgadas según empaque; alimentación USB.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK878 notebookcoolerpad inprimarybox. ONEblackwideX/hourglassoutline coolingpadwiththickraisedborderandfinesmallBLACKmetalmeshCENTREcoveringONElargecentralFAN. Matchfourangledwingcorners/asymmetricalXoutercontour fromPRIMARYblackphoto, gentleelevatedtopfront3/4allowswholepadandmesh. NeutralOFFfan, no blue/coloredalternatives, RGB, extraunseenports, inventedcable/plug, laptop, boxorprops."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "VENT003"
     },
     "movil": {
       "solicitado": "VENT003",
       "sku": "VENT003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:22.244Z",
+      "fecha": "2026-10-16T00:38:02.683Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/vent003-ventilador-para-laptop-878/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/vent003-ventilador-para-laptop-878/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/vent003-ventilador-para-laptop-878/",
       "archivo_html": "productos/vent003-ventilador-para-laptop-878/index.html",
       "http": 200,
       "sha256_html": "89b27fd108d4a6df18bc58b53bc4dbdfeedd3eaa093fa2dc0b0ee86eddbc1f90",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/vent003/VENT003-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/vent003/VENT003-01-600.webp?v=c4236594d44ebb95",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/vent003/VENT003-01-600.webp?v=c4236594d44ebb95",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/vent003-ventilador-para-laptop-878/",
+          "url": "https://conectatech-ec.github.io/productos/vent003-ventilador-para-laptop-878/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/vent003/VENT003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/vent003/VENT003-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/VENT003-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/VENT003-390.png",
       "sha256": "6cc2139a7ca1d046db5554a2265896e79f7b2ccc47558c6a30a90d0199be2b38",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/VENT003-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/VENT003-1280.png",
         "sha256": "105efdc26f6185bbe9905dd30b56ab9bea468ac0ddf7979e0beb282ac5c4e7b1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

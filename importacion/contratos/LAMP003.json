@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/lamp003-lampara-led-grande-ovalada/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Lámpara RGB de escritorio MJ-52. Iluminación: Luz RGB según empaque. Formato: Panel ovalado vertical. Colocación: Base de escritorio.",
   "contenido_venta": "Una lámpara de escritorio. No incluye teléfono ni trípode.",
   "compatibilidad": "Alimentación y control compatibles con el modelo; verificar requisitos antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact MJ52 RGBdesktopfilllight onbox. ONEWHITE lamp withTALLslimroundedCAPSULE/ovalverticalfrontpanelinTHINWHITEframe, shortWHITEnecktoLOWwideROUND/ovalWHITEdeskbase withactualsmallgreyTOPcontrolsymbols/keysasreference. Sameprimaryfront3/4, panelgentleSOLIDBLUE illumination(onecolourseenamongboxexamples), no multicolouraddressablepatternorbackgroundglow. Wholeexactone lamp, no secondlamp, phone, tripod, remote notactuallyshown, people, boxorcaptions. Preserveexactaspectratio/shortneck/baseprofile andnewwhitefinish."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "LAMP003"
     },
     "movil": {
       "solicitado": "LAMP003",
       "sku": "LAMP003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:14.007Z",
+      "fecha": "2026-10-16T00:37:43.922Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lamp003-lampara-led-grande-ovalada/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/lamp003-lampara-led-grande-ovalada/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/lamp003-lampara-led-grande-ovalada/",
       "archivo_html": "productos/lamp003-lampara-led-grande-ovalada/index.html",
       "http": 200,
       "sha256_html": "a4a182c0e9795e748fbb3238ec3aff21b2119be20a779a28986fc168e13f084b",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lamp003/LAMP003-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/lamp003/LAMP003-01-600.webp?v=b395c010dbbbabdd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/lamp003/LAMP003-01-600.webp?v=b395c010dbbbabdd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/lamp003-lampara-led-grande-ovalada/",
+          "url": "https://conectatech-ec.github.io/productos/lamp003-lampara-led-grande-ovalada/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/lamp003/LAMP003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/lamp003/LAMP003-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/LAMP003-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/LAMP003-390.png",
       "sha256": "7142c7ee3f47c17ddac31e3a31af9d3e87d4188d8750a8f66e7d1f673877878b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/LAMP003-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/LAMP003-1280.png",
         "sha256": "a3090868fc4028726774786460ecf3dcc633c6d984c48c7838f38d6abdab4100",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

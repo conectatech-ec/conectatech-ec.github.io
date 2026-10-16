@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Cargador compatible USB-A de 5 W para iPhone. Potencia: 5 W según referencia. Conexión: USB-A según empaque. Transporte: Formato compacto.",
   "contenido_venta": "Un cargador de pared. No incluye cable.",
   "compatibilidad": "Equipos que admitan alimentación USB-A de 5 W mediante cable compatible; no se declara carga rápida.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact WHITE5WUSBPowerAdapter inownerbox, modelreference18245. SmallcompactWHITE roundedSQUAREuprightcuboid, TWOflatparallelUSmetalprongsUPwithactualsmallholes, frontbroadWHITEblankface andRIGHTslimroundedside exactlyprimaryillustration. USB-A output ishiddenonBOTTOMoppositeprongs; keepHIDDENtoavoidinventingunseenportface. Wholeoneunit correctshortcubeproportions, not35Wlargerbody. No Appleboxlogo transferredonto actualbody, no cable, greyregulatoryprint, box, propsorcaptions."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "CUBO011"
     },
     "movil": {
       "solicitado": "CUBO011",
       "sku": "CUBO011",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:03.367Z",
+      "fecha": "2026-10-16T00:37:31.022Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/",
       "archivo_html": "productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/index.html",
       "http": 200,
       "sha256_html": "b7a29ba4a7a6f706478806540ed89b686e121cf241d720c3583ea320ac53164a",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo011/CUBO011-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cubo011/CUBO011-01-600.webp?v=939ee9e0650fa25e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo011/CUBO011-01-600.webp?v=939ee9e0650fa25e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/",
+          "url": "https://conectatech-ec.github.io/productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cubo011/CUBO011-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo011/CUBO011-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/CUBO011-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/CUBO011-390.png",
       "sha256": "6ab5b052b7e25ce92a33c0496fbfc9176218f423518c94e37b60c68f64eb706e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/CUBO011-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/CUBO011-1280.png",
         "sha256": "2cf3515fdbc8c42b0826220bf9f365df5a5aa3043dd0eb9e78be29b0fa4840d5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

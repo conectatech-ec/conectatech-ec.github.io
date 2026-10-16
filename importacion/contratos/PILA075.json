@@ -91,9 +91,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila075-pila-1620-suncom/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Pila Suncom CR1620. Modelo: CR1620. Voltaje: 3 V. Unidad de venta: Una sola pila. Formato: Litio.",
   "contenido_venta": "Una sola pila, sin blíster. Precio por unidad.",
   "compatibilidad": "Equipo que requiera exactamente el modelo, dimensiones y voltaje indicados.",
@@ -181,8 +181,12 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Revisión visual ampliada: una sola celda metálica, modelo y proporciones cotejados con fuente propia; cara grabada SUNCOM CR1620 LITHIUM BATTERY 3V del modelo visible, sin empaque. No se traslada contenido del blíster ni cifras ajenas a la ficha."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "PILA075"
     },
     "confirmacion_unidad_propietario": {
       "estado": "VERIFICADO",
@@ -193,7 +197,7 @@
       "solicitado": "PILA075",
       "sku": "PILA075",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:24.228Z",
+      "fecha": "2026-10-16T00:38:05.013Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -218,7 +222,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila075-pila-1620-suncom/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila075-pila-1620-suncom/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila075-pila-1620-suncom/",
       "archivo_html": "productos/pila075-pila-1620-suncom/index.html",
       "http": 200,
       "sha256_html": "b19a38f090d055f418ef54a459408f4aed3eea9ad04b71c2f5593d3db315287a",
@@ -228,7 +232,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila075/PILA075-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila075/PILA075-01-600.webp?v=2f89356d7295d5e7",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila075/PILA075-01-600.webp?v=2f89356d7295d5e7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -237,32 +241,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila075-pila-1620-suncom/",
+          "url": "https://conectatech-ec.github.io/productos/pila075-pila-1620-suncom/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila075/PILA075-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila075/PILA075-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/PILA075-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/PILA075-390.png",
       "sha256": "83cabf1176d10ee265129accb9bea1b0d47819646c7e061520522f1e48f72536",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/PILA075-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/PILA075-1280.png",
         "sha256": "f58f73d346a66baaf2a766431d8d4fa166d19a0ef8304d82fdadec4af5ce5ca7",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

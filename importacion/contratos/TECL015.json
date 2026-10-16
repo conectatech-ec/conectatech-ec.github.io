@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl015-teclado-gk70/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Teclado gamer Space Warships GK70 iluminado. Iluminación: Retroiluminación de siete colores según empaque. Formato: Teclado completo con bloque numérico. Diseño: Carcasa angular con apoyo frontal.",
   "contenido_venta": "Un teclado. Accesorios no confirmados no se declaran incluidos.",
   "compatibilidad": "Verificar conexión compatible antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact SpaceWarshipsGK70keyboard onownerbox. WholeONEBLACKfullsizekeyboard withANGULARarmouredouterframe, integratedoversizedLEFTfrontwristlipwithlongcutouthole, topcentralRECTANGULARcarryhandlehole, realnumericblockRIGHT. MatchALLkeygroupsandlegendsasactualboxlayout, colourbacklightmutedpurpleLEFT/redMIDDLE/greenRIGHT asreference. SpaceWarshipsrealwordmarkspacebar, no Monster/otherbrands. Sameelevatedfront3/4, no mechanicalswitchcloseups, mouse, unconfirmedcable/plug, boxorprops. DoNOTchangeGK70shape/keylayout."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "TECL015"
     },
     "movil": {
       "solicitado": "TECL015",
       "sku": "TECL015",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:19.372Z",
+      "fecha": "2026-10-16T00:37:58.982Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl015-teclado-gk70/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/tecl015-teclado-gk70/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl015-teclado-gk70/",
       "archivo_html": "productos/tecl015-teclado-gk70/index.html",
       "http": 200,
       "sha256_html": "56dd60afbfaa9f05db9082de1514a5feca02a6bab0c79cdc72a9cb6b482d2a78",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl015/TECL015-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/tecl015/TECL015-01-600.webp?v=576a2903976ae3ce",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl015/TECL015-01-600.webp?v=576a2903976ae3ce",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/tecl015-teclado-gk70/",
+          "url": "https://conectatech-ec.github.io/productos/tecl015-teclado-gk70/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/tecl015/TECL015-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl015/TECL015-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/TECL015-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/TECL015-390.png",
       "sha256": "ae943cd2f91a13eb70c182d5ab482e418b22e69dd7fc3e803b59b9535b95f42b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/TECL015-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/TECL015-1280.png",
         "sha256": "666c3ba0316c7c8e6d23e97aa989824b0f2678ebde69eae7fd0750ae7a86ef0e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/estab005-estabilizador-cm8/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Estabilizador CM8 de tres ejes para celular. Estabilización: Tres ejes según empaque. Transporte: Diseño plegable. Manejo: Controles en el mango.",
   "contenido_venta": "Un estabilizador para celular. No incluye teléfono.",
   "compatibilidad": "Teléfono de tamaño y peso admitidos por el fabricante; funciones de seguimiento y aplicación sujetas a compatibilidad.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACK/darkGREY CM8 3axisphonegimbal onownerbox. Singleuprightcylindricalgrip, preciseactualupperL-shapedjointedarmwiththreevisiblemotorjoints, EMPTYhorizontalphoneclamp atTOP (remove displayPHONE entirely; preserveactualsmalllowerclampbaranduppergrip). Actualfrontgripcontrolpanelwithcentralroundjoystickandrealadjacentsmallroundkeys/copiedredrecordindicatorperbox, sidewheel/pivotvisibleonLEFT. Wholeonegimbal samefront3/4source, no othermodel, tripod/cable notconfirmed, extraunreferencedbuttons, screen, brand, retailboxorprops."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "ESTAB005"
     },
     "movil": {
       "solicitado": "ESTAB005",
       "sku": "ESTAB005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:05.481Z",
+      "fecha": "2026-10-16T00:37:33.683Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/estab005-estabilizador-cm8/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/estab005-estabilizador-cm8/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/estab005-estabilizador-cm8/",
       "archivo_html": "productos/estab005-estabilizador-cm8/index.html",
       "http": 200,
       "sha256_html": "3d8e234202865573ba7e07c431870da0bbbe3cf814e75b20010afe1ae420b8b9",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/estab005/ESTAB005-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/estab005/ESTAB005-01-600.webp?v=7e68a2a1201e9783",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/estab005/ESTAB005-01-600.webp?v=7e68a2a1201e9783",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/estab005-estabilizador-cm8/",
+          "url": "https://conectatech-ec.github.io/productos/estab005-estabilizador-cm8/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/estab005/ESTAB005-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/estab005/ESTAB005-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/ESTAB005-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/ESTAB005-390.png",
       "sha256": "05f2b046c1b78cd6238898a63272d602a4b4f5fbba356a7640a05f399d3007f0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/ESTAB005-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/ESTAB005-1280.png",
         "sha256": "3e7ff565d1e358b51e5b9f4494065b5d107e98b70c4ff9963d3669f5e31a33e2",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pane002-panel-de-luz-pl-19/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Panel de luz LED PL-19 para fotografía. Iluminación: Luz LED continua. Formato: Difusor rectangular. Ajuste: Soporte orientable según referencia.",
   "contenido_venta": "Un panel LED. No incluye trípode de piso ni teléfono.",
   "compatibilidad": "Montaje y alimentación adecuados para el modelo; verificar requisitos antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact PL19 photographyLEDpanel fromownerbox. OneportraitrectangularfrostedWHITEfrontdiffuserwithroundedcornersandTHINBLACKback/edgehousing, blackshorttiltbracketwithactualscrewknobatBOTTOMonly (no tallfloorstand). Wholepanelupright mildfront3/4sameprimaryillustration, exactportraitaspectratioandthicknessexisting. OFFneutralwhitediffuser, no colourfulglow, inventedrearcontrols/logos, people, phone, powerbrick, box, storeorprops."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "PANE002"
     },
     "movil": {
       "solicitado": "PANE002",
       "sku": "PANE002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:16.867Z",
+      "fecha": "2026-10-16T00:37:47.552Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pane002-panel-de-luz-pl-19/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pane002-panel-de-luz-pl-19/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pane002-panel-de-luz-pl-19/",
       "archivo_html": "productos/pane002-panel-de-luz-pl-19/index.html",
       "http": 200,
       "sha256_html": "3c05974d609b508075527ca98657eb5b3bbc43f1b43ea499d517487aaa94af27",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pane002/PANE002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pane002/PANE002-01-600.webp?v=c58ce9d3c4732cb9",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pane002/PANE002-01-600.webp?v=c58ce9d3c4732cb9",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pane002-panel-de-luz-pl-19/",
+          "url": "https://conectatech-ec.github.io/productos/pane002-panel-de-luz-pl-19/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pane002/PANE002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pane002/PANE002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/PANE002-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/PANE002-390.png",
       "sha256": "f60218c5fd91db69e2dc92e69395daf03f5db8c66e0211ca8059c0af6e25b1b0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/PANE002-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/PANE002-1280.png",
         "sha256": "f275b3138d5f3b1f1451aa8f68608da03f5adaf9c65d1734bbc74f615d01e22f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

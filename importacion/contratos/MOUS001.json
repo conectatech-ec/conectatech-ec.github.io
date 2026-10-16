@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous001-mouse-alambrico-color-gris-negro-s-r/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Mouse USB alámbrico gris y negro. Conexión: USB-A con cable. Manejo: Rueda central de desplazamiento. Diseño: Cuerpo gris con laterales negros.",
   "contenido_venta": "Un mouse con cable USB-A integrado.",
   "compatibilidad": "Equipo con puerto USB-A compatible.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physicalGREY/BLACK wiredmouse inownerblister. LowlongroundedbodywithSILVERGREYcentralUPPERpanelandBLACKglossylateraledges, actualBLACKscrollwheelnearFRONTandlongthincentreblackseamendingintinyrounddotnearPALM. Orientmousecorrectly(frontwithwheelandcordaway, palmbacktowardviewer), samephysicalshape, modesttopfront3/4. FixedBLACKcordloosebehindtooneUSB-A MALEconfirmedrearphoto. Wholeoneunit, no brand/DPIkey/RGB, extra sidebuttons, retailblister, paperorprops. Cleannewgreysurface."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "MOUS001"
     },
     "movil": {
       "solicitado": "MOUS001",
       "sku": "MOUS001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:14.958Z",
+      "fecha": "2026-10-16T00:37:45.128Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous001-mouse-alambrico-color-gris-negro-s-r/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/mous001-mouse-alambrico-color-gris-negro-s-r/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous001-mouse-alambrico-color-gris-negro-s-r/",
       "archivo_html": "productos/mous001-mouse-alambrico-color-gris-negro-s-r/index.html",
       "http": 200,
       "sha256_html": "178c9263b4c277d640a2e750c48f2ee9343ebcec881a3e099748bf1e6c048b79",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous001/MOUS001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/mous001/MOUS001-01-600.webp?v=7fc6f913234e40b4",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous001/MOUS001-01-600.webp?v=7fc6f913234e40b4",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/mous001-mouse-alambrico-color-gris-negro-s-r/",
+          "url": "https://conectatech-ec.github.io/productos/mous001-mouse-alambrico-color-gris-negro-s-r/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/mous001/MOUS001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous001/MOUS001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/MOUS001-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/MOUS001-390.png",
       "sha256": "fb3718d39297fb00c40d8a6f933a4324e69aab416392d171ed8d65860e364280",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/MOUS001-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/MOUS001-1280.png",
         "sha256": "5d4738df2ea45b65c20e3c9bb51425b2a93469c459ecf2473d5df346081d2dc9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

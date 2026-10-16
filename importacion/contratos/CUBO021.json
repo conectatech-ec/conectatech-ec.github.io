@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo021-cubo-40w-usb-c/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Cargador compatible USB-C de 40 W para iPhone. Potencia: 40 W nominales según referencia. Conexión: Un puerto USB-C. Formato: Adaptador compacto de pared.",
   "contenido_venta": "Un cargador de pared. No incluye cable.",
   "compatibilidad": "Equipo USB-C y cable compatibles; potencia efectiva depende del protocolo y del dispositivo. No se promete la cifra de 60 W como potencia continua.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact WHITE40W DynamicPowerAdapter onprovidedbox. Compact squarish roundedWHITEcubebody with TWO flatparallelUSprongsfoldedflatontheTOP assource illustration, one BLUEUSB-Cfemale onLEFT/frontshortface and genuine subtleGREYAppleprofilelogo onRIGHTbroaderface onlyas pictured. Sameprimaryboxfront3/4withfoldedprongs visible, actualbodyandportgeometry, doNOTsubstitute35Wdualportbody. WholeONEadapter no cable, printed60Wclaim, electricalmicrotext, box, extra ports, propsorcaptions."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "CUBO021"
     },
     "movil": {
       "solicitado": "CUBO021",
       "sku": "CUBO021",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:24:55.778Z",
+      "fecha": "2026-10-16T00:37:22.390Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo021-cubo-40w-usb-c/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cubo021-cubo-40w-usb-c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo021-cubo-40w-usb-c/",
       "archivo_html": "productos/cubo021-cubo-40w-usb-c/index.html",
       "http": 200,
       "sha256_html": "c7b939c10ecdda47d4c95e6acb5068b2a1b1f1f5272a036f32ac5a36832db1b2",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo021/CUBO021-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cubo021/CUBO021-01-600.webp?v=3a0035e1af19be89",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo021/CUBO021-01-600.webp?v=3a0035e1af19be89",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cubo021-cubo-40w-usb-c/",
+          "url": "https://conectatech-ec.github.io/productos/cubo021-cubo-40w-usb-c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cubo021/CUBO021-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo021/CUBO021-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/CUBO021-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/CUBO021-390.png",
       "sha256": "7719d05001af1ff725e425fd4e34c64963d148e23986340c086c7a3477c412e7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/CUBO021-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/CUBO021-1280.png",
         "sha256": "6c4eef58b70ba10d7a2ffe0e57f42b17c6de6a7ef133f2e5253d3ac68f99ba36",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

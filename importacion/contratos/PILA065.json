@@ -81,9 +81,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila065-pila-rayovac-para-audifonos-tamano-13/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Pila Rayovac tamaño 13 para audífonos. Tamaño: 13. Aplicación: Audífonos médicos compatibles. Unidad de venta: Una sola pila.",
   "contenido_venta": "Una sola pila para audífono, sin rueda dispensadora ni blíster. Precio por unidad.",
   "compatibilidad": "Audífono médico que requiera el tamaño 13; comprobar modelo antes de comprar.",
@@ -171,8 +171,12 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact ONEphysicalhearingaidbuttoncellsize13 fromownerreference. SmallroundSILVERbuttoncellwithactualsteppedrimandtrue size13 proportions. KeepACTUAL orange sealadhesivepullTABcoveringtopfacewithroundseal+roundedrectangulartailEXACTshapeinphysicalownerwheelpack. TabisTHINflexibleLABELattachedONEcell, notplasticbody, metalrimvisiblebelow. No printorlogo notvisibleontab. WholeONEcellgentleelevatedfront3/4onWHITE, smallitemoccupies50%width, noextraunsealedcell/secondview, wheel/dispenser, card, hearingaid, handsorprops."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "PILA065"
     },
     "confirmacion_unidad_propietario": {
       "estado": "VERIFICADO",
@@ -183,7 +187,7 @@
       "solicitado": "PILA065",
       "sku": "PILA065",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:32.167Z",
+      "fecha": "2026-10-16T00:38:14.644Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -208,7 +212,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila065-pila-rayovac-para-audifonos-tamano-13/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila065-pila-rayovac-para-audifonos-tamano-13/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila065-pila-rayovac-para-audifonos-tamano-13/",
       "archivo_html": "productos/pila065-pila-rayovac-para-audifonos-tamano-13/index.html",
       "http": 200,
       "sha256_html": "8fc2b4105627a58ff5e5485937133bc5709e5785995c92da900c9543235d1e9f",
@@ -218,7 +222,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila065/PILA065-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila065/PILA065-01-600.webp?v=0e53999df679fd57",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila065/PILA065-01-600.webp?v=0e53999df679fd57",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -227,32 +231,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila065-pila-rayovac-para-audifonos-tamano-13/",
+          "url": "https://conectatech-ec.github.io/productos/pila065-pila-rayovac-para-audifonos-tamano-13/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila065/PILA065-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila065/PILA065-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/PILA065-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/PILA065-390.png",
       "sha256": "1fdb42b9601efbe6ba48253b7ee2bdb83d172cb016e31174be4bfa16aeccb631",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/PILA065-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/PILA065-1280.png",
         "sha256": "b1a6a71359d1d34adbe3b6dc9152e3b2f4dc0124a66912b9e25a7729dccf683e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

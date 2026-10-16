@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/repr001-reproductor-mp4-mrobo/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Reproductor MP4 portátil Mrobo. Formato: Reproductor portátil MP4. Pantalla: Pantalla integrada. Control: Botones físicos y mando circular.",
   "contenido_venta": "Un reproductor. No incluye tarjeta microSD.",
   "compatibilidad": "Tarjeta microSD y archivos compatibles; capacidad y formatos adicionales deben verificarse antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact PHYSICAL black mrobo MP4 in primary ownerphoto. One slimrectangularblackbody, OFFdark rectangularLCDupperhalf, actualGOLDmrobo wordmarkbelowLCD, twoflattopfunctionkeysleft/rightbelowscreen, centralCIRCULARDpad withrealFOURroundsurroundkeys. Preserveprecisebuttonlayout, screen/bodyproportions. Wholedevice mildfront3/4, noheadphones, card, cord, box, screenUI, inventedsideports. Newcleanblack."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "REPR001"
     },
     "movil": {
       "solicitado": "REPR001",
       "sku": "REPR001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:17.661Z",
+      "fecha": "2026-10-16T00:37:48.706Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/repr001-reproductor-mp4-mrobo/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/repr001-reproductor-mp4-mrobo/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/repr001-reproductor-mp4-mrobo/",
       "archivo_html": "productos/repr001-reproductor-mp4-mrobo/index.html",
       "http": 200,
       "sha256_html": "9aa17dafff8ec8fcef72381a14e97309193c3b212ddafeb33607c4d4a3a35007",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/repr001/REPR001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/repr001/REPR001-01-600.webp?v=ba7f4eacdeeea422",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/repr001/REPR001-01-600.webp?v=ba7f4eacdeeea422",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/repr001-reproductor-mp4-mrobo/",
+          "url": "https://conectatech-ec.github.io/productos/repr001-reproductor-mp4-mrobo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/repr001/REPR001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/repr001/REPR001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/REPR001-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/REPR001-390.png",
       "sha256": "6d3c8b25d76876d494278868544fac17563a9ae0ff49276a7e821d4e168f9647",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/REPR001-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/REPR001-1280.png",
         "sha256": "afbabac3e49407ee53f1595b8a8de16014d704e59e17024ef3538f0b3016f64e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

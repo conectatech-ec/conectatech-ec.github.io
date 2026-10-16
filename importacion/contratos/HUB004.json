@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub004-hub-usb-c-4-puertos-rca-hb01/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Hub RCA HB-01 USB-C con cuatro USB-A. Expansión: Cuatro puertos USB-A. Interfaz: USB 2.0. Entrada: Cable USB-C integrado.",
   "contenido_venta": "Un hub con cable USB-C integrado.",
   "compatibilidad": "Equipos USB-C compatibles con datos; conexiones USB 2.0 con alimentación y ancho de banda compartidos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact RCA HB01 USB2hub onownerbox. ThicksmallrectangularWHITEbody withbrightORANGEflatTOPpanel, FOURactualBLUEUSB-AfemalesinlinealongbroadORANGEtop, genuineWHITE RCAwordmarknearleft/bottomend. FixedshortWHITEcordexitsRIGHTendandcurvesbehindtoUSB-CMALEwhitemoulding. Wholeoneunit sameboxelevatedfront3/4, EXACT4outputs(noendport). Blueinsertsarephysicalcolour, don'taddUSB3text. No laptop, extra USB, powerbrick, retailboxorprops; neworangeandwhitefinish."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "HUB004"
     },
     "movil": {
       "solicitado": "HUB004",
       "sku": "HUB004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:11.018Z",
+      "fecha": "2026-10-16T00:37:40.266Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub004-hub-usb-c-4-puertos-rca-hb01/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/hub004-hub-usb-c-4-puertos-rca-hb01/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub004-hub-usb-c-4-puertos-rca-hb01/",
       "archivo_html": "productos/hub004-hub-usb-c-4-puertos-rca-hb01/index.html",
       "http": 200,
       "sha256_html": "dbdc5ced77231022569b1416da1240b9979e201b581f6c7a909f19bef3e2a1f5",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub004/HUB004-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/hub004/HUB004-01-600.webp?v=99c490868ca8403c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub004/HUB004-01-600.webp?v=99c490868ca8403c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/hub004-hub-usb-c-4-puertos-rca-hb01/",
+          "url": "https://conectatech-ec.github.io/productos/hub004-hub-usb-c-4-puertos-rca-hb01/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/hub004/HUB004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub004/HUB004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/HUB004-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/HUB004-390.png",
       "sha256": "417c09f035c19a74afd8bfe2cefa54598d5f3ebaac1d7ce10402f14f93b2ac3a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/HUB004-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/HUB004-1280.png",
         "sha256": "3e0779f7a32ea4dc52090c0083d9fedc5ed5613e3350a225fae988fcfb790ead",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

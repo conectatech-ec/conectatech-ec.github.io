@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/gadg008-gadget-pantalla-magnetica-para-produccion-y-selfie/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Pantalla magnética T2 de 3,97 pulgadas para selfies. Pantalla: 3,97 pulgadas. Conexión: Wi-Fi de 2,4 GHz según referencia. Sujeción: Acoplamiento magnético.",
   "contenido_venta": "Una pantalla magnética. No incluye teléfono.",
   "compatibilidad": "Teléfono con función de conexión compatible; comprobar requisitos antes de comprar. Requiere alimentación USB-C de 5 V.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact T2 MagneticSelfieScreen, BLACKvariantCHECKMARKED onbackbox, NOTwhitefrontdisplayvariant. OneportraitroundedrectangularBLACKscreenbodywithactualthinraisedblackrim anddisplayOFFdarkneutralglass. UsebackboxBLACKvariantthumbnailforactualcolour, primaryWHITEvariantONLYtoidentifysharedshape/proportions. Wholeunitfrontmild3/4, rearcircularmagneticmoduleHIDDENnaturallybehindbody (doNOTinventrearports). No displaywoman/phone, screenUI, extraremote, powercord, retailbox or captions. Small3.97inchdeviceformat, cleannewblack."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "GADG008"
     },
     "movil": {
       "solicitado": "GADG008",
       "sku": "GADG008",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:07.784Z",
+      "fecha": "2026-10-16T00:37:36.499Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/gadg008-gadget-pantalla-magnetica-para-produccion-y-selfie/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/gadg008-gadget-pantalla-magnetica-para-produccion-y-selfie/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/gadg008-gadget-pantalla-magnetica-para-produccion-y-selfie/",
       "archivo_html": "productos/gadg008-gadget-pantalla-magnetica-para-produccion-y-selfie/index.html",
       "http": 200,
       "sha256_html": "f4235e34494d9157613c20602d436dd4ffe1183e1d118294928dfc2198be7033",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/gadg008/GADG008-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/gadg008/GADG008-01-600.webp?v=68396673d570922c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/gadg008/GADG008-01-600.webp?v=68396673d570922c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/gadg008-gadget-pantalla-magnetica-para-produccion-y-selfie/",
+          "url": "https://conectatech-ec.github.io/productos/gadg008-gadget-pantalla-magnetica-para-produccion-y-selfie/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/gadg008/GADG008-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/gadg008/GADG008-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/GADG008-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/GADG008-390.png",
       "sha256": "9474143204b0c3116edbce0462ccbda9e22038a10523a05b4273f609985ba835",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/GADG008-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/GADG008-1280.png",
         "sha256": "175abf3a3a17b3c2f41656b8b49302e589fab7a822ce7bacda73c48b9292ac40",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl002-teclado-y-mouse-inalambrico-hp-cs700/",
-  "fecha_verificacion": "2026-10-16T00:23:54.218805+00:00",
+  "fecha_verificacion": "2026-10-16T00:37:24.336500+00:00",
   "descripcion": "Combo inalámbrico HP CS700: teclado y mouse. Conexión: Inalámbrica según empaque. Teclado: Formato completo con bloque numérico. Mouse: Rueda de desplazamiento y selector central.",
   "contenido_venta": "Un teclado y un mouse inalámbricos.",
   "compatibilidad": "Equipo compatible con el receptor inalámbrico del conjunto.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact PHYSICALHP CS700comboinownerSECONDphoto(notgenerickeyboard). ONEBLACKfullsizekeyboard withactualwhiteHPcirclelogoincentrebetweenmainkeysandnumpad, actualrealkeylayoutfromphoto, threeblueLEDslotsabovearrowarea. ONEBLACKmouse lower/right withthinactualwheelandONEslimDPIkeybehindwheel, actualwhiteHPcircleonpalm. Wholeboth mildtopfront3/4, nofabricatedcords/wirelessreceiver, batteries, laptop, boxorprops. Keep correct relativephysicalscale, cleannewblack."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T00:37:24.336500+00:00",
+      "reporte": "reportes/continuacion-092/http-publicacion.json",
+      "archivo": "reportes/continuacion-092/http-publicacion.json",
+      "sha256": "dc2db693c23fb273361216b09545a3ab207ba5ebc1dfb493a05bcdf17720651c",
+      "sku": "TECL002"
     },
     "movil": {
       "solicitado": "TECL002",
       "sku": "TECL002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T00:25:20.350Z",
+      "fecha": "2026-10-16T00:38:00.289Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl002-teclado-y-mouse-inalambrico-hp-cs700/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/tecl002-teclado-y-mouse-inalambrico-hp-cs700/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl002-teclado-y-mouse-inalambrico-hp-cs700/",
       "archivo_html": "productos/tecl002-teclado-y-mouse-inalambrico-hp-cs700/index.html",
       "http": 200,
       "sha256_html": "79fcd6afa07528c1661aa501aa5251a9a39a1b27077b675125524e56b67760b0",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl002/TECL002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/tecl002/TECL002-01-600.webp?v=520aa8d2118c3f99",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl002/TECL002-01-600.webp?v=520aa8d2118c3f99",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/tecl002-teclado-y-mouse-inalambrico-hp-cs700/",
+          "url": "https://conectatech-ec.github.io/productos/tecl002-teclado-y-mouse-inalambrico-hp-cs700/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/tecl002/TECL002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl002/TECL002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-092/qa-local/movil/TECL002-390.png",
+      "archivo": "reportes/continuacion-092/qa-publica/movil/TECL002-390.png",
       "sha256": "36e084b52ad89a994c29fd1ed4604fd33aad8b6019be76551a22a3d35b44bf2a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-092/qa-local/movil/TECL002-1280.png",
+        "archivo": "reportes/continuacion-092/qa-publica/movil/TECL002-1280.png",
         "sha256": "52d93925d952645cf3cc0705a3915419962425fe8379ed5a3f4a14aa9892096e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
