@@ -14,7 +14,7 @@ report.external_pairing_receipt_seen=report.receipts.some(r=>r.source==='externa
 const alex=await get('/alex/status');if(alex.http===200)report.alex=alex.data;
 const results=await get('/messenger/seller/results');
 report.alex_messenger=(results.data?.events||[]).filter(e=>e.intent==='alex').map(e=>{
- const a=results.data.drafts?.find(d=>d.event_ref===e.k&&d.advisor==='Alex');return{incoming_at:new Date(e.inbound).toISOString(),status:e.status,generative:a?.generative===true,model:a?.model||null,human_approved:a?.human_approved===true,media_count:a?.media_count||0,graph_http:a?.graph_http||[],graph_accepted_parts:e.parts?.filter(p=>p.state==='accepted').length||0,delivery_receipts:e.parts?.filter(p=>p.delivered===1).length||0,error:e.error||null};
+ const a=results.data.drafts?.find(d=>d.event_ref===e.k&&d.advisor==='Alex');return{incoming_at:new Date(e.inbound).toISOString(),status:e.status,generative:a?.generative===true,model:a?.model||null,human_approved:a?.human_approved===true,quality:a?.quality||null,media_count:a?.media_count||0,graph_http:a?.graph_http||[],graph_accepted_parts:e.parts?.filter(p=>p.state==='accepted').length||0,delivery_receipts:e.parts?.filter(p=>p.delivered===1).length||0,error:e.error||null};
 });
 // External signed receipts are not attributed to the owner's earlier test automatically.
 const output=new URL('./generated/fase2/',import.meta.url);await mkdir(output,{recursive:true});await writeFile(new URL('meta-diagnostics.json',output),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

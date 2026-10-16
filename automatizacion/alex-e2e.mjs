@@ -14,7 +14,7 @@ try{
  const current=await refreshCatalog(catalog);
  for(const path of ['/alex/chat','/alex/status','/alex/handoffs'])assert.equal((await fetch(base+path)).status,401);report.access_http=401;
  for(const [message,sku]of [['Busco un micrófono JBL Quantum Stream, ¿cuánto cuesta y hay stock?','MICR27'],['Busco una batería portátil Philco, ¿cuánto cuesta y hay stock?','POWE003'],['Busco el adaptador de enchufe Europa a Latino, ¿cuánto cuesta y hay stock?','ADAP005']]){
-  await ask(message,a=>{assert.equal(a.generative,true,a.error_code||'Generative response required');assert.ok(a.focus.includes(sku));assert.ok(a.text.includes('$'+current.productos.find(p=>p.sku===sku).promo.toFixed(2)));assert.match(a.text,/stock|unidad/);assert.ok(a.image?.includes('/'+sku.toLowerCase()+'/'));},true);
+  await ask(message,a=>{assert.equal(a.generative,true,a.error_code||'Generative response required');assert.ok(a.focus.includes(sku));assert.ok(a.text.includes('$'+current.productos.find(p=>p.sku===sku).promo.toFixed(2)));assert.match(a.text,/disponibilidad/i);assert.ok(a.image?.includes('/'+sku.toLowerCase()+'/'));},true);
  }
  await ask('Busco una batería portátil para mi celular. Tengo presupuesto 40.',a=>{assert.equal(a.generative,true,a.error_code||'Generative response required');assert.deepEqual(a.focus,['POWE003']);assert.equal(a.memory.budget,40);assert.match(a.text,/Philco/);},true);
  await ask('¿Y esa cuánto cuesta?',a=>{assert.equal(a.generative,true,a.error_code||'Generative response required');assert.ok(a.focus.includes('POWE003'));assert.ok(a.text.includes('$'));assert.equal(a.image,null);});

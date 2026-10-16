@@ -20,7 +20,7 @@ test('PVP is card price; authorized October plans expire at midnight Ecuador',()
  assert.equal(factBook(source,Date.parse('2026-11-01T05:00:00Z')).plans,undefined);assert.match(f.interest,/deben confirmarse/);
 });
 test('Only fresh verified facts can supply price, stock, specs and product IDs stay internal',()=>{
- const r=renderPlan(plan(),source);assert.ok(r.text.startsWith('El Philco'));assert.match(r.text,/\$/);assert.ok(!r.text.includes('POWE003'));
+ const r=renderPlan(plan(),source);assert.ok(r.text.startsWith('💵 Philco'));assert.match(r.text,/\$/);assert.ok(!r.text.includes('POWE003'));
  for(const p of [plan({facts:['invented.price']}),plan({focus:['OTHER']}),plan({facts:['POWE003.cash','POWE003.stock','payment']})])assert.throws(()=>renderPlan(p,source));
  for(const p of [plan({say:'Cuesta $1'}),plan({ask:'Cuesta poco. ¿Lo compras?'})]){const safe=renderPlan(p,source);assert.equal(safe.prose_filtered,true);assert.ok(!safe.text.includes('$1'));assert.ok(!safe.text.includes('Cuesta poco'));}
  for(const say of ['Tiene más memoria','Soy humano','Lo probé personalmente'])assert.equal(renderPlan(plan({say}),source).prose_filtered,true);

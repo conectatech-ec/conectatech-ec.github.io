@@ -35,6 +35,7 @@ jobs:
       - run: node automatizacion/tests/seller.test.mjs
       - run: node automatizacion/tests/alex.test.mjs
       - run: node automatizacion/tests/alex-upgrade.test.mjs
+      - run: node automatizacion/tests/alex-commercial.test.mjs
       - name: Ensayo integral Messenger en runner HTTP local con SQLite real
         run: node automatizacion/messenger-runner-e2e.mjs
       - run: python automatizacion/tests/deploy_test.py

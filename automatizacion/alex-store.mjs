@@ -2,6 +2,7 @@ import baseline from './generated/catalogo.json' with {type:'json'};
 import {generateAlex,policy,redact,quickReplies,fresh} from './alex.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
 import {seal,unseal} from './messenger-control.mjs';
+import {normalizeAlexAction} from './channels.mjs';
 import {reviewInit,reviewCleanup,reviewNext,reviewFetch,cancelConversationReviews} from './alex-review.mjs';
 const json=(x,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
 export function alexInit(box){
@@ -82,13 +83,13 @@ export async function alexFetch(path,req,box){
   const b=await req.json();if(typeof b.message!=='string'||b.message.length>1000)return json({error:'Invalid message'},400);
   if(b.reset===true){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}
   let source;try{source=await refreshCatalog(baseline);}catch{source={...baseline,fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
-  const memory=await loadMemory(box,'demo');const result=await generateAlex(b.message,source,memory,box.env,()=>reserveAI(box));
+  const memory=await loadMemory(box,'demo');const result=await generateAlex(normalizeAlexAction(b.quick_reply_payload)||b.message,source,memory,box.env,()=>reserveAI(box));
   if(!result.image&&result.generative&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
   if(result.action==='erase'){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}else await saveMemory(box,'demo',result.memory);
   const p=source.productos.find(p=>p.sku===result.image);let image=null;
   if(p&&fresh(source)&&p.stock>0&&(!(memory.shown||[]).includes(p.sku)||result.intent==='photo')){try{image=await approvedImage(p);result.memory.shown=[...new Set([...(memory.shown||[]),p.sku])];await saveMemory(box,'demo',result.memory);}catch{}}
   if(Number.isFinite(alexNext(box)))await box.state.storage.setAlarm(alexNext(box));
-  return json({name:'Alex',text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,quick_replies:quickReplies(result),memory:{focus:result.memory.focus,budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,delivery:result.memory.delivery,turns:result.memory.history?.length||0},source_fresh:fresh(source),outbound_enabled:false});
+  return json({name:'Alex',text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,quick_replies:quickReplies(result),facts:result.facts||[],memory:{focus:result.memory.focus,recent_products:result.memory.recent_products||[],budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,delivery:result.memory.delivery,turn_count:result.memory.turn_count||0,turns:result.memory.history?.length||0},source_fresh:fresh(source),outbound_enabled:false});
  }
  return null;
 }

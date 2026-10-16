@@ -116,7 +116,7 @@ jobs:
     needs: preparar
     if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && needs.preparar.outputs.activar == 'true' && needs.preparar.outputs.ready == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     environment: conectatech-piloto-gratis
     steps:
       - uses: actions/checkout@v4
@@ -135,6 +135,7 @@ jobs:
       - run: node automatizacion/tests/seller.test.mjs
       - run: node automatizacion/tests/alex.test.mjs
       - run: node automatizacion/tests/alex-upgrade.test.mjs
+      - run: node automatizacion/tests/alex-commercial.test.mjs
       - id: deploy
         run: python automatizacion/deploy_free.py
         env:
@@ -175,8 +176,8 @@ jobs:
         env:
           CLOUDFLARE_PILOT_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
-      - name: Verificar Alex generativo real, memoria, tres productos y planes autorizados
-        run: node automatizacion/alex-upgrade-e2e.mjs
+      - name: Verificar 24 turnos de Alex real, cambios de tema, botones y cierre comercial
+        run: node automatizacion/alex-commercial-e2e.mjs
         env:
           PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
