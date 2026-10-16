@@ -1,0 +1,50 @@
+{
+  "name": "Alex, tu asesor de CONECTATECH",
+  "approved_by": "instruccion expresa del propietario, 2026-10-16",
+  "pickup": "Av. 6 de Diciembre y La Niña, C.C. Multicentro Shopping, subsuelo, local 3, Quito",
+  "payment_methods": [
+    "contado",
+    "tarjeta"
+  ],
+  "pvp_is_final_card_price": true,
+  "delivery": "Contraentrega en Quito según cobertura y tarifa confirmadas; envío nacional con costo adicional y condiciones de pago por confirmar.",
+  "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+  "max_output_tokens": 384,
+  "max_prompt_bytes": 14000,
+  "daily_neurons_reserved": 8000,
+  "neurons_reserved_per_call": 80,
+  "memory_idle_hours": 24,
+  "max_history_turns": 6,
+  "sources": [
+    "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+    "https://blog.cloudflare.com/build-ai-agents-on-cloudflare/"
+  ],
+  "card_plans": {
+    "valid_month": "2026-10",
+    "timezone": "America/Guayaquil",
+    "authorized_by": "confirmación expresa del propietario en esta conversación",
+    "pacifico": {
+      "interest_free_months": [
+        3
+      ]
+    },
+    "guayaquil_amex": {
+      "interest_free_months": [
+        3
+      ]
+    },
+    "diners": {
+      "interest_free_up_to_months": 6,
+      "interest_months": [
+        12
+      ]
+    },
+    "pichincha": {
+      "interest_free_up_to_months": 6,
+      "interest_months": [
+        12
+      ]
+    },
+    "other_terms": "PVP más intereses; tasa y monto final por confirmar. No se han autorizado tasas ni cálculo de cuotas."
+  }
+}

@@ -81,7 +81,7 @@ export async function handleMessengerWebhook(req,env,scope='development',ctx=nul
    for(const event of events){
     if(event.recipient!==env.META_PAGE_ID||pairingText(event.text).kind!=='no_phrase')continue;
     const key=await hmac(env.META_APP_SECRET,env.META_PAGE_ID+':'+event.id);
-    const r=await stub.fetch('https://inbox/seller/ingest',{method:'POST',body:JSON.stringify({key,sender:String(event.sender||''),timestamp:event.timestamp,skus:detectSkus(event.text),text:event.text.slice(0,1000),handoff:/\b(vendedor|humano|persona|asesor|garant[ií]a|reclamo|cancelar|no\s+me\s+escribas)\b/i.test(event.text)})});
+    const r=await stub.fetch('https://inbox/seller/ingest',{method:'POST',body:JSON.stringify({key,sender:String(event.sender||''),timestamp:event.timestamp,skus:detectSkus(event.text),text:event.text.slice(0,1000),handoff:/\b(vendedor|humano|persona|asesor|reclamo|cancelar|no\s+me\s+escribas)\b/i.test(event.text)})});
     if(!r.ok)return finish({error:'Storage unavailable; Meta may retry'},503,'storage_unavailable');
     const value=await r.json();if(value.queued)queued++;if(value.duplicate)duplicates++;
    }

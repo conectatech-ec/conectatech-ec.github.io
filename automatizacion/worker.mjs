@@ -6,6 +6,7 @@ export {answer} from './commerce.mjs';
 export {MessengerTestInbox} from './messenger-store.mjs';
 import {handleMessengerWebhook,messengerSelfTest} from './messenger.mjs';
 import {setupPage} from './messenger-setup.mjs';
+import {alexPage,privacyPage} from './alex-ui.mjs';
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 async function authorized(req,env) {
   // All pilot endpoints are private; no customer data in GitHub or public logs.
@@ -29,9 +30,17 @@ export default {
    return json({ok:true,pilot:true,seller_transport_implementation:'official_graph_v1',cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&env.META_TEST_SENDER_IDS),messenger_outbound:!!seller?.enabled,meta_ingress_enabled:env.META_INGRESS_ENABLED==='true'});
   }
   if(path==='/webhooks/meta') return handleMessengerWebhook(req,env,'development',ctx);
+  if(path==='/alex'&&req.method==='GET')return alexPage();
+  if(['/privacy','/data-deletion'].includes(path)&&req.method==='GET')return privacyPage(path==='/data-deletion');
   if(path==='/messenger/setup'&&req.method==='GET') return setupPage();
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {
+   if(path==='/alex/chat'&&req.method==='POST'){
+    const b=await body(req);if(!/^[a-zA-Z0-9_-]{16,64}$/.test(b.session_id||''))return json({error:'Invalid session'},400);
+    if(!env.MESSENGER_TEST_INBOX)return json({error:'Storage unavailable'},503);
+    return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('alex-demo-'+b.session_id)).fetch('https://inbox/alex/chat',{method:'POST',body:JSON.stringify(b)});
+   }
+   if(['/alex/status','/alex/handoffs'].includes(path)&&req.method==='GET')return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox'+path);
    if(path==='/messenger/status'&&req.method==='GET') {
     let seller=null;if(env.MESSENGER_TEST_INBOX&&env.META_PAGE_ACCESS_TOKEN)seller=await (await env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox/seller/status')).json();
     return json({mode:env.META_MODE,app_secret_present:!!env.META_APP_SECRET,verify_token_present:!!env.META_VERIFY_TOKEN,page_present:!!env.META_PAGE_ID,test_senders_present:!!env.META_TEST_SENDER_IDS||!!seller?.testers_configured,reception_enabled:env.META_INGRESS_ENABLED==='true',outbound_enabled:!!seller?.enabled,test_seller:seller});

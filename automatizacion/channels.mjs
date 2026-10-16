@@ -11,11 +11,17 @@ export async function verifyMetaSignature(raw,signature,secret) {
  const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['verify']);
  return crypto.subtle.verify('HMAC',key,bytes,new TextEncoder().encode(raw));
 }
+function quickText(message){
+ const m=/^ALEX:(photo|payment|human|retiro|quito|nacional|microphone|battery)(?::(MICR27|POWE003|ADAP005))?$/.exec(message.quick_reply?.payload||'');
+ if(!m)return message.text;
+ const actions={photo:'Quiero ver una fotografía',payment:'¿Cuáles son las formas de pago?',human:'Quiero hablar con una persona',retiro:'Quiero retirar en tienda',quito:'Quiero entrega en Quito',nacional:'Quiero envío nacional',microphone:'Busco un micrófono para grabar mi voz',battery:'Busco una batería portátil'};
+ return actions[m[1]]+(m[2]?' del producto '+m[2]:'');
+}
 export function normalizeEvents(payload,env) {
  const events=[];
  for(const entry of payload.entry||[]) {
   if(payload.object==='page' && env.META_PAGE_ID && String(entry.id)===env.META_PAGE_ID) {
-   for(const e of entry.messaging||[]) if(e.message?.mid&&!e.message.is_echo&&typeof e.message.text==='string') events.push({id:'messenger:'+e.message.mid,canal:'messenger',sender:e.sender?.id,recipient:e.recipient?.id,text:e.message.text.slice(0,64000),timestamp:e.timestamp});
+   for(const e of entry.messaging||[]) if(e.message?.mid&&!e.message.is_echo&&typeof e.message.text==='string') events.push({id:'messenger:'+e.message.mid,canal:'messenger',sender:e.sender?.id,recipient:e.recipient?.id,text:quickText(e.message).slice(0,64000),timestamp:e.timestamp});
   }
   if(payload.object==='whatsapp_business_account' && env.META_WABA_ID && String(entry.id)===env.META_WABA_ID) {
    for(const change of entry.changes||[]) {
