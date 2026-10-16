@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo023-cubo-de-carga-20w-klipxtreme/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Cargador Klipxtreme PowerWall 20 USB-C de 20 W. Potencia: Hasta 20 W nominales. Conexión: USB-C PD 3.0. Tecnología: GaN según empaque.",
   "contenido_venta": "Un cargador. No incluye cable.",
   "compatibilidad": "USB-C PD 3.0 compatible; potencia disponible depende de equipo y cable.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact BLACKKlipxtremePowerWall20fromownerbox. ONEcompactroundedrectangularblackcharger withactualWHITEklipxtremelogoand20Wonbroadside, ONEUSB-CfemaleonshortENDface, TWOparallelUSflatprongsfromoppositeend. Sameboxfront3/4matchingprongpositionandbodyproportions, genuinebodyprintonlyasshown. No secondport, cable, phone, box, marketingicons/captions."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "CUBO023"
     },
     "movil": {
       "solicitado": "CUBO023",
       "sku": "CUBO023",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:17.377Z",
+      "fecha": "2026-10-16T02:01:13.221Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo023-cubo-de-carga-20w-klipxtreme/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cubo023-cubo-de-carga-20w-klipxtreme/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo023-cubo-de-carga-20w-klipxtreme/",
       "archivo_html": "productos/cubo023-cubo-de-carga-20w-klipxtreme/index.html",
       "http": 200,
       "sha256_html": "12cef4cf00b32817b22a32a5cc9a2b5f1af19fb5a4d9f293c46d4c5f4a61d3c9",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo023/CUBO023-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cubo023/CUBO023-01-600.webp?v=fe46646c44c129a7",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo023/CUBO023-01-600.webp?v=fe46646c44c129a7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cubo023-cubo-de-carga-20w-klipxtreme/",
+          "url": "https://conectatech-ec.github.io/productos/cubo023-cubo-de-carga-20w-klipxtreme/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cubo023/CUBO023-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo023/CUBO023-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/CUBO023-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/CUBO023-390.png",
       "sha256": "aa684e0b203cf4078b2f2e567a911042a1bc44506f5c8c4c135e972b9badfb33",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/CUBO023-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/CUBO023-1280.png",
         "sha256": "ea263b281ffe035afb20b78d86ba0c45da48bb68eea9fbc54dcb2d668d9e823c",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

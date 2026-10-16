@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/case002-case-para-disco-nv2-y-nv3/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Case Rihao para SSD M.2 SATA y NVMe. Uso: Carcasa para SSD M.2. Compatibilidad: SATA y NVMe según empaque. Carcasa: Aluminio según referencia.",
   "contenido_venta": "Un case para SSD. No incluye unidad SSD ni accesorios no confirmados.",
   "compatibilidad": "SSD M.2 SATA o NVMe compatible con el case; verificar dimensiones y formato antes de comprar.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact silverGREY RiHAO SSDenclosureillustratedonownerbox. ONEclosedlonglowroundedrectangularGREYmetalbody, seamalonglongside, actualwhiteRiHAOwordmarkcentredTOP. Sameelevatedtopfront3/4, keepshortendwithunseenportsHIDDENexactassource. Wholeenclosureonly,nofabricatedUSBports/cables/SSD/slideopenview, retailbox, 10Gbpsiconsorprops. Preserveflatlowaspectratio."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "CASE002"
     },
     "movil": {
       "solicitado": "CASE002",
       "sku": "CASE002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:18.401Z",
+      "fecha": "2026-10-16T02:01:14.543Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/case002-case-para-disco-nv2-y-nv3/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/case002-case-para-disco-nv2-y-nv3/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/case002-case-para-disco-nv2-y-nv3/",
       "archivo_html": "productos/case002-case-para-disco-nv2-y-nv3/index.html",
       "http": 200,
       "sha256_html": "f21e20dbfa440a7d6bfc385e5ae27a5d53a4cafd8ae2d8d36c4ab7ded02e1553",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/case002/CASE002-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/case002/CASE002-01-600.webp?v=f94c67563155b770",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/case002/CASE002-01-600.webp?v=f94c67563155b770",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/case002-case-para-disco-nv2-y-nv3/",
+          "url": "https://conectatech-ec.github.io/productos/case002-case-para-disco-nv2-y-nv3/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/case002/CASE002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/case002/CASE002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/CASE002-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/CASE002-390.png",
       "sha256": "411600c3803e01ea888e4d177897fb9795be3719c7b5ee7a4f637e09393c4e9f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/CASE002-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/CASE002-1280.png",
         "sha256": "0acce7180590383bef8bb01a56f40860a3727281aca0885392c1680c0e858720",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

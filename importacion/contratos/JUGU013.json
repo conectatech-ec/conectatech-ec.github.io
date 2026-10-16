@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu013-juguete-mini-consola-de-videojuegos-x8/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Consola portátil X8. Modelo: X8. Formato: Consola portátil vertical. Controles: Dos palancas y botones físicos.",
   "contenido_venta": "Una consola portátil. No se declaran controles externos ni accesorios no confirmados.",
   "compatibilidad": "Funciones y contenido según el modelo; verificar antes de comprar.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. EditexactPHYSICALBLACKX8consoleinsideowneropenboxphoto, NOTgreenboxillustration. OneportraitroundedrectangularBLACKbody, LARGEupperOFFscreenwithactualwhiteX8below, actualLEFTanaloguethumbstickjustbelowdisplay, FOURcoloredactionbuttonsRIGHT(GREENtop,BLUEleft,REDright,YELLOWbottom), smallTHREEcentrebuttons, BLACKDpadLOWERLEFT, secondBLACKanaloguethumbstickLOWERRIGHT, smallrealdiagonalspeakergrillecentreLOWER. Exactwholeunitfrontmild3/4, no games/UI, externalcontrollers, greenvariant, extra buttons, retailbox/blisterorprops."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "JUGU013"
     },
     "movil": {
       "solicitado": "JUGU013",
       "sku": "JUGU013",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:40.089Z",
+      "fecha": "2026-10-16T02:01:39.593Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu013-juguete-mini-consola-de-videojuegos-x8/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu013-juguete-mini-consola-de-videojuegos-x8/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu013-juguete-mini-consola-de-videojuegos-x8/",
       "archivo_html": "productos/jugu013-juguete-mini-consola-de-videojuegos-x8/index.html",
       "http": 200,
       "sha256_html": "29bb19a0b01b394e32325f02e9f1838d1d1e204c21064fd385161c16535c6a9a",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu013/JUGU013-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu013/JUGU013-01-600.webp?v=87880c08df375f87",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu013/JUGU013-01-600.webp?v=87880c08df375f87",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu013-juguete-mini-consola-de-videojuegos-x8/",
+          "url": "https://conectatech-ec.github.io/productos/jugu013-juguete-mini-consola-de-videojuegos-x8/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu013/JUGU013-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu013/JUGU013-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/JUGU013-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU013-390.png",
       "sha256": "4a7e8e8244c4c6c7ef333e2317497246693b2f674c2af70c39842e0520b73692",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/JUGU013-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU013-1280.png",
         "sha256": "89a4a03f8a0a48eed18ea8ec9024c16de6007571bddacdac5c185cf3c5387add",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

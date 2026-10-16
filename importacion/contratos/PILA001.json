@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila001-pila-9v-alcalina-pikcell/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Pila alcalina PKCELL de 9 V. Voltaje: 9 V nominales. Tecnología: Alcalina según empaque. Contenido: Una pila.",
   "contenido_venta": "Una pila de 9 V, sin empaque en la portada.",
   "compatibilidad": "Equipo que requiera pila alcalina de 9 V.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact ONEphysical9Vrectangularbattery inownerblister. actualBLUE/orangegeometricwrapwithWHITEPKCELLwordmarkandactual9V6LR61/Ultraalkalineprint. WholeuprightcompactrectangularbodywithroundedmetalrollededgesandactualTWO9VsnapterminalsonTOP(oneSMALLroundpositiveandoneLARGERhexagonalnegative). Maintainshortstout9Vbodyproportions: approximatebodyheight48.5,width26.5,depth17.5 (notlongcylindrical). Mildfront3/4showsactualbroadprintedfaceandtop, no cables, USBport, secondbattery, card/blister/props. Newcleanstamping; doNOTcopymarketingclaimsfromcardontobattery."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "PILA001"
     },
     "movil": {
       "solicitado": "PILA001",
       "sku": "PILA001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:26.405Z",
+      "fecha": "2026-10-16T02:01:23.437Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila001-pila-9v-alcalina-pikcell/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila001-pila-9v-alcalina-pikcell/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila001-pila-9v-alcalina-pikcell/",
       "archivo_html": "productos/pila001-pila-9v-alcalina-pikcell/index.html",
       "http": 200,
       "sha256_html": "8caed56f645008d883444bbf70a8b3298006ee081cca15d8f43a209f47afd0db",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila001/PILA001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila001/PILA001-01-600.webp?v=411c52d31471e473",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila001/PILA001-01-600.webp?v=411c52d31471e473",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila001-pila-9v-alcalina-pikcell/",
+          "url": "https://conectatech-ec.github.io/productos/pila001-pila-9v-alcalina-pikcell/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila001/PILA001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila001/PILA001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/PILA001-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/PILA001-390.png",
       "sha256": "619631be5ccfe5ac40e1044a6bfe2935ec2cafb362795bb314b275bdb7add780",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/PILA001-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/PILA001-1280.png",
         "sha256": "6dcb77ee019f2c0c706a3e4ad0f3f51a8c0c660809eb6620921a46c69f70ea03",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

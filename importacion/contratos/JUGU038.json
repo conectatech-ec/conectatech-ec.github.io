@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu038-juguete-auto-armable-ferrari-rojo/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Auto de carreras armable 8412 de 826 piezas. Construcción: 826 piezas según empaque. Diseño: Automóvil de carreras. Modelo: 8412.",
   "contenido_venta": "Un conjunto armable. La portada muestra el automóvil montado.",
   "compatibilidad": "Armado según instrucciones del modelo.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact REDconstructionblockRACINGCARshownonbothownerboxfaces. ONEassembledTOYBLOCKcar notrealFerrari: lowREDhood/body, WHITEstripesandactualBLUEfrontbumpertrim, fourBLACKtyreswithGREYmulti-spokehubs, transparentheadlamp/windscreenpieces, blackrearwingmountedactualbackposts. ReproduceactualracingdecalsONLYaslegibleinreference, don'tinventnewnumbers/brands. Samewholefront3/4complementingbothviews, no driver, extra car, backdrop/track, box/stickersorprops. Crispcleanplasticstudsandjoins."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "JUGU038"
     },
     "movil": {
       "solicitado": "JUGU038",
       "sku": "JUGU038",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:36.101Z",
+      "fecha": "2026-10-16T02:01:34.799Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu038-juguete-auto-armable-ferrari-rojo/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu038-juguete-auto-armable-ferrari-rojo/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu038-juguete-auto-armable-ferrari-rojo/",
       "archivo_html": "productos/jugu038-juguete-auto-armable-ferrari-rojo/index.html",
       "http": 200,
       "sha256_html": "dd35b40bfa097aad7217f116cee3b0d185a2ec9932e9338eb16afaf132edb7d8",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu038/JUGU038-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu038/JUGU038-01-600.webp?v=5bd6285c3749aca6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu038/JUGU038-01-600.webp?v=5bd6285c3749aca6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu038-juguete-auto-armable-ferrari-rojo/",
+          "url": "https://conectatech-ec.github.io/productos/jugu038-juguete-auto-armable-ferrari-rojo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu038/JUGU038-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu038/JUGU038-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/JUGU038-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU038-390.png",
       "sha256": "06f1f64f6016154cf5aa62d97f6cd546f23ab90bef98e2cb8af39fbc0dd0976a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/JUGU038-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU038-1280.png",
         "sha256": "0e1f141c6ddc526d8bf854b746b3a732d330adb2765c0c4aa91d1749f85c4cbe",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

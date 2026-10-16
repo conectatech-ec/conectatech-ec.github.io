@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila046-pila-recargable-aaa-marca-maxday-pack-de-2/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Pilas recargables Maxday AAA, paquete de 2. Tamaño: AAA. Tecnología: Ni-MH de 1,2 V nominales. Contenido: 2 pilas recargables.",
   "contenido_venta": "Un paquete comercial de 2 pilas AAA, sin empaque en la portada.",
   "compatibilidad": "Equipo y cargador compatibles con pilas AAA Ni-MH de 1,2 V; cargador no incluido.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact physicalMaxday AAAbatteriesfromownerblister. EXACTLY2wholecylindricalcellsparallelVERTICALsidebyside(withsmallspace), samephysicalwrappers/colors Negro y verde, realbodyprint Maxday/Ni-MH1.2V/2800mAh ONLYasactuallyvisible; neveraddunknowncodes/certifications. KeepTRUE AAA dimensions/proportions height44.5,width10.5, lengthtodiameter4.24; DONOTstretchlengthorcreateAAAAthinness. ShowpositiveTOPsilverbuttonandbottomsilverbasedges. Preserveexact2quantity, no charger, retailblister/card, extras, captions, performanceclaimbadges. Frontslight3/4wholecells, pristinecleanmaterials."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "PILA046"
     },
     "movil": {
       "solicitado": "PILA046",
       "sku": "PILA046",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:30.960Z",
+      "fecha": "2026-10-16T02:01:28.523Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila046-pila-recargable-aaa-marca-maxday-pack-de-2/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila046-pila-recargable-aaa-marca-maxday-pack-de-2/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila046-pila-recargable-aaa-marca-maxday-pack-de-2/",
       "archivo_html": "productos/pila046-pila-recargable-aaa-marca-maxday-pack-de-2/index.html",
       "http": 200,
       "sha256_html": "d8950b29b754525dbf35f63cdaeb4b884b79ebc78742436f1a767099d6b2528f",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila046/PILA046-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila046/PILA046-01-600.webp?v=3176c08a0a738722",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila046/PILA046-01-600.webp?v=3176c08a0a738722",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila046-pila-recargable-aaa-marca-maxday-pack-de-2/",
+          "url": "https://conectatech-ec.github.io/productos/pila046-pila-recargable-aaa-marca-maxday-pack-de-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila046/PILA046-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila046/PILA046-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/PILA046-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/PILA046-390.png",
       "sha256": "547c12c3d97c4ce8966656cf7285f768980e8a21042854fb298e2ee85b34111f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/PILA046-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/PILA046-1280.png",
         "sha256": "ec378293bbdacff13fd47dd46d05bc884810edda2d840ba42bf15f28abb0f530",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

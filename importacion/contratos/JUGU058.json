@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu058-juguete-dinosaurio-armable-no13087-1268-piezas/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Dinosaurio mecánico armable 13087. Construcción: 1268 piezas según empaque. Diseño: Dinosaurio mecánico armable. Modelo: 13087.",
   "contenido_venta": "Un conjunto armable. La portada muestra el dinosaurio montado.",
   "compatibilidad": "Armado según instrucciones del modelo.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact NO130871268pcBLOCKmechanicalDINOSAUR inownerbox. ONEassembledplasticBLOCKtoy, notrealanimal/realbones. WHITE/GREYsegmentedT-rexbody, actualTURQUOISEhead/neckinserts, openjawwithwhiteblockteeth, bigroundGOLD/YELLOWgearsattorsoandhindlegjoints, TWOlargearticulatedhindlegsandTWOsmallforearms, longGREYsegmentedtail. Matchcompletehead/body/tailgeometryandblockjoinsfrombothsourceangles, wholeleftfacingfront3/4likeprimarybox. No inventedweapons/LEDs, displayplinth, retailbox, background/props."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "JUGU058"
     },
     "movil": {
       "solicitado": "JUGU058",
       "sku": "JUGU058",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:37.202Z",
+      "fecha": "2026-10-16T02:01:35.943Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu058-juguete-dinosaurio-armable-no13087-1268-piezas/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu058-juguete-dinosaurio-armable-no13087-1268-piezas/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu058-juguete-dinosaurio-armable-no13087-1268-piezas/",
       "archivo_html": "productos/jugu058-juguete-dinosaurio-armable-no13087-1268-piezas/index.html",
       "http": 200,
       "sha256_html": "d3ae86b7673dc30470fe2d159edb3e107d32e2605e3a6704f277b8cccea9c184",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu058/JUGU058-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu058/JUGU058-01-600.webp?v=78771222dbab4931",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu058/JUGU058-01-600.webp?v=78771222dbab4931",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu058-juguete-dinosaurio-armable-no13087-1268-piezas/",
+          "url": "https://conectatech-ec.github.io/productos/jugu058-juguete-dinosaurio-armable-no13087-1268-piezas/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu058/JUGU058-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu058/JUGU058-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/JUGU058-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU058-390.png",
       "sha256": "99ceaceda5815faf944f5131145571bfad4a8de7f9d09e867d3824ec27919392",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/JUGU058-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU058-1280.png",
         "sha256": "96fdd440ec327aecdfb71b8eae0857a7b60fd691d69ec3e0046d37c581e5e481",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

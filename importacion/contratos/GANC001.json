@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/ganc001-gancho-de-mano-deportivo-para-ejercitar/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Ejercitador de mano con resistencia ajustable. Ajuste: Perilla de resistencia. Agarre: Empuñaduras con relieve. Construcción: Resorte metálico visible.",
   "contenido_venta": "Un ejercitador de mano.",
   "compatibilidad": "Ejercicios de agarre adecuados para el usuario; ajuste mediante perilla.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact PHYSICALblue/BLACKhandgripinownerphoto. ONEtwohandleBLUEplasticframe withactualBLACKtexturedrubbergripinserts, silverCOILspringbetweenTOPcurvedleftarchandupperRIGHTbar, actualBLACKribbedresistanceadjustknobatRIGHTendofupperbarwiththinsilvercollar. Preserveallactualpivotrivetsandbottomsmallblackcomponentexactassource, no inventedcounterreadout/strengthnumbers. Wholeonegripperfrontgentle3/4, sameopenedhandleangle, no hand/package/props."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "GANC001"
     },
     "movil": {
       "solicitado": "GANC001",
       "sku": "GANC001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:21.640Z",
+      "fecha": "2026-10-16T02:01:18.275Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/ganc001-gancho-de-mano-deportivo-para-ejercitar/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/ganc001-gancho-de-mano-deportivo-para-ejercitar/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/ganc001-gancho-de-mano-deportivo-para-ejercitar/",
       "archivo_html": "productos/ganc001-gancho-de-mano-deportivo-para-ejercitar/index.html",
       "http": 200,
       "sha256_html": "a0bd7ebcd923f61952f86aba985a57a17ab87e1d7e31b9d69b30b7093cc6336f",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/ganc001/GANC001-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/ganc001/GANC001-01-600.webp?v=b56a13feddbb7e00",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/ganc001/GANC001-01-600.webp?v=b56a13feddbb7e00",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/ganc001-gancho-de-mano-deportivo-para-ejercitar/",
+          "url": "https://conectatech-ec.github.io/productos/ganc001-gancho-de-mano-deportivo-para-ejercitar/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/ganc001/GANC001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/ganc001/GANC001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/GANC001-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/GANC001-390.png",
       "sha256": "c6a2cc630b7cd40833e036ef50c0526566f1a18a9ee0809c2973f4f46df2068d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/GANC001-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/GANC001-1280.png",
         "sha256": "f0c90cae62e6d6473915c2a031fba78d6b5a95fd9d8c93cd4bc56dbaee7abf15",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

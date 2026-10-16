@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu090-juguete-armable-transformer-avion-y-mueco-689-piezas/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Modelo armable transformable FG831 de 689 piezas. Construcción: 689 piezas según empaque. Configuración: Modelo transformable. Portada: Configuración de nave.",
   "contenido_venta": "Un conjunto transformable. La portada muestra una sola configuración de nave.",
   "compatibilidad": "Armado y transformación según instrucciones; no son dos modelos independientes incluidos.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact FG831689pcconstructionblocktoy inownerbox. ShowONEassembledSPACESHIPmodeONLY, NOTrobotandshiptogether. White/lightGREYflatmainhullwithYELLOWaccenttiles, TWOhugeGREYcylindricalenginepodsoneeachsidewithactualORANGEmechanicalblocksattheirends, sourceangularwings/greyforwardnosematchingfrontillustration. Visibleplasticstudsandblockpiecejoins, notrealspaceship, no flames/glow/explosion, starfield, box, minifiguresoradditionalform. Wholemodel samefront3/4frombox, faithfuloriginalshape/geometry."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "JUGU090"
     },
     "movil": {
       "solicitado": "JUGU090",
       "sku": "JUGU090",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:35.119Z",
+      "fecha": "2026-10-16T02:01:33.561Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu090-juguete-armable-transformer-avion-y-mueco-689-piezas/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu090-juguete-armable-transformer-avion-y-mueco-689-piezas/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu090-juguete-armable-transformer-avion-y-mueco-689-piezas/",
       "archivo_html": "productos/jugu090-juguete-armable-transformer-avion-y-mueco-689-piezas/index.html",
       "http": 200,
       "sha256_html": "cb8e9316cd25ff0903e3fae218a52007d8491310b0043e19649f3621c6c47b15",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu090/JUGU090-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu090/JUGU090-01-600.webp?v=0f29e294f14cb4dd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu090/JUGU090-01-600.webp?v=0f29e294f14cb4dd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu090-juguete-armable-transformer-avion-y-mueco-689-piezas/",
+          "url": "https://conectatech-ec.github.io/productos/jugu090-juguete-armable-transformer-avion-y-mueco-689-piezas/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu090/JUGU090-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu090/JUGU090-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/JUGU090-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU090-390.png",
       "sha256": "1ed21bff77bd94b910840e0e7413044339451e44c1e3ba33e111dfd25fe72058",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/JUGU090-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU090-1280.png",
         "sha256": "25ac8b45fdd2fa921ce8684e562af98d3302f8773e8239b2b2a4fe9f14e75739",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

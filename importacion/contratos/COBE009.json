@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cobe009-cobertor-estuche-airpods-pro-2-spigen/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Estuche Spigen para AirPods Pro 2. Compatibilidad: AirPods Pro 2. Diseño: Carcasa morada con bandas negras. Sujeción: Mosquetón incluido según empaque.",
   "contenido_venta": "Un estuche protector con mosquetón. No incluye audífonos.",
   "compatibilidad": "AirPods Pro de segunda generación; comprobar ajuste del estuche.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact Spigenpurple/BLACKAirPodsPro2PROTECTIVECASEonownerbox. ONEwideLOWroundedrectangularPURPLEclosedcase, actualthickBLACKhorizontalmiddlebandwithgenuinewhiteSpigenlogoandsmallGREENindicatorpoint, BLACKlowerband/frame. ActualBLACKelongatedovalcarabineronRIGHTattachedsideviarealshortloopandmetalringassource. PreserveexactshortwideAirPodsPROcaseproportions, modestfront3/4wholecase+carabiner. No earbuds/chargingcaseinsides, phones, inventedports, retailbox, captions. Smallaccessoryoccupies65%framewidth."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "COBE009"
     },
     "movil": {
       "solicitado": "COBE009",
       "sku": "COBE009",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:20.525Z",
+      "fecha": "2026-10-16T02:01:16.914Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cobe009-cobertor-estuche-airpods-pro-2-spigen/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/cobe009-cobertor-estuche-airpods-pro-2-spigen/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cobe009-cobertor-estuche-airpods-pro-2-spigen/",
       "archivo_html": "productos/cobe009-cobertor-estuche-airpods-pro-2-spigen/index.html",
       "http": 200,
       "sha256_html": "eed1adc756e37db28109a25fbbe5445800aaa13c218a3137fb2b7d55aae80387",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cobe009/COBE009-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/cobe009/COBE009-01-600.webp?v=88fc7bd8c4326761",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cobe009/COBE009-01-600.webp?v=88fc7bd8c4326761",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/cobe009-cobertor-estuche-airpods-pro-2-spigen/",
+          "url": "https://conectatech-ec.github.io/productos/cobe009-cobertor-estuche-airpods-pro-2-spigen/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/cobe009/COBE009-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cobe009/COBE009-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/COBE009-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/COBE009-390.png",
       "sha256": "947a0c87f1502dfde3aebe8a27b33a3580a0346ffa0b13f4b03adbd28580146d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/COBE009-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/COBE009-1280.png",
         "sha256": "1c8efa155d533dd184e73b6b295cc3e8fd323d0255152163c57ffcfc0f8b04a7",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

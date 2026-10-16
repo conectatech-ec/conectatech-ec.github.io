@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila005-pila-bateria-9v-recargable-maxday/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Pila recargable Maxday Ni-MH de 9 V. Voltaje: 9 V nominales. Tecnología: Ni-MH recargable según empaque. Contenido: Una pila.",
   "contenido_venta": "Una pila de 9 V, sin empaque en la portada.",
   "compatibilidad": "Dispositivo compatible con pila Ni-MH de 9 V y cargador adecuado, no incluido.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact ONEphysical9Vrectangularbattery inownerblister. BLACKwrapwithGREENdiagonalbands, actualwhiteMaxday/Ni-MH/9V/400mAhONLYasphysicalbody. WholeuprightcompactrectangularbodywithroundedmetalrollededgesandactualTWO9VsnapterminalsonTOP(oneSMALLroundpositiveandoneLARGERhexagonalnegative). Maintainshortstout9Vbodyproportions: approximatebodyheight48.5,width26.5,depth17.5 (notlongcylindrical). Mildfront3/4showsactualbroadprintedfaceandtop, no cables, USBport, secondbattery, card/blister/props. Newcleanstamping; doNOTcopymarketingclaimsfromcardontobattery."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "PILA005"
     },
     "movil": {
       "solicitado": "PILA005",
       "sku": "PILA005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:27.432Z",
+      "fecha": "2026-10-16T02:01:24.723Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila005-pila-bateria-9v-recargable-maxday/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila005-pila-bateria-9v-recargable-maxday/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila005-pila-bateria-9v-recargable-maxday/",
       "archivo_html": "productos/pila005-pila-bateria-9v-recargable-maxday/index.html",
       "http": 200,
       "sha256_html": "fb78b0090ecee8025bf53dd1fcfb3a41aca5d2685228d264c6e5853c71b105af",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila005/PILA005-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila005/PILA005-01-600.webp?v=bc176c659aa833c1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila005/PILA005-01-600.webp?v=bc176c659aa833c1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila005-pila-bateria-9v-recargable-maxday/",
+          "url": "https://conectatech-ec.github.io/productos/pila005-pila-bateria-9v-recargable-maxday/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila005/PILA005-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila005/PILA005-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/PILA005-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/PILA005-390.png",
       "sha256": "4f9bfe375136a230023687bc0b6c41c2080eef61924ce54f70df8ccde92751a8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/PILA005-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/PILA005-1280.png",
         "sha256": "f525c533b9bf568724a296ba067fe761e3ab17cc42d6e5f2d290f7ae42b45a21",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

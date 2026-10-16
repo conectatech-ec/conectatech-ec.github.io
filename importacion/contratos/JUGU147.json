@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu147-juguete-perro-electronico-rosado/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Perro electrónico con ruedas. Formato: Perro electrónico de juguete. Movimiento: Ruedas con rodillos. Acabado: Rosado y blanco.",
   "contenido_venta": "Un perro electrónico de juguete. Accesorios no confirmados no se declaran incluidos.",
   "compatibilidad": "Alimentación y control según instrucciones del modelo.",
@@ -185,14 +185,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact PINKvariantphysicalSTUNTwheelrobotdoginownerFRONTwindow. UseactualPINKbody/WHITEhubs/PINKwheelrollersfromphysicaltoy, sharedbodygeometryfromWHITEvariantboxBACKillustration ONLY. ONEcompactrobotDOGwithlowwhite/pinkroundedbody, BLACKroundedrectangularFACEwithactualbluepixel-stylepair-eyesasreference, actualshortuprightears, legassemblieswithrealomnidirectionalrollerwheels. MatchEXACTnumber/placementofwheelsassource; doNOTaddinventedtires. Wholeoneunit samefront3/4asboxmodelillustration, no picturedremoteincover, cable, batteries, retailbox, motionarrows/musicnotes/sceneryorprops. Newpinktoyfinish."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "JUGU147"
     },
     "movil": {
       "solicitado": "JUGU147",
       "sku": "JUGU147",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:42.909Z",
+      "fecha": "2026-10-16T02:01:43.369Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +221,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu147-juguete-perro-electronico-rosado/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/jugu147-juguete-perro-electronico-rosado/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu147-juguete-perro-electronico-rosado/",
       "archivo_html": "productos/jugu147-juguete-perro-electronico-rosado/index.html",
       "http": 200,
       "sha256_html": "11b1df5cdc873746af640678379a60832ecb20c12e5b549be61fd33110a8383d",
@@ -227,7 +231,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu147/JUGU147-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/jugu147/JUGU147-01-600.webp?v=168be7548b3f2178",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu147/JUGU147-01-600.webp?v=168be7548b3f2178",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,32 +240,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/jugu147-juguete-perro-electronico-rosado/",
+          "url": "https://conectatech-ec.github.io/productos/jugu147-juguete-perro-electronico-rosado/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/jugu147/JUGU147-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu147/JUGU147-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/JUGU147-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU147-390.png",
       "sha256": "4dd5571e1eef9989b33f7dc7d68fb8e7143f553e8a1d4596541dbfe8bbcee90c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/JUGU147-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/JUGU147-1280.png",
         "sha256": "d8261fec675cca0e4f4556f02f56cf28888531ccd5db07fbe9c5c7905062ae55",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

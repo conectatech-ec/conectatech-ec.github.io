@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila004-pila-9v-maxday/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Pila alcalina Maxday de 9 V. Voltaje: 9 V nominales. Tecnología: Alcalina según empaque. Contenido: Una pila.",
   "contenido_venta": "Una pila de 9 V, sin empaque en la portada.",
   "compatibilidad": "Equipo que requiera pila alcalina de 9 V.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact ONEphysical9Vrectangularbattery inownerblister. SILVERupperwrapwithBLACKpanelactualwhiteMaxday/SUPERALKALINE/6LR619V, DARKBLUElowerwrapwithBLACKXmark. WholeuprightcompactrectangularbodywithroundedmetalrollededgesandactualTWO9VsnapterminalsonTOP(oneSMALLroundpositiveandoneLARGERhexagonalnegative). Maintainshortstout9Vbodyproportions: approximatebodyheight48.5,width26.5,depth17.5 (notlongcylindrical). Mildfront3/4showsactualbroadprintedfaceandtop, no cables, USBport, secondbattery, card/blister/props. Newcleanstamping; doNOTcopymarketingclaimsfromcardontobattery."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "PILA004"
     },
     "movil": {
       "solicitado": "PILA004",
       "sku": "PILA004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:25.249Z",
+      "fecha": "2026-10-16T02:01:22.119Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila004-pila-9v-maxday/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/pila004-pila-9v-maxday/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila004-pila-9v-maxday/",
       "archivo_html": "productos/pila004-pila-9v-maxday/index.html",
       "http": 200,
       "sha256_html": "e24f233df8ce15ddc2c1dd6c47a16b85bebfad8c641b002c2d2c9a0776bac0d1",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila004/PILA004-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/pila004/PILA004-01-600.webp?v=2a0c6bc5efc8ee32",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila004/PILA004-01-600.webp?v=2a0c6bc5efc8ee32",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/pila004-pila-9v-maxday/",
+          "url": "https://conectatech-ec.github.io/productos/pila004-pila-9v-maxday/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/pila004/PILA004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila004/PILA004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/PILA004-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/PILA004-390.png",
       "sha256": "e8d7078329e45624bc02f1b5d1b610d2305bacb4d29700bc5dda2f00bc07133f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/PILA004-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/PILA004-1280.png",
         "sha256": "8c0e6484af24e1302758030fbdc51c629b908a2a8ec7107abb3b96075c2e70a0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true

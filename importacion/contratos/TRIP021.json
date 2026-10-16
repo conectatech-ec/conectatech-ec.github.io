@@ -80,9 +80,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip021-tripode-selfie-k26/",
-  "fecha_verificacion": "2026-10-16T01:38:21.684789+00:00",
+  "fecha_verificacion": "2026-10-16T01:52:57.605523+00:00",
   "descripcion": "Trípode selfie K26 con control integrado. Formato: Trípode y palo selfie. Extensión: Hasta 90 cm nominales según empaque. Control: Mando integrado según referencia.",
   "contenido_venta": "Un trípode selfie con control integrado. No incluye teléfono.",
   "compatibilidad": "Teléfono que ajuste a la pinza del modelo; comprobar conexión del control.",
@@ -169,14 +169,18 @@
       "evidencia": "Edición/representación comercial asistida de referencias proporcionadas por propietario; fondo blanco y acabado nuevo; modelo/componentes cotejados. Exact K26BLACKfoldedselfiesticktripodonownerbox. ShowONEwholeFOLDEDcompactclosedbodyasreference, actuallongcylindricaltelescopingcolumnRIGHT, foldedphoneclampUPPERend, broadcurvedBLACKhandleLEFTwithrealovalremoteattachedlowerpart. Correctslotsandhingefromillustration. No deployedlegsorphone/unshowngeometries, extra remote, retailbox/900mmcaption. Studio3/4similarreference, pristineblack."
     },
     "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Candidato en rama independiente; no desplegado."
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T01:52:57.605523+00:00",
+      "reporte": "reportes/continuacion-093/http-publicacion.json",
+      "archivo": "reportes/continuacion-093/http-publicacion.json",
+      "sha256": "39175a74831e77c11d68206a86b76aa60960d05a1293311e9cc6f6875ad76e4b",
+      "sku": "TRIP021"
     },
     "movil": {
       "solicitado": "TRIP021",
       "sku": "TRIP021",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T01:39:13.604Z",
+      "fecha": "2026-10-16T02:01:08.807Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -201,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip021-tripode-selfie-k26/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/trip021-tripode-selfie-k26/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip021-tripode-selfie-k26/",
       "archivo_html": "productos/trip021-tripode-selfie-k26/index.html",
       "http": 200,
       "sha256_html": "6b6910ff6ca30f4e5fbe65b03cef2d7365702f72df526401c8516c5657f9b0fc",
@@ -211,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip021/TRIP021-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/trip021/TRIP021-01-600.webp?v=11c1830261a95a94",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip021/TRIP021-01-600.webp?v=11c1830261a95a94",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -220,32 +224,32 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/trip021-tripode-selfie-k26/",
+          "url": "https://conectatech-ec.github.io/productos/trip021-tripode-selfie-k26/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/trip021/TRIP021-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip021/TRIP021-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-093/qa-local/movil/TRIP021-390.png",
+      "archivo": "reportes/continuacion-093/qa-publica/movil/TRIP021-390.png",
       "sha256": "e3d7673169e6a631a7a51109fb9863616852465b557af4c3f4f1ef5f2c494c5f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-093/qa-local/movil/TRIP021-1280.png",
+        "archivo": "reportes/continuacion-093/qa-publica/movil/TRIP021-1280.png",
         "sha256": "056335f2ab464d8d288339228640a50703ae05762eadf179641090d2118a4190",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
