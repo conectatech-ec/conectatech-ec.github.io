@@ -1,0 +1,126 @@
+{
+  "modo": "aplicar",
+  "resultados": [
+    {
+      "sku": "JUGU040",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "JUGU041",
+        "JUGU076"
+      ]
+    },
+    {
+      "sku": "JUGU041",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "JUGU040",
+        "JUGU076"
+      ]
+    },
+    {
+      "sku": "JUGU076",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "JUGU040",
+        "JUGU041"
+      ]
+    },
+    {
+      "sku": "TECL005",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "TECL013",
+        "MOUS016",
+        "MOUS021"
+      ]
+    },
+    {
+      "sku": "TECL013",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "TECL005",
+        "MOUS016",
+        "MOUS021"
+      ]
+    },
+    {
+      "sku": "MOUS016",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "TECL005",
+        "TECL013",
+        "MOUS021"
+      ]
+    },
+    {
+      "sku": "AUDI025",
+      "estado": "aplicado_local",
+      "campos": [
+        "clasificacionComercial"
+      ],
+      "relacionados": []
+    },
+    {
+      "sku": "MOUS021",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "TECL005",
+        "TECL013",
+        "MOUS016"
+      ]
+    },
+    {
+      "sku": "TECL022",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "TECL005",
+        "TECL013",
+        "MOUS016"
+      ]
+    },
+    {
+      "sku": "TECL031",
+      "estado": "sin_cambios",
+      "campos": [],
+      "relacionados": [
+        "TECL005",
+        "TECL013",
+        "MOUS016"
+      ]
+    },
+    {
+      "sku": "TECL021",
+      "estado": "aplicado_local",
+      "campos": [
+        "categoriaComercial",
+        "categoriaOriginal",
+        "contenidoVenta",
+        "fechaInventario",
+        "marca",
+        "modelo",
+        "presentacion",
+        "relacionados",
+        "stockTiempoReal",
+        "unidadVenta",
+        "variante"
+      ],
+      "relacionados": [
+        "TECL005",
+        "TECL013",
+        "MOUS016"
+      ]
+    }
+  ],
+  "precios_stock_sku_urls_imagenes_conservados": true,
+  "aprobados": 11,
+  "pendientes": 0,
+  "nota": "Metadatos locales. El importador editorial sigue a cargo de títulos, descripción y características; la publicación requiere verificación móvil y HTTP."
+}
