@@ -106,9 +106,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl114-cable-hdmi-20m/",
-  "fecha_verificacion": "2026-10-16T20:51:17.674207+00:00",
+  "fecha_verificacion": "2026-10-16T21:18:31.282969+00:00",
   "descripcion": "Cable HDMI de 20 Metros — Colores Surtidos. Longitud: 20 metros. Conexión: HDMI. Presentación de venta: Un cable. Variantes: Colores surtidos según disponibilidad. Imagen de portada: Detalle de un conector; no muestra el cable completo.",
   "contenido_venta": "Un cable HDMI de 20 metros. Colores surtidos según disponibilidad. La portada muestra el detalle de un conector, no el cable completo.",
   "presentacion": "sin caja",
@@ -161,7 +161,7 @@
       "solicitado": "CABL114",
       "sku": "CABL114",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T20:53:51.947Z",
+      "fecha": "2026-10-16T21:18:31.835Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -186,7 +186,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl114-cable-hdmi-20m/",
-      "url_comprobada": "http://127.0.0.1:8803/productos/cabl114-cable-hdmi-20m/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl114-cable-hdmi-20m/",
       "archivo_html": "productos/cabl114-cable-hdmi-20m/index.html",
       "http": 200,
       "sha256_html": "d28ebce72bdb6d223ad27baf903cc23c5158e8c8a175bec58656527caf4e2b60",
@@ -196,7 +196,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl114/CABL114-01.webp",
-        "url_cargada": "http://127.0.0.1:8803/imagenes/cabl114/CABL114-01-600.webp?v=dda5acb130529a08",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl114/CABL114-01-600.webp?v=dda5acb130529a08",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -205,36 +205,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8803/productos/cabl114-cable-hdmi-20m/",
+          "url": "https://conectatech-ec.github.io/productos/cabl114-cable-hdmi-20m/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8803/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8803/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8803/imagenes/cabl114/CABL114-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl114/CABL114-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-103/qa-local/movil/CABL114-390.png",
+      "archivo": "reportes/continuacion-103/qa-publica/movil/CABL114-390.png",
       "sha256": "a2a784f7efe60132770c9272e428fd3998db9ef5ea42473aca16de41f3499932",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-103/qa-local/movil/CABL114-1280.png",
+        "archivo": "reportes/continuacion-103/qa-publica/movil/CABL114-1280.png",
         "sha256": "88b1a5a9d3894ca532252af823457194fdc303ca0ce254e97febc1f9e742c63d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T21:18:31.282969+00:00",
+      "archivo": "reportes/continuacion-103/http-publicacion.json",
+      "reporte": "reportes/continuacion-103/http-publicacion.json",
+      "sha256": "9a60bd585da65b782bfde3c13610cee44be77959eff673d255f49d4ea704efe9",
+      "sku": "CABL114"
     }
   },
   "beneficios": [
