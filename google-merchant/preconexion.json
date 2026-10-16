@@ -1,0 +1,76 @@
+{
+  "merchant_center": "5874003439",
+  "verificado_en_utc": "2026-10-16T17:44:27.657145+00:00",
+  "fuente_commit": "2021b04123cdf16ce0da7320f3382d2fa0b167ef",
+  "fuente_rama": "main (lectura solamente)",
+  "inventario_sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
+  "fecha_corte": "10-10-2026",
+  "antiguedad_corte_dias": 6,
+  "articulos_feed": 674,
+  "articulos_con_http_publico_verificado": 674,
+  "coherencia_catalogo_maestro": {
+    "sku_revisados": 1170,
+    "discrepancias": []
+  },
+  "precio_final_documentado": "REFERENCIA-OFICIAL: promo_contado = V. TOTAL; PVP final = PVP + importe IVA. Ambos IVA incluido. No se recalculan.",
+  "fechas_inventario_en_articulos": {
+    "None": 558,
+    "10/10/2026": 116
+  },
+  "stock_tiempo_real_acreditado": 0,
+  "observaciones_fichas": {
+    "fichas_con_whatsapp": 674,
+    "fichas_con_contraentrega_quito": 674,
+    "fichas_con_precio_sujeto_confirmacion": 674,
+    "fichas_con_formulario": 0
+  },
+  "enlaces_politicas_en_fichas": [],
+  "estado": "BLOQUEADO_PARA_PUBLICACION",
+  "publicacion_habilitada": false,
+  "bloqueos": [
+    {
+      "tema": "stock",
+      "estado": "NO_ACREDITADO_VIGENTE",
+      "accion": "Obtener corte depurado vigente de 593 con fecha de extracción, SKU, stock y precios finales. No importar ni modificar producción desde esta integración."
+    },
+    {
+      "tema": "precio",
+      "estado": "IVA_DOCUMENTADO; COMPRA_FINAL_PENDIENTE",
+      "accion": "Confirmar que el precio contado es accesible al comprador y coincide con el total del producto al comprar, con gastos de envío separados y conocidos antes de confirmar."
+    },
+    {
+      "tema": "compra",
+      "estado": "NO_ACREDITADA_COMPRA_COMPLETA_EN_SITIO",
+      "accion": "Demostrar proceso completo de pedido en el sitio, confirmación y entrega estimada; WhatsApp de consulta y panel de cotizaciones no acreditan este requisito. Contraentrega es admisible como método de pago, pero no reemplaza un proceso de compra verificable."
+    },
+    {
+      "tema": "envios",
+      "estado": "COBERTURA_COSTO_PLAZOS_PENDIENTES",
+      "accion": "Documentar cobertura real (Quito u otras zonas), tarifas, manejo y tránsito. No asumir cobertura nacional ni envío gratis. Ecuador no aparece en la lista general de países donde el atributo shipping es obligatorio; eso no permite informar condiciones falsas o no aclarar gastos de compra."
+    },
+    {
+      "tema": "devoluciones",
+      "estado": "POLITICA_COMPLETA_NO_IDENTIFICADA",
+      "accion": "Facilitar URL pública con condiciones reales de devolución/reembolso, plazos, procedimiento y costos. Garantía no equivale a devolución."
+    },
+    {
+      "tema": "cuenta",
+      "estado": "SIN_ACCESO_CONECTADO",
+      "accion": "En la cuenta 5874003439 comprobar dominio verificado/reclamado, datos de empresa y contacto, Ecuador/español/USD y diagnósticos. No se modificó la cuenta."
+    }
+  ],
+  "siguiente_paso": "Confirmar en Merchant Center 5874003439 la verificación y reclamación del dominio del catálogo; mantener los destinos excluidos. Para activar productos hacen falta stock vigente, compra completa y políticas reales.",
+  "automatizacion": {
+    "cada_ejecucion": "Obtiene el HEAD actual de main en una copia separada, valida y escribe únicamente en feeds/google-merchant-ec.",
+    "programacion_activa": false,
+    "motivo": "GitHub solo ejecuta schedules desde la rama predeterminada. El workflow permanece en la rama aislada; no se modificó main.",
+    "activacion_sin_main": "Requiere un ejecutor programado independiente gratuito autorizado; no se ha creado ni contratado ningún servicio."
+  },
+  "fuentes_oficiales": [
+    "https://support.google.com/merchants/answer/160637?hl=es",
+    "https://support.google.com/merchants/answer/10249082?hl=es",
+    "https://support.google.com/merchants/answer/13889434?hl=es",
+    "https://support.google.com/merchants/answer/14011730?hl=es"
+  ],
+  "costo": 0
+}
