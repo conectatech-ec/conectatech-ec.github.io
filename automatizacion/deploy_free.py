@@ -44,12 +44,12 @@ def check_connection(api):
     if not isinstance(settings,dict): raise ValueError('Pilot settings could not be verified')
     # Avoid discarding or inheriting production bindings from an unexpected Worker.
     for b in settings.get('bindings',[]):
-        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN'} or b.get('type') not in {'ai','plain_text','secret_text'}:
+        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE'} or b.get('type') not in {'ai','plain_text','secret_text'}:
             raise ValueError('Unexpected existing binding; review isolated pilot before upload')
     return True
 
 def worker_metadata():
-    return {'main_module':'worker.mjs','compatibility_date':'2026-10-01','bindings':[{'type':'ai','name':'AI'},{'type':'plain_text','name':'LIVE_DATA','text':'true'},{'type':'plain_text','name':'FREE_TIER_VERIFIED','text':'true'}],'observability':{'enabled':False}}
+    return {'main_module':'worker.mjs','compatibility_date':'2026-10-01','bindings':[{'type':'ai','name':'AI'},{'type':'plain_text','name':'LIVE_DATA','text':'true'},{'type':'plain_text','name':'FREE_TIER_VERIFIED','text':'true'},{'type':'plain_text','name':'PILOT_RELEASE','text':os.environ.get('GITHUB_SHA','local-unreleased')}],'observability':{'enabled':False}}
 def report_connection(result):
     path=ROOT/'generated/fase2/connection.json';path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

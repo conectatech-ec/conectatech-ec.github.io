@@ -16,7 +16,21 @@ async function send(path,options={}) {
 }
 const auth={Authorization:`Bearer ${token}`};
 try {
- const health=await send('/health');assert.equal(health.status,200);const healthData=await health.json();assert.equal(healthData.pilot,true);assert.equal(healthData.cloud_bindings,false,'No D1 in this deployment');report.health=healthData;
+ let healthData;
+ const attempts=deployed?15:1;
+ for(let attempt=1;attempt<=attempts;attempt++) {
+  try {
+   const health=await send('/health');const raw=await health.text();
+   if(health.status===200) {
+    const data=JSON.parse(raw);
+    if(data.pilot===true&&(!process.env.EXPECTED_RELEASE||data.release===process.env.EXPECTED_RELEASE)) {healthData=data;break;}
+   }
+  } catch { /* During edge propagation a previous placeholder can be served. */ }
+  console.log(JSON.stringify({check:'wait_for_pilot_release',attempt}));
+  if(attempt<attempts) await new Promise(resolve=>setTimeout(resolve,2000));
+ }
+ assert.ok(healthData,'Expected pilot release not served after bounded propagation wait');
+ assert.equal(healthData.cloud_bindings,false,'No D1 in this deployment');report.health=healthData;
  for(const [path,method,headers] of [['/chat','POST',{}],['/chat','POST',{Authorization:'Bearer deliberately-invalid-test-token'}],['/ready','GET',{}],['/banners/MICR27','GET',{}],['/interesados','POST',{}]]) {
   const r=await send(path,{method,headers});assert.equal(r.status,401,`${path} must reject unauthenticated access`);report.access_tests.push({path,method,status:r.status,wrong_token:!!headers.Authorization});
  }

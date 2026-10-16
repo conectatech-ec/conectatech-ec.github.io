@@ -31,7 +31,7 @@ async function body(req) {return JSON.parse(await limitedText(req,8000));}
 export default {
  async fetch(req,env) {
   const path=new URL(req.url).pathname;
-  if(path==='/health') return json({ok:true,pilot:true,cloud_bindings:!!env.DB,ai_binding:!!env.AI});
+  if(path==='/health') return json({ok:true,pilot:true,cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null});
   if(path==='/webhooks/meta') {
    if(req.method==='GET') return verifyMetaWebhook(req,env);
    if(req.method!=='POST'||!env.DB) return json({error:'Webhook not configured'},503);
