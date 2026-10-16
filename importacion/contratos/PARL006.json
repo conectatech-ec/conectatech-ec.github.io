@@ -79,9 +79,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl006-parlante-zioli-con-luces/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Parlante ZIDLI D3 con luces. Presentación de venta: Un parlante ZIDLI D3 con luces..",
   "contenido_venta": "Un parlante ZIDLI D3 con luces.",
   "presentacion": "sin caja",
@@ -135,7 +135,7 @@
       "solicitado": "PARL006",
       "sku": "PARL006",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:14.487Z",
+      "fecha": "2026-10-16T05:56:59.564Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -157,7 +157,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/parl006-parlante-zioli-con-luces/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/parl006-parlante-zioli-con-luces/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/parl006-parlante-zioli-con-luces/",
       "archivo_html": "productos/parl006-parlante-zioli-con-luces/index.html",
       "http": 200,
       "sha256_html": "c83635223872c0c52d7fd942f4da79ac7964f797b2212f53563256997bf0aaa3",
@@ -167,7 +167,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/parl006/PARL006-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/parl006/PARL006-01-600.webp?v=1972c28f7e5a07a2",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/parl006/PARL006-01-600.webp?v=1972c28f7e5a07a2",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -176,51 +176,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/parl006-parlante-zioli-con-luces/",
+          "url": "https://conectatech-ec.github.io/productos/parl006-parlante-zioli-con-luces/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/parl006/PARL006-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/parl006/PARL006-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/PARL006-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/PARL006-390.png",
       "sha256": "b84460c7b1184b39eff964ed0a8ffb0032587d311bd51d2c11b9b716ecf7d525",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/PARL006-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/PARL006-1280.png",
         "sha256": "db7caef07421c62f088913a431623cb4ae93254b7356906d2811bf8e60a75a31",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "PARL006"
     }
   }
 }

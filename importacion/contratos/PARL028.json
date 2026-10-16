@@ -79,9 +79,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Parlante Monster Project 1. Presentación de venta: Un parlante portátil Monster Project 1..",
   "contenido_venta": "Un parlante portátil Monster Project 1.",
   "presentacion": "sin caja",
@@ -135,7 +135,7 @@
       "solicitado": "PARL028",
       "sku": "PARL028",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:30:56.796Z",
+      "fecha": "2026-10-16T05:56:35.894Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -157,7 +157,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
       "archivo_html": "productos/parl028-parlante-monster-project-1/index.html",
       "http": 200,
       "sha256_html": "e8df29f97e8f5b4f73c8bcb6d3dad96738a8e27e5a2461e1574d436d740384e6",
@@ -167,7 +167,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/parl028/PARL028-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/parl028/PARL028-01-600.webp?v=9f6dafaea3cf9cdc",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/parl028/PARL028-01-600.webp?v=9f6dafaea3cf9cdc",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -176,51 +176,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/parl028/PARL028-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/parl028/PARL028-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/radi001-radio-parlante-rca-53hsrcl-con-despertador/",
+          "url": "https://conectatech-ec.github.io/productos/radi001-radio-parlante-rca-53hsrcl-con-despertador/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/PARL028-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/PARL028-390.png",
       "sha256": "940c9635ce09bc5177339c10cf56fc12847777fee9eea5880a22cd9e2803e444",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/PARL028-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/PARL028-1280.png",
         "sha256": "f376520474e6e16e2c8c9e33f04650bcd4ab6b9ec0ae9ba3b5f42a6858df4c90",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "PARL028"
     }
   }
 }

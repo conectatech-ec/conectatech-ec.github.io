@@ -61,9 +61,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila031-pila-c-rca/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Pila C RCA. Presentación de venta: Un blíster de dos pilas C RCA. La imagen muestra las dos celdas fuera del blíster..",
   "contenido_venta": "Un blíster de dos pilas C RCA. La imagen muestra las dos celdas fuera del blíster.",
   "presentacion": "sin caja",
@@ -115,7 +115,7 @@
       "solicitado": "PILA031",
       "sku": "PILA031",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:20.395Z",
+      "fecha": "2026-10-16T05:57:07.373Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -137,7 +137,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila031-pila-c-rca/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/pila031-pila-c-rca/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila031-pila-c-rca/",
       "archivo_html": "productos/pila031-pila-c-rca/index.html",
       "http": 200,
       "sha256_html": "480ecd934319941f84479f657e81ebd221482ec0ccbd4e5baa47502cdd186e2a",
@@ -147,7 +147,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila031/PILA031-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/pila031/PILA031-01-600.webp?v=9fef4f2fae061976",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila031/PILA031-01-600.webp?v=9fef4f2fae061976",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -156,51 +156,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/pila031-pila-c-rca/",
+          "url": "https://conectatech-ec.github.io/productos/pila031-pila-c-rca/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/pila031/PILA031-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila031/PILA031-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/pila067-pila-aaaa-camelion-pack-de-2/",
+          "url": "https://conectatech-ec.github.io/productos/pila067-pila-aaaa-camelion-pack-de-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/pila028-pila-aaa-rca-pack-de-6/",
+          "url": "https://conectatech-ec.github.io/productos/pila028-pila-aaa-rca-pack-de-6/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/pila015-pila-27a-pikcell/",
+          "url": "https://conectatech-ec.github.io/productos/pila015-pila-27a-pikcell/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/PILA031-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/PILA031-390.png",
       "sha256": "97d0f2841af55c14fa8ec85480becee3ec122e5bf036da225c84f6b917e87ded",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/PILA031-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/PILA031-1280.png",
         "sha256": "b2fe9c3b9285dfa186cf2ee1a274ea0b37451a8c2fce784ae5242dd9eca4d665",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "PILA031"
     }
   }
 }

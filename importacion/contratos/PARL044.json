@@ -79,9 +79,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl044-parlante-ultrablaster-klipxtreme/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Parlante Ultrablaster Klipxtreme. Presentación de venta: Un sistema UltraBlaster: parlante, adaptador de corriente, dos micrófonos inalámbricos, trípode, control remoto, cuatro pilas AA, dos pilas AAA y manual según contenido confirmado del empaque. La imagen muestra el parlante principal..",
   "contenido_venta": "Un sistema UltraBlaster: parlante, adaptador de corriente, dos micrófonos inalámbricos, trípode, control remoto, cuatro pilas AA, dos pilas AAA y manual según contenido confirmado del empaque. La imagen muestra el parlante principal.",
   "presentacion": "sin caja",
@@ -135,7 +135,7 @@
       "solicitado": "PARL044",
       "sku": "PARL044",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:09.888Z",
+      "fecha": "2026-10-16T05:56:53.313Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -157,7 +157,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/parl044-parlante-ultrablaster-klipxtreme/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/parl044-parlante-ultrablaster-klipxtreme/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/parl044-parlante-ultrablaster-klipxtreme/",
       "archivo_html": "productos/parl044-parlante-ultrablaster-klipxtreme/index.html",
       "http": 200,
       "sha256_html": "faf3bb0243a0a47166cf566b7141c47f520004418b9068fe509ec96c048ddf95",
@@ -167,7 +167,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/parl044/PARL044-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/parl044/PARL044-01-600.webp?v=3cdadbc04ba9f06d",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/parl044/PARL044-01-600.webp?v=3cdadbc04ba9f06d",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -176,51 +176,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/parl044-parlante-ultrablaster-klipxtreme/",
+          "url": "https://conectatech-ec.github.io/productos/parl044-parlante-ultrablaster-klipxtreme/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/parl044/PARL044-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/parl044/PARL044-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/PARL044-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/PARL044-390.png",
       "sha256": "b13341735ee99e445f63176d3d6ddddaf4d7cb00ebd6c886d1d470f657f4b6e0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/PARL044-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/PARL044-1280.png",
         "sha256": "0dd5a4735e40fd8a1a7f73cce6fa921354fe977fc496841fb70ed1a580ecd468",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "PARL044"
     }
   }
 }

@@ -61,9 +61,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous029-mousepad-cuadrado-esencial/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Mousepad Cuadrado Esencial. Presentación de venta: Un mousepad cuadrado..",
   "contenido_venta": "Un mousepad cuadrado.",
   "presentacion": "sin caja",
@@ -115,7 +115,7 @@
       "solicitado": "MOUS029",
       "sku": "MOUS029",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:10.801Z",
+      "fecha": "2026-10-16T05:56:54.583Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -137,7 +137,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous029-mousepad-cuadrado-esencial/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/mous029-mousepad-cuadrado-esencial/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous029-mousepad-cuadrado-esencial/",
       "archivo_html": "productos/mous029-mousepad-cuadrado-esencial/index.html",
       "http": 200,
       "sha256_html": "ce5338d5725cd0864f269d11bbc1d8d94f0f1a76133e20a4bb759f0821d9168c",
@@ -147,7 +147,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous029/MOUS029-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/mous029/MOUS029-01-600.webp?v=f0bc913516ae6ed7",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous029/MOUS029-01-600.webp?v=f0bc913516ae6ed7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -156,51 +156,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/mous029-mousepad-cuadrado-esencial/",
+          "url": "https://conectatech-ec.github.io/productos/mous029-mousepad-cuadrado-esencial/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/mous029/MOUS029-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous029/MOUS029-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/padm001-padmouse-mousepad-pad-mouse-havit/",
+          "url": "https://conectatech-ec.github.io/productos/padm001-padmouse-mousepad-pad-mouse-havit/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/mous003-mouse-ergonomico-meetion-btm010r/",
+          "url": "https://conectatech-ec.github.io/productos/mous003-mouse-ergonomico-meetion-btm010r/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/mous037-mouse-klipxtreme-slimsurfer/",
+          "url": "https://conectatech-ec.github.io/productos/mous037-mouse-klipxtreme-slimsurfer/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/MOUS029-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/MOUS029-390.png",
       "sha256": "941866c9f8cfb904e08377b9222fb34fe373a4dff716e339de92cd264af6e01b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/MOUS029-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/MOUS029-1280.png",
         "sha256": "e7cb8b9e4a118dbcbbf7d15801d97c94b4b206ec87933a565198eb82eaed0787",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "MOUS029"
     }
   }
 }

@@ -142,9 +142,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous003-mouse-ergonomico-meetion-btm010r/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Mouse Ergonomico Meetion BTM010R. Presentación de venta: Un mouse vertical ergonómico. Colores surtidos según disponibilidad; la fotografía ilustra una variante..",
   "contenido_venta": "Un mouse vertical ergonómico. Colores surtidos según disponibilidad; la fotografía ilustra una variante.",
   "presentacion": "sin caja",
@@ -205,7 +205,7 @@
       "solicitado": "MOUS003",
       "sku": "MOUS003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:26.583Z",
+      "fecha": "2026-10-16T05:57:16.100Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -227,7 +227,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous003-mouse-ergonomico-meetion-btm010r/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/mous003-mouse-ergonomico-meetion-btm010r/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous003-mouse-ergonomico-meetion-btm010r/",
       "archivo_html": "productos/mous003-mouse-ergonomico-meetion-btm010r/index.html",
       "http": 200,
       "sha256_html": "2352a8da837eb021bf859d3d52ff1a80df8c9edcbfc7f13dd9daef7a5b97e475",
@@ -237,7 +237,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous003/MOUS003-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/mous003/MOUS003-01-600.webp?v=b5eac64ceabddffa",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous003/MOUS003-01-600.webp?v=b5eac64ceabddffa",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -246,51 +246,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/mous003-mouse-ergonomico-meetion-btm010r/",
+          "url": "https://conectatech-ec.github.io/productos/mous003-mouse-ergonomico-meetion-btm010r/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/mous003/MOUS003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous003/MOUS003-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/mous029-mousepad-cuadrado-esencial/",
+          "url": "https://conectatech-ec.github.io/productos/mous029-mousepad-cuadrado-esencial/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/padm001-padmouse-mousepad-pad-mouse-havit/",
+          "url": "https://conectatech-ec.github.io/productos/padm001-padmouse-mousepad-pad-mouse-havit/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/mous037-mouse-klipxtreme-slimsurfer/",
+          "url": "https://conectatech-ec.github.io/productos/mous037-mouse-klipxtreme-slimsurfer/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/MOUS003-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/MOUS003-390.png",
       "sha256": "5bdbbef46572d80f5840518e3b2e64a868148d8e3e130467806c078fb867a093",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/MOUS003-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/MOUS003-1280.png",
         "sha256": "3ebc82b8e20d1d4c5188390ad2a4fc9ed4a2ab87255732ac855cb383a09b1e5f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "MOUS003"
     }
   }
 }

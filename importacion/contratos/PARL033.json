@@ -70,9 +70,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Parlantes Para Pc-laptop ENV Thunder 1306. Presentación de venta: Un sistema de parlantes con una unidad central y dos satélites..",
   "contenido_venta": "Un sistema de parlantes con una unidad central y dos satélites.",
   "presentacion": "sin caja",
@@ -125,7 +125,7 @@
       "solicitado": "PARL033",
       "sku": "PARL033",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:30:57.690Z",
+      "fecha": "2026-10-16T05:56:37.065Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -147,7 +147,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
       "archivo_html": "productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/index.html",
       "http": 200,
       "sha256_html": "afafdb1acbc365e2639ea97e18159631325379302b7cbe2aae7b360793f783fe",
@@ -157,7 +157,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/parl033/PARL033-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/parl033/PARL033-01-600.webp?v=99c61fcc4b8658c5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/parl033/PARL033-01-600.webp?v=99c61fcc4b8658c5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -166,51 +166,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/parl033/PARL033-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/parl033/PARL033-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/radi001-radio-parlante-rca-53hsrcl-con-despertador/",
+          "url": "https://conectatech-ec.github.io/productos/radi001-radio-parlante-rca-53hsrcl-con-despertador/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/PARL033-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/PARL033-390.png",
       "sha256": "1d4abd66e6ce2296bd894979eac31654175ce22d026cf3496c2c70403b7c9855",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/PARL033-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/PARL033-1280.png",
         "sha256": "2fbd5856816f0aa16f1e2c821bc87bc4169f7a0532a476d8a1b2eae9e0b8daa9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "PARL033"
     }
   }
 }

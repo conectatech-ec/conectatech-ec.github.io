@@ -61,9 +61,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/pila070-pila-d-maxday/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Pila D Maxday. Presentación de venta: Un blíster de dos pilas D Maxday. La imagen muestra las dos celdas fuera del blíster..",
   "contenido_venta": "Un blíster de dos pilas D Maxday. La imagen muestra las dos celdas fuera del blíster.",
   "presentacion": "sin caja",
@@ -115,7 +115,7 @@
       "solicitado": "PILA070",
       "sku": "PILA070",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:21.385Z",
+      "fecha": "2026-10-16T05:57:08.642Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -137,7 +137,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/pila070-pila-d-maxday/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/pila070-pila-d-maxday/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/pila070-pila-d-maxday/",
       "archivo_html": "productos/pila070-pila-d-maxday/index.html",
       "http": 200,
       "sha256_html": "1ae15c67be5ac9e76346a639cc85b400fab06040340009039ef0af3c93de2b23",
@@ -147,7 +147,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/pila070/PILA070-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/pila070/PILA070-01-600.webp?v=50f25004dc4e25ca",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/pila070/PILA070-01-600.webp?v=50f25004dc4e25ca",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -156,51 +156,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/pila070-pila-d-maxday/",
+          "url": "https://conectatech-ec.github.io/productos/pila070-pila-d-maxday/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/pila070/PILA070-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/pila070/PILA070-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/pila067-pila-aaaa-camelion-pack-de-2/",
+          "url": "https://conectatech-ec.github.io/productos/pila067-pila-aaaa-camelion-pack-de-2/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/pila028-pila-aaa-rca-pack-de-6/",
+          "url": "https://conectatech-ec.github.io/productos/pila028-pila-aaa-rca-pack-de-6/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/pila015-pila-27a-pikcell/",
+          "url": "https://conectatech-ec.github.io/productos/pila015-pila-27a-pikcell/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/PILA070-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/PILA070-390.png",
       "sha256": "2d1165e87cd90dbdb6157314e317f990ec6308775bf1a5e70f1ef061b4cac6ca",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/PILA070-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/PILA070-1280.png",
         "sha256": "6ed194282a87797e1fb32301d37f2865c084f39b20e398f1e0f9ca89d1ff9d83",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "PILA070"
     }
   }
 }

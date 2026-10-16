@@ -70,9 +70,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/vent006-ventilador-para-laptop-ncp-075/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Base refrigerante para laptop MIPUSO MORAKOT-5 NCP-075. Presentación de venta: Una base refrigerante para laptop. Laptop no incluida. Colores surtidos según disponibilidad; la fotografía ilustra una variante..",
   "contenido_venta": "Una base refrigerante para laptop. Laptop no incluida. Colores surtidos según disponibilidad; la fotografía ilustra una variante.",
   "presentacion": "sin caja",
@@ -125,7 +125,7 @@
       "solicitado": "VENT006",
       "sku": "VENT006",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:31.463Z",
+      "fecha": "2026-10-16T05:57:23.102Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -147,7 +147,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/vent006-ventilador-para-laptop-ncp-075/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/vent006-ventilador-para-laptop-ncp-075/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/vent006-ventilador-para-laptop-ncp-075/",
       "archivo_html": "productos/vent006-ventilador-para-laptop-ncp-075/index.html",
       "http": 200,
       "sha256_html": "8c6e67e21987f12fff3776790879c529a31ff159c9a74b751e9a6de543b1070f",
@@ -157,7 +157,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/vent006/VENT006-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/vent006/VENT006-01-600.webp?v=26653eb4b04b0d7d",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/vent006/VENT006-01-600.webp?v=26653eb4b04b0d7d",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -166,41 +166,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/vent006-ventilador-para-laptop-ncp-075/",
+          "url": "https://conectatech-ec.github.io/productos/vent006-ventilador-para-laptop-ncp-075/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/vent006/VENT006-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/vent006/VENT006-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/pad001-pad-almohadilla-de-gel-para-teclados/",
+          "url": "https://conectatech-ec.github.io/productos/pad001-pad-almohadilla-de-gel-para-teclados/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/VENT006-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/VENT006-390.png",
       "sha256": "ed86d8b50ee188d306135cb213aee5676a7573b8b67f1c1c07e77143559da1e6",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/VENT006-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/VENT006-1280.png",
         "sha256": "2a1321f14e026cb910d8487732429438485bee8b88c09cc29bf0780df66e673f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "VENT006"
     }
   }
 }

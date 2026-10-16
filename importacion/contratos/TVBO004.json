@@ -88,9 +88,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "TV Stick TV98 5G ATV X8 Redondo. Presentación de venta: Un TV Stick TV98 ATV X8. La imagen muestra el dispositivo principal..",
   "contenido_venta": "Un TV Stick TV98 ATV X8. La imagen muestra el dispositivo principal.",
   "presentacion": "sin caja",
@@ -145,7 +145,7 @@
       "solicitado": "TVBO004",
       "sku": "TVBO004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:30:55.111Z",
+      "fecha": "2026-10-16T05:56:32.944Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -167,7 +167,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
       "archivo_html": "productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/index.html",
       "http": 200,
       "sha256_html": "075f647aa9b6f99503cffdad149519bd7d720e7092501be4f2bf70b7ed3f0c3e",
@@ -177,7 +177,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tvbo004/TVBO004-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/tvbo004/TVBO004-01-600.webp?v=7456f07f85ffade4",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tvbo004/TVBO004-01-600.webp?v=7456f07f85ffade4",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -186,51 +186,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/tvbo004/TVBO004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tvbo004/TVBO004-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo006-tv-box-andowl-mxq-pro/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo006-tv-box-andowl-mxq-pro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo008-tv-box-onn-4k/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo008-tv-box-onn-4k/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo010-fire-tv-stick-amazon-4k-8gb-wifi-6/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo010-fire-tv-stick-amazon-4k-8gb-wifi-6/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/TVBO004-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/TVBO004-390.png",
       "sha256": "af078e108a29dc2471befd02df0942afe1f1e0204f96d32ed58b2611a06f8cfd",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/TVBO004-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/TVBO004-1280.png",
         "sha256": "755f8e3b8251f34e05950f47509427e9ab18b94e609077903024ec52fc71cbf8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "TVBO004"
     }
   }
 }

@@ -70,9 +70,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi113-audifonos-klipxtreme-openbuds-koe-250bk/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Audifonos Klipxtreme Openbuds KOE-250BK. Presentación de venta: Un par de audífonos Klipxtreme OpenBuds. La imagen muestra los dos audífonos principales..",
   "contenido_venta": "Un par de audífonos Klipxtreme OpenBuds. La imagen muestra los dos audífonos principales.",
   "presentacion": "sin caja",
@@ -125,7 +125,7 @@
       "solicitado": "AUDI113",
       "sku": "AUDI113",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:15.401Z",
+      "fecha": "2026-10-16T05:57:00.680Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -147,7 +147,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi113-audifonos-klipxtreme-openbuds-koe-250bk/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/audi113-audifonos-klipxtreme-openbuds-koe-250bk/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi113-audifonos-klipxtreme-openbuds-koe-250bk/",
       "archivo_html": "productos/audi113-audifonos-klipxtreme-openbuds-koe-250bk/index.html",
       "http": 200,
       "sha256_html": "8f24c09335ea26f6aabcfcb62a3a42dce89ae9a8f1bc3447e2015588c512d2ff",
@@ -157,7 +157,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi113/AUDI113-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/audi113/AUDI113-01-600.webp?v=dde2cd123d78949b",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi113/AUDI113-01-600.webp?v=dde2cd123d78949b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -166,51 +166,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/audi113-audifonos-klipxtreme-openbuds-koe-250bk/",
+          "url": "https://conectatech-ec.github.io/productos/audi113-audifonos-klipxtreme-openbuds-koe-250bk/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/audi113/AUDI113-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi113/AUDI113-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/AUDI113-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI113-390.png",
       "sha256": "91a9e69a67063fbf7d69f8e64fb6dc0dae959bef811b7cb12cd531e04de6bc7d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/AUDI113-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI113-1280.png",
         "sha256": "cac60808f301a399a565bb6ba47d45a667677170bc60945050761cc1cf82cd62",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "AUDI113"
     }
   }
 }

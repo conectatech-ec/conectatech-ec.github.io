@@ -79,9 +79,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi103-audifonos-jbl-endurance-pace/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Audifonos JBL Endurance Pace. Presentación de venta: Un audífono JBL Endurance Pace..",
   "contenido_venta": "Un audífono JBL Endurance Pace.",
   "presentacion": "sin caja",
@@ -135,7 +135,7 @@
       "solicitado": "AUDI103",
       "sku": "AUDI103",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:04.217Z",
+      "fecha": "2026-10-16T05:56:45.844Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -157,7 +157,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi103-audifonos-jbl-endurance-pace/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/audi103-audifonos-jbl-endurance-pace/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi103-audifonos-jbl-endurance-pace/",
       "archivo_html": "productos/audi103-audifonos-jbl-endurance-pace/index.html",
       "http": 200,
       "sha256_html": "3362894f85460def968bfddf7a3ccae92961968cfab1a4250116be46f7edd0fb",
@@ -167,7 +167,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi103/AUDI103-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/audi103/AUDI103-01-600.webp?v=7cca99c002d7e9d5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi103/AUDI103-01-600.webp?v=7cca99c002d7e9d5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -176,51 +176,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/audi103-audifonos-jbl-endurance-pace/",
+          "url": "https://conectatech-ec.github.io/productos/audi103-audifonos-jbl-endurance-pace/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/audi103/AUDI103-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi103/AUDI103-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/AUDI103-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI103-390.png",
       "sha256": "8559423b2bd0a38b0d73c3fc4e4fa8f3f5c7bf7018b53ef4d570b30cfb35e784",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/AUDI103-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI103-1280.png",
         "sha256": "5826a66ad5d1fe01994a6bcb7c9db792a2427b896ef1c429e406285405f38d6a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "AUDI103"
     }
   }
 }
