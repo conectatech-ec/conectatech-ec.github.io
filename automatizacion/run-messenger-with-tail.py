@@ -9,7 +9,8 @@ try:
     except RuntimeError:print('Live tail unavailable with existing token; no permission expansion requested')
     env=dict(os.environ)
     if isinstance(tail,dict) and isinstance(tail.get('url'),str) and tail['url'].startswith('wss://'):env['CF_WORKER_TAIL_URL']=tail['url']
-    result=subprocess.run(['node','automatizacion/tail-proof.mjs'],env=env)
+    try:result=subprocess.run(['node','automatizacion/tail-proof.mjs'],env=env,timeout=150)
+    except subprocess.TimeoutExpired:raise SystemExit('Bounded Worker diagnostic timeout; details withheld') from None
 finally:
     if isinstance(tail,dict) and re.fullmatch(r'[a-f0-9]{32}',tail.get('id','')):
         try:api.call(SCRIPT+'/tails/'+tail['id'],'DELETE')

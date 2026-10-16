@@ -26,8 +26,10 @@ async function main(){
   report.invalid_signature_probe_observed=report.observed.some(r=>r.source==='authorized_ci_probe'&&r.signature_valid===false&&r.http_status===403);
   if(exitCode!==0)process.exitCode=exitCode||1;
  }catch{console.error('Worker tail verification failed; sensitive details withheld');process.exitCode=1;}finally{
-  if(ws&&[WebSocket.OPEN,WebSocket.CONNECTING].includes(ws.readyState))ws.close();
+  try{if(ws&&[WebSocket.OPEN,WebSocket.CONNECTING].includes(ws.readyState))ws.close();}catch{}
   const root=new URL('./generated/fase2/',import.meta.url);await mkdir(root,{recursive:true});await writeFile(new URL('tail-proof.json',root),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+  // A diagnostic socket must never keep the verifier running after evidence is saved.
+  setTimeout(()=>process.exit(process.exitCode||0),500);
  }
 }
 if(process.argv[1]?.endsWith('/tail-proof.mjs')||process.argv[1]==='automatizacion/tail-proof.mjs')await main();
