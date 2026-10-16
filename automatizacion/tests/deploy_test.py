@@ -4,6 +4,13 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('deploy_free',ROOT/'deploy_free.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 class MinimumPrivilegeTest(unittest.TestCase):
+ def test_read_only_reception_audit_does_not_disclose_binding_values_or_invent_event_evidence(self):
+  private='synthetic-private-credential-do-not-emit'
+  report=module.reception_settings({'observability':{'enabled':False},'bindings':[{'name':'META_INGRESS_ENABLED','text':'false'},{'name':'META_MODE','text':'development-only'},{'name':'META_APP_SECRET','text':private}]})
+  self.assertFalse(report['observability_enabled']);self.assertFalse(report['meta_ingress_enabled']);self.assertTrue(report['development_only'])
+  self.assertTrue(report['meta_app_secret_binding_present']);self.assertFalse(report['test_sender_allowlist_binding_present']);self.assertNotIn(private,json.dumps(report))
+  for field in ['event_http_status','event_signature_verified','event_discard_verified']:self.assertIsNone(report[field])
+  self.assertIsNone(module.reception_settings({})['observability_enabled'])
  def test_rotation_preserves_exact_secret_and_retries_propagation_without_code_upload(self):
   token='  synthetic-fixture-token-of-at-least-32-characters\n'
   settings={'bindings':[{'name':'META_INGRESS_ENABLED','text':'false'},{'name':'META_MODE','text':'development-only'}]}

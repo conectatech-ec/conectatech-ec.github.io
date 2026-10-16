@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Comprobar acceso al Worker existente sin crear recursos
+      - name: Leer configuracion del Worker, recepcion Meta y estado de logs sin modificar recursos
         id: conexion
         run: python automatizacion/deploy_free.py --check
         env:

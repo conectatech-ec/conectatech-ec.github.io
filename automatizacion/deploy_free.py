@@ -70,6 +70,18 @@ def report_connection(result):
     path.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('ready='+str(result['ready']).lower()+'\n')
+def reception_settings(settings):
+    bindings={b['name']:b for b in settings.get('bindings',[])}
+    observations=settings.get('observability') or {}
+    logs=observations.get('logs') or {}
+    return {'observability_enabled':observations.get('enabled'),'logs_enabled':logs.get('enabled'),'invocation_logs_enabled':logs.get('invocation_logs'),
+            'meta_ingress_enabled':bindings.get('META_INGRESS_ENABLED',{}).get('text')=='true',
+            'development_only':bindings.get('META_MODE',{}).get('text')=='development-only',
+            'meta_app_secret_binding_present':'META_APP_SECRET' in bindings,
+            'meta_verify_token_binding_present':'META_VERIFY_TOKEN' in bindings,
+            'test_sender_allowlist_binding_present':'META_TEST_SENDER_IDS' in bindings,
+            'event_http_status':None,'event_signature_verified':None,'event_discard_verified':None,
+            'scope':'current_configuration_only_not_a_Meta_event_receipt'}
 def sync_meta_verify_token(api,settings,url,token):
     bindings={b['name']:b for b in settings.get('bindings',[])}
     if bindings.get('META_INGRESS_ENABLED',{}).get('text')!='false' or bindings.get('META_MODE',{}).get('text')!='development-only':
@@ -128,7 +140,7 @@ def main():
     api=API(settings['CLOUDFLARE_ACCOUNT_ID'],settings['CLOUDFLARE_API_TOKEN'])
     existing=check_connection(api)
     if check_only:
-        report_connection({'ready':True,'status':'existing_worker_read_check_passed','plan_verification':'owner_dashboard_attestation','resources_created':False,'d1_enabled':False});return
+        report_connection({'ready':True,'status':'existing_worker_read_check_passed','plan_verification':'owner_dashboard_attestation','resources_created':False,'d1_enabled':False,'messenger_reception_audit':reception_settings(existing)});return
     if sync_only:
         sync_meta_verify_token(api,existing,settings['CLOUDFLARE_PILOT_URL'],os.environ.get('META_VERIFY_TOKEN',''));return
     metadata=worker_metadata(config);files=[]
