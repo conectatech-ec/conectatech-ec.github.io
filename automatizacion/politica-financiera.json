@@ -10,11 +10,14 @@
     "actualizacion_de_plan"
   ],
   "despliegue_automatico": false,
-  "canales_externos_activos": [],
-  "ia_por_defecto": "desactivada",
+  "canales_externos_activos": [
+    "Messenger oficial exclusivamente probadores autorizados"
+  ],
+  "ia_por_defecto": "Workers AI Free; Alex generativo sujeto a prueba HTTPS",
   "condicion_ia": "Verificar cuenta exclusivamente Free sin facturacion ni creditos prepagados; configurar FREE_TIER_VERIFIED=true solo despues de verificarlo. No cambiar el plan al superar cuotas.",
   "verificacion_plan": "panel_del_propietario; CF_FREE_ONLY_CONFIRMED=true; sin consulta Billing API",
   "permiso_despliegue": "Editor solo sobre Worker individual conectatech-comercial-piloto",
   "d1_despliegue_inicial": false,
-  "deduplicacion_messenger": "Durable Object SQLite Free del mismo Worker; límites locales y sin permisos adicionales"
+  "deduplicacion_messenger": "Durable Object SQLite Free del mismo Worker; límites locales y sin permisos adicionales",
+  "cuota_alex": "8000 neuronas reservadas/día, 80 por llamada, sin actualización a Paid"
 }

@@ -72,7 +72,7 @@ export async function sellerFetch(path,req,box){
   return json({enabled:true,mode:'authorized-testers-only',permissions:proof,live_customers_enabled:false});
  }
  if(path==='/seller/process'&&req.method==='POST'){if(box.name!=='messenger-development')return json({error:'CI transport blocked'},409);await sellerAlarm(box);return json({processed:true});}
- if(path==='/seller/results'&&req.method==='GET')return json({events:q.exec('SELECT k,status,skus,intent,error FROM seller_jobs ORDER BY rowid DESC LIMIT 30').toArray().map(r=>({...r,skus:JSON.parse(r.skus)})),drafts:q.exec('SELECT safe FROM seller_drafts ORDER BY rowid DESC LIMIT 10').toArray().map(r=>JSON.parse(r.safe))});
+ if(path==='/seller/results'&&req.method==='GET')return json({events:q.exec('SELECT k,status,skus,intent,error,inbound FROM seller_jobs ORDER BY rowid DESC LIMIT 30').toArray().map(r=>({...r,skus:JSON.parse(r.skus),parts:q.exec('SELECT state,delivered FROM seller_parts WHERE job=?',r.k).toArray()})),drafts:q.exec('SELECT safe FROM seller_drafts ORDER BY rowid DESC LIMIT 10').toArray().map(r=>JSON.parse(r.safe))});
  if(path==='/seller/delivery'&&req.method==='POST'){
   const b=await req.json();let correlated=0;for(const mid of b.mids||[]){const key=await h(env.PILOT_TOKEN,'mid:'+mid);q.exec("UPDATE seller_parts SET delivered=1 WHERE mid_hash=? AND state='accepted'",key);correlated+=q.exec('SELECT COUNT(*) AS n FROM seller_parts WHERE mid_hash=? AND delivered=1',key).one().n;}return json({correlated});
  }
@@ -116,7 +116,7 @@ async function runSeller(box,deps){
   if(Date.now()-row.inbound>=86400000){handoff(box,row,'OUTSIDE_24H_WINDOW');continue;}
   let messages=[],source,alexResult;
   try{
-   if(row.intent==='alex'){const prepared=await prepareAlex(box,row,deps);messages=prepared.messages;source=prepared.source;alexResult=prepared.result;if(alexResult.action==='handoff')handoff(box,row,'ALEX_HUMAN_REQUEST');}
+   if(row.intent==='alex'){const prepared=await prepareAlex(box,row,deps);messages=prepared.messages;source=prepared.source;alexResult=prepared.result;q.exec('INSERT OR REPLACE INTO seller_drafts VALUES (?,?)',row.k,JSON.stringify({event_ref:row.k,advisor:'Alex',generative:alexResult.generative,model:alexResult.model||null,intent:alexResult.intent,focus:alexResult.focus,media_count:messages.length-1}));if(alexResult.action==='handoff')handoff(box,row,'ALEX_HUMAN_REQUEST');}
    else if(row.intent==='handoff'){messages=[{text:'He dejado tu consulta pendiente de atención por un vendedor. No se ha confirmado ninguna compra. También puedes continuar por la bandeja oficial de CONECTATECHec.'}];handoff(box,row,'REQUESTED_HUMAN');}
    else if(!JSON.parse(row.skus).length)messages=[{text:'¡Hola! Soy el asistente de CONECTATECH. Puedo ayudarte con MICR27, POWE003 y ADAP005. Indícame el código del producto o escribe «vendedor» para dejar tu consulta a una persona.'}];
    else{

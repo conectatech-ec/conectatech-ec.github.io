@@ -25,7 +25,7 @@ test('Only fresh verified facts can supply price, stock, specs and product IDs s
  const stale={...source,fuente_fecha:'2020-01-01'};assert.equal(factBook(stale)['POWE003.cash'],undefined);assert.throws(()=>renderPlan(plan(),stale));assert.equal(factBook({...source,productos:source.productos.map(p=>({...p,stock:0}))})['POWE003.card'],undefined);
 });
 test('Real binding contract uses JSON generative model and safe fallback consumes no paid path',async()=>{
- let called=0,reserved=0;const env={FREE_TIER_VERIFIED:'true',AI:{run:async(model,args)=>{called++;assert.equal(model,policy.model);assert.equal(args.response_format.type,'json_object');assert.ok(args.max_tokens<=384);return{response:JSON.stringify(plan())};}}};
+ let called=0,reserved=0;const env={FREE_TIER_VERIFIED:'true',AI:{run:async(model,args)=>{called++;assert.equal(model,policy.model);assert.equal(args.response_format.type,'json_schema');assert.ok(args.response_format.json_schema.properties.facts.items.enum.includes('POWE003.card'));assert.ok(new TextEncoder().encode(JSON.stringify(args)).length<=policy.max_prompt_bytes);assert.ok(args.max_tokens<=384);return{response:JSON.stringify(plan())};}}};
  const r=await generateAlex('¿Y esa cuánto cuesta?',source,{focus:['POWE003'],history:[]},env,async()=>{reserved++;return true;});assert.equal(r.generative,true);assert.equal(r.memory.history.length,2);assert.equal(called,1);
  const denied=await generateAlex('precio',source,{},env,async()=>false);assert.equal(denied.generative,false);assert.equal(called,1);assert.equal(reserved,1);
  env.AI.run=async()=>{throw Error('quota');};const fallback=await generateAlex('precio',source,{},env);assert.ok(!fallback.text.includes('$'));assert.equal(fallback.generative,false);

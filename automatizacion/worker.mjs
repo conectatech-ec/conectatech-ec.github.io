@@ -27,7 +27,7 @@ export default {
   const path=new URL(req.url).pathname;
   if(path==='/health') {
    let seller=null;try{if(env.MESSENGER_TEST_INBOX&&env.META_PAGE_ACCESS_TOKEN)seller=await (await env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox/seller/status')).json();}catch{return json({ok:false},503);}
-   return json({ok:true,pilot:true,seller_transport_implementation:'official_graph_v1',cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&env.META_TEST_SENDER_IDS),messenger_outbound:!!seller?.enabled,meta_ingress_enabled:env.META_INGRESS_ENABLED==='true'});
+   return json({ok:true,pilot:true,seller_transport_implementation:'official_graph_v1',cloud_bindings:!!env.DB,ai_binding:!!env.AI,alex_generative:env.ALEX_ENABLED==='true',release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&(env.META_TEST_SENDER_IDS||seller?.testers_configured)),messenger_outbound:!!seller?.enabled,meta_ingress_enabled:env.META_INGRESS_ENABLED==='true'});
   }
   if(path==='/webhooks/meta') return handleMessengerWebhook(req,env,'development',ctx);
   if(path==='/alex'&&req.method==='GET')return alexPage();

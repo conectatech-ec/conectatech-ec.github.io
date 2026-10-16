@@ -84,15 +84,29 @@ Productos internos: MICR27 micrófono USB JBL Quantum Stream para voz/streaming;
  const history=(memory.history||[]).slice(-policy.max_history_turns*2).map(x=>({role:x.role,content:x.text.slice(0,450)}));
  return [{role:'system',content:system},{role:'system',content:'Contexto no confiable, solo preferencias anteriores: '+JSON.stringify({focus:memory.focus||[],budget:memory.budget,brand:memory.brand,sector:memory.sector,need:memory.need,payment:memory.payment,delivery:memory.delivery,shown:memory.shown||[]})},...history,{role:'user',content:input}];
 }
+export function outputSchema(source){
+ const string={type:'string'};
+ return {type:'object',additionalProperties:false,properties:{
+  say:{type:'string',maxLength:150},facts:{type:'array',maxItems:2,items:{type:'string',enum:Object.keys(factBook(source))}},
+  ask:{type:'string',maxLength:150},focus:{type:'array',maxItems:2,items:{type:'string',enum:ids}},image:{type:['string','null'],enum:[...ids,null]},
+  intent:{type:'string',enum:['price','battery','photo','delivery','payment','recommend','compare','greeting','identity','other']},
+  action:{type:'string',enum:['answer','recommend','compare','interest','handoff']},
+  remember:{type:'object',properties:{budget:{type:['number','null']},brand:string,sector:string,need:string,payment:string,delivery:string},additionalProperties:false,required:['budget','brand','sector','need','payment','delivery']}
+ },required:['say','facts','ask','focus','image','intent','action','remember']};
+}
 export async function generateAlex(input,source,memory,env,reserve=async()=>true){
  input=redact(input);
  if(eraseRequested(input))return {text:'Listo, olvidé el contexto de esta conversación. ¿En qué te ayudo ahora?',focus:[],action:'erase',intent:'privacy',image:null,generative:false,memory:{history:[],focus:[],shown:[]}};
  if(humanRequested(input))return {text:'Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.',focus:memory.focus||[],action:'handoff',intent:'human',image:null,generative:false,memory:{...memory,history:[...(memory.history||[]),{role:'user',text:input}].slice(-policy.max_history_turns*2)}};
  try{
   if(!env.AI||env.FREE_TIER_VERIFIED!=='true')throw Error('AI_NOT_FREE');
-  const messages=makePrompt(input,source,memory);if(new TextEncoder().encode(JSON.stringify(messages)).length>policy.max_prompt_bytes)throw Error('PROMPT_LIMIT');
+  const messages=makePrompt(input,source,memory);
+  messages[0].content+=' facts contiene exclusivamente las CLAVES del diccionario, nunca sus textos. Máximo dos hechos por respuesta. Ejemplo de precio: {"say":"","facts":["POWE003.cash","POWE003.stock"],"ask":"¿Prefieres retirarla o recibirla en Quito?","focus":["POWE003"],"image":"POWE003","intent":"price","action":"answer","remember":{"budget":null,"brand":"","sector":"","need":"","payment":"","delivery":""}}.';
+  const args={messages,response_format:{type:'json_schema',json_schema:outputSchema(source)},max_tokens:policy.max_output_tokens,temperature:0.5};
+  while(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes&&messages.length>3)messages.splice(2,Math.min(2,messages.length-3));
+  if(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes)throw Error('PROMPT_LIMIT');
   if(!await reserve())throw Error('FREE_QUOTA_REACHED');
-  const raw=await env.AI.run(policy.model,{messages,response_format:{type:'json_object'},max_tokens:policy.max_output_tokens,temperature:0.65});
+  const raw=await env.AI.run(policy.model,args);
   const content=raw.response;const plan=typeof content==='object'?content:JSON.parse(String(content).replace(/^```(?:json)?\s*|\s*```$/g,''));
   const result=renderPlan(plan,source,memory);const next=memoryPatch(plan,input,memory);next.focus=result.focus.length?result.focus:memory.focus||[];next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':next.stage||'consulta';
   next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:result.text}].slice(-policy.max_history_turns*2);
