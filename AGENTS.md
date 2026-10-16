@@ -1,3 +1,7 @@
+## Orden vigente del propietario — prioridad de búsqueda, 16 de octubre de 2026
+
+Buscar directamente en Drive los SKU pendientes sin limitarse al índice recuperado. Estuches quedan pendientes con importancia muy baja; priorizar los demás SKU aptos. No confundir ausencia de asociación con inexistencia de fotos. Publicar únicamente con identidad, fidelidad y controles comprobados.
+
 ## Orden vigente del propietario — variantes surtidas, 16 de octubre de 2026
 
 «los SKU fotografiados en varios colore y diseños se venden surtidos segun disponibilidad». Aplicar a colores y diseños fotografiados propios; aclarar surtido según disponibilidad y unidad comercial real, sin garantizar variante fija ni convertir varias muestras en un paquete. No resuelve contradicciones de modelo o cantidad. Política: `importacion/politica-variantes-surtidas.json`.
