@@ -1,0 +1,13 @@
+name = "conectatech-comercial-piloto"
+main = "worker.mjs"
+compatibility_date = "2026-10-01"
+workers_dev = true
+# Use Workers FREE only. Never upgrade automatically.
+[ai]
+binding = "AI"
+[[d1_databases]]
+binding = "DB"
+database_name = "conectatech-comercial-piloto"
+database_id = "REPLACE_WITH_AUTHORIZED_FREE_D1_ID"
+[triggers]
+crons = ["19 * * * *"]

@@ -1,0 +1,29 @@
+name: Piloto comercial aislado
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['automatizacion/**', '.github/workflows/comercial-piloto.yml']
+permissions:
+  contents: read
+concurrency:
+  group: comercial-piloto-aislado
+  cancel-in-progress: false
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python automatizacion/build.py
+      - run: node automatizacion/tests/worker.test.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: piloto-comercial-3sku
+          path: automatizacion/generated/
+          retention-days: 7

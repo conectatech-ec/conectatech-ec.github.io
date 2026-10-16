@@ -1,0 +1,9 @@
+{
+  "propietario": "CONECTATECH",
+  "costo_operativo_autorizado_usd": 0,
+  "prohibido_sin_autorizacion_previa_explicita": ["contratacion", "planes_de_pago", "pruebas_con_conversion_a_pago", "consumo_facturable", "cargos_automaticos", "actualizacion_de_plan"],
+  "despliegue_automatico": false,
+  "canales_externos_activos": [],
+  "ia_por_defecto": "desactivada",
+  "condicion_ia": "Verificar cuenta exclusivamente Free sin facturacion ni creditos prepagados; configurar FREE_TIER_VERIFIED=true solo despues de verificarlo. No cambiar el plan al superar cuotas."
+}
