@@ -86,9 +86,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/styl005-stylus-pen-universal/",
-  "fecha_verificacion": "2026-10-16T02:35:29.565934+00:00",
+  "fecha_verificacion": "2026-10-16T03:37:18.330492+00:00",
   "descripcion": "Lápiz táctil blanco recargable por USB-C. Color: Blanco. Carga indicada: USB tipo C según empaque. Diseño: Cuerpo delgado con botón e indicadores.",
   "contenido_venta": "Un lápiz táctil.",
   "presentacion": "sin caja",
@@ -140,7 +140,7 @@
       "solicitado": "STYL005",
       "sku": "STYL005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T02:38:46.738Z",
+      "fecha": "2026-10-16T03:37:21.297Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -162,7 +162,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/styl005-stylus-pen-universal/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/styl005-stylus-pen-universal/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/styl005-stylus-pen-universal/",
       "archivo_html": "productos/styl005-stylus-pen-universal/index.html",
       "http": 200,
       "sha256_html": "7f86d3311e5dbded0ba3cc232d74e3544506754f04197c16673c933ebe10df3b",
@@ -172,7 +172,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/styl005/STYL005-01-600.webp?v=92fd67c4d29b4daf",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-600.webp?v=92fd67c4d29b4daf",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -181,36 +181,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/styl005-stylus-pen-universal/",
+          "url": "https://conectatech-ec.github.io/productos/styl005-stylus-pen-universal/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/styl005/STYL005-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-094/qa-local/movil/STYL005-390.png",
+      "archivo": "reportes/cierre-094-095/movil/STYL005-390.png",
       "sha256": "8d176e226d1ebdf2a4340b555e33b3bc1f7608a79b7ce227640d7b5c0836cfcd",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-094/qa-local/movil/STYL005-1280.png",
+        "archivo": "reportes/cierre-094-095/movil/STYL005-1280.png",
         "sha256": "2165c37dea37c2d5df0a4cb1ee0bdc82036686a683d8c59753183265594579c1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T03:37:18.330492+00:00",
+      "archivo": "reportes/cierre-094-095/http.json",
+      "reporte": "reportes/cierre-094-095/http.json",
+      "sha256": "9bf7c5251411884fc86a216010e08ea036f6ae4f2548b57077677e33227572c5",
+      "sku": "STYL005"
     }
   }
 }
