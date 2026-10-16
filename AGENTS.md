@@ -1,3 +1,13 @@
+## Orden vigente del propietario — variantes surtidas, 16 de octubre de 2026
+
+«los SKU fotografiados en varios colore y diseños se venden surtidos segun disponibilidad». Aplicar a colores y diseños fotografiados propios; aclarar surtido según disponibilidad y unidad comercial real, sin garantizar variante fija ni convertir varias muestras en un paquete. No resuelve contradicciones de modelo o cantidad. Política: `importacion/politica-variantes-surtidas.json`.
+
+## Orden vigente del propietario — unidades de venta, 16 de octubre de 2026
+
+pilas 23A, 27A se vende por unidad, pilas AA, AAA, AAAA, C, D, se vende el blister. los radios de comunicacion se venden el par
+
+Aplicar esta instrucción expresa con prioridad sobre reservas anteriores por unidad comercial. Conservar precios, PVP, stock, SKU y fotografías aprobadas. Política: `importacion/politica-unidades-venta.json`. Continuar con el objetivo de 48 publicaciones nuevas efectivas por lote, verificadas; no contar candidatos revisados como publicaciones.
+
 ## Orden vigente del propietario — continuación 093
 
 Continuar producción autorizada: 60 candidatos nuevos y 89 referencias propias, incluidos 12 candidatos adicionales de respaldo para aumentar las publicaciones reales. Deduplicar main/web; conservar reservas técnicas y solicitudes rechazadas sin repetirlas. Revisar cada maestro y publicar sólo aptos con contrato, QA y CI; recursos primero y HTTP/Chromium antes de estados/fechas. Conservar 1170 SKU, precios, PVP, stock, datos593, URLs, originales y fotografías correctas, prioridad reciente079, categorías084 y mismo feedMeta con product_type maestro. Pilas de botón históricas por una celda; no extender esa regla a otros formatos. AA/AAA conservan paquetes de maestro; reservar unidades ambiguas. Mantener clasificación AAA existente. Diademas verticales. Mantener correcciones conocidas en cola, REL050 pendiente de fidelidad. Rama independiente y main fresco, integración normal sinforce, sin afirmar cancelación ni exclusividad de otra sesión. Sin WebStore, SEO avanzado ni nuevas integraciones.
