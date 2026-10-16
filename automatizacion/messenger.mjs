@@ -71,7 +71,9 @@ export async function handleMessengerWebhook(req,env,scope='development') {
     try{
      const stub=env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-'+scope));
      const r=await stub.fetch('https://inbox/pairing/claim',{method:'POST',body:JSON.stringify({code_hash:await pairingHash(match[1],env.PILOT_TOKEN),psid:String(event.sender||'')})});
-     if(r.ok)paired=(await r.json()).claimed||paired;
+     if(r.ok){const claimed=(await r.json()).claimed;paired=claimed||paired;
+      if(claimed&&source==='external_https'&&env.META_PAGE_ACCESS_TOKEN)await stub.fetch('https://inbox/seller/auto-enroll',{method:'POST',body:'{}'});
+     }
     }catch{console.error(JSON.stringify({event:'meta_pairing_unavailable'}));}
    }
   }

@@ -30,6 +30,7 @@ try {
   if(attempt<attempts) await new Promise(resolve=>setTimeout(resolve,2000));
  }
  assert.ok(healthData,'Expected pilot release not served after bounded propagation wait');
+ if(deployed)assert.equal(healthData.seller_transport_implementation,'official_graph_v1','Actual deployed code must include seller transport');
  assert.equal(healthData.cloud_bindings,false,'No D1 in this deployment');report.health=healthData;
  for(const [path,method,headers] of [['/chat','POST',{}],['/chat','POST',{Authorization:'Bearer deliberately-invalid-test-token'}],['/ready','GET',{}],['/banners/MICR27','GET',{}],['/interesados','POST',{}]]) {
   const r=await send(path,{method,headers});assert.equal(r.status,401,`${path} must reject unauthenticated access`);report.access_tests.push({path,method,status:r.status,wrong_token:!!headers.Authorization});

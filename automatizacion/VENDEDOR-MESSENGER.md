@@ -19,7 +19,7 @@ La instrucción vigente del propietario autoriza envíos automáticos oficiales 
 
 Panel: https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/messenger/setup
 
-Entrar con PILOT_TOKEN desde el gestor privado. Crear frase tras confirmar rol de probador y enviarla desde esa cuenta por Messenger a CONECTATECHec. **Registrar probador y habilitar prueba** promueve el PSID cifrado sin mostrarlo, verifica permisos y habilita solo esa lista. GitHub también realiza este paso si encuentra una vinculación vigente durante la activación autorizada.
+Entrar con PILOT_TOKEN desde el gestor privado. Crear frase tras confirmar rol de probador y enviarla desde esa cuenta por Messenger a CONECTATECHec. **Registrar probador y habilitar prueba** promueve el PSID cifrado sin mostrarlo, verifica permisos y habilita solo esa lista. GitHub también realiza este paso si encuentra una vinculación vigente. Si no existe, deja preparada la activación automática del probador: la frase firmada y válida registra la lista y habilita las pruebas; el siguiente mensaje con SKU recibe respuesta. La parada desarma esta activación. Nunca se autorregistra un cliente por escribir un SKU.
 
 Enviar MICR27, POWE003 y ADAP005 desde el probador, una consulta por mensaje. El botón **Actualizar vendedor** muestra conteos de mensajes aceptados y entregados. **DETENER RESPUESTAS** pausa inmediatamente la cola pendiente; una solicitud Graph que ya salió puede concluir. Los trabajos pausados no se reenvían al reactivar.
 

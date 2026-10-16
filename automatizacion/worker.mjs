@@ -26,7 +26,7 @@ export default {
   const path=new URL(req.url).pathname;
   if(path==='/health') {
    let seller=null;try{if(env.MESSENGER_TEST_INBOX&&env.META_PAGE_ACCESS_TOKEN)seller=await (await env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox/seller/status')).json();}catch{return json({ok:false},503);}
-   return json({ok:true,pilot:true,cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&env.META_TEST_SENDER_IDS),messenger_outbound:!!seller?.enabled,meta_ingress_enabled:env.META_INGRESS_ENABLED==='true'});
+   return json({ok:true,pilot:true,seller_transport_implementation:'official_graph_v1',cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&env.META_TEST_SENDER_IDS),messenger_outbound:!!seller?.enabled,meta_ingress_enabled:env.META_INGRESS_ENABLED==='true'});
   }
   if(path==='/webhooks/meta') return handleMessengerWebhook(req,env);
   if(path==='/messenger/setup'&&req.method==='GET') return setupPage();
@@ -37,7 +37,7 @@ export default {
     return json({mode:env.META_MODE,app_secret_present:!!env.META_APP_SECRET,verify_token_present:!!env.META_VERIFY_TOKEN,page_present:!!env.META_PAGE_ID,test_senders_present:!!env.META_TEST_SENDER_IDS||!!seller?.testers_configured,reception_enabled:env.META_INGRESS_ENABLED==='true',outbound_enabled:!!seller?.enabled,test_seller:seller});
    }
    if(path==='/messenger/self-test'&&req.method==='POST') return messengerSelfTest(await body(req),env);
-   const sellerPath=/^\/messenger\/seller\/(status|enable|disable|promote|results)$/.test(path);
+   const sellerPath=/^\/messenger\/seller\/(status|enable|disable|promote|results|arm)$/.test(path);
    const controlPath=/^\/messenger\/pairing\/(start|status|consume|cancel)$/.test(path);
    if(sellerPath||controlPath||(['/messenger/test-results','/messenger/metrics','/messenger/receipts','/messenger/review'].includes(path)&&((path==='/messenger/review'&&req.method==='POST')||(path!=='/messenger/review'&&req.method==='GET')))) {
     if(!env.MESSENGER_TEST_INBOX) return json({error:'Test storage unavailable'},503);

@@ -9,6 +9,7 @@ const h=async(secret,text)=>{const k=await crypto.subtle.importKey('raw',new Tex
 export function sellerInit(box){
  const q=box.sql;
  q.exec('CREATE TABLE IF NOT EXISTS seller_settings (id INTEGER PRIMARY KEY CHECK(id=1), enabled INTEGER, checked INTEGER, proof TEXT)');
+ q.exec('CREATE TABLE IF NOT EXISTS seller_enrollment_policy (id INTEGER PRIMARY KEY CHECK(id=1), armed INTEGER)');
  q.exec('CREATE TABLE IF NOT EXISTS seller_testers (k TEXT PRIMARY KEY, sealed TEXT)');
  q.exec('CREATE TABLE IF NOT EXISTS seller_jobs (k TEXT PRIMARY KEY, who TEXT, sealed TEXT, inbound INTEGER, skus TEXT, intent TEXT, status TEXT, expires INTEGER, error TEXT)');
  q.exec('CREATE TABLE IF NOT EXISTS seller_parts (job TEXT, part INTEGER, state TEXT, mid_hash TEXT, delivered INTEGER, PRIMARY KEY(job,part))');
@@ -26,12 +27,26 @@ export async function sellerFetch(path,req,box){
   const row=q.exec('SELECT * FROM seller_settings WHERE id=1').toArray()[0];
   const counts=q.exec('SELECT status,COUNT(*) AS n FROM seller_jobs GROUP BY status').toArray();
   const parts=q.exec('SELECT state,COUNT(*) AS n,SUM(delivered) AS delivered FROM seller_parts GROUP BY state').toArray();
-  return json({mode:'authorized-testers-only',enabled:sellerActive(box),page_token_present:!!env.META_PAGE_ACCESS_TOKEN,testers_configured:!!env.META_TEST_SENDER_IDS||q.exec('SELECT COUNT(*) AS n FROM seller_testers').one().n>0,permissions:row?.proof?JSON.parse(row.proof):null,window_hours:24,retention_days:7,daily_limit:100,counts,parts,live_customers_enabled:false});
+  return json({mode:'authorized-testers-only',enabled:sellerActive(box),enrollment_armed:q.exec('SELECT armed FROM seller_enrollment_policy WHERE id=1').toArray()[0]?.armed===1,page_token_present:!!env.META_PAGE_ACCESS_TOKEN,testers_configured:!!env.META_TEST_SENDER_IDS||q.exec('SELECT COUNT(*) AS n FROM seller_testers').one().n>0,permissions:row?.proof?JSON.parse(row.proof):null,window_hours:24,retention_days:7,daily_limit:100,counts,parts,live_customers_enabled:false});
  }
  if(path==='/seller/disable'&&req.method==='POST'){
+  q.exec('INSERT INTO seller_enrollment_policy VALUES (1,0) ON CONFLICT(id) DO UPDATE SET armed=0');
+  q.exec('DELETE FROM pairing');
   q.exec('INSERT INTO seller_settings VALUES (1,0,0,NULL) ON CONFLICT(id) DO UPDATE SET enabled=0');
   q.exec("UPDATE seller_jobs SET status='paused',error='OPERATOR_STOP' WHERE status IN ('queued','sending')");
   return json({enabled:false,queued_jobs_paused:true,in_flight_request_may_complete:true});
+ }
+ if(path==='/seller/arm'&&req.method==='POST'){
+  if(box.name!=='messenger-development'||env.META_MODE!=='development-only')return json({error:'Tester enrollment only'},409);
+  const proof=await verifyPage(env);if(!proof.ready)return json({armed:false,permissions:proof},409);
+  q.exec('INSERT INTO seller_enrollment_policy VALUES (1,1) ON CONFLICT(id) DO UPDATE SET armed=1');
+  q.exec('INSERT INTO seller_settings VALUES (1,0,?,?) ON CONFLICT(id) DO UPDATE SET checked=excluded.checked,proof=excluded.proof',now,JSON.stringify(proof));
+  return json({armed:true,enabled:sellerActive(box),permissions:proof,notice:'Only an owner-confirmed tester nonce can enroll; no client auto-registration.'});
+ }
+ if(path==='/seller/auto-enroll'&&req.method==='POST'){
+  if(box.name!=='messenger-development'||q.exec('SELECT armed FROM seller_enrollment_policy WHERE id=1').toArray()[0]?.armed!==1)return json({enabled:false},409);
+  const p=await sellerFetch('/seller/promote',new Request('https://inbox/seller/promote',{method:'POST',body:JSON.stringify({confirmed_tester:true})}),box);if(!p.ok)return p;
+  return sellerFetch('/seller/enable',new Request('https://inbox/seller/enable',{method:'POST',body:JSON.stringify({enrollment:true})}),box);
  }
  if(path==='/seller/promote'&&req.method==='POST'){
   const b=await req.json();if(b.confirmed_tester!==true)return json({error:'App tester role confirmation required'},400);
@@ -42,9 +57,11 @@ export async function sellerFetch(path,req,box){
   q.exec('INSERT OR IGNORE INTO seller_testers VALUES (?,?)',key,row.sealed);q.exec('DELETE FROM pairing');return json({configured:true,psid_disclosed:false});
  }
  if(path==='/seller/enable'&&req.method==='POST'){
+  const command=await req.json();
   if(box.name!=='messenger-development'||env.META_MODE!=='development-only')return json({error:'Only isolated tester transport supported'},409);
   if(!env.META_TEST_SENDER_IDS&&!q.exec('SELECT COUNT(*) AS n FROM seller_testers').one().n)return json({error:'Authorized tester required'},409);
   const proof=await verifyPage(env);if(!proof.ready)return json({enabled:false,permissions:proof},409);
+  if(command.enrollment&&q.exec('SELECT armed FROM seller_enrollment_policy WHERE id=1').toArray()[0]?.armed!==1)return json({enabled:false,error:'Enrollment stopped'},409);
   q.exec('INSERT INTO seller_settings VALUES (1,1,?,?) ON CONFLICT(id) DO UPDATE SET enabled=1,checked=excluded.checked,proof=excluded.proof',now,JSON.stringify(proof));
   return json({enabled:true,mode:'authorized-testers-only',permissions:proof,live_customers_enabled:false});
  }

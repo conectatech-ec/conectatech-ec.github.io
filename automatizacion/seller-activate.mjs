@@ -5,14 +5,16 @@ const base=process.env.CLOUDFLARE_PILOT_URL||config.url_publica;
 const headers={Authorization:'Bearer '+process.env.PILOT_TOKEN,'Content-Type':'application/json'};
 async function call(path,body){try{const r=await fetch(base+'/messenger/'+path,{method:body?'POST':'GET',headers,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(45000)});return{http:r.status,data:await r.json()};}catch{return{http:0,data:{error:'REQUEST_FAILED_VALUES_WITHHELD'}};}}
 const report={authorized_testers_only:true,live_customers_enabled:false,paid_services_activated:false};
-for(const route of ['seller/status','seller/enable','seller/disable','seller/promote','seller/results']){const r=await fetch(base+'/messenger/'+route);if(r.status!==401)throw Error('Private seller route not protected');}report.private_routes_http=401;
-let state=await call('seller/status');report.initial_status_http=state.http;
+for(const route of ['seller/status','seller/enable','seller/disable','seller/promote','seller/results','seller/arm']){const r=await fetch(base+'/messenger/'+route);if(r.status!==401)throw Error('Private seller route not protected');}report.private_routes_http=401;
+let state;for(let attempt=0;attempt<15;attempt++){state=await call('seller/status');if(state.http===200&&state.data.mode==='authorized-testers-only')break;await new Promise(r=>setTimeout(r,2000));}
+ report.initial_status_http=state.http;
+ if(state.http!==200||state.data.mode!=='authorized-testers-only')throw Error('Deployed seller status route is unavailable');
 if(config.habilitar_vendedor_probadores===true){
  const paired=await call('pairing/status');
  if(paired.data.claimed){const p=await call('seller/promote',{confirmed_tester:true});report.promote_http=p.http;}
  state=await call('seller/status');
  if(state.data.testers_configured){const enabled=await call('seller/enable',{});report.enable_http=enabled.http;report.activation_result=enabled.data;}
- else report.blocker='AUTHORIZED_TESTER_MESSAGE_REQUIRED';
+ else {const armed=await call('seller/arm',{});report.arm_http=armed.http;report.enrollment_result=armed.data;if(armed.http!==200||armed.data.armed!==true)throw Error('Tester enrollment could not be armed; inspect permission check');report.blocker='AUTHORIZED_TESTER_MESSAGE_REQUIRED';}
 }
 const final=await call('seller/status');report.seller=final.data;
 report.evidence={incoming_received:false,graph_response_accepted:false,messenger_delivery_confirmed:false};

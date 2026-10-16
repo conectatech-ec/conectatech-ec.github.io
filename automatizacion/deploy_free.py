@@ -160,11 +160,13 @@ def main():
         files.append((name,'application/javascript+module',source.encode()))
     files.append(('catalog.mjs','application/javascript+module',b'export default '+(ROOT/'generated/catalogo.json').read_bytes()+b';\n'))
     body,ctype=multipart(metadata,files)
-    api.call(SCRIPT,'PUT',body,ctype)
+    # Synchronize secrets first. The final mutation uploads the complete code bundle,
+    # preventing subsequent secret deployments from restoring an earlier bundle.
     api.call(SCRIPT+'/secrets','PUT',{'name':'PILOT_TOKEN','text':os.environ['PILOT_TOKEN'],'type':'secret_text'})
     for name in ['META_APP_SECRET','META_VERIFY_TOKEN','META_TEST_SENDER_IDS','META_PAGE_ACCESS_TOKEN']:
         value=os.environ.get(name,'')
         if value:api.call(SCRIPT+'/secrets','PUT',{'name':name,'text':value,'type':'secret_text'})
+    api.call(SCRIPT,'PUT',body,ctype)
     # workers.dev is enabled manually in the panel; no account/subdomain/route changes.
     url=settings['CLOUDFLARE_PILOT_URL']
     path=ROOT/'generated/fase2/deployment.json';path.parent.mkdir(parents=True,exist_ok=True)
