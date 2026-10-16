@@ -9,8 +9,9 @@ export function candidates(input,memory={}){
 }
 export function paymentContext(input,memory={}){
  const named=/pac[ií]fico/i.test(input)?'pacifico':/guayaquil|american express|amex/i.test(input)?'guayaquil_amex':/diners/i.test(input)?'diners':/pichincha/i.test(input)?'pichincha':null;
- const term=String(input).match(/\b(3|tres|6|seis|12|doce|24|veinticuatro|36|treinta y seis)\s+(?:meses|cuotas)\b/i)||String(input).match(/\ba\s+(?:los\s+)?(3|tres|6|seis|12|doce|24|veinticuatro|36|treinta y seis)\b/i);
- const numbers={tres:3,seis:6,doce:12,veinticuatro:24,'treinta y seis':36};
+ const terms='[1-9]\\d?|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|quince|dieciocho|veinticuatro|treinta y seis';
+ const term=String(input).match(new RegExp('\\b('+terms+')\\s+(?:meses|cuotas)\\b','i'))||String(input).match(new RegExp('\\ba\\s+(?:los\\s+)?('+terms+')\\b','i'));
+ const numbers={uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12,quince:15,dieciocho:18,veinticuatro:24,'treinta y seis':36};
  const months=term?(numbers[term[1].toLowerCase()]||Number(term[1])):null;
  const bank=named||memory.bank||null,max=bank?policy.card_plans?.[bank]?.interest_free_up_to_months||Math.max(...(policy.card_plans?.[bank]?.interest_free_months||[0])):0;
  return {bank,months,requires_interest:!!months&&(months>=12||!!max&&months>max)};
@@ -48,7 +49,7 @@ export function factBook(source,now=Date.now()){
  const names={MICR27:'JBL Quantum Stream',POWE003:'Philco FLP8202CV',ADAP005:'adaptador Europa a Latino'};
  for(const p of source?.productos||[]){
   if(!ids.includes(p.sku))continue;const id=p.sku,name=names[id];facts[id+'.name']=name;
-  if(fresh(source)&&p.stock>0){facts[id+'.cash']=`El ${name} está en PROMO CONTADO a $${p.promo.toFixed(2)}.`;facts[id+'.stock']=`Hay ${p.stock} ${p.stock===1?'unidad':'unidades'} como stock referencial; se confirma al comprar.`;facts[id+'.pvp']=`El PVP publicado es $${p.pvp.toFixed(2)}.`;if(policy.pvp_is_final_card_price)facts[id+'.card']=`Con tarjeta, el ${name} cuesta $${p.pvp.toFixed(2)}.`;}
+  if(fresh(source)&&p.stock>0){facts[id+'.cash']=`El ${name} está en PROMO CONTADO a $${p.promo.toFixed(2)}.`;facts[id+'.stock']=`Hay ${p.stock} ${p.stock===1?'unidad':'unidades'} como stock referencial; se confirma al comprar.`;facts[id+'.pvp']=`El PVP publicado es $${p.pvp.toFixed(2)}, antes de intereses cuando correspondan.`;if(policy.pvp_is_final_card_price)facts[id+'.card']=`Con tarjeta, el ${name} cuesta $${p.pvp.toFixed(2)}, antes de intereses cuando correspondan.`;}
   else facts[id+'.unavailable']=fresh(source)?`No tengo disponibilidad confirmada del ${name}.`:'No tengo precio ni disponibilidad vigentes del '+name+'.';
  }
  if(source?.productos?.some(p=>p.sku==='POWE003')){facts['POWE003.battery']='La Philco tiene capacidad de 20.000 mAh y pantalla para consultar el nivel de carga.';facts['POWE003.power']='Tiene USB-C PD de hasta 20 W y USB-A de hasta 22,5 W, para equipos compatibles.';facts['POWE003.benefit']='La Philco te permite llevar energía de reserva y elegir entre conexión USB-C y USB-A.';}
