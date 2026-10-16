@@ -98,9 +98,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu115-juguete-armable-carros-f1/",
-  "fecha_verificacion": "2026-10-16T22:32:15.889225+00:00",
+  "fecha_verificacion": "2026-10-16T22:56:27.530084+00:00",
   "descripcion": "Auto de Carreras F1 Armable — Modelos Surtidos. Presentación de venta: Un kit para armar un auto de carreras. Variantes: Modelos fotografiados surtidos según disponibilidad, al mismo precio. Cantidad de piezas: Varía según el modelo entregado. Imagen de portada: Detalle de la rueda y parte frontal de un modelo de ejemplo.",
   "contenido_venta": "Un kit para armar un auto de carreras. Modelos surtidos según disponibilidad, al mismo precio del SKU. La cantidad de piezas varía según el modelo. La portada muestra un detalle del auto de ejemplo.",
   "presentacion": "sin caja",
@@ -153,7 +153,7 @@
       "solicitado": "JUGU115",
       "sku": "JUGU115",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T22:32:37.308Z",
+      "fecha": "2026-10-16T22:56:31.455Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -178,7 +178,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu115-juguete-armable-carros-f1/",
-      "url_comprobada": "http://127.0.0.1:8804/productos/jugu115-juguete-armable-carros-f1/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu115-juguete-armable-carros-f1/",
       "archivo_html": "productos/jugu115-juguete-armable-carros-f1/index.html",
       "http": 200,
       "sha256_html": "9de7f5c62b2b1fd8861dc50decde5e6362843f48ade0626972ee2b635c4130e1",
@@ -188,7 +188,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu115/JUGU115-01.webp",
-        "url_cargada": "http://127.0.0.1:8804/imagenes/jugu115/JUGU115-01-600.webp?v=a64517afffe3070c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu115/JUGU115-01-600.webp?v=a64517afffe3070c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -197,36 +197,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8804/productos/jugu115-juguete-armable-carros-f1/",
+          "url": "https://conectatech-ec.github.io/productos/jugu115-juguete-armable-carros-f1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8804/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8804/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8804/imagenes/jugu115/JUGU115-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu115/JUGU115-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-104/qa-local/movil/JUGU115-390.png",
+      "archivo": "reportes/continuacion-104/qa-publica/movil/JUGU115-390.png",
       "sha256": "da7498071bcaeb94a20f9c5e088dec12ed9ed4d71eaa869f0e3949ecb587da8d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-104/qa-local/movil/JUGU115-1280.png",
+        "archivo": "reportes/continuacion-104/qa-publica/movil/JUGU115-1280.png",
         "sha256": "c8501b8d39c437787ab8e1eb303dabe9cc5195b9cbd61c6c9b152e688ec86a95",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T22:56:27.530084+00:00",
+      "archivo": "reportes/continuacion-104/http-publicacion.json",
+      "reporte": "reportes/continuacion-104/http-publicacion.json",
+      "sha256": "d21064810756fb4bce1eba5234576a28d81d7323d62e3823987ee41c1b2959d1",
+      "sku": "JUGU115"
     }
   },
   "beneficios": [
