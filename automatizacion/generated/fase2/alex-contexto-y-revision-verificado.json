@@ -1,0 +1,362 @@
+{
+  "verified_at": "2026-10-16T22:46:37.097Z",
+  "worker": "conectatech-comercial-piloto",
+  "url": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
+  "branch": "automatizacion/piloto-cloud-3sku-20261015",
+  "release": "5ddd50af10cfa9f52a858319a05ede90a700eef0",
+  "workflow_run": 38977601581,
+  "workflow_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38977601581",
+  "conclusion": "success",
+  "unit_tests": {
+    "passed": 98,
+    "python": 16,
+    "node": 82
+  },
+  "https_real_ai": {
+    "mode": "real_ai_context_upgrade_private_https_not_Messenger",
+    "passed": true,
+    "paid_services_activated": false,
+    "messages_sent_to_Messenger": 0,
+    "tests": [
+      {
+        "input": "Busco el JBL Quantum Stream, ¿cuánto cuesta y hay stock?",
+        "text": "El JBL Quantum Stream está en PROMO CONTADO a $102.01. Hay 1 unidad como stock referencial; se confirma al comprar. ¿Quieres retirarlo en Quito o recibirlo en casa?",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "MICR27"
+        ],
+        "image": "https://conectatech-ec.github.io/imagenes/micr27/MICR27-promo.webp",
+        "buttons": [
+          "Retiro en tienda",
+          "Entrega en Quito",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "MICR27"
+          ],
+          "turns": 2
+        }
+      },
+      {
+        "input": "Quiero la batería Philco, ¿cuánto cuesta y hay stock?",
+        "text": "El Philco FLP8202CV está en PROMO CONTADO a $33.01. Hay 1 unidad como stock referencial; se confirma al comprar. ¿Hay algo más que necesites saber sobre ella?",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": "https://conectatech-ec.github.io/imagenes/powe003/POWE003-01.webp",
+        "buttons": [
+          "Retiro en tienda",
+          "Entrega en Quito",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "turns": 2
+        }
+      },
+      {
+        "input": "¿Cuánto cuesta el adaptador Europa a Latino y hay stock?",
+        "text": "El adaptador Europa a Latino está en PROMO CONTADO a $2.50. Hay 16 unidades como stock referencial; se confirma al comprar. ¿Quieres retirarlo en Quito o recibirlo en tu casa?",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "ADAP005"
+        ],
+        "image": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01.webp",
+        "buttons": [
+          "Retiro en tienda",
+          "Entrega en Quito",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "ADAP005"
+          ],
+          "turns": 2
+        }
+      },
+      {
+        "input": "Busco una batería portátil para mi celular; mi presupuesto es de cuarenta dólares.",
+        "text": "El Philco FLP8202CV está en PROMO CONTADO a $33.01. ¿Prefieres retirarla o recibirla en Quito?",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": "https://conectatech-ec.github.io/imagenes/powe003/POWE003-01.webp",
+        "buttons": [
+          "Retiro en tienda",
+          "Entrega en Quito",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "budget": 40,
+          "turns": 2
+        }
+      },
+      {
+        "input": "Mi presupuesto ahora 35. Pago al contado y estoy en La Carolina, Quito. Quiero entrega en Quito.",
+        "text": "La Philco te permite llevar energía de reserva y elegir entre conexión USB-C y USB-A. El Philco FLP8202CV está en PROMO CONTADO a $33.01.",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": null,
+        "buttons": [
+          "Retiro en tienda",
+          "Entrega en Quito",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "budget": 35,
+          "sector": "La Carolina",
+          "payment": "contado",
+          "delivery": "quito",
+          "turns": 4
+        }
+      },
+      {
+        "input": "No quiero hablar con una persona todavía; prefiero seguir contigo.",
+        "text": "La Philco te permite llevar energía de reserva y elegir entre conexión USB-C y USB-A. El Philco FLP8202CV está en PROMO CONTADO a $33.01.",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": null,
+        "buttons": [
+          "Formas de pago",
+          "Envío nacional",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "budget": 35,
+          "sector": "La Carolina",
+          "payment": "contado",
+          "delivery": "quito",
+          "turns": 6
+        }
+      },
+      {
+        "input": "¿Me muestras otra vez la foto de esa batería?",
+        "text": "La Philco te permite llevar energía de reserva y elegir entre conexión USB-C y USB-A. La Philco tiene capacidad de 20.000 mAh y pantalla para consultar el nivel de carga.",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": "https://conectatech-ec.github.io/imagenes/powe003/POWE003-01.webp",
+        "buttons": [
+          "Precio de contado",
+          "Formas de pago",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "budget": 35,
+          "sector": "La Carolina",
+          "payment": "contado",
+          "delivery": "quito",
+          "turns": 8
+        }
+      },
+      {
+        "input": "¿Qué capacidad tiene esa batería?",
+        "text": "La Philco tiene capacidad de 20.000 mAh y pantalla para consultar el nivel de carga. ¿Necesitas algo más sobre la batería Philco?",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": null,
+        "buttons": [
+          "Ver fotografía",
+          "Formas de pago",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "budget": 35,
+          "sector": "La Carolina",
+          "payment": "contado",
+          "delivery": "quito",
+          "turns": 10
+        }
+      },
+      {
+        "input": "¿Me haces una rebajita? 😂",
+        "text": "La oferta de contado publicada es la autorizada; un descuento adicional necesita aprobación. Jajaja, ¡veo que te gusta negociar! ¿Hay algo más que necesites saber sobre la batería Philco?",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": null,
+        "buttons": [
+          "Retiro en tienda",
+          "Entrega en Quito",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "budget": 35,
+          "sector": "La Carolina",
+          "payment": "contado",
+          "delivery": "quito",
+          "turns": 12
+        }
+      },
+      {
+        "input": "¿Y con tarjeta cuánto cuesta?",
+        "text": "Con tarjeta, el Philco FLP8202CV cuesta $37.96, antes de intereses cuando correspondan.",
+        "generative": true,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": null,
+        "buttons": [
+          "Retiro en tienda",
+          "Entrega en Quito",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "budget": 35,
+          "sector": "La Carolina",
+          "payment": "contado",
+          "delivery": "quito",
+          "turns": 12
+        }
+      },
+      {
+        "input": "¿Eres una persona?",
+        "text": "Soy Alex, el asistente automatizado de CONECTATECH.",
+        "generative": false,
+        "error_code": null,
+        "focus": [
+          "POWE003"
+        ],
+        "image": null,
+        "buttons": [
+          "Ver fotografía",
+          "Formas de pago",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [
+            "POWE003"
+          ],
+          "budget": 35,
+          "sector": "La Carolina",
+          "payment": "contado",
+          "delivery": "quito",
+          "turns": 12
+        }
+      },
+      {
+        "input": "olvida esta conversación",
+        "text": "Listo, olvidé el contexto de esta conversación. ¿En qué te ayudo ahora?",
+        "generative": false,
+        "error_code": null,
+        "focus": [],
+        "image": null,
+        "buttons": [
+          "Busco un micrófono",
+          "Busco una batería",
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [],
+          "turns": 0
+        }
+      }
+    ],
+    "quota_before": {
+      "reserved_neurons": 6080,
+      "calls": 76,
+      "remaining_calls": 24,
+      "reset_at": "2026-10-17T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    },
+    "private_endpoints_http": 401,
+    "review_shell_http": 200,
+    "review": {
+      "required": false,
+      "pending_count": 0,
+      "scope": "authorized-testers-only",
+      "live_customers_enabled": false
+    },
+    "ci_review_mutation_http": 409,
+    "quota_after": {
+      "reserved_neurons": 6880,
+      "calls": 86,
+      "remaining_calls": 14,
+      "reset_at": "2026-10-17T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    }
+  },
+  "new_review_flow_messenger_test": {
+    "incoming_verified": false,
+    "human_approval_verified": false,
+    "send_verified": false,
+    "visual_receipt_verified": false,
+    "status": "awaiting_authorized_tester_personal_account_action",
+    "prior_messenger_text_image_and_card_confirmation_preserved": "alex-cloud-verificado.json"
+  },
+  "meta": {
+    "permission_access": "standard",
+    "app_mode": "development",
+    "advanced_access_approved": false,
+    "business_verification": "in_review_owner_confirmation",
+    "external_customer_operation_enabled": false
+  },
+  "security": {
+    "general_ingress_enabled": false,
+    "tester_mode_preserved": true,
+    "secrets_in_logs": false,
+    "main_modified": false,
+    "catalogue_production_modified": false
+  },
+  "finance": {
+    "new_cost_authorized_usd": 0,
+    "paid_services_activated": false,
+    "free_counter_after_tests": {
+      "reserved_neurons": 6880,
+      "calls": 86,
+      "remaining_calls": 14,
+      "reset_at": "2026-10-17T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    }
+  }
+}

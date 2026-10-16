@@ -31,6 +31,8 @@ Esta bandeja está implementada para probadores; el transporte general de client
 
 ## Verificación
 
+Despliegue `5ddd50af`: [ejecución aprobada de GitHub Actions](https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38977601581) y [evidencia conservada](generated/fase2/alex-contexto-y-revision-verificado.json). Pasaron 98 pruebas automatizadas y doce turnos por HTTPS: diez inferencias generativas reales más transparencia y eliminación sin invocar el modelo. La comprobación por HTTPS no se presenta como una nueva entrega de Messenger. El probador ya había confirmado texto, imagen y pagos en la versión anterior; la aprobación humana desde Messenger de esta versión queda pendiente de su interacción personal.
+
 Se conservan las pruebas anteriores. `tests/alex-upgrade.test.mjs` incorpora doce escenarios de correcciones, negaciones, brevedad, contexto exacto, botones, cuotas, aprobación, rechazo, cambio de cotización, caducidad, parada, orden, privacidad y aislamiento CI. Se utilizan SQLite y cifrado reales con transporte simulado en las pruebas unitarias, que no acreditan por sí solas una entrega en Messenger.
 
 `alex-upgrade-e2e.mjs` comprueba los tres productos y el modelo real por HTTPS, memoria y correcciones, fotografía repetida bajo petición, características, regateo y precio con tarjeta. Nunca fabrica un evento de Meta ni envía mensajes desde el namespace de demostración. El resultado se guarda en generated/fase2/alex-context-upgrade.json. La prueba integral anterior `alex-e2e.mjs` se conserva como evidencia y herramienta de regresión.
