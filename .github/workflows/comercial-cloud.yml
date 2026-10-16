@@ -54,6 +54,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - run: python automatizacion/tests/deploy_test.py
       - name: Sincronizar solo META_VERIFY_TOKEN y comprobar desafio HTTPS
         run: python automatizacion/deploy_free.py --sync-meta-verify-token

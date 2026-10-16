@@ -1,4 +1,4 @@
-import importlib.util,sqlite3,unittest,os,sys,tempfile
+import importlib.util,sqlite3,unittest,os,sys,tempfile,io,json
 from unittest.mock import patch
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -20,13 +20,26 @@ class MinimumPrivilegeTest(unittest.TestCase):
   def opener(req,timeout):
    q=module.urllib.parse.parse_qs(module.urllib.parse.urlsplit(req.full_url).query)
    seen.append(q['hub.verify_token'][0])
-   if len(seen)==1 or seen[-1]!=token:raise module.urllib.error.HTTPError(req.full_url,403,'fixture',{},None)
+   if len(seen)==1 or seen[-1]!=token:raise module.urllib.error.HTTPError(req.full_url,403,'fixture',{},io.BytesIO(b'Forbidden'))
    return Reply(q['hub.challenge'][0])
   with tempfile.TemporaryDirectory() as tmp,patch.object(module,'ROOT',Path(tmp)),patch.object(module.urllib.request,'urlopen',side_effect=opener),patch.object(module.time,'sleep') as delay,patch('builtins.print') as output:
    result=module.sync_meta_verify_token(api,settings,'https://conectatech-comercial-piloto.fixture.workers.dev',token)
    self.assertTrue(result['passed']);self.assertEqual(result['attempts'],2);delay.assert_called_once_with(2)
    self.assertEqual(api.calls,[(module.SCRIPT+'/secrets','PUT',{'name':'META_VERIFY_TOKEN','text':token,'type':'secret_text'})])
    self.assertEqual(seen[:2],[token,token]);self.assertNotIn(token,str(output.call_args_list))
+ def test_rotation_alternate_client_requires_exact_challenge_and_keeps_secret_out_of_arguments(self):
+  token='synthetic-fixture-secret-only-for-test-0001'
+  settings={'bindings':[{'name':'META_INGRESS_ENABLED','text':'false'},{'name':'META_MODE','text':'development-only'}]}
+  success={'passed':True,'configured_token_http':200,'challenge_matches':True,'wrong_token_http':403,'attempts':1}
+  for verified in [True,False]:
+   data={**success,'challenge_matches':verified}
+   child=unittest.mock.Mock(returncode=0,stdout=json.dumps(data))
+   blocked=module.urllib.error.HTTPError('https://fixture.invalid',403,'fixture',{},io.BytesIO(b'upstream denial'))
+   with tempfile.TemporaryDirectory() as tmp,patch.object(module,'ROOT',Path(tmp)),patch.object(module.urllib.request,'urlopen',side_effect=blocked),patch.object(module.subprocess,'run',return_value=child) as run,patch('builtins.print'):
+    if verified:self.assertTrue(module.sync_meta_verify_token(unittest.mock.Mock(),settings,'https://fixture.invalid',token)['passed'])
+    else:
+     with self.assertRaises(RuntimeError):module.sync_meta_verify_token(unittest.mock.Mock(),settings,'https://fixture.invalid',token)
+    self.assertNotIn(token,str(run.call_args.args));self.assertEqual(run.call_args.kwargs['env']['META_VERIFY_TOKEN'],token)
  def test_rotation_refuses_open_ingress_before_any_mutation(self):
   api=unittest.mock.Mock()
   with self.assertRaises(ValueError):module.sync_meta_verify_token(api,{'bindings':[]},'https://unused.invalid','x'*32)

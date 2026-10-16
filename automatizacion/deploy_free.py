@@ -1,7 +1,7 @@
 """Update one existing pilot Worker with a per-Worker Editor token.
 Free plan is verified by owner in dashboard; no Billing/D1/account-list API access.
 """
-import json, os, re, secrets, sys, time, urllib.error, urllib.parse, urllib.request
+import json, os, re, secrets, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 WORKER='conectatech-comercial-piloto'
@@ -85,16 +85,27 @@ def sync_meta_verify_token(api,settings,url,token):
         except urllib.error.HTTPError as error:return error.code,error.read(512).decode('utf-8',errors='replace')
         except (urllib.error.URLError,TimeoutError):return 0,''
     challenge='ct-rotation-'+secrets.token_hex(12)
+    node_result=None
     for attempt in range(1,16):
         status,body=challenge_request(token,challenge)
         if status==200 and body==challenge:break
+        if status==403 and body!='Forbidden':
+            # Some intermediaries reject urllib before the Worker. Use the same
+            # standards-based Node fetch client as the existing HTTPS pilot tests.
+            try:
+                child=subprocess.run(['node',str(ROOT/'verify-meta-token.mjs'),url],env={**os.environ,'META_VERIFY_TOKEN':token},capture_output=True,text=True,timeout=180)
+                node_result=json.loads(child.stdout)
+            except (OSError,ValueError,subprocess.TimeoutExpired):raise RuntimeError('HTTPS client verification failed; URL and secret withheld') from None
+            if child.returncode!=0 or node_result.get('passed') is not True or node_result.get('configured_token_http')!=200 or node_result.get('challenge_matches') is not True or node_result.get('wrong_token_http')!=403:
+                raise RuntimeError(f"HTTPS challenge not verified (HTTP {node_result.get('configured_token_http',0)}); URL and secret withheld")
+            break
         if attempt<15:time.sleep(2)
     else:
         print(json.dumps({'rotation_diagnostic':True,'http':status,'handler_forbidden':body=='Forbidden','github_value_has_outer_whitespace':token!=token.strip()}))
         raise RuntimeError(f'New token challenge failed (HTTP {status}); request URL and secret withheld')
-    wrong_status,_=challenge_request('invalid-'+secrets.token_hex(24),challenge)
+    wrong_status=node_result['wrong_token_http'] if node_result else challenge_request('invalid-'+secrets.token_hex(24),challenge)[0]
     if wrong_status!=403:raise RuntimeError('Incorrect verification token was not rejected; secret withheld')
-    result={'worker':WORKER,'url':url+'/webhooks/meta','passed':True,'configured_token_http':200,'challenge_matches':True,'wrong_token_http':403,'attempts':attempt,'secret_preserved_exactly':True,'reception_enabled':False,'outbound_enabled':False,'worker_code_changed':False,'paid_services_activated':False}
+    result={'worker':WORKER,'url':url+'/webhooks/meta','passed':True,'configured_token_http':200,'challenge_matches':True,'wrong_token_http':403,'attempts':node_result['attempts'] if node_result else attempt,'https_client':'node_fetch' if node_result else 'python_urllib','secret_preserved_exactly':True,'reception_enabled':False,'outbound_enabled':False,'worker_code_changed':False,'paid_services_activated':False}
     path=ROOT/'generated/fase2/meta-token-sync.json';path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
     return result
