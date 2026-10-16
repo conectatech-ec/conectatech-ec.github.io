@@ -11,7 +11,7 @@ if(token){
  if(me.b.error)report.identity_error_code=Number(me.b.error.code)||null;
  if(report.page_identity_matches){
   const apps=await get(config.meta_page_id+'/subscribed_apps?fields=id,name,subscribed_fields',token);report.subscriptions_http=apps.http;report.subscriptions_error_code=Number(apps.b.error?.code)||null;report.subscriptions_error_subcode=Number(apps.b.error?.error_subcode)||null;report.subscriptions_requires_manage_metadata=/pages_manage_metadata/i.test(apps.b.error?.message||'');
-  const app=apps.b.data?.find(a=>a.name==='Jotacellcomunicapp');report.app_subscription_found=!!app;report.messages_subscribed=!!app?.subscribed_fields?.includes('messages');report.delivery_subscribed=!!app?.subscribed_fields?.includes('message_deliveries');
+  const app=apps.b.data?.find(a=>a.name==='Jotacellcomunicapp');report.app_subscription_found=apps.http===200?!!app:null;report.messages_subscribed=apps.http===200?!!app?.subscribed_fields?.includes('messages'):null;report.delivery_subscribed=apps.http===200?!!app?.subscribed_fields?.includes('message_deliveries'):null;
   const appInfo=await get('app?fields=id,name',token);report.app_identity_http=appInfo.http;report.app_name_matches=appInfo.b.name==='Jotacellcomunicapp';
   const appId=app?.id||process.env.META_APP_ID||(report.app_name_matches?appInfo.b.id:null);
   if(appId&&process.env.META_APP_SECRET){

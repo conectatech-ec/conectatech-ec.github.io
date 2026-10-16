@@ -39,7 +39,7 @@ export async function controlFetch(path,req,box){
    sql.exec('INSERT INTO receipt_rate VALUES (?,1) ON CONFLICT(day) DO UPDATE SET n=n+1',day);
   }
   // Rebuild the envelope explicitly: discard all unrecognized fields.
-  const data={id:crypto.randomUUID(),at:new Date(now).toISOString(),method:'POST',path:'/webhooks/meta',signature_valid:b.signature_valid,http_status:b.http_status,reason:b.reason,page_matches:b.page_matches===true,source:b.source,reception_enabled:b.reception_enabled===true,outbound_enabled:false};
+  const data={id:crypto.randomUUID(),at:new Date(now).toISOString(),method:'POST',path:'/webhooks/meta',signature_valid:b.signature_valid,http_status:b.http_status,reason:b.reason,page_matches:b.page_matches===true,source:b.source,reception_enabled:b.reception_enabled===true,outbound_enabled:b.outbound_enabled===true};
   sql.exec('INSERT INTO receipts VALUES (?,?,?,?)',data.id,now,JSON.stringify(data),now+7*86400000);
   sql.exec("DELETE FROM receipts WHERE json_extract(data,'$.signature_valid')=1 AND id NOT IN (SELECT id FROM receipts WHERE json_extract(data,'$.signature_valid')=1 ORDER BY at DESC,rowid DESC LIMIT 50)");
   sql.exec("DELETE FROM receipts WHERE COALESCE(json_extract(data,'$.signature_valid'),0)=0 AND id NOT IN (SELECT id FROM receipts WHERE COALESCE(json_extract(data,'$.signature_valid'),0)=0 ORDER BY at DESC,rowid DESC LIMIT 10)");

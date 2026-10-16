@@ -1,6 +1,6 @@
 import catalog from './generated/catalogo.json' with {type:'json'};
 import {answer} from './commerce.mjs';
-import {sellerInit,sellerCleanup,sellerFetch,sellerAlarm,sellerNext} from './messenger-seller.mjs';
+import {sellerInit,sellerCleanup,sellerFetch,sellerAlarm,sellerNext,sellerActive} from './messenger-seller.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
 import {controlInit,controlCleanup,controlNextAlarm,controlFetch} from './messenger-control.mjs';
 const json=(x,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
@@ -38,7 +38,10 @@ export class MessengerTestInbox {
    const daily=this.sql.exec("SELECT day,COUNT(*) AS consultas,SUM(status='prepared') AS borradores_preparados,SUM(status='queued') AS pendientes,SUM(status='failed') AS fallidos,SUM(skus!='[]') AS consultas_con_sku,SUM(attempts) AS reintentos FROM events GROUP BY day ORDER BY day DESC").toArray();
    const duplicates=this.sql.exec('SELECT day,duplicates FROM counters').toArray();
    const reviews=this.sql.exec('SELECT decision,COUNT(*) AS n FROM reviews GROUP BY decision').toArray();
-   return json({retention_days:7,mode:'development-only',outbound_enabled:false,messages_sent:0,confirmed_orders:0,opportunity_definition:'consultas_con_sku cuenta interés en SKU; no equivale a ventas ni clientes únicos',daily:daily.map(r=>({...r,duplicates:duplicates.find(d=>d.day===r.day)?.duplicates||0})),reviews});
+   const sent=this.sql.exec("SELECT COUNT(*) AS n FROM seller_parts WHERE state='accepted'").one().n;
+   const delivered=this.sql.exec("SELECT COUNT(*) AS n FROM seller_parts WHERE state='accepted' AND delivered=1").one().n;
+   const seller=this.sql.exec('SELECT status,COUNT(*) AS n FROM seller_jobs GROUP BY status').toArray();
+   return json({retention_days:7,mode:'development-only',outbound_enabled:sellerActive(this),messages_sent:sent,messages_delivered:delivered,seller,confirmed_orders:0,opportunity_definition:'consultas_con_sku cuenta interés en SKU; no equivale a ventas ni clientes únicos',daily:daily.map(r=>({...r,duplicates:duplicates.find(d=>d.day===r.day)?.duplicates||0})),reviews});
   }
   if(path==='/review'&&req.method==='POST') {
    const b=await req.json();

@@ -20,10 +20,10 @@ async function limitedBody(req) {
 export async function handleMessengerWebhook(req,env,scope='development') {
  if(req.method==='GET') return verifyMetaWebhook(req,env);
  if(req.method!=='POST') return json({error:'Method not allowed'},405);
- let payload,pageMatches=false,signatureValid=null;
+ let payload,pageMatches=false,signatureValid=null,outboundEnabled=false;
  const source=scope==='ci'?'synthetic_ci':env.PILOT_TOKEN&&req.headers.get('Authorization')===`Bearer ${env.PILOT_TOKEN}`?'authorized_ci_probe':'external_https';
  async function finish(data,status,reason){
-  const receipt={signature_valid:signatureValid,http_status:status,reason,page_matches:pageMatches,source,reception_enabled:env.META_INGRESS_ENABLED==='true'};
+  const receipt={signature_valid:signatureValid,http_status:status,reason,page_matches:pageMatches,source,reception_enabled:env.META_INGRESS_ENABLED==='true'||outboundEnabled,outbound_enabled:outboundEnabled};
   console.info(JSON.stringify({event:'meta_webhook_receipt',...receipt}));
   try{if(env.MESSENGER_TEST_INBOX)await env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-'+scope)).fetch('https://inbox/receipt',{method:'POST',body:JSON.stringify(receipt)});}catch{console.error(JSON.stringify({event:'meta_receipt_unavailable'}));}
   return json(data,status);
@@ -45,6 +45,7 @@ export async function handleMessengerWebhook(req,env,scope='development') {
    if(e.sender?.id&&String(e.recipient?.id)===env.META_PAGE_ID&&Array.isArray(e.delivery?.mids))await stub.fetch('https://inbox/seller/delivery',{method:'POST',body:JSON.stringify({mids:e.delivery.mids.slice(0,20).filter(m=>typeof m==='string'&&m.length<500)})});
   }
   if(seller.enabled){
+   outboundEnabled=true;
    let events;try{events=normalizeEvents(payload,env);}catch{return finish({error:'Event limit'},400,'event_limit');}
    if(events.length>10)return finish({error:'Batch limit'},400,'event_limit');
    for(const event of events){

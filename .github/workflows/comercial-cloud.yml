@@ -160,6 +160,11 @@ jobs:
         env:
           CLOUDFLARE_PILOT_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Habilitar solo probadores configurados y verificar proteccion HTTPS
+        run: node automatizacion/seller-activate.mjs
+        env:
+          CLOUDFLARE_PILOT_URL: ${{ steps.deploy.outputs.url }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

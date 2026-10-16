@@ -1,3 +1,5 @@
+> Actualización 16-10-2026: la implementación vigente de envío autorizado, lista de probadores y parada está en [VENDEDOR-MESSENGER.md](VENDEDOR-MESSENGER.md). Las restricciones de salida descritas abajo corresponden al prototipo anterior. No acreditan el estado del vendedor actual.
+
 # Vincular probador y comprobar entrega desde Meta
 
 Panel del piloto:

@@ -80,6 +80,7 @@ export async function sellerAlarm(box,deps={refreshCatalog,verifyAssets,sendMess
  if(!sellerActive(box))return;
  const rows=q.exec("SELECT * FROM seller_jobs WHERE status='queued' ORDER BY rowid LIMIT 1").toArray();
  for(const row of rows){
+  if(q.exec('SELECT until_at FROM seller_handoffs WHERE who=?',row.who).toArray()[0]?.until_at>Date.now()){q.exec("UPDATE seller_jobs SET status='paused',error='HUMAN_HANDOFF' WHERE k=?",row.k);continue;}
   q.exec("UPDATE seller_jobs SET status='processing' WHERE k=? AND status='queued'",row.k);
   if(Date.now()-row.inbound>=86400000){handoff(box,row,'OUTSIDE_24H_WINDOW');continue;}
   let messages=[],source;
@@ -97,8 +98,9 @@ export async function sellerAlarm(box,deps={refreshCatalog,verifyAssets,sendMess
      // Approved benefit copy + current financial data, never generative prices or specs.
      messages.push({text:('¡Hola! Te comparto la información vigente de CONECTATECH:\n'+response.text+'\n¿Prefieres retiro, contraentrega en Quito o envío nacional? Escribe «vendedor» si necesitas ayuda.').slice(0,1900)});
      messages.push({attachment:{type:'image',payload:{url:response.foto,is_reusable:false}}});
-     if(response.banner&&catalog.productos.find(p=>p.sku===sku).promo===response.precio&&catalog.productos.find(p=>p.sku===sku).pvp===response.pvp)messages.push({attachment:{type:'image',payload:{url:response.banner,is_reusable:false}}});
-     drafts.push({sku,precio:response.precio,stock:response.stock_referencial,fuente_fecha:response.fuente_fecha,foto:response.foto,banner:response.banner});
+     const currentBanner=response.banner&&catalog.productos.find(p=>p.sku===sku).promo===response.precio&&catalog.productos.find(p=>p.sku===sku).pvp===response.pvp?response.banner:null;
+     if(currentBanner)messages.push({attachment:{type:'image',payload:{url:currentBanner,is_reusable:false}}});
+     drafts.push({sku,precio:response.precio,stock:response.stock_referencial,fuente_fecha:response.fuente_fecha,foto:response.foto,banner:currentBanner});
     }
     q.exec('INSERT OR REPLACE INTO seller_drafts VALUES (?,?)',row.k,JSON.stringify({event_ref:row.k,products:drafts}));
    }

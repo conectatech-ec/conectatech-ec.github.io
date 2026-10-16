@@ -1,3 +1,5 @@
+> Actualización 16-10-2026: la implementación vigente de envío autorizado, lista de probadores y parada está en [VENDEDOR-MESSENGER.md](VENDEDOR-MESSENGER.md). Las restricciones de salida descritas abajo corresponden al prototipo anterior. No acreditan el estado del vendedor actual.
+
 # Messenger de Meta — Jotacellcomunicapp en Desarrollo
 
 **Diagnóstico desplegado y verificado:** [panel privado y vinculación mediante frase](MESSENGER-CONECTAR-PROBADOR.md), con [evidencia HTTPS actual](generated/fase2/meta-diagnostico-vinculacion-verificado.json). 48 pruebas aprobadas; tres SKU, recibos 200/firma válida/cierre y 403/firma inválida, PSID cifrado de consumo único y panel operativo. No hay entrega externa de Meta confirmada todavía. META_INGRESS_ENABLED=false; faltan la acción de cuenta Meta/probador y su allowlist. Los estados de instalaciones anteriores que siguen son históricos.

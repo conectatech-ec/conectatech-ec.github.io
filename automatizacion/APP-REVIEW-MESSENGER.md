@@ -1,0 +1,26 @@
+# Preparación de acceso a clientes externos — Jotacellcomunicapp
+
+## Estado acreditado por API
+
+Token de CONECTATECHec válido, tipo PAGE, aplicación coincidente, `pages_messaging` concedido. Eso habilita la validación con probadores con rol aceptado. No acredita App Live, aprobación de Advanced Access ni revisión empresarial. Esta sesión no dispone de la sesión administrativa de Meta ni de un API para presentar App Review en nombre del propietario.
+
+## Acción de cuenta imprescindible, después de la conversación probadora
+
+En Meta for Developers → Jotacellcomunicapp → App Review / Permissions and Features o el caso de uso Messenger que muestre el panel:
+
+1. Comprobar `pages_messaging` y solicitar el nivel de acceso que Meta exija para personas externas a roles. No pedir permisos de anuncios, facturación ni perfiles.
+2. Completar la verificación empresarial que el panel solicite; no contratar Meta Verified. Proporcionar datos reales del negocio, contacto, política pública de privacidad e instrucciones/mecanismo de eliminación de datos revisados por el propietario. No inventar identidad legal, dirección ni plazos legales.
+3. Adjuntar instrucciones y grabación de una conversación real autorizada: consulta de MICR27, respuesta con fuente vigente, fotografía/banner, luego POWE003 y ADAP005; transferencia a vendedor y parada. No mostrar secretos, identificadores personales ni conversaciones de clientes. No usar fixtures CI como grabación probatoria.
+4. Verificar que la Página, además del webhook de la app, está vinculada y suscrita a `messages`. Añadir `message_deliveries` para confirmar entrega si la configuración oficial lo permite. No ampliar permisos automáticamente. Gestionar este enlace en la interfaz de Meta evita conceder `pages_manage_metadata` solo para un diagnóstico.
+5. Tras aprobación, conservar evidencia del nivel concedido y del modo Live/público requerido. Solo entonces retirar el filtro de probadores mediante un cambio controlado y nueva prueba externa. El propietario ya pidió habilitar funciones autorizadas; no se requerirá repetir autorización comercial, pero sí acreditar el permiso de Meta.
+
+## Texto propuesto para la revisión
+
+«CONECTATECH responde consultas iniciadas por personas en Messenger de su Página. Utiliza pages_messaging para contestar dentro de la ventana estándar con información de tres productos del catálogo propio: precios y disponibilidad actualizados, fotografías aprobadas y opciones de entrega pendientes de confirmación. No envía campañas ni mensajes proactivos fuera de ventana. El usuario puede pedir atención por una persona. Existen deduplicación persistente, bloqueo de fuentes vencidas, parada del operador y registros mínimos con eliminación operativa a siete días. La prueba se realiza con cuentas autorizadas y aisladas de clientes.»
+
+Esto es un borrador de justificación, no una solicitud presentada ni aprobada. La política de privacidad y el mecanismo de eliminación deben estar disponibles y cumplir lo que solicite el panel antes de presentar la revisión. Código y operación: VENDEDOR-MESSENGER.md.
+
+Fuentes oficiales:
+- https://developers.facebook.com/docs/messenger-platform/
+- https://developers.facebook.com/docs/messenger-platform/app-review/
+- https://www.postman.com/meta/messenger-platform-api/documentation/iyp204x/messenger-platform-api
