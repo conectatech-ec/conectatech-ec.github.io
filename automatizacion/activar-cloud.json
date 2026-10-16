@@ -1,9 +1,9 @@
 {
   "activar": false,
-  "sincronizar_meta_verify_token": true,
+  "sincronizar_meta_verify_token": false,
   "meta_page_id": "105549695770538",
   "costo_maximo_usd": 0,
   "alcance": "actualizar solo Worker existente del piloto; sin Billing, D1, cron, rutas, producción ni envíos Meta",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Rotación autorizada de META_VERIFY_TOKEN: verificar sincronización exacta y desafío HTTPS. Recepción cerrada, sin envíos ni cambios de producción."
+  "nota": "Nuevo META_VERIFY_TOKEN sincronizado desde GitHub: desafío HTTPS 200 exacto y token incorrecto 403. Código del Worker sin cambios. Controles de upload y rotación cerrados; recepción Meta cerrada y sin envíos."
 }

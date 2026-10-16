@@ -21,6 +21,10 @@ No existe cliente de Graph Send API ni Page Access Token en el Worker. Registrar
 
 ## Operación privada y aprobación humana
 
+### Rotación del token de verificación
+
+Tras reemplazar `META_VERIFY_TOKEN` en el environment GitHub `conectatech-piloto-gratis`, el workflow de la rama del piloto puede sincronizarlo con `sincronizar_meta_verify_token:true` y `activar:false` en `activar-cloud.json`. La tarea requiere primero comprobar el Worker existente y que su recepción siga cerrada en Desarrollo. Actualiza únicamente ese secreto, conserva exactamente el valor de GitHub y verifica por HTTPS tanto el HTTP 200 con challenge idéntico como el HTTP 403 con token incorrecto. Espera de forma limitada la propagación; nunca imprime valores ni la URL que contiene el secreto. No sube código ni otros secretos. Tras la operación se vuelve a cerrar el flag de sincronización; el Worker permanece activo.
+
 Todas estas rutas exigen `Authorization: Bearer PILOT_TOKEN` en la cabecera, nunca en la URL. Por defecto usan el almacén de probadores. `?scope=ci` selecciona exclusivamente pruebas técnicas sintéticas.
 
 | Método y ruta | Resultado |
