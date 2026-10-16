@@ -30,6 +30,18 @@ class MinimumPrivilegeTest(unittest.TestCase):
   class FakeAPI:
    def call(self,path):return {'bindings':[{'name':'PRODUCTION_DB','type':'d1'}]}
   with self.assertRaises(ValueError):module.check_connection(FakeAPI())
+ def test_optional_meta_configuration_rejects_weak_verify_token_and_bad_psids(self):
+  module.validate_meta_settings({})
+  module.validate_meta_settings({'META_VERIFY_TOKEN':'x'*32,'META_TEST_SENDER_IDS':'123,456'})
+  for env in [{'META_VERIFY_TOKEN':'short'},{'META_TEST_SENDER_IDS':'123,not-a-psid'}]:
+   with self.assertRaises(ValueError):module.validate_meta_settings(env)
+ def test_messenger_storage_is_sqlite_on_same_worker_without_new_api_permissions(self):
+  metadata=module.worker_metadata()
+  self.assertEqual(metadata['exports'],{'MessengerTestInbox':{'type':'durable-object','storage':'sqlite'}})
+  binding=next(b for b in metadata['bindings'] if b['name']=='MESSENGER_TEST_INBOX')
+  self.assertEqual(binding['type'],'durable_object_namespace');self.assertEqual(binding['class_name'],'MessengerTestInbox')
+  self.assertNotIn('script_name',binding)
+  self.assertIn('secret_text',metadata['keep_bindings'])
  def test_main_cannot_connect_or_deploy(self):
   with patch.dict(os.environ,{'GITHUB_REF':'refs/heads/main'}),patch.object(sys,'argv',['deploy_free.py','--check']),patch.object(module.urllib.request,'urlopen') as network:
    with self.assertRaises(ValueError):module.main()

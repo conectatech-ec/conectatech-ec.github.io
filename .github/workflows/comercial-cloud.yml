@@ -59,6 +59,7 @@ jobs:
       - run: python automatizacion/tests/deploy_test.py
       - run: node automatizacion/tests/worker.test.mjs
       - run: node automatizacion/tests/live.test.mjs
+      - run: node automatizacion/tests/messenger.test.mjs
       - id: deploy
         run: python automatizacion/deploy_free.py
         env:
@@ -67,6 +68,10 @@ jobs:
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+          META_VERIFY_TOKEN: ${{ secrets.META_VERIFY_TOKEN }}
+          META_TEST_SENDER_IDS: ${{ secrets.META_TEST_SENDER_IDS }}
+          META_PAGE_ID: ${{ vars.META_PAGE_ID }}
       - name: Verificar HTTPS e inferencia IA real para los tres SKU
         run: node automatizacion/e2e.mjs
         env:
@@ -74,6 +79,12 @@ jobs:
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
           REQUIRE_REAL_AI: 'true'
           EXPECTED_RELEASE: ${{ github.sha }}
+      - name: Verificar receptor Messenger de desarrollo sin envios
+        run: node automatizacion/messenger-e2e.mjs
+        env:
+          PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          META_VERIFY_TOKEN: ${{ secrets.META_VERIFY_TOKEN }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,19 +1,11 @@
 import catalog from './generated/catalogo.json' with {type:'json'};
 import {renderBanner} from './banner.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
-import {verifyMetaWebhook,verifyMetaSignature,normalizeEvents} from './channels.mjs';
+import {answer} from './commerce.mjs';
+export {answer} from './commerce.mjs';
+export {MessengerTestInbox} from './messenger-store.mjs';
+import {handleMessengerWebhook,messengerSelfTest} from './messenger.mjs';
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
-export function answer(sku,message,now=Date.now(),source=catalog) {
-  sku=sku==='MICR027'?'MICR27':sku;
-  const p=source.productos.find(x=>x.sku===sku);
-  if(!p) return {error:'SKU fuera del piloto',disponibles:source.productos.map(x=>x.sku)};
-  if(!Number.isFinite(Date.parse(source.fuente_fecha))||Date.parse(source.fuente_fecha)>now+300000||now-Date.parse(source.fuente_fecha)>24*3600000) return {error:'Datos vencidos: consulta la ficha; no se cotiza ni reserva.',url:p.url,stale:true};
-  if(p.stock<=0) return {sku:p.sku,text:p.anuncio,disponible:false,stock_referencial:0,url:p.url,fuente_fecha:source.fuente_fecha};
-  let text=p.anuncio;
-  if(/env[ií]o|entrega|retiro|quito/i.test(message)) text+='\nPuedes solicitar retiro en tienda, contraentrega en Quito o envío nacional. Cobertura, costo y fecha pendientes de confirmación; no se ha confirmado un pedido.';
-  if(/mejor|gama|accesorio|compatible|promoci[oó]n/i.test(message)) text+='\nNo hay relaciones de compatibilidad, mejora de gama ni promociones adicionales validadas para este piloto. Indica tu equipo y necesidad.';
-  return {sku:p.sku,text,precio:p.promo,pvp:p.pvp,stock_referencial:p.stock,foto:p.foto,banner:p.banner,url:p.url,caracteristicas:p.caracteristicas,fuente_fecha:source.fuente_fecha,disponible:true,opciones_compra:[{tipo:'retiro',estado:'por_confirmar'},{tipo:'contraentrega_quito',estado:'por_confirmar'},{tipo:'envio_nacional',estado:'por_confirmar'}],modo:'datos_verificados'};
-}
 async function authorized(req,env) {
   // All pilot endpoints are private; no customer data in GitHub or public logs.
   return !!env.PILOT_TOKEN && req.headers.get('Authorization')===`Bearer ${env.PILOT_TOKEN}`;
@@ -31,22 +23,16 @@ async function body(req) {return JSON.parse(await limitedText(req,8000));}
 export default {
  async fetch(req,env) {
   const path=new URL(req.url).pathname;
-  if(path==='/health') return json({ok:true,pilot:true,cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null});
-  if(path==='/webhooks/meta') {
-   if(req.method==='GET') return verifyMetaWebhook(req,env);
-   if(req.method!=='POST'||!env.DB) return json({error:'Webhook not configured'},503);
-   let raw;try {raw=await limitedText(req,100000);} catch {return json({error:'Payload too large or invalid'},413);}
-   if(!await verifyMetaSignature(raw,req.headers.get('X-Hub-Signature-256'),env.META_APP_SECRET)) return json({error:'Invalid signature'},403);
-   try {
-    const events=normalizeEvents(JSON.parse(raw),env);
-    for(const event of events) {
-     await env.DB.prepare('INSERT OR IGNORE INTO eventos_canal (id, canal, payload, created_at, expires_at) VALUES (?, ?, ?, ?, ?)').bind(event.id,event.canal,JSON.stringify(event),new Date().toISOString(),new Date(Date.now()+7*86400000).toISOString()).run();
-    }
-    return json({received:events.length,outbound_enabled:false});
-   } catch {return json({error:'Webhook storage failed; retry'},503);}
-  }
+  if(path==='/health') return json({ok:true,pilot:true,cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&env.META_TEST_SENDER_IDS),messenger_outbound:false});
+  if(path==='/webhooks/meta') return handleMessengerWebhook(req,env);
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {
+   if(path==='/messenger/self-test'&&req.method==='POST') return messengerSelfTest(await body(req),env);
+   if(path==='/messenger/test-results'&&req.method==='GET') {
+    if(!env.MESSENGER_TEST_INBOX) return json({error:'Test storage unavailable'},503);
+    const scope=new URL(req.url).searchParams.get('scope')==='ci'?'ci':'development';
+    return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-'+scope)).fetch('https://inbox/results');
+   }
    if(req.method==='GET' && path==='/ready') {
     const source=await refreshCatalog(catalog);
     return json({ok:true,fuente_fecha:source.fuente_fecha,free_only:env.FREE_TIER_VERIFIED==='true',ai:!!env.AI,database:!!env.DB});

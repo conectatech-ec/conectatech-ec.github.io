@@ -18,7 +18,10 @@ class API:
         req=urllib.request.Request(self.base+path,data=payload,method=method,headers={'Authorization':'Bearer '+self.token,'Content-Type':content_type})
         try:
             with urllib.request.urlopen(req,timeout=45) as r: body=json.load(r)
-        except urllib.error.HTTPError as e: raise RuntimeError(f'Worker request failed ({e.code}); verify existing pilot and per-Worker Editor scope. No permission broadening performed.') from None
+        except urllib.error.HTTPError as e:
+            try: codes=[x.get('code') for x in json.loads(e.read(16000)).get('errors',[]) if isinstance(x.get('code'),int)]
+            except Exception:codes=[]
+            raise RuntimeError(f'Worker request failed (HTTP {e.code}, error_codes={codes}); response values withheld; no permission broadening performed.') from None
         if body.get('success') is not True: raise RuntimeError('Worker request rejected; response body withheld')
         return body['result']
 def multipart(metadata,files):
@@ -39,17 +42,29 @@ def connection_settings(environ):
     if len(environ.get('PILOT_TOKEN',''))<32: missing.append('PILOT_TOKEN')
     if not re.fullmatch(r'https://'+re.escape(WORKER)+r'\.[a-z0-9-]+\.workers\.dev',environ.get('CLOUDFLARE_PILOT_URL','')): missing.append('CLOUDFLARE_PILOT_URL')
     return missing
+def validate_meta_settings(environ):
+    verify=environ.get('META_VERIFY_TOKEN','').strip()
+    if verify and len(verify)<32:raise ValueError('META_VERIFY_TOKEN must have at least 32 characters')
+    testers=environ.get('META_TEST_SENDER_IDS','').strip()
+    if testers:
+        ids=[s.strip() for s in testers.split(',')]
+        if len(ids)>20 or any(not re.fullmatch(r'[0-9]{1,32}',s) for s in ids):raise ValueError('META_TEST_SENDER_IDS must contain at most 20 numeric PSIDs')
 def check_connection(api):
     settings=api.call(SCRIPT+'/settings')
     if not isinstance(settings,dict): raise ValueError('Pilot settings could not be verified')
     # Avoid discarding or inheriting production bindings from an unexpected Worker.
     for b in settings.get('bindings',[]):
-        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE'} or b.get('type') not in {'ai','plain_text','secret_text'}:
+        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE','META_APP_SECRET','META_VERIFY_TOKEN','META_PAGE_ID','META_TEST_SENDER_IDS','META_MODE','MESSENGER_TEST_INBOX'} or b.get('type') not in {'ai','plain_text','secret_text','durable_object_namespace'}:
             raise ValueError('Unexpected existing binding; review isolated pilot before upload')
-    return True
+    return settings
 
-def worker_metadata():
-    return {'main_module':'worker.mjs','compatibility_date':'2026-10-01','bindings':[{'type':'ai','name':'AI'},{'type':'plain_text','name':'LIVE_DATA','text':'true'},{'type':'plain_text','name':'FREE_TIER_VERIFIED','text':'true'},{'type':'plain_text','name':'PILOT_RELEASE','text':os.environ.get('GITHUB_SHA','local-unreleased')}],'observability':{'enabled':False}}
+def worker_metadata(config=None):
+    bindings=[{'type':'ai','name':'AI'},{'type':'plain_text','name':'LIVE_DATA','text':'true'},{'type':'plain_text','name':'FREE_TIER_VERIFIED','text':'true'},{'type':'plain_text','name':'PILOT_RELEASE','text':os.environ.get('GITHUB_SHA','local-unreleased')},{'type':'plain_text','name':'META_MODE','text':'development-only'},{'type':'durable_object_namespace','name':'MESSENGER_TEST_INBOX','class_name':'MessengerTestInbox'}]
+    page=(os.environ.get('META_PAGE_ID','') or (config or {}).get('meta_page_id','')).strip()
+    if page:
+        if not re.fullmatch(r'[0-9]+',page):raise ValueError('META_PAGE_ID must be a numeric Page ID')
+        bindings.append({'type':'plain_text','name':'META_PAGE_ID','text':page})
+    return {'main_module':'worker.mjs','compatibility_date':'2026-10-01','bindings':bindings,'keep_bindings':['secret_text','plain_text'],'exports':{'MessengerTestInbox':{'type':'durable-object','storage':'sqlite'}},'observability':{'enabled':False}}
 def report_connection(result):
     path=ROOT/'generated/fase2/connection.json';path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
@@ -67,19 +82,23 @@ def main():
         if check_only:
             report_connection({'ready':False,'status':'awaiting_github_environment_configuration','missing':missing,'cloud_requests_issued':False});return
         raise ValueError('Missing configuration; no requests issued: '+', '.join(missing))
+    validate_meta_settings(os.environ)
     api=API(settings['CLOUDFLARE_ACCOUNT_ID'],settings['CLOUDFLARE_API_TOKEN'])
     check_connection(api)
     if check_only:
         report_connection({'ready':True,'status':'existing_worker_read_check_passed','plan_verification':'owner_dashboard_attestation','resources_created':False,'d1_enabled':False});return
-    metadata=worker_metadata();files=[]
-    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs']:
+    metadata=worker_metadata(config);files=[]
+    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs']:
         source=(ROOT/name).read_text()
-        if name=='worker.mjs': source=source.replace("import catalog from './generated/catalogo.json' with {type:'json'};","import catalog from './catalog.mjs';")
+        source=source.replace("import catalog from './generated/catalogo.json' with {type:'json'};","import catalog from './catalog.mjs';")
         files.append((name,'application/javascript+module',source.encode()))
     files.append(('catalog.mjs','application/javascript+module',b'export default '+(ROOT/'generated/catalogo.json').read_bytes()+b';\n'))
     body,ctype=multipart(metadata,files)
     api.call(SCRIPT,'PUT',body,ctype)
     api.call(SCRIPT+'/secrets','PUT',{'name':'PILOT_TOKEN','text':os.environ['PILOT_TOKEN'],'type':'secret_text'})
+    for name in ['META_APP_SECRET','META_VERIFY_TOKEN','META_TEST_SENDER_IDS']:
+        value=os.environ.get(name,'').strip()
+        if value:api.call(SCRIPT+'/secrets','PUT',{'name':name,'text':value,'type':'secret_text'})
     # workers.dev is enabled manually in the panel; no account/subdomain/route changes.
     url=settings['CLOUDFLARE_PILOT_URL']
     path=ROOT/'generated/fase2/deployment.json';path.parent.mkdir(parents=True,exist_ok=True)

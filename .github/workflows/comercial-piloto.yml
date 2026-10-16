@@ -31,6 +31,7 @@ jobs:
       - run: python automatizacion/build.py
       - run: node automatizacion/tests/worker.test.mjs
       - run: node automatizacion/tests/live.test.mjs
+      - run: node automatizacion/tests/messenger.test.mjs
       - run: python automatizacion/tests/deploy_test.py
       - name: Prueba integral con fuentes y medios públicos reales
         run: node automatizacion/e2e.mjs

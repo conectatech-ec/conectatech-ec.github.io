@@ -15,5 +15,6 @@
   "condicion_ia": "Verificar cuenta exclusivamente Free sin facturacion ni creditos prepagados; configurar FREE_TIER_VERIFIED=true solo despues de verificarlo. No cambiar el plan al superar cuotas.",
   "verificacion_plan": "panel_del_propietario; CF_FREE_ONLY_CONFIRMED=true; sin consulta Billing API",
   "permiso_despliegue": "Editor solo sobre Worker individual conectatech-comercial-piloto",
-  "d1_despliegue_inicial": false
+  "d1_despliegue_inicial": false,
+  "deduplicacion_messenger": "Durable Object SQLite Free del mismo Worker; límites locales y sin permisos adicionales"
 }
