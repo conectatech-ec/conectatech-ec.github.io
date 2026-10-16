@@ -1,0 +1,41 @@
+{
+  "fecha": "2026-10-16T19:33:41.570546+00:00",
+  "productos": [
+    {
+      "sku": "ROUT001",
+      "motivos_previos_conservados": [
+        "Empaque M1500 ilustra dos módulos, pero no confirma expresamente contenido de venta del SKU. No duplicar el conjunto ROUT002 ni inferir cantidad del dibujo."
+      ],
+      "resolucion": "Dos módulos confirmados por propietario 2026-10-16. Cotejados con caja propia: cuerpo cilíndrico blanco, círculo superior gris, anillo radial verde, logo cudy y testigo V frontal. Maestro sin caja; no reconstruye puertos, accesorios o cara posterior.",
+      "politicas_propietario": [
+        "importacion/politica-unidades-venta.json",
+        "importacion/politica-variantes-surtidas.json"
+      ],
+      "limite_conservado": null
+    },
+    {
+      "sku": "LECT004",
+      "motivos_previos_conservados": [
+        "Dos modelos distintos Q-T96 y Q-GF300 con conexiones diferentes asociados al mismo SKU; confirmar variante vigente antes de publicar."
+      ],
+      "resolucion": "Propietario confirmó 2026-10-16: es lo mismo, no pongas el modelo. Se omiten Q-T96/Q-GF300 y velocidad/compatibilidad/USB-C universal. Maestro representa cuerpo Andowl de fuente0, textura punteada, bandeja frontal y logo; cable sale de encuadre sin reconstruir terminal. Historia de dos conexiones conservada y consulta comercial visible.",
+      "politicas_propietario": [
+        "importacion/politica-unidades-venta.json",
+        "importacion/politica-variantes-surtidas.json"
+      ],
+      "limite_conservado": null
+    },
+    {
+      "sku": "JUGU069",
+      "motivos_previos_conservados": [
+        "Maestro dice paquete de8; fotos muestran maletas de6 autos con surtidos diferentes. No se cambia cantidad ni se inventan vehículos adicionales."
+      ],
+      "resolucion": "Cantidad8 confirmada por propietario2026-10-16 pese a fotos históricas de maleta6. No se inventa maleta8 ni dosautos invisibles: portada es detalle explícito de una pieza propia, auto azul de compartimento superior derecho. Perfil lateral cotejado, número63, dobleX, ruedas doradas, faldón naranja, contorno y alerón. Primera propuesta trescuartos quedó no aprobada por cara frontal no referenciada. Clasificación original vigente conservada sin inferir licencia ni marca desde empaque; surtidos y contenido claramente indicados.",
+      "politicas_propietario": [
+        "importacion/politica-unidades-venta.json",
+        "importacion/politica-variantes-surtidas.json"
+      ],
+      "limite_conservado": null
+    }
+  ]
+}

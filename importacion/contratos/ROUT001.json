@@ -99,9 +99,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rout001-sistema-mesh-cudy-fast-ax1500-wifi6/",
-  "fecha_verificacion": "2026-10-16T18:53:04.925619+00:00",
+  "fecha_verificacion": "2026-10-16T19:33:41.570546+00:00",
   "descripcion": "Sistema Mesh Cudy AX1500 Wi-Fi 6 de 2 Módulos. Presentación de venta: Sistema de 2 módulos. Tecnología inalámbrica: Wi-Fi 6. Clase inalámbrica: AX1500. Modelo: M1500.",
   "contenido_venta": "Un sistema Mesh de dos módulos. Cantidad confirmada por el propietario.",
   "presentacion": "sin caja",
@@ -154,7 +154,7 @@
       "solicitado": "ROUT001",
       "sku": "ROUT001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T18:54:55.674Z",
+      "fecha": "2026-10-16T19:33:42.181Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -179,7 +179,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rout001-sistema-mesh-cudy-fast-ax1500-wifi6/",
-      "url_comprobada": "http://127.0.0.1:8801/productos/rout001-sistema-mesh-cudy-fast-ax1500-wifi6/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/rout001-sistema-mesh-cudy-fast-ax1500-wifi6/",
       "archivo_html": "productos/rout001-sistema-mesh-cudy-fast-ax1500-wifi6/index.html",
       "http": 200,
       "sha256_html": "7696e6160a58311f9eeeec4f2e8f320eef7a048d8987af7371e3122d97850d9d",
@@ -189,7 +189,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rout001/ROUT001-01.webp",
-        "url_cargada": "http://127.0.0.1:8801/imagenes/rout001/ROUT001-01-600.webp?v=8af46fc36467c513",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/rout001/ROUT001-01-600.webp?v=8af46fc36467c513",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -198,36 +198,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8801/productos/rout001-sistema-mesh-cudy-fast-ax1500-wifi6/",
+          "url": "https://conectatech-ec.github.io/productos/rout001-sistema-mesh-cudy-fast-ax1500-wifi6/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8801/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8801/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8801/imagenes/rout001/ROUT001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/rout001/ROUT001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-101/qa-local/movil/ROUT001-390.png",
+      "archivo": "reportes/continuacion-101/qa-publica/movil/ROUT001-390.png",
       "sha256": "355c2894fce7028b84370769cd0161592bb2a2af501c7266695eb23abb69720d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-101/qa-local/movil/ROUT001-1280.png",
+        "archivo": "reportes/continuacion-101/qa-publica/movil/ROUT001-1280.png",
         "sha256": "682331dca04861675b7352869a4a1506d331d8773e7f5567531ac5eb10b01b07",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T19:33:41.570546+00:00",
+      "archivo": "reportes/continuacion-101/http-publicacion.json",
+      "reporte": "reportes/continuacion-101/http-publicacion.json",
+      "sha256": "7677a2c9dc6f2f3f39ef32beb36fbf8ff83c4249532600578a015783b6ae9cd5",
+      "sku": "ROUT001"
     }
   },
   "resolucion_propietario": "2 módulos",
