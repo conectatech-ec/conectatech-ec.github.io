@@ -2,6 +2,10 @@
 
 [Formulario preparado, guion y límites de acceso del revisor](META-SOLICITUD-ACCESO.md).
 
+## Estado confirmado por el propietario
+
+El 16 de octubre de 2026 el propietario confirmó desde el panel: **pages_messaging con acceso estándar y aplicación en modo Desarrollo**. [Registro de la confirmación](meta-access-status.json). Ya no es necesario volver a solicitar ese dato. El próximo paso de cuenta es pulsar «Solicitar acceso avanzado» para ese permiso, o abrir sus requisitos si el botón no está habilitado. No cambiar a Live como sustituto de la revisión ni abrir el filtro de remitentes. El probador conserva su operación actual.
+
 ## Estado acreditado por API
 
 Token de CONECTATECHec válido, tipo PAGE, aplicación coincidente, `pages_messaging` concedido. Eso habilita la validación con probadores con rol aceptado. No acredita App Live, aprobación de Advanced Access ni revisión empresarial. Esta sesión no dispone de la sesión administrativa de Meta ni de un API para presentar App Review en nombre del propietario.

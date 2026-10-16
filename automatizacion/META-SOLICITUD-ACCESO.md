@@ -2,6 +2,8 @@
 
 Preparación del 16 de octubre de 2026. Esta documentación no afirma que Meta haya aprobado ni recibido una solicitud. La solicitud se presenta desde la cuenta administradora de la aplicación existente; no se crea otra app ni se cambia de plan. [Evidencia de la conversación real](generated/fase2/alex-cloud-verificado.json).
 
+**Actualización del panel confirmada por el propietario:** acceso estándar de pages_messaging y modo Desarrollo. [Registro](meta-access-status.json). El dato ya está disponible: solicitar acceso avanzado desde esa fila y completar los requisitos que muestre Meta; no volver a pedir el nivel actual. La apertura a compradores externos sigue bloqueada y el probador continúa activo.
+
 [Verificación HTTPS y permisos existentes](generated/fase2/meta-review-readiness-verificado.json): privacidad y eliminación HTTP 200; cinco rutas privadas HTTP 401 sin credenciales. Sin inferencias, envíos ni despliegues durante esa comprobación. El nivel de acceso avanzado y modo Live siguen sin acreditarse desde el panel.
 
 ## Campos y enlaces que ya podemos completar
