@@ -1,6 +1,6 @@
 # Piloto comercial CONECTATECH — cloud privado verificado
 
-**Actualización Alex (16 de octubre de 2026):** [implementación, operación y límites actuales](ALEX.md). Alex añade generación real con Workers AI, memoria cifrada, planes con tarjeta autorizados y respuestas rápidas nativas. La activación para probadores depende de la prueba HTTPS real. Los apartados inferiores conservan la auditoría histórica de fase 1; sus afirmaciones de infraestructura no desplegada o canales deshabilitados no describen el estado actual. No hay habilitación general de compradores.
+**Actualización Alex (16 de octubre de 2026):** [implementación, operación y límites actuales](ALEX.md). Alex añade generación real con Workers AI, memoria cifrada, planes con tarjeta autorizados y respuestas rápidas nativas. Activado para el probador registrado tras aprobar 13 intercambios HTTPS con IA real y 85 pruebas; [evidencia](generated/fase2/alex-cloud-verificado.json). Falta confirmar una nueva conversación de Alex y su recepción en Messenger. Los apartados inferiores conservan la auditoría histórica de fase 1; sus afirmaciones de infraestructura no desplegada o canales deshabilitados no describen el estado actual. No hay habilitación general de compradores.
 
 **Messenger:** [receptor de Desarrollo instalado en modo cerrado](MESSENGER-DESARROLLO.md), con Durable Object SQLite Free para deduplicación de pruebas; Meta y envíos reales deshabilitados.
 
