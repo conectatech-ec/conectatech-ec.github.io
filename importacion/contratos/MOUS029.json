@@ -1,111 +1,76 @@
 {
   "sku": "MOUS029",
   "nombre_original": "Mousepad Cuadrado Esencial",
-  "titulo_comercial": "Mousepad esencial negro",
+  "titulo_comercial": "Mousepad Cuadrado Esencial",
   "tipo": "original",
   "marca": null,
   "modelo": null,
-  "variante": "Negro",
+  "variante": "negro",
   "categoria_original": "Mouse",
   "categoria_comercial": "Computación y Periféricos",
   "precio_contado": 2.5,
   "pvp": 2.87,
   "stock": 11,
   "unidad_venta": {
-    "descripcion": "1 producto",
+    "descripcion": "Un mousepad cuadrado.",
     "cantidad": 1,
-    "verificada": false,
-    "fuente": "datos-593/inventario-publico.csv",
-    "evidencia": "Nombre comercial singular del catálogo/593 y fotos. No se afirma pack ni accesorios."
+    "verificada": true,
+    "fuente": "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk",
+    "evidencia": "Presentación comercial cotejada con referencias propias y maestro; aplicar instrucciones expresas del propietario de unidades y surtidos, 2026-10-16, cuando corresponde. Una unidad comercial puede ser blíster, sistema o par según descripción."
   },
   "fotografias_fuente": [
     {
       "drive_id": "1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj",
-      "archivo": "MOUS029.jpg",
+      "nombre": "MOUS029.jpg",
       "url": "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk",
       "sha256": "9a71c9dfe736c529e3652bd5d1344a9fc5a07a80fa632b0a1b6ee51504d2ad90",
-      "resolucion": [
-        1800,
-        1350
-      ],
-      "ruta_original_local": ".produccion-privada/lote020-propias/originales/MOUS029.jpg",
-      "fila_registro": [
-        1236
-      ],
-      "tipo_registro": [
-        "Caja original"
-      ]
+      "original_intacto_en_drive": true,
+      "uso": "Referencia propia física y/o de empaque para identificación y representación comercial asistida; original privado intacto"
     }
   ],
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "importacion/politica-unidades-venta.json",
+    "importacion/politica-variantes-surtidas.json"
   ],
-  "imagen_principal": null,
+  "imagen_principal": "/imagenes/mous029/MOUS029-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
-    "estado": "PENDIENTE",
+    "estado": "AUTORIZADO",
     "tipo": "propia",
-    "titular": "CONECTATECH",
     "fuente": "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk",
-    "evidencia": "Fotografías propias de identificación autorizadas por el propietario el 2026-10-10; aún no existe una imagen comercial apta sin caja. No autoriza fotografías externas.",
-    "fecha_verificacion": "2026-10-10",
-    "archivos": [],
-    "investigacion_previa": {
-      "estado": "autorizado_propietario",
-      "titular": "CONECTATECH",
-      "fuente": "Fotografías propias de Drive",
-      "evidencia": "Orden maestra del propietario de 2026-10-10 autoriza procesamiento y publicación de fotografías propias.",
-      "material_externo_utilizado": false
-    }
+    "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
+    "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+    "archivos": [
+      {
+        "sha256": "e43ea87617c8b7765f8fb0db16f5f5f38086d21d84c2a7ff895b39ca8b6acb55",
+        "fuente": "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk"
+      }
+    ]
   },
   "especificaciones": [
     {
-      "nombre": "Formato rectangular de esquinas redondeadas",
-      "valor": "Formato rectangular de esquinas redondeadas",
+      "nombre": "Presentación de venta",
+      "valor": "Un mousepad cuadrado.",
       "fuentes": [
-        "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk",
-        "datos-593/inventario-publico.csv"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Color negro",
-      "valor": "Color negro",
-      "fuentes": [
-        "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk",
-        "datos-593/inventario-publico.csv"
+        "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
-  "estado_calidad": "BLOQUEADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_calidad": "APROBADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/mous029-mousepad-cuadrado-esencial/",
-  "fecha_verificacion": "2026-10-10T06:17:03.540315+00:00",
-  "descripcion": "Superficie de apoyo negra para organizar el espacio de uso del mouse en casa o en la oficina.",
-  "compatibilidad": null,
-  "contenido_venta": null,
-  "garantia": null,
+  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "descripcion": "Mousepad Cuadrado Esencial. Presentación de venta: Un mousepad cuadrado..",
+  "contenido_venta": "Un mousepad cuadrado.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "pendientes": [
-    "La única fotografía muestra una bolsa plástica con reflejos sobre el producto. Quitar el empaque exigiría reconstruir una superficie no fotografiada libre.",
-    "Marca, modelo y dimensiones no documentados."
-  ],
-  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1236; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "revision_regla": 3,
-  "propuesta_origen": "importacion/lotes/lote-020/propias-propuestas.json",
-  "notas_internas": {
-    "campos_no_confirmados": [],
-    "nota_licencia": null,
-    "nota_variante": null,
-    "observaciones": [],
-    "discrepancias_propuesta": []
-  },
+  "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1236; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
@@ -124,38 +89,118 @@
       }
     },
     "identidad": {
-      "sku_verificado": false,
+      "sku_verificado": true,
+      "marca_verificado": false,
+      "marca_no_declarada": true,
+      "modelo_no_declarado": true,
+      "modelo_verificado": false,
+      "variante_verificado": true,
       "fuentes": [
         "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk"
       ],
-      "discrepancias_pendientes": [],
-      "variante_verificado": false,
-      "marca_no_declarada": true,
-      "modelo_no_declarado": true,
-      "nota_no_declaracion": "No se acredita marca fabricante o modelo exacto. Se conserva la clasificación comercial del Registro y se describe exclusivamente el producto fotografiado."
+      "discrepancias_pendientes": []
     },
     "ficha": {
-      "verificada": false,
-      "fuente": "importacion/lotes/lote-020/propias-propuestas.json"
+      "verificada": true,
+      "fuente": "https://drive.google.com/file/d/1JmY6Xy0Ht-qxQil_SGCyHwqlrsMU9Irj/view?usp=drivesdk",
+      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+    },
+    "revision_visual": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:29:19.245695+00:00",
+      "sha256_maestro": "e43ea87617c8b7765f8fb0db16f5f5f38086d21d84c2a7ff895b39ca8b6acb55",
+      "evidencia": "Silueta cuadrada negra de esquinas redondeadas cotejada con fotografía propia. Representación asistida retira bolsa y reflejos sin añadir estampado, costuras, marca ni dimensiones no acreditadas."
     },
     "movil": {
-      "estado": "PENDIENTE",
-      "motivo": "Requiere render real de la ficha y los medios aplicados; no afirmar revisión antes de capturar"
-    },
-    "publicacion_http": {
-      "estado": "PENDIENTE",
-      "motivo": "Aún sin despliegue y comprobación HTTP de esta versión"
+      "solicitado": "MOUS029",
+      "sku": "MOUS029",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:31:10.801Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/mous029-mousepad-cuadrado-esencial/",
+      "url_comprobada": "http://127.0.0.1:8787/productos/mous029-mousepad-cuadrado-esencial/",
+      "archivo_html": "productos/mous029-mousepad-cuadrado-esencial/index.html",
+      "http": 200,
+      "sha256_html": "ce5338d5725cd0864f269d11bbc1d8d94f0f1a76133e20a4bb759f0821d9168c",
+      "sha256_html_local": "ce5338d5725cd0864f269d11bbc1d8d94f0f1a76133e20a4bb759f0821d9168c",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/mous029/MOUS029-01.webp",
+        "url_cargada": "http://127.0.0.1:8787/imagenes/mous029/MOUS029-01-600.webp?v=f0bc913516ae6ed7",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8787/productos/mous029-mousepad-cuadrado-esencial/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8787/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8787/imagenes/mous029/MOUS029-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8787/productos/padm001-padmouse-mousepad-pad-mouse-havit/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8787/productos/mous003-mouse-ergonomico-meetion-btm010r/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8787/productos/mous037-mouse-klipxtreme-slimsurfer/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/continuacion-097/qa-local/movil/MOUS029-390.png",
+      "sha256": "941866c9f8cfb904e08377b9222fb34fe373a4dff716e339de92cd264af6e01b",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/continuacion-097/qa-local/movil/MOUS029-1280.png",
+        "sha256": "e7cb8b9e4a118dbcbbf7d15801d97c94b4b206ec87933a565198eb82eaed0787",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
     }
-  },
-  "actualizacion_593": {
-    "fecha_corte": "2026-10-10",
-    "fuente": "datos-593/corte-2026-10-10.json.gz",
-    "source_sha256": "e890cdd30f6d5a4a9f95c520eca8ddc67954633c8eabc9ad53ceb500e375ffd2",
-    "campos": [
-      "precio_contado",
-      "pvp",
-      "stock"
-    ],
-    "nota": "Autorización expresa del propietario para sincronizar este corte. No cambia aprobaciones visuales."
   }
 }
