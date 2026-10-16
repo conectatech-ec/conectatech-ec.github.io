@@ -10,12 +10,13 @@ if(token){
  const me=await get('me?fields=id',token);report.page_identity_http=me.http;report.page_identity_matches=me.http===200&&String(me.b.id)===config.meta_page_id;
  if(me.b.error)report.identity_error_code=Number(me.b.error.code)||null;
  if(report.page_identity_matches){
-  const apps=await get(config.meta_page_id+'/subscribed_apps?fields=id,name,subscribed_fields',token);report.subscriptions_http=apps.http;
+  const apps=await get(config.meta_page_id+'/subscribed_apps?fields=id,name,subscribed_fields',token);report.subscriptions_http=apps.http;report.subscriptions_error_code=Number(apps.b.error?.code)||null;report.subscriptions_error_subcode=Number(apps.b.error?.error_subcode)||null;report.subscriptions_requires_manage_metadata=/pages_manage_metadata/i.test(apps.b.error?.message||'');
   const app=apps.b.data?.find(a=>a.name==='Jotacellcomunicapp');report.app_subscription_found=!!app;report.messages_subscribed=!!app?.subscribed_fields?.includes('messages');report.delivery_subscribed=!!app?.subscribed_fields?.includes('message_deliveries');
-  const appId=app?.id||process.env.META_APP_ID;
+  const appInfo=await get('app?fields=id,name',token);report.app_identity_http=appInfo.http;report.app_name_matches=appInfo.b.name==='Jotacellcomunicapp';
+  const appId=app?.id||process.env.META_APP_ID||(report.app_name_matches?appInfo.b.id:null);
   if(appId&&process.env.META_APP_SECRET){
    const d=await get('debug_token?input_token='+encodeURIComponent(token),appId+'|'+process.env.META_APP_SECRET);
-   const data=d.b.data||{};report.token_debug_http=d.http;report.token_valid=data.is_valid===true;report.token_type=data.type||null;report.token_app_matches=String(data.app_id)===String(appId);report.pages_messaging_granted=!!data.scopes?.includes('pages_messaging');report.pages_manage_metadata_granted=!!data.scopes?.includes('pages_manage_metadata');report.token_expired=Number(data.expires_at)>0&&Number(data.expires_at)*1000<=Date.now();
+   const data=d.b.data||{};report.token_debug_http=d.http;report.token_debug_error_code=Number(d.b.error?.code)||null;report.token_valid=data.is_valid===true;report.token_type=data.type||null;report.token_app_matches=String(data.app_id)===String(appId);report.pages_messaging_granted=!!data.scopes?.includes('pages_messaging');report.pages_manage_metadata_granted=!!data.scopes?.includes('pages_manage_metadata');report.token_expired=Number(data.expires_at)>0&&Number(data.expires_at)*1000<=Date.now();
   }
  }
 }

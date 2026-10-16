@@ -55,7 +55,7 @@ def check_connection(api):
     if not isinstance(settings,dict): raise ValueError('Pilot settings could not be verified')
     # Avoid discarding or inheriting production bindings from an unexpected Worker.
     for b in settings.get('bindings',[]):
-        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE','META_APP_SECRET','META_VERIFY_TOKEN','META_PAGE_ID','META_TEST_SENDER_IDS','META_MODE','MESSENGER_TEST_INBOX','META_INGRESS_ENABLED'} or b.get('type') not in {'ai','plain_text','secret_text','durable_object_namespace'}:
+        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE','META_APP_SECRET','META_VERIFY_TOKEN','META_PAGE_ID','META_TEST_SENDER_IDS','META_MODE','MESSENGER_TEST_INBOX','META_INGRESS_ENABLED','META_PAGE_ACCESS_TOKEN','META_APP_ID'} or b.get('type') not in {'ai','plain_text','secret_text','durable_object_namespace'}:
             raise ValueError('Unexpected existing binding; review isolated pilot before upload')
     return settings
 
@@ -65,6 +65,9 @@ def worker_metadata(config=None):
     if page:
         if not re.fullmatch(r'[0-9]+',page):raise ValueError('META_PAGE_ID must be a numeric Page ID')
         bindings.append({'type':'plain_text','name':'META_PAGE_ID','text':page})
+    if os.environ.get('META_APP_ID'):
+        if not re.fullmatch(r'[0-9]+',os.environ['META_APP_ID']):raise ValueError('META_APP_ID must be numeric')
+        bindings.append({'type':'plain_text','name':'META_APP_ID','text':os.environ['META_APP_ID']})
     return {'main_module':'worker.mjs','compatibility_date':'2026-10-01','bindings':bindings,'keep_bindings':['secret_text','plain_text'],'exports':{'MessengerTestInbox':{'type':'durable-object','storage':'sqlite'}},'observability':{'enabled':False}}
 def report_connection(result):
     path=ROOT/'generated/fase2/connection.json';path.parent.mkdir(parents=True,exist_ok=True)
@@ -151,7 +154,7 @@ def main():
     if sync_only:
         sync_meta_verify_token(api,existing,settings['CLOUDFLARE_PILOT_URL'],os.environ.get('META_VERIFY_TOKEN',''));return
     metadata=worker_metadata(config);files=[]
-    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs']:
+    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs']:
         source=(ROOT/name).read_text()
         source=source.replace("import catalog from './generated/catalogo.json' with {type:'json'};","import catalog from './catalog.mjs';")
         files.append((name,'application/javascript+module',source.encode()))
@@ -159,7 +162,7 @@ def main():
     body,ctype=multipart(metadata,files)
     api.call(SCRIPT,'PUT',body,ctype)
     api.call(SCRIPT+'/secrets','PUT',{'name':'PILOT_TOKEN','text':os.environ['PILOT_TOKEN'],'type':'secret_text'})
-    for name in ['META_APP_SECRET','META_VERIFY_TOKEN','META_TEST_SENDER_IDS']:
+    for name in ['META_APP_SECRET','META_VERIFY_TOKEN','META_TEST_SENDER_IDS','META_PAGE_ACCESS_TOKEN']:
         value=os.environ.get(name,'')
         if value:api.call(SCRIPT+'/secrets','PUT',{'name':name,'text':value,'type':'secret_text'})
     # workers.dev is enabled manually in the panel; no account/subdomain/route changes.

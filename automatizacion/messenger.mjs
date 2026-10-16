@@ -35,6 +35,28 @@ export async function handleMessengerWebhook(req,env,scope='development') {
  try{payload=JSON.parse(raw);}catch{return finish({error:'Invalid JSON'},400,'invalid_json');}
  if(payload.object!=='page') return finish({received:0,ignored:true,outbound_enabled:false},200,'ignored_object');
  pageMatches=Array.isArray(payload.entry)&&payload.entry.some(e=>String(e.id)===env.META_PAGE_ID);
+ // Real tester transport is independent of legacy draft ingress. CI cannot enter it.
+ if(source==='external_https'&&pageMatches&&env.META_PAGE_ACCESS_TOKEN&&env.MESSENGER_TEST_INBOX){
+  const stub=env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-'+scope));
+  const seller=await (await stub.fetch('https://inbox/seller/status')).json();
+  let queued=0,duplicates=0;
+  // Delivery receipts prove transport delivery, not that a person has read a message.
+  for(const entry of payload.entry||[])if(String(entry.id)===env.META_PAGE_ID)for(const e of entry.messaging||[]){
+   if(e.sender?.id&&String(e.recipient?.id)===env.META_PAGE_ID&&Array.isArray(e.delivery?.mids))await stub.fetch('https://inbox/seller/delivery',{method:'POST',body:JSON.stringify({mids:e.delivery.mids.slice(0,20).filter(m=>typeof m==='string'&&m.length<500)})});
+  }
+  if(seller.enabled){
+   let events;try{events=normalizeEvents(payload,env);}catch{return finish({error:'Event limit'},400,'event_limit');}
+   if(events.length>10)return finish({error:'Batch limit'},400,'event_limit');
+   for(const event of events){
+    if(event.recipient!==env.META_PAGE_ID)continue;
+    const key=await hmac(env.META_APP_SECRET,env.META_PAGE_ID+':'+event.id);
+    const r=await stub.fetch('https://inbox/seller/ingest',{method:'POST',body:JSON.stringify({key,sender:String(event.sender||''),timestamp:event.timestamp,skus:detectSkus(event.text),text:event.text.slice(0,1000),handoff:/\b(vendedor|humano|persona|asesor|garant[ií]a|reclamo|cancelar|no\s+me\s+escribas)\b/i.test(event.text)})});
+    if(!r.ok)return finish({error:'Storage unavailable; Meta may retry'},503,'storage_unavailable');
+    const a=await r.json();if(a.queued)queued++;if(a.duplicate)duplicates++;
+   }
+   return finish({mode:'authorized-testers-only',queued,duplicates,outbound_enabled:true},200,'processed');
+  }
+ }
  // A closed receiver acknowledges signed deliveries without business processing.
  // Enrollment is a separate, owner-authorized one-use control phrase only.
  if(env.META_INGRESS_ENABLED!=='true'){

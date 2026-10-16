@@ -29,13 +29,17 @@ export default {
   if(path==='/messenger/setup'&&req.method==='GET') return setupPage();
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {
-   if(path==='/messenger/status'&&req.method==='GET') return json({mode:env.META_MODE,app_secret_present:!!env.META_APP_SECRET,verify_token_present:!!env.META_VERIFY_TOKEN,page_present:!!env.META_PAGE_ID,test_senders_present:!!env.META_TEST_SENDER_IDS,reception_enabled:env.META_INGRESS_ENABLED==='true',outbound_enabled:false});
+   if(path==='/messenger/status'&&req.method==='GET') {
+    let seller=null;if(env.MESSENGER_TEST_INBOX&&env.META_PAGE_ACCESS_TOKEN)seller=await (await env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox/seller/status')).json();
+    return json({mode:env.META_MODE,app_secret_present:!!env.META_APP_SECRET,verify_token_present:!!env.META_VERIFY_TOKEN,page_present:!!env.META_PAGE_ID,test_senders_present:!!env.META_TEST_SENDER_IDS||!!seller?.testers_configured,reception_enabled:env.META_INGRESS_ENABLED==='true',outbound_enabled:!!seller?.enabled,test_seller:seller});
+   }
    if(path==='/messenger/self-test'&&req.method==='POST') return messengerSelfTest(await body(req),env);
+   const sellerPath=/^\/messenger\/seller\/(status|enable|disable|promote|results)$/.test(path);
    const controlPath=/^\/messenger\/pairing\/(start|status|consume|cancel)$/.test(path);
-   if(controlPath||(['/messenger/test-results','/messenger/metrics','/messenger/receipts','/messenger/review'].includes(path)&&((path==='/messenger/review'&&req.method==='POST')||(path!=='/messenger/review'&&req.method==='GET')))) {
+   if(sellerPath||controlPath||(['/messenger/test-results','/messenger/metrics','/messenger/receipts','/messenger/review'].includes(path)&&((path==='/messenger/review'&&req.method==='POST')||(path!=='/messenger/review'&&req.method==='GET')))) {
     if(!env.MESSENGER_TEST_INBOX) return json({error:'Test storage unavailable'},503);
     const scope=new URL(req.url).searchParams.get('scope')==='ci'?'ci':'development';
-    const target=path==='/messenger/test-results'?'results':controlPath?'pairing/'+path.split('/').pop():path.split('/').pop();
+    const target=sellerPath?'seller/'+path.split('/').pop():path==='/messenger/test-results'?'results':controlPath?'pairing/'+path.split('/').pop():path.split('/').pop();
     const options=req.method==='POST'?{method:'POST',body:JSON.stringify(await body(req))}:{method:req.method};
     return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-'+scope)).fetch('https://inbox/'+target,options);
    }

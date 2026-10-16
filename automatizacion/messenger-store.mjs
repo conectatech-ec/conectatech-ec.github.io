@@ -1,5 +1,6 @@
 import catalog from './generated/catalogo.json' with {type:'json'};
 import {answer} from './commerce.mjs';
+import {sellerInit,sellerCleanup,sellerFetch,sellerAlarm,sellerNext} from './messenger-seller.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
 import {controlInit,controlCleanup,controlNextAlarm,controlFetch} from './messenger-control.mjs';
 const json=(x,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
@@ -14,19 +15,20 @@ export function commercialDraft(response) {
 }
 export class MessengerTestInbox {
  constructor(state,env) {
-  this.state=state;this.env=env;this.sql=state.storage.sql;
+  this.state=state;this.env=env;this.sql=state.storage.sql;this.name=state.id?.name||'unknown';
   this.sql.exec('CREATE TABLE IF NOT EXISTS events (k TEXT PRIMARY KEY, day INTEGER, status TEXT, skus TEXT, result TEXT, attempts INTEGER, next_at INTEGER, expires INTEGER, error TEXT)');
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_expiry ON events(expires)');
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_pending ON events(status,next_at)');
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_day ON events(day)');
   this.sql.exec('CREATE TABLE IF NOT EXISTS reviews (k TEXT PRIMARY KEY, decision TEXT, digest TEXT, reviewed_at INTEGER)');
   this.sql.exec('CREATE TABLE IF NOT EXISTS counters (day INTEGER PRIMARY KEY, duplicates INTEGER NOT NULL DEFAULT 0)');
-  controlInit(this);
+  controlInit(this);sellerInit(this);
  }
- cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);controlCleanup(this,now);}
+ cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);controlCleanup(this,now);sellerCleanup(this,now);}
  async fetch(req) {
   const path=new URL(req.url).pathname;
   this.cleanup(Date.now());
+  const seller=await sellerFetch(path,req,this);if(seller)return seller;
   const control=await controlFetch(path,req,this);if(control)return control;
   if(path==='/results') {
    const rows=this.sql.exec('SELECT e.k AS event_ref,e.status,e.skus,e.result,e.attempts,e.error,r.decision,r.reviewed_at FROM events e LEFT JOIN reviews r ON r.k=e.k ORDER BY e.rowid DESC LIMIT 30').toArray();
@@ -60,6 +62,7 @@ export class MessengerTestInbox {
  }
  async alarm() {
   const now=Date.now();this.cleanup(now);
+  await sellerAlarm(this);
   const rows=this.sql.exec("SELECT k,skus,attempts FROM events WHERE status = 'queued' AND next_at <= ? ORDER BY rowid LIMIT 3",now).toArray();
   for(const row of rows) {
    try {
@@ -81,7 +84,7 @@ export class MessengerTestInbox {
   }
   const next=this.sql.exec("SELECT MIN(next_at) AS t FROM events WHERE status = 'queued'").one().t;
   const expiry=this.sql.exec('SELECT MIN(expires) AS t FROM events').one().t;
-  const controlExpiry=controlNextAlarm(this);
+  const controlExpiry=Math.min(controlNextAlarm(this),sellerNext(this));
   if(next||expiry||Number.isFinite(controlExpiry))await this.state.storage.setAlarm(Math.max(Date.now()+200,Math.min(next||Infinity,expiry||Infinity,controlExpiry)));
  }
 }

@@ -6,11 +6,11 @@ export async function pairingHash(code,secret){
  return hex(new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode('tester-pairing:'+code))));
 }
 async function cipherKey(secret){return crypto.subtle.importKey('raw',await crypto.subtle.digest('SHA-256',new TextEncoder().encode('conectatech:tester-psid:'+secret)),'AES-GCM',false,['encrypt','decrypt']);}
-async function seal(psid,secret){
+export async function seal(psid,secret){
  const iv=crypto.getRandomValues(new Uint8Array(12));const bytes=await crypto.subtle.encrypt({name:'AES-GCM',iv},await cipherKey(secret),new TextEncoder().encode(psid));
  return JSON.stringify({iv:[...iv],cipher:[...new Uint8Array(bytes)]});
 }
-async function unseal(raw,secret){const x=JSON.parse(raw);return new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:new Uint8Array(x.iv)},await cipherKey(secret),new Uint8Array(x.cipher)));}
+export async function unseal(raw,secret){const x=JSON.parse(raw);return new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:new Uint8Array(x.iv)},await cipherKey(secret),new Uint8Array(x.cipher)));}
 export function controlInit(box){
  box.sql.exec('CREATE TABLE IF NOT EXISTS receipts (id TEXT PRIMARY KEY, at INTEGER, data TEXT, expires INTEGER)');
  box.sql.exec('CREATE TABLE IF NOT EXISTS pairing (id INTEGER PRIMARY KEY CHECK(id=1), code_hash TEXT, expires INTEGER, sealed TEXT)');
