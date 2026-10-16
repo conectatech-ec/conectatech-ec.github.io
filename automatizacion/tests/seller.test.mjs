@@ -45,3 +45,16 @@ test('A valid wrapped phrase registers automatically and greeting alone cannot r
   const {pairingPanelState}=await import('../messenger-setup.mjs');assert.match(pairingPanelState(state,{enabled:true,testers_configured:true}).text,/registrado/);
  }finally{globalThis.fetch=original;}
 });
+test('An enabled seller still accepts a new authorized tester enrollment before business routing',async()=>{
+ const {box,env,q,post}=setup();env.META_INGRESS_ENABLED='false';const old=globalThis.fetch;globalThis.fetch=fakeGraph;
+ try{await post('arm',{});const p=await(await box.fetch(new Request('https://i/pairing/start',{method:'POST',body:'{"confirmed_tester":true}'}))).json();const raw=JSON.stringify({object:'page',entry:[{id:page,messaging:[{sender:{id:'100000003'},recipient:{id:page},timestamp:Date.now(),message:{mid:'second-authorized-tester',text:p.phrase}}]}]});await handleMessengerWebhook(new Request('https://p/webhooks/meta',{method:'POST',headers:{'X-Hub-Signature-256':'sha256='+await hmac(env.META_APP_SECRET,raw)},body:raw}),env);assert.equal((await(await box.fetch(new Request('https://i/pairing/status'))).json()).registered,true);assert.equal(q.exec('SELECT COUNT(*) AS n FROM seller_testers').one().n,1);assert.equal(q.exec('SELECT COUNT(*) AS n FROM seller_jobs').one().n,0);}finally{globalThis.fetch=old;}
+});
+test('Concurrent event processing and alarm cannot send the same queued reply twice',async()=>{
+ const {box,ingest}=setup();await ingest();let unblock,n=0;const wait=new Promise(r=>unblock=r);const deps={sendMessage:async()=>{n++;await wait;return {state:'accepted',messageId:'concurrent-test'};}};
+ const running=sellerAlarm(box,deps);await new Promise(r=>setTimeout(r,10));await sellerAlarm(box,deps);unblock();await running;assert.equal(n,1);
+});
+test('A signed accepted tester event schedules cloud processing after acknowledgement; CI cannot process it',async()=>{
+ const {box,env}=setup();const original=env.MESSENGER_TEST_INBOX;let calls=0;env.MESSENGER_TEST_INBOX={idFromName:n=>n,get:n=>({fetch:(url,o)=>url.endsWith('/seller/process')?(calls++,Promise.resolve(Response.json({processed:true}))):original.get(n).fetch(url,o)})};
+ const raw=JSON.stringify({object:'page',entry:[{id:page,messaging:[{sender:{id:sender},recipient:{id:page},timestamp:Date.now(),message:{mid:'scheduled-cloud-job',text:'MICR27'}}]}]});const pending=[];
+ const r=await handleMessengerWebhook(new Request('https://p/webhooks/meta',{method:'POST',headers:{'X-Hub-Signature-256':'sha256='+await hmac(env.META_APP_SECRET,raw)},body:raw}),env,'development',{waitUntil:p=>pending.push(p)});assert.equal(r.status,200);await Promise.all(pending);assert.equal(calls,1);box.name='messenger-ci';assert.equal((await box.fetch(new Request('https://i/seller/process',{method:'POST',body:'{}'}))).status,409);
+});

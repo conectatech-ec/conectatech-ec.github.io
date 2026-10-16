@@ -69,6 +69,7 @@ export async function sellerFetch(path,req,box){
   q.exec('INSERT INTO seller_settings VALUES (1,1,?,?) ON CONFLICT(id) DO UPDATE SET enabled=1,checked=excluded.checked,proof=excluded.proof',now,JSON.stringify(proof));
   return json({enabled:true,mode:'authorized-testers-only',permissions:proof,live_customers_enabled:false});
  }
+ if(path==='/seller/process'&&req.method==='POST'){if(box.name!=='messenger-development')return json({error:'CI transport blocked'},409);await sellerAlarm(box);return json({processed:true});}
  if(path==='/seller/results'&&req.method==='GET')return json({events:q.exec('SELECT k,status,skus,intent,error FROM seller_jobs ORDER BY rowid DESC LIMIT 30').toArray().map(r=>({...r,skus:JSON.parse(r.skus)})),drafts:q.exec('SELECT safe FROM seller_drafts ORDER BY rowid DESC LIMIT 10').toArray().map(r=>JSON.parse(r.safe))});
  if(path==='/seller/delivery'&&req.method==='POST'){
   const b=await req.json();let correlated=0;for(const mid of b.mids||[]){const key=await h(env.PILOT_TOKEN,'mid:'+mid);q.exec("UPDATE seller_parts SET delivered=1 WHERE mid_hash=? AND state='accepted'",key);correlated+=q.exec('SELECT COUNT(*) AS n FROM seller_parts WHERE mid_hash=? AND delivered=1',key).one().n;}return json({correlated});
@@ -93,6 +94,11 @@ export async function sellerFetch(path,req,box){
 }
 function handoff(box,row,reason){box.sql.exec('INSERT INTO seller_handoffs VALUES (?,?) ON CONFLICT(who) DO UPDATE SET until_at=excluded.until_at',row.who,Date.now()+86400000);box.sql.exec("UPDATE seller_jobs SET status='handoff',error=? WHERE k=?",reason,row.k);}
 export async function sellerAlarm(box,deps={refreshCatalog,verifyAssets,sendMessage}){
+ if(box.sellerRunning)return;
+ box.sellerRunning=true;
+ try{await runSeller(box,deps);}finally{box.sellerRunning=false;}
+}
+async function runSeller(box,deps){
  const q=box.sql,env=box.env;
  // Any crash with an in-flight send is ambiguous: never replay it automatically.
  if(q.exec("SELECT COUNT(*) AS n FROM seller_jobs WHERE status IN ('sending','processing')").one().n){
