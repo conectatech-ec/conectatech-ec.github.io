@@ -1,5 +1,7 @@
 # Preparación de acceso a clientes externos — CONECTATECH / Alex
 
+[Formulario preparado, guion y límites de acceso del revisor](META-SOLICITUD-ACCESO.md).
+
 ## Estado acreditado por API
 
 Token de CONECTATECHec válido, tipo PAGE, aplicación coincidente, `pages_messaging` concedido. Eso habilita la validación con probadores con rol aceptado. No acredita App Live, aprobación de Advanced Access ni revisión empresarial. Esta sesión no dispone de la sesión administrativa de Meta ni de un API para presentar App Review en nombre del propietario.

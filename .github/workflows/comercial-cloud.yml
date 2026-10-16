@@ -72,6 +72,14 @@ jobs:
           name: diagnostico-meta-solo-lectura
           path: automatizacion/generated/fase2/meta-diagnostics.json
           retention-days: 7
+      - name: Verificar URLs publicas y proteccion de acceso para App Review sin usar IA ni enviar mensajes
+        run: node automatizacion/meta-review-readiness.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preparacion-app-review-meta
+          path: automatizacion/generated/fase2/meta-review-readiness.json
+          retention-days: 7
   sincronizar_meta:
     needs: preparar
     if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && needs.preparar.outputs.sincronizar_meta == 'true' && needs.preparar.outputs.ready == 'true'
