@@ -152,7 +152,7 @@
       "solicitado": "ADAP027",
       "sku": "ADAP027",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T18:40:05.689Z",
+      "fecha": "2026-10-16T18:43:01.171Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -169,6 +169,9 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
@@ -177,8 +180,8 @@
       "url_comprobada": "http://127.0.0.1:8800/productos/adap027-adaptador-mini-hdmi-macho-a-hdmi-hembra/",
       "archivo_html": "productos/adap027-adaptador-mini-hdmi-macho-a-hdmi-hembra/index.html",
       "http": 200,
-      "sha256_html": "4fb03cb47344dd4a8b09f5479d0b93c742dd86bf8ad9984b8ed0b9e6b77f2a06",
-      "sha256_html_local": "4fb03cb47344dd4a8b09f5479d0b93c742dd86bf8ad9984b8ed0b9e6b77f2a06",
+      "sha256_html": "05421df3ea5c0b8534d490d8e50864e9b5550a9077e6857c91afee6e1ff8e4af",
+      "sha256_html_local": "05421df3ea5c0b8534d490d8e50864e9b5550a9077e6857c91afee6e1ff8e4af",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
@@ -214,15 +217,42 @@
         }
       ],
       "archivo": "reportes/continuacion-100/qa-local/movil/ADAP027-390.png",
-      "sha256": "ea0acd1e9df73bbfdbef8bd7f30e2cf4212f64f1d40e88879cfc83be17d3da6b",
+      "sha256": "41b2a19d02ed856e204ba6e443a1ff065c989c2910d0288ffbb54a28a9eea174",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
         "archivo": "reportes/continuacion-100/qa-local/movil/ADAP027-1280.png",
-        "sha256": "4cee4bfa21c9a1b3cf135426d0de57e1eba7787679b02f5cadf800ff5d3b8554",
+        "sha256": "95d325f20b97bac6ebef4a16a39e7472a42ab67c7ae6d83b0cb7ec1fcec280b2",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
     }
-  }
+  },
+  "beneficios": [
+    {
+      "valor": "Mini-HDMI → HDMI",
+      "titulo": "Adapta la conexión",
+      "descripcion": "Conecta un cable HDMI a una entrada mini-HDMI compatible.",
+      "especificaciones": [
+        "Conexión macho",
+        "Conexión hembra"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1g9Yx4f6gKREet7qvcPOhr6mA7YbBF3GD/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Diseño compacto",
+      "titulo": "Fácil de llevar",
+      "descripcion": "Un adaptador pequeño para guardar junto a tus accesorios.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1g9Yx4f6gKREet7qvcPOhr6mA7YbBF3GD/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }
