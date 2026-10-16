@@ -1,6 +1,6 @@
-# Fase 2 — activación pendiente de cuenta gratuita
+# Fase 2 — cuenta gratuita confirmada, conexión pendiente
 
-El propietario indicó que necesita crear una cuenta gratuita. No hay Cloudflare, Meta ni IA reales autorizados mediante credenciales en este entorno. No se han creado recursos ni activado planes externos. Activación permanece `false` en `activar-cloud.json`. No se modifican main, catálogo, feed ni producción.
+El propietario confirmó la creación de la cuenta corporativa Cloudflare y Workers Free con 100000 solicitudes diarias. La conexión por credenciales sigue pendiente. La guía actual es [CONECTAR-CLOUDFLARE.md](CONECTAR-CLOUDFLARE.md). No hay acceso técnico a Cloudflare, Meta ni IA reales mediante credenciales en este entorno. No se han creado recursos ni activado planes externos. Activación permanece `false` en `activar-cloud.json`. No se modifican main, catálogo, feed ni producción.
 
 ## Recuperación y resultados verificables
 
@@ -24,14 +24,14 @@ Fuentes: [Workers](https://developers.cloudflare.com/workers/platform/pricing/),
 
 ## Conexión exacta que necesita el propietario
 
-1. Crear cuenta en https://dash.cloudflare.com/sign-up y verificar correo. Mantener Workers **Free**, sin tarjeta, créditos ni prueba con conversión. Si la interfaz exige un pago, detener el alta del servicio. No hace falta comprar dominio ni transferir DNS. En Workers & Pages elegir un subdominio gratuito `workers.dev`.
+1. Cuenta ya creada y Workers Free confirmado por el propietario; no repetir el alta. Verificar correo si aún estuviera pendiente. Mantener Workers **Free**, sin tarjeta, créditos ni prueba con conversión. Si la interfaz exige un pago, detener el alta del servicio. No hace falta comprar dominio ni transferir DNS. En Workers & Pages elegir un subdominio gratuito `workers.dev`.
 2. Crear un **API Token personalizado**, limitado a esa cuenta nueva. Permisos: **Workers Scripts: Edit**, **D1: Edit**, **Billing: Read** (solo lectura para bloquear planes pagados; nunca Billing Write). Si la interfaz usa “Write” en vez de “Edit”, son los permisos de escritura equivalentes. No proporcionar Global API Key, DNS Edit ni Workers Routes. La IA del runtime usa un binding, no una clave de proveedor externo. El alcance de Scripts permite modificar Workers de esa cuenta: por eso se recomienda la cuenta nueva del piloto, sin servicios de producción.
 3. En GitHub, crear el environment `conectatech-piloto-gratis` desde [Settings → Environments](https://github.com/conectatech-ec/conectatech-ec.github.io/settings/environments). Restringir su deployment branch a `automatizacion/piloto-cloud-3sku-20261015`. Introducir allí **secrets** `CLOUDFLARE_API_TOKEN` y `PILOT_TOKEN` (valor aleatorio largo, mínimo 32 caracteres). Guardar como **variables** `CLOUDFLARE_ACCOUNT_ID` y `CF_FREE_ONLY_CONFIRMED=true` solo después de comprobar cuenta Free y ausencia de facturación. Estos pasos se realizan en interfaces cloud; no se necesita la laptop como servidor. No pegar tokens en chat, commits, Issues o artifacts.
 4. Avisar en el chat cuando la cuenta y secretos estén listos. El cambio concreto de activación será editar `activar-cloud.json` a `activar:true` **en esta rama**. La configuración actual permanece desactivada. Ese push ejecuta `comercial-cloud.yml` sin registrar workflows en main, crea/reutiliza únicamente D1 `conectatech-comercial-piloto`, aplica esquema y sube únicamente el Worker homónimo en workers.dev.
 5. El despliegue hace GET de suscripciones y rechaza listas incompletas, planes pagados, pruebas o información ambigua. Si el guard falla, no se elude: se revisa la cuenta/error. El token no tiene permiso de modificación de facturación. El script no contiene endpoints de contratación, pago ni upgrade. No activa envíos Meta.
 6. Tras desplegar, el workflow llama al HTTPS real para los tres SKU con `REQUIRE_REAL_AI=true`; la prueba falla si Workers AI no ejecuta inferencia real. Evidencia queda en el artifact `evidencia-cloud-piloto`. Hasta superar ese paso NO se declara activación completa. El upload REST de Cloudflare está preparado y probado con validaciones locales; su compatibilidad final todavía requiere una cuenta real.
 
-El script usa Python estándar y la API oficial, sin instalar herramientas o paquetes externos. Referencias: [Upload Worker Module](https://developers.cloudflare.com/api/resources/workers/subresources/scripts/methods/update/), [List Subscriptions y Billing Read](https://developers.cloudflare.com/api/resources/accounts/subresources/subscriptions/methods/get/). No se ejecutó ese script contra Cloudflare por faltar la cuenta.
+El script usa Python estándar y la API oficial, sin instalar herramientas o paquetes externos. Referencias: [Upload Worker Module](https://developers.cloudflare.com/api/resources/workers/subresources/scripts/methods/update/), [List Subscriptions y Billing Read](https://developers.cloudflare.com/api/resources/accounts/subresources/subscriptions/methods/get/). No se ejecutó ese script contra Cloudflare por faltar la conexión técnica. `--check` permite verificarla sin crear recursos.
 
 ## API y canales oficiales preparados
 

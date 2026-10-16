@@ -1,5 +1,7 @@
 # Piloto comercial CONECTATECH — aislado y sin despliegue
 
+**Conexión de la cuenta Free confirmada:** [CONECTAR-CLOUDFLARE.md](CONECTAR-CLOUDFLARE.md).
+
 **Fase 2:** consultar [FASE2-ACTIVACION.md](FASE2-ACTIVACION.md) para los avances, evidencia integral, actualización de datos y conexión exacta de cuenta. Este documento conserva la auditoría y el estado histórico de la fase 1.
 
 Regla financiera permanente: costo autorizado $0. Prohibidas contrataciones, pruebas convertibles, planes pagados, créditos y consumos facturables sin autorización previa explícita. Política legible por máquina en `politica-financiera.json`. No se ha activado ningún proveedor.

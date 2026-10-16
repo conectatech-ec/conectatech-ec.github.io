@@ -35,18 +35,45 @@ def multipart(metadata,files):
     for name,ctype,body in [('metadata','application/json',json.dumps(metadata).encode()),*files]:
         parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"; filename="{name}"\r\nContent-Type: {ctype}\r\n\r\n'.encode()+body+b'\r\n')
     return b''.join(parts)+f'--{boundary}--\r\n'.encode(),'multipart/form-data; boundary='+boundary
-def main():
-    config=json.loads((ROOT/'activar-cloud.json').read_text())
-    if config.get('activar') is not True: raise ValueError('Activation remains disabled')
-    if os.environ.get('GITHUB_REF')!=BRANCH: raise ValueError('Only the isolated pilot branch may deploy')
-    if os.environ.get('CF_FREE_ONLY_CONFIRMED')!='true': raise ValueError('Free account confirmation missing')
-    account=os.environ.get('CLOUDFLARE_ACCOUNT_ID','');token=os.environ.get('CLOUDFLARE_API_TOKEN','');pilot=os.environ.get('PILOT_TOKEN','')
-    if not re.fullmatch(r'[a-f0-9]{32}',account) or not token or len(pilot)<32: raise ValueError('Missing account or secrets; no requests issued')
-    api=API(account,token)
-    verify_free(api.call('/subscriptions')) # GET only. No billing/plan modification exists in this code.
+def connection_settings(environ):
+    missing=[]
+    if environ.get('CF_FREE_ONLY_CONFIRMED')!='true': missing.append('CF_FREE_ONLY_CONFIRMED')
+    if not re.fullmatch(r'[a-f0-9]{32}',environ.get('CLOUDFLARE_ACCOUNT_ID','')): missing.append('CLOUDFLARE_ACCOUNT_ID')
+    if not environ.get('CLOUDFLARE_API_TOKEN'): missing.append('CLOUDFLARE_API_TOKEN')
+    if len(environ.get('PILOT_TOKEN',''))<32: missing.append('PILOT_TOKEN')
+    return missing
+def check_connection(api):
+    verify_free(api.call('/subscriptions'))
     subdomain=api.call('/workers/subdomain').get('subdomain')
     if not subdomain or not re.fullmatch(r'[a-z0-9-]+',subdomain): raise ValueError('Set a free workers.dev subdomain in the dashboard first')
-    dbs=api.call('/d1/database?per_page=100')
+    databases=api.call('/d1/database?per_page=100')
+    if not isinstance(databases,list): raise ValueError('D1 permission could not be verified')
+    return subdomain,databases
+def report_connection(result):
+    path=ROOT/'generated/fase2/connection.json';path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(json.dumps(result,indent=2)+'\n')
+    print(json.dumps(result))
+    if os.environ.get('GITHUB_OUTPUT'):
+        with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('ready='+str(result['ready']).lower()+'\n')
+def main():
+    if os.environ.get('GITHUB_REF')!=BRANCH: raise ValueError('Only the isolated pilot branch may connect or deploy')
+    check_only=sys.argv[1:]==['--check']
+    if sys.argv[1:] and not check_only: raise ValueError('Unsupported argument')
+    if not check_only:
+        config=json.loads((ROOT/'activar-cloud.json').read_text())
+        if config.get('activar') is not True: raise ValueError('Activation remains disabled')
+    missing=connection_settings(os.environ)
+    if missing:
+        if check_only:
+            report_connection({'ready':False,'status':'awaiting_github_environment_configuration','missing':missing,'cloud_requests_issued':False})
+            return
+        raise ValueError('Missing account or secrets; no requests issued: '+', '.join(missing))
+    account=os.environ['CLOUDFLARE_ACCOUNT_ID'];token=os.environ['CLOUDFLARE_API_TOKEN'];pilot=os.environ['PILOT_TOKEN']
+    api=API(account,token)
+    subdomain,dbs=check_connection(api) # Only GET requests, including plan guard.
+    if check_only:
+        report_connection({'ready':True,'status':'read_only_check_passed','free_guard':'passed','workers_dev_configured':True,'d1_read_access':True,'resources_created':False})
+        return
     matches=[d for d in dbs if d['name']==DATABASE]
     if len(matches)>1: raise ValueError('Ambiguous pilot database')
     db=matches[0] if matches else api.call('/d1/database','POST',{'name':DATABASE})
