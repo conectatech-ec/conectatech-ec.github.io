@@ -10,6 +10,10 @@ El 16 de octubre de 2026 el propietario confirmó desde el panel: **pages_messag
 
 Token de CONECTATECHec válido, tipo PAGE, aplicación coincidente, `pages_messaging` concedido. Eso habilita la validación con probadores con rol aceptado. No acredita App Live, aprobación de Advanced Access ni revisión empresarial. Esta sesión no dispone de la sesión administrativa de Meta ni de un API para presentar App Review en nombre del propietario.
 
+## Verificación legal
+
+El propietario confirmó que ya presentó la verificación legal del negocio en Meta Business. Estado: EN REVISIÓN. Estimación comunicada por Meta: aproximadamente dos días laborables, sin garantía de aprobación ni plazo. No volver a pedir que la envíe. El desarrollo y las pruebas con el remitente autorizado continúan; acceso avanzado y modo Live siguen sin aprobar.
+
 ## Conversación probadora acreditada
 
 16 de octubre de 2026, 14:57–14:58 de Ecuador: dos consultas externas con firma válida y HTTP 200, ambas procesadas por Alex con el modelo generativo real; Graph API aceptó dos textos y una imagen con HTTP 200. El probador confirmó la recepción en Messenger. [Evidencia sin identificadores ni mensajes privados](generated/fase2/alex-cloud-verificado.json). No hay recibo automático message_deliveries ni una grabación de pantalla creada por esta sesión.

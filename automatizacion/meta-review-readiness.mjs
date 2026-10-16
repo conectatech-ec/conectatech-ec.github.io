@@ -6,7 +6,7 @@ if(config.url_publica!=='https://conectatech-comercial-piloto.conectatech-ecu.wo
 const report={read_only:true,worker_code_changed:false,ai_calls:0,messages_sent:0,paid_services_activated:false,public_checks:[],private_access_checks:[]};
 const checks=[
  ['/health','health'],['/privacy','privacy'],['/data-deletion','deletion'],
- ['/alex/chat','private'],['/alex/status','private'],['/alex/handoffs','private'],['/messenger/seller/enable','private'],['/messenger/seller/results','private']
+ ['/alex/chat','private'],['/alex/status','private'],['/alex/handoffs','private'],['/alex/quota','private'],['/alex/review/queue','private'],['/alex/review/decision','private'],['/messenger/seller/enable','private'],['/messenger/seller/results','private']
 ];
 await Promise.all(checks.map(async([path,kind])=>{
  try{
@@ -29,6 +29,7 @@ report.existing_permission_evidence={page_identity_matches:account.page_identity
 report.permissions_not_proven_by_token={advanced_access:'not_verified',app_live:'not_verified'};
 let ownerStatus=null;try{ownerStatus=await read('meta-access-status.json');}catch{/* No dashboard status is inferred from a token scope. */}
 if(ownerStatus?.source==='owner_confirmation_of_meta_dashboard')report.owner_dashboard_status={access_level:ownerStatus.access_level,app_mode:ownerStatus.app_mode,source:ownerStatus.source,confirmed_date_local:ownerStatus.confirmed_date_local};
+if(ownerStatus?.business_verification)report.business_verification={status:ownerStatus.business_verification.status,source:ownerStatus.business_verification.source,estimate_business_days:ownerStatus.business_verification.estimate_business_days,estimate_is_not_a_guarantee:true};
 report.acceptance={real_messenger_conversation:prior.messenger_alex_new_conversation_verified===true,text_and_image_confirmed_by_tester:prior.tester_confirmation?.received_text===true&&prior.tester_confirmation?.received_image===true,card_payment_response_validated_by_owner:prior.tester_confirmation?.card_payment_response_correct===true,meta_delivery_receipt_verified:prior.messenger_delivery_verification?.meta_delivery_receipt_verified===true};
 report.technical_checks_passed=[...report.public_checks,...report.private_access_checks].every(x=>x.passed)&&Object.entries(report.existing_permission_evidence).filter(([k])=>k!=='page_subscription_read_http').every(([,v])=>v===true);
 report.public_operation_enabled=false;

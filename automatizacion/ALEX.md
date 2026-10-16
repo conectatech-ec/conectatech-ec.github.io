@@ -4,6 +4,8 @@ Activo solo para el probador registrado. [Evidencia de 86 pruebas y 13 intercamb
 
 Worker existente: https://conectatech-comercial-piloto.conectatech-ecu.workers.dev . Rama exclusiva `automatizacion/piloto-cloud-3sku-20261015`. Sin cambios al catálogo ni a main.
 
+[Mejoras de contexto, bandeja de aprobación y pruebas nuevas](ALEX-MEJORAS-CONTEXTO.md). La verificación legal está en revisión; no equivale a acceso avanzado.
+
 ## Conversar y detener
 
 - El probador ya registrado escribe a CONECTATECHec en Messenger, por nombre o necesidad: «Busco una batería portátil», «¿Y esa cuánto cuesta?», «¿Con tarjeta?». No necesita copiar PSID ni volver a vincularse.

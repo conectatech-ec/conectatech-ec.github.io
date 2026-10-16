@@ -12,9 +12,9 @@ export async function verifyMetaSignature(raw,signature,secret) {
  return crypto.subtle.verify('HMAC',key,bytes,new TextEncoder().encode(raw));
 }
 function quickText(message){
- const m=/^ALEX:(photo|payment|human|retiro|quito|nacional|microphone|battery)(?::(MICR27|POWE003|ADAP005))?$/.exec(message.quick_reply?.payload||'');
+ const m=/^ALEX:(photo|cash|payment|human|retiro|quito|nacional|microphone|battery)(?::(MICR27|POWE003|ADAP005))?$/.exec(message.quick_reply?.payload||'');
  if(!m)return message.text;
- const actions={photo:'Quiero ver una fotografía',payment:'¿Cuáles son las formas de pago?',human:'Quiero hablar con una persona',retiro:'Quiero retirar en tienda',quito:'Quiero entrega en Quito',nacional:'Quiero envío nacional',microphone:'Busco un micrófono para grabar mi voz',battery:'Busco una batería portátil'};
+ const actions={photo:'Quiero ver una fotografía',cash:'Quiero saber el precio de contado',payment:'Quiero conocer las formas de pago',human:'Quiero hablar con una persona',retiro:'Quiero retirar en tienda',quito:'Quiero entrega en Quito',nacional:'Quiero envío nacional',microphone:'Busco un micrófono para grabar mi voz',battery:'Busco una batería portátil'};
  return actions[m[1]]+(m[2]?' del producto '+m[2]:'');
 }
 export function normalizeEvents(payload,env) {

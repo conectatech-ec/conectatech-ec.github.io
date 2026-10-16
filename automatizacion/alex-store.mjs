@@ -2,6 +2,7 @@ import baseline from './generated/catalogo.json' with {type:'json'};
 import {generateAlex,policy,redact,quickReplies,fresh} from './alex.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
 import {seal,unseal} from './messenger-control.mjs';
+import {reviewInit,reviewCleanup,reviewNext,reviewFetch,cancelConversationReviews} from './alex-review.mjs';
 const json=(x,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
 export function alexInit(box){
  for(const q of [
@@ -10,9 +11,10 @@ export function alexInit(box){
   'CREATE TABLE IF NOT EXISTS alex_opportunities (who TEXT PRIMARY KEY, sealed TEXT, expires INTEGER)',
   'CREATE TABLE IF NOT EXISTS alex_usage (day INTEGER PRIMARY KEY, reserved INTEGER, calls INTEGER)'
  ])box.sql.exec(q);
+ reviewInit(box);
 }
-export function alexCleanup(box,now){for(const name of ['alex_memory','alex_inputs','alex_opportunities'])box.sql.exec('DELETE FROM '+name+' WHERE expires<=?',now);box.sql.exec('DELETE FROM alex_usage WHERE day<?',Math.floor(now/86400000)-1);}
-export function alexNext(box){return Math.min(...['alex_memory','alex_inputs','alex_opportunities'].map(n=>box.sql.exec('SELECT MIN(expires) AS t FROM '+n).one().t||Infinity));}
+export function alexCleanup(box,now){for(const name of ['alex_memory','alex_inputs','alex_opportunities'])box.sql.exec('DELETE FROM '+name+' WHERE expires<=?',now);box.sql.exec('DELETE FROM alex_usage WHERE day<?',Math.floor(now/86400000)-1);reviewCleanup(box,now);}
+export function alexNext(box){return Math.min(reviewNext(box),...['alex_memory','alex_inputs','alex_opportunities'].map(n=>box.sql.exec('SELECT MIN(expires) AS t FROM '+n).one().t||Infinity));}
 export async function reserveAI(box){
  const ns=box.env.MESSENGER_TEST_INBOX;if(!ns)return false;
  const r=await ns.get(ns.idFromName('alex-ai-quota')).fetch('https://inbox/alex/quota',{method:'POST',body:'{}'});return r.ok&&(await r.json()).reserved===true;
@@ -30,10 +32,12 @@ export async function prepareAlex(box,row,deps={refreshCatalog,verifyAssets}){
  const input=await unseal(data.sealed,box.env.PILOT_TOKEN),memory=await loadMemory(box,row.who);
  let source;try{source=await deps.refreshCatalog(baseline);}catch{source={...baseline,fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
  const result=await generateAlex(input,source,memory,box.env,()=>reserveAI(box));
+ if(['erase','handoff'].includes(result.action))cancelConversationReviews(box,row.who);
  if(!result.image&&result.generative&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
  if(result.action==='erase'){
   box.sql.exec('DELETE FROM alex_memory WHERE who=?',row.who);box.sql.exec('DELETE FROM seller_handoffs WHERE who=?',row.who);box.sql.exec('DELETE FROM alex_opportunities WHERE who=?',row.who);
   box.sql.exec("DELETE FROM alex_inputs WHERE job IN (SELECT k FROM seller_jobs WHERE who=?)",row.who);
+  box.sql.exec("UPDATE seller_jobs SET status='privacy_erased',sealed='',error='PRIVACY_REQUEST' WHERE who=? AND k<>? AND status IN ('queued','awaiting_review')",row.who,row.k);
   box.sql.exec("UPDATE seller_jobs SET sealed='' WHERE who=? AND status NOT IN ('queued','processing','sending')",row.who);
  }
  if(result.action==='interest'||result.action==='handoff'){
@@ -54,6 +58,12 @@ export async function prepareAlex(box,row,deps={refreshCatalog,verifyAssets}){
 }
 export async function alexFetch(path,req,box){
  const q=box.sql,now=Date.now();
+ const review=await reviewFetch(path,req,box);if(review)return review;
+ if(path==='/alex/quota/status'&&req.method==='GET'){
+  if(box.name!=='alex-ai-quota')return json({error:'Quota scope'},409);
+  const day=Math.floor(now/86400000),row=q.exec('SELECT reserved,calls FROM alex_usage WHERE day=?',day).toArray()[0];
+  return json({reserved_neurons:row?.reserved||0,calls:row?.calls||0,remaining_calls:Math.max(0,Math.floor((policy.daily_neurons_reserved-(row?.reserved||0))/policy.neurons_reserved_per_call)),reset_at:new Date((day+1)*86400000).toISOString(),reserved_limit:policy.daily_neurons_reserved,estimation_only_not_provider_meter:true,paid_fallback:false});
+ }
  if(path==='/alex/quota'&&req.method==='POST'){
   if(box.name!=='alex-ai-quota')return json({error:'Quota scope'},409);
   const day=Math.floor(now/86400000),row=q.exec('SELECT reserved,calls FROM alex_usage WHERE day=?',day).toArray()[0];
@@ -78,7 +88,7 @@ export async function alexFetch(path,req,box){
   const p=source.productos.find(p=>p.sku===result.image);let image=null;
   if(p&&fresh(source)&&p.stock>0&&(!(memory.shown||[]).includes(p.sku)||result.intent==='photo')){try{image=await approvedImage(p);result.memory.shown=[...new Set([...(memory.shown||[]),p.sku])];await saveMemory(box,'demo',result.memory);}catch{}}
   if(Number.isFinite(alexNext(box)))await box.state.storage.setAlarm(alexNext(box));
-  return json({name:'Alex',text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,quick_replies:quickReplies(result),memory:{focus:result.memory.focus,budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,turns:result.memory.history?.length||0},source_fresh:fresh(source),outbound_enabled:false});
+  return json({name:'Alex',text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,quick_replies:quickReplies(result),memory:{focus:result.memory.focus,budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,delivery:result.memory.delivery,turns:result.memory.history?.length||0},source_fresh:fresh(source),outbound_enabled:false});
  }
  return null;
 }

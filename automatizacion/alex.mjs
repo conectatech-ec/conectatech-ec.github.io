@@ -1,7 +1,9 @@
 import policy from './alex-policy.json' with {type:'json'};
+import {mergePreferences,redundantQuestion,asksHuman} from './alex-context.mjs';
 export {policy};
 const ids=['MICR27','POWE003','ADAP005'];
 export function candidates(input,memory={}){
+ const exact=[];if(/\b(?:MICR0?27|JBL|Quantum)\b/i.test(input))exact.push('MICR27');if(/\b(?:POWE003|Philco|FLP8202CV)\b/i.test(input))exact.push('POWE003');if(/\bADAP005\b/i.test(input))exact.push('ADAP005');if(exact.length)return exact;
  const found=[];if(/\b(?:MICR0?27|JBL|Quantum|micr[oó]fono|streaming|podcast)\b/i.test(input))found.push('MICR27');
  if(/\b(?:POWE003|Philco|FLP8202CV|bater[ií]a|power\s?bank)\b/i.test(input))found.push('POWE003');
  if(/\b(?:ADAP005|adaptador|enchufe|clavija)\b/i.test(input))found.push('ADAP005');
@@ -20,7 +22,7 @@ export function redact(text){
  return String(text||'').slice(0,1200).replace(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/gi,'[correo omitido]').replace(/(?:\+?\d[\s()-]*){9,19}/g,'[numero privado omitido]').replace(/\b(?:contrase[nñ]a|clave|cvv|cvc|pin|c[eé]dula|n[uú]mero de tarjeta)\s*(?:es|:|=)?\s*[^\n,;.?!]{1,80}/gi,'[dato sensible omitido]');
 }
 export function eraseRequested(text){return /\b(?:olvida|borra|elimina)\b.{0,40}\b(?:datos|memoria|conversaci[oó]n|contexto|todo)\b/i.test(text);}
-export function humanRequested(text){return /\b(?:hablar|pasame|p[aá]same|quiero|necesito)\b.{0,35}\b(?:persona|humano|vendedor|asesor real)\b|^\s*(?:vendedor|humano|hablar con una persona)\s*$|reclamo|me cobraron|devoluci[oó]n|estafa|contrase[nñ]a|cvv|cvc/i.test(text);}
+export const humanRequested=asksHuman;
 export function fresh(source,now=Date.now()){const stamp=Date.parse(source?.fuente_fecha);return Number.isFinite(stamp)&&stamp<=now+300000&&now-stamp<=86400000;}
 export function factBook(source,now=Date.now()){
  const facts={
@@ -79,6 +81,7 @@ export function renderPlan(plan,source,memory={}){
   if(/\b(?:hola|bienvenido|soy alex)\b/i.test(say))say='';
   if(ask&&(memory.history||[]).filter(t=>t.role==='assistant').slice(-2).some(t=>t.text.includes(ask)))ask='';
  }
+ if(redundantQuestion(ask,memory))ask='';
  const allowed=(source?.productos||[]).map(p=>p.sku);
  let focus=Array.isArray(plan.focus)?[...new Set(plan.focus)].filter(s=>allowed.includes(s)).slice(0,2):[];
  if(plan.focus?.length&&focus.length!==plan.focus.length)throw Error('UNKNOWN_PRODUCT');
@@ -91,19 +94,14 @@ export function renderPlan(plan,source,memory={}){
  if(action==='handoff'){keys=['human'];say='';ask='';}
  if(plan.intent==='identity')keys=['identity'];
  if(keys.length===2)say='';
- const parts=plan.intent==='price'?[...keys.map(k=>facts[k]),say,ask]:[say,...keys.map(k=>facts[k]),ask];
- const text=parts.filter(Boolean).join(' ').replace(/\s+/g,' ').trim();
+ const compose=()=> (plan.intent==='price'?[...keys.map(k=>facts[k]),say,ask]:[say,...keys.map(k=>facts[k]),ask]).filter(Boolean).join(' ').replace(/\s+/g,' ').trim();
+ let text=compose();if(text.length>440){ask='';text=compose();}if(text.length>440){say='';text=compose();}
  if(!text||text.length>440||/\b(?:MICR27|MICR027|POWE003|ADAP005)\b/.test(text))throw Error('BAD_LENGTH_OR_INTERNAL_ID');
  const image=ids.includes(plan.image)&&focus.includes(plan.image)&&(keys.some(k=>k.startsWith(plan.image+'.'))||plan.intent==='photo')?plan.image:null;
  return {text,focus,action,intent:String(plan.intent||'other').slice(0,30),image,facts:keys,generative:true,model:policy.model,prose_filtered};
 }
 function memoryPatch(plan,input,memory){
- const recent=[...(memory.history||[]).filter(t=>t.role==='user').map(t=>t.text),input].join(' ').toLowerCase();const x=plan.remember||{},next={...memory};
- if(typeof x.budget==='number'&&x.budget>0&&x.budget<100000&&recent.includes(String(x.budget)))next.budget=x.budget;
- for(const [key,max]of [['brand',40],['sector',60],['need',100]])if(typeof x[key]==='string'&&x[key].length<=max&&x[key].length>1&&recent.includes(x[key].toLowerCase()))next[key]=x[key];
- if(['contado','tarjeta'].includes(x.payment)&&recent.includes(x.payment))next.payment=x.payment;
- if(['retiro','quito','nacional'].includes(x.delivery)&&new RegExp(x.delivery==='nacional'?'nacional|provincia':x.delivery,'i').test(recent))next.delivery=x.delivery;
- return next;
+ return mergePreferences(input,plan.remember||{},memory);
 }
 export function makePrompt(input,source,memory){
  const facts=factBook(source);
@@ -137,6 +135,8 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   const messages=makePrompt(input,context,memory);
   messages[0].content+=' facts contiene exclusivamente las CLAVES del diccionario, nunca sus textos. Máximo dos hechos por respuesta. Ejemplo de precio: {"say":"","facts":["POWE003.cash","POWE003.stock"],"ask":"¿Prefieres retirarla o recibirla en Quito?","focus":["POWE003"],"image":"POWE003","intent":"price","action":"answer","remember":{"budget":null,"brand":"","sector":"","need":"","payment":"","delivery":""}}.';
   messages[0].content+=' No cambies foco de producto ante preguntas sobre banco, pago, entrega o regateo. Si pide una batería para su celular, recomienda POWE003 con benefit y cash; si pide un micrófono, MICR27. No describas envíos ni pagos cuando preguntan por una necesidad de producto. Si ya ofrece presupuesto, úsalo y no lo vuelvas a preguntar. Ante urgencia en Quito usa delivery y pregunta únicamente el sector; no derives por simple urgencia. Si piden foto, usa intent=photo. No repitas todos los bancos si solo preguntan por uno. Para regateo puedes generar say="Jajaja, ¡veo que te gusta negociar!" y facts=["discount"], sin repetir la pregunta anterior. Usa humor contextual breve y evita preguntas genéricas sin relación.';
+  messages[0].content+=' El último dato explícito del comprador corrige sus preferencias anteriores. No vuelvas a preguntar presupuesto, sector, pago o entrega ya informados. No preguntes si quiere una característica que acabas de confirmar. Una respuesta directa puede terminar sin pregunta. Si dice que NO quiere una persona, sigue conversando; no lo transfieras por esa negación.';
+  messages[0].content+=' Consultar el precio con otra forma de pago no significa que el cliente haya cambiado su elección. Responde el importe de la modalidad consultada (card si pregunta por tarjeta), aunque anteriormente haya elegido contado.';
   const args={messages,response_format:{type:'json_schema',json_schema:outputSchema(context)},max_tokens:policy.max_output_tokens,temperature:0.5};
   while(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes&&messages.length>2)messages.splice(1,Math.min(2,messages.length-2));
   if(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes)throw Error('PROMPT_LIMIT');
@@ -147,7 +147,8 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   const knownBank=factBook(context)[payment.bank];
   if((payment.months||payment.named&&/intereses|tarjeta|pago|plan|banco|aceptan|diferir|cuotas|^\W*pichincha\W*$|^\W*diners\W*$|^\W*pac[ií]fico\W*$/i.test(input))&&knownBank){plan.facts=[payment.bank];plan.intent='payment';plan.action='answer';plan.image=null;}
   if(payment.requires_interest){plan.facts=['interest'];plan.say='';plan.intent='payment';plan.image=null;plan.action='answer';}
-  const result=renderPlan(plan,context,memory);const next=memoryPatch(plan,input,memory);if(payment.bank)next.bank=payment.bank;if(payment.months)next.months=payment.months;next.focus=result.focus.length?result.focus:memory.focus||[];next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':next.stage||'consulta';
+  if(plan.action==='handoff'&&/\bno\s+quiero\b.{0,40}\b(?:persona|humano|vendedor)\b/i.test(input)&&!humanRequested(input)){plan.action='answer';plan.facts=plan.facts.filter(k=>k!=='human');if(!plan.say&&!plan.facts.length)plan.say='¡Seguimos por aquí!';}
+  const next=memoryPatch(plan,input,memory);if(payment.bank)next.bank=payment.bank;if(payment.months)next.months=payment.months;const result=renderPlan(plan,context,next);next.focus=result.focus.length?result.focus:memory.focus||[];next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':next.stage||'consulta';
   next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:result.text}].slice(-policy.max_history_turns*2);
   return {...result,memory:next};
  }catch(error){
@@ -159,7 +160,9 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
 export function quickReplies(result){
  const focus=result.focus[0];let options;
  if(result.action==='handoff')return [];
- if(result.intent==='price'||result.action==='interest')options=[['Retiro en tienda','retiro'],['Entrega en Quito','quito'],['Hablar con persona','human']];
+ if(result.intent==='price'||result.intent==='payment'||result.action==='interest')options=[['Retiro en tienda','retiro'],['Entrega en Quito','quito'],['Hablar con persona','human']];
+ else if(result.intent==='delivery')options=[['Formas de pago','payment'],['Envío nacional','nacional'],['Hablar con persona','human']];
+ else if(result.intent==='photo')options=[['Precio de contado','cash'],['Formas de pago','payment'],['Hablar con persona','human']];
  else if(focus)options=[['Ver fotografía','photo'],['Formas de pago','payment'],['Hablar con persona','human']];
  else options=[['Busco un micrófono','microphone'],['Busco una batería','battery'],['Hablar con persona','human']];
  return options.map(([title,action])=>({content_type:'text',title,payload:'ALEX:'+action+(focus?':'+focus:'')}));

@@ -7,6 +7,7 @@ export {MessengerTestInbox} from './messenger-store.mjs';
 import {handleMessengerWebhook,messengerSelfTest} from './messenger.mjs';
 import {setupPage} from './messenger-setup.mjs';
 import {alexPage,privacyPage} from './alex-ui.mjs';
+import {reviewPage} from './alex-review.mjs';
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 async function authorized(req,env) {
   // All pilot endpoints are private; no customer data in GitHub or public logs.
@@ -31,10 +32,21 @@ export default {
   }
   if(path==='/webhooks/meta') return handleMessengerWebhook(req,env,'development',ctx);
   if(path==='/alex'&&req.method==='GET')return alexPage();
+  if(path==='/alex/review'&&req.method==='GET')return reviewPage();
   if(['/privacy','/data-deletion'].includes(path)&&req.method==='GET')return privacyPage(path==='/data-deletion');
   if(path==='/messenger/setup'&&req.method==='GET') return setupPage();
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {
+   if(path==='/alex/quota'&&req.method==='GET')return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('alex-ai-quota')).fetch('https://inbox/alex/quota/status');
+   if(/^\/alex\/review\/(queue|mode|decision|regenerate)$/.test(path)){
+    const namespace=new URL(req.url).searchParams.get('scope')==='ci'?'messenger-ci':'messenger-development';
+    const stub=env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName(namespace)),options=req.method==='POST'?{method:'POST',body:JSON.stringify(await body(req))}:{method:req.method};
+    const response=await stub.fetch('https://inbox'+path,options);
+    if(req.method==='POST'&&response.ok&&namespace==='messenger-development'&&path!=='/alex/review/mode'){
+     const data=await response.clone().json();if(data.approved||data.queued_for_new_review)ctx?.waitUntil?.(stub.fetch('https://inbox/seller/process',{method:'POST',body:'{}'}).catch(()=>{}));
+    }
+    return response;
+   }
    if(path==='/alex/chat'&&req.method==='POST'){
     const b=await body(req);if(!/^[a-zA-Z0-9_-]{16,64}$/.test(b.session_id||''))return json({error:'Invalid session'},400);
     if(!env.MESSENGER_TEST_INBOX)return json({error:'Storage unavailable'},503);

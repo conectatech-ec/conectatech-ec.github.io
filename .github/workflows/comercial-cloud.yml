@@ -134,6 +134,7 @@ jobs:
       - run: node automatizacion/tests/messenger.test.mjs
       - run: node automatizacion/tests/seller.test.mjs
       - run: node automatizacion/tests/alex.test.mjs
+      - run: node automatizacion/tests/alex-upgrade.test.mjs
       - id: deploy
         run: python automatizacion/deploy_free.py
         env:
@@ -175,7 +176,7 @@ jobs:
           CLOUDFLARE_PILOT_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - name: Verificar Alex generativo real, memoria, tres productos y planes autorizados
-        run: node automatizacion/alex-e2e.mjs
+        run: node automatizacion/alex-upgrade-e2e.mjs
         env:
           PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
