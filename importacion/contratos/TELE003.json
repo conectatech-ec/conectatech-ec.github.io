@@ -115,9 +115,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
-  "fecha_verificacion": "2026-10-16T13:28:25.638554+00:00",
+  "fecha_verificacion": "2026-10-16T14:01:42.688647+00:00",
   "descripcion": "Televisor House TV De 43 Pulgadas Full HD. Presentación de venta: Un televisor House TV de 43 pulgadas. Pantalla: 43 pulgadas. Resolución: 1920 × 1080 según etiqueta propia. Portada: Panel; no representa ni promete soportes de pared adicionales.",
   "contenido_venta": "Un televisor House TV de 43 pulgadas.",
   "presentacion": "sin caja",
@@ -172,7 +172,7 @@
       "solicitado": "TELE003",
       "sku": "TELE003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T13:40:59.593Z",
+      "fecha": "2026-10-16T14:01:57.135Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -194,7 +194,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
-      "url_comprobada": "http://127.0.0.1:8798/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
       "archivo_html": "productos/tele003-televisor-house-tv-43-pulgadas-fullhd/index.html",
       "http": 200,
       "sha256_html": "71ee0d88b09d4a3c51d8dd25a37eac065813455106bd24d23c21dda5de231e19",
@@ -204,7 +204,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tele003/TELE003-01.webp",
-        "url_cargada": "http://127.0.0.1:8798/imagenes/tele003/TELE003-01-600.webp?v=622fea1fb2b1dff1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tele003/TELE003-01-600.webp?v=622fea1fb2b1dff1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -213,46 +213,54 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8798/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
+          "url": "https://conectatech-ec.github.io/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/imagenes/tele003/TELE003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tele003/TELE003-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/productos/trip026-tripode-selfie-n08s/",
+          "url": "https://conectatech-ec.github.io/productos/trip026-tripode-selfie-n08s/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/productos/tele002-televisor-env-40-pulgadas-fullhd/",
+          "url": "https://conectatech-ec.github.io/productos/tele002-televisor-env-40-pulgadas-fullhd/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-098/qa-local/movil/TELE003-390.png",
+      "archivo": "reportes/continuacion-098/qa-publica/movil/TELE003-390.png",
       "sha256": "340093b10f99a87d3b5fec0e49488433d940a31b93705e6bd6193eb8c4ded5e0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-098/qa-local/movil/TELE003-1280.png",
+        "archivo": "reportes/continuacion-098/qa-publica/movil/TELE003-1280.png",
         "sha256": "90bd81c7ecc724fdaacc069bcf54bc53f7e1b4b3c12dda604af708ad25f20433",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:01:42.688647+00:00",
+      "archivo": "reportes/continuacion-098/http-publicacion.json",
+      "reporte": "reportes/continuacion-098/http-publicacion.json",
+      "sha256": "33920043a1a0597d537772dffd88e1195a7ccf9b996736c17581770c588bac2f",
+      "sku": "TELE003"
     }
   }
 }

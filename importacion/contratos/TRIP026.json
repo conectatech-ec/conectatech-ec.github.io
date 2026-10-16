@@ -97,9 +97,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip026-tripode-selfie-n08s/",
-  "fecha_verificacion": "2026-10-16T13:28:25.638554+00:00",
+  "fecha_verificacion": "2026-10-16T14:01:42.688647+00:00",
   "descripcion": "Tripode Selfie Bluetooth N08S. Presentación de venta: Un trípode selfie N08S. Celular no incluido. Formato: Plegable.",
   "contenido_venta": "Un trípode selfie N08S. Celular no incluido.",
   "presentacion": "sin caja",
@@ -154,7 +154,7 @@
       "solicitado": "TRIP026",
       "sku": "TRIP026",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T13:40:53.902Z",
+      "fecha": "2026-10-16T14:01:49.581Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -176,7 +176,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip026-tripode-selfie-n08s/",
-      "url_comprobada": "http://127.0.0.1:8798/productos/trip026-tripode-selfie-n08s/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip026-tripode-selfie-n08s/",
       "archivo_html": "productos/trip026-tripode-selfie-n08s/index.html",
       "http": 200,
       "sha256_html": "256659a8d3d40c3584fd038de3e2ac4234e6f9a3db016c75984bcb1f259d8e20",
@@ -186,7 +186,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip026/TRIP026-01.webp",
-        "url_cargada": "http://127.0.0.1:8798/imagenes/trip026/TRIP026-01-600.webp?v=8baa879f9f9edd8a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip026/TRIP026-01-600.webp?v=8baa879f9f9edd8a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -195,46 +195,54 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8798/productos/trip026-tripode-selfie-n08s/",
+          "url": "https://conectatech-ec.github.io/productos/trip026-tripode-selfie-n08s/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/imagenes/trip026/TRIP026-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip026/TRIP026-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/productos/tele002-televisor-env-40-pulgadas-fullhd/",
+          "url": "https://conectatech-ec.github.io/productos/tele002-televisor-env-40-pulgadas-fullhd/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
+          "url": "https://conectatech-ec.github.io/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-098/qa-local/movil/TRIP026-390.png",
+      "archivo": "reportes/continuacion-098/qa-publica/movil/TRIP026-390.png",
       "sha256": "a302e569fd6f25f7af844dc3e0d298f7c982c6ccadd645c6f7996208640ceeec",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-098/qa-local/movil/TRIP026-1280.png",
+        "archivo": "reportes/continuacion-098/qa-publica/movil/TRIP026-1280.png",
         "sha256": "7c42115dde2da3797ca89314ae037b53061358be6d8dc2fdc4aaa741a1187a65",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:01:42.688647+00:00",
+      "archivo": "reportes/continuacion-098/http-publicacion.json",
+      "reporte": "reportes/continuacion-098/http-publicacion.json",
+      "sha256": "33920043a1a0597d537772dffd88e1195a7ccf9b996736c17581770c588bac2f",
+      "sku": "TRIP026"
     }
   }
 }
