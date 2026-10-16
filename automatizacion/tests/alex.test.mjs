@@ -88,3 +88,7 @@ test('Interest-bearing terms cannot be quoted as bare PVP even when model select
 test('Transparency never depends on quota or model and does not trigger human handoff',async()=>{
  for(const text of ['¿Eres una persona?','¿Eres humano?','¿Eres un bot?']){const r=await generateAlex(text,source,{focus:['POWE003']},{});assert.match(r.text,/automatizado/);assert.equal(r.action,'answer');assert.equal(r.memory.focus[0],'POWE003');}
 });
+test('An authorized current bank plan is answered without an unnecessary model handoff',async()=>{
+ const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:JSON.stringify(plan({facts:['human'],action:'handoff'}))})}};
+ const r=await generateAlex('¿Pichincha a seis meses tiene intereses?',source,{focus:['POWE003']},env);assert.equal(r.action,'answer');assert.match(r.text,/seis meses sin intereses/);assert.equal(r.image,null);
+});

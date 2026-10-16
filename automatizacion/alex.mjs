@@ -14,7 +14,7 @@ export function paymentContext(input,memory={}){
  const numbers={uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12,quince:15,dieciocho:18,veinticuatro:24,'treinta y seis':36};
  const months=term?(numbers[term[1].toLowerCase()]||Number(term[1])):null;
  const bank=named||memory.bank||null,max=bank?policy.card_plans?.[bank]?.interest_free_up_to_months||Math.max(...(policy.card_plans?.[bank]?.interest_free_months||[0])):0;
- return {bank,months,requires_interest:!!months&&(months>=12||!!max&&months>max)};
+ return {bank,named,months,requires_interest:!!months&&(months>=12||!!max&&months>max)};
 }
 export function redact(text){
  return String(text||'').slice(0,1200).replace(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/gi,'[correo omitido]').replace(/(?:\+?\d[\s()-]*){9,19}/g,'[numero privado omitido]').replace(/\b(?:contrase[nñ]a|clave|cvv|cvc|pin|c[eé]dula|n[uú]mero de tarjeta)\s*(?:es|:|=)?\s*[^\n,;.?!]{1,80}/gi,'[dato sensible omitido]');
@@ -144,7 +144,9 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   const raw=await env.AI.run(policy.model,args);
   const content=raw.response;const plan=typeof content==='object'?content:JSON.parse(String(content).replace(/^```(?:json)?\s*|\s*```$/g,''));
   // An approved interest-bearing term cannot be presented as the base PVP alone.
-  if(payment.requires_interest){plan.facts=['interest'];plan.say='';plan.intent='payment';plan.image=null;if(plan.action!=='handoff')plan.action='answer';}
+  const knownBank=factBook(context)[payment.bank];
+  if((payment.months||payment.named&&/intereses|tarjeta|pago|plan|banco|aceptan|diferir|cuotas|^\W*pichincha\W*$|^\W*diners\W*$|^\W*pac[ií]fico\W*$/i.test(input))&&knownBank){plan.facts=[payment.bank];plan.intent='payment';plan.action='answer';plan.image=null;}
+  if(payment.requires_interest){plan.facts=['interest'];plan.say='';plan.intent='payment';plan.image=null;plan.action='answer';}
   const result=renderPlan(plan,context,memory);const next=memoryPatch(plan,input,memory);if(payment.bank)next.bank=payment.bank;if(payment.months)next.months=payment.months;next.focus=result.focus.length?result.focus:memory.focus||[];next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':next.stage||'consulta';
   next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:result.text}].slice(-policy.max_history_turns*2);
   return {...result,memory:next};
