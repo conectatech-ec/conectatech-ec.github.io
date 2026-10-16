@@ -24,7 +24,7 @@ Ejecutar desde la raíz: `python automatizacion/build.py` y `node automatizacion
 
 API privada: `GET /health`, `POST /chat` con `{ "sku":"MICR27", "message":"precio y entrega" }`; `POST /interesados` con `{ "sku":"MICR27", "tipo":"reserva", "entrega":"retiro", "cantidad":1, "contacto":"contacto autorizado", "consent":true }`. Ambos POST requieren `Authorization: Bearer <PILOT_TOKEN>`; interesados además `Idempotency-Key` único de 16–80 caracteres. Guardar token exclusivamente en secretos del proveedor. No poner el token en una web pública.
 
-Solicitudes admiten interés/pedido/reserva y retiro/contraentrega Quito/envío nacional. Devuelven siempre pendiente de confirmación: NO descuentan stock, confirman pago, prometen transporte ni constituyen reserva de inventario. D1 guarda datos privados 30 días y cron los depura. Clave única evita duplicados; reutilizarla con otro contenido devuelve 409. Reintentar fallos con la misma clave. Logs contienen solo código de evento y ruta; no contactos ni tokens.
+Solicitudes admiten interés/pedido/reserva y retiro/contraentrega Quito/envío nacional. Devuelven siempre pendiente de confirmación: NO descuentan stock, confirman pago, prometen transporte ni constituyen reserva de inventario. El diseño opcional D1 conserva datos 30 días; está deshabilitado en el despliegue inicial de mínimo privilegio. Sin DB la API devuelve 503 y no guarda solicitudes. Clave única evita duplicados; reutilizarla con otro contenido devuelve 409. Reintentar fallos con la misma clave. Logs contienen solo código de evento y ruta; no contactos ni tokens.
 
 Solo MICR27 tiene banner vigente: el generador exige coincidencia de revisión y hash de portada, y rechaza banners con precio incrustado. Los otros dos usan foto aprobada y `banner:null`. No se crearon imágenes. No hay relaciones verificadas de upsell/accesorios en el piloto: se pide necesidad/modelo y no se inventa compatibilidad. No se añaden promociones fuera de Promo Contado real.
 
@@ -39,9 +39,9 @@ Fuentes oficiales consultadas: https://developers.cloudflare.com/workers/platfor
 
 ## Activación pendiente (sin ejecutar)
 
-Hace falta una cuenta cloud Free verificada y autorización para desplegar un entorno de piloto separado. Crear D1 privado gratuito, aplicar `schema.sql`, copiar `wrangler.toml.example` a config ignorada, introducir ID D1 y PILOT_TOKEN mediante secretos. La IA permanece apagada salvo `FREE_TIER_VERIFIED=true` tras verificar cuenta Free. No se incluyen comandos de cambio de plan. No existe credential cloud en este entorno.
+Seguir exclusivamente [CONECTAR-CLOUDFLARE.md](CONECTAR-CLOUDFLARE.md): Worker individual existente, token Editor solo para ese recurso y confirmación del plan desde el panel. No crear D1, no pedir Billing y no configurar cron. El procedimiento histórico de activación mediante permisos de cuenta queda reemplazado. La cuenta Free existe; faltan los secretos.
 
-Para operación continua se necesita sincronización del bundle al cambiar fuentes y monitor externo. El bundle actual caduca a las 24h de la fecha del feed; no se renueva su fecha artificialmente. La configuración cron preparada depura solicitudes y registra `catalog_stale`, pero no refresca ni alerta por sí sola. En una fase autorizada: un repo independiente para automatización (o workflow aprobado) refresca datos y despliega solo el Worker piloto; sin tocar main del catálogo. Configurar notificaciones de fallos de GitHub y monitor de salud gratuito. NO se afirma que alertas externas o recuperación de despliegue estén operativas.
+El runtime de fase 2 consulta precios/stock actuales del feed público y comprueba medios. No renueva fechas artificialmente. Persiste pendiente la conexión y prueba HTTPS/IA reales; no hay monitoreo externo continuo.
 
 ## Canales y seguridad
 

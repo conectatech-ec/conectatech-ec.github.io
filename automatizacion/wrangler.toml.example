@@ -9,9 +9,4 @@ LIVE_DATA = "true"
 FREE_TIER_VERIFIED = "false"
 [ai]
 binding = "AI"
-[[d1_databases]]
-binding = "DB"
-database_name = "conectatech-comercial-piloto"
-database_id = "REPLACE_WITH_AUTHORIZED_FREE_D1_ID"
-[triggers]
-crons = ["19 * * * *"]
+# Sin D1 ni cron en el despliegue inicial de mínimo privilegio.
