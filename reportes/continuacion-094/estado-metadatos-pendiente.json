@@ -1,8 +1,10 @@
 {
-  "estado": "PENDIENTE_QA_PUBLICO_METADATOS",
+  "estado": "SUPERADO_TRAS_QA_PUBLICA_COMPLETA",
   "fichas_http_verificadas": 2,
   "fichas_chromium_verificadas": 2,
   "catalogo_publico_verificado": false,
   "motivo": "Metadatos de novedades todavía no publicados; no se cierran contratos ni cola hasta verificar catálogo después del despliegue.",
-  "alcance_commit": "Dos entradas del registro semántico y payload del catálogo, referencia de caché y recursos095; sin cierre de estados ni cambios de reglas, finanzas o stock."
+  "alcance_commit": "Dos entradas del registro semántico y payload del catálogo, referencia de caché y recursos095; sin cierre de estados ni cambios de reglas, finanzas o stock.",
+  "estado_anterior": "PENDIENTE_QA_PUBLICO_METADATOS",
+  "reporte_cierre": "reportes/cierre-094-095/cierre.json"
 }

@@ -77,9 +77,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/foco003-focos-recargable-ashun/",
-  "fecha_verificacion": "2026-10-16T02:35:29.565934+00:00",
+  "fecha_verificacion": "2026-10-16T03:37:18.330492+00:00",
   "descripcion": "Foco LED recargable ASHUN de 15 W. Iluminación: LED. Potencia indicada: 15 W según empaque. Formato: Cuerpo blanco con gancho para colgar.",
   "contenido_venta": "Un foco recargable.",
   "presentacion": "sin caja",
@@ -130,7 +130,7 @@
       "solicitado": "FOCO003",
       "sku": "FOCO003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T02:38:45.880Z",
+      "fecha": "2026-10-16T03:37:19.070Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -152,7 +152,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/foco003-focos-recargable-ashun/",
-      "url_comprobada": "http://127.0.0.1:8784/productos/foco003-focos-recargable-ashun/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/foco003-focos-recargable-ashun/",
       "archivo_html": "productos/foco003-focos-recargable-ashun/index.html",
       "http": 200,
       "sha256_html": "ac2fddd65a5c72fb0d4b3178c20c18621ec617774a9db73d788841731f0a0da6",
@@ -162,7 +162,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01.webp",
-        "url_cargada": "http://127.0.0.1:8784/imagenes/foco003/FOCO003-01-600.webp?v=936e6425f7c3659f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-600.webp?v=936e6425f7c3659f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -171,36 +171,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8784/productos/foco003-focos-recargable-ashun/",
+          "url": "https://conectatech-ec.github.io/productos/foco003-focos-recargable-ashun/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8784/imagenes/foco003/FOCO003-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-094/qa-local/movil/FOCO003-390.png",
+      "archivo": "reportes/cierre-094-095/movil/FOCO003-390.png",
       "sha256": "6c43608b63da5632a3b33c5c38d096a28db3d687728beada9345295b4fc597c5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-094/qa-local/movil/FOCO003-1280.png",
+        "archivo": "reportes/cierre-094-095/movil/FOCO003-1280.png",
         "sha256": "83769308ff157d1ff6135626e7f880a496061968660bbbd5e6aec332fdf2f133",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T03:37:18.330492+00:00",
+      "archivo": "reportes/cierre-094-095/http.json",
+      "reporte": "reportes/cierre-094-095/http.json",
+      "sha256": "9bf7c5251411884fc86a216010e08ea036f6ae4f2548b57077677e33227572c5",
+      "sku": "FOCO003"
     }
   }
 }
