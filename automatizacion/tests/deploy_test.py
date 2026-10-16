@@ -1,9 +1,41 @@
-import importlib.util,sqlite3,unittest,os,sys
+import importlib.util,sqlite3,unittest,os,sys,tempfile
 from unittest.mock import patch
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('deploy_free',ROOT/'deploy_free.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 class MinimumPrivilegeTest(unittest.TestCase):
+ def test_rotation_preserves_exact_secret_and_retries_propagation_without_code_upload(self):
+  token='  synthetic-fixture-token-of-at-least-32-characters\n'
+  settings={'bindings':[{'name':'META_INGRESS_ENABLED','text':'false'},{'name':'META_MODE','text':'development-only'}]}
+  class FakeAPI:
+   def __init__(self):self.calls=[]
+   def call(self,*args):self.calls.append(args)
+  class Reply:
+   status=200
+   def __init__(self,text):self.text=text
+   def __enter__(self):return self
+   def __exit__(self,*args):pass
+   def read(self,n):return self.text.encode()
+  api=FakeAPI();seen=[]
+  def opener(req,timeout):
+   q=module.urllib.parse.parse_qs(module.urllib.parse.urlsplit(req.full_url).query)
+   seen.append(q['hub.verify_token'][0])
+   if len(seen)==1 or seen[-1]!=token:raise module.urllib.error.HTTPError(req.full_url,403,'fixture',{},None)
+   return Reply(q['hub.challenge'][0])
+  with tempfile.TemporaryDirectory() as tmp,patch.object(module,'ROOT',Path(tmp)),patch.object(module.urllib.request,'urlopen',side_effect=opener),patch.object(module.time,'sleep') as delay,patch('builtins.print') as output:
+   result=module.sync_meta_verify_token(api,settings,'https://conectatech-comercial-piloto.fixture.workers.dev',token)
+   self.assertTrue(result['passed']);self.assertEqual(result['attempts'],2);delay.assert_called_once_with(2)
+   self.assertEqual(api.calls,[(module.SCRIPT+'/secrets','PUT',{'name':'META_VERIFY_TOKEN','text':token,'type':'secret_text'})])
+   self.assertEqual(seen[:2],[token,token]);self.assertNotIn(token,str(output.call_args_list))
+ def test_rotation_refuses_open_ingress_before_any_mutation(self):
+  api=unittest.mock.Mock()
+  with self.assertRaises(ValueError):module.sync_meta_verify_token(api,{'bindings':[]},'https://unused.invalid','x'*32)
+  api.call.assert_not_called()
+ def test_rotation_never_treats_http_200_with_wrong_challenge_as_success(self):
+  settings={'bindings':[{'name':'META_INGRESS_ENABLED','text':'false'},{'name':'META_MODE','text':'development-only'}]}
+  reply=unittest.mock.MagicMock();reply.__enter__.return_value=reply;reply.status=200;reply.read.return_value=b'wrong-challenge'
+  with patch.object(module.urllib.request,'urlopen',return_value=reply),patch.object(module.time,'sleep'):
+   with self.assertRaisesRegex(RuntimeError,'New token challenge failed'):module.sync_meta_verify_token(unittest.mock.Mock(),settings,'https://unused.invalid','x'*32)
  def test_financial_database_and_other_workers_blocked_before_network(self):
   api=module.API('a'*32,'synthetic-token')
   with patch.object(module.urllib.request,'urlopen') as network:

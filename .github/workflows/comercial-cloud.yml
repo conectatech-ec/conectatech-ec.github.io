@@ -15,13 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       activar: ${{ steps.config.outputs.activar }}
+      sincronizar_meta: ${{ steps.config.outputs.sincronizar_meta }}
       ready: ${{ steps.conexion.outputs.ready }}
     steps:
       - uses: actions/checkout@v4
         with:
           sparse-checkout: automatizacion
       - id: config
-        run: python -c 'import json,os; c=json.load(open("automatizacion/activar-cloud.json")); open(os.environ["GITHUB_OUTPUT"],"a").write("activar="+str(c["activar"]).lower()+"\n")'
+        run: python -c 'import json,os; c=json.load(open("automatizacion/activar-cloud.json")); open(os.environ["GITHUB_OUTPUT"],"a").write("activar="+str(c["activar"]).lower()+"\nsincronizar_meta="+str(c.get("sincronizar_meta_verify_token",False)).lower()+"\n")'
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -39,6 +40,35 @@ jobs:
         with:
           name: estado-conexion-cloud
           path: automatizacion/generated/fase2/connection.json
+          retention-days: 7
+  sincronizar_meta:
+    needs: preparar
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && needs.preparar.outputs.sincronizar_meta == 'true' && needs.preparar.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: conectatech-piloto-gratis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: automatizacion
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python automatizacion/tests/deploy_test.py
+      - name: Sincronizar solo META_VERIFY_TOKEN y comprobar desafio HTTPS
+        run: python automatizacion/deploy_free.py --sync-meta-verify-token
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          META_VERIFY_TOKEN: ${{ secrets.META_VERIFY_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verificacion-meta-token
+          path: automatizacion/generated/fase2/meta-token-sync.json
           retention-days: 7
   desplegar:
     needs: preparar

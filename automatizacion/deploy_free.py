@@ -1,7 +1,7 @@
 """Update one existing pilot Worker with a per-Worker Editor token.
 Free plan is verified by owner in dashboard; no Billing/D1/account-list API access.
 """
-import json, os, re, secrets, sys, urllib.error, urllib.request
+import json, os, re, secrets, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 WORKER='conectatech-comercial-piloto'
@@ -70,12 +70,41 @@ def report_connection(result):
     path.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('ready='+str(result['ready']).lower()+'\n')
+def sync_meta_verify_token(api,settings,url,token):
+    bindings={b['name']:b for b in settings.get('bindings',[])}
+    if bindings.get('META_INGRESS_ENABLED',{}).get('text')!='false' or bindings.get('META_MODE',{}).get('text')!='development-only':
+        raise ValueError('Token rotation requires closed development-only Messenger ingress')
+    if len(token.strip())<32:raise ValueError('META_VERIFY_TOKEN must have at least 32 characters')
+    # Secret values are opaque: never strip or otherwise change the GitHub value.
+    api.call(SCRIPT+'/secrets','PUT',{'name':'META_VERIFY_TOKEN','text':token,'type':'secret_text'})
+    def challenge_request(candidate,challenge):
+        target=url+'/webhooks/meta?'+urllib.parse.urlencode({'hub.mode':'subscribe','hub.verify_token':candidate,'hub.challenge':challenge})
+        try:
+            with urllib.request.urlopen(urllib.request.Request(target,headers={'Cache-Control':'no-cache'}),timeout=10) as response:
+                return response.status,response.read(512).decode('utf-8')
+        except urllib.error.HTTPError as error:return error.code,''
+        except (urllib.error.URLError,TimeoutError):return 0,''
+    challenge='ct-rotation-'+secrets.token_hex(12)
+    for attempt in range(1,16):
+        status,body=challenge_request(token,challenge)
+        if status==200 and body==challenge:break
+        if attempt<15:time.sleep(2)
+    else:raise RuntimeError(f'New token challenge failed (HTTP {status}); request URL and secret withheld')
+    wrong_status,_=challenge_request('invalid-'+secrets.token_hex(24),challenge)
+    if wrong_status!=403:raise RuntimeError('Incorrect verification token was not rejected; secret withheld')
+    result={'worker':WORKER,'url':url+'/webhooks/meta','passed':True,'configured_token_http':200,'challenge_matches':True,'wrong_token_http':403,'attempts':attempt,'secret_preserved_exactly':True,'reception_enabled':False,'outbound_enabled':False,'worker_code_changed':False,'paid_services_activated':False}
+    path=ROOT/'generated/fase2/meta-token-sync.json';path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
+    return result
 def main():
     if os.environ.get('GITHUB_REF')!=BRANCH: raise ValueError('Only the isolated pilot branch may connect or deploy')
     check_only=sys.argv[1:]==['--check']
-    if sys.argv[1:] and not check_only: raise ValueError('Unsupported argument')
+    sync_only=sys.argv[1:]==['--sync-meta-verify-token']
+    if sys.argv[1:] and not (check_only or sync_only): raise ValueError('Unsupported argument')
     config=json.loads((ROOT/'activar-cloud.json').read_text())
-    if not check_only and config.get('activar') is not True: raise ValueError('Activation remains disabled')
+    if config.get('activar') is True and config.get('sincronizar_meta_verify_token') is True:raise ValueError('Choose code deployment or token rotation, never both')
+    if sync_only and config.get('sincronizar_meta_verify_token') is not True:raise ValueError('Token synchronization remains disabled')
+    if not (check_only or sync_only) and config.get('activar') is not True: raise ValueError('Activation remains disabled')
     settings=effective_settings(os.environ,config)
     missing=connection_settings(settings)
     if missing:
@@ -84,9 +113,11 @@ def main():
         raise ValueError('Missing configuration; no requests issued: '+', '.join(missing))
     validate_meta_settings(os.environ)
     api=API(settings['CLOUDFLARE_ACCOUNT_ID'],settings['CLOUDFLARE_API_TOKEN'])
-    check_connection(api)
+    existing=check_connection(api)
     if check_only:
         report_connection({'ready':True,'status':'existing_worker_read_check_passed','plan_verification':'owner_dashboard_attestation','resources_created':False,'d1_enabled':False});return
+    if sync_only:
+        sync_meta_verify_token(api,existing,settings['CLOUDFLARE_PILOT_URL'],os.environ.get('META_VERIFY_TOKEN',''));return
     metadata=worker_metadata(config);files=[]
     for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs']:
         source=(ROOT/name).read_text()
@@ -97,7 +128,7 @@ def main():
     api.call(SCRIPT,'PUT',body,ctype)
     api.call(SCRIPT+'/secrets','PUT',{'name':'PILOT_TOKEN','text':os.environ['PILOT_TOKEN'],'type':'secret_text'})
     for name in ['META_APP_SECRET','META_VERIFY_TOKEN','META_TEST_SENDER_IDS']:
-        value=os.environ.get(name,'').strip()
+        value=os.environ.get(name,'')
         if value:api.call(SCRIPT+'/secrets','PUT',{'name':name,'text':value,'type':'secret_text'})
     # workers.dev is enabled manually in the panel; no account/subdomain/route changes.
     url=settings['CLOUDFLARE_PILOT_URL']
