@@ -70,9 +70,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi049-audifonos-gamer-hp-dhe8001u/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Audifonos Gamer HP DHE8001U. Presentación de venta: Un audífono de diadema HP con micrófono..",
   "contenido_venta": "Un audífono de diadema HP con micrófono.",
   "presentacion": "sin caja",
@@ -125,7 +125,7 @@
       "solicitado": "AUDI049",
       "sku": "AUDI049",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:03.336Z",
+      "fecha": "2026-10-16T05:56:44.589Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -147,7 +147,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi049-audifonos-gamer-hp-dhe8001u/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/audi049-audifonos-gamer-hp-dhe8001u/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi049-audifonos-gamer-hp-dhe8001u/",
       "archivo_html": "productos/audi049-audifonos-gamer-hp-dhe8001u/index.html",
       "http": 200,
       "sha256_html": "6f0be747240848f718c1eecef361a6ec49c20e22c30d311a3248b13f5bb591a4",
@@ -157,7 +157,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi049/AUDI049-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/audi049/AUDI049-01-600.webp?v=15cdbe4a8a035d71",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi049/AUDI049-01-600.webp?v=15cdbe4a8a035d71",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -166,51 +166,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/audi049-audifonos-gamer-hp-dhe8001u/",
+          "url": "https://conectatech-ec.github.io/productos/audi049-audifonos-gamer-hp-dhe8001u/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/audi049/AUDI049-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi049/AUDI049-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/AUDI049-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI049-390.png",
       "sha256": "dcb391d705b60bc3184bf0b95213a676208dc57e8e72cf0737ce4471dc4226e5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/AUDI049-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI049-1280.png",
         "sha256": "f80109a2c1b7529c4660c4e93682b85fd0dee8b97655c966a31c1103febc502a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "AUDI049"
     }
   }
 }

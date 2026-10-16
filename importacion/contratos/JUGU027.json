@@ -70,9 +70,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu027-juguete-mini-consola-de-videojuegos-r36s/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Juguete Mini Consola DE Videojuegos R36S. Presentación de venta: Una consola portátil R36S. Colores surtidos según disponibilidad; la fotografía ilustra una variante con pantalla apagada. No se promete un catálogo de juegos..",
   "contenido_venta": "Una consola portátil R36S. Colores surtidos según disponibilidad; la fotografía ilustra una variante con pantalla apagada. No se promete un catálogo de juegos.",
   "presentacion": "sin caja",
@@ -125,7 +125,7 @@
       "solicitado": "JUGU027",
       "sku": "JUGU027",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:29.930Z",
+      "fecha": "2026-10-16T05:57:20.803Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -147,7 +147,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu027-juguete-mini-consola-de-videojuegos-r36s/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/jugu027-juguete-mini-consola-de-videojuegos-r36s/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu027-juguete-mini-consola-de-videojuegos-r36s/",
       "archivo_html": "productos/jugu027-juguete-mini-consola-de-videojuegos-r36s/index.html",
       "http": 200,
       "sha256_html": "30a52403220fdff221b3391beaf5a2f7510e9f37d68ad5ae02911dc691d6ce84",
@@ -157,7 +157,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu027/JUGU027-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/jugu027/JUGU027-01-600.webp?v=677268fa85f63ca9",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu027/JUGU027-01-600.webp?v=677268fa85f63ca9",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -166,51 +166,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/jugu027-juguete-mini-consola-de-videojuegos-r36s/",
+          "url": "https://conectatech-ec.github.io/productos/jugu027-juguete-mini-consola-de-videojuegos-r36s/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/jugu027/JUGU027-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu027/JUGU027-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/jugu167-dinosaurio-coelccionable-varios-modelos/",
+          "url": "https://conectatech-ec.github.io/productos/jugu167-dinosaurio-coelccionable-varios-modelos/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/jugu084-juguete-carro-de-coleccion-mercedes-benz-deportivo/",
+          "url": "https://conectatech-ec.github.io/productos/jugu084-juguete-carro-de-coleccion-mercedes-benz-deportivo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/bal001-balon-de-futbol-grande/",
+          "url": "https://conectatech-ec.github.io/productos/bal001-balon-de-futbol-grande/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/JUGU027-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/JUGU027-390.png",
       "sha256": "e15f3a61421e28122398804a26178eb130ff6d266fe43339ae356b72fc47cdd1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/JUGU027-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/JUGU027-1280.png",
         "sha256": "b91528f811445b887b25fd3bbbf560c0d9bfdc1756fd61986bed3dcef7f50481",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "JUGU027"
     }
   }
 }

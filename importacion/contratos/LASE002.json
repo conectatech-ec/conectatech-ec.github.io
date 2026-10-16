@@ -61,9 +61,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/lase002-laser-puntero-color-rojo-simple/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Laser Puntero Color Rojo Simple. Presentación de venta: Un puntero láser con mosquetón. Colores surtidos según disponibilidad; la fotografía ilustra una variante. No dirigir a los ojos..",
   "contenido_venta": "Un puntero láser con mosquetón. Colores surtidos según disponibilidad; la fotografía ilustra una variante. No dirigir a los ojos.",
   "presentacion": "sin caja",
@@ -115,7 +115,7 @@
       "solicitado": "LASE002",
       "sku": "LASE002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:33.182Z",
+      "fecha": "2026-10-16T05:57:25.427Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -137,7 +137,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lase002-laser-puntero-color-rojo-simple/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/lase002-laser-puntero-color-rojo-simple/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/lase002-laser-puntero-color-rojo-simple/",
       "archivo_html": "productos/lase002-laser-puntero-color-rojo-simple/index.html",
       "http": 200,
       "sha256_html": "49f069239f637b33aa6bc591b025f0d64cc636b87f04f98882130a649b39106f",
@@ -147,7 +147,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lase002/LASE002-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/lase002/LASE002-01-600.webp?v=994cf0556b661c89",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/lase002/LASE002-01-600.webp?v=994cf0556b661c89",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -156,51 +156,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/lase002-laser-puntero-color-rojo-simple/",
+          "url": "https://conectatech-ec.github.io/productos/lase002-laser-puntero-color-rojo-simple/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/lase002/LASE002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/lase002/LASE002-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/mous029-mousepad-cuadrado-esencial/",
+          "url": "https://conectatech-ec.github.io/productos/mous029-mousepad-cuadrado-esencial/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/padm001-padmouse-mousepad-pad-mouse-havit/",
+          "url": "https://conectatech-ec.github.io/productos/padm001-padmouse-mousepad-pad-mouse-havit/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/mous003-mouse-ergonomico-meetion-btm010r/",
+          "url": "https://conectatech-ec.github.io/productos/mous003-mouse-ergonomico-meetion-btm010r/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/LASE002-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/LASE002-390.png",
       "sha256": "8f9af19842b977c1f3db3b466cb5fbd599a398348108f16147143f9c5887e3fd",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/LASE002-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/LASE002-1280.png",
         "sha256": "54830cabcedf2e6ec092f620eed428a9113ba2351d1b38a01993ebe30032cbb9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "LASE002"
     }
   }
 }

@@ -79,9 +79,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tvbo008-tv-box-onn-4k/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "TV BOX ONN 4K. Presentación de venta: Un dispositivo onn 4K con control remoto, dos pilas AAA, cable HDMI, adaptador de corriente y guía rápida según contenido indicado en el empaque. La imagen muestra el dispositivo principal..",
   "contenido_venta": "Un dispositivo onn 4K con control remoto, dos pilas AAA, cable HDMI, adaptador de corriente y guía rápida según contenido indicado en el empaque. La imagen muestra el dispositivo principal.",
   "presentacion": "sin caja",
@@ -135,7 +135,7 @@
       "solicitado": "TVBO008",
       "sku": "TVBO008",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:07.277Z",
+      "fecha": "2026-10-16T05:56:49.664Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -157,7 +157,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tvbo008-tv-box-onn-4k/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/tvbo008-tv-box-onn-4k/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tvbo008-tv-box-onn-4k/",
       "archivo_html": "productos/tvbo008-tv-box-onn-4k/index.html",
       "http": 200,
       "sha256_html": "5b817e5d6925a9f0702cf79243efa24e908b13979f828b95388e98d7b5cf9f03",
@@ -167,7 +167,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tvbo008/TVBO008-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/tvbo008/TVBO008-01-600.webp?v=2011a4cf88923dd0",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tvbo008/TVBO008-01-600.webp?v=2011a4cf88923dd0",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -176,51 +176,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo008-tv-box-onn-4k/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo008-tv-box-onn-4k/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/tvbo008/TVBO008-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tvbo008/TVBO008-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo006-tv-box-andowl-mxq-pro/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo006-tv-box-andowl-mxq-pro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo010-fire-tv-stick-amazon-4k-8gb-wifi-6/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo010-fire-tv-stick-amazon-4k-8gb-wifi-6/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/TVBO008-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/TVBO008-390.png",
       "sha256": "e314cfde17e4f86891a479208427ce7a1a9a7c0a048e85718ff4676a8263e2bc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/TVBO008-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/TVBO008-1280.png",
         "sha256": "87351ee377ab9355b4054de1748d2e44febf6489cced776e0c38859757049020",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "TVBO008"
     }
   }
 }

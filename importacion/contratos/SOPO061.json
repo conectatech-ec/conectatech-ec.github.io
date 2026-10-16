@@ -70,9 +70,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo061-soporte-magnetico-para-vehiculo-klip-xtreme/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Soporte Magnetico Para Vehiculo Klip Xtreme. Presentación de venta: Un soporte magnético para vehículo. Celular no incluido..",
   "contenido_venta": "Un soporte magnético para vehículo. Celular no incluido.",
   "presentacion": "sin caja",
@@ -125,7 +125,7 @@
       "solicitado": "SOPO061",
       "sku": "SOPO061",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:30:53.933Z",
+      "fecha": "2026-10-16T05:56:30.761Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -147,7 +147,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo061-soporte-magnetico-para-vehiculo-klip-xtreme/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/sopo061-soporte-magnetico-para-vehiculo-klip-xtreme/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo061-soporte-magnetico-para-vehiculo-klip-xtreme/",
       "archivo_html": "productos/sopo061-soporte-magnetico-para-vehiculo-klip-xtreme/index.html",
       "http": 200,
       "sha256_html": "281b6eb36dc308a8124d4f1fccefd9f3c13b18c078b2f33c11e0914b69a5bb4e",
@@ -157,7 +157,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo061/SOPO061-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/sopo061/SOPO061-01-600.webp?v=8e612729ad3a8a49",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo061/SOPO061-01-600.webp?v=8e612729ad3a8a49",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -166,46 +166,54 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/sopo061-soporte-magnetico-para-vehiculo-klip-xtreme/",
+          "url": "https://conectatech-ec.github.io/productos/sopo061-soporte-magnetico-para-vehiculo-klip-xtreme/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/sopo061/SOPO061-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo061/SOPO061-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/sopo005-soporte-para-celular-de-escritorio-con-prensa-l365/",
+          "url": "https://conectatech-ec.github.io/productos/sopo005-soporte-para-celular-de-escritorio-con-prensa-l365/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/sopo054-soporte-de-celular-para-cuello/",
+          "url": "https://conectatech-ec.github.io/productos/sopo054-soporte-de-celular-para-cuello/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/SOPO061-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/SOPO061-390.png",
       "sha256": "3fe874cd17b74dc98b58dfeafa64e19e98409918bd194dab0c831296aff55139",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/SOPO061-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/SOPO061-1280.png",
         "sha256": "054e54e3f08ce36ebfd693fb5d6b7215e23ecf76b7868f1ce34ce0ed20e2db90",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "SOPO061"
     }
   }
 }

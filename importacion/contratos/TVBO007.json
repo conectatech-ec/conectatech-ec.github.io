@@ -70,9 +70,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tvbo007-fire-tv-stick-amazon-4k-max-16gb-wifi-6e/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Fire TV Stick Amazon 4K MAX 16GB Wifi 6E. Presentación de venta: Un Fire TV Stick 4K Max de Amazon. La imagen muestra el dispositivo principal..",
   "contenido_venta": "Un Fire TV Stick 4K Max de Amazon. La imagen muestra el dispositivo principal.",
   "presentacion": "sin caja",
@@ -125,7 +125,7 @@
       "solicitado": "TVBO007",
       "sku": "TVBO007",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:09.011Z",
+      "fecha": "2026-10-16T05:56:52.070Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -147,7 +147,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tvbo007-fire-tv-stick-amazon-4k-max-16gb-wifi-6e/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/tvbo007-fire-tv-stick-amazon-4k-max-16gb-wifi-6e/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tvbo007-fire-tv-stick-amazon-4k-max-16gb-wifi-6e/",
       "archivo_html": "productos/tvbo007-fire-tv-stick-amazon-4k-max-16gb-wifi-6e/index.html",
       "http": 200,
       "sha256_html": "5de2ae9192d7b9d4500b2f8ec5068d155f3d1af297875fab2659b4a1126ffdd9",
@@ -157,7 +157,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tvbo007/TVBO007-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/tvbo007/TVBO007-01-600.webp?v=1b1cf5a705ad44e5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tvbo007/TVBO007-01-600.webp?v=1b1cf5a705ad44e5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -166,51 +166,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo007-fire-tv-stick-amazon-4k-max-16gb-wifi-6e/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo007-fire-tv-stick-amazon-4k-max-16gb-wifi-6e/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/tvbo007/TVBO007-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tvbo007/TVBO007-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo004-tv-stick-tv98-5g-atv-x8-redondo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo006-tv-box-andowl-mxq-pro/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo006-tv-box-andowl-mxq-pro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/tvbo008-tv-box-onn-4k/",
+          "url": "https://conectatech-ec.github.io/productos/tvbo008-tv-box-onn-4k/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/TVBO007-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/TVBO007-390.png",
       "sha256": "a942517a2f7e30dd04cb7129627067d1911b5bdab7b40bd13a3229b3d0e11e9c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/TVBO007-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/TVBO007-1280.png",
         "sha256": "3177c0a43f434ded8cabe8bb178f70b2e38ff3a94a9310bbd1e1e261b05bd918",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "TVBO007"
     }
   }
 }

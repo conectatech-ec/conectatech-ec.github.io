@@ -97,9 +97,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi076-audifonos-de-diadema-gaming-5rca553/",
-  "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
   "descripcion": "Audifonos DE Diadema Gaming 5RCA553. Presentación de venta: Un audífono de diadema con micrófono y cable..",
   "contenido_venta": "Un audífono de diadema con micrófono y cable.",
   "presentacion": "sin caja",
@@ -155,7 +155,7 @@
       "solicitado": "AUDI076",
       "sku": "AUDI076",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:31:00.699Z",
+      "fecha": "2026-10-16T05:56:40.693Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -177,7 +177,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi076-audifonos-de-diadema-gaming-5rca553/",
-      "url_comprobada": "http://127.0.0.1:8787/productos/audi076-audifonos-de-diadema-gaming-5rca553/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi076-audifonos-de-diadema-gaming-5rca553/",
       "archivo_html": "productos/audi076-audifonos-de-diadema-gaming-5rca553/index.html",
       "http": 200,
       "sha256_html": "139ed9f9d750bfb5d711f2267842a6bceb5cc6ddd0c8db6416f6f0cb1b5d3ab0",
@@ -187,7 +187,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi076/AUDI076-01.webp",
-        "url_cargada": "http://127.0.0.1:8787/imagenes/audi076/AUDI076-01-600.webp?v=3580ba7ba14cfad6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi076/AUDI076-01-600.webp?v=3580ba7ba14cfad6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -196,51 +196,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8787/productos/audi076-audifonos-de-diadema-gaming-5rca553/",
+          "url": "https://conectatech-ec.github.io/productos/audi076-audifonos-de-diadema-gaming-5rca553/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/imagenes/audi076/AUDI076-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi076/AUDI076-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8787/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-local/movil/AUDI076-390.png",
+      "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI076-390.png",
       "sha256": "288421c580debb3c3d283fe939bd63e05ad09de0703c0917289be8eec65f0584",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-local/movil/AUDI076-1280.png",
+        "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI076-1280.png",
         "sha256": "ea77d61dbc70bf7c8b13bf0d69a2adc7fed32c10cdaa734c48579d95aeb6205f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T05:56:36.742098+00:00",
+      "archivo": "reportes/continuacion-097/http-publicacion.json",
+      "reporte": "reportes/continuacion-097/http-publicacion.json",
+      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
+      "sku": "AUDI076"
     }
   }
 }
