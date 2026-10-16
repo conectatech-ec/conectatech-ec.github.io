@@ -28,6 +28,9 @@ test('Budget is anchored to user text including words, decimals and corrections,
  assert.equal(statedBudget('El teléfono 0991234567'),null);const m=mergePreferences('Mi presupuesto ahora 30, mejor al contado',{budget:40,payment:'tarjeta'},{budget:40,payment:'tarjeta'});assert.equal(m.budget,30);assert.equal(m.payment,'contado');
  assert.equal(mergePreferences('¿Ese cuánto cuesta?',{sector:'La Carolina'},{history:[{role:'user',text:'La Carolina'}]}).sector,undefined);
  assert.equal(mergePreferences('¿Y con tarjeta cuánto cuesta?',{payment:'tarjeta'},{payment:'contado'}).payment,'contado');
+ assert.equal(mergePreferences('Quiero entrega en Quito.',{},{}).delivery,'quito');
+ assert.equal(mergePreferences('Mejor retiro en tienda.',{delivery:'quito'},{delivery:'quito'}).delivery,'retiro');
+ assert.equal(mergePreferences('¿Entregan en Quito?',{delivery:'quito'},{}).delivery,undefined);
 });
 test('A negated human request does not pause the conversation; explicit requests and sensitive claims still transfer',async()=>{
  assert.equal(asksHuman('No quiero hablar con una persona, sigamos aquí'),false);assert.equal(asksHuman('No quiero un bot; pásame una persona'),true);assert.equal(asksHuman('No quiero una persona, pero tengo un reclamo'),true);

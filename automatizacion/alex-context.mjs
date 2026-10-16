@@ -16,7 +16,9 @@ export function mergePreferences(input,proposed={},memory={}){
  else if(['contado','tarjeta'].includes(proposed.payment)&&text.includes(proposed.payment)&&!/[¿?]|cuanto|cuesta|aceptan|compar|precio|intereses|planes|meses/.test(text)&&!new RegExp('\\bno(?:\\s+(?:quiero|con|en|al|pago)){0,3}\\s+'+proposed.payment).test(text)){
   const alternatives=['contado','tarjeta'].filter(p=>text.includes(p));if(alternatives.length===1)next.payment=proposed.payment;
  }
- if(['retiro','quito','nacional'].includes(proposed.delivery)&&new RegExp(proposed.delivery==='retiro'?'retir|tienda':proposed.delivery==='nacional'?'nacional|provincia':'quito','i').test(text))next.delivery=proposed.delivery;
+ const deliveryChoices=[...text.matchAll(/(?:quiero|prefiero|necesito|mejor)\s+(?:el\s+)?(retiro(?:\s+en\s+tienda)?|retirar(?:lo|la)?(?:\s+en\s+tienda)?|entrega\s+en\s+quito|envio\s+nacional)\b/g)].filter(m=>!/(?:\bno\s+)$/.test(text.slice(Math.max(0,m.index-4),m.index)));
+ if(deliveryChoices.length){const choice=deliveryChoices.at(-1)[1];next.delivery=/^retir/.test(choice)?'retiro':/nacional/.test(choice)?'nacional':'quito';}
+ else if(['retiro','quito','nacional'].includes(proposed.delivery)&&new RegExp(proposed.delivery==='retiro'?'retir|tienda':proposed.delivery==='nacional'?'nacional|provincia':'quito','i').test(text)&&!/[¿?]|\bno\b/.test(text))next.delivery=proposed.delivery;
  return next;
 }
 export function redundantQuestion(question,memory={}){
