@@ -127,9 +127,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
-  "fecha_verificacion": "2026-10-16T19:29:22.751075+00:00",
+  "fecha_verificacion": "2026-10-16T20:03:39.667123+00:00",
   "descripcion": "Micrófono de Mesa con Soporte. Presentación de venta: Un micrófono con soporte incluido. Soporte: Incluido. Diseño del cabezal: Rejilla negra con tapa superior rectangular. Imagen de portada: Detalle del cabezal; no muestra el conjunto completo.",
   "contenido_venta": "Un micrófono con soporte de mesa incluido. La portada muestra un detalle del cabezal, no el conjunto completo.",
   "presentacion": "sin caja",
@@ -185,7 +185,7 @@
       "solicitado": "MICR33",
       "sku": "MICR33",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T19:39:39.426Z",
+      "fecha": "2026-10-16T20:03:40.420Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -210,7 +210,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
-      "url_comprobada": "http://127.0.0.1:8802/productos/micr33-microfono-genuine-para-pc-laptop/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
       "archivo_html": "productos/micr33-microfono-genuine-para-pc-laptop/index.html",
       "http": 200,
       "sha256_html": "685ba1512b830756d000a53c40bc4e01763a2d11b8696635e04caeb298f08b19",
@@ -220,7 +220,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-01.webp",
-        "url_cargada": "http://127.0.0.1:8802/imagenes/micr33/MICR33-01-600.webp?v=8272c26cfdf3f4d5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-01-600.webp?v=8272c26cfdf3f4d5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -229,36 +229,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8802/productos/micr33-microfono-genuine-para-pc-laptop/",
+          "url": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8802/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8802/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8802/imagenes/micr33/MICR33-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-102/qa-local/movil/MICR33-390.png",
+      "archivo": "reportes/continuacion-102/qa-publica/movil/MICR33-390.png",
       "sha256": "4d58cac5db8222acb90548de497dea09dc269afb4b2f7babd554a797652132f8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-102/qa-local/movil/MICR33-1280.png",
+        "archivo": "reportes/continuacion-102/qa-publica/movil/MICR33-1280.png",
         "sha256": "45283dfdf69fa595a87e37624b8c57a6202dc4284583ce783c52bbc669a14f62",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T20:03:39.667123+00:00",
+      "archivo": "reportes/continuacion-102/http-publicacion.json",
+      "reporte": "reportes/continuacion-102/http-publicacion.json",
+      "sha256": "49592245b44433bdb5416a604ce4e1bad2ad8de84e38921930361361863b271f",
+      "sku": "MICR33"
     }
   },
   "resolucion_propietario": "Sí, incluye soporte",
