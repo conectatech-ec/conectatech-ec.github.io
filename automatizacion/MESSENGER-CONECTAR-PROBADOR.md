@@ -1,3 +1,5 @@
+> Corrección de vinculación 16-10-2026: recargar el panel después del despliegue. Usar «Copiar frase»; solo la última frase creada es válida durante diez minutos. «Mostrar PSID» permanece deshabilitado hasta una captura real y no es necesario cuando el registro automático ya lo guardó. El panel distingue captura, registro automático, caducidad y código reemplazado. Los recibos distinguen formato incorrecto, nonce no vigente, eco de Página, standby y eventos sin texto, sin guardar el contenido. No abrir META_INGRESS_ENABLED para resolver la vinculación. Evidencia en generated/fase2/vinculacion-diagnosticada.json.
+
 > Actualización 16-10-2026: la implementación vigente de envío autorizado, lista de probadores y parada está en [VENDEDOR-MESSENGER.md](VENDEDOR-MESSENGER.md). Las restricciones de salida descritas abajo corresponden al prototipo anterior. No acreditan el estado del vendedor actual.
 
 # Vincular probador y comprobar entrega desde Meta

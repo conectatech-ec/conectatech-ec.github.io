@@ -1,0 +1,83 @@
+{
+  "worker": "conectatech-comercial-piloto",
+  "deployed_commit": "75882f34",
+  "branch": "automatizacion/piloto-cloud-3sku-20261015",
+  "actions_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38947545361",
+  "tests_passed": 64,
+  "app_webhook": {
+    "http": 200,
+    "page_object": true,
+    "active": true,
+    "messages": true,
+    "callback_matches": true
+  },
+  "page_token": {
+    "valid": true,
+    "page_identity_matches": true,
+    "pages_messaging": true
+  },
+  "page_subscription_edge": {
+    "http": 403,
+    "requires_pages_manage_metadata": true,
+    "state": "not_readable_with_existing_token_not_proof_of_missing_subscription",
+    "permissions_expanded": false
+  },
+  "external_receipts": [
+    {
+      "at": "2026-10-16T18:21:19.304Z",
+      "http_status": 200,
+      "signature_valid": true,
+      "reason": "ingress_disabled",
+      "page_matches": true,
+      "source": "external_https",
+      "reception_enabled": false,
+      "outbound_enabled": false
+    }
+  ],
+  "historical_message_text_stored": false,
+  "historical_discard_detail": "ingress_disabled does not identify phrase-format, replacement, expiry, echo or standby; a new authorized delivery is required",
+  "new_diagnostic_reasons": [
+    "pairing_phrase_format",
+    "pairing_recipient_mismatch",
+    "pairing_timestamp_rejected",
+    "pairing_not_current",
+    "pairing_standby_ignored",
+    "pairing_echo_ignored",
+    "pairing_no_user_text"
+  ],
+  "security": {
+    "meta_ingress_enabled": false,
+    "live_customers_enabled": false,
+    "signature_verification": true,
+    "nonce_bits": 128,
+    "enrollment_expiry_minutes": 10,
+    "private_routes_http": 401,
+    "paid_services_activated": false
+  },
+  "cloud_integration_passed": true,
+  "operator_panel_http": 200,
+  "seller": {
+    "mode": "authorized-testers-only",
+    "enabled": false,
+    "enrollment_armed": true,
+    "page_token_present": true,
+    "testers_configured": false,
+    "permissions": {
+      "ready": true,
+      "reason": "AUTHORIZED_TEST_SEND_READY",
+      "pages_messaging": true,
+      "subscription_read_http": 403,
+      "messages_subscription_verified": false,
+      "delivery_subscribed": false,
+      "advanced_access_verified": false,
+      "app_live_verified": false,
+      "checked_at": 1792172795458
+    },
+    "window_hours": 24,
+    "retention_days": 7,
+    "daily_limit": 100,
+    "counts": [],
+    "parts": [],
+    "live_customers_enabled": false
+  }
+}

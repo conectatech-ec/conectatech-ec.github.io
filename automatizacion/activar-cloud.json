@@ -1,10 +1,10 @@
 {
-  "activar": true,
+  "activar": false,
   "sincronizar_meta_verify_token": false,
   "meta_page_id": "105549695770538",
   "costo_maximo_usd": 0,
   "alcance": "Solo Worker piloto: Messenger oficial para probadores con permiso verificado; sin Billing, D1, cron, rutas, main ni catálogo de producción",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Corregir exclusivamente vinculación: normalizar espacios al copiar sin cambiar nonce, firma o caducidad; explicar descartes y estados del panel. Mantener META_INGRESS_ENABLED=false, clientes externos bloqueados y ningún envío de diagnóstico.",
+  "nota": "Corrección 75882f34 desplegada y verificada: 64 pruebas, mensajes de app y callback activos, entrega externa 200 con firma válida. Frase anterior no vinculada; no se conservó texto. Panel corregido y descartes diferenciados; pendiente reenvío autorizado. META_INGRESS_ENABLED=false; sin clientes reales, pagos ni main.",
   "habilitar_vendedor_probadores": false
 }
