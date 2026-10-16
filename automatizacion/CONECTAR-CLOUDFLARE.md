@@ -1,6 +1,6 @@
 # Permisos definitivos — despliegue aislado
 
-La cuenta Workers Free fue confirmada por el propietario. Activación permanece `false`. Esta guía reemplaza la solicitud anterior de Workers Scripts Edit, D1 Edit y Billing Read.
+La cuenta Workers Free fue confirmada por el propietario. El piloto ya fue conectado, desplegado y probado: [evidencia](generated/fase2/despliegue-verificado.json). Se dejó `activar:false` para cerrar futuros uploads; el servicio desplegado sigue activo. Esta guía describe los permisos y el procedimiento de conexión inicial. Esta guía reemplaza la solicitud anterior de Workers Scripts Edit, D1 Edit y Billing Read.
 
 ## Token mínimo
 

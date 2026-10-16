@@ -1,6 +1,8 @@
 # Fase 2 — piloto con mínimo privilegio
 
-La cuenta Cloudflare Workers Free fue confirmada por el propietario. Sigue pendiente conectar los secretos. Activación permanece `false`; no se desplegó un servicio cloud ni se modificaron main, catálogo o producción.
+El piloto privado ya está desplegado y verificado por HTTPS con inferencia IA real para los tres SKU. Evidencia: [despliegue-verificado.json](generated/fase2/despliegue-verificado.json) y [Actions 38849611908](https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38849611908). El Worker activo sirve la release `253b67ce`. Las cinco pruebas de acceso sin token/token incorrecto devolvieron 401; respuestas y tarjetas de tres SKU devolvieron 200. No se modificó main ni producción.
+
+Después de verificarlo se volvió a dejar `activar:false` para impedir nuevos uploads accidentales; esto NO apaga el Worker. D1, persistencia de solicitudes y envíos comerciales siguen deshabilitados. El resto del documento describe la preparación y restricciones del piloto.
 
 La guía vigente de conexión y permisos es [CONECTAR-CLOUDFLARE.md](CONECTAR-CLOUDFLARE.md). Reemplaza todas las instrucciones previas que pedían Billing Read, Workers Scripts Edit para toda la cuenta o D1 Edit.
 
