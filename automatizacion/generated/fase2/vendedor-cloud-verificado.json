@@ -1,0 +1,94 @@
+{
+  "verified_at": "2026-10-16T17:46:35.458Z",
+  "deployed_commit": "f7d1817d",
+  "branch": "automatizacion/piloto-cloud-3sku-20261015",
+  "worker": "conectatech-comercial-piloto",
+  "url": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
+  "operator_panel": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/messenger/setup",
+  "workflow_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38942171929",
+  "unit_tests_passed": 61,
+  "cloud_skus": [
+    {
+      "sku": "MICR27",
+      "price": 102.01,
+      "stock": 1,
+      "assets_verified": 2,
+      "banner_http": 200,
+      "ai": "ia_con_datos_verificados"
+    },
+    {
+      "sku": "POWE003",
+      "price": 33.01,
+      "stock": 1,
+      "assets_verified": 1,
+      "banner_http": 200,
+      "ai": "ia_con_datos_verificados"
+    },
+    {
+      "sku": "ADAP005",
+      "price": 2.5,
+      "stock": 16,
+      "assets_verified": 1,
+      "banner_http": 200,
+      "ai": "ia_con_datos_verificados"
+    }
+  ],
+  "activation": {
+    "authorized_testers_only": true,
+    "live_customers_enabled": false,
+    "paid_services_activated": false,
+    "private_routes_http": 401,
+    "initial_status_http": 200,
+    "arm_http": 200,
+    "enrollment_result": {
+      "armed": true,
+      "enabled": false,
+      "permissions": {
+        "ready": true,
+        "reason": "AUTHORIZED_TEST_SEND_READY",
+        "pages_messaging": true,
+        "subscription_read_http": 403,
+        "messages_subscription_verified": false,
+        "delivery_subscribed": false,
+        "advanced_access_verified": false,
+        "app_live_verified": false,
+        "checked_at": 1792172795458
+      },
+      "notice": "Only an owner-confirmed tester nonce can enroll; no client auto-registration."
+    },
+    "blocker": "AUTHORIZED_TESTER_MESSAGE_REQUIRED",
+    "seller": {
+      "mode": "authorized-testers-only",
+      "enabled": false,
+      "enrollment_armed": true,
+      "page_token_present": true,
+      "testers_configured": false,
+      "permissions": {
+        "ready": true,
+        "reason": "AUTHORIZED_TEST_SEND_READY",
+        "pages_messaging": true,
+        "subscription_read_http": 403,
+        "messages_subscription_verified": false,
+        "delivery_subscribed": false,
+        "advanced_access_verified": false,
+        "app_live_verified": false,
+        "checked_at": 1792172795458
+      },
+      "window_hours": 24,
+      "retention_days": 7,
+      "daily_limit": 100,
+      "counts": [],
+      "parts": [],
+      "live_customers_enabled": false
+    },
+    "evidence": {
+      "incoming_received": false,
+      "graph_response_accepted": false,
+      "messenger_delivery_confirmed": false
+    }
+  },
+  "main_modified_by_this_work": false,
+  "catalogue_production_modified_by_this_work": false,
+  "authorized_cost_usd": 0,
+  "paid_services_activated": false
+}
