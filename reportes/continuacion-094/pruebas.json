@@ -1,0 +1,17 @@
+{
+  "incremental": {
+    "pruebas": 9,
+    "resultado": "OK"
+  },
+  "contrato": {
+    "pruebas": 17,
+    "resultado": "OK"
+  },
+  "produccion_historica": {
+    "pruebas": 6,
+    "fallos": 3,
+    "mismos_fallos_en_main_base": true,
+    "base": "e9cd46bc3277eae73b8c1c513f9cd4b50abcb77d",
+    "causa": "Fixture importacion/piloto-imagenes.json carece de aprobaciones históricas; mismos tres fallos antes/después. No se modifican controles para ocultarlos."
+  }
+}
