@@ -1,7 +1,40 @@
 {
-  "executed_at": "2026-10-16T02:19:08.067Z",
+  "executed_at": "2026-10-16T04:11:15.383Z",
   "mode": "real_data_worker_in_process",
+  "url": null,
   "real_ai": false,
+  "access_tests": [
+    {
+      "path": "/chat",
+      "method": "POST",
+      "status": 401,
+      "wrong_token": false
+    },
+    {
+      "path": "/chat",
+      "method": "POST",
+      "status": 401,
+      "wrong_token": true
+    },
+    {
+      "path": "/ready",
+      "method": "GET",
+      "status": 401,
+      "wrong_token": false
+    },
+    {
+      "path": "/banners/MICR27",
+      "method": "GET",
+      "status": 401,
+      "wrong_token": false
+    },
+    {
+      "path": "/interesados",
+      "method": "POST",
+      "status": 401,
+      "wrong_token": false
+    }
+  ],
   "results": [
     {
       "sku": "MICR27",
@@ -24,7 +57,7 @@
         "Software": "JBL QuantumENGINE para PC",
         "Contenido": "Micrófono, cable USB y documentación"
       },
-      "fuente_fecha": "2026-10-16T02:07:29.483Z",
+      "fuente_fecha": "2026-10-16T03:29:21.972Z",
       "disponible": true,
       "opciones_compra": [
         {
@@ -79,7 +112,7 @@
         "Indicador": "Pantalla de nivel de carga",
         "Color": "Azul"
       },
-      "fuente_fecha": "2026-10-16T02:07:29.483Z",
+      "fuente_fecha": "2026-10-16T03:29:21.972Z",
       "disponible": true,
       "opciones_compra": [
         {
@@ -129,7 +162,7 @@
         "Formato": "Europa a Latino",
         "Diseño": "Cuerpo compacto con relieves de agarre"
       },
-      "fuente_fecha": "2026-10-16T02:07:29.483Z",
+      "fuente_fecha": "2026-10-16T03:29:21.972Z",
       "disponible": true,
       "opciones_compra": [
         {
@@ -163,5 +196,12 @@
         "url_compra": "https://conectatech-ec.github.io/productos/adap005-adaptador-europa-latino-color-negro/"
       }
     }
-  ]
+  ],
+  "passed": true,
+  "health": {
+    "ok": true,
+    "pilot": true,
+    "cloud_bindings": false,
+    "ai_binding": false
+  }
 }

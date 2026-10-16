@@ -15,6 +15,11 @@ class MinimumPrivilegeTest(unittest.TestCase):
   self.assertEqual(module.connection_settings(env),[])
   env['CF_FREE_ONLY_CONFIRMED']='false';env['CLOUDFLARE_PILOT_URL']='https://production.example'
   self.assertEqual(set(module.connection_settings(env)),{'CF_FREE_ONLY_CONFIRMED','CLOUDFLARE_PILOT_URL'})
+ def test_public_url_fallback_does_not_supply_or_override_credentials(self):
+  url='https://conectatech-comercial-piloto.fixture.workers.dev'
+  settings=module.effective_settings({}, {'url_publica':url})
+  self.assertEqual(settings,{'CLOUDFLARE_PILOT_URL':url})
+  self.assertEqual(module.effective_settings({'CLOUDFLARE_PILOT_URL':'https://wrong.example'}, {'url_publica':url})['CLOUDFLARE_PILOT_URL'],'https://wrong.example')
  def test_connection_reads_only_existing_worker(self):
   class FakeAPI:
    def __init__(self):self.calls=[]

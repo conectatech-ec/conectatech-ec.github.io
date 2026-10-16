@@ -1,18 +1,38 @@
-// Run in GitHub Actions with real public sources; PILOT_BASE_URL selects real deployment.
+// Execute the real handler with live sources; PILOT_BASE_URL tests deployed HTTPS.
 import {mkdir,writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import worker from './worker.mjs';
+import catalog from './generated/catalogo.json' with {type:'json'};
+import {LIVE_FEED} from './live.mjs';
 import {renderBanner} from './banner.mjs';
 const output=new URL('./generated/fase2/',import.meta.url);await mkdir(output,{recursive:true});
-const report={executed_at:new Date().toISOString(),mode:process.env.PILOT_BASE_URL?'deployed_https':'real_data_worker_in_process',real_ai:false,results:[]};
+const deployed=!!process.env.PILOT_BASE_URL;
+const base=process.env.PILOT_BASE_URL||'https://pilot.invalid';
 const token=process.env.PILOT_TOKEN||'synthetic-local-test-token';
-for(const sku of ['MICR27','POWE003','ADAP005']) {
- const req=new Request((process.env.PILOT_BASE_URL||'https://pilot.invalid')+'/chat',{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify({sku,message:'precio disponibilidad envío y opciones de compra'})});
- const r=process.env.PILOT_BASE_URL?await fetch(req):await worker.fetch(req,{PILOT_TOKEN:token,LIVE_DATA:'true'});
- const a=await r.json();assert.equal(r.status,200,JSON.stringify(a));assert.equal(a.sku,sku);assert.equal(a.disponible,true);assert.ok(a.precio>0);assert.equal(a.opciones_compra.length,3);assert.ok(a.medios_verificados.length>=1);assert.equal(a.banner_comercial.sku,sku);assert.equal(a.banner_comercial.precio,a.precio);assert.equal(a.banner_comercial.foto,a.foto);
- if(process.env.REQUIRE_REAL_AI==='true') assert.equal(a.modo,'ia_con_datos_verificados','Actual Workers AI binding must succeed; simulation is insufficient');
- report.results.push(a);report.real_ai=report.real_ai||a.modo==='ia_con_datos_verificados';
- await writeFile(new URL(sku+'.html',output),renderBanner(a,a.banner_comercial.nombre));
- console.log(JSON.stringify({sku,price:a.precio,stock:a.stock_referencial,assets_verified:a.medios_verificados.length,ai:a.modo}));
+const report={executed_at:new Date().toISOString(),mode:deployed?'deployed_https':'real_data_worker_in_process',url:deployed?base:null,real_ai:false,access_tests:[],results:[],passed:false};
+async function send(path,options={}) {
+ const request=new Request(base+path,{...options,signal:AbortSignal.timeout(30000)});
+ return deployed?fetch(request):worker.fetch(request,{PILOT_TOKEN:token,LIVE_DATA:'true'});
 }
-await writeFile(new URL('e2e.json',output),JSON.stringify(report,null,2)+'\n');
+const auth={Authorization:`Bearer ${token}`};
+try {
+ const health=await send('/health');assert.equal(health.status,200);const healthData=await health.json();assert.equal(healthData.pilot,true);assert.equal(healthData.cloud_bindings,false,'No D1 in this deployment');report.health=healthData;
+ for(const [path,method,headers] of [['/chat','POST',{}],['/chat','POST',{Authorization:'Bearer deliberately-invalid-test-token'}],['/ready','GET',{}],['/banners/MICR27','GET',{}],['/interesados','POST',{}]]) {
+  const r=await send(path,{method,headers});assert.equal(r.status,401,`${path} must reject unauthenticated access`);report.access_tests.push({path,method,status:r.status,wrong_token:!!headers.Authorization});
+ }
+ const feedResponse=await fetch(LIVE_FEED,{signal:AbortSignal.timeout(15000)});assert.equal(feedResponse.status,200);const feed=await feedResponse.json();
+ for(const sku of ['MICR27','POWE003','ADAP005']) {
+  const r=await send('/chat',{method:'POST',headers:{...auth,'Content-Type':'application/json'},body:JSON.stringify({sku,message:'precio disponibilidad envío y opciones de compra'})});
+  const body=await r.text();assert.equal(r.status,200,`${sku}: HTTP ${r.status}; ${body.slice(0,600)}`);const a=JSON.parse(body);
+  const expected=feed.productos.find(p=>p.sku===sku);const media=catalog.productos.find(p=>p.sku===sku);
+  assert.ok(expected);assert.equal(a.sku,sku);assert.equal(a.disponible,true);assert.equal(a.precio,expected.promo);assert.equal(a.pvp,expected.pvp);assert.equal(a.stock_referencial,expected.stock);assert.equal(a.foto,media.foto);assert.equal(a.banner,media.banner);assert.equal(a.opciones_compra.length,3);assert.ok(a.medios_verificados.length>=1);assert.equal(a.banner_comercial.sku,sku);assert.equal(a.banner_comercial.precio,a.precio);assert.equal(a.banner_comercial.foto,a.foto);
+  for(const asset of a.medios_verificados) assert.equal(asset.sha256,media[asset.tipo+'_sha256']);
+  if(process.env.REQUIRE_REAL_AI==='true') assert.equal(a.modo,'ia_con_datos_verificados','Actual Workers AI binding must succeed; simulation is insufficient');
+  const bannerResponse=await send('/banners/'+sku,{headers:auth});assert.equal(bannerResponse.status,200);const bannerHTML=await bannerResponse.text();assert.ok(bannerHTML.includes(a.foto));assert.ok(bannerHTML.includes(a.precio.toFixed(2)));assert.ok(!bannerHTML.includes(token));
+  report.results.push(a);report.real_ai=report.real_ai||a.modo==='ia_con_datos_verificados';
+  await writeFile(new URL(sku+'.html',output),renderBanner(a,a.banner_comercial.nombre));
+  console.log(JSON.stringify({sku,price:a.precio,stock:a.stock_referencial,assets_verified:a.medios_verificados.length,banner_http:bannerResponse.status,ai:a.modo}));
+ }
+ report.passed=true;
+} catch(e) {report.error=String(e.message).slice(0,1000);throw e;}
+finally {await writeFile(new URL('e2e.json',output),JSON.stringify(report,null,2)+'\n');}

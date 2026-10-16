@@ -26,6 +26,11 @@ def multipart(metadata,files):
     for name,ctype,body in [('metadata','application/json',json.dumps(metadata).encode()),*files]:
         parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"; filename="{name}"\r\nContent-Type: {ctype}\r\n\r\n'.encode()+body+b'\r\n')
     return b''.join(parts)+f'--{boundary}--\r\n'.encode(),'multipart/form-data; boundary='+boundary
+def effective_settings(environ,config):
+    settings=dict(environ)
+    if not settings.get('CLOUDFLARE_PILOT_URL'):
+        settings['CLOUDFLARE_PILOT_URL']=config.get('url_publica','')
+    return settings
 def connection_settings(environ):
     missing=[]
     if environ.get('CF_FREE_ONLY_CONFIRMED')!='true': missing.append('CF_FREE_ONLY_CONFIRMED')
@@ -54,15 +59,15 @@ def main():
     if os.environ.get('GITHUB_REF')!=BRANCH: raise ValueError('Only the isolated pilot branch may connect or deploy')
     check_only=sys.argv[1:]==['--check']
     if sys.argv[1:] and not check_only: raise ValueError('Unsupported argument')
-    if not check_only:
-        config=json.loads((ROOT/'activar-cloud.json').read_text())
-        if config.get('activar') is not True: raise ValueError('Activation remains disabled')
-    missing=connection_settings(os.environ)
+    config=json.loads((ROOT/'activar-cloud.json').read_text())
+    if not check_only and config.get('activar') is not True: raise ValueError('Activation remains disabled')
+    settings=effective_settings(os.environ,config)
+    missing=connection_settings(settings)
     if missing:
         if check_only:
             report_connection({'ready':False,'status':'awaiting_github_environment_configuration','missing':missing,'cloud_requests_issued':False});return
         raise ValueError('Missing configuration; no requests issued: '+', '.join(missing))
-    api=API(os.environ['CLOUDFLARE_ACCOUNT_ID'],os.environ['CLOUDFLARE_API_TOKEN'])
+    api=API(settings['CLOUDFLARE_ACCOUNT_ID'],settings['CLOUDFLARE_API_TOKEN'])
     check_connection(api)
     if check_only:
         report_connection({'ready':True,'status':'existing_worker_read_check_passed','plan_verification':'owner_dashboard_attestation','resources_created':False,'d1_enabled':False});return
@@ -76,7 +81,7 @@ def main():
     api.call(SCRIPT,'PUT',body,ctype)
     api.call(SCRIPT+'/secrets','PUT',{'name':'PILOT_TOKEN','text':os.environ['PILOT_TOKEN'],'type':'secret_text'})
     # workers.dev is enabled manually in the panel; no account/subdomain/route changes.
-    url=os.environ['CLOUDFLARE_PILOT_URL']
+    url=settings['CLOUDFLARE_PILOT_URL']
     path=ROOT/'generated/fase2/deployment.json';path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps({'url':url,'worker':WORKER,'plan_verification':'owner_dashboard_attestation','d1_enabled':False,'real_ai':'pending_smoke_test'},indent=2)+'\n')
     if os.environ.get('GITHUB_OUTPUT'):
