@@ -100,9 +100,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/inve002-inversor-de-voltaje-para-vehiculo-dc-12-a-110v-usb-a/",
-  "fecha_verificacion": "2026-10-16T19:29:22.751075+00:00",
+  "fecha_verificacion": "2026-10-16T20:03:39.667123+00:00",
   "descripcion": "Inversor para Vehículo de 12 V a 110 V Andowl. Entrada: 12 V CC. Salida: 110 V CA. Presentación de venta: Un inversor para vehículo. Imagen de portada: Cara ventilada del dispositivo; no muestra las tomas de salida.",
   "contenido_venta": "Un inversor para vehículo de entrada 12 V y salida 110 V. La imagen muestra la cara ventilada; no muestra las tomas de salida.",
   "presentacion": "sin caja",
@@ -155,7 +155,7 @@
       "solicitado": "INVE002",
       "sku": "INVE002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T19:39:41.353Z",
+      "fecha": "2026-10-16T20:03:43.640Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -180,7 +180,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/inve002-inversor-de-voltaje-para-vehiculo-dc-12-a-110v-usb-a/",
-      "url_comprobada": "http://127.0.0.1:8802/productos/inve002-inversor-de-voltaje-para-vehiculo-dc-12-a-110v-usb-a/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/inve002-inversor-de-voltaje-para-vehiculo-dc-12-a-110v-usb-a/",
       "archivo_html": "productos/inve002-inversor-de-voltaje-para-vehiculo-dc-12-a-110v-usb-a/index.html",
       "http": 200,
       "sha256_html": "c445be81b0ac6b56f0878ff7c4806f2f5e6bcd32d957aefaec72453a8642dc07",
@@ -190,7 +190,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/inve002/INVE002-01.webp",
-        "url_cargada": "http://127.0.0.1:8802/imagenes/inve002/INVE002-01-600.webp?v=1f9d8d6d6a4781c9",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/inve002/INVE002-01-600.webp?v=1f9d8d6d6a4781c9",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -199,36 +199,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8802/productos/inve002-inversor-de-voltaje-para-vehiculo-dc-12-a-110v-usb-a/",
+          "url": "https://conectatech-ec.github.io/productos/inve002-inversor-de-voltaje-para-vehiculo-dc-12-a-110v-usb-a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8802/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8802/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8802/imagenes/inve002/INVE002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/inve002/INVE002-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-102/qa-local/movil/INVE002-390.png",
+      "archivo": "reportes/continuacion-102/qa-publica/movil/INVE002-390.png",
       "sha256": "88a037bf32c9f445fd1982ef27a8465a9a0789f1835b6296dab44d60f3167496",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-102/qa-local/movil/INVE002-1280.png",
+        "archivo": "reportes/continuacion-102/qa-publica/movil/INVE002-1280.png",
         "sha256": "a36f5646905736334a9e0e88c36bb7e4c19f47b2aa4a656f29d4ecd9740f0b8c",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T20:03:39.667123+00:00",
+      "archivo": "reportes/continuacion-102/http-publicacion.json",
+      "reporte": "reportes/continuacion-102/http-publicacion.json",
+      "sha256": "49592245b44433bdb5416a604ce4e1bad2ad8de84e38921930361361863b271f",
+      "sku": "INVE002"
     }
   },
   "resolucion_propietario": "110 V",
