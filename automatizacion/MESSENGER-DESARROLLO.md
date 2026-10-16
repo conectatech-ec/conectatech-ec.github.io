@@ -1,6 +1,6 @@
 # Messenger de Meta — Jotacellcomunicapp en Desarrollo
 
-**Actualización de diagnóstico:** [panel privado y vinculación mediante frase](MESSENGER-CONECTAR-PROBADOR.md), sin acceso a conversaciones ni permisos nuevos. El receptor cerrado ahora confirma Page POST firmado con HTTP 200 incluso sin allowlist; conserva recibos mínimos y permite vinculación temporal únicamente mediante código creado por el propietario. Los estados de despliegue previos que siguen a continuación son históricos; consultar la evidencia de la última instalación antes de declarar activo el nuevo panel.
+**Diagnóstico desplegado y verificado:** [panel privado y vinculación mediante frase](MESSENGER-CONECTAR-PROBADOR.md), con [evidencia HTTPS actual](generated/fase2/meta-diagnostico-vinculacion-verificado.json). 48 pruebas aprobadas; tres SKU, recibos 200/firma válida/cierre y 403/firma inválida, PSID cifrado de consumo único y panel operativo. No hay entrega externa de Meta confirmada todavía. META_INGRESS_ENABLED=false; faltan la acción de cuenta Meta/probador y su allowlist. Los estados de instalaciones anteriores que siguen son históricos.
 
 Guía operativa actual, revisión humana, métricas y requisitos de conversaciones reales: [OPERAR-MESSENGER.md](OPERAR-MESSENGER.md). El Page ID confirmado está fijado en la configuración del piloto; no requiere crear otra variable en GitHub.
 
@@ -12,7 +12,7 @@ Callback HTTPS exacto:
 
 Alcance: recibir únicamente pruebas de la Página CONECTATECHec, validar firma, reconocer MICR27/MICR027, POWE003 y ADAP005, preparar borradores comerciales y consultar su resultado con autenticación. Nunca se envía un mensaje por Graph API, no se publica la app ni se procesan clientes no autorizados. No se modifica main ni el catálogo.
 
-**Control adicional:** todos los despliegues fijan `META_INGRESS_ENABLED=false`. Los eventos de Página autenticados se ignoran sin almacenar hasta una habilitación deliberada posterior. Las pruebas internas usan solo el espacio CI y no abren la recepción de Meta. Configurar secretos o completar el challenge no cambia ese control.
+**Control adicional:** todos los despliegues fijan `META_INGRESS_ENABLED=false`. Los eventos de Página autenticados no se procesan comercialmente hasta una habilitación deliberada posterior. Se conservan únicamente recibos anónimos de diagnóstico; la frase privada de vinculación es un control separado de un solo uso. Las pruebas internas usan solo el espacio CI y no abren la recepción de Meta. Configurar secretos o completar el challenge no cambia ese control.
 
 ## Configuración segura
 
@@ -48,7 +48,7 @@ POST verifica `X-Hub-Signature-256` mediante HMAC-SHA256 con META_APP_SECRET sob
 
 Solo se acepta objeto Page, Page ID configurado, recipient Page correcto y PSID de la allowlist, sin ecos. Se ignoran mensajes de más de 24 horas y timestamps futuros anómalos. El modo Desarrollo en Meta es una protección adicional; la allowlist del servidor mantiene el aislamiento aunque cambie una configuración de la app. Los otros clientes se ignoran sin almacenar sus mensajes ni responderles.
 
-El almacén recibe únicamente huella HMAC del identificador de evento y SKU reconocidos. **HMAC no es cifrado reversible.** No conserva texto libre, teléfono, nombre, PSID, App Secret ni Verify Token. Borradores contienen texto comercial del catálogo, precio, stock referencial, foto verificada y banner de imagen vigente cuando existe (MICR27). Para todos los SKU prepara una tarjeta nativa de Messenger con la fotografía y enlace público de la ficha; no trata una tarjeta HTML privada como imagen de Messenger.
+El almacén recibe únicamente huella HMAC del identificador de evento y SKU reconocidos. **HMAC no es cifrado reversible.** El almacén comercial no conserva texto libre, teléfono, nombre, PSID, App Secret ni Verify Token. La vinculación autorizada del probador mantiene excepcionalmente su PSID cifrado durante hasta diez minutos y lo elimina al mostrarlo una vez; no aparece en logs ni artifacts. Borradores contienen texto comercial del catálogo, precio, stock referencial, foto verificada y banner de imagen vigente cuando existe (MICR27). Para todos los SKU prepara una tarjeta nativa de Messenger con la fotografía y enlace público de la ficha; no trata una tarjeta HTML privada como imagen de Messenger.
 
 ## Deduplicación, errores y costo $0
 

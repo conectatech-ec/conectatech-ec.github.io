@@ -7,7 +7,7 @@ permissions:
   contents: read
 concurrency:
   group: comercial-cloud-piloto
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   preparar:
     if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'

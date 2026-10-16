@@ -1,0 +1,189 @@
+{
+  "release": "608adb8b",
+  "run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38859315222",
+  "artifact": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38859315222/artifacts/12028866167",
+  "unit_tests": 48,
+  "operator_panel": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/messenger/setup",
+  "commercial": [
+    {
+      "sku": "MICR27",
+      "price": 102.01,
+      "stock": 1,
+      "assets_verified": 2,
+      "banner_http": 200,
+      "ai": "ia_con_datos_verificados"
+    },
+    {
+      "sku": "POWE003",
+      "price": 33.01,
+      "stock": 1,
+      "assets_verified": 1,
+      "banner_http": 200,
+      "ai": "ia_con_datos_verificados"
+    },
+    {
+      "sku": "ADAP005",
+      "price": 2.5,
+      "stock": 16,
+      "assets_verified": 1,
+      "banner_http": 200,
+      "ai": "ia_con_datos_verificados"
+    }
+  ],
+  "messenger_tests": {
+    "mode": "synthetic_signed_https_development_pipeline",
+    "meta_app_verified": false,
+    "outbound_enabled": false,
+    "tests": [
+      {
+        "case": "bad_signature",
+        "status": 403
+      },
+      {
+        "case": "tamper",
+        "status": 403
+      },
+      {
+        "case": "foreign_sender",
+        "status": 200
+      },
+      {
+        "case": "echo",
+        "status": 200
+      },
+      {
+        "case": "verify_challenge",
+        "status": 200
+      },
+      {
+        "case": "bad_verify_token",
+        "status": 403
+      },
+      {
+        "case": "ingress_disabled",
+        "status": 200
+      }
+    ],
+    "prepared": [
+      {
+        "sku": "MICR27",
+        "precio": 102.01,
+        "stock_referencial": 1,
+        "foto": "https://conectatech-ec.github.io/imagenes/micr27/MICR27-01.webp",
+        "banner": "https://conectatech-ec.github.io/imagenes/micr27/MICR27-promo.webp",
+        "native_card": true,
+        "duplicate_ignored": true
+      },
+      {
+        "sku": "POWE003",
+        "precio": 33.01,
+        "stock_referencial": 1,
+        "foto": "https://conectatech-ec.github.io/imagenes/powe003/POWE003-01.webp",
+        "banner": null,
+        "native_card": true,
+        "duplicate_ignored": true
+      },
+      {
+        "sku": "ADAP005",
+        "precio": 2.5,
+        "stock_referencial": 16,
+        "foto": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01.webp",
+        "banner": null,
+        "native_card": true,
+        "duplicate_ignored": true
+      }
+    ],
+    "passed": true,
+    "metrics_and_human_review": "passed",
+    "changed_draft_review_status": 409,
+    "runtime_meta_configuration_present": false,
+    "meta_page_reception_enabled": false,
+    "meta_secret_readiness": {
+      "app_secret": true,
+      "verify_token": true,
+      "page": true,
+      "test_senders": false
+    },
+    "secure_tester_pairing_and_receipts": "passed_synthetic_ci_only",
+    "operator_panel_http": 200,
+    "configured_verify_token_handshake": "passed",
+    "configured_secret_closed_ingress_receipt": "passed_CI_probe_not_Meta_delivery",
+    "configured_app_secret_hmac": "passed_empty_fixture_not_Meta_delivery",
+    "configured_signature_tamper_status": 403,
+    "preview_without_token": 401
+  },
+  "worker_receipts": {
+    "scope": "private_worker_receipts_not_general_HTTP_logs",
+    "meta_delivery_confirmed": null,
+    "status_http": 200,
+    "configuration": {
+      "development_only": true,
+      "reception_enabled": false,
+      "outbound_enabled": false,
+      "test_senders_present": false
+    },
+    "receipts_http": 200,
+    "receipts": [
+      {
+        "at": "2026-10-16T06:07:54.995Z",
+        "http_status": 403,
+        "signature_valid": false,
+        "reason": "invalid_signature",
+        "page_matches": false,
+        "source": "authorized_ci_probe",
+        "reception_enabled": false,
+        "outbound_enabled": false
+      },
+      {
+        "at": "2026-10-16T06:07:54.889Z",
+        "http_status": 200,
+        "signature_valid": true,
+        "reason": "ingress_disabled",
+        "page_matches": false,
+        "source": "authorized_ci_probe",
+        "reception_enabled": false,
+        "outbound_enabled": false
+      },
+      {
+        "at": "2026-10-16T06:03:36.583Z",
+        "http_status": 403,
+        "signature_valid": false,
+        "reason": "invalid_signature",
+        "page_matches": false,
+        "source": "authorized_ci_probe",
+        "reception_enabled": false,
+        "outbound_enabled": false
+      },
+      {
+        "at": "2026-10-16T06:03:36.478Z",
+        "http_status": 200,
+        "signature_valid": true,
+        "reason": "ingress_disabled",
+        "page_matches": false,
+        "source": "authorized_ci_probe",
+        "reception_enabled": false,
+        "outbound_enabled": false
+      }
+    ],
+    "external_signed_receipts": 0,
+    "external_pairing_receipt_seen": false
+  },
+  "cloudflare_tail": {
+    "scope": "Cloudflare_live_Worker_invocations",
+    "tail_connected": true,
+    "observed": [],
+    "historical_meta_test_verified": false,
+    "signed_closed_probe_observed": false,
+    "invalid_signature_probe_observed": false
+  },
+  "previous_official_meta_test_confirmed": false,
+  "minimum_owner_action": "Associate Page/messages using existing authorization if not already associated; enroll an authorized tester through private panel and send its one-use phrase from Messenger",
+  "constraints": {
+    "meta_ingress_enabled": false,
+    "outbound_enabled": false,
+    "paid_services_activated": false,
+    "permissions_expanded": false,
+    "main_modified": false,
+    "catalog_modified": false
+  }
+}
