@@ -23,6 +23,7 @@ test('Only fresh verified facts can supply price, stock, specs and product IDs s
  const r=renderPlan(plan(),source);assert.ok(r.text.startsWith('El Philco'));assert.match(r.text,/\$/);assert.ok(!r.text.includes('POWE003'));
  for(const p of [plan({facts:['invented.price']}),plan({focus:['OTHER']}),plan({facts:['POWE003.cash','POWE003.stock','payment']})])assert.throws(()=>renderPlan(p,source));
  for(const p of [plan({say:'Cuesta $1'}),plan({ask:'Cuesta poco. ¿Lo compras?'})]){const safe=renderPlan(p,source);assert.equal(safe.prose_filtered,true);assert.ok(!safe.text.includes('$1'));assert.ok(!safe.text.includes('Cuesta poco'));}
+ for(const say of ['Tiene más memoria','Soy humano','Lo probé personalmente'])assert.equal(renderPlan(plan({say}),source).prose_filtered,true);
  const stale={...source,fuente_fecha:'2020-01-01'};assert.equal(factBook(stale)['POWE003.cash'],undefined);assert.throws(()=>renderPlan(plan(),stale));assert.equal(factBook({...source,productos:source.productos.map(p=>({...p,stock:0}))})['POWE003.card'],undefined);
 });
 test('Real binding contract uses JSON generative model and safe fallback consumes no paid path',async()=>{

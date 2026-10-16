@@ -61,6 +61,8 @@ const cleanFree=text=>String(text||'').trim().replace(/\s+/g,' ');
 export function freeProseSafe(text,question=false){
  if(text.length>190||/[\d$€]|https?:|\{\{|\}\}|\b(?:MICR\d|POWE\d|ADAP\d)/i.test(text))return false;
  if(/gratis|regal|sin costo|garantiz|aseguro|confirmad|reservad|descuent[oa].*(?:doy|tienes)|te llega|llega hoy|entregamos hoy|sin recargo|sin intereses|impermeable|resiste|original|duraci[oó]n|bater[ií]a dura|incluye|compatible con|recib[ií] tu pago|ya (?:pagaste|compraste)|Jotacell|soy (?:una )?persona/i.test(text))return false;
+ if(/soy (?:un[ao]? )?human[oa]|no soy (?:un )?(?:bot|robot)|(?:lo|yo) (?:prob[eé]|us[eé]|compr[eé])|en mi experiencia/i.test(text))return false;
+ if(!question&&/\b(?:tiene|tienen|trae|ofrece|cuenta|dura|funciona|soporta|admite|rinde|pesa|mide|viene|aguanta|mejor|peor|memoria|c[aá]mara|procesador|bluetooth|wifi)\b/i.test(text))return false;
  if(!question&&/\b(?:cuesta|precio|stock|disponible|capacidad|USB|Watt|volt|RAM|GB|mAh|garant[ií]a|tarjeta|entrega|env[ií]o|direcci[oó]n|horario|descuento|JBL|Philco|Quantum|FLP|adaptador|micr[oó]fono|bater[ií]a|powerbank)\b/i.test(text))return false;
  return true;
 }
