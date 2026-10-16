@@ -44,6 +44,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Comprobar token de Pagina y permisos Meta sin enviar mensajes
+        run: node automatizacion/meta-account-check.mjs
+        env:
+          CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+          META_APP_ID: ${{ vars.META_APP_ID }}
+          META_TEST_SENDER_IDS: ${{ secrets.META_TEST_SENDER_IDS }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: permisos-meta-solo-lectura
+          path: automatizacion/generated/fase2/meta-account-check.json
+          retention-days: 7
       - name: Leer recibos privados del Worker sin enviar mensajes
         run: node automatizacion/meta-diagnostics.mjs
         env:
