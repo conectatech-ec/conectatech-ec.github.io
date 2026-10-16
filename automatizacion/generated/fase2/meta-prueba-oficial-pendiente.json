@@ -1,0 +1,50 @@
+{
+  "worker": "conectatech-comercial-piloto",
+  "callback": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/webhooks/meta",
+  "user_report": {
+    "source": "Meta for Developers console, reported by owner",
+    "field": "messages",
+    "api_version": "v26.0",
+    "result": "Se probó correctamente el campo del webhook messages v26.0"
+  },
+  "verification_scope": "read-only Cloudflare settings; not a webhook invocation log",
+  "run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38856441773",
+  "settings": {
+    "observability_enabled": null,
+    "logs_enabled": null,
+    "invocation_logs_enabled": null,
+    "meta_ingress_enabled": false,
+    "development_only": true,
+    "meta_app_secret_binding_present": true,
+    "meta_verify_token_binding_present": true,
+    "test_sender_allowlist_binding_present": false,
+    "event_http_status": null,
+    "event_signature_verified": null,
+    "event_discard_verified": null,
+    "scope": "current_configuration_only_not_a_Meta_event_receipt"
+  },
+  "event_receipt": {
+    "http_status": null,
+    "signature_verified": null,
+    "discard_verified": null,
+    "correlated_cloudflare_log_available_to_session": false
+  },
+  "limitations": [
+    "Existing deployment metadata sets observability.enabled=false; settings API omits current observability fields, so absence is not proof of current dashboard setting",
+    "No ignored-event receipt is stored by the current application",
+    "No historical log query executed: current authorized integration only reads settings for this Worker",
+    "A valid signed Page payload with missing sender allowlist returns 503 before checking the closed ingress gate; do not claim 200 or verified discard from the console success notice"
+  ],
+  "minimum_next_step": [
+    "Capture a repeated official test using Cloudflare dashboard real-time logs; share only time/timezone and HTTP status",
+    "Configure authorized Page-scoped tester PSIDs in META_TEST_SENDER_IDS in the GitHub pilot environment; app roles accepted and Page messages subscription confirmed",
+    "Require explicit owner authorization before changing META_INGRESS_ENABLED; no customer auto-sending"
+  ],
+  "changes": {
+    "worker_updated": false,
+    "gate_changed": false,
+    "main_modified": false,
+    "production_modified": false,
+    "paid_services_activated": false
+  }
+}
