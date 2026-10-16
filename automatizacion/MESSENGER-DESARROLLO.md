@@ -1,5 +1,7 @@
 # Messenger de Meta — Jotacellcomunicapp en Desarrollo
 
+**Estado:** receptor cerrado desplegado, pruebas sintéticas por HTTPS aprobadas y recepción real deshabilitada. [Evidencia](generated/fase2/messenger-desplegado-verificado.json). Handshake con el token real y entrega desde Meta pendientes de configuración segura. Nuevos uploads cerrados con `activar:false`; el Worker sigue activo.
+
 Callback HTTPS exacto:
 
 `https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/webhooks/meta`

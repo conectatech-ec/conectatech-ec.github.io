@@ -1,0 +1,28 @@
+{
+  "callback_url": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/webhooks/meta",
+  "release": "2f526b10",
+  "run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38851281623",
+  "artifact": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38851281623/artifacts/12025451144",
+  "verification_scope": "synthetic_signed_https_development_pipeline",
+  "meta_app_verified": false,
+  "meta_page_reception_enabled": false,
+  "outbound_enabled": false,
+  "meta_configuration_present": false,
+  "configured_verify_token_handshake": "pending_secret",
+  "checks": {
+    "unit_tests": 34,
+    "challenge_fixture_http": 200,
+    "wrong_verify_token_fixture_http": 403,
+    "bad_signature_fixture_http": 403,
+    "tampered_body_fixture_http": 403,
+    "foreign_sender_ignored": true,
+    "echo_ignored": true,
+    "durable_duplicate_ignored_3_sku": true,
+    "drafts_prepared_3_sku": true,
+    "private_preview_without_token_http": 401,
+    "real_page_ingress_blocked": true
+  },
+  "storage": "same-Worker Durable Object SQLite Free; HMAC event fingerprints and public commercial drafts only; 7-day retention",
+  "paid_services_activated": false,
+  "main_modified": false
+}

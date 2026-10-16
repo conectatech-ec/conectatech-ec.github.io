@@ -1,7 +1,7 @@
 {
-  "activar": true,
+  "activar": false,
   "costo_maximo_usd": 0,
   "alcance": "actualizar solo Worker existente del piloto; sin Billing, D1, cron, rutas, producción ni envíos Meta",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Alternativa de menor riesgo, tras CI 38851204310 aprobado: instalar solo pruebas internas. META_INGRESS_ENABLED=false obligatorio; sin recepción de la Página ni Graph Send API; SQLite Free del mismo Worker."
+  "nota": "Receptor cerrado desplegado y verificado. Nuevos uploads bloqueados; Worker activo. META_INGRESS_ENABLED=false y sin envíos Graph. Conexión real Meta pendiente de secretos y prueba autorizada."
 }

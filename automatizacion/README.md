@@ -1,6 +1,8 @@
 # Piloto comercial CONECTATECH — cloud privado verificado
 
-**Estado actual:** [despliegue HTTPS verificado](generated/fase2/despliegue-verificado.json), release `253b67ce`, sin D1 ni envíos comerciales. El control de nuevos despliegues quedó cerrado; el Worker continúa activo. La auditoría inferior conserva contexto histórico.
+**Messenger:** [receptor de Desarrollo instalado en modo cerrado](MESSENGER-DESARROLLO.md), con Durable Object SQLite Free para deduplicación de pruebas; Meta y envíos reales deshabilitados.
+
+**Estado actual del piloto comercial previo:** [despliegue HTTPS verificado](generated/fase2/despliegue-verificado.json), release `253b67ce`, sin D1 ni envíos comerciales. El control de nuevos despliegues quedó cerrado; el Worker continúa activo. La auditoría inferior conserva contexto histórico.
 
 **Conexión de la cuenta Free confirmada:** [CONECTAR-CLOUDFLARE.md](CONECTAR-CLOUDFLARE.md).
 
