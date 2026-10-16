@@ -1,22 +1,23 @@
 # Google Merchant Center — 5874003439
 
 Costo: $0. País: Ecuador (`EC`). Idioma: español (`es`). Moneda: USD.
-Destino: fichas gratuitas; cada artículo excluye `Shopping_ads`. No se crea campaña ni se conecta Google Ads.
+Estado: solo validación. Cada artículo excluye `Shopping_ads` y `Free_listings` hasta resolver stock, compra y políticas. No se activa ninguna publicación ni se conecta Google Ads.
 
 ## Feed y aislamiento
 
-URL prevista, válida únicamente después del primer workflow exitoso:
+URL pública estable (se conserva al renovar el archivo):
 
 `https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/refs/heads/feeds/google-merchant-ec/google-merchant/productos-ec.xml`
 
-El generador lee catálogo, inventario593, fichas y contratos existentes. No ejecuta el exportador Meta ni generadores de catálogo, no modifica sus fuentes y no cambia las sesiones de trabajo existentes. El workflow publica cuatro archivos solamente en `feeds/google-merchant-ec`, con árbol independiente y sin catálogo ni workflows. Nunca escribe en main ni despliega Pages.
+El generador lee catálogo, inventario593, fichas y contratos existentes. No ejecuta el exportador Meta ni generadores de catálogo, no modifica sus fuentes y no cambia las sesiones de trabajo existentes. El workflow publica el XML y cuatro archivos de verificaciones solamente en `feeds/google-merchant-ec`, con árbol independiente y sin catálogo ni workflows. Nunca escribe en main ni despliega Pages.
 
 ## Ejecutar y validar
 
 ```sh
 python -m pip install 'Pillow>=12.0,<13'
 python -m unittest discover -s google-merchant -p test_feed.py
-python google-merchant/generar.py --verify-public
+python google-merchant/generar.py --root /ruta/copia-fuente-vigente --output google-merchant --verify-public
+python google-merchant/preconexion.py --root /ruta/copia-fuente-vigente --output google-merchant
 ```
 
 Sin `--verify-public` el resultado es candidato local: no presentarlo como verificado por HTTPS.
@@ -26,11 +27,15 @@ Se incluyen únicamente SKU con contrato aprobado y publicación verificada, uni
 
 El precio es `promo_contado`, que coincide con la oferta y el precio principal visible; no se declara el PVP como precio anterior ni se inventa una oferta temporal. Los textos editoriales mantenidos con asistencia generativa se reutilizan sin reescritura como `structured_title` y `structured_description`, con `digital_source_type=trained_algorithmic_media`, según la especificación de Google. La condición se reutiliza únicamente si está explícita en la ficha. Marca solo si coincide literalmente entre contrato y datos estructurados y no es un producto clasificado como genérico. No se infieren marcas por título/SKU, ni GTIN/MPN, ni `identifier_exists=no`. Los identificadores faltantes pueden impedir que Google apruebe artículos: conseguir los identificadores auténticos antes de subsanar ese aviso.
 
-## Actualización automática preparada, activación pendiente
+## Actualización desde fuente vigente, sin escrituras en main
 
-En la rama de integración el workflow corre al cambiar su código y se puede ejecutar manualmente cuando GitHub lo permita. Usa la versión de esa rama. No recibe automáticamente las futuras modificaciones de main mientras permanezca aislado.
+Cada ejecución obtiene el HEAD actual de `main` en una copia separada `fuente-vigente`, conserva su SHA en las evidencias y valida los datos servidos por HTTPS. El código de integración permanece en su rama y solo escribe el feed y las verificaciones en `feeds/google-merchant-ec`. No se importa un nuevo corte593 ni se aplican precios o existencias al catálogo.
 
-Para actualización continua, se debe autorizar posteriormente integrar solo el código y el workflow en la rama predeterminada: entonces se ejecuta cuando cambien las fuentes aprobadas en main y diariamente a las 06:23 de Ecuador. Los schedules de GitHub solo se activan desde la rama predeterminada. Esta tarea no autoriza modificar main, por lo que no se integra ni se activa ese schedule aquí. Después de activarlo, configurar descarga diaria en Merchant Center posterior a las 06:23; los cambios pueden tardar en reflejarse hasta la siguiente descarga y revisión de Google. No hay suscripción ni servicio externo.
+El workflow se ejecuta al cambiar su código y queda preparado para ejecución manual. El schedule diario sigue **inactivo**: GitHub únicamente ejecuta schedules de la rama predeterminada y esta tarea prohíbe modificarla. No se confunde lectura automática de main durante una ejecución con actualización continua. Una programación autónoma sin cambiar main requiere un ejecutor independiente gratuito autorizado; no se ha creado ni contratado ninguno. No se fusiona el PR.
+
+El XML queda en modo de validación con `excluded_destination` repetido para `Shopping_ads` y `Free_listings`. Importarlo no habilita estos artículos para esos destinos. No se retira la exclusión hasta comprobar la información comercial y contar con autorización de activación. Esto no desindexa ni controla el contenido del catálogo que Google pueda rastrear por otras vías.
+
+El archivo `preconexion.json` documenta fecha de corte, coherencia de precios y stock, observaciones de compra/envíos/devoluciones y pasos pendientes de la cuenta. La referencia oficial confirma que los importes del corte incluyen IVA; no confirma stock actual ni que la compra final se cierre por ese precio. No se ha accedido a la cuenta Merchant Center.
 
 ## Comprobaciones antes de habilitar fichas gratuitas
 
@@ -41,7 +46,7 @@ Para actualización continua, se debe autorizar posteriormente integrar solo el 
 5. Envíos: la ficha menciona contraentrega en Quito y consulta de cobertura/costo. Obtener zonas, tarifas reales, manejo, tránsito y exclusiones. No asumir envío nacional a todo Ecuador ni envío gratuito. No se exporta `shipping` con ceros. Publicar y configurar los datos verdaderos cuando se autorice; no crear políticas en esta tarea.
 6. Devoluciones: no se encontró una política completa en la ficha revisada. Preparar URL accesible con aceptación/rechazo de devoluciones, plazos, condiciones, procedimiento, costos y reembolso verdaderos; reflejarla en Merchant Center. No equiparar garantía a devoluciones ni inventar días.
 7. Imágenes y producto: conservar fotos aprobadas; revisar metadatos IPTC requeridos por Google para imágenes creadas con IA cuando corresponda. La validación técnica de hash/tamaño no certifica propiedad intelectual, ausencia de falsificaciones ni todas las políticas de Google. Reservar los casos con identidad/autenticidad no resuelta.
-8. Alta de fuente: Productos → fuentes de datos → archivo mediante URL (el nombre del menú puede variar), pegar URL verificada del feed, seleccionar Ecuador/español, habilitar fichas gratuitas y revisar procesamiento. No habilitar Google Ads.
+8. Alta de fuente: Productos → fuentes de datos → archivo mediante URL (el nombre del menú puede variar), primero comprobar que el dominio está verificado y reclamado por la cuenta 5874003439; luego pegar la URL verificada del feed, seleccionar Ecuador/español/USD y revisar procesamiento manteniendo las exclusiones. No habilitar fichas gratuitas de estos artículos hasta cerrar los bloqueos. No habilitar Google Ads.
 
 Referencias oficiales consultadas:
 
@@ -50,3 +55,7 @@ Referencias oficiales consultadas:
 - [Fichas gratuitas](https://support.google.com/merchants/answer/13889434?hl=es)
 - [Requisitos editoriales y profesionales](https://support.google.com/merchants/answer/12079604?hl=es)
 - [Políticas de devolución](https://support.google.com/merchants/answer/14011730?hl=es)
+
+Ecuador admite español y USD según Google. No está en la lista general de países donde Google exige especificar tarifas mediante shipping para fichas gratuitas; aun así deben quedar claros los gastos y las condiciones reales de entrega antes de confirmar la compra. Una cuenta y un XML válidos no garantizan elegibilidad.
+
+Siguiente paso de conexión: comprobar verificación y reclamación del dominio del catálogo dentro de Merchant Center 5874003439. Siguiente paso comercial: disponer de stock vigente y demostrar compra completa en el sitio; los enlaces de consulta por WhatsApp no lo acreditan. Contraentrega es admisible como método de pago, pero no sustituye el proceso de compra.

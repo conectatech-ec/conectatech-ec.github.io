@@ -46,6 +46,7 @@ class FeedTest(unittest.TestCase):
         self.assertEqual(doc.find('.//{' + feed.NS + '}structured_title/{' + feed.NS + '}content').text, self.p['name'])
         self.assertEqual(doc.find('.//{' + feed.NS + '}structured_description/{' + feed.NS + '}digital_source_type').text, 'trained_algorithmic_media')
         self.assertEqual(row['availability'], 'in_stock')
+        self.assertEqual([node.text for node in doc.findall('.//{' + feed.NS + '}excluded_destination')], ['Shopping_ads', 'Free_listings'])
         for key in ['gtin', 'mpn', 'identifier_exists', 'brand', 'shipping']:
             self.assertNotIn(key, row)
         self.assertEqual(before, self.p)

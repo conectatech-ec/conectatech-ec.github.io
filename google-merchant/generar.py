@@ -132,7 +132,7 @@ def candidate(root, p, o, slug, master):
     picture(image_bytes)
     row = dict(id=sku, title=title, description=description, link=BASE + '/productos/' + slug + '/',
                image_link=image, availability='in_stock' if stock > 0 else 'out_of_stock', price=f'{price:.2f} USD',
-               excluded_destination='Shopping_ads')
+               excluded_destination=['Shopping_ads', 'Free_listings'])
     page_path = root / 'productos' / slug / 'index.html'
     document = page_path.read_text()
     obj = check_page(document, row)
@@ -189,7 +189,8 @@ def xml_feed(rows):
                 ET.SubElement(structured, '{' + NS + '}digital_source_type').text = 'trained_algorithmic_media'
                 ET.SubElement(structured, '{' + NS + '}content').text = str(value)
             else:
-                ET.SubElement(item, '{' + NS + '}' + key).text = str(value)
+                for entry in value if isinstance(value, list) else [value]:
+                    ET.SubElement(item, '{' + NS + '}' + key).text = str(entry)
     ET.indent(rss)
     data = ET.tostring(rss, encoding='utf-8', xml_declaration=True) + b'\n'
     ET.fromstring(data)
@@ -229,6 +230,7 @@ def generate(root, out, public=False):
     out.mkdir(parents=True, exist_ok=True)
     source_commit = subprocess.check_output(['git', '-C', str(root), 'rev-parse', 'HEAD'], text=True).strip()
     summary = dict(merchant_center='5874003439', idioma='es', pais='EC', moneda='USD', costo_autorizado=0,
+                   publicacion_habilitada=False, estado='SOLO_VALIDACION_COMERCIAL_PENDIENTE',
                    source_commit=source_commit, validacion='local_y_http_publico' if public else 'local; HTTP público pendiente',
                    productos_origen=len(products), incluidos=len(rows), excluidos=len(exclusions),
                    motivos=dict(sorted(Counter(e['motivo'] for e in exclusions).items())),
