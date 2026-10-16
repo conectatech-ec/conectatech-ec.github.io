@@ -82,14 +82,16 @@ def sync_meta_verify_token(api,settings,url,token):
         try:
             with urllib.request.urlopen(urllib.request.Request(target,headers={'Cache-Control':'no-cache'}),timeout=10) as response:
                 return response.status,response.read(512).decode('utf-8')
-        except urllib.error.HTTPError as error:return error.code,''
+        except urllib.error.HTTPError as error:return error.code,error.read(512).decode('utf-8',errors='replace')
         except (urllib.error.URLError,TimeoutError):return 0,''
     challenge='ct-rotation-'+secrets.token_hex(12)
     for attempt in range(1,16):
         status,body=challenge_request(token,challenge)
         if status==200 and body==challenge:break
         if attempt<15:time.sleep(2)
-    else:raise RuntimeError(f'New token challenge failed (HTTP {status}); request URL and secret withheld')
+    else:
+        print(json.dumps({'rotation_diagnostic':True,'http':status,'handler_forbidden':body=='Forbidden','github_value_has_outer_whitespace':token!=token.strip()}))
+        raise RuntimeError(f'New token challenge failed (HTTP {status}); request URL and secret withheld')
     wrong_status,_=challenge_request('invalid-'+secrets.token_hex(24),challenge)
     if wrong_status!=403:raise RuntimeError('Incorrect verification token was not rejected; secret withheld')
     result={'worker':WORKER,'url':url+'/webhooks/meta','passed':True,'configured_token_http':200,'challenge_matches':True,'wrong_token_http':403,'attempts':attempt,'secret_preserved_exactly':True,'reception_enabled':False,'outbound_enabled':False,'worker_code_changed':False,'paid_services_activated':False}
