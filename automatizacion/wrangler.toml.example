@@ -2,7 +2,11 @@ name = "conectatech-comercial-piloto"
 main = "worker.mjs"
 compatibility_date = "2026-10-01"
 workers_dev = true
+# Referencia alternativa; el despliegue aprobado usa deploy_free.py.
 # Use Workers FREE only. Never upgrade automatically.
+[vars]
+LIVE_DATA = "true"
+FREE_TIER_VERIFIED = "false"
 [ai]
 binding = "AI"
 [[d1_databases]]

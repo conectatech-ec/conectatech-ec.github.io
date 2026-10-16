@@ -30,6 +30,10 @@ jobs:
           python-version: '3.12'
       - run: python automatizacion/build.py
       - run: node automatizacion/tests/worker.test.mjs
+      - run: node automatizacion/tests/live.test.mjs
+      - run: python automatizacion/tests/deploy_test.py
+      - name: Prueba integral con fuentes y medios públicos reales
+        run: node automatizacion/e2e.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: piloto-comercial-3sku

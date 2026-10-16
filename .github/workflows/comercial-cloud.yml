@@ -1,0 +1,59 @@
+name: Activar piloto cloud gratuito
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['automatizacion/activar-cloud.json', '.github/workflows/comercial-cloud.yml']
+permissions:
+  contents: read
+concurrency:
+  group: comercial-cloud-piloto
+  cancel-in-progress: false
+jobs:
+  preparar:
+    runs-on: ubuntu-latest
+    outputs:
+      activar: ${{ steps.config.outputs.activar }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: automatizacion
+      - id: config
+        run: python -c 'import json,os; c=json.load(open("automatizacion/activar-cloud.json")); open(os.environ["GITHUB_OUTPUT"],"a").write("activar="+str(c["activar"]).lower()+"\n")'
+  desplegar:
+    needs: preparar
+    if: needs.preparar.outputs.activar == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    environment: conectatech-piloto-gratis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: automatizacion
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python automatizacion/tests/deploy_test.py
+      - run: node automatizacion/tests/worker.test.mjs
+      - run: node automatizacion/tests/live.test.mjs
+      - id: deploy
+        run: python automatizacion/deploy_free.py
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Verificar HTTPS e inferencia IA real para los tres SKU
+        run: node automatizacion/e2e.mjs
+        env:
+          PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          REQUIRE_REAL_AI: 'true'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidencia-cloud-piloto
+          path: automatizacion/generated/fase2/
+          retention-days: 7

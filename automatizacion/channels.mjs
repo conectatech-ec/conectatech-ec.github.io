@@ -1,0 +1,36 @@
+// Official Meta webhook receiver. No outbound HTTP calls or Marketplace bots.
+export function verifyMetaWebhook(req,env) {
+ const q=new URL(req.url).searchParams;
+ if(!env.META_VERIFY_TOKEN||q.get('hub.mode')!=='subscribe'||q.get('hub.verify_token')!==env.META_VERIFY_TOKEN) return new Response('Forbidden',{status:403});
+ const challenge=q.get('hub.challenge');
+ return challenge&&challenge.length<=200?new Response(challenge):new Response('Bad challenge',{status:400});
+}
+export async function verifyMetaSignature(raw,signature,secret) {
+ if(!secret||!/^sha256=[a-f0-9]{64}$/i.test(signature||'')) return false;
+ const bytes=Uint8Array.from(signature.slice(7).match(/../g),x=>parseInt(x,16));
+ const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['verify']);
+ return crypto.subtle.verify('HMAC',key,bytes,new TextEncoder().encode(raw));
+}
+export function normalizeEvents(payload,env) {
+ const events=[];
+ for(const entry of payload.entry||[]) {
+  if(payload.object==='page' && env.META_PAGE_ID && String(entry.id)===env.META_PAGE_ID) {
+   for(const e of entry.messaging||[]) if(e.message?.mid&&!e.message.is_echo&&typeof e.message.text==='string') events.push({id:'messenger:'+e.message.mid,canal:'messenger',sender:e.sender?.id,text:e.message.text.slice(0,2000),timestamp:e.timestamp});
+  }
+  if(payload.object==='whatsapp_business_account' && env.META_WABA_ID && String(entry.id)===env.META_WABA_ID) {
+   for(const change of entry.changes||[]) {
+    if(change.value?.metadata?.phone_number_id!==env.META_PHONE_NUMBER_ID) continue;
+    for(const e of change.value?.messages||[]) if(e.type==='text'&&e.id) events.push({id:'whatsapp:'+e.id,canal:'whatsapp',sender:e.from,text:String(e.text?.body||'').slice(0,2000),timestamp:Number(e.timestamp)*1000});
+   }
+  }
+ }
+ if(events.length>100) throw Error('event_limit');
+ return events;
+}
+export function prepareOfficialReply(event,response,now=Date.now()) {
+ if(!Number.isFinite(event.timestamp)||event.timestamp>now+300000||now-event.timestamp>86400000) throw Error('outside_service_window');
+ if(!response.text||response.error) throw Error('no_verified_response');
+ if(event.canal==='messenger') return {canal:'messenger',send_enabled:false,body:{recipient:{id:event.sender},messaging_type:'RESPONSE',message:{text:response.text.slice(0,1900)}}};
+ if(event.canal==='whatsapp') return {canal:'whatsapp',send_enabled:false,blocked_reason:'Verificar gratuidad efectiva en la cuenta antes de habilitar cualquier envío',body:{messaging_product:'whatsapp',to:event.sender,type:'text',text:{body:response.text.slice(0,4000)}}};
+ throw Error('unsupported_channel');
+}
