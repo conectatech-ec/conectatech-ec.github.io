@@ -9,13 +9,17 @@ export function detectSkus(text) {
  const matches=String(text).toUpperCase().match(/\b(?:MICR027|MICR27|POWE003|ADAP005)\b/g)||[];
  return [...new Set(matches.map(s=>s==='MICR027'?'MICR27':s))];
 }
-// Normalize copy/paste spacing only. The nonce still needs exactly 128 bits,
-// a matching owner-created enrollment, valid signature, Page and recent event.
-export function pairingCode(text){
- const clean=String(text).normalize('NFKC').replace(/[\u200B\uFEFF]/g,'').trim();
- const m=/^CONECTATECH-PRUEBA\s+([a-f0-9]{32})$/i.exec(clean);
- return m?m[1].toLowerCase():null;
+// Extract one complete, unambiguous owner-issued phrase from message.text only.
+// Greeting/wrappers are not authentication; the exact nonce + HMAC + Page + TTL are.
+export function pairingText(text){
+ const clean=String(text).normalize('NFKC').replace(/[\u200B\uFEFF]/g,'').replace(/[\u2010-\u2015\u2212]/g,'-');
+ const candidates=[...clean.matchAll(/\bCONECTATECH\s*-\s*PRUEBA[\s:]+([a-f0-9]{32})(?![a-z0-9])/gi)].map(m=>m[1].toLowerCase());
+ const codes=[...new Set(candidates)];
+ if(codes.length===1)return {kind:'valid',code:codes[0]};
+ if(codes.length>1)return {kind:'ambiguous',code:null};
+ return {kind:/\bCONECTATECH\s*-?\s*PRUEBA\b/i.test(clean)?'malformed':'no_phrase',code:null};
 }
+export function pairingCode(text){return pairingText(text).code;}
 async function limitedBody(req) {
  if(Number(req.headers.get('Content-Length')||0)>64000) throw Error('BODY_SIZE');
  const reader=req.body?.getReader();if(!reader) return '';
@@ -75,8 +79,8 @@ export async function handleMessengerWebhook(req,env,scope='development') {
    const rows=(payload.entry||[]).filter(e=>String(e.id)===env.META_PAGE_ID);
    if(!events.length)pairingReason=rows.some(e=>Array.isArray(e.standby)&&e.standby.length)?'pairing_standby_ignored':rows.some(e=>Array.isArray(e.messaging)&&e.messaging.some(m=>m.message?.is_echo))?'pairing_echo_ignored':'pairing_no_user_text';
    for(const event of events){
-    const code=pairingCode(event.text);
-    if(!code){pairingReason='pairing_phrase_format';continue;}
+    const parsed=pairingText(event.text),code=parsed.code;
+    if(!code){pairingReason=parsed.kind==='no_phrase'?'pairing_message_not_phrase':parsed.kind==='ambiguous'?'pairing_phrase_ambiguous':'pairing_phrase_format';continue;}
     if(event.recipient!==env.META_PAGE_ID){pairingReason='pairing_recipient_mismatch';continue;}
     if(!Number.isFinite(event.timestamp)||event.timestamp>Date.now()+300000||Date.now()-event.timestamp>600000){pairingReason='pairing_timestamp_rejected';continue;}
     try{
@@ -111,7 +115,7 @@ export async function handleMessengerWebhook(req,env,scope='development') {
 export async function messengerSelfTest(body,env) {
  if(env.META_MODE!=='development-only'||!env.MESSENGER_TEST_INBOX) return json({error:'Development test unavailable'},503);
  if(!/^[a-zA-Z0-9_-]{16,80}$/.test(body.test_id||'')||!['MICR27','POWE003','ADAP005'].includes(body.sku)||!['accept','bad_signature','tamper','foreign_sender','echo','verify_challenge','bad_verify_token','ingress_disabled','pairing_claim'].includes(body.case||''))return json({error:'Invalid synthetic fixture'},400);
- if(body.case==='pairing_claim'&&!/^CONECTATECH-PRUEBA [a-f0-9]{32}$/.test(body.pairing_phrase||''))return json({error:'Invalid enrollment fixture'},400);
+ if(body.case==='pairing_claim'&&!pairingCode(body.pairing_phrase||''))return json({error:'Invalid enrollment fixture'},400);
  const testEnv={...env,META_INGRESS_ENABLED:['ingress_disabled','pairing_claim'].includes(body.case)?'false':'true',META_APP_SECRET:env.PILOT_TOKEN,META_PAGE_ID:'100000000000001',META_TEST_SENDER_IDS:'100000000000002'};
  if(body.case==='verify_challenge'||body.case==='bad_verify_token') {
   const q=new URL('https://pilot/webhooks/meta');q.searchParams.set('hub.mode','subscribe');q.searchParams.set('hub.verify_token',body.case==='bad_verify_token'?'invalid-fixture':env.PILOT_TOKEN);q.searchParams.set('hub.challenge','fixture-challenge');

@@ -1,7 +1,7 @@
 import {spawn} from 'node:child_process';
 import {mkdir,writeFile} from 'node:fs/promises';
 const worker='conectatech-comercial-piloto';
-const reasons=new Set(['ingress_disabled','pairing_claimed','pairing_phrase_format','pairing_recipient_mismatch','pairing_timestamp_rejected','pairing_not_current','pairing_standby_ignored','pairing_echo_ignored','pairing_no_user_text','ignored_object','invalid_json','event_limit','allowlist_missing','storage_unavailable','processed','not_configured','invalid_body','invalid_signature']);
+const reasons=new Set(['ingress_disabled','pairing_claimed','pairing_phrase_format','pairing_message_not_phrase','pairing_phrase_ambiguous','pairing_recipient_mismatch','pairing_timestamp_rejected','pairing_not_current','pairing_standby_ignored','pairing_echo_ignored','pairing_no_user_text','ignored_object','invalid_json','event_limit','allowlist_missing','storage_unavailable','processed','not_configured','invalid_body','invalid_signature']);
 const sources=new Set(['external_https','authorized_ci_probe','synthetic_ci']);
 export function sanitizeTrace(t){
  if(t.scriptName!==worker||t.event?.request?.method!=='POST')return null;

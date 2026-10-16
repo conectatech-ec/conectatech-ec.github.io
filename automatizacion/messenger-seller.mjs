@@ -31,7 +31,7 @@ export async function sellerFetch(path,req,box){
  }
  if(path==='/seller/disable'&&req.method==='POST'){
   q.exec('INSERT INTO seller_enrollment_policy VALUES (1,0) ON CONFLICT(id) DO UPDATE SET armed=0');
-  q.exec('DELETE FROM pairing');
+  q.exec('DELETE FROM pairing');q.exec('DELETE FROM pairing_registration');
   q.exec('INSERT INTO seller_settings VALUES (1,0,0,NULL) ON CONFLICT(id) DO UPDATE SET enabled=0');
   q.exec("UPDATE seller_jobs SET status='paused',error='OPERATOR_STOP' WHERE status IN ('queued','sending')");
   return json({enabled:false,queued_jobs_paused:true,in_flight_request_may_complete:true});
@@ -50,11 +50,15 @@ export async function sellerFetch(path,req,box){
  }
  if(path==='/seller/promote'&&req.method==='POST'){
   const b=await req.json();if(b.confirmed_tester!==true)return json({error:'App tester role confirmation required'},400);
-  const row=q.exec('SELECT sealed,expires FROM pairing WHERE id=1').toArray()[0];if(!row?.sealed||row.expires<=now)return json({error:'No current paired tester'},409);
+  const row=q.exec('SELECT code_hash,sealed,expires FROM pairing WHERE id=1').toArray()[0];if(!row?.sealed||row.expires<=now)return json({error:'No current paired tester'},409);
   if(q.exec('SELECT COUNT(*) AS n FROM seller_testers').one().n>=20)return json({error:'Tester limit'},429);
   const psid=await unseal(row.sealed,env.PILOT_TOKEN),key=await h(env.PILOT_TOKEN,'tester:'+psid);
   // Only known one-use pairing; no arbitrary IDs can be promoted by webhook input.
-  q.exec('INSERT OR IGNORE INTO seller_testers VALUES (?,?)',key,row.sealed);q.exec('DELETE FROM pairing');return json({configured:true,psid_disclosed:false});
+  const current=q.exec('SELECT code_hash,sealed,expires FROM pairing WHERE id=1').toArray()[0];
+  if(!current||current.code_hash!==row.code_hash||current.sealed!==row.sealed||current.expires<=Date.now())return json({error:'Enrollment replaced or expired'},409);
+  q.exec('INSERT OR IGNORE INTO seller_testers VALUES (?,?)',key,row.sealed);
+  q.exec('INSERT INTO pairing_registration VALUES (1,?,?) ON CONFLICT(id) DO UPDATE SET code_hash=excluded.code_hash,expires=excluded.expires',row.code_hash,row.expires);
+  q.exec('DELETE FROM pairing WHERE code_hash=?',row.code_hash);return json({configured:true,psid_disclosed:false});
  }
  if(path==='/seller/enable'&&req.method==='POST'){
   const command=await req.json();

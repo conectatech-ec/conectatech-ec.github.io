@@ -90,7 +90,7 @@ test('Copy/paste whitespace normalizes without weakening nonce, signature or exp
  const box=new MessengerTestInbox({storage:s},env);env.MESSENGER_TEST_INBOX={idFromName:n=>n,get:()=>({fetch:(u,o)=>box.fetch(new Request(u,o))})};
  const p=await(await box.fetch(new Request('https://i/pairing/start',{method:'POST',body:'{"confirmed_tester":true}'}))).json();
  const pasted='\n'+p.phrase.replace(' ','\u00a0')+'\u200b\n';assert.equal(pairingCode(pasted),p.phrase.slice(-32));
- for(const bad of [p.phrase+' texto',p.phrase.slice(0,-1),'prefijo '+p.phrase])assert.equal(pairingCode(bad),null);
+ for(const bad of [p.phrase+'a',p.phrase.slice(0,-1),'x'+p.phrase])assert.equal(pairingCode(bad),null);
  await handleMessengerWebhook(await signed(fixture(pasted),env,true),env);assert.equal((await(await box.fetch(new Request('https://i/pairing/status'))).json()).claimed,false);
  await handleMessengerWebhook(await signed(fixture(pasted),env),env);assert.equal((await(await box.fetch(new Request('https://i/pairing/status'))).json()).claimed,true);
 });
@@ -113,3 +113,11 @@ test('Panel only enables PSID after claim and recognizes automatic registration 
  const replaced=pairingPanelState({pending:true,expires_at:expires},{},[],'other-expiry');assert.match(replaced.text,/otro código/);assert.equal(replaced.poll,false);
  const echo=pairingPanelState({pending:true,expires_at:expires},{},[{source:'external_https',at:new Date().toISOString(),reason:'pairing_echo_ignored'}]);assert.match(echo.text,/perfil personal autorizado/);
 });
+test('Phrase extraction handles greeting, quotes and dash typography but rejects ambiguity, truncated nonce and nested non-text fields',async()=>{
+ const {pairingText,pairingCode}=await import('../messenger.mjs');const {normalizeEvents}=await import('../channels.mjs');const a='a'.repeat(32),b='b'.repeat(32),phrase='CONECTATECH-PRUEBA '+a;
+ for(const text of ['Hola. '+phrase+' Gracias.','«'+phrase+'»','`'+phrase+'`','CONECTATECH — PRUEBA: '+a])assert.equal(pairingCode(text),a);
+ assert.equal(pairingText('Hola, quiero información.').kind,'no_phrase');assert.equal(pairingCode(phrase+'0'),null);assert.equal(pairingText(phrase+' CONECTATECH-PRUEBA '+b).kind,'ambiguous');
+ const event=fixture('hola');event.entry[0].messaging[0].message.quick_reply={payload:phrase};assert.equal(pairingCode(normalizeEvents(event,{META_PAGE_ID:page})[0].text),null);
+ const long=fixture('saludo '.repeat(400)+phrase);assert.equal(pairingCode(normalizeEvents(long,{META_PAGE_ID:page})[0].text),a);
+});
+test('An active new pairing is never falsely marked complete from an older registered tester',async()=>{const {pairingPanelState}=await import('../messenger-setup.mjs');const pending={pending:true,claimed:false,expires_at:new Date(Date.now()+600000).toISOString()};const s=pairingPanelState(pending,{enabled:true,testers_configured:true});assert.equal(s.poll,true);assert.equal(s.canConsume,false);assert.ok(!s.text.includes('Respuestas de prueba habilitadas'));});

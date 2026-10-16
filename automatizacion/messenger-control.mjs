@@ -14,24 +14,32 @@ export async function unseal(raw,secret){const x=JSON.parse(raw);return new Text
 export function controlInit(box){
  box.sql.exec('CREATE TABLE IF NOT EXISTS receipts (id TEXT PRIMARY KEY, at INTEGER, data TEXT, expires INTEGER)');
  box.sql.exec('CREATE TABLE IF NOT EXISTS pairing (id INTEGER PRIMARY KEY CHECK(id=1), code_hash TEXT, expires INTEGER, sealed TEXT)');
+ box.sql.exec('CREATE TABLE IF NOT EXISTS pairing_registration (id INTEGER PRIMARY KEY CHECK(id=1), code_hash TEXT, expires INTEGER)');
  box.sql.exec('CREATE TABLE IF NOT EXISTS pairing_rate (day INTEGER PRIMARY KEY, n INTEGER)');
  box.sql.exec('CREATE TABLE IF NOT EXISTS receipt_rate (day INTEGER PRIMARY KEY, n INTEGER)');
 }
 export function controlCleanup(box,now){
- box.sql.exec('DELETE FROM receipts WHERE expires <= ?',now);box.sql.exec('DELETE FROM pairing WHERE expires <= ?',now);box.sql.exec('DELETE FROM pairing_rate WHERE day < ?',Math.floor(now/86400000));
+ box.sql.exec('DELETE FROM pairing_registration WHERE expires<=?',now);box.sql.exec('DELETE FROM receipts WHERE expires <= ?',now);box.sql.exec('DELETE FROM pairing WHERE expires <= ?',now);box.sql.exec('DELETE FROM pairing_rate WHERE day < ?',Math.floor(now/86400000));
  box.sql.exec('DELETE FROM receipt_rate WHERE day < ?',Math.floor(now/86400000));
 }
 export function controlNextAlarm(box){
  const a=box.sql.exec('SELECT MIN(expires) AS t FROM receipts').one().t,b=box.sql.exec('SELECT MIN(expires) AS t FROM pairing').one().t;
- return Math.min(a||Infinity,b||Infinity);
+ const c=box.sql.exec('SELECT MIN(expires) AS t FROM pairing_registration').one().t;return Math.min(a||Infinity,b||Infinity,c||Infinity);
 }
-async function schedule(box){const pending=box.sql.exec("SELECT MIN(next_at) AS t FROM events WHERE status='queued'").one().t,expiry=box.sql.exec('SELECT MIN(expires) AS t FROM events').one().t;const at=Math.min(pending??Infinity,expiry??Infinity,controlNextAlarm(box));if(Number.isFinite(at))await box.state.storage.setAlarm(Math.max(Date.now()+100,at));}
+async function schedule(box){
+ const pending=box.sql.exec("SELECT MIN(next_at) AS t FROM events WHERE status='queued'").one().t,expiry=box.sql.exec('SELECT MIN(expires) AS t FROM events').one().t;
+ const sellerPending=box.sql.exec("SELECT COUNT(*) AS n FROM seller_jobs WHERE status='queued' AND EXISTS (SELECT 1 FROM seller_settings WHERE id=1 AND enabled=1)").one().n;
+ const sellerExpiry=box.sql.exec('SELECT MIN(expires) AS t FROM seller_jobs').one().t;
+ // Appending a receipt or starting enrollment must not postpone already queued replies.
+ const at=Math.min(pending??Infinity,expiry??Infinity,controlNextAlarm(box),sellerPending?Date.now()+100:Infinity,sellerExpiry??Infinity);
+ if(Number.isFinite(at))await box.state.storage.setAlarm(Math.max(Date.now()+100,at));
+}
 export async function controlFetch(path,req,box){
  const sql=box.sql,now=Date.now();
  if(path==='/receipts'&&req.method==='GET')return json({scope:'worker_webhook_receipts',outbound_enabled:false,receipts:sql.exec('SELECT data FROM receipts ORDER BY at DESC LIMIT 50').toArray().map(r=>JSON.parse(r.data))});
  if(path==='/receipt'&&req.method==='POST'){
   const b=await req.json();
-  const reasons=['ingress_disabled','pairing_claimed','pairing_phrase_format','pairing_recipient_mismatch','pairing_timestamp_rejected','pairing_not_current','pairing_standby_ignored','pairing_echo_ignored','pairing_no_user_text','ignored_object','invalid_json','event_limit','allowlist_missing','storage_unavailable','processed','not_configured','invalid_body','invalid_signature'];
+  const reasons=['ingress_disabled','pairing_claimed','pairing_phrase_format','pairing_message_not_phrase','pairing_phrase_ambiguous','pairing_recipient_mismatch','pairing_timestamp_rejected','pairing_not_current','pairing_standby_ignored','pairing_echo_ignored','pairing_no_user_text','ignored_object','invalid_json','event_limit','allowlist_missing','storage_unavailable','processed','not_configured','invalid_body','invalid_signature'];
   if(!reasons.includes(b.reason)||![true,false,null].includes(b.signature_valid)||![200,400,403,413,503].includes(b.http_status)||!['external_https','authorized_ci_probe','synthetic_ci'].includes(b.source))return json({error:'Invalid receipt'},400);
   if(b.signature_valid!==true){
    const day=Math.floor(now/86400000),count=sql.exec('SELECT n FROM receipt_rate WHERE day=?',day).toArray()[0]?.n||0;
@@ -52,14 +60,15 @@ export async function controlFetch(path,req,box){
   const day=Math.floor(now/86400000),count=sql.exec('SELECT n FROM pairing_rate WHERE day=?',day).toArray()[0]?.n||0;
   if(count>=25)return json({error:'Daily enrollment limit'},429);
   sql.exec('INSERT INTO pairing_rate VALUES (?,1) ON CONFLICT(day) DO UPDATE SET n=n+1',day);
+  sql.exec('DELETE FROM pairing_registration');
   const code=hex(crypto.getRandomValues(new Uint8Array(16))),expires=now+600000,hash=await pairingHash(code,box.env.PILOT_TOKEN);
   sql.exec('INSERT INTO pairing VALUES (1,?,?,NULL) ON CONFLICT(id) DO UPDATE SET code_hash=excluded.code_hash,expires=excluded.expires,sealed=NULL',hash,expires);
   await schedule(box);
   return json({phrase:'CONECTATECH-PRUEBA '+code,expires_at:new Date(expires).toISOString(),outbound_enabled:false});
  }
  const row=sql.exec('SELECT code_hash,expires,sealed FROM pairing WHERE id=1').toArray()[0];
- if(path==='/pairing/status'&&req.method==='GET')return json({pending:!!row&&!row.sealed,claimed:!!row?.sealed,expires_at:row?new Date(row.expires).toISOString():null});
- if(path==='/pairing/cancel'&&req.method==='POST'){sql.exec('DELETE FROM pairing');return json({cancelled:true});}
+ if(path==='/pairing/status'&&req.method==='GET'){const done=sql.exec('SELECT expires FROM pairing_registration WHERE id=1').toArray()[0];return json({pending:!!row&&!row.sealed,claimed:!!row?.sealed,registered:!row&&!!done,expires_at:row?new Date(row.expires).toISOString():done?new Date(done.expires).toISOString():null});}
+ if(path==='/pairing/cancel'&&req.method==='POST'){sql.exec('DELETE FROM pairing');sql.exec('DELETE FROM pairing_registration');return json({cancelled:true});}
  if(path==='/pairing/claim'&&req.method==='POST'){
   const b=await req.json();if(!row||row.sealed||b.code_hash!==row.code_hash||!/^\d{1,32}$/.test(b.psid||''))return json({claimed:false});
   const sealed=await seal(b.psid,box.env.PILOT_TOKEN);

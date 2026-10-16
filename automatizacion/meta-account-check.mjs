@@ -32,6 +32,6 @@ if(token){
 report.advanced_access_verified=false;report.app_live_verified=false;
 const base=process.env.CLOUDFLARE_PILOT_URL||config.url_publica;
 for(const [key,path]of [['pairing','/messenger/pairing/status'],['seller','/messenger/seller/status']]){
- try{const r=await fetch(base+path,{headers:{Authorization:'Bearer '+process.env.PILOT_TOKEN},signal:AbortSignal.timeout(10000)});report[key+'_http']=r.status;if(r.ok){const b=await r.json();report[key]=key==='pairing'?{pending:!!b.pending,claimed:!!b.claimed}:b;}}catch{report[key+'_http']=0;}
+ try{const r=await fetch(base+path,{headers:{Authorization:'Bearer '+process.env.PILOT_TOKEN},signal:AbortSignal.timeout(10000)});report[key+'_http']=r.status;if(r.ok){const b=await r.json();report[key]=key==='pairing'?{pending:!!b.pending,claimed:!!b.claimed,registered:!!b.registered}:b;}}catch{report[key+'_http']=0;}
 }
 const dir=new URL('./generated/fase2/',import.meta.url);await mkdir(dir,{recursive:true});await writeFile(new URL('meta-account-check.json',dir),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

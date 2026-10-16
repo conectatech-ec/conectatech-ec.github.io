@@ -15,7 +15,7 @@ export function normalizeEvents(payload,env) {
  const events=[];
  for(const entry of payload.entry||[]) {
   if(payload.object==='page' && env.META_PAGE_ID && String(entry.id)===env.META_PAGE_ID) {
-   for(const e of entry.messaging||[]) if(e.message?.mid&&!e.message.is_echo&&typeof e.message.text==='string') events.push({id:'messenger:'+e.message.mid,canal:'messenger',sender:e.sender?.id,recipient:e.recipient?.id,text:e.message.text.slice(0,2000),timestamp:e.timestamp});
+   for(const e of entry.messaging||[]) if(e.message?.mid&&!e.message.is_echo&&typeof e.message.text==='string') events.push({id:'messenger:'+e.message.mid,canal:'messenger',sender:e.sender?.id,recipient:e.recipient?.id,text:e.message.text.slice(0,64000),timestamp:e.timestamp});
   }
   if(payload.object==='whatsapp_business_account' && env.META_WABA_ID && String(entry.id)===env.META_WABA_ID) {
    for(const change of entry.changes||[]) {
