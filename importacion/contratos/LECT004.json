@@ -117,9 +117,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/lect004-lector-de-cd-dvd-externo-andowl/",
-  "fecha_verificacion": "2026-10-16T18:53:04.925619+00:00",
+  "fecha_verificacion": "2026-10-16T19:33:41.570546+00:00",
   "descripcion": "Lector Externo de CD y DVD Andowl. Tipo de dispositivo: Unidad óptica externa para CD y DVD. Presentación de venta: Una unidad externa. Diseño: Cuerpo negro compacto con bandeja frontal. Conexión disponible: Consultar antes de comprar; las referencias propias muestran conexiones distintas.",
   "contenido_venta": "Una unidad externa de CD/DVD. Imagen del dispositivo principal; consulta la conexión disponible antes de comprar.",
   "presentacion": "sin caja",
@@ -174,7 +174,7 @@
       "solicitado": "LECT004",
       "sku": "LECT004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T18:54:56.697Z",
+      "fecha": "2026-10-16T19:33:44.195Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -199,7 +199,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lect004-lector-de-cd-dvd-externo-andowl/",
-      "url_comprobada": "http://127.0.0.1:8801/productos/lect004-lector-de-cd-dvd-externo-andowl/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/lect004-lector-de-cd-dvd-externo-andowl/",
       "archivo_html": "productos/lect004-lector-de-cd-dvd-externo-andowl/index.html",
       "http": 200,
       "sha256_html": "e82007c80259921058fe783e1af38847a9fc9bb72318cebac2c60ada0db91f34",
@@ -209,7 +209,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lect004/LECT004-01.webp",
-        "url_cargada": "http://127.0.0.1:8801/imagenes/lect004/LECT004-01-600.webp?v=0924b0054df7136a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/lect004/LECT004-01-600.webp?v=0924b0054df7136a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -218,36 +218,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8801/productos/lect004-lector-de-cd-dvd-externo-andowl/",
+          "url": "https://conectatech-ec.github.io/productos/lect004-lector-de-cd-dvd-externo-andowl/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8801/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8801/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8801/imagenes/lect004/LECT004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/lect004/LECT004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-101/qa-local/movil/LECT004-390.png",
+      "archivo": "reportes/continuacion-101/qa-publica/movil/LECT004-390.png",
       "sha256": "83d10e02fe247553e224c98347772e84e0b2fa873b03e32c3fa8527415495fc8",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-101/qa-local/movil/LECT004-1280.png",
+        "archivo": "reportes/continuacion-101/qa-publica/movil/LECT004-1280.png",
         "sha256": "f2a8db37a8f051f0f27c1e72e1c47b17117599b76fab51286b9065788c398143",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T19:33:41.570546+00:00",
+      "archivo": "reportes/continuacion-101/http-publicacion.json",
+      "reporte": "reportes/continuacion-101/http-publicacion.json",
+      "sha256": "7677a2c9dc6f2f3f39ef32beb36fbf8ff83c4249532600578a015783b6ae9cd5",
+      "sku": "LECT004"
     }
   },
   "resolucion_propietario": "es lo mismo, no pongas el modelo",
