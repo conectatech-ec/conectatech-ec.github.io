@@ -84,3 +84,32 @@ test('Cloudflare tail exports only Worker webhook status and sanitized audit fie
  const input={scriptName:'conectatech-comercial-piloto',eventTimestamp:Date.now(),event:{request:{method:'POST',url:'https://pilot/webhooks/meta?private='+sensitive,headers:{Authorization:sensitive}},response:{status:200}},logs:[{message:[JSON.stringify({event:'meta_webhook_receipt',signature_valid:true,http_status:200,reason:'ingress_disabled',source:'authorized_ci_probe',page_matches:false,text:sensitive,psid:sensitive})]}]};
  const safe=sanitizeTrace(input);assert.equal(safe.http_status,200);assert.equal(safe.signature_valid,true);assert.ok(!JSON.stringify(safe).includes(sensitive));assert.equal(sanitizeTrace({...input,scriptName:'production'}),null);assert.equal(sanitizeTrace({...input,event:{request:{method:'GET',url:'https://pilot/webhooks/meta?secret='+sensitive}}}),null);
 });
+test('Copy/paste whitespace normalizes without weakening nonce, signature or expiry checks',async()=>{
+ const {pairingCode}=await import('../messenger.mjs');
+ const s=storage(),env={...environment(),PILOT_TOKEN:'synthetic-private-test-token-00000000001',META_INGRESS_ENABLED:'false'};
+ const box=new MessengerTestInbox({storage:s},env);env.MESSENGER_TEST_INBOX={idFromName:n=>n,get:()=>({fetch:(u,o)=>box.fetch(new Request(u,o))})};
+ const p=await(await box.fetch(new Request('https://i/pairing/start',{method:'POST',body:'{"confirmed_tester":true}'}))).json();
+ const pasted='\n'+p.phrase.replace(' ','\u00a0')+'\u200b\n';assert.equal(pairingCode(pasted),p.phrase.slice(-32));
+ for(const bad of [p.phrase+' texto',p.phrase.slice(0,-1),'prefijo '+p.phrase])assert.equal(pairingCode(bad),null);
+ await handleMessengerWebhook(await signed(fixture(pasted),env,true),env);assert.equal((await(await box.fetch(new Request('https://i/pairing/status'))).json()).claimed,false);
+ await handleMessengerWebhook(await signed(fixture(pasted),env),env);assert.equal((await(await box.fetch(new Request('https://i/pairing/status'))).json()).claimed,true);
+});
+test('Enrollment diagnostics distinguish wrong nonce, echo, standby and expired timestamp without storing personal content',async()=>{
+ const s=storage(),env={...environment(),PILOT_TOKEN:'synthetic-private-test-token-00000000002',META_INGRESS_ENABLED:'false'};
+ const box=new MessengerTestInbox({storage:s},env);env.MESSENGER_TEST_INBOX={idFromName:n=>n,get:()=>({fetch:(u,o)=>box.fetch(new Request(u,o))})};
+ const start=async()=> (await(await box.fetch(new Request('https://i/pairing/start',{method:'POST',body:'{"confirmed_tester":true}'}))).json()).phrase;
+ const old=await start();const phrase=await start();
+ for(const [payload,reason]of [[fixture(old),'pairing_not_current'],[fixture(phrase,{timestamp:Date.now()-600001}),'pairing_timestamp_rejected'],[fixture(phrase,{message:{mid:'echo-test',text:phrase,is_echo:true}}),'pairing_echo_ignored'],[{object:'page',entry:[{id:page,standby:[{message:{text:phrase}}]}]},'pairing_standby_ignored']]){
+  const r=await handleMessengerWebhook(await signed(payload,env),env);assert.equal(r.status,200);const receipts=(await(await box.fetch(new Request('https://i/receipts'))).json()).receipts;assert.ok(receipts.some(x=>x.reason===reason&&x.signature_valid));assert.ok(!JSON.stringify(receipts).includes(sender));assert.ok(!JSON.stringify(receipts).includes(phrase));
+ }
+ assert.equal((await(await box.fetch(new Request('https://i/pairing/status'))).json()).claimed,false);
+});
+test('Panel only enables PSID after claim and recognizes automatic registration and replaced code',async()=>{
+ const {pairingPanelState}=await import('../messenger-setup.mjs');
+ const expires=new Date(Date.now()+600000).toISOString();
+ assert.equal(pairingPanelState({pending:true,expires_at:expires},{enabled:false}).canConsume,false);
+ assert.equal(pairingPanelState({claimed:true},{}).canConsume,true);
+ const automatic=pairingPanelState({pending:false,claimed:false},{enabled:true,testers_configured:true});assert.equal(automatic.poll,false);assert.equal(automatic.canConsume,false);assert.match(automatic.text,/Respuestas de prueba habilitadas/);
+ const replaced=pairingPanelState({pending:true,expires_at:expires},{},[],'other-expiry');assert.match(replaced.text,/otro código/);assert.equal(replaced.poll,false);
+ const echo=pairingPanelState({pending:true,expires_at:expires},{},[{source:'external_https',at:new Date().toISOString(),reason:'pairing_echo_ignored'}]);assert.match(echo.text,/perfil personal autorizado/);
+});

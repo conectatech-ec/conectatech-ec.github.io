@@ -31,7 +31,7 @@ export async function controlFetch(path,req,box){
  if(path==='/receipts'&&req.method==='GET')return json({scope:'worker_webhook_receipts',outbound_enabled:false,receipts:sql.exec('SELECT data FROM receipts ORDER BY at DESC LIMIT 50').toArray().map(r=>JSON.parse(r.data))});
  if(path==='/receipt'&&req.method==='POST'){
   const b=await req.json();
-  const reasons=['ingress_disabled','pairing_claimed','ignored_object','invalid_json','event_limit','allowlist_missing','storage_unavailable','processed','not_configured','invalid_body','invalid_signature'];
+  const reasons=['ingress_disabled','pairing_claimed','pairing_phrase_format','pairing_recipient_mismatch','pairing_timestamp_rejected','pairing_not_current','pairing_standby_ignored','pairing_echo_ignored','pairing_no_user_text','ignored_object','invalid_json','event_limit','allowlist_missing','storage_unavailable','processed','not_configured','invalid_body','invalid_signature'];
   if(!reasons.includes(b.reason)||![true,false,null].includes(b.signature_valid)||![200,400,403,413,503].includes(b.http_status)||!['external_https','authorized_ci_probe','synthetic_ci'].includes(b.source))return json({error:'Invalid receipt'},400);
   if(b.signature_valid!==true){
    const day=Math.floor(now/86400000),count=sql.exec('SELECT n FROM receipt_rate WHERE day=?',day).toArray()[0]?.n||0;

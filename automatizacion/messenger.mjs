@@ -9,6 +9,13 @@ export function detectSkus(text) {
  const matches=String(text).toUpperCase().match(/\b(?:MICR027|MICR27|POWE003|ADAP005)\b/g)||[];
  return [...new Set(matches.map(s=>s==='MICR027'?'MICR27':s))];
 }
+// Normalize copy/paste spacing only. The nonce still needs exactly 128 bits,
+// a matching owner-created enrollment, valid signature, Page and recent event.
+export function pairingCode(text){
+ const clean=String(text).normalize('NFKC').replace(/[\u200B\uFEFF]/g,'').trim();
+ const m=/^CONECTATECH-PRUEBA\s+([a-f0-9]{32})$/i.exec(clean);
+ return m?m[1].toLowerCase():null;
+}
 async function limitedBody(req) {
  if(Number(req.headers.get('Content-Length')||0)>64000) throw Error('BODY_SIZE');
  const reader=req.body?.getReader();if(!reader) return '';
@@ -61,23 +68,27 @@ export async function handleMessengerWebhook(req,env,scope='development') {
  // A closed receiver acknowledges signed deliveries without business processing.
  // Enrollment is a separate, owner-authorized one-use control phrase only.
  if(env.META_INGRESS_ENABLED!=='true'){
-  let paired=false;
+  let paired=false,pairingReason='ingress_disabled';
   if(pageMatches&&env.PILOT_TOKEN&&env.MESSENGER_TEST_INBOX){
    let events;try{events=normalizeEvents(payload,env);}catch{return finish({error:'Event limit'},400,'event_limit');}
    if(events.length>10)return finish({error:'Test batch limit'},400,'event_limit');
+   const rows=(payload.entry||[]).filter(e=>String(e.id)===env.META_PAGE_ID);
+   if(!events.length)pairingReason=rows.some(e=>Array.isArray(e.standby)&&e.standby.length)?'pairing_standby_ignored':rows.some(e=>Array.isArray(e.messaging)&&e.messaging.some(m=>m.message?.is_echo))?'pairing_echo_ignored':'pairing_no_user_text';
    for(const event of events){
-    const match=/^CONECTATECH-PRUEBA ([a-f0-9]{32})$/.exec(event.text);
-    if(!match||event.recipient!==env.META_PAGE_ID||!Number.isFinite(event.timestamp)||event.timestamp>Date.now()+300000||Date.now()-event.timestamp>600000)continue;
+    const code=pairingCode(event.text);
+    if(!code){pairingReason='pairing_phrase_format';continue;}
+    if(event.recipient!==env.META_PAGE_ID){pairingReason='pairing_recipient_mismatch';continue;}
+    if(!Number.isFinite(event.timestamp)||event.timestamp>Date.now()+300000||Date.now()-event.timestamp>600000){pairingReason='pairing_timestamp_rejected';continue;}
     try{
      const stub=env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-'+scope));
-     const r=await stub.fetch('https://inbox/pairing/claim',{method:'POST',body:JSON.stringify({code_hash:await pairingHash(match[1],env.PILOT_TOKEN),psid:String(event.sender||'')})});
-     if(r.ok){const claimed=(await r.json()).claimed;paired=claimed||paired;
+     const r=await stub.fetch('https://inbox/pairing/claim',{method:'POST',body:JSON.stringify({code_hash:await pairingHash(code,env.PILOT_TOKEN),psid:String(event.sender||'')})});
+     if(r.ok){const claimed=(await r.json()).claimed;paired=claimed||paired;if(!claimed)pairingReason='pairing_not_current';
       if(claimed&&source==='external_https'&&env.META_PAGE_ACCESS_TOKEN)await stub.fetch('https://inbox/seller/auto-enroll',{method:'POST',body:'{}'});
      }
     }catch{console.error(JSON.stringify({event:'meta_pairing_unavailable'}));}
    }
   }
-  return finish({mode:'development-only',queued:0,ignored:true,reception_enabled:false,outbound_enabled:false},200,paired?'pairing_claimed':'ingress_disabled');
+  return finish({mode:'development-only',queued:0,ignored:true,reception_enabled:false,outbound_enabled:false},200,paired?'pairing_claimed':pairingReason);
  }
  const allowed=new Set(String(env.META_TEST_SENDER_IDS||'').split(',').map(s=>s.trim()).filter(s=>/^\d+$/.test(s)));
  if(!env.META_PAGE_ID||allowed.size===0) return finish({error:'Page or test sender allowlist missing'},503,'allowlist_missing');
