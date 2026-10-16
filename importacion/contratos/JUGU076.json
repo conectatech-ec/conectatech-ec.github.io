@@ -106,9 +106,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu076-juguete-carro-antiguo-lada/",
-  "fecha_verificacion": "2026-10-16T14:20:36.825005+00:00",
+  "fecha_verificacion": "2026-10-16T14:54:42.047280+00:00",
   "descripcion": "Carro Clasico Lada Coleccionable Colores Surtidos. Presentación de venta: Un vehículo de juguete. Colores y diseños surtidos según disponibilidad. Variantes: Una variante propia ilustrada; no se garantiza color o diseño fijo.",
   "contenido_venta": "Un vehículo de juguete. Colores y diseños surtidos según disponibilidad.",
   "presentacion": "sin caja",
@@ -164,7 +164,7 @@
       "solicitado": "JUGU076",
       "sku": "JUGU076",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T14:21:22.877Z",
+      "fecha": "2026-10-16T14:54:45.065Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -186,7 +186,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu076-juguete-carro-antiguo-lada/",
-      "url_comprobada": "http://127.0.0.1:8799/productos/jugu076-juguete-carro-antiguo-lada/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu076-juguete-carro-antiguo-lada/",
       "archivo_html": "productos/jugu076-juguete-carro-antiguo-lada/index.html",
       "http": 200,
       "sha256_html": "a801aeabaded21df12d6b16a2c9f16929561fa16e21fbbc2f037c1197e026757",
@@ -196,7 +196,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu076/JUGU076-01.webp",
-        "url_cargada": "http://127.0.0.1:8799/imagenes/jugu076/JUGU076-01-600.webp?v=597a563c9a042908",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu076/JUGU076-01-600.webp?v=597a563c9a042908",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -205,46 +205,54 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8799/productos/jugu076-juguete-carro-antiguo-lada/",
+          "url": "https://conectatech-ec.github.io/productos/jugu076-juguete-carro-antiguo-lada/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/imagenes/jugu076/JUGU076-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu076/JUGU076-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/productos/jugu040-juguete-camioneta-combi-coleccionable-grande/",
+          "url": "https://conectatech-ec.github.io/productos/jugu040-juguete-camioneta-combi-coleccionable-grande/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/productos/jugu041-juguete-camioneta-combi-coleccionable-semi-mediana/",
+          "url": "https://conectatech-ec.github.io/productos/jugu041-juguete-camioneta-combi-coleccionable-semi-mediana/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-099/qa-local/movil/JUGU076-390.png",
+      "archivo": "reportes/continuacion-099/qa-publica/movil/JUGU076-390.png",
       "sha256": "6d962ccf0b5421f58fb0751804c18fe6cef2a4254ddd5e0573a1b997b702fbe5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-099/qa-local/movil/JUGU076-1280.png",
+        "archivo": "reportes/continuacion-099/qa-publica/movil/JUGU076-1280.png",
         "sha256": "7c0796968d1ac4fee091f20132266e659e15d2ba372908f3800997c021345d87",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:54:42.047280+00:00",
+      "archivo": "reportes/continuacion-099/http-publicacion.json",
+      "reporte": "reportes/continuacion-099/http-publicacion.json",
+      "sha256": "9ae452ba3f0cd4b72d977f33a050493b6f7ba11d09b70fdd3c66b2ad3a62fc90",
+      "sku": "JUGU076"
     }
   }
 }
