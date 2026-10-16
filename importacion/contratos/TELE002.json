@@ -106,9 +106,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tele002-televisor-env-40-pulgadas-fullhd/",
-  "fecha_verificacion": "2026-10-16T13:28:25.638554+00:00",
+  "fecha_verificacion": "2026-10-16T14:01:42.688647+00:00",
   "descripcion": "Televisor ENV De 40 Pulgadas Full HD. Presentación de venta: Un televisor ENV de 40 pulgadas. Pantalla: 40 pulgadas. Resolución: Full HD según maestro y empaque.",
   "contenido_venta": "Un televisor ENV de 40 pulgadas.",
   "presentacion": "sin caja",
@@ -163,7 +163,7 @@
       "solicitado": "TELE002",
       "sku": "TELE002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T13:40:58.711Z",
+      "fecha": "2026-10-16T14:01:55.971Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -185,7 +185,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tele002-televisor-env-40-pulgadas-fullhd/",
-      "url_comprobada": "http://127.0.0.1:8798/productos/tele002-televisor-env-40-pulgadas-fullhd/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tele002-televisor-env-40-pulgadas-fullhd/",
       "archivo_html": "productos/tele002-televisor-env-40-pulgadas-fullhd/index.html",
       "http": 200,
       "sha256_html": "d0f94a67e03f0303f131de3f75305b518b32870e1cd4a7f1bd623cf34cc8f4d6",
@@ -195,7 +195,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tele002/TELE002-01.webp",
-        "url_cargada": "http://127.0.0.1:8798/imagenes/tele002/TELE002-01-600.webp?v=8a9458d51706975c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tele002/TELE002-01-600.webp?v=8a9458d51706975c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -204,46 +204,54 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8798/productos/tele002-televisor-env-40-pulgadas-fullhd/",
+          "url": "https://conectatech-ec.github.io/productos/tele002-televisor-env-40-pulgadas-fullhd/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/imagenes/tele002/TELE002-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tele002/TELE002-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/productos/trip026-tripode-selfie-n08s/",
+          "url": "https://conectatech-ec.github.io/productos/trip026-tripode-selfie-n08s/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
+          "url": "https://conectatech-ec.github.io/productos/tele003-televisor-house-tv-43-pulgadas-fullhd/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-098/qa-local/movil/TELE002-390.png",
+      "archivo": "reportes/continuacion-098/qa-publica/movil/TELE002-390.png",
       "sha256": "2ffc7da0eda6a1e50203eee5b5761e16fcb445bffa933b63f499679a6ec2b4ab",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-098/qa-local/movil/TELE002-1280.png",
+        "archivo": "reportes/continuacion-098/qa-publica/movil/TELE002-1280.png",
         "sha256": "7f2934ea471e9eeacb380c960257370ddd9b03e7f9e797c581b5914c0fedbc70",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:01:42.688647+00:00",
+      "archivo": "reportes/continuacion-098/http-publicacion.json",
+      "reporte": "reportes/continuacion-098/http-publicacion.json",
+      "sha256": "33920043a1a0597d537772dffd88e1195a7ccf9b996736c17581770c588bac2f",
+      "sku": "TELE002"
     }
   }
 }
