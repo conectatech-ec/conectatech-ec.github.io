@@ -30,6 +30,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /index.html
+            /seo-contenido.json
+            /seo-pages.json
+            /datos-593/inventario-publico.csv
+            /importacion/contratos/
+            /productos/
+            /imagenes/*/*.webp
+            /google-merchant/
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

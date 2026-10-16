@@ -183,7 +183,13 @@ def xml_feed(rows):
     for row in rows:
         item = ET.SubElement(channel, 'item')
         for key, value in row.items():
-            ET.SubElement(item, '{' + NS + '}' + key).text = str(value)
+            if key in ('title', 'description'):
+                # Textos editoriales del catálogo mantenidos con asistencia generativa.
+                structured = ET.SubElement(item, '{' + NS + '}structured_' + key)
+                ET.SubElement(structured, '{' + NS + '}digital_source_type').text = 'trained_algorithmic_media'
+                ET.SubElement(structured, '{' + NS + '}content').text = str(value)
+            else:
+                ET.SubElement(item, '{' + NS + '}' + key).text = str(value)
     ET.indent(rss)
     data = ET.tostring(rss, encoding='utf-8', xml_declaration=True) + b'\n'
     ET.fromstring(data)
