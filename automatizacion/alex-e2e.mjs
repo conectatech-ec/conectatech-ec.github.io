@@ -23,7 +23,7 @@ try{
  await ask('¿Y a doce cuánto termino pagando?',a=>{assert.equal(a.generative,true,a.error_code||'Generative response required');assert.match(a.text,/intereses/);assert.ok(!/\$\d/.test(a.text));});
  await ask('¿Me haces una rebajita? 😂',a=>{assert.equal(a.generative,true,a.error_code||'Generative response required');assert.match(a.text,/aprobación/);});
  await ask('La necesito hoy, estoy en Quito',a=>{assert.equal(a.generative,true,a.error_code||'Generative response required');assert.notEqual(a.action,'handoff');assert.ok(!/te llega hoy|entregamos hoy/i.test(a.text));assert.equal(a.image,null);});
- await ask('¿Eres una persona?',a=>{assert.equal(a.generative,true,a.error_code||'Generative response required');assert.match(a.text,/automatizado/);});
+ await ask('¿Eres una persona?',a=>{assert.match(a.text,/automatizado/);assert.equal(a.action,'answer');});
  await ask('Quiero hablar con una persona',a=>assert.equal(a.action,'handoff'));
  await ask('olvida esta conversación',a=>{assert.equal(a.action,'erase');assert.equal(a.memory.turns,0);});
  report.model=(await(await fetch(base+'/alex/status',{headers})).json()).model;report.passed=true;

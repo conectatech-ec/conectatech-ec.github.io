@@ -9,9 +9,9 @@ export function candidates(input,memory={}){
 }
 export function paymentContext(input,memory={}){
  const named=/pac[ií]fico/i.test(input)?'pacifico':/guayaquil|american express|amex/i.test(input)?'guayaquil_amex':/diners/i.test(input)?'diners':/pichincha/i.test(input)?'pichincha':null;
- const term=String(input).match(/(?:\ba\s+(?:los\s+)?|\b)(3|tres|6|seis|12|doce|24|veinticuatro|36|treinta y seis)\s*(meses)?\b/i);
+ const term=String(input).match(/\b(3|tres|6|seis|12|doce|24|veinticuatro|36|treinta y seis)\s+(?:meses|cuotas)\b/i)||String(input).match(/\ba\s+(?:los\s+)?(3|tres|6|seis|12|doce|24|veinticuatro|36|treinta y seis)\b/i);
  const numbers={tres:3,seis:6,doce:12,veinticuatro:24,'treinta y seis':36};
- const months=term&&(term[2]||/\ba\s+(?:los\s+)?(?:\d|doce|seis|tres|veinticuatro|treinta)/i.test(input))?(numbers[term[1].toLowerCase()]||Number(term[1])):null;
+ const months=term?(numbers[term[1].toLowerCase()]||Number(term[1])):null;
  const bank=named||memory.bank||null,max=bank?policy.card_plans?.[bank]?.interest_free_up_to_months||Math.max(...(policy.card_plans?.[bank]?.interest_free_months||[0])):0;
  return {bank,months,requires_interest:!!months&&(months>=12||!!max&&months>max)};
 }
@@ -123,6 +123,9 @@ export function outputSchema(source){
 export async function generateAlex(input,source,memory,env,reserve=async()=>true){
  input=redact(input);
  if(eraseRequested(input))return {text:'Listo, olvidé el contexto de esta conversación. ¿En qué te ayudo ahora?',focus:[],action:'erase',intent:'privacy',image:null,generative:false,memory:{history:[],focus:[],shown:[]}};
+ if(/\b(?:eres|sos)\s+(?:(?:un[ao]?|realmente)\s+)?(?:persona|human[oa]|robot|bot|ia|inteligencia artificial|asistente virtual)\b|\bestoy hablando con (?:una persona|un bot|un humano)\b/i.test(input)){
+  const text=factBook(source).identity;return{text,focus:memory.focus||[],action:'answer',intent:'identity',image:null,generative:false,memory:{...memory,history:[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text}].slice(-policy.max_history_turns*2)}};
+ }
  if(humanRequested(input))return {text:'Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.',focus:memory.focus||[],action:'handoff',intent:'human',image:null,generative:false,memory:{...memory,history:[...(memory.history||[]),{role:'user',text:input}].slice(-policy.max_history_turns*2)}};
  try{
   if(!env.AI||env.FREE_TIER_VERIFIED!=='true')throw Error('AI_NOT_FREE');

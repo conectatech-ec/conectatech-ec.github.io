@@ -83,3 +83,6 @@ test('Interest-bearing terms cannot be quoted as bare PVP even when model select
  }
  assert.equal(paymentContext('Pichincha a seis meses').requires_interest,false);assert.equal(paymentContext('quiero 12 unidades').requires_interest,false);assert.equal(paymentContext('Guayaquil a 6 meses').requires_interest,true);
 });
+test('Transparency never depends on quota or model and does not trigger human handoff',async()=>{
+ for(const text of ['¿Eres una persona?','¿Eres humano?','¿Eres un bot?']){const r=await generateAlex(text,source,{focus:['POWE003']},{});assert.match(r.text,/automatizado/);assert.equal(r.action,'answer');assert.equal(r.memory.focus[0],'POWE003');}
+});

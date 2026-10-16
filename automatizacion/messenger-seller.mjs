@@ -147,6 +147,10 @@ async function runSeller(box,deps){
    const result=await deps.sendMessage(env,recipient,messages[part],{inboundAt:row.inbound,scope:box.name,enabled:sellerActive(box)});
    const mid=result.messageId?await h(env.PILOT_TOKEN,'mid:'+result.messageId):null;
    q.exec('UPDATE seller_parts SET state=?,mid_hash=? WHERE job=? AND part=?',result.state,mid,row.k,part);
+   if(row.intent==='alex'){
+    const auditRow=q.exec('SELECT safe FROM seller_drafts WHERE job=?',row.k).toArray()[0];
+    if(auditRow){const audit=JSON.parse(auditRow.safe);audit.graph_http=[...(audit.graph_http||[]),Number.isInteger(result.http)?result.http:null];q.exec('UPDATE seller_drafts SET safe=? WHERE job=?',JSON.stringify(audit),row.k);}
+   }
    if(result.state!=='accepted'){
     q.exec("UPDATE seller_jobs SET status=?,error=? WHERE k=?",result.state,'GRAPH_'+(result.code||result.http||'UNKNOWN'),row.k);
     // Stop all automatic sends on an unexpected Graph result; owner can inspect sanitized status.
