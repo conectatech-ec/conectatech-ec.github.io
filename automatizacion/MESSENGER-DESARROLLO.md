@@ -1,5 +1,7 @@
 # Messenger de Meta — Jotacellcomunicapp en Desarrollo
 
+Guía operativa actual, revisión humana, métricas y requisitos de conversaciones reales: [OPERAR-MESSENGER.md](OPERAR-MESSENGER.md). El Page ID confirmado está fijado en la configuración del piloto; no requiere crear otra variable en GitHub.
+
 **Estado:** receptor cerrado desplegado, pruebas sintéticas por HTTPS aprobadas y recepción real deshabilitada. [Evidencia](generated/fase2/messenger-desplegado-verificado.json). Handshake con el token real y entrega desde Meta pendientes de configuración segura. Nuevos uploads cerrados con `activar:false`; el Worker sigue activo.
 
 Callback HTTPS exacto:

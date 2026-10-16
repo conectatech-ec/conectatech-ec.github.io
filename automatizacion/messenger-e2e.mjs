@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
+import {hmac} from './messenger.mjs';
 const base=process.env.PILOT_BASE_URL,token=process.env.PILOT_TOKEN;
 assert.ok(base&&token,'Deployed pilot and private token required');
 const headers={Authorization:`Bearer ${token}`,'Content-Type':'application/json'};
@@ -25,12 +26,27 @@ try {
  for(const reference of references) {
   const row=rows.find(r=>r.event_ref===reference.ref);assert.equal(row?.status,'prepared',reference.sku+' must be durably prepared');const draft=row.result.find(d=>d.sku===reference.sku);assert.ok(draft.foto);assert.ok(draft.precio>0);assert.equal(draft.send_enabled,false);assert.ok(draft.messages.some(m=>m.attachment?.type==='template'));report.prepared.push({sku:draft.sku,precio:draft.precio,stock_referencial:draft.stock_referencial,foto:draft.foto,banner:draft.banner,native_card:true,duplicate_ignored:true});
  }
+ const reviewRow=rows.find(r=>r.event_ref===references[0].ref);
+ const approved=await call('/messenger/review?scope=ci',{event_ref:reviewRow.event_ref,result_digest:reviewRow.result_digest,decision:'aprobado'});assert.equal(approved.send_enabled,false);assert.equal(approved.decision,'aprobado');
+ const rejectedRow=rows.find(r=>r.event_ref===references[1].ref);
+ await call('/messenger/review?scope=ci',{event_ref:rejectedRow.event_ref,result_digest:rejectedRow.result_digest,decision:'rechazado'});
+ const stale=await fetch(base+'/messenger/review?scope=ci',{method:'POST',headers,body:JSON.stringify({event_ref:reviewRow.event_ref,result_digest:'0'.repeat(64),decision:'aprobado'})});assert.equal(stale.status,409);
+ const metrics=await call('/messenger/metrics?scope=ci');assert.equal(metrics.messages_sent,0);assert.ok(metrics.daily.reduce((n,d)=>n+d.consultas,0)>=3);assert.ok(metrics.daily.reduce((n,d)=>n+d.duplicates,0)>=3);report.metrics_and_human_review='passed';report.changed_draft_review_status=409;
  const health=await (await fetch(base+'/health')).json();report.runtime_meta_configuration_present=health.messenger_configured;assert.equal(health.meta_ingress_enabled,false);report.meta_page_reception_enabled=false;
+ const status=await call('/messenger/status');report.meta_secret_readiness={app_secret:status.app_secret_present,verify_token:status.verify_token_present,page:status.page_present,test_senders:status.test_senders_present};
  if(process.env.META_VERIFY_TOKEN) {
   const url=new URL(base+'/webhooks/meta');url.searchParams.set('hub.mode','subscribe');url.searchParams.set('hub.verify_token',process.env.META_VERIFY_TOKEN);url.searchParams.set('hub.challenge','ct-meta-dev-challenge');
   let r;try{r=await fetch(url,{signal:AbortSignal.timeout(10000)});}catch{throw Error('Configured verification HTTPS request failed; URL withheld');}
   assert.equal(r.status,200);assert.equal(await r.text(),'ct-meta-dev-challenge');report.configured_verify_token_handshake='passed';
  } else report.configured_verify_token_handshake='pending_secret';
- const unauth=await fetch(base+'/messenger/test-results?scope=ci');assert.equal(unauth.status,401);report.preview_without_token=401;report.passed=true;console.log(JSON.stringify(report));
+ if(process.env.META_APP_SECRET) {
+  assert.equal(status.app_secret_present,true);
+  const raw=JSON.stringify({object:'page',entry:[]});const signature='sha256='+await hmac(process.env.META_APP_SECRET,raw);
+  const signed=await fetch(base+'/webhooks/meta',{method:'POST',headers:{'X-Hub-Signature-256':signature},body:raw,signal:AbortSignal.timeout(10000)});
+  assert.equal(signed.status,status.page_present&&status.test_senders_present?200:503);
+  const tampered=await fetch(base+'/webhooks/meta',{method:'POST',headers:{'X-Hub-Signature-256':signature},body:raw+' '});assert.equal(tampered.status,403);
+  report.configured_app_secret_hmac='passed_empty_fixture_not_Meta_delivery';report.configured_signature_tamper_status=403;
+ } else report.configured_app_secret_hmac='pending_secret';
+ for(const path of ['/messenger/test-results?scope=ci','/messenger/status','/messenger/metrics','/messenger/review']){const unauth=await fetch(base+path);assert.equal(unauth.status,401);}report.preview_without_token=401;report.passed=true;console.log(JSON.stringify(report));
 } catch(e){report.error=String(e.message).slice(0,500);throw e;}
 finally{await mkdir(new URL('./generated/fase2/',import.meta.url),{recursive:true});await writeFile(output,JSON.stringify(report,null,2)+'\n');}

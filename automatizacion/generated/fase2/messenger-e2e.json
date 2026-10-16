@@ -62,8 +62,18 @@
     }
   ],
   "passed": true,
+  "metrics_and_human_review": "passed",
+  "changed_draft_review_status": 409,
   "runtime_meta_configuration_present": true,
   "meta_page_reception_enabled": false,
+  "meta_secret_readiness": {
+    "app_secret": true,
+    "verify_token": true,
+    "page": true,
+    "test_senders": true
+  },
   "configured_verify_token_handshake": "passed",
+  "configured_app_secret_hmac": "passed_empty_fixture_not_Meta_delivery",
+  "configured_signature_tamper_status": 403,
   "preview_without_token": 401
 }

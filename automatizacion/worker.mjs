@@ -27,11 +27,14 @@ export default {
   if(path==='/webhooks/meta') return handleMessengerWebhook(req,env);
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {
+   if(path==='/messenger/status'&&req.method==='GET') return json({mode:env.META_MODE,app_secret_present:!!env.META_APP_SECRET,verify_token_present:!!env.META_VERIFY_TOKEN,page_present:!!env.META_PAGE_ID,test_senders_present:!!env.META_TEST_SENDER_IDS,reception_enabled:env.META_INGRESS_ENABLED==='true',outbound_enabled:false});
    if(path==='/messenger/self-test'&&req.method==='POST') return messengerSelfTest(await body(req),env);
-   if(path==='/messenger/test-results'&&req.method==='GET') {
+   if(['/messenger/test-results','/messenger/metrics','/messenger/review'].includes(path)&&((path==='/messenger/review'&&req.method==='POST')||(path!=='/messenger/review'&&req.method==='GET'))) {
     if(!env.MESSENGER_TEST_INBOX) return json({error:'Test storage unavailable'},503);
     const scope=new URL(req.url).searchParams.get('scope')==='ci'?'ci':'development';
-    return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-'+scope)).fetch('https://inbox/results');
+    const target=path==='/messenger/test-results'?'results':path.split('/').pop();
+    const options=target==='review'?{method:'POST',body:JSON.stringify(await body(req))}:undefined;
+    return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-'+scope)).fetch('https://inbox/'+target,options);
    }
    if(req.method==='GET' && path==='/ready') {
     const source=await refreshCatalog(catalog);

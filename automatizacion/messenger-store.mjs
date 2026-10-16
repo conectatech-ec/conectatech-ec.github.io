@@ -2,6 +2,7 @@ import catalog from './generated/catalogo.json' with {type:'json'};
 import {answer} from './commerce.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
 const json=(x,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
+async function digest(text){return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))].map(n=>n.toString(16).padStart(2,'0')).join('');}
 export function commercialDraft(response) {
  if(response.error) throw Error('SOURCE_INVALID');
  if(!response.disponible) return {sku:response.sku,text:response.text,send_enabled:false};
@@ -17,18 +18,36 @@ export class MessengerTestInbox {
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_expiry ON events(expires)');
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_pending ON events(status,next_at)');
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_day ON events(day)');
+  this.sql.exec('CREATE TABLE IF NOT EXISTS reviews (k TEXT PRIMARY KEY, decision TEXT, digest TEXT, reviewed_at INTEGER)');
+  this.sql.exec('CREATE TABLE IF NOT EXISTS counters (day INTEGER PRIMARY KEY, duplicates INTEGER NOT NULL DEFAULT 0)');
  }
+ cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);}
  async fetch(req) {
   const path=new URL(req.url).pathname;
+  this.cleanup(Date.now());
   if(path==='/results') {
-   const rows=this.sql.exec('SELECT k AS event_ref,status,skus,result,attempts,error FROM events ORDER BY rowid DESC LIMIT 30').toArray();
-   return json({mode:'development-only',outbound_enabled:false,events:rows.map(r=>({...r,skus:JSON.parse(r.skus),result:r.result?JSON.parse(r.result):null}))});
+   const rows=this.sql.exec('SELECT e.k AS event_ref,e.status,e.skus,e.result,e.attempts,e.error,r.decision,r.reviewed_at FROM events e LEFT JOIN reviews r ON r.k=e.k ORDER BY e.rowid DESC LIMIT 30').toArray();
+   return json({mode:'development-only',outbound_enabled:false,events:await Promise.all(rows.map(async r=>({...r,decision:r.decision||'pendiente',result_digest:r.result?await digest(r.result):null,skus:JSON.parse(r.skus),result:r.result?JSON.parse(r.result):null})))});
+  }
+  if(path==='/metrics'&&req.method==='GET') {
+   const daily=this.sql.exec("SELECT day,COUNT(*) AS consultas,SUM(status='prepared') AS borradores_preparados,SUM(status='queued') AS pendientes,SUM(status='failed') AS fallidos,SUM(skus!='[]') AS consultas_con_sku,SUM(attempts) AS reintentos FROM events GROUP BY day ORDER BY day DESC").toArray();
+   const duplicates=this.sql.exec('SELECT day,duplicates FROM counters').toArray();
+   const reviews=this.sql.exec('SELECT decision,COUNT(*) AS n FROM reviews GROUP BY decision').toArray();
+   return json({retention_days:7,mode:'development-only',outbound_enabled:false,messages_sent:0,confirmed_orders:0,opportunity_definition:'consultas_con_sku cuenta interés en SKU; no equivale a ventas ni clientes únicos',daily:daily.map(r=>({...r,duplicates:duplicates.find(d=>d.day===r.day)?.duplicates||0})),reviews});
+  }
+  if(path==='/review'&&req.method==='POST') {
+   const b=await req.json();
+   if(!/^[a-f0-9]{64}$/.test(b.event_ref||'')||!['aprobado','rechazado'].includes(b.decision)||!/^[a-f0-9]{64}$/.test(b.result_digest||''))return json({error:'Invalid review'},400);
+   const row=this.sql.exec('SELECT status,result FROM events WHERE k = ?',b.event_ref).toArray()[0];
+   if(!row||row.status!=='prepared'||await digest(row.result)!==b.result_digest)return json({error:'Draft unavailable or changed; review again'},409);
+   this.sql.exec('INSERT INTO reviews VALUES (?,?,?,?) ON CONFLICT(k) DO UPDATE SET decision=excluded.decision,digest=excluded.digest,reviewed_at=excluded.reviewed_at',b.event_ref,b.decision,b.result_digest,Date.now());
+   return json({event_ref:b.event_ref,decision:b.decision,send_enabled:false,notice:'Revisión registrada. No se ha enviado ningún mensaje.'});
   }
   if(path!=='/accept'||req.method!=='POST')return json({error:'Not found'},404);
   const b=await req.json();if(!/^[a-f0-9]{64}$/.test(b.key)||!Array.isArray(b.skus)||b.skus.some(s=>!['MICR27','POWE003','ADAP005'].includes(s)))return json({error:'Bad fixture'},400);
-  const now=Date.now();this.sql.exec('DELETE FROM events WHERE expires <= ?',now);
+  const now=Date.now();
   const existing=this.sql.exec('SELECT status FROM events WHERE k = ?',b.key).toArray()[0];
-  if(existing){if(existing.status==='queued')await this.state.storage.setAlarm(now+100);return json({duplicate:true});}
+  if(existing){this.sql.exec('INSERT INTO counters(day,duplicates) VALUES (?,1) ON CONFLICT(day) DO UPDATE SET duplicates=duplicates+1',Math.floor(now/86400000));if(existing.status==='queued')await this.state.storage.setAlarm(now+100);return json({duplicate:true});}
   const day=Math.floor(now/86400000);
   const count=this.sql.exec('SELECT COUNT(*) AS n FROM events WHERE day = ?',day).one().n;
   if(count>=100)return json({error:'Daily test limit'},429);
@@ -37,7 +56,7 @@ export class MessengerTestInbox {
   return json({queued:true,duplicate:false});
  }
  async alarm() {
-  const now=Date.now();this.sql.exec('DELETE FROM events WHERE expires <= ?',now);
+  const now=Date.now();this.cleanup(now);
   const rows=this.sql.exec("SELECT k,skus,attempts FROM events WHERE status = 'queued' AND next_at <= ? ORDER BY rowid LIMIT 3",now).toArray();
   for(const row of rows) {
    try {

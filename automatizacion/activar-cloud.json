@@ -1,7 +1,8 @@
 {
-  "activar": false,
+  "activar": true,
+  "meta_page_id": "105549695770538",
   "costo_maximo_usd": 0,
   "alcance": "actualizar solo Worker existente del piloto; sin Billing, D1, cron, rutas, producción ni envíos Meta",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Receptor cerrado desplegado y verificado. Nuevos uploads bloqueados; Worker activo. META_INGRESS_ENABLED=false y sin envíos Graph. Conexión real Meta pendiente de secretos y prueba autorizada."
+  "nota": "Aplicar secretos Meta desde GitHub y Page ID confirmado. Verificar challenge y HMAC por HTTPS. META_INGRESS_ENABLED=false y sin envíos Graph; recepción pendiente de PSID de probadores y suscripción Meta."
 }

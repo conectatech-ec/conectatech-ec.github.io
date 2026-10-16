@@ -24,7 +24,7 @@ await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const address=server.address();
 try {
  const exitCode=await new Promise(resolve=>{
-  const child=spawn(process.execPath,[...process.execArgv,'automatizacion/messenger-e2e.mjs'],{stdio:'inherit',env:{...process.env,PILOT_BASE_URL:'http://127.0.0.1:'+address.port,PILOT_TOKEN:env.PILOT_TOKEN,META_VERIFY_TOKEN:env.META_VERIFY_TOKEN,MESSENGER_E2E_SCOPE:'cloud_runner_loopback_http_sqlite_fixture'}});
+  const child=spawn(process.execPath,[...process.execArgv,'automatizacion/messenger-e2e.mjs'],{stdio:'inherit',env:{...process.env,PILOT_BASE_URL:'http://127.0.0.1:'+address.port,PILOT_TOKEN:env.PILOT_TOKEN,META_VERIFY_TOKEN:env.META_VERIFY_TOKEN,META_APP_SECRET:env.META_APP_SECRET,MESSENGER_E2E_SCOPE:'cloud_runner_loopback_http_sqlite_fixture'}});
   child.on('error',()=>resolve(1));child.on('close',resolve);
  });
  if(exitCode!==0)process.exitCode=exitCode||1;

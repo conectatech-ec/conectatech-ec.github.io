@@ -35,6 +35,14 @@ class MinimumPrivilegeTest(unittest.TestCase):
   module.validate_meta_settings({'META_VERIFY_TOKEN':'x'*32,'META_TEST_SENDER_IDS':'123,456'})
   for env in [{'META_VERIFY_TOKEN':'short'},{'META_TEST_SENDER_IDS':'123,not-a-psid'}]:
    with self.assertRaises(ValueError):module.validate_meta_settings(env)
+ def test_confirmed_page_configured_without_enabling_ingress_or_sends(self):
+  with patch.dict(os.environ,{'META_PAGE_ID':''}):
+   meta=module.worker_metadata({'meta_page_id':'105549695770538'})
+  bindings={b['name']:b for b in meta['bindings']}
+  self.assertEqual(bindings['META_PAGE_ID']['text'],'105549695770538')
+  self.assertEqual(bindings['META_INGRESS_ENABLED']['text'],'false')
+  self.assertEqual(bindings['META_MODE']['text'],'development-only')
+  self.assertNotIn('META_PAGE_ACCESS_TOKEN',bindings)
  def test_messenger_storage_is_sqlite_on_same_worker_without_new_api_permissions(self):
   metadata=module.worker_metadata()
   self.assertEqual(metadata['exports'],{'MessengerTestInbox':{'type':'durable-object','storage':'sqlite'}})
