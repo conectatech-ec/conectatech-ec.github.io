@@ -1,6 +1,6 @@
 # Alex, tu asesor de CONECTATECH
 
-Activo solo para el probador registrado. [Evidencia de 86 pruebas y 13 intercambios HTTPS reales](generated/fase2/alex-cloud-verificado.json). Falta una consulta nueva del probador para confirmar envío y recepción de Alex en Messenger; los recibos del piloto anterior se mantienen separados.
+Activo solo para el probador registrado. [Evidencia de 86 pruebas y 13 intercambios HTTPS reales](generated/fase2/alex-cloud-verificado.json). Conversación real del probador acreditada: dos eventos externos firmados y procesados, dos respuestas generativas y una imagen aceptadas con HTTP 200 por Graph API. El probador confirmó que recibió texto e imagen; no existe recibo automático message_deliveries. Los recibos del piloto anterior se mantienen separados.
 
 Worker existente: https://conectatech-comercial-piloto.conectatech-ecu.workers.dev . Rama exclusiva `automatizacion/piloto-cloud-3sku-20261015`. Sin cambios al catálogo ni a main.
 

@@ -1,8 +1,8 @@
 {
   "verified_at": "2026-10-16T19:48:57.985Z",
   "release": "2bd70bfa",
-  "workflow_run": 38957367335,
-  "workflow_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38957367335",
+  "workflow_run": 38958952866,
+  "workflow_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38958952866",
   "unit_tests": 86,
   "real_ai": {
     "mode": "real_generative_ai_private_https_not_Messenger",
@@ -238,15 +238,72 @@
     "outbound_enabled": true,
     "test_senders_present": true
   },
-  "messenger_alex_new_conversation_verified": false,
-  "messenger_alex_delivery_verified": false,
-  "messenger_alex_events": [],
-  "warning": "Recepción visual de texto e imagen confirmada por el probador. Pendiente contrastar los recibos recientes del Worker.",
+  "messenger_alex_new_conversation_verified": true,
+  "messenger_alex_delivery_verified": true,
+  "messenger_alex_events": [
+    {
+      "incoming_at": "2026-10-16T19:58:10.845Z",
+      "status": "sent",
+      "generative": true,
+      "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+      "media_count": 0,
+      "graph_http": [
+        200
+      ],
+      "graph_accepted_parts": 1,
+      "delivery_receipts": 0,
+      "error": null
+    },
+    {
+      "incoming_at": "2026-10-16T19:57:03.387Z",
+      "status": "sent",
+      "generative": true,
+      "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+      "media_count": 1,
+      "graph_http": [
+        200,
+        200
+      ],
+      "graph_accepted_parts": 2,
+      "delivery_receipts": 0,
+      "error": null
+    }
+  ],
+  "warning": null,
   "financial_rule": "Costo nuevo autorizado 0 USD; Free confirmado por propietario, sin Billing API, suscripciones ni recursos de pago.",
   "tester_confirmation": {
     "received_text": true,
     "received_image": true,
     "source": "confirmacion expresa del propietario mediante perfil probador",
     "recorded_at": "2026-10-16T19:59:27.064884+00:00"
-  }
+  },
+  "messenger_delivery_verification": {
+    "visual_confirmation_by_authorized_tester": true,
+    "meta_delivery_receipt_count": 0,
+    "meta_delivery_receipt_verified": false,
+    "method": "confirmacion visual expresa del probador, complementada por HTTP 200 Send API; no se equipara HTTP 200 con entrega"
+  },
+  "messenger_alex_signed_receipts": [
+    {
+      "at": "2026-10-16T19:58:11.876Z",
+      "http_status": 200,
+      "signature_valid": true,
+      "reason": "processed",
+      "page_matches": true,
+      "source": "external_https",
+      "reception_enabled": true,
+      "outbound_enabled": true
+    },
+    {
+      "at": "2026-10-16T19:57:04.211Z",
+      "http_status": 200,
+      "signature_valid": true,
+      "reason": "processed",
+      "page_matches": true,
+      "source": "external_https",
+      "reception_enabled": true,
+      "outbound_enabled": true
+    }
+  ],
+  "messenger_verified_at": "2026-10-16T20:00:43.233Z"
 }

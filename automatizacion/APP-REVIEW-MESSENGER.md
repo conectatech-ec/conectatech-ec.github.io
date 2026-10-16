@@ -4,7 +4,11 @@
 
 Token de CONECTATECHec válido, tipo PAGE, aplicación coincidente, `pages_messaging` concedido. Eso habilita la validación con probadores con rol aceptado. No acredita App Live, aprobación de Advanced Access ni revisión empresarial. Esta sesión no dispone de la sesión administrativa de Meta ni de un API para presentar App Review en nombre del propietario.
 
-## Acción de cuenta imprescindible, después de la conversación probadora
+## Conversación probadora acreditada
+
+16 de octubre de 2026, 14:57–14:58 de Ecuador: dos consultas externas con firma válida y HTTP 200, ambas procesadas por Alex con el modelo generativo real; Graph API aceptó dos textos y una imagen con HTTP 200. El probador confirmó la recepción en Messenger. [Evidencia sin identificadores ni mensajes privados](generated/fase2/alex-cloud-verificado.json). No hay recibo automático message_deliveries ni una grabación de pantalla creada por esta sesión.
+
+## Acción de cuenta imprescindible para compradores externos
 
 En Meta for Developers → Jotacellcomunicapp → App Review / Permissions and Features o el caso de uso Messenger que muestre el panel:
 
@@ -16,7 +20,7 @@ En Meta for Developers → Jotacellcomunicapp → App Review / Permissions and F
 
 ## Texto propuesto para la revisión
 
-«CONECTATECH responde consultas iniciadas por personas en Messenger de su Página. Utiliza pages_messaging para contestar dentro de la ventana estándar con información de tres productos del catálogo propio: precios y disponibilidad actualizados, fotografías aprobadas y opciones de entrega pendientes de confirmación. No envía campañas ni mensajes proactivos fuera de ventana. El usuario puede pedir atención por una persona. Existen deduplicación persistente, bloqueo de fuentes vencidas, parada del operador y registros mínimos con eliminación operativa a siete días. La prueba se realiza con cuentas autorizadas y aisladas de clientes.»
+«CONECTATECH responde consultas iniciadas por personas en Messenger de su Página. Alex utiliza generación de lenguaje real con memoria contextual cifrada de 24 horas y hechos comerciales verificados. Utiliza pages_messaging para contestar dentro de la ventana estándar con información de tres productos del catálogo propio: precios y disponibilidad actualizados, fotografías aprobadas y opciones de entrega pendientes de confirmación. No envía campañas ni mensajes proactivos fuera de ventana. El usuario puede pedir atención por una persona. Existen deduplicación persistente, bloqueo de fuentes vencidas, parada del operador y registros mínimos con eliminación operativa a siete días. La prueba se realiza con cuentas autorizadas y aisladas de clientes.»
 
 Esto es un borrador de justificación, no una solicitud presentada ni aprobada. URLs preparadas en el Worker: `https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/privacy` y `https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/data-deletion`. Revisar los datos reales de negocio y los campos exigidos por Meta antes de presentar la revisión. La verificación de empresa no es Meta Verified de pago; no contratar servicios. Código y operación: VENDEDOR-MESSENGER.md.
 
