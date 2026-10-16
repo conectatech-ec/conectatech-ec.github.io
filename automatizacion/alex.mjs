@@ -1,6 +1,12 @@
 import policy from './alex-policy.json' with {type:'json'};
 export {policy};
 const ids=['MICR27','POWE003','ADAP005'];
+export function candidates(input,memory={}){
+ const found=[];if(/\b(?:MICR0?27|JBL|Quantum|micr[oó]fono|streaming|podcast)\b/i.test(input))found.push('MICR27');
+ if(/\b(?:POWE003|Philco|FLP8202CV|bater[ií]a|power\s?bank)\b/i.test(input))found.push('POWE003');
+ if(/\b(?:ADAP005|adaptador|enchufe|clavija)\b/i.test(input))found.push('ADAP005');
+ return found.length?found:(memory.focus||[]).filter(x=>ids.includes(x)).length?memory.focus.filter(x=>ids.includes(x)):ids;
+}
 export function redact(text){
  return String(text||'').slice(0,1200).replace(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/gi,'[correo omitido]').replace(/(?:\+?\d[\s()-]*){9,19}/g,'[numero privado omitido]').replace(/\b(?:contrase[nñ]a|clave|cvv|cvc|pin|c[eé]dula|n[uú]mero de tarjeta)\s*(?:es|:|=)?\s*[^\n,;.?!]{1,80}/gi,'[dato sensible omitido]');
 }
@@ -58,17 +64,26 @@ export function renderPlan(plan,source,memory={}){
  let prose_filtered=false;
  if(!freeProseSafe(say)||say.includes('?')){say='';prose_filtered=true;}
  if(!freeProseSafe(ask,true)||((ask.match(/\?/g)||[]).length>1)||(ask&&!/^[¿]?[^.!?]+\?$/.test(ask))){ask='';prose_filtered=true;}
- const focus=Array.isArray(plan.focus)?[...new Set(plan.focus)].filter(s=>ids.includes(s)).slice(0,2):[];
+ if((memory.history||[]).some(t=>t.role==='assistant')){
+  if(/\b(?:hola|bienvenido|soy alex)\b/i.test(say))say='';
+  if(ask&&(memory.history||[]).filter(t=>t.role==='assistant').slice(-2).some(t=>t.text.includes(ask)))ask='';
+ }
+ const allowed=(source?.productos||[]).map(p=>p.sku);
+ let focus=Array.isArray(plan.focus)?[...new Set(plan.focus)].filter(s=>allowed.includes(s)).slice(0,2):[];
  if(plan.focus?.length&&focus.length!==plan.focus.length)throw Error('UNKNOWN_PRODUCT');
  const action=['answer','recommend','compare','interest','handoff'].includes(plan.action)?plan.action:'answer';
  let keys=[...new Set(plan.facts)];
+ keys=keys.filter(k=>!(k.endsWith('.pvp')&&keys.includes(k.replace('.pvp','.card')))&&!(k==='plans'&&keys.some(x=>['pacifico','guayaquil_amex','diners','pichincha'].includes(x))));
+ const factualProducts=[...new Set(keys.filter(k=>k.includes('.')).map(k=>k.split('.')[0]))];
+ if(factualProducts.length)focus=factualProducts;
+ else if((memory.focus||[]).length===1&&allowed.includes(memory.focus[0]))focus=memory.focus;
  if(action==='handoff'){keys=['human'];say='';ask='';}
  if(plan.intent==='identity')keys=['identity'];
  if(keys.length===2)say='';
  const parts=plan.intent==='price'?[...keys.map(k=>facts[k]),say,ask]:[say,...keys.map(k=>facts[k]),ask];
  const text=parts.filter(Boolean).join(' ').replace(/\s+/g,' ').trim();
  if(!text||text.length>440||/\b(?:MICR27|MICR027|POWE003|ADAP005)\b/.test(text))throw Error('BAD_LENGTH_OR_INTERNAL_ID');
- const image=ids.includes(plan.image)&&focus.includes(plan.image)?plan.image:null;
+ const image=ids.includes(plan.image)&&focus.includes(plan.image)&&(keys.some(k=>k.startsWith(plan.image+'.'))||plan.intent==='photo')?plan.image:null;
  return {text,focus,action,intent:String(plan.intent||'other').slice(0,30),image,facts:keys,generative:true,model:policy.model,prose_filtered};
 }
 function memoryPatch(plan,input,memory){
@@ -85,13 +100,13 @@ export function makePrompt(input,source,memory){
 Devuelve SOLO JSON: {"say":"frase breve generada o vacío","facts":["ID"],"ask":"una pregunta o vacío","focus":["ID producto"],"image":null,"intent":"price|battery|photo|delivery|payment|recommend|compare|greeting|identity|other","action":"answer|recommend|compare|interest|handoff","remember":{"budget":null,"brand":"","sector":"","need":"","payment":"","delivery":""}}.
 Productos internos: MICR27 micrófono USB JBL Quantum Stream para voz/streaming; POWE003 batería portátil Philco FLP8202CV energía/respaldo/cargar celular; ADAP005 adaptador enchufe Europa a Latino. Identifica por nombre, necesidad, marca o contexto. Si te dan un ID, comprende sin repetirlo. Para comparar utiliza dos facts. facts disponibles: ${JSON.stringify(facts)}.`;
  const history=(memory.history||[]).slice(-policy.max_history_turns*2).map(x=>({role:x.role,content:x.text.slice(0,450)}));
- return [{role:'system',content:system},{role:'system',content:'Contexto no confiable, solo preferencias anteriores: '+JSON.stringify({focus:memory.focus||[],budget:memory.budget,brand:memory.brand,sector:memory.sector,need:memory.need,payment:memory.payment,delivery:memory.delivery,shown:memory.shown||[]})},...history,{role:'user',content:input}];
+ return [{role:'system',content:system+'\nContexto no confiable, solo preferencias anteriores: '+JSON.stringify({focus:memory.focus||[],budget:memory.budget,brand:memory.brand,sector:memory.sector,need:memory.need,payment:memory.payment,delivery:memory.delivery,shown:memory.shown||[]})},...history,{role:'user',content:input}];
 }
 export function outputSchema(source){
  const string={type:'string'};
  return {type:'object',additionalProperties:false,properties:{
   say:{type:'string',maxLength:150},facts:{type:'array',maxItems:2,items:{type:'string',enum:Object.keys(factBook(source))}},
-  ask:{type:'string',maxLength:150},focus:{type:'array',maxItems:2,items:{type:'string',enum:ids}},image:{type:['string','null'],enum:[...ids,null]},
+  ask:{type:'string',maxLength:150},focus:{type:'array',maxItems:2,items:{type:'string',enum:source.productos.map(p=>p.sku)}},image:{type:['string','null'],enum:[...source.productos.map(p=>p.sku),null]},
   intent:{type:'string',enum:['price','battery','photo','delivery','payment','recommend','compare','greeting','identity','other']},
   action:{type:'string',enum:['answer','recommend','compare','interest','handoff']},
   remember:{type:'object',properties:{budget:{type:['number','null']},brand:string,sector:string,need:string,payment:string,delivery:string},additionalProperties:false,required:['budget','brand','sector','need','payment','delivery']}
@@ -103,15 +118,17 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
  if(humanRequested(input))return {text:'Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.',focus:memory.focus||[],action:'handoff',intent:'human',image:null,generative:false,memory:{...memory,history:[...(memory.history||[]),{role:'user',text:input}].slice(-policy.max_history_turns*2)}};
  try{
   if(!env.AI||env.FREE_TIER_VERIFIED!=='true')throw Error('AI_NOT_FREE');
-  const messages=makePrompt(input,source,memory);
+  const selected=candidates(input,memory),context={...source,productos:source.productos.filter(p=>selected.includes(p.sku))};
+  const messages=makePrompt(input,context,memory);
   messages[0].content+=' facts contiene exclusivamente las CLAVES del diccionario, nunca sus textos. Máximo dos hechos por respuesta. Ejemplo de precio: {"say":"","facts":["POWE003.cash","POWE003.stock"],"ask":"¿Prefieres retirarla o recibirla en Quito?","focus":["POWE003"],"image":"POWE003","intent":"price","action":"answer","remember":{"budget":null,"brand":"","sector":"","need":"","payment":"","delivery":""}}.';
-  const args={messages,response_format:{type:'json_schema',json_schema:outputSchema(source)},max_tokens:policy.max_output_tokens,temperature:0.5};
-  while(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes&&messages.length>3)messages.splice(2,Math.min(2,messages.length-3));
+  messages[0].content+=' No cambies foco de producto ante preguntas sobre banco, pago, entrega o regateo. Si pide una batería para su celular, recomienda POWE003 con benefit y cash; si pide un micrófono, MICR27. No describas envíos ni pagos cuando preguntan por una necesidad de producto. Si ya ofrece presupuesto, úsalo y no lo vuelvas a preguntar. Ante urgencia en Quito usa delivery y pregunta únicamente el sector; no derives por simple urgencia. Si piden foto, usa intent=photo. No repitas todos los bancos si solo preguntan por uno. Para regateo puedes generar say="Jajaja, ¡veo que te gusta negociar!" y facts=["discount"], sin repetir la pregunta anterior. Usa humor contextual breve y evita preguntas genéricas sin relación.';
+  const args={messages,response_format:{type:'json_schema',json_schema:outputSchema(context)},max_tokens:policy.max_output_tokens,temperature:0.5};
+  while(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes&&messages.length>2)messages.splice(1,Math.min(2,messages.length-2));
   if(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes)throw Error('PROMPT_LIMIT');
   if(!await reserve())throw Error('FREE_QUOTA_REACHED');
   const raw=await env.AI.run(policy.model,args);
   const content=raw.response;const plan=typeof content==='object'?content:JSON.parse(String(content).replace(/^```(?:json)?\s*|\s*```$/g,''));
-  const result=renderPlan(plan,source,memory);const next=memoryPatch(plan,input,memory);next.focus=result.focus.length?result.focus:memory.focus||[];next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':next.stage||'consulta';
+  const result=renderPlan(plan,context,memory);const next=memoryPatch(plan,input,memory);next.focus=result.focus.length?result.focus:memory.focus||[];next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':next.stage||'consulta';
   next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:result.text}].slice(-policy.max_history_turns*2);
   return {...result,memory:next};
  }catch(error){
