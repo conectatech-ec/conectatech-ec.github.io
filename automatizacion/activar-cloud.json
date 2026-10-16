@@ -1,7 +1,7 @@
 {
-  "activar": true,
+  "activar": false,
   "costo_maximo_usd": 0,
   "alcance": "actualizar solo Worker existente del piloto; sin Billing, D1, cron, rutas, producción ni envíos Meta",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Actualización autorizada: receptor Messenger solo Desarrollo; Durable Object SQLite Free del mismo Worker; sin Graph Send API ni clientes reales."
+  "nota": "Despliegue Messenger bloqueado por revisión automática; solo CI y comprobación de lectura. No cambiar Worker activo hasta resolver aprobación y conexión Meta."
 }
