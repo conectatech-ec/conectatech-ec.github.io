@@ -1,0 +1,86 @@
+{
+  "read_only": true,
+  "worker_code_changed": false,
+  "ai_calls": 0,
+  "messages_sent": 0,
+  "paid_services_activated": false,
+  "public_checks": [
+    {
+      "path": "/data-deletion",
+      "http": 200,
+      "passed": true
+    },
+    {
+      "path": "/health",
+      "http": 200,
+      "passed": true
+    },
+    {
+      "path": "/privacy",
+      "http": 200,
+      "passed": true
+    }
+  ],
+  "private_access_checks": [
+    {
+      "path": "/alex/chat",
+      "http": 401,
+      "passed": true
+    },
+    {
+      "path": "/alex/handoffs",
+      "http": 401,
+      "passed": true
+    },
+    {
+      "path": "/alex/status",
+      "http": 401,
+      "passed": true
+    },
+    {
+      "path": "/messenger/seller/enable",
+      "http": 401,
+      "passed": true
+    },
+    {
+      "path": "/messenger/seller/results",
+      "http": 401,
+      "passed": true
+    }
+  ],
+  "worker": {
+    "release": "2bd70bfacdfffef8685ea6136e65332235330e4f",
+    "alex_enabled": true,
+    "tester_outbound_enabled": true,
+    "commercial_ingress_enabled": false
+  },
+  "existing_permission_evidence": {
+    "page_identity_matches": true,
+    "token_valid": true,
+    "pages_messaging_granted": true,
+    "app_messages_field": true,
+    "callback_matches": true,
+    "page_subscription_read_http": 403
+  },
+  "permissions_not_proven_by_token": {
+    "advanced_access": "not_verified",
+    "app_live": "not_verified"
+  },
+  "acceptance": {
+    "real_messenger_conversation": true,
+    "text_and_image_confirmed_by_tester": true,
+    "card_payment_response_validated_by_owner": true,
+    "meta_delivery_receipt_verified": false
+  },
+  "technical_checks_passed": true,
+  "public_operation_enabled": false,
+  "review_submission_status": "not_submitted_by_this_session",
+  "owner_account_steps": [
+    "Confirmar nivel de pages_messaging y modo de app en Meta",
+    "Completar únicamente los campos y requisitos que exija el panel",
+    "Proporcionar grabación y acceso de revisión restringido si Meta los requiere"
+  ],
+  "verified_at": "2026-10-16T20:48:52.930Z",
+  "workflow_run": 38964763311,
+  "workflow_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38964763311"
+}

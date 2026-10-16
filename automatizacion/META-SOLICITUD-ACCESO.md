@@ -2,6 +2,8 @@
 
 Preparación del 16 de octubre de 2026. Esta documentación no afirma que Meta haya aprobado ni recibido una solicitud. La solicitud se presenta desde la cuenta administradora de la aplicación existente; no se crea otra app ni se cambia de plan. [Evidencia de la conversación real](generated/fase2/alex-cloud-verificado.json).
 
+[Verificación HTTPS y permisos existentes](generated/fase2/meta-review-readiness-verificado.json): privacidad y eliminación HTTP 200; cinco rutas privadas HTTP 401 sin credenciales. Sin inferencias, envíos ni despliegues durante esa comprobación. El nivel de acceso avanzado y modo Live siguen sin acreditarse desde el panel.
+
 ## Campos y enlaces que ya podemos completar
 
 | Campo | Valor |
