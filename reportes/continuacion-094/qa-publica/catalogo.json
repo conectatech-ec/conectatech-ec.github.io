@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "fecha": "2026-10-16T02:58:17.184Z",
+  "fecha": "2026-10-16T03:14:46.975Z",
   "base": "https://conectatech-ec.github.io",
   "sku_solicitados": [
     "FOCO003",
@@ -11,7 +11,7 @@
     {
       "ancho_viewport": 1280,
       "alto_viewport": 900,
-      "estado": "REVISAR",
+      "estado": "VERIFICADO",
       "verificaciones": {
         "html_exacto": true,
         "metadatos_publicados": true,
@@ -38,29 +38,155 @@
         "pagina_activa": true,
         "paginacion_sin_desbordamiento": true,
         "categoria": true,
-        "productos_del_lote": false,
+        "productos_del_lote": true,
         "busqueda_sin_resultados": true,
         "restaurar_busqueda": true
       },
-      "errores": [
-        "Una o más tarjetas aprobadas fallan carga, enlaces, miniaturas o datos."
-      ],
+      "errores": [],
       "productos": [
         {
           "sku": "FOCO003",
-          "errores": [
-            "SKU ausente del catálogo o de los metadatos exigidos en Pages."
-          ]
+          "errores": [],
+          "tarjeta": {
+            "sku": "FOCO003",
+            "actualizado": "2026-10-16T02:58:13.427540+00:00",
+            "altura": 505.78125,
+            "ancho": 373.328125,
+            "titulo": "Foco LED recargable ASHUN de 15 W",
+            "categoria": "Iluminación · FOCO003",
+            "promo": "$15,00",
+            "pvp": "PVP $17,25",
+            "promo_px": 22,
+            "pvp_px": 10,
+            "pvp_tachado": false,
+            "contenido_largo": [],
+            "enlaces": {
+              "imagen": "/productos/foco003-focos-recargable-ashun/",
+              "titulo": "/productos/foco003-focos-recargable-ashun/",
+              "detalles": "/productos/foco003-focos-recargable-ashun/"
+            },
+            "imagen": {
+              "src": "/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3",
+              "srcset": "/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3 300w, /imagenes/foco003/FOCO003-01-600.webp?v=936e6425f7c3659f 600w, /imagenes/foco003/FOCO003-01.webp?v=6afe3f0c8284d936 1200w",
+              "cargada": true,
+              "naturalWidth": 380,
+              "naturalHeight": 380,
+              "actual": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-600.webp?v=936e6425f7c3659f",
+              "ajuste": "contain"
+            }
+          },
+          "miniaturas": [
+            {
+              "ancho": 300,
+              "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-300.webp",
+              "archivo_local": "imagenes/foco003/FOCO003-01-300.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "1697ded0094394a385ffbe481896fce257dd7307cb0e5888f5fba66eac92d9c3",
+              "sha256_local": "1697ded0094394a385ffbe481896fce257dd7307cb0e5888f5fba66eac92d9c3"
+            },
+            {
+              "ancho": 600,
+              "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-600.webp",
+              "archivo_local": "imagenes/foco003/FOCO003-01-600.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "936e6425f7c3659ffbc707864ff42f38b8bbfa74dba90c935dc76c86a984ec77",
+              "sha256_local": "936e6425f7c3659ffbc707864ff42f38b8bbfa74dba90c935dc76c86a984ec77"
+            },
+            {
+              "ancho": 1200,
+              "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01.webp",
+              "archivo_local": "imagenes/foco003/FOCO003-01.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "6afe3f0c8284d936699e0d88548a75ba476ced5aec70e1760a3b4910499754da",
+              "sha256_local": "6afe3f0c8284d936699e0d88548a75ba476ced5aec70e1760a3b4910499754da"
+            }
+          ],
+          "ficha": {
+            "url": "https://conectatech-ec.github.io/productos/foco003-focos-recargable-ashun/",
+            "archivo_local": "productos/foco003-focos-recargable-ashun/index.html",
+            "ok": true,
+            "http": 200,
+            "sha256": "ac2fddd65a5c72fb0d4b3178c20c18621ec617774a9db73d788841731f0a0da6",
+            "sha256_local": "ac2fddd65a5c72fb0d4b3178c20c18621ec617774a9db73d788841731f0a0da6"
+          },
+          "estado": "VERIFICADO"
         },
         {
           "sku": "STYL005",
-          "errores": [
-            "SKU ausente del catálogo o de los metadatos exigidos en Pages."
-          ]
+          "errores": [],
+          "tarjeta": {
+            "sku": "STYL005",
+            "actualizado": "2026-10-16T02:58:13.427540+00:00",
+            "altura": 505.78125,
+            "ancho": 373.328125,
+            "titulo": "Lápiz táctil blanco recargable por USB-C",
+            "categoria": "Soportes y Accesorios · STYL005",
+            "promo": "$18,89",
+            "pvp": "PVP $21,72",
+            "promo_px": 22,
+            "pvp_px": 10,
+            "pvp_tachado": false,
+            "contenido_largo": [],
+            "enlaces": {
+              "imagen": "/productos/styl005-stylus-pen-universal/",
+              "titulo": "/productos/styl005-stylus-pen-universal/",
+              "detalles": "/productos/styl005-stylus-pen-universal/"
+            },
+            "imagen": {
+              "src": "/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07",
+              "srcset": "/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07 300w, /imagenes/styl005/STYL005-01-600.webp?v=92fd67c4d29b4daf 600w, /imagenes/styl005/STYL005-01.webp?v=ea37cd5385107af2 1200w",
+              "cargada": true,
+              "naturalWidth": 380,
+              "naturalHeight": 380,
+              "actual": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-600.webp?v=92fd67c4d29b4daf",
+              "ajuste": "contain"
+            }
+          },
+          "miniaturas": [
+            {
+              "ancho": 300,
+              "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-300.webp",
+              "archivo_local": "imagenes/styl005/STYL005-01-300.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "cb3a97b315660b0724b25ced20c7c1d4f6d4852ed840ce84f5199f70026e8fa8",
+              "sha256_local": "cb3a97b315660b0724b25ced20c7c1d4f6d4852ed840ce84f5199f70026e8fa8"
+            },
+            {
+              "ancho": 600,
+              "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-600.webp",
+              "archivo_local": "imagenes/styl005/STYL005-01-600.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "92fd67c4d29b4daf9a71c60eaac8b6d0bdceeb9b3779c1ed32109bd6f8850b7d",
+              "sha256_local": "92fd67c4d29b4daf9a71c60eaac8b6d0bdceeb9b3779c1ed32109bd6f8850b7d"
+            },
+            {
+              "ancho": 1200,
+              "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01.webp",
+              "archivo_local": "imagenes/styl005/STYL005-01.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "ea37cd5385107af235e18f0b331295318a32efcc69b6a53bf63c34a84f7746be",
+              "sha256_local": "ea37cd5385107af235e18f0b331295318a32efcc69b6a53bf63c34a84f7746be"
+            }
+          ],
+          "ficha": {
+            "url": "https://conectatech-ec.github.io/productos/styl005-stylus-pen-universal/",
+            "archivo_local": "productos/styl005-stylus-pen-universal/index.html",
+            "ok": true,
+            "http": 200,
+            "sha256": "7f86d3311e5dbded0ba3cc232d74e3544506754f04197c16673c933ebe10df3b",
+            "sha256_local": "7f86d3311e5dbded0ba3cc232d74e3544506754f04197c16673c933ebe10df3b"
+          },
+          "estado": "VERIFICADO"
         }
       ],
       "http": 200,
-      "sha256_html": "11ec356d3a7ff81f7dbf06bcd5aab46839c6650ed79975e8556d2a525f08c790",
+      "sha256_html": "9ffff48e6ad08ef337a5b4926eeb16952bf2d0011c876263be31ad26d39d23b1",
       "destacados": [
         {
           "url": "/productos/telf024-telefono-honor-x5c-plus-256gb-4gb-4gb/",
@@ -85,6 +211,8 @@
       ],
       "ordenes": {
         "fotos": [
+          "FOCO003",
+          "STYL005",
           "ANTE001",
           "CASE002",
           "TARJ013",
@@ -106,11 +234,11 @@
           "JUGU147",
           "JUGU057",
           "JUGU163",
-          "PILA001",
-          "PILA003",
-          "PILA004"
+          "PILA001"
         ],
         "recientes": [
+          "FOCO003",
+          "STYL005",
           "ANTE001",
           "CASE002",
           "TARJ013",
@@ -132,9 +260,7 @@
           "JUGU147",
           "JUGU057",
           "JUGU163",
-          "PILA001",
-          "PILA003",
-          "PILA004"
+          "PILA001"
         ],
         "catalogo": [
           "AROD001",
@@ -248,10 +374,66 @@
         "ancho_documento": 1280,
         "tarjetas": [
           {
+            "sku": "FOCO003",
+            "actualizado": "2026-10-16T02:58:13.427540+00:00",
+            "altura": 505.78125,
+            "ancho": 373.328125,
+            "titulo": "Foco LED recargable ASHUN de 15 W",
+            "categoria": "Iluminación · FOCO003",
+            "promo": "$15,00",
+            "pvp": "PVP $17,25",
+            "promo_px": 22,
+            "pvp_px": 10,
+            "pvp_tachado": false,
+            "contenido_largo": [],
+            "enlaces": {
+              "imagen": "/productos/foco003-focos-recargable-ashun/",
+              "titulo": "/productos/foco003-focos-recargable-ashun/",
+              "detalles": "/productos/foco003-focos-recargable-ashun/"
+            },
+            "imagen": {
+              "src": "/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3",
+              "srcset": "/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3 300w, /imagenes/foco003/FOCO003-01-600.webp?v=936e6425f7c3659f 600w, /imagenes/foco003/FOCO003-01.webp?v=6afe3f0c8284d936 1200w",
+              "cargada": true,
+              "naturalWidth": 380,
+              "naturalHeight": 380,
+              "actual": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-600.webp?v=936e6425f7c3659f",
+              "ajuste": "contain"
+            }
+          },
+          {
+            "sku": "STYL005",
+            "actualizado": "2026-10-16T02:58:13.427540+00:00",
+            "altura": 505.78125,
+            "ancho": 373.328125,
+            "titulo": "Lápiz táctil blanco recargable por USB-C",
+            "categoria": "Soportes y Accesorios · STYL005",
+            "promo": "$18,89",
+            "pvp": "PVP $21,72",
+            "promo_px": 22,
+            "pvp_px": 10,
+            "pvp_tachado": false,
+            "contenido_largo": [],
+            "enlaces": {
+              "imagen": "/productos/styl005-stylus-pen-universal/",
+              "titulo": "/productos/styl005-stylus-pen-universal/",
+              "detalles": "/productos/styl005-stylus-pen-universal/"
+            },
+            "imagen": {
+              "src": "/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07",
+              "srcset": "/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07 300w, /imagenes/styl005/STYL005-01-600.webp?v=92fd67c4d29b4daf 600w, /imagenes/styl005/STYL005-01.webp?v=ea37cd5385107af2 1200w",
+              "cargada": true,
+              "naturalWidth": 380,
+              "naturalHeight": 380,
+              "actual": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-600.webp?v=92fd67c4d29b4daf",
+              "ajuste": "contain"
+            }
+          },
+          {
             "sku": "ANTE001",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.328125,
+            "ancho": 373.34375,
             "titulo": "Antena mini para TV",
             "categoria": "TV y Entretenimiento · ANTE001",
             "promo": "$6,50",
@@ -307,7 +489,7 @@
             "sku": "TARJ013",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.34375,
+            "ancho": 373.328125,
             "titulo": "Memoria ADATA microSDXC de 128 GB con adaptador",
             "categoria": "Hogar y Accesorios · TARJ013",
             "promo": "$29,35",
@@ -335,7 +517,7 @@
             "sku": "COBE009",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.328125,
+            "ancho": 373.34375,
             "titulo": "Estuche Spigen para AirPods Pro 2",
             "categoria": "Protección para Dispositivos · COBE009",
             "promo": "$10,01",
@@ -391,7 +573,7 @@
             "sku": "CUBO023",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.34375,
+            "ancho": 373.328125,
             "titulo": "Cargador Klipxtreme PowerWall 20 USB-C de 20 W",
             "categoria": "Cargadores y Energía · CUBO023",
             "promo": "$9,90",
@@ -419,7 +601,7 @@
             "sku": "GANC001",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.328125,
+            "ancho": 373.34375,
             "titulo": "Ejercitador de mano con resistencia ajustable",
             "categoria": "Deportes · GANC001",
             "promo": "$6,00",
@@ -464,10 +646,10 @@
             "imagen": {
               "src": "/imagenes/jugu105/JUGU105-01-300.webp?v=a7d8e4cb4555e61f",
               "srcset": "/imagenes/jugu105/JUGU105-01-300.webp?v=a7d8e4cb4555e61f 300w, /imagenes/jugu105/JUGU105-01-600.webp?v=a9487a8219b9776a 600w, /imagenes/jugu105/JUGU105-01.webp?v=0dc7c894820f3ca1 1200w",
-              "cargada": true,
-              "naturalWidth": 380,
-              "naturalHeight": 380,
-              "actual": "https://conectatech-ec.github.io/imagenes/jugu105/JUGU105-01-600.webp?v=a9487a8219b9776a",
+              "cargada": false,
+              "naturalWidth": 0,
+              "naturalHeight": 0,
+              "actual": "",
               "ajuste": "contain"
             }
           },
@@ -475,7 +657,7 @@
             "sku": "JUGU153",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.34375,
+            "ancho": 373.328125,
             "titulo": "Local armable Street View 88090",
             "categoria": "Juguetes y Coleccionables · JUGU153",
             "promo": "$19,00",
@@ -492,10 +674,10 @@
             "imagen": {
               "src": "/imagenes/jugu153/JUGU153-01-300.webp?v=e660eab244b70855",
               "srcset": "/imagenes/jugu153/JUGU153-01-300.webp?v=e660eab244b70855 300w, /imagenes/jugu153/JUGU153-01-600.webp?v=84663f1870107015 600w, /imagenes/jugu153/JUGU153-01.webp?v=e143ee30e27413d7 1200w",
-              "cargada": true,
-              "naturalWidth": 380,
-              "naturalHeight": 380,
-              "actual": "https://conectatech-ec.github.io/imagenes/jugu153/JUGU153-01-600.webp?v=84663f1870107015",
+              "cargada": false,
+              "naturalWidth": 0,
+              "naturalHeight": 0,
+              "actual": "",
               "ajuste": "contain"
             }
           },
@@ -503,7 +685,7 @@
             "sku": "JUGU090",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.328125,
+            "ancho": 373.34375,
             "titulo": "Modelo armable transformable FG831 de 689 piezas",
             "categoria": "Juguetes y Coleccionables · JUGU090",
             "promo": "$39,00",
@@ -559,7 +741,7 @@
             "sku": "JUGU160",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.34375,
+            "ancho": 373.328125,
             "titulo": "Carrusel armable Creative Music Box 656009",
             "categoria": "Juguetes y Coleccionables · JUGU160",
             "promo": "$39,45",
@@ -587,7 +769,7 @@
             "sku": "JUGU058",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.328125,
+            "ancho": 373.34375,
             "titulo": "Dinosaurio mecánico armable 13087",
             "categoria": "Juguetes y Coleccionables · JUGU058",
             "promo": "$37,29",
@@ -643,7 +825,7 @@
             "sku": "JUGU067",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.34375,
+            "ancho": 373.328125,
             "titulo": "Consola portátil plegable M3",
             "categoria": "Juguetes y Coleccionables · JUGU067",
             "promo": "$14,90",
@@ -671,7 +853,7 @@
             "sku": "JUGU013",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.328125,
+            "ancho": 373.34375,
             "titulo": "Consola portátil X8",
             "categoria": "Juguetes y Coleccionables · JUGU013",
             "promo": "$59,00",
@@ -727,7 +909,7 @@
             "sku": "JUGU007",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.34375,
+            "ancho": 373.328125,
             "titulo": "Moto clásica de colección 6011",
             "categoria": "Juguetes y Coleccionables · JUGU007",
             "promo": "$8,00",
@@ -755,7 +937,7 @@
             "sku": "JUGU147",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.328125,
+            "ancho": 373.34375,
             "titulo": "Perro electrónico con ruedas",
             "categoria": "Juguetes y Coleccionables · JUGU147",
             "promo": "$42,00",
@@ -811,7 +993,7 @@
             "sku": "JUGU163",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.34375,
+            "ancho": 373.328125,
             "titulo": "Paleta de maquillaje Igoodco de 15 colores",
             "categoria": "Juguetes y Coleccionables · JUGU163",
             "promo": "$12,50",
@@ -839,7 +1021,7 @@
             "sku": "PILA001",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
             "altura": 505.78125,
-            "ancho": 373.328125,
+            "ancho": 373.34375,
             "titulo": "Pila alcalina PKCELL de 9 V",
             "categoria": "Cargadores y Energía · PILA001",
             "promo": "$4,80",
@@ -862,68 +1044,12 @@
               "actual": "",
               "ajuste": "contain"
             }
-          },
-          {
-            "sku": "PILA003",
-            "actualizado": "2026-10-16T01:52:57.605523+00:00",
-            "altura": 505.78125,
-            "ancho": 373.328125,
-            "titulo": "Pila alcalina Rayovac de 9 V",
-            "categoria": "Cargadores y Energía · PILA003",
-            "promo": "$5,95",
-            "pvp": "PVP $6,84",
-            "promo_px": 22,
-            "pvp_px": 10,
-            "pvp_tachado": false,
-            "contenido_largo": [],
-            "enlaces": {
-              "imagen": "/productos/pila003-pila-9v-alcalina-rayovac/",
-              "titulo": "/productos/pila003-pila-9v-alcalina-rayovac/",
-              "detalles": "/productos/pila003-pila-9v-alcalina-rayovac/"
-            },
-            "imagen": {
-              "src": "/imagenes/pila003/PILA003-01-300.webp?v=1247215d27694e58",
-              "srcset": "/imagenes/pila003/PILA003-01-300.webp?v=1247215d27694e58 300w, /imagenes/pila003/PILA003-01-600.webp?v=ff5773032fc2e670 600w, /imagenes/pila003/PILA003-01.webp?v=fafc10e01b34a9ef 1200w",
-              "cargada": false,
-              "naturalWidth": 0,
-              "naturalHeight": 0,
-              "actual": "",
-              "ajuste": "contain"
-            }
-          },
-          {
-            "sku": "PILA004",
-            "actualizado": "2026-10-16T01:52:57.605523+00:00",
-            "altura": 505.78125,
-            "ancho": 373.34375,
-            "titulo": "Pila alcalina Maxday de 9 V",
-            "categoria": "Cargadores y Energía · PILA004",
-            "promo": "$4,15",
-            "pvp": "PVP $4,77",
-            "promo_px": 22,
-            "pvp_px": 10,
-            "pvp_tachado": false,
-            "contenido_largo": [],
-            "enlaces": {
-              "imagen": "/productos/pila004-pila-9v-maxday/",
-              "titulo": "/productos/pila004-pila-9v-maxday/",
-              "detalles": "/productos/pila004-pila-9v-maxday/"
-            },
-            "imagen": {
-              "src": "/imagenes/pila004/PILA004-01-300.webp?v=19cad5ecedce8c15",
-              "srcset": "/imagenes/pila004/PILA004-01-300.webp?v=19cad5ecedce8c15 300w, /imagenes/pila004/PILA004-01-600.webp?v=2a0c6bc5efc8ee32 600w, /imagenes/pila004/PILA004-01.webp?v=35c3042375ec962d 1200w",
-              "cargada": false,
-              "naturalWidth": 0,
-              "naturalHeight": 0,
-              "actual": "",
-              "ajuste": "contain"
-            }
           }
         ]
       },
       "captura": {
         "archivo": "reportes/continuacion-094/qa-publica/catalogo/catalogo-1280.png",
-        "sha256": "0f1da3788c7aaea2051d8bdb5a54d57feac7d78283b41d5c50bc5d970e3e8d1b",
+        "sha256": "9f57d106592e12fc7b8c3738107ae00ed65be7663c5bef1b0f2dbc502b15e694",
         "recorte": {
           "x": 64,
           "y": 158.140625,
@@ -935,7 +1061,7 @@
     {
       "ancho_viewport": 390,
       "alto_viewport": 900,
-      "estado": "REVISAR",
+      "estado": "VERIFICADO",
       "verificaciones": {
         "html_exacto": true,
         "metadatos_publicados": true,
@@ -962,29 +1088,155 @@
         "pagina_activa": true,
         "paginacion_sin_desbordamiento": true,
         "categoria": true,
-        "productos_del_lote": false,
+        "productos_del_lote": true,
         "busqueda_sin_resultados": true,
         "restaurar_busqueda": true
       },
-      "errores": [
-        "Una o más tarjetas aprobadas fallan carga, enlaces, miniaturas o datos."
-      ],
+      "errores": [],
       "productos": [
         {
           "sku": "FOCO003",
-          "errores": [
-            "SKU ausente del catálogo o de los metadatos exigidos en Pages."
-          ]
+          "errores": [],
+          "tarjeta": {
+            "sku": "FOCO003",
+            "actualizado": "2026-10-16T02:58:13.427540+00:00",
+            "altura": 336.6875,
+            "ancho": 176.5,
+            "titulo": "Foco LED recargable ASHUN de 15 W",
+            "categoria": "Iluminación · FOCO003",
+            "promo": "$15,00",
+            "pvp": "PVP $17,25",
+            "promo_px": 20,
+            "pvp_px": 10,
+            "pvp_tachado": false,
+            "contenido_largo": [],
+            "enlaces": {
+              "imagen": "/productos/foco003-focos-recargable-ashun/",
+              "titulo": "/productos/foco003-focos-recargable-ashun/",
+              "detalles": "/productos/foco003-focos-recargable-ashun/"
+            },
+            "imagen": {
+              "src": "/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3",
+              "srcset": "/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3 300w, /imagenes/foco003/FOCO003-01-600.webp?v=936e6425f7c3659f 600w, /imagenes/foco003/FOCO003-01.webp?v=6afe3f0c8284d936 1200w",
+              "cargada": true,
+              "naturalWidth": 171,
+              "naturalHeight": 171,
+              "actual": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3",
+              "ajuste": "contain"
+            }
+          },
+          "miniaturas": [
+            {
+              "ancho": 300,
+              "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-300.webp",
+              "archivo_local": "imagenes/foco003/FOCO003-01-300.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "1697ded0094394a385ffbe481896fce257dd7307cb0e5888f5fba66eac92d9c3",
+              "sha256_local": "1697ded0094394a385ffbe481896fce257dd7307cb0e5888f5fba66eac92d9c3"
+            },
+            {
+              "ancho": 600,
+              "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-600.webp",
+              "archivo_local": "imagenes/foco003/FOCO003-01-600.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "936e6425f7c3659ffbc707864ff42f38b8bbfa74dba90c935dc76c86a984ec77",
+              "sha256_local": "936e6425f7c3659ffbc707864ff42f38b8bbfa74dba90c935dc76c86a984ec77"
+            },
+            {
+              "ancho": 1200,
+              "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01.webp",
+              "archivo_local": "imagenes/foco003/FOCO003-01.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "6afe3f0c8284d936699e0d88548a75ba476ced5aec70e1760a3b4910499754da",
+              "sha256_local": "6afe3f0c8284d936699e0d88548a75ba476ced5aec70e1760a3b4910499754da"
+            }
+          ],
+          "ficha": {
+            "url": "https://conectatech-ec.github.io/productos/foco003-focos-recargable-ashun/",
+            "archivo_local": "productos/foco003-focos-recargable-ashun/index.html",
+            "ok": true,
+            "http": 200,
+            "sha256": "ac2fddd65a5c72fb0d4b3178c20c18621ec617774a9db73d788841731f0a0da6",
+            "sha256_local": "ac2fddd65a5c72fb0d4b3178c20c18621ec617774a9db73d788841731f0a0da6"
+          },
+          "estado": "VERIFICADO"
         },
         {
           "sku": "STYL005",
-          "errores": [
-            "SKU ausente del catálogo o de los metadatos exigidos en Pages."
-          ]
+          "errores": [],
+          "tarjeta": {
+            "sku": "STYL005",
+            "actualizado": "2026-10-16T02:58:13.427540+00:00",
+            "altura": 348.375,
+            "ancho": 176.5,
+            "titulo": "Lápiz táctil blanco recargable por USB-C",
+            "categoria": "Soportes y Accesorios · STYL005",
+            "promo": "$18,89",
+            "pvp": "PVP $21,72",
+            "promo_px": 20,
+            "pvp_px": 10,
+            "pvp_tachado": false,
+            "contenido_largo": [],
+            "enlaces": {
+              "imagen": "/productos/styl005-stylus-pen-universal/",
+              "titulo": "/productos/styl005-stylus-pen-universal/",
+              "detalles": "/productos/styl005-stylus-pen-universal/"
+            },
+            "imagen": {
+              "src": "/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07",
+              "srcset": "/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07 300w, /imagenes/styl005/STYL005-01-600.webp?v=92fd67c4d29b4daf 600w, /imagenes/styl005/STYL005-01.webp?v=ea37cd5385107af2 1200w",
+              "cargada": true,
+              "naturalWidth": 171,
+              "naturalHeight": 171,
+              "actual": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07",
+              "ajuste": "contain"
+            }
+          },
+          "miniaturas": [
+            {
+              "ancho": 300,
+              "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-300.webp",
+              "archivo_local": "imagenes/styl005/STYL005-01-300.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "cb3a97b315660b0724b25ced20c7c1d4f6d4852ed840ce84f5199f70026e8fa8",
+              "sha256_local": "cb3a97b315660b0724b25ced20c7c1d4f6d4852ed840ce84f5199f70026e8fa8"
+            },
+            {
+              "ancho": 600,
+              "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-600.webp",
+              "archivo_local": "imagenes/styl005/STYL005-01-600.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "92fd67c4d29b4daf9a71c60eaac8b6d0bdceeb9b3779c1ed32109bd6f8850b7d",
+              "sha256_local": "92fd67c4d29b4daf9a71c60eaac8b6d0bdceeb9b3779c1ed32109bd6f8850b7d"
+            },
+            {
+              "ancho": 1200,
+              "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01.webp",
+              "archivo_local": "imagenes/styl005/STYL005-01.webp",
+              "ok": true,
+              "http": 200,
+              "sha256": "ea37cd5385107af235e18f0b331295318a32efcc69b6a53bf63c34a84f7746be",
+              "sha256_local": "ea37cd5385107af235e18f0b331295318a32efcc69b6a53bf63c34a84f7746be"
+            }
+          ],
+          "ficha": {
+            "url": "https://conectatech-ec.github.io/productos/styl005-stylus-pen-universal/",
+            "archivo_local": "productos/styl005-stylus-pen-universal/index.html",
+            "ok": true,
+            "http": 200,
+            "sha256": "7f86d3311e5dbded0ba3cc232d74e3544506754f04197c16673c933ebe10df3b",
+            "sha256_local": "7f86d3311e5dbded0ba3cc232d74e3544506754f04197c16673c933ebe10df3b"
+          },
+          "estado": "VERIFICADO"
         }
       ],
       "http": 200,
-      "sha256_html": "11ec356d3a7ff81f7dbf06bcd5aab46839c6650ed79975e8556d2a525f08c790",
+      "sha256_html": "9ffff48e6ad08ef337a5b4926eeb16952bf2d0011c876263be31ad26d39d23b1",
       "destacados": [
         {
           "url": "/productos/telf024-telefono-honor-x5c-plus-256gb-4gb-4gb/",
@@ -1009,6 +1261,8 @@
       ],
       "ordenes": {
         "fotos": [
+          "FOCO003",
+          "STYL005",
           "ANTE001",
           "CASE002",
           "TARJ013",
@@ -1030,11 +1284,11 @@
           "JUGU147",
           "JUGU057",
           "JUGU163",
-          "PILA001",
-          "PILA003",
-          "PILA004"
+          "PILA001"
         ],
         "recientes": [
+          "FOCO003",
+          "STYL005",
           "ANTE001",
           "CASE002",
           "TARJ013",
@@ -1056,9 +1310,7 @@
           "JUGU147",
           "JUGU057",
           "JUGU163",
-          "PILA001",
-          "PILA003",
-          "PILA004"
+          "PILA001"
         ],
         "catalogo": [
           "AROD001",
@@ -1171,6 +1423,62 @@
         "scrollWidth": 362,
         "ancho_documento": 390,
         "tarjetas": [
+          {
+            "sku": "FOCO003",
+            "actualizado": "2026-10-16T02:58:13.427540+00:00",
+            "altura": 348.375,
+            "ancho": 176.5,
+            "titulo": "Foco LED recargable ASHUN de 15 W",
+            "categoria": "Iluminación · FOCO003",
+            "promo": "$15,00",
+            "pvp": "PVP $17,25",
+            "promo_px": 20,
+            "pvp_px": 10,
+            "pvp_tachado": false,
+            "contenido_largo": [],
+            "enlaces": {
+              "imagen": "/productos/foco003-focos-recargable-ashun/",
+              "titulo": "/productos/foco003-focos-recargable-ashun/",
+              "detalles": "/productos/foco003-focos-recargable-ashun/"
+            },
+            "imagen": {
+              "src": "/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3",
+              "srcset": "/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3 300w, /imagenes/foco003/FOCO003-01-600.webp?v=936e6425f7c3659f 600w, /imagenes/foco003/FOCO003-01.webp?v=6afe3f0c8284d936 1200w",
+              "cargada": true,
+              "naturalWidth": 171,
+              "naturalHeight": 171,
+              "actual": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-300.webp?v=1697ded0094394a3",
+              "ajuste": "contain"
+            }
+          },
+          {
+            "sku": "STYL005",
+            "actualizado": "2026-10-16T02:58:13.427540+00:00",
+            "altura": 348.375,
+            "ancho": 176.5,
+            "titulo": "Lápiz táctil blanco recargable por USB-C",
+            "categoria": "Soportes y Accesorios · STYL005",
+            "promo": "$18,89",
+            "pvp": "PVP $21,72",
+            "promo_px": 20,
+            "pvp_px": 10,
+            "pvp_tachado": false,
+            "contenido_largo": [],
+            "enlaces": {
+              "imagen": "/productos/styl005-stylus-pen-universal/",
+              "titulo": "/productos/styl005-stylus-pen-universal/",
+              "detalles": "/productos/styl005-stylus-pen-universal/"
+            },
+            "imagen": {
+              "src": "/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07",
+              "srcset": "/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07 300w, /imagenes/styl005/STYL005-01-600.webp?v=92fd67c4d29b4daf 600w, /imagenes/styl005/STYL005-01.webp?v=ea37cd5385107af2 1200w",
+              "cargada": true,
+              "naturalWidth": 171,
+              "naturalHeight": 171,
+              "actual": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-300.webp?v=cb3a97b315660b07",
+              "ajuste": "contain"
+            }
+          },
           {
             "sku": "ANTE001",
             "actualizado": "2026-10-16T01:52:57.605523+00:00",
@@ -1304,10 +1612,10 @@
             "imagen": {
               "src": "/imagenes/cubo016/CUBO016-01-300.webp?v=e4774d424709935d",
               "srcset": "/imagenes/cubo016/CUBO016-01-300.webp?v=e4774d424709935d 300w, /imagenes/cubo016/CUBO016-01-600.webp?v=e6cb0553b56c1bc8 600w, /imagenes/cubo016/CUBO016-01.webp?v=8a678a1609f7fd63 1200w",
-              "cargada": true,
-              "naturalWidth": 171,
-              "naturalHeight": 171,
-              "actual": "https://conectatech-ec.github.io/imagenes/cubo016/CUBO016-01-300.webp?v=e4774d424709935d",
+              "cargada": false,
+              "naturalWidth": 0,
+              "naturalHeight": 0,
+              "actual": "",
               "ajuste": "contain"
             }
           },
@@ -1332,10 +1640,10 @@
             "imagen": {
               "src": "/imagenes/cubo023/CUBO023-01-300.webp?v=ce128ff0b6dce467",
               "srcset": "/imagenes/cubo023/CUBO023-01-300.webp?v=ce128ff0b6dce467 300w, /imagenes/cubo023/CUBO023-01-600.webp?v=fe46646c44c129a7 600w, /imagenes/cubo023/CUBO023-01.webp?v=5c3a976681170631 1200w",
-              "cargada": true,
-              "naturalWidth": 171,
-              "naturalHeight": 171,
-              "actual": "https://conectatech-ec.github.io/imagenes/cubo023/CUBO023-01-300.webp?v=ce128ff0b6dce467",
+              "cargada": false,
+              "naturalWidth": 0,
+              "naturalHeight": 0,
+              "actual": "",
               "ajuste": "contain"
             }
           },
@@ -1786,68 +2094,12 @@
               "actual": "",
               "ajuste": "contain"
             }
-          },
-          {
-            "sku": "PILA003",
-            "actualizado": "2026-10-16T01:52:57.605523+00:00",
-            "altura": 348.375,
-            "ancho": 176.5,
-            "titulo": "Pila alcalina Rayovac de 9 V",
-            "categoria": "Cargadores y Energía · PILA003",
-            "promo": "$5,95",
-            "pvp": "PVP $6,84",
-            "promo_px": 20,
-            "pvp_px": 10,
-            "pvp_tachado": false,
-            "contenido_largo": [],
-            "enlaces": {
-              "imagen": "/productos/pila003-pila-9v-alcalina-rayovac/",
-              "titulo": "/productos/pila003-pila-9v-alcalina-rayovac/",
-              "detalles": "/productos/pila003-pila-9v-alcalina-rayovac/"
-            },
-            "imagen": {
-              "src": "/imagenes/pila003/PILA003-01-300.webp?v=1247215d27694e58",
-              "srcset": "/imagenes/pila003/PILA003-01-300.webp?v=1247215d27694e58 300w, /imagenes/pila003/PILA003-01-600.webp?v=ff5773032fc2e670 600w, /imagenes/pila003/PILA003-01.webp?v=fafc10e01b34a9ef 1200w",
-              "cargada": false,
-              "naturalWidth": 0,
-              "naturalHeight": 0,
-              "actual": "",
-              "ajuste": "contain"
-            }
-          },
-          {
-            "sku": "PILA004",
-            "actualizado": "2026-10-16T01:52:57.605523+00:00",
-            "altura": 348.375,
-            "ancho": 176.5,
-            "titulo": "Pila alcalina Maxday de 9 V",
-            "categoria": "Cargadores y Energía · PILA004",
-            "promo": "$4,15",
-            "pvp": "PVP $4,77",
-            "promo_px": 20,
-            "pvp_px": 10,
-            "pvp_tachado": false,
-            "contenido_largo": [],
-            "enlaces": {
-              "imagen": "/productos/pila004-pila-9v-maxday/",
-              "titulo": "/productos/pila004-pila-9v-maxday/",
-              "detalles": "/productos/pila004-pila-9v-maxday/"
-            },
-            "imagen": {
-              "src": "/imagenes/pila004/PILA004-01-300.webp?v=19cad5ecedce8c15",
-              "srcset": "/imagenes/pila004/PILA004-01-300.webp?v=19cad5ecedce8c15 300w, /imagenes/pila004/PILA004-01-600.webp?v=2a0c6bc5efc8ee32 600w, /imagenes/pila004/PILA004-01.webp?v=35c3042375ec962d 1200w",
-              "cargada": false,
-              "naturalWidth": 0,
-              "naturalHeight": 0,
-              "actual": "",
-              "ajuste": "contain"
-            }
           }
         ]
       },
       "captura": {
         "archivo": "reportes/continuacion-094/qa-publica/catalogo/catalogo-390.png",
-        "sha256": "37a462c6b085a0946c0fd463892848b7576c4e020e985f51d6ccf6fab5ef9666",
+        "sha256": "3089a996e0fe46180721bee0d9e8d76c61a6046d14fa55deb1d8280a14a39f6a",
         "recorte": {
           "x": 14,
           "y": 0,
@@ -1867,12 +2119,76 @@
       "sha256_local": "b75dde112ed36fc4aa50680ad81c2cfb2c9528a0488b2c952b77213efcd71934"
     },
     {
-      "url": "https://conectatech-ec.github.io/assets/catalogo-publicado.js?v=26a816affc8f",
+      "url": "https://conectatech-ec.github.io/assets/catalogo-publicado.js?v=aefde4b39a03",
       "archivo_local": "assets/catalogo-publicado.js",
       "ok": true,
       "http": 200,
-      "sha256": "26a816affc8f32517b97296f6a131bdb304f80ef32a2e9af729416579fa7404b",
-      "sha256_local": "26a816affc8f32517b97296f6a131bdb304f80ef32a2e9af729416579fa7404b"
+      "sha256": "aefde4b39a03f4037e988675e3c74f86e8608f4edaee88efe0af1266e477afdd",
+      "sha256_local": "aefde4b39a03f4037e988675e3c74f86e8608f4edaee88efe0af1266e477afdd"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-300.webp",
+      "archivo_local": "imagenes/foco003/FOCO003-01-300.webp",
+      "ok": true,
+      "http": 200,
+      "sha256": "1697ded0094394a385ffbe481896fce257dd7307cb0e5888f5fba66eac92d9c3",
+      "sha256_local": "1697ded0094394a385ffbe481896fce257dd7307cb0e5888f5fba66eac92d9c3"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01-600.webp",
+      "archivo_local": "imagenes/foco003/FOCO003-01-600.webp",
+      "ok": true,
+      "http": 200,
+      "sha256": "936e6425f7c3659ffbc707864ff42f38b8bbfa74dba90c935dc76c86a984ec77",
+      "sha256_local": "936e6425f7c3659ffbc707864ff42f38b8bbfa74dba90c935dc76c86a984ec77"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/imagenes/foco003/FOCO003-01.webp",
+      "archivo_local": "imagenes/foco003/FOCO003-01.webp",
+      "ok": true,
+      "http": 200,
+      "sha256": "6afe3f0c8284d936699e0d88548a75ba476ced5aec70e1760a3b4910499754da",
+      "sha256_local": "6afe3f0c8284d936699e0d88548a75ba476ced5aec70e1760a3b4910499754da"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/productos/foco003-focos-recargable-ashun/",
+      "archivo_local": "productos/foco003-focos-recargable-ashun/index.html",
+      "ok": true,
+      "http": 200,
+      "sha256": "ac2fddd65a5c72fb0d4b3178c20c18621ec617774a9db73d788841731f0a0da6",
+      "sha256_local": "ac2fddd65a5c72fb0d4b3178c20c18621ec617774a9db73d788841731f0a0da6"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-300.webp",
+      "archivo_local": "imagenes/styl005/STYL005-01-300.webp",
+      "ok": true,
+      "http": 200,
+      "sha256": "cb3a97b315660b0724b25ced20c7c1d4f6d4852ed840ce84f5199f70026e8fa8",
+      "sha256_local": "cb3a97b315660b0724b25ced20c7c1d4f6d4852ed840ce84f5199f70026e8fa8"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01-600.webp",
+      "archivo_local": "imagenes/styl005/STYL005-01-600.webp",
+      "ok": true,
+      "http": 200,
+      "sha256": "92fd67c4d29b4daf9a71c60eaac8b6d0bdceeb9b3779c1ed32109bd6f8850b7d",
+      "sha256_local": "92fd67c4d29b4daf9a71c60eaac8b6d0bdceeb9b3779c1ed32109bd6f8850b7d"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/imagenes/styl005/STYL005-01.webp",
+      "archivo_local": "imagenes/styl005/STYL005-01.webp",
+      "ok": true,
+      "http": 200,
+      "sha256": "ea37cd5385107af235e18f0b331295318a32efcc69b6a53bf63c34a84f7746be",
+      "sha256_local": "ea37cd5385107af235e18f0b331295318a32efcc69b6a53bf63c34a84f7746be"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/productos/styl005-stylus-pen-universal/",
+      "archivo_local": "productos/styl005-stylus-pen-universal/index.html",
+      "ok": true,
+      "http": 200,
+      "sha256": "7f86d3311e5dbded0ba3cc232d74e3544506754f04197c16673c933ebe10df3b",
+      "sha256_local": "7f86d3311e5dbded0ba3cc232d74e3544506754f04197c16673c933ebe10df3b"
     }
   ],
   "advertencias_ajenas_al_lote": [],
@@ -1883,8 +2199,8 @@
   },
   "resumen": {
     "vistas_comprobadas": 2,
-    "vistas_verificadas": 0,
+    "vistas_verificadas": 2,
     "sku_solicitados": 2,
-    "errores": 2
+    "errores": 0
   }
 }
