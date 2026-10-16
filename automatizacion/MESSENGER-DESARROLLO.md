@@ -6,6 +6,8 @@ Callback HTTPS exacto:
 
 Alcance: recibir únicamente pruebas de la Página CONECTATECHec, validar firma, reconocer MICR27/MICR027, POWE003 y ADAP005, preparar borradores comerciales y consultar su resultado con autenticación. Nunca se envía un mensaje por Graph API, no se publica la app ni se procesan clientes no autorizados. No se modifica main ni el catálogo.
 
+**Control adicional:** todos los despliegues fijan `META_INGRESS_ENABLED=false`. Los eventos de Página autenticados se ignoran sin almacenar hasta una habilitación deliberada posterior. Las pruebas internas usan solo el espacio CI y no abren la recepción de Meta. Configurar secretos o completar el challenge no cambia ese control.
+
 ## Configuración segura
 
 En GitHub → Settings → Environments → `conectatech-piloto-gratis`, agregar:

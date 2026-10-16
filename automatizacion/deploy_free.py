@@ -54,12 +54,12 @@ def check_connection(api):
     if not isinstance(settings,dict): raise ValueError('Pilot settings could not be verified')
     # Avoid discarding or inheriting production bindings from an unexpected Worker.
     for b in settings.get('bindings',[]):
-        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE','META_APP_SECRET','META_VERIFY_TOKEN','META_PAGE_ID','META_TEST_SENDER_IDS','META_MODE','MESSENGER_TEST_INBOX'} or b.get('type') not in {'ai','plain_text','secret_text','durable_object_namespace'}:
+        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE','META_APP_SECRET','META_VERIFY_TOKEN','META_PAGE_ID','META_TEST_SENDER_IDS','META_MODE','MESSENGER_TEST_INBOX','META_INGRESS_ENABLED'} or b.get('type') not in {'ai','plain_text','secret_text','durable_object_namespace'}:
             raise ValueError('Unexpected existing binding; review isolated pilot before upload')
     return settings
 
 def worker_metadata(config=None):
-    bindings=[{'type':'ai','name':'AI'},{'type':'plain_text','name':'LIVE_DATA','text':'true'},{'type':'plain_text','name':'FREE_TIER_VERIFIED','text':'true'},{'type':'plain_text','name':'PILOT_RELEASE','text':os.environ.get('GITHUB_SHA','local-unreleased')},{'type':'plain_text','name':'META_MODE','text':'development-only'},{'type':'durable_object_namespace','name':'MESSENGER_TEST_INBOX','class_name':'MessengerTestInbox'}]
+    bindings=[{'type':'ai','name':'AI'},{'type':'plain_text','name':'LIVE_DATA','text':'true'},{'type':'plain_text','name':'FREE_TIER_VERIFIED','text':'true'},{'type':'plain_text','name':'PILOT_RELEASE','text':os.environ.get('GITHUB_SHA','local-unreleased')},{'type':'plain_text','name':'META_MODE','text':'development-only'},{'type':'plain_text','name':'META_INGRESS_ENABLED','text':'false'},{'type':'durable_object_namespace','name':'MESSENGER_TEST_INBOX','class_name':'MessengerTestInbox'}]
     page=(os.environ.get('META_PAGE_ID','') or (config or {}).get('meta_page_id','')).strip()
     if page:
         if not re.fullmatch(r'[0-9]+',page):raise ValueError('META_PAGE_ID must be a numeric Page ID')

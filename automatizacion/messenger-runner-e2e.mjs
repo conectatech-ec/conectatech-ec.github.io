@@ -12,7 +12,7 @@ const namespace={idFromName:name=>name,get(name){
  }
  return {fetch:(url,options)=>stores.get(name).fetch(new Request(url,options))};
 }};
-const env={PILOT_TOKEN:'synthetic-runner-token-not-a-production-secret',META_MODE:'development-only',META_PAGE_ID:'100000000000001',META_APP_SECRET:'synthetic-app-secret-not-a-Meta-credential',META_VERIFY_TOKEN:'synthetic-runner-verification-token-0000001',META_TEST_SENDER_IDS:'100000000000002',MESSENGER_TEST_INBOX:namespace};
+const env={PILOT_TOKEN:'synthetic-runner-token-not-a-production-secret',META_MODE:'development-only',META_INGRESS_ENABLED:'false',META_PAGE_ID:'100000000000001',META_APP_SECRET:'synthetic-app-secret-not-a-Meta-credential',META_VERIFY_TOKEN:'synthetic-runner-verification-token-0000001',META_TEST_SENDER_IDS:'100000000000002',MESSENGER_TEST_INBOX:namespace};
 const server=createServer(async(req,res)=>{
  try {
   const chunks=[];for await(const chunk of req)chunks.push(chunk);

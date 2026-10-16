@@ -23,7 +23,7 @@ async function body(req) {return JSON.parse(await limitedText(req,8000));}
 export default {
  async fetch(req,env) {
   const path=new URL(req.url).pathname;
-  if(path==='/health') return json({ok:true,pilot:true,cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&env.META_TEST_SENDER_IDS),messenger_outbound:false});
+  if(path==='/health') return json({ok:true,pilot:true,cloud_bindings:!!env.DB,ai_binding:!!env.AI,release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&env.META_TEST_SENDER_IDS),messenger_outbound:false,meta_ingress_enabled:env.META_INGRESS_ENABLED==='true'});
   if(path==='/webhooks/meta') return handleMessengerWebhook(req,env);
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {

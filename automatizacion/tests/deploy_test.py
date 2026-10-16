@@ -42,6 +42,7 @@ class MinimumPrivilegeTest(unittest.TestCase):
   self.assertEqual(binding['type'],'durable_object_namespace');self.assertEqual(binding['class_name'],'MessengerTestInbox')
   self.assertNotIn('script_name',binding)
   self.assertIn('secret_text',metadata['keep_bindings'])
+  self.assertEqual(next(b['text'] for b in metadata['bindings'] if b['name']=='META_INGRESS_ENABLED'),'false')
  def test_main_cannot_connect_or_deploy(self):
   with patch.dict(os.environ,{'GITHUB_REF':'refs/heads/main'}),patch.object(sys,'argv',['deploy_free.py','--check']),patch.object(module.urllib.request,'urlopen') as network:
    with self.assertRaises(ValueError):module.main()

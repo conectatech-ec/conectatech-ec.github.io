@@ -26,6 +26,7 @@ export async function handleMessengerWebhook(req,env,scope='development') {
  if(payload.object!=='page') return json({received:0,ignored:true,outbound_enabled:false});
  const allowed=new Set(String(env.META_TEST_SENDER_IDS||'').split(',').map(s=>s.trim()).filter(s=>/^\d+$/.test(s)));
  if(!env.META_PAGE_ID||allowed.size===0) return json({error:'Page or test sender allowlist missing'},503);
+ if(env.META_INGRESS_ENABLED!=='true')return json({mode:'development-only',queued:0,ignored:true,reception_enabled:false,outbound_enabled:false});
  if(!env.MESSENGER_TEST_INBOX) return json({error:'Durable test storage unavailable'},503);
  let events;try{events=normalizeEvents(payload,env);}catch{return json({error:'Event limit'},400);}
  if(events.length>10) return json({error:'Test batch limit'},400);
@@ -44,8 +45,8 @@ export async function handleMessengerWebhook(req,env,scope='development') {
 }
 export async function messengerSelfTest(body,env) {
  if(env.META_MODE!=='development-only'||!env.MESSENGER_TEST_INBOX) return json({error:'Development test unavailable'},503);
- if(!/^[a-zA-Z0-9_-]{16,80}$/.test(body.test_id||'')||!['MICR27','POWE003','ADAP005'].includes(body.sku)||!['accept','bad_signature','tamper','foreign_sender','echo','verify_challenge','bad_verify_token'].includes(body.case||''))return json({error:'Invalid synthetic fixture'},400);
- const testEnv={...env,META_APP_SECRET:env.PILOT_TOKEN,META_PAGE_ID:'100000000000001',META_TEST_SENDER_IDS:'100000000000002'};
+ if(!/^[a-zA-Z0-9_-]{16,80}$/.test(body.test_id||'')||!['MICR27','POWE003','ADAP005'].includes(body.sku)||!['accept','bad_signature','tamper','foreign_sender','echo','verify_challenge','bad_verify_token','ingress_disabled'].includes(body.case||''))return json({error:'Invalid synthetic fixture'},400);
+ const testEnv={...env,META_INGRESS_ENABLED:body.case==='ingress_disabled'?'false':'true',META_APP_SECRET:env.PILOT_TOKEN,META_PAGE_ID:'100000000000001',META_TEST_SENDER_IDS:'100000000000002'};
  if(body.case==='verify_challenge'||body.case==='bad_verify_token') {
   const q=new URL('https://pilot/webhooks/meta');q.searchParams.set('hub.mode','subscribe');q.searchParams.set('hub.verify_token',body.case==='bad_verify_token'?'invalid-fixture':env.PILOT_TOKEN);q.searchParams.set('hub.challenge','fixture-challenge');
   const r=verifyMetaWebhook(new Request(q),{META_VERIFY_TOKEN:env.PILOT_TOKEN});

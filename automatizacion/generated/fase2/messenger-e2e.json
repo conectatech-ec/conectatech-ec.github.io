@@ -26,6 +26,10 @@
     {
       "case": "bad_verify_token",
       "status": 403
+    },
+    {
+      "case": "ingress_disabled",
+      "status": 200
     }
   ],
   "prepared": [
@@ -59,6 +63,7 @@
   ],
   "passed": true,
   "runtime_meta_configuration_present": true,
+  "meta_page_reception_enabled": false,
   "configured_verify_token_handshake": "passed",
   "preview_without_token": 401
 }

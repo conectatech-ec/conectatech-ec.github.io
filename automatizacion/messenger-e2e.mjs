@@ -13,7 +13,7 @@ try {
   const a=await call('/messenger/self-test',b);assert.equal(a.synthetic,true);assert.equal(a.webhook_status,200);assert.equal(a.ack.queued,1);assert.equal(a.ack.outbound_enabled,false);
   const duplicate=await call('/messenger/self-test',b);assert.equal(duplicate.ack.duplicates,1);references.push({sku,ref:a.event_ref});
  }
- for(const [kind,status] of [['bad_signature',403],['tamper',403],['foreign_sender',200],['echo',200],['verify_challenge',200],['bad_verify_token',403]]) {
+ for(const [kind,status] of [['bad_signature',403],['tamper',403],['foreign_sender',200],['echo',200],['verify_challenge',200],['bad_verify_token',403],['ingress_disabled',200]]) {
   const r=await call('/messenger/self-test',{sku:'MICR27',test_id:'ci-'+crypto.randomUUID(),case:kind});assert.equal(r.webhook_status,status);if(r.ack)assert.equal(r.ack.queued||0,0);if(kind==='verify_challenge')assert.equal(r.challenge_matches,true);report.tests.push({case:kind,status});
  }
  let rows=[];
@@ -25,7 +25,7 @@ try {
  for(const reference of references) {
   const row=rows.find(r=>r.event_ref===reference.ref);assert.equal(row?.status,'prepared',reference.sku+' must be durably prepared');const draft=row.result.find(d=>d.sku===reference.sku);assert.ok(draft.foto);assert.ok(draft.precio>0);assert.equal(draft.send_enabled,false);assert.ok(draft.messages.some(m=>m.attachment?.type==='template'));report.prepared.push({sku:draft.sku,precio:draft.precio,stock_referencial:draft.stock_referencial,foto:draft.foto,banner:draft.banner,native_card:true,duplicate_ignored:true});
  }
- const health=await (await fetch(base+'/health')).json();report.runtime_meta_configuration_present=health.messenger_configured;
+ const health=await (await fetch(base+'/health')).json();report.runtime_meta_configuration_present=health.messenger_configured;assert.equal(health.meta_ingress_enabled,false);report.meta_page_reception_enabled=false;
  if(process.env.META_VERIFY_TOKEN) {
   const url=new URL(base+'/webhooks/meta');url.searchParams.set('hub.mode','subscribe');url.searchParams.set('hub.verify_token',process.env.META_VERIFY_TOKEN);url.searchParams.set('hub.challenge','ct-meta-dev-challenge');
   let r;try{r=await fetch(url,{signal:AbortSignal.timeout(10000)});}catch{throw Error('Configured verification HTTPS request failed; URL withheld');}
