@@ -70,9 +70,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tarj004-tarjeta-de-memoria-microsd-64gb-kingston-80mb-s-yan-tech/",
-  "fecha_verificacion": "2026-10-16T13:28:25.638554+00:00",
+  "fecha_verificacion": "2026-10-16T14:01:42.688647+00:00",
   "descripcion": "Tarjeta MicroSD Kingston De 64 GB Con Adaptador. Presentación de venta: Una tarjeta microSD de 64 GB con un adaptador SD. Capacidad: 64 GB.",
   "contenido_venta": "Una tarjeta microSD de 64 GB con un adaptador SD.",
   "presentacion": "sin caja",
@@ -124,7 +124,7 @@
       "solicitado": "TARJ004",
       "sku": "TARJ004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T13:41:00.549Z",
+      "fecha": "2026-10-16T14:01:58.305Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -146,7 +146,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tarj004-tarjeta-de-memoria-microsd-64gb-kingston-80mb-s-yan-tech/",
-      "url_comprobada": "http://127.0.0.1:8798/productos/tarj004-tarjeta-de-memoria-microsd-64gb-kingston-80mb-s-yan-tech/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tarj004-tarjeta-de-memoria-microsd-64gb-kingston-80mb-s-yan-tech/",
       "archivo_html": "productos/tarj004-tarjeta-de-memoria-microsd-64gb-kingston-80mb-s-yan-tech/index.html",
       "http": 200,
       "sha256_html": "a91af13818a6d76569f3811d31305d277be46aa295b39e3e937caa31769c6865",
@@ -156,7 +156,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tarj004/TARJ004-01.webp",
-        "url_cargada": "http://127.0.0.1:8798/imagenes/tarj004/TARJ004-01-600.webp?v=70e6184118b3582c",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tarj004/TARJ004-01-600.webp?v=70e6184118b3582c",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -165,36 +165,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8798/productos/tarj004-tarjeta-de-memoria-microsd-64gb-kingston-80mb-s-yan-tech/",
+          "url": "https://conectatech-ec.github.io/productos/tarj004-tarjeta-de-memoria-microsd-64gb-kingston-80mb-s-yan-tech/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/imagenes/tarj004/TARJ004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tarj004/TARJ004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-098/qa-local/movil/TARJ004-390.png",
+      "archivo": "reportes/continuacion-098/qa-publica/movil/TARJ004-390.png",
       "sha256": "be8f7ee28486a3f848d6ba365091c58638d118b34c52fc2d31bef554528a32fb",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-098/qa-local/movil/TARJ004-1280.png",
+        "archivo": "reportes/continuacion-098/qa-publica/movil/TARJ004-1280.png",
         "sha256": "26e9f5cbc0bd2a63a9b2e638a8593fb5408a50a78e00fc6f844c0e469a34b537",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:01:42.688647+00:00",
+      "archivo": "reportes/continuacion-098/http-publicacion.json",
+      "reporte": "reportes/continuacion-098/http-publicacion.json",
+      "sha256": "33920043a1a0597d537772dffd88e1195a7ccf9b996736c17581770c588bac2f",
+      "sku": "TARJ004"
     }
   }
 }

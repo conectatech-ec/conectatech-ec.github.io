@@ -88,9 +88,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi085-audifonos-de-diadema-klipxtreme-ksh-290-sekual/",
-  "fecha_verificacion": "2026-10-16T13:28:25.638554+00:00",
+  "fecha_verificacion": "2026-10-16T14:01:42.688647+00:00",
   "descripcion": "Audifonos De Diadema Klipxtreme Sekual KSH-290. Presentación de venta: Un audífono de diadema con micrófono. Diseño: Diadema vertical con almohadillas de espuma. Micrófono: Brazo integrado.",
   "contenido_venta": "Un audífono de diadema con micrófono.",
   "presentacion": "sin caja",
@@ -143,7 +143,7 @@
       "solicitado": "AUDI085",
       "sku": "AUDI085",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T13:40:53.106Z",
+      "fecha": "2026-10-16T14:01:48.177Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -165,7 +165,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi085-audifonos-de-diadema-klipxtreme-ksh-290-sekual/",
-      "url_comprobada": "http://127.0.0.1:8798/productos/audi085-audifonos-de-diadema-klipxtreme-ksh-290-sekual/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi085-audifonos-de-diadema-klipxtreme-ksh-290-sekual/",
       "archivo_html": "productos/audi085-audifonos-de-diadema-klipxtreme-ksh-290-sekual/index.html",
       "http": 200,
       "sha256_html": "7e7c528fd3ac2cbbdfa82cff3d881ff0ed746f219151a614a972b0f40ce065dc",
@@ -175,7 +175,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi085/AUDI085-01.webp",
-        "url_cargada": "http://127.0.0.1:8798/imagenes/audi085/AUDI085-01-600.webp?v=03554781f7e1d3c6",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi085/AUDI085-01-600.webp?v=03554781f7e1d3c6",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -184,41 +184,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8798/productos/audi085-audifonos-de-diadema-klipxtreme-ksh-290-sekual/",
+          "url": "https://conectatech-ec.github.io/productos/audi085-audifonos-de-diadema-klipxtreme-ksh-290-sekual/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/imagenes/audi085/AUDI085-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi085/AUDI085-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/productos/parl035-parlante-para-bicicleta-moto-blackview-aurabass/",
+          "url": "https://conectatech-ec.github.io/productos/parl035-parlante-para-bicicleta-moto-blackview-aurabass/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-098/qa-local/movil/AUDI085-390.png",
+      "archivo": "reportes/continuacion-098/qa-publica/movil/AUDI085-390.png",
       "sha256": "cc5ab2a65da4d998ebfce5d947f8266ca2b6834fdb130a9426d8721afa1962bf",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-098/qa-local/movil/AUDI085-1280.png",
+        "archivo": "reportes/continuacion-098/qa-publica/movil/AUDI085-1280.png",
         "sha256": "5a39843dff1c5e09c912866b3a76757617d55bc766f6063a7a931050b35d91d8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:01:42.688647+00:00",
+      "archivo": "reportes/continuacion-098/http-publicacion.json",
+      "reporte": "reportes/continuacion-098/http-publicacion.json",
+      "sha256": "33920043a1a0597d537772dffd88e1195a7ccf9b996736c17581770c588bac2f",
+      "sku": "AUDI085"
     }
   }
 }

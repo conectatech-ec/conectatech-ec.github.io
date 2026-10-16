@@ -106,9 +106,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous025-mouse-ergonomico-inalambrico-yelandar-modelo-d6/",
-  "fecha_verificacion": "2026-10-16T13:28:25.638554+00:00",
+  "fecha_verificacion": "2026-10-16T14:01:42.688647+00:00",
   "descripcion": "Mouse Ergonomico Yelandar D6. Presentación de venta: Un mouse ergonómico D6. Diseño: Cuerpo ergonómico vertical.",
   "contenido_venta": "Un mouse ergonómico D6.",
   "presentacion": "sin caja",
@@ -164,7 +164,7 @@
       "solicitado": "MOUS025",
       "sku": "MOUS025",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T13:40:51.193Z",
+      "fecha": "2026-10-16T14:01:45.197Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -186,7 +186,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous025-mouse-ergonomico-inalambrico-yelandar-modelo-d6/",
-      "url_comprobada": "http://127.0.0.1:8798/productos/mous025-mouse-ergonomico-inalambrico-yelandar-modelo-d6/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous025-mouse-ergonomico-inalambrico-yelandar-modelo-d6/",
       "archivo_html": "productos/mous025-mouse-ergonomico-inalambrico-yelandar-modelo-d6/index.html",
       "http": 200,
       "sha256_html": "1ef75894f84ceac2b2ec5246eeb3d6fbc7ba167602df00bb579743497e5d3cfb",
@@ -196,7 +196,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous025/MOUS025-01.webp",
-        "url_cargada": "http://127.0.0.1:8798/imagenes/mous025/MOUS025-01-600.webp?v=0b23872d40a054aa",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous025/MOUS025-01-600.webp?v=0b23872d40a054aa",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -205,36 +205,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8798/productos/mous025-mouse-ergonomico-inalambrico-yelandar-modelo-d6/",
+          "url": "https://conectatech-ec.github.io/productos/mous025-mouse-ergonomico-inalambrico-yelandar-modelo-d6/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8798/imagenes/mous025/MOUS025-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous025/MOUS025-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-098/qa-local/movil/MOUS025-390.png",
+      "archivo": "reportes/continuacion-098/qa-publica/movil/MOUS025-390.png",
       "sha256": "02ec7a91fe3b498bbea1fba82e8e489f7deed7b3ba55f15baf3fceb92280869b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-098/qa-local/movil/MOUS025-1280.png",
+        "archivo": "reportes/continuacion-098/qa-publica/movil/MOUS025-1280.png",
         "sha256": "af7d901b68de4a0b27963ee21b146b4bd433efe1e4d91cfbc8fcb8715e255495",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:01:42.688647+00:00",
+      "archivo": "reportes/continuacion-098/http-publicacion.json",
+      "reporte": "reportes/continuacion-098/http-publicacion.json",
+      "sha256": "33920043a1a0597d537772dffd88e1195a7ccf9b996736c17581770c588bac2f",
+      "sku": "MOUS025"
     }
   }
 }
