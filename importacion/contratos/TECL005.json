@@ -124,9 +124,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl005-teclado-portatil-bluetooth-model-hb023s/",
-  "fecha_verificacion": "2026-10-16T14:20:36.825005+00:00",
+  "fecha_verificacion": "2026-10-16T14:54:42.047280+00:00",
   "descripcion": "Teclado Plegable Bluetooth HB023S. Presentación de venta: Un teclado plegable Bluetooth HB023S. Distribución: QWERTY sin Ñ. Diseño: Plegable mediante bisagra central.",
   "contenido_venta": "Un teclado plegable Bluetooth HB023S.",
   "presentacion": "sin caja",
@@ -183,7 +183,7 @@
       "solicitado": "TECL005",
       "sku": "TECL005",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T14:21:23.679Z",
+      "fecha": "2026-10-16T14:54:46.176Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -205,7 +205,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl005-teclado-portatil-bluetooth-model-hb023s/",
-      "url_comprobada": "http://127.0.0.1:8799/productos/tecl005-teclado-portatil-bluetooth-model-hb023s/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl005-teclado-portatil-bluetooth-model-hb023s/",
       "archivo_html": "productos/tecl005-teclado-portatil-bluetooth-model-hb023s/index.html",
       "http": 200,
       "sha256_html": "0ac3c78bb8204af40fd5029301f8cff96c53a07ecbbe5b3aa8aff8ee38d75d58",
@@ -215,7 +215,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl005/TECL005-01.webp",
-        "url_cargada": "http://127.0.0.1:8799/imagenes/tecl005/TECL005-01-600.webp?v=3654203091c664e9",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl005/TECL005-01-600.webp?v=3654203091c664e9",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -224,51 +224,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8799/productos/tecl005-teclado-portatil-bluetooth-model-hb023s/",
+          "url": "https://conectatech-ec.github.io/productos/tecl005-teclado-portatil-bluetooth-model-hb023s/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/imagenes/tecl005/TECL005-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl005/TECL005-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/productos/tecl013-teclado-portatil-fk1000-yelandar/",
+          "url": "https://conectatech-ec.github.io/productos/tecl013-teclado-portatil-fk1000-yelandar/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/productos/mous016-mouse-inalambrico-s-r-micro-usb-usb-a-bluetooth/",
+          "url": "https://conectatech-ec.github.io/productos/mous016-mouse-inalambrico-s-r-micro-usb-usb-a-bluetooth/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/productos/mous021-mouse-alambrico-monster-5mont36/",
+          "url": "https://conectatech-ec.github.io/productos/mous021-mouse-alambrico-monster-5mont36/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-099/qa-local/movil/TECL005-390.png",
+      "archivo": "reportes/continuacion-099/qa-publica/movil/TECL005-390.png",
       "sha256": "8a2f27e111db0cae3bfbda7d797f176ee5f605034319ef17922aad6f11663e30",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-099/qa-local/movil/TECL005-1280.png",
+        "archivo": "reportes/continuacion-099/qa-publica/movil/TECL005-1280.png",
         "sha256": "70352cccdac5f05329ebdd3401f70c4bac9fa80646560f4495ef34a44fde320d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:54:42.047280+00:00",
+      "archivo": "reportes/continuacion-099/http-publicacion.json",
+      "reporte": "reportes/continuacion-099/http-publicacion.json",
+      "sha256": "9ae452ba3f0cd4b72d977f33a050493b6f7ba11d09b70fdd3c66b2ad3a62fc90",
+      "sku": "TECL005"
     }
   }
 }

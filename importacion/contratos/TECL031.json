@@ -88,9 +88,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl031-teclado-portatil-inalambrico-monster/",
-  "fecha_verificacion": "2026-10-16T14:20:36.825005+00:00",
+  "fecha_verificacion": "2026-10-16T14:54:42.047280+00:00",
   "descripcion": "Teclado Plegable Inalambrico Monster. Presentación de venta: Un teclado plegable inalámbrico Monster. Distribución: QWERTY sin Ñ. Diseño: Plegable de dos mitades.",
   "contenido_venta": "Un teclado plegable inalámbrico Monster.",
   "presentacion": "sin caja",
@@ -143,7 +143,7 @@
       "solicitado": "TECL031",
       "sku": "TECL031",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T14:21:28.548Z",
+      "fecha": "2026-10-16T14:54:54.451Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -165,7 +165,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl031-teclado-portatil-inalambrico-monster/",
-      "url_comprobada": "http://127.0.0.1:8799/productos/tecl031-teclado-portatil-inalambrico-monster/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl031-teclado-portatil-inalambrico-monster/",
       "archivo_html": "productos/tecl031-teclado-portatil-inalambrico-monster/index.html",
       "http": 200,
       "sha256_html": "75b9724e9d145eae1581eedf017ce7b855e2cf0b43e3581b0b23d0386a81c9ed",
@@ -175,7 +175,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl031/TECL031-01.webp",
-        "url_cargada": "http://127.0.0.1:8799/imagenes/tecl031/TECL031-01-600.webp?v=c36d73c518725588",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl031/TECL031-01-600.webp?v=c36d73c518725588",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -184,51 +184,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8799/productos/tecl031-teclado-portatil-inalambrico-monster/",
+          "url": "https://conectatech-ec.github.io/productos/tecl031-teclado-portatil-inalambrico-monster/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/imagenes/tecl031/TECL031-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl031/TECL031-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/productos/tecl005-teclado-portatil-bluetooth-model-hb023s/",
+          "url": "https://conectatech-ec.github.io/productos/tecl005-teclado-portatil-bluetooth-model-hb023s/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/productos/tecl013-teclado-portatil-fk1000-yelandar/",
+          "url": "https://conectatech-ec.github.io/productos/tecl013-teclado-portatil-fk1000-yelandar/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8799/productos/mous016-mouse-inalambrico-s-r-micro-usb-usb-a-bluetooth/",
+          "url": "https://conectatech-ec.github.io/productos/mous016-mouse-inalambrico-s-r-micro-usb-usb-a-bluetooth/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-099/qa-local/movil/TECL031-390.png",
+      "archivo": "reportes/continuacion-099/qa-publica/movil/TECL031-390.png",
       "sha256": "94cb7bbd1253d2ce0e76b288260f8771ce68a017085b6aca11b3d57eb0387603",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-099/qa-local/movil/TECL031-1280.png",
+        "archivo": "reportes/continuacion-099/qa-publica/movil/TECL031-1280.png",
         "sha256": "620377473f95466d893e3da597f515d6a0048c39179d52193b429b0bdc558706",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T14:54:42.047280+00:00",
+      "archivo": "reportes/continuacion-099/http-publicacion.json",
+      "reporte": "reportes/continuacion-099/http-publicacion.json",
+      "sha256": "9ae452ba3f0cd4b72d977f33a050493b6f7ba11d09b70fdd3c66b2ad3a62fc90",
+      "sku": "TECL031"
     }
   }
 }
