@@ -20,6 +20,11 @@ export async function reserveAI(box){
 export async function loadMemory(box,who){const row=box.sql.exec('SELECT sealed FROM alex_memory WHERE who=?',who).toArray()[0];if(!row)return {history:[],focus:[],shown:[]};try{return JSON.parse(await unseal(row.sealed,box.env.PILOT_TOKEN));}catch{return {history:[],focus:[],shown:[]};}}
 export async function saveMemory(box,who,memory){const data=await seal(JSON.stringify(memory),box.env.PILOT_TOKEN);box.sql.exec('INSERT INTO alex_memory VALUES (?,?,?) ON CONFLICT(who) DO UPDATE SET sealed=excluded.sealed,expires=excluded.expires',who,data,Date.now()+policy.memory_idle_hours*3600000);}
 export async function saveInput(box,key,text){const data=await seal(redact(text),box.env.PILOT_TOKEN);box.sql.exec('INSERT OR IGNORE INTO alex_inputs VALUES (?,?,?)',key,data,Date.now()+86400000);}
+export async function approvedImage(product,verifier=verifyAssets){
+ const old=baseline.productos.find(p=>p.sku===product.sku);
+ if(product.banner&&old&&product.promo===old.promo&&product.pvp===old.pvp&&product.stock===old.stock){try{await verifier(product);return product.banner;}catch{/* An unavailable banner never replaces the verified exact photo. */}}
+ await verifier({...product,banner:null});return product.foto;
+}
 export async function prepareAlex(box,row,deps={refreshCatalog,verifyAssets}){
  const data=box.sql.exec('SELECT sealed FROM alex_inputs WHERE job=?',row.k).toArray()[0];if(!data)throw Error('ALEX_INPUT_EXPIRED');
  const input=await unseal(data.sealed,box.env.PILOT_TOKEN),memory=await loadMemory(box,row.who);
@@ -40,8 +45,7 @@ export async function prepareAlex(box,row,deps={refreshCatalog,verifyAssets}){
  const already=(memory.shown||[]).includes(result.image);
  if(product&&fresh(source)&&product.stock>0&&(!already||result.intent==='photo')){
   try{
-   await deps.verifyAssets(product);const old=baseline.productos.find(p=>p.sku===product.sku);
-   const image=product.banner&&product.promo===old.promo&&product.pvp===old.pvp&&product.stock===old.stock?product.banner:product.foto;
+   const image=await approvedImage(product,deps.verifyAssets);
    messages.push({attachment:{type:'template',payload:{template_type:'generic',elements:[{title:product.nombre.slice(0,80),image_url:image,buttons:[{type:'web_url',title:'Ver ficha',url:product.url}]}]}}});
    result.memory.shown=[...new Set([...(memory.shown||[]),product.sku])];
   }catch{/* No unverified or changed image is sent. Text remains factual. */}
@@ -72,7 +76,7 @@ export async function alexFetch(path,req,box){
   if(!result.image&&result.generative&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
   if(result.action==='erase'){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}else await saveMemory(box,'demo',result.memory);
   const p=source.productos.find(p=>p.sku===result.image);let image=null;
-  if(p&&fresh(source)&&p.stock>0&&(!(memory.shown||[]).includes(p.sku)||result.intent==='photo')){try{await verifyAssets(p);const old=baseline.productos.find(x=>x.sku===p.sku);image=p.banner&&p.promo===old.promo&&p.pvp===old.pvp&&p.stock===old.stock?p.banner:p.foto;result.memory.shown=[...new Set([...(memory.shown||[]),p.sku])];await saveMemory(box,'demo',result.memory);}catch{}}
+  if(p&&fresh(source)&&p.stock>0&&(!(memory.shown||[]).includes(p.sku)||result.intent==='photo')){try{image=await approvedImage(p);result.memory.shown=[...new Set([...(memory.shown||[]),p.sku])];await saveMemory(box,'demo',result.memory);}catch{}}
   if(Number.isFinite(alexNext(box)))await box.state.storage.setAlarm(alexNext(box));
   return json({name:'Alex',text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,quick_replies:quickReplies(result),memory:{focus:result.memory.focus,budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,turns:result.memory.history?.length||0},source_fresh:fresh(source),outbound_enabled:false});
  }

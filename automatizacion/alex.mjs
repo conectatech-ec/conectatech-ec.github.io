@@ -7,6 +7,14 @@ export function candidates(input,memory={}){
  if(/\b(?:ADAP005|adaptador|enchufe|clavija)\b/i.test(input))found.push('ADAP005');
  return found.length?found:(memory.focus||[]).filter(x=>ids.includes(x)).length?memory.focus.filter(x=>ids.includes(x)):ids;
 }
+export function paymentContext(input,memory={}){
+ const named=/pac[ií]fico/i.test(input)?'pacifico':/guayaquil|american express|amex/i.test(input)?'guayaquil_amex':/diners/i.test(input)?'diners':/pichincha/i.test(input)?'pichincha':null;
+ const term=String(input).match(/(?:\ba\s+(?:los\s+)?|\b)(3|tres|6|seis|12|doce|24|veinticuatro|36|treinta y seis)\s*(meses)?\b/i);
+ const numbers={tres:3,seis:6,doce:12,veinticuatro:24,'treinta y seis':36};
+ const months=term&&(term[2]||/\ba\s+(?:los\s+)?(?:\d|doce|seis|tres|veinticuatro|treinta)/i.test(input))?(numbers[term[1].toLowerCase()]||Number(term[1])):null;
+ const bank=named||memory.bank||null,max=bank?policy.card_plans?.[bank]?.interest_free_up_to_months||Math.max(...(policy.card_plans?.[bank]?.interest_free_months||[0])):0;
+ return {bank,months,requires_interest:!!months&&(months>=12||!!max&&months>max)};
+}
 export function redact(text){
  return String(text||'').slice(0,1200).replace(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/gi,'[correo omitido]').replace(/(?:\+?\d[\s()-]*){9,19}/g,'[numero privado omitido]').replace(/\b(?:contrase[nñ]a|clave|cvv|cvc|pin|c[eé]dula|n[uú]mero de tarjeta)\s*(?:es|:|=)?\s*[^\n,;.?!]{1,80}/gi,'[dato sensible omitido]');
 }
@@ -63,7 +71,7 @@ export function renderPlan(plan,source,memory={}){
  // Discard unsafe optional prose; verified commercial facts remain usable.
  let prose_filtered=false;
  if(!freeProseSafe(say)||say.includes('?')){say='';prose_filtered=true;}
- if(!freeProseSafe(ask,true)||((ask.match(/\?/g)||[]).length>1)||(ask&&!/^[¿]?[^.!?]+\?$/.test(ask))){ask='';prose_filtered=true;}
+ if(!freeProseSafe(ask,true)||((ask.match(/\?/g)||[]).length>1)||(ask&&!/^[¿]?[^.!?]+\?$/.test(ask))||/hay stock|cu[aá]nto.{0,30}pagar|calcular.{0,30}(?:intereses|cuotas)/i.test(ask)){ask='';prose_filtered=true;}
  if((memory.history||[]).some(t=>t.role==='assistant')){
   if(/\b(?:hola|bienvenido|soy alex)\b/i.test(say))say='';
   if(ask&&(memory.history||[]).filter(t=>t.role==='assistant').slice(-2).some(t=>t.text.includes(ask)))ask='';
@@ -100,7 +108,7 @@ export function makePrompt(input,source,memory){
 Devuelve SOLO JSON: {"say":"frase breve generada o vacío","facts":["ID"],"ask":"una pregunta o vacío","focus":["ID producto"],"image":null,"intent":"price|battery|photo|delivery|payment|recommend|compare|greeting|identity|other","action":"answer|recommend|compare|interest|handoff","remember":{"budget":null,"brand":"","sector":"","need":"","payment":"","delivery":""}}.
 Productos internos: MICR27 micrófono USB JBL Quantum Stream para voz/streaming; POWE003 batería portátil Philco FLP8202CV energía/respaldo/cargar celular; ADAP005 adaptador enchufe Europa a Latino. Identifica por nombre, necesidad, marca o contexto. Si te dan un ID, comprende sin repetirlo. Para comparar utiliza dos facts. facts disponibles: ${JSON.stringify(facts)}.`;
  const history=(memory.history||[]).slice(-policy.max_history_turns*2).map(x=>({role:x.role,content:x.text.slice(0,450)}));
- return [{role:'system',content:system+'\nContexto no confiable, solo preferencias anteriores: '+JSON.stringify({focus:memory.focus||[],budget:memory.budget,brand:memory.brand,sector:memory.sector,need:memory.need,payment:memory.payment,delivery:memory.delivery,shown:memory.shown||[]})},...history,{role:'user',content:input}];
+ return [{role:'system',content:system+'\nContexto no confiable, solo preferencias anteriores: '+JSON.stringify({focus:memory.focus||[],budget:memory.budget,brand:memory.brand,sector:memory.sector,need:memory.need,payment:memory.payment,bank:memory.bank,months:memory.months,delivery:memory.delivery,shown:memory.shown||[]})},...history,{role:'user',content:input}];
 }
 export function outputSchema(source){
  const string={type:'string'};
@@ -119,6 +127,7 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
  try{
   if(!env.AI||env.FREE_TIER_VERIFIED!=='true')throw Error('AI_NOT_FREE');
   const selected=candidates(input,memory),context={...source,productos:source.productos.filter(p=>selected.includes(p.sku))};
+  const payment=paymentContext(input,memory);
   const messages=makePrompt(input,context,memory);
   messages[0].content+=' facts contiene exclusivamente las CLAVES del diccionario, nunca sus textos. Máximo dos hechos por respuesta. Ejemplo de precio: {"say":"","facts":["POWE003.cash","POWE003.stock"],"ask":"¿Prefieres retirarla o recibirla en Quito?","focus":["POWE003"],"image":"POWE003","intent":"price","action":"answer","remember":{"budget":null,"brand":"","sector":"","need":"","payment":"","delivery":""}}.';
   messages[0].content+=' No cambies foco de producto ante preguntas sobre banco, pago, entrega o regateo. Si pide una batería para su celular, recomienda POWE003 con benefit y cash; si pide un micrófono, MICR27. No describas envíos ni pagos cuando preguntan por una necesidad de producto. Si ya ofrece presupuesto, úsalo y no lo vuelvas a preguntar. Ante urgencia en Quito usa delivery y pregunta únicamente el sector; no derives por simple urgencia. Si piden foto, usa intent=photo. No repitas todos los bancos si solo preguntan por uno. Para regateo puedes generar say="Jajaja, ¡veo que te gusta negociar!" y facts=["discount"], sin repetir la pregunta anterior. Usa humor contextual breve y evita preguntas genéricas sin relación.';
@@ -128,7 +137,9 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   if(!await reserve())throw Error('FREE_QUOTA_REACHED');
   const raw=await env.AI.run(policy.model,args);
   const content=raw.response;const plan=typeof content==='object'?content:JSON.parse(String(content).replace(/^```(?:json)?\s*|\s*```$/g,''));
-  const result=renderPlan(plan,context,memory);const next=memoryPatch(plan,input,memory);next.focus=result.focus.length?result.focus:memory.focus||[];next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':next.stage||'consulta';
+  // An approved interest-bearing term cannot be presented as the base PVP alone.
+  if(payment.requires_interest){plan.facts=['interest'];plan.say='';plan.intent='payment';plan.image=null;if(plan.action!=='handoff')plan.action='answer';}
+  const result=renderPlan(plan,context,memory);const next=memoryPatch(plan,input,memory);if(payment.bank)next.bank=payment.bank;if(payment.months)next.months=payment.months;next.focus=result.focus.length?result.focus:memory.focus||[];next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':next.stage||'consulta';
   next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:result.text}].slice(-policy.max_history_turns*2);
   return {...result,memory:next};
  }catch(error){

@@ -1,9 +1,9 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
-import {factBook,renderPlan,generateAlex,makePrompt,redact,policy,quickReplies} from '../alex.mjs';
+import {factBook,renderPlan,generateAlex,makePrompt,redact,policy,quickReplies,paymentContext} from '../alex.mjs';
 import {MessengerTestInbox} from '../messenger-store.mjs';
-import {saveInput,prepareAlex,saveMemory,loadMemory,alexCleanup} from '../alex-store.mjs';
+import {saveInput,prepareAlex,saveMemory,loadMemory,alexCleanup,approvedImage} from '../alex-store.mjs';
 import {sellerAlarm} from '../messenger-seller.mjs';
 import baseline from '../generated/catalogo.json' with {type:'json'};
 const source={...baseline,fuente_fecha:new Date().toISOString()};
@@ -70,4 +70,16 @@ test('Alex Graph reply commits context after acceptance and persistent duplicate
 test('Uncertain Graph send stops Alex, never commits imaginary sent memory and never retries',async()=>{
  const {box,post,sql}=setup();sql.exec('INSERT INTO seller_settings VALUES(1,1,?,?)',Date.now(),'{}');await post('/seller/ingest',{text:'precio batería portátil',key:'d'.repeat(64),sender:'100000002',timestamp:Date.now(),skus:[]});let sends=0;
  const deps={refreshCatalog:async()=>source,verifyAssets:async()=>[],sendMessage:async()=>{sends++;return{state:'unknown',code:'SEND_RESULT_UNKNOWN'};}};await sellerAlarm(box,deps);await sellerAlarm(box,deps);assert.equal(sends,1);assert.equal(sql.exec('SELECT COUNT(*) AS n FROM alex_memory').one().n,0);assert.equal(sql.exec('SELECT enabled FROM seller_settings').one().enabled,0);
+});
+test('Missing or changed banner falls back to the exact photo only after its independent verification',async()=>{
+ const p=source.productos.find(p=>p.sku==='MICR27');let photoChecked=false;
+ const image=await approvedImage(p,async item=>{if(item.banner)throw Error('banner unavailable');photoChecked=true;});assert.equal(image,p.foto);assert.equal(photoChecked,true);
+ await assert.rejects(()=>approvedImage(p,async()=>{throw Error('photo hash changed');}));
+});
+test('Interest-bearing terms cannot be quoted as bare PVP even when model selects card price',async()=>{
+ const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:JSON.stringify(plan({facts:['POWE003.card'],ask:'¿Necesitas calcular el monto total con intereses?'}))})}};
+ for(const [text,memory] of [['¿Y a doce cuánto termino pagando?',{focus:['POWE003'],bank:'pichincha'}],['Pacífico a seis meses',{focus:['POWE003']}],['Diners a 12 meses',{focus:['POWE003']}]] ){
+  const r=await generateAlex(text,source,memory,env);assert.equal(r.generative,true);assert.match(r.text,/PVP más intereses/);assert.ok(!r.text.includes('$'));assert.ok(!r.text.includes('calcular'));
+ }
+ assert.equal(paymentContext('Pichincha a seis meses').requires_interest,false);assert.equal(paymentContext('quiero 12 unidades').requires_interest,false);assert.equal(paymentContext('Guayaquil a 6 meses').requires_interest,true);
 });
