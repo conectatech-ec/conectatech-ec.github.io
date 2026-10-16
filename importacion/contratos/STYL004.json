@@ -97,9 +97,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
-  "fecha_verificacion": "2026-10-16T20:51:17.674207+00:00",
+  "fecha_verificacion": "2026-10-16T21:18:31.282969+00:00",
   "descripcion": "Lápiz Táctil con Punta de Disco y Esfero. Punta táctil: Disco transparente con soporte metálico. Diseño: Cuerpo negro con terminación cromada. Presentación de venta: Un lápiz táctil con esfero. Imagen de portada: Detalle de la punta táctil; no muestra el lápiz completo.",
   "contenido_venta": "Un lápiz táctil con esfero. La portada muestra únicamente el detalle de la punta táctil.",
   "presentacion": "sin caja",
@@ -152,7 +152,7 @@
       "solicitado": "STYL004",
       "sku": "STYL004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T20:53:53.027Z",
+      "fecha": "2026-10-16T21:18:33.736Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -177,7 +177,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
-      "url_comprobada": "http://127.0.0.1:8803/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
       "archivo_html": "productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/index.html",
       "http": 200,
       "sha256_html": "b086522a16d5b93de21033c9fdce7818ebc1d945619fee9af5bfeae1eb3238db",
@@ -187,7 +187,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/styl004/STYL004-01.webp",
-        "url_cargada": "http://127.0.0.1:8803/imagenes/styl004/STYL004-01-600.webp?v=af1efeff212d7ac0",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/styl004/STYL004-01-600.webp?v=af1efeff212d7ac0",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -196,36 +196,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8803/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
+          "url": "https://conectatech-ec.github.io/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8803/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8803/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8803/imagenes/styl004/STYL004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/styl004/STYL004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-103/qa-local/movil/STYL004-390.png",
+      "archivo": "reportes/continuacion-103/qa-publica/movil/STYL004-390.png",
       "sha256": "35cac3e1035d23945c7dca55c146101c9e4f08dae015cc2a0ff546537164851c",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-103/qa-local/movil/STYL004-1280.png",
+        "archivo": "reportes/continuacion-103/qa-publica/movil/STYL004-1280.png",
         "sha256": "6afbad449e6f29e9c2a57f46f02a041e3488d2280789f0941c919b8a2e5b98ab",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-16T21:18:31.282969+00:00",
+      "archivo": "reportes/continuacion-103/http-publicacion.json",
+      "reporte": "reportes/continuacion-103/http-publicacion.json",
+      "sha256": "9a60bd585da65b782bfde3c13610cee44be77959eff673d255f49d4ea704efe9",
+      "sku": "STYL004"
     }
   },
   "beneficios": [
