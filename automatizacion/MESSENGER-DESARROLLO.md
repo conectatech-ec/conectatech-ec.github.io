@@ -2,7 +2,7 @@
 
 Guía operativa actual, revisión humana, métricas y requisitos de conversaciones reales: [OPERAR-MESSENGER.md](OPERAR-MESSENGER.md). El Page ID confirmado está fijado en la configuración del piloto; no requiere crear otra variable en GitHub.
 
-**Estado:** receptor cerrado desplegado, pruebas sintéticas por HTTPS aprobadas y recepción real deshabilitada. [Evidencia](generated/fase2/messenger-desplegado-verificado.json). Handshake con el token real y entrega desde Meta pendientes de configuración segura. Nuevos uploads cerrados con `activar:false`; el Worker sigue activo.
+**Estado actualizado:** Page ID y secretos de Meta aplicados. Challenge con token configurado y HMAC con App Secret verificados por HTTPS; 36 pruebas unitarias y pipeline de tres SKU aprobados. [Evidencia actual](generated/fase2/meta-configuracion-verificada.json). Falta META_TEST_SENDER_IDS, verificación/suscripción desde el panel de Meta y entrega real de un probador. Recepción cerrada, sin envíos; `activar:false` bloquea nuevos uploads y el Worker sigue activo.
 
 Callback HTTPS exacto:
 
@@ -21,7 +21,7 @@ En GitHub → Settings → Environments → `conectatech-piloto-gratis`, agregar
 | Secret | META_VERIFY_TOKEN | Valor aleatorio de al menos 32 caracteres generado por un gestor de contraseñas. No reutilizar PILOT_TOKEN ni App Secret. |
 | Secret | META_APP_SECRET | App Secret de Jotacellcomunicapp, desde Meta Developers → App Settings → Basic. |
 | Secret | META_TEST_SENDER_IDS | Lista separada por comas de PSID de los probadores autorizados para esa Página; no son IDs generales del perfil de Facebook. |
-| Variable | META_PAGE_ID | ID numérico de CONECTATECHec; el nombre de la Página no sustituye al ID. |
+| Variable opcional | META_PAGE_ID | Ya fijado como 105549695770538 en activar-cloud.json; no hace falta configurarlo de nuevo. |
 
 El propietario puede compartir únicamente el Page ID en chat si necesita ayuda. Nunca compartir App Secret, Verify Token, PILOT_TOKEN ni PSID aquí. No colocar secretos en commits, URLs de documentación, artifacts, Issues o capturas públicas.
 
@@ -62,4 +62,4 @@ Fuentes oficiales: [Durable Objects Free](https://developers.cloudflare.com/dura
 
 ## Estado de verificación
 
-Las pruebas locales de seguridad y SQLite no sustituyen la prueba en Cloudflare. El workflow despliega solo el Worker autorizado, verifica primero el piloto existente por HTTPS y después el receptor sintético firmado, deduplicación y preparación durable de los tres SKU. La recepción real desde Jotacellcomunicapp continúa pendiente hasta introducir secretos/Page ID/PSID y completar el handshake y una prueba real desde Meta en Desarrollo. No se declara app publicada ni envío a clientes.
+Las pruebas locales de seguridad y SQLite no sustituyen la prueba en Cloudflare. El workflow despliega solo el Worker autorizado, verifica primero el piloto existente por HTTPS y después el receptor sintético firmado, deduplicación y preparación durable de los tres SKU. Los secretos y Page ID ya fueron aplicados y el challenge funciona por HTTPS. La recepción real desde Jotacellcomunicapp continúa pendiente de los PSID autorizados, la verificación/suscripción de Página, la apertura deliberada del gate de pruebas y una entrega real desde Meta en Desarrollo. No se declara app publicada ni envío a clientes.
