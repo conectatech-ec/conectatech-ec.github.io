@@ -54,7 +54,10 @@ export function renderPlan(plan,source,memory={}){
  const facts=factBook(source);
  if(!plan||typeof plan!=='object'||!Array.isArray(plan.facts)||plan.facts.length>2||plan.facts.some(k=>typeof k!=='string'||!Object.hasOwn(facts,k)))throw Error('UNVERIFIED_FACT');
  let say=cleanFree(plan.say).split(/(?<=[.!])\s+/)[0],ask=cleanFree(plan.ask);
- if(!freeProseSafe(say)||!freeProseSafe(ask,true)||((ask.match(/\?/g)||[]).length>1)||say.includes('?')||(ask&&!/^[¿]?[^.!?]+\?$/.test(ask)))throw Error('UNSAFE_PROSE');
+ // Discard unsafe optional prose; verified commercial facts remain usable.
+ let prose_filtered=false;
+ if(!freeProseSafe(say)||say.includes('?')){say='';prose_filtered=true;}
+ if(!freeProseSafe(ask,true)||((ask.match(/\?/g)||[]).length>1)||(ask&&!/^[¿]?[^.!?]+\?$/.test(ask))){ask='';prose_filtered=true;}
  const focus=Array.isArray(plan.focus)?[...new Set(plan.focus)].filter(s=>ids.includes(s)).slice(0,2):[];
  if(plan.focus?.length&&focus.length!==plan.focus.length)throw Error('UNKNOWN_PRODUCT');
  const action=['answer','recommend','compare','interest','handoff'].includes(plan.action)?plan.action:'answer';
@@ -66,7 +69,7 @@ export function renderPlan(plan,source,memory={}){
  const text=parts.filter(Boolean).join(' ').replace(/\s+/g,' ').trim();
  if(!text||text.length>440||/\b(?:MICR27|MICR027|POWE003|ADAP005)\b/.test(text))throw Error('BAD_LENGTH_OR_INTERNAL_ID');
  const image=ids.includes(plan.image)&&focus.includes(plan.image)?plan.image:null;
- return {text,focus,action,intent:String(plan.intent||'other').slice(0,30),image,facts:keys,generative:true,model:policy.model};
+ return {text,focus,action,intent:String(plan.intent||'other').slice(0,30),image,facts:keys,generative:true,model:policy.model,prose_filtered};
 }
 function memoryPatch(plan,input,memory){
  const recent=[...(memory.history||[]).filter(t=>t.role==='user').map(t=>t.text),input].join(' ').toLowerCase();const x=plan.remember||{},next={...memory};

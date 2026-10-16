@@ -25,6 +25,7 @@ export async function prepareAlex(box,row,deps={refreshCatalog,verifyAssets}){
  const input=await unseal(data.sealed,box.env.PILOT_TOKEN),memory=await loadMemory(box,row.who);
  let source;try{source=await deps.refreshCatalog(baseline);}catch{source={...baseline,fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
  const result=await generateAlex(input,source,memory,box.env,()=>reserveAI(box));
+ if(!result.image&&result.generative&&result.focus?.length&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
  if(result.action==='erase'){
   box.sql.exec('DELETE FROM alex_memory WHERE who=?',row.who);box.sql.exec('DELETE FROM seller_handoffs WHERE who=?',row.who);box.sql.exec('DELETE FROM alex_opportunities WHERE who=?',row.who);
   box.sql.exec("DELETE FROM alex_inputs WHERE job IN (SELECT k FROM seller_jobs WHERE who=?)",row.who);
@@ -68,6 +69,7 @@ export async function alexFetch(path,req,box){
   if(b.reset===true){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}
   let source;try{source=await refreshCatalog(baseline);}catch{source={...baseline,fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
   const memory=await loadMemory(box,'demo');const result=await generateAlex(b.message,source,memory,box.env,()=>reserveAI(box));
+  if(!result.image&&result.generative&&result.focus?.length&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
   if(result.action==='erase'){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}else await saveMemory(box,'demo',result.memory);
   const p=source.productos.find(p=>p.sku===result.image);let image=null;
   if(p&&fresh(source)&&p.stock>0&&(!(memory.shown||[]).includes(p.sku)||result.intent==='photo')){try{await verifyAssets(p);const old=baseline.productos.find(x=>x.sku===p.sku);image=p.banner&&p.promo===old.promo&&p.pvp===old.pvp&&p.stock===old.stock?p.banner:p.foto;result.memory.shown=[...new Set([...(memory.shown||[]),p.sku])];await saveMemory(box,'demo',result.memory);}catch{}}

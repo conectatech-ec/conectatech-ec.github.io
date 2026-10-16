@@ -21,7 +21,8 @@ test('PVP is card price; authorized October plans expire at midnight Ecuador',()
 });
 test('Only fresh verified facts can supply price, stock, specs and product IDs stay internal',()=>{
  const r=renderPlan(plan(),source);assert.ok(r.text.startsWith('El Philco'));assert.match(r.text,/\$/);assert.ok(!r.text.includes('POWE003'));
- for(const p of [plan({facts:['invented.price']}),plan({say:'Cuesta $1'}),plan({ask:'Cuesta poco. ¿Lo compras?'}),plan({focus:['OTHER']}),plan({facts:['POWE003.cash','POWE003.stock','payment']})])assert.throws(()=>renderPlan(p,source));
+ for(const p of [plan({facts:['invented.price']}),plan({focus:['OTHER']}),plan({facts:['POWE003.cash','POWE003.stock','payment']})])assert.throws(()=>renderPlan(p,source));
+ for(const p of [plan({say:'Cuesta $1'}),plan({ask:'Cuesta poco. ¿Lo compras?'})]){const safe=renderPlan(p,source);assert.equal(safe.prose_filtered,true);assert.ok(!safe.text.includes('$1'));assert.ok(!safe.text.includes('Cuesta poco'));}
  const stale={...source,fuente_fecha:'2020-01-01'};assert.equal(factBook(stale)['POWE003.cash'],undefined);assert.throws(()=>renderPlan(plan(),stale));assert.equal(factBook({...source,productos:source.productos.map(p=>({...p,stock:0}))})['POWE003.card'],undefined);
 });
 test('Real binding contract uses JSON generative model and safe fallback consumes no paid path',async()=>{
@@ -58,4 +59,15 @@ test('Handoff retains redacted current context; erase works while human gate is 
 });
 test('Alex UI and privacy load publicly but chat, memory and opportunity endpoints require auth',async()=>{
  const {default:worker}=await import('../worker.mjs');for(const p of ['/alex','/privacy','/data-deletion'])assert.equal((await worker.fetch(new Request('https://p'+p),{})).status,200);for(const p of ['/alex/chat','/alex/status','/alex/handoffs'])assert.equal((await worker.fetch(new Request('https://p'+p),{})).status,401);
+});
+test('Alex Graph reply commits context after acceptance and persistent duplicate guard blocks replay',async()=>{
+ const {box,post,sql}=setup();sql.exec('INSERT INTO seller_settings VALUES(1,1,?,?)',Date.now(),'{}');
+ const payload={text:'¿Cuánto cuesta la batería portátil?',key:'c'.repeat(64),sender:'100000002',timestamp:Date.now(),skus:[]};await post('/seller/ingest',payload);let sends=0;
+ await sellerAlarm(box,{refreshCatalog:async()=>source,verifyAssets:async()=>[],sendMessage:async(e,p,m)=>{sends++;if(m.text){assert.ok(m.quick_replies.length<=3);assert.ok(!m.text.includes('POWE003'));}return{state:'accepted',messageId:'accepted-'+sends};}});
+ assert.equal(sends,2);assert.equal(sql.exec('SELECT COUNT(*) AS n FROM alex_memory').one().n,1);assert.equal(sql.exec('SELECT sealed FROM seller_jobs').one().sealed,'');assert.equal(sql.exec('SELECT COUNT(*) AS n FROM alex_inputs').one().n,0);assert.equal(JSON.parse(sql.exec('SELECT safe FROM seller_drafts').one().safe).generative,true);
+ assert.equal((await(await post('/seller/ingest',payload)).json()).duplicate,true);await sellerAlarm(box);assert.equal(sends,2);
+});
+test('Uncertain Graph send stops Alex, never commits imaginary sent memory and never retries',async()=>{
+ const {box,post,sql}=setup();sql.exec('INSERT INTO seller_settings VALUES(1,1,?,?)',Date.now(),'{}');await post('/seller/ingest',{text:'precio batería portátil',key:'d'.repeat(64),sender:'100000002',timestamp:Date.now(),skus:[]});let sends=0;
+ const deps={refreshCatalog:async()=>source,verifyAssets:async()=>[],sendMessage:async()=>{sends++;return{state:'unknown',code:'SEND_RESULT_UNKNOWN'};}};await sellerAlarm(box,deps);await sellerAlarm(box,deps);assert.equal(sends,1);assert.equal(sql.exec('SELECT COUNT(*) AS n FROM alex_memory').one().n,0);assert.equal(sql.exec('SELECT enabled FROM seller_settings').one().enabled,0);
 });
