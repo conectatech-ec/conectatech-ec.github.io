@@ -8,7 +8,7 @@ const namespace={idFromName:name=>name,get(name){
  if(!stores.has(name)) {
   const db=new DatabaseSync(':memory:');let box,timer;
   const state={storage:{sql:{exec(sql,...args){const stmt=db.prepare(sql);let rows=[];if(/^SELECT/i.test(sql))rows=stmt.all(...args);else stmt.run(...args);return {toArray:()=>rows,one:()=>{if(rows.length!==1)throw Error('SQLite single row expected');return rows[0];}};}},setAlarm:async time=>{clearTimeout(timer);timer=setTimeout(()=>box.alarm().catch(()=>{}),Math.max(1,time-Date.now()));timer.unref();}}};
-  box=new MessengerTestInbox(state,{});stores.set(name,box);
+  box=new MessengerTestInbox(state,env);stores.set(name,box);
  }
  return {fetch:(url,options)=>stores.get(name).fetch(new Request(url,options))};
 }};

@@ -4,6 +4,10 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('deploy_free',ROOT/'deploy_free.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 class MinimumPrivilegeTest(unittest.TestCase):
+ def test_live_tail_scope_does_not_allow_other_worker_or_broad_logs_access(self):
+  module.permitted_request(module.SCRIPT+'/tails','GET');module.permitted_request(module.SCRIPT+'/tails','POST');module.permitted_request(module.SCRIPT+'/tails/'+'a'*32,'DELETE')
+  for path,method in [('/workers/observability/telemetry/query','POST'),('/workers/scripts/production/tails','POST'),(module.SCRIPT+'/tails','DELETE'),(module.SCRIPT+'/tails/not-valid','DELETE')]:
+   with self.assertRaises(ValueError):module.permitted_request(path,method)
  def test_read_only_reception_audit_does_not_disclose_binding_values_or_invent_event_evidence(self):
   private='synthetic-private-credential-do-not-emit'
   report=module.reception_settings({'observability':{'enabled':False},'bindings':[{'name':'META_INGRESS_ENABLED','text':'false'},{'name':'META_MODE','text':'development-only'},{'name':'META_APP_SECRET','text':private}]})

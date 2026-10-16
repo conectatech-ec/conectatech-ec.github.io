@@ -8,7 +8,8 @@ WORKER='conectatech-comercial-piloto'
 BRANCH='refs/heads/automatizacion/piloto-cloud-3sku-20261015'
 SCRIPT='/workers/scripts/'+WORKER
 def permitted_request(path,method):
-    allowed={(SCRIPT+'/settings','GET'),(SCRIPT,'PUT'),(SCRIPT+'/secrets','PUT')}
+    allowed={(SCRIPT+'/settings','GET'),(SCRIPT+'/tails','GET'),(SCRIPT+'/tails','POST'),(SCRIPT,'PUT'),(SCRIPT+'/secrets','PUT')}
+    if method=='DELETE' and re.fullmatch(re.escape(SCRIPT)+r'/tails/[a-f0-9]{32}',path):return
     if (path,method) not in allowed: raise ValueError('Operation outside isolated Worker scope')
 class API:
     def __init__(self,account,token):self.base=f'https://api.cloudflare.com/client/v4/accounts/{account}';self.token=token
@@ -23,7 +24,7 @@ class API:
             except Exception:codes=[]
             raise RuntimeError(f'Worker request failed (HTTP {e.code}, error_codes={codes}); response values withheld; no permission broadening performed.') from None
         if body.get('success') is not True: raise RuntimeError('Worker request rejected; response body withheld')
-        return body['result']
+        return body.get('result')
 def multipart(metadata,files):
     boundary='codex-'+secrets.token_hex(16);parts=[]
     for name,ctype,body in [('metadata','application/json',json.dumps(metadata).encode()),*files]:
@@ -82,6 +83,12 @@ def reception_settings(settings):
             'test_sender_allowlist_binding_present':'META_TEST_SENDER_IDS' in bindings,
             'event_http_status':None,'event_signature_verified':None,'event_discard_verified':None,
             'scope':'current_configuration_only_not_a_Meta_event_receipt'}
+def tail_read_status(api):
+    try:
+        result=api.call(SCRIPT+'/tails')
+        return {'list_access':True,'active_sessions':len(result) if isinstance(result,list) else None,'historical_invocations':False,'scope':'live_tail_session_metadata_only'}
+    except RuntimeError:
+        return {'list_access':False,'historical_invocations':False,'scope':'existing_token_only_no_permission_expansion'}
 def sync_meta_verify_token(api,settings,url,token):
     bindings={b['name']:b for b in settings.get('bindings',[])}
     if bindings.get('META_INGRESS_ENABLED',{}).get('text')!='false' or bindings.get('META_MODE',{}).get('text')!='development-only':
@@ -140,11 +147,11 @@ def main():
     api=API(settings['CLOUDFLARE_ACCOUNT_ID'],settings['CLOUDFLARE_API_TOKEN'])
     existing=check_connection(api)
     if check_only:
-        report_connection({'ready':True,'status':'existing_worker_read_check_passed','plan_verification':'owner_dashboard_attestation','resources_created':False,'d1_enabled':False,'messenger_reception_audit':reception_settings(existing)});return
+        report_connection({'ready':True,'status':'existing_worker_read_check_passed','plan_verification':'owner_dashboard_attestation','resources_created':False,'d1_enabled':False,'messenger_reception_audit':reception_settings(existing),'tail_read_status':tail_read_status(api)});return
     if sync_only:
         sync_meta_verify_token(api,existing,settings['CLOUDFLARE_PILOT_URL'],os.environ.get('META_VERIFY_TOKEN',''));return
     metadata=worker_metadata(config);files=[]
-    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs']:
+    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs']:
         source=(ROOT/name).read_text()
         source=source.replace("import catalog from './generated/catalogo.json' with {type:'json'};","import catalog from './catalog.mjs';")
         files.append((name,'application/javascript+module',source.encode()))

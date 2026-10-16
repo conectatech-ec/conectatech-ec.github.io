@@ -72,7 +72,10 @@
     "page": true,
     "test_senders": true
   },
+  "secure_tester_pairing_and_receipts": "passed_synthetic_ci_only",
+  "operator_panel_http": 200,
   "configured_verify_token_handshake": "passed",
+  "configured_secret_closed_ingress_receipt": "passed_CI_probe_not_Meta_delivery",
   "configured_app_secret_hmac": "passed_empty_fixture_not_Meta_delivery",
   "configured_signature_tamper_status": 403,
   "preview_without_token": 401

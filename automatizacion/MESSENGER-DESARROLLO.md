@@ -1,5 +1,7 @@
 # Messenger de Meta — Jotacellcomunicapp en Desarrollo
 
+**Actualización de diagnóstico:** [panel privado y vinculación mediante frase](MESSENGER-CONECTAR-PROBADOR.md), sin acceso a conversaciones ni permisos nuevos. El receptor cerrado ahora confirma Page POST firmado con HTTP 200 incluso sin allowlist; conserva recibos mínimos y permite vinculación temporal únicamente mediante código creado por el propietario. Los estados de despliegue previos que siguen a continuación son históricos; consultar la evidencia de la última instalación antes de declarar activo el nuevo panel.
+
 Guía operativa actual, revisión humana, métricas y requisitos de conversaciones reales: [OPERAR-MESSENGER.md](OPERAR-MESSENGER.md). El Page ID confirmado está fijado en la configuración del piloto; no requiere crear otra variable en GitHub.
 
 **Estado actualizado:** Page ID y secretos de Meta aplicados. Challenge con token configurado y HMAC con App Secret verificados por HTTPS; 36 pruebas unitarias y pipeline de tres SKU aprobados. [Evidencia actual](generated/fase2/meta-configuracion-verificada.json). Falta META_TEST_SENDER_IDS, verificación/suscripción desde el panel de Meta y entrega real de un probador. Recepción cerrada, sin envíos; `activar:false` bloquea nuevos uploads y el Worker sigue activo.

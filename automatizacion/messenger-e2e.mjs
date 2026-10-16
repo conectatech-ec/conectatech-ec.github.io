@@ -34,19 +34,27 @@ try {
  const metrics=await call('/messenger/metrics?scope=ci');assert.equal(metrics.messages_sent,0);assert.ok(metrics.daily.reduce((n,d)=>n+d.consultas,0)>=3);assert.ok(metrics.daily.reduce((n,d)=>n+d.duplicates,0)>=3);report.metrics_and_human_review='passed';report.changed_draft_review_status=409;
  const health=await (await fetch(base+'/health')).json();report.runtime_meta_configuration_present=health.messenger_configured;assert.equal(health.meta_ingress_enabled,false);report.meta_page_reception_enabled=false;
  const status=await call('/messenger/status');report.meta_secret_readiness={app_secret:status.app_secret_present,verify_token:status.verify_token_present,page:status.page_present,test_senders:status.test_senders_present};
+ const pairing=await call('/messenger/pairing/start?scope=ci',{confirmed_tester:true});
+ const paired=await call('/messenger/self-test',{sku:'MICR27',test_id:'ci-'+crypto.randomUUID(),case:'pairing_claim',pairing_phrase:pairing.phrase});assert.equal(paired.ack.queued,0);assert.equal(paired.ack.reception_enabled,false);
+ const enrolled=await call('/messenger/pairing/status?scope=ci');assert.equal(enrolled.claimed,true);
+ const identity=await call('/messenger/pairing/consume?scope=ci',{});assert.ok(identity.psid==='100000000000002','Synthetic enrollment identity mismatch; values withheld');
+ const consumed=await fetch(base+'/messenger/pairing/consume?scope=ci',{method:'POST',headers,body:'{}'});assert.equal(consumed.status,409);
+ const audit=await call('/messenger/receipts?scope=ci');assert.ok(audit.receipts.some(r=>r.reason==='pairing_claimed'&&r.signature_valid&&r.source==='synthetic_ci'));assert.ok(!JSON.stringify(audit).includes('100000000000002'));assert.ok(!JSON.stringify(audit).includes(pairing.phrase));report.secure_tester_pairing_and_receipts='passed_synthetic_ci_only';
+ const panel=await fetch(base+'/messenger/setup');assert.equal(panel.status,200);assert.match(panel.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);assert.ok(!(await panel.text()).includes(token));report.operator_panel_http=200;
  if(process.env.META_VERIFY_TOKEN) {
   const url=new URL(base+'/webhooks/meta');url.searchParams.set('hub.mode','subscribe');url.searchParams.set('hub.verify_token',process.env.META_VERIFY_TOKEN);url.searchParams.set('hub.challenge','ct-meta-dev-challenge');
   let r;try{r=await fetch(url,{signal:AbortSignal.timeout(10000)});}catch{throw Error('Configured verification HTTPS request failed; URL withheld');}
-  assert.equal(r.status,200);assert.equal(await r.text(),'ct-meta-dev-challenge');report.configured_verify_token_handshake='passed';
+  assert.equal(r.status,200);assert.ok((await r.text())==='ct-meta-dev-challenge','Verification challenge mismatch; response withheld');report.configured_verify_token_handshake='passed';
  } else report.configured_verify_token_handshake='pending_secret';
  if(process.env.META_APP_SECRET) {
   assert.equal(status.app_secret_present,true);
   const raw=JSON.stringify({object:'page',entry:[]});const signature='sha256='+await hmac(process.env.META_APP_SECRET,raw);
-  const signed=await fetch(base+'/webhooks/meta',{method:'POST',headers:{'X-Hub-Signature-256':signature},body:raw,signal:AbortSignal.timeout(10000)});
-  assert.equal(signed.status,status.page_present&&status.test_senders_present?200:503);
-  const tampered=await fetch(base+'/webhooks/meta',{method:'POST',headers:{'X-Hub-Signature-256':signature},body:raw+' '});assert.equal(tampered.status,403);
+  const signed=await fetch(base+'/webhooks/meta',{method:'POST',headers:{...headers,'X-Hub-Signature-256':signature},body:raw,signal:AbortSignal.timeout(10000)});
+  assert.equal(signed.status,200);assert.equal((await signed.json()).reception_enabled,false);
+  const tampered=await fetch(base+'/webhooks/meta',{method:'POST',headers:{...headers,'X-Hub-Signature-256':signature},body:raw+' '});assert.equal(tampered.status,403);
+  const actualAudit=await call('/messenger/receipts');assert.ok(actualAudit.receipts.some(r=>r.signature_valid&&r.source==='authorized_ci_probe'&&r.http_status===200&&r.reason==='ingress_disabled'));report.configured_secret_closed_ingress_receipt='passed_CI_probe_not_Meta_delivery';
   report.configured_app_secret_hmac='passed_empty_fixture_not_Meta_delivery';report.configured_signature_tamper_status=403;
  } else report.configured_app_secret_hmac='pending_secret';
- for(const path of ['/messenger/test-results?scope=ci','/messenger/status','/messenger/metrics','/messenger/review']){const unauth=await fetch(base+path);assert.equal(unauth.status,401);}report.preview_without_token=401;report.passed=true;console.log(JSON.stringify(report));
+ for(const path of ['/messenger/test-results?scope=ci','/messenger/status','/messenger/metrics','/messenger/review','/messenger/receipts','/messenger/pairing/start','/messenger/pairing/status','/messenger/pairing/consume']){const unauth=await fetch(base+path);assert.equal(unauth.status,401);}report.preview_without_token=401;report.passed=true;console.log(JSON.stringify(report));
 } catch(e){report.error=String(e.message).slice(0,500);throw e;}
 finally{await mkdir(new URL('./generated/fase2/',import.meta.url),{recursive:true});await writeFile(output,JSON.stringify(report,null,2)+'\n');}

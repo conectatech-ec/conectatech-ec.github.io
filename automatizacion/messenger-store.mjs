@@ -1,6 +1,7 @@
 import catalog from './generated/catalogo.json' with {type:'json'};
 import {answer} from './commerce.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
+import {controlInit,controlCleanup,controlNextAlarm,controlFetch} from './messenger-control.mjs';
 const json=(x,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
 async function digest(text){return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))].map(n=>n.toString(16).padStart(2,'0')).join('');}
 export function commercialDraft(response) {
@@ -20,11 +21,13 @@ export class MessengerTestInbox {
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_day ON events(day)');
   this.sql.exec('CREATE TABLE IF NOT EXISTS reviews (k TEXT PRIMARY KEY, decision TEXT, digest TEXT, reviewed_at INTEGER)');
   this.sql.exec('CREATE TABLE IF NOT EXISTS counters (day INTEGER PRIMARY KEY, duplicates INTEGER NOT NULL DEFAULT 0)');
+  controlInit(this);
  }
- cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);}
+ cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);controlCleanup(this,now);}
  async fetch(req) {
   const path=new URL(req.url).pathname;
   this.cleanup(Date.now());
+  const control=await controlFetch(path,req,this);if(control)return control;
   if(path==='/results') {
    const rows=this.sql.exec('SELECT e.k AS event_ref,e.status,e.skus,e.result,e.attempts,e.error,r.decision,r.reviewed_at FROM events e LEFT JOIN reviews r ON r.k=e.k ORDER BY e.rowid DESC LIMIT 30').toArray();
    return json({mode:'development-only',outbound_enabled:false,events:await Promise.all(rows.map(async r=>({...r,decision:r.decision||'pendiente',result_digest:r.result?await digest(r.result):null,skus:JSON.parse(r.skus),result:r.result?JSON.parse(r.result):null})))});
@@ -78,6 +81,7 @@ export class MessengerTestInbox {
   }
   const next=this.sql.exec("SELECT MIN(next_at) AS t FROM events WHERE status = 'queued'").one().t;
   const expiry=this.sql.exec('SELECT MIN(expires) AS t FROM events').one().t;
-  if(next||expiry)await this.state.storage.setAlarm(Math.max(Date.now()+200,Math.min(next||Infinity,expiry||Infinity)));
+  const controlExpiry=controlNextAlarm(this);
+  if(next||expiry||Number.isFinite(controlExpiry))await this.state.storage.setAlarm(Math.max(Date.now()+200,Math.min(next||Infinity,expiry||Infinity,controlExpiry)));
  }
 }

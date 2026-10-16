@@ -41,6 +41,20 @@ jobs:
           name: estado-conexion-cloud
           path: automatizacion/generated/fase2/connection.json
           retention-days: 7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Leer recibos privados del Worker sin enviar mensajes
+        run: node automatizacion/meta-diagnostics.mjs
+        env:
+          CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: diagnostico-meta-solo-lectura
+          path: automatizacion/generated/fase2/meta-diagnostics.json
+          retention-days: 7
   sincronizar_meta:
     needs: preparar
     if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && needs.preparar.outputs.sincronizar_meta == 'true' && needs.preparar.outputs.ready == 'true'
@@ -113,12 +127,19 @@ jobs:
           REQUIRE_REAL_AI: 'true'
           EXPECTED_RELEASE: ${{ github.sha }}
       - name: Verificar receptor Messenger de desarrollo sin envios
-        run: node automatizacion/messenger-e2e.mjs
+        run: python automatizacion/run-messenger-with-tail.py
         env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
           META_VERIFY_TOKEN: ${{ secrets.META_VERIFY_TOKEN }}
           META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+      - name: Leer recibos del Worker despues de verificar HTTPS
+        run: node automatizacion/meta-diagnostics.mjs
+        env:
+          CLOUDFLARE_PILOT_URL: ${{ steps.deploy.outputs.url }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
