@@ -1,0 +1,25 @@
+{
+  "deployed_commit": "73cf0ef2",
+  "branch": "automatizacion/piloto-cloud-3sku-20261015",
+  "worker": "conectatech-comercial-piloto",
+  "url": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/messenger/setup",
+  "workflow_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38949344653",
+  "unit_tests_passed": 68,
+  "cloud_enrollment_test": {
+    "scope": "synthetic_CI_only_not_a_real_sender",
+    "wrapped_phrase": "passed",
+    "registration_without_psid_export": "passed_synthetic_ci_registration_without_PSID_export",
+    "ci_outbound_enable_http": 409,
+    "panel_http": 200,
+    "private_routes_http": 401
+  },
+  "real_sender": {
+    "registered": true,
+    "outbound_testers_only": true,
+    "live_customers_enabled": false,
+    "identity_disclosed": false,
+    "source": "private_seller_status_and_external_signed_pairing_claimed_receipt"
+  },
+  "paid_services_activated": false,
+  "meta_ingress_enabled": false
+}
