@@ -15,6 +15,14 @@ if(token){
   const appInfo=await get('app?fields=id,name',token);report.app_identity_http=appInfo.http;report.app_name_matches=appInfo.b.name==='Jotacellcomunicapp';
   const appId=app?.id||process.env.META_APP_ID||(report.app_name_matches?appInfo.b.id:null);
   if(appId&&process.env.META_APP_SECRET){
+   const appToken=appId+'|'+process.env.META_APP_SECRET;
+   const webhook=await get(appId+'/subscriptions',appToken);
+   report.app_webhook_http=webhook.http;report.app_webhook_error_code=Number(webhook.b.error?.code)||null;
+   const pageHook=webhook.b.data?.find(x=>x.object==='page');
+   report.app_page_webhook_found=webhook.http===200?!!pageHook:null;
+   report.app_page_webhook_active=pageHook? pageHook.active===true:null;
+   report.app_messages_field=pageHook?!!pageHook.fields?.some(f=>(typeof f==='string'?f:f.name)==='messages'):null;
+   report.app_callback_matches=pageHook? pageHook.callback_url===config.url_publica+'/webhooks/meta':null;
    const d=await get('debug_token?input_token='+encodeURIComponent(token),appId+'|'+process.env.META_APP_SECRET);
    const data=d.b.data||{};report.token_debug_http=d.http;report.token_debug_error_code=Number(d.b.error?.code)||null;report.token_valid=data.is_valid===true;report.token_type=data.type||null;report.token_app_matches=String(data.app_id)===String(appId);report.pages_messaging_granted=!!data.scopes?.includes('pages_messaging');report.pages_manage_metadata_granted=!!data.scopes?.includes('pages_manage_metadata');report.token_expired=Number(data.expires_at)>0&&Number(data.expires_at)*1000<=Date.now();
   }
