@@ -33,6 +33,7 @@ test('Native buttons follow product, compare choices and already expressed check
  const photo=quickReplies(plan({intent:'photo'}));assert.ok(photo.some(b=>b.payload==='ALEX:card:POWE003'));assert.ok(photo.some(b=>b.payload==='ALEX:specs:POWE003'));
  const compare=quickReplies(plan({focus:['MICR27','POWE003'],action:'compare',intent:'compare'}));assert.deepEqual(compare.slice(0,2).map(b=>b.payload),['ALEX:choose:MICR27','ALEX:choose:POWE003']);
  const buy=quickReplies(plan({intent:'delivery',memory:{payment:'contado',delivery:'quito'}}));assert.ok(buy.some(b=>b.payload==='ALEX:buy:POWE003'));
+ const misclassified=quickReplies(plan({intent:'price',facts:['POWE003.power']}));assert.ok(misclassified.some(b=>b.payload==='ALEX:photo:POWE003'));
  const interest=quickReplies(plan({action:'interest',memory:{payment:'contado',delivery:'quito'}}));assert.ok(!interest.some(b=>/retiro|quito|card|cash/.test(b.payload)));assert.ok(interest.some(b=>b.payload==='ALEX:human:POWE003'));
  assert.deepEqual(quickReplies(plan({facts:['warranty'],memory:{payment:'contado',delivery:'quito'}})).map(b=>b.payload),['ALEX:human:POWE003']);
  for(const b of [...photo,...compare,...buy,...interest]){const payload={object:'page',entry:[{id:'1',messaging:[{sender:{id:'2'},timestamp:Date.now(),message:{mid:'test-'+b.payload,text:b.title,quick_reply:{payload:b.payload}}}]}]};assert.equal(normalizeEvents(payload,{META_PAGE_ID:'1'})[0].text,normalizeAlexAction(b.payload));}
@@ -42,6 +43,7 @@ test('Unnecessary closing questions and manufactured commercial promises are rem
  for(const ask of ['¿Hay algo más que necesites?','¿Qué tipo de descuento te gustaría?','¿Quieres que te regale otro?']){const a=renderPlan(plan({ask}),source);assert.ok(!a.text.includes('?'));assert.match(a.text,/\$33\.01/);}
  const a=renderPlan(plan({facts:['POWE003.cash','POWE003.battery'],intent:'recommend'}),source);assert.ok(a.text.startsWith('💵'));assert.match(a.text,/\nLa Philco/);
  assert.ok(!renderPlan(plan({say:'Son iguales y equivalentes.'}),source).text.includes('equivalentes'));
+ assert.ok(!renderPlan(plan({ask:'¿Te parece suficiente potencia para tus necesidades?'}),source).text.includes('?'));
 });
 test('Private demonstration uses the same validated button payloads and removes obsolete choices',async()=>{
  const html=await alexPage().text();new Function(html.match(/<script nonce="[^"]+">([\s\S]*?)<\/script>/)[1]);assert.ok(html.includes('quick_reply_payload:payload'));assert.ok(html.includes("send(q.title,q.payload)"));assert.ok(html.includes("querySelectorAll('[data-choice]')"));

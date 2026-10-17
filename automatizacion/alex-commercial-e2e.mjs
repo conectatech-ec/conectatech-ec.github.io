@@ -5,23 +5,23 @@ import baseline from './generated/catalogo.json' with {type:'json'};
 import {refreshCatalog} from './live.mjs';
 import {factBook} from './alex.mjs';
 const base=process.env.PILOT_BASE_URL,headers={Authorization:'Bearer '+process.env.PILOT_TOKEN,'Content-Type':'application/json'},session=crypto.randomUUID();
-const report={mode:'real_ai_24_turn_private_https_not_Messenger',passed:false,paid_services_activated:false,messages_sent_to_Messenger:0,tests:[],native_choices_used:0};
+const report={mode:'real_ai_24_turn_private_https_not_Messenger',passed:false,paid_services_activated:false,messages_sent_to_Messenger:0,tests:[],validation_errors:[],native_choices_used:0};
 let last,source;
 const skuPrice=(sku,key)=>source.productos.find(p=>p.sku===sku)[key].toFixed(2);
 async function get(path){const r=await fetch(base+path,{headers,signal:AbortSignal.timeout(15000)});assert.equal(r.status,200);return r.json();}
 async function ask(message,check=()=>{},payload){
  const r=await fetch(base+'/alex/chat',{method:'POST',headers,body:JSON.stringify({session_id:session,message,quick_reply_payload:payload}),signal:AbortSignal.timeout(60000)});assert.equal(r.status,200);const a=await r.json();
  report.tests.push({turn:report.tests.length+1,input:message,via_native_payload:!!payload,text:a.text,generative:a.generative,error_code:a.error_code,focus:a.focus,facts:a.facts,image:a.image,buttons:a.quick_replies?.map(x=>x.title),memory:a.memory});
- assert.equal(a.outbound_enabled,false);assert.ok(a.text.length<=440);assert.ok((a.text.match(/\?/g)||[]).length<=1);assert.ok(!/\b(?:MICR27|POWE003|ADAP005|stock|SKU|referencial)\b|\b\d+\s+unidades?\b/i.test(a.text));
+ try{assert.equal(a.outbound_enabled,false);assert.ok(a.text.length<=440);assert.ok((a.text.match(/\?/g)||[]).length<=1);assert.ok(!/\b(?:MICR27|POWE003|ADAP005|stock|SKU|referencial)\b|\b\d+\s+unidades?\b/i.test(a.text));
  if(report.tests.length>1)assert.ok(!/\b(?:hola|epa|bienvenid[oa]|soy alex)\b/i.test(a.text),'No repeated greetings beyond the short history');
  const facts=factBook(source);for(const k of a.facts||[])assert.ok(Object.hasOwn(facts,k),'Only approved live facts: '+k);
  for(const amount of a.text.match(/\$\d+(?:\.\d{2})?/g)||[])assert.ok((a.facts||[]).some(k=>facts[k]?.includes(amount)),'Price must come from its current approved fact');
  assert.ok(a.quick_replies.length<=3);for(const b of a.quick_replies){assert.ok(b.title.length<=20);assert.ok(/^ALEX:/.test(b.payload));}
- await check(a);last=a;return a;
+ await check(a);}catch(e){report.validation_errors.push({turn:report.tests.length,error:String(e.message).slice(0,350)});}last=a;return a;
 }
 const real=a=>assert.equal(a.generative,true,a.error_code||'Actual generative model required');
 const cash=sku=>a=>{real(a);assert.deepEqual(a.focus,[sku]);assert.ok(a.text.startsWith('💵'));assert.ok(a.text.includes('$'+skuPrice(sku,'promo')));};
-async function choose(action,check){const b=last.quick_replies.find(q=>q.payload==='ALEX:'+action+(action==='choose:POWE003'?'':':'+last.focus[0]));assert.ok(b,'Relevant native choice missing: '+action);report.native_choices_used++;return ask(b.title,check,b.payload);}
+async function choose(action,check){const b=last.quick_replies.find(q=>q.payload==='ALEX:'+action+(action==='choose:POWE003'?'':':'+last.focus[0]));if(!b){report.validation_errors.push({turn:report.tests.length+1,error:'Relevant native choice missing: '+action});const fallback={card:'¿Cuánto cuesta con tarjeta?',photo:'Quiero ver otra vez la foto',buy:'Quiero comprar este producto','choose:POWE003':'Elijo la batería Philco'};return ask(fallback[action],check);}report.native_choices_used++;return ask(b.title,check,b.payload);}
 try{
  source=await refreshCatalog(baseline);report.quota_before=await get('/alex/quota');
  // If the existing free budget is nearly due to renew, wait for renewal instead of raising limits.
@@ -53,6 +53,6 @@ try{
  await ask('¿Qué garantía tiene la batería Philco?',a=>{real(a);assert.match(a.text,/garantía/);assert.match(a.text,/confirma|vendedor|persona/);assert.ok(!/\d+\s*(?:años|meses)/i.test(a.text));});
  await ask('Quiero hablar con una persona',a=>{assert.equal(a.action,'handoff');assert.equal(a.quick_replies.length,0);});
  await ask('olvida esta conversación',a=>{assert.equal(a.action,'erase');assert.equal(a.memory.turns,0);assert.equal(a.memory.budget,undefined);});
- report.quota_after=await get('/alex/quota');report.real_generative_turns=report.tests.filter(x=>x.generative).length;assert.equal(report.real_generative_turns,22);assert.ok(report.native_choices_used>=4);report.passed=true;
+ report.quota_after=await get('/alex/quota');report.real_generative_turns=report.tests.filter(x=>x.generative).length;assert.equal(report.real_generative_turns,22);assert.ok(report.native_choices_used>=4);assert.equal(report.validation_errors.length,0,'All 24 turns and native choices must pass; recorded errors are not waived');report.passed=true;
 }catch(e){report.failure=String(e.message).slice(0,350);}
 const folder=new URL('./generated/fase2/',import.meta.url);await mkdir(folder,{recursive:true});await writeFile(new URL('alex-commercial-24-turn.json',folder),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));if(!report.passed)process.exitCode=1;

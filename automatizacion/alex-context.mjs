@@ -10,7 +10,15 @@ export function mergePreferences(input,proposed={},memory={}){
  const text=fold(input),next={...memory},budget=statedBudget(input);
  if(budget!==null)next.budget=budget;
  // Newly proposed preferences must appear in the current user input, not old model prose.
- for(const [key,max]of [['brand',40],['sector',60],['need',100]])if(typeof proposed[key]==='string'&&proposed[key].length>1&&proposed[key].length<=max&&text.includes(fold(proposed[key])))next[key]=proposed[key];
+ for(const [key,max]of [['brand',40],['sector',60],['need',100]])if(typeof proposed[key]==='string'&&proposed[key].length>1&&proposed[key].length<=max&&text.includes(fold(proposed[key]))){
+  const value=fold(proposed[key]);
+  if(key==='sector'){
+   const locationCue=/\b(?:estoy|vivo|sector|barrio|zona|direccion|entrega|envio|quito|guayaquil)\b/.test(text),lastAsk=(memory.history||[]).filter(t=>t.role==='assistant').at(-1)?.text||'';
+   if(/^(?:quito|guayaquil|ecuador|celular|telefono|casa|domicilio|tarjeta|contado|bateria|microfono|producto)$/.test(value)||!locationCue&&!/sector|barrio|zona/i.test(lastAsk))continue;
+  }
+  if(key==='brand'&&/^(?:celular|telefono|bateria|microfono|producto|tarjeta|contado)$/.test(value))continue;
+  next[key]=proposed[key];
+ }
  const payments=[...text.matchAll(/(?:pago|pagare|prefiero|mejor|quiero pagar|usare)\s+(?:(?:al|en|con)\s+)?(contado|tarjeta|efectivo)\b/g)].filter(m=>!/(?:\bno\s+(?:quiero\s+)?)$/.test(text.slice(Math.max(0,m.index-12),m.index)));
  if(payments.length)next.payment=payments.at(-1)[1]==='efectivo'?'contado':payments.at(-1)[1];
  else if(['contado','tarjeta'].includes(proposed.payment)&&text.includes(proposed.payment)&&!/[¿?]|cuanto|cuesta|aceptan|compar|precio|intereses|planes|meses/.test(text)&&!new RegExp('\\bno(?:\\s+(?:quiero|con|en|al|pago)){0,3}\\s+'+proposed.payment).test(text)){

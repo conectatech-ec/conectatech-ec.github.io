@@ -87,6 +87,7 @@ export function renderPlan(plan,source,memory={}){
  }
  if(redundantQuestion(ask,memory))ask='';
  if(/algo m[aá]s|qu[eé] m[aá]s|necesitas saber|tipo de descuento|qu[eé] descuento/i.test(ask))ask='';
+ if(/cu[aá]nta energ[ií]a de reserva|te parece.*suficiente|suficiente (?:capacidad|potencia)/i.test(ask))ask='';
  const allowed=(source?.productos||[]).map(p=>p.sku);
  let focus=Array.isArray(plan.focus)?[...new Set(plan.focus)].filter(s=>allowed.includes(s)).slice(0,2):[];
  if(plan.focus?.length&&focus.length!==plan.focus.length)throw Error('UNKNOWN_PRODUCT');
@@ -172,7 +173,7 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
  }
 }
 export function quickReplies(result){
- const focus=result.focus?.[0],memory=result.memory||{},names={MICR27:'Elegir JBL',POWE003:'Elegir Philco',ADAP005:'Elegir adaptador'};let options;
+ const focus=result.focus?.[0],memory=result.memory||{},facts=result.facts||[],names={MICR27:'Elegir JBL',POWE003:'Elegir Philco',ADAP005:'Elegir adaptador'};let options;
  if(result.action==='handoff')return [];
  if(result.intent==='safe_fallback')options=[['Hablar con persona','human']];
  else if(result.facts?.some(k=>['warranty','compatibility','stale'].includes(k)))options=[['Hablar con persona','human']];
@@ -180,6 +181,8 @@ export function quickReplies(result){
  else if(result.intent==='photo')options=[['Precio de contado','cash'],['Precio con tarjeta','card'],['Características','specs']];
  else if(result.action==='interest')options=!memory.payment?[['Precio de contado','cash'],['Precio con tarjeta','card'],['Hablar con persona','human']]:!memory.delivery?[['Retiro en tienda','retiro'],['Entrega en Quito','quito'],['Envío nacional','nacional']]:[['Hablar con persona','human'],['Ver fotografía','photo']];
  else if(focus&&memory.payment&&memory.delivery&&result.purchasable!==false)options=[['Continuar compra','buy'],['Ver fotografía','photo'],['Hablar con persona','human']];
+ else if(facts.some(k=>/\.(?:battery|power|audio|patterns|plug|benefit)$/.test(k))&&!facts.some(k=>/\.(?:cash|card|pvp)$/.test(k)))options=[['Ver fotografía','photo'],['Precio de contado','cash'],['Precio con tarjeta','card']];
+ else if(facts.some(k=>/\.(?:card|pvp)$/.test(k)))options=[['Precio de contado','cash'],['Retiro en tienda','retiro'],['Entrega en Quito','quito']];
  else if(result.intent==='payment'||result.intent==='price')options=memory.delivery?[['Continuar compra','buy'],['Ver fotografía','photo'],['Hablar con persona','human']]:[['Retiro en tienda','retiro'],['Entrega en Quito','quito'],['Precio con tarjeta','card']];
  else if(result.intent==='delivery')options=memory.payment?[['Continuar compra','buy'],['Ver fotografía','photo'],['Hablar con persona','human']]:[['Precio de contado','cash'],['Precio con tarjeta','card'],['Hablar con persona','human']];
  else if(focus)options=[['Ver fotografía','photo'],['Precio de contado','cash'],['Precio con tarjeta','card']];
