@@ -6,7 +6,8 @@ import {createApp,verifyAccess} from '../src/worker.mjs';
 const schema=readFileSync(new URL('../migrations/0001.sql',import.meta.url),'utf8');
 export const editorial=JSON.parse(readFileSync(new URL('../data/piloto-editorial.json',import.meta.url)));
 export const now=1800000000;
-export function fixture(){
+export function fixture({clock=now}={}){
+ const now=clock;
  const sql=new DatabaseSync(':memory:');sql.exec(schema);
  function prepare(query){let args=[];return {bind(...v){args=v;return this;},async first(){return sql.prepare(query).get(...args)||null;},async all(){return {results:sql.prepare(query).all(...args)};},async run(){const r=sql.prepare(query).run(...args);return {meta:{changes:Number(r.changes)}};}};}
  const db={prepare,async batch(items){sql.exec('BEGIN');try{const result=[];for(const p of items)result.push(await p.run());sql.exec('COMMIT');return result;}catch(e){sql.exec('ROLLBACK');throw e;}}};

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Read only selected XLSX columns; output sanitized SQL, never costs or exact stock."""
+from decimal import Decimal
 import argparse, datetime as dt, hashlib, json, re, zipfile, xml.etree.ElementTree as ET
 from pathlib import Path
 NS={'m':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
@@ -27,10 +28,14 @@ def rows(path):
 def quote(x):return "'"+str(x).replace("'","''")+"'"
 def build(path, mapping, editorial, until):
  if not re.fullmatch(r'Reporte-Inventario al \d{2}-\d{2}-\d{4}\.xlsx',path.name):raise ValueError('Requiere exportación XLSX de inventario identificada por fecha')
- if set(mapping)!={'sku','promo','pvp','stock'}:raise ValueError('Mapeo explícito requerido: sku,promo,pvp,stock')
+ if set(mapping) not in ({'sku','promo','pvp','stock'},{'sku','promo','pvp','pvp_tax','stock'}):raise ValueError('Mapeo explícito requerido: sku,promo,pvp,stock; opcional pvp_tax como importe fiscal')
  now=dt.datetime.now(dt.timezone.utc).timestamp()
  if not now<until<=now+172800:raise ValueError('Vigencia debe ser futura y máximo 48 horas')
- digest=hashlib.sha256(path.read_bytes()).hexdigest();iterator=iter(rows(path));headers=next(iterator)
+ digest=hashlib.sha256(path.read_bytes()).hexdigest();iterator=iter(rows(path));headers=None
+ for index,candidate in enumerate(iterator):
+  if all(label in [value.strip() for value in candidate.values()] for label in mapping.values()):headers=candidate;break
+  if index>=19:break
+ if headers is None:raise ValueError('No se encontró encabezado explícito en primeras 20 filas')
  columns={}
  for key,label in mapping.items():
   matches=[col for col,value in headers.items() if value.strip()==label]
@@ -44,13 +49,15 @@ def build(path, mapping, editorial, until):
   seen.add(sku)
   if sku not in approved:continue
   values={}
-  for key in ['promo','pvp','stock']:
+  for key in ['promo','pvp','stock']+(['pvp_tax'] if 'pvp_tax' in columns else []):
    s=row.get(columns[key],'')
    if not re.fullmatch(r'\d+(?:\.\d+)?',s):raise ValueError('Valor numérico inválido: '+sku+' '+key)
-   values[key]=float(s)
+   values[key]=Decimal(s)
+  if 'pvp_tax' in values:values['pvp']+=values.pop('pvp_tax')
   if values['promo']<=0 or values['pvp']<=0:continue
+  if any(values[k].as_tuple().exponent < -2 for k in ['promo','pvp']):raise ValueError('Precio con precisión no admitida: '+sku)
   p=approved[sku];data=json.dumps({k:v for k,v in p.items() if k!='evidencia'},ensure_ascii=False)
-  fingerprint=hashlib.sha256(json.dumps([sku,data,values['promo'],values['pvp'],values['stock']>0],ensure_ascii=False).encode()).hexdigest()
+  fingerprint=hashlib.sha256(json.dumps([sku,data,str(values['promo']),str(values['pvp']),values['stock']>0],ensure_ascii=False).encode()).hexdigest()
   statements.append('INSERT INTO products VALUES ('+','.join([quote(sku),quote(data),str(values['promo']),str(values['pvp']),str(int(values['stock']>0)),str(until),quote(fingerprint)])+') ON CONFLICT(sku) DO UPDATE SET data=excluded.data,promo=excluded.promo,pvp=excluded.pvp,available=excluded.available,verified_until=excluded.verified_until,inventory_digest=excluded.inventory_digest;')
  statements.append("INSERT INTO audit VALUES ("+quote('inventory:'+digest)+",'SISTEMA','INVENTARIO','IMPORTADO',"+quote(json.dumps({'source_sha256':digest,'source_file':path.name}))+","+str(int(now))+") ON CONFLICT(id) DO NOTHING;")
  statements.extend(["UPDATE publications SET state='PENDIENTE' WHERE state IN ('PREPARADO','APROBADO') AND EXISTS (SELECT 1 FROM products p WHERE p.sku=publications.sku AND (p.available=0 OR p.inventory_digest!=publications.inventory_digest));",'COMMIT;'])

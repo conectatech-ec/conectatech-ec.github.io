@@ -26,3 +26,18 @@ class ImportTests(unittest.TestCase):
    with self.assertRaises(ValueError):module.build(path,mapping,editorial,1)
  def test_reject_legacy_csv(self):
   with self.assertRaises(ValueError):module.build(Path('inventario-publico.csv'),{},[],0)
+
+ def test_real_layout_header_offset_and_explicit_tax_amount(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   path=Path(tmp)/'Reporte-Inventario al 16-10-2026.xlsx';self.workbook(path,price='33.01')
+   with zipfile.ZipFile(path) as z:parts={n:z.read(n) for n in z.namelist()}
+   sheet=parts['xl/worksheets/sheet1.xml'].decode().replace('<sheetData>','<sheetData><row><c r="A1" t="inlineStr"><is><t>INVENTARIO</t></is></c></row><row></row><row></row>').replace('</row></sheetData>','<c r="F5" t="inlineStr"><is><t>4.95</t></is></c></row></sheetData>').replace('<t>Costo privado</t></is></c></row>','<t>Costo privado</t></is></c><c r="F4" t="inlineStr"><is><t>IVA PVP</t></is></c></row>')
+   parts['xl/worksheets/sheet1.xml']=sheet.encode()
+   with zipfile.ZipFile(path,'w') as z:
+    for n,b in parts.items():z.writestr(n,b)
+   mapping={'sku':'Código','promo':'Contado','pvp':'PVP','pvp_tax':'IVA PVP','stock':'Existencia'}
+   until=int(datetime.datetime.now(datetime.timezone.utc).timestamp())+86400
+   editorial=json.loads((Path(__file__).parents[1]/'data/piloto-editorial.json').read_text())
+   sql=module.build(path,mapping,editorial,until)
+   db=sqlite3.connect(':memory:');db.executescript((Path(__file__).parents[1]/'migrations/0001.sql').read_text());db.executescript(sql)
+   self.assertEqual(db.execute('select promo,pvp from products').fetchone(),(33.01,16.95))

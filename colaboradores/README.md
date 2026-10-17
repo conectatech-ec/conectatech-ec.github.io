@@ -12,7 +12,7 @@ npm test
 npm run check
 ```
 
-Las pruebas usan SQLite en memoria, identidad inyectada exclusivamente desde `tests/fixture.mjs` y precios artificiales ($10/$12). No son precios comerciales. El Worker exportado usa siempre Cloudflare Access y no acepta cabeceras de prueba. La prueba de Access firma y verifica JWT RSA realmente.
+Las pruebas usan SQLite en memoria, identidad inyectada exclusivamente desde `tests/fixture.mjs` y precios artificiales ($10/$12) para pruebas de permisos. La prueba adicional `real-inventory.test.mjs` aplica el SQL saneado del archivo recibido y comprueba los precios reales de los tres productos, sin desplegar cuentas ni referencias. El Worker exportado usa siempre Cloudflare Access y no acepta cabeceras de prueba. La prueba de Access firma y verifica JWT RSA realmente.
 
 `tests/ui-check.mjs` comprueba la interfaz en Chromium contra el Worker y SQLite con datos controlados. Su configuración de Playwright/rutas corresponde al entorno de ejecución y no es una URL pública. No se suben cuentas ni datos de prueba al servidor.
 
@@ -24,11 +24,11 @@ Base auditada `1dbad9ea5b69666dff6b3fc0cfd464185cb66e2e`, confirmada en GitHub. 
 
 Hay tres banners históricos listados en `reportes/banners-prioritarios.json` para otros SKU. Su mero estado «generado» no prueba aprobación vigente; no se usan para estos tres productos. `banner:null` muestra honestamente su ausencia. Sin catálogo PDF confirmado. No se fabrica material visual sin autorización/fidelidad demostrada.
 
-## Inventario: bloqueo deliberado
+## Inventario recibido y validado
 
-Falta `Reporte-Inventario al 16-10-2026.xlsx`. No se ha sustituido con el CSV histórico ni con el corte del 10/10. Por ello no hay precios comerciales cargados, anuncios reales vigentes ni enlaces comerciales desplegados. Las fichas editoriales sí están preparadas.
+`Reporte-Inventario al 16-10-2026.xlsx` fue adjuntado por el propietario y validado. El original permanece fuera del repositorio público. `data/piloto-inventario.sql` contiene únicamente la carga saneada de los tres productos; `data/inventario-validacion.json` registra fuente, hash, precios y vencimiento. `data/piloto-anuncios.json` contiene textos con precios reales e imágenes aprobadas, con enlaces a fichas públicas existentes (sin atribución individual hasta desplegar el servicio). No se importó un CSV histórico ni se cambió producción. La carga se comprobó en SQLite; no se aplicó a D1 remoto.
 
-El importador estándar lee el primer tab del XLSX, exige mapeo explícito de cuatro encabezados y rechaza duplicados, fórmulas, precios no numéricos, columnas ambiguas y vigencia de más de 48 horas. Los otros campos, incluidos costos, nunca salen al SQL. La disponibilidad se reduce a booleano. No altera Sistema 593.
+El importador estándar lee el primer tab del XLSX, busca los encabezados explícitos en las primeras 20 filas, admite el título y espacios de la exportación real, exige mapeo de SKU/contado/PVP/stock y rechaza duplicados, fórmulas, precios no numéricos, columnas ambiguas y vigencia de más de 48 horas. El mapeo real está en `data/mapeo-593.json`: contado = V. TOTAL; PVP final = PVP + importe PVP % IVA. Es la regla comprobada en `datos-593/REFERENCIA-OFICIAL.md`; no se calcula un porcentaje adicional. Usa Decimal para preservar centavos. Los otros campos, incluidos costos, nunca salen al SQL. La disponibilidad se reduce a booleano. No altera Sistema 593.
 
 Ejemplo de archivo de mapeo (ajustar encabezados a la exportación real, no asumirlos):
 
