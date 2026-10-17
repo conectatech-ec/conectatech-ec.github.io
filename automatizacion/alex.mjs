@@ -90,7 +90,7 @@ export function renderPlan(plan,source,memory={}){
   if(ask&&(memory.history||[]).filter(t=>t.role==='assistant').slice(-2).some(t=>t.text.includes(ask)))ask='';
  }
  if(redundantQuestion(ask,memory))ask='';
- if(/algo m[aá]s|qu[eé] m[aá]s|necesitas saber|tipo de descuento|qu[eé] descuento/i.test(ask))ask='';
+ if(/algo m[aá]s|necesitas saber|tipo de descuento|qu[eé] descuento/i.test(ask))ask='';
  if(/cu[aá]nta energ[ií]a de reserva|te parece.*suficiente|suficiente (?:capacidad|potencia)/i.test(ask))ask='';
  const allowed=(source?.productos||[]).map(p=>p.sku);
  let focus=Array.isArray(plan.focus)?[...new Set(plan.focus)].filter(s=>allowed.includes(s)).slice(0,2):[];
