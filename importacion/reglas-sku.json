@@ -2078,9 +2078,9 @@
     "REL016": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Omitir modelo comercial y tamaño de pantalla contradictorio. Una unidad, colores surtidos según disponibilidad. No inferir funciones no verificadas. Confirmación expresa del propietario, reportes/continuacion-105/aclaraciones-propietario.json.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1247,1248,1249,1250; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "REL059": {
       "autenticidad": "original verificado",
@@ -6538,9 +6538,9 @@
     "MICR13": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Solo USB-C, sin variante Lightning. Conservar SX21 y powerbank. Confirmación expresa del propietario, reportes/continuacion-105/aclaraciones-propietario.json.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 453,456,458,459; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 3
     },
     "MICR03": {
       "autenticidad": "genérico/compatible",
@@ -7417,9 +7417,13 @@
     "SOPO020": {
       "autenticidad": "original verificado",
       "presentacion": "sin caja",
-      "instrucciones": "",
+      "instrucciones": "Omitir modelo comercial; una unidad, variantes fotografiadas surtidas según disponibilidad. Confirmación expresa del propietario, reportes/continuacion-105/aclaraciones-propietario.json. Ninguna imagen comercial del producto debe mostrar Yantech / YAN TECH ni su logotipo. Retirar visualmente esa marca, conservar el producto y los originales. Aplicar a portada, galería y futuros banners.",
       "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 120,121,298,299; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "revision": 4,
+      "marcas_excluidas_imagen": [
+        "Yantech"
+      ],
+      "evidencia_marca_imagen": "Fotografías propias SOPO020.jpg y SOPO020_20261009_162735.jpg: marca YAN TECH identificada en empaque. Excepción visual vigente del propietario."
     },
     "SOPO052": {
       "autenticidad": "original verificado",
@@ -54835,6 +54839,88 @@
             "instrucciones": "Confirmación expresa propietario2026-10-16: Un solo kit de auto F1; variantes fotografiadas surtidas al mismo precio. No se promete cantidad fija de piezas. Conservar precios, PVP, stock, SKU y URL. Evidencia: reportes/continuacion-104/aclaraciones-propietario.json.",
             "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1807,1950; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
             "revision": 3
+          }
+        }
+      ]
+    },
+    {
+      "fecha": "2026-10-17T00:04:11.116418+00:00",
+      "cambios": [
+        {
+          "sku": "MICR13",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 453,456,458,459; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 2
+          },
+          "despues": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "Solo USB-C, sin variante Lightning. Conservar SX21 y powerbank. Confirmación expresa del propietario, reportes/continuacion-105/aclaraciones-propietario.json.",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 453,456,458,459; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 3
+          }
+        },
+        {
+          "sku": "SOPO020",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 120,121,298,299; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 2
+          },
+          "despues": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "Omitir modelo comercial; una unidad, variantes fotografiadas surtidas según disponibilidad. Confirmación expresa del propietario, reportes/continuacion-105/aclaraciones-propietario.json.",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 120,121,298,299; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 3
+          }
+        },
+        {
+          "sku": "REL016",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1247,1248,1249,1250; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 2
+          },
+          "despues": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "Omitir modelo comercial y tamaño de pantalla contradictorio. Una unidad, colores surtidos según disponibilidad. No inferir funciones no verificadas. Confirmación expresa del propietario, reportes/continuacion-105/aclaraciones-propietario.json.",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1247,1248,1249,1250; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 3
+          }
+        }
+      ]
+    },
+    {
+      "fecha": "2026-10-17T00:04:29.801876+00:00",
+      "cambios": [
+        {
+          "sku": "SOPO020",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "Omitir modelo comercial; una unidad, variantes fotografiadas surtidas según disponibilidad. Confirmación expresa del propietario, reportes/continuacion-105/aclaraciones-propietario.json.",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 120,121,298,299; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 3
+          },
+          "despues": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "Omitir modelo comercial; una unidad, variantes fotografiadas surtidas según disponibilidad. Confirmación expresa del propietario, reportes/continuacion-105/aclaraciones-propietario.json. Ninguna imagen comercial del producto debe mostrar Yantech / YAN TECH ni su logotipo. Retirar visualmente esa marca, conservar el producto y los originales. Aplicar a portada, galería y futuros banners.",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 120,121,298,299; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 4,
+            "marcas_excluidas_imagen": [
+              "Yantech"
+            ],
+            "evidencia_marca_imagen": "Fotografías propias SOPO020.jpg y SOPO020_20261009_162735.jpg: marca YAN TECH identificada en empaque. Excepción visual vigente del propietario."
           }
         }
       ]
