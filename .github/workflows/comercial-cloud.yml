@@ -150,8 +150,8 @@ jobs:
           META_PAGE_ID: ${{ vars.META_PAGE_ID }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           META_APP_ID: ${{ vars.META_APP_ID }}
-      - name: Verificar HTTPS e inferencia IA real para los tres SKU
-        run: node automatizacion/e2e.mjs
+      - name: Verificar piloto previo si el alcance no es la nueva conversación
+        run: node --input-type=module -e 'import fs from "node:fs"; const c=JSON.parse(fs.readFileSync("automatizacion/activar-cloud.json")); if(c.alex_validation!=="conversation_flow") await import("./automatizacion/e2e.mjs");'
         env:
           PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}

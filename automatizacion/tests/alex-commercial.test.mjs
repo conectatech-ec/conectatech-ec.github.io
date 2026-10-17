@@ -64,9 +64,36 @@ test('An explicit purchase advances to an unconfirmed request without asking kno
  const quoted=await generateAlex('¿Y ese cuánto cuesta de contado?',source,{focus:['MICR27']},env);assert.ok(quoted.text.startsWith('💵'));assert.ok(quoted.text.includes('$102.01'));assert.deepEqual(quoted.focus,['MICR27']);
  env.AI.run=async()=>({response:JSON.stringify(plan({facts:['POWE003.card'],ask:''}))});const total=await generateAlex('¿Y cuánto termino pagando en total?',source,{focus:['POWE003'],bank:'pichincha',months:12},env);assert.match(total.text,/PVP más intereses/);assert.ok(!total.text.includes('$'));
  env.AI.run=async()=>({response:JSON.stringify(plan({facts:['identity','national'],action:'handoff',intent:'identity'}))});
- const recommendation=await generateAlex('Busco una batería portátil, mi presupuesto cuarenta',source,{},env);assert.equal(recommendation.action,'recommend');assert.ok(recommendation.text.startsWith('💵'));assert.match(recommendation.text,/energía de reserva/);
+ const recommendation=await generateAlex('Busco una batería portátil, mi presupuesto cuarenta',source,{},env);assert.equal(recommendation.action,'recommend');assert.ok(recommendation.text.startsWith('💵'));assert.deepEqual(recommendation.facts,['POWE003.cash']);assert.ok(recommendation.text.includes('$33.01'));
  const address=await generateAlex('¿Cuál es la dirección para retirar?',source,m,env);assert.equal(address.action,'answer');assert.ok(address.text.startsWith('📍'));assert.match(address.text,/local 3/);
  const negotiation=await generateAlex('¿Me haces una rebajita? 😂',source,m,env);assert.equal(negotiation.action,'answer');assert.match(negotiation.text,/aprobación/);
  env.AI.run=async()=>({response:JSON.stringify(plan({facts:['pickup'],focus:['MICR27'],intent:'delivery'}))});
  const patterns=await generateAlex('¿Qué cambia entre cardioide y omnidireccional?',source,{focus:['MICR27'],payment:'contado',delivery:'retiro'},env);assert.deepEqual(patterns.facts,['MICR27.patterns']);assert.match(patterns.text,/cardioide.*omnidireccional/);assert.ok(!patterns.text.includes('Retiro'));
+});
+test('Conversation preserves original warmth and useful follow-ups alongside verified commercial facts',async()=>{
+ const a=renderPlan(plan({say:'Jajaja, vamos a cuidar ese bolsillo 😄.',facts:['POWE003.cash','discount'],ask:'¿Qué uso le darías principalmente?'}),source);
+ assert.ok(a.text.startsWith('💵'));assert.match(a.text,/Jajaja/);assert.match(a.text,/aprobación/);assert.match(a.text,/¿Qué uso/);assert.equal((a.text.match(/\?/g)||[]).length,1);
+ const technical=renderPlan(plan({say:'Para esos viajes, pensemos en tu rutina.',facts:['POWE003.battery'],ask:'¿Qué celular usas?',intent:'battery'}),source,{payment:'contado',delivery:'quito'});
+ assert.match(technical.text,/20.000 mAh/);assert.match(technical.text,/Para esos viajes/);assert.match(technical.text,/¿Qué celular usas/);
+ const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:JSON.stringify(plan({say:'¡Que los viajes sean por gusto y no por buscar enchufe!',facts:['POWE003.cash'],ask:'¿Qué celular usas?',remember:{need:'viajes'}}))})}};
+ const recommendation=await generateAlex('Busco batería para viajes, mi presupuesto cuarenta',source,{},env);assert.equal(recommendation.generative,true);assert.match(recommendation.text,/viajes/);assert.match(recommendation.text,/¿Qué celular/);assert.equal(recommendation.memory.need,'viajes');
+ // Social conversation needs neither a product fact nor a purchase prompt.
+ const social=renderPlan(plan({say:'Jajaja, ese enchufe ya debe extrañarte 😄.',facts:[],ask:'',intent:'other'}),source,{greeted:true});assert.match(social.text,/enchufe/);assert.ok(!social.text.includes('$'));
+ for(const say of ['La Philco dura toda la semana','Tiene garantía de por vida','Te llega hoy','Soy humano'])assert.equal(renderPlan(plan({say}),source).prose_filtered,true);
+});
+test('Use and concern persist across twenty turns; model sees context beyond the short transcript',async()=>{
+ let memory={},calls=0;
+ const env={FREE_TIER_VERIFIED:'true',AI:{run:async(_model,args)=>{
+  calls++;if(calls>13){assert.match(args.messages[0].content,/viajes largos/);assert.match(args.messages[0].content,/consulta/);assert.ok(!args.messages.some(m=>m.role==='user'&&m.content.includes('viajes largos')));}
+  return {response:JSON.stringify(plan({say:calls===1?'Vamos a pensar en esos viajes.':'Sigamos con lo que te preocupa.',facts:[],ask:calls===1?'¿Qué celular usas?':'',intent:'other',image:null,remember:calls===1?{need:'viajes largos'}:{}}))};
+ }}};
+ for(let i=0;i<20;i++){const a=await generateAlex(i===0?'Busco batería para viajes largos':'Sigo revisando mis opciones',source,memory,env);assert.equal(a.generative,true,a.error_code);assert.equal(a.memory.need,'viajes largos');memory=a.memory;}
+ assert.equal(memory.turn_count,20);assert.equal(memory.history.length,12);
+});
+test('Knowing payment and delivery does not turn technical answers or hesitation into a checkout menu',async()=>{
+ const memory={focus:['POWE003'],payment:'contado',delivery:'quito',stage:'consulta'};
+ const technical=quickReplies(plan({facts:['POWE003.battery'],intent:'battery',memory}));assert.ok(!technical.some(q=>q.payload.includes(':buy:')));assert.ok(technical.some(q=>q.payload.includes(':photo:')));
+ const price=quickReplies(plan({memory}));assert.ok(!price.some(q=>q.payload.includes(':buy:')));assert.ok(price.some(q=>q.payload.includes(':specs:')));
+ const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:JSON.stringify(plan({say:'Claro, podemos ir con calma.',facts:['request'],action:'interest',ask:'¿Qué te falta aclarar para decidir?',intent:'other'}))})}};
+ const hesitant=await generateAlex('No quiero comprar todavía',source,memory,env);assert.equal(hesitant.action,'answer');assert.ok(!hesitant.facts.includes('request'));assert.ok(!quickReplies(hesitant).some(q=>q.payload.includes(':buy:')));assert.match(hesitant.text,/calma/);
 });

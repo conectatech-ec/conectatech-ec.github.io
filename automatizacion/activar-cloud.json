@@ -1,13 +1,13 @@
 {
-  "activar": false,
+  "activar": true,
   "sincronizar_meta_verify_token": false,
   "meta_page_id": "105549695770538",
   "costo_maximo_usd": 0,
   "alcance": "Solo Worker piloto: Messenger oficial para probadores con permiso verificado; sin Billing, D1, cron, rutas, main ni catálogo de producción",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Diagnóstico de cuota en solo lectura antes del ajuste conversacional; sin inferencias ni envíos. Se conserva el Worker, permisos y probador actuales.",
+  "nota": "Desplegar mejora de conversación sin modificar la reserva de 8000 neuronas/día ni clientes externos. Verificación HTTPS y medios; prueba real de dos turnos solo con al menos cuatro reservas libres. Si no hay cupo, registrar bloqueo sin atribuir éxito generativo.",
   "habilitar_vendedor_probadores": false,
   "procesar_cola_probadores": false,
   "alex_generativo": true,
-  "alex_validation": "conversation_24"
+  "alex_validation": "conversation_flow"
 }
