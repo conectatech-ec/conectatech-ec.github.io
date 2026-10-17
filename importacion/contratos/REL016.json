@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel016-reloj-smartwatch-t900-ultra-big-2-09/",
-  "fecha_verificacion": "2026-10-17T00:05:31.842100+00:00",
+  "fecha_verificacion": "2026-10-17T00:29:22.982742+00:00",
   "descripcion": "Smartwatch con Correa Ajustable — Colores Surtidos. Diseño: Pantalla rectangular de esquinas redondeadas. Correa: Ajustable. Variantes: Colores fotografiados surtidos según disponibilidad. Presentación de venta: Un smartwatch con correa.",
   "contenido_venta": "Un smartwatch con correa ajustable. Colores surtidos según disponibilidad. La imagen muestra una variante de ejemplo.",
   "presentacion": "sin caja",
@@ -173,7 +173,7 @@
       "solicitado": "REL016",
       "sku": "REL016",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T00:05:54.783Z",
+      "fecha": "2026-10-17T00:29:27.085Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -198,7 +198,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/rel016-reloj-smartwatch-t900-ultra-big-2-09/",
-      "url_comprobada": "http://127.0.0.1:8805/productos/rel016-reloj-smartwatch-t900-ultra-big-2-09/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/rel016-reloj-smartwatch-t900-ultra-big-2-09/",
       "archivo_html": "productos/rel016-reloj-smartwatch-t900-ultra-big-2-09/index.html",
       "http": 200,
       "sha256_html": "c58fb766cd6a806b3b33de639f16d1837b2d62e5144fb07172bc225709c54c90",
@@ -208,7 +208,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/rel016/REL016-01.webp",
-        "url_cargada": "http://127.0.0.1:8805/imagenes/rel016/REL016-01-600.webp?v=7cd3b598e783cc68",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/rel016/REL016-01-600.webp?v=7cd3b598e783cc68",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -217,36 +217,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8805/productos/rel016-reloj-smartwatch-t900-ultra-big-2-09/",
+          "url": "https://conectatech-ec.github.io/productos/rel016-reloj-smartwatch-t900-ultra-big-2-09/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8805/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8805/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8805/imagenes/rel016/REL016-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/rel016/REL016-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-105/qa-local/movil/REL016-390.png",
+      "archivo": "reportes/continuacion-105/qa-publica/movil/REL016-390.png",
       "sha256": "8a70aa9bca4836958eaf97506e124990812be6402ebf605fefccafd202a2b3e9",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-105/qa-local/movil/REL016-1280.png",
+        "archivo": "reportes/continuacion-105/qa-publica/movil/REL016-1280.png",
         "sha256": "8af2d0f58d181ec7ae3d8a727a5c14b1562eeb30966a24be2ecb113900d45e50",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T00:29:22.982742+00:00",
+      "archivo": "reportes/continuacion-105/http-publicacion.json",
+      "reporte": "reportes/continuacion-105/http-publicacion.json",
+      "sha256": "46dcd57e4d394faf576154b58fc2b9be84b6feb3cfea105794ff85299633a6ff",
+      "sku": "REL016"
     }
   },
   "beneficios": [

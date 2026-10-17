@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr13-microfono-inalambrico-con-powerbank-sx21/",
-  "fecha_verificacion": "2026-10-17T00:05:31.842100+00:00",
+  "fecha_verificacion": "2026-10-17T00:29:22.982742+00:00",
   "descripcion": "Micrófono Inalámbrico SX21 con Powerbank — USB-C. Conexión: USB-C únicamente, confirmada por el propietario. Presentación de venta: Kit de micrófono inalámbrico con powerbank. Uso indicado: Grabación de voz para entrevistas y videos con dispositivo compatible. Imagen de portada: Detalle frontal del micrófono; no muestra todo el kit.",
   "contenido_venta": "Un kit de micrófono inalámbrico SX21 con powerbank y receptor USB-C. La portada muestra un detalle frontal del micrófono, no todo el kit.",
   "presentacion": "sin caja",
@@ -173,7 +173,7 @@
       "solicitado": "MICR13",
       "sku": "MICR13",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T00:05:52.373Z",
+      "fecha": "2026-10-17T00:29:23.594Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -198,7 +198,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr13-microfono-inalambrico-con-powerbank-sx21/",
-      "url_comprobada": "http://127.0.0.1:8805/productos/micr13-microfono-inalambrico-con-powerbank-sx21/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr13-microfono-inalambrico-con-powerbank-sx21/",
       "archivo_html": "productos/micr13-microfono-inalambrico-con-powerbank-sx21/index.html",
       "http": 200,
       "sha256_html": "283c705a07be4179d32cfbc6a58b447d9c1ee8aae2dd4613d6ef611cc899a729",
@@ -208,7 +208,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr13/MICR13-01.webp",
-        "url_cargada": "http://127.0.0.1:8805/imagenes/micr13/MICR13-01-600.webp?v=5b283c90060a272d",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr13/MICR13-01-600.webp?v=5b283c90060a272d",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -217,36 +217,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8805/productos/micr13-microfono-inalambrico-con-powerbank-sx21/",
+          "url": "https://conectatech-ec.github.io/productos/micr13-microfono-inalambrico-con-powerbank-sx21/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8805/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8805/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8805/imagenes/micr13/MICR13-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr13/MICR13-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-105/qa-local/movil/MICR13-390.png",
+      "archivo": "reportes/continuacion-105/qa-publica/movil/MICR13-390.png",
       "sha256": "40d97742e965f2bacc412e3d85dcfa9cee08d209c0e333bbaf003825669bf317",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-105/qa-local/movil/MICR13-1280.png",
+        "archivo": "reportes/continuacion-105/qa-publica/movil/MICR13-1280.png",
         "sha256": "4f4cd44c96e9b46227dcfc6080890d8d9eced63df11310443cd339fe3a3ccd1f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T00:29:22.982742+00:00",
+      "archivo": "reportes/continuacion-105/http-publicacion.json",
+      "reporte": "reportes/continuacion-105/http-publicacion.json",
+      "sha256": "46dcd57e4d394faf576154b58fc2b9be84b6feb3cfea105794ff85299633a6ff",
+      "sku": "MICR13"
     }
   },
   "beneficios": [
