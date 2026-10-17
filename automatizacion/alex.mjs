@@ -17,7 +17,7 @@ export function paymentContext(input,memory={}){
  const terms='[1-9]\\d?|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|quince|dieciocho|veinticuatro|treinta y seis';
  const term=String(input).match(new RegExp('\\b('+terms+')\\s+(?:meses|cuotas)\\b','i'))||String(input).match(new RegExp('\\ba\\s+(?:los\\s+)?('+terms+')\\b','i'));
  const numbers={uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12,quince:15,dieciocho:18,veinticuatro:24,'treinta y seis':36};
- const months=term?(numbers[term[1].toLowerCase()]||Number(term[1])):null;
+ const months=term?(numbers[term[1].toLowerCase()]||Number(term[1])):memory.months&&!/contado|efectivo/i.test(input)&&/cu[aá]nto|total|final|termino|precio|cuota/i.test(input)?memory.months:null;
  const bank=named||memory.bank||null,max=bank?policy.card_plans?.[bank]?.interest_free_up_to_months||Math.max(...(policy.card_plans?.[bank]?.interest_free_months||[0])):0;
  return {bank,named,months,requires_interest:!!months&&(months>=12||!!max&&months>max)};
 }
@@ -72,6 +72,7 @@ export function freeProseSafe(text,question=false){
  if(!question&&/\b(?:cuesta|precio|stock|disponible|capacidad|USB|Watt|volt|RAM|GB|mAh|garant[ií]a|tarjeta|entrega|env[ií]o|direcci[oó]n|horario|descuento|JBL|Philco|Quantum|FLP|adaptador|micr[oó]fono|bater[ií]a|powerbank)\b/i.test(text))return false;
  if(!question&&/son iguales|id[eé]nticos|equivalentes|misma funci[oó]n|m[aá]s potente/i.test(text))return false;
  if(!question&&/\b(?:permite|enfoca|capta|patr[oó]n|cardioide|omnidireccional|conexi[oó]n|condensador|potente|r[aá]pid[oa])\b/i.test(text))return false;
+ if(!question&&/retir|\bAv\.|Multicentro|\blocal\b|\bQuito\b/i.test(text))return false;
  return true;
 }
 export function renderPlan(plan,source,memory={}){
@@ -103,6 +104,9 @@ export function renderPlan(plan,source,memory={}){
  if(action==='handoff'){keys=['human'];say='';ask='';}
  if(plan.intent==='identity')keys=['identity'];
  if(keys.some(k=>/\.(?:battery|power|audio|patterns|plug)$/.test(k))||keys.includes('pickup'))ask='';
+ if(keys.some(k=>k.endsWith('.stock')))ask='';
+ if(/sector|barrio|zona/i.test(ask)&&!memory.delivery&&!keys.some(k=>['delivery','national','pickup'].includes(k))&&action!=='interest')ask='';
+ if(/(?:sector|zona).*(?:trabaj|estudi)/i.test(ask))ask='';
  if(keys.some(k=>k.endsWith('.cash'))&&/banco|tarjeta/i.test(ask))ask='';
  if(keys.length===2)say='';
  const priceFirst=plan.intent==='price'||keys.some(k=>/\.(?:cash|card|pvp)$/.test(k));
@@ -159,6 +163,8 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   const content=raw.response;const plan=typeof content==='object'?content:JSON.parse(String(content).replace(/^```(?:json)?\s*|\s*```$/g,''));
   // An approved interest-bearing term cannot be presented as the base PVP alone.
   const knownBank=factBook(context)[payment.bank];
+  const book=factBook(context),requestedPrice=/cu[aá]nto.{0,45}(?:cuesta|vale|sale|pago|pagar)|(?:precio|\bPVP\b)/i.test(input);
+  if(requestedPrice&&context.productos.length===1&&!payment.requires_interest){const sku=context.productos[0].sku,kind=/tarjeta|\bPVP\b/i.test(input)?'card':/contado|efectivo/i.test(input)?'cash':memory.payment==='tarjeta'?'card':'cash',key=sku+'.'+kind;if(book[key]){plan.facts=[key];if(/disponib|\bstock\b|\bhay\b/i.test(input)&&book[sku+'.stock'])plan.facts.push(sku+'.stock');plan.intent='price';plan.action='answer';plan.focus=[sku];}}
   if((payment.months||payment.named&&/intereses|tarjeta|pago|plan|banco|aceptan|diferir|cuotas|^\W*pichincha\W*$|^\W*diners\W*$|^\W*pac[ií]fico\W*$/i.test(input))&&knownBank){plan.facts=[payment.bank];plan.intent='payment';plan.action='answer';plan.image=null;}
   if(payment.requires_interest){plan.facts=['interest'];plan.say='';plan.intent='payment';plan.image=null;plan.action='answer';}
   if(/garant[ií]a/i.test(input)&&!humanRequested(input)){plan.facts=['warranty'];plan.say='';plan.ask='';plan.image=null;plan.action='answer';}
