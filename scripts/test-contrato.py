@@ -68,10 +68,46 @@ class ContractTests(unittest.TestCase):
     def errors(self, sku='TEST001'):
         return validator.validate(self.root, self.contracts[sku], sku, self.rule, self.items[sku], self.ctx)
 
+    def test_revision_cover_preserves_sku_and_position_checks(self):
+        contract = self.contracts['TEST001']; mobile = contract['validaciones']['movil']
+        revised = '/imagenes/test001/TEST001-r106-01.webp'
+        contract['imagen_principal'] = revised
+        page = self.root / mobile['archivo_html']; page.write_text('TEST001' + revised)
+        mobile['sha256_html'] = validator.sha(page.read_bytes())
+        self.assertEqual(self.errors(), [])
+        for invalid in ['/imagenes/test002/TEST002-r106-01.webp',
+                        '/imagenes/test001/TEST001-r106-02.webp',
+                        '/imagenes/test001/TEST001-r0-01.webp',
+                        '/imagenes/test001/../TEST001-r106-01.webp',
+                        revised + '?revision=106']:
+            with self.subTest(path=invalid):
+                contract['imagen_principal'] = invalid
+                self.assertIn('portada', {e['codigo'] for e in self.errors()})
+
     def runjob(self):
         (self.root / 'manifest.json').write_text(json.dumps(self.manifest))
         pipeline.run(SimpleNamespace(root=self.root, manifiesto='manifest.json', reporte='report.json', aplicar=True, borradores=None))
         return json.loads((self.root / 'report.json').read_text())
+
+    def test_revision_resources_do_not_overwrite_published_images(self):
+        self.assertEqual(self.runjob()['productos'][0]['estado'], 'aplicado_local')
+        previous = self.root / 'imagenes/test001/TEST001-01.webp'
+        previous_bytes = previous.read_bytes()
+        self.items['TEST001'][0]['revision_publicacion'] = 106
+        revised = '/imagenes/test001/TEST001-r106-01.webp'
+        self.contracts['TEST001']['imagen_principal'] = revised
+        self.assertEqual(self.runjob()['productos'][0]['estado'], 'aplicado_local')
+        self.assertEqual(previous.read_bytes(), previous_bytes)
+        self.assertTrue((self.root / revised.lstrip('/')).is_file())
+        self.assertEqual(pipeline.editorial.read_catalog(self.root)[1][0]['imageUrl'], revised)
+        with patch.object(pipeline, 'process', side_effect=AssertionError('No regenerar revisión intacta')):
+            self.assertEqual(self.runjob()['productos'][0]['estado'], 'aplicado_local')
+
+    def test_revision_resource_tag_rejects_paths_and_nonintegers(self):
+        for invalid in ['../otro', 0, -1, True, 1.5]:
+            item = {**self.items['TEST001'][0], 'revision_publicacion': invalid}
+            with self.subTest(revision=invalid), self.assertRaises(ValueError):
+                pipeline.process(self.root, 'TEST001', item, self.rule)
 
     def test_verified_contract_and_idempotence(self):
         self.assertEqual(self.errors(), [])

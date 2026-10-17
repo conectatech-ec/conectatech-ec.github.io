@@ -12,11 +12,11 @@
   "pvp": 25.47,
   "stock": 1,
   "unidad_venta": {
-    "descripcion": "Un micrófono con soporte de mesa incluido. La portada muestra un detalle del cabezal, no el conjunto completo.",
+    "descripcion": "Un micrófono con soporte de mesa incluido.",
     "cantidad": 1,
     "verificada": true,
     "fuente": "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk",
-    "evidencia": "Presentación comercial cotejada con referencias propias y maestro; aplicar instrucciones expresas del propietario de unidades y surtidos, 2026-10-16, cuando corresponde. Una unidad comercial puede ser blíster, sistema o par según descripción. Confirmación expresa2026-10-16 en reportes/continuacion-102/aclaraciones-propietario.json"
+    "evidencia": "Unidad de venta documentada con aclaraciones vigentes del propietario; reportes/correcciones-106/orden-propietario.json"
   },
   "fotografias_fuente": [
     {
@@ -69,19 +69,20 @@
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
     "importacion/politica-variantes-surtidas.json",
-    "reportes/continuacion-102/aclaraciones-propietario.json"
+    "reportes/continuacion-102/aclaraciones-propietario.json",
+    "reportes/correcciones-106/orden-propietario.json"
   ],
-  "imagen_principal": "/imagenes/micr33/MICR33-01.webp",
+  "imagen_principal": "/imagenes/micr33/MICR33-r106-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk",
     "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
-    "fecha_verificacion": "2026-10-16T19:29:22.751075+00:00",
+    "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
     "archivos": [
       {
-        "sha256": "7469bf055d167981cb7fe5eb57778a4d45f4d1ae3e473c338e485e121ffa4f4d",
+        "sha256": "ee5a1575651a5892bdba9d03286a106f9a73c01d3d7bce24a19aedf894e174cb",
         "fuente": "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk"
       }
     ]
@@ -89,10 +90,10 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Un micrófono con soporte incluido.",
+      "valor": "Un micrófono con soporte de mesa incluido.",
       "fuentes": [
         "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk",
-        "reportes/continuacion-102/aclaraciones-propietario.json"
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -102,7 +103,7 @@
       "valor": "Incluido.",
       "fuentes": [
         "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk",
-        "reportes/continuacion-102/aclaraciones-propietario.json"
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -111,31 +112,23 @@
       "nombre": "Diseño del cabezal",
       "valor": "Rejilla negra con tapa superior rectangular.",
       "fuentes": [
-        "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Imagen de portada",
-      "valor": "Detalle del cabezal; no muestra el conjunto completo.",
-      "fuentes": [
-        "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk"
+        "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
-  "fecha_verificacion": "2026-10-16T20:03:39.667123+00:00",
-  "descripcion": "Micrófono de Mesa con Soporte. Presentación de venta: Un micrófono con soporte incluido. Soporte: Incluido. Diseño del cabezal: Rejilla negra con tapa superior rectangular. Imagen de portada: Detalle del cabezal; no muestra el conjunto completo.",
-  "contenido_venta": "Un micrófono con soporte de mesa incluido. La portada muestra un detalle del cabezal, no el conjunto completo.",
+  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "descripcion": "Micrófono de Mesa con Soporte. Presentación de venta: Un micrófono con soporte de mesa incluido. Soporte: Incluido. Diseño del cabezal: Rejilla negra con tapa superior rectangular.",
+  "contenido_venta": "Un micrófono con soporte de mesa incluido.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 3,
+  "revision_regla": 4,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2032,2033,2034,2035,2036; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
@@ -173,19 +166,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T19:29:22.751075+00:00",
-      "sha256_maestro": "7469bf055d167981cb7fe5eb57778a4d45f4d1ae3e473c338e485e121ffa4f4d",
-      "evidencia": "Confirmación2026-10-16 del propietario: soporteincluido. Nuevo maestro es detalle de cabezal físico fuente4: rejillaalta ycap rectangular con banda verticalnegra, recorteantesdeplaca ysoporte. No se recrean rótulos eléctricos, conectores ni piezas invisibles. No se declara resuelta la placa LCT240 de los borradores anteriores; permanece como limitación de esa vista. Genuine en caja es eslogan; no se declara marca Genuine ni fabricante adicional. Originales privados intactos."
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "sha256_maestro": "ee5a1575651a5892bdba9d03286a106f9a73c01d3d7bce24a19aedf894e174cb",
+      "evidencia": "Conjunto completo: cuerpo y rejilla rectangular, suspensión con brazos, conector inferior metálico, poste y base circular. Dos fotografías físicas2/3 acreditan geometría. Se cotejó y corrigió placa amarilla frente al primer borrador, sin usarla para declarar especificaciones nuevas. Soporte incluido confirmado por propietario; sin recorte del cuerpo o base."
     },
     "movil": {
       "solicitado": "MICR33",
       "sku": "MICR33",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T20:03:40.420Z",
+      "fecha": "2026-10-17T01:50:01.585Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -210,17 +203,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
+      "url_comprobada": "http://127.0.0.1:8806/productos/micr33-microfono-genuine-para-pc-laptop/",
       "archivo_html": "productos/micr33-microfono-genuine-para-pc-laptop/index.html",
       "http": 200,
-      "sha256_html": "685ba1512b830756d000a53c40bc4e01763a2d11b8696635e04caeb298f08b19",
-      "sha256_html_local": "685ba1512b830756d000a53c40bc4e01763a2d11b8696635e04caeb298f08b19",
+      "sha256_html": "42bd334ad35324031e3122ff10c5264dfbffd7d372e798a655b64649b60484fa",
+      "sha256_html_local": "42bd334ad35324031e3122ff10c5264dfbffd7d372e798a655b64649b60484fa",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-01-600.webp?v=8272c26cfdf3f4d5",
+        "src": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-r106-01.webp",
+        "url_cargada": "http://127.0.0.1:8806/imagenes/micr33/MICR33-r106-01-600.webp?v=05ba151584df9dbd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -229,48 +222,53 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
+          "url": "http://127.0.0.1:8806/productos/micr33-microfono-genuine-para-pc-laptop/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8806/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8806/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-01.webp",
+          "url": "http://127.0.0.1:8806/imagenes/micr33/MICR33-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-102/qa-publica/movil/MICR33-390.png",
-      "sha256": "4d58cac5db8222acb90548de497dea09dc269afb4b2f7babd554a797652132f8",
+      "archivo": "reportes/correcciones-106/qa-local/movil/MICR33-390.png",
+      "sha256": "28e3bbbcabcd4b3a4e1a64f2b414ee5da266f6834f320c8710f47834496f1337",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-102/qa-publica/movil/MICR33-1280.png",
-        "sha256": "45283dfdf69fa595a87e37624b8c57a6202dc4284583ce783c52bbc669a14f62",
+        "archivo": "reportes/correcciones-106/qa-local/movil/MICR33-1280.png",
+        "sha256": "71bcb52f0b2c463b520eb97882a2295b15f88c6210bb2d80595fdc60bcea122d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T20:03:39.667123+00:00",
-      "archivo": "reportes/continuacion-102/http-publicacion.json",
-      "reporte": "reportes/continuacion-102/http-publicacion.json",
-      "sha256": "49592245b44433bdb5416a604ce4e1bad2ad8de84e38921930361361863b271f",
-      "sku": "MICR33"
     }
   },
   "resolucion_propietario": "Sí, incluye soporte",
   "beneficios": [
+    {
+      "valor": "Contenido de venta",
+      "titulo": "Producto completo",
+      "descripcion": "Un micrófono con soporte de mesa incluido.",
+      "especificaciones": [
+        "Presentación de venta"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    },
     {
       "valor": "Soporte incluido",
       "titulo": "Micrófono de mesa",
@@ -284,20 +282,15 @@
         "reportes/continuacion-102/aclaraciones-propietario.json"
       ],
       "estado": "VERIFICADO"
-    },
+    }
+  ],
+  "historial_correcciones": [
     {
-      "valor": "Cabezal de rejilla",
-      "titulo": "Imagen de detalle",
-      "descripcion": "Acabado negro. La portada muestra el detalle del cabezal.",
-      "especificaciones": [
-        "Diseño del cabezal",
-        "Imagen de portada"
-      ],
-      "fuentes": [
-        "https://drive.google.com/file/d/12vcwGMzO4izqjhCrX4e0NvRL6Tn1oLun/view?usp=drivesdk",
-        "reportes/continuacion-102/aclaraciones-propietario.json"
-      ],
-      "estado": "VERIFICADO"
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "motivo": "Propietario rechaza portada anterior; mostrar producto o conjunto completo y fiel.",
+      "sha256_anterior": "7469bf055d167981cb7fe5eb57778a4d45f4d1ae3e473c338e485e121ffa4f4d",
+      "revision_regla_anterior": 3,
+      "evidencia": "reportes/correcciones-106/orden-propietario.json"
     }
   ]
 }

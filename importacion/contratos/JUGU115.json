@@ -12,11 +12,11 @@
   "pvp": 14.78,
   "stock": 2,
   "unidad_venta": {
-    "descripcion": "Un kit para armar un auto de carreras. Modelos surtidos según disponibilidad, al mismo precio del SKU. La cantidad de piezas varía según el modelo. La portada muestra un detalle del auto de ejemplo.",
+    "descripcion": "Un kit para armar un auto de carreras. Modelos surtidos según disponibilidad, al mismo precio del SKU. La cantidad de piezas varía según el modelo.",
     "cantidad": 1,
     "verificada": true,
     "fuente": "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk",
-    "evidencia": "Confirmación expresa del propietario: CORRECTO; Un solo kit de auto F1; variantes fotografiadas surtidas al mismo precio. No se promete cantidad fija de piezas."
+    "evidencia": "Unidad de venta documentada con aclaraciones vigentes del propietario; reportes/correcciones-106/orden-propietario.json"
   },
   "fotografias_fuente": [
     {
@@ -42,19 +42,20 @@
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
     "importacion/politica-variantes-surtidas.json",
-    "reportes/continuacion-104/aclaraciones-propietario.json"
+    "reportes/continuacion-104/aclaraciones-propietario.json",
+    "reportes/correcciones-106/orden-propietario.json"
   ],
-  "imagen_principal": "/imagenes/jugu115/JUGU115-01.webp",
+  "imagen_principal": "/imagenes/jugu115/JUGU115-r106-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk",
     "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
-    "fecha_verificacion": "2026-10-16T22:32:15.889225+00:00",
+    "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
     "archivos": [
       {
-        "sha256": "973feed99f40843a0986d06b8a55ec63f7b7d4b37e0125a4a815beefed05204a",
+        "sha256": "9f84dabb320015a94e27b3ec723eb394397b8ef8a157980061504b9b4d49b908",
         "fuente": "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk"
       }
     ]
@@ -62,9 +63,10 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Un kit para armar un auto de carreras.",
+      "valor": "Un kit para armar un auto de carreras. Modelos surtidos según disponibilidad, al mismo precio del SKU. La cantidad de piezas varía según el modelo.",
       "fuentes": [
-        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -73,7 +75,8 @@
       "nombre": "Variantes",
       "valor": "Modelos fotografiados surtidos según disponibilidad, al mismo precio.",
       "fuentes": [
-        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -82,31 +85,23 @@
       "nombre": "Cantidad de piezas",
       "valor": "Varía según el modelo entregado.",
       "fuentes": [
-        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Imagen de portada",
-      "valor": "Detalle de la rueda y parte frontal de un modelo de ejemplo.",
-      "fuentes": [
-        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu115-juguete-armable-carros-f1/",
-  "fecha_verificacion": "2026-10-16T22:56:27.530084+00:00",
-  "descripcion": "Auto de Carreras F1 Armable — Modelos Surtidos. Presentación de venta: Un kit para armar un auto de carreras. Variantes: Modelos fotografiados surtidos según disponibilidad, al mismo precio. Cantidad de piezas: Varía según el modelo entregado. Imagen de portada: Detalle de la rueda y parte frontal de un modelo de ejemplo.",
-  "contenido_venta": "Un kit para armar un auto de carreras. Modelos surtidos según disponibilidad, al mismo precio del SKU. La cantidad de piezas varía según el modelo. La portada muestra un detalle del auto de ejemplo.",
+  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "descripcion": "Auto de Carreras F1 Armable — Modelos Surtidos. Presentación de venta: Un kit para armar un auto de carreras. Modelos surtidos según disponibilidad, al mismo precio del SKU. La cantidad de piezas varía según el modelo. Variantes: Modelos fotografiados surtidos según disponibilidad, al mismo precio. Cantidad de piezas: Varía según el modelo entregado.",
+  "contenido_venta": "Un kit para armar un auto de carreras. Modelos surtidos según disponibilidad, al mismo precio del SKU. La cantidad de piezas varía según el modelo.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 3,
+  "revision_regla": 4,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1807,1950; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
@@ -141,19 +136,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T22:32:15.889225+00:00",
-      "sha256_maestro": "973feed99f40843a0986d06b8a55ec63f7b7d4b37e0125a4a815beefed05204a",
-      "evidencia": "Propietario confirma variantes fotografiadas surtidas al mismo precio. MaestroFINALdetalla rueda delantera de cinco radios rojos, neumático negro yala frontal roja/negra con franja blanca del33010, sin recrear letraslaterales, cockpitniotro modelo. No es venta de rueda separada: la ficha declara un kit de auto completo yportada de detalle. Foto33010indica275piezas;foto33055indica201 aunque consulta previa decía204; no se fija ni publica cantidad de piezas, pues depende del modelo. Primerborradorcompleto alteró microtextos: privado, no se publica."
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "sha256_maestro": "9f84dabb320015a94e27b3ec723eb394397b8ef8a157980061504b9b4d49b908",
+      "evidencia": "Auto F1 armado completo cotejado con referencia propia33010: alerón frontal y trasero, nariz larga, cockpit, cuatro ruedas, radios rojos, cuerpo rojo/negro y franjas blancas. Sustituye recorte de rueda. Se muestra ejemplo de variante fotografiada autorizada como surtida; no se fija cantidad de piezas común a ambos modelos."
     },
     "movil": {
       "solicitado": "JUGU115",
       "sku": "JUGU115",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T22:56:31.455Z",
+      "fecha": "2026-10-17T01:50:07.002Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -178,17 +173,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu115-juguete-armable-carros-f1/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu115-juguete-armable-carros-f1/",
+      "url_comprobada": "http://127.0.0.1:8806/productos/jugu115-juguete-armable-carros-f1/",
       "archivo_html": "productos/jugu115-juguete-armable-carros-f1/index.html",
       "http": 200,
-      "sha256_html": "9de7f5c62b2b1fd8861dc50decde5e6362843f48ade0626972ee2b635c4130e1",
-      "sha256_html_local": "9de7f5c62b2b1fd8861dc50decde5e6362843f48ade0626972ee2b635c4130e1",
+      "sha256_html": "78f55a9036c1005ec7477cfd11106a2d5f1dc6b6b76809532f669824393888a2",
+      "sha256_html_local": "78f55a9036c1005ec7477cfd11106a2d5f1dc6b6b76809532f669824393888a2",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/jugu115/JUGU115-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu115/JUGU115-01-600.webp?v=a64517afffe3070c",
+        "src": "https://conectatech-ec.github.io/imagenes/jugu115/JUGU115-r106-01.webp",
+        "url_cargada": "http://127.0.0.1:8806/imagenes/jugu115/JUGU115-r106-01-600.webp?v=98e38ddf0a7db7e8",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -197,47 +192,52 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/jugu115-juguete-armable-carros-f1/",
+          "url": "http://127.0.0.1:8806/productos/jugu115-juguete-armable-carros-f1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8806/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8806/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/jugu115/JUGU115-01.webp",
+          "url": "http://127.0.0.1:8806/imagenes/jugu115/JUGU115-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-104/qa-publica/movil/JUGU115-390.png",
-      "sha256": "da7498071bcaeb94a20f9c5e088dec12ed9ed4d71eaa869f0e3949ecb587da8d",
+      "archivo": "reportes/correcciones-106/qa-local/movil/JUGU115-390.png",
+      "sha256": "1bcde2906d6553992433a07daa2e0e79ea853e753d7eb3cc46c7d9641c73112f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-104/qa-publica/movil/JUGU115-1280.png",
-        "sha256": "c8501b8d39c437787ab8e1eb303dabe9cc5195b9cbd61c6c9b152e688ec86a95",
+        "archivo": "reportes/correcciones-106/qa-local/movil/JUGU115-1280.png",
+        "sha256": "cfc0c5da1ab180d88025858028cc21ec496508a00202684b0b8bac220ead0171",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T22:56:27.530084+00:00",
-      "archivo": "reportes/continuacion-104/http-publicacion.json",
-      "reporte": "reportes/continuacion-104/http-publicacion.json",
-      "sha256": "d21064810756fb4bce1eba5234576a28d81d7323d62e3823987ee41c1b2959d1",
-      "sku": "JUGU115"
     }
   },
   "beneficios": [
+    {
+      "valor": "Contenido de venta",
+      "titulo": "Producto completo",
+      "descripcion": "Un kit para armar un auto de carreras. Modelos surtidos según disponibilidad, al mismo precio del SKU. La cantidad de piezas varía según el modelo.",
+      "especificaciones": [
+        "Presentación de venta"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    },
     {
       "valor": "Un kit armable",
       "titulo": "Auto de carreras",
@@ -251,20 +251,15 @@
         "reportes/continuacion-104/aclaraciones-propietario.json"
       ],
       "estado": "VERIFICADO"
-    },
+    }
+  ],
+  "historial_correcciones": [
     {
-      "valor": "Modelos surtidos",
-      "titulo": "Mismo precio del SKU",
-      "descripcion": "La portada muestra un detalle de un modelo de ejemplo.",
-      "especificaciones": [
-        "Variantes",
-        "Imagen de portada"
-      ],
-      "fuentes": [
-        "https://drive.google.com/file/d/1534Gg3-FM8lGg07mdVeUXKL0L3_YnqPG/view?usp=drivesdk",
-        "reportes/continuacion-104/aclaraciones-propietario.json"
-      ],
-      "estado": "VERIFICADO"
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "motivo": "Propietario rechaza portada anterior; mostrar producto o conjunto completo y fiel.",
+      "sha256_anterior": "973feed99f40843a0986d06b8a55ec63f7b7d4b37e0125a4a815beefed05204a",
+      "revision_regla_anterior": 3,
+      "evidencia": "reportes/correcciones-106/orden-propietario.json"
     }
   ]
 }

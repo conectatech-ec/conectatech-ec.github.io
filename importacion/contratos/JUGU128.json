@@ -12,11 +12,11 @@
   "pvp": 10.7,
   "stock": 1,
   "unidad_venta": {
-    "descripcion": "Un conjunto de 6 figuras, confirmado por el propietario. La portada muestra el detalle de una figura, no todo el conjunto. Diseños según disponibilidad.",
+    "descripcion": "Un conjunto de 6 figuras de juguete. Diseños según disponibilidad.",
     "cantidad": 1,
     "verificada": true,
     "fuente": "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk",
-    "evidencia": "Presentación comercial cotejada con referencias propias y maestro; aplicar instrucciones expresas del propietario de unidades y surtidos, 2026-10-16, cuando corresponde. Una unidad comercial puede ser blíster, sistema o par según descripción. Confirmación expresa2026-10-16 en reportes/continuacion-102/aclaraciones-propietario.json"
+    "evidencia": "Unidad de venta documentada con aclaraciones vigentes del propietario; reportes/correcciones-106/orden-propietario.json"
   },
   "fotografias_fuente": [
     {
@@ -42,19 +42,20 @@
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
     "importacion/politica-variantes-surtidas.json",
-    "reportes/continuacion-102/aclaraciones-propietario.json"
+    "reportes/continuacion-102/aclaraciones-propietario.json",
+    "reportes/correcciones-106/orden-propietario.json"
   ],
-  "imagen_principal": "/imagenes/jugu128/JUGU128-01.webp",
+  "imagen_principal": "/imagenes/jugu128/JUGU128-r106-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk",
     "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
-    "fecha_verificacion": "2026-10-16T19:29:22.751075+00:00",
+    "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
     "archivos": [
       {
-        "sha256": "f224cad5be3d5870ed2f579402ae5cc6f21ed8bdb885a838d1891149ec18f66a",
+        "sha256": "21cef2a7c059022472e58791e55eceacb0c98348b080c92eeab7c90f774491fb",
         "fuente": "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk"
       }
     ]
@@ -62,10 +63,10 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Conjunto de 6 figuras.",
+      "valor": "Un conjunto de 6 figuras de juguete. Diseños según disponibilidad.",
       "fuentes": [
         "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk",
-        "reportes/continuacion-102/aclaraciones-propietario.json"
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -75,16 +76,7 @@
       "valor": "6.",
       "fuentes": [
         "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk",
-        "reportes/continuacion-102/aclaraciones-propietario.json"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Imagen de portada",
-      "valor": "Detalle de una figura; no muestra todo el conjunto.",
-      "fuentes": [
-        "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk"
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -93,7 +85,8 @@
       "nombre": "Variantes",
       "valor": "Diseños según disponibilidad; no se garantiza una variante individual fija.",
       "fuentes": [
-        "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -102,22 +95,23 @@
       "nombre": "Diseño",
       "valor": "Figuras de cabezas cúbicas y estampados de estilo pixelado.",
       "fuentes": [
-        "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu128-juguete-mueco-para-nios-as-de-myworld/",
-  "fecha_verificacion": "2026-10-16T20:03:39.667123+00:00",
-  "descripcion": "Conjunto Myworld de 6 Figuras de Juguete. Presentación de venta: Conjunto de 6 figuras. Cantidad de figuras: 6. Imagen de portada: Detalle de una figura; no muestra todo el conjunto. Variantes: Diseños según disponibilidad; no se garantiza una variante individual fija. Diseño: Figuras de cabezas cúbicas y estampados de estilo pixelado.",
-  "contenido_venta": "Un conjunto de 6 figuras, confirmado por el propietario. La portada muestra el detalle de una figura, no todo el conjunto. Diseños según disponibilidad.",
+  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "descripcion": "Conjunto Myworld de 6 Figuras de Juguete. Presentación de venta: Un conjunto de 6 figuras de juguete. Diseños según disponibilidad. Cantidad de figuras: 6. Variantes: Diseños según disponibilidad; no se garantiza una variante individual fija. Diseño: Figuras de cabezas cúbicas y estampados de estilo pixelado.",
+  "contenido_venta": "Un conjunto de 6 figuras de juguete. Diseños según disponibilidad.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 3,
+  "revision_regla": 4,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2102,2103; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
@@ -152,19 +146,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T19:29:22.751075+00:00",
-      "sha256_maestro": "f224cad5be3d5870ed2f579402ae5cc6f21ed8bdb885a838d1891149ec18f66a",
-      "evidencia": "Cantidad6 confirmada expresamente porpropietario2026-10-16. Hero detalla figura superiorcentral: cabeza cuadradaverde con cara pixelada, torso marrón conmotivo verde, brazosrojos, manosabiertas colorpiel,piernas marrones/verdes. Contraste completo con foto0, sin armas ni base añadidas. No se inventan seis figuras nuevas ni se promete accesorio no confirmado. Clasificación vigente porregla conservada sin afirmar licencia oficial por ilustración."
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "sha256_maestro": "21cef2a7c059022472e58791e55eceacb0c98348b080c92eeab7c90f774491fb",
+      "evidencia": "Seis figuras completas en dos filas, diseños/colores cotejados con blíster propio: amarillo/marrón, verde/rojo, azul/blanco, gris/naranja/verde, marrón/blanco/azul y sexta figura con accesorios celestes. Se representan conjunto y accesorios fotografiados, no seis copias del diseño aislado. Cantidad6 confirmada por propietario. Base pequeña acreditada por indicación del empaque."
     },
     "movil": {
       "solicitado": "JUGU128",
       "sku": "JUGU128",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T20:03:42.365Z",
+      "fecha": "2026-10-17T01:50:02.390Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -189,17 +183,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu128-juguete-mueco-para-nios-as-de-myworld/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu128-juguete-mueco-para-nios-as-de-myworld/",
+      "url_comprobada": "http://127.0.0.1:8806/productos/jugu128-juguete-mueco-para-nios-as-de-myworld/",
       "archivo_html": "productos/jugu128-juguete-mueco-para-nios-as-de-myworld/index.html",
       "http": 200,
-      "sha256_html": "f064198ba86b4dcef54c6929923765311a3dc4ede3092dd28e9a31ccff0e514d",
-      "sha256_html_local": "f064198ba86b4dcef54c6929923765311a3dc4ede3092dd28e9a31ccff0e514d",
+      "sha256_html": "f5415518f9b39445424047238a0d06be1e5b38178a375baaad1c9eba844c6cf7",
+      "sha256_html_local": "f5415518f9b39445424047238a0d06be1e5b38178a375baaad1c9eba844c6cf7",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/jugu128/JUGU128-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu128/JUGU128-01-600.webp?v=370da3efab1b0a8f",
+        "src": "https://conectatech-ec.github.io/imagenes/jugu128/JUGU128-r106-01.webp",
+        "url_cargada": "http://127.0.0.1:8806/imagenes/jugu128/JUGU128-r106-01-600.webp?v=08820d1886be35d2",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -208,59 +202,50 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/jugu128-juguete-mueco-para-nios-as-de-myworld/",
+          "url": "http://127.0.0.1:8806/productos/jugu128-juguete-mueco-para-nios-as-de-myworld/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8806/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8806/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/jugu128/JUGU128-01.webp",
+          "url": "http://127.0.0.1:8806/imagenes/jugu128/JUGU128-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-102/qa-publica/movil/JUGU128-390.png",
-      "sha256": "3b9c467d2a6100191491d806939494458a62d416fd4e9d47a67e973e82bc04fe",
+      "archivo": "reportes/correcciones-106/qa-local/movil/JUGU128-390.png",
+      "sha256": "a5bd9e11cf3a17cd9212fa38e9a858ca08314cf0a350b3b91aed22d9a9e4310e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-102/qa-publica/movil/JUGU128-1280.png",
-        "sha256": "324bc0018f71c83566b6aec435ed33dbb87812fef174db125a3491b1f4d08e70",
+        "archivo": "reportes/correcciones-106/qa-local/movil/JUGU128-1280.png",
+        "sha256": "58b12225a333a98a43739bcf11083f9d3673e85a93c791eefaaca6a96fd05065",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T20:03:39.667123+00:00",
-      "archivo": "reportes/continuacion-102/http-publicacion.json",
-      "reporte": "reportes/continuacion-102/http-publicacion.json",
-      "sha256": "49592245b44433bdb5416a604ce4e1bad2ad8de84e38921930361361863b271f",
-      "sku": "JUGU128"
     }
   },
   "resolucion_propietario": "Conjunto de 6 figuras",
   "beneficios": [
     {
-      "valor": "6 figuras",
-      "titulo": "Conjunto de juguetes",
-      "descripcion": "Se vende el conjunto de 6 figuras. La portada muestra una pieza.",
+      "valor": "Contenido de venta",
+      "titulo": "Producto completo",
+      "descripcion": "Un conjunto de 6 figuras de juguete. Diseños según disponibilidad.",
       "especificaciones": [
-        "Presentación de venta",
-        "Cantidad de figuras"
+        "Presentación de venta"
       ],
       "fuentes": [
         "https://drive.google.com/file/d/1Rv7PUEYl7mZyydrUctYRDt3DGk6yz4px/view?usp=drivesdk",
-        "reportes/continuacion-102/aclaraciones-propietario.json"
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO"
     },
@@ -276,6 +261,15 @@
         "reportes/continuacion-102/aclaraciones-propietario.json"
       ],
       "estado": "VERIFICADO"
+    }
+  ],
+  "historial_correcciones": [
+    {
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "motivo": "Propietario rechaza portada anterior; mostrar producto o conjunto completo y fiel.",
+      "sha256_anterior": "f224cad5be3d5870ed2f579402ae5cc6f21ed8bdb885a838d1891149ec18f66a",
+      "revision_regla_anterior": 3,
+      "evidencia": "reportes/correcciones-106/orden-propietario.json"
     }
   ]
 }

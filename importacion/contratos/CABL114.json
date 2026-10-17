@@ -12,11 +12,11 @@
   "pvp": 24.56,
   "stock": 1,
   "unidad_venta": {
-    "descripcion": "Un cable HDMI de 20 metros. Colores surtidos según disponibilidad. La portada muestra el detalle de un conector, no el cable completo.",
+    "descripcion": "Un cable HDMI de 20 metros. Colores surtidos según disponibilidad.",
     "cantidad": 1,
     "verificada": true,
     "fuente": "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk",
-    "evidencia": "Presentación comercial cotejada con referencias propias y maestro; aplicar instrucciones expresas del propietario de unidades y surtidos, 2026-10-16, cuando corresponde. Una unidad comercial puede ser blíster, sistema o par según descripción."
+    "evidencia": "Unidad de venta documentada con aclaraciones vigentes del propietario; reportes/correcciones-106/orden-propietario.json"
   },
   "fotografias_fuente": [
     {
@@ -41,19 +41,20 @@
     "https://drive.google.com/file/d/1xhdmTjQvJmr0rk2dpMp3ia_0tU7Y90gc/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
-    "importacion/politica-variantes-surtidas.json"
+    "importacion/politica-variantes-surtidas.json",
+    "reportes/correcciones-106/orden-propietario.json"
   ],
-  "imagen_principal": "/imagenes/cabl114/CABL114-01.webp",
+  "imagen_principal": "/imagenes/cabl114/CABL114-r106-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk",
     "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
-    "fecha_verificacion": "2026-10-16T20:51:17.674207+00:00",
+    "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
     "archivos": [
       {
-        "sha256": "f9d5df214be2d5c022788468c245af382c44dbefafe59d0460b6dcb940225afd",
+        "sha256": "3cadf13772cc0c0abeeeb6aecf4cd2dac88952879537d10ae70fdee93b9c5820",
         "fuente": "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk"
       }
     ]
@@ -63,7 +64,8 @@
       "nombre": "Longitud",
       "valor": "20 metros.",
       "fuentes": [
-        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -72,16 +74,18 @@
       "nombre": "Conexión",
       "valor": "HDMI.",
       "fuentes": [
-        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     },
     {
       "nombre": "Presentación de venta",
-      "valor": "Un cable.",
+      "valor": "Un cable HDMI de 20 metros. Colores surtidos según disponibilidad.",
       "fuentes": [
-        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -90,31 +94,23 @@
       "nombre": "Variantes",
       "valor": "Colores surtidos según disponibilidad.",
       "fuentes": [
-        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Imagen de portada",
-      "valor": "Detalle de un conector; no muestra el cable completo.",
-      "fuentes": [
-        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl114-cable-hdmi-20m/",
-  "fecha_verificacion": "2026-10-16T21:18:31.282969+00:00",
-  "descripcion": "Cable HDMI de 20 Metros — Colores Surtidos. Longitud: 20 metros. Conexión: HDMI. Presentación de venta: Un cable. Variantes: Colores surtidos según disponibilidad. Imagen de portada: Detalle de un conector; no muestra el cable completo.",
-  "contenido_venta": "Un cable HDMI de 20 metros. Colores surtidos según disponibilidad. La portada muestra el detalle de un conector, no el cable completo.",
+  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "descripcion": "Cable HDMI de 20 Metros — Colores Surtidos. Longitud: 20 metros. Conexión: HDMI. Presentación de venta: Un cable HDMI de 20 metros. Colores surtidos según disponibilidad. Variantes: Colores surtidos según disponibilidad.",
+  "contenido_venta": "Un cable HDMI de 20 metros. Colores surtidos según disponibilidad.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 3,
+  "revision_regla": 4,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2751,2753; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
@@ -149,19 +145,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T20:51:17.674207+00:00",
-      "sha256_maestro": "f9d5df214be2d5c022788468c245af382c44dbefafe59d0460b6dcb940225afd",
-      "evidencia": "Dos referencias propias cotejadas: etiqueta CABL11420M y casilla20m marcada. Seis terminaciones de colores; regla expresa de surtidos2026-10-16 resuelve selección de color. Maestro representa detalle del conector azul: blindaje dorado con dos retenciones, manga azul HDTV2.0V4Kx2K y alivio negro. No se inventa bobina, segundo extremo ni longitud visual. No se promete4K a20m, ancho de banda ni funciones del texto promocional de caja sin prueba."
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "sha256_maestro": "3cadf13772cc0c0abeeeb6aecf4cd2dac88952879537d10ae70fdee93b9c5820",
+      "evidencia": "Cable completo recogido en bobina con DOS extremos HDMI coincidentes de manga azul y alivio negro. Referencias propias acreditan terminaciones y longitud20m; bobina es presentación comercial asistida, sin atribuir diseño oculto adicional. No se prometen prestaciones4K a20m ni ancho de banda no probado. Una unidad, color surtido."
     },
     "movil": {
       "solicitado": "CABL114",
       "sku": "CABL114",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T21:18:31.835Z",
+      "fecha": "2026-10-17T01:50:05.156Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -186,17 +182,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl114-cable-hdmi-20m/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl114-cable-hdmi-20m/",
+      "url_comprobada": "http://127.0.0.1:8806/productos/cabl114-cable-hdmi-20m/",
       "archivo_html": "productos/cabl114-cable-hdmi-20m/index.html",
       "http": 200,
-      "sha256_html": "d28ebce72bdb6d223ad27baf903cc23c5158e8c8a175bec58656527caf4e2b60",
-      "sha256_html_local": "d28ebce72bdb6d223ad27baf903cc23c5158e8c8a175bec58656527caf4e2b60",
+      "sha256_html": "6dd3f4266ad9b352adca5cc37cb41137e0ce505cd51e0cca54e50b288396f424",
+      "sha256_html_local": "6dd3f4266ad9b352adca5cc37cb41137e0ce505cd51e0cca54e50b288396f424",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/cabl114/CABL114-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl114/CABL114-01-600.webp?v=dda5acb130529a08",
+        "src": "https://conectatech-ec.github.io/imagenes/cabl114/CABL114-r106-01.webp",
+        "url_cargada": "http://127.0.0.1:8806/imagenes/cabl114/CABL114-r106-01-600.webp?v=421eb477c17756a2",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -205,47 +201,52 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/cabl114-cable-hdmi-20m/",
+          "url": "http://127.0.0.1:8806/productos/cabl114-cable-hdmi-20m/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8806/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8806/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/cabl114/CABL114-01.webp",
+          "url": "http://127.0.0.1:8806/imagenes/cabl114/CABL114-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-103/qa-publica/movil/CABL114-390.png",
-      "sha256": "a2a784f7efe60132770c9272e428fd3998db9ef5ea42473aca16de41f3499932",
+      "archivo": "reportes/correcciones-106/qa-local/movil/CABL114-390.png",
+      "sha256": "0ef5877b8ca23438105492834b8ac2bf863e283c45efb2da86eaf5cae33b1fa1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-103/qa-publica/movil/CABL114-1280.png",
-        "sha256": "88b1a5a9d3894ca532252af823457194fdc303ca0ce254e97febc1f9e742c63d",
+        "archivo": "reportes/correcciones-106/qa-local/movil/CABL114-1280.png",
+        "sha256": "d182671909a6f37516a41375cfe1e3508465e863810ee52ae3a6170e5911150d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T21:18:31.282969+00:00",
-      "archivo": "reportes/continuacion-103/http-publicacion.json",
-      "reporte": "reportes/continuacion-103/http-publicacion.json",
-      "sha256": "9a60bd585da65b782bfde3c13610cee44be77959eff673d255f49d4ea704efe9",
-      "sku": "CABL114"
     }
   },
   "beneficios": [
+    {
+      "valor": "Contenido de venta",
+      "titulo": "Producto completo",
+      "descripcion": "Un cable HDMI de 20 metros. Colores surtidos según disponibilidad.",
+      "especificaciones": [
+        "Presentación de venta"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    },
     {
       "valor": "20 metros",
       "titulo": "Cable HDMI",
@@ -259,19 +260,15 @@
         "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk"
       ],
       "estado": "VERIFICADO"
-    },
+    }
+  ],
+  "historial_correcciones": [
     {
-      "valor": "Colores surtidos",
-      "titulo": "Según disponibilidad",
-      "descripcion": "La portada muestra un conector de ejemplo, no el cable completo.",
-      "especificaciones": [
-        "Variantes",
-        "Imagen de portada"
-      ],
-      "fuentes": [
-        "https://drive.google.com/file/d/1dFGyJ4Q_GKTmXw43kYZyk-3vyGXpaHPl/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO"
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "motivo": "Propietario rechaza portada anterior; mostrar producto o conjunto completo y fiel.",
+      "sha256_anterior": "f9d5df214be2d5c022788468c245af382c44dbefafe59d0460b6dcb940225afd",
+      "revision_regla_anterior": 3,
+      "evidencia": "reportes/correcciones-106/orden-propietario.json"
     }
   ]
 }
