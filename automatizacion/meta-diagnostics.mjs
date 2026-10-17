@@ -12,6 +12,7 @@ report.receipts=(receipts.data?.receipts||[]).map(r=>({at:r.at,http_status:r.htt
 report.external_signed_receipts=report.receipts.filter(r=>r.source==='external_https'&&r.signature_valid===true).length;
 report.external_pairing_receipt_seen=report.receipts.some(r=>r.source==='external_https'&&r.reason==='pairing_claimed'&&r.signature_valid===true);
 const alex=await get('/alex/status');if(alex.http===200)report.alex=alex.data;
+const quota=await get('/alex/quota');if(quota.http===200)report.alex_quota=quota.data;
 const results=await get('/messenger/seller/results');
 report.alex_messenger=(results.data?.events||[]).filter(e=>e.intent==='alex').map(e=>{
  const a=results.data.drafts?.find(d=>d.event_ref===e.k&&d.advisor==='Alex');return{incoming_at:new Date(e.inbound).toISOString(),status:e.status,generative:a?.generative===true,model:a?.model||null,human_approved:a?.human_approved===true,quality:a?.quality||null,media_count:a?.media_count||0,graph_http:a?.graph_http||[],graph_accepted_parts:e.parts?.filter(p=>p.state==='accepted').length||0,delivery_receipts:e.parts?.filter(p=>p.delivered===1).length||0,error:e.error||null};
