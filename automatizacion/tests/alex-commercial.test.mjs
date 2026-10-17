@@ -79,6 +79,7 @@ test('Conversation preserves original warmth and useful follow-ups alongside ver
  const recommendation=await generateAlex('Busco batería para viajes, mi presupuesto cuarenta',source,{},env);assert.equal(recommendation.generative,true);assert.match(recommendation.text,/viajes/);assert.match(recommendation.text,/¿Qué celular/);assert.equal(recommendation.memory.need,'viajes');
  // Social conversation needs neither a product fact nor a purchase prompt.
  const social=renderPlan(plan({say:'Jajaja, ese enchufe ya debe extrañarte 😄.',facts:[],ask:'',intent:'other'}),source,{greeted:true});assert.match(social.text,/enchufe/);assert.ok(!social.text.includes('$'));
+ const reaction=renderPlan(plan({say:'Jajaja, te entiendo. Vamos con calma.',facts:[],ask:'¿Qué es lo que más te preocupa?',intent:'other'}),source,{greeted:true});assert.match(reaction.text,/te entiendo\. Vamos con calma\./);assert.ok(reaction.text.endsWith('?'));
  for(const say of ['La Philco dura toda la semana','Tiene garantía de por vida','Te llega hoy','Soy humano'])assert.equal(renderPlan(plan({say}),source).prose_filtered,true);
 });
 test('Use and concern persist across twenty turns; model sees context beyond the short transcript',async()=>{

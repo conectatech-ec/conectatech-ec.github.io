@@ -80,7 +80,7 @@ export function freeProseSafe(text,question=false){
 export function renderPlan(plan,source,memory={}){
  const facts=factBook(source);
  if(!plan||typeof plan!=='object'||!Array.isArray(plan.facts)||plan.facts.length>2||plan.facts.some(k=>typeof k!=='string'||!Object.hasOwn(facts,k)))throw Error('UNVERIFIED_FACT');
- let say=cleanFree(plan.say).split(/(?<=[.!])\s+/)[0],ask=cleanFree(plan.ask);
+ let say=cleanFree(plan.say),ask=cleanFree(plan.ask);
  // Discard unsafe optional prose; verified commercial facts remain usable.
  let prose_filtered=false;
  if(!freeProseSafe(say)||say.includes('?')){say='';prose_filtered=true;}
