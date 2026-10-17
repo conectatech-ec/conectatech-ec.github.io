@@ -106,9 +106,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu089-juguete-camioneta-tesla/",
-  "fecha_verificacion": "2026-10-17T02:43:11.042502+00:00",
+  "fecha_verificacion": "2026-10-17T03:09:06.854312+00:00",
   "descripcion": "Camioneta de Juguete con Cuadriciclo y Base. Contenido de venta: Una camioneta, un cuadriciclo y una base. Diseño: Camioneta de carrocería angular en acabado plateado y negro. Cuadriciclo: Incluido sobre la plataforma trasera de la camioneta. Base: Rectangular de color negro, incluida.",
   "contenido_venta": "Un conjunto de camioneta de juguete, cuadriciclo y base de exhibición. Los tres elementos están incluidos.",
   "presentacion": "sin caja",
@@ -161,7 +161,7 @@
       "solicitado": "JUGU089",
       "sku": "JUGU089",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T02:44:07.193Z",
+      "fecha": "2026-10-17T03:09:09.629Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -186,7 +186,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu089-juguete-camioneta-tesla/",
-      "url_comprobada": "http://127.0.0.1:8807/productos/jugu089-juguete-camioneta-tesla/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu089-juguete-camioneta-tesla/",
       "archivo_html": "productos/jugu089-juguete-camioneta-tesla/index.html",
       "http": 200,
       "sha256_html": "2521f1903011531247eb43e1e57df0d51215bade50559dda62cf517229032849",
@@ -196,7 +196,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu089/JUGU089-01.webp",
-        "url_cargada": "http://127.0.0.1:8807/imagenes/jugu089/JUGU089-01-600.webp?v=e3c390e7e9dba2b1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu089/JUGU089-01-600.webp?v=e3c390e7e9dba2b1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -205,36 +205,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8807/productos/jugu089-juguete-camioneta-tesla/",
+          "url": "https://conectatech-ec.github.io/productos/jugu089-juguete-camioneta-tesla/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8807/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8807/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8807/imagenes/jugu089/JUGU089-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu089/JUGU089-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-107/qa-local/movil/JUGU089-390.png",
+      "archivo": "reportes/continuacion-107/qa-publica/movil/JUGU089-390.png",
       "sha256": "e3ad70dc97371e58e395d77c3bdb9249ab1761ebd2468f11124e58faca753576",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-107/qa-local/movil/JUGU089-1280.png",
+        "archivo": "reportes/continuacion-107/qa-publica/movil/JUGU089-1280.png",
         "sha256": "7083af8cbd1fc432f93130c5664b6c96ab2f9aa44bec021beceb32c68418e076",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T03:09:06.854312+00:00",
+      "archivo": "reportes/continuacion-107/http-publicacion.json",
+      "reporte": "reportes/continuacion-107/http-publicacion.json",
+      "sha256": "88798eba14c4f4e138897f4ce133ea87bdbf26fc2f8b552c60985b34ee90661d",
+      "sku": "JUGU089"
     }
   },
   "beneficios": [
