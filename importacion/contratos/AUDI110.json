@@ -101,9 +101,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
-  "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
+  "fecha_verificacion": "2026-10-17T06:04:43.375212+00:00",
   "descripcion": "Audífonos Tipo Arete HT-10 con Estuche de Carga. Presentación de venta: Dos auriculares y un estuche de carga. Diseño: Tipo arete, de oído abierto. Color: Negro.",
   "contenido_venta": "Un par de audífonos tipo arete con estuche de carga.",
   "presentacion": "sin caja",
@@ -157,7 +157,7 @@
       "solicitado": "AUDI110",
       "sku": "AUDI110",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T03:49:07.228Z",
+      "fecha": "2026-10-17T06:04:49.067Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -182,7 +182,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
-      "url_comprobada": "http://127.0.0.1:8808/productos/audi110-audifonos-tipo-arete-ht-10/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
       "archivo_html": "productos/audi110-audifonos-tipo-arete-ht-10/index.html",
       "http": 200,
       "sha256_html": "a76d72c62a78bd76f32612fe46e6a68920b92063c75115fcfa1d00bed025380b",
@@ -192,7 +192,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi110/AUDI110-r108-01.webp",
-        "url_cargada": "http://127.0.0.1:8808/imagenes/audi110/AUDI110-r108-01-600.webp?v=bbe6a90c3382cf19",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi110/AUDI110-r108-01-600.webp?v=bbe6a90c3382cf19",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -201,51 +201,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8808/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/imagenes/audi110/AUDI110-r108-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi110/AUDI110-r108-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/productos/parl028-parlante-monster-project-1/",
+          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/productos/radi001-radio-parlante-rca-53hsrcl-con-despertador/",
+          "url": "https://conectatech-ec.github.io/productos/radi001-radio-parlante-rca-53hsrcl-con-despertador/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-108/qa-local/movil/AUDI110-390.png",
+      "archivo": "reportes/correcciones-108/qa-publica/movil/AUDI110-390.png",
       "sha256": "9e0d3c2653f224f3bfd8b18c9d0651035b41826bc98447c428f7b493732a79d0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-108/qa-local/movil/AUDI110-1280.png",
+        "archivo": "reportes/correcciones-108/qa-publica/movil/AUDI110-1280.png",
         "sha256": "5641dc105f1d9f264065f2286ac27a463364bf22478da24bc43139d4742e9acf",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T06:04:43.375212+00:00",
+      "archivo": "reportes/correcciones-108/http-publicacion.json",
+      "reporte": "reportes/correcciones-108/http-publicacion.json",
+      "sha256": "543bb0205965db8df80574327c6b4f4d429bcba58436931542f1a6a5c408b936",
+      "sku": "AUDI110"
     }
   },
   "historial_correcciones": [

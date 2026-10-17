@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-10-17T05:52:00Z",
+  "estado": "VERIFICADO",
+  "url": "https://conectatech-ec.github.io/",
+  "http": 200,
+  "navegador": "Chromium real del entorno",
+  "ca_proporcionada_por_entorno": "/usr/local/share/ca-certificates/environment-proxy-ca.crt",
+  "sha256_ca": "7fa2d7d439db8bfa7c191457e61af5e3f4eb412314eb148766ac09e93786e4c3",
+  "solucion": "Conservar proxy administrado y añadir su CA al almacén NSS del usuario; Node usa proxy de entorno y CA del sistema.",
+  "verificacion_tls_activa": true,
+  "ignoreHTTPSErrors": false,
+  "ignore_certificate_errors": false,
+  "evidencia_fichas": "reportes/correcciones-108/qa-publica/movil.json"
+}

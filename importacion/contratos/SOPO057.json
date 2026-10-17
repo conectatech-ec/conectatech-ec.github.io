@@ -119,9 +119,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/sopo057-soporte-portable-stand-viajero-mini-para-escritorio/",
-  "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
+  "fecha_verificacion": "2026-10-17T06:04:43.375212+00:00",
   "descripcion": "Soporte Portátil Plegable con Prensa para Celular. Presentación de venta: Un soporte para celular. Celular no incluido. Formato: Plegable y portátil. Montaje: Prensa de escritorio con dos varillas. Ajuste: Pinza y articulación orientables. Color: Gris oscuro.",
   "contenido_venta": "Un soporte plegable con prensa de escritorio y pinza para celular. Celular no incluido.",
   "presentacion": "sin caja",
@@ -175,7 +175,7 @@
       "solicitado": "SOPO057",
       "sku": "SOPO057",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T03:49:09.092Z",
+      "fecha": "2026-10-17T06:04:52.520Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -200,7 +200,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/sopo057-soporte-portable-stand-viajero-mini-para-escritorio/",
-      "url_comprobada": "http://127.0.0.1:8808/productos/sopo057-soporte-portable-stand-viajero-mini-para-escritorio/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/sopo057-soporte-portable-stand-viajero-mini-para-escritorio/",
       "archivo_html": "productos/sopo057-soporte-portable-stand-viajero-mini-para-escritorio/index.html",
       "http": 200,
       "sha256_html": "1bf1819d7216ee167516b8c668ff24b9c8e84fb2accdac63ecd11d77f5065a25",
@@ -210,7 +210,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/sopo057/SOPO057-r108-01.webp",
-        "url_cargada": "http://127.0.0.1:8808/imagenes/sopo057/SOPO057-r108-01-600.webp?v=38394285a50938bd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/sopo057/SOPO057-r108-01-600.webp?v=38394285a50938bd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -219,36 +219,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8808/productos/sopo057-soporte-portable-stand-viajero-mini-para-escritorio/",
+          "url": "https://conectatech-ec.github.io/productos/sopo057-soporte-portable-stand-viajero-mini-para-escritorio/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/imagenes/sopo057/SOPO057-r108-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/sopo057/SOPO057-r108-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-108/qa-local/movil/SOPO057-390.png",
+      "archivo": "reportes/correcciones-108/qa-publica/movil/SOPO057-390.png",
       "sha256": "396e6d5ca217f98ce64af1d598461e355e37fb1db1db783ee4588f00d8eaa595",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-108/qa-local/movil/SOPO057-1280.png",
+        "archivo": "reportes/correcciones-108/qa-publica/movil/SOPO057-1280.png",
         "sha256": "bfaff501f7b79722de7c58d4733194faf9e4f9e21d94a24edecad609c2da6f91",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T06:04:43.375212+00:00",
+      "archivo": "reportes/correcciones-108/http-publicacion.json",
+      "reporte": "reportes/correcciones-108/http-publicacion.json",
+      "sha256": "543bb0205965db8df80574327c6b4f4d429bcba58436931542f1a6a5c408b936",
+      "sku": "SOPO057"
     }
   },
   "historial_correcciones": [

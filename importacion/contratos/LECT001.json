@@ -83,9 +83,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
-  "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
+  "fecha_verificacion": "2026-10-17T06:04:43.375212+00:00",
   "descripcion": "Lector USB de Memorias — Modelos Surtidos. Presentación de venta: Un lector de memorias USB; modelos vendidos por separado. Conexión: USB. Variantes: Colores y diseños surtidos según disponibilidad.",
   "contenido_venta": "Un lector de memorias USB. Colores y diseños surtidos según disponibilidad. La imagen muestra alternativas vendidas por separado.",
   "presentacion": "sin caja",
@@ -137,7 +137,7 @@
       "solicitado": "LECT001",
       "sku": "LECT001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T03:49:05.387Z",
+      "fecha": "2026-10-17T06:04:46.486Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -162,7 +162,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
-      "url_comprobada": "http://127.0.0.1:8808/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
       "archivo_html": "productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/index.html",
       "http": 200,
       "sha256_html": "b7ab7c75a182af9170a23c33a91257be956e466a4f1198ed15be2d968d6dc2d2",
@@ -172,7 +172,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lect001/LECT001-r108-01.webp",
-        "url_cargada": "http://127.0.0.1:8808/imagenes/lect001/LECT001-r108-01-600.webp?v=92e5befaf7ce8cdd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/lect001/LECT001-r108-01-600.webp?v=92e5befaf7ce8cdd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -181,36 +181,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8808/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
+          "url": "https://conectatech-ec.github.io/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/imagenes/lect001/LECT001-r108-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/lect001/LECT001-r108-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-108/qa-local/movil/LECT001-390.png",
+      "archivo": "reportes/correcciones-108/qa-publica/movil/LECT001-390.png",
       "sha256": "0add84416b84e9c54444e3756cdd9d9cfdbab357fa0d90cbdb980f39ddc37aae",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-108/qa-local/movil/LECT001-1280.png",
+        "archivo": "reportes/correcciones-108/qa-publica/movil/LECT001-1280.png",
         "sha256": "34652a582dd982ce21ff4f6379a6dfd8135a2dc6809b2065913194f5447e2c23",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T06:04:43.375212+00:00",
+      "archivo": "reportes/correcciones-108/http-publicacion.json",
+      "reporte": "reportes/correcciones-108/http-publicacion.json",
+      "sha256": "543bb0205965db8df80574327c6b4f4d429bcba58436931542f1a6a5c408b936",
+      "sku": "LECT001"
     }
   },
   "historial_correcciones": [
