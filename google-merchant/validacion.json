@@ -6,18 +6,57 @@
   "costo_autorizado": 0,
   "publicacion_habilitada": false,
   "estado": "SOLO_VALIDACION_COMERCIAL_PENDIENTE",
-  "source_commit": "2021b04123cdf16ce0da7320f3382d2fa0b167ef",
+  "source_commit": "1dbad9ea5b69666dff6b3fc0cfd464185cb66e2e",
   "validacion": "local_y_http_publico",
+  "inventario_corregido": {
+    "fecha_corte": "2026-10-16",
+    "archivo_origen": "Reporte-Inventario al 16-10-2026.xlsx",
+    "sha256_xlsx_privado": "66505c7a23be1a089689833940a8c3dc889a4b5d8e889e4998aa87a3ec74a983",
+    "referencias_origen": 1553,
+    "referencias_catalogo": 1170,
+    "columnas_origen": {
+      "sku": "D: Cod. Principal",
+      "stock": "B: Stock",
+      "promo_contado": "Q: V. TOTAL",
+      "pvp_final": "X: PVP + Y: importe de IVA"
+    },
+    "fuente_fecha": "Fecha del corte indicada por el propietario y nombre del archivo adjunto; no fecha de modificación del repositorio.",
+    "impuestos": "Importes finales del corte, IVA incluido. Sin recalcular porcentajes.",
+    "stock_tiempo_real": false,
+    "autorizacion": "Solicitud del propietario: utilizar la base corregida 593 del 16-10-2026 solo en el feed; no modificar main ni producción.",
+    "alcance": "Solo SKU del feed público anterior; sin cantidades internas ni precios nuevos del archivo privado.",
+    "referencias_exportadas": 674,
+    "campos_publicos": [
+      "sku",
+      "availability",
+      "precio_coincide_corte",
+      "precio_publico_validado"
+    ],
+    "web_commit_comparado": "1dbad9ea5b69666dff6b3fc0cfd464185cb66e2e",
+    "no_publicado": [
+      "Excel original",
+      "CSV privado completo",
+      "cantidades internas",
+      "precios corregidos distintos de la web",
+      "costos",
+      "márgenes",
+      "utilidades",
+      "datos privados"
+    ],
+    "sha256_productos": "502ca223b880ad2d79aaea032de78262f28a0c222ae7a2e432402c5e168d5015"
+  },
   "productos_origen": 1170,
-  "incluidos": 674,
-  "excluidos": 496,
+  "incluidos": 669,
+  "excluidos": 501,
   "motivos": {
     "identidad_pendiente": 4,
-    "producto_no_aprobado": 242,
+    "producto_no_aprobado": 228,
     "publicacion_no_verificada": 249,
-    "sin_contrato": 1
+    "sin_contrato": 1,
+    "sin_inventario_maestro": 14,
+    "stock_ficha_no_coincide": 5
   },
-  "feed_sha256": "ef1d0f3fec273d5574fcbd68c0e16d213ba1845d22d437eca8acf85dc9cfa1f1",
+  "feed_sha256": "b89949b3c41d5359611ddfda5c47c50b76a4173798a36bb072758864e0a39c76",
   "advertencias": [
     "Stock registrado: no implica inventario en tiempo real.",
     "Faltan verificar compra online, precio final, envíos y devoluciones; XML válido no garantiza aprobación de Google.",

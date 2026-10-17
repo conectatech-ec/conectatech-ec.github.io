@@ -1,37 +1,75 @@
 {
   "merchant_center": "5874003439",
-  "verificado_en_utc": "2026-10-16T17:44:27.657145+00:00",
-  "fuente_commit": "2021b04123cdf16ce0da7320f3382d2fa0b167ef",
+  "verificado_en_utc": "2026-10-17T00:10:17.923252+00:00",
+  "fuente_commit": "1dbad9ea5b69666dff6b3fc0cfd464185cb66e2e",
   "fuente_rama": "main (lectura solamente)",
-  "inventario_sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
-  "fecha_corte": "10-10-2026",
-  "antiguedad_corte_dias": 6,
-  "articulos_feed": 674,
-  "articulos_con_http_publico_verificado": 674,
+  "inventario_sha256": "86d1043d672fa52f434e3e90a36882935ad79eef88f59e55f6f4836bc8b7a691",
+  "fecha_corte": "2026-10-16",
+  "antiguedad_corte_dias": 1,
+  "inventario_origen": "Reporte-Inventario al 16-10-2026.xlsx",
+  "origen_privado_sha256": "66505c7a23be1a089689833940a8c3dc889a4b5d8e889e4998aa87a3ec74a983",
+  "articulos_feed": 669,
+  "articulos_con_http_publico_verificado": 669,
   "coherencia_catalogo_maestro": {
-    "sku_revisados": 1170,
-    "discrepancias": []
+    "sku_web": 1170,
+    "sku_con_revision_corte16": 674,
+    "discrepancias": [
+      {
+        "sku": "TVBO001",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "EXTE003",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "POWE014",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "SOPO061",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "CABL155",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      }
+    ],
+    "nota": "Revisión limitada a los SKU del feed anterior, sin cantidades internas ni precios privados. SKU sin esta revisión quedan excluidos; diferencias de precio o de disponibilidad con la ficha excluyen el artículo."
   },
-  "precio_final_documentado": "REFERENCIA-OFICIAL: promo_contado = V. TOTAL; PVP final = PVP + importe IVA. Ambos IVA incluido. No se recalculan.",
+  "precio_final_documentado": "Corte corregido16: Q V. TOTAL = contado; X PVP + Y importe de IVA = PVP final. IVA incluido. Sin recalcular porcentajes ni modificar precios web.",
   "fechas_inventario_en_articulos": {
-    "None": 558,
-    "10/10/2026": 116
+    "16/10/2026": 669
   },
   "stock_tiempo_real_acreditado": 0,
   "observaciones_fichas": {
-    "fichas_con_whatsapp": 674,
-    "fichas_con_contraentrega_quito": 674,
-    "fichas_con_precio_sujeto_confirmacion": 674,
+    "fichas_con_whatsapp": 669,
+    "fichas_con_contraentrega_quito": 669,
+    "fichas_con_precio_sujeto_confirmacion": 669,
     "fichas_con_formulario": 0
   },
   "enlaces_politicas_en_fichas": [],
+  "dominio_merchant": {
+    "sitio": "https://conectatech-ec.github.io/",
+    "cuenta_merchant": "5874003439",
+    "archivo_verificacion_existente": "https://conectatech-ec.github.io/google8bb019c7a5a192ed.html",
+    "estado_cuenta": "NO_COMPROBABLE_SIN_ACCESO_MERCHANT_CENTER",
+    "requiere_usuario": "Comparar el archivo o token que pide Google en la cuenta 5874003439; completar Verificar y después Reclamar. Archivo público presente no prueba reclamación ni titularidad de esa cuenta.",
+    "sitio_https": "HTTP 200, sin redirección",
+    "meta_google_site_verification_presente": false,
+    "archivo_https": "HTTP 200, sin redirección",
+    "contenido_archivo_correcto": true,
+    "robots_https": "HTTP 200, sin redirección",
+    "rastreo_googlebot_permitido": true,
+    "rastreo_imagenes_permitido": true
+  },
   "estado": "BLOQUEADO_PARA_PUBLICACION",
   "publicacion_habilitada": false,
   "bloqueos": [
     {
       "tema": "stock",
-      "estado": "NO_ACREDITADO_VIGENTE",
-      "accion": "Obtener corte depurado vigente de 593 con fecha de extracción, SKU, stock y precios finales. No importar ni modificar producción desde esta integración."
+      "estado": "CORTE16_APLICADO; NO_TIEMPO_REAL",
+      "accion": "Mantener actualizada la extracción de 593. El feed usa exclusivamente el corte16 corregido; excluye disponibilidad incompatible con la ficha y no modifica producción. Un corte no es inventario en tiempo real."
     },
     {
       "tema": "precio",
@@ -59,12 +97,12 @@
       "accion": "En la cuenta 5874003439 comprobar dominio verificado/reclamado, datos de empresa y contacto, Ecuador/español/USD y diagnósticos. No se modificó la cuenta."
     }
   ],
-  "siguiente_paso": "Confirmar en Merchant Center 5874003439 la verificación y reclamación del dominio del catálogo; mantener los destinos excluidos. Para activar productos hacen falta stock vigente, compra completa y políticas reales.",
+  "siguiente_paso": "En Merchant Center 5874003439, Configuración > Información de empresa > Tienda online: verificar y reclamar https://conectatech-ec.github.io/. Añadir la URL estable como fuente Ecuador/español/USD manteniendo exclusiones; no habilitar hasta confirmar compra completa, envíos, devoluciones y discrepancias pendientes.",
   "automatizacion": {
     "cada_ejecucion": "Obtiene el HEAD actual de main en una copia separada, valida y escribe únicamente en feeds/google-merchant-ec.",
-    "programacion_activa": false,
-    "motivo": "GitHub solo ejecuta schedules desde la rama predeterminada. El workflow permanece en la rama aislada; no se modificó main.",
-    "activacion_sin_main": "Requiere un ejecutor programado independiente gratuito autorizado; no se ha creado ni contratado ningún servicio."
+    "programacion": "Preparada mediante tarea cloud que escribe solo solicitud-actualizacion.json en la rama de integración y dispara GitHub Actions. No depende de laptop ni del schedule de main.",
+    "estado_programacion": "Consultar automatización ChatGPT; este informe no presupone que esté creada o activa.",
+    "actualizacion_inventario": "Usa el CSV depurado vigente y su manifiesto con hash. Un nuevo corte requiere un archivo real autorizado; no inventa ni refresca artificialmente su fecha."
   },
   "fuentes_oficiales": [
     "https://support.google.com/merchants/answer/160637?hl=es",
