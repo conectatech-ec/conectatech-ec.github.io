@@ -154,9 +154,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu040-juguete-camioneta-combi-coleccionable-grande/",
-  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "fecha_verificacion": "2026-10-17T02:13:50.629043+00:00",
   "descripcion": "Camioneta Combi Coleccionable Grande Disenos Surtidos. Presentación de venta: Un vehículo de juguete. Colores y diseños surtidos según disponibilidad. Variantes: Una variante propia ilustrada; no se garantiza color o diseño fijo.",
   "contenido_venta": "Un vehículo de juguete. Colores y diseños surtidos según disponibilidad.",
   "presentacion": "sin caja",
@@ -217,7 +217,7 @@
       "solicitado": "JUGU040",
       "sku": "JUGU040",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T01:49:58.194Z",
+      "fecha": "2026-10-17T02:13:51.197Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -242,7 +242,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu040-juguete-camioneta-combi-coleccionable-grande/",
-      "url_comprobada": "http://127.0.0.1:8806/productos/jugu040-juguete-camioneta-combi-coleccionable-grande/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu040-juguete-camioneta-combi-coleccionable-grande/",
       "archivo_html": "productos/jugu040-juguete-camioneta-combi-coleccionable-grande/index.html",
       "http": 200,
       "sha256_html": "075216d5e47d47eab46401ad97ca4b794cfa60930cac5d556c47b5b3ee530e90",
@@ -252,7 +252,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu040/JUGU040-r106-01.webp",
-        "url_cargada": "http://127.0.0.1:8806/imagenes/jugu040/JUGU040-r106-01-600.webp?v=682e6ec99e7f7970",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu040/JUGU040-r106-01-600.webp?v=682e6ec99e7f7970",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -261,46 +261,54 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8806/productos/jugu040-juguete-camioneta-combi-coleccionable-grande/",
+          "url": "https://conectatech-ec.github.io/productos/jugu040-juguete-camioneta-combi-coleccionable-grande/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/imagenes/jugu040/JUGU040-r106-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu040/JUGU040-r106-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/productos/jugu041-juguete-camioneta-combi-coleccionable-semi-mediana/",
+          "url": "https://conectatech-ec.github.io/productos/jugu041-juguete-camioneta-combi-coleccionable-semi-mediana/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/productos/jugu076-juguete-carro-antiguo-lada/",
+          "url": "https://conectatech-ec.github.io/productos/jugu076-juguete-carro-antiguo-lada/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-106/qa-local/movil/JUGU040-390.png",
+      "archivo": "reportes/correcciones-106/qa-publica/movil/JUGU040-390.png",
       "sha256": "c9e0baf4f5cd2fc5cc474b079ace45ba106730b5a2c15f0e7db6cf837eacd9a9",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-106/qa-local/movil/JUGU040-1280.png",
+        "archivo": "reportes/correcciones-106/qa-publica/movil/JUGU040-1280.png",
         "sha256": "ad0b87b6810bc114abb6ffc4994e8ff7102b199d6138fd542d90119f6c7ed9bd",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T02:13:50.629043+00:00",
+      "archivo": "reportes/correcciones-106/http-publicacion.json",
+      "reporte": "reportes/correcciones-106/http-publicacion.json",
+      "sha256": "ea6c3eb608de5bc652c7325641343fb27445bfeb272effb20e16bb61e05a3f7d",
+      "sku": "JUGU040"
     }
   },
   "historial_correcciones": [
