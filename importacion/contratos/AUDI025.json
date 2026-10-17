@@ -119,9 +119,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
-  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "fecha_verificacion": "2026-10-17T02:13:50.629043+00:00",
   "descripcion": "Audifonos Inalambricos Thinkplus X15 II. Presentación de venta: Un par de audífonos con estuche de carga. Producto genérico AAA. Contenido de venta: Dos auriculares y un estuche. Presentación del conjunto: Par de auriculares con su estuche de carga.",
   "contenido_venta": "Un par de audífonos con estuche de carga. Producto genérico AAA.",
   "presentacion": "sin caja",
@@ -177,7 +177,7 @@
       "solicitado": "AUDI025",
       "sku": "AUDI025",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T01:49:59.124Z",
+      "fecha": "2026-10-17T02:13:53.095Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -202,7 +202,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
-      "url_comprobada": "http://127.0.0.1:8806/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
       "archivo_html": "productos/audi025-audifonos-inalambricos-thinkplus-x15ii/index.html",
       "http": 200,
       "sha256_html": "0a81ac0d71758af48e62f22a3f600d072b34486ffbe13bcb5ce855041e136128",
@@ -212,7 +212,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01.webp",
-        "url_cargada": "http://127.0.0.1:8806/imagenes/audi025/AUDI025-r106-01-600.webp?v=016f7cb039b29e15",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01-600.webp?v=016f7cb039b29e15",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -221,36 +221,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8806/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
+          "url": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/imagenes/audi025/AUDI025-r106-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-106/qa-local/movil/AUDI025-390.png",
+      "archivo": "reportes/correcciones-106/qa-publica/movil/AUDI025-390.png",
       "sha256": "28f43b0beae34ed49612e14d370272451a044e525a7c62bf147bba28c9a19382",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-106/qa-local/movil/AUDI025-1280.png",
+        "archivo": "reportes/correcciones-106/qa-publica/movil/AUDI025-1280.png",
         "sha256": "4ae5f4c585a987c36cf2254519e96683ce4ebbb4dddd4a9d9f80b61706d10eea",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T02:13:50.629043+00:00",
+      "archivo": "reportes/correcciones-106/http-publicacion.json",
+      "reporte": "reportes/correcciones-106/http-publicacion.json",
+      "sha256": "ea6c3eb608de5bc652c7325641343fb27445bfeb272effb20e16bb61e05a3f7d",
+      "sku": "AUDI025"
     }
   },
   "historial_correcciones": [

@@ -103,9 +103,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu161-juguete-de-combate/",
-  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "fecha_verificacion": "2026-10-17T02:13:50.629043+00:00",
   "descripcion": "Juguete de Combate con Depósito y Extensión. Presentación de venta: Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad. Contenido: Juguete, depósito superior y extensión de boca. Variantes: Colores y diseños surtidos según disponibilidad. Edad indicada: 14 años en adelante, según empaque.",
   "contenido_venta": "Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad.",
   "presentacion": "sin caja",
@@ -158,7 +158,7 @@
       "solicitado": "JUGU161",
       "sku": "JUGU161",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T01:50:06.204Z",
+      "fecha": "2026-10-17T02:14:02.909Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -183,7 +183,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu161-juguete-de-combate/",
-      "url_comprobada": "http://127.0.0.1:8806/productos/jugu161-juguete-de-combate/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu161-juguete-de-combate/",
       "archivo_html": "productos/jugu161-juguete-de-combate/index.html",
       "http": 200,
       "sha256_html": "2fb7b994a14eaccb6fed081d5a1a19669481a3e7729c2def9c41370f2a9e0451",
@@ -193,7 +193,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/jugu161/JUGU161-r106-01.webp",
-        "url_cargada": "http://127.0.0.1:8806/imagenes/jugu161/JUGU161-r106-01-600.webp?v=ac523999c6245c99",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu161/JUGU161-r106-01-600.webp?v=ac523999c6245c99",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -202,36 +202,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8806/productos/jugu161-juguete-de-combate/",
+          "url": "https://conectatech-ec.github.io/productos/jugu161-juguete-de-combate/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/imagenes/jugu161/JUGU161-r106-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/jugu161/JUGU161-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-106/qa-local/movil/JUGU161-390.png",
+      "archivo": "reportes/correcciones-106/qa-publica/movil/JUGU161-390.png",
       "sha256": "5591572b9efff0b1d4d359534b0a66f8d270be695370f745dc7de6e5de0b7f80",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-106/qa-local/movil/JUGU161-1280.png",
+        "archivo": "reportes/correcciones-106/qa-publica/movil/JUGU161-1280.png",
         "sha256": "3b41c9ad5e447e5546c7bbe7e47e7a921a31531305a1afbad31a23f1c88eab40",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T02:13:50.629043+00:00",
+      "archivo": "reportes/correcciones-106/http-publicacion.json",
+      "reporte": "reportes/correcciones-106/http-publicacion.json",
+      "sha256": "ea6c3eb608de5bc652c7325641343fb27445bfeb272effb20e16bb61e05a3f7d",
+      "sku": "JUGU161"
     }
   },
   "beneficios": [

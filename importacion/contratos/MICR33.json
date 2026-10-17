@@ -120,9 +120,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
-  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "fecha_verificacion": "2026-10-17T02:13:50.629043+00:00",
   "descripcion": "Micrófono de Mesa con Soporte. Presentación de venta: Un micrófono con soporte de mesa incluido. Soporte: Incluido. Diseño del cabezal: Rejilla negra con tapa superior rectangular.",
   "contenido_venta": "Un micrófono con soporte de mesa incluido.",
   "presentacion": "sin caja",
@@ -178,7 +178,7 @@
       "solicitado": "MICR33",
       "sku": "MICR33",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T01:50:01.585Z",
+      "fecha": "2026-10-17T02:13:56.808Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -203,7 +203,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
-      "url_comprobada": "http://127.0.0.1:8806/productos/micr33-microfono-genuine-para-pc-laptop/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
       "archivo_html": "productos/micr33-microfono-genuine-para-pc-laptop/index.html",
       "http": 200,
       "sha256_html": "42bd334ad35324031e3122ff10c5264dfbffd7d372e798a655b64649b60484fa",
@@ -213,7 +213,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-r106-01.webp",
-        "url_cargada": "http://127.0.0.1:8806/imagenes/micr33/MICR33-r106-01-600.webp?v=05ba151584df9dbd",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-r106-01-600.webp?v=05ba151584df9dbd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -222,36 +222,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8806/productos/micr33-microfono-genuine-para-pc-laptop/",
+          "url": "https://conectatech-ec.github.io/productos/micr33-microfono-genuine-para-pc-laptop/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/imagenes/micr33/MICR33-r106-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/micr33/MICR33-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-106/qa-local/movil/MICR33-390.png",
+      "archivo": "reportes/correcciones-106/qa-publica/movil/MICR33-390.png",
       "sha256": "28e3bbbcabcd4b3a4e1a64f2b414ee5da266f6834f320c8710f47834496f1337",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-106/qa-local/movil/MICR33-1280.png",
+        "archivo": "reportes/correcciones-106/qa-publica/movil/MICR33-1280.png",
         "sha256": "71bcb52f0b2c463b520eb97882a2295b15f88c6210bb2d80595fdc60bcea122d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T02:13:50.629043+00:00",
+      "archivo": "reportes/correcciones-106/http-publicacion.json",
+      "reporte": "reportes/correcciones-106/http-publicacion.json",
+      "sha256": "ea6c3eb608de5bc652c7325641343fb27445bfeb272effb20e16bb61e05a3f7d",
+      "sku": "MICR33"
     }
   },
   "resolucion_propietario": "Sí, incluye soporte",

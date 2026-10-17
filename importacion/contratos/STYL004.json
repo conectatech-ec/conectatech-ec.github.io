@@ -92,9 +92,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
-  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "fecha_verificacion": "2026-10-17T02:13:50.629043+00:00",
   "descripcion": "Lápiz Táctil con Punta de Disco y Esfero. Punta táctil: Disco transparente con soporte metálico. Diseño: Cuerpo negro con terminación cromada. Presentación de venta: Un lápiz táctil con esfero y tapa.",
   "contenido_venta": "Un lápiz táctil con esfero y tapa.",
   "presentacion": "sin caja",
@@ -147,7 +147,7 @@
       "solicitado": "STYL004",
       "sku": "STYL004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T01:50:03.198Z",
+      "fecha": "2026-10-17T02:13:59.272Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -172,7 +172,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
-      "url_comprobada": "http://127.0.0.1:8806/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
       "archivo_html": "productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/index.html",
       "http": 200,
       "sha256_html": "45fe39aafe04e7034e1c2eb9ab1d50d6424e36bf5e8a96ab2896736d4199f66d",
@@ -182,7 +182,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/styl004/STYL004-r106-01.webp",
-        "url_cargada": "http://127.0.0.1:8806/imagenes/styl004/STYL004-r106-01-600.webp?v=3faea2d00890f241",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/styl004/STYL004-r106-01-600.webp?v=3faea2d00890f241",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -191,36 +191,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8806/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
+          "url": "https://conectatech-ec.github.io/productos/styl004-stylus-pen-lapiz-tactil-punta-redonda-esfero/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8806/imagenes/styl004/STYL004-r106-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/styl004/STYL004-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-106/qa-local/movil/STYL004-390.png",
+      "archivo": "reportes/correcciones-106/qa-publica/movil/STYL004-390.png",
       "sha256": "3e0c28d9451e088625cbf10fc80214b7e6a3193b76f6f34e24b7385d5ffe13ee",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-106/qa-local/movil/STYL004-1280.png",
+        "archivo": "reportes/correcciones-106/qa-publica/movil/STYL004-1280.png",
         "sha256": "96bcb694b391efbfb3ee20fc0147f4c3bf6e8fbfc486fcfe91e31ef43f31d7ff",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T02:13:50.629043+00:00",
+      "archivo": "reportes/correcciones-106/http-publicacion.json",
+      "reporte": "reportes/correcciones-106/http-publicacion.json",
+      "sha256": "ea6c3eb608de5bc652c7325641343fb27445bfeb272effb20e16bb61e05a3f7d",
+      "sku": "STYL004"
     }
   },
   "beneficios": [
