@@ -95,5 +95,5 @@ test('Knowing payment and delivery does not turn technical answers or hesitation
  const technical=quickReplies(plan({facts:['POWE003.battery'],intent:'battery',memory}));assert.ok(!technical.some(q=>q.payload.includes(':buy:')));assert.ok(technical.some(q=>q.payload.includes(':photo:')));
  const price=quickReplies(plan({memory}));assert.ok(!price.some(q=>q.payload.includes(':buy:')));assert.ok(price.some(q=>q.payload.includes(':specs:')));
  const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:JSON.stringify(plan({say:'Claro, podemos ir con calma.',facts:['request'],action:'interest',ask:'¿Qué te falta aclarar para decidir?',intent:'other'}))})}};
- const hesitant=await generateAlex('No quiero comprar todavía',source,memory,env);assert.equal(hesitant.action,'answer');assert.ok(!hesitant.facts.includes('request'));assert.ok(!quickReplies(hesitant).some(q=>q.payload.includes(':buy:')));assert.match(hesitant.text,/calma/);
+ const hesitant=await generateAlex('No quiero comprar todavía',source,{...memory,stage:'compra_pendiente'},env);assert.equal(hesitant.memory.stage,'consulta');assert.equal(hesitant.action,'answer');assert.ok(!hesitant.facts.includes('request'));assert.ok(!quickReplies(hesitant).some(q=>q.payload.includes(':buy:')));assert.match(hesitant.text,/calma/);
 });

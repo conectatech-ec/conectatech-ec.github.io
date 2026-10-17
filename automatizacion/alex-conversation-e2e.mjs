@@ -24,8 +24,8 @@ try{
  }
  const status=await get('/messenger/status');assert.equal(status.mode,'development-only');assert.equal(status.reception_enabled,false);assert.equal(status.test_senders_present,true);report.tester_outbound_enabled=status.outbound_enabled;report.protocol_passed=true;
  report.quota_before=await get('/alex/quota');
- // Leave at least two reservations to the personal tester. No live model call when exhausted.
- if(report.quota_before.remaining_calls<4){
+ // Leave at least twenty reservations to the personal tester. No live model call when exhausted.
+ if(report.quota_before.remaining_calls<22){
   report.status='blocked_free_quota';report.resume_at=report.quota_before.reset_at;
   if(report.quota_before.remaining_calls===0){const a=await ask('Busco una batería para mi celular');assert.equal(a.generative,false);assert.equal(a.error_code,'FREE_QUOTA_REACHED');assert.deepEqual(a.facts,[]);assert.equal(a.image,null);report.quota_guard_verified=true;}
  }else{
