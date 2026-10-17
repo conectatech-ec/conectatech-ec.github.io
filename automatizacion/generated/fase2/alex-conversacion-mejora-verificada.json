@@ -1,0 +1,204 @@
+{
+  "release": "418956dc7ac0cc8f1183aaf53a7c7d55e41f5d62",
+  "run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/39000358749",
+  "branch": "automatizacion/piloto-cloud-3sku-20261015",
+  "automated_checks": {
+    "python": 16,
+    "node": 91,
+    "total": 107,
+    "controlled_conversation_memory_turns": 20,
+    "real_Messenger_conversation_on_this_release_verified": false
+  },
+  "cloud": {
+    "mode": "private_https_conversation_not_Messenger",
+    "at": "2026-10-17T03:52:30.532Z",
+    "status": "blocked_free_quota",
+    "passed": null,
+    "protocol_passed": true,
+    "real_generative_turns": 0,
+    "messages_sent_to_Messenger": 0,
+    "paid_services_activated": false,
+    "assets": [
+      {
+        "sku": "MICR27",
+        "banner_http": 200,
+        "current_price": 102.01,
+        "current_card_price": 127.51,
+        "source_fresh": true,
+        "verified_media": [
+          {
+            "tipo": "foto",
+            "sha256": "810f1a44f8f0b5730293e4b3368225b3a0e37216cb3ca673d978bfa9073fcae7",
+            "bytes": 34750
+          },
+          {
+            "tipo": "banner",
+            "sha256": "a8ea4e0f393c8afb036c83a48907a4f2c84ba5cc76e25b869aed7d0cd99afd56",
+            "bytes": 102848
+          }
+        ]
+      },
+      {
+        "sku": "POWE003",
+        "banner_http": 200,
+        "current_price": 33.01,
+        "current_card_price": 37.96,
+        "source_fresh": true,
+        "verified_media": [
+          {
+            "tipo": "foto",
+            "sha256": "39a969281e87e7eb639054a285556b56c8690611e89f322d0882594dc923a6fe",
+            "bytes": 57562
+          }
+        ]
+      },
+      {
+        "sku": "ADAP005",
+        "banner_http": 200,
+        "current_price": 2.5,
+        "current_card_price": 2.87,
+        "source_fresh": true,
+        "verified_media": [
+          {
+            "tipo": "foto",
+            "sha256": "fe2ac0a7848ba74e232fc32608c19b54c236a34f4bd5de7ffbd669975d8b1827",
+            "bytes": 112290
+          }
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "input": "Busco una batería para mi celular",
+        "text": "Para orientarte bien, necesito apoyo de un vendedor. ¿Quieres que le deje el contexto de lo que buscas?",
+        "generative": false,
+        "error_code": "FREE_QUOTA_REACHED",
+        "facts": [],
+        "focus": [],
+        "image": null,
+        "buttons": [
+          "Hablar con persona"
+        ],
+        "memory": {
+          "focus": [],
+          "recent_products": [],
+          "turn_count": 0,
+          "turns": 1
+        }
+      }
+    ],
+    "health": {
+      "ok": true,
+      "pilot": true,
+      "seller_transport_implementation": "official_graph_v1",
+      "cloud_bindings": false,
+      "ai_binding": true,
+      "alex_generative": true,
+      "release": "418956dc7ac0cc8f1183aaf53a7c7d55e41f5d62",
+      "messenger_test_storage": true,
+      "messenger_configured": true,
+      "messenger_outbound": true,
+      "meta_ingress_enabled": false
+    },
+    "private_routes_http": 401,
+    "tester_outbound_enabled": true,
+    "quota_before": {
+      "reserved_neurons": 8000,
+      "calls": 100,
+      "remaining_calls": 0,
+      "reset_at": "2026-10-18T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    },
+    "resume_at": "2026-10-18T00:00:00.000Z",
+    "quota_guard_verified": true,
+    "quota_after": {
+      "reserved_neurons": 8000,
+      "calls": 100,
+      "remaining_calls": 0,
+      "reset_at": "2026-10-18T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    }
+  },
+  "changes": [
+    "Conservar reacciones breves completas y el humor junto a dos hechos verificados.",
+    "Permitir preguntas útiles después de características y disponibilidad.",
+    "Recordar el uso expresado por el comprador y usarlo más allá de la transcripción corta.",
+    "Evitar el cierre prematuro y respetar que el comprador vuelva a explorar.",
+    "Reservar veinte consultas para el probador antes de ejecutar nuevas pruebas generativas."
+  ],
+  "limitations": [
+    "La reserva diaria interna está agotada; no equivale a la medición de consumo de Cloudflare.",
+    "No se ejecutó IA real en esta verificación: el bloqueo de cuota se comprobó por HTTPS sin consumir inferencias.",
+    "La nueva calidad conversacional generada y su recepción visual en Messenger quedan pendientes de renovación y prueba del perfil autorizado."
+  ],
+  "cost_new_authorized_usd": 0,
+  "paid_services_activated": false,
+  "production_catalogue_changed": false,
+  "main_changed": false,
+  "controlled_before_after_not_real_inference": [
+    {
+      "case": "short_reaction_is_not_truncated",
+      "synthetic_model_plan_not_real_inference": true,
+      "before": {
+        "text": "Jajaja, te entiendo.",
+        "buttons": [
+          "Continuar compra",
+          "Ver fotografía",
+          "Hablar con persona"
+        ]
+      },
+      "after": {
+        "text": "Jajaja, te entiendo. Vamos con calma.\n¿Qué es lo que más te preocupa?",
+        "buttons": [
+          "Características",
+          "Ver fotografía",
+          "Hablar con persona"
+        ]
+      }
+    },
+    {
+      "case": "technical_answer_can_continue_the_conversation",
+      "synthetic_model_plan_not_real_inference": true,
+      "before": {
+        "text": "Para esos viajes, pensemos en tu rutina.\nLa Philco tiene capacidad de 20.000 mAh y pantalla para consultar el nivel de carga.",
+        "buttons": [
+          "Continuar compra",
+          "Ver fotografía",
+          "Hablar con persona"
+        ]
+      },
+      "after": {
+        "text": "Para esos viajes, pensemos en tu rutina.\nLa Philco tiene capacidad de 20.000 mAh y pantalla para consultar el nivel de carga.\n¿Qué celular usas?",
+        "buttons": [
+          "Ver fotografía",
+          "Precio de contado",
+          "Precio con tarjeta"
+        ]
+      }
+    },
+    {
+      "case": "warmth_survives_two_verified_facts",
+      "synthetic_model_plan_not_real_inference": true,
+      "before": {
+        "text": "💵 Philco FLP8202CV: $33.01 en PROMO CONTADO.\nLa oferta de contado publicada es la autorizada; un descuento adicional necesita aprobación.\n¿Qué uso le darías principalmente?",
+        "buttons": [
+          "Continuar compra",
+          "Ver fotografía",
+          "Hablar con persona"
+        ]
+      },
+      "after": {
+        "text": "💵 Philco FLP8202CV: $33.01 en PROMO CONTADO.\nLa oferta de contado publicada es la autorizada; un descuento adicional necesita aprobación.\nJajaja, vamos a cuidar ese bolsillo 😄.\n¿Qué uso le darías principalmente?",
+        "buttons": [
+          "Características",
+          "Ver fotografía",
+          "Precio con tarjeta"
+        ]
+      }
+    }
+  ]
+}
