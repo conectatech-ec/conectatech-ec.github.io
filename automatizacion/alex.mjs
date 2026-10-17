@@ -1,5 +1,5 @@
 import policy from './alex-policy.json' with {type:'json'};
-import {mergePreferences,redundantQuestion,asksHuman} from './alex-context.mjs';
+import {mergePreferences,redundantQuestion,asksHuman,statedBudget} from './alex-context.mjs';
 export {policy};
 const ids=['MICR27','POWE003','ADAP005'];
 export function candidates(input,memory={}){
@@ -73,6 +73,7 @@ export function freeProseSafe(text,question=false){
  if(!question&&/son iguales|id[eé]nticos|equivalentes|misma funci[oó]n|m[aá]s potente/i.test(text))return false;
  if(!question&&/\b(?:permite|enfoca|capta|patr[oó]n|cardioide|omnidireccional|conexi[oó]n|condensador|potente|r[aá]pid[oa])\b/i.test(text))return false;
  if(!question&&/retir|\bAv\.|Multicentro|\blocal\b|\bQuito\b/i.test(text))return false;
+ if(!question&&/rebaj|(?:te|le)\s+(?:doy|hago|ofrezco|regalo|dejo|bajo)|negociamos|negociable/i.test(text))return false;
  return true;
 }
 export function renderPlan(plan,source,memory={}){
@@ -155,7 +156,9 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   messages[0].content+=' El último dato explícito del comprador corrige sus preferencias anteriores. No vuelvas a preguntar presupuesto, sector, pago o entrega ya informados. No preguntes si quiere una característica que acabas de confirmar. Una respuesta directa puede terminar sin pregunta. Si dice que NO quiere una persona, sigue conversando; no lo transfieras por esa negación.';
   messages[0].content+=' Consultar el precio con otra forma de pago no significa que el cliente haya cambiado su elección. Responde el importe de la modalidad consultada (card si pregunta por tarjeta), aunque anteriormente haya elegido contado.';
   messages[0].content+=' Si pide comparar dos productos, action=compare e intent=compare, focus con ambos y un fact de uso o beneficio por producto; no los presentes como sustitutos si sirven para tareas distintas. Si elige uno después, enfócate únicamente en el elegido.';
-  const args={messages,response_format:{type:'json_schema',json_schema:outputSchema(context)},max_tokens:policy.max_output_tokens,temperature:0.5};
+  const bargaining=/rebaj|descuento|me (?:lo|la).{0,20}barato/i.test(input),schema=outputSchema(context);
+  if(bargaining&&/[😂😅🤣]/u.test(input)){schema.properties.say.minLength=4;messages[0].content+=' El cliente bromea al negociar: genera en say una reacción cálida y original muy breve, sin saludo, cifras, promesas ni decir que le harás una rebaja. No copies una frase de plantilla; facts debe incluir discount.';}
+  const args={messages,response_format:{type:'json_schema',json_schema:schema},max_tokens:policy.max_output_tokens,temperature:0.5};
   while(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes&&messages.length>2)messages.splice(1,Math.min(2,messages.length-2));
   if(new TextEncoder().encode(JSON.stringify(args)).length>policy.max_prompt_bytes)throw Error('PROMPT_LIMIT');
   if(!await reserve())throw Error('FREE_QUOTA_REACHED');
@@ -164,11 +167,15 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   // An approved interest-bearing term cannot be presented as the base PVP alone.
   const knownBank=factBook(context)[payment.bank];
   const book=factBook(context),requestedPrice=/cu[aá]nto.{0,45}(?:cuesta|vale|sale|pago|pagar)|(?:precio|\bPVP\b)/i.test(input);
+  if(context.productos.length===1&&statedBudget(input)!==null&&/busco|necesito|recomiend/i.test(input)){const sku=context.productos[0].sku;if(book[sku+'.cash']){plan.facts=[sku+'.cash',sku+'.benefit'];plan.focus=[sku];plan.action='recommend';plan.intent='recommend';plan.ask='';}}
   if(requestedPrice&&context.productos.length===1&&!payment.requires_interest){const sku=context.productos[0].sku,kind=/tarjeta|\bPVP\b/i.test(input)?'card':/contado|efectivo/i.test(input)?'cash':memory.payment==='tarjeta'?'card':'cash',key=sku+'.'+kind;if(book[key]){plan.facts=[key];if(/disponib|\bstock\b|\bhay\b/i.test(input)&&book[sku+'.stock'])plan.facts.push(sku+'.stock');plan.intent='price';plan.action='answer';plan.focus=[sku];}}
   if((payment.months||payment.named&&/intereses|tarjeta|pago|plan|banco|aceptan|diferir|cuotas|^\W*pichincha\W*$|^\W*diners\W*$|^\W*pac[ií]fico\W*$/i.test(input))&&knownBank){plan.facts=[payment.bank];plan.intent='payment';plan.action='answer';plan.image=null;}
   if(payment.requires_interest){plan.facts=['interest'];plan.say='';plan.intent='payment';plan.image=null;plan.action='answer';}
-  if(/garant[ií]a/i.test(input)&&!humanRequested(input)){plan.facts=['warranty'];plan.say='';plan.ask='';plan.image=null;plan.action='answer';}
-  if(plan.action==='compare'&&context.productos.length===2){plan.facts=context.productos.map(p=>/usos|sirven.*mismo/i.test(input)?p.sku+'.benefit':plan.facts.find(k=>k.startsWith(p.sku+'.')&&!k.endsWith('.name'))||p.sku+'.benefit');plan.focus=context.productos.map(p=>p.sku);plan.ask='';}
+  if(/garant[ií]a/i.test(input)&&!humanRequested(input)){plan.facts=['warranty'];plan.say='';plan.ask='';plan.image=null;plan.action='answer';plan.intent='other';}
+  if(bargaining&&!humanRequested(input)){plan.facts=['discount'];plan.action='answer';plan.intent='other';plan.ask='';plan.image=null;}
+  if(/direcci[oó]n|ubicaci[oó]n|d[oó]nde.{0,35}(?:retir|tienda|local)|(?:est[aá]n|est[aá]) ubicad/i.test(input)){plan.facts=['pickup'];plan.action='answer';plan.intent='delivery';plan.say='';plan.ask='';plan.image=null;}
+  if(/foto|fotograf[ií]a|imagen|banner/i.test(input)&&context.productos.length===1){const sku=context.productos[0].sku;plan.focus=[sku];plan.intent='photo';plan.image=sku;if(!plan.facts.some(k=>k.startsWith(sku+'.')))plan.facts=[sku+'.name'];}
+  if(plan.action==='compare'&&context.productos.length===2){plan.facts=context.productos.map(p=>/usos|sirven.*mismo/i.test(input)?p.sku+'.benefit':plan.facts.find(k=>k.startsWith(p.sku+'.')&&!k.endsWith('.name'))||p.sku+'.benefit');plan.focus=context.productos.map(p=>p.sku);plan.intent='compare';plan.ask='';}
   if(plan.action==='handoff'&&/\bno\s+quiero\b.{0,40}\b(?:persona|humano|vendedor)\b/i.test(input)&&!humanRequested(input)){plan.action='answer';plan.facts=plan.facts.filter(k=>k!=='human');if(!plan.say&&!plan.facts.length)plan.say='¡Seguimos por aquí!';}
   const next=memoryPatch(plan,input,memory);if(payment.bank)next.bank=payment.bank;if(payment.months)next.months=payment.months;
   // An explicit purchase request advances only to an unconfirmed request, using known preferences.

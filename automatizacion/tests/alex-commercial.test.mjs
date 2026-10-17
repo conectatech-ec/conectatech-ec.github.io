@@ -47,6 +47,7 @@ test('Unnecessary closing questions and manufactured commercial promises are rem
  assert.ok(!renderPlan(plan({ask:'¿Te parece suficiente potencia para tus necesidades?'}),source).text.includes('?'));
  assert.ok(!renderPlan(plan({say:'Retira en Av.',facts:['pickup'],ask:'¿Quieres retirar en Quito?'}),source).text.includes('Retira en Av.'));
  assert.ok(!renderPlan(plan({ask:'¿Cuál es el sector en el que trabajas?'}),source).text.includes('?'));
+ assert.ok(!renderPlan(plan({say:'Te hago una rebajita.'}),source).text.includes('Te hago'));
 });
 test('Private demonstration uses the same validated button payloads and removes obsolete choices',async()=>{
  const html=await alexPage().text();new Function(html.match(/<script nonce="[^"]+">([\s\S]*?)<\/script>/)[1]);assert.ok(html.includes('quick_reply_payload:payload'));assert.ok(html.includes("send(q.title,q.payload)"));assert.ok(html.includes("querySelectorAll('[data-choice]')"));
@@ -62,4 +63,8 @@ test('An explicit purchase advances to an unconfirmed request without asking kno
  env.AI.run=async()=>({response:JSON.stringify(plan({facts:['MICR27.name'],focus:['MICR27'],image:null}))});
  const quoted=await generateAlex('¿Y ese cuánto cuesta de contado?',source,{focus:['MICR27']},env);assert.ok(quoted.text.startsWith('💵'));assert.ok(quoted.text.includes('$102.01'));assert.deepEqual(quoted.focus,['MICR27']);
  env.AI.run=async()=>({response:JSON.stringify(plan({facts:['POWE003.card'],ask:''}))});const total=await generateAlex('¿Y cuánto termino pagando en total?',source,{focus:['POWE003'],bank:'pichincha',months:12},env);assert.match(total.text,/PVP más intereses/);assert.ok(!total.text.includes('$'));
+ env.AI.run=async()=>({response:JSON.stringify(plan({facts:['identity','national'],action:'handoff',intent:'identity'}))});
+ const recommendation=await generateAlex('Busco una batería portátil, mi presupuesto cuarenta',source,{},env);assert.equal(recommendation.action,'recommend');assert.ok(recommendation.text.startsWith('💵'));assert.match(recommendation.text,/energía de reserva/);
+ const address=await generateAlex('¿Cuál es la dirección para retirar?',source,m,env);assert.equal(address.action,'answer');assert.ok(address.text.startsWith('📍'));assert.match(address.text,/local 3/);
+ const negotiation=await generateAlex('¿Me haces una rebajita? 😂',source,m,env);assert.equal(negotiation.action,'answer');assert.match(negotiation.text,/aprobación/);
 });
