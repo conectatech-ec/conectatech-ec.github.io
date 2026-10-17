@@ -29,7 +29,7 @@ export function garantia(config, producto = {}) {
 }
 
 export function respuestaAlex(config, motivo, producto = {}) {
-  if (motivo === 'garantia') return garantia(config, producto).texto + '. Cuéntame qué ocurrió; revisaremos el caso sin limitar tus derechos legales.';
+  if (motivo === 'garantia') return garantia(config, producto).texto + '. Si tu artículo tiene un plazo superior registrado, se respeta. Cuéntame qué ocurrió; revisaremos el caso sin limitar tus derechos legales.';
   if (motivo === 'cambio_voluntario') return 'Podemos evaluar un cambio voluntario de 1 a 3 días desde la entrega; excepcionalmente hasta 7 con autorización. En celulares, tablets y televisores no es una facilidad habitual. Esto no reduce el derecho legal de devolución o cambio del artículo 45.';
   if (motivo === 'devolucion_legal') return 'La ley reconoce devolución o cambio dentro del término legal de quince días desde la recepción, si la naturaleza y el estado del bien lo permiten. Los 3 o 7 días comerciales no lo limitan. Te derivo a un responsable para revisar tu caso.';
   if (motivo === 'error_tienda') return 'Si recibiste un producto distinto o hubo un error de despacho, vamos a revisarlo y gestionar la solución. No te trasladaremos costos del error cuando no corresponda. Te derivo a un responsable.';
