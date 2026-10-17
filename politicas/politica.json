@@ -1,0 +1,172 @@
+{
+  "version": "2026-10-16.revision-1",
+  "estado": "PENDIENTE_APROBACION",
+  "publicar": false,
+  "titulo": "Cambios, devoluciones y garantías — CONECTATECH",
+  "url_prevista": "https://conectatech-ec.github.io/cambios-devoluciones-garantias/",
+  "pais": "EC",
+  "contacto": {
+    "nombre_comercial": "CONECTATECH",
+    "responsable_legal": null,
+    "direccion": "Av. 6 de Diciembre y La Niña, C.C. Multicentro Shopping, subsuelo, local 3. Quito, Ecuador.",
+    "telefono": "+593 99 857 6759",
+    "whatsapp": "https://wa.me/593998576759",
+    "horario": null,
+    "correo": null,
+    "fuente": "Dirección y canal ya utilizados en las fichas públicas del catálogo; confirmar responsable legal antes de publicar."
+  },
+  "garantias": {
+    "cobertura_comercial": "defectos de fabricación",
+    "inicio": "entrega del producto, de acuerdo con el comprobante y las condiciones documentadas",
+    "reglas_categoria": {
+      "celulares": {
+        "valor": 1,
+        "unidad": "anio",
+        "ampliable": true
+      },
+      "accesorios": {
+        "valor": 30,
+        "unidad": "dia",
+        "ampliable": true
+      },
+      "tablets": {
+        "valor": null,
+        "unidad": null
+      },
+      "televisores": {
+        "valor": null,
+        "unidad": null
+      },
+      "computacion": {
+        "valor": null,
+        "unidad": null
+      },
+      "otros": {
+        "valor": null,
+        "unidad": null
+      }
+    },
+    "alias_categoria": {
+      "TELEFONOS": "celulares",
+      "Telefonos": "celulares",
+      "Celulares": "celulares",
+      "Accesorios": "accesorios",
+      "TABLETS": "tablets",
+      "Tablets": "tablets",
+      "TELEVISORES": "televisores",
+      "Televisores": "televisores",
+      "COMPUTACION": "computacion"
+    },
+    "excepciones_sku": {},
+    "regla_excepciones": "Solo ampliaciones documentadas y aprobadas. No inferir categoría del prefijo SKU ni del nombre. Plazos desconocidos permanecen sin asignar; no equivalen a ausencia de garantía legal."
+  },
+  "cambios_voluntarios": {
+    "habitual_dias": {
+      "desde": 1,
+      "hasta": 3
+    },
+    "excepcional_hasta_dias": 7,
+    "excepcional_requiere_autorizacion": true,
+    "no_habitual_categorias": [
+      "celulares",
+      "tablets",
+      "televisores"
+    ],
+    "restringe_derechos_legales": false
+  },
+  "devolucion_legal": {
+    "articulo": "LODC 45, sustituido en 2022",
+    "valor": 15,
+    "unidad": "termino_legal_dias",
+    "inicio": "recepción",
+    "canales": "cualquier medio de compra, incluidas compras a distancia",
+    "naturaleza_debe_permitirlo": true,
+    "estado": "mismo estado en que se recibió",
+    "notas_credito_forzadas": false,
+    "computo_para_campo_numerico_google_confirmado": false
+  },
+  "operativa_pendiente": {
+    "metodos_recepcion_devoluciones": null,
+    "etiqueta_o_transportista": null,
+    "coste_sin_error_tienda": null,
+    "tarifa_reposicion": null,
+    "metodo_reembolso": null,
+    "plazo_operativo_reembolso": null,
+    "plazos_diagnostico_reparacion": null
+  },
+  "secciones": [
+    {
+      "id": "derechos",
+      "titulo": "Tus derechos tienen prioridad",
+      "parrafos": [
+        "Esta política diferencia las garantías comerciales, los cambios voluntarios, las devoluciones legales y los errores de CONECTATECH. Las condiciones comerciales son adicionales: no sustituyen ni limitan derechos irrenunciables del consumidor.",
+        "Las garantías comerciales se ofrecen por defectos de fabricación. Esto no excluye las obligaciones legales aplicables a deficiencias de funcionamiento, defectos, falta de conformidad u otros supuestos protegidos por la normativa ecuatoriana."
+      ]
+    },
+    {
+      "id": "garantias",
+      "titulo": "Garantías comerciales por defectos de fabricación",
+      "parrafos": [
+        "Celulares: {{celulares_garantia}} por defectos de fabricación.",
+        "Accesorios: {{accesorios_garantia}} por defectos de fabricación, salvo un plazo superior expresamente registrado para el producto.",
+        "Tablets, televisores, computación y otros productos: el plazo de garantía indicado para cada artículo, en su ficha o comprobante. Consulta ese plazo antes de comprar si no está indicado; su ausencia no elimina las garantías legales.",
+        "Los plazos comerciales se cuentan desde la entrega, según el comprobante y las condiciones documentadas. Las ampliaciones aprobadas para una categoría o SKU se respetarán. La atención corresponde al proveedor identificado en el comprobante de compra bajo el nombre comercial CONECTATECH."
+      ]
+    },
+    {
+      "id": "evaluacion",
+      "titulo": "Evaluamos la causa del inconveniente",
+      "parrafos": [
+        "La garantía comercial no cubre daños atribuibles a golpes, caídas o accidentes; contacto con líquidos; uso incorrecto o contrario a instrucciones; manipulación indebida; reparaciones o modificaciones no autorizadas que hayan causado el daño; ni daños externos ajenos a defectos de fabricación.",
+        "Cada reclamación se evalúa antes de determinar su cobertura. Una intervención previa o un daño externo no producen por sí solos el rechazo de cualquier reclamación: se analizará su relación con el defecto. Estas exclusiones comerciales no impiden ejercer los derechos legales que correspondan."
+      ]
+    },
+    {
+      "id": "voluntarios",
+      "titulo": "Cambios voluntarios: una facilidad adicional",
+      "parrafos": [
+        "CONECTATECH puede autorizar un cambio voluntario, habitualmente entre 1 y 3 días desde la entrega. Excepcionalmente puede ampliarlo hasta 7 días, previa evaluación y autorización. Esta facilidad no limita el término legal de devolución o cambio.",
+        "Para esta facilidad comercial, el producto debe estar en perfecto estado, con su caja y accesorios originales completos, sin daños ni señales de uso incompatibles con el cambio. Se revisan las condiciones y excepciones del caso.",
+        "En celulares, tablets y televisores no ofrecemos cambios voluntarios como política comercial habitual. Estos productos conservan su garantía y los derechos legales de devolución, cambio, reparación, sustitución u otros remedios cuando correspondan.",
+        "La caja y los accesorios completos son condiciones de esta facilidad voluntaria. No se convierten en una prohibición automática de reclamar por defectos o ejercer otros derechos legales."
+      ]
+    },
+    {
+      "id": "devoluciones",
+      "titulo": "Devoluciones y cambios reconocidos por la ley",
+      "parrafos": [
+        "El artículo 45 reformado de la Ley Orgánica de Defensa del Consumidor reconoce el derecho de solicitar devolución o cambio dentro del término legal de quince (15) días posteriores a la recepción, por cualquier medio de compra, siempre que la naturaleza del bien lo permita y mantenga el estado en que se recibió. Incluye las compras a distancia; no se limita a ellas.",
+        "Este derecho es distinto de la facilidad voluntaria de 1 a 3 días y su extensión excepcional hasta 7. No se rechaza automáticamente una solicitud por superar esos plazos comerciales. Tampoco se excluyen categorías completas de los derechos legales.",
+        "Cuando corresponda devolver dinero, no se impondrá una nota de crédito ni otro bien o servicio como compensación obligatoria. Fuera de los casos legalmente exigibles o expresamente autorizados, CONECTATECH no ofrece reembolsos por simple decisión del comprador como beneficio comercial adicional.",
+        "Los bienes defectuosos o no conformes se atienden conforme a los remedios legales aplicables, incluidas las opciones del consumidor cuando la ley las reconozca. No se exige agotar siempre una reparación antes de considerar otra solución legal."
+      ]
+    },
+    {
+      "id": "errores",
+      "titulo": "Si el error es de CONECTATECH",
+      "parrafos": [
+        "Si recibes un producto distinto del comprado, hay un error de despacho o se comprueba otra equivocación atribuible a la tienda, gestionaremos el error y ofreceremos la solución correspondiente.",
+        "CONECTATECH asumirá los gastos que legalmente le correspondan. No trasladaremos al comprador costos de un error de la tienda cuando no proceda. Los casos que requieran revisión se derivarán a una persona responsable."
+      ]
+    },
+    {
+      "id": "solicitud",
+      "titulo": "Cómo solicitar atención",
+      "parrafos": [
+        "Comunícate por el WhatsApp oficial o acércate a nuestro local para solicitar asistencia. Indica qué producto adquiriste, la fecha y el comprobante de compra cuando corresponda, una descripción del inconveniente y fotografías o información razonablemente necesarias para evaluarlo.",
+        "No necesitas proporcionar información personal ajena a la reclamación. Para identificar una compra o efectuar un reembolso se solicitarán únicamente los datos necesarios en la etapa correspondiente.",
+        "Indica si se trata de una evaluación de garantía, un cambio voluntario, una devolución legal o un error de CONECTATECH. Si no sabes cómo clasificarlo, te ayudaremos; escoger una opción incorrecta no elimina tus derechos.",
+        "La recepción del producto, el método de devolución y los gastos se coordinarán según el motivo, la responsabilidad y las reglas legales aplicables. Antes de enviarlo, solicita instrucciones por el canal oficial; esta coordinación no condiciona el ejercicio oportuno de un derecho legal."
+      ]
+    },
+    {
+      "id": "solucion",
+      "titulo": "Evaluación y solución",
+      "parrafos": [
+        "Revisaremos la información y, cuando sea necesario, el producto para determinar la solución que corresponda. No prometemos plazos de diagnóstico, reparación o reembolso que no hayan sido confirmados, ni subordinamos los plazos legales a tiempos internos no definidos.",
+        "Se respetan los plazos y remedios obligatorios. En los supuestos del artículo 71 de la Ley Orgánica de Defensa del Consumidor se aplicará el límite legal que allí se establece, no superior a treinta días; no se presenta ese límite como un plazo genérico de diagnóstico.",
+        "Si no estás de acuerdo con la atención recibida, puedes pedir la revisión por una persona responsable y acudir a las vías de protección del consumidor que correspondan."
+      ]
+    }
+  ]
+}
