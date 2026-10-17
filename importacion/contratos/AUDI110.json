@@ -1,7 +1,7 @@
 {
   "sku": "AUDI110",
   "nombre_original": "Audifonos Tipo Arete HT-10",
-  "titulo_comercial": "Audifonos Tipo Arete HT-10",
+  "titulo_comercial": "Audífonos Tipo Arete HT-10 con Estuche de Carga",
   "tipo": "original",
   "marca": "ANCOSUN",
   "modelo": "HT-10",
@@ -16,7 +16,7 @@
     "cantidad": 1,
     "verificada": true,
     "fuente": "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk",
-    "evidencia": "Presentación comercial cotejada con referencias propias y maestro; aplicar instrucciones expresas del propietario de unidades y surtidos, 2026-10-16, cuando corresponde. Una unidad comercial puede ser blíster, sistema o par según descripción."
+    "evidencia": "Unidad de venta documentada con aclaraciones vigentes del propietario; reportes/correcciones-108/orden-propietario.json"
   },
   "fotografias_fuente": [
     {
@@ -50,19 +50,20 @@
     "https://drive.google.com/file/d/1qGfJ6frjrWNZPrRfRtJAB_Zq_cSy4h4-/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
-    "importacion/politica-variantes-surtidas.json"
+    "importacion/politica-variantes-surtidas.json",
+    "reportes/correcciones-108/orden-propietario.json"
   ],
-  "imagen_principal": "/imagenes/audi110/AUDI110-01.webp",
+  "imagen_principal": "/imagenes/audi110/AUDI110-r108-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk",
     "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
-    "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+    "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
     "archivos": [
       {
-        "sha256": "e6b99596a7d741aaa170c2fd14c227bf5d9df7a3a65d677d0689eb58f6089077",
+        "sha256": "d25b6d2cabe04b5dcc1b18bdbc60b4d124eb52176b03b9c56082db984e342eed",
         "fuente": "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk"
       }
     ]
@@ -70,24 +71,45 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Un par de audífonos tipo arete con estuche de carga.",
+      "valor": "Dos auriculares y un estuche de carga.",
       "fuentes": [
-        "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Diseño",
+      "valor": "Tipo arete, de oído abierto.",
+      "fuentes": [
+        "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Color",
+      "valor": "Negro.",
+      "fuentes": [
+        "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
-  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
-  "descripcion": "Audifonos Tipo Arete HT-10. Presentación de venta: Un par de audífonos tipo arete con estuche de carga..",
+  "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
+  "descripcion": "Audífonos Tipo Arete HT-10 con Estuche de Carga. Presentación de venta: Dos auriculares y un estuche de carga. Diseño: Tipo arete, de oído abierto. Color: Negro.",
   "contenido_venta": "Un par de audífonos tipo arete con estuche de carga.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 2,
+  "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 997,998,999; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
@@ -123,19 +145,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:29:19.245695+00:00",
-      "sha256_maestro": "e6b99596a7d741aaa170c2fd14c227bf5d9df7a3a65d677d0689eb58f6089077",
-      "evidencia": "Caso HT-10 abierto con exactamente dos auriculares alojados, sin duplicados fuera del estuche. Geometría cotejada con ilustraciones propias autorizadas078; no fotografía física directa."
+      "fecha": "2026-10-17T03:48:28.910925+00:00",
+      "sha256_maestro": "d25b6d2cabe04b5dcc1b18bdbc60b4d124eb52176b03b9c56082db984e342eed",
+      "evidencia": "Exactamente dos auriculares completos fuera del estuche abierto vacío, cotejados con ilustraciones propias HT-10: dos lóbulos, puente corto, ranura y detalle metálico oval. No se suman auriculares en cavidades. Estuche completo, forma negra ovalada; sin puntas in-ear, cables ni teléfono."
     },
     "movil": {
       "solicitado": "AUDI110",
       "sku": "AUDI110",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:56:34.444Z",
+      "fecha": "2026-10-17T03:49:07.228Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -152,22 +174,25 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
+      "url_comprobada": "http://127.0.0.1:8808/productos/audi110-audifonos-tipo-arete-ht-10/",
       "archivo_html": "productos/audi110-audifonos-tipo-arete-ht-10/index.html",
       "http": 200,
-      "sha256_html": "6de0d52f2241d891d5f281c3a4e22be9a06f2560002c843db5f9e69017f0ca8c",
-      "sha256_html_local": "6de0d52f2241d891d5f281c3a4e22be9a06f2560002c843db5f9e69017f0ca8c",
+      "sha256_html": "a76d72c62a78bd76f32612fe46e6a68920b92063c75115fcfa1d00bed025380b",
+      "sha256_html_local": "a76d72c62a78bd76f32612fe46e6a68920b92063c75115fcfa1d00bed025380b",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi110/AUDI110-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi110/AUDI110-01-600.webp?v=27371ba0189f7626",
+        "src": "https://conectatech-ec.github.io/imagenes/audi110/AUDI110-r108-01.webp",
+        "url_cargada": "http://127.0.0.1:8808/imagenes/audi110/AUDI110-r108-01-600.webp?v=bbe6a90c3382cf19",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -176,59 +201,88 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
+          "url": "http://127.0.0.1:8808/productos/audi110-audifonos-tipo-arete-ht-10/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8808/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8808/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/audi110/AUDI110-01.webp",
+          "url": "http://127.0.0.1:8808/imagenes/audi110/AUDI110-r108-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
+          "url": "http://127.0.0.1:8808/productos/parl028-parlante-monster-project-1/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+          "url": "http://127.0.0.1:8808/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/productos/radi001-radio-parlante-rca-53hsrcl-con-despertador/",
+          "url": "http://127.0.0.1:8808/productos/radi001-radio-parlante-rca-53hsrcl-con-despertador/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI110-390.png",
-      "sha256": "a775ebad2368c0250b6d19b5db4a93776ce27d9c000b6eaa63e68540cfbeb6c0",
+      "archivo": "reportes/correcciones-108/qa-local/movil/AUDI110-390.png",
+      "sha256": "9e0d3c2653f224f3bfd8b18c9d0651035b41826bc98447c428f7b493732a79d0",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI110-1280.png",
-        "sha256": "38e9eaea2be035da2602985f7b0a97110e20666889ced1865e5671135c8f7a5a",
+        "archivo": "reportes/correcciones-108/qa-local/movil/AUDI110-1280.png",
+        "sha256": "5641dc105f1d9f264065f2286ac27a463364bf22478da24bc43139d4742e9acf",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:56:36.742098+00:00",
-      "archivo": "reportes/continuacion-097/http-publicacion.json",
-      "reporte": "reportes/continuacion-097/http-publicacion.json",
-      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
-      "sku": "AUDI110"
     }
-  }
+  },
+  "historial_correcciones": [
+    {
+      "fecha": "2026-10-17T03:48:28.910925+00:00",
+      "motivo": "Propietario rechaza portada anterior; mostrar producto o conjunto completo y fiel.",
+      "sha256_anterior": "e6b99596a7d741aaa170c2fd14c227bf5d9df7a3a65d677d0689eb58f6089077",
+      "revision_regla_anterior": 2,
+      "evidencia": "reportes/correcciones-108/orden-propietario.json"
+    }
+  ],
+  "beneficios": [
+    {
+      "valor": "Tipo arete",
+      "titulo": "Diseño de oído abierto",
+      "descripcion": "Auriculares de dos lóbulos con unión curva, como muestra el producto.",
+      "especificaciones": [
+        "Diseño"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Par con estuche",
+      "titulo": "Conjunto de carga",
+      "descripcion": "Incluye dos auriculares y su estuche de carga.",
+      "especificaciones": [
+        "Presentación de venta"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1PbMuAfLPVTUFDTtrWMrrV2Cw7ACh3vOK/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

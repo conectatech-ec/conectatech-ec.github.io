@@ -1,7 +1,7 @@
 {
   "sku": "LECT001",
   "nombre_original": "Lector DE Memorias Multiple Tipo Flash Varios Colores",
-  "titulo_comercial": "Lector DE Memorias Multiple Tipo Flash Varios Colores",
+  "titulo_comercial": "Lector USB de Memorias — Modelos Surtidos",
   "tipo": "original",
   "marca": null,
   "modelo": null,
@@ -12,11 +12,11 @@
   "pvp": 3.45,
   "stock": 11,
   "unidad_venta": {
-    "descripcion": "Un lector de memorias USB. Colores y diseños surtidos según disponibilidad; la fotografía ilustra una variante.",
+    "descripcion": "Un lector de memorias USB. Colores y diseños surtidos según disponibilidad. La imagen muestra alternativas vendidas por separado.",
     "cantidad": 1,
     "verificada": true,
     "fuente": "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
-    "evidencia": "Presentación comercial cotejada con referencias propias y maestro; aplicar instrucciones expresas del propietario de unidades y surtidos, 2026-10-16, cuando corresponde. Una unidad comercial puede ser blíster, sistema o par según descripción."
+    "evidencia": "Unidad de venta documentada con aclaraciones vigentes del propietario; reportes/correcciones-108/orden-propietario.json"
   },
   "fotografias_fuente": [
     {
@@ -32,19 +32,20 @@
     "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
-    "importacion/politica-variantes-surtidas.json"
+    "importacion/politica-variantes-surtidas.json",
+    "reportes/correcciones-108/orden-propietario.json"
   ],
-  "imagen_principal": "/imagenes/lect001/LECT001-01.webp",
+  "imagen_principal": "/imagenes/lect001/LECT001-r108-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
     "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
-    "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+    "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
     "archivos": [
       {
-        "sha256": "95dee45a363437ebd601147cd1b74926cc6fc13a2de09933ac8bcf586961258c",
+        "sha256": "d3842d1e4e09dc3c4460b1ab5ccdc404db454f2a568fadd8871300604cf1fb8c",
         "fuente": "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk"
       }
     ]
@@ -52,24 +53,45 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Un lector de memorias USB. Colores y diseños surtidos según disponibilidad; la fotografía ilustra una variante.",
+      "valor": "Un lector de memorias USB; modelos vendidos por separado.",
       "fuentes": [
-        "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Conexión",
+      "valor": "USB.",
+      "fuentes": [
+        "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Variantes",
+      "valor": "Colores y diseños surtidos según disponibilidad.",
+      "fuentes": [
+        "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
-  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
-  "descripcion": "Lector DE Memorias Multiple Tipo Flash Varios Colores. Presentación de venta: Un lector de memorias USB. Colores y diseños surtidos según disponibilidad; la fotografía ilustra una variante..",
-  "contenido_venta": "Un lector de memorias USB. Colores y diseños surtidos según disponibilidad; la fotografía ilustra una variante.",
+  "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
+  "descripcion": "Lector USB de Memorias — Modelos Surtidos. Presentación de venta: Un lector de memorias USB; modelos vendidos por separado. Conexión: USB. Variantes: Colores y diseños surtidos según disponibilidad.",
+  "contenido_venta": "Un lector de memorias USB. Colores y diseños surtidos según disponibilidad. La imagen muestra alternativas vendidas por separado.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 2,
+  "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 176; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
@@ -103,19 +125,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:29:19.245695+00:00",
-      "sha256_maestro": "95dee45a363437ebd601147cd1b74926cc6fc13a2de09933ac8bcf586961258c",
-      "evidencia": "Un lector blanco/verde, conector y forma cotejados con referencia física. No par; variante ilustrativa y surtido autorizados por propietario."
+      "fecha": "2026-10-17T03:48:28.910925+00:00",
+      "sha256_maestro": "d3842d1e4e09dc3c4460b1ab5ccdc404db454f2a568fadd8871300604cf1fb8c",
+      "evidencia": "Dos alternativas completas cotejadas con foto física: blanco/verde rectangular y blanco/morado redondeado con círculo. Tapas colocadas y conectores bajo plástico transparente; se retiró ranura lateral no acreditada del primer borrador. Venta de una unidad, no par."
     },
     "movil": {
       "solicitado": "LECT001",
       "sku": "LECT001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:57:11.285Z",
+      "fecha": "2026-10-17T03:49:05.387Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -132,22 +154,25 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
+      "url_comprobada": "http://127.0.0.1:8808/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
       "archivo_html": "productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/index.html",
       "http": 200,
-      "sha256_html": "b7d0da91281b3d79c74c0c8a6984479a324568d4897a6aee9207f034707b0c98",
-      "sha256_html_local": "b7d0da91281b3d79c74c0c8a6984479a324568d4897a6aee9207f034707b0c98",
+      "sha256_html": "b7ab7c75a182af9170a23c33a91257be956e466a4f1198ed15be2d968d6dc2d2",
+      "sha256_html_local": "b7ab7c75a182af9170a23c33a91257be956e466a4f1198ed15be2d968d6dc2d2",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/lect001/LECT001-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/lect001/LECT001-01-600.webp?v=4ef4441e103e7dc7",
+        "src": "https://conectatech-ec.github.io/imagenes/lect001/LECT001-r108-01.webp",
+        "url_cargada": "http://127.0.0.1:8808/imagenes/lect001/LECT001-r108-01-600.webp?v=92e5befaf7ce8cdd",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -156,44 +181,73 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
+          "url": "http://127.0.0.1:8808/productos/lect001-lector-de-memorias-multiple-tipo-flash-varios-colores/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8808/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8808/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/lect001/LECT001-01.webp",
+          "url": "http://127.0.0.1:8808/imagenes/lect001/LECT001-r108-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-publica/movil/LECT001-390.png",
-      "sha256": "b7e2bd4232ce7f63ecf2f9effad9edcbf87f45a565cfdc30212244fbb3f83c3e",
+      "archivo": "reportes/correcciones-108/qa-local/movil/LECT001-390.png",
+      "sha256": "0add84416b84e9c54444e3756cdd9d9cfdbab357fa0d90cbdb980f39ddc37aae",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-publica/movil/LECT001-1280.png",
-        "sha256": "21d844b830f7835334adebcd7d21b4da869efacf6a44f0d0fb899d927aadc1f0",
+        "archivo": "reportes/correcciones-108/qa-local/movil/LECT001-1280.png",
+        "sha256": "34652a582dd982ce21ff4f6379a6dfd8135a2dc6809b2065913194f5447e2c23",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:56:36.742098+00:00",
-      "archivo": "reportes/continuacion-097/http-publicacion.json",
-      "reporte": "reportes/continuacion-097/http-publicacion.json",
-      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
-      "sku": "LECT001"
     }
-  }
+  },
+  "historial_correcciones": [
+    {
+      "fecha": "2026-10-17T03:48:28.910925+00:00",
+      "motivo": "Propietario rechaza portada anterior; mostrar producto o conjunto completo y fiel.",
+      "sha256_anterior": "95dee45a363437ebd601147cd1b74926cc6fc13a2de09933ac8bcf586961258c",
+      "revision_regla_anterior": 2,
+      "evidencia": "reportes/correcciones-108/orden-propietario.json"
+    }
+  ],
+  "beneficios": [
+    {
+      "valor": "USB",
+      "titulo": "Conexión al computador",
+      "descripcion": "Formato de lector de memorias con conexión USB.",
+      "especificaciones": [
+        "Conexión"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Modelos surtidos",
+      "titulo": "Una unidad por compra",
+      "descripcion": "Colores y diseños disponibles según existencias; se venden por separado.",
+      "especificaciones": [
+        "Variantes"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1mErt6DX2aYm2k-m79DLdwrjD1J5nrdd8/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }

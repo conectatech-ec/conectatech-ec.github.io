@@ -1,0 +1,34 @@
+{
+  "fecha": "2026-10-17T05:46:00Z",
+  "estado": "RECUPERADO_PENDIENTE_ACTIVACION",
+  "sku": [
+    "JUGU145",
+    "LECT001",
+    "CASE003",
+    "AUDI110",
+    "TRIP002",
+    "SOPO057"
+  ],
+  "recursos": {
+    "pr": 54,
+    "merge": "c885208dfd0405b1b1451dade77ef42f8b257802",
+    "pages": 39000521662,
+    "qa_http_remoto": 39000850311,
+    "verificados": 18
+  },
+  "activacion": {
+    "pr": 55,
+    "ci_anterior": 39000279816,
+    "motivo_nueva_cabeza": "Ejecución cancelada de otra rama con la misma cabeza dejó estado inestable; repetir CI en cabeza nueva con checkpoint persistente."
+  },
+  "nuevos": 0,
+  "acumulado_nuevos": 43,
+  "pendientes": 221,
+  "con_portada": 949,
+  "siguiente_nuevo": {
+    "sku": "JUGU148",
+    "maestro": "exec-fa92cb3b-27f3-40b0-a6e3-23cc31b08f1a.png",
+    "publicado": false
+  },
+  "cloud_ajeno_modificado": false
+}

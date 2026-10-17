@@ -1,3 +1,7 @@
+## Orden vigente del propietario — correcciones108, 16 de octubre de 2026
+
+Mejorar JUGU145, LECT001, CASE003, AUDI110, TRIP002 y SOPO057 con producto o conjunto completo, fiel a referencias propias y presentación premium sin caja. Mantener originales, precios, stock, SKU y URLs. No contar correcciones como publicaciones nuevas; continuar la cola de nuevos aptos. Sin servicios nuevos de pago y sin modificar otras sesiones. Recursos versionados108 primero, CI de cabeza final y HTTP/Chromium públicos antes de fechas y cierre.
+
 ## Orden vigente del propietario — continuación 107, 16 de octubre de 2026
 
 PARL001: cubierta transparente integrada al parlante, con iluminación interior; NO es empaque y no se retira. JUGU089: venta incluye camioneta, cuadriciclo y base. Mostrar completos ambos productos/conjuntos, conservar precios/stock/SKU/URLs y fotografías anteriores. Estas son publicaciones nuevas sólo tras comprobar ausencia previa y HTTP/Chromium públicos. Conservar las trece correcciones106 ya verificadas, sin regenerarlas. Sin servicios nuevos de pago ni cambios a la sesión cloud24/7. Mantener CI de cabeza final, recursos primero, fechas después de prueba pública y cierre verificable.

@@ -1,7 +1,7 @@
 {
   "sku": "CASE003",
   "nombre_original": "Case Disco Duro 2.5 Altek Plastico",
-  "titulo_comercial": "Case Disco Duro 2.5 Altek Plastico",
+  "titulo_comercial": "Carcasa Altek para Disco de 2.5 Pulgadas — Colores Surtidos",
   "tipo": "original",
   "marca": "Altek",
   "modelo": null,
@@ -12,11 +12,11 @@
   "pvp": 13.63,
   "stock": 1,
   "unidad_venta": {
-    "descripcion": "Una carcasa externa para disco HDD de 2.5 pulgadas. Disco no incluido. Colores surtidos según disponibilidad; la fotografía ilustra una variante. La imagen muestra dos vistas de una misma carcasa; la venta corresponde a una sola unidad.",
+    "descripcion": "Una carcasa plástica externa para disco HDD de 2.5 pulgadas. Disco no incluido. Colores surtidos según disponibilidad; la imagen muestra alternativas, no un paquete.",
     "cantidad": 1,
     "verificada": true,
     "fuente": "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
-    "evidencia": "Presentación comercial cotejada con referencias propias y maestro; aplicar instrucciones expresas del propietario de unidades y surtidos, 2026-10-16, cuando corresponde. Una unidad comercial puede ser blíster, sistema o par según descripción."
+    "evidencia": "Unidad de venta documentada con aclaraciones vigentes del propietario; reportes/correcciones-108/orden-propietario.json"
   },
   "fotografias_fuente": [
     {
@@ -41,19 +41,20 @@
     "https://drive.google.com/file/d/1bFPt1LPu0xRkFdNXRe9qxZAZzqQszuMG/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
-    "importacion/politica-variantes-surtidas.json"
+    "importacion/politica-variantes-surtidas.json",
+    "reportes/correcciones-108/orden-propietario.json"
   ],
-  "imagen_principal": "/imagenes/case003/CASE003-01.webp",
+  "imagen_principal": "/imagenes/case003/CASE003-r108-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
     "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
-    "fecha_verificacion": "2026-10-16T05:29:19.245695+00:00",
+    "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
     "archivos": [
       {
-        "sha256": "aad562be47237da162bd669455097185035208d5b6b95b326aca3a128575a562",
+        "sha256": "49daba710fcb57c988e4630316dce1220d59797b40cf46e5f820f13d29721515",
         "fuente": "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk"
       }
     ]
@@ -61,24 +62,55 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Una carcasa externa para disco HDD de 2.5 pulgadas. Disco no incluido. Colores surtidos según disponibilidad; la fotografía ilustra una variante. La imagen muestra dos vistas de una misma carcasa; la venta corresponde a una sola unidad.",
+      "valor": "Una carcasa externa. Disco no incluido.",
       "fuentes": [
-        "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk"
+        "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Formato",
+      "valor": "Para disco HDD de 2.5 pulgadas.",
+      "fuentes": [
+        "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Material",
+      "valor": "Plástico.",
+      "fuentes": [
+        "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Variantes",
+      "valor": "Colores surtidos según disponibilidad; venta por unidad.",
+      "fuentes": [
+        "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/case003-case-disco-duro-2-5-altek-plastico/",
-  "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
-  "descripcion": "Case Disco Duro 2.5 Altek Plastico. Presentación de venta: Una carcasa externa para disco HDD de 2.5 pulgadas. Disco no incluido. Colores surtidos según disponibilidad; la fotografía ilustra una variante. La imagen muestra dos vistas de una misma carcasa; la venta corresponde a una sola unidad..",
-  "contenido_venta": "Una carcasa externa para disco HDD de 2.5 pulgadas. Disco no incluido. Colores surtidos según disponibilidad; la fotografía ilustra una variante. La imagen muestra dos vistas de una misma carcasa; la venta corresponde a una sola unidad.",
+  "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
+  "descripcion": "Carcasa Altek para Disco de 2.5 Pulgadas — Colores Surtidos. Presentación de venta: Una carcasa externa. Disco no incluido. Formato: Para disco HDD de 2.5 pulgadas. Material: Plástico. Variantes: Colores surtidos según disponibilidad; venta por unidad.",
+  "contenido_venta": "Una carcasa plástica externa para disco HDD de 2.5 pulgadas. Disco no incluido. Colores surtidos según disponibilidad; la imagen muestra alternativas, no un paquete.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 2,
+  "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2369,2370; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
@@ -113,19 +145,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:29:19.245695+00:00",
-      "sha256_maestro": "aad562be47237da162bd669455097185035208d5b6b95b326aca3a128575a562",
-      "evidencia": "Carcasa azul de2.5pulgadas cotejada con caja propia Altek. Se muestran dos vistas del mismo modelo y se aclara expresamente venta de una unidad, sin disco. Surtido autorizado."
+      "fecha": "2026-10-17T03:48:28.910925+00:00",
+      "sha256_maestro": "49daba710fcb57c988e4630316dce1220d59797b40cf46e5f820f13d29721515",
+      "evidencia": "Cinco colores del empaque propio Altek cotejados: negro, claro, rosa, verde y azul. Proporciones rectangulares, cantos, junta perimetral y acabado plástico conservados. Sin puertos o cables ocultos inventados. Imagen de alternativas, no cinco unidades incluidas; se elimina la antigua leyenda de dos vistas."
     },
     "movil": {
       "solicitado": "CASE003",
       "sku": "CASE003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:57:12.524Z",
+      "fecha": "2026-10-17T03:49:06.321Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -142,22 +174,25 @@
         "imagenes_cargadas": true,
         "galeria_del_contrato": true,
         "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
         "enlaces_internos": true,
         "escritorio": true
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/case003-case-disco-duro-2-5-altek-plastico/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/case003-case-disco-duro-2-5-altek-plastico/",
+      "url_comprobada": "http://127.0.0.1:8808/productos/case003-case-disco-duro-2-5-altek-plastico/",
       "archivo_html": "productos/case003-case-disco-duro-2-5-altek-plastico/index.html",
       "http": 200,
-      "sha256_html": "e030cf959ae72c776c668fbfc31b18ce5d104f453ce2ba801750aa42978bef97",
-      "sha256_html_local": "e030cf959ae72c776c668fbfc31b18ce5d104f453ce2ba801750aa42978bef97",
+      "sha256_html": "fd7e2e256769c742fa622751697bba443865563858e82f47bec12db3e5f461d8",
+      "sha256_html_local": "fd7e2e256769c742fa622751697bba443865563858e82f47bec12db3e5f461d8",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/case003/CASE003-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/case003/CASE003-01-600.webp?v=38bd060501486339",
+        "src": "https://conectatech-ec.github.io/imagenes/case003/CASE003-r108-01.webp",
+        "url_cargada": "http://127.0.0.1:8808/imagenes/case003/CASE003-r108-01-600.webp?v=b616682ce6bb4158",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -166,44 +201,73 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/case003-case-disco-duro-2-5-altek-plastico/",
+          "url": "http://127.0.0.1:8808/productos/case003-case-disco-duro-2-5-altek-plastico/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8808/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8808/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/case003/CASE003-01.webp",
+          "url": "http://127.0.0.1:8808/imagenes/case003/CASE003-r108-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-097/qa-publica/movil/CASE003-390.png",
-      "sha256": "da5e9bab6d06f2e46d26a2c2a551defe2da8862c5b5a8374feae970968492a7d",
+      "archivo": "reportes/correcciones-108/qa-local/movil/CASE003-390.png",
+      "sha256": "8753c1a52efe15dbe3614c4a4d15ce58ab9a6d7fa8fc200f924036167ca2fe7d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-publica/movil/CASE003-1280.png",
-        "sha256": "b396f2bb1057c143b55c7560a8f8f50626cfe9218cfc9c15b95307a8c0246cef",
+        "archivo": "reportes/correcciones-108/qa-local/movil/CASE003-1280.png",
+        "sha256": "fcd239bb190fcfc85630aaed0c2b468cba13d04e0188cc6ec4ec612c502dc3b0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:56:36.742098+00:00",
-      "archivo": "reportes/continuacion-097/http-publicacion.json",
-      "reporte": "reportes/continuacion-097/http-publicacion.json",
-      "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
-      "sku": "CASE003"
     }
-  }
+  },
+  "historial_correcciones": [
+    {
+      "fecha": "2026-10-17T03:48:28.910925+00:00",
+      "motivo": "Propietario rechaza portada anterior; mostrar producto o conjunto completo y fiel.",
+      "sha256_anterior": "aad562be47237da162bd669455097185035208d5b6b95b326aca3a128575a562",
+      "revision_regla_anterior": 2,
+      "evidencia": "reportes/correcciones-108/orden-propietario.json"
+    }
+  ],
+  "beneficios": [
+    {
+      "valor": "2.5 pulgadas",
+      "titulo": "Carcasa para disco HDD",
+      "descripcion": "Carcasa externa para alojar un disco HDD de 2.5 pulgadas; disco no incluido.",
+      "especificaciones": [
+        "Formato"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Plástico",
+      "titulo": "Colores surtidos",
+      "descripcion": "Cuerpo plástico disponible en colores según existencias, vendido por unidad.",
+      "especificaciones": [
+        "Material"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/18iOB-D7eOOyE7a9TUJh2rneZNxCxR2dx/view?usp=drivesdk",
+        "reportes/correcciones-108/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    }
+  ]
 }
