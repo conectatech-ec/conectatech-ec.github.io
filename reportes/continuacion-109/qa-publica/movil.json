@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "fecha": "2026-10-17T06:26:50.677Z",
+  "base": "https://conectatech-ec.github.io",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "JUGU148",
+      "sku": "JUGU148",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T06:26:50.903Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/jugu148-juguete-armable-florero-109-piezas/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu148-juguete-armable-florero-109-piezas/",
+      "archivo_html": "productos/jugu148-juguete-armable-florero-109-piezas/index.html",
+      "http": 200,
+      "sha256_html": "ddc2937f2c6daa316ae74e88dd3660a2e2350c802cef7310db48b3a778164c50",
+      "sha256_html_local": "ddc2937f2c6daa316ae74e88dd3660a2e2350c802cef7310db48b3a778164c50",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/jugu148/JUGU148-01.webp",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu148/JUGU148-01-600.webp?v=62fd5205809fecf8",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "https://conectatech-ec.github.io/productos/jugu148-juguete-armable-florero-109-piezas/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/imagenes/jugu148/JUGU148-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/continuacion-109/qa-publica/movil/JUGU148-390.png",
+      "sha256": "29b36ef1fb28e294314f8a15ad663aab363516c360cf9918dbdfcf94006ee63b",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/continuacion-109/qa-publica/movil/JUGU148-1280.png",
+        "sha256": "2f758a99e38a663ec8cfaa725bb3f01a44047ba65d9faa5f81e0d03c6871a79b",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
