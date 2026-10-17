@@ -1,13 +1,13 @@
 {
-  "activar": true,
+  "activar": false,
   "sincronizar_meta_verify_token": false,
   "meta_page_id": "105549695770538",
   "costo_maximo_usd": 0,
   "alcance": "Solo Worker piloto: Messenger oficial para probadores con permiso verificado; sin Billing, D1, cron, rutas, main ni catálogo de producción",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Último ensayo completo de 24 turnos tuvo 23 correctos y un cruce entre patrones del JBL y retiro. Corregirlo y verificar dos turnos de regresión reales, sin declarar aprobado otro ensayo completo ni ampliar cuota; reservar cuatro inferencias para el probador. Sin clientes externos, main, catálogo ni fábrica de banners.",
+  "nota": "Corrección 1f9659e6 desplegada y verificada con dos consultas reales por HTTPS; 104 pruebas unitarias pasan. Preservar evidencia del ensayo de 24 turnos con 23 correctos; repetición completa pendiente por cuota. Cerrar disparador de despliegue; solo lectura y cuatro inferencias para el perfil probador. Sin clientes externos, main, catálogo ni fábrica de banners.",
   "habilitar_vendedor_probadores": false,
   "procesar_cola_probadores": false,
   "alex_generativo": true,
-  "alex_validation": "targeted_regression"
+  "alex_validation": "conversation_24"
 }

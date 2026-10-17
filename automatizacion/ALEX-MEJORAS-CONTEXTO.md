@@ -50,3 +50,13 @@ La memoria mantiene además el indicador de saludo, un contador de turnos y los 
 La calidad de futuras conversaciones reales del probador se registra sin sus mensajes ni PSID: longitud, número de preguntas, presencia de saltos de línea, botones públicos y contador de turnos. HTTP 200 de Graph significa aceptación; recepción visual y recibos de entrega se mantienen como evidencias distintas. Ninguna prueba sintética se atribuye a Messenger real.
 
 Para validar desde el perfil autorizado, mantener una conversación de al menos veinte consultas, alternando necesidad de batería, precio, botones, capacidad, regateo, pago y entrega, luego JBL, comparación de usos y adaptador. Terminar con intención de compra y garantía; pedir atención humana al final porque pausa la automatización. La prueba no necesita una nueva vinculación, PSID ni credenciales en este chat. Las herramientas de esta sesión no controlan el perfil personal del probador.
+
+### Resultado real y límite pendiente
+
+[Evidencia conservada de calidad comercial](generated/fase2/alex-calidad-comercial-evidencia.json). Las 104 pruebas automatizadas pasan. El último ensayo continuo ejecutó 24 turnos, con 22 inferencias reales, cuatro selecciones mediante payload nativo y los tres productos. Pasaron 23 turnos; la consulta sobre patrones del JBL recibió por error el retiro en tienda. Se conserva ese fallo: no se declara aprobado el ensayo completo.
+
+La corrección está desplegada en `1f9659e6`: [despliegue y regresión aprobados](https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38985755529). Dos consultas nuevas por HTTPS verificaron precio/banner del JBL, memoria de contado/retiro y la explicación correcta de cardioide frente a omnidireccional. Esta regresión dirigida no equivale a repetir los 24 turnos.
+
+Quedaron cuatro inferencias en el contador preventivo después de las comprobaciones; el límite de 8.000 neuronas reservadas no se amplió y no es el medidor real del proveedor. Renovación: 18 de octubre de 2026 a las 00:00 UTC, equivalente al 17 de octubre a las 19:00 de Quito. La repetición completa requiere 22 llamadas y queda pendiente por esa cuota. `alex_validation` vuelve a `conversation_24` al cerrar el disparador de despliegue, para que futuros cambios no hereden una excepción de prueba dirigida.
+
+Para la comprobación inmediata en Messenger se reservaron esas cuatro llamadas: batería con presupuesto de cuarenta, botón de precio con tarjeta, consulta de precio del JBL y consulta de precio del adaptador. Se solicitó la confirmación visual al perfil autorizado; no se registra como realizada mientras no haya evidencia. El modo de compradores externos sigue bloqueado.

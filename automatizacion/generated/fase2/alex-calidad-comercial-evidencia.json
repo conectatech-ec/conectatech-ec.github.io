@@ -1,0 +1,996 @@
+{
+  "verified_at": "2026-10-17T00:20:18.078Z",
+  "worker": "conectatech-comercial-piloto",
+  "url": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
+  "branch": "automatizacion/piloto-cloud-3sku-20261015",
+  "deployed_release": "1f9659e67180b0d7e5e07044e7b4177ae9ec0bdd",
+  "unit_tests": {
+    "passed": 104,
+    "python": 16,
+    "node": 88
+  },
+  "last_full_conversation": {
+    "workflow_run": 38985355336,
+    "workflow_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38985355336",
+    "release": "32913d51",
+    "turns_executed": 24,
+    "real_generative_turns": 22,
+    "turns_without_validation_error": 23,
+    "failed_turn": 13,
+    "passed": false,
+    "report": {
+      "mode": "real_ai_24_turn_private_https_not_Messenger",
+      "passed": false,
+      "paid_services_activated": false,
+      "messages_sent_to_Messenger": 0,
+      "tests": [
+        {
+          "turn": 1,
+          "input": "¡Hola! Busco una batería portátil para mi celular, mi presupuesto es de cuarenta dólares.",
+          "via_native_payload": false,
+          "text": "💵 Philco FLP8202CV: $33.01 en PROMO CONTADO.\nLa Philco te permite llevar energía de reserva y elegir entre conexión USB-C y USB-A.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "POWE003.cash",
+            "POWE003.benefit"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/powe003/POWE003-01.webp",
+          "buttons": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 40,
+            "turn_count": 1,
+            "turns": 2
+          }
+        },
+        {
+          "turn": 2,
+          "input": "Precio con tarjeta",
+          "via_native_payload": true,
+          "text": "💳 Philco FLP8202CV: $37.96 con tarjeta, más intereses cuando correspondan.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "POWE003.card"
+          ],
+          "image": null,
+          "buttons": [
+            "Precio de contado",
+            "Retiro en tienda",
+            "Entrega en Quito"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 40,
+            "turn_count": 2,
+            "turns": 4
+          }
+        },
+        {
+          "turn": 3,
+          "input": "¿Y al contado cuánto cuesta?",
+          "via_native_payload": false,
+          "text": "💵 Philco FLP8202CV: $33.01 en PROMO CONTADO.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "POWE003.cash"
+          ],
+          "image": null,
+          "buttons": [
+            "Retiro en tienda",
+            "Entrega en Quito",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 40,
+            "turn_count": 3,
+            "turns": 6
+          }
+        },
+        {
+          "turn": 4,
+          "input": "¿Qué capacidad tiene esa batería?",
+          "via_native_payload": false,
+          "text": "La Philco tiene capacidad de 20.000 mAh y pantalla para consultar el nivel de carga.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "POWE003.battery"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 40,
+            "turn_count": 4,
+            "turns": 8
+          }
+        },
+        {
+          "turn": 5,
+          "input": "¿Qué conexión USB-C tiene?",
+          "via_native_payload": false,
+          "text": "Tiene USB-C PD de hasta 20 W y USB-A de hasta 22,5 W, para equipos compatibles.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "POWE003.power"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 40,
+            "turn_count": 5,
+            "turns": 10
+          }
+        },
+        {
+          "turn": 6,
+          "input": "Ver fotografía",
+          "via_native_payload": true,
+          "text": "Philco FLP8202CV",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "POWE003.name"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/powe003/POWE003-01.webp",
+          "buttons": [
+            "Precio de contado",
+            "Precio con tarjeta",
+            "Características"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 40,
+            "turn_count": 6,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 7,
+          "input": "Mi presupuesto ahora 35. Prefiero pagar al contado.",
+          "via_native_payload": false,
+          "text": "💵 Philco FLP8202CV: $33.01 en PROMO CONTADO.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "POWE003.cash"
+          ],
+          "image": null,
+          "buttons": [
+            "Retiro en tienda",
+            "Entrega en Quito",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 35,
+            "payment": "contado",
+            "turn_count": 7,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 8,
+          "input": "Quiero entrega en Quito. Estoy en La Carolina, Quito.",
+          "via_native_payload": false,
+          "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "delivery"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 8,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 9,
+          "input": "Continuar compra",
+          "via_native_payload": true,
+          "text": "Avancemos con tu compra; todavía debe confirmarla un vendedor.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "request"
+          ],
+          "image": null,
+          "buttons": [
+            "Hablar con persona",
+            "Ver fotografía"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 9,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 10,
+          "input": "¿Me haces una rebajita? 😂",
+          "via_native_payload": false,
+          "text": "La oferta de contado publicada es la autorizada; un descuento adicional necesita aprobación.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "discount"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 10,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 11,
+          "input": "Cambio de tema: muéstrame el micrófono JBL Quantum Stream.",
+          "via_native_payload": false,
+          "text": "El JBL Quantum Stream sirve para streaming, podcasts y videollamadas, con control de silencio e indicador RGB.\n¿Quieres saber más sobre el JBL Quantum Stream?",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "MICR27"
+          ],
+          "facts": [
+            "MICR27.benefit"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/micr27/MICR27-promo.webp",
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "MICR27"
+            ],
+            "recent_products": [
+              "POWE003",
+              "MICR27"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 11,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 12,
+          "input": "¿Y ese cuánto cuesta de contado?",
+          "via_native_payload": false,
+          "text": "💵 JBL Quantum Stream: $102.01 en PROMO CONTADO.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "MICR27"
+          ],
+          "facts": [
+            "MICR27.cash"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "MICR27"
+            ],
+            "recent_products": [
+              "POWE003",
+              "MICR27"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 12,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 13,
+          "input": "¿Qué cambia entre cardioide y omnidireccional?",
+          "via_native_payload": false,
+          "text": "📍 Retiro: Av. 6 de Diciembre y La Niña, C.C. Multicentro Shopping, subsuelo, local 3, Quito.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "MICR27"
+          ],
+          "facts": [
+            "pickup"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "MICR27"
+            ],
+            "recent_products": [
+              "POWE003",
+              "MICR27"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 13,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 14,
+          "input": "¿Qué calidad de grabación permite ese micrófono?",
+          "via_native_payload": false,
+          "text": "El Quantum Stream permite grabar hasta 96 kHz y 24 bits, con monitoreo por audífonos.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "MICR27"
+          ],
+          "facts": [
+            "MICR27.audio"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "MICR27"
+            ],
+            "recent_products": [
+              "POWE003",
+              "MICR27"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 14,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 15,
+          "input": "Compara los usos del JBL Quantum Stream y la batería Philco. ¿Sirven para lo mismo?",
+          "via_native_payload": false,
+          "text": "El JBL Quantum Stream sirve para streaming, podcasts y videollamadas, con control de silencio e indicador RGB.\nLa Philco te permite llevar energía de reserva y elegir entre conexión USB-C y USB-A.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "MICR27",
+            "POWE003"
+          ],
+          "facts": [
+            "MICR27.benefit",
+            "POWE003.benefit"
+          ],
+          "image": null,
+          "buttons": [
+            "Elegir JBL",
+            "Elegir Philco",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "MICR27",
+              "POWE003"
+            ],
+            "recent_products": [
+              "MICR27",
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 15,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 16,
+          "input": "Elegir Philco",
+          "via_native_payload": true,
+          "text": "Philco FLP8202CV",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "POWE003.name"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "MICR27",
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 16,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 17,
+          "input": "Ahora necesito el adaptador de enchufe Europa a Latino. ¿Cuánto cuesta de contado?",
+          "via_native_payload": false,
+          "text": "💵 adaptador Europa a Latino: $2.50 en PROMO CONTADO.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "ADAP005"
+          ],
+          "facts": [
+            "ADAP005.cash"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/adap005/ADAP005-01.webp",
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "ADAP005"
+            ],
+            "recent_products": [
+              "MICR27",
+              "POWE003",
+              "ADAP005"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 17,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 18,
+          "input": "¿Y ese con tarjeta cuánto cuesta?",
+          "via_native_payload": false,
+          "text": "💳 adaptador Europa a Latino: $2.87 con tarjeta, más intereses cuando correspondan.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "ADAP005"
+          ],
+          "facts": [
+            "ADAP005.card"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "ADAP005"
+            ],
+            "recent_products": [
+              "MICR27",
+              "POWE003",
+              "ADAP005"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 18,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 19,
+          "input": "¿Hay disponibilidad de ese adaptador?",
+          "via_native_payload": false,
+          "text": "Confirmamos disponibilidad antes de concretar tu compra.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "ADAP005"
+          ],
+          "facts": [
+            "ADAP005.stock"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "ADAP005"
+            ],
+            "recent_products": [
+              "MICR27",
+              "POWE003",
+              "ADAP005"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 19,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 20,
+          "input": "Volvamos a la batería Philco: quiero comprarla al contado, con entrega en Quito.",
+          "via_native_payload": false,
+          "text": "Avancemos con tu compra; todavía debe confirmarla un vendedor.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "request"
+          ],
+          "image": null,
+          "buttons": [
+            "Hablar con persona",
+            "Ver fotografía"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "MICR27",
+              "ADAP005",
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 20,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 21,
+          "input": "¿Cuál es la dirección para retirar en tienda?",
+          "via_native_payload": false,
+          "text": "📍 Retiro: Av. 6 de Diciembre y La Niña, C.C. Multicentro Shopping, subsuelo, local 3, Quito.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "pickup"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "MICR27",
+              "ADAP005",
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 21,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 22,
+          "input": "¿Qué garantía tiene la batería Philco?",
+          "via_native_payload": false,
+          "text": "🛡️ Un vendedor te confirma la cobertura y condiciones de garantía de este producto.",
+          "generative": true,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [
+            "warranty"
+          ],
+          "image": null,
+          "buttons": [
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "MICR27",
+              "ADAP005",
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 22,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 23,
+          "input": "Quiero hablar con una persona",
+          "via_native_payload": false,
+          "text": "Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.",
+          "generative": false,
+          "error_code": null,
+          "focus": [
+            "POWE003"
+          ],
+          "facts": [],
+          "image": null,
+          "buttons": [],
+          "memory": {
+            "focus": [
+              "POWE003"
+            ],
+            "recent_products": [
+              "MICR27",
+              "ADAP005",
+              "POWE003"
+            ],
+            "budget": 35,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "delivery": "quito",
+            "turn_count": 22,
+            "turns": 12
+          }
+        },
+        {
+          "turn": 24,
+          "input": "olvida esta conversación",
+          "via_native_payload": false,
+          "text": "Listo, olvidé el contexto de esta conversación. ¿En qué te ayudo ahora?",
+          "generative": false,
+          "error_code": null,
+          "focus": [],
+          "facts": [],
+          "image": null,
+          "buttons": [
+            "Busco un micrófono",
+            "Busco una batería",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [],
+            "recent_products": [],
+            "turn_count": 0,
+            "turns": 0
+          }
+        }
+      ],
+      "validation_errors": [
+        {
+          "turn": 13,
+          "error": "The input did not match the regular expression /cardioide/i. Input:\n\n'📍 Retiro: Av. 6 de Diciembre y La Niña, C.C. Multicentro Shopping, subsuelo, local 3, Quito.'\n"
+        }
+      ],
+      "native_choices_used": 4,
+      "quota_before": {
+        "reserved_neurons": 5760,
+        "calls": 72,
+        "remaining_calls": 28,
+        "reset_at": "2026-10-18T00:00:00.000Z",
+        "reserved_limit": 8000,
+        "estimation_only_not_provider_meter": true,
+        "paid_fallback": false
+      },
+      "quota_at_start": {
+        "reserved_neurons": 5760,
+        "calls": 72,
+        "remaining_calls": 28,
+        "reset_at": "2026-10-18T00:00:00.000Z",
+        "reserved_limit": 8000,
+        "estimation_only_not_provider_meter": true,
+        "paid_fallback": false
+      },
+      "private_routes_http": 401,
+      "quota_after": {
+        "reserved_neurons": 7520,
+        "calls": 94,
+        "remaining_calls": 6,
+        "reset_at": "2026-10-18T00:00:00.000Z",
+        "reserved_limit": 8000,
+        "estimation_only_not_provider_meter": true,
+        "paid_fallback": false
+      },
+      "real_generative_turns": 22,
+      "failure": "All 24 turns and native choices must pass; recorded errors are not waived\n\n1 !== 0\n"
+    }
+  },
+  "last_correction": {
+    "description": "Una consulta explícita sobre cardioide y omnidireccional usa únicamente los patrones aprobados del JBL, aunque el modelo seleccione retiro.",
+    "workflow_run": 38985755529,
+    "workflow_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/38985755529",
+    "deployment_conclusion": "success",
+    "regression": {
+      "mode": "two_real_ai_regression_turns_not_a_full_24_turn_pass",
+      "passed": true,
+      "messages_sent_to_Messenger": 0,
+      "paid_services_activated": false,
+      "tests": [
+        {
+          "input": "¿Cuánto cuesta de contado el JBL Quantum Stream? Pago al contado. Quiero retiro en tienda.",
+          "text": "💵 JBL Quantum Stream: $102.01 en PROMO CONTADO.\n¿Desea confirmar el retiro en tienda?",
+          "generative": true,
+          "facts": [
+            "MICR27.cash"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/micr27/MICR27-promo.webp",
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "MICR27"
+            ],
+            "recent_products": [
+              "MICR27"
+            ],
+            "payment": "contado",
+            "delivery": "retiro",
+            "turn_count": 1,
+            "turns": 2
+          }
+        },
+        {
+          "input": "¿Qué cambia entre cardioide y omnidireccional?",
+          "text": "Su patrón cardioide enfoca una voz; el omnidireccional permite captar varias personas.",
+          "generative": true,
+          "facts": [
+            "MICR27.patterns"
+          ],
+          "image": null,
+          "buttons": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "MICR27"
+            ],
+            "recent_products": [
+              "MICR27"
+            ],
+            "payment": "contado",
+            "delivery": "retiro",
+            "turn_count": 2,
+            "turns": 4
+          }
+        }
+      ],
+      "quota_before": {
+        "reserved_neurons": 7520,
+        "calls": 94,
+        "remaining_calls": 6,
+        "reset_at": "2026-10-18T00:00:00.000Z",
+        "reserved_limit": 8000,
+        "estimation_only_not_provider_meter": true,
+        "paid_fallback": false
+      },
+      "quota_after": {
+        "reserved_neurons": 7680,
+        "calls": 96,
+        "remaining_calls": 4,
+        "reset_at": "2026-10-18T00:00:00.000Z",
+        "reserved_limit": 8000,
+        "estimation_only_not_provider_meter": true,
+        "paid_fallback": false
+      }
+    }
+  },
+  "full_24_turn_rerun_after_last_correction": {
+    "passed": false,
+    "status": "not_executed_insufficient_remaining_preventive_budget",
+    "required_model_calls": 22,
+    "remaining_model_calls": 4,
+    "not_a_claim_of_a_complete_run_pass": true
+  },
+  "messenger_new_release": {
+    "status": "awaiting_personal_authorized_tester_interaction",
+    "actual_incoming_verified": false,
+    "graph_send_verified": false,
+    "visual_receipt_verified": false,
+    "prior_tester_text_image_card_confirmations_preserved": "alex-cloud-verificado.json"
+  },
+  "meta": {
+    "pages_messaging_access": "standard",
+    "app_mode": "development",
+    "advanced_access_approved": false,
+    "business_verification": "in_review_owner_confirmation",
+    "external_customers_enabled": false,
+    "general_ingress_enabled": false,
+    "tester_gate_preserved": true
+  },
+  "safety": {
+    "global_stop_preserved": true,
+    "duplicate_protection_preserved": true,
+    "customer_stock_quantities_hidden": true,
+    "credentials_disclosed": false,
+    "main_modified": false,
+    "catalogue_or_banner_factory_modified": false
+  },
+  "finance": {
+    "new_cost_authorized_usd": 0,
+    "paid_services_activated": false,
+    "preventive_limit_neurons": 8000,
+    "neurons_reserved_per_call": 80,
+    "quota_after": {
+      "reserved_neurons": 7680,
+      "calls": 96,
+      "remaining_calls": 4,
+      "reset_at": "2026-10-18T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    },
+    "quota_is_not_provider_meter": true
+  }
+}
