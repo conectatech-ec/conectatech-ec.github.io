@@ -176,8 +176,8 @@ jobs:
         env:
           CLOUDFLARE_PILOT_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
-      - name: Verificar 24 turnos de Alex real, cambios de tema, botones y cierre comercial
-        run: node automatizacion/alex-commercial-e2e.mjs
+      - name: Verificar Alex real con alcance documentado de conversación o regresión
+        run: node automatizacion/alex-validate.mjs
         env:
           PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}

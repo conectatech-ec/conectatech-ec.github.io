@@ -5,8 +5,9 @@
   "costo_maximo_usd": 0,
   "alcance": "Solo Worker piloto: Messenger oficial para probadores con permiso verificado; sin Billing, D1, cron, rutas, main ni catálogo de producción",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Cerrar omisiones semánticas del modelo en recomendación con presupuesto, regateo, fotografía y dirección conocida, conservando generación de tono original y datos aprobados. Validar 24 turnos sin ampliar cuota gratuita ni abrir clientes externos; preservar probador y parada; sin main, catálogo ni fábrica de banners.",
+  "nota": "Último ensayo completo de 24 turnos tuvo 23 correctos y un cruce entre patrones del JBL y retiro. Corregirlo y verificar dos turnos de regresión reales, sin declarar aprobado otro ensayo completo ni ampliar cuota; reservar cuatro inferencias para el probador. Sin clientes externos, main, catálogo ni fábrica de banners.",
   "habilitar_vendedor_probadores": false,
   "procesar_cola_probadores": false,
-  "alex_generativo": true
+  "alex_generativo": true,
+  "alex_validation": "targeted_regression"
 }

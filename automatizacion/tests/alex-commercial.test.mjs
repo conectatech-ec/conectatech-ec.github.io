@@ -67,4 +67,6 @@ test('An explicit purchase advances to an unconfirmed request without asking kno
  const recommendation=await generateAlex('Busco una batería portátil, mi presupuesto cuarenta',source,{},env);assert.equal(recommendation.action,'recommend');assert.ok(recommendation.text.startsWith('💵'));assert.match(recommendation.text,/energía de reserva/);
  const address=await generateAlex('¿Cuál es la dirección para retirar?',source,m,env);assert.equal(address.action,'answer');assert.ok(address.text.startsWith('📍'));assert.match(address.text,/local 3/);
  const negotiation=await generateAlex('¿Me haces una rebajita? 😂',source,m,env);assert.equal(negotiation.action,'answer');assert.match(negotiation.text,/aprobación/);
+ env.AI.run=async()=>({response:JSON.stringify(plan({facts:['pickup'],focus:['MICR27'],intent:'delivery'}))});
+ const patterns=await generateAlex('¿Qué cambia entre cardioide y omnidireccional?',source,{focus:['MICR27'],payment:'contado',delivery:'retiro'},env);assert.deepEqual(patterns.facts,['MICR27.patterns']);assert.match(patterns.text,/cardioide.*omnidireccional/);assert.ok(!patterns.text.includes('Retiro'));
 });
