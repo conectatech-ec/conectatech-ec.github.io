@@ -32,6 +32,11 @@ test('Budget is anchored to user text including words, decimals and corrections,
  assert.equal(mergePreferences('Estoy en Quito',{sector:'Quito'},{}).sector,undefined);
  assert.equal(mergePreferences('Estoy en La Carolina, Quito',{sector:'La Carolina'},{}).sector,'La Carolina');
  assert.equal(mergePreferences('La Carolina',{sector:'La Carolina'},{history:[{role:'assistant',text:'¿En qué sector estás?'}]}).sector,'La Carolina');
+ assert.equal(mergePreferences('Estoy en La Carolina, Quito',{},{}).sector,'La Carolina');
+ assert.equal(mergePreferences('Prefiero pagar al contado',{},{}).payment,'contado');
+ assert.equal(mergePreferences('Quiero comprarla al contado',{},{}).payment,'contado');
+ assert.equal(mergePreferences('¿Cuánto cuesta si pago al contado?',{payment:'contado'},{payment:'tarjeta'}).payment,'tarjeta');
+ assert.equal(mergePreferences('¿Y ese cuánto cuesta?',{}, {sector:'celular'}).sector,undefined);
  assert.equal(mergePreferences('Quiero entrega en Quito.',{},{}).delivery,'quito');
  assert.equal(mergePreferences('Mejor retiro en tienda.',{delivery:'quito'},{delivery:'quito'}).delivery,'retiro');
  assert.equal(mergePreferences('¿Entregan en Quito?',{delivery:'quito'},{}).delivery,undefined);

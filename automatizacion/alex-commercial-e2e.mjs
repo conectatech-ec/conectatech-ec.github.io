@@ -43,7 +43,7 @@ try{
  await ask('¿Y ese cuánto cuesta de contado?',cash('MICR27'));
  await ask('¿Qué cambia entre cardioide y omnidireccional?',a=>{real(a);assert.match(a.text,/cardioide/i);assert.match(a.text,/omnidireccional/i);});
  await ask('¿Qué calidad de grabación permite ese micrófono?',a=>{real(a);assert.match(a.text,/96 kHz/);assert.match(a.text,/24 bits/);});
- await ask('Compara los usos del JBL Quantum Stream y la batería Philco. ¿Sirven para lo mismo?',a=>{real(a);assert.deepEqual(new Set(a.focus),new Set(['MICR27','POWE003']));assert.equal(a.action,'compare');});
+ await ask('Compara los usos del JBL Quantum Stream y la batería Philco. ¿Sirven para lo mismo?',a=>{real(a);assert.deepEqual(new Set(a.focus),new Set(['MICR27','POWE003']));assert.equal(a.action,'compare');assert.match(a.text,/streaming|podcasts/);assert.match(a.text,/energía de reserva/);assert.ok(!a.text.includes('?'));});
  await choose('choose:POWE003',a=>{real(a);assert.deepEqual(a.focus,['POWE003']);assert.equal(a.memory.budget,35);});
  await ask('Ahora necesito el adaptador de enchufe Europa a Latino. ¿Cuánto cuesta de contado?',a=>{cash('ADAP005')(a);assert.ok(a.image?.includes('/adap005/'));});
  await ask('¿Y ese con tarjeta cuánto cuesta?',a=>{real(a);assert.deepEqual(a.focus,['ADAP005']);assert.ok(a.text.startsWith('💳'));assert.ok(a.text.includes('$'+skuPrice('ADAP005','pvp')));assert.equal(a.memory.payment,'contado');});

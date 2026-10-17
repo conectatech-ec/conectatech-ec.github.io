@@ -43,6 +43,7 @@ test('Unnecessary closing questions and manufactured commercial promises are rem
  for(const ask of ['¿Hay algo más que necesites?','¿Qué tipo de descuento te gustaría?','¿Quieres que te regale otro?']){const a=renderPlan(plan({ask}),source);assert.ok(!a.text.includes('?'));assert.match(a.text,/\$33\.01/);}
  const a=renderPlan(plan({facts:['POWE003.cash','POWE003.battery'],intent:'recommend'}),source);assert.ok(a.text.startsWith('💵'));assert.match(a.text,/\nLa Philco/);
  assert.ok(!renderPlan(plan({say:'Son iguales y equivalentes.'}),source).text.includes('equivalentes'));
+ assert.ok(!renderPlan(plan({say:'El patrón cardioide enfoca una voz',facts:['MICR27.patterns'],focus:['MICR27']}),source).text.includes('El patrón'));
  assert.ok(!renderPlan(plan({ask:'¿Te parece suficiente potencia para tus necesidades?'}),source).text.includes('?'));
 });
 test('Private demonstration uses the same validated button payloads and removes obsolete choices',async()=>{
@@ -54,4 +55,6 @@ test('An explicit purchase advances to an unconfirmed request without asking kno
  const a=await generateAlex('Quiero comprar la batería Philco',source,m,env);assert.equal(a.action,'interest');assert.match(a.text,/todavía debe confirmarla/);assert.ok(!a.text.includes('?'));assert.equal(a.memory.stage,'compra_pendiente');
  const negative=await generateAlex('No quiero comprar todavía',source,m,env);assert.notEqual(negative.action,'interest');
  const warranty=await generateAlex('¿Qué garantía tiene?',source,m,env);assert.ok(warranty.text.startsWith('🛡️'));assert.match(warranty.text,/vendedor/);assert.ok(!/\d/.test(warranty.text));
+ env.AI.run=async()=>({response:JSON.stringify(plan({action:'compare',intent:'compare',facts:['MICR27.name','POWE003.name'],focus:['MICR27','POWE003']}))});
+ const compared=await generateAlex('Compara los usos del JBL y la batería Philco',source,m,env);assert.deepEqual(compared.facts,['MICR27.benefit','POWE003.benefit']);assert.ok(!compared.text.includes('?'));
 });

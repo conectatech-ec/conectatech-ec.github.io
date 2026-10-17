@@ -71,6 +71,7 @@ export function freeProseSafe(text,question=false){
  if(!question&&/\b(?:tiene|tienen|trae|ofrece|cuenta|dura|funciona|soporta|admite|rinde|pesa|mide|viene|aguanta|mejor|peor|memoria|c[aá]mara|procesador|bluetooth|wifi)\b/i.test(text))return false;
  if(!question&&/\b(?:cuesta|precio|stock|disponible|capacidad|USB|Watt|volt|RAM|GB|mAh|garant[ií]a|tarjeta|entrega|env[ií]o|direcci[oó]n|horario|descuento|JBL|Philco|Quantum|FLP|adaptador|micr[oó]fono|bater[ií]a|powerbank)\b/i.test(text))return false;
  if(!question&&/son iguales|id[eé]nticos|equivalentes|misma funci[oó]n|m[aá]s potente/i.test(text))return false;
+ if(!question&&/\b(?:permite|enfoca|capta|patr[oó]n|cardioide|omnidireccional|conexi[oó]n|condensador|potente|r[aá]pid[oa])\b/i.test(text))return false;
  return true;
 }
 export function renderPlan(plan,source,memory={}){
@@ -94,13 +95,15 @@ export function renderPlan(plan,source,memory={}){
  const action=['answer','recommend','compare','interest','handoff'].includes(plan.action)?plan.action:'answer';
  let keys=[...new Set(plan.facts)];
  keys=keys.filter(k=>!(k.endsWith('.pvp')&&keys.includes(k.replace('.pvp','.card')))&&!(k==='plans'&&keys.some(x=>['pacifico','guayaquil_amex','diners','pichincha'].includes(x))));
- keys=keys.filter(k=>!k.endsWith('.name')||!keys.some(other=>other!==k&&other.startsWith(k.split('.')[0]+'.')));
+ keys=keys.filter(k=>!k.endsWith('.name')||!keys.some(other=>other!==k&&other.startsWith(k.split('.')[0]+'.'))&&!(keys.length>1&&(memory.focus||[]).includes(k.split('.')[0])));
  keys.sort((a,b)=>Number(/\.(?:cash|card|pvp)$/.test(b))-Number(/\.(?:cash|card|pvp)$/.test(a)));
  const factualProducts=[...new Set(keys.filter(k=>k.includes('.')).map(k=>k.split('.')[0]))];
  if(factualProducts.length)focus=factualProducts;
  else if((memory.focus||[]).length===1&&allowed.includes(memory.focus[0]))focus=memory.focus;
  if(action==='handoff'){keys=['human'];say='';ask='';}
  if(plan.intent==='identity')keys=['identity'];
+ if(keys.some(k=>/\.(?:battery|power|audio|patterns|plug)$/.test(k))||keys.includes('pickup'))ask='';
+ if(keys.some(k=>k.endsWith('.cash'))&&/banco|tarjeta/i.test(ask))ask='';
  if(keys.length===2)say='';
  const priceFirst=plan.intent==='price'||keys.some(k=>/\.(?:cash|card|pvp)$/.test(k));
  const compose=()=> (priceFirst?[...keys.map(k=>facts[k]),say,ask]:[say,...keys.map(k=>facts[k]),ask]).filter(Boolean).join('\n').trim();
@@ -132,6 +135,7 @@ export function outputSchema(source){
 }
 export async function generateAlex(input,source,memory,env,reserve=async()=>true){
  input=redact(input);
+ memory=mergePreferences('',{},memory);
  if(eraseRequested(input))return {text:'Listo, olvidé el contexto de esta conversación. ¿En qué te ayudo ahora?',focus:[],action:'erase',intent:'privacy',image:null,generative:false,memory:{history:[],focus:[],shown:[]}};
  if(/\b(?:eres|sos)\s+(?:(?:un[ao]?|realmente)\s+)?(?:persona|human[oa]|robot|bot|ia|inteligencia artificial|asistente virtual)\b|\bestoy hablando con (?:una persona|un bot|un humano)\b/i.test(input)){
   const text=factBook(source).identity;return{text,focus:memory.focus||[],action:'answer',intent:'identity',image:null,generative:false,memory:{...memory,greeted:true,turn_count:(memory.turn_count||0)+1,history:[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text}].slice(-policy.max_history_turns*2)}};
@@ -158,6 +162,7 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   if((payment.months||payment.named&&/intereses|tarjeta|pago|plan|banco|aceptan|diferir|cuotas|^\W*pichincha\W*$|^\W*diners\W*$|^\W*pac[ií]fico\W*$/i.test(input))&&knownBank){plan.facts=[payment.bank];plan.intent='payment';plan.action='answer';plan.image=null;}
   if(payment.requires_interest){plan.facts=['interest'];plan.say='';plan.intent='payment';plan.image=null;plan.action='answer';}
   if(/garant[ií]a/i.test(input)&&!humanRequested(input)){plan.facts=['warranty'];plan.say='';plan.ask='';plan.image=null;plan.action='answer';}
+  if(plan.action==='compare'&&context.productos.length===2){plan.facts=context.productos.map(p=>/usos|sirven.*mismo/i.test(input)?p.sku+'.benefit':plan.facts.find(k=>k.startsWith(p.sku+'.')&&!k.endsWith('.name'))||p.sku+'.benefit');plan.focus=context.productos.map(p=>p.sku);plan.ask='';}
   if(plan.action==='handoff'&&/\bno\s+quiero\b.{0,40}\b(?:persona|humano|vendedor)\b/i.test(input)&&!humanRequested(input)){plan.action='answer';plan.facts=plan.facts.filter(k=>k!=='human');if(!plan.say&&!plan.facts.length)plan.say='¡Seguimos por aquí!';}
   const next=memoryPatch(plan,input,memory);if(payment.bank)next.bank=payment.bank;if(payment.months)next.months=payment.months;
   // An explicit purchase request advances only to an unconfirmed request, using known preferences.
