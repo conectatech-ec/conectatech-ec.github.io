@@ -93,6 +93,8 @@ export function renderPlan(plan,source,memory={}){
  const action=['answer','recommend','compare','interest','handoff'].includes(plan.action)?plan.action:'answer';
  let keys=[...new Set(plan.facts)];
  keys=keys.filter(k=>!(k.endsWith('.pvp')&&keys.includes(k.replace('.pvp','.card')))&&!(k==='plans'&&keys.some(x=>['pacifico','guayaquil_amex','diners','pichincha'].includes(x))));
+ keys=keys.filter(k=>!k.endsWith('.name')||!keys.some(other=>other!==k&&other.startsWith(k.split('.')[0]+'.')));
+ keys.sort((a,b)=>Number(/\.(?:cash|card|pvp)$/.test(b))-Number(/\.(?:cash|card|pvp)$/.test(a)));
  const factualProducts=[...new Set(keys.filter(k=>k.includes('.')).map(k=>k.split('.')[0]))];
  if(factualProducts.length)focus=factualProducts;
  else if((memory.focus||[]).length===1&&allowed.includes(memory.focus[0]))focus=memory.focus;
@@ -173,6 +175,7 @@ export function quickReplies(result){
  const focus=result.focus?.[0],memory=result.memory||{},names={MICR27:'Elegir JBL',POWE003:'Elegir Philco',ADAP005:'Elegir adaptador'};let options;
  if(result.action==='handoff')return [];
  if(result.intent==='safe_fallback')options=[['Hablar con persona','human']];
+ else if(result.facts?.some(k=>['warranty','compatibility','stale'].includes(k)))options=[['Hablar con persona','human']];
  else if(result.focus?.length===2&&(result.intent==='compare'||result.action==='compare'))return result.focus.map(s=>({content_type:'text',title:names[s],payload:'ALEX:choose:'+s})).concat({content_type:'text',title:'Hablar con persona',payload:'ALEX:human'});
  else if(result.intent==='photo')options=[['Precio de contado','cash'],['Precio con tarjeta','card'],['Características','specs']];
  else if(result.action==='interest')options=!memory.payment?[['Precio de contado','cash'],['Precio con tarjeta','card'],['Hablar con persona','human']]:!memory.delivery?[['Retiro en tienda','retiro'],['Entrega en Quito','quito'],['Envío nacional','nacional']]:[['Hablar con persona','human'],['Ver fotografía','photo']];
