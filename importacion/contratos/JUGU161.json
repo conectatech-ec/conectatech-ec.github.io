@@ -12,11 +12,11 @@
   "pvp": 28.58,
   "stock": 1,
   "unidad_venta": {
-    "descripcion": "Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad. La portada muestra el detalle del depósito, no todo el conjunto.",
+    "descripcion": "Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad.",
     "cantidad": 1,
     "verificada": true,
     "fuente": "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
-    "evidencia": "Confirmación expresa del propietario: SI; Incluye conjunto completo: juguete, depósito superior y extensión de boca, con diseños según disponibilidad."
+    "evidencia": "Unidad de venta documentada con aclaraciones vigentes del propietario; reportes/correcciones-106/orden-propietario.json"
   },
   "fotografias_fuente": [
     {
@@ -42,19 +42,20 @@
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
     "importacion/politica-variantes-surtidas.json",
-    "reportes/continuacion-104/aclaraciones-propietario.json"
+    "reportes/continuacion-104/aclaraciones-propietario.json",
+    "reportes/correcciones-106/orden-propietario.json"
   ],
-  "imagen_principal": "/imagenes/jugu161/JUGU161-01.webp",
+  "imagen_principal": "/imagenes/jugu161/JUGU161-r106-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
     "evidencia": "Orden078 y continuación vigente: representación comercial asistida desde fotografías propias de empaque/modelo autorizada por propietario. No se afirma fotografía física directa ni licencia externa. Referencias privadas preservadas en Drive.",
-    "fecha_verificacion": "2026-10-16T22:32:15.889225+00:00",
+    "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
     "archivos": [
       {
-        "sha256": "08a53cfa264490dcba96eef1976c41c3e99b09059b16cce66244a96ddc17669d",
+        "sha256": "b946a25668f4a3043728b0e66c5656e9e0b7c59a1dfc31a770f2f44689fb5f17",
         "fuente": "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk"
       }
     ]
@@ -62,9 +63,10 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Un conjunto completo de juguete de combate.",
+      "valor": "Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad.",
       "fuentes": [
-        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -73,7 +75,8 @@
       "nombre": "Contenido",
       "valor": "Juguete, depósito superior y extensión de boca.",
       "fuentes": [
-        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -82,7 +85,8 @@
       "nombre": "Variantes",
       "valor": "Colores y diseños surtidos según disponibilidad.",
       "fuentes": [
-        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -91,31 +95,23 @@
       "nombre": "Edad indicada",
       "valor": "14 años en adelante, según empaque.",
       "fuentes": [
-        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO",
-      "publicar": true
-    },
-    {
-      "nombre": "Imagen de portada",
-      "valor": "Detalle del depósito; no muestra todo el conjunto.",
-      "fuentes": [
-        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/jugu161-juguete-de-combate/",
-  "fecha_verificacion": "2026-10-16T22:56:27.530084+00:00",
-  "descripcion": "Juguete de Combate con Depósito y Extensión. Presentación de venta: Un conjunto completo de juguete de combate. Contenido: Juguete, depósito superior y extensión de boca. Variantes: Colores y diseños surtidos según disponibilidad. Edad indicada: 14 años en adelante, según empaque. Imagen de portada: Detalle del depósito; no muestra todo el conjunto.",
-  "contenido_venta": "Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad. La portada muestra el detalle del depósito, no todo el conjunto.",
+  "fecha_verificacion": "2026-10-17T01:44:32.550978+00:00",
+  "descripcion": "Juguete de Combate con Depósito y Extensión. Presentación de venta: Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad. Contenido: Juguete, depósito superior y extensión de boca. Variantes: Colores y diseños surtidos según disponibilidad. Edad indicada: 14 años en adelante, según empaque.",
+  "contenido_venta": "Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
-  "revision_regla": 3,
+  "revision_regla": 4,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 1877,1879; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
   "validaciones": {
     "base_593": {
@@ -150,19 +146,19 @@
     "ficha": {
       "verificada": true,
       "fuente": "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T22:32:15.889225+00:00",
-      "sha256_maestro": "08a53cfa264490dcba96eef1976c41c3e99b09059b16cce66244a96ddc17669d",
-      "evidencia": "Referencias propias de empaque y ventana física cotejadas; propietario confirma conjunto completo. MaestroFINALmuestraSOLAMENTE depósito superior azul translúcido de relieve cuadriculado ycuello negro, sin recrear gatillo, estampados ni cuerpo oculto. Las tres piezas de venta se describen explícitamente en ficha; portada de detalle no implica venta separada del depósito. No se prometen velocidad, potencia, batería, munición o funcionamiento no comprobados. Primer borrador completo cambió gatillo y estampado; se conserva privado sin publicar."
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "sha256_maestro": "b946a25668f4a3043728b0e66c5656e9e0b7c59a1dfc31a770f2f44689fb5f17",
+      "evidencia": "Representación completa de variante azul cotejada con empaque propio0: juguete con cuerpo azul/blanco/negro, gatillo rojo visible, depósito superior azul ribeteado y extensión negra ranurada. Se conservan las tres partes confirmadas por propietario. No se presenta depósito aislado ni se atribuye potencia, batería o munición adicionales."
     },
     "movil": {
       "solicitado": "JUGU161",
       "sku": "JUGU161",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-16T22:56:30.177Z",
+      "fecha": "2026-10-17T01:50:06.204Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -187,17 +183,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/jugu161-juguete-de-combate/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/jugu161-juguete-de-combate/",
+      "url_comprobada": "http://127.0.0.1:8806/productos/jugu161-juguete-de-combate/",
       "archivo_html": "productos/jugu161-juguete-de-combate/index.html",
       "http": 200,
-      "sha256_html": "8cb836ff72e530c0bce32ed8b299d01c292ea5f7571a063e1d511230c985d89b",
-      "sha256_html_local": "8cb836ff72e530c0bce32ed8b299d01c292ea5f7571a063e1d511230c985d89b",
+      "sha256_html": "2fb7b994a14eaccb6fed081d5a1a19669481a3e7729c2def9c41370f2a9e0451",
+      "sha256_html_local": "2fb7b994a14eaccb6fed081d5a1a19669481a3e7729c2def9c41370f2a9e0451",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/jugu161/JUGU161-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/jugu161/JUGU161-01-600.webp?v=376beb3b9a1ba3a3",
+        "src": "https://conectatech-ec.github.io/imagenes/jugu161/JUGU161-r106-01.webp",
+        "url_cargada": "http://127.0.0.1:8806/imagenes/jugu161/JUGU161-r106-01-600.webp?v=ac523999c6245c99",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -206,47 +202,52 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/jugu161-juguete-de-combate/",
+          "url": "http://127.0.0.1:8806/productos/jugu161-juguete-de-combate/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8806/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8806/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/jugu161/JUGU161-01.webp",
+          "url": "http://127.0.0.1:8806/imagenes/jugu161/JUGU161-r106-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-104/qa-publica/movil/JUGU161-390.png",
-      "sha256": "07de5606292ef5f4fb42a69ed822af13e62f660e80cf36425f21ff4b8526eebd",
+      "archivo": "reportes/correcciones-106/qa-local/movil/JUGU161-390.png",
+      "sha256": "5591572b9efff0b1d4d359534b0a66f8d270be695370f745dc7de6e5de0b7f80",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-104/qa-publica/movil/JUGU161-1280.png",
-        "sha256": "795f1afc2f7522f79f65967334fb8ffd1605a0719707cf51a99049f66d01d7b8",
+        "archivo": "reportes/correcciones-106/qa-local/movil/JUGU161-1280.png",
+        "sha256": "3b41c9ad5e447e5546c7bbe7e47e7a921a31531305a1afbad31a23f1c88eab40",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T22:56:27.530084+00:00",
-      "archivo": "reportes/continuacion-104/http-publicacion.json",
-      "reporte": "reportes/continuacion-104/http-publicacion.json",
-      "sha256": "d21064810756fb4bce1eba5234576a28d81d7323d62e3823987ee41c1b2959d1",
-      "sku": "JUGU161"
     }
   },
   "beneficios": [
+    {
+      "valor": "Contenido de venta",
+      "titulo": "Producto completo",
+      "descripcion": "Un conjunto de juguete de combate con depósito superior y extensión de boca incluidos. Colores y diseños surtidos según disponibilidad.",
+      "especificaciones": [
+        "Presentación de venta"
+      ],
+      "fuentes": [
+        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
+        "reportes/correcciones-106/orden-propietario.json"
+      ],
+      "estado": "VERIFICADO"
+    },
     {
       "valor": "Conjunto completo",
       "titulo": "Depósito y extensión incluidos",
@@ -260,20 +261,15 @@
         "reportes/continuacion-104/aclaraciones-propietario.json"
       ],
       "estado": "VERIFICADO"
-    },
+    }
+  ],
+  "historial_correcciones": [
     {
-      "valor": "Diseños surtidos",
-      "titulo": "Según disponibilidad",
-      "descripcion": "La imagen muestra un detalle del depósito; no todo el conjunto.",
-      "especificaciones": [
-        "Variantes",
-        "Imagen de portada"
-      ],
-      "fuentes": [
-        "https://drive.google.com/file/d/1N0TbGC2kVPWT8U-k5DJTKwDqx4NYr95U/view?usp=drivesdk",
-        "reportes/continuacion-104/aclaraciones-propietario.json"
-      ],
-      "estado": "VERIFICADO"
+      "fecha": "2026-10-17T01:44:32.550978+00:00",
+      "motivo": "Propietario rechaza portada anterior; mostrar producto o conjunto completo y fiel.",
+      "sha256_anterior": "08a53cfa264490dcba96eef1976c41c3e99b09059b16cce66244a96ddc17669d",
+      "revision_regla_anterior": 3,
+      "evidencia": "reportes/correcciones-106/orden-propietario.json"
     }
   ]
 }

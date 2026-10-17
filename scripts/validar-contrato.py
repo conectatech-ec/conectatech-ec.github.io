@@ -305,8 +305,11 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
             fail('derechos', 'Permiso no vinculado al hash y procedencia de cada imagen comercial')
     if not candidates:
         fail('portada', 'Sin fotografía comercial revisada en el manifiesto')
-    principal = '/imagenes/' + sku.lower() + '/' + sku + '-01.webp'
-    if contract.get('imagen_principal') != principal:
+    # Una corrección publica sus recursos antes de activar la ficha. La revisión
+    # conserva rutas anteriores y evita sustituir bytes aún usados en producción.
+    principal = contract.get('imagen_principal')
+    cover_pattern = re.escape('/imagenes/' + sku.lower() + '/' + sku) + r'(?:-r[1-9][0-9]*)?-01\.webp'
+    if not isinstance(principal, str) or not re.fullmatch(cover_pattern, principal):
         fail('portada', 'Ruta de portada no corresponde al SKU/posición 01')
     expected_secondary = ['/imagenes/' + sku.lower() + '/' + sku + '-' + str(i.get('posicion')).zfill(2) + '.webp' for i in candidates if i.get('posicion') != 1]
     if contract.get('imagenes_secundarias') != expected_secondary:

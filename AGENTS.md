@@ -1,3 +1,7 @@
+## Orden vigente del propietario — corrección de calidad, 16 de octubre de 2026
+
+Corrección expresa del propietario (2026-10-16, Guayaquil): portada premium del producto completo y del conjunto vendido; no aceptar macros, fragmentos o una pieza aislada como sustituto. Conservar geometría, conectores, textos y contenido fieles a las referencias. No publicar una corrección no comprobada. Precio, stock, SKU y URL intactos. SKU señalados: JUGU040, AUDI025, ADAP027, JUGU069, MICR33, JUGU128, STYL004, CUBO003, CABL114, JUGU161, JUGU115, PROT003, MICR13. Estas correcciones no cuentan como SKU nuevos. Aplicar producto completo como criterio a nuevas publicaciones.
+
 ## Orden vigente del propietario — prioridad de búsqueda, 16 de octubre de 2026
 
 Buscar directamente en Drive los SKU pendientes sin limitarse al índice recuperado. Estuches quedan pendientes con importancia muy baja; priorizar los demás SKU aptos. No confundir ausencia de asociación con inexistencia de fotos. Publicar únicamente con identidad, fidelidad y controles comprobados.

@@ -41,6 +41,9 @@ def process(root, sku, item, r):
     if not item.get('fuente'):raise ValueError('Fuente de imagen no documentada')
     slot=item['posicion']
     if slot not in (1,2,3,4):raise ValueError('Posición debe ser 1–4')
+    publication_revision=item.get('revision_publicacion')
+    if publication_revision is not None and (type(publication_revision) is not int or publication_revision < 1):
+        raise ValueError('Revisión de publicación debe ser un entero positivo')
     if not compatible(r,item,slot==1):raise ValueError('La fotografía contradice la presentación: '+r['presentacion'])
     if item.get('fondo_aprobado') is not True:raise ValueError('Fondo distractor: requiere recorte o edición revisados')
     data=safe(root,item['archivo']).read_bytes()
@@ -77,7 +80,8 @@ def process(root, sku, item, r):
     for size in (1200,600,300):
         target=bg if size==1200 else bg.resize((size,size),Image.Resampling.LANCZOS)
         buf=io.BytesIO();target.save(buf,'WEBP',quality=90,method=6)
-        stem=f'{sku}-{slot:02d}'+('' if size==1200 else f'-{size}')
+        revision_suffix=f'-r{publication_revision}' if publication_revision is not None else ''
+        stem=f'{sku}{revision_suffix}-{slot:02d}'+('' if size==1200 else f'-{size}')
         rel=f'imagenes/{sku.lower()}/{stem}.webp';payload=buf.getvalue();outputs[rel]=payload
         versions[str(size)]={'url':'/'+rel,'sha256':sha(payload),'bytes':len(payload),'ancho':size,'alto':size}
     original=f'imagenes/{sku.lower()}/original-{sha(data)[:16]}{ext}'
@@ -89,6 +93,8 @@ def process(root, sku, item, r):
             'huella_proceso':fingerprint(item,r),'version_proceso':PIPELINE_VERSION}
     if item.get('revision_marcas'):
         result['revision_marcas']=item['revision_marcas']
+    if publication_revision is not None:
+        result['revision_publicacion']=publication_revision
     return result,outputs
 
 def run(args):
