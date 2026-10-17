@@ -1,3 +1,7 @@
+## Orden vigente del propietario — continuación 107, 16 de octubre de 2026
+
+PARL001: cubierta transparente integrada al parlante, con iluminación interior; NO es empaque y no se retira. JUGU089: venta incluye camioneta, cuadriciclo y base. Mostrar completos ambos productos/conjuntos, conservar precios/stock/SKU/URLs y fotografías anteriores. Estas son publicaciones nuevas sólo tras comprobar ausencia previa y HTTP/Chromium públicos. Conservar las trece correcciones106 ya verificadas, sin regenerarlas. Sin servicios nuevos de pago ni cambios a la sesión cloud24/7. Mantener CI de cabeza final, recursos primero, fechas después de prueba pública y cierre verificable.
+
 ## Orden vigente del propietario — corrección de calidad, 16 de octubre de 2026
 
 Corrección expresa del propietario (2026-10-16, Guayaquil): portada premium del producto completo y del conjunto vendido; no aceptar macros, fragmentos o una pieza aislada como sustituto. Conservar geometría, conectores, textos y contenido fieles a las referencias. No publicar una corrección no comprobada. Precio, stock, SKU y URL intactos. SKU señalados: JUGU040, AUDI025, ADAP027, JUGU069, MICR33, JUGU128, STYL004, CUBO003, CABL114, JUGU161, JUGU115, PROT003, MICR13. Estas correcciones no cuentan como SKU nuevos. Aplicar producto completo como criterio a nuevas publicaciones.
