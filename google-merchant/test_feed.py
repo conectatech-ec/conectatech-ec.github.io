@@ -27,7 +27,7 @@ class FeedTest(unittest.TestCase):
         self.o = dict(comercialVerificado=True, imagenPendiente=False, nombre=self.p['name'], descripcion='Descripción <literal sin etiquetas>')
         self.o['descripcion'] = 'Descripción real con & y comillas ".'
         self.o.update(imagen=self.p['imageUrl'], imagenProfesional=dict(contiene_caja=False, revision_visual='VERIFICADO', versiones={'300': dict(url=self.p['imageUrl'], sha256=hashlib.sha256(image_path.read_bytes()).hexdigest())}))
-        self.master = dict(stock='2', promo_contado='12.34', categoria='ACCESORIOS')
+        self.master = dict(availability='in_stock', precio_coincide_corte=True, precio_publico_validado='12.34', categoria='ACCESORIOS')
         self.contract = dict(sku='TEST1', estado_calidad='APROBADO', estado_publicacion='PUBLICADO_VERIFICADO', unidad_venta=dict(verificada=True), imagen_principal=self.p['imageUrl'], validaciones=dict(identidad=dict(sku_verificado=True, discrepancias_pendientes=[]), ficha=dict(verificada=True), publicacion_http=dict(estado='VERIFICADO')))
         self.schema = {'@type': 'Product', 'sku': 'TEST1', 'name': self.p['name'], 'description': self.o['descripcion'], 'image': [feed.BASE + self.p['imageUrl']], 'offers': dict(url=feed.BASE + '/productos/test1-producto/', price='12.34', priceCurrency='USD', availability='https://schema.org/InStock', itemCondition='https://schema.org/NewCondition')}
         self.save()
@@ -57,7 +57,7 @@ class FeedTest(unittest.TestCase):
                 feed.money(price)
 
     def test_price_disagreement_rejected(self):
-        self.master['promo_contado'] = '15.00'
+        self.master['precio_publico_validado'] = '15.00'
         with self.assertRaisesRegex(ValueError, 'precio_inventario_no_coincide'):
             self.run_candidate()
 
@@ -73,10 +73,40 @@ class FeedTest(unittest.TestCase):
 
     def test_zero_stock_is_out_of_stock(self):
         self.p['stock'] = 0
-        self.master['stock'] = '0'
+        self.master['availability'] = 'out_of_stock'
         self.schema['offers']['availability'] = 'https://schema.org/OutOfStock'
         self.save()
         self.assertEqual(self.run_candidate()[0]['availability'], 'out_of_stock')
+
+    def test_private_quantities_not_exposed_or_invented(self):
+        row, proof = self.run_candidate()
+        self.assertEqual(row['availability'], 'in_stock')
+        self.assertNotIn('stock', proof)
+        self.assertEqual(proof['disponibilidad_corte16'], 'in_stock')
+        self.assertEqual(self.p['stock'], 2)
+
+    def test_corrected_soldout_cannot_reuse_stale_web_availability(self):
+        self.master['availability'] = 'out_of_stock'
+        with self.assertRaisesRegex(ValueError, 'stock_ficha_no_coincide'):
+            self.run_candidate()
+
+    def test_inventory_hash_and_minimum_cut(self):
+        path = self.root / 'vigente.json'
+        records = [{'sku': 'TEST1', 'availability': 'in_stock', 'precio_coincide_corte': True, 'precio_publico_validado': '12.34'}]
+        raw = json.dumps(records, sort_keys=True, separators=(',', ':')).encode()
+        meta = {'fecha_corte': '2026-10-16', 'sha256_productos': hashlib.sha256(raw).hexdigest(), 'referencias_exportadas': 1, 'productos': records}
+        path.write_text(json.dumps(meta))
+        result, _ = feed.load_inventory(path)
+        self.assertEqual(result[0]['_fecha_corte'], '16/10/2026')
+        meta['fecha_corte'] = '2026-10-10'
+        path.write_text(json.dumps(meta))
+        with self.assertRaisesRegex(ValueError, 'corte del 10/10'):
+            feed.load_inventory(path)
+        meta['fecha_corte'] = '2026-10-16'
+        meta['sha256_productos'] = '0' * 64
+        path.write_text(json.dumps(meta))
+        with self.assertRaisesRegex(ValueError, 'manifiesto'):
+            feed.load_inventory(path)
 
     def test_inconsistent_landing_page_rejected(self):
         self.schema['offers']['price'] = '13.00'

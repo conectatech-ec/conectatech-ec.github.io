@@ -7,6 +7,8 @@ on:
       - 'google-merchant/generar.py'
       - 'google-merchant/test_feed.py'
       - 'google-merchant/preconexion.py'
+      - 'google-merchant/fuentes/**'
+      - 'google-merchant/solicitud-actualizacion.json'
       - '.github/workflows/google-merchant.yml'
       - 'index.html'
       - 'seo-contenido.json'
@@ -59,7 +61,7 @@ jobs:
       - name: Pruebas y generación con verificación HTTPS
         run: |
           python -m unittest discover -s google-merchant -p test_feed.py
-          python google-merchant/generar.py --root fuente-vigente --output google-merchant --verify-public
+          python google-merchant/generar.py --root fuente-vigente --inventory google-merchant/fuentes/vigente.json --output google-merchant --verify-public
           python google-merchant/preconexion.py --root fuente-vigente --output google-merchant
           git -C fuente-vigente diff --exit-code
           git diff --exit-code -- . ':!google-merchant'
@@ -75,6 +77,7 @@ jobs:
             const summary = JSON.parse(fs.readFileSync('google-merchant/validacion.json', 'utf8'));
             const xml = fs.readFileSync('google-merchant/productos-ec.xml');
             if (summary.publicacion_habilitada !== false || summary.validacion !== 'local_y_http_publico' || summary.incluidos < 1 || crypto.createHash('sha256').update(xml).digest('hex') !== summary.feed_sha256) throw new Error('Validación insuficiente');
+            if (!summary.inventario_corregido || summary.inventario_corregido.fecha_corte < '2026-10-16') throw new Error('Corte de inventario no autorizado');
             const readiness = JSON.parse(fs.readFileSync('google-merchant/preconexion.json', 'utf8'));
             if (readiness.publicacion_habilitada !== false || readiness.fuente_commit !== summary.source_commit) throw new Error('Preconexión insuficiente');
             const ids = xml.toString('utf8').match(/<g:id>/g) || [];

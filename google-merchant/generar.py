@@ -13,6 +13,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from collections import Counter
 from decimal import Decimal, InvalidOperation
+from datetime import date
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
 
@@ -21,6 +22,28 @@ from PIL import Image
 BASE = 'https://conectatech-ec.github.io'
 NS = 'http://base.google.com/ns/1.0'
 ET.register_namespace('g', NS)
+
+
+def load_inventory(path):
+    metadata = json.loads(path.read_text())
+    cut = date.fromisoformat(metadata['fecha_corte'])
+    if cut < date(2026, 10, 16):
+        raise ValueError('No se permite volver al corte del 10/10')
+    records = metadata['productos']
+    canonical = json.dumps(records, sort_keys=True, separators=(',', ':')).encode()
+    if hashlib.sha256(canonical).hexdigest() != metadata.get('sha256_productos'):
+        raise ValueError('La revisión limitada no coincide con su manifiesto')
+    expected = {'sku', 'availability', 'precio_coincide_corte', 'precio_publico_validado'}
+    if not records or any(set(row) != expected for row in records):
+        raise ValueError('Inventario: campos públicos incorrectos')
+    if len({r['sku'] for r in records}) != len(records) or len(records) != metadata['referencias_exportadas']:
+        raise ValueError('Inventario: SKU duplicados o cantidad incorrecta')
+    for row in records:
+        if row['availability'] not in ('in_stock', 'out_of_stock'):
+            raise ValueError('Disponibilidad no válida en revisión limitada')
+        row['_fecha_corte'] = cut.strftime('%d/%m/%Y')
+        row['_sha256_fuente'] = metadata['sha256_productos']
+    return records, metadata
 
 
 def money(value):
@@ -112,11 +135,14 @@ def candidate(root, p, o, slug, master):
     if not master:
         raise ValueError('sin_inventario_maestro')
     price = money(p.get('promo'))
-    if price != money(master.get('promo_contado')):
+    if master.get('precio_coincide_corte') is not True or price != money(master.get('precio_publico_validado')):
         raise ValueError('precio_inventario_no_coincide')
-    stock = p.get('stock')
-    if isinstance(stock, bool) or not isinstance(stock, int) or stock < 0 or Decimal(master['stock']) != stock:
+    web_stock = p.get('stock')
+    if isinstance(web_stock, bool) or not isinstance(web_stock, int) or web_stock < 0:
         raise ValueError('stock_no_confiable')
+    availability = master.get('availability')
+    if availability not in ('in_stock', 'out_of_stock'):
+        raise ValueError('disponibilidad_corregida_no_confiable')
     if not slug or not re.fullmatch(r'[a-z0-9-]+', slug):
         raise ValueError('sin_url_estable')
     image = local_url(o.get('imagen'))
@@ -131,7 +157,7 @@ def candidate(root, p, o, slug, master):
         raise ValueError('hash_fotografia_no_coincide')
     picture(image_bytes)
     row = dict(id=sku, title=title, description=description, link=BASE + '/productos/' + slug + '/',
-               image_link=image, availability='in_stock' if stock > 0 else 'out_of_stock', price=f'{price:.2f} USD',
+               image_link=image, availability=availability, price=f'{price:.2f} USD',
                excluded_destination=['Shopping_ads', 'Free_listings'])
     page_path = root / 'productos' / slug / 'index.html'
     document = page_path.read_text()
@@ -148,8 +174,9 @@ def candidate(root, p, o, slug, master):
     # La ausencia de identificadores no prueba que no existan: no fabricar GTIN/MPN ni identifier_exists=no.
     if master.get('categoria'):
         row['product_type'] = master['categoria']
-    proof = dict(sku=sku, stock=stock, fecha_inventario=o.get('fechaInventario'), stock_tiempo_real=o.get('stockTiempoReal'),
-                 contrato=str(cp.relative_to(root)), precio_fuente='index.products.promo = inventario593.promo_contado = ficha.offers.price = precio visible',
+    proof = dict(sku=sku, disponibilidad_corte16=availability, fecha_inventario=master.get('_fecha_corte'), stock_tiempo_real=False,
+                 inventario_sha256=master.get('_sha256_fuente'),
+                 contrato=str(cp.relative_to(root)), precio_fuente='precio web sin modificar = corte corregido 593.promo_contado = ficha.offers.price = precio visible',
                  html_sha256=hashlib.sha256(document.encode()).hexdigest(), imagen_sha256=hashlib.sha256(image_bytes).hexdigest())
     return row, proof
 
@@ -197,13 +224,18 @@ def xml_feed(rows):
     return data
 
 
-def generate(root, out, public=False):
+def generate(root, out, public=False, inventory=None):
     products = json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n', (root / 'index.html').read_text())[1])
     seo = json.loads((root / 'seo-contenido.json').read_text())
     urls = json.loads((root / 'seo-pages.json').read_text())
-    with (root / 'datos-593/inventario-publico.csv').open(newline='') as f:
-        master_rows = list(csv.DictReader(f))
+    inventory = inventory or Path(__file__).resolve().parent / 'fuentes/vigente.json'
+    master_rows, inventory_metadata = load_inventory(inventory)
     master = {p['sku']: p for p in master_rows}
+    # Reutilizar categoría pública existente sin tomar precios/stock del corte antiguo.
+    with (root / 'datos-593/inventario-publico.csv').open(newline='') as f:
+        for row in csv.DictReader(f):
+            if row['sku'] in master:
+                master[row['sku']]['categoria'] = row.get('categoria', '')
     if len(master) != len(master_rows) or len({p['sku'] for p in products}) != len(products):
         raise ValueError('SKU duplicado; se cancela toda la exportación')
     pairs, exclusions = [], []
@@ -232,6 +264,7 @@ def generate(root, out, public=False):
     summary = dict(merchant_center='5874003439', idioma='es', pais='EC', moneda='USD', costo_autorizado=0,
                    publicacion_habilitada=False, estado='SOLO_VALIDACION_COMERCIAL_PENDIENTE',
                    source_commit=source_commit, validacion='local_y_http_publico' if public else 'local; HTTP público pendiente',
+                   inventario_corregido={k: v for k, v in inventory_metadata.items() if k != 'productos'},
                    productos_origen=len(products), incluidos=len(rows), excluidos=len(exclusions),
                    motivos=dict(sorted(Counter(e['motivo'] for e in exclusions).items())),
                    feed_sha256=hashlib.sha256(data).hexdigest(),
@@ -251,5 +284,6 @@ if __name__ == '__main__':
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument('--output', type=Path)
     parser.add_argument('--verify-public', action='store_true')
+    parser.add_argument('--inventory', type=Path)
     args = parser.parse_args()
-    generate(args.root.resolve(), args.output or args.root / 'google-merchant', args.verify_public)
+    generate(args.root.resolve(), args.output or args.root / 'google-merchant', args.verify_public, args.inventory)
