@@ -226,6 +226,28 @@ jobs:
         continue-on-error: true
         run: python scripts/validar-contrato.py --manifiesto "$MANIFIESTO" --fase prepublicacion --reporte "$REPORTE_CONTRATO"
 
+      - name: Comprobar los 18 recursos públicos de correcciones108
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, hashlib, urllib.request, pathlib, datetime
+          skus=['JUGU145','LECT001','CASE003','AUDI110','TRIP002','SOPO057']
+          results=[]
+          for sku in skus:
+              for suffix in ['', '-600', '-300']:
+                  file=pathlib.Path('imagenes')/sku.lower()/(sku+'-r108-01'+suffix+'.webp')
+                  url='https://conectatech-ec.github.io/'+file.as_posix()
+                  with urllib.request.urlopen(urllib.request.Request(url,headers={'Cache-Control':'no-cache'}),timeout=60) as response:
+                      body=response.read()
+                      status=response.status
+                  digest=hashlib.sha256(body).hexdigest()
+                  assert status==200 and digest==hashlib.sha256(file.read_bytes()).hexdigest(),url
+                  results.append({'url':url,'http':status,'sha256':digest,'estado':'VERIFICADO'})
+          report={'fecha':datetime.datetime.now(datetime.timezone.utc).isoformat(),'recursos':18,'verificados':len(results),'resultados':results}
+          pathlib.Path('reportes/correcciones-108/recursos-http.json').write_text(json.dumps(report,indent=2)+'\n')
+          print('RECURSOS108_JSON='+json.dumps(report,separators=(',',':')))
+          PY
+
       - name: Guardar contratos revisados, capturas y reportes
         if: always()
         uses: actions/upload-artifact@v4
@@ -234,6 +256,7 @@ jobs:
           retention-days: 14
           if-no-files-found: warn
           path: |
+            reportes/correcciones-108/recursos-http.json
             reportes/qa-lote-activo/
             reportes/movil-lote-activo.json
             reportes/movil/
