@@ -1,0 +1,12 @@
+{
+  "name": "conectatech-colaboradores",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/*.test.mjs && python -m unittest discover -s tests -p \"test_*.py\"",
+    "check": "node --check src/worker.mjs && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
