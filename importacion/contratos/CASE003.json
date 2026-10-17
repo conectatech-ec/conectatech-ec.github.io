@@ -102,9 +102,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/case003-case-disco-duro-2-5-altek-plastico/",
-  "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
+  "fecha_verificacion": "2026-10-17T06:04:43.375212+00:00",
   "descripcion": "Carcasa Altek para Disco de 2.5 Pulgadas — Colores Surtidos. Presentación de venta: Una carcasa externa. Disco no incluido. Formato: Para disco HDD de 2.5 pulgadas. Material: Plástico. Variantes: Colores surtidos según disponibilidad; venta por unidad.",
   "contenido_venta": "Una carcasa plástica externa para disco HDD de 2.5 pulgadas. Disco no incluido. Colores surtidos según disponibilidad; la imagen muestra alternativas, no un paquete.",
   "presentacion": "sin caja",
@@ -157,7 +157,7 @@
       "solicitado": "CASE003",
       "sku": "CASE003",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T03:49:06.321Z",
+      "fecha": "2026-10-17T06:04:47.726Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -182,7 +182,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/case003-case-disco-duro-2-5-altek-plastico/",
-      "url_comprobada": "http://127.0.0.1:8808/productos/case003-case-disco-duro-2-5-altek-plastico/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/case003-case-disco-duro-2-5-altek-plastico/",
       "archivo_html": "productos/case003-case-disco-duro-2-5-altek-plastico/index.html",
       "http": 200,
       "sha256_html": "fd7e2e256769c742fa622751697bba443865563858e82f47bec12db3e5f461d8",
@@ -192,7 +192,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/case003/CASE003-r108-01.webp",
-        "url_cargada": "http://127.0.0.1:8808/imagenes/case003/CASE003-r108-01-600.webp?v=b616682ce6bb4158",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/case003/CASE003-r108-01-600.webp?v=b616682ce6bb4158",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -201,36 +201,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8808/productos/case003-case-disco-duro-2-5-altek-plastico/",
+          "url": "https://conectatech-ec.github.io/productos/case003-case-disco-duro-2-5-altek-plastico/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/imagenes/case003/CASE003-r108-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/case003/CASE003-r108-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-108/qa-local/movil/CASE003-390.png",
+      "archivo": "reportes/correcciones-108/qa-publica/movil/CASE003-390.png",
       "sha256": "8753c1a52efe15dbe3614c4a4d15ce58ab9a6d7fa8fc200f924036167ca2fe7d",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-108/qa-local/movil/CASE003-1280.png",
+        "archivo": "reportes/correcciones-108/qa-publica/movil/CASE003-1280.png",
         "sha256": "fcd239bb190fcfc85630aaed0c2b468cba13d04e0188cc6ec4ec612c502dc3b0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T06:04:43.375212+00:00",
+      "archivo": "reportes/correcciones-108/http-publicacion.json",
+      "reporte": "reportes/correcciones-108/http-publicacion.json",
+      "sha256": "543bb0205965db8df80574327c6b4f4d429bcba58436931542f1a6a5c408b936",
+      "sku": "CASE003"
     }
   },
   "historial_correcciones": [

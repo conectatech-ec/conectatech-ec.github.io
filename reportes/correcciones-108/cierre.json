@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-10-17T06:27:26.605495+00:00",
+  "estado": "PUBLICADO_VERIFICADO",
+  "lote": "correcciones-108",
+  "fecha_corte_catalogo": "2026-10-17T06:04:43.375212+00:00",
+  "nota_corte": "Cobertura949 al verificar las seis correcciones, antes de la nueva publicación109.",
+  "nuevos": 0,
+  "actualizados": 6,
+  "sku_corregidos": [
+    "AUDI110",
+    "CASE003",
+    "JUGU145",
+    "LECT001",
+    "SOPO057",
+    "TRIP002"
+  ],
+  "objetivo_publicaciones": 48,
+  "nuevos_publicados_acumulados": 43,
+  "pendientes_para_objetivo": 5,
+  "total_sku": 1170,
+  "con_portada": 949,
+  "sin_portada": 221,
+  "finanzas_stock_593_urls_intactos": true,
+  "imagenes_anteriores_intactas": true,
+  "correcciones_antiguas_pendientes": [
+    "REL050"
+  ],
+  "chromium_fichas": {
+    "solicitados": 6,
+    "comprobados": 6,
+    "sin_comprobar": 0,
+    "verificados": 6,
+    "revisar": 0,
+    "errores_herramienta": 0
+  },
+  "chromium_catalogo": {
+    "vistas_comprobadas": 2,
+    "vistas_verificadas": 2,
+    "sku_solicitados": 6,
+    "errores": 0
+  },
+  "recursos_http": 18,
+  "ejecuciones": {
+    "recursos": {
+      "pr": 54,
+      "ci": 39000291709,
+      "merge": "c885208dfd0405b1b1451dade77ef42f8b257802",
+      "pages": 39000521662,
+      "http_ci": 39000850311
+    },
+    "activacion": {
+      "pr": 55,
+      "ci": 39007567682,
+      "head": "38abde96b69cbdfc47e0b9994e9db45472e97d21",
+      "merge": "bae9940e81e40e42736956535dd9f674cd320cb1",
+      "pages": 39007986060,
+      "main_verificado": "00865ce299a45f49b25a88067324fb55800b656f"
+    },
+    "fechas": {
+      "pr": 57,
+      "head": "8d7096ee2318cf2b7d711255d2676c42733e9190",
+      "ci_anterior": 39008616185,
+      "nota": "Cabeza nueva incorpora assets/catalogo-publicado.js con las seis miniaturas y fechas.",
+      "ci": 39008945339,
+      "merge": "daa4e55ab6a874efd36c62a195813c15966f85d3",
+      "pages": 39009390833,
+      "main_verificado": "d5fa7afb7e19f3e03cf744237aa497c3df9316f6"
+    }
+  },
+  "servicios_contratados": [],
+  "automatizacion_comercial_modificada_por_esta_sesion": false
+}

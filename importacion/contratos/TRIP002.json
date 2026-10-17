@@ -111,9 +111,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/trip002-tripode-n01/",
-  "fecha_verificacion": "2026-10-17T03:48:28.910925+00:00",
+  "fecha_verificacion": "2026-10-17T06:04:43.375212+00:00",
   "descripcion": "Trípode N01 con Soporte para Celular. Presentación de venta: Un trípode con soporte para celular. Celular no incluido. Diseño: Mástil telescópico y tres patas plegables. Soporte: Pinza para celular con orientación ajustable. Variantes: Colores surtidos según disponibilidad.",
   "contenido_venta": "Un trípode con soporte para celular. Celular no incluido. Colores surtidos según disponibilidad; la imagen ilustra una variante.",
   "presentacion": "sin caja",
@@ -167,7 +167,7 @@
       "solicitado": "TRIP002",
       "sku": "TRIP002",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-17T03:49:08.234Z",
+      "fecha": "2026-10-17T06:04:50.846Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -192,7 +192,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/trip002-tripode-n01/",
-      "url_comprobada": "http://127.0.0.1:8808/productos/trip002-tripode-n01/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/trip002-tripode-n01/",
       "archivo_html": "productos/trip002-tripode-n01/index.html",
       "http": 200,
       "sha256_html": "cf3f3ab43e3d033b9efab2f27014cce9c9ec4b7ddf396c4c8cbb729cd5777df1",
@@ -202,7 +202,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/trip002/TRIP002-r108-01.webp",
-        "url_cargada": "http://127.0.0.1:8808/imagenes/trip002/TRIP002-r108-01-600.webp?v=0063b66339150a8b",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/trip002/TRIP002-r108-01-600.webp?v=0063b66339150a8b",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -211,36 +211,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8808/productos/trip002-tripode-n01/",
+          "url": "https://conectatech-ec.github.io/productos/trip002-tripode-n01/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8808/imagenes/trip002/TRIP002-r108-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/trip002/TRIP002-r108-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/correcciones-108/qa-local/movil/TRIP002-390.png",
+      "archivo": "reportes/correcciones-108/qa-publica/movil/TRIP002-390.png",
       "sha256": "faafa1875532f197c7f7b7953275e59d490694eff3a25e5db9d4d3e515fb922a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-108/qa-local/movil/TRIP002-1280.png",
+        "archivo": "reportes/correcciones-108/qa-publica/movil/TRIP002-1280.png",
         "sha256": "ce1c0a81760bcb081b4b4eace9fe61323932946cfc75635aa06474fc3216fdd0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-17T06:04:43.375212+00:00",
+      "archivo": "reportes/correcciones-108/http-publicacion.json",
+      "reporte": "reportes/correcciones-108/http-publicacion.json",
+      "sha256": "543bb0205965db8df80574327c6b4f4d429bcba58436931542f1a6a5c408b936",
+      "sku": "TRIP002"
     }
   },
   "historial_correcciones": [
