@@ -133,7 +133,7 @@ def candidate(root, p, o, slug, master):
     if p.get('name') != title:
         raise ValueError('titulo_catalogo_no_coincide')
     if not master:
-        raise ValueError('sin_inventario_maestro')
+        raise ValueError('sin_revision_limitada_corte16')
     price = money(p.get('promo'))
     if master.get('precio_coincide_corte') is not True or price != money(master.get('precio_publico_validado')):
         raise ValueError('precio_inventario_no_coincide')

@@ -28,4 +28,6 @@ GitHub Actions ejecuta este flujo en Linux público gratuito, obtiene el main ac
 
 El proceso no inventa nuevos cortes ni refresca sus fechas. Una nueva exportación real autorizada requiere revisión privada antes de renovar la fuente limitada. Si fallan todas las comprobaciones, no se reemplaza el feed anterior: consultar fecha y estado de Actions para no presentar un resultado antiguo como actual.
 
+La tarea cloud «Actualizar feed ConectaTech» quedó creada y habilitada con recurrencia diaria, en zona America/Guayaquil. Su primera ejecución programada aún debe comprobarse; la ejecución inicial de GitHub Actions ya se verificó. Las nuevas altas de web sin revisión limitada del corte se reservan con `sin_revision_limitada_corte16`, aunque exista su fila en el Excel privado.
+
 [Requisitos y acciones en Merchant Center](REQUISITOS-MERCHANT.md). Estado de dominio, compra, envíos y devoluciones: `preconexion.json`. No se retiran las exclusiones sin cerrar requisitos y contar con autorización de activación.
