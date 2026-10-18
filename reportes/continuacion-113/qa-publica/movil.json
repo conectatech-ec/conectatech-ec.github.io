@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "fecha": "2026-10-18T07:50:29.698Z",
+  "base": "https://conectatech-ec.github.io",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "TECL018",
+      "sku": "TECL018",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-18T07:50:29.906Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
+      "archivo_html": "productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/index.html",
+      "http": 200,
+      "sha256_html": "69280d9b77ad8f5942cb35441c79e6df6560f062228acebe4f959592d98f2e95",
+      "sha256_html_local": "69280d9b77ad8f5942cb35441c79e6df6560f062228acebe4f959592d98f2e95",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/tecl018/TECL018-01.webp",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl018/TECL018-01-600.webp?v=ba0ecd22c37be5f5",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "https://conectatech-ec.github.io/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/imagenes/tecl018/TECL018-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/continuacion-113/qa-publica/movil/TECL018-390.png",
+      "sha256": "14afea051eaa21634eaac5e590a4a2112d294f1b0c383cb2abc2b99d6ea32c4a",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/continuacion-113/qa-publica/movil/TECL018-1280.png",
+        "sha256": "f00d207b66714a13ebd8ee3a837dfbcff1bc9daf5ce7d371f5b3caf33b56fb1f",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
