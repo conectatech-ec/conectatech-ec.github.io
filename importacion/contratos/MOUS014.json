@@ -112,9 +112,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous014-mouse-alambrico-gaming-rca-201/",
-  "fecha_verificacion": "2026-10-18T06:55:49.737892+00:00",
+  "fecha_verificacion": "2026-10-18T07:20:28.205866+00:00",
   "descripcion": "Mouse Inalámbrico Gaming RCA-201 con Receptor. Conexión: Inalámbrica de 2,4 GHz mediante receptor. Modelo: RCA-201. Controles: Rueda de desplazamiento y botón DPI. Diseño: Cuerpo negro de líneas angulares con detalles rojos. Contenido de venta: Un mouse con receptor inalámbrico.",
   "contenido_venta": "Un mouse inalámbrico RCA-201 con receptor.",
   "presentacion": "sin caja",
@@ -166,7 +166,7 @@
       "solicitado": "MOUS014",
       "sku": "MOUS014",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-18T06:58:09.399Z",
+      "fecha": "2026-10-18T07:20:28.975Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -191,7 +191,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous014-mouse-alambrico-gaming-rca-201/",
-      "url_comprobada": "http://127.0.0.1:8812/productos/mous014-mouse-alambrico-gaming-rca-201/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous014-mouse-alambrico-gaming-rca-201/",
       "archivo_html": "productos/mous014-mouse-alambrico-gaming-rca-201/index.html",
       "http": 200,
       "sha256_html": "ad35bbc19e15f0055db2a8de96c8898ac528c82d9ae2da55f4a365ec76c69a2b",
@@ -201,7 +201,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous014/MOUS014-01.webp",
-        "url_cargada": "http://127.0.0.1:8812/imagenes/mous014/MOUS014-01-600.webp?v=5bc2b56a7c31b1b0",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous014/MOUS014-01-600.webp?v=5bc2b56a7c31b1b0",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -210,51 +210,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8812/productos/mous014-mouse-alambrico-gaming-rca-201/",
+          "url": "https://conectatech-ec.github.io/productos/mous014-mouse-alambrico-gaming-rca-201/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/imagenes/mous014/MOUS014-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous014/MOUS014-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/productos/mous010-mouse-inalambrico-monster-airmars-m5/",
+          "url": "https://conectatech-ec.github.io/productos/mous010-mouse-inalambrico-monster-airmars-m5/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/productos/tecl016-teclado-numerico-alambrico-mini/",
+          "url": "https://conectatech-ec.github.io/productos/tecl016-teclado-numerico-alambrico-mini/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/productos/tecl017-teclado-numerico-inalambrico-mini/",
+          "url": "https://conectatech-ec.github.io/productos/tecl017-teclado-numerico-inalambrico-mini/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-112/qa-local/movil/MOUS014-390.png",
+      "archivo": "reportes/continuacion-112/qa-publica/movil/MOUS014-390.png",
       "sha256": "85003ca70edc73793789045e7cfe5f316fc80a714a2a9b672e1362badc178c28",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-112/qa-local/movil/MOUS014-1280.png",
+        "archivo": "reportes/continuacion-112/qa-publica/movil/MOUS014-1280.png",
         "sha256": "0d45665ea692394a5154a465ad2cde4683ae32c5ed8cf7e636b3518b79498902",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-18T07:20:28.205866+00:00",
+      "archivo": "reportes/continuacion-112/http-publicacion.json",
+      "reporte": "reportes/continuacion-112/http-publicacion.json",
+      "sha256": "7890af02e8156798a53a5d291008a536634bbbb6a64070870765a52bef565b3a",
+      "sku": "MOUS014"
     }
   },
   "beneficios": [

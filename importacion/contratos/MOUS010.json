@@ -140,9 +140,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/mous010-mouse-inalambrico-monster-airmars-m5/",
-  "fecha_verificacion": "2026-10-18T06:55:49.884780+00:00",
+  "fecha_verificacion": "2026-10-18T07:20:28.205866+00:00",
   "descripcion": "Mouse con Cable Monster Airmars KM2. Conexión: Con cable integrado. Modelo: Airmars KM2. Controles: Rueda de desplazamiento y botón central. Diseño: Cuerpo negro de contorno redondeado. Contenido de venta: Un mouse con su cable integrado.",
   "contenido_venta": "Un mouse Monster Airmars KM2 con cable integrado.",
   "presentacion": "sin caja",
@@ -194,7 +194,7 @@
       "solicitado": "MOUS010",
       "sku": "MOUS010",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-18T06:58:10.321Z",
+      "fecha": "2026-10-18T07:20:32.558Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -219,7 +219,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/mous010-mouse-inalambrico-monster-airmars-m5/",
-      "url_comprobada": "http://127.0.0.1:8812/productos/mous010-mouse-inalambrico-monster-airmars-m5/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/mous010-mouse-inalambrico-monster-airmars-m5/",
       "archivo_html": "productos/mous010-mouse-inalambrico-monster-airmars-m5/index.html",
       "http": 200,
       "sha256_html": "eaf86a7b49999c20d6f2b44b69b6b940527a6120a6a6e20b2590c40a69c816cb",
@@ -229,7 +229,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/mous010/MOUS010-01.webp",
-        "url_cargada": "http://127.0.0.1:8812/imagenes/mous010/MOUS010-01-600.webp?v=184c6d2565cb5088",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/mous010/MOUS010-01-600.webp?v=184c6d2565cb5088",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -238,51 +238,59 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8812/productos/mous010-mouse-inalambrico-monster-airmars-m5/",
+          "url": "https://conectatech-ec.github.io/productos/mous010-mouse-inalambrico-monster-airmars-m5/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/imagenes/mous010/MOUS010-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/mous010/MOUS010-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/productos/mous014-mouse-alambrico-gaming-rca-201/",
+          "url": "https://conectatech-ec.github.io/productos/mous014-mouse-alambrico-gaming-rca-201/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/productos/tecl016-teclado-numerico-alambrico-mini/",
+          "url": "https://conectatech-ec.github.io/productos/tecl016-teclado-numerico-alambrico-mini/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8812/productos/tecl017-teclado-numerico-inalambrico-mini/",
+          "url": "https://conectatech-ec.github.io/productos/tecl017-teclado-numerico-inalambrico-mini/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-112/qa-local/movil/MOUS010-390.png",
+      "archivo": "reportes/continuacion-112/qa-publica/movil/MOUS010-390.png",
       "sha256": "f8df3c7ec67dff34db4960516be165be765b80dc99b7f44c146bee4525fbed9b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-112/qa-local/movil/MOUS010-1280.png",
+        "archivo": "reportes/continuacion-112/qa-publica/movil/MOUS010-1280.png",
         "sha256": "49b059a0e20a154359c5c2a2d2ae29e298bd8335893e336c73a1374757d43094",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-18T07:20:28.205866+00:00",
+      "archivo": "reportes/continuacion-112/http-publicacion.json",
+      "reporte": "reportes/continuacion-112/http-publicacion.json",
+      "sha256": "7890af02e8156798a53a5d291008a536634bbbb6a64070870765a52bef565b3a",
+      "sku": "MOUS010"
     }
   },
   "beneficios": [

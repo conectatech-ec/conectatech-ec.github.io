@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-10-18T07:22:38.284269+00:00",
+  "lote": "importacion/lotes/continuacion-113/manifiesto-aprobados.json",
+  "modo": "aplicar",
+  "productos": [
+    {
+      "sku": "TECL018",
+      "solicitado": "TECL018",
+      "nombre_comercial": "Teclado Numerico 198I CON Flechas Modelo K35",
+      "originales": [
+        {
+          "archivo": "importacion/lotes/continuacion-113/editorial-imagenes/TECL018.png",
+          "sha256": "605a1e8fab4434314b176f96ceb95e6d08306a0cf2f4cad13e255002347240f3"
+        }
+      ],
+      "imagen_profesional": {
+        "1200": {
+          "url": "/imagenes/tecl018/TECL018-01.webp",
+          "sha256": "faf5531cafb0272c3c329e29e5b4ae65dc53c5d71beff2766641a2be07901484",
+          "bytes": 65768,
+          "ancho": 1200,
+          "alto": 1200
+        },
+        "600": {
+          "url": "/imagenes/tecl018/TECL018-01-600.webp",
+          "sha256": "ba0ecd22c37be5f5227cdf8403c743dfc78f7911cb30a01dd03d687cb6f6b78d",
+          "bytes": 21156,
+          "ancho": 600,
+          "alto": 600
+        },
+        "300": {
+          "url": "/imagenes/tecl018/TECL018-01-300.webp",
+          "sha256": "700e4f159915e4bd517a55adc4950e0ba4fb6f509e9d6438fbd8ef92bd7c1398",
+          "bytes": 8000,
+          "ancho": 300,
+          "alto": 300
+        }
+      },
+      "autenticidad": "original verificado",
+      "presentacion": "sin caja",
+      "precio_contado": 29,
+      "pvp": 33.35,
+      "url": "https://conectatech-ec.github.io/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
+      "estado": "aplicado_local",
+      "pendientes": [],
+      "control_calidad": "APROBADO",
+      "requiere_verificacion": false,
+      "contrato": {
+        "version": 3,
+        "estado": "APROBADO_LOCAL",
+        "errores": [],
+        "validaciones_posteriores": [
+          "prepublicacion: captura móvil del HTML generado",
+          "publicacion: HTTP de Pages y hashes"
+        ]
+      }
+    }
+  ],
+  "errores": [],
+  "publicados": [],
+  "duplicados": [],
+  "similares": [],
+  "duracion_segundos": 0.655,
+  "precios_stock_conservados": true,
+  "resumen": {
+    "total": 1,
+    "imagenes_listas": 1,
+    "pendientes": 0,
+    "errores": 0,
+    "por_verificar_autenticidad": 0,
+    "imagenes_reutilizadas": 0,
+    "imagenes_procesadas": 1
+  }
+}
