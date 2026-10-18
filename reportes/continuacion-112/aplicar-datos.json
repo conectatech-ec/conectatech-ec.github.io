@@ -1,0 +1,74 @@
+{
+  "modo": "aplicar",
+  "resultados": [
+    {
+      "sku": "MOUS014",
+      "estado": "aplicado_local",
+      "campos": [
+        "beneficios",
+        "contenidoVenta",
+        "relacionados",
+        "unidadVenta"
+      ],
+      "relacionados": [
+        "MOUS010",
+        "TECL016",
+        "TECL017"
+      ]
+    },
+    {
+      "sku": "MOUS010",
+      "estado": "aplicado_local",
+      "campos": [
+        "beneficios",
+        "contenidoVenta",
+        "relacionados",
+        "unidadVenta"
+      ],
+      "relacionados": [
+        "MOUS014",
+        "TECL016",
+        "TECL017"
+      ]
+    },
+    {
+      "sku": "TECL016",
+      "estado": "aplicado_local",
+      "campos": [
+        "relacionados"
+      ],
+      "relacionados": [
+        "MOUS014",
+        "MOUS010",
+        "TECL017"
+      ]
+    },
+    {
+      "sku": "TECL017",
+      "estado": "aplicado_local",
+      "campos": [
+        "beneficios",
+        "relacionados"
+      ],
+      "relacionados": [
+        "MOUS014",
+        "MOUS010",
+        "TECL016"
+      ]
+    },
+    {
+      "sku": "JUGU129",
+      "estado": "aplicado_local",
+      "campos": [
+        "beneficios",
+        "contenidoVenta",
+        "unidadVenta"
+      ],
+      "relacionados": []
+    }
+  ],
+  "precios_stock_sku_urls_imagenes_conservados": true,
+  "aprobados": 5,
+  "pendientes": 0,
+  "nota": "Metadatos locales. El importador editorial sigue a cargo de títulos, descripción y características; la publicación requiere verificación móvil y HTTP."
+}
