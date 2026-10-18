@@ -116,9 +116,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
-  "fecha_verificacion": "2026-10-18T07:22:37.737224+00:00",
+  "fecha_verificacion": "2026-10-18T07:50:29.329627+00:00",
   "descripcion": "Teclado Numérico Inalámbrico K35 — Plateado. Modelo: K35. Color: Plateado. Conexión: Bluetooth y conexión inalámbrica de 2,4 GHz. Distribución: Bloque numérico con 00, operaciones, teclas de navegación y flechas independientes. Contenido de venta: Un teclado numérico inalámbrico K35.",
   "contenido_venta": "Un teclado numérico inalámbrico K35, color plateado.",
   "presentacion": "sin caja",
@@ -170,7 +170,7 @@
       "solicitado": "TECL018",
       "sku": "TECL018",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-18T07:23:02.132Z",
+      "fecha": "2026-10-18T07:50:29.906Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -195,7 +195,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
-      "url_comprobada": "http://127.0.0.1:8813/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
       "archivo_html": "productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/index.html",
       "http": 200,
       "sha256_html": "69280d9b77ad8f5942cb35441c79e6df6560f062228acebe4f959592d98f2e95",
@@ -205,7 +205,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl018/TECL018-01.webp",
-        "url_cargada": "http://127.0.0.1:8813/imagenes/tecl018/TECL018-01-600.webp?v=ba0ecd22c37be5f5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl018/TECL018-01-600.webp?v=ba0ecd22c37be5f5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -214,36 +214,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8813/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
+          "url": "https://conectatech-ec.github.io/productos/tecl018-teclado-numerico-198i-con-flechas-modelo-k35/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8813/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8813/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8813/imagenes/tecl018/TECL018-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl018/TECL018-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-113/qa-local/movil/TECL018-390.png",
+      "archivo": "reportes/continuacion-113/qa-publica/movil/TECL018-390.png",
       "sha256": "14afea051eaa21634eaac5e590a4a2112d294f1b0c383cb2abc2b99d6ea32c4a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-113/qa-local/movil/TECL018-1280.png",
+        "archivo": "reportes/continuacion-113/qa-publica/movil/TECL018-1280.png",
         "sha256": "f00d207b66714a13ebd8ee3a837dfbcff1bc9daf5ce7d371f5b3caf33b56fb1f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-18T07:50:29.329627+00:00",
+      "archivo": "reportes/continuacion-113/http-publicacion.json",
+      "reporte": "reportes/continuacion-113/http-publicacion.json",
+      "sha256": "0ab9de0b14d37b70b57633a4eb45430953716e69bda1a9d6f30b52cae372c1eb",
+      "sku": "TECL018"
     }
   },
   "beneficios": [
