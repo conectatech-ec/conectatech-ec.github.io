@@ -105,9 +105,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
-  "fecha_verificacion": "2026-10-18T05:35:23.755145+00:00",
+  "fecha_verificacion": "2026-10-18T06:02:58.763159+00:00",
   "descripcion": "Cargador de Pared XIA 33 W — USB-A. Potencia anunciada: 33 W. Salida: Una conexión USB-A. Enchufe: Dos patas planas. Contenido de venta: Un cargador de pared.",
   "contenido_venta": "Un cargador de pared con una salida USB-A y dos patas planas.",
   "presentacion": "sin caja",
@@ -159,7 +159,7 @@
       "solicitado": "CUBO009",
       "sku": "CUBO009",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-18T05:40:25.533Z",
+      "fecha": "2026-10-18T06:04:20.081Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -184,7 +184,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
-      "url_comprobada": "http://127.0.0.1:8811/productos/cubo009-cubo-cargador-33w-xia/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
       "archivo_html": "productos/cubo009-cubo-cargador-33w-xia/index.html",
       "http": 200,
       "sha256_html": "84052d21e1943d1111a3c1a833c9296907bd27f51048d7f7f3caa3814adb3fe9",
@@ -194,7 +194,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo009/CUBO009-01.webp",
-        "url_cargada": "http://127.0.0.1:8811/imagenes/cubo009/CUBO009-01-600.webp?v=f9af3538b0ec334f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo009/CUBO009-01-600.webp?v=f9af3538b0ec334f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -203,41 +203,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8811/productos/cubo009-cubo-cargador-33w-xia/",
+          "url": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8811/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8811/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8811/imagenes/cubo009/CUBO009-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo009/CUBO009-01.webp",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8811/productos/cubo010-cubo-cargador-67w-xia/",
+          "url": "https://conectatech-ec.github.io/productos/cubo010-cubo-cargador-67w-xia/",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-111/qa-local/movil/CUBO009-390.png",
+      "archivo": "reportes/continuacion-111/qa-publica/reintento-CUBO009/CUBO009-390.png",
       "sha256": "a772b83225e74675458f999c6cad23ebc6e0eb85ee8b9f44af67d180a3c1d120",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-111/qa-local/movil/CUBO009-1280.png",
+        "archivo": "reportes/continuacion-111/qa-publica/reintento-CUBO009/CUBO009-1280.png",
         "sha256": "1ed0d1f0571b0a6473193325a197df6b88533cf0c5a5c638ed683c3f0d55e5fe",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-18T06:02:58.763159+00:00",
+      "archivo": "reportes/continuacion-111/http-publicacion.json",
+      "reporte": "reportes/continuacion-111/http-publicacion.json",
+      "sha256": "ef882627c8d60e9ca819cac2012c6176374e271566da32ba421436e309d3824e",
+      "sku": "CUBO009"
     }
   },
   "beneficios": [
