@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "fecha": "2026-10-18T06:04:19.894Z",
+  "base": "https://conectatech-ec.github.io",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "CUBO009",
+      "sku": "CUBO009",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-18T06:04:20.081Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
+      "archivo_html": "productos/cubo009-cubo-cargador-33w-xia/index.html",
+      "http": 200,
+      "sha256_html": "84052d21e1943d1111a3c1a833c9296907bd27f51048d7f7f3caa3814adb3fe9",
+      "sha256_html_local": "84052d21e1943d1111a3c1a833c9296907bd27f51048d7f7f3caa3814adb3fe9",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/cubo009/CUBO009-01.webp",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo009/CUBO009-01-600.webp?v=f9af3538b0ec334f",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/imagenes/cubo009/CUBO009-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/productos/cubo010-cubo-cargador-67w-xia/",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/continuacion-111/qa-publica/reintento-CUBO009/CUBO009-390.png",
+      "sha256": "a772b83225e74675458f999c6cad23ebc6e0eb85ee8b9f44af67d180a3c1d120",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/continuacion-111/qa-publica/reintento-CUBO009/CUBO009-1280.png",
+        "sha256": "1ed0d1f0571b0a6473193325a197df6b88533cf0c5a5c638ed683c3f0d55e5fe",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
