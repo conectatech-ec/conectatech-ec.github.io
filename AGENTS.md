@@ -1,3 +1,7 @@
+## Orden vigente del propietario — continuación114,18oct2026
+
+BILL006: «anula este sku, ya se vendieron». Cancelar producción y marcar agotado (stock0) por autorización expresa, conservando código, precios y corte593 histórico; no contar como publicación nueva ni renovar fecha. SOPO048: negro; la forma de la manija inferior no es relevante para el propietario. Usar soporte completo fiel al esquema, sin inventar otros mecanismos ni incluir monitor. Nuevas portadas UPS001/SOPO048/AUDI080 con representación asistida078 desde fuentes propias, recursos primero, CI de cabeza final y HTTP/Chromium antes de fechas/cierre. Conservar correcciones108 y publicaciones112/113, sin nuevos servicios de pago ni cambios cloud24/7.
+
 ## Orden vigente del propietario — correcciones108, 16 de octubre de 2026
 
 Mejorar JUGU145, LECT001, CASE003, AUDI110, TRIP002 y SOPO057 con producto o conjunto completo, fiel a referencias propias y presentación premium sin caja. Mantener originales, precios, stock, SKU y URLs. No contar correcciones como publicaciones nuevas; continuar la cola de nuevos aptos. Sin servicios nuevos de pago y sin modificar otras sesiones. Recursos versionados108 primero, CI de cabeza final y HTTP/Chromium públicos antes de fechas y cierre.
