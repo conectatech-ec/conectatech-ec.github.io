@@ -184,9 +184,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/moni004-monitor-portatil-asus-360-15-6-pulgadas/",
-  "fecha_verificacion": "2026-10-19T02:38:58.480774+00:00",
+  "fecha_verificacion": "2026-10-19T03:01:39.227680+00:00",
   "descripcion": "Monitor Portátil ASUS ZenScreen MB169CK — 15,6″ Full HD. Modelo: ASUS ZenScreen MB169CK. Pantalla: 15,6 pulgadas, panel IPS y superficie antirreflejos. Resolución: 1920 × 1080 píxeles, Full HD. Frecuencia máxima: 60 Hz. Conexiones: Dos USB-C con DisplayPort Alt Mode y una entrada mini HDMI. Compatibilidad de vídeo: La conexión de vídeo USB-C requiere un equipo con DisplayPort Alt Mode. Por mini HDMI se requiere alimentación USB-C. Soporte: Soporte de 360° para posición horizontal o vertical. Contenido de venta: Un monitor portátil ASUS ZenScreen MB169CK con su soporte.",
   "contenido_venta": "Un monitor portátil ASUS ZenScreen MB169CK con soporte de 360°.",
   "presentacion": "sin caja",
@@ -238,7 +238,7 @@
       "solicitado": "MONI004",
       "sku": "MONI004",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-19T02:39:36.168Z",
+      "fecha": "2026-10-19T03:01:39.784Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -263,7 +263,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/moni004-monitor-portatil-asus-360-15-6-pulgadas/",
-      "url_comprobada": "http://127.0.0.1:8815/productos/moni004-monitor-portatil-asus-360-15-6-pulgadas/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/moni004-monitor-portatil-asus-360-15-6-pulgadas/",
       "archivo_html": "productos/moni004-monitor-portatil-asus-360-15-6-pulgadas/index.html",
       "http": 200,
       "sha256_html": "5c9dca5bb0789c0d3d705f7ce0adbdbd9cffbe541e9accd39d984296331107c7",
@@ -273,7 +273,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/moni004/MONI004-01.webp",
-        "url_cargada": "http://127.0.0.1:8815/imagenes/moni004/MONI004-01-600.webp?v=019dde5efb1bfb0f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/moni004/MONI004-01-600.webp?v=019dde5efb1bfb0f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -282,36 +282,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8815/productos/moni004-monitor-portatil-asus-360-15-6-pulgadas/",
+          "url": "https://conectatech-ec.github.io/productos/moni004-monitor-portatil-asus-360-15-6-pulgadas/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8815/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8815/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8815/imagenes/moni004/MONI004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/moni004/MONI004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-115/qa-local/movil/MONI004-390.png",
+      "archivo": "reportes/continuacion-115/qa-publica/movil/MONI004-390.png",
       "sha256": "ddc357e95dd4cb4d604cb66c291b0f434c5117ce014165fc64c92ce80ff8d7ce",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-115/qa-local/movil/MONI004-1280.png",
+        "archivo": "reportes/continuacion-115/qa-publica/movil/MONI004-1280.png",
         "sha256": "1c6e368f75abe158e1c159a061fccea5a697a6c7855381459ef55e24d4257ec8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-19T03:01:39.227680+00:00",
+      "archivo": "reportes/continuacion-115/http-publicacion.json",
+      "reporte": "reportes/continuacion-115/http-publicacion.json",
+      "sha256": "e7bd965361ccee2874b56f5d5d08e7332575a52c7a63c9664c7dfc24eca399be",
+      "sku": "MONI004"
     }
   },
   "beneficios": [
