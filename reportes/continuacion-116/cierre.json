@@ -1,0 +1,91 @@
+{
+  "fecha": "2026-10-19T04:11:56.959075+00:00",
+  "estado": "PUBLICADO_VERIFICADO",
+  "lote": "continuacion-116",
+  "nuevos": 1,
+  "actualizados": 0,
+  "sku_nuevos": [
+    "POWE001"
+  ],
+  "objetivo_publicaciones": 48,
+  "nuevos_publicados_acumulados": 60,
+  "objetivo_superado_por": 12,
+  "pendientes_para_objetivo": 0,
+  "total_sku": 1170,
+  "con_portada": 966,
+  "sin_portada": 204,
+  "pendientes_activos": 203,
+  "pendientes_con_fuentes_indexadas": 48,
+  "pendientes_sin_fuentes_indexadas": 155,
+  "cancelados_propietario": [
+    "BILL006"
+  ],
+  "precios_pvp_593_urls_intactos": true,
+  "stock_intacto": true,
+  "imagenes_anteriores_intactas": true,
+  "correcciones_antiguas_pendientes": [
+    "REL050"
+  ],
+  "correcciones108_preservadas": "reportes/correcciones-108/cierre.json",
+  "chromium_fichas": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  },
+  "chromium_catalogo": {
+    "vistas_comprobadas": 2,
+    "vistas_verificadas": 2,
+    "sku_solicitados": 2,
+    "errores": 0
+  },
+  "recursos_http": 3,
+  "lote_anterior": "reportes/continuacion-115/cierre.json",
+  "ejecuciones": {
+    "base": "a94be917cbd5aec5d38a42821c7d1df77ca1bc01",
+    "nuevos": [
+      "POWE001"
+    ],
+    "confirmacion": "respuestas-propietario.json",
+    "estado": "PREPARANDO_RECURSOS",
+    "recursos": {
+      "pr": 81,
+      "head": "b34f85c88e433839c7237337aac96b598a2b3256",
+      "ci": 39194849751,
+      "estado": "PUBLICO_HTTP_VERIFICADO",
+      "merge": "088dd1503ba48764ff53cc9f60911b8f7eeb413b",
+      "pages": 39195169569,
+      "webp_verificados": 3
+    },
+    "activacion": {
+      "pr": 82,
+      "head": "34a633a55e31491c9673696c058cfd4649b1008d",
+      "ci": 39195206117,
+      "estado": "PUBLICO_HTTP_CHROMIUM_VERIFICADO",
+      "merge": "199c1821b6bc0740379c0e15fd86147df036ab9b",
+      "main_funcional": "74c75ca25ae999b28378eeded2811eb37ed3ca8a",
+      "pages": 39196246237,
+      "pages_previos": [
+        39196043587,
+        39196135831
+      ]
+    },
+    "fechas": {
+      "pr": 83,
+      "head": "a402debe80cfe071ce2d95698f2912a30ad8308e",
+      "ci": 39197054672,
+      "estado": "CATALOGO_PUBLICO_HTTP_CHROMIUM_VERIFICADO",
+      "merge": "49c99479d3251c36f4f854c4638f6590e3f40375",
+      "main_funcional": "40ff293e68600a46f2a11b486512b46450c20ce6",
+      "pages": 39197468901,
+      "pages_previos": [
+        39197371035,
+        39197451793
+      ]
+    }
+  },
+  "servicios_contratados": [],
+  "automatizacion_comercial_modificada_por_esta_sesion": false
+}
