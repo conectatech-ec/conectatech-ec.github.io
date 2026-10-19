@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "fecha": "2026-10-19T03:56:11.681Z",
+  "base": "https://conectatech-ec.github.io",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "POWE001",
+      "sku": "POWE001",
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-19T03:56:11.872Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
+      "archivo_html": "productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/index.html",
+      "http": 200,
+      "sha256_html": "5c25a84ba844cf146e27e0e15eb0c6e04c8bee377ddd7fe8b82631943a103820",
+      "sha256_html_local": "5c25a84ba844cf146e27e0e15eb0c6e04c8bee377ddd7fe8b82631943a103820",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/powe001/POWE001-01.webp",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/powe001/POWE001-01-600.webp?v=3ead78d36cc2ea22",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "https://conectatech-ec.github.io/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "https://conectatech-ec.github.io/imagenes/powe001/POWE001-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/continuacion-116/qa-publica/movil/POWE001-390.png",
+      "sha256": "2cdf00ffcc274992dd8665a643b5cccd0893583e31e5e8607bda6475de5bd389",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/continuacion-116/qa-publica/movil/POWE001-1280.png",
+        "sha256": "a60c7dd93026c8ff783d881218d1f0d3276f28a70284730fa9b61aa58c05513a",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}

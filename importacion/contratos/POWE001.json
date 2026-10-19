@@ -154,9 +154,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
-  "fecha_verificacion": "2026-10-19T03:30:12.158569+00:00",
+  "fecha_verificacion": "2026-10-19T03:56:11.355786+00:00",
   "descripcion": "Powerbank Inalámbrica para iPhone — 10.000 mAh, USB-C. Capacidad nominal: 10.000 mAh. Conexión de recarga: USB-C. Color: Blanco. Uso: Carga inalámbrica para iPhone. Consulta compatibilidad con tu modelo y funda. Contenido de venta: Una powerbank inalámbrica blanca con conexión USB-C.",
   "contenido_venta": "Una powerbank inalámbrica blanca con conexión USB-C.",
   "presentacion": "sin caja",
@@ -208,7 +208,7 @@
       "solicitado": "POWE001",
       "sku": "POWE001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-19T03:32:08.302Z",
+      "fecha": "2026-10-19T03:56:11.872Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -233,7 +233,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
-      "url_comprobada": "http://127.0.0.1:8816/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
       "archivo_html": "productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/index.html",
       "http": 200,
       "sha256_html": "5c25a84ba844cf146e27e0e15eb0c6e04c8bee377ddd7fe8b82631943a103820",
@@ -243,7 +243,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/powe001/POWE001-01.webp",
-        "url_cargada": "http://127.0.0.1:8816/imagenes/powe001/POWE001-01-600.webp?v=3ead78d36cc2ea22",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/powe001/POWE001-01-600.webp?v=3ead78d36cc2ea22",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -252,36 +252,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8816/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
+          "url": "https://conectatech-ec.github.io/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8816/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8816/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8816/imagenes/powe001/POWE001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/powe001/POWE001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-116/qa-local/movil/POWE001-390.png",
+      "archivo": "reportes/continuacion-116/qa-publica/movil/POWE001-390.png",
       "sha256": "2cdf00ffcc274992dd8665a643b5cccd0893583e31e5e8607bda6475de5bd389",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-116/qa-local/movil/POWE001-1280.png",
+        "archivo": "reportes/continuacion-116/qa-publica/movil/POWE001-1280.png",
         "sha256": "a60c7dd93026c8ff783d881218d1f0d3276f28a70284730fa9b61aa58c05513a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-19T03:56:11.355786+00:00",
+      "archivo": "reportes/continuacion-116/http-publicacion.json",
+      "reporte": "reportes/continuacion-116/http-publicacion.json",
+      "sha256": "3f838bf88b4f91c9496df532dffdf89516921e3031492cbb9860f60be19076af",
+      "sku": "POWE001"
     }
   },
   "beneficios": [
