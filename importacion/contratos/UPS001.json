@@ -138,9 +138,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/ups001-ups-mini-negro-dc/",
-  "fecha_verificacion": "2026-10-18T23:23:22.811150+00:00",
+  "fecha_verificacion": "2026-10-18T23:46:34.882665+00:00",
   "descripcion": "Mini UPS DC1036P — 36 W, Negro. Modelo: DC1036P. Color: Negro. Potencia máxima indicada: 36 W. Batería nominal indicada: 10 400 mAh. Entrada indicada: 85–265 V CA, 50/60 Hz. Salidas indicadas: 5 V, 9 V, 12 V y USB. Contenido de venta: Un mini UPS DC1036P.",
   "contenido_venta": "Un mini UPS DC1036P negro.",
   "presentacion": "sin caja",
@@ -192,7 +192,7 @@
       "solicitado": "UPS001",
       "sku": "UPS001",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-18T23:24:32.033Z",
+      "fecha": "2026-10-18T23:46:35.540Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -217,7 +217,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/ups001-ups-mini-negro-dc/",
-      "url_comprobada": "http://127.0.0.1:8814/productos/ups001-ups-mini-negro-dc/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/ups001-ups-mini-negro-dc/",
       "archivo_html": "productos/ups001-ups-mini-negro-dc/index.html",
       "http": 200,
       "sha256_html": "c5690a3d430a723668132bd2f4d6b178f85364851d531549e93c1c34eb41ea92",
@@ -227,7 +227,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/ups001/UPS001-01.webp",
-        "url_cargada": "http://127.0.0.1:8814/imagenes/ups001/UPS001-01-600.webp?v=e4cb20fcd83bb853",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/ups001/UPS001-01-600.webp?v=e4cb20fcd83bb853",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -236,36 +236,44 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8814/productos/ups001-ups-mini-negro-dc/",
+          "url": "https://conectatech-ec.github.io/productos/ups001-ups-mini-negro-dc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8814/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8814/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8814/imagenes/ups001/UPS001-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/ups001/UPS001-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-114/qa-local/movil/UPS001-390.png",
+      "archivo": "reportes/continuacion-114/qa-publica/movil/UPS001-390.png",
       "sha256": "b25910a9bb98eec1c1968752f243fecf8bdb8a685a54c335edda24021b0c4329",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-114/qa-local/movil/UPS001-1280.png",
+        "archivo": "reportes/continuacion-114/qa-publica/movil/UPS001-1280.png",
         "sha256": "44ab1ce51b997de0c100c970fdc029d3779bac30f511122d05a84d39ceb13c60",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-18T23:46:34.882665+00:00",
+      "archivo": "reportes/continuacion-114/http-publicacion.json",
+      "reporte": "reportes/continuacion-114/http-publicacion.json",
+      "sha256": "4f3d4ba11328fe616e88066b263034a8c473a762817109b13b3bddd847d27c67",
+      "sku": "UPS001"
     }
   },
   "beneficios": [
