@@ -2,8 +2,8 @@
   "date_local": "2026-10-20",
   "timezone": "America/Guayaquil",
   "branch": "automatizacion/piloto-cloud-3sku-20261015",
-  "deployed_release": "a992d438118a0f4fb3339e361e3242318e781449",
-  "cloud_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/39507695921",
+  "deployed_release": "b011cfddb3c4e3aa14eb812f7ce59aad48925ded",
+  "cloud_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/39508044322",
   "provider": {
     "service": "Cloudflare Workers AI",
     "generative_model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
@@ -88,10 +88,10 @@
     "manual_price_confirmation_required": false
   },
   "verification": {
-    "automated_checks": 117,
+    "automated_checks": 118,
     "cloud_https": {
       "mode": "samsung_private_https_not_Messenger",
-      "at": "2026-10-20T22:23:48.417Z",
+      "at": "2026-10-20T22:26:43.567Z",
       "passed": true,
       "messages_sent": 0,
       "paid_services_activated": false,
@@ -123,7 +123,7 @@
         {
           "input": "Me interesa el Samsung A17 de 128 GB para trabajar. ¿Qué me puedes contar?",
           "catalog_only": false,
-          "text": "¡Genial elección!\nSamsung Galaxy A17 128 GB: batería 5000 mAh.",
+          "text": "Es una buena opción para el trabajo.\nSamsung Galaxy A17 128 GB: pantalla 6,7 pulgadas Super AMOLED.",
           "generative": true,
           "response_mode": "generative",
           "error_code": null,
@@ -131,7 +131,7 @@
             "TELF011"
           ],
           "facts": [
-            "TELF011.battery"
+            "TELF011.screen"
           ],
           "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
           "buttons": [
@@ -307,7 +307,7 @@
         "ai_binding": true,
         "alex_generative": true,
         "catalog_first": true,
-        "release": "a992d438118a0f4fb3339e361e3242318e781449",
+        "release": "b011cfddb3c4e3aa14eb812f7ce59aad48925ded",
         "messenger_test_storage": true,
         "messenger_configured": true,
         "messenger_outbound": true,
@@ -320,9 +320,9 @@
         "live_customers_enabled": false
       },
       "quota_before": {
-        "reserved_neurons": 480,
-        "calls": 6,
-        "remaining_calls": 94,
+        "reserved_neurons": 640,
+        "calls": 8,
+        "remaining_calls": 92,
         "reset_at": "2026-10-21T00:00:00.000Z",
         "reserved_limit": 8000,
         "estimation_only_not_provider_meter": true,
@@ -330,9 +330,9 @@
       },
       "source_published_at": "2026-10-19T04:01:57.366Z",
       "quota_after": {
-        "reserved_neurons": 640,
-        "calls": 8,
-        "remaining_calls": 92,
+        "reserved_neurons": 800,
+        "calls": 10,
+        "remaining_calls": 90,
         "reset_at": "2026-10-21T00:00:00.000Z",
         "reserved_limit": 8000,
         "estimation_only_not_provider_meter": true,
@@ -341,7 +341,14 @@
     },
     "real_Messenger_conversation_on_new_release_verified": false,
     "owner_visual_confirmation": "pending",
-    "no_messages_sent_from_synthetic_https_demo": true
+    "no_messages_sent_from_synthetic_https_demo": true,
+    "post_recovery_message_limits": {
+      "daily_limit": 100,
+      "window": "rolling_24_hours",
+      "accepted_last24h": 2,
+      "remaining_messages": 98,
+      "next_slot_at": "2026-10-21T22:00:16.329Z"
+    }
   },
   "capacity_scenarios": {
     "assumption": "Five incoming messages per conversation; explanatory workload, not measured customer statistics.",
