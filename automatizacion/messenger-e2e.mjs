@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {hmac} from './messenger.mjs';
+import {LIVE_FEED} from './live.mjs';
 const base=process.env.PILOT_BASE_URL,token=process.env.PILOT_TOKEN;
 assert.ok(base&&token,'Deployed pilot and private token required');
 const headers={Authorization:`Bearer ${token}`,'Content-Type':'application/json'};
@@ -8,6 +9,7 @@ const report={mode:process.env.MESSENGER_E2E_SCOPE||'synthetic_signed_https_deve
 const output=new URL('./generated/fase2/messenger-e2e.json',import.meta.url);
 async function call(path,body){const r=await fetch(base+path,{method:body?'POST':'GET',headers,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(15000)});const data=await r.json();assert.equal(r.status,200);return data;}
 try {
+ const feedResponse=await fetch(LIVE_FEED,{signal:AbortSignal.timeout(15000)});assert.equal(feedResponse.status,200);const feed=await feedResponse.json();const age=Date.now()-Date.parse(feed.fechaCatalogo);assert.ok(Number.isFinite(age)&&age>=-300000);const sourceCurrent=age<=86400000;report.source_published_at=feed.fechaCatalogo;report.source_current=sourceCurrent;
  const references=[];
  for(const sku of ['MICR27','POWE003','ADAP005']) {
   const test_id='ci-'+crypto.randomUUID();const b={sku,test_id,case:'accept'};
@@ -20,18 +22,20 @@ try {
  let rows=[];
  for(let i=0;i<25;i++) {
   const preview=await call('/messenger/test-results?scope=ci');rows=preview.events;
-  if(references.every(x=>rows.some(r=>r.event_ref===x.ref&&r.status==='prepared')))break;
+  if(references.every(x=>rows.some(r=>r.event_ref===x.ref&&r.status===(sourceCurrent?'prepared':'failed'))))break;
   await new Promise(r=>setTimeout(r,1000));
  }
  for(const reference of references) {
-  const row=rows.find(r=>r.event_ref===reference.ref);assert.equal(row?.status,'prepared',reference.sku+' must be durably prepared');const draft=row.result.find(d=>d.sku===reference.sku);assert.ok(draft.foto);assert.ok(draft.precio>0);assert.equal(draft.send_enabled,false);assert.ok(draft.messages.some(m=>m.attachment?.type==='template'));report.prepared.push({sku:draft.sku,precio:draft.precio,stock_referencial:draft.stock_referencial,foto:draft.foto,banner:draft.banner,native_card:true,duplicate_ignored:true});
+  const row=rows.find(r=>r.event_ref===reference.ref);if(!sourceCurrent){assert.equal(row?.status,'failed');assert.equal(row.result,null);assert.equal(row.attempts,3);continue;}assert.equal(row?.status,'prepared',reference.sku+' must be durably prepared');const draft=row.result.find(d=>d.sku===reference.sku);assert.ok(draft.foto);assert.ok(draft.precio>0);assert.equal(draft.send_enabled,false);assert.ok(draft.messages.some(m=>m.attachment?.type==='template'));report.prepared.push({sku:draft.sku,precio:draft.precio,stock_referencial:draft.stock_referencial,foto:draft.foto,banner:draft.banner,native_card:true,duplicate_ignored:true});
  }
+ if(sourceCurrent){
  const reviewRow=rows.find(r=>r.event_ref===references[0].ref);
  const approved=await call('/messenger/review?scope=ci',{event_ref:reviewRow.event_ref,result_digest:reviewRow.result_digest,decision:'aprobado'});assert.equal(approved.send_enabled,false);assert.equal(approved.decision,'aprobado');
  const rejectedRow=rows.find(r=>r.event_ref===references[1].ref);
  await call('/messenger/review?scope=ci',{event_ref:rejectedRow.event_ref,result_digest:rejectedRow.result_digest,decision:'rechazado'});
  const stale=await fetch(base+'/messenger/review?scope=ci',{method:'POST',headers,body:JSON.stringify({event_ref:reviewRow.event_ref,result_digest:'0'.repeat(64),decision:'aprobado'})});assert.equal(stale.status,409);
- const metrics=await call('/messenger/metrics?scope=ci');assert.equal(metrics.messages_sent,0);assert.ok(metrics.daily.reduce((n,d)=>n+d.consultas,0)>=3);assert.ok(metrics.daily.reduce((n,d)=>n+d.duplicates,0)>=3);report.metrics_and_human_review='passed';report.changed_draft_review_status=409;
+ }else{const denied=await fetch(base+'/messenger/review?scope=ci',{method:'POST',headers,body:JSON.stringify({event_ref:references[0].ref,result_digest:'0'.repeat(64),decision:'aprobado'})});assert.equal(denied.status,409);report.stale_source_draft_block_verified=true;report.expired_prices_sent=0;}
+ const metrics=await call('/messenger/metrics?scope=ci');assert.equal(metrics.messages_sent,0);assert.ok(metrics.daily.reduce((n,d)=>n+d.consultas,0)>=3);assert.ok(metrics.daily.reduce((n,d)=>n+d.duplicates,0)>=3);report.metrics_and_human_review=sourceCurrent?'passed':'stale_drafts_and_approval_blocked';report.changed_draft_review_status=409;
  const health=await (await fetch(base+'/health')).json();report.runtime_meta_configuration_present=health.messenger_configured;assert.equal(health.meta_ingress_enabled,false);report.meta_page_reception_enabled=false;
  const status=await call('/messenger/status');report.meta_secret_readiness={app_secret:status.app_secret_present,verify_token:status.verify_token_present,page:status.page_present,test_senders:status.test_senders_present};
  const pairing=await call('/messenger/pairing/start?scope=ci',{confirmed_tester:true});
