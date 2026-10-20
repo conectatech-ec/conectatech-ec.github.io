@@ -17,5 +17,13 @@ const results=await get('/messenger/seller/results');
 report.alex_messenger=(results.data?.events||[]).filter(e=>e.intent==='alex').map(e=>{
  const a=results.data.drafts?.find(d=>d.event_ref===e.k&&d.advisor==='Alex');return{incoming_at:new Date(e.inbound).toISOString(),status:e.status,generative:a?.generative===true,model:a?.model||null,human_approved:a?.human_approved===true,quality:a?.quality||null,media_count:a?.media_count||0,graph_http:a?.graph_http||[],graph_accepted_parts:e.parts?.filter(p=>p.state==='accepted').length||0,delivery_receipts:e.parts?.filter(p=>p.delivered===1).length||0,error:e.error||null};
 });
+// Explicit synthetic operator queries only; never replays customer events or enters Graph.
+if(config.diagnosticar_alex===true){
+ report.synthetic_private_probes=[];const session=crypto.randomUUID();
+ if((report.alex_quota?.remaining_calls||0)>=22)for(const message of ['Hola, busco un celular Samsung','¿Qué precio tiene el Samsung A17?']){
+  const r=await fetch(base+'/alex/chat',{method:'POST',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify({session_id:session,message}),signal:AbortSignal.timeout(60000)});const a=r.ok?await r.json():{};
+  report.synthetic_private_probes.push({input:message,http:r.status,text:a.text,generative:a.generative,error_code:a.error_code,focus:a.focus,source_fresh:a.source_fresh,outbound_enabled:a.outbound_enabled});
+ }
+}
 // External signed receipts are not attributed to the owner's earlier test automatically.
 const output=new URL('./generated/fase2/',import.meta.url);await mkdir(output,{recursive:true});await writeFile(new URL('meta-diagnostics.json',output),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
