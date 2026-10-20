@@ -88,7 +88,7 @@ export function freeProseSafe(text,question=false){
  if(text.length>190||/[\d$€]|https?:|\{\{|\}\}|\b(?:MICR\d|POWE\d|ADAP\d|TELF\d)/i.test(text))return false;
  if(/gratis|regal|sin costo|garantiz|aseguro|confirmad|reservad|descuent[oa].*(?:doy|tienes)|te llega|llega hoy|entregamos hoy|sin recargo|sin intereses|impermeable|resiste|original|duraci[oó]n|bater[ií]a dura|incluye|compatible con|recib[ií] tu pago|ya (?:pagaste|compraste)|Jotacell|soy (?:una )?persona/i.test(text))return false;
  if(/soy (?:un[ao]? )?human[oa]|no soy (?:un )?(?:bot|robot)|(?:lo|yo) (?:prob[eé]|us[eé]|compr[eé])|en mi experiencia/i.test(text))return false;
- if(!question&&/\b(?:tiene|tienen|trae|ofrece|cuenta|dura|funciona|soporta|admite|rinde|pesa|mide|viene|aguanta|mejor|peor|memoria|c[aá]mara|procesador|bluetooth|wifi)\b/i.test(text))return false;
+ if(!question&&/\b(?:tenemos|disponemos|disponibilidad|tiene|tienen|trae|ofrece|cuenta|dura|funciona|soporta|admite|rinde|pesa|mide|viene|aguanta|mejor|peor|memoria|c[aá]mara|procesador|bluetooth|wifi)\b/i.test(text))return false;
  // Product nouns can reflect what the buyer said; claims still require verified slots.
  if(!question&&/\b(?:cuesta|precio|stock|disponible|capacidad|USB|Watt|volt|RAM|GB|mAh|garant[ií]a|tarjeta|entrega|env[ií]o|direcci[oó]n|horario|descuento)\b/i.test(text))return false;
  if(!question&&/son iguales|id[eé]nticos|equivalentes|misma funci[oó]n|m[aá]s potente/i.test(text))return false;
@@ -180,7 +180,8 @@ export function commercialFallback(input,source,memory={},error_code='AI_UNAVAIL
  else if(products.length===2&&products.every(p=>/^TELF/.test(p.sku))){facts=products.map(p=>p.sku+'.name');ask='¿Cuál de estas versiones te interesa?';intent='recommend';}
  else if(p){
   const id=p.sku,price=/precio|cu[aá]nto|cuesta|vale|contado|tarjeta|PVP/i.test(input),spec=/bater[ií]a|capacidad/i.test(input)?'battery':/pantalla/i.test(input)?'screen':/c[aá]mara/i.test(input)?'camera':/memoria|almacenamiento|RAM/i.test(input)?'memory':/USB|conexi[oó]n/i.test(input)?'power':/grabaci[oó]n|audio/i.test(input)?'audio':/cardioide|omnidireccional/i.test(input)?'patterns':null;
-  if(price){const type=/tarjeta|PVP/i.test(input)?'card':'cash',key=id+'.'+type;facts=[book[key]?key:id+'.'+type+'_pending'];intent='price';if(!book[key])ask='¿Quieres que te muestre las características verificadas?';}
+  if(/disponib|\bstock\b|\btienen\b|\bhay\b/i.test(input)){facts=[book[id+'.stock']?id+'.stock':id+'.unavailable'];}
+  else if(price){const type=/tarjeta|PVP/i.test(input)?'card':'cash',key=id+'.'+type;facts=[book[key]?key:id+'.'+type+'_pending'];intent='price';if(!book[key])ask='¿Quieres que te muestre las características verificadas?';}
   else if(spec&&book[id+'.'+spec]){facts=[id+'.'+spec];}
   else if(/foto|imagen|banner/i.test(input)){facts=[book[id+'.photo_missing']?id+'.photo_missing':id+'.name'];image=p.foto?id:null;intent='photo';}
   else {facts=[spec&&book[id+'.details']?id+'.details':book[id+'.benefit']?id+'.benefit':id+'.name'];ask='¿Qué te gustaría revisar de este modelo?';}
@@ -199,7 +200,7 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
  }
  if(humanRequested(input))return {text:'Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.',focus:memory.focus||[],action:'handoff',intent:'human',image:null,generative:false,memory:{...memory,history:[...(memory.history||[]),{role:'user',text:input}].slice(-policy.max_history_turns*2)}};
  // Exact factual questions use verified catalog data without spending a model reservation.
- if(env.CATALOG_FIRST==='true'&&(/precio|cu[aá]nto.{0,35}(?:cuesta|vale|sale)|contraentrega|env[ií]os? nacional(?:es)?|direcci[oó]n|foto|fotograf[ií]a|contado|tarjeta|\bPVP\b/i.test(input)||/^[¿]?(?:qu[eé]|cu[aá]nta|dime).{0,45}(?:bater[ií]a|pantalla|c[aá]mara|capacidad|almacenamiento)/i.test(input))){
+ if(env.CATALOG_FIRST==='true'&&(/precio|cu[aá]nto.{0,35}(?:cuesta|vale|sale)|contraentrega|env[ií]os? nacional(?:es)?|direcci[oó]n|foto|fotograf[ií]a|contado|tarjeta|\bPVP\b|disponib|\bstock\b|\btienen\b/i.test(input)||/^[¿]?(?:qu[eé]|cu[aá]nta|dime).{0,45}(?:bater[ií]a|pantalla|c[aá]mara|capacidad|almacenamiento)/i.test(input))){
   const a=commercialFallback(input,source,memory,null);return {...a,error_code:null,response_mode:'verified_catalog'};
  }
  try{

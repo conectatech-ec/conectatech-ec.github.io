@@ -16,6 +16,7 @@ try{
  a=await ask('Me interesa el Samsung A17 de 128 GB para trabajar. ¿Qué me puedes contar?');assert.deepEqual(a.focus,['TELF011']);assert.ok(a.image?.includes('/telf011/'));assert.ok(!a.text.includes('$'));
  for(const [input,type]of [['¿Qué precio tiene ese Samsung A17 de 128 GB al contado?','cash'],['¿Y ese con tarjeta cuánto cuesta?','card']]){const before=await get('/alex/quota');a=await ask(input);assert.deepEqual(a.focus,['TELF011']);if(quoteCurrent(source,source.productos.find(p=>p.sku==='TELF011'))){assert.ok(a.text.includes(book['TELF011.'+type].match(/\$[\d.]+/)[0]));}else{assert.ok(!a.text.includes('$'));assert.match(a.text,/requiere confirmación/);}assert.equal((await get('/alex/quota')).calls,before.calls);}
  a=await ask('¿Qué batería tiene ese Samsung A17 de 128 GB?');assert.match(a.text,/5000 mAh/);assert.deepEqual(a.focus,['TELF011']);
+ a=await ask('¿Tienen disponibilidad de ese Samsung A17 de 128 GB?');assert.ok(!/tenemos|disponible para|\d+ unidades/i.test(a.text));assert.ok(!a.text.includes('$'));
  a=await ask('¿Hacen contraentrega en Quito?');assert.match(a.text,/Contraentrega en Quito/);assert.match(a.text,/cobertura/);
  a=await ask('¿Y envíos nacionales?');assert.match(a.text,/costo adicional/);
  a=await ask('¿Qué precio tiene el Samsung A17 de 128 GB?',true);assert.equal(a.generative,false);assert.equal(a.response_mode,'verified_catalog');assert.notEqual(a.action,'handoff');
