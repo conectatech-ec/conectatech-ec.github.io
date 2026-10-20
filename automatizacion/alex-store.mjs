@@ -1,6 +1,6 @@
-import baseline from './generated/catalogo.json' with {type:'json'};
+import {alexBaseline as baseline,refreshAlexCatalog,quoteCurrent} from './alex-catalog.mjs';
 import {generateAlex,policy,redact,quickReplies,fresh} from './alex.mjs';
-import {refreshCatalog,verifyAssets} from './live.mjs';
+import {verifyAssets} from './live.mjs';
 import {seal,unseal} from './messenger-control.mjs';
 import {normalizeAlexAction} from './channels.mjs';
 import {reviewInit,reviewCleanup,reviewNext,reviewFetch,cancelConversationReviews} from './alex-review.mjs';
@@ -23,18 +23,19 @@ export async function reserveAI(box){
 export async function loadMemory(box,who){const row=box.sql.exec('SELECT sealed FROM alex_memory WHERE who=?',who).toArray()[0];if(!row)return {history:[],focus:[],shown:[]};try{return JSON.parse(await unseal(row.sealed,box.env.PILOT_TOKEN));}catch{return {history:[],focus:[],shown:[]};}}
 export async function saveMemory(box,who,memory){const data=await seal(JSON.stringify(memory),box.env.PILOT_TOKEN);box.sql.exec('INSERT INTO alex_memory VALUES (?,?,?) ON CONFLICT(who) DO UPDATE SET sealed=excluded.sealed,expires=excluded.expires',who,data,Date.now()+policy.memory_idle_hours*3600000);}
 export async function saveInput(box,key,text){const data=await seal(redact(text),box.env.PILOT_TOKEN);box.sql.exec('INSERT OR IGNORE INTO alex_inputs VALUES (?,?,?)',key,data,Date.now()+86400000);}
-export async function approvedImage(product,verifier=verifyAssets){
+export async function approvedImage(product,verifier=verifyAssets,allowBanner=true){
+ if(!product.foto||!product.foto_sha256)throw Error('NO_VERIFIED_IMAGE');
  const old=baseline.productos.find(p=>p.sku===product.sku);
- if(product.banner&&old&&product.promo===old.promo&&product.pvp===old.pvp&&product.stock===old.stock){try{await verifier(product);return product.banner;}catch{/* An unavailable banner never replaces the verified exact photo. */}}
+ if(product.banner&&allowBanner&&old&&product.promo===old.promo&&product.pvp===old.pvp&&product.stock===old.stock){try{await verifier(product);return product.banner;}catch{/* An unavailable banner never replaces the verified exact photo. */}}
  await verifier({...product,banner:null});return product.foto;
 }
-export async function prepareAlex(box,row,deps={refreshCatalog,verifyAssets}){
+export async function prepareAlex(box,row,deps={refreshCatalog:refreshAlexCatalog,verifyAssets}){
  const data=box.sql.exec('SELECT sealed FROM alex_inputs WHERE job=?',row.k).toArray()[0];if(!data)throw Error('ALEX_INPUT_EXPIRED');
  const input=await unseal(data.sealed,box.env.PILOT_TOKEN),memory=await loadMemory(box,row.who);
- let source;try{source=await deps.refreshCatalog(baseline);}catch{source={...baseline,fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
+ let source;try{source=await (deps.refreshCatalog===refreshAlexCatalog?refreshAlexCatalog(baseline,fetch,Date.now(),input+' '+(memory.focus||[]).join(' ')):deps.refreshCatalog(baseline));}catch{source={...baseline,source_error_code:'SOURCE_UNAVAILABLE',fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
  const result=await generateAlex(input,source,memory,box.env,()=>reserveAI(box));
  if(['erase','handoff'].includes(result.action))cancelConversationReviews(box,row.who);
- if(!result.image&&result.generative&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
+ if(!result.image&&result.focus.length===1&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
  if(result.action==='erase'){
   box.sql.exec('DELETE FROM alex_memory WHERE who=?',row.who);box.sql.exec('DELETE FROM seller_handoffs WHERE who=?',row.who);box.sql.exec('DELETE FROM alex_opportunities WHERE who=?',row.who);
   box.sql.exec("DELETE FROM alex_inputs WHERE job IN (SELECT k FROM seller_jobs WHERE who=?)",row.who);
@@ -48,9 +49,9 @@ export async function prepareAlex(box,row,deps={refreshCatalog,verifyAssets}){
  const messages=[{text:result.text,quick_replies:quickReplies(result)}];if(!messages[0].quick_replies.length)delete messages[0].quick_replies;
  const product=source.productos.find(p=>p.sku===result.image);
  const already=(memory.shown||[]).includes(result.image);
- if(product&&fresh(source)&&product.stock>0&&(!already||result.intent==='photo')){
+ if(product&&product.foto&&(!already||result.intent==='photo')){
   try{
-   const image=await approvedImage(product,deps.verifyAssets);
+   const image=await approvedImage(product,deps.verifyAssets,quoteCurrent(source,product));
    messages.push({attachment:{type:'template',payload:{template_type:'generic',elements:[{title:product.nombre.slice(0,80),image_url:image,buttons:[{type:'web_url',title:'Ver ficha',url:product.url}]}]}}});
    result.memory.shown=[...new Set([...(memory.shown||[]),product.sku])];
   }catch{/* No unverified or changed image is sent. Text remains factual. */}
@@ -82,14 +83,15 @@ export async function alexFetch(path,req,box){
   if(!box.name.startsWith('alex-demo-'))return json({error:'Demo only'},409);
   const b=await req.json();if(typeof b.message!=='string'||b.message.length>1000)return json({error:'Invalid message'},400);
   if(b.reset===true){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}
-  let source;try{source=await refreshCatalog(baseline);}catch{source={...baseline,fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
-  const memory=await loadMemory(box,'demo');const result=await generateAlex(normalizeAlexAction(b.quick_reply_payload)||b.message,source,memory,box.env,()=>reserveAI(box));
-  if(!result.image&&result.generative&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
+  const memory=await loadMemory(box,'demo');
+  let source;try{source=await refreshAlexCatalog(baseline,fetch,Date.now(),b.message+' '+(memory.focus||[]).join(' '));}catch{source={...baseline,source_error_code:'SOURCE_UNAVAILABLE',fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
+  const result=await generateAlex(normalizeAlexAction(b.quick_reply_payload)||b.message,source,memory,b.catalog_only===true?{...box.env,AI:null}:box.env,()=>reserveAI(box));
+  if(!result.image&&result.focus.length===1&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
   if(result.action==='erase'){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}else await saveMemory(box,'demo',result.memory);
   const p=source.productos.find(p=>p.sku===result.image);let image=null;
-  if(p&&fresh(source)&&p.stock>0&&(!(memory.shown||[]).includes(p.sku)||result.intent==='photo')){try{image=await approvedImage(p);result.memory.shown=[...new Set([...(memory.shown||[]),p.sku])];await saveMemory(box,'demo',result.memory);}catch{}}
+  if(p&&p.foto&&(!(memory.shown||[]).includes(p.sku)||result.intent==='photo')){try{image=await approvedImage(p,verifyAssets,quoteCurrent(source,p));result.memory.shown=[...new Set([...(memory.shown||[]),p.sku])];await saveMemory(box,'demo',result.memory);}catch{}}
   if(Number.isFinite(alexNext(box)))await box.state.storage.setAlarm(alexNext(box));
-  return json({name:'Alex',text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,quick_replies:quickReplies(result),facts:result.facts||[],memory:{focus:result.memory.focus,recent_products:result.memory.recent_products||[],budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,delivery:result.memory.delivery,turn_count:result.memory.turn_count||0,turns:result.memory.history?.length||0},source_fresh:fresh(source),outbound_enabled:false});
+  return json({name:'Alex',text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,quick_replies:quickReplies(result),facts:result.facts||[],memory:{focus:result.memory.focus,recent_products:result.memory.recent_products||[],budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,delivery:result.memory.delivery,turn_count:result.memory.turn_count||0,turns:result.memory.history?.length||0},source_fresh:fresh(source),source_published_at:source.fuente_fecha,source_error_code:source.source_error_code||null,response_mode:result.response_mode||(result.generative?'generative':'control'),quote_current:result.focus.every(s=>quoteCurrent(source,source.productos.find(p=>p.sku===s))),outbound_enabled:false});
  }
  return null;
 }

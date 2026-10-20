@@ -93,3 +93,12 @@ test('Review browser code parses and private review routes reject absent credent
  const page=reviewPage(),html=await page.text();new Function(html.match(/<script nonce="[^"]+">([\s\S]*?)<\/script>/)[1]);assert.ok(page.headers.get('content-security-policy').includes("frame-ancestors 'none'"));
  const {default:worker}=await import('../worker.mjs');for(const p of ['/alex/quota','/alex/review/queue','/alex/review/mode','/alex/review/decision','/alex/review/regenerate'])assert.equal((await worker.fetch(new Request('https://p'+p),{})).status,401);
 });
+test('Recover only unsolicited model handoffs; explicit human requests and CI stay blocked',async()=>{
+ const f=setup(),stamp=Date.now();
+ for(const [key,who,intent]of [['a'.repeat(64),'model','alex'],['b'.repeat(64),'human','alex_control']]){f.q.exec('INSERT INTO seller_jobs VALUES(?,?,?,?,?,?,?,?,?)',key,who,'',stamp,'[]',intent,'handoff',stamp+86400000,'ALEX_HUMAN_REQUEST');f.q.exec('INSERT INTO seller_handoffs VALUES(?,?)',who,stamp+86400000);}
+ const r=await f.post('/seller/recover-model-handoffs',{});assert.equal(r.status,200);assert.equal((await r.json()).recovered_model_handoffs,1);assert.equal(f.q.exec('SELECT COUNT(*) AS n FROM seller_handoffs WHERE who=?','human').one().n,1);assert.equal(f.q.exec('SELECT COUNT(*) AS n FROM seller_handoffs WHERE who=?','model').one().n,0);assert.equal(f.sends(),0);assert.equal((await setup('messenger-ci').post('/seller/recover-model-handoffs',{})).status,409);
+});
+test('A stale source does not block an approved static Messenger answer or trigger a human pause',async()=>{
+ const f=setup();f.env.AI.run=async()=>{throw Error('provider unavailable');};await f.ingest('¿Hacen contraentrega en Quito?');
+ await sellerAlarm(f.box,{...f.deps,refreshCatalog:async()=>({...source,fuente_fecha:'2020-01-01'})});assert.equal(f.sends(),1);assert.equal(f.q.exec('SELECT status FROM seller_jobs').one().status,'sent');assert.equal(f.q.exec('SELECT COUNT(*) AS n FROM seller_handoffs').one().n,0);const audit=JSON.parse(f.q.exec('SELECT safe FROM seller_drafts').one().safe);assert.equal(audit.generative,false);assert.equal(audit.response_mode,'verified_catalog_fallback');assert.equal(audit.error_code,'AI_UNAVAILABLE');
+});

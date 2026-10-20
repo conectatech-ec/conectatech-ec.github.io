@@ -36,11 +36,12 @@ jobs:
       - run: node automatizacion/tests/alex.test.mjs
       - run: node automatizacion/tests/alex-upgrade.test.mjs
       - run: node automatizacion/tests/alex-commercial.test.mjs
+      - run: node automatizacion/tests/alex-samsung.test.mjs
       - name: Ensayo integral Messenger en runner HTTP local con SQLite real
         run: node automatizacion/messenger-runner-e2e.mjs
       - run: python automatizacion/tests/deploy_test.py
       - name: Prueba integral con fuentes y medios públicos reales
-        run: node automatizacion/e2e.mjs
+        run: node automatizacion/alex-catalog-e2e.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: piloto-comercial-3sku

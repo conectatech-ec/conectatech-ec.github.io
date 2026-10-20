@@ -1,5 +1,5 @@
 import {seal,unseal} from './messenger-control.mjs';
-import baseline from './generated/catalogo.json' with {type:'json'};
+import {alexBaseline as baseline,quoteCurrent} from './alex-catalog.mjs';
 const json=(x,s=200)=>Response.json(x,{status:s,headers:{'Cache-Control':'no-store'}});
 export const digest=async value=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(value))))].map(n=>n.toString(16).padStart(2,'0')).join('');
 export function reviewInit(box){
@@ -28,8 +28,8 @@ export async function approvedDraft(box,row,deps){
  const stored=box.sql.exec('SELECT * FROM alex_reviews WHERE job=?',row.k).toArray()[0];if(!stored||stored.decision!=='approved')return null;
  if(stored.expires<=Date.now()||Date.now()-row.inbound>=86400000)throw Error('REVIEW_EXPIRED');
  const payload=JSON.parse(await unseal(stored.sealed,box.env.PILOT_TOKEN));if(await digest(payload)!==stored.digest)throw Error('REVIEW_CHANGED');
- const source=await deps.refreshCatalog(baseline);
- const stamp=Date.parse(source.fuente_fecha);if(!Number.isFinite(stamp)||Date.now()-stamp>86400000||stamp>Date.now()+300000)throw Error('REVIEW_SOURCE_STALE');
+ const source=await deps.refreshCatalog(payload.source);
+ if(payload.result.facts?.some(k=>/\.(?:cash|card|pvp)$/.test(k))&&payload.result.focus.some(s=>!quoteCurrent(source,source.productos.find(p=>p.sku===s))))throw Error('REVIEW_SOURCE_STALE');
  for(const sku of payload.result.focus||[]){
   const old=payload.source.productos.find(p=>p.sku===sku),current=source.productos.find(p=>p.sku===sku);
   if(!old||!current||['nombre','promo','pvp','stock','url','foto','banner','foto_sha256','banner_sha256'].some(k=>old[k]!==current[k]))throw Error('REVIEW_SOURCE_CHANGED');
