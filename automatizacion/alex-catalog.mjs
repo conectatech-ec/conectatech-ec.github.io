@@ -25,7 +25,8 @@ export function catalogMatches(query,products){
  return matches.filter(p=>!capacities.length||capacities.every(c=>fold(p.nombre).replace(/\s/g,'').includes(c.replace(/\s/g,'')))).slice(0,2);
 }
 export async function refreshAlexCatalog(seed=alexBaseline,fetcher=fetch,now=Date.now(),query=''){
- const source=await readCatalogSnapshot(seed,fetcher,now,products=>catalogMatches(query,products),true);
+ const input=typeof query==='string'?query:query.input||'',focus=typeof query==='object'?query.focus||[]:[];
+ const source=await readCatalogSnapshot(seed,fetcher,now,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},true);
  let inventory=[];
  try{const r=await fetcher(INVENTORY_FEED,{signal:AbortSignal.timeout(10000),cf:{cacheTtl:60,cacheEverything:true}});if(!r.ok)throw Error('INVENTORY_UNAVAILABLE');const text=await r.text();if(text.length>500000)throw Error('INVENTORY_SIZE');inventory=csvRows(text);}catch{/* Block quotes, keep existing verified product facts and logistics usable. */}
  for(const p of source.productos){const matches=inventory.filter(r=>r.sku===p.sku),r=matches[0];p.price_verified=matches.length===1&&Number(r.promo_contado)===p.promo&&Number(r.pvp_final)===p.pvp&&Number(r.stock)===p.stock;}

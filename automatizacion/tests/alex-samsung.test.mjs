@@ -51,3 +51,9 @@ test('Other published models resolve on demand without rebuilding the catalog or
 });
 
 test('Availability remains unconfirmed without current matching sources, even when a publication shows stock',async()=>{const s={...source,fuente_fecha:'2020-01-01'};const a=await generateAlex('¿Tienen disponibilidad del Samsung A17 de 128 GB?',s,{}, {CATALOG_FIRST:'true'});assert.equal(a.response_mode,'verified_catalog');assert.match(a.text,/No tengo.*disponibilidad vigentes/);assert.ok(!a.text.includes('$'));assert.equal(a.action,'answer');});
+
+test('An explicit new model wins over an earlier model when loading published catalog records',async()=>{
+ const products=[...feed.productos,{sku:'TELF998',nombre:'Samsung A16 128GB',promo:100,pvp:125,stock:1,url:'https://conectatech-ec.github.io/productos/telf998-a16/'},{sku:'TELF997',nombre:'Samsung A56 256GB',promo:300,pvp:375,stock:1,url:'https://conectatech-ec.github.io/productos/telf997-a56/'}];
+ const csv='sku,stock,promo_contado,pvp_final\n'+products.map(p=>[p.sku,p.stock,p.promo,p.pvp].join(',')).join('\n');const fetcher=async url=>String(url).endsWith('.csv')?new Response(csv):Response.json({fechaCatalogo:new Date().toISOString(),productos:products});
+ const s=await refreshAlexCatalog(source,fetcher,Date.now(),{input:'Ahora quiero Samsung A56 de 256 GB',focus:['TELF998']});assert.ok(s.productos.some(p=>p.sku==='TELF997'));assert.deepEqual(candidates('Ahora quiero Samsung A56 de 256 GB',{focus:['TELF998']},s),['TELF997']);
+});

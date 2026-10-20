@@ -32,7 +32,7 @@ export async function approvedImage(product,verifier=verifyAssets,allowBanner=tr
 export async function prepareAlex(box,row,deps={refreshCatalog:refreshAlexCatalog,verifyAssets}){
  const data=box.sql.exec('SELECT sealed FROM alex_inputs WHERE job=?',row.k).toArray()[0];if(!data)throw Error('ALEX_INPUT_EXPIRED');
  const input=await unseal(data.sealed,box.env.PILOT_TOKEN),memory=await loadMemory(box,row.who);
- let source;try{source=await (deps.refreshCatalog===refreshAlexCatalog?refreshAlexCatalog(baseline,fetch,Date.now(),input+' '+(memory.focus||[]).join(' ')):deps.refreshCatalog(baseline));}catch{source={...baseline,source_error_code:'SOURCE_UNAVAILABLE',fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
+ let source;try{source=await (deps.refreshCatalog===refreshAlexCatalog?refreshAlexCatalog(baseline,fetch,Date.now(),{input,focus:memory.focus||[]}):deps.refreshCatalog(baseline));}catch{source={...baseline,source_error_code:'SOURCE_UNAVAILABLE',fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
  const result=await generateAlex(input,source,memory,box.env,()=>reserveAI(box));
  if(['erase','handoff'].includes(result.action))cancelConversationReviews(box,row.who);
  if(!result.image&&result.focus.length===1&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
@@ -84,7 +84,7 @@ export async function alexFetch(path,req,box){
   const b=await req.json();if(typeof b.message!=='string'||b.message.length>1000)return json({error:'Invalid message'},400);
   if(b.reset===true){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}
   const memory=await loadMemory(box,'demo');
-  let source;try{source=await refreshAlexCatalog(baseline,fetch,Date.now(),b.message+' '+(memory.focus||[]).join(' '));}catch{source={...baseline,source_error_code:'SOURCE_UNAVAILABLE',fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
+  let source;try{source=await refreshAlexCatalog(baseline,fetch,Date.now(),{input:b.message,focus:memory.focus||[]});}catch{source={...baseline,source_error_code:'SOURCE_UNAVAILABLE',fuente_fecha:null,productos:baseline.productos.map(p=>({...p,stock:0}))};}
   const result=await generateAlex(normalizeAlexAction(b.quick_reply_payload)||b.message,source,memory,b.catalog_only===true?{...box.env,AI:null}:box.env,()=>reserveAI(box));
   if(!result.image&&result.focus.length===1&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
   if(result.action==='erase'){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}else await saveMemory(box,'demo',result.memory);
