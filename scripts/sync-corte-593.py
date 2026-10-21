@@ -45,15 +45,20 @@ def patch_page(text,p,old,cut):
  if n!=1:raise ValueError('Precio visible inesperado: '+p['sku'])
  text,n=re.subn(r'PVP\s+\$([0-9.,]+)',lambda m:'PVP $'+f"{p['pvp']:.2f}".replace('.',',' if ',' in m[1] else '.'),text)
  if n<1:raise ValueError('PVP visible ausente: '+p['sku'])
- text=re.sub(r'((?:Stock registrado|Sin stock registrado) al )\d{2}/\d{2}/\d{4}',r'\g<1>'+cut,text)
- if old['stock']>0 and p['stock']<=0:
-  if 'class="status ' in text:
-   text=text.replace('class="status "','class="status unavailable"').replace('>Stock registrado al ','>Sin stock registrado al ').replace('Consultar y comprar por WhatsApp','Consultar próxima disponibilidad')
-  elif 'Temporalmente agotado.' not in text:
-   text=text.replace('<h2>Consulta y compra</h2>','<p style="font-weight:bold;color:#9b2c2c">Temporalmente agotado. Consulta próxima disponibilidad.</p><h2>Consulta y compra</h2>')
- elif old['stock']<=0 and p['stock']>0:
-  text=text.replace('class="status unavailable"','class="status "').replace('>Sin stock registrado al ','>Stock registrado al ').replace('Consultar próxima disponibilidad','Consultar y comprar por WhatsApp')
+ available=p['stock']>0
+ status=re.compile(r'<div class="status (?:unavailable)?"(?: style="[^"]*")?>.*?</div>')
+ if status.search(text):
+  label=('Stock registrado al '+cut+' · confirma disponibilidad') if available else ('Stock: 0 · No disponible · Corte: '+cut)
+  badge='<div class="status '+('' if available else 'unavailable')+'"'+('' if available else ' style="border:1px solid #fecaca;font-weight:800"')+'>'+htmlmod.escape(label)+'</div>'
+  text=status.sub(lambda m:badge,text)
+  text=text.replace('Consultar próxima disponibilidad','Consultar y comprar por WhatsApp') if available else text.replace('Consultar y comprar por WhatsApp','Consultar próxima disponibilidad')
+ else:
   text=text.replace('<p style="font-weight:bold;color:#9b2c2c">Temporalmente agotado. Consulta próxima disponibilidad.</p>','')
+  text=re.sub(r'<p class="stock-unavailable"[^>]*>.*?</p>','',text)
+  if not available:
+   badge='<p class="stock-unavailable" style="font-weight:800;color:#991b1b;background:#fef2f2;border:1px solid #fecaca;padding:8px 12px;border-radius:8px">Stock: 0 · No disponible</p>'
+   text,n=re.subn(r'(<p class="muted">SKU .*?</p>)',lambda m:m[1]+badge,text)
+   if n!=1:raise ValueError('Ubicación de disponibilidad no encontrada: '+p['sku'])
  if old['promo']!=p['promo']:
   text=text.replace('USD '+f"{old['promo']:.2f}",'USD '+f"{p['promo']:.2f}")
   for sep in ('.',','):

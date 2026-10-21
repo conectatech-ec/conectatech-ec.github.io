@@ -54,7 +54,7 @@ async function main() {
   const familyMatch = index.match(/const categoryFamilies=(\{[^\n]+\});/);
   const families = familyMatch ? JSON.parse(familyMatch[1]) : {};
   const category = p => p.categoriaComercial || families[p.category] || 'Hogar y Accesorios';
-  const inStock = products.filter(p => p.stock > 0);
+  const catalogProducts = products;
   const pageSize = Number(index.match(/(?:const|let) pageSize\s*=\s*(\d+)/)?.[1] || 24);
   const report = {version: 1, fecha: new Date().toISOString(), base: opt.base, sku_solicitados: skus,
     alcance: 'Renderizado real, navegación y datos del catálogo; no certifica fidelidad visual del producto ni publicación.',
@@ -143,6 +143,7 @@ async function main() {
                 promo: promo?.textContent, pvp: pvp?.textContent, promo_px: promo ? parseFloat(getComputedStyle(promo).fontSize) : 0,
                 pvp_px: pvp ? parseFloat(getComputedStyle(pvp).fontSize) : 0,
                 pvp_tachado: pvp ? [pvp, ...pvp.querySelectorAll('*')].some(el => getComputedStyle(el).textDecorationLine.includes('line-through') || ['DEL', 'S', 'STRIKE'].includes(el.tagName)) : null,
+                sin_stock: card.querySelector('.ct-stock-unavailable')?.textContent.trim() || null,
                 contenido_largo: Array.from(card.querySelectorAll('.specs,.spec,.stock,.description,.descripcion,.desc,ul,ol,dl')).map(el => el.className || el.tagName),
                 enlaces: {imagen: anchor(image || card.querySelector('.product-img')), titulo: anchor(title), detalles: detail?.getAttribute('href') || null},
                 imagen: image ? {src: image.getAttribute('src'), srcset: image.getAttribute('srcset'), cargada: image.complete && image.naturalWidth > 0,
@@ -150,7 +151,7 @@ async function main() {
             })};
         });
         const order = mode => {
-          const list = inStock.slice();
+          const list = catalogProducts.slice();
           const updatedTime = p => Date.parse(payload.productos[p.sku]?.actualizadoEn || '') || 0;
           const hasPhoto = p => Boolean(p.imageUrl || payload.productos[p.sku]?.imagen?.src);
           const priority = p => ({nuevo: 0, actualizado: 1}[payload.productos[p.sku]?.tipoCambio] ?? 2);
@@ -189,12 +190,12 @@ async function main() {
         const clip = {x: Math.max(0, box.x), y: Math.max(0, box.y), width: Math.min(box.width, width - Math.max(0, box.x)), height: Math.min(box.height, 880 - Math.max(0, box.y))};
         const file = rel(path.join(opt.capturas, 'catalogo-' + width + '.png')); fs.mkdirSync(path.dirname(safe(file)), {recursive: true});
         row.captura = {archivo: file, sha256: sha(await page.screenshot({path: safe(file), clip, animations: 'disabled'})), recorte: clip};
-        if (inStock.length > pageSize) {
+        if (catalogProducts.length > pageSize) {
           await page.locator('#ct-pages button[data-page="next"]').click();
           check('paginacion_siguiente', equals(await ids(), order(defaultMode).slice(pageSize, pageSize * 2).map(p => p.sku)), 'Página2 no conserva orden de novedades.');
           await page.locator('#ct-pages button[data-page="prev"]').click();
           check('paginacion_anterior', equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Página anterior no restaura resultados.');
-          if (inStock.length > pageSize * 4) {
+          if (catalogProducts.length > pageSize * 4) {
             await page.locator('#ct-pages select[data-page-select]').selectOption('5');
             check('paginacion_5', equals(await ids(), order(defaultMode).slice(pageSize * 4, pageSize * 5).map(p => p.sku)), 'No se puede ir directamente a la página5.');
             await page.locator('#ct-pages button[data-page="2"]').click();
@@ -204,7 +205,7 @@ async function main() {
             await page.locator('#ct-pages button[data-page="1"]').click();
           }
         }
-        const categoryName = [...new Set(inStock.map(category))].find(name => inStock.filter(p => category(p) === name).length > pageSize) || category(inStock[0]);
+        const categoryName = [...new Set(catalogProducts.map(category))].find(name => catalogProducts.filter(p => category(p) === name).length > pageSize) || category(catalogProducts[0]);
         const chip = page.locator('#chips .chip').filter({hasText: categoryName});
         await chip.first().click();
         const expectedCategory = order(defaultMode).filter(p => category(p) === categoryName).slice(0, pageSize).map(p => p.sku);
@@ -218,7 +219,6 @@ async function main() {
           const sourceVersions = enriched[sku]?.imagenProfesional?.versiones || {};
           const sourceImage = {srcset: [300, 600, 1200].map(size => sourceVersions[String(size)]?.url ? `${sourceVersions[String(size)].url} ${size}w` : '').filter(Boolean).join(', ')};
           if (!p || (!published && opt.base === PUBLIC)) { product.errores.push('SKU ausente del catálogo o de los metadatos exigidos en Pages.'); continue; }
-          if (p.stock <= 0) { product.estado = 'EXCLUIDO_SIN_EXISTENCIAS'; continue; }
           await page.locator('#q').fill(sku);
           ensure(equals(await ids(), [sku]), 'La búsqueda porSKU no devuelve solamente el producto esperado.');
           const card = page.locator('#grid .ct-compact-card').first(); await card.scrollIntoViewIfNeeded();
@@ -228,6 +228,7 @@ async function main() {
           const current = (await snapshot()).tarjetas.find(item => item.sku === sku);
           if (!current) { product.errores.push('Tarjeta deSKU no localizada.'); continue; }
           product.tarjeta = current;
+          ensure(p.stock > 0 ? current.sin_stock === null : /Stock: 0.*No disponible/.test(current.sin_stock || ''), 'Aviso de stock distinto de la disponibilidad del SKU.');
           if (published) {
             ensure(Number.isFinite(Date.parse(published.actualizadoEn)) && /^[a-f0-9]{64}$/.test(published.huella || ''), 'Metadatos publicados sin fecha o huella válidas.');
             ensure(current.actualizado === published.actualizadoEn, 'Fecha de actualización no coincide con metadatos.');

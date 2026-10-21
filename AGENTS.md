@@ -211,3 +211,7 @@ Orden expresa del propietario (2026-10-10): retirar el nombre Yantech / YAN TECH
 
 Continuar progresivamente con referencias ya preparadas y permisos vigentes. Priorizar al frente todo SKU con cambio real publicado y verificado, incluido título o descripción mínimos: novedades y actualizados se ordenan por fecha efectiva descendente; a igual fecha, nuevos primero. Esta instrucción posterior sustituye la separación histórica de todos los nuevos antes de todos los actualizados. No renovar fechas por reverificación ni cambios exclusivamente financieros. Reusar fotos correctas, no volver a descargar fuentes intactas. Mantener integración normal sin force, 1170 SKU, precios, stock, datos593, URLs y originales. Permisos y representación desde imagen/caja/modelo según orden078 continúan autorizados.
 
+## Orden vigente del propietario — stock cero visible, 21oct2026
+
+Los SKU existentes con stock0 de593 siguen visibles en catálogo, categorías, búsqueda y ficha. Mostrar claramente «Stock: 0 · No disponible» cerca del SKU/precio; conservar el aviso en futuras sincronizaciones y retirarlo al reponer stock. No filtrar agotados del catálogo general ni inventar existencias. Mantener fotografías, precios, SKU, URLs y fechas editoriales; este ajuste global no cuenta como publicaciones nuevas ni renueva fechas. BILL006 conserva stock0/cancelación de producción; no reencolarlo. Sin modificar la automatización cloud24/7 ni contratar servicios.
+
