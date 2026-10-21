@@ -23,6 +23,7 @@ main{max-width:1180px;margin:auto;padding:18px 14px 80px}
 .cat{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--blue);font-weight:800}
 .name{font-size:16px;font-weight:800;line-height:1.25;margin:6px 0 8px;min-height:40px}
 .stock{font-size:12px;color:var(--green);font-weight:800;margin-bottom:10px}
+.ct-stock-unavailable{display:block;align-self:flex-start;padding:1px 6px;margin:-6px 0 0;border:1px solid #fecaca;border-radius:8px;background:#fef2f2;color:#991b1b;font-size:12px;line-height:1.35;font-weight:800}
 .promo-label{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase}.promo-badge{display:inline-flex;align-items:center;gap:5px;background:#fff0f1;color:#c91f31;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;margin-bottom:4px;width:max-content}
 .promo{font-size:27px;font-weight:950;color:var(--red);line-height:1.05}
 .pvp{font-size:13px;color:var(--muted);margin:5px 0 14px}
@@ -228,7 +229,7 @@ function goToPage(page){
 sortSelector.addEventListener("change",()=>{currentPage=1;render()});
 function render(){
  const q=searchBox.value;
- const list=orderedProducts(products.filter(p=>p.stock>0&&(selectedExactCategory?p.category===selectedExactCategory:(selected==="TODOS"||p.commercialCategory===selected))&&matchesSearch(p,q)));
+ const list=orderedProducts(products.filter(p=>(selectedExactCategory?p.category===selectedExactCategory:(selected==="TODOS"||p.commercialCategory===selected))&&matchesSearch(p,q)));
  const totalPages=Math.max(1,Math.ceil(list.length/pageSize));currentPage=Math.min(currentPage,totalPages);
  const shown=list.slice((currentPage-1)*pageSize,currentPage*pageSize);
  document.getElementById("count").textContent=list.length+" productos · Página "+currentPage+" de "+totalPages;
@@ -239,6 +240,7 @@ function render(){
      <a class="product-img product-link" href="${esc(productHref(p))}" aria-label="Ver ${esc(p.name)}">${productImage(p)}</a>
      <div class="cat">${esc(p.commercialCategory)} · ${esc(p.sku)}</div>
      <a class="name product-link" href="${esc(productHref(p))}">${esc(p.name)}</a>
+     ${p.stock>0?'':'<div class="ct-stock-unavailable">Stock: 0 · No disponible</div>'}
      <div class="ct-compact-prices"><div><span class="promo-label">PROMO CONTADO</span><div class="promo">${money(p.promo)}</div></div><div class="pvp">PVP ${money(p.pvp)}</div></div>
      <div class="actions"><a class="detail" href="${esc(productHref(p))}">Ver detalles</a><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${msg}">Consultar ↗</a></div>
    </article>`;
@@ -325,7 +327,7 @@ function openProduct(sku){
  const specs=p.specs?Object.entries(p.specs).map(([k,v])=>`<div class="spec"><b>${esc(k)}</b>${esc(v)}</div>`).join(""):"";
  document.getElementById("sheetContent").innerHTML=`
   <div class="sheet-icon">${productImage(p,true)}</div>
-  <div class="cat">${esc(p.commercialCategory)}</div><h2>${esc(p.name)}</h2><div class="stock">● Disponible</div>
+  <div class="cat">${esc(p.commercialCategory)}</div><h2>${esc(p.name)}</h2>${p.stock>0?'<div class="stock">● Disponible</div>':'<div class="ct-stock-unavailable">Stock: 0 · No disponible</div>'}
   <div class="sheet-price"><div><div class="promo-badge">⚡ PRECIO PROMO CONTADO</div><div class="promo">${money(p.promo)}</div></div><div class="pvp">PVP ${money(p.pvp)}</div></div>
   ${specs?`<h3>Características principales</h3><div class="specs">${specs}</div>`:""}
   <div class="benefits"><span>✓ Compra con factura</span><span>✓ Garantía</span><span>✓ Local físico en Quito</span><span>✓ Entregas en Quito</span></div>
