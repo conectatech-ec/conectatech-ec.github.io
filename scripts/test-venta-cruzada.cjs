@@ -31,4 +31,4 @@ const preview=inyectar('<html><head></head><body><main><article><h1>A17</h1></ar
 assert(preview.includes('Completa tu compra'),'Falta módulo en ficha');
 assert(preview.includes('data-ct-vc-action'),'Falta interacción de selección');
 assert(!inyectar('<html></html>',bySku.get('ESTU050'),products,slugs).includes('Completa tu compra'),'Agregó venta cruzada a estuche');
-console.log(JSON.stringify({skuCatalogo:products.length,telefonos:phones,recomendaciones,resultado:'OK'},null,2));
+console.log(JSON.stringify({skuCatalogo:products.length,telefonos:phones,recomendaciones:recommendations,resultado:'OK'},null,2));
