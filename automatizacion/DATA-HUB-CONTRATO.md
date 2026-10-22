@@ -14,6 +14,8 @@ Rama independiente: `automatizacion/piloto-cloud-3sku-20261015`. Este contrato n
 
 El campo `web` de `current.json` se conserva como índice derivado de compatibilidad para el piloto existente; no es autoridad financiera ni una segunda base de reglas. La capa complementaria es el punto de intercambio de medios para nuevas integraciones. Los consumidores deben leer la fuente oficial antes que cualquier precio histórico incrustado en una ficha, anuncio, banner o PDF.
 
+El snapshot de la rama no se considera actualizado indefinidamente: el workflow tiene solo lectura y no hace commits para cada Excel. La fuente cloud activa está en `/commercial/catalog` del Worker existente, con autenticación privada; `/commercial/catalog/status` identifica el SHA y la vigencia. Los candidatos y el manifiesto de cada actualización quedan en los artefactos del job `ingresar`. Otras sesiones pueden obtener esos artefactos con la integración GitHub autorizada y comprobar la versión antes de integrar, sin copiar PILOT_TOKEN entre proyectos ni recurrir a un feed antiguo. No publicar el endpoint privado ni compartir su clave con clientes. La adopción en la rama de cada canal requiere su flujo de integración autorizado.
+
 ## Actualización e invalidación
 
 El importador único valida Excel, fechas, precios exactos y SKU/variantes. `write_bundle()` prepara fuente, adaptadores, capa complementaria, cambios y manifiesto antes de sustituir el puntero `current.json`. Compara con la versión válida anterior, incluida la del Worker cuando sea más reciente que la rama. Conserva `last-valid.json` para reversión sin rejuvenecer su fecha. Un archivo rechazado no sustituye la fuente vigente.
