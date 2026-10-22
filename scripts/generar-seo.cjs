@@ -5,6 +5,7 @@ if(frameFs.existsSync(frameFile)){const frames=JSON.parse(frameFs.readFileSync(f
 
 const fs=require('fs'),path=require('path');
 const fichaComercial=require('./ficha-comercial.cjs');
+const ventaCruzada=require('./venta-cruzada.cjs');
 const html=fs.readFileSync('index.html','utf8');
 const m=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
 if(!m)throw Error('No se encontró la base de productos');
@@ -35,7 +36,7 @@ for(const p of products){
  const publicContent=!custom.comercialVerificado&&custom.tipo==='generico'
   ? content.replace('<p>⚡ PROMO CONTADO</p>','<p class="muted"><strong>Condición: Producto compatible (AAA)</strong></p><p>⚡ PROMO CONTADO</p>')
   : content;
- const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),publicContent.replace(/^[ \t]+$/gm,''));
+ const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),ventaCruzada.inyectar(publicContent,p,products,stable).replace(/^[ \t]+$/gm,''));
 }
 const xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(u=>'  <url><loc>'+u+'</loc></url>').join('\n')+'\n</urlset>\n';
 fs.writeFileSync('sitemap.xml',xml);
