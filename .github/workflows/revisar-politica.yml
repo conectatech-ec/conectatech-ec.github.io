@@ -1,0 +1,46 @@
+name: Revisar política sin publicar
+on:
+  push:
+    branches: [revision/politica-garantias-20261016]
+    paths:
+      - 'politicas/**'
+      - 'cambios-devoluciones-garantias/**'
+      - '.github/workflows/revisar-politica.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /politicas/
+            /cambios-devoluciones-garantias/
+            /logo-conectatech.png
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verificar fuente, mensajes, enlaces y garantías
+        run: |
+          node politicas/construir.mjs
+          node politicas/test-politica.mjs
+          git diff --exit-code -- politicas/POLITICA-COMPLETA.md politicas/alex-fuente.json politicas/garantias-catalogos.csv cambios-devoluciones-garantias/index.html
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Preparar navegador gratuito de validación
+        run: |
+          python -m pip install 'playwright>=1.55,<2'
+          python -m playwright install --with-deps chromium
+      - name: Comprobar 320, 390, 768 y 1280 píxeles sin contactar servicios comerciales
+        run: python politicas/verificar-vista.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: revision-politica
+          path: work-validacion-politica/
+          retention-days: 14
