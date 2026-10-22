@@ -1,12 +1,16 @@
 """GitHub Actions private workbook processor. Only sanitized outputs may become artifacts."""
-import hashlib,json,os,re,sys,tempfile,time,urllib.request,urllib.error,urllib.parse
+import hashlib,json,os,re,sys,tempfile,time,urllib.request,urllib.error,urllib.parse,subprocess,base64,io
 from pathlib import Path
 from normalizar_593 import normalize,write_bundle,iso,stamp
 ROOT=Path(__file__).resolve().parent
 BASE='https://conectatech-comercial-piloto.conectatech-ecu.workers.dev'
 def request(path,body=None):
- data=json.dumps(body).encode() if body is not None else None
- return urllib.request.urlopen(urllib.request.Request(BASE+path,data=data,headers={'Authorization':'Bearer '+os.environ['PILOT_TOKEN'],'Content-Type':'application/json'}),timeout=40)
+ result=subprocess.run(['node',str(ROOT/'central-http.mjs'),path],input=json.dumps(body) if body is not None else '',text=True,capture_output=True,timeout=55)
+ try:data=json.loads(result.stdout)
+ except Exception:raise RuntimeError('PRIVATE_SOURCE_TRANSPORT') from None
+ if result.returncode or data.get('status',0)==0:raise RuntimeError('PRIVATE_SOURCE_TRANSPORT')
+ if data['status']>=400:raise urllib.error.HTTPError(BASE+path,data['status'],'PRIVATE_SOURCE_HTTP',{},None)
+ response=io.BytesIO(base64.b64decode(data['bytes_b64']));response.headers={'X-Report-Filename':data.get('filename')};return response
 def output(ready):
  if os.environ.get('GITHUB_OUTPUT'):
   with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('ready='+str(ready).lower()+'\n')

@@ -170,9 +170,13 @@ def main():
     files.append(('alex-extra.mjs','application/javascript+module',b'export default '+(ROOT/'generated/alex-productos-extra.json').read_bytes()+b';\n'))
     source_data=(ROOT/'central/current.json').read_bytes()
     # Code-only deployments must not restore an older report after a cloud ingestion.
-    req=urllib.request.Request(settings['CLOUDFLARE_PILOT_URL']+'/commercial/catalog',headers={'Authorization':'Bearer '+os.environ['PILOT_TOKEN']})
-    try:
-        with urllib.request.urlopen(req,timeout=25) as r:current=r.read(2000001)
+    readback=subprocess.run(['node',str(ROOT/'central-http.mjs'),'/commercial/catalog'],input='',text=True,capture_output=True,timeout=55)
+    try:probe=json.loads(readback.stdout)
+    except Exception:raise RuntimeError('Could not preserve existing commercial source; deployment stopped') from None
+    if readback.returncode or probe.get('status') not in (200,404):raise RuntimeError('Could not preserve existing commercial source; deployment stopped')
+    if probe['status']==200:
+        import base64
+        current=base64.b64decode(probe['bytes_b64'])
         if len(current)>2000000:raise ValueError('Runtime commercial source too large')
         from datetime import datetime
         a=json.loads(source_data);b=json.loads(current)
@@ -180,8 +184,6 @@ def main():
         if datetime.fromisoformat(b['source']['generated_at'].replace('Z','+00:00'))>datetime.fromisoformat(a['source']['generated_at'].replace('Z','+00:00')):
             rollback=config.get('source_rollback_confirmed') is True and config.get('rollback_source_sha256')==a['source']['sha256']
             if not rollback:source_data=current
-    except urllib.error.HTTPError as e:
-        if e.code!=404:raise RuntimeError('Could not preserve existing commercial source; deployment stopped') from None
     from datetime import datetime,timezone
     source_record=json.loads(source_data);source_record['published_at']=datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
     files.append(('central-data.mjs','application/javascript+module',b'export default '+json.dumps(source_record,ensure_ascii=False,separators=(',',':')).encode()+b';\n'))
