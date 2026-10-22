@@ -215,3 +215,7 @@ Continuar progresivamente con referencias ya preparadas y permisos vigentes. Pri
 
 Los SKU existentes con stock0 de593 siguen visibles en catálogo, categorías, búsqueda y ficha. Mostrar claramente «Stock: 0 · No disponible» cerca del SKU/precio; conservar el aviso en futuras sincronizaciones y retirarlo al reponer stock. No filtrar agotados del catálogo general ni inventar existencias. Mantener fotografías, precios, SKU, URLs y fechas editoriales; este ajuste global no cuenta como publicaciones nuevas ni renueva fechas. BILL006 conserva stock0/cancelación de producción; no reencolarlo. Sin modificar la automatización cloud24/7 ni contratar servicios.
 
+
+## Orden vigente del propietario — etiqueta AAA, 21oct2026
+
+En todos los productos ya clasificados AAA, sustituir la etiqueta visible «AAA / producto genérico» por «Producto compatible (AAA)», respetando exactamente mayúsculas y paréntesis. Aplicar también a futuras fichas mediante los generadores; conservar la clasificación interna por SKU y las excepciones confirmadas. Este cambio global de etiqueta no renueva fechas ni cuenta como SKU nuevos. Mantener precios, stock, fotografías, títulos, URLs, aviso de stock cero y automatización cloud24/7.
