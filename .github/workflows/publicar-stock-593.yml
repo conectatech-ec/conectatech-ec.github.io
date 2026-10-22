@@ -1,0 +1,52 @@
+name: Publicar stock y fecha desde corte 593 validado
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'datos-593/corte-stock-validado.json'
+      - 'scripts/aplicar-corte-stock.cjs'
+      - '.github/workflows/publicar-stock-593.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publicacion-stock-593-web
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verificar fuente y publicar unicamente web
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for intento in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/aplicar-corte-stock.cjs
+            APLICAR_STOCK_593=SI node scripts/aplicar-corte-stock.cjs
+            node scripts/generar-seo.cjs
+            node scripts/test-venta-cruzada.cjs
+            git add index.html datos-593/estado-ultimo-corte.json productos sitemap.xml seo-pages.json
+            if git diff --cached --quiet; then
+              echo "Stock, fichas y fecha ya coinciden con el corte verificado."
+              exit 0
+            fi
+            git commit -m "Actualizar stock y fecha web con corte 593 validado"
+            if git push origin HEAD:main; then
+              echo "Stock y fichas publicados para GitHub Pages."
+              exit 0
+            fi
+            echo "Cambios simultaneos: revalidar contra main actualizado ($intento/5)"
+          done
+          echo "Se agoto la publicacion segura sin forzar el repositorio."
+          exit 1
