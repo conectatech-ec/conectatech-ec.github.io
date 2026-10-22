@@ -34,7 +34,9 @@ function planificar(html,source,prior){
  const zeros=updated.filter(p=>p.stock===0).length;
  const negatives=updated.filter(p=>p.stock<0).length;
  const checks=[['cambios_stock_esperados',changes.length],['cambios_disponibilidad_esperados',availability.length],['disponibles_esperados',positives],['agotados_esperados',zeros],['negativos_esperados',negatives]];
- for(const [key,value] of checks)if(expected[key]!==undefined&&expected[key]!==value)throw Error('No coincide la validación '+key+': '+value+' vs '+expected[key]);
+ const alreadyPublished=prior&&prior.origen_sha256===source.sha256;
+ if(alreadyPublished&&changes.length!==0)throw Error('Corte ya publicado pero cantidades cambiaron: no revertir una sincronización posterior');
+ for(const [key,value] of checks)if((!alreadyPublished||!key.startsWith('cambios_'))&&expected[key]!==undefined&&expected[key]!==value)throw Error('No coincide la validación '+key+': '+value+' vs '+expected[key]);
  // Descartar incluso cambios accidentales fuera de .stock
  const original=JSON.parse(match[1]);
  for(let i=0;i<original.length;i++){
