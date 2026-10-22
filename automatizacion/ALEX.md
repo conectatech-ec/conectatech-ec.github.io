@@ -68,3 +68,26 @@ La consulta se realiza al responder y al reverificar los importes antes de envia
 Cada nueva fuente que publique el proceso existente se incorpora sin confirmar precios artículo por artículo: solo se habilita la cotización cuando el corte es reciente y ambas fuentes coinciden. Si no se publica un corte real actualizado, la automatización no puede fabricarlo. El pipeline del piloto comprueba las fuentes y guarda el artefacto `vigencia-comercial-593`, sin escribir en main ni ejecutar el exportador del catálogo. No se ha añadido una tarea programada a main: la sincronización del receptor ocurre bajo demanda en el Worker, disponible permanentemente.
 
 Las consultas de características verificadas, fotografías exactas, retiro y logística siguen funcionando sin IA. Un importe pendiente no deriva automáticamente la conversación a una persona. No se confirman cantidades ni se muestran banners con importes vencidos.
+
+
+## Alex Pro: objeciones y continuidad comercial — 22 de octubre de 2026 UTC
+
+La conversación real del probador mostró una promoción de Pacífico tras negar que tuviera esa tarjeta. El recibo de las 00:15:05 UTC corresponde a `verified_catalog`, no a una inferencia fallida. La cuota privada tenía 94 reservas disponibles. El texto original no puede reconstruirse de los registros: el piloto borra la entrada cifrada después del envío y solo conserva hechos comerciales y métricas sanitizadas. La frase facilitada por el propietario se reprodujo de forma sintética y produjo exactamente el error antes de corregirlo.
+
+Causas y cambios:
+
+- La selección de promociones por nombre de banco precedía a la negación. Ahora la interpretación distingue banco rechazado, banco elegido y banco consultado. Una objeción no puede ofrecer el plan rechazado, ni mediante el respaldo ni mediante el modelo.
+- El respaldo no conservaba cambios de banco/plazo y el camino generativo confundía consultas con preferencias. Ambos actualizan ahora la misma memoria antes de contestar. Se guardan por separado el banco elegido, el último banco consultado y sus plazos; un cambio explícito limpia términos anteriores. Preguntar hipotéticamente por otra tarjeta no altera la elección.
+- El prompt incluía ofertas bancarias ajenas al tema actual. Ahora solo recibe las relevantes; el renderizado excluye bancos rechazados y resúmenes que los incluyan. Los bancos sin un plan autorizado requieren confirmación: no heredan las condiciones del banco anterior.
+- El respaldo no reconocía posponer o retomar una compra. Ahora conserva contexto, acepta continuar después y no convierte esa intención en una compra ni muestra cierre mientras el comprador prefiera esperar.
+- El identificador de producto confundía una pregunta sobre la batería del teléfono con una nueva búsqueda de powerbank. Las características y pronombres conservan el foco cuando no hay una petición de cambiar producto.
+
+El botón nativo «Otra tarjeta» genera una solicitud de nuevo banco, conserva el SKU interno y no repite el precio o la promoción anterior. No pide número de tarjeta, CVV ni datos sensibles. La memoria sigue cifrada, con caducidad y borrado existentes. Las consultas sobre importes vencidos siguen requiriendo confirmación; las características y opciones de entrega continúan útiles. No se modifican las políticas bancarias autorizadas, precios, fuentes maestras, cuotas, clientes externos ni catálogo.
+
+Pruebas y alcance:
+
+- `generated/fase2/alex-objeciones-simuladas.json`: cuatro recorridos completos de 21 turnos, incluidos agotamiento de reserva, proveedor caído, contrato de modelo simulado deliberadamente incorrecto y catálogo sintético vigente. Ninguno acredita un modelo real o una conversación de Messenger. Los importes de la fuente sintética prueban la lógica y no certifican vigencia comercial real.
+- `alex-objections-e2e.mjs`: dos conversaciones privadas HTTPS con la misma secuencia, una con el binding real de Workers AI y otra con IA deshabilitada expresamente; incluye pulsación nativa después de rechazar Pacífico. Nunca fabrica eventos de Meta ni envía esos guiones por Graph. Las aserciones comprueban variante, presupuesto, preferencias más allá del historial corto, descarte persistente, precio exacto si está verificado o confirmación si no, logística sin promesas, pausa y reanudación.
+- Messenger requiere una entrada externa con firma válida posterior al nuevo despliegue y una respuesta registrada por Graph. HTTP 200 de envío no acredita recepción visual. La conversación real corregida queda pendiente hasta recibir evidencia del perfil autorizado; los resultados HTTPS no la sustituyen.
+
+La cuenta Meta sigue restringida a probadores. Las instrucciones de App Review y las URLs de privacidad/eliminación se conservan. No abrir compradores externos, aumentar topes ni contratar servicios para esta corrección.

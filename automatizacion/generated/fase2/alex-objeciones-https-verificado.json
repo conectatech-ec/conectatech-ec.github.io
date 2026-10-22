@@ -1,0 +1,1924 @@
+{
+  "at": "2026-10-22T00:38:46.811Z",
+  "kind": "private_HTTPS_synthetic_conversations",
+  "passed": true,
+  "real_Messenger_conversation_verified": false,
+  "messages_sent_to_Messenger": 0,
+  "paid_services_activated": false,
+  "conversations": [
+    {
+      "mode": "model_available_path",
+      "synthetic_customer": true,
+      "real_AI_calls": 11,
+      "turns": [
+        {
+          "input": "Hola, busco un Samsung A17",
+          "quick_reply": false,
+          "text": "¡Genial elección!\nSamsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB\n¿Cuál de estas versiones te interesa?",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [
+            "TELF011.name",
+            "TELF012.name"
+          ],
+          "focus": [
+            "TELF011",
+            "TELF012"
+          ],
+          "image": null,
+          "buttons": [
+            "A17 de 128 GB",
+            "A17 de 256 GB",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011",
+              "TELF012"
+            ],
+            "recent_products": [
+              "TELF011",
+              "TELF012"
+            ],
+            "bank": null,
+            "last_bank_mentioned": null,
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 1,
+            "turns": 2
+          }
+        },
+        {
+          "input": "Me interesa el Samsung A17 de 128 GB; mi presupuesto es de doscientos dólares",
+          "quick_reply": false,
+          "text": "¡Genial elección!\n💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres saber más sobre el retiro en Multicentro o la contraentrega en Quito?",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [
+            "TELF011.cash_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": null,
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 2,
+            "turns": 4
+          }
+        },
+        {
+          "input": "¿Qué precio tiene al contado?",
+          "quick_reply": false,
+          "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.cash_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": null,
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 3,
+            "turns": 6
+          }
+        },
+        {
+          "input": "¿Y con tarjeta cuánto cuesta?",
+          "quick_reply": false,
+          "text": "💳 El precio con tarjeta del Samsung Galaxy A17 128 GB requiere confirmación.",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.card_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": null,
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 4,
+            "turns": 8
+          }
+        },
+        {
+          "input": "¿Y con tarjeta Pacífico a tres meses?",
+          "quick_reply": false,
+          "text": "En octubre, Pacífico permite tres meses sin intereses sobre el PVP.",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "pacifico"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": "pacifico",
+            "months": null,
+            "last_bank_months": 3,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 5,
+            "turns": 10
+          }
+        },
+        {
+          "input": "Pero no tengo tarjeta Pacífico",
+          "quick_reply": false,
+          "text": "Entendido, buscamos otra opción.\n¿Con qué otra tarjeta o forma de pago te gustaría seguir?",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Otra tarjeta",
+            "Precio de contado",
+            "Características"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": "pacifico",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": true,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 6,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Otra tarjeta",
+          "quick_reply": true,
+          "text": "Claro, revisemos otra opción.\n¿De qué banco es la tarjeta que quieres usar?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Otra tarjeta",
+            "Precio de contado",
+            "Características"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": null,
+            "last_bank_mentioned": "pacifico",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": true,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 7,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Tengo Pichincha",
+          "quick_reply": false,
+          "text": "Genial, Pichincha es una buena opción.\nEn octubre, Pichincha permite hasta seis meses sin intereses; a doce meses se aplica PVP más intereses.",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [
+            "pichincha"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "pichincha",
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 8,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y a seis meses?",
+          "quick_reply": false,
+          "text": "En octubre, Pichincha permite hasta seis meses sin intereses; a doce meses se aplica PVP más intereses.\n¿Quieres que te muestre el precio actual del PVP?",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [
+            "pichincha"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "pichincha",
+            "last_bank_mentioned": "pichincha",
+            "months": 6,
+            "last_bank_months": 6,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 9,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Mejor uso Diners",
+          "quick_reply": false,
+          "text": "De acuerdo, cambio a Diners.",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 10,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y a doce meses cuánto termino pagando?",
+          "quick_reply": false,
+          "text": "En plazos con intereses se aplica PVP más intereses; la tasa, cuota y monto final deben confirmarse, no están calculados aquí.",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [
+            "interest"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 11,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Hacen contraentrega en Quito?",
+          "quick_reply": false,
+          "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.\n¿En qué sector necesitas la entrega?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "delivery"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 12,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Prefiero contraentrega en Quito. Estoy en La Carolina, Quito",
+          "quick_reply": false,
+          "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "delivery"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 13,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y también hacen envíos nacionales?",
+          "quick_reply": false,
+          "text": "🛵 Envíos nacionales con costo adicional; confirmamos pago y condiciones antes de comprar.\n¿A qué ciudad necesitas el envío?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "national"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 14,
+            "turns": 12
+          }
+        },
+        {
+          "input": "No quiero comprar todavía",
+          "quick_reply": false,
+          "text": "Claro, vamos con calma. Podemos seguir cuando te venga bien.",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": true,
+            "delivery": "quito",
+            "turn_count": 15,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Quiero continuar después",
+          "quick_reply": false,
+          "text": "¡Claro que sí!",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": true,
+            "delivery": "quito",
+            "turn_count": 16,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Sigamos con ese Samsung",
+          "quick_reply": false,
+          "text": "¡Retomemos por aquí!\nSamsung Galaxy A17 128 GB\n¿Qué te gustaría aclarar antes de decidir?",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [
+            "TELF011.name"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 17,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y si pago con Pichincha a seis meses?",
+          "quick_reply": false,
+          "text": "En octubre, Pichincha permite hasta seis meses sin intereses; a doce meses se aplica PVP más intereses.",
+          "generative": true,
+          "response_mode": "generative",
+          "error_code": null,
+          "facts": [
+            "pichincha"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "pichincha",
+            "months": 12,
+            "last_bank_months": 6,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 18,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Mejor pago al contado",
+          "quick_reply": false,
+          "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.cash_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "bank": null,
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 19,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Qué batería tiene ese?",
+          "quick_reply": false,
+          "text": "Samsung Galaxy A17 128 GB: batería 5000 mAh.",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.battery"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "bank": null,
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 20,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Quiero ver una fotografía de ese Samsung",
+          "quick_reply": false,
+          "text": "Samsung Galaxy A17 128 GB",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.name"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+          "buttons": [
+            "Precio de contado",
+            "Precio con tarjeta",
+            "Características"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "bank": null,
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 21,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y ese cuánto cuesta?",
+          "quick_reply": false,
+          "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.cash_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [
+              "TELF012",
+              "TELF011"
+            ],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "bank": null,
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 22,
+            "turns": 12
+          }
+        }
+      ],
+      "reservations_used": 11,
+      "passed": true
+    },
+    {
+      "mode": "forced_without_AI",
+      "synthetic_customer": true,
+      "real_AI_calls": 0,
+      "turns": [
+        {
+          "input": "Hola, busco un Samsung A17",
+          "quick_reply": false,
+          "text": "Samsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB\n¿Cuál de estas versiones te interesa?",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [
+            "TELF011.name",
+            "TELF012.name"
+          ],
+          "focus": [
+            "TELF011",
+            "TELF012"
+          ],
+          "image": null,
+          "buttons": [
+            "A17 de 128 GB",
+            "A17 de 256 GB",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011",
+              "TELF012"
+            ],
+            "recent_products": [],
+            "bank": null,
+            "last_bank_mentioned": null,
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 1,
+            "turns": 2
+          }
+        },
+        {
+          "input": "Me interesa el Samsung A17 de 128 GB; mi presupuesto es de doscientos dólares",
+          "quick_reply": false,
+          "text": "Samsung Galaxy A17 128 GB: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [
+            "TELF011.benefit"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+          "buttons": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": null,
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 2,
+            "turns": 4
+          }
+        },
+        {
+          "input": "¿Qué precio tiene al contado?",
+          "quick_reply": false,
+          "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.cash_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": null,
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 3,
+            "turns": 6
+          }
+        },
+        {
+          "input": "¿Y con tarjeta cuánto cuesta?",
+          "quick_reply": false,
+          "text": "💳 El precio con tarjeta del Samsung Galaxy A17 128 GB requiere confirmación.",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.card_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": null,
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 4,
+            "turns": 8
+          }
+        },
+        {
+          "input": "¿Y con tarjeta Pacífico a tres meses?",
+          "quick_reply": false,
+          "text": "En octubre, Pacífico permite tres meses sin intereses sobre el PVP.",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "pacifico"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": "pacifico",
+            "months": null,
+            "last_bank_months": 3,
+            "rejected_banks": [],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 5,
+            "turns": 10
+          }
+        },
+        {
+          "input": "Pero no tengo tarjeta Pacífico",
+          "quick_reply": false,
+          "text": "Entendido, buscamos otra opción.\n¿Con qué otra tarjeta o forma de pago te gustaría seguir?",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Otra tarjeta",
+            "Precio de contado",
+            "Características"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "bank": null,
+            "last_bank_mentioned": "pacifico",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": true,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 6,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Otra tarjeta",
+          "quick_reply": true,
+          "text": "Claro, revisemos otra opción.\n¿De qué banco es la tarjeta que quieres usar?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Otra tarjeta",
+            "Precio de contado",
+            "Características"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": null,
+            "last_bank_mentioned": "pacifico",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": true,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 7,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Tengo Pichincha",
+          "quick_reply": false,
+          "text": "En octubre, Pichincha permite hasta seis meses sin intereses; a doce meses se aplica PVP más intereses.",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [
+            "pichincha"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "pichincha",
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 8,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y a seis meses?",
+          "quick_reply": false,
+          "text": "Samsung Galaxy A17 128 GB: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [
+            "TELF011.benefit"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "pichincha",
+            "last_bank_mentioned": "pichincha",
+            "months": 6,
+            "last_bank_months": 6,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 9,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Mejor uso Diners",
+          "quick_reply": false,
+          "text": "En octubre, Diners permite hasta seis meses sin intereses; a doce meses se aplica PVP más intereses.",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [
+            "diners"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 10,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y a doce meses cuánto termino pagando?",
+          "quick_reply": false,
+          "text": "En plazos con intereses se aplica PVP más intereses; la tasa, cuota y monto final deben confirmarse, no están calculados aquí.",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [
+            "interest"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 11,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Hacen contraentrega en Quito?",
+          "quick_reply": false,
+          "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.\n¿En qué sector necesitas la entrega?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "delivery"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "turn_count": 12,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Prefiero contraentrega en Quito. Estoy en La Carolina, Quito",
+          "quick_reply": false,
+          "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "delivery"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 13,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y también hacen envíos nacionales?",
+          "quick_reply": false,
+          "text": "🛵 Envíos nacionales con costo adicional; confirmamos pago y condiciones antes de comprar.\n¿A qué ciudad necesitas el envío?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "national"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 14,
+            "turns": 12
+          }
+        },
+        {
+          "input": "No quiero comprar todavía",
+          "quick_reply": false,
+          "text": "Claro, vamos con calma. Podemos seguir cuando te venga bien.",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": true,
+            "delivery": "quito",
+            "turn_count": 15,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Quiero continuar después",
+          "quick_reply": false,
+          "text": "Claro, vamos con calma. Podemos seguir cuando te venga bien.",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": true,
+            "delivery": "quito",
+            "turn_count": 16,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Sigamos con ese Samsung",
+          "quick_reply": false,
+          "text": "¡Retomemos por aquí!\nSamsung Galaxy A17 128 GB\n¿Qué te gustaría aclarar antes de decidir?",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [
+            "TELF011.name"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "diners",
+            "months": 12,
+            "last_bank_months": 12,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 17,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y si pago con Pichincha a seis meses?",
+          "quick_reply": false,
+          "text": "En octubre, Pichincha permite hasta seis meses sin intereses; a doce meses se aplica PVP más intereses.",
+          "generative": false,
+          "response_mode": "verified_catalog_fallback",
+          "error_code": "AI_NOT_FREE",
+          "facts": [
+            "pichincha"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "tarjeta",
+            "bank": "diners",
+            "last_bank_mentioned": "pichincha",
+            "months": 12,
+            "last_bank_months": 6,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 18,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Mejor pago al contado",
+          "quick_reply": false,
+          "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.cash_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "bank": null,
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 19,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Qué batería tiene ese?",
+          "quick_reply": false,
+          "text": "Samsung Galaxy A17 128 GB: batería 5000 mAh.",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.battery"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "bank": null,
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 20,
+            "turns": 12
+          }
+        },
+        {
+          "input": "Quiero ver una fotografía de ese Samsung",
+          "quick_reply": false,
+          "text": "Samsung Galaxy A17 128 GB",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.name"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+          "buttons": [
+            "Precio de contado",
+            "Precio con tarjeta",
+            "Características"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "bank": null,
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 21,
+            "turns": 12
+          }
+        },
+        {
+          "input": "¿Y ese cuánto cuesta?",
+          "quick_reply": false,
+          "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
+          "generative": false,
+          "response_mode": "verified_catalog",
+          "error_code": null,
+          "facts": [
+            "TELF011.cash_pending"
+          ],
+          "focus": [
+            "TELF011"
+          ],
+          "image": null,
+          "buttons": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "memory": {
+            "focus": [
+              "TELF011"
+            ],
+            "recent_products": [],
+            "budget": 200,
+            "sector": "La Carolina",
+            "payment": "contado",
+            "bank": null,
+            "last_bank_mentioned": "pichincha",
+            "months": null,
+            "last_bank_months": null,
+            "rejected_banks": [
+              "pacifico"
+            ],
+            "card_declined": false,
+            "payment_change_pending": false,
+            "stage": "consulta",
+            "purchase_deferred": false,
+            "delivery": "quito",
+            "turn_count": 22,
+            "turns": 12
+          }
+        }
+      ],
+      "reservations_used": 0,
+      "passed": true
+    }
+  ],
+  "health": {
+    "ok": true,
+    "pilot": true,
+    "seller_transport_implementation": "official_graph_v1",
+    "cloud_bindings": false,
+    "ai_binding": true,
+    "alex_generative": true,
+    "catalog_first": true,
+    "release": "e890abdbf3f3d8ce8f1ee9a3e408d0082daa5104",
+    "messenger_test_storage": true,
+    "messenger_configured": true,
+    "messenger_outbound": true,
+    "meta_ingress_enabled": false
+  },
+  "quota_before": {
+    "reserved_neurons": 480,
+    "calls": 6,
+    "remaining_calls": 94,
+    "reset_at": "2026-10-23T00:00:00.000Z",
+    "reserved_limit": 8000,
+    "estimation_only_not_provider_meter": true,
+    "paid_fallback": false
+  },
+  "source": {
+    "cut_date": "2026-10-10",
+    "published_at": "2026-10-21T23:46:07.876Z",
+    "verified_at": "2026-10-10T05:00:00.000Z",
+    "quote_current": false
+  },
+  "quota_after": {
+    "reserved_neurons": 1360,
+    "calls": 17,
+    "remaining_calls": 83,
+    "reset_at": "2026-10-23T00:00:00.000Z",
+    "reserved_limit": 8000,
+    "estimation_only_not_provider_meter": true,
+    "paid_fallback": false
+  }
+}

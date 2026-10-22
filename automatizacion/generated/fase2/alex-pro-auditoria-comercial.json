@@ -1,0 +1,133 @@
+{
+  "checked_at": "2026-10-22T00:38:46.811Z",
+  "scope": "alex_pro_commercial_quality",
+  "deployed_release": "e890abdbf3f3d8ce8f1ee9a3e408d0082daa5104",
+  "cost_authorized_usd": 0,
+  "causes": [
+    {
+      "error": "Promotion after denial of owning the card",
+      "cause": "Name matching selected a bank before processing negation. CATALOG_FIRST took this branch without using AI.",
+      "verified_before": {
+        "customer_example_supplied_by_owner": "Pero no tengo tarjeta Pacífico",
+        "synthetic_exact_reproduction": "En octubre, Pacífico permite tres meses sin intereses sobre el PVP.",
+        "persisted_response_mode": "verified_catalog",
+        "persisted_facts": [
+          "pacifico"
+        ],
+        "available_AI_reservations": 94
+      }
+    },
+    {
+      "error": "Incorrect bank, preference or term after switching",
+      "cause": "Fallback did not update bank/term memory; the generative path treated every named bank as a new preference and reused previous terms.",
+      "fix": "Shared preference merge; chosen bank distinct from queried bank; rejected bank list; independent chosen/query terms; explicit changes clear obsolete terms."
+    },
+    {
+      "error": "Irrelevant offers in otherwise ordinary conversation",
+      "cause": "Prompt exposed every bank offer regardless of the current topic; final rendering did not exclude rejected banks.",
+      "fix": "Contextual fact selection, final rejection filter and contextual native other-card action."
+    },
+    {
+      "error": "Hesitation or resuming lost sales intent",
+      "cause": "Fallback lacked defer/resume handling.",
+      "fix": "Persistent defer state, no premature checkout; product and preferences kept on resuming."
+    },
+    {
+      "error": "Battery question lost the phone variant",
+      "cause": "Generic battery keyword took priority over the current product.",
+      "fix": "Technical follow-up uses exact current focus unless a different product is explicitly requested."
+    }
+  ],
+  "corrections": {
+    "preserved_memory_fields": [
+      "product",
+      "variant",
+      "budget",
+      "bank",
+      "queried_bank",
+      "rejected_banks",
+      "chosen_bank_months",
+      "queried_bank_months",
+      "payment",
+      "delivery",
+      "sector",
+      "defer_state"
+    ],
+    "unapproved_bank_conditions": "require_confirmation",
+    "unverified_prices": "require_confirmation",
+    "stock_or_discounts_invented": false,
+    "unnecessary_handoff": false
+  },
+  "model": {
+    "provider": "Cloudflare Workers AI",
+    "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+    "real_available_during_HTTPS": true,
+    "real_generative_answers": 11,
+    "quota_after": {
+      "reserved_neurons": 1360,
+      "calls": 17,
+      "remaining_calls": 83,
+      "reset_at": "2026-10-23T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    },
+    "limits_changed": false,
+    "paid_fallback": false
+  },
+  "evidence": {
+    "local": {
+      "kind": "simulated",
+      "conversations": 4,
+      "turns_per_conversation": 21,
+      "real_AI": false,
+      "messages_to_Messenger": 0,
+      "file": "alex-objeciones-simuladas.json"
+    },
+    "HTTPS": {
+      "kind": "synthetic_customers_real_deployed_Worker",
+      "conversations": [
+        {
+          "mode": "model_available_path",
+          "turns": 22,
+          "real_AI_calls": 11,
+          "reservations_used": 11,
+          "passed": true
+        },
+        {
+          "mode": "forced_without_AI",
+          "turns": 22,
+          "real_AI_calls": 0,
+          "reservations_used": 0,
+          "passed": true
+        }
+      ],
+      "file": "alex-objeciones-https-verificado.json",
+      "readable_transcript": "alex-pro-conversaciones-https.md"
+    },
+    "Messenger": {
+      "post_correction_conversation_verified": false,
+      "owner_probe_requested": true,
+      "old_failure_evidence_is_not_post_fix_acceptance": true
+    }
+  },
+  "pending": [
+    "Recepción real de la conversación corregida desde el perfil autorizado; no sustituirla por HTTPS.",
+    "Nuevo corte comercial 593 validado para precios y disponibilidad vigentes.",
+    "Permisos oficiales Meta para compradores externos; acceso general permanece cerrado."
+  ],
+  "deployment": {
+    "run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/39700852431",
+    "status": "success",
+    "checks": 125,
+    "code_commit": "e890abdbf3f3d8ce8f1ee9a3e408d0082daa5104"
+  },
+  "controls": {
+    "external_customers_enabled": false,
+    "main_modified": false,
+    "other_projects_modified": false,
+    "AI_limit_changed": false,
+    "incoming_message_limit_changed": false,
+    "paid_services_activated": false
+  }
+}
