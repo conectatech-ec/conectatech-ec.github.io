@@ -1,23 +1,26 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {alexBaseline,refreshAlexCatalog,quoteCurrent} from '../alex-catalog.mjs';
+import {alexBaseline,refreshAlexCatalog,quoteCurrent,INVENTORY_HISTORY} from '../alex-catalog.mjs';
 import {candidates,generateAlex,commercialFallback,factBook,quickReplies,policy} from '../alex.mjs';
 import {approvedImage} from '../alex-store.mjs';
 // Synthetic confirmed source exercises price mechanics; deployed A17s remain explicitly blocked.
 const source={...alexBaseline,fuente_fecha:new Date().toISOString(),productos:alexBaseline.productos.map(p=>({...p}))},now=Date.now();
 const feed={fechaCatalogo:new Date(now-2*86400000).toISOString(),productos:source.productos.map(p=>({...p}))};
-const fake=data=>async()=>Response.json(data);
+const provenance=stamp=>[{sha:'a'.repeat(40),commit:{committer:{date:stamp}}}];
+const cutNote=date=>'Sistema 593 — Inventario exportado el '+date.slice(8,10)+'-'+date.slice(5,7)+'-'+date.slice(0,4);
+const currentCut=new Date(now-5*3600000).toISOString().slice(0,10);
+const withProvenance=fn=>async(url,...args)=>url===INVENTORY_HISTORY?Response.json(provenance(new Date(now).toISOString())):String(url).endsWith('REFERENCIA-OFICIAL.md')?new Response(cutNote(currentCut)):fn(url,...args);
 const modelPlan={say:'Vamos a encontrar una opción que te encaje.',facts:['TELF011.name'],ask:'¿Qué es lo que más te interesa?',focus:['TELF011'],image:null,intent:'recommend',action:'answer',remember:{}};
 test('Samsung A17 variants are explicit, their context survives pronouns, and original pilot remains available',()=>{
  assert.deepEqual(candidates('Hola, busco un celular Samsung'),['TELF011','TELF012']);assert.deepEqual(candidates('Samsung A17 de 128 GB'),['TELF011']);assert.deepEqual(candidates('Samsung A17 de 256 GB'),['TELF012']);assert.deepEqual(candidates('¿Y ese con tarjeta?',{focus:['TELF011']}),['TELF011']);assert.deepEqual(candidates('Philco'),['POWE003']);assert.equal(alexBaseline.productos.length,5);
 });
 test('Publication age and exact 593 price/stock matches control quotes automatically per SKU',async()=>{
  const csv='sku,stock,promo_contado,pvp_final\n'+source.productos.map(p=>[p.sku,p.stock,p.promo,p.pvp].join(',')).join('\n');
- const fetcher=(data,text=csv)=>async url=>String(url).endsWith('.csv')?new Response(text):Response.json(data);
+ const fetcher=(data,text=csv)=>withProvenance(async url=>String(url).endsWith('.csv')?new Response(text):Response.json(data));
  let s=await refreshAlexCatalog(source,fetcher(feed),now);assert.equal(quoteCurrent(s,s.productos.find(p=>p.sku==='TELF011'),now),false);assert.equal(factBook(s)['TELF011.cash'],undefined);
  s=await refreshAlexCatalog(source,fetcher({...feed,fechaCatalogo:new Date(now).toISOString()}),now);assert.equal(quoteCurrent(s,s.productos.find(p=>p.sku==='TELF011'),now),true);assert.ok(factBook(s)['TELF011.cash']);
  const changed=csv.replace('TELF011,2,185.9,232.38','TELF011,2,1,2');s=await refreshAlexCatalog(source,fetcher({...feed,fechaCatalogo:new Date(now).toISOString()},changed),now);assert.equal(quoteCurrent(s,s.productos.find(p=>p.sku==='TELF011'),now),false);assert.equal(factBook(s)['TELF011.cash'],undefined);assert.ok(factBook(s)['POWE003.cash']);
- const failed=async url=>String(url).endsWith('.csv')?new Response('',{status:503}):Response.json({...feed,fechaCatalogo:new Date(now).toISOString()});s=await refreshAlexCatalog(source,failed,now);assert.equal(quoteCurrent(s,s.productos[0]),false);
+ const failed=withProvenance(async url=>String(url).endsWith('.csv')?new Response('',{status:503}):Response.json({...feed,fechaCatalogo:new Date(now).toISOString()}));s=await refreshAlexCatalog(source,failed,now);assert.equal(quoteCurrent(s,s.productos[0]),false);
 });
 test('AI failure and exhausted reservations retain useful verified commercial responses and context',async()=>{
  const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>{throw Error('provider unavailable');}}};let memory={};
@@ -46,7 +49,7 @@ test('Unambiguous catalog answers consume no AI reservation; advice retains the 
 });
 test('Other published models resolve on demand without rebuilding the catalog or merging variants',async()=>{
  const extra={sku:'TELF999',nombre:'Samsung A16 128GB',promo:100,pvp:125,stock:1,url:'https://conectatech-ec.github.io/productos/telf999-samsung-a16/'};
- const data={fechaCatalogo:new Date(now).toISOString(),productos:[...feed.productos,extra]};const csv='sku,stock,promo_contado,pvp_final\n'+data.productos.map(p=>[p.sku,p.stock,p.promo,p.pvp].join(',')).join('\n');const fetcher=async url=>String(url).endsWith('.csv')?new Response(csv):Response.json(data);
+ const data={fechaCatalogo:new Date(now).toISOString(),productos:[...feed.productos,extra]};const csv='sku,stock,promo_contado,pvp_final\n'+data.productos.map(p=>[p.sku,p.stock,p.promo,p.pvp].join(',')).join('\n');const fetcher=withProvenance(async url=>String(url).endsWith('.csv')?new Response(csv):Response.json(data));
  const s=await refreshAlexCatalog(source,fetcher,now,'Samsung A16 de 128 GB');assert.equal(s.productos.length,6);assert.deepEqual(candidates('Samsung A16 de 128 GB',{},s),['TELF999']);assert.deepEqual(candidates('¿Y ese con tarjeta?',{focus:['TELF999']},s),['TELF999']);assert.equal(factBook(s)['TELF999.card'],'💳 Samsung A16 128GB: $125.00 con tarjeta, más intereses cuando correspondan.');assert.equal(s.productos.find(p=>p.sku==='TELF999').foto,null);
 });
 
@@ -54,6 +57,29 @@ test('Availability remains unconfirmed without current matching sources, even wh
 
 test('An explicit new model wins over an earlier model when loading published catalog records',async()=>{
  const products=[...feed.productos,{sku:'TELF998',nombre:'Samsung A16 128GB',promo:100,pvp:125,stock:1,url:'https://conectatech-ec.github.io/productos/telf998-a16/'},{sku:'TELF997',nombre:'Samsung A56 256GB',promo:300,pvp:375,stock:1,url:'https://conectatech-ec.github.io/productos/telf997-a56/'}];
- const csv='sku,stock,promo_contado,pvp_final\n'+products.map(p=>[p.sku,p.stock,p.promo,p.pvp].join(',')).join('\n');const fetcher=async url=>String(url).endsWith('.csv')?new Response(csv):Response.json({fechaCatalogo:new Date().toISOString(),productos:products});
+ const csv='sku,stock,promo_contado,pvp_final\n'+products.map(p=>[p.sku,p.stock,p.promo,p.pvp].join(',')).join('\n');const fetcher=withProvenance(async url=>String(url).endsWith('.csv')?new Response(csv):Response.json({fechaCatalogo:new Date().toISOString(),productos:products}));
  const s=await refreshAlexCatalog(source,fetcher,Date.now(),{input:'Ahora quiero Samsung A56 de 256 GB',focus:['TELF998']});assert.ok(s.productos.some(p=>p.sku==='TELF997'));assert.deepEqual(candidates('Ahora quiero Samsung A56 de 256 GB',{focus:['TELF998']},s),['TELF997']);
+});
+
+test('Republishing the website cannot renew old inventory; provenance errors fail closed',async()=>{
+ const current={fechaCatalogo:new Date(now).toISOString(),productos:source.productos};
+ const csv='sku,stock,promo_contado,pvp_final\n'+current.productos.map(p=>[p.sku,p.stock,p.promo,p.pvp].join(',')).join('\n');
+ const old=new Date(now-10*86400000).toISOString(),seen=[];
+ const fetcher=async url=>{seen.push(url);return url===INVENTORY_HISTORY?Response.json(provenance(old)):String(url).endsWith('.md')?new Response(cutNote(new Date(Date.parse(old)-5*3600000).toISOString().slice(0,10))):String(url).endsWith('.csv')?new Response(csv):Response.json(current);};
+ const s=await refreshAlexCatalog(source,fetcher,now);
+ assert.equal(s.feed_published_at,current.fechaCatalogo);assert.equal(s.inventory_updated_at,old);assert.ok(Date.parse(s.fuente_fecha)<=Date.parse(old));assert.equal(s.source_error_code,'INVENTORY_STALE');
+ assert.ok(seen.some(u=>u.includes('/'+'a'.repeat(40)+'/datos-593/')));
+ for(const p of s.productos){assert.equal(p.price_verified,true);assert.equal(quoteCurrent(s,p,now),false);assert.equal(factBook(s)[p.sku+'.cash'],undefined);}
+ const fallback=commercialFallback('Precio del Samsung A17 128 GB',s,{});assert.match(fallback.text,/requiere confirmación/);assert.ok(!fallback.text.includes('$'));assert.equal(fallback.action,'answer');
+ for(const status of [403,429,503]){const failed=await refreshAlexCatalog(source,async url=>url===INVENTORY_HISTORY?new Response('',{status}):Response.json(current),now);assert.equal(failed.source_error_code,'INVENTORY_PROVENANCE_UNAVAILABLE');assert.equal(failed.fuente_fecha,null);assert.ok(failed.productos.every(p=>!quoteCurrent(failed,p,now)));}
+ for(const bad of [[{sha:'not-a-commit',commit:{committer:{date:old}}}],provenance(new Date(now+86400000).toISOString())]){const failed=await refreshAlexCatalog(source,async url=>url===INVENTORY_HISTORY?Response.json(bad):Response.json(current),now);assert.equal(failed.fuente_fecha,null);}
+});
+
+// A CSV category edit must not certify a new ERP extraction.
+test('A fresh CSV commit cannot revive an expired official 593 cut',async()=>{
+ const current={fechaCatalogo:new Date(now).toISOString(),productos:source.productos};
+ const csv='sku,stock,promo_contado,pvp_final\n'+current.productos.map(p=>[p.sku,p.stock,p.promo,p.pvp].join(',')).join('\n');
+ const fetcher=async url=>url===INVENTORY_HISTORY?Response.json(provenance(new Date(now).toISOString())):String(url).endsWith('.md')?new Response(cutNote('2026-01-01')):String(url).endsWith('.csv')?new Response(csv):Response.json(current);
+ const s=await refreshAlexCatalog(source,fetcher,now);assert.equal(s.inventory_cut_date,'2026-01-01');assert.equal(s.source_error_code,'INVENTORY_STALE');assert.ok(s.productos.every(p=>!quoteCurrent(s,p,now)));
+ for(const note of ['Missing cut',cutNote('2026-02-31'),cutNote('2099-12-31')]){const invalid=await refreshAlexCatalog(source,async url=>String(url).endsWith('.md')?new Response(note):fetcher(url),now);assert.equal(invalid.source_error_code,'INVENTORY_PROVENANCE_UNAVAILABLE');}
 });

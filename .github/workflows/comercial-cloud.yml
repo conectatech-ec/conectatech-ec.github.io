@@ -66,6 +66,14 @@ jobs:
         env:
           CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Comprobar vigencia independiente de inventario 593 y feed sin IA ni escrituras
+        run: node automatizacion/alex-catalog-e2e.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vigencia-comercial-593
+          path: automatizacion/generated/fase2/alex-live-catalog-check.json
+          retention-days: 7
       - uses: actions/upload-artifact@v4
         if: always()
         with:
