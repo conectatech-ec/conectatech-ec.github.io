@@ -1,0 +1,253 @@
+{
+  "checked_at": "2026-10-21T23:57:38Z",
+  "scope": "private_worker_receipts_not_generic_HTTP_logs",
+  "release": "b011cfddb3c4e3aa14eb812f7ce59aad48925ded",
+  "general_commercial_ingress": false,
+  "allowed_testers_only": true,
+  "verified_signed_inbound": [
+    {
+      "at": "2026-10-20T22:49:29.333Z",
+      "http_status": 200,
+      "signature_valid": true,
+      "reason": "processed",
+      "page_matches": true,
+      "source": "external_https",
+      "reception_enabled": true,
+      "outbound_enabled": true
+    },
+    {
+      "at": "2026-10-20T22:49:09.440Z",
+      "http_status": 200,
+      "signature_valid": true,
+      "reason": "processed",
+      "page_matches": true,
+      "source": "external_https",
+      "reception_enabled": true,
+      "outbound_enabled": true
+    },
+    {
+      "at": "2026-10-20T22:48:50.319Z",
+      "http_status": 200,
+      "signature_valid": true,
+      "reason": "processed",
+      "page_matches": true,
+      "source": "external_https",
+      "reception_enabled": true,
+      "outbound_enabled": true
+    },
+    {
+      "at": "2026-10-20T22:48:25.530Z",
+      "http_status": 200,
+      "signature_valid": true,
+      "reason": "processed",
+      "page_matches": true,
+      "source": "external_https",
+      "reception_enabled": true,
+      "outbound_enabled": true
+    },
+    {
+      "at": "2026-10-20T22:48:15.323Z",
+      "http_status": 200,
+      "signature_valid": true,
+      "reason": "processed",
+      "page_matches": true,
+      "source": "external_https",
+      "reception_enabled": true,
+      "outbound_enabled": true
+    }
+  ],
+  "responses": [
+    {
+      "incoming_at": "2026-10-20T22:49:28.648Z",
+      "status": "sent",
+      "generative": false,
+      "model": null,
+      "error_code": null,
+      "response_mode": "verified_catalog",
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "national"
+      ],
+      "commercial_facts": [
+        "🛵 Envíos nacionales con costo adicional; confirmamos pago y condiciones antes de comprar."
+      ],
+      "human_approved": false,
+      "quality": {
+        "characters": 124,
+        "question_count": 1,
+        "commercial_copy_clean": true,
+        "line_breaks": true,
+        "quick_reply_titles": [
+          "Precio de contado",
+          "Precio con tarjeta",
+          "Hablar con persona"
+        ],
+        "turn_count": 6
+      },
+      "media_count": 0,
+      "graph_http": [
+        200
+      ],
+      "graph_accepted_parts": 1,
+      "delivery_receipts": 0,
+      "error": null
+    },
+    {
+      "incoming_at": "2026-10-20T22:49:08.768Z",
+      "status": "sent",
+      "generative": false,
+      "model": null,
+      "error_code": null,
+      "response_mode": "verified_catalog",
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "delivery"
+      ],
+      "commercial_facts": [
+        "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar."
+      ],
+      "human_approved": false,
+      "quality": {
+        "characters": 118,
+        "question_count": 1,
+        "commercial_copy_clean": true,
+        "line_breaks": true,
+        "quick_reply_titles": [
+          "Precio de contado",
+          "Precio con tarjeta",
+          "Hablar con persona"
+        ],
+        "turn_count": 5
+      },
+      "media_count": 0,
+      "graph_http": [
+        200
+      ],
+      "graph_accepted_parts": 1,
+      "delivery_receipts": 0,
+      "error": null
+    },
+    {
+      "incoming_at": "2026-10-20T22:48:49.498Z",
+      "status": "sent",
+      "generative": false,
+      "model": null,
+      "error_code": null,
+      "response_mode": "verified_catalog",
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "TELF011.card_pending"
+      ],
+      "commercial_facts": [
+        "💳 El precio con tarjeta del Samsung Galaxy A17 128 GB requiere confirmación."
+      ],
+      "human_approved": false,
+      "quality": {
+        "characters": 134,
+        "question_count": 1,
+        "commercial_copy_clean": true,
+        "line_breaks": true,
+        "quick_reply_titles": [
+          "Características",
+          "Ver fotografía",
+          "Precio con tarjeta"
+        ],
+        "turn_count": 4
+      },
+      "media_count": 0,
+      "graph_http": [
+        200
+      ],
+      "graph_accepted_parts": 1,
+      "delivery_receipts": 0,
+      "error": null
+    },
+    {
+      "incoming_at": "2026-10-20T22:48:24.898Z",
+      "status": "sent",
+      "generative": true,
+      "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+      "error_code": null,
+      "response_mode": "generative",
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "TELF011.cash_pending"
+      ],
+      "commercial_facts": [
+        "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación."
+      ],
+      "human_approved": false,
+      "quality": {
+        "characters": 142,
+        "question_count": 1,
+        "commercial_copy_clean": true,
+        "line_breaks": true,
+        "quick_reply_titles": [
+          "Características",
+          "Ver fotografía",
+          "Precio con tarjeta"
+        ],
+        "turn_count": 3
+      },
+      "media_count": 1,
+      "graph_http": [
+        200,
+        200
+      ],
+      "graph_accepted_parts": 2,
+      "delivery_receipts": 0,
+      "error": null
+    },
+    {
+      "incoming_at": "2026-10-20T22:48:14.501Z",
+      "status": "sent",
+      "generative": true,
+      "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+      "error_code": null,
+      "response_mode": "generative",
+      "focus": [
+        "TELF011",
+        "TELF012"
+      ],
+      "facts": [
+        "TELF011.name",
+        "TELF012.name"
+      ],
+      "commercial_facts": [
+        "Samsung Galaxy A17 128 GB",
+        "Samsung Galaxy A17 256 GB"
+      ],
+      "human_approved": false,
+      "quality": {
+        "characters": 89,
+        "question_count": 1,
+        "commercial_copy_clean": true,
+        "line_breaks": true,
+        "quick_reply_titles": [
+          "A17 de 128 GB",
+          "A17 de 256 GB",
+          "Hablar con persona"
+        ],
+        "turn_count": 2
+      },
+      "media_count": 0,
+      "graph_http": [
+        200
+      ],
+      "graph_accepted_parts": 1,
+      "delivery_receipts": 0,
+      "error": null
+    }
+  ],
+  "graph_accepted_is_not_read_receipt": true,
+  "visual_confirmation_for_these_messages": false,
+  "source_job": 119555676038
+}

@@ -1,0 +1,256 @@
+{
+  "mode": "samsung_private_https_not_Messenger",
+  "at": "2026-10-22T00:04:15.494Z",
+  "passed": true,
+  "messages_sent": 0,
+  "paid_services_activated": false,
+  "tests": [
+    {
+      "input": "Hola, busco un celular Samsung",
+      "catalog_only": false,
+      "text": "Samsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB\n¿Cuál de estas versiones te interesa?",
+      "generative": true,
+      "response_mode": "generative",
+      "error_code": null,
+      "focus": [
+        "TELF011",
+        "TELF012"
+      ],
+      "facts": [
+        "TELF011.name",
+        "TELF012.name"
+      ],
+      "image": null,
+      "buttons": [
+        "A17 de 128 GB",
+        "A17 de 256 GB",
+        "Hablar con persona"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    },
+    {
+      "input": "Me interesa el Samsung A17 de 128 GB para trabajar. ¿Qué me puedes contar?",
+      "catalog_only": false,
+      "text": "Samsung Galaxy A17 128 GB: pantalla 6,7 pulgadas Super AMOLED.\n¿Cuál es tu uso principal con el celular?",
+      "generative": true,
+      "response_mode": "generative",
+      "error_code": null,
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "TELF011.screen"
+      ],
+      "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+      "buttons": [
+        "Ver fotografía",
+        "Precio de contado",
+        "Precio con tarjeta"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    },
+    {
+      "input": "¿Qué precio tiene ese Samsung A17 de 128 GB al contado?",
+      "catalog_only": false,
+      "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
+      "generative": false,
+      "response_mode": "verified_catalog",
+      "error_code": null,
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "TELF011.cash_pending"
+      ],
+      "image": null,
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Precio con tarjeta"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    },
+    {
+      "input": "¿Y ese con tarjeta cuánto cuesta?",
+      "catalog_only": false,
+      "text": "💳 El precio con tarjeta del Samsung Galaxy A17 128 GB requiere confirmación.",
+      "generative": false,
+      "response_mode": "verified_catalog",
+      "error_code": null,
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "TELF011.card_pending"
+      ],
+      "image": null,
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Precio con tarjeta"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    },
+    {
+      "input": "¿Qué batería tiene ese Samsung A17 de 128 GB?",
+      "catalog_only": false,
+      "text": "Samsung Galaxy A17 128 GB: batería 5000 mAh.",
+      "generative": false,
+      "response_mode": "verified_catalog",
+      "error_code": null,
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "TELF011.battery"
+      ],
+      "image": null,
+      "buttons": [
+        "Ver fotografía",
+        "Precio de contado",
+        "Precio con tarjeta"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    },
+    {
+      "input": "¿Tienen disponibilidad de ese Samsung A17 de 128 GB?",
+      "catalog_only": false,
+      "text": "No tengo precio ni disponibilidad vigentes del Samsung Galaxy A17 128 GB.",
+      "generative": false,
+      "response_mode": "verified_catalog",
+      "error_code": null,
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "TELF011.unavailable"
+      ],
+      "image": null,
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Hablar con persona"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    },
+    {
+      "input": "¿Hacen contraentrega en Quito?",
+      "catalog_only": false,
+      "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.\n¿En qué sector necesitas la entrega?",
+      "generative": false,
+      "response_mode": "verified_catalog",
+      "error_code": null,
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "delivery"
+      ],
+      "image": null,
+      "buttons": [
+        "Precio de contado",
+        "Precio con tarjeta",
+        "Hablar con persona"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    },
+    {
+      "input": "¿Y envíos nacionales?",
+      "catalog_only": false,
+      "text": "🛵 Envíos nacionales con costo adicional; confirmamos pago y condiciones antes de comprar.\n¿A qué ciudad necesitas el envío?",
+      "generative": false,
+      "response_mode": "verified_catalog",
+      "error_code": null,
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "national"
+      ],
+      "image": null,
+      "buttons": [
+        "Precio de contado",
+        "Precio con tarjeta",
+        "Hablar con persona"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    },
+    {
+      "input": "¿Qué precio tiene el Samsung A17 de 128 GB?",
+      "catalog_only": true,
+      "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
+      "generative": false,
+      "response_mode": "verified_catalog",
+      "error_code": null,
+      "focus": [
+        "TELF011"
+      ],
+      "facts": [
+        "TELF011.cash_pending"
+      ],
+      "image": null,
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Precio con tarjeta"
+      ],
+      "source_fresh": false,
+      "source_error_code": "INVENTORY_STALE"
+    }
+  ],
+  "model_calls": 2,
+  "real_Messenger_verified": false,
+  "health": {
+    "ok": true,
+    "pilot": true,
+    "seller_transport_implementation": "official_graph_v1",
+    "cloud_bindings": false,
+    "ai_binding": true,
+    "alex_generative": true,
+    "catalog_first": true,
+    "release": "35b19618dc361044b82e10aad4ca7407cb84a371",
+    "messenger_test_storage": true,
+    "messenger_configured": true,
+    "messenger_outbound": true,
+    "meta_ingress_enabled": false
+  },
+  "recovery": {
+    "recovered_model_handoffs": 0,
+    "explicit_human_requests_preserved": true,
+    "messages_replayed": 0,
+    "live_customers_enabled": false
+  },
+  "quota_before": {
+    "reserved_neurons": 0,
+    "calls": 0,
+    "remaining_calls": 100,
+    "reset_at": "2026-10-23T00:00:00.000Z",
+    "reserved_limit": 8000,
+    "estimation_only_not_provider_meter": true,
+    "paid_fallback": false
+  },
+  "source_published_at": "2026-10-21T23:46:07.876Z",
+  "inventory_cut_date": "2026-10-10",
+  "inventory_updated_at": "2026-10-11T04:42:45.000Z",
+  "inventory_commit": "ca7eacaaae823cbf4d6868bfd24d2dea3e8c152d",
+  "source_verified_at": "2026-10-10T05:00:00.000Z",
+  "source_error_code": "INVENTORY_STALE",
+  "worker_inventory_provenance_verified": true,
+  "quota_after": {
+    "reserved_neurons": 160,
+    "calls": 2,
+    "remaining_calls": 98,
+    "reset_at": "2026-10-23T00:00:00.000Z",
+    "reserved_limit": 8000,
+    "estimation_only_not_provider_meter": true,
+    "paid_fallback": false
+  }
+}

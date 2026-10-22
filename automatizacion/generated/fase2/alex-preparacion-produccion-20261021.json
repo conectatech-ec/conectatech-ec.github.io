@@ -1,0 +1,173 @@
+{
+  "checked_at": "2026-10-22T00:04:15.494Z",
+  "financial_authorization_usd": 0,
+  "production_blockers": [
+    {
+      "code": "META_EXTERNAL_PERMISSION_UNPROVEN",
+      "last_owner_confirmation_date": "2026-10-16",
+      "pages_messaging": "standard",
+      "app_mode": "development",
+      "advanced_access_approved": false,
+      "business_verification_last_reported": "in_review",
+      "note": "No acceso al panel administrativo; no inferir una aprobación posterior del token."
+    },
+    {
+      "code": "VALIDATED_593_CUT_STALE",
+      "official_cut_date": "2026-10-10",
+      "csv_last_change_at": "2026-10-11T04:42:45.000Z",
+      "feed_republished_at": "2026-10-21T23:46:07.876Z",
+      "prices_and_availability_blocked": true,
+      "upstream_reason": "El exportador pone fechaCatalogo=new Date(); republicar fichas no produce un nuevo corte ERP.",
+      "direct_erp_connection_present": false
+    },
+    {
+      "code": "REVIEWER_ACCOUNT_ACCESS_PENDING",
+      "procedure": "automatizacion/META-SOLICITUD-ACCESO.md",
+      "owner_admin_token_must_not_be_shared": true,
+      "preenroll_authorized_account_before_asynchronous_review": true,
+      "reviewer_automatically_allowed": false
+    }
+  ],
+  "incoming_limit": {
+    "value": 100,
+    "window": "rolling_24_hours",
+    "origin": "internal_pilot_code",
+    "location": "automatizacion/messenger-seller.mjs:PILOT_INCOMING_LIMIT",
+    "runtime_setting_available": false,
+    "changed": false,
+    "resets": "Cada mensaje deja de contar a las 24 horas; no reinicia a medianoche.",
+    "provider_limit": false,
+    "concurrent_admission_protection_added": true
+  },
+  "ai_limit": {
+    "provider": "Cloudflare Workers AI",
+    "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+    "internal_reserved_neurons_daily": 8000,
+    "per_attempt": 80,
+    "max_daily_attempts": 100,
+    "reset": "00:00 UTC",
+    "actual_provider_meter_available": false,
+    "changed": false,
+    "no_paid_fallback": true,
+    "last_checked_quota": {
+      "reserved_neurons": 160,
+      "calls": 2,
+      "remaining_calls": 98,
+      "reset_at": "2026-10-23T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    }
+  },
+  "source_sync": {
+    "mode": "automatic_read_only_on_each_answer",
+    "official_cut_document": "datos-593/REFERENCIA-OFICIAL.md at inventory commit",
+    "immutable_csv": true,
+    "matched_fields": [
+      "sku",
+      "promo_contado",
+      "pvp_final",
+      "stock"
+    ],
+    "max_age_hours": 24,
+    "age_uses_oldest_of": [
+      "published_feed",
+      "inventory_commit",
+      "official_ERP_cut_start_of_day_Quito"
+    ],
+    "new_cut_automatically_accepted_when_recent_and_matched": true,
+    "manual_per_SKU_confirmation_required": false,
+    "rewrites_dates": false,
+    "production_exporter_modified": false,
+    "direct_erp_sync_activated": false,
+    "failure_policy": "Keep verified technical facts, exact photo, context, quick replies and logistics; no stale financial claims."
+  },
+  "source_checks": {
+    "at": "2026-10-22T00:03:41.884Z",
+    "source_published_at": "2026-10-21T23:46:07.876Z",
+    "source_verified_at": "2026-10-10T05:00:00.000Z",
+    "inventory_cut_date": "2026-10-10",
+    "inventory_updated_at": "2026-10-11T04:42:45.000Z",
+    "inventory_commit": "ca7eacaaae823cbf4d6868bfd24d2dea3e8c152d",
+    "source_error_code": "INVENTORY_STALE",
+    "source_prices_cross_checked": true,
+    "ai_calls": 0,
+    "messages_sent": 0,
+    "paid_services_activated": false,
+    "products": [
+      {
+        "sku": "MICR27",
+        "quote_current": false,
+        "source_matches_593": true,
+        "verified_photos": 1
+      },
+      {
+        "sku": "POWE003",
+        "quote_current": false,
+        "source_matches_593": true,
+        "verified_photos": 1
+      },
+      {
+        "sku": "ADAP005",
+        "quote_current": false,
+        "source_matches_593": true,
+        "verified_photos": 1
+      },
+      {
+        "sku": "TELF011",
+        "quote_current": false,
+        "source_matches_593": true,
+        "verified_photos": 1
+      },
+      {
+        "sku": "TELF012",
+        "quote_current": false,
+        "source_matches_593": true,
+        "verified_photos": 0
+      }
+    ],
+    "passed": true
+  },
+  "actual_messenger_after_previous_deployment": {
+    "evidence": "alex-messenger-postdespliegue-20261021.json",
+    "verified_signed_inbound": 5,
+    "http": 200,
+    "real_generative_responses": 2,
+    "catalog_responses": 3,
+    "graph_accepted_parts": 6,
+    "images": 1,
+    "read_or_visual_delivery_proven": false,
+    "latest_checked_release_has_private_HTTPS_verification_only": true
+  },
+  "controls": {
+    "general_commercial_ingress": false,
+    "authorized_testers_preserved": true,
+    "meta_signature_validation": true,
+    "messenger_24h_window": true,
+    "main_modified": false,
+    "catalog_modified": false,
+    "billing_activated": false
+  },
+  "deployment": {
+    "status": "success",
+    "run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/39697322024",
+    "commit": "35b19618dc361044b82e10aad4ca7407cb84a371",
+    "checks_passed": 121,
+    "private_HTTPS_queries": 9,
+    "real_AI_responses": 2,
+    "generative_disabled_for_factual_queries": true,
+    "worker_inventory_provenance_verified": true,
+    "public_prices_blocked": true
+  },
+  "evidence": [
+    "alex-preproduccion-cloud-verificado-20261021.json",
+    "alex-messenger-postdespliegue-20261021.json"
+  ],
+  "reviewer_next_account_step": "Desde App Review pages_messaging, completar el mecanismo oficial de acceso de prueba que solicite el panel y autorizar una cuenta que se pueda vincular antes de enviar. No es posible hacerlo con GitHub ni el token individual del Worker.",
+  "references": [
+    "https://github.com/conectatech-ec/conectatech-ec.github.io/blob/main/.github/workflows/sincronizar-593.yml",
+    "https://github.com/conectatech-ec/conectatech-ec.github.io/blob/main/scripts/exportar-canales.cjs",
+    "https://github.com/conectatech-ec/conectatech-ec.github.io/blob/ca7eacaaae823cbf4d6868bfd24d2dea3e8c152d/datos-593/REFERENCIA-OFICIAL.md",
+    "https://www.postman.com/meta/messenger-platform-api/documentation/iyp204x/messenger-platform-api"
+  ]
+}
