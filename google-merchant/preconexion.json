@@ -1,37 +1,57 @@
 {
   "merchant_center": "5874003439",
-  "verificado_en_utc": "2026-10-21T13:14:47.587237+00:00",
-  "fuente_commit": "817381f418a9fadd8615b35d2ec7d78ea0c2162c",
+  "verificado_en_utc": "2026-10-22T13:42:46.358303+00:00",
+  "fuente_commit": "f29b7a15903feb109334b8eadc95a8bb61356ec0",
   "fuente_rama": "main (lectura solamente)",
   "inventario_sha256": "86d1043d672fa52f434e3e90a36882935ad79eef88f59e55f6f4836bc8b7a691",
   "fecha_corte": "2026-10-16",
-  "antiguedad_corte_dias": 5,
+  "antiguedad_corte_dias": 6,
   "inventario_origen": "Reporte-Inventario al 16-10-2026.xlsx",
   "origen_privado_sha256": "66505c7a23be1a089689833940a8c3dc889a4b5d8e889e4998aa87a3ec74a983",
-  "articulos_feed": 669,
-  "articulos_con_http_publico_verificado": 669,
+  "articulos_feed": 663,
+  "articulos_con_http_publico_verificado": 663,
   "coherencia_catalogo_maestro": {
     "sku_web": 1170,
     "sku_con_revision_corte16": 674,
     "discrepancias": [
       {
-        "sku": "TVBO001",
+        "sku": "CASE003",
         "motivo": "disponibilidad_web_difiere_corte16"
       },
       {
-        "sku": "EXTE003",
+        "sku": "REL071",
         "motivo": "disponibilidad_web_difiere_corte16"
       },
       {
-        "sku": "POWE014",
+        "sku": "ADAP014",
         "motivo": "disponibilidad_web_difiere_corte16"
       },
       {
-        "sku": "SOPO061",
+        "sku": "BILL002",
         "motivo": "disponibilidad_web_difiere_corte16"
       },
       {
-        "sku": "CABL155",
+        "sku": "CABL092",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "CORT03",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "CUBO021",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "JUGU057",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "MICR14",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "CABL170",
         "motivo": "disponibilidad_web_difiere_corte16"
       }
     ],
@@ -39,13 +59,13 @@
   },
   "precio_final_documentado": "Corte corregido16: Q V. TOTAL = contado; X PVP + Y importe de IVA = PVP final. IVA incluido. Sin recalcular porcentajes ni modificar precios web.",
   "fechas_inventario_en_articulos": {
-    "16/10/2026": 669
+    "16/10/2026": 663
   },
   "stock_tiempo_real_acreditado": 0,
   "observaciones_fichas": {
-    "fichas_con_whatsapp": 669,
-    "fichas_con_contraentrega_quito": 669,
-    "fichas_con_precio_sujeto_confirmacion": 669,
+    "fichas_con_whatsapp": 663,
+    "fichas_con_contraentrega_quito": 663,
+    "fichas_con_precio_sujeto_confirmacion": 663,
     "fichas_con_formulario": 0
   },
   "enlaces_politicas_en_fichas": [],

@@ -6,7 +6,7 @@
   "costo_autorizado": 0,
   "publicacion_habilitada": false,
   "estado": "SOLO_VALIDACION_COMERCIAL_PENDIENTE",
-  "source_commit": "817381f418a9fadd8615b35d2ec7d78ea0c2162c",
+  "source_commit": "f29b7a15903feb109334b8eadc95a8bb61356ec0",
   "validacion": "local_y_http_publico",
   "inventario_corregido": {
     "fecha_corte": "2026-10-16",
@@ -46,17 +46,18 @@
     "sha256_productos": "502ca223b880ad2d79aaea032de78262f28a0c222ae7a2e432402c5e168d5015"
   },
   "productos_origen": 1170,
-  "incluidos": 669,
-  "excluidos": 501,
+  "incluidos": 663,
+  "excluidos": 507,
   "motivos": {
     "identidad_pendiente": 4,
     "producto_no_aprobado": 206,
     "publicacion_no_verificada": 249,
     "sin_contrato": 1,
     "sin_revision_limitada_corte16": 36,
-    "stock_ficha_no_coincide": 5
+    "stock_ficha_no_coincide": 10,
+    "stock_no_confiable": 1
   },
-  "feed_sha256": "b2833980c9213cac5e4682e21b1315ea86609e01032fab4501012d9a9a793c99",
+  "feed_sha256": "615aaa9636a107f0151d782ed4c4638c30df6b40f9a73a70eb08e00ea0d22986",
   "advertencias": [
     "Stock registrado: no implica inventario en tiempo real.",
     "Faltan verificar compra online, precio final, envíos y devoluciones; XML válido no garantiza aprobación de Google.",
