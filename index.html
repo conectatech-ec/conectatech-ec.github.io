@@ -90,6 +90,9 @@ body.ct-category-view .ct-hero,body.ct-category-view .ct-gift-campaign,body.ct-c
 @media(max-width:520px){.ct-category-controls label{width:100%}.ct-category-controls select{flex:1;width:0}}
 </style>
 <link rel="stylesheet" href="/assets/conectatech-2.css?v=b75dde112ed3">
+<link rel="stylesheet" href="/assets/titulos-pro.css">
+<script src="/assets/titulos-pro-piloto.js"></script>
+<script src="/assets/titulos-pro.js"></script>
 </head>
 <body>
 <header><div class="wrap">
@@ -190,7 +193,7 @@ const tokens=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").to
 const exactSkuSearch=new Set(products.map(p=>norm(p.sku)));
 const aliases={cel:["celular","telefono","smartphone"],telf:["telefono","celular"],audif:["audifono","auricular"],reloj:["smartwatch"],tv:["televisor"],mem:["memoria","flash"]};
 function searchable(p){
- const raw=[p.name,p.sku,p.category,p.commercialCategory,p.searchTerms||'',Object.values(p.specs||{}).join(' ')].join(" ");
+ const raw=[p.name,p.sku,p.category,p.commercialCategory,p.searchTerms||'',window.CONECTATECH_TITULOS_PRO?.searchText(p)||'',Object.values(p.specs||{}).join(' ')].join(" ");
  return {raw:raw.toLowerCase(),compact:norm(raw),parts:tokens(raw)};
 }
 function matchesSearch(p,q){
@@ -236,10 +239,10 @@ function render(){
  document.getElementById("empty").style.display=list.length?"none":"block";
  document.getElementById("grid").innerHTML=shown.map(p=>{
    const msg=encodeURIComponent("Hola ConectaTech, me interesa "+p.name+" ("+p.sku+"). ¿Está disponible a precio promo contado "+money(p.promo)+"?");
-   return `<article class="card ct-compact-card" data-sku="${esc(p.sku)}" data-actualizado="${esc(updatedAt(p))}">
+   return `<article class="card ct-compact-card${window.CONECTATECH_TITULOS_PRO?.entry(p)?' ct-pro-card':''}" data-sku="${esc(p.sku)}" data-actualizado="${esc(updatedAt(p))}">
      <a class="product-img product-link" href="${esc(productHref(p))}" aria-label="Ver ${esc(p.name)}">${productImage(p)}</a>
      <div class="cat">${esc(p.commercialCategory)} · ${esc(p.sku)}</div>
-     <a class="name product-link" href="${esc(productHref(p))}">${esc(p.name)}</a>
+     ${window.CONECTATECH_TITULOS_PRO?.nameHTML(p,productHref(p))||`<a class="name product-link" href="${esc(productHref(p))}">${esc(p.name)}</a>`}
      ${p.stock>0?'':'<div class="ct-stock-unavailable">Stock: 0 · No disponible</div>'}
      <div class="ct-compact-prices"><div><span class="promo-label">PROMO CONTADO</span><div class="promo">${money(p.promo)}</div></div><div class="pvp">PVP ${money(p.pvp)}</div></div>
      <div class="actions"><a class="detail" href="${esc(productHref(p))}">Ver detalles</a><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${msg}">Consultar ↗</a></div>

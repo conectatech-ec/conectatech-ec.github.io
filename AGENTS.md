@@ -219,3 +219,7 @@ Los SKU existentes con stock0 de593 siguen visibles en catálogo, categorías, b
 ## Orden vigente del propietario — etiqueta AAA, 21oct2026
 
 En todos los productos ya clasificados AAA, sustituir la etiqueta visible «AAA / producto genérico» por «Producto compatible (AAA)», respetando exactamente mayúsculas y paréntesis. Aplicar también a futuras fichas mediante los generadores; conservar la clasificación interna por SKU y las excepciones confirmadas. Este cambio global de etiqueta no renueva fechas ni cuenta como SKU nuevos. Mantener precios, stock, fotografías, títulos, URLs, aviso de stock cero y automatización cloud24/7.
+
+## Orden del propietario — piloto de títulos PRO,21oct2026
+
+Preparar exclusivamente20SKU (4celulares,4carga,4audio,4computación,4accesorios) en rama independiente, comparativa real antes/después y móvil2columnas. Título máximo2líneas, subtítulo gris con marca/modelo/datos verificados. Conservar nombre593,SKU,marca,modelo,precios,stock,URLs,fotos,SEO,schema,feeds y búsqueda. No modificar main ni producción ni escalar aún. Costo adicional0. Motor optativo y reversible con selección explícita; revisión del propietario antes de cualquier integración.
