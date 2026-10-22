@@ -13,3 +13,10 @@ fallo de carga o piloto desactivado devuelve la tarjeta anterior sin tocar produ
 Vista temporal anterior: ?titulos=original. La lista admite sólo20SKU explícitos en este
 piloto. El motor soporta incorporación por mapas, pero el guard impide ampliación masiva
 sin cambiar expresamente el alcance autorizado. No tocar main,feeds,SEO,fichas ni precios.
+7. node scripts/preparar-galeria-final-titulos.cjs (comparativas finales móvil/escritorio).
+Criterio editorial aprobado; aprobación de despliegue todavía NO concedida.
+Identidad principal en titulo; identidadEnSubtitulo conserva modelos complementarios
+con ubicación explícita aprobada. condicionTarjeta=De terceros identifica compatibles
+sin AAA protagonista; clasificación completa ya visible en ficha antes de compra.
+Próximos lotes: crear mapa explícito de hasta20SKU tras autorizar alcance; reutilizar
+estas guardas. El piloto actual permanece limitado a los mismos20SKU.

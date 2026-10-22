@@ -7,16 +7,7 @@ def norm(s):return re.sub(r'[^a-z0-9]','',unicodedata.normalize('NFD',s.lower())
 def tokens(s):
  s=unicodedata.normalize('NFD',s.lower()).encode('ascii','ignore').decode();s=re.sub(r'\b(telefonos?|celulares?)\b','celular',s)
  return [t for t in re.findall('[a-z0-9]+',s) if t not in ['de','del','la','el','a','con','para','y','un','una','en']]
-x=json.loads((ROOT/'importacion/pilotos/titulos-pro-20.json').read_text());entries=x['productos'];products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',(ROOT/'index.html').read_text())[1]);by={p['sku']:p for p in products};sample=dict((s,by[s]) for s in entries)
-for category in sorted({p['category'] for p in products}):
- p=next(p for p in products if p['category']==category);sample[p['sku']]=p
-for s,e in entries.items():
- reference=set(tokens(e['tituloAnterior']+' '+e['titulo']+' '+e.get('modelo','')))
- peers=[p for p in products if p['category']==by[s]['category'] and p['sku']!=s];peers.sort(key=lambda p:(-len(reference&set(tokens(p['name']))),p['sku']))
- for p in peers[:8]:
-  if len(sample)<200:sample[p['sku']]=p
-for p in products:
- if len(sample)<200:sample[p['sku']]=p
+x=json.loads((ROOT/'importacion/pilotos/titulos-pro-20.json').read_text());entries=x['productos'];products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',(ROOT/'index.html').read_text())[1]);by={p['sku']:p for p in products};prior=json.loads((ROOT/'revision/titulos-pro-20/coincidencias.json').read_text());sample={s:by[s] for s in prior['muestra']['sku']}
 assert len(sample)==200
 stages={'actual':'tituloAnterior','primera':'tituloPrimeraPropuesta','nueva':'titulo'};duplicates={}
 for stage,field in stages.items():
@@ -29,6 +20,7 @@ rows=[]
 resolved=[]
 for s,e in entries.items():
  assert all(norm(t) in norm(e['titulo']) for t in e['identidadObligatoria']),s
+ assert all(norm(t) in norm(e['subtitulo']) for t in e.get('identidadEnSubtitulo',[])),s
  # No repetir un segmento completo del subtítulo que ya está en el título.
  repeated=[v.strip() for v in e['subtitulo'].split('·') if len(norm(v))>=4 and norm(v) in norm(e['titulo'])];assert not repeated,(s,repeated)
  neighbors={stage:[{'sku':p['sku'],'titulo':p['name']} for p in sample.values() if p['sku']!=s and p['category']==by[s]['category'] and matches(e[field],p)] for stage,field in stages.items()}

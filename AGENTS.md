@@ -227,3 +227,7 @@ Preparar exclusivamente20SKU (4celulares,4carga,4audio,4computación,4accesorios
 ## Corrección definitiva del piloto — título identificable
 
 La primera propuesta de20SKU NO está aprobada. Reprocesar sólo esos20: tipo+marca/modelo o atributo comprobado; conservar títulos actuales si ya son claros; subtítulo complementario sin repetir; si faltan datos fiables conservar identidad actual y marcar enriquecimiento. Comparar título actual/primera propuesta/nueva/subtítulo, revisar indistinguibilidad en muestra del catálogo y mostrar galería real. No modificar main,publicar ni escalar. Precio,stock,SKU,URLs,593,fotos intactos. Costo0.
+
+## Criterio editorial PRO aprobado — 22oct2026
+
+Sólo20SKU del piloto: tipo+marca/modelo o atributo diferenciador, subtítulo útil verificado. Aplicar ejemplos aprobados MONI004,POWE001,PARL001,AUDI098; MOUS014 con receptor inalámbrico por respuesta guardada del propietario. AAA/genérico fuera del primer plano de tarjetas; compatibles identificados De terceros, clasificación real en ficha antes de compra. Mantener2columnas móvil,Promo contado,PVP,fotos y fuentes593. Aprobación del criterio no autoriza main,merge,publicación ni escalado masivo. Costo0.

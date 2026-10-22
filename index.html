@@ -241,7 +241,7 @@ function render(){
    const msg=encodeURIComponent("Hola ConectaTech, me interesa "+p.name+" ("+p.sku+"). ¿Está disponible a precio promo contado "+money(p.promo)+"?");
    return `<article class="card ct-compact-card${window.CONECTATECH_TITULOS_PRO?.entry(p)?' ct-pro-card':''}" data-sku="${esc(p.sku)}" data-actualizado="${esc(updatedAt(p))}">
      <a class="product-img product-link" href="${esc(productHref(p))}" aria-label="Ver ${esc(p.name)}">${productImage(p)}</a>
-     <div class="cat">${esc(p.commercialCategory)} · ${esc(p.sku)}</div>
+     <div class="cat">${esc(p.commercialCategory)} · ${esc(p.sku)}${window.CONECTATECH_TITULOS_PRO?.conditionText(p)?' · '+esc(window.CONECTATECH_TITULOS_PRO.conditionText(p)):''}</div>
      ${window.CONECTATECH_TITULOS_PRO?.nameHTML(p,productHref(p))||`<a class="name product-link" href="${esc(productHref(p))}">${esc(p.name)}</a>`}
      ${p.stock>0?'':'<div class="ct-stock-unavailable">Stock: 0 · No disponible</div>'}
      <div class="ct-compact-prices"><div><span class="promo-label">PROMO CONTADO</span><div class="promo">${money(p.promo)}</div></div><div class="pvp">PVP ${money(p.pvp)}</div></div>

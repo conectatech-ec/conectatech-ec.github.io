@@ -11,6 +11,6 @@
     if(typeof location!=='undefined'&&new URLSearchParams(location.search).get('titulos')==='original')return null;
     const e=c.productos?.[p.sku];return e&&typeof e.titulo==='string'&&e.titulo.trim()&&typeof e.subtitulo==='string'&&e.subtitulo.trim()?e:null;
   }
-  return {entry,searchText(p){const e=entry(p);return e?[e.nombre593,e.titulo,e.subtitulo,e.marca,e.modelo].join(' '):'';},
+  return {entry,conditionText(p){return entry(p)?.condicionTarjeta||'';},searchText(p){const e=entry(p);return e?[e.nombre593,e.titulo,e.subtitulo,e.marca,e.modelo].join(' '):'';},
     nameHTML(p,href){const e=entry(p);return e?`<a class="name product-link ct-pro-title" href="${esc(href)}" title="${esc(p.name)}">${text(e.titulo)}</a><div class="ct-pro-subtitle">${text(e.subtitulo)}</div>`:null;}};
 });
