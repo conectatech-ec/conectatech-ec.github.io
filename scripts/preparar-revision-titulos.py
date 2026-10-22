@@ -20,8 +20,8 @@ for mode,source in [('antes',base),('despues',after)]:
  (out/('catalogo-'+mode+'.html')).write_text(source)
 rows=[]
 for sku,e in selected.items():
- p=next(p for p in products if p['sku']==sku);rows.append({'SKU':sku,'Grupo':e['grupo'],'Nombre original593':e['nombre593'],'Título anterior':e['tituloAnterior'],'Título propuesto':e['titulo'],'Subtítulo':e['subtitulo'],'Marca preservada':e['marca'],'Modelo preservado':e['modelo'],'Promo contado':f"{p['promo']:.2f}",'PVP':f"{p['pvp']:.2f}",'Stock':p['stock'],'URL':e['url']})
+ p=next(p for p in products if p['sku']==sku);rows.append({'SKU':sku,'Grupo':e['grupo'],'Nombre original593':e['nombre593'],'Título actual':e['tituloAnterior'],'Primera propuesta':e['tituloPrimeraPropuesta'],'Nueva propuesta identificable':e['titulo'],'Subtítulo final':e['subtitulo'],'Estado de enriquecimiento':e['estadoEnriquecimiento'],'Marca preservada':e['marca'],'Modelo preservado':e['modelo'],'Promo contado':f"{p['promo']:.2f}",'PVP':f"{p['pvp']:.2f}",'Stock':p['stock'],'URL':e['url']})
 with (out/'titulos-antes-despues.csv').open('w',newline='',encoding='utf-8-sig') as f:
- w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+ w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator="\n");w.writeheader();w.writerows(rows)
 (out/'datos-comparacion.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
 print('Revisión real preparada: 20 productos, mismas fotos y datos; antes/después.')
