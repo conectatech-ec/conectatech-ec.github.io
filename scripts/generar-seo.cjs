@@ -4,6 +4,8 @@ const frameFile='importacion/encuadres-producto.json';
 if(frameFs.existsSync(frameFile)){const frames=JSON.parse(frameFs.readFileSync(frameFile)).productos;let page=frameFs.readFileSync('index.html','utf8');const line='const productFrames='+JSON.stringify(frames)+';\n';page=/const productFrames=.*?;\n/.test(page)?page.replace(/const productFrames=.*?;\n/,()=>line):page.replace('const products=',line+'const products=');frameFs.writeFileSync('index.html',page);}
 
 const fs=require('fs'),path=require('path');
+const estadoStock=fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
+const fechaPublicada=estadoStock&&/^\d{4}-\d{2}-\d{2}$/.test(estadoStock.fecha_corte)?estadoStock.fecha_corte.split('-').reverse().join('/'):null;
 const fichaComercial=require('./ficha-comercial.cjs');
 const ventaCruzada=require('./venta-cruzada.cjs');
 const html=fs.readFileSync('index.html','utf8');
@@ -23,7 +25,7 @@ for(const p of products){
  const id=stable[p.sku]||slug(p),url=origin+'/productos/'+id+'/';
  links[p.sku]=id;urls.push(url);
  if(selected&&!selected.has(p.sku))continue;
- const custom=overrides[p.sku]||{};
+ const custom={...(overrides[p.sku]||{}),...(fechaPublicada?{fechaInventario:fechaPublicada}:{})};
  const displayName=custom.nombre||p.name;
  const productImage=custom.imagen||p.imageUrl||'';
  const title=custom.tituloSeo||displayName+' en Quito | ConectaTech';
@@ -36,7 +38,8 @@ for(const p of products){
  const publicContent=!custom.comercialVerificado&&custom.tipo==='generico'
   ? content.replace('<p>⚡ PROMO CONTADO</p>','<p class="muted"><strong>Condición: Producto compatible (AAA)</strong></p><p>⚡ PROMO CONTADO</p>')
   : content;
- const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),ventaCruzada.inyectar(publicContent,p,products,stable).replace(/^[ \t]+$/gm,''));
+ const contentFecha=fechaPublicada&&!custom.comercialVerificado?publicContent.replace('<h2>Consulta y compra</h2>','<p class="muted">'+(p.stock>0?'Inventario actualizado al ':'Stock: 0 · No disponible · Corte: ')+fechaPublicada+' · confirma disponibilidad</p><h2>Consulta y compra</h2>'):publicContent;
+ const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),ventaCruzada.inyectar(contentFecha,p,products,stable).replace(/^[ \t]+$/gm,''));
 }
 const xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(u=>'  <url><loc>'+u+'</loc></url>').join('\n')+'\n</urlset>\n';
 fs.writeFileSync('sitemap.xml',xml);
