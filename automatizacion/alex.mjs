@@ -226,7 +226,7 @@ export function commercialFallback(input,source,memory={},error_code='AI_UNAVAIL
  else if(p){
   const id=p.sku,price=/precio|cu[aá]nto|cuesta|vale|contado|tarjeta|PVP/i.test(input),spec=/bater[ií]a|capacidad/i.test(input)?'battery':/pantalla/i.test(input)?'screen':/c[aá]mara/i.test(input)?'camera':/memoria|almacenamiento|RAM/i.test(input)?'memory':/USB|conexi[oó]n/i.test(input)?'power':/grabaci[oó]n|audio/i.test(input)?'audio':/cardioide|omnidireccional/i.test(input)?'patterns':null;
   if(/disponib|\bstock\b|\btienen\b|\bhay\b/i.test(input)){facts=[book[id+'.stock']?id+'.stock':id+'.unavailable'];}
-  else if(price){const type=/tarjeta|PVP/i.test(input)||payment.named||memory.payment==='tarjeta'&&!/contado|efectivo/i.test(input)?'card':'cash',key=id+'.'+type;facts=[book[key]?key:id+'.'+type+'_pending'];intent='price';if(!book[key])ask='¿Quieres que te muestre las características verificadas?';}
+  else if(price){const type=/tarjeta|PVP/i.test(input)||payment.named||memory.payment==='tarjeta'&&!/contado|efectivo/i.test(input)?'card':'cash',key=id+'.'+type;facts=[p.central_availability&&p.central_availability!=='in_stock'?id+'.unavailable':book[key]?key:id+'.'+type+'_pending'];intent='price';if(!book[key])ask=p.central_availability&&p.central_availability!=='in_stock'?'¿Quieres revisar otra opción?':'¿Quieres que te muestre las características verificadas?';}
   else if(spec&&book[id+'.'+spec]){facts=[id+'.'+spec];}
   else if(/foto|imagen|banner/i.test(input)){facts=[book[id+'.photo_missing']?id+'.photo_missing':id+'.name'];image=p.foto?id:null;intent='photo';}
   else {facts=[spec&&book[id+'.details']?id+'.details':book[id+'.benefit']?id+'.benefit':id+'.name'];ask='¿Qué te gustaría revisar de este modelo?';}

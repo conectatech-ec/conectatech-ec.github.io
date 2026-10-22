@@ -1,6 +1,7 @@
 import original from './generated/catalogo.json' with {type:'json'};
 import extra from './generated/alex-productos-extra.json' with {type:'json'};
 import {readCatalogSnapshot} from './live.mjs';
+import {central,sourceToAlex} from './central-source.mjs';
 export const INVENTORY_FEED='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/main/datos-593/inventario-publico.csv';
 export const INVENTORY_HISTORY='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/commits?path=datos-593%2Finventario-publico.csv&sha=main&per_page=1';
 // A new catalogue build is not a new stock check. Pin CSV to its own last changed commit.
@@ -44,8 +45,9 @@ export function catalogMatches(query,products){
  const capacities=q.match(/\b(\d+)\s*gb\b/g)||[];
  return matches.filter(p=>!capacities.length||capacities.every(c=>fold(p.nombre).replace(/\s/g,'').includes(c.replace(/\s/g,'')))).slice(0,2);
 }
-export async function refreshAlexCatalog(seed=alexBaseline,fetcher=fetch,now=Date.now(),query=''){
+export async function refreshAlexCatalog(seed=alexBaseline,fetcher=fetch,now=Date.now(),query='',centralData=fetcher===fetch?central:null){
  const input=typeof query==='string'?query:query.input||'',focus=typeof query==='object'?query.focus||[]:[];
+ if(centralData)return sourceToAlex(seed,centralData,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
  const source=await readCatalogSnapshot(seed,fetcher,now,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},true);
  let inventory=[],snapshot=null;
  try{snapshot=await inventorySnapshot(fetcher,now);inventory=snapshot.rows;}catch{/* Missing provenance blocks quotes, never the technical catalogue or logistics. */}

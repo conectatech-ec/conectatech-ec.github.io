@@ -1,0 +1,73 @@
+name: Normalizar reporte 593 aislado
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['.github/workflows/central-593.yml', 'automatizacion/process_pending_593.py']
+permissions:
+  contents: read
+concurrency:
+  group: comercial-cloud-piloto
+  cancel-in-progress: false
+jobs:
+  ingresar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: automatizacion/piloto-cloud-3sku-20261015
+          sparse-checkout: automatizacion
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - id: reporte
+        name: Leer una fuente privada y normalizar con reglas unicas
+        run: python automatizacion/process_pending_593.py
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - id: revision
+        if: steps.reporte.outputs.ready == 'true'
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Desplegar exclusivamente datos y codigo vigente del piloto gratuito
+        if: steps.reporte.outputs.ready == 'true'
+        run: python automatizacion/deploy_free.py
+        env:
+          PILOT_DEPLOY_RELEASE: ${{ steps.revision.outputs.sha }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Comprobar importes y protecciones del piloto por HTTPS
+        if: steps.reporte.outputs.ready == 'true'
+        run: node automatizacion/central-e2e.mjs
+        env:
+          PILOT_BASE_URL: https://conectatech-comercial-piloto.conectatech-ecu.workers.dev
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Borrar el original privado tras procesamiento verificado
+        if: steps.reporte.outputs.ready == 'true'
+        run: |
+          python - <<'PY'
+          import json,sys
+          sys.path.insert(0,'automatizacion')
+          from process_pending_593 import request
+          d=json.load(open('automatizacion/central/current.json'))
+          with request('/commercial/complete',{'sha256':d['source']['sha256'],'status':'processed'}) as r:
+              result=json.load(r)
+          assert result['raw_file_erased'] is True
+          print('Report processed; encrypted original erased; production destinations unchanged.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fuente-593-validada-sin-datos-privados
+          path: |
+            automatizacion/central/
+            automatizacion/generated/fase2/central-processing.json
+            automatizacion/generated/fase2/central-cloud.json
+          retention-days: 7

@@ -1,0 +1,746 @@
+{
+  "source": {
+    "file_name": "Reporte-Inventario 21-10-2026.xlsx",
+    "sha256": "84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+    "cut_date": "2026-10-21",
+    "generated_at": "2026-10-22T00:25:22Z",
+    "received_at": "2026-10-22T01:10:43.872841Z",
+    "sheet": "reporte-inventario",
+    "mapping": {
+      "sku": "D",
+      "name": "C",
+      "availability": "B>0",
+      "promo_cash": "Q",
+      "pvp_card": "X+Y"
+    }
+  },
+  "sku_rows": 1554,
+  "unique_sku": 1554,
+  "product_count": 1553,
+  "service_count": 1,
+  "duplicate_sku": [],
+  "blocked": [
+    {
+      "sku": "ENVI001",
+      "row": 600,
+      "reasons": [
+        "NOT_A_PRODUCT"
+      ]
+    },
+    {
+      "sku": "FLAS026",
+      "row": 722,
+      "reasons": [
+        "IDENTITY_NAME_CHANGED_REVIEW"
+      ]
+    },
+    {
+      "sku": "FLAS024",
+      "row": 752,
+      "reasons": [
+        "IDENTITY_NAME_CHANGED_REVIEW"
+      ]
+    },
+    {
+      "sku": "MOUS010",
+      "row": 1074,
+      "reasons": [
+        "IDENTITY_NAME_CHANGED_REVIEW"
+      ]
+    },
+    {
+      "sku": "POWE014",
+      "row": 1257,
+      "reasons": [
+        "NEGATIVE_STOCK"
+      ]
+    }
+  ],
+  "blocked_count": 5,
+  "in_stock": 1140,
+  "out_of_stock": 409,
+  "comparison_16_oct": {
+    "status": "not_available_not_inferred"
+  },
+  "comparison_last_published_593": {
+    "cut_date": "2026-10-10",
+    "sku_count": 1549,
+    "new_sku": [
+      "ADAP100",
+      "ADAP101",
+      "CABL173",
+      "CARG071",
+      "DISC010",
+      "FLAS040",
+      "PARL045"
+    ],
+    "absent_sku_not_proven_discontinued": [
+      "AUDI078",
+      "HUB003"
+    ],
+    "changed_sku": 100,
+    "change_counts": {
+      "stock_quantity_private": 100,
+      "promo_cash": 4,
+      "pvp_card": 7,
+      "source_name": 3
+    },
+    "changes": [
+      {
+        "sku": "ADAP014",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ADAP017",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ADAP019",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ADAP030",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ADAP034",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ADAP046",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ADAP067",
+        "fields": [
+          "promo_cash",
+          "pvp_card",
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "AUDI001",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "AUDI002",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "AUDI039",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "AUDI089",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "AUDI097",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "AUDI111",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "AUDI123",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "BILL002",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "BILL006",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL030",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL031",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL037",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL048",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL052",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL089",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL092",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL102",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL113",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL155",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL166",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CABL170",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CARG046",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CARG068",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CASE003",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CHIP001",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "COBE005",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CORT03",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CUBO017",
+        "fields": [
+          "pvp_card",
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CUBO021",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "CUBO023",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ESTU011",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ESTU026",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ESTU048",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ESTU056",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ESTU063",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "ESTU072",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "EXTE003",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "FLAS021",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "FLAS024",
+        "fields": [
+          "stock_quantity_private",
+          "source_name"
+        ]
+      },
+      {
+        "sku": "FLAS026",
+        "fields": [
+          "pvp_card",
+          "stock_quantity_private",
+          "source_name"
+        ]
+      },
+      {
+        "sku": "FLAS034",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "GADG002",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "HUB031",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "JUGU003",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "JUGU036",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "JUGU057",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "JUGU080",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "JUGU085",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "JUGU120",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "JUGU137",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "JUGU142",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "MICA001",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "MICA005",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "MICA006",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "MICA008",
+        "fields": [
+          "pvp_card",
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "MICR14",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "MICR23",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "MICR24",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "MOUS010",
+        "fields": [
+          "stock_quantity_private",
+          "source_name"
+        ]
+      },
+      {
+        "sku": "MOUS029",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "PANE002",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "PILA013",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "PILA014",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "PILA048",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "PILA073",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "POWE008",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "POWE010",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "POWE014",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "PROT001",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "PROT003",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "RADI006",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "REL013",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "REL065",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "REL067",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "REL071",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "SOPO002",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "SOPO006",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "SOPO043",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "SOPO059",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "SOPO061",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "STYL001",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TABL001",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TABL003",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TARJ018",
+        "fields": [
+          "promo_cash",
+          "pvp_card",
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TELF001",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TELF004",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TELF013",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TELF019",
+        "fields": [
+          "promo_cash",
+          "pvp_card",
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TELF020",
+        "fields": [
+          "promo_cash",
+          "pvp_card",
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TELF036",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TELF037",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TRIP026",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      },
+      {
+        "sku": "TVBO001",
+        "fields": [
+          "stock_quantity_private"
+        ]
+      }
+    ]
+  },
+  "comparison_web_feed": {
+    "published_at": "2026-10-21T23:46:07.876Z",
+    "sku_count": 1159,
+    "common_sku": 1159,
+    "cash_changed": 4,
+    "pvp_changed": 5,
+    "became_unavailable": [
+      "ADAP014",
+      "AUDI001",
+      "AUDI089",
+      "BILL002",
+      "CABL030",
+      "CABL092",
+      "CABL155",
+      "CABL170",
+      "CASE003",
+      "CORT03",
+      "CUBO021",
+      "ESTU026",
+      "ESTU072",
+      "EXTE003",
+      "FLAS021",
+      "FLAS024",
+      "FLAS034",
+      "JUGU057",
+      "JUGU085",
+      "MICR14",
+      "MOUS010",
+      "PILA014",
+      "POWE014",
+      "REL013",
+      "REL071",
+      "SOPO061",
+      "TELF013",
+      "TELF019",
+      "TELF020",
+      "TVBO001"
+    ]
+  },
+  "private_columns_exported": false,
+  "stock_quantities_exported": false
+}

@@ -55,12 +55,12 @@ def check_connection(api):
     if not isinstance(settings,dict): raise ValueError('Pilot settings could not be verified')
     # Avoid discarding or inheriting production bindings from an unexpected Worker.
     for b in settings.get('bindings',[]):
-        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE','META_APP_SECRET','META_VERIFY_TOKEN','META_PAGE_ID','META_TEST_SENDER_IDS','META_MODE','MESSENGER_TEST_INBOX','META_INGRESS_ENABLED','META_PAGE_ACCESS_TOKEN','META_APP_ID','ALEX_ENABLED','CATALOG_FIRST'} or b.get('type') not in {'ai','plain_text','secret_text','durable_object_namespace'}:
+        if b.get('name') not in {'AI','LIVE_DATA','FREE_TIER_VERIFIED','PILOT_TOKEN','PILOT_RELEASE','META_APP_SECRET','META_VERIFY_TOKEN','META_PAGE_ID','META_TEST_SENDER_IDS','META_MODE','MESSENGER_TEST_INBOX','META_INGRESS_ENABLED','META_PAGE_ACCESS_TOKEN','META_APP_ID','ALEX_ENABLED','CATALOG_FIRST','COMMERCIAL_ACTIONS_TOKEN'} or b.get('type') not in {'ai','plain_text','secret_text','durable_object_namespace'}:
             raise ValueError('Unexpected existing binding; review isolated pilot before upload')
     return settings
 
 def worker_metadata(config=None):
-    bindings=[{'type':'ai','name':'AI'},{'type':'plain_text','name':'LIVE_DATA','text':'true'},{'type':'plain_text','name':'FREE_TIER_VERIFIED','text':'true'},{'type':'plain_text','name':'PILOT_RELEASE','text':os.environ.get('GITHUB_SHA','local-unreleased')},{'type':'plain_text','name':'META_MODE','text':'development-only'},{'type':'plain_text','name':'META_INGRESS_ENABLED','text':'false'},{'type':'durable_object_namespace','name':'MESSENGER_TEST_INBOX','class_name':'MessengerTestInbox'}]
+    bindings=[{'type':'ai','name':'AI'},{'type':'plain_text','name':'LIVE_DATA','text':'true'},{'type':'plain_text','name':'FREE_TIER_VERIFIED','text':'true'},{'type':'plain_text','name':'PILOT_RELEASE','text':os.environ.get('PILOT_DEPLOY_RELEASE') or os.environ.get('GITHUB_SHA','local-unreleased')},{'type':'plain_text','name':'META_MODE','text':'development-only'},{'type':'plain_text','name':'META_INGRESS_ENABLED','text':'false'},{'type':'durable_object_namespace','name':'MESSENGER_TEST_INBOX','class_name':'MessengerTestInbox'}]
     bindings.append({'type':'plain_text','name':'ALEX_ENABLED','text':'true' if (config or {}).get('alex_generativo') is True else 'false'})
     bindings.append({'type':'plain_text','name':'CATALOG_FIRST','text':'true' if (config or {}).get('catalogo_primero') is True else 'false'})
     page=(os.environ.get('META_PAGE_ID','') or (config or {}).get('meta_page_id','')).strip()
@@ -156,22 +156,40 @@ def main():
     if sync_only:
         sync_meta_verify_token(api,existing,settings['CLOUDFLARE_PILOT_URL'],os.environ.get('META_VERIFY_TOKEN',''));return
     metadata=worker_metadata(config);files=[]
-    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','alex-context.mjs','alex-catalog.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs']:
+    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','alex-context.mjs','alex-catalog.mjs','central-source.mjs','commercial-reception.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs']:
         source=(ROOT/name).read_text()
         source=source.replace("import catalog from './generated/catalogo.json' with {type:'json'};","import catalog from './catalog.mjs';")
         source=source.replace("import baseline from './generated/catalogo.json' with {type:'json'};","import baseline from './catalog.mjs';")
         source=source.replace("import policy from './alex-policy.json' with {type:'json'};","import policy from './alex-policy.mjs';")
         source=source.replace("import original from './generated/catalogo.json' with {type:'json'};","import original from './catalog.mjs';")
         source=source.replace("import extra from './generated/alex-productos-extra.json' with {type:'json'};","import extra from './alex-extra.mjs';")
+        source=source.replace("import central from './central/current.json' with {type:'json'};","import central from './central-data.mjs';")
         files.append((name,'application/javascript+module',source.encode()))
     files.append(('catalog.mjs','application/javascript+module',b'export default '+(ROOT/'generated/catalogo.json').read_bytes()+b';\n'))
     files.append(('alex-policy.mjs','application/javascript+module',b'export default '+(ROOT/'alex-policy.json').read_bytes()+b';\n'))
     files.append(('alex-extra.mjs','application/javascript+module',b'export default '+(ROOT/'generated/alex-productos-extra.json').read_bytes()+b';\n'))
+    source_data=(ROOT/'central/current.json').read_bytes()
+    # Code-only deployments must not restore an older report after a cloud ingestion.
+    req=urllib.request.Request(settings['CLOUDFLARE_PILOT_URL']+'/commercial/catalog',headers={'Authorization':'Bearer '+os.environ['PILOT_TOKEN']})
+    try:
+        with urllib.request.urlopen(req,timeout=25) as r:current=r.read(2000001)
+        if len(current)>2000000:raise ValueError('Runtime commercial source too large')
+        from datetime import datetime
+        a=json.loads(source_data);b=json.loads(current)
+        if b.get('schema')!='conectatech.commercial.v1':raise ValueError('Runtime commercial source schema mismatch')
+        if datetime.fromisoformat(b['source']['generated_at'].replace('Z','+00:00'))>datetime.fromisoformat(a['source']['generated_at'].replace('Z','+00:00')):
+            rollback=config.get('source_rollback_confirmed') is True and config.get('rollback_source_sha256')==a['source']['sha256']
+            if not rollback:source_data=current
+    except urllib.error.HTTPError as e:
+        if e.code!=404:raise RuntimeError('Could not preserve existing commercial source; deployment stopped') from None
+    from datetime import datetime,timezone
+    source_record=json.loads(source_data);source_record['published_at']=datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
+    files.append(('central-data.mjs','application/javascript+module',b'export default '+json.dumps(source_record,ensure_ascii=False,separators=(',',':')).encode()+b';\n'))
     body,ctype=multipart(metadata,files)
     # Synchronize secrets first. The final mutation uploads the complete code bundle,
     # preventing subsequent secret deployments from restoring an earlier bundle.
     api.call(SCRIPT+'/secrets','PUT',{'name':'PILOT_TOKEN','text':os.environ['PILOT_TOKEN'],'type':'secret_text'})
-    for name in ['META_APP_SECRET','META_VERIFY_TOKEN','META_TEST_SENDER_IDS','META_PAGE_ACCESS_TOKEN']:
+    for name in ['META_APP_SECRET','META_VERIFY_TOKEN','META_TEST_SENDER_IDS','META_PAGE_ACCESS_TOKEN','COMMERCIAL_ACTIONS_TOKEN']:
         value=os.environ.get(name,'')
         if value:api.call(SCRIPT+'/secrets','PUT',{'name':name,'text':value,'type':'secret_text'})
     api.call(SCRIPT,'PUT',body,ctype)

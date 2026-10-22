@@ -4,6 +4,7 @@ import {alexInit,alexCleanup,alexNext,alexFetch} from './alex-store.mjs';
 import {sellerInit,sellerCleanup,sellerFetch,sellerAlarm,sellerNext,sellerActive} from './messenger-seller.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
 import {controlInit,controlCleanup,controlNextAlarm,controlFetch} from './messenger-control.mjs';
+import {commercialInit,commercialCleanup,commercialFetch} from './commercial-reception.mjs';
 const json=(x,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
 async function digest(text){return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))].map(n=>n.toString(16).padStart(2,'0')).join('');}
 export function commercialDraft(response) {
@@ -23,12 +24,13 @@ export class MessengerTestInbox {
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_day ON events(day)');
   this.sql.exec('CREATE TABLE IF NOT EXISTS reviews (k TEXT PRIMARY KEY, decision TEXT, digest TEXT, reviewed_at INTEGER)');
   this.sql.exec('CREATE TABLE IF NOT EXISTS counters (day INTEGER PRIMARY KEY, duplicates INTEGER NOT NULL DEFAULT 0)');
-  controlInit(this);sellerInit(this);alexInit(this);
+  controlInit(this);sellerInit(this);alexInit(this);commercialInit(this);
  }
- cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);controlCleanup(this,now);sellerCleanup(this,now);alexCleanup(this,now);}
+ cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);controlCleanup(this,now);sellerCleanup(this,now);alexCleanup(this,now);commercialCleanup(this,now);}
  async fetch(req) {
   const path=new URL(req.url).pathname;
   this.cleanup(Date.now());
+  const commercial=await commercialFetch(path,req,this);if(commercial)return commercial;
   const alex=await alexFetch(path,req,this);if(alex)return alex;
   const seller=await sellerFetch(path,req,this);if(seller)return seller;
   const control=await controlFetch(path,req,this);if(control)return control;

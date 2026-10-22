@@ -54,6 +54,7 @@ jobs:
           META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
           META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
           META_APP_ID: ${{ vars.META_APP_ID }}
+          COMMERCIAL_ACTIONS_TOKEN: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
           META_TEST_SENDER_IDS: ${{ secrets.META_TEST_SENDER_IDS }}
       - uses: actions/upload-artifact@v4
         if: always()
@@ -146,6 +147,8 @@ jobs:
       - run: node automatizacion/tests/alex-commercial.test.mjs
       - run: node automatizacion/tests/alex-samsung.test.mjs
       - run: node automatizacion/tests/alex-objections.test.mjs
+      - run: python automatizacion/tests/central_593_test.py
+      - run: node automatizacion/tests/central.test.mjs
       - id: deploy
         run: python automatizacion/deploy_free.py
         env:
@@ -160,8 +163,9 @@ jobs:
           META_PAGE_ID: ${{ vars.META_PAGE_ID }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           META_APP_ID: ${{ vars.META_APP_ID }}
+          COMMERCIAL_ACTIONS_TOKEN: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
       - name: Verificar piloto previo si el alcance no es la nueva conversación
-        run: node --input-type=module -e 'import fs from "node:fs"; const c=JSON.parse(fs.readFileSync("automatizacion/activar-cloud.json")); if(!["conversation_flow","samsung_recovery","commercial_objections"].includes(c.alex_validation)) await import("./automatizacion/e2e.mjs");'
+        run: node --input-type=module -e 'import fs from "node:fs"; const c=JSON.parse(fs.readFileSync("automatizacion/activar-cloud.json")); if(!["conversation_flow","samsung_recovery","commercial_objections","central_source"].includes(c.alex_validation)) await import("./automatizacion/e2e.mjs");'
         env:
           PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}

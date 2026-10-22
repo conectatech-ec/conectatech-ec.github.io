@@ -1,3 +1,5 @@
+import {central} from './central-source.mjs';
+import {uploadPage,centralStatus} from './commercial-reception.mjs';
 import catalog from './generated/catalogo.json' with {type:'json'};
 import {renderBanner} from './banner.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
@@ -36,8 +38,15 @@ export default {
   if(path==='/alex/review'&&req.method==='GET')return reviewPage();
   if(['/privacy','/data-deletion'].includes(path)&&req.method==='GET')return privacyPage(path==='/data-deletion');
   if(path==='/messenger/setup'&&req.method==='GET') return setupPage();
+  if(path==='/commercial/upload'&&req.method==='GET')return uploadPage();
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {
+   if(path==='/commercial/catalog'&&req.method==='GET')return json(central);
+   if(path==='/commercial/catalog/status'&&req.method==='GET')return json(centralStatus());
+   if(/^\/commercial\/(status|report|complete)$/.test(path)){
+    const name=new URL(req.url).searchParams.get('scope')==='ci'?'commercial-source-ci':'commercial-source';
+    return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName(name)).fetch('https://inbox'+path+new URL(req.url).search,{method:req.method,headers:req.headers,body:['GET','HEAD'].includes(req.method)?undefined:req.body,duplex:'half'});
+   }
    if(path==='/alex/quota'&&req.method==='GET')return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('alex-ai-quota')).fetch('https://inbox/alex/quota/status');
    if(/^\/alex\/review\/(queue|mode|decision|regenerate)$/.test(path)){
     const namespace=new URL(req.url).searchParams.get('scope')==='ci'?'messenger-ci':'messenger-development';
