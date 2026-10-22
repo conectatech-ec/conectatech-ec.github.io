@@ -103,24 +103,29 @@ def adapters(canonical,outdir):
  def money(p,k):return f"{p['prices'][k]/100:.2f}"
  def csvout(name,fields,data):
   with (outdir/name).open('w',newline='',encoding='utf-8') as f:w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(data)
- for name in ['alex','web_catalog','banner_factory','pdf_categories']:
-  view={'source_sha256':canonical['source']['sha256'],'canonical':'../current.json','generated_at':canonical['source']['generated_at'],'expires_at':canonical['expires_at'],'sku':[p['sku'] for p in allvalid if name in ['alex','web_catalog']] if name in ['alex','web_catalog'] else [p['sku'] for p in active],'price_fields':{'cash':'prices.promo_cash_cents','card':'prices.pvp_card_cents'},'publishing_enabled':False}
+ for name in ['alex','web_catalog','webstore','banner_factory','pdf_categories','whatsapp_business']:
+  view={'source_sha256':canonical['source']['sha256'],'data_version':'593-v1-'+canonical['source']['sha256'],'canonical':'../current.json','enrichment':'../enrichment.json','generated_at':canonical['source']['generated_at'],'validated_at':canonical['normalized_at'],'expires_at':canonical['expires_at'],'sku':[p['sku'] for p in allvalid] if name in ['alex','web_catalog','webstore'] else [p['sku'] for p in active],'price_fields':{'cash':'prices.promo_cash_cents','card':'prices.pvp_card_cents'},'publishing_enabled':False}
   if name=='pdf_categories':view['categories']={k:[p['sku'] for p in active if (p['category'] or 'Sin categoría')==k] for k in sorted(set(p['category'] or 'Sin categoría' for p in active))}
   (outdir/(name+'.json')).write_text(json.dumps(view,ensure_ascii=False,separators=(',',':'))+'\n')
  rows=[{'id':p['sku'],'title':p['name'][:150],'description':p['name'],'availability':'in stock','condition':'new','price':money(p,'pvp_card_cents')+' USD','link':p['web']['url'],'image_link':p['web']['image_url'],'product_type':p['category']} for p in eligible]
  csvout('meta.csv',list(rows[0]) if rows else ['id','title','availability','condition','price','sale_price','link','image_link','product_type'],rows)
  # Cash prices are payment-conditional, so Google candidate uses card PVP without an unconditional sale claim.
  google=[{**r,'availability':'in_stock'} for r in rows];csvout('google.csv',list(google[0]) if google else ['id','title','description','availability','condition','price','link','image_link','product_type'],google)
- return {'source_sha256':canonical['source']['sha256'],'destinations':6,'active_products':len(active),'meta_google_candidate_rows':len(rows),'publishing_enabled':False,'skipped_until_web_and_media_match':len(active)-len(rows),'conditional_sale_price_omitted':'Promo contado is conditional on payment method; no invented unconditional discount in automatic channel feeds.','external_validation_pending':['landing-page structured price/payment consistency','brand/GTIN requirements where applicable','destination account authorization']}
-def write_bundle(out,canonical,report):
+ return {'source_sha256':canonical['source']['sha256'],'data_version':'593-v1-'+canonical['source']['sha256'],'destinations':8,'active_products':len(active),'meta_google_candidate_rows':len(rows),'publishing_enabled':False,'skipped_until_web_and_media_match':len(active)-len(rows),'conditional_sale_price_omitted':'Promo contado is conditional on payment method; no invented unconditional discount in automatic channel feeds.','external_validation_pending':['landing-page structured price/payment consistency','brand/GTIN requirements where applicable','destination account authorization']}
+def write_bundle(out,canonical,report,previous_central=None):
+ from data_hub_593 import write_hub
  out=Path(out);out.parent.mkdir(parents=True,exist_ok=True)
+ previous=None
  if (out/'current.json').exists():
   previous=json.loads((out/'current.json').read_text())
-  if previous['source']['generated_at']>canonical['source']['generated_at']:raise ValueError('REPORT_OLDER_THAN_LAST_VALID')
+ reference=previous_central or previous
+ if reference and reference['source']['generated_at']>canonical['source']['generated_at']:raise ValueError('REPORT_OLDER_THAN_LAST_VALID')
  with tempfile.TemporaryDirectory(prefix='central-stage-',dir=out.parent) as directory:
   stage=Path(directory);channels=adapters(canonical,stage/'adapters');(stage/'current.json').write_text(json.dumps(canonical,ensure_ascii=False,separators=(',',':'))+'\n');(stage/'validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');(stage/'channels.json').write_text(json.dumps(channels,ensure_ascii=False,indent=2)+'\n')
+  enrichment=json.loads((out/'enrichment.json').read_text()) if (out/'enrichment.json').exists() else None
+  write_hub(stage,canonical,reference,existing_enrichment=enrichment)
   out.mkdir(exist_ok=True)
-  if (out/'current.json').exists() and previous['source']['sha256']!=canonical['source']['sha256']:shutil.copy2(out/'current.json',out/'last-valid.json')
+  if reference and reference['source']['sha256']!=canonical['source']['sha256']:(out/'last-valid.json').write_text(json.dumps(reference,ensure_ascii=False,separators=(',',':'))+'\n')
   for f in stage.iterdir():
    if f.name=='current.json':continue
    if f.is_dir():shutil.copytree(f,out/f.name,dirs_exist_ok=True)

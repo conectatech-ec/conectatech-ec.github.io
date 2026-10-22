@@ -54,7 +54,6 @@ jobs:
           META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
           META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
           META_APP_ID: ${{ vars.META_APP_ID }}
-          COMMERCIAL_ACTIONS_TOKEN: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
           META_TEST_SENDER_IDS: ${{ secrets.META_TEST_SENDER_IDS }}
       - uses: actions/upload-artifact@v4
         if: always()

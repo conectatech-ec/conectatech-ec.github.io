@@ -41,7 +41,7 @@ def main():
   for sku in sorted(set(before)-set(after)):
    p=before[sku];canonical['products'].append({'sku':sku,'source_name':p['source_name'],'name':p['name'],'category':p['category'],'variant_gb':p.get('variant_gb',[]),'availability':'blocked','blocked_reasons':['ABSENT_LATEST_REPORT'],'prices':None,'provenance':{'note':'Absent in latest report; discontinuation not asserted'},'web':{'url':p.get('web',{}).get('url'),'price_matches':False}})
   canonical['products'].sort(key=lambda p:p['sku'])
-  write_bundle(ROOT/'central',canonical,validation)
+  write_bundle(ROOT/'central',canonical,validation,previous_central=previous)
   c=json.loads((ROOT/'activar-cloud.json').read_text());c['activar']=True;(ROOT/'activar-cloud.json').write_text(json.dumps(c))
   report.update(validated=True,products=len(canonical['products']),blocked=validation['blocked_count']);output(True)
  except Exception as error:

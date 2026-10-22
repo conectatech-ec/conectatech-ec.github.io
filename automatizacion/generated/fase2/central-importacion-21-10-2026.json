@@ -210,7 +210,8 @@
     "web_catalog_production_modified": false,
     "banners_regenerated": false,
     "PDFs_regenerated": false,
-    "publishing_enabled": false
+    "publishing_enabled": false,
+    "eight_destinations_prepared": true
   },
   "automation": {
     "single_file_private_receiver_deployed": true,
@@ -219,14 +220,16 @@
     "normalizer_runs_in_GitHub_Actions": true,
     "Actions_job_bootstrap_verified": true,
     "automatic_dispatch_token_present": false,
-    "needed_for_unattended_dispatch": "COMMERCIAL_ACTIONS_TOKEN in conectatech-piloto-gratis; selected repository Actions read/write only",
     "direct_593_API_configured": false,
     "public_593_API_documentation_found": false,
     "API_research_urls": [
       "https://593sistemas.com/",
       "https://593sistemas.com/contacto"
     ],
-    "no_local_computer_access_assumed": true
+    "no_local_computer_access_assumed": true,
+    "additional_PAT_required_for_processing": false,
+    "prior_PAT_request_withdrawn": true,
+    "unattended_dispatch_status": "Not connected; prefer existing authenticated rerun now and future authorized pull schedule, not a new PAT"
   },
   "controls": {
     "main_modified": false,
@@ -235,5 +238,6 @@
     "paid_services_activated": false,
     "new_cost_authorized_usd": 0
   },
-  "deployment_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/39704884426"
+  "deployment_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/39704884426",
+  "data_hub_contract": "../../DATA-HUB-CONTRATO.md"
 }

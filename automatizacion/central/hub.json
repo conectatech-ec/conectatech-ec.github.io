@@ -1,0 +1,146 @@
+{
+  "schema": "conectatech.data_hub.v1",
+  "version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+  "source_sha256": "84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+  "commercial_signature": "9b22cf04c6390c92f636879aa8b15541a941d7a5bd093df0c3af2e315876681f",
+  "cut_date": "2026-10-21",
+  "generated_at": "2026-10-22T00:25:22Z",
+  "validated_at": "2026-10-22T01:10:43.872841Z",
+  "expires_at": "2026-10-23T00:25:22Z",
+  "fresh": true,
+  "commercial_source": "current.json",
+  "official_name_field": "source_name",
+  "enrichment": "enrichment.json",
+  "changes": "changes.json",
+  "channels": {
+    "web_catalog": {
+      "expected_version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+      "verified_version": null,
+      "state": "prepared_not_delivered",
+      "receipt": null,
+      "pending": [
+        "destination_receipt_required"
+      ],
+      "production_publish_enabled": false
+    },
+    "webstore": {
+      "expected_version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+      "verified_version": null,
+      "state": "prepared_not_delivered",
+      "receipt": null,
+      "pending": [
+        "destination_receipt_required"
+      ],
+      "production_publish_enabled": false
+    },
+    "alex_messenger": {
+      "expected_version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+      "verified_version": null,
+      "state": "prepared_not_delivered",
+      "receipt": null,
+      "pending": [
+        "destination_receipt_required"
+      ],
+      "production_publish_enabled": false
+    },
+    "signature": {
+      "expected_version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+      "verified_version": null,
+      "state": "prepared_not_delivered",
+      "receipt": null,
+      "pending": [
+        "destination_receipt_required"
+      ],
+      "production_publish_enabled": false
+    },
+    "pdf_categories": {
+      "expected_version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+      "verified_version": null,
+      "state": "prepared_not_delivered",
+      "receipt": null,
+      "pending": [
+        "destination_receipt_required"
+      ],
+      "production_publish_enabled": false
+    },
+    "meta_commerce": {
+      "expected_version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+      "verified_version": null,
+      "state": "prepared_not_delivered",
+      "receipt": null,
+      "pending": [
+        "destination_receipt_required"
+      ],
+      "production_publish_enabled": false
+    },
+    "google_merchant": {
+      "expected_version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+      "verified_version": null,
+      "state": "prepared_not_delivered",
+      "receipt": null,
+      "pending": [
+        "destination_receipt_required"
+      ],
+      "production_publish_enabled": false
+    },
+    "whatsapp_business": {
+      "expected_version": "593-v1-84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+      "verified_version": null,
+      "state": "prepared_not_delivered",
+      "receipt": null,
+      "pending": [
+        "destination_receipt_required"
+      ],
+      "production_publish_enabled": false
+    }
+  },
+  "changed_sku_count": 47,
+  "alerts": [
+    {
+      "channel": "web_catalog",
+      "code": "DESTINATION_NOT_CURRENT"
+    },
+    {
+      "channel": "webstore",
+      "code": "DESTINATION_NOT_CURRENT"
+    },
+    {
+      "channel": "alex_messenger",
+      "code": "DESTINATION_NOT_CURRENT"
+    },
+    {
+      "channel": "signature",
+      "code": "DESTINATION_NOT_CURRENT"
+    },
+    {
+      "channel": "pdf_categories",
+      "code": "DESTINATION_NOT_CURRENT"
+    },
+    {
+      "channel": "meta_commerce",
+      "code": "DESTINATION_NOT_CURRENT"
+    },
+    {
+      "channel": "google_merchant",
+      "code": "DESTINATION_NOT_CURRENT"
+    },
+    {
+      "channel": "whatsapp_business",
+      "code": "DESTINATION_NOT_CURRENT"
+    }
+  ],
+  "fully_synchronized": false,
+  "fully_automated": false,
+  "future_channels_contract": {
+    "canonical": "current.json",
+    "enrichment": "enrichment.json",
+    "must_verify": [
+      "version",
+      "commercial_signature",
+      "received",
+      "processed",
+      "evidence",
+      "verified_at"
+    ]
+  }
+}

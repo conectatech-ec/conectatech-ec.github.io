@@ -2,7 +2,7 @@ name: Normalizar reporte 593 aislado
 on:
   push:
     branches: ['automatizacion/piloto-cloud-3sku-20261015']
-    paths: ['.github/workflows/central-593.yml', 'automatizacion/process_pending_593.py']
+    paths: ['.github/workflows/central-593.yml', 'automatizacion/process_pending_593.py', 'automatizacion/data_hub_593.py']
 permissions:
   contents: read
 concurrency:
@@ -19,6 +19,7 @@ jobs:
         with:
           ref: automatizacion/piloto-cloud-3sku-20261015
           sparse-checkout: automatizacion
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -50,6 +51,10 @@ jobs:
           PILOT_BASE_URL: https://conectatech-comercial-piloto.conectatech-ecu.workers.dev
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
           EXPECTED_RELEASE: ${{ steps.revision.outputs.sha }}
+      - name: Verificar version comercial recibida por Alex y registrar destinos pendientes
+        run: python automatizacion/data_hub_593.py --verify-alex
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - name: Borrar el original privado tras procesamiento verificado
         if: steps.reporte.outputs.ready == 'true'
         run: |

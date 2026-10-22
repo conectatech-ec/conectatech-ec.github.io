@@ -1,6 +1,6 @@
 # CONECTATECH — fuente central comercial 593
 
-La fuente normalizada es [central/current.json](central/current.json). Usa una sola política de normalización y seis adaptadores; no sustituye feeds, catálogo, fábrica de imágenes ni catálogos PDF en producción. Solo Alex del Worker piloto está conectado ahora.
+La fuente normalizada es [central/current.json](central/current.json). Usa una sola política de normalización y ocho destinos mediante adaptadores; no sustituye feeds, catálogo, fábrica de imágenes ni catálogos PDF en producción. Solo Alex del Worker piloto está conectado ahora.
 
 ## Corte importado y comparación
 
@@ -20,7 +20,7 @@ Precios exactos: Promo contado = Q (V. TOTAL); PVP final = X + Y (IVA exportado 
 
 Los dos SKU ausentes tienen guardas de exclusión en la fuente (1.556 registros de consulta en total, sin contarlos como SKU del Excel). Eso impide recuperar sus precios desde datos anteriores. Alex usa el mismo contrato para IA y respaldo; el campo interno de compatibilidad de disponibilidad es un booleano, nunca la cantidad del ERP.
 
-## Seis adaptadores, una fuente
+## Ocho destinos, una fuente
 
 [Manifiesto de canales](central/channels.json). Alex, catálogo web, fábrica de banners y PDF por categorías apuntan a la fuente central y seleccionan sus SKU; no repiten reglas de precios. Meta y Google tienen CSV candidatos derivados de la misma fuente. Hay 907 referencias con enlaces, imagen, categoría y precios coincidentes con la web de referencia. Otros 233 disponibles quedan fuera de esos candidatos mientras falte compatibilidad o publicación previa.
 
@@ -32,9 +32,15 @@ Panel: https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/commerci
 
 Workflow: `.github/workflows/central-593.yml`, job `ingresar`, rama `automatizacion/piloto-cloud-3sku-20261015`, environment `conectatech-piloto-gratis`. Descarga el archivo por HTTPS privado, verifica su hash, aplica el normalizador único, prepara los seis destinos y actualiza solo el Worker piloto. Un error conserva la última fuente desplegada. Los fallos de validación devuelven códigos sin datos privados; fallos transitorios permiten relanzar el job sin subir otro archivo. Los artefactos contienen solo resultados depurados durante siete días.
 
-El receptor y el job están preparados y probados. El disparo desatendido requiere una configuración de cuenta aún ausente: `COMMERCIAL_ACTIONS_TOKEN`. Token fine-grained GitHub limitado al repositorio `conectatech-ec/conectatech-ec.github.io`, Actions: Read and write y Metadata: Read obligatorio; sin Contents write, administración ni facturación. Guardarlo como secreto del environment existente y sincronizarlo mediante el despliegue del piloto. El Worker permite únicamente relanzar el job del normalizador en la rama autorizada. Actions es un permiso de repositorio, no de rama; no presentarlo como un token que GitHub limite por rama. Nunca poner su valor en documentos o mensajes.
+El procesamiento no requiere crear un token personal. Se reutilizan el acceso autorizado a GitHub, `GITHUB_TOKEN` con `contents: read` en el runner y los secretos existentes del entorno. Después de cargar un Excel se puede relanzar el job `ingresar` con la sesión GitHub actual o las herramientas conectadas. La prueba de transporte usó un archivo sintético; aún no se acredita un Excel nuevo recibido, procesado y aceptado por todos los destinos reales.
 
-Sin ese token, la carga queda pendiente y el job puede relanzarse desde GitHub/las herramientas autorizadas. No se presenta como un disparo automático ya conectado. No se añade un cron a main: los workflows programados de GitHub no sirven para ejecutar esta rama aislada como servicio permanente. El receptor HTTPS sí permanece disponible en Workers Free.
+Se retira la solicitud previa de crear `COMMERCIAL_ACTIONS_TOKEN` como requisito. La compatibilidad opcional del código con ese secreto no implica que exista, se solicite o se use. Se retiró también su exposición innecesaria al diagnóstico de Meta. No se extraen ni transfieren al Worker las credenciales de la integración conectada.
+
+El disparo automático tras cargar un archivo sigue sin conectar. `GITHUB_TOKEN` pertenece a un job y caduca; no es una credencial permanente para Cloudflare. La programación de Actions necesita un workflow en la rama predeterminada, que es `main`. No se modifica esa rama. La opción preferida para evitar nuevas credenciales es un futuro consumidor periódico de la cola con el `GITHUB_TOKEN` del propio runner, sujeto a autorizar su incorporación a la rama predeterminada. No está instalado ahora. El receptor HTTPS sí permanece disponible en Workers Free.
+
+Si posteriormente se exige disparo inmediato desde el Worker, se prefiere una GitHub App con tokens de instalación de una hora, permisos Actions: write y Metadata: read, limitados a un repositorio seleccionado. No se necesitan Contents: write, administración, Pages ni Billing. Actions: write es un alcance de repositorio, no de rama: en este repositorio compartido también permite relanzar workflows de producción con sus propios permisos. Por ello no se activa esta alternativa como si garantizara aislamiento por rama; un repositorio de automatización separado sería un límite más fuerte, sujeto a autorización. Los límites de repo/workflow/rama en el código del Worker reducen errores pero no restringen un token robado en GitHub. No se crea ninguna App ni credencial en esta fase.
+
+Documentación verificada de GitHub: [vida del GITHUB_TOKEN](https://docs.github.com/en/actions/concepts/security/github_token), [programación en rama predeterminada](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule), [reintento de job y permisos](https://docs.github.com/en/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run), [tokens de instalación](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-an-installation-access-token-for-a-github-app).
 
 ## Última versión válida y reversión
 
@@ -50,6 +56,10 @@ Para retirar también la exportación manual hace falta documentación oficial d
 
 ## Alcance de las pruebas
 
-La importación real se ejecutó sobre el Excel adjunto en el entorno cloud. Veinte consultas reales por HTTPS verificaron ambos A17, tres SKU originales, un SKU nuevo y exclusiones. No utilizaron IA, no enviaron mensajes a Messenger y no acreditan por sí mismas recepción visual en el perfil probador. La recepción de archivo se probó con un payload sintético en el ámbito CI; no se afirma que el Excel original haya atravesado todavía la recepción por navegador y el disparo automático, cuya credencial sigue pendiente.
+La importación real se ejecutó sobre el Excel adjunto en el entorno cloud. Veinte consultas reales por HTTPS verificaron ambos A17, tres SKU originales, un SKU nuevo y exclusiones. No utilizaron IA, no enviaron mensajes a Messenger y no acreditan por sí mismas recepción visual en el perfil probador. La recepción de archivo se probó con un payload sintético en el ámbito CI; no se afirma que el Excel original haya atravesado todavía la recepción por navegador y el disparo automático, cuyo mecanismo de disparo desatendido sigue pendiente.
 
 Costo adicional autorizado: $0. Sin main, producción del catálogo, clientes externos, cuotas ampliadas ni servicios pagos.
+
+## Contrato para otras sesiones
+
+Consultar [DATA-HUB-CONTRATO.md](DATA-HUB-CONTRATO.md) y [central/hub.json](central/hub.json). Las preparaciones y los recibos se distinguen por destino; ningún adaptador preparado acredita publicación.

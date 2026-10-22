@@ -1,6 +1,6 @@
 // Private Worker transport for Python jobs. stdout is captured, never written to Actions logs.
 const path=process.argv[2];
-if(!/^\/commercial\/(?:catalog|status|report|complete)(?:\?sha256=[a-f0-9]{64})?$/.test(path||''))throw Error('PRIVATE_SOURCE_PATH');
+if(!/^\/commercial\/(?:catalog(?:\/status)?|status|report|complete)(?:\?sha256=[a-f0-9]{64})?$/.test(path||''))throw Error('PRIVATE_SOURCE_PATH');
 let input='';for await(const chunk of process.stdin)input+=chunk;
 try{
  const r=await fetch('https://conectatech-comercial-piloto.conectatech-ecu.workers.dev'+path,{method:input?'POST':'GET',headers:{Authorization:'Bearer '+process.env.PILOT_TOKEN,'Content-Type':'application/json'},body:input||undefined,signal:AbortSignal.timeout(45000)});
