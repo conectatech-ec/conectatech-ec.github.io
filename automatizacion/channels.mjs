@@ -12,10 +12,10 @@ export async function verifyMetaSignature(raw,signature,secret) {
  return crypto.subtle.verify('HMAC',key,bytes,new TextEncoder().encode(raw));
 }
 export function normalizeAlexAction(payload){
- const m=/^ALEX:(photo|cash|card|specs|choose|buy|payment|human|retiro|quito|nacional|microphone|battery)(?::(MICR27|POWE003|ADAP005|TELF011|TELF012))?$/.exec(payload||'');
+ const m=/^ALEX:(photo|cash|card|specs|choose|buy|payment|anothercard|human|retiro|quito|nacional|microphone|battery)(?::(MICR27|POWE003|ADAP005|TELF011|TELF012))?$/.exec(payload||'');
  if(!m)return null;
  const actions={photo:'Quiero ver una fotografía',cash:'Quiero saber el precio de contado',card:'¿Cuál es el precio con tarjeta?',specs:'Quiero conocer las características',choose:'Elijo este producto',buy:'Quiero comprar este producto',payment:'Quiero conocer las formas de pago',human:'Quiero hablar con una persona',retiro:'Quiero retirar en tienda',quito:'Quiero entrega en Quito',nacional:'Quiero envío nacional',microphone:'Busco un micrófono para grabar mi voz',battery:'Busco una batería portátil'};
- return actions[m[1]]+(m[2]?' del producto '+m[2]:'');
+ return (m[1]==='anothercard'?'Quiero usar otra tarjeta':actions[m[1]])+(m[2]?' del producto '+m[2]:'');
 }
 const quickText=message=>normalizeAlexAction(message.quick_reply?.payload)||message.text;
 export function normalizeEvents(payload,env) {

@@ -1,15 +1,15 @@
 {
-  "activar": false,
+  "activar": true,
   "sincronizar_meta_verify_token": false,
   "meta_page_id": "105549695770538",
   "costo_maximo_usd": 0,
   "alcance": "Solo Worker piloto: Messenger oficial para probadores con permiso verificado; sin Billing, D1, cron, rutas, main ni catálogo de producción",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "35b19618 desplegado: 121 comprobaciones y nueve consultas HTTPS correctas, dos con IA real. Fuente 593: corte oficial 10-10-2026 vencido, aunque feed republicado 21-10; precios/stock bloqueados automáticamente. Cinco entradas reales de Messenger tras despliegue anterior con firma válida, Graph 200 y una imagen. Conservar probadores, 100 mensajes/24h y cuotas IA, general cerrado. Cerrar disparador; sin pagos ni cambios a main.",
+  "nota": "Corrección comercial: negaciones bancarias, alternativas y preferencias separadas de consultas, pausa y continuación, contexto de variante. Verificar dos conversaciones HTTPS de 22 turnos: modelo real y sin IA. Solo probadores; conservar cuotas, 593 vencido bloqueado, sin main ni pagos.",
   "habilitar_vendedor_probadores": false,
   "procesar_cola_probadores": false,
   "alex_generativo": true,
-  "alex_validation": "samsung_recovery",
+  "alex_validation": "commercial_objections",
   "diagnosticar_alex": false,
   "catalogo_primero": true
 }
