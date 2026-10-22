@@ -1,0 +1,239 @@
+{
+  "schema": "conectatech.central.import_evidence.v1",
+  "source_sha256": "84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+  "cut_date": "2026-10-21",
+  "generated_at": "2026-10-22T00:25:22Z",
+  "valid_until": "2026-10-23T00:25:22Z",
+  "baseline_repository_commit": "3217ad431898077ad9b4ad7a1cf214a3c8723c9a",
+  "counts": {
+    "sku_rows": 1554,
+    "unique_sku": 1554,
+    "product_count": 1553,
+    "service_count": 1,
+    "blocked_count": 5,
+    "in_stock": 1140,
+    "out_of_stock": 409
+  },
+  "comparison_16_oct": {
+    "status": "not_found",
+    "searched": [
+      "workspace attachments",
+      "repository default branch",
+      "corporate Drive metadata",
+      "personal Drive metadata"
+    ],
+    "not_substituted_or_inferred": true
+  },
+  "comparison_last_published_593": {
+    "cut_date": "2026-10-10",
+    "sku_count": 1549,
+    "new_sku": [
+      "ADAP100",
+      "ADAP101",
+      "CABL173",
+      "CARG071",
+      "DISC010",
+      "FLAS040",
+      "PARL045"
+    ],
+    "absent_sku_not_proven_discontinued": [
+      "AUDI078",
+      "HUB003"
+    ],
+    "changed_sku": 100,
+    "change_counts": {
+      "stock_quantity_private": 100,
+      "promo_cash": 4,
+      "pvp_card": 7,
+      "source_name": 3
+    }
+  },
+  "comparison_published_feed": {
+    "published_at": "2026-10-21T23:46:07.876Z",
+    "sku_count": 1159,
+    "common_sku": 1159,
+    "cash_changed": 4,
+    "pvp_changed": 5,
+    "became_unavailable": [
+      "ADAP014",
+      "AUDI001",
+      "AUDI089",
+      "BILL002",
+      "CABL030",
+      "CABL092",
+      "CABL155",
+      "CABL170",
+      "CASE003",
+      "CORT03",
+      "CUBO021",
+      "ESTU026",
+      "ESTU072",
+      "EXTE003",
+      "FLAS021",
+      "FLAS024",
+      "FLAS034",
+      "JUGU057",
+      "JUGU085",
+      "MICR14",
+      "MOUS010",
+      "PILA014",
+      "POWE014",
+      "REL013",
+      "REL071",
+      "SOPO061",
+      "TELF013",
+      "TELF019",
+      "TELF020",
+      "TVBO001"
+    ]
+  },
+  "price_changes": [
+    {
+      "sku": "ADAP067",
+      "contado_anterior": "7.50",
+      "contado_21": 6.9,
+      "pvp_anterior": "8.62",
+      "pvp_21": 7.94,
+      "estado": "in_stock"
+    },
+    {
+      "sku": "CUBO017",
+      "contado_anterior": "9.35",
+      "contado_21": 9.35,
+      "pvp_anterior": "10.75",
+      "pvp_21": 11.68,
+      "estado": "in_stock"
+    },
+    {
+      "sku": "FLAS026",
+      "contado_anterior": "8.45",
+      "contado_21": 8.45,
+      "pvp_anterior": "9.72",
+      "pvp_21": 10.56,
+      "estado": "blocked"
+    },
+    {
+      "sku": "MICA008",
+      "contado_anterior": "2.00",
+      "contado_21": 2.0,
+      "pvp_anterior": "2.30",
+      "pvp_21": 2.5,
+      "estado": "in_stock"
+    },
+    {
+      "sku": "TARJ018",
+      "contado_anterior": "59.90",
+      "contado_21": 69.9,
+      "pvp_anterior": "74.88",
+      "pvp_21": 87.38,
+      "estado": "in_stock"
+    },
+    {
+      "sku": "TELF019",
+      "contado_anterior": "185.90",
+      "contado_21": 205.9,
+      "pvp_anterior": "232.38",
+      "pvp_21": 257.38,
+      "estado": "out_of_stock"
+    },
+    {
+      "sku": "TELF020",
+      "contado_anterior": "235.90",
+      "contado_21": 245.9,
+      "pvp_anterior": "294.88",
+      "pvp_21": 307.38,
+      "estado": "out_of_stock"
+    }
+  ],
+  "blocked": [
+    {
+      "sku": "ENVI001",
+      "row": 600,
+      "reasons": [
+        "NOT_A_PRODUCT"
+      ]
+    },
+    {
+      "sku": "FLAS026",
+      "row": 722,
+      "reasons": [
+        "IDENTITY_NAME_CHANGED_REVIEW"
+      ]
+    },
+    {
+      "sku": "FLAS024",
+      "row": 752,
+      "reasons": [
+        "IDENTITY_NAME_CHANGED_REVIEW"
+      ]
+    },
+    {
+      "sku": "MOUS010",
+      "row": 1074,
+      "reasons": [
+        "IDENTITY_NAME_CHANGED_REVIEW"
+      ]
+    },
+    {
+      "sku": "POWE014",
+      "row": 1257,
+      "reasons": [
+        "NEGATIVE_STOCK"
+      ]
+    }
+  ],
+  "absent_not_proven_discontinued": [
+    "AUDI078",
+    "HUB003"
+  ],
+  "source_privacy": {
+    "raw_xlsx_in_repository": false,
+    "stock_quantities_in_canonical": false,
+    "costs_or_margins_exported": false
+  },
+  "cloud_proof": "central-cloud-verificado.json",
+  "Alex": {
+    "deployed": true,
+    "release": "1057a3988d62d4343076f9969f882f6e26cf8901",
+    "source": "validated_central_593",
+    "raw_report_cut": "2026-10-21",
+    "old_10_oct_financial_dependency_removed": true,
+    "fallback_uses_same_source": true,
+    "HTTPS_verified_queries": 20,
+    "AI_calls_for_data_tests": 0,
+    "real_Messenger_after_source_update_verified": false
+  },
+  "other_channels": {
+    "six_adapters_prepared": true,
+    "meta_google_candidates": 907,
+    "existing_feeds_replaced": false,
+    "web_catalog_production_modified": false,
+    "banners_regenerated": false,
+    "PDFs_regenerated": false,
+    "publishing_enabled": false
+  },
+  "automation": {
+    "single_file_private_receiver_deployed": true,
+    "encrypted_original_retention_hours": 24,
+    "raw_source_erased_after_processing": true,
+    "normalizer_runs_in_GitHub_Actions": true,
+    "Actions_job_bootstrap_verified": true,
+    "automatic_dispatch_token_present": false,
+    "needed_for_unattended_dispatch": "COMMERCIAL_ACTIONS_TOKEN in conectatech-piloto-gratis; selected repository Actions read/write only",
+    "direct_593_API_configured": false,
+    "public_593_API_documentation_found": false,
+    "API_research_urls": [
+      "https://593sistemas.com/",
+      "https://593sistemas.com/contacto"
+    ],
+    "no_local_computer_access_assumed": true
+  },
+  "controls": {
+    "main_modified": false,
+    "other_projects_modified": false,
+    "external_customers_enabled": false,
+    "paid_services_activated": false,
+    "new_cost_authorized_usd": 0
+  },
+  "deployment_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/39704884426"
+}

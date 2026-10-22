@@ -36,6 +36,11 @@ def main():
   with tempfile.TemporaryDirectory(prefix='private-593-') as folder:
    p=Path(folder)/filename;p.write_bytes(raw);p.chmod(0o600);canonical,validation=normalize(p,baseline,published,media=media,sale_units=units)
   if canonical['source']['generated_at']<previous['source']['generated_at']:raise ValueError('REPORT_OLDER_THAN_LAST_VALID')
+  before={p['sku']:p for p in previous['products']};after={p['sku']:p for p in canonical['products']}
+  validation['comparison_last_valid_central']={'generated_at':previous['source']['generated_at'],'source_sha256':previous['source']['sha256'],'new_sku':sorted(set(after)-set(before)),'not_in_new_source':sorted(set(before)-set(after)),'price_changed':sum(after[s].get('prices')!=before[s].get('prices') for s in set(after)&set(before)),'availability_changed':sum(after[s]['availability']!=before[s]['availability'] for s in set(after)&set(before)),'quantity_changes':'Not inferred from public availability; original private reports required.'}
+  for sku in sorted(set(before)-set(after)):
+   p=before[sku];canonical['products'].append({'sku':sku,'source_name':p['source_name'],'name':p['name'],'category':p['category'],'variant_gb':p.get('variant_gb',[]),'availability':'blocked','blocked_reasons':['ABSENT_LATEST_REPORT'],'prices':None,'provenance':{'note':'Absent in latest report; discontinuation not asserted'},'web':{'url':p.get('web',{}).get('url'),'price_matches':False}})
+  canonical['products'].sort(key=lambda p:p['sku'])
   write_bundle(ROOT/'central',canonical,validation)
   c=json.loads((ROOT/'activar-cloud.json').read_text());c['activar']=True;(ROOT/'activar-cloud.json').write_text(json.dumps(c))
   report.update(validated=True,products=len(canonical['products']),blocked=validation['blocked_count']);output(True)

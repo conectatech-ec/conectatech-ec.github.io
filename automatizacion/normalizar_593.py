@@ -105,7 +105,7 @@ def adapters(canonical,outdir):
   with (outdir/name).open('w',newline='',encoding='utf-8') as f:w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(data)
  for name in ['alex','web_catalog','banner_factory','pdf_categories']:
   view={'source_sha256':canonical['source']['sha256'],'canonical':'../current.json','generated_at':canonical['source']['generated_at'],'expires_at':canonical['expires_at'],'sku':[p['sku'] for p in allvalid if name in ['alex','web_catalog']] if name in ['alex','web_catalog'] else [p['sku'] for p in active],'price_fields':{'cash':'prices.promo_cash_cents','card':'prices.pvp_card_cents'},'publishing_enabled':False}
-  if name=='pdf_categories':view['categories']={k:[p['sku'] for p in active if p['category']==k] for k in sorted(set(p['category'] or 'Sin categoría' for p in active))}
+  if name=='pdf_categories':view['categories']={k:[p['sku'] for p in active if (p['category'] or 'Sin categoría')==k] for k in sorted(set(p['category'] or 'Sin categoría' for p in active))}
   (outdir/(name+'.json')).write_text(json.dumps(view,ensure_ascii=False,separators=(',',':'))+'\n')
  rows=[{'id':p['sku'],'title':p['name'][:150],'description':p['name'],'availability':'in stock','condition':'new','price':money(p,'pvp_card_cents')+' USD','link':p['web']['url'],'image_link':p['web']['image_url'],'product_type':p['category']} for p in eligible]
  csvout('meta.csv',list(rows[0]) if rows else ['id','title','availability','condition','price','sale_price','link','image_link','product_type'],rows)

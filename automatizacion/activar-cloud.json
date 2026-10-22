@@ -1,11 +1,11 @@
 {
-  "activar": true,
+  "activar": false,
   "sincronizar_meta_verify_token": false,
   "meta_page_id": "105549695770538",
   "costo_maximo_usd": 0,
   "alcance": "Solo Worker piloto: Messenger oficial para probadores con permiso verificado; sin Billing, D1, cron, rutas, main ni catálogo de producción",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Activar solo en piloto fuente central validada del reporte 21-10-2026, generado 2026-10-22T00:25:22Z. Datos originales privados, sin cantidades de stock; fuente única y seis adaptadores en preparación, sin actualizar canales de producción. Comprobar precios exactos, agotados/conflictos bloqueados, receptor privado de archivo único y controles existentes. Sin cuotas ampliadas ni nuevos pagos. Reintento seguro: lecturas privadas con cliente Node ya utilizado en HTTPS; conservar freno ante HTTP inesperado y fuentes anteriores.",
+  "nota": "Fuente central 21-10-2026 desplegada en 1057a398 y verificada por veinte consultas HTTPS, sin IA. 1554 SKU reales, cinco exclusiones de origen y dos ausentes protegidos. Precios A17/3 SKU correctos y conflictos/agotados bloqueados. Receptor cloud privado listo; disparo desatendido pendiente de COMMERCIAL_ACTIONS_TOKEN. Sin reemplazar feeds, main, catálogo, banners ni PDF de producción; presupuesto $0. Cerrar disparador de despliegue.",
   "habilitar_vendedor_probadores": false,
   "procesar_cola_probadores": false,
   "alex_generativo": true,

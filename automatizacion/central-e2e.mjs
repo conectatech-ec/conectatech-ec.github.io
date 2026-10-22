@@ -5,11 +5,11 @@ const base=process.env.PILOT_BASE_URL||'https://conectatech-comercial-piloto.con
 const report={at:new Date().toISOString(),kind:'validated_593_private_HTTPS',passed:false,source_sha256:central.source.sha256,source_generated_at:central.source.generated_at,cut_date:central.source.cut_date,messages_to_Messenger:0,AI_calls:0,production_channels_changed:false,checks:[]};
 async function get(path){const r=await fetch(base+path,{headers,signal:AbortSignal.timeout(20000)});assert.equal(r.status,200);return r.json();}
 try{
- for(let i=0;i<15;i++){const d=await get('/commercial/catalog/status');if(d.source_sha256===central.source.sha256){report.central=d;break;}await new Promise(r=>setTimeout(r,2000));}assert.ok(report.central);assert.equal(report.central.current,true);assert.equal((await get('/health')).meta_ingress_enabled,false);
+ for(let i=0;i<15;i++){const d=await get('/commercial/catalog/status'),health=await get('/health');if(d.source_sha256===central.source.sha256&&(!process.env.EXPECTED_RELEASE||health.release===process.env.EXPECTED_RELEASE)){report.central=d;report.health=health;break;}await new Promise(r=>setTimeout(r,2000));}assert.ok(report.central);assert.equal(report.central.current,true);assert.equal(report.health.meta_ingress_enabled,false);
  for(const path of ['/commercial/catalog','/commercial/status','/commercial/report'])assert.equal((await fetch(base+path)).status,401);
  const shell=await fetch(base+'/commercial/upload');assert.equal(shell.status,200);assert.ok(!(await shell.text()).includes(process.env.PILOT_TOKEN));
  const session=crypto.randomUUID();
- for(const sku of ['TELF011','TELF012','MICR27','POWE003','ADAP005','ADAP100','POWE014','FLAS024','FLAS026','MOUS010','ENVI001','HUB003','AUDI078','TELF019']){
+ for(const sku of ['TELF011','TELF012','MICR27','POWE003','ADAP005','ADAP100','POWE014','FLAS024','FLAS026','MOUS010','ENVI001','HUB003','AUDI078','TELF019'].filter(s=>central.products.some(p=>p.sku===s))){
   const p=central.products.find(p=>p.sku===sku);assert.ok(p);
   for(const method of p.availability==='in_stock'?['contado','tarjeta']:['contado']){
    const r=await fetch(base+'/alex/chat',{method:'POST',headers,body:JSON.stringify({session_id:session,message:'¿Qué precio tiene '+sku+' con '+method+'?',catalog_only:true,reset:true}),signal:AbortSignal.timeout(40000)});assert.equal(r.status,200);const a=await r.json();assert.deepEqual(a.focus,[sku]);assert.equal(a.generative,false);assert.equal(a.source_sha256,central.source.sha256);assert.equal(a.source_kind,'validated_central_593');

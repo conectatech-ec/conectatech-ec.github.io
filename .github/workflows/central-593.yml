@@ -49,6 +49,7 @@ jobs:
         env:
           PILOT_BASE_URL: https://conectatech-comercial-piloto.conectatech-ecu.workers.dev
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          EXPECTED_RELEASE: ${{ steps.revision.outputs.sha }}
       - name: Borrar el original privado tras procesamiento verificado
         if: steps.reporte.outputs.ready == 'true'
         run: |
