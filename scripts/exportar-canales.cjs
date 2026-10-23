@@ -7,7 +7,7 @@ const products=JSON.parse(m[1]);
 const content=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
 const urls=JSON.parse(fs.readFileSync('seo-pages.json','utf8'));
 const base='https://conectatech-ec.github.io';
-const inventoryState=fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
+const inventoryState=typeof fs.existsSync==='function'&&fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
 if(inventoryState && (!/^\d{4}-\d{2}-\d{2}$/.test(inventoryState.fecha_corte)||!/^[a-f0-9]{64}$/.test(inventoryState.origen_sha256)))throw Error('Estado de inventario 593 inválido: no emitir feeds');
 // Categorías del mismo inventario público593; no inferirlas del título o del SKU.
 function parseMasterCSV(str){
