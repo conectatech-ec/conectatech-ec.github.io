@@ -8,7 +8,9 @@ const estadoStock=fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse
 const fechaPublicada=estadoStock&&/^\d{4}-\d{2}-\d{2}$/.test(estadoStock.fecha_corte)?estadoStock.fecha_corte.split('-').reverse().join('/'):null;
 const fichaComercial=require('./ficha-comercial.cjs');
 const ventaCruzada=require('./venta-cruzada.cjs');
-const html=fs.readFileSync('index.html','utf8');
+const disponibilidadWeb=require('./disponibilidad-web.cjs');
+const sourceHTML=fs.readFileSync('index.html','utf8');
+const html=disponibilidadWeb.renderCatalogDate(sourceHTML,estadoStock);
 const m=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
 if(!m)throw Error('No se encontró la base de productos');
 const products=JSON.parse(m[1]), origin='https://conectatech-ec.github.io';
@@ -39,7 +41,7 @@ for(const p of products){
   ? content.replace('<p>⚡ PROMO CONTADO</p>','<p class="muted"><strong>Condición: Producto compatible (AAA)</strong></p><p>⚡ PROMO CONTADO</p>')
   : content;
  const contentFecha=fechaPublicada&&!custom.comercialVerificado?publicContent.replace('<h2>Consulta y compra</h2>','<p class="muted">'+(p.stock>0?'Inventario actualizado al ':'Stock: 0 · No disponible · Corte: ')+fechaPublicada+' · confirma disponibilidad</p><h2>Consulta y compra</h2>'):publicContent;
- const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),ventaCruzada.inyectar(contentFecha,p,products,stable).replace(/^[ \t]+$/gm,''));
+ const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),disponibilidadWeb.renderPage(ventaCruzada.inyectar(contentFecha,p,products,stable).replace(/^[ \t]+$/gm,''),p,fechaPublicada));
 }
 const xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(u=>'  <url><loc>'+u+'</loc></url>').join('\n')+'\n</urlset>\n';
 fs.writeFileSync('sitemap.xml',xml);
@@ -48,5 +50,5 @@ const mapLine='const seoPages='+JSON.stringify(links)+';';
 const seoPagesPattern=/const seoPages=Object.fromEntries\([^\n]*\);|const seoPages=\{[^\n]*\};/;
 if(!seoPagesPattern.test(html))throw Error('No se encontró el mapeo SEO en index.html');
 const updated=html.replace(seoPagesPattern,mapLine);
-if(updated!==html)fs.writeFileSync('index.html',updated);
+if(updated!==sourceHTML)fs.writeFileSync('index.html',updated);
 console.log('Generadas '+Object.keys(links).length+' fichas y '+urls.length+' URLs.');
