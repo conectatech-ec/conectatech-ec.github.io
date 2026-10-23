@@ -219,3 +219,15 @@ Los SKU existentes con stock0 de593 siguen visibles en catálogo, categorías, b
 ## Orden vigente del propietario — etiqueta AAA, 21oct2026
 
 En todos los productos ya clasificados AAA, sustituir la etiqueta visible «AAA / producto genérico» por «Producto compatible (AAA)», respetando exactamente mayúsculas y paréntesis. Aplicar también a futuras fichas mediante los generadores; conservar la clasificación interna por SKU y las excepciones confirmadas. Este cambio global de etiqueta no renueva fechas ni cuenta como SKU nuevos. Mantener precios, stock, fotografías, títulos, URLs, aviso de stock cero y automatización cloud24/7.
+
+## Orden del propietario — piloto de títulos PRO,21oct2026
+
+Preparar exclusivamente20SKU (4celulares,4carga,4audio,4computación,4accesorios) en rama independiente, comparativa real antes/después y móvil2columnas. Título máximo2líneas, subtítulo gris con marca/modelo/datos verificados. Conservar nombre593,SKU,marca,modelo,precios,stock,URLs,fotos,SEO,schema,feeds y búsqueda. No modificar main ni producción ni escalar aún. Costo adicional0. Motor optativo y reversible con selección explícita; revisión del propietario antes de cualquier integración.
+
+## Corrección definitiva del piloto — título identificable
+
+La primera propuesta de20SKU NO está aprobada. Reprocesar sólo esos20: tipo+marca/modelo o atributo comprobado; conservar títulos actuales si ya son claros; subtítulo complementario sin repetir; si faltan datos fiables conservar identidad actual y marcar enriquecimiento. Comparar título actual/primera propuesta/nueva/subtítulo, revisar indistinguibilidad en muestra del catálogo y mostrar galería real. No modificar main,publicar ni escalar. Precio,stock,SKU,URLs,593,fotos intactos. Costo0.
+
+## Criterio editorial PRO aprobado — 22oct2026
+
+Sólo20SKU del piloto: tipo+marca/modelo o atributo diferenciador, subtítulo útil verificado. Aplicar ejemplos aprobados MONI004,POWE001,PARL001,AUDI098; MOUS014 con receptor inalámbrico por respuesta guardada del propietario. AAA/genérico fuera del primer plano de tarjetas; compatibles identificados De terceros, clasificación real en ficha antes de compra. Mantener2columnas móvil,Promo contado,PVP,fotos y fuentes593. Aprobación del criterio no autoriza main,merge,publicación ni escalado masivo. Costo0.
