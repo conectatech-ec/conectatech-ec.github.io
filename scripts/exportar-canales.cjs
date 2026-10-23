@@ -7,6 +7,8 @@ const products=JSON.parse(m[1]);
 const content=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
 const urls=JSON.parse(fs.readFileSync('seo-pages.json','utf8'));
 const base='https://conectatech-ec.github.io';
+const inventoryState=fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
+if(inventoryState && (!/^\d{4}-\d{2}-\d{2}$/.test(inventoryState.fecha_corte)||!/^[a-f0-9]{64}$/.test(inventoryState.origen_sha256)))throw Error('Estado de inventario 593 inválido: no emitir feeds');
 // Categorías del mismo inventario público593; no inferirlas del título o del SKU.
 function parseMasterCSV(str){
  const records=[];let record=[],cell='',quoted=false;
@@ -46,7 +48,7 @@ const rows=products.filter(p=>p.stock>0&&p.promo>0).map(p=>{
 });
 fs.mkdirSync('exportaciones',{recursive:true});
 const salesProducts=products.filter(p=>p.stock>0&&p.promo>0).map(p=>({sku:p.sku,nombre:p.name,categoria:p.category,stock:p.stock,promo:p.promo,pvp:p.pvp,url:base+'/productos/'+urls[p.sku]+'/'}));
-fs.writeFileSync('exportaciones/catalogo-ventas.json',JSON.stringify({fechaCatalogo:new Date().toISOString(),fuente:'Sistema 593: disponibilidad y precios sujetos a confirmación',productos:salesProducts})+'\n');
+fs.writeFileSync('exportaciones/catalogo-ventas.json',JSON.stringify({fechaCatalogo:new Date().toISOString(),fecha_corte:inventoryState?.fecha_corte||null,fuente_sha256:inventoryState?.origen_sha256||null,fuente:'Sistema 593: disponibilidad y precios sujetos a confirmación',productos:salesProducts})+'\n');
 fs.writeFileSync('exportaciones/contenido-multicanal.csv',csv(['sku','title','description','price','pvp','availability','link','image_link','category','stock','facebook_title','facebook_copy'],rows));
 const ready=rows.filter(p=>/^https?:\/\//.test(p.image_link));
 const knownBrand=sku=>{
@@ -61,7 +63,7 @@ const knownBrand=sku=>{
 const meta=ready.map(p=>({id:p.sku,title:p.title,description:p.description,availability:p.availability,condition:p.condition,price:p.price,link:p.link,image_link:p.image_link,brand:knownBrand(p.sku),product_type:productType(p.sku)}));
 fs.writeFileSync('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand','product_type'],meta));
 fs.writeFileSync('exportaciones/resumen-canales.json',JSON.stringify({
- generated_at:new Date().toISOString(),total_products:rows.length,
+ generated_at:new Date().toISOString(),fecha_corte:inventoryState?.fecha_corte||null,fuente_sha256:inventoryState?.origen_sha256||null,total_products:rows.length,
  with_image_url:ready.length,without_image_url:rows.length-ready.length,
  meta_pilot_items:ready.length,
  with_recognized_brand:meta.filter(p=>p.brand).length,
