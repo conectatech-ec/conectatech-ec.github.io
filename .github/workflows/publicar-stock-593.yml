@@ -1,4 +1,4 @@
-name: Publicar stock y fecha desde corte 593 validado
+name: Publicar stock, fecha y feeds comerciales desde 593 validado
 on:
   push:
     branches: [main]
@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verificar fuente y publicar unicamente web
+      - name: Validar corte y exportar web, ventas y Meta
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -36,14 +36,16 @@ jobs:
             APLICAR_STOCK_593=SI node scripts/aplicar-corte-stock.cjs
             node scripts/generar-seo.cjs
             node scripts/test-venta-cruzada.cjs
-            git add index.html datos-593/estado-ultimo-corte.json productos sitemap.xml seo-pages.json
+            node scripts/test-exportar-canales.cjs
+            node scripts/exportar-canales.cjs
+            git add index.html datos-593/estado-ultimo-corte.json productos sitemap.xml seo-pages.json exportaciones/
             if git diff --cached --quiet; then
-              echo "Stock, fichas y fecha ya coinciden con el corte verificado."
+              echo "Stock, fichas, fecha y feeds comerciales ya coinciden con el corte verificado."
               exit 0
             fi
             git commit -m "Actualizar stock y fecha web con corte 593 validado"
             if git push origin HEAD:main; then
-              echo "Stock y fichas publicados para GitHub Pages."
+              echo "Stock, fichas y exportaciones comerciales registrados; verificar GitHub Pages y consumidores externos."
               exit 0
             fi
             echo "Cambios simultaneos: revalidar contra main actualizado ($intento/5)"
