@@ -1,0 +1,52 @@
+name: Publicar corte comercial 593 validado
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'datos-593/corte-comercial-publico-validado.json'
+      - '.github/workflows/publicar-corte-comercial-593.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publicacion-stock-593-web
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Aplicar corte exacto, regenerar fichas y exportaciones
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for intento in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/aplicar-corte-comercial-593.cjs
+            APLICAR_COMERCIAL_593=SI node scripts/aplicar-corte-comercial-593.cjs
+            node scripts/generar-seo.cjs
+            node scripts/test-venta-cruzada.cjs
+            node scripts/exportar-canales.cjs
+            git add index.html datos-593/estado-ultimo-corte.json productos sitemap.xml seo-pages.json exportaciones
+            if git diff --cached --quiet; then
+              echo "Web y exportaciones ya actualizadas al corte comercial validado."
+              exit 0
+            fi
+            git commit -m "Sincronizar web y feeds comerciales con corte 593"
+            if git push origin HEAD:main; then
+              echo "Web y exportaciones publicadas en GitHub; verificar Pages despues."
+              exit 0
+            fi
+            echo "Revalidando contra main actualizado (${intento}/5)"
+          done
+          echo "Publicacion no terminada; sin push forzado"
+          exit 1
