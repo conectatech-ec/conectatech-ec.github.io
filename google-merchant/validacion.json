@@ -6,13 +6,13 @@
   "costo_autorizado": 0,
   "publicacion_habilitada": false,
   "estado": "SOLO_VALIDACION_COMERCIAL_PENDIENTE",
-  "source_commit": "f29b7a15903feb109334b8eadc95a8bb61356ec0",
+  "source_commit": "984e8b77110b4b0892249929bb73a68eeec7f590",
   "validacion": "local_y_http_publico",
   "inventario_corregido": {
-    "fecha_corte": "2026-10-16",
-    "archivo_origen": "Reporte-Inventario al 16-10-2026.xlsx",
-    "sha256_xlsx_privado": "66505c7a23be1a089689833940a8c3dc889a4b5d8e889e4998aa87a3ec74a983",
-    "referencias_origen": 1553,
+    "fecha_corte": "2026-10-22",
+    "archivo_origen": "Reporte-Inventario al 22-10-2026.xlsx",
+    "sha256_xlsx_privado": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
+    "referencias_origen": 1566,
     "referencias_catalogo": 1170,
     "columnas_origen": {
       "sku": "D: Cod. Principal",
@@ -23,8 +23,8 @@
     "fuente_fecha": "Fecha del corte indicada por el propietario y nombre del archivo adjunto; no fecha de modificación del repositorio.",
     "impuestos": "Importes finales del corte, IVA incluido. Sin recalcular porcentajes.",
     "stock_tiempo_real": false,
-    "autorizacion": "Solicitud del propietario: utilizar la base corregida 593 del 16-10-2026 solo en el feed; no modificar main ni producción.",
-    "alcance": "Solo SKU del feed público anterior; sin cantidades internas ni precios nuevos del archivo privado.",
+    "autorizacion": "Actualizacion comercial autorizada por propietario 22/10/2026. Feed aislado, sin habilitar anuncios o destinos externos.",
+    "alcance": "Solo SKU del feed ya existente. Datos limitados a disponibilidad y precios públicos; sin cantidades internas.",
     "referencias_exportadas": 674,
     "campos_publicos": [
       "sku",
@@ -32,7 +32,7 @@
       "precio_coincide_corte",
       "precio_publico_validado"
     ],
-    "web_commit_comparado": "1dbad9ea5b69666dff6b3fc0cfd464185cb66e2e",
+    "web_commit_comparado": "984e8b77110b4b0892249929bb73a68eeec7f590",
     "no_publicado": [
       "Excel original",
       "CSV privado completo",
@@ -43,21 +43,21 @@
       "utilidades",
       "datos privados"
     ],
-    "sha256_productos": "502ca223b880ad2d79aaea032de78262f28a0c222ae7a2e432402c5e168d5015"
+    "sha256_productos": "d0d214534189fb99d3dc641834f2d786b381cf276dab74b9bafd58663f173a0a"
   },
   "productos_origen": 1170,
-  "incluidos": 663,
-  "excluidos": 507,
+  "incluidos": 670,
+  "excluidos": 500,
   "motivos": {
+    "http_publico: precio_ficha_no_coincide": 1,
+    "http_publico: stock_ficha_no_coincide": 3,
     "identidad_pendiente": 4,
     "producto_no_aprobado": 206,
     "publicacion_no_verificada": 249,
     "sin_contrato": 1,
-    "sin_revision_limitada_corte16": 36,
-    "stock_ficha_no_coincide": 10,
-    "stock_no_confiable": 1
+    "sin_revision_limitada_corte16": 36
   },
-  "feed_sha256": "615aaa9636a107f0151d782ed4c4638c30df6b40f9a73a70eb08e00ea0d22986",
+  "feed_sha256": "876f05050a31b1536a448a974ff74a01f5cb71078ca4fe66873dfd5d3fe14183",
   "advertencias": [
     "Stock registrado: no implica inventario en tiempo real.",
     "Faltan verificar compra online, precio final, envíos y devoluciones; XML válido no garantiza aprobación de Google.",

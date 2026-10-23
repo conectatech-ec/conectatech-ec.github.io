@@ -1,71 +1,30 @@
 {
   "merchant_center": "5874003439",
-  "verificado_en_utc": "2026-10-22T13:42:46.358303+00:00",
-  "fuente_commit": "f29b7a15903feb109334b8eadc95a8bb61356ec0",
+  "verificado_en_utc": "2026-10-23T04:01:24.829928+00:00",
+  "fuente_commit": "984e8b77110b4b0892249929bb73a68eeec7f590",
   "fuente_rama": "main (lectura solamente)",
-  "inventario_sha256": "86d1043d672fa52f434e3e90a36882935ad79eef88f59e55f6f4836bc8b7a691",
-  "fecha_corte": "2026-10-16",
-  "antiguedad_corte_dias": 6,
-  "inventario_origen": "Reporte-Inventario al 16-10-2026.xlsx",
-  "origen_privado_sha256": "66505c7a23be1a089689833940a8c3dc889a4b5d8e889e4998aa87a3ec74a983",
-  "articulos_feed": 663,
-  "articulos_con_http_publico_verificado": 663,
+  "inventario_sha256": "6b81ccf7bbbd619e2181e3d27594250bb2ed439ad49730128f2a17b348e17018",
+  "fecha_corte": "2026-10-22",
+  "antiguedad_corte_dias": 1,
+  "inventario_origen": "Reporte-Inventario al 22-10-2026.xlsx",
+  "origen_privado_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
+  "articulos_feed": 670,
+  "articulos_con_http_publico_verificado": 670,
   "coherencia_catalogo_maestro": {
     "sku_web": 1170,
     "sku_con_revision_corte16": 674,
-    "discrepancias": [
-      {
-        "sku": "CASE003",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "REL071",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "ADAP014",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "BILL002",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "CABL092",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "CORT03",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "CUBO021",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "JUGU057",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "MICR14",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "CABL170",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      }
-    ],
+    "discrepancias": [],
     "nota": "Revisión limitada a los SKU del feed anterior, sin cantidades internas ni precios privados. SKU sin esta revisión quedan excluidos; diferencias de precio o de disponibilidad con la ficha excluyen el artículo."
   },
   "precio_final_documentado": "Corte corregido16: Q V. TOTAL = contado; X PVP + Y importe de IVA = PVP final. IVA incluido. Sin recalcular porcentajes ni modificar precios web.",
   "fechas_inventario_en_articulos": {
-    "16/10/2026": 663
+    "22/10/2026": 670
   },
   "stock_tiempo_real_acreditado": 0,
   "observaciones_fichas": {
-    "fichas_con_whatsapp": 663,
-    "fichas_con_contraentrega_quito": 663,
-    "fichas_con_precio_sujeto_confirmacion": 663,
+    "fichas_con_whatsapp": 670,
+    "fichas_con_contraentrega_quito": 670,
+    "fichas_con_precio_sujeto_confirmacion": 670,
     "fichas_con_formulario": 0
   },
   "enlaces_politicas_en_fichas": [],
