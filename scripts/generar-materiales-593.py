@@ -131,8 +131,55 @@ def generate_pdf(name,items,state,pages,regular,bold):
  c.save()
  return {'archivo':str(path.relative_to(ROOT)),'bytes':path.stat().st_size,
   'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'productos':len(items),'paginas':1+(len(items)+5)//6}
+
+def _pixfont(size,bold=False):
+ path='/usr/share/fonts/truetype/dejavu/DejaVuSans'+('-Bold' if bold else '')+'.ttf'
+ return ImageFont.truetype(path,size)
+def banner_revisar(p,state):
+ asset=photo(p)
+ if not asset:return None
+ background=ROOT/'imagenes/marca/fondo-promocional-original.png'
+ logo=ROOT/'imagenes/marca/logo-original.png'
+ if not background.exists() or not logo.exists():raise ValueError('Falta arte original de marca')
+ with Image.open(background) as b:
+  im=ImageOps.fit(b.convert('RGB'),(1200,1200),method=Image.Resampling.LANCZOS)
+ with Image.open(logo) as l:
+  mark=l.convert('RGBA');mark.thumbnail((150,150),Image.Resampling.LANCZOS)
+ im.paste(mark,(35,30),mark)
+ d=ImageDraw.Draw(im)
+ d.rounded_rectangle((35,208,1165,1125),radius=32,fill=(7,27,57),outline=(67,191,144),width=3)
+ title=str(p['name'])
+ words=title.split();lines=[];line=''
+ for word in words:
+  t=(line+' '+word).strip()
+  if d.textbbox((0,0),t,font=_pixfont(39,True))[2]<=1020:line=t
+  else:
+   if line:lines.append(line)
+   line=word
+ if line:lines.append(line)
+ for i,line in enumerate(lines[:2]):d.text((72,239+i*52),line,font=_pixfont(39,True),fill='white')
+ with Image.open(asset) as pimg:
+  pimg=ImageOps.exif_transpose(pimg).convert('RGBA')
+  pimg.thumbnail((710,625),Image.Resampling.LANCZOS)
+  white=Image.new('RGB',(725,630),'white')
+  white.paste(pimg,((725-pimg.width)//2,(630-pimg.height)//2),pimg)
+  im.paste(white,(420,346))
+ d=ImageDraw.Draw(im)
+ d.text((72,445),'PROMO CONTADO',font=_pixfont(29,True),fill=(182,243,213))
+ d.text((72,491),fmt(p['promo']),font=_pixfont(56,True),fill='white')
+ d.text((72,582),'PVP '+fmt(p['pvp']),font=_pixfont(28),fill=(213,224,240))
+ d.text((72,691),'SKU '+p['sku'],font=_pixfont(22),fill=(197,220,236))
+ d.text((72,905),'Actualizado al '+state['fecha_corte'],font=_pixfont(22),fill='white')
+ d.text((72,957),'Confirma disponibilidad antes de comprar',font=_pixfont(17),fill=(203,221,240))
+ d.text((72,1058),'CONECTATECH · Quito · Factura y garantía',font=_pixfont(19,True),fill='white')
+ output=ROOT/'banners-593-revision';output.mkdir(parents=True,exist_ok=True)
+ target=output/(p['sku']+'-revision.png')
+ im.save(target,format='PNG',optimize=True)
+ return {'sku':p['sku'],'archivo':str(target.relative_to(ROOT)),'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),
+  'fecha_corte':state['fecha_corte'],'estado':'REVISION_PRIVADA','publicado':False,'apto_envio':False}
+
 def main():
- p=argparse.ArgumentParser();p.add_argument('--catalogos',action='store_true');p.add_argument('--insumos',action='store_true')
+ p=argparse.ArgumentParser();p.add_argument('--catalogos',action='store_true');p.add_argument('--insumos',action='store_true');p.add_argument('--banners',action='store_true')
  a=p.parse_args();products,state,pages=load();active=[p for p in products if p['stock']>0 and p['promo']>0 and p['pvp']>0]
  groups={key:[p for p in active if p['category'] in categories] for key,categories in CATEGORIES.items()}
  known=set(sum((lst for lst in CATEGORIES.values()),[]))
@@ -158,6 +205,9 @@ def main():
   payload={**common,'estado':'INSUMOS_VALIDOS_PENDIENTE_FABRICA','productos':rows}
   dest=ROOT/'exportaciones/insumos-signature-593.json'
   dest.parent.mkdir(exist_ok=True);dest.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':'))+'\n',encoding='utf-8')
+ if a.banners:
+  previews=[x for x in (banner_revisar(p,state) for p in active if p['category'] in ('Telefonos','Tablets')) if x]
+  (ROOT/'banners-593-revision/manifest.json').write_text(json.dumps({'fecha_corte':state['fecha_corte'],'fuente_sha256':state['origen_sha256'],'estado':'REVISION_PRIVADA','publicacion_automatica':False,'banners':previews},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  print(json.dumps({'fecha_corte':state['fecha_corte'],'catalogos':len(results),'sku_activos':len(active),
   'archivos_pdf':[x['archivo'] for x in results]},ensure_ascii=False))
 if __name__=='__main__':main()
