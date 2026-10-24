@@ -46,7 +46,8 @@
     "La clasificación conserva 379 SKU maestros sin ficha publicada como pendientes, sin asumir ausencia de fotos.",
     "Categorías maestras: 1.549 SKU; último corte reporta 1.566. Diferencia neta de cobertura: 17; no se inventan SKU ni categorías faltantes.",
     "Validación previa a cualquier escritura: un error de datos no produce un lote parcial de exportaciones.",
-    "Pruebas simulan alta de SKU y cambios editoriales aprobados conservando identificadores; no prueban importación Meta."
+    "Pruebas simulan alta de SKU y cambios editoriales aprobados conservando identificadores; no prueban importación Meta.",
+    "Capturas del propietario confirman el feed existente y su reemplazo diario activo; no añadir otro horario ni otra fuente."
   ],
   "bloqueos": [
     "No hay conexión autenticada a Meta en esta sesión ni credenciales Meta configuradas en el entorno.",
@@ -121,5 +122,25 @@
     },
     "alcance": "Identificadores transcritos de la captura. No verifica propiedad, permisos efectivos, WABA, número, feed ni productos visibles. La sesión del propietario no acredita acceso del agente."
   },
-  "siguiente_comprobacion": "Abrir CONECTATECH | Catálogo Maestro; revisar Orígenes de datos y Configuración. Conservar fuente y asociaciones actuales hasta verificar WABA y número."
+  "siguiente_comprobacion": "Volver a Configurar del catálogo (engranaje lateral, fuera de Configurar de la fuente) para revisar activos comerciales/cuentas conectadas; identificar asociación WhatsApp sin modificarla.",
+  "evidencia_origen_meta": {
+    "fuente": "Capturas del propietario de Orígenes de datos y Configurar fuente",
+    "nombre": "CONECTATECH | Sincronización automática 593",
+    "tipo": "Archivo de datos (Programada)",
+    "url": "https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv",
+    "divisa_predeterminada": "USD",
+    "productos_asociados_al_origen": 939,
+    "estado_mostrado": "Sin errores",
+    "ultima_actualizacion_mostrada": "23 de oct a las 11:43 a. m.",
+    "proxima_actualizacion_mostrada": "Oct 24, 2026, 11:43 AM",
+    "programacion": {
+      "operacion": "reemplazo",
+      "estado": "Activa",
+      "frecuencia": "Cada día",
+      "hora": "11:43",
+      "zona_mostrada": "GMT-05:00"
+    },
+    "lista_complementaria_vinculada": false,
+    "alcance": "Configuración transcrita de capturas. Confirma feed y programación existentes en Meta; no acredita acceso del agente, aprobación de cada SKU, WABA, asociación al número ni visibilidad WhatsApp."
+  }
 }
