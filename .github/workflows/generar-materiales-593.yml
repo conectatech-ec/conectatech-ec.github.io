@@ -20,7 +20,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.ref_name }}
-          fetch-depth: 0
+          fetch-depth: 1
+          filter: blob:none
           sparse-checkout: |
             .github
             scripts
@@ -30,6 +31,8 @@ jobs:
             logo-conectatech.png
             imagenes
             exportaciones
+            catalogos-593
+            banners-593-revision
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
