@@ -1,0 +1,85 @@
+name: Generar catálogos PDF y preparar banners SIGNATURE 593
+on:
+  push:
+    branches: [main, integracion/signature-pdf-banners-593-20261023]
+    paths:
+      - 'datos-593/estado-ultimo-corte.json'
+      - 'scripts/generar-materiales-593.py'
+      - '.github/workflows/generar-materiales-593.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: materiales-593-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+          sparse-checkout: |
+            .github
+            scripts
+            datos-593
+            index.html
+            seo-pages.json
+            logo-conectatech.png
+            imagenes
+            exportaciones
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar herramientas gratuitas
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0 reportlab==4.4.3
+      - name: Preparar PDF, feed SIGNATURE y banners privados de revisión
+        run: |
+          python -m py_compile scripts/generar-materiales-593.py
+          python scripts/generar-materiales-593.py --catalogos --insumos --banners
+      - name: Verificar fecha, fuente y salidas
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('datos-593/estado-ultimo-corte.json').read_text())
+          pdf=json.loads(Path('catalogos-593/manifest.json').read_text())
+          factory=json.loads(Path('exportaciones/insumos-signature-593.json').read_text())
+          drafts=json.loads(Path('banners-593-revision/manifest.json').read_text())
+          for x in (pdf,factory,drafts):
+              assert x['fecha_corte']==state['fecha_corte']
+              assert x['fuente_sha256']==state['origen_sha256']
+          assert pdf['catalogos'] and pdf['con_existencias']==state['con_stock']
+          assert len(factory['productos'])==state['con_stock']
+          assert drafts['estado']=='REVISION_PRIVADA' and not drafts['publicacion_automatica']
+          assert all(not p['apto_envio'] for p in factory['productos'])
+          for item in pdf['catalogos']:
+              path=Path(item['archivo'])
+              assert path.is_file() and path.stat().st_size>1000
+              assert path.read_bytes()[:5]==b'%PDF-'
+          print('QA de PDF, insumos y borradores SIGNATURE aprobado')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: signature-banners-revision-${{ github.sha }}
+          path: banners-593-revision/
+          retention-days: 7
+      - name: Publicar únicamente PDF y manifiestos comerciales
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for intento in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/generar-materiales-593.py --catalogos --insumos
+            git add catalogos-593/ exportaciones/insumos-signature-593.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Actualizar catálogos PDF y feed SIGNATURE desde corte 593"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Cambio concurrente, reintentando: ${intento}"
+          done
+          exit 1
