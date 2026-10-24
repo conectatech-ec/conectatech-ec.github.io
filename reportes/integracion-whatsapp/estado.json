@@ -1,5 +1,5 @@
 {
-  "estado": "PREPARADO_EN_RAMA_NO_VINCULADO",
+  "estado": "CATALOGO_MAESTRO_CONECTADO_SEGUN_CAPTURA_PRODUCTOS_PENDIENTES",
   "fecha_revision_local": "2026-10-23",
   "fecha_corte": "2026-10-22",
   "fuente_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
@@ -47,7 +47,8 @@
     "Categorías maestras: 1.549 SKU; último corte reporta 1.566. Diferencia neta de cobertura: 17; no se inventan SKU ni categorías faltantes.",
     "Validación previa a cualquier escritura: un error de datos no produce un lote parcial de exportaciones.",
     "Pruebas simulan alta de SKU y cambios editoriales aprobados conservando identificadores; no prueban importación Meta.",
-    "Capturas del propietario confirman el feed existente y su reemplazo diario activo; no añadir otro horario ni otra fuente."
+    "Capturas del propietario confirman el feed existente y su reemplazo diario activo; no añadir otro horario ni otra fuente.",
+    "Captura de Más detalles en WhatsApp confirma conexión al Catálogo Maestro por nombre. El administrador de la aplicación muestra cero productos y avisa de un plazo de hasta 24 horas."
   ],
   "bloqueos": [
     "No hay conexión autenticada a Meta en esta sesión ni credenciales Meta configuradas en el entorno.",
@@ -122,7 +123,7 @@
     },
     "alcance": "Identificadores transcritos de la captura. No verifica propiedad, permisos efectivos, WABA, número, feed ni productos visibles. La sesión del propietario no acredita acceso del agente."
   },
-  "siguiente_comprobacion": "Volver a Configurar del catálogo (engranaje lateral, fuera de Configurar de la fuente) para revisar activos comerciales/cuentas conectadas; identificar asociación WhatsApp sin modificarla.",
+  "siguiente_comprobacion": "Conservar conexión y feed. Comprobar productos desde la aplicación dentro del plazo mostrado de hasta 24 horas desde conexión/cambios; si continúa vacío al vencer el plazo, revisar Productos/diagnósticos/estado por canal en Meta antes de modificar asociaciones. Después verificar catálogo y colecciones desde WhatsApp de cliente.",
   "evidencia_origen_meta": {
     "fuente": "Capturas del propietario de Orígenes de datos y Configurar fuente",
     "nombre": "CONECTATECH | Sincronización automática 593",
@@ -142,5 +143,27 @@
     },
     "lista_complementaria_vinculada": false,
     "alcance": "Configuración transcrita de capturas. Confirma feed y programación existentes en Meta; no acredita acceso del agente, aprobación de cada SKU, WABA, asociación al número ni visibilidad WhatsApp."
+  },
+  "evidencia_vinculacion_app": {
+    "fuente": "Captura del propietario: WhatsApp Business Android > Catálogo > Más detalles",
+    "catalogo_nombre_mostrado": "CONECTATECH | Catálogo Maestro",
+    "texto_vinculacion": "Meta Business Suite que se conectó a esta cuenta de WhatsApp",
+    "id_mostrado_en_app": null,
+    "correspondencia_id": "ID del Maestro documentado previamente en captura Meta; el cuadro de WhatsApp sólo muestra nombre.",
+    "productos_en_administrador_app": 0,
+    "mensaje_app": "El catálogo no contiene productos. Administra el catálogo con Meta Business Suite.",
+    "plazo_mostrado": "Pueden transcurrir hasta 24 horas para que los cambios o productos se muestren aquí.",
+    "visibilidad_cliente_verificada": false,
+    "colecciones_visibles_verificadas": false,
+    "alcance": "Confirma nombre del catálogo conectado en la aplicación del propietario. No acredita número mediante pantalla de perfil, propiedad/permisos del activo, cantidad visible al cliente ni sincronización final."
+  },
+  "evidencia_importacion_meta": {
+    "fuente": "Captura del propietario: Resumen de la subida de productos",
+    "fecha_hora_mostrada": "23 de oct a las 11:43am GMT-05:00",
+    "actualizados_o_agregados": 939,
+    "eliminados": 22,
+    "no_subidos": 0,
+    "problemas": 0,
+    "alcance": "Resultado de esa subida en Meta. No establece motivo de cada eliminación ni visibilidad WhatsApp."
   }
 }
