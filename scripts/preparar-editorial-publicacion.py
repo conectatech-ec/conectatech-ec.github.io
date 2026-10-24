@@ -1,0 +1,32 @@
+"""Compila mapas incrementales verificados, sin tocar productos, precios ni páginas."""
+import json,re,hashlib,unicodedata
+from pathlib import Path
+cfg=json.loads(Path('importacion/editorial/publicados.json').read_text());manifest=json.loads(Path('importacion/editorial/lotes/lote-'+cfg['loteActual']+'.json').read_text());html=Path('index.html').read_text();products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',html)[1]);by={p['sku']:p for p in products};queue=json.loads(Path('reportes/editorial-selectivo/clasificacion-1170.json').read_text());states={e['sku']:e['estado'] for e in queue['cola']}
+assert len(manifest['skus'])<=30 and len(set(manifest['skus']))==len(manifest['skus'])
+assert cfg['criterioAprobado'] and cfg['excluirPrefijos']==['TELF','TABL']
+norm=lambda s:re.sub('[^a-z0-9]','',unicodedata.normalize('NFD',s.lower()).encode('ascii','ignore').decode())
+seen={};seo=json.loads(Path('seo-contenido.json').read_text())
+for sku,e in cfg['productos'].items():
+ assert sku in by and not sku.startswith(('TELF','TABL')),sku
+ lot=Path('importacion/editorial/lotes/lote-'+e['lote'].split('-')[-1]+'.json');m=json.loads(lot.read_text());assert len(m['skus'])<=30 and sku in m['skus'],sku
+ assert e['titulo']==m['productos'][sku]['titulo'] and e['subtitulo']==m['productos'][sku]['subtitulo'],sku
+ assert by[sku]['category'].lower() not in ['telefonos','tablets','celulares'],sku
+ assert states[sku]=='MEJORAR TÍTULO' and e['tituloAnterior']==by[sku]['name'],sku
+ assert e['titulo'] and e['subtitulo'] and e['fuentes'],sku
+ assert not re.search(r'producto gen[eé]rico|compatible\s*\(AAA\)',e['titulo']+' '+e['subtitulo'],re.I),sku
+ assert norm(e['titulo']) not in seen,(sku,seen.get(norm(e['titulo'])));seen[norm(e['titulo'])]=sku
+ for other in products:
+  if other['sku']!=sku and other['sku'] not in cfg['productos']:assert norm(e['titulo'])!=norm(other['name']),(sku,other['sku'])
+ assert all(not (len(norm(v))>=4 and norm(v) in norm(e['titulo'])) for v in e['subtitulo'].split('·')),sku
+ assert e['sha256Foto']==hashlib.sha256(Path(e['foto'].lstrip('/')).read_bytes()).hexdigest(),sku
+ assert e['condicionTarjeta']==('De terceros' if seo[sku]['reglaSKU']['autenticidad']=='genérico/compatible' else ''),sku
+ if e.get('publicacionVerificada'):
+  v=e['publicacionVerificada'];report=Path(v['informe']);assert report.is_file() and hashlib.sha256(report.read_bytes()).hexdigest()==v['sha256Informe'],sku
+  data=json.loads(report.read_text());assert data['estado']=='VERIFICADO_HTTP_CHROMIUM' and sku in data['skus'],sku
+out='window.CONECTATECH_TITULOS_PRO_DATOS='+json.dumps(cfg,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')+';\n';Path('assets/editorial-titulos-datos.js').write_text(out)
+# Versionar sólo estos tres recursos evita servir datos de un lote anterior.
+for name in ['editorial-titulos-datos.js','editorial-titulos.js','editorial-titulos.css']:
+ digest=hashlib.sha256(Path('assets',name).read_bytes()).hexdigest()[:12]
+ html=re.sub(r'(/assets/'+re.escape(name)+r')(?:\?v=[a-f0-9]+)?',lambda m:m[1]+'?v='+digest,html)
+Path('index.html').write_text(html)
+print('Compilados',len(cfg['productos']),'SKU; máximo30/lote,0celulares/tablets y fechas sólo tras verificación pública.')

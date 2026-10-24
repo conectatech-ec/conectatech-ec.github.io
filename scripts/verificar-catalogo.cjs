@@ -6,6 +6,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const ROOT = path.resolve(__dirname, '..');
+const availabilityCore=require('../assets/disponibilidad-core.js');
+const compactCard=(c,width)=>c.altura-(c.alto_estado||0)-(c.alto_subtitulo||0)<=(width===1280?520:410)&&c.altura<=(width===1280?600:470)&&!c.contenido_largo.length;
 const PUBLIC = 'https://conectatech-ec.github.io';
 const sha = data => crypto.createHash('sha256').update(data).digest('hex');
 const safe = file => { const p = path.resolve(ROOT, file); if (!p.startsWith(ROOT + path.sep)) throw new Error('Ruta fuera del repositorio'); return p; };
@@ -55,6 +57,10 @@ async function main() {
   const families = familyMatch ? JSON.parse(familyMatch[1]) : {};
   const category = p => p.categoriaComercial || families[p.category] || 'Hogar y Accesorios';
   const catalogProducts = products;
+  const editorialFile=safe('importacion/editorial/publicados.json');
+  const editorial=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile)):null;
+  const entry=p=>editorial?.activo&&!editorial.excluirPrefijos?.some(x=>p.sku.startsWith(x))?editorial.productos[p.sku]:null;
+  const editorialDate=p=>entry(p)?.publicacionVerificada?.estado==='VERIFICADO_HTTP_CHROMIUM'?entry(p).publicacionVerificada.fecha:'';
   const pageSize = Number(index.match(/(?:const|let) pageSize\s*=\s*(\d+)/)?.[1] || 24);
   const report = {version: 1, fecha: new Date().toISOString(), base: opt.base, sku_solicitados: skus,
     alcance: 'Renderizado real, navegación y datos del catálogo; no certifica fidelidad visual del producto ni publicación.',
@@ -70,7 +76,7 @@ async function main() {
     report.motor = {nombre: 'Chromium', version: browser.version()};
     const context = await browser.newContext({locale: 'es-EC', deviceScaleFactor: 1, reducedMotion: 'reduce'});
     context.setDefaultTimeout(15000);
-    if (opt.base !== PUBLIC) await context.route(PUBLIC + '/**', route => { const u = new URL(route.request().url()); return route.continue({url: opt.base + u.pathname + u.search}); });
+    if (opt.base !== PUBLIC) await context.route(PUBLIC + '/**', async route => { const u = new URL(route.request().url()); const response=await context.request.get(opt.base + u.pathname + u.search); return route.fulfill({response}); });
     const fetched = new Map();
     async function resource(url, relativeFile) {
       const key = url + '\0' + relativeFile;
@@ -138,7 +144,8 @@ async function main() {
               const r = card.getBoundingClientRect(), image = card.querySelector('.product-img img'), promo = card.querySelector('.promo'), pvp = card.querySelector('.pvp'), title = card.querySelector('.name');
               const anchor = element => element?.closest('a')?.getAttribute('href') || element?.querySelector('a')?.getAttribute('href') || null;
               const detail = Array.from(card.querySelectorAll('a')).find(a => /Ver detalles/i.test(a.textContent));
-              return {sku: card.dataset.sku, actualizado: card.dataset.actualizado || '', altura: r.height, ancho: r.width,
+              const extraHeight=selector=>{const el=card.querySelector(selector);if(!el)return 0;const st=getComputedStyle(el);return el.getBoundingClientRect().height+(parseFloat(st.marginTop)||0)+(parseFloat(st.marginBottom)||0);};
+              return {alto_estado:extraHeight('.ct-availability'),alto_subtitulo:extraHeight('.ct-pro-subtitle'),estado_disponibilidad:card.querySelector('.ct-availability')?.dataset.availability,sku: card.dataset.sku, actualizado: card.dataset.actualizado || '', altura: r.height, ancho: r.width,
                 titulo: title?.textContent.trim(), categoria: card.querySelector('.cat')?.textContent.trim(),
                 promo: promo?.textContent, pvp: pvp?.textContent, promo_px: promo ? parseFloat(getComputedStyle(promo).fontSize) : 0,
                 pvp_px: pvp ? parseFloat(getComputedStyle(pvp).fontSize) : 0,
@@ -150,16 +157,20 @@ async function main() {
                   naturalWidth: image.naturalWidth, naturalHeight: image.naturalHeight, actual: image.currentSrc, ajuste: getComputedStyle(image).objectFit} : null};
             })};
         });
+        // La disponibilidad central ya filtra agotados por defecto y los precios sólo son de elegibles.
         const order = mode => {
-          const list = catalogProducts.slice();
-          const updatedTime = p => Date.parse(payload.productos[p.sku]?.actualizadoEn || '') || 0;
-          const hasPhoto = p => Boolean(p.imageUrl || payload.productos[p.sku]?.imagen?.src);
-          const priority = p => ({nuevo: 0, actualizado: 1}[payload.productos[p.sku]?.tipoCambio] ?? 2);
-          if (mode === 'fotos' || mode === 'recientes') list.sort((a, b) => Number(priority(a) === 2) - Number(priority(b) === 2) || updatedTime(b) - updatedTime(a) || priority(a) - priority(b));
-          if (mode === 'nombre') list.sort((a, b) => a.name.localeCompare(b.name, 'es', {sensitivity: 'base', numeric: true}));
-          if (mode === 'precio-asc') list.sort((a, b) => a.promo - b.promo);
-          if (mode === 'precio-desc') list.sort((a, b) => b.promo - a.promo);
-          return list.filter(hasPhoto).concat(list.filter(p => !hasPhoto(p)));
+          const list=catalogProducts.filter(p=>availabilityCore.forProduct(p).main_catalog);
+          const updatedTime=p=>Date.parse(editorialDate(p)||payload.productos[p.sku]?.actualizadoEn||'')||0;
+          const hasPhoto=p=>Boolean(p.imageUrl||payload.productos[p.sku]?.imagen?.src);
+          const priority=p=>editorialDate(p)?1:({nuevo:0,actualizado:1}[payload.productos[p.sku]?.tipoCambio]??2);
+          return list.sort((a,b)=>{
+            const eligible=Number(availabilityCore.forProduct(b).commercial_eligible)-Number(availabilityCore.forProduct(a).commercial_eligible);if(eligible)return eligible;
+            const photo=Number(hasPhoto(b))-Number(hasPhoto(a));if(photo)return photo;
+            if(mode==='nombre')return a.name.localeCompare(b.name,'es',{sensitivity:'base',numeric:true});
+            if(mode==='precio-asc')return a.promo-b.promo;if(mode==='precio-desc')return b.promo-a.promo;
+            if(mode==='catalogo')return 0;
+            return Number(priority(a)===2)-Number(priority(b)===2)||updatedTime(b)-updatedTime(a)||priority(a)-priority(b);
+          });
         };
         const defaultMode = payload.ordenPredeterminado || 'recientes';
         check('orden_inicial', await page.locator('#catalogSort').inputValue() === defaultMode && equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Orden inicial distinto de las novedades publicadas.');
@@ -173,7 +184,7 @@ async function main() {
         const initial = await snapshot(); row.diseno = initial;
         check('columnas', initial.columnas === (width === 1280 ? 3 : 2), 'Número de columnas incorrecto: ' + initial.columnas);
         check('sin_desbordamiento_catalogo', initial.scrollWidth <= Math.ceil(initial.ancho) + 1, 'El grid presenta desbordamiento horizontal.');
-        check('tarjetas_compactas', initial.tarjetas.every(card => card.altura <= (width === 1280 ? 520 : 410) && card.altura > 0 && !card.contenido_largo.length), 'Tarjeta supera el límite de la presentación 3/2 o contiene ficha técnica/stock/descripción extensa.');
+        check('tarjetas_compactas', initial.tarjetas.every(card => compactCard(card,width) && card.altura>0 && card.alto_estado<=60 && card.alto_subtitulo<=40), 'Tarjeta supera el límite de la presentación 3/2 o contiene ficha técnica/stock/descripción extensa.');
         check('precios_tarjetas', initial.tarjetas.every(card => { const p = bySku.get(card.sku); return p && money(card.promo) === Math.round(p.promo * 100) && money(card.pvp) === Math.round(p.pvp * 100) && card.promo_px > card.pvp_px && card.pvp_tachado === false; }), 'Precios o jerarquía incorrectos en tarjetas.');
         check('enlaces_tarjetas', initial.tarjetas.every(card => Object.values(card.enlaces).every(href => href && new URL(href, PUBLIC).href === PUBLIC + '/productos/' + slugs[card.sku] + '/')), 'Imagen, título o Ver detalles no enlazan a ficha estable.');
         if (initial.ancho_documento > width) report.advertencias_ajenas_al_lote.push({ancho: width, motivo: 'Ancho total del documento supera viewport; revisar zonas ajenas al grid.', ancho_documento: initial.ancho_documento});
@@ -228,15 +239,16 @@ async function main() {
           const current = (await snapshot()).tarjetas.find(item => item.sku === sku);
           if (!current) { product.errores.push('Tarjeta deSKU no localizada.'); continue; }
           product.tarjeta = current;
-          ensure(p.stock > 0 ? current.sin_stock === null : /Stock: 0.*No disponible/.test(current.sin_stock || ''), 'Aviso de stock distinto de la disponibilidad del SKU.');
+          ensure(current.estado_disponibilidad===availabilityCore.forProduct(p).status,'Estado visible distinto de disponibilidad central.');
+          ensure(current.titulo===(entry(p)?.titulo||p.name),'Título visible distinto del mapa editorial/original.');
           if (published) {
             ensure(Number.isFinite(Date.parse(published.actualizadoEn)) && /^[a-f0-9]{64}$/.test(published.huella || ''), 'Metadatos publicados sin fecha o huella válidas.');
-            ensure(current.actualizado === published.actualizadoEn, 'Fecha de actualización no coincide con metadatos.');
+            ensure(current.actualizado === (editorialDate(p)||published.actualizadoEn), 'Fecha de actualización no coincide con metadatos.');
           } else {
             ensure(current.actualizado === '', 'El candidato nuevo tiene una fecha de publicación artificial.');
             product.metadatos = 'CANDIDATO_LOCAL_SIN_FECHA_PUBLICA';
           }
-          ensure(current.altura <= (width === 1280 ? 520 : 410) && !current.contenido_largo.length, 'Tarjeta del producto pierde diseño compacto.');
+          ensure(compactCard(current,width) && current.alto_estado<=60 && current.alto_subtitulo<=40, 'Tarjeta del producto pierde diseño compacto.');
           ensure(current.imagen?.cargada && current.imagen?.ajuste === 'contain', 'Imagen no carga o usa ajuste diferente decontain.');
           ensure(money(current.promo) === Math.round(p.promo * 100) && money(current.pvp) === Math.round(p.pvp * 100) && current.promo_px > current.pvp_px && current.pvp_tachado === false, 'Datos o jerarquía de precios modificados.');
           // A financial update may register a SKU before it has a photo. Match

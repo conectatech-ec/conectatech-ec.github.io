@@ -161,6 +161,19 @@ jobs:
           mapfile -t skus < "$RUNNER_TEMP/conectatech-qa-skus.txt"
           node scripts/verificar-catalogo.cjs --sku "${skus[@]}" --base "$BASE_QA" --salida "$REPORTE_CATALOGO" --capturas reportes/catalogo
 
+      - name: Comprobar títulos editoriales activos y datos conservados
+        id: editorial
+        if: always() && steps.preflight.outcome == 'success'
+        continue-on-error: true
+        env:
+          BASE_EDITORIAL: ${{ env.BASE_QA }}
+        run: |
+          if [ -f importacion/editorial/publicados.json ]; then
+            python scripts/preparar-editorial-publicacion.py
+            git diff --exit-code -- index.html assets/editorial-titulos-datos.js
+            node scripts/verificar-editorial-publicacion.cjs
+          fi
+
       - name: Incorporar únicamente evidencia móvil válida
         id: evidencia
         if: always() && steps.preflight.outcome == 'success'
@@ -240,6 +253,7 @@ jobs:
             reportes/prepublicacion-lote-activo.json
             reportes/catalogo-lote-activo.json
             reportes/catalogo/
+            reportes/editorial-selectivo/
 
       - name: Exigir todos los controles sin publicar
         if: always()
@@ -249,9 +263,11 @@ jobs:
           EVIDENCIA: ${{ steps.evidencia.outcome }}
           CONTRATO: ${{ steps.contrato.outcome }}
           CATALOGO: ${{ steps.catalogo.outcome }}
+          EDITORIAL: ${{ steps.editorial.outcome }}
         run: |
           test "$PREFLIGHT" = success
           test "$MOVIL" = success
           test "$EVIDENCIA" = success
           test "$CONTRATO" = success
           test "$CATALOGO" = success
+          test "$EDITORIAL" = success
