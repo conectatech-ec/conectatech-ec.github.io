@@ -8,6 +8,7 @@ on:
       - 'seo-contenido.json'
       - 'scripts/exportar-canales.cjs'
       - 'scripts/colecciones-whatsapp.cjs'
+      - 'scripts/validar-exportacion-593.cjs'
       - 'datos-593/estado-ultimo-corte.json'
       - 'datos-593/inventario-publico.csv'
       - 'seo-pages.json'
@@ -31,6 +32,7 @@ jobs:
           node-version: '22'
       - name: Generar archivos CSV
         run: |
+          node scripts/test-validar-exportacion-593.cjs
           node scripts/test-colecciones-whatsapp.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/exportar-canales.cjs

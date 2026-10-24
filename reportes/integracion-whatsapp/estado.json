@@ -42,7 +42,11 @@
     "Las colecciones propuestas son referencias SKU; no son colecciones publicadas en WhatsApp.",
     "La categoría maestra vacía no se infiere del título ni del prefijo SKU.",
     "No se seleccionan Ofertas destacadas sin aprobación editorial.",
-    "El exportador deja de aplicar reglas de imágenes/títulos: sólo consume el contenido ya publicado."
+    "El exportador deja de aplicar reglas de imágenes/títulos: sólo consume el contenido ya publicado.",
+    "La clasificación conserva 379 SKU maestros sin ficha publicada como pendientes, sin asumir ausencia de fotos.",
+    "Categorías maestras: 1.549 SKU; último corte reporta 1.566. Diferencia neta de cobertura: 17; no se inventan SKU ni categorías faltantes.",
+    "Validación previa a cualquier escritura: un error de datos no produce un lote parcial de exportaciones.",
+    "Pruebas simulan alta de SKU y cambios editoriales aprobados conservando identificadores; no prueban importación Meta."
   ],
   "bloqueos": [
     "No hay conexión autenticada a Meta en esta sesión ni credenciales Meta configuradas en el entorno.",
@@ -67,8 +71,38 @@
   "nota_limite": "Referencia general oficial de WhatsApp Business App; no acredita el límite efectivo de CONECTATECH ni su modalidad.",
   "publicacion": "No integrar ni publicar carga masiva hasta comprobar límite, permisos y organización visible. No hay cambios en el número, mensajería, SIGNATURE, inventario ni web.",
   "pruebas": [
+    "node scripts/test-validar-exportacion-593.cjs",
     "node scripts/test-colecciones-whatsapp.cjs",
     "node scripts/test-exportar-canales.cjs",
     "node scripts/exportar-canales.cjs"
-  ]
+  ],
+  "cobertura": {
+    "sku_publicados": 1170,
+    "sku_categorias_maestras": 1549,
+    "sku_fuente_ultimo_corte": 1566,
+    "sku_sin_ficha": 379
+  },
+  "registros_preparados": 1549,
+  "sin_categoria_maestra_con_ficha": 71,
+  "control_593": "Antes de escribir, exige fecha y hash del corte aplicado, cobertura exacta de SKU publicados, stock y precios coincidentes. No altera Data Hub ni inventario.",
+  "autorizacion": {
+    "meta_autenticado": false,
+    "navegador_interactivo_disponible": false,
+    "credenciales_meta_configuradas": false,
+    "conexion_meta_disponible_en_herramientas": false,
+    "drive_configuracion_meta_encontrada": false,
+    "comprobaciones": [
+      "Herramientas disponibles: sin acciones Meta/WhatsApp ni navegador interactivo.",
+      "Estado del entorno: sin secretos ni identidades Meta; red aplicada sin dominios Meta.",
+      "Búsquedas en plugins: sin integración adecuada de catálogo WhatsApp.",
+      "Drive CONECTATECH: búsquedas Catálogo Maestro, WhatsApp y Meta sin documento de configuración identificado."
+    ],
+    "procedimiento_propietario": [
+      "Abrir https://business.facebook.com/commerce/ en el navegador habitual e iniciar sesión directamente en Meta; completar MFA allí si se solicita.",
+      "Seleccionar CONECTATECH y el catálogo existente CONECTATECH | Catálogo Maestro. No crear ni migrar un catálogo.",
+      "En Configuración del negocio, comprobar acceso de la cuenta conectada al catálogo (gestionar catálogo) y a la WABA existente para consultar su asociación.",
+      "Para operar desde esta sesión hace falta una conexión oficial autenticada o un navegador interactivo con toma de control. Ninguno está disponible actualmente; iniciar sesión en un navegador personal no comparte la sesión con el agente.",
+      "Cuando la interfaz proporcione ese mecanismo, autorizarse dentro de él. No copiar contraseñas, tokens, cookies ni perfiles de navegador al chat."
+    ]
+  }
 }

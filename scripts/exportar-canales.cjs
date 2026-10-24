@@ -8,7 +8,14 @@ const content=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
 const urls=JSON.parse(fs.readFileSync('seo-pages.json','utf8'));
 const base='https://conectatech-ec.github.io';
 const inventoryState=typeof fs.existsSync==='function'&&fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
-if(inventoryState && (!/^\d{4}-\d{2}-\d{2}$/.test(inventoryState.fecha_corte)||!/^[a-f0-9]{64}$/.test(inventoryState.origen_sha256)))throw Error('Estado de inventario 593 inválido: no emitir feeds');
+const {validar}=require('./validar-exportacion-593.cjs');
+const cutPaths={comercial:'datos-593/corte-comercial-publico-validado.json',stock:'datos-593/corte-stock-validado.json'};
+const cutPath=inventoryState?.referencia||(inventoryState?.precios_y_demas_atributos_intactos===true?cutPaths.stock:null);
+if(!Object.values(cutPaths).includes(cutPath))throw Error('Falta referencia al corte validado 593');
+const cut=JSON.parse(fs.readFileSync(cutPath,'utf8'));
+validar({products,inventoryState,cut});
+// Preparar todo antes de escribir: un fallo no deja un lote parcial.
+const outputs=new Map();
 // Categorías del mismo inventario público593; no inferirlas del título o del SKU.
 function parseMasterCSV(str){
  const records=[];let record=[],cell='',quoted=false;
@@ -46,10 +53,9 @@ const rows=products.filter(p=>p.stock>0&&p.promo>0).map(p=>{
     facebook_title:(o.nombre||p.name).slice(0,150),
     facebook_copy:(o.descripcion||o.descripcionSeo||p.name)+'\nPROMO CONTADO $'+p.promo.toFixed(2)+' · PVP $'+p.pvp.toFixed(2)+'\nConsulta disponibilidad en Quito. '+base+'/productos/'+urls[p.sku]+'/'};
 });
-fs.mkdirSync('exportaciones',{recursive:true});
 const salesProducts=products.filter(p=>p.stock>0&&p.promo>0).map(p=>({sku:p.sku,nombre:p.name,categoria:p.category,stock:p.stock,promo:p.promo,pvp:p.pvp,url:base+'/productos/'+urls[p.sku]+'/'}));
-fs.writeFileSync('exportaciones/catalogo-ventas.json',JSON.stringify({fechaCatalogo:new Date().toISOString(),fecha_corte:inventoryState?.fecha_corte||null,fuente_sha256:inventoryState?.origen_sha256||null,fuente:'Sistema 593: disponibilidad y precios sujetos a confirmación',productos:salesProducts})+'\n');
-fs.writeFileSync('exportaciones/contenido-multicanal.csv',csv(['sku','title','description','price','pvp','availability','link','image_link','category','stock','facebook_title','facebook_copy'],rows));
+outputs.set('exportaciones/catalogo-ventas.json',JSON.stringify({fechaCatalogo:new Date().toISOString(),fecha_corte:inventoryState?.fecha_corte||null,fuente_sha256:inventoryState?.origen_sha256||null,fuente:'Sistema 593: disponibilidad y precios sujetos a confirmación',productos:salesProducts})+'\n');
+outputs.set('exportaciones/contenido-multicanal.csv',csv(['sku','title','description','price','pvp','availability','link','image_link','category','stock','facebook_title','facebook_copy'],rows));
 const ready=rows.filter(p=>/^https?:\/\//.test(p.image_link));
 const knownBrand=sku=>{
   const product=products.find(p=>p.sku===sku);
@@ -70,8 +76,8 @@ const meta=products.filter(p=>p.promo>0).map(p=>{
  availability:p.stock>0?'in stock':'out of stock',condition:'new',price:p.promo.toFixed(2)+' USD',
  link:base+'/productos/'+urls[p.sku]+'/',image_link,brand:knownBrand(p.sku),product_type:productType(p.sku)};
 }).filter(Boolean);
-fs.writeFileSync('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand','product_type'],meta));
-fs.writeFileSync('exportaciones/resumen-canales.json',JSON.stringify({
+outputs.set('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand','product_type'],meta));
+outputs.set('exportaciones/resumen-canales.json',JSON.stringify({
  generated_at:new Date().toISOString(),fecha_corte:inventoryState?.fecha_corte||null,fuente_sha256:inventoryState?.origen_sha256||null,total_products:rows.length,
  with_image_url:ready.length,without_image_url:rows.length-ready.length,
  meta_pilot_items:meta.length,
@@ -81,7 +87,10 @@ fs.writeFileSync('exportaciones/resumen-canales.json',JSON.stringify({
  without_master_category:meta.filter(p=>!p.product_type).map(p=>p.id),
  note:'Archivo piloto para revisión en Commerce Manager; publicación, elegibilidad, fotografía y políticas requieren validación. No publica anuncios en Marketplace.'
 },null,2)+'\n');
-console.log('Exportaciones creadas: '+rows.length+' productos, '+ready.length+' con URL de imagen.');
 
 const {planificar}=require('./colecciones-whatsapp.cjs');
-fs.writeFileSync('exportaciones/whatsapp-organizacion-pendiente.json',JSON.stringify(planificar({products,content,masterCategories,urls,inventoryState}),null,2)+'\n');
+outputs.set('exportaciones/whatsapp-organizacion-pendiente.json',JSON.stringify(planificar({products,content,masterCategories,urls,inventoryState}),null,2)+'\n');
+
+fs.mkdirSync('exportaciones',{recursive:true});
+for(const [path,value] of outputs)fs.writeFileSync(path,value);
+console.log('Exportaciones preparadas: '+rows.length+' disponibles; Meta '+meta.length+' SKU, incluidos '+meta.filter(p=>p.availability==='out of stock').length+' agotados. Importación y visibilidad pendientes de Meta.');

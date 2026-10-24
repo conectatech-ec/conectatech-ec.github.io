@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict'),{validar}=require('./validar-exportacion-593.cjs');
+const products=[{sku:'SKU001',stock:0,promo:1.25,pvp:1.5}];
+const inventoryState={fecha_corte:'2026-10-22',origen_sha256:'a'.repeat(64),sku_web:1};
+const cut={fecha_corte:inventoryState.fecha_corte,sha256_original:inventoryState.origen_sha256,productos:{SKU001:{stock:0,promo_centavos:125,pvp_centavos:150}}};
+const args={products,inventoryState,cut},before=JSON.stringify(args);
+assert.equal(validar(args),true);assert.equal(JSON.stringify(args),before);
+assert.throws(()=>validar({...args,products:[{...products[0],stock:1}]}),/Stock distinto/);
+assert.throws(()=>validar({...args,products:[{...products[0],promo:1.3}]}),/Precio distinto/);
+assert.throws(()=>validar({...args,products:[{...products[0],pvp:Infinity}]}),/Precio público inválido/);
+assert.throws(()=>validar({...args,products:[{...products[0],sku:'FALTA'}]}),/Falta SKU/);
+assert.throws(()=>validar({...args,inventoryState:{...inventoryState,fecha_corte:'2026-10-23'}}),/no coinciden/);
+assert.throws(()=>validar({...args,products:[]}),/Cobertura/);
+const stockCut={fecha_corte:inventoryState.fecha_corte,sha256:inventoryState.origen_sha256,stock_por_sku:{SKU001:0}};
+assert.equal(validar({...args,cut:stockCut}),true);
+assert.throws(()=>validar({...args,cut:{...stockCut,stock_por_sku:{SKU001:1}}}),/Stock distinto/);
+console.log('593: fuente, fecha, cobertura, SKU, precios, stock y ausencia de mutaciones verificados.');
