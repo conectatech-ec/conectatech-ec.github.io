@@ -172,6 +172,9 @@ jobs:
             python scripts/preparar-editorial-publicacion.py
             git diff --exit-code -- index.html assets/editorial-titulos-datos.js
             node scripts/verificar-editorial-publicacion.cjs
+            if node -e "const c=require('./importacion/editorial/publicados.json');process.exit(Object.values(c.productos).every(e=>e.publicacionVerificada)?0:1)"; then
+              node scripts/verificar-editorial-prioridad.cjs
+            fi
           fi
 
       - name: Incorporar únicamente evidencia móvil válida
