@@ -7,6 +7,9 @@ on:
       - 'index.html'
       - 'seo-contenido.json'
       - 'scripts/exportar-canales.cjs'
+      - 'scripts/colecciones-whatsapp.cjs'
+      - 'datos-593/estado-ultimo-corte.json'
+      - 'datos-593/inventario-publico.csv'
       - 'seo-pages.json'
 permissions:
   contents: write
@@ -28,6 +31,7 @@ jobs:
           node-version: '22'
       - name: Generar archivos CSV
         run: |
+          node scripts/test-colecciones-whatsapp.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/exportar-canales.cjs
       - name: Guardar exportaciones

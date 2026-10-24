@@ -1,4 +1,4 @@
-require('./aplicar-reglas-medios.cjs')();
+// Exportación de sólo lectura: títulos e imágenes se aprueban en sus proyectos.
 const fs=require('fs');
 const html=fs.readFileSync('index.html','utf8');
 const m=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
@@ -60,15 +60,28 @@ const knownBrand=sku=>{
   if(['TELF011','TELF012'].includes(sku))return 'Samsung';
   return '';
 };
-const meta=ready.map(p=>({id:p.sku,title:p.title,description:p.description,availability:p.availability,condition:p.condition,price:p.price,link:p.link,image_link:p.image_link,brand:knownBrand(p.sku),product_type:productType(p.sku)}));
+// Los agotados conservan su ID: omitirlos puede dejar disponibilidad anterior en Meta.
+const meta=products.filter(p=>p.promo>0).map(p=>{
+ const o=content[p.sku]||{},image=o.imagen||p.imageUrl;
+ if(!image)return null;
+ const image_link=new URL(image,base).href;
+ if(!/^https?:\/\//.test(image_link))return null;
+ return {id:p.sku,title:o.nombre||p.name,description:o.descripcion||o.descripcionSeo||p.name,
+ availability:p.stock>0?'in stock':'out of stock',condition:'new',price:p.promo.toFixed(2)+' USD',
+ link:base+'/productos/'+urls[p.sku]+'/',image_link,brand:knownBrand(p.sku),product_type:productType(p.sku)};
+}).filter(Boolean);
 fs.writeFileSync('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand','product_type'],meta));
 fs.writeFileSync('exportaciones/resumen-canales.json',JSON.stringify({
  generated_at:new Date().toISOString(),fecha_corte:inventoryState?.fecha_corte||null,fuente_sha256:inventoryState?.origen_sha256||null,total_products:rows.length,
  with_image_url:ready.length,without_image_url:rows.length-ready.length,
- meta_pilot_items:ready.length,
+ meta_pilot_items:meta.length,
+ meta_out_of_stock:meta.filter(p=>p.availability==='out of stock').length,
  with_recognized_brand:meta.filter(p=>p.brand).length,
  with_product_type:meta.filter(p=>p.product_type).length,
  without_master_category:meta.filter(p=>!p.product_type).map(p=>p.id),
  note:'Archivo piloto para revisión en Commerce Manager; publicación, elegibilidad, fotografía y políticas requieren validación. No publica anuncios en Marketplace.'
 },null,2)+'\n');
 console.log('Exportaciones creadas: '+rows.length+' productos, '+ready.length+' con URL de imagen.');
+
+const {planificar}=require('./colecciones-whatsapp.cjs');
+fs.writeFileSync('exportaciones/whatsapp-organizacion-pendiente.json',JSON.stringify(planificar({products,content,masterCategories,urls,inventoryState}),null,2)+'\n');

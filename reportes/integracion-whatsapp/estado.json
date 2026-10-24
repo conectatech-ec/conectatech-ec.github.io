@@ -1,0 +1,74 @@
+{
+  "estado": "PREPARADO_EN_RAMA_NO_VINCULADO",
+  "fecha_revision_local": "2026-10-23",
+  "fecha_corte": "2026-10-22",
+  "fuente_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
+  "sku_web": 1170,
+  "candidatos_locales": 881,
+  "agotados": 38,
+  "pendientes_imagen": 204,
+  "sin_categoria_maestra": 71,
+  "colecciones_propuestas": {
+    "Audífonos y audio": 105,
+    "Computación y almacenamiento": 102,
+    "Smartwatches y correas": 32,
+    "Cargadores, cables y energía": 313,
+    "Estuches y protectores": 6,
+    "Juguetes": 103,
+    "Pilas y powerbanks": 72,
+    "Soportes y accesorios": 52,
+    "TV y entretenimiento": 15,
+    "Micrófonos y creación de contenido": 47,
+    "Celulares y tablets": 23,
+    "Hogar inteligente": 2,
+    "Cámaras y seguridad": 9
+  },
+  "catalogo_maestro_id": null,
+  "whatsapp_product_catalog_id": null,
+  "waba_id": null,
+  "propiedad_verificada": false,
+  "numero_asociado_verificado": false,
+  "limite_efectivo": null,
+  "productos_importados": null,
+  "productos_visibles": null,
+  "ultima_importacion_meta": null,
+  "evidencia_whatsapp": null,
+  "automatizacion_importacion_verificada": false,
+  "automatizacion_colecciones_verificada": false,
+  "hallazgos": [
+    "Feed existente: exportaciones/meta-catalogo-piloto.csv; no se creó otro feed ni inventario.",
+    "El exportador existente excluye agotados; la corrección conserva el SKU y emite out of stock.",
+    "Los flujos actuales de publicación de cortes llaman al exportador; se reutilizan sin añadir horarios.",
+    "Las colecciones propuestas son referencias SKU; no son colecciones publicadas en WhatsApp.",
+    "La categoría maestra vacía no se infiere del título ni del prefijo SKU.",
+    "No se seleccionan Ofertas destacadas sin aprobación editorial.",
+    "El exportador deja de aplicar reglas de imágenes/títulos: sólo consume el contenido ya publicado."
+  ],
+  "bloqueos": [
+    "No hay conexión autenticada a Meta en esta sesión ni credenciales Meta configuradas en el entorno.",
+    "La política de red del entorno no incluye graph.facebook.com ni business.facebook.com.",
+    "No se puede comprobar capacidad, propiedad, WABA, origen del catálogo ni visibilidad desde el repositorio.",
+    "No se ha verificado una API oficial que mantenga colecciones visibles de esta modalidad de WhatsApp; product_type y conjuntos Meta no acreditan esa función."
+  ],
+  "pasos_propietario": [
+    "En Configuración del negocio de Meta > Orígenes de datos > Catálogos, localizar CONECTATECH | Catálogo Maestro y WhatsApp Product Catalog. Revisar ID, propietario, Personas y Activos conectados, sin crear otro catálogo.",
+    "En Commerce Manager > Catálogo Maestro > Orígenes de datos, comprobar que el origen usa https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv y revisar última importación y diagnósticos; no reemplazarlo sin verificar el origen actual.",
+    "En Configuración del negocio > Cuentas > Cuentas de WhatsApp, verificar WABA, propietario, personas autorizadas y número comercial existente, sin migrarlo ni cambiarlo.",
+    "Habilitar una conexión autenticada para esta sesión con acceso al catálogo existente; conceder los permisos faltantes del activo desde Personas si corresponde. No enviar secretos por chat.",
+    "Con acceso, verificar la modalidad y límite efectivo antes de seleccionar productos. Vincular únicamente el catálogo verificado por el mecanismo oficial que presente Meta.",
+    "Si la modalidad sólo ofrece edición manual de colecciones: WhatsApp Business > Herramientas para la empresa > Catálogo > Añadir nueva colección; reutilizar los SKU seleccionados. Confirmar primero el menú real de la cuenta.",
+    "Desde otro WhatsApp de cliente, abrir el perfil comercial > catálogo; comprobar colecciones, productos, precio, agotados y navegación. Registrar captura, cantidad visible y fecha real."
+  ],
+  "referencias_oficiales": [
+    "https://whatsappbusiness.com/resources/resource-library/whatsapp-business-app-resources-whatsapp-business-catalog/",
+    "https://faq.whatsapp.com/2929318000711140/?cms_platform=android&locale=es_ES"
+  ],
+  "limite_documentado_app": 500,
+  "nota_limite": "Referencia general oficial de WhatsApp Business App; no acredita el límite efectivo de CONECTATECH ni su modalidad.",
+  "publicacion": "No integrar ni publicar carga masiva hasta comprobar límite, permisos y organización visible. No hay cambios en el número, mensajería, SIGNATURE, inventario ni web.",
+  "pruebas": [
+    "node scripts/test-colecciones-whatsapp.cjs",
+    "node scripts/test-exportar-canales.cjs",
+    "node scripts/exportar-canales.cjs"
+  ]
+}
