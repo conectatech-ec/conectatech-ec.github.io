@@ -219,3 +219,7 @@ Los SKU existentes con stock0 de593 siguen visibles en catálogo, categorías, b
 ## Orden vigente del propietario — etiqueta AAA, 21oct2026
 
 En todos los productos ya clasificados AAA, sustituir la etiqueta visible «AAA / producto genérico» por «Producto compatible (AAA)», respetando exactamente mayúsculas y paréntesis. Aplicar también a futuras fichas mediante los generadores; conservar la clasificación interna por SKU y las excepciones confirmadas. Este cambio global de etiqueta no renueva fechas ni cuenta como SKU nuevos. Mantener precios, stock, fotografías, títulos, URLs, aviso de stock cero y automatización cloud24/7.
+
+## Editorial selectivo aprobado — 23oct2026,Guayaquil
+
+Propietario valida calibración8; publicar automáticamente sólo mejoras verificadas en lotes<=30,conservar CORRECTO y bloquear REVISAR IDENTIDAD. Celulares y tablets al final: no modificar TELF/TABL ni sus fichas/imágenes/datos. No fusionar PR87completo. Fotografías en otra sesión: sólo solicitudes en cola compartida,0ediciones. Modificados primero en web mediante fecha real tras HTTP/Chromium; no por reverificación. Precios,stock,SKU,fotos,URLs,593,feeds intactos. Costo0.
