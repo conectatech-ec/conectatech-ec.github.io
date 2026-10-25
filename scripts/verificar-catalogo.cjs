@@ -249,9 +249,10 @@ async function main() {
             ensure(current.actualizado === '', 'El candidato nuevo tiene una fecha de publicación artificial.');
             product.metadatos = 'CANDIDATO_LOCAL_SIN_FECHA_PUBLICA';
           }
-          ensure(compactCard(current,width) && current.alto_estado<=60 && current.alto_subtitulo<=40, 'Tarjeta del producto pierde diseño compacto.');
+          ensure(compactCard(current,width) && current.alto_estado<=(availabilityCore.forProduct(p).replenishment?90:60) && current.alto_subtitulo<=40, 'Tarjeta del producto pierde diseño compacto.');
           ensure(current.imagen?.cargada && current.imagen?.ajuste === 'contain', 'Imagen no carga o usa ajuste diferente decontain.');
-          ensure(money(current.promo) === Math.round(p.promo * 100) && money(current.pvp) === Math.round(p.pvp * 100) && current.promo_px > current.pvp_px && current.pvp_tachado === false, 'Datos o jerarquía de precios modificados.');
+          if(availabilityCore.forProduct(p).commercial_eligible)ensure(money(current.promo) === Math.round(p.promo * 100) && money(current.pvp) === Math.round(p.pvp * 100) && current.promo_px > current.pvp_px && current.pvp_tachado === false, 'Datos o jerarquía de precios modificados.');
+          else ensure(current.promo==null&&current.pvp==null&&await card.locator('.ct-av-price-note').isVisible(),'Un producto sin disponibilidad comercial no debe mostrar precios históricos.');
           // A financial update may register a SKU before it has a photo. Match
           // productImage(): use registered versions only for the current image.
           const registeredImage = published?.imagen;
