@@ -1,5 +1,5 @@
 {
-  "estado": "CATALOGO_MAESTRO_CONECTADO_SEGUN_CAPTURA_PRODUCTOS_PENDIENTES",
+  "estado": "VINCULADO_PRODUCTOS_NO_VISIBLES_TAMBIEN_PARA_CLIENTE_SEGUN_PROPIETARIO",
   "fecha_revision_local": "2026-10-23",
   "fecha_corte": "2026-10-22",
   "fuente_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
@@ -123,7 +123,7 @@
     },
     "alcance": "Identificadores transcritos de la captura. No verifica propiedad, permisos efectivos, WABA, número, feed ni productos visibles. La sesión del propietario no acredita acceso del agente."
   },
-  "siguiente_comprobacion": "Conservar conexión y feed. Comprobar productos desde la aplicación dentro del plazo mostrado de hasta 24 horas desde conexión/cambios; si continúa vacío al vencer el plazo, revisar Productos/diagnósticos/estado por canal en Meta antes de modificar asociaciones. Después verificar catálogo y colecciones desde WhatsApp de cliente.",
+  "siguiente_comprobacion": "En WhatsApp Business Android > Herramientas > Facebook e Instagram, comprobar qué página figura vinculada; contrastar su asociación con el Catálogo Maestro. No sustituir conexiones existentes.",
   "evidencia_origen_meta": {
     "fuente": "Capturas del propietario de Orígenes de datos y Configurar fuente",
     "nombre": "CONECTATECH | Sincronización automática 593",
@@ -165,5 +165,52 @@
     "no_subidos": 0,
     "problemas": 0,
     "alcance": "Resultado de esa subida en Meta. No establece motivo de cada eliminación ni visibilidad WhatsApp."
+  },
+  "diagnostico_visibilidad": {
+    "fecha_registro_local": "2026-10-24",
+    "evidencias": [
+      {
+        "fuente": "Captura Meta: Productos",
+        "total_catalogo": 939,
+        "muestra": {
+          "sku": [
+            "ADAP007",
+            "ADAP027"
+          ],
+          "estado": "Elegible",
+          "disponibilidad": "Disponible"
+        },
+        "alcance": "Muestra de productos; no prueba elegibilidad de los 939 por canal."
+      },
+      {
+        "fuente": "Captura Meta: Acciones 1",
+        "texto": "Configura un conjunto de datos para optimizar el rendimiento de los anuncios",
+        "alcance": "Recomendación de píxel/SDK para publicidad; no se ha identificado como causa del catálogo vacío."
+      },
+      {
+        "fuente": "Captura ficha ADAP007",
+        "precio": "6.00 USD",
+        "disponibilidad": "In stock",
+        "condicion": "new",
+        "imagen": "presente",
+        "estado": "Elegible",
+        "alcance": "No muestra rechazo específico WhatsApp. Campos Incompleto no se modifican sin determinar requisitos."
+      },
+      {
+        "fuente": "Respuesta del propietario tras abrir enlace de catálogo desde cuenta cliente",
+        "resultado": "mismo mensaje de catálogo vacío",
+        "alcance": "Prueba reportada por propietario; no es inspección directa del agente."
+      }
+    ],
+    "hipotesis_pendientes": [
+      "Página Facebook asociada al catálogo y vinculada al mismo WhatsApp Business; aún no comprobado.",
+      "Estado de publicación y elegibilidad específicos del canal WhatsApp.",
+      "Capacidad efectiva de catálogo conectado para esta cuenta: sin confirmar; no inferir causa por 939 SKU.",
+      "Retraso o incidencia de la conexión Meta/WhatsApp; sin confirmación de causa."
+    ],
+    "siguiente_paso": "En WhatsApp Business Android > Herramientas > Facebook e Instagram, comprobar qué página figura vinculada; contrastar su asociación con el Catálogo Maestro. No sustituir conexiones existentes.",
+    "referencia_oficial": "https://faq.whatsapp.com/1057141349534704/?cms_platform=web&eea=0&locale=es_MX",
+    "borrador_soporte": "En WhatsApp Business Android de CONECTATECH el catálogo conectado aparece vacío, también al abrirlo desde otra cuenta cliente. Más detalles identifica CONECTATECH | Catálogo Maestro. En Meta, catálogo ID 1036301566100990, hay 939 productos; el origen programado Sincronización automática 593 usa https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv. ADAP007 y ADAP027 aparecen Elegibles y Disponibles. Solicitamos revisar publicación/elegibilidad del catálogo conectado para WhatsApp sin migrar ni cambiar el número. Adjuntamos capturas; facilitar fecha/hora exacta de conexión y versión de app para el diagnóstico.",
+    "soporte_enviado": false
   }
 }
