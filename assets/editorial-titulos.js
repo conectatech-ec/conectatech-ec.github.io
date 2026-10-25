@@ -10,8 +10,8 @@
     if(!c?.activo)return null;
     if(typeof location!=='undefined'&&new URLSearchParams(location.search).get('titulos')==='original')return null;
     if((c.excluirPrefijos||[]).some(prefix=>p.sku.startsWith(prefix)))return null;
-    const e=c.productos?.[p.sku];return e&&typeof e.titulo==='string'&&e.titulo.trim()&&typeof e.subtitulo==='string'&&e.subtitulo.trim()?e:null;
+    const e=c.productos?.[p.sku];return e&&typeof e.titulo==='string'&&e.titulo.trim()&&typeof e.subtitulo==='string'?e:null;
   }
   return {entry,verifiedDate(p){const e=entry(p),v=e?.publicacionVerificada||e?.publicacionAnterior;return v?.estado==='VERIFICADO_HTTP_CHROMIUM'&&v.sha256Informe&&Number.isFinite(Date.parse(v.fecha))?v.fecha:'';},conditionText(p){return entry(p)?.condicionTarjeta||'';},searchText(p){const e=entry(p);return e?[e.nombre593,e.titulo,e.subtitulo,e.marca,e.modelo].join(' '):'';},
-    nameHTML(p,href){const e=entry(p);return e?`<a class="name product-link ct-pro-title" href="${esc(href)}" title="${esc(p.name)}">${text(e.titulo)}</a><div class="ct-pro-subtitle">${text(e.subtitulo)}</div>`:null;}};
+    nameHTML(p,href){const e=entry(p);return e?`<a class="name product-link ct-pro-title" href="${esc(href)}" title="${esc(p.name)}">${text(e.titulo)}</a>${e.subtitulo.trim()?`<div class="ct-pro-subtitle">${text(e.subtitulo)}</div>`:''}`:null;}};
 });

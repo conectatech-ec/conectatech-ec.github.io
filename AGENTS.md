@@ -234,3 +234,6 @@ El propietario confirma: «OK PARECE QUE YA NOS ENTENDIMOS!!!! PUBLICA LOS CAMBI
 
 ## Corrección expresa MICR09
 Título comercial: «Set de micrófonos inalámbricos Pack 2». Mantener receptor USB-C/color negro y datos originales intactos. Publicación autorizada.
+
+## Lote editorial002 autorizado
+30SKU existentes,60acumulados; conservar los1110fuera del mapa y33celulares/tablets sin cambios. Subtítulo opcional cuando añadirlo sólo repite información. Modelos técnicos conservados en ficha y búsqueda. SOPO009 reservado en cola fotográfica por discrepancia entre referencia PNG y registro webp; sin cambiar sus textos ni imágenes. Fechas y prioridad después de prueba pública real.
