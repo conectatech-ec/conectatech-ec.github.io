@@ -28,6 +28,24 @@ for(const p of products){
  links[p.sku]=id;urls.push(url);
  if(selected&&!selected.has(p.sku))continue;
  const custom={...(overrides[p.sku]||{}),...(fechaPublicada?{fechaInventario:fechaPublicada}:{})};
+ // Referencia fotográfica expresamente aprobada; limitada a PROT003.
+ if(p.sku==='PROT003'){
+  const photoFile=path.join('importacion','fotografia-publicada','PROT003.json');
+  if(fs.existsSync(photoFile)){
+   const approved=JSON.parse(fs.readFileSync(photoFile,'utf8'));
+   const photo=approved.imagenProfesional;
+   if(approved.sku==='PROT003'&&approved.aprobado_por_propietario===true&&
+      approved.maestro_aprobado_sha256==='ec2a21e15462f82bed2c87963ee69e46fc961ad998613a9176be5341f3393f53'&&
+      photo?.versiones?.['1200']?.url==='/imagenes/prot003/PROT003-r20261024-01.webp'&&
+      [approved.imagen_anterior,photo.versiones['1200'].url].includes(custom.imagen)){
+    custom.imagen=photo.versiones['1200'].url;
+    custom.imagenProfesional=photo;
+    custom.galeria=[photo];
+    custom.imagenPendiente=false;
+   }
+  }
+ }
+
  const displayName=custom.nombre||p.name;
  const productImage=custom.imagen||p.imageUrl||'';
  const title=custom.tituloSeo||displayName+' en Quito | ConectaTech';
