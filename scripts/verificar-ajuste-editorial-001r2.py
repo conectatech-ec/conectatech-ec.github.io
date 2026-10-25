@@ -7,7 +7,7 @@ class Text(HTMLParser):
  def __init__(self):super().__init__();self.depth=0;self.parts=[]
  def handle_starttag(self,t,a):
   a=dict(a)
-  if t=='div' and 'specs' in a.get('class','').split():self.depth=1
+  if t=='div' and 'spec' in a.get('class','').split():self.depth=1
   elif self.depth:self.depth+=1
  def handle_endtag(self,t):
   if self.depth:self.depth-=1
