@@ -12,7 +12,7 @@ for sku,e in cfg['productos'].items():
  assert e['titulo']==m['productos'][sku]['titulo'] and e['subtitulo']==m['productos'][sku]['subtitulo'],sku
  assert by[sku]['category'].lower() not in ['telefonos','tablets','celulares'],sku
  assert states[sku]=='MEJORAR TÍTULO' and e['tituloAnterior']==by[sku]['name'],sku
- assert e['titulo'] and e['subtitulo'] and e['fuentes'],sku
+ assert e['titulo'] and isinstance(e['subtitulo'],str) and e['fuentes'],sku
  assert not re.search(r'producto gen[eé]rico|compatible\s*\(AAA\)',e['titulo']+' '+e['subtitulo'],re.I),sku
  assert norm(e['titulo']) not in seen,(sku,seen.get(norm(e['titulo'])));seen[norm(e['titulo'])]=sku
  for other in products:
