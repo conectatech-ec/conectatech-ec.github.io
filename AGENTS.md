@@ -223,3 +223,14 @@ En todos los productos ya clasificados AAA, sustituir la etiqueta visible «AAA 
 ## Editorial selectivo aprobado — 23oct2026,Guayaquil
 
 Propietario valida calibración8; publicar automáticamente sólo mejoras verificadas en lotes<=30,conservar CORRECTO y bloquear REVISAR IDENTIDAD. Celulares y tablets al final: no modificar TELF/TABL ni sus fichas/imágenes/datos. No fusionar PR87completo. Fotografías en otra sesión: sólo solicitudes en cola compartida,0ediciones. Modificados primero en web mediante fecha real tras HTTP/Chromium; no por reverificación. Precios,stock,SKU,fotos,URLs,593,feeds intactos. Costo0.
+
+## Ajuste editorial del mismo lote —24oct2026,Guayaquil
+
+Sólo los30SKU ya publicados del lote001. Conservar nombres comerciales reconocibles y atributos vendedores comprobados; retirar códigos técnicos alfanuméricos de títulos/subtítulos y mantenerlos en especificaciones. AUDI018TuneFlex confirmado por propietario; DISC005HD710Pro va al subtítulo por excepción expresa; PARL026títuloParlanteportátilde3pulgadas,subSing-e/negro/bocinasuperior,y3pulgadas en especificaciones/descripción. CódigosUID-10,WH-T900,NK11,mx310,MT-207SP,KCH915,KNH750GRyotrosfuera de encabezadoscomerciales. No modificar celulares/tablets ni fotos/precios/stock/URLs. No ampliar a la cola47 hasta conformidad del propietario con este lote. Modificados primero tras comprobación pública real; preservar fechas previas verificadas mientras se valida la nueva revisión. Costo0.
+
+## Aprobación expresa de publicación y siguiente lote
+
+El propietario confirma: «OK PARECE QUE YA NOS ENTENDIMOS!!!! PUBLICA LOS CAMBIOS Y PROCESA OTRO LOTE DE SKU, avancemos rapido». Publicar la corrección aprobada del lote001 y procesar otro lote<=30 con nombres comerciales/atributos útiles y códigos técnicos sólo en especificaciones. No repetir aprobación rutinaria. Celulares/tablets siguen para el final; sin editar fotos,precios,stock,SKU,URLs ni feeds. Conservar corte593vigente y avances fotográficos ajenos; modificados disponibles primero tras verificación real. Costo0.
+
+## Corrección expresa MICR09
+Título comercial: «Set de micrófonos inalámbricos Pack 2». Mantener receptor USB-C/color negro y datos originales intactos. Publicación autorizada.

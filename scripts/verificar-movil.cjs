@@ -83,9 +83,10 @@ async function main() {
     // Las fichas estáticas mantienen canonical y algunas imágenes absolutas de Pages.
     // En prueba local se renderizan esos recursos del servidor local, sin reescribir HTML.
     if (opt.base !== PUBLIC) {
-      await context.route(PUBLIC + '/**', route => {
+      await context.route(PUBLIC + '/**', async route => {
         const url = new URL(route.request().url());
-        return route.continue({url: opt.base + url.pathname + url.search});
+        const response=await context.request.get(opt.base + url.pathname + url.search);
+        return route.fulfill({response});
       });
     }
     const linkCache = new Map();
@@ -110,6 +111,9 @@ async function main() {
         if (seen.has(sku)) throw new Error('SKU repetido en esta ejecución.'); seen.add(sku);
         const p = products.get(sku), content = seo[sku] || {};
         const slug = slugs[sku], expectedName = content.nombre || p.name;
+        const editorialPath=safe('importacion/editorial/publicados.json');const editorial=fs.existsSync(editorialPath)?JSON.parse(fs.readFileSync(editorialPath)):null;
+        const entry=editorial?.activo&&!editorial.excluirPrefijos?.some(prefix=>sku.startsWith(prefix))?editorial.productos?.[sku]:null;
+        const expectedHeading=entry?.mostrarTituloEnFicha?entry.titulo:expectedName;
         const canonical = PUBLIC + '/productos/' + slug + '/';
         row.url = canonical; row.url_comprobada = opt.base + '/productos/' + slug + '/';
         row.archivo_html = relative('productos/' + slug + '/index.html');
@@ -145,7 +149,7 @@ async function main() {
         check('http', row.http === 200, 'Ficha HTTP ' + row.http);
         check('html_coincide_local', row.sha256_html === row.sha256_html_local, 'HTML servido distinto del archivo local de revisión.');
         check('sin_desbordamiento_horizontal', data.ancho_documento <= data.ancho_viewport, 'Desbordamiento horizontal: ' + data.ancho_documento + '/' + data.ancho_viewport);
-        check('titulo', data.titulo_visible && data.titulo === expectedName && data.schema?.name === expectedName, 'Título visible/schema distinto de la ficha local.');
+        check('titulo', data.titulo_visible && data.titulo === expectedHeading && data.schema?.name === expectedName, 'Título visible/schema distinto de la ficha local.');
         check('sku', new RegExp('(^|[^A-Z0-9])' + sku + '([^A-Z0-9]|$)').test(data.sku_visible) && data.schema?.sku === sku, 'SKU visible/schema incorrecto.');
         check('canonical', data.canonical === canonical, 'Canonical distinto de la URL estable.');
         check('promo_contado', data.precio_visible && money(data.precio) === Math.round(p.promo * 100) && Math.round(Number(data.schema?.offers?.price) * 100) === Math.round(p.promo * 100) && data.schema?.offers?.priceCurrency === 'USD', 'Promo contado visible/schema distinta del catálogo.');

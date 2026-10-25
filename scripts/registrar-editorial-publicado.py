@@ -5,7 +5,7 @@ cfgPath=Path('importacion/editorial/publicados.json');cfg=json.loads(cfgPath.rea
 assert report['estado']=='VERIFICADO_HTTP_CHROMIUM' and report['base']=='https://conectatech-ec.github.io'
 assert sorted(report['skus'])==sorted(manifest['skus']) and not report['errores']
 assert report['objetosOriginales1170Identicos'] and report['busquedaPorTituloNuevoOriginal593Modelo']
-assert len(report['fichasSinCambios'])==len(manifest['skus']) and all(e['http']==200 for e in report['fichasSinCambios'])
+fichas=report.get('fichasVerificadas',report.get('fichasSinCambios',[]));assert len(fichas)==len(manifest['skus']) and all(e['http']==200 for e in fichas)
 updated=[]
 for sku in manifest['skus']:
  e=cfg['productos'][sku];assert not sku.startswith(('TELF','TABL'))

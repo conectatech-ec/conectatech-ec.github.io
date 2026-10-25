@@ -18,8 +18,15 @@ for sku,e in cfg['productos'].items():
  for other in products:
   if other['sku']!=sku and other['sku'] not in cfg['productos']:assert norm(e['titulo'])!=norm(other['name']),(sku,other['sku'])
  assert all(not (len(norm(v))>=4 and norm(v) in norm(e['titulo'])) for v in e['subtitulo'].split('·')),sku
- assert e['sha256Foto']==hashlib.sha256(Path(e['foto'].lstrip('/')).read_bytes()).hexdigest(),sku
+ # El renderer usa la portada vigente, incluida una corrección aprobada por la sesión fotográfica.
+ # Se comprueban URL y bytes contra el registro fotográfico actual; la referencia editorial anterior es histórica.
+ photo=seo[sku]['imagenProfesional']['versiones']['1200']
+ assert photo['url']==seo[sku]['imagen']==by[sku]['imageUrl'],sku
+ assert photo['sha256']==hashlib.sha256(Path(photo['url'].lstrip('/')).read_bytes()).hexdigest(),sku
  assert e['condicionTarjeta']==('De terceros' if seo[sku]['reglaSKU']['autenticidad']=='genérico/compatible' else ''),sku
+ if cfg.get('criterioCodigosTecnicosFueraDeTitulos'):
+  forbidden=cfg['criterioCodigosTecnicosFueraDeTitulos']
+  for code in forbidden:assert code.casefold() not in (e['titulo']+' '+e['subtitulo']).casefold(),(sku,code)
  if e.get('publicacionVerificada'):
   v=e['publicacionVerificada'];report=Path(v['informe']);assert report.is_file() and hashlib.sha256(report.read_bytes()).hexdigest()==v['sha256Informe'],sku
   data=json.loads(report.read_text());assert data['estado']=='VERIFICADO_HTTP_CHROMIUM' and sku in data['skus'],sku
