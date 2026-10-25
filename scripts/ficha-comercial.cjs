@@ -1,8 +1,13 @@
+const fs=require('fs'),path=require('path');
+const editorialFile=path.join(__dirname,'../importacion/editorial/publicados.json');
+const editorialMap=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile,'utf8')):null;
 const renderBeneficios=require('./ficha-beneficios.cjs');
 const origin='https://conectatech-ec.github.io';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>'$'+Number(n).toFixed(2).replace('.',',');
 module.exports=function ficha(p,c,url){
+ const editorial=editorialMap?.activo&&!editorialMap.excluirPrefijos?.some(prefix=>p.sku.startsWith(prefix))?editorialMap.productos?.[p.sku]:null;
+ const presentation=editorial?.mostrarTituloEnFicha?editorial:null;
  const name=c.nombre||p.name, img=c.imagen?new URL(c.imagen,origin).href:'';
  const cover=c.imagenProfesional;
  const frame=c.encuadreProducto;
@@ -26,7 +31,7 @@ module.exports=function ficha(p,c,url){
 <header><nav aria-label="Principal"><a href="/" aria-label="ConectaTech, inicio"><img src="/logo-conectatech.png" alt="ConectaTech"></a><a href="/#catalogo">Ver catálogo →</a></nav></header>
 <main><div class="crumb"><a href="/">Catálogo</a> / ${esc(c.categoriaComercial||p.category)} / ${esc(p.sku)}</div>
 <article class="product"><div class="visual">${photo}${(c.galeria||[]).filter(i=>i.posicion!==1).length?`<div class="gallery">${c.galeria.filter(i=>i.posicion!==1).map(i=>`<a href="${esc(versionUrl(i.versiones['1200']))}" target="_blank" rel="noopener"><img src="${esc(versionUrl(i.versiones['300']))}" alt="Vista adicional de ${esc(name)}" width="110" height="110" loading="lazy"></a>`).join('')}</div>`:''}</div>
-<div><div class="eyebrow">ConectaTech · ${esc(specs.Marca||p.category)}</div><h1>${esc(name)}</h1><div class="sku">Código ${esc(p.sku)}${classification?' · '+esc(classification):''}</div><div class="status ${available?'':'unavailable'}"${available?'':' style="border:1px solid #fecaca;font-weight:800"'}>${esc(availability)}</div>
+<div><div class="eyebrow">ConectaTech · ${esc(specs.Marca||p.category)}</div><h1>${esc(presentation?.titulo||name)}</h1>${presentation?`<p class="ct-editorial-subtitle" style="color:#68788b;margin:-6px 0 16px;font-size:15px;line-height:1.4">${esc(presentation.subtitulo)}</p>`:''}<div class="sku">Código ${esc(p.sku)}${classification?' · '+esc(classification):''}</div><div class="status ${available?'':'unavailable'}"${available?'':' style="border:1px solid #fecaca;font-weight:800"'}>${esc(availability)}</div>
 <div class="pricing"><div class="promo-label">PROMO CONTADO</div><div class="price">${money(p.promo)}</div><div class="pvp">PVP ${money(p.pvp)}</div></div>
 <ul class="quick">${Object.entries(specs).filter(([k])=>!['Marca','Modelo'].includes(k)).slice(0,3).map(([k,v])=>`<li><strong>${esc(k)}:</strong> ${esc(v)}</li>`).join('')}</ul>
 <a class="cta" href="${esc(wa)}" target="_blank" rel="noopener">${available?'Consultar y comprar por WhatsApp':'Consultar próxima disponibilidad'}</a><div class="note">Precios y disponibilidad sujetos a confirmación.</div></div></article>

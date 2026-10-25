@@ -9,7 +9,7 @@
   "productos": {
     "MONI004": {
       "titulo": "Monitor portátil ASUS de 15,6″",
-      "subtitulo": "ZenScreen MB169CK · Full HD",
+      "subtitulo": "ZenScreen · Full HD",
       "tituloAnterior": "Monitor Portátil ASUS ZenScreen MB169CK — 15,6″ Full HD",
       "nombre593": "Monitor Portatil Asus 360 15.6 Pulgadas",
       "marca": "ASUS",
@@ -17,7 +17,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#MONI004",
-        "importacion/contratos/MONI004.json"
+        "importacion/contratos/MONI004.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#MONI004"
       ],
       "evidenciaAtributos": {
         "Modelo": "ASUS ZenScreen MB169CK.",
@@ -34,14 +35,31 @@
       "foto": "/imagenes/moni004/MONI004-01.webp",
       "sha256Foto": "d0ca638deab5367f3c8c8fe7e2a7355b97d8f59ae124b784563926e8885c7e30",
       "causa": "La tarjeta actual concentra modelo y pantalla en una sola línea de información; distribuirlos conserva identidad y mejora lectura.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Monitor portátil ASUS de 15,6″",
+          "subtitulo": "ZenScreen MB169CK · Full HD",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "831f5d228099f634af3de3d00e118e2811dac381672c1c16b3691f0880b303e1"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "831f5d228099f634af3de3d00e118e2811dac381672c1c16b3691f0880b303e1"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "POWE001": {
       "titulo": "Powerbank inalámbrica para iPhone de 10.000 mAh",
@@ -107,7 +125,7 @@
       }
     },
     "PARL001": {
-      "titulo": "Parlante Bluetooth L20 con luces LED",
+      "titulo": "Parlante Bluetooth con luces LED",
       "subtitulo": "Cubierta transparente",
       "tituloAnterior": "Parlante Bluetooth L20 con Luces y Cubierta Transparente",
       "nombre593": "Parlante CON Luces L20",
@@ -116,7 +134,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#PARL001",
-        "importacion/contratos/PARL001.json"
+        "importacion/contratos/PARL001.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#PARL001"
       ],
       "evidenciaAtributos": {
         "Modelo": "L20.",
@@ -130,14 +149,31 @@
       "foto": "/imagenes/parl001/PARL001-01.webp",
       "sha256Foto": "009a8086b3fd3dba7832994c94bce0f0ec8c97709899d82dae736b5b161e15b1",
       "causa": "Destacar conexión y luces; explicar la cubierta integrada sin repetir.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Parlante Bluetooth L20 con luces LED",
+          "subtitulo": "Cubierta transparente",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "64641fdbcca80cd9feddc90130c230e15bcebaabb59e804f3d9fd523088f04be"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "64641fdbcca80cd9feddc90130c230e15bcebaabb59e804f3d9fd523088f04be"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "ADAP049": {
       "titulo": "Adaptador USB-A de audio y micrófono",
@@ -173,8 +209,8 @@
       }
     },
     "AUDI007": {
-      "titulo": "Audífonos Pro Studio UID-10",
-      "subtitulo": "Diadema inalámbrica plegable",
+      "titulo": "Audífonos Pro Studio plegables",
+      "subtitulo": "Diadema inalámbrica",
       "tituloAnterior": "Audífonos Pro Studio UID-10 | diadema inalámbrica plegable",
       "nombre593": "Audifonos Diadema Pro Studio",
       "marca": "Pro Studio",
@@ -182,7 +218,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#AUDI007",
-        "importacion/contratos/AUDI007.json"
+        "importacion/contratos/AUDI007.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#AUDI007"
       ],
       "evidenciaAtributos": {
         "Modelo": "UID-10",
@@ -194,17 +231,34 @@
       "foto": "/imagenes/audi007/AUDI007-01.webp",
       "sha256Foto": "4a88aa5ab710da3e0ebb2a70e7e794408bb652f6669c345a66c5e40f1130d403",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Audífonos Pro Studio UID-10",
+          "subtitulo": "Diadema inalámbrica plegable",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "921a38c96f492846ba682646cbe22456b2160041cb2b393619acad09ebebce57"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "921a38c96f492846ba682646cbe22456b2160041cb2b393619acad09ebebce57"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "AUDI015": {
-      "titulo": "Audífonos Face Change G05D",
+      "titulo": "Audífonos Face Change",
       "subtitulo": "Diseño que cambia con el dedo",
       "tituloAnterior": "Audífonos Face Change G05D | diseño que cambia con el dedo",
       "nombre593": "Audifonos Inalambricos Face Change G05D",
@@ -213,7 +267,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#AUDI015",
-        "importacion/contratos/AUDI015.json"
+        "importacion/contratos/AUDI015.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#AUDI015"
       ],
       "evidenciaAtributos": {
         "Modelo": "G05D",
@@ -225,18 +280,35 @@
       "foto": "/imagenes/audi015/AUDI015-01.webp",
       "sha256Foto": "a22a328197f4816d38c1f01c743a59eadcc7552a7d901fd1aed4541b17a766b2",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Audífonos Face Change G05D",
+          "subtitulo": "Diseño que cambia con el dedo",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "2b1b89692c7abcb48ec6fcf1021e956985e9486027c2f77e27812f81c917395a"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "2b1b89692c7abcb48ec6fcf1021e956985e9486027c2f77e27812f81c917395a"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "AUDI018": {
-      "titulo": "Audífonos con estuche violeta",
-      "subtitulo": "Inalámbricos · diseño transparente",
+      "titulo": "Audífonos inalámbricos Tune Flex",
+      "subtitulo": "Estuche violeta transparente",
       "tituloAnterior": "Audífonos inalámbricos JBL | estuche transparente violeta",
       "nombre593": "AUDIFONOS INALAMBRICOS TUNE FLEX",
       "marca": "JBL",
@@ -244,7 +316,8 @@
       "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#AUDI018",
-        "importacion/contratos/AUDI018.json"
+        "importacion/contratos/AUDI018.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#AUDI018"
       ],
       "evidenciaAtributos": {
         "Formato": "Dos audífonos con estuche",
@@ -255,14 +328,31 @@
       "foto": "/imagenes/audi018/AUDI018-01.webp",
       "sha256Foto": "8e362fe86957a83f524a59ea79f7dbf428e818a1049bf68113f04d6d33ce6b4b",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Audífonos con estuche violeta",
+          "subtitulo": "Inalámbricos · diseño transparente",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "f169326c569aba76ae0468bb0080de2e68805440f5bcbd97969b71111b75782a"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "f169326c569aba76ae0468bb0080de2e68805440f5bcbd97969b71111b75782a"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "AUDI063": {
       "titulo": "Audífonos tipo Pro 2 con pantalla",
@@ -327,7 +417,7 @@
       }
     },
     "AUDI100": {
-      "titulo": "Audífonos inalámbricos WH-T900 Pro ULT",
+      "titulo": "Audífonos inalámbricos Pro ULT",
       "subtitulo": "Diadema negra",
       "tituloAnterior": "Audífonos inalámbricos estilo Sony WH-T900 Pro ULT | diadema negra",
       "nombre593": "Audifonos De Diadema Ult Powersound",
@@ -336,7 +426,8 @@
       "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#AUDI100",
-        "importacion/contratos/AUDI100.json"
+        "importacion/contratos/AUDI100.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#AUDI100"
       ],
       "evidenciaAtributos": {
         "Modelo": "WH-T900 Pro ULT",
@@ -348,18 +439,35 @@
       "foto": "/imagenes/audi100/AUDI100-01.webp",
       "sha256Foto": "0fb2bf651490398f637a187bea98e2169262d3b98a4168fc76120360e5ebf142",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Audífonos inalámbricos WH-T900 Pro ULT",
+          "subtitulo": "Diadema negra",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "58fd2a5b74fb3e97322321154846886d60a512b2b9a81150029714bd161272f8"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "58fd2a5b74fb3e97322321154846886d60a512b2b9a81150029714bd161272f8"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "AUDI107": {
       "titulo": "Audífonos Klip Xtreme Hi-Fi",
-      "subtitulo": "KNH-750GR · diadema inalámbrica",
+      "subtitulo": "Diadema inalámbrica · gris oscuro",
       "tituloAnterior": "Audífonos Klip Xtreme Hi-Fi KNH-750GR | diadema inalámbrica",
       "nombre593": "Audifonos De Diadema Klipxtreme Hi-Fi Knh-750Gr",
       "marca": "Klip Xtreme",
@@ -367,7 +475,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#AUDI107",
-        "importacion/contratos/AUDI107.json"
+        "importacion/contratos/AUDI107.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#AUDI107"
       ],
       "evidenciaAtributos": {
         "Modelo": "Hi-Fi KNH-750GR",
@@ -379,18 +488,35 @@
       "foto": "/imagenes/audi107/AUDI107-01.webp",
       "sha256Foto": "1555e3d9e6b115bf638ecdced06d17b1c8cad68ffd05f02230a51176e149b784",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Audífonos Klip Xtreme Hi-Fi",
+          "subtitulo": "KNH-750GR · diadema inalámbrica",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "d27f0686ec77fdae01e40ce09e791b70d802f3b509cefb12c96d394a4d2ec80b"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "d27f0686ec77fdae01e40ce09e791b70d802f3b509cefb12c96d394a4d2ec80b"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "AUDI108": {
       "titulo": "Audífonos Klip Xtreme DuoVox",
-      "subtitulo": "KCH-915 · micrófono integrado",
+      "subtitulo": "Micrófono de brazo integrado",
       "tituloAnterior": "Audífonos Klip Xtreme DuoVox KCH-915 | diadema con micrófono",
       "nombre593": "Audifonos De Diadema Klipxtreme Duovox Kch-915",
       "marca": "Klip Xtreme",
@@ -398,7 +524,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#AUDI108",
-        "importacion/contratos/AUDI108.json"
+        "importacion/contratos/AUDI108.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#AUDI108"
       ],
       "evidenciaAtributos": {
         "Modelo": "DuoVox KCH-915",
@@ -411,18 +538,35 @@
       "foto": "/imagenes/audi108/AUDI108-01.webp",
       "sha256Foto": "e8b4be9a5e8f9b147942725204d895cd274f336068c18d6e081767317bcca959",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Audífonos Klip Xtreme DuoVox",
+          "subtitulo": "KCH-915 · micrófono integrado",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "a033793f8ee4ec1a9d489a8ca368a3c07f5bc3f7caabb9cccc05fe77362a4eae"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "a033793f8ee4ec1a9d489a8ca368a3c07f5bc3f7caabb9cccc05fe77362a4eae"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "AUDI115": {
-      "titulo": "Audífonos inalámbricos LMN-X02",
-      "subtitulo": "Estuche negro · detalles rojos",
+      "titulo": "Audífonos inalámbricos negros y rojos",
+      "subtitulo": "Con estuche",
       "tituloAnterior": "Audífonos inalámbricos LMN-X02 | estuche negro y detalles rojos",
       "nombre593": "Audifonos Inalambricos Lmn-X02",
       "marca": "LMN",
@@ -430,7 +574,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#AUDI115",
-        "importacion/contratos/AUDI115.json"
+        "importacion/contratos/AUDI115.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#AUDI115"
       ],
       "evidenciaAtributos": {
         "Modelo": "X02",
@@ -442,18 +587,35 @@
       "foto": "/imagenes/audi115/AUDI115-01.webp",
       "sha256Foto": "11dd6aebc98e6873967215c6cd322a7731401d54a52be5cda328022507c9698f",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Audífonos inalámbricos LMN-X02",
+          "subtitulo": "Estuche negro · detalles rojos",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "a412b8b88b17200fcc837bb51bc7d9d14be77bc68ef2efc0203eb596ea8c8803"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "a412b8b88b17200fcc837bb51bc7d9d14be77bc68ef2efc0203eb596ea8c8803"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "AUDI120": {
       "titulo": "Audífonos Xtech Avid de 3,5 mm",
-      "subtitulo": "XTH-356 · diadema",
+      "subtitulo": "Formato de diadema",
       "tituloAnterior": "Audifonos DE Diadema 3.5MM Xtech XTH356 Avid",
       "nombre593": "Audifonos DE Diadema 3.5MM Xtech XTH356 Avid",
       "marca": "Xtech",
@@ -461,24 +623,43 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#AUDI120",
-        "importacion/contratos/AUDI120.json"
+        "importacion/contratos/AUDI120.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#AUDI120"
       ],
       "evidenciaAtributos": {
-        "Presentación de venta": "Un audífono de diadema Xtech Avid con conexión de 3.5 mm."
+        "Presentación de venta": "Un audífono de diadema Xtech Avid con conexión de 3.5 mm.",
+        "Modelo técnico": "XTH-356"
       },
       "clasificacionReal": "original verificado",
       "url": "https://conectatech-ec.github.io/productos/audi120-audifonos-de-diadema-3-5mm-xtech-xth356-avid/",
       "foto": "/imagenes/audi120/AUDI120-01.webp",
       "sha256Foto": "74290440b539a41525abe8476674ea215130715720a56eb6ab9639aaefdb479a",
       "causa": "Normalizar redacción/ortografía conservando todos los atributos.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Audífonos Xtech Avid de 3,5 mm",
+          "subtitulo": "XTH-356 · diadema",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "1406313e98db89b5a3b78d3e9acbd66f7c7434ac5593971ef34f9523e86b328f"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "1406313e98db89b5a3b78d3e9acbd66f7c7434ac5593971ef34f9523e86b328f"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "BARR002": {
       "titulo": "Barra de sonido Klip Xtreme",
@@ -544,7 +725,7 @@
     },
     "CARG041": {
       "titulo": "Cargador vehicular Ldnio de 30 W",
-      "subtitulo": "C105 · cable USB-A a USB-C",
+      "subtitulo": "Con cable USB-A a USB-C",
       "tituloAnterior": "Cargador vehicular Ldnio C105 30 W | con cable USB-A a USB-C",
       "nombre593": "Cargador Para Vehiculo Ldnio 30W C105 Usb-a + Cable Usb-c",
       "marca": "",
@@ -552,30 +733,49 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#CARG041",
-        "importacion/contratos/CARG041.json"
+        "importacion/contratos/CARG041.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#CARG041"
       ],
       "evidenciaAtributos": {
         "Puertos": "1 USB-A",
         "Potencia nominal": "Hasta 30 W",
-        "Diseño": "Cargador compacto"
+        "Diseño": "Cargador compacto",
+        "Modelo técnico": "C105"
       },
       "clasificacionReal": "original verificado",
       "url": "https://conectatech-ec.github.io/productos/carg041-cargador-para-vehiculo-ldnio-30w-c105-usb-a-cable-usb-c/",
       "foto": "/imagenes/carg041/CARG041-01.webp",
       "sha256Foto": "566f31febc6fc2218645fcb65c04289d0b0f95657db672ae3106a853e05b0139",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Cargador vehicular Ldnio de 30 W",
+          "subtitulo": "C105 · cable USB-A a USB-C",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "cec59745fe69f58f41383ddb98de1807c817883ac828008930ce62befea86a18"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "cec59745fe69f58f41383ddb98de1807c817883ac828008930ce62befea86a18"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "CARG042": {
       "titulo": "Cargador vehicular Ldnio de 60 W",
-      "subtitulo": "C104 · cable USB-C a USB-C",
+      "subtitulo": "Con cable USB-C a USB-C",
       "tituloAnterior": "Cargador vehicular Ldnio C104 60 W | con cable USB-C a USB-C",
       "nombre593": "Cargador Para Vehiculo Ldnio 60W C104 Usb-c Doble + Cable Usb-c A Usb-c",
       "marca": "",
@@ -583,30 +783,49 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#CARG042",
-        "importacion/contratos/CARG042.json"
+        "importacion/contratos/CARG042.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#CARG042"
       ],
       "evidenciaAtributos": {
         "Puertos": "2 USB-C",
         "Potencia nominal": "Hasta 60 W combinados",
-        "Diseño": "Cargador compacto"
+        "Diseño": "Cargador compacto",
+        "Modelo técnico": "C104"
       },
       "clasificacionReal": "original verificado",
       "url": "https://conectatech-ec.github.io/productos/carg042-cargador-para-vehiculo-ldnio-60w-c104-usb-c-doble-cable-usb-c-a-usb-c/",
       "foto": "/imagenes/carg042/CARG042-01.webp",
       "sha256Foto": "5c042a8817c635de7e641d5b61e10d64a9a2c812370777008010a7d0b26c4dec",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Cargador vehicular Ldnio de 60 W",
+          "subtitulo": "C104 · cable USB-C a USB-C",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "8de369599d6199c928b2f7ae6a9197e51d7ec71cbc8b63fd410da5628cdb6241"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "8de369599d6199c928b2f7ae6a9197e51d7ec71cbc8b63fd410da5628cdb6241"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "DISC005": {
-      "titulo": "Disco externo ADATA HD710 Pro 1 TB",
-      "subtitulo": "Carcasa robusta · negro",
+      "titulo": "Disco externo ADATA de 1 TB",
+      "subtitulo": "HD710 Pro · carcasa robusta negra",
       "tituloAnterior": "Disco duro externo ADATA HD710 Pro 1 TB | carcasa robusta negra",
       "nombre593": "Disco Duro Externo Adata 1Tb Antishock",
       "marca": "ADATA",
@@ -614,7 +833,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#DISC005",
-        "importacion/contratos/DISC005.json"
+        "importacion/contratos/DISC005.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#DISC005"
       ],
       "evidenciaAtributos": {
         "Modelo": "HD710 Pro",
@@ -628,14 +848,31 @@
       "foto": "/imagenes/disc005/DISC005-01.webp",
       "sha256Foto": "257d190eb31078c909a362aa0adae64488135ffb3768a48412deeef3dd4ef85f",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Disco externo ADATA HD710 Pro 1 TB",
+          "subtitulo": "Carcasa robusta · negro",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "ba75e0acb0903520fc53aa57abdc3892fdd01304bf202f166e24cc46234d6051"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "ba75e0acb0903520fc53aa57abdc3892fdd01304bf202f166e24cc46234d6051"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "FLAS024": {
       "titulo": "Memoria USB Kingston de 8 GB",
@@ -671,7 +908,7 @@
       }
     },
     "JUGU027": {
-      "titulo": "Consola portátil R36S",
+      "titulo": "Consola portátil de diseño vertical",
       "subtitulo": "Colores surtidos según disponibilidad",
       "tituloAnterior": "Juguete Mini Consola DE Videojuegos R36S",
       "nombre593": "Juguete Mini Consola DE Videojuegos R36S",
@@ -680,7 +917,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#JUGU027",
-        "importacion/contratos/JUGU027.json"
+        "importacion/contratos/JUGU027.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#JUGU027"
       ],
       "evidenciaAtributos": {
         "Presentación de venta": "Una consola portátil R36S. Colores surtidos según disponibilidad; la fotografía ilustra una variante con pantalla apagada. No se promete un catálogo de juegos."
@@ -690,18 +928,35 @@
       "foto": "/imagenes/jugu027/JUGU027-01.webp",
       "sha256Foto": "a53b9828eb10e1dfee351c90456b7ee2041542654d5a5964a5bdc384ea3cc243",
       "causa": "Normalizar redacción/ortografía conservando todos los atributos.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Consola portátil R36S",
+          "subtitulo": "Colores surtidos según disponibilidad",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "c11ac17c7a61199b49ef5799fc0bc62d6ad9287968f7f0e9d10b5efcdaa3798d"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "c11ac17c7a61199b49ef5799fc0bc62d6ad9287968f7f0e9d10b5efcdaa3798d"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "MICR09": {
-      "titulo": "Micrófonos inalámbricos NK11",
-      "subtitulo": "2 transmisores · receptor USB-C",
+      "titulo": "Dúo de micrófonos inalámbricos",
+      "subtitulo": "Receptor USB-C · color negro",
       "tituloAnterior": "Micrófonos inalámbricos NK11 | kit negro con receptor USB-C",
       "nombre593": "Micrófonos inalámbricos NK11 | kit negro con receptor USB-C",
       "marca": "",
@@ -709,7 +964,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#MICR09",
-        "importacion/contratos/MICR09.json"
+        "importacion/contratos/MICR09.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#MICR09"
       ],
       "evidenciaAtributos": {
         "Modelo": "NK11",
@@ -722,14 +978,31 @@
       "foto": "/imagenes/micr09/MICR09-01.webp",
       "sha256Foto": "9279b1596d43d2e8be3efa79a2c47c6642fc359f47466d14b901c28f63fca04e",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Micrófonos inalámbricos NK11",
+          "subtitulo": "2 transmisores · receptor USB-C",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "25dae933b40806c41ce99a937be38db271e61779cf3f2b06eb11c0365317cc12"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "25dae933b40806c41ce99a937be38db271e61779cf3f2b06eb11c0365317cc12"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "PARL016": {
       "titulo": "Parlante Bluetooth RCA portátil",
@@ -763,8 +1036,8 @@
       }
     },
     "PARL026": {
-      "titulo": "Parlante portátil Sing-e ZQS1328S",
-      "subtitulo": "Negro · bocina superior",
+      "titulo": "Parlante portátil de 3 pulgadas",
+      "subtitulo": "Sing-e · negro · bocina superior",
       "tituloAnterior": "Parlante portátil Sing-e ZQS1328S | negro con bocina superior",
       "nombre593": "Parlante Sing-E 3 Pulgadas Zqs1328S",
       "marca": "Sing-e",
@@ -772,26 +1045,45 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#PARL026",
-        "importacion/contratos/PARL026.json"
+        "importacion/contratos/PARL026.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#PARL026"
       ],
       "evidenciaAtributos": {
         "Modelo": "ZQS1328S",
         "Color y variante": "Negro",
-        "Diseño": "Bocina superior y rejilla circular inferior"
+        "Diseño": "Bocina superior y rejilla circular inferior",
+        "Tamaño nominal": "3 pulgadas."
       },
       "clasificacionReal": "original verificado",
       "url": "https://conectatech-ec.github.io/productos/parl026-parlante-sing-e-3-pulgadas-zqs1328s/",
       "foto": "/imagenes/parl026/PARL026-01.webp",
       "sha256Foto": "75655599cb3454bc4ea1c90a4228a5393b7ebf1492af92f2b4d550e8bcee4bb7",
       "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Parlante portátil Sing-e ZQS1328S",
+          "subtitulo": "Negro · bocina superior",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "baa169c5059040717d807db2dfcfa9c08463e1896d53c61fe7dd8e30b9bf388f"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "baa169c5059040717d807db2dfcfa9c08463e1896d53c61fe7dd8e30b9bf388f"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "PARL043": {
       "titulo": "Parlante Xtech Halen compacto",
@@ -858,7 +1150,7 @@
       }
     },
     "TARJ003": {
-      "titulo": "MicroSD HP mx310 de 64 GB",
+      "titulo": "MicroSD HP de 64 GB",
       "subtitulo": "U1 · Clase 10 · hasta 100 MB/s",
       "tituloAnterior": "Tarjeta DE Memoria Microsd HP 64GB 100MB Model MX310",
       "nombre593": "Tarjeta De Memoria Microsd Hp 64Gb 100Mb Model Mx310",
@@ -867,7 +1159,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#TARJ003",
-        "importacion/contratos/TARJ003.json"
+        "importacion/contratos/TARJ003.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#TARJ003"
       ],
       "evidenciaAtributos": {
         "Capacidad": "64 GB",
@@ -881,14 +1174,31 @@
       "foto": "/imagenes/tarj003/TARJ003-01.webp",
       "sha256Foto": "225bfae20bad9f8768d692c59844308108a7f3bef46cafd9c71fb9e0c871c9f8",
       "causa": "Normalizar redacción/ortografía conservando todos los atributos.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "MicroSD HP mx310 de 64 GB",
+          "subtitulo": "U1 · Clase 10 · hasta 100 MB/s",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "f078100bb10ccbb0574736e77079899dcdb65a6a4b04f0b457eb37e4c0917ed6"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "f078100bb10ccbb0574736e77079899dcdb65a6a4b04f0b457eb37e4c0917ed6"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     },
     "TARJ014": {
       "titulo": "MicroSD Kingston Canvas Go! Plus 64 GB",
@@ -926,8 +1236,8 @@
       }
     },
     "TECL022": {
-      "titulo": "Teclado + mouse Monster MT-207 SP",
-      "subtitulo": "Con cable · español con Ñ",
+      "titulo": "Teclado + mouse Monster con cable",
+      "subtitulo": "Distribución española con Ñ",
       "tituloAnterior": "Combo Teclado Y Mouse Alambrico Monster MT-207 SP",
       "nombre593": "Teclado Y Mouse Alambrico Monster MT-207",
       "marca": "Monster",
@@ -935,7 +1245,8 @@
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#TECL022",
-        "importacion/contratos/TECL022.json"
+        "importacion/contratos/TECL022.json",
+        "importacion/editorial/ajuste-lote001-20261024/instrucciones-propietario.json#TECL022"
       ],
       "evidenciaAtributos": {
         "Presentación de venta": "Un teclado y un mouse alámbricos Monster MT-207 SP.",
@@ -947,15 +1258,50 @@
       "foto": "/imagenes/tecl022/TECL022-01.webp",
       "sha256Foto": "b30ef0a0c3b6b17e68ed1c597cd93d7b959cb29316d7151a5f7f835c79fbe110",
       "causa": "Normalizar redacción/ortografía conservando todos los atributos.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "lote": "editorial-001r2",
+      "publicacionVerificada": null,
+      "historialEditorial": [
+        {
+          "titulo": "Teclado + mouse Monster MT-207 SP",
+          "subtitulo": "Con cable · español con Ñ",
+          "lote": "editorial-001",
+          "publicacionVerificada": {
+            "estado": "VERIFICADO_HTTP_CHROMIUM",
+            "fecha": "2026-10-24T03:39:06.751Z",
+            "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
+            "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
+            "huellaTitulo": "16bfbd08d13947a820c4e9c503259f7b301dfd2cf8a7330aebb51e665614f196"
+          }
+        }
+      ],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "16bfbd08d13947a820c4e9c503259f7b301dfd2cf8a7330aebb51e665614f196"
-      }
+      },
+      "mostrarTituloEnFicha": true,
+      "causaAjuste": "Corrección del propietario: nombre comercial y atributos útiles, códigos técnicos sólo en ficha."
     }
   },
-  "loteActual": "001"
+  "loteActual": "001r2",
+  "escaladoMasivo": "EN_PAUSA_HASTA_CONFORMIDAD_LOTE_ACTUAL",
+  "criterioCodigosTecnicosFueraDeTitulos": [
+    "UID-10",
+    "WH-T900",
+    "ZQS1328S",
+    "mx310",
+    "MT-207",
+    "NK11",
+    "KCH-915",
+    "KNH-750GR",
+    "MB169CK",
+    "G05D",
+    "LMN-X02",
+    "XTH-356",
+    "C105",
+    "C104",
+    "R36S"
+  ]
 }

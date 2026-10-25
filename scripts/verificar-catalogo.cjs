@@ -61,7 +61,7 @@ async function main() {
   const editorial=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile)):null;
   const entry=p=>editorial?.activo&&!editorial.excluirPrefijos?.some(x=>p.sku.startsWith(x))?editorial.productos[p.sku]:null;
   const publicationDates=JSON.parse(fs.readFileSync(safe('importacion/actualizaciones-sku.json')));
-  const editorialDate=p=>{const v=entry(p)?.publicacionVerificada,m=publicationDates.productos[p.sku]?.actualizadoEn||'';return v?.estado==='VERIFICADO_HTTP_CHROMIUM'&&(Date.parse(v.fecha)||0)>(Date.parse(m)||0)?v.fecha:'';};
+  const editorialDate=p=>{const e=entry(p),v=e?.publicacionVerificada||e?.publicacionAnterior,m=publicationDates.productos[p.sku]?.actualizadoEn||'';return v?.estado==='VERIFICADO_HTTP_CHROMIUM'&&(Date.parse(v.fecha)||0)>(Date.parse(m)||0)?v.fecha:'';};
   const pageSize = Number(index.match(/(?:const|let) pageSize\s*=\s*(\d+)/)?.[1] || 24);
   const report = {version: 1, fecha: new Date().toISOString(), base: opt.base, sku_solicitados: skus,
     alcance: 'Renderizado real, navegación y datos del catálogo; no certifica fidelidad visual del producto ni publicación.',

@@ -16,3 +16,14 @@ comprueba lote<=30,identidad,fuentes,duplicados,fotos y exclusión TELF/TABL. ac
 revierte todo; quitar una entrada revierte sólo eseSKU. ?titulos=original permite comparar.
 Sólo publicacionVerificada con informe HTTP/Chromium yhash real habilita lafecha nueva
 y posición al inicio. No fechar antes de comprobar la web pública ni por reverificar.
+
+Ajuste24oct2026: sólo lote001,30SKU revisados/18ajustados/12conservados. Modelos
+comerciales reconocibles en tarjeta; códigos técnicos a especificaciones, también
+fuera de subtítulos. DISC005HD710Pro en subtítulo por petición expresa. PARL026
+3pulgadas nominales confirmadas por propietario en título/descripción/ficha técnica.
+mostrarTituloEnFicha activa el encabezado comercial sólo en fichas afectadas, sin
+modificar nombres originales593,URLs,precios,stock,fotos ni nombres/SEO históricos.
+Atributos ya verificados de CARG041/CARG042/AUDI120 se trasladan a fila Modelo técnico.
+Masivo PAUSADO: no ampliar la cola hasta conformidad con estos ajustes del lote.
+La fecha previa pública se conserva como publicacionAnterior hasta verificación de
+la revisión nueva; no afirmar una verificación nueva antes del HTTP/Chromium real.
