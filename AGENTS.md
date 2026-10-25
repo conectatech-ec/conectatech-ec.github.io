@@ -227,3 +227,7 @@ Propietario valida calibración8; publicar automáticamente sólo mejoras verifi
 ## Ajuste editorial del mismo lote —24oct2026,Guayaquil
 
 Sólo los30SKU ya publicados del lote001. Conservar nombres comerciales reconocibles y atributos vendedores comprobados; retirar códigos técnicos alfanuméricos de títulos/subtítulos y mantenerlos en especificaciones. AUDI018TuneFlex confirmado por propietario; DISC005HD710Pro va al subtítulo por excepción expresa; PARL026títuloParlanteportátilde3pulgadas,subSing-e/negro/bocinasuperior,y3pulgadas en especificaciones/descripción. CódigosUID-10,WH-T900,NK11,mx310,MT-207SP,KCH915,KNH750GRyotrosfuera de encabezadoscomerciales. No modificar celulares/tablets ni fotos/precios/stock/URLs. No ampliar a la cola47 hasta conformidad del propietario con este lote. Modificados primero tras comprobación pública real; preservar fechas previas verificadas mientras se valida la nueva revisión. Costo0.
+
+## Aprobación expresa de publicación y siguiente lote
+
+El propietario confirma: «OK PARECE QUE YA NOS ENTENDIMOS!!!! PUBLICA LOS CAMBIOS Y PROCESA OTRO LOTE DE SKU, avancemos rapido». Publicar la corrección aprobada del lote001 y procesar otro lote<=30 con nombres comerciales/atributos útiles y códigos técnicos sólo en especificaciones. No repetir aprobación rutinaria. Celulares/tablets siguen para el final; sin editar fotos,precios,stock,SKU,URLs ni feeds. Conservar corte593vigente y avances fotográficos ajenos; modificados disponibles primero tras verificación real. Costo0.
