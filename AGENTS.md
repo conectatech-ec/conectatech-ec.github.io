@@ -231,3 +231,6 @@ Sólo los30SKU ya publicados del lote001. Conservar nombres comerciales reconoci
 ## Aprobación expresa de publicación y siguiente lote
 
 El propietario confirma: «OK PARECE QUE YA NOS ENTENDIMOS!!!! PUBLICA LOS CAMBIOS Y PROCESA OTRO LOTE DE SKU, avancemos rapido». Publicar la corrección aprobada del lote001 y procesar otro lote<=30 con nombres comerciales/atributos útiles y códigos técnicos sólo en especificaciones. No repetir aprobación rutinaria. Celulares/tablets siguen para el final; sin editar fotos,precios,stock,SKU,URLs ni feeds. Conservar corte593vigente y avances fotográficos ajenos; modificados disponibles primero tras verificación real. Costo0.
+
+## Corrección expresa MICR09
+Título comercial: «Set de micrófonos inalámbricos Pack 2». Mantener receptor USB-C/color negro y datos originales intactos. Publicación autorizada.
