@@ -22,6 +22,7 @@ on:
       - 'scripts/exportar-canales.cjs'
       - 'scripts/categorias-meta-web.cjs'
       - 'scripts/sincronizar-conjuntos-meta.cjs'
+      - 'scripts/prioridad-comercial-meta.cjs'
       - '.github/workflows/exportar-canales.yml'
       - 'scripts/validar-exportacion-593.cjs'
       - 'datos-593/estado-ultimo-corte.json'
@@ -100,6 +101,7 @@ jobs:
           node-version: '22'
       - run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-prioridad-meta.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/test-validar-exportacion-593.cjs
   exportar:
@@ -118,6 +120,7 @@ jobs:
       - name: Generar archivos CSV
         run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-prioridad-meta.cjs
           node scripts/test-validar-exportacion-593.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/exportar-canales.cjs
