@@ -135,6 +135,9 @@ const statusHTML=a=>'<div class="ct-availability ct-availability-'+a.status+'" d
 const availabilityContact=p=>window.CONECTATECH_AVAILABILITY.whatsappURL(p,availabilityFor(p));
 const catalogConfig=window.CONECTATECH_CATALOGO||{ordenPredeterminado:"recientes",productos:{}};
 const catalogMeta=catalogConfig.productos||{};
+// ct-photo-priority-PROT003: fotografía aprobada y prioridad solicitada.
+const photoPROT003=products.find(p=>p.sku==="PROT003");
+if(photoPROT003?.imageUrl==="/imagenes/prot003/PROT003-r106-01.webp")photoPROT003.imageUrl="/imagenes/prot003/PROT003-r20261024-01.webp";
 const sortSelector=document.getElementById("catalogSort");
 sortSelector.value=Array.from(sortSelector.options).some(o=>o.value===catalogConfig.ordenPredeterminado)?catalogConfig.ordenPredeterminado:"recientes";
 const editorialDateFor=p=>{const e=window.CONECTATECH_TITULOS_PRO?.verifiedDate(p)||"",m=catalogMeta[p.sku]?.actualizadoEn||"";return (Date.parse(e)||0)>(Date.parse(m)||0)?e:"";};
@@ -146,6 +149,11 @@ const productHref=p=>"/productos/"+seoPages[p.sku]+"/";
 function orderedProducts(list){
  const mode=sortSelector.value;
  return list.sort((a,b)=>{
+  if(mode==="recientes"){
+   const photoA=a.sku==="PROT003"&&a.imageUrl==="/imagenes/prot003/PROT003-r20261024-01.webp";
+   const photoB=b.sku==="PROT003"&&b.imageUrl==="/imagenes/prot003/PROT003-r20261024-01.webp";
+   if(photoA!==photoB)return photoA?-1:1;
+  }
   const availabilityPriority=Number(availabilityFor(b).commercial_eligible)-Number(availabilityFor(a).commercial_eligible);
   if(availabilityPriority)return availabilityPriority;
   const photoPriority=Number(hasPublishedImage(b))-Number(hasPublishedImage(a));
