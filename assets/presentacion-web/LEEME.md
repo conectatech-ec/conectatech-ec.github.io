@@ -29,6 +29,12 @@ Costo adicional: $0. No editar generadores, inventario, fotografías, títulos, 
 
 ## Ambientación sin etiquetas
 
-El cliente ve el ambiente visual, no una etiqueta de edición. Halloween utiliza una escena nocturna propia en SVG: luna ámbar texturada, murciélagos, telarañas, bruma y trazos de circuito. La vitrina lleva un marco de luz y un panel oscuro; las fotos permanecen blancas y completas. En móvil las telarañas se anclan a las esquinas para conservarse con el recorte del paisaje. `halloween-emblema.svg` enmarca el logo con una calabaza completa; el emblema original queda por encima, con sus mismos bytes, dimensiones y posición. No se pega una cara cortada sobre su borde. Los recursos decorativos se ocultan automáticamente fuera de Halloween, no reciben clics y no crean contenido comercial. Los efectos respetan movimiento reducido; no se alteran datos, imágenes de producto ni condiciones.
+La sección superior se denomina **hero de portada** o **banner principal**; contiene la vitrina de productos con carrusel. En Halloween tiene un subfondo naranja luminoso, una luna completa con halo, murciélagos, telarañas y reflejos cálidos. La vitrina translúcida mantiene las fotos originales y usa azul/verde para títulos, precios y acciones. La luna pulsa suavemente y respeta movimiento reducido. Una calabaza completa se sitúa al pie del emblema, con el logo original por encima; conserva su tamaño, rótulo y archivos. En móvil se reservan 6 px adicionales para que la decoración no alcance el buscador. El calendario oculta la ambientación fuera de Halloween. Los recursos son SVG propios y locales.
 
 El catálogo muestra cinco productos por fila desde 1200 px, tres entre 601 y 1199 px y dos hasta 600 px. El encabezado de regalos dice «En esta temporada tu compra tiene un regalo», con antetítulo y mensaje principal destacados; no cambia los montos ni las condiciones.
+
+## Jerarquía de las tarjetas
+
+Categoría y SKU comparten una franja secundaria; el título mantiene su texto editorial y usa 14 px en escritorio y 12 px en móvil, con mayor peso. Se elimina su altura mínima reservada: el subtítulo queda a 3 px del título, sin renglones vacíos. Se conservan imágenes, datos, enlaces, disponibilidad, orden y cinco columnas/dos en móvil. No se editan componentes editoriales ni sus datos.
+
+Referencia de composición indicada por el propietario: https://techtogoec.com/. Orienta el protagonismo comercial del producto; las ilustraciones, colores, recursos y composición de CONECTATECH son propios.

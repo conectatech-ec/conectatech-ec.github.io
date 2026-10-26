@@ -148,9 +148,9 @@ main>.notice{font-size:10px;line-height:1.7;color:#496078;background:#eaf1f7;bor
 #grid .ct-compact-card:hover{border-color:#82b4d2;box-shadow:0 10px 26px #092e4a12;transform:translateY(-2px)}
 #grid .ct-compact-card .product-img{height:180px!important;padding:4px;background:#fff!important;border:0;border-radius:9px;margin-bottom:10px}
 #grid .ct-compact-card .product-img img{object-fit:contain}
-#grid .ct-compact-card .cat{font-size:8px;line-height:1.6;letter-spacing:.2px;color:#57718a;overflow-wrap:anywhere}
-#grid .ct-compact-card .name,#grid .ct-compact-card .ct-pro-title{display:block;font-size:12px;line-height:1.5;font-weight:650;letter-spacing:-.3px;min-height:36px;max-height:none;-webkit-line-clamp:unset;overflow:visible;overflow-wrap:anywhere;margin:6px 0}
-#grid .ct-compact-card .ct-pro-subtitle{font-size:10px;line-height:1.5;color:#5c7185;margin:0 0 6px}
+#grid .ct-compact-card .cat{font-size:8.5px;line-height:1.45;font-weight:500;letter-spacing:.1px;text-transform:none;color:#586f80;background:#f0f5f8;border:1px solid #e1eaf0;border-radius:5px;padding:5px 6px;margin:0 0 6px;overflow-wrap:anywhere}
+#grid .ct-compact-card .name,#grid .ct-compact-card .ct-pro-title{display:block;flex:0 0 auto;font-size:14px;line-height:1.4;font-weight:750;letter-spacing:-.25px;color:#143953;min-height:0;max-height:none;-webkit-line-clamp:unset;overflow:visible;overflow-wrap:anywhere;margin:0 0 3px}
+#grid .ct-compact-card .ct-pro-subtitle{flex:0 0 auto;font-size:10px;line-height:1.45;color:#5c7185;margin:0 0 5px}
 #grid .ct-compact-card .ct-availability{font-size:9px;line-height:1.5;margin:3px 0 10px}
 #grid .ct-compact-card .ct-availability span{padding:3px 6px;border-radius:5px}
 #grid .ct-compact-card .ct-availability strong{font-size:11px}
@@ -176,7 +176,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
  main{padding:13px 12px 45px}main>.notice{font-size:9px;line-height:1.85;border-radius:7px;padding:8px 10px;margin-bottom:14px}
  .pw-hero{display:grid;grid-template-columns:1fr;min-height:0;border-radius:17px;padding:25px 20px 19px;gap:25px;margin-bottom:19px}.pw-hero .pw-season-label{font-size:9px;padding:6px 10px;margin-bottom:17px}.pw-hero .eyebrow{font-size:7px;letter-spacing:1.1px}.pw-hero h1{font-size:36px;line-height:1.1;letter-spacing:-1.6px;margin:12px 0 14px}.pw-hero p{font-size:11px;line-height:1.9}.pw-hero .ct-hero-actions{margin-top:18px;gap:8px;flex-wrap:nowrap}.pw-hero .ct-hero-actions a{min-height:43px;font-size:9px;padding:10px 12px;width:auto}.pw-hero .ct-hero-proof{font-size:8px;line-height:1.8;gap:8px;margin-top:17px}.pw-showcase-heading{font-size:7px;letter-spacing:1px;margin-bottom:11px}.pw-slide-counter{font-size:9px}.pw-carousel{height:265px}.pw-slide{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:14px}.pw-slide-photo{height:237px;padding:7px;border-radius:12px;box-shadow:0 10px 22px #0003}.pw-slide-title{font-size:12px;letter-spacing:-.2px;line-height:1.5}.pw-slide-copy .ct-availability{font-size:8px;margin-bottom:9px}.pw-slide-copy .ct-availability span{padding:3px 5px}.pw-slide-subtitle,.pw-slide-condition{font-size:8px!important;line-height:1.6!important}.pw-slide-prices{margin-top:12px;gap:3px}.pw-slide-prices>span{font-size:7px;letter-spacing:.65px}.pw-slide-prices strong{font-size:26px;letter-spacing:-1.2px}.pw-slide-prices small{font-size:9px}.pw-slide-link{min-height:40px;padding:9px 10px;margin-top:12px;font-size:8px;border-radius:7px}.pw-carousel-controls{margin-top:7px;gap:4px}.pw-carousel-controls button{width:40px;height:42px}.pw-carousel-dots{margin:0 2px}.pw-carousel-dots button{width:25px;height:42px}.pw-carousel-controls [data-pw-play]{margin-left:3px}.pw-moon{right:15px;top:22px;width:62px;height:62px}.pw-bats{width:115px;top:23px;right:12px}
  .pw-campaign{border-radius:14px;margin-bottom:20px}.pw-campaign-heading{padding:17px 15px;gap:9px}.pw-campaign-heading h2{font-size:19px;letter-spacing:-.6px}.pw-store-label{font-size:7px;letter-spacing:.7px;padding:6px 8px}.pw-campaign-content{grid-template-columns:1fr;gap:19px;padding:11px}.pw-banner-open{border-radius:9px}.pw-banner-open>span{font-size:8px;padding:6px 8px;right:7px;bottom:7px}.pw-campaign-copy{padding:4px 7px 7px}.pw-campaign-copy h3{font-size:24px;margin:10px 0 13px}.pw-campaign-copy>p{font-size:11px;line-height:1.9}.pw-kicker{font-size:8px;letter-spacing:1.1px}.pw-gift-tiers{flex-direction:row;gap:9px;margin-bottom:15px}.pw-gift-tiers>div{flex-direction:column;align-items:flex-start;gap:4px;padding:7px 0 11px;flex:1;min-width:0}.pw-gift-tiers strong{font-size:25px;min-width:0}.pw-gift-tiers span{font-size:9px;line-height:1.6}.pw-campaign-copy .pw-campaign-address{font-size:10px}.pw-campaign-copy summary{font-size:10px}.pw-campaign-copy details p{font-size:11px}[data-pw-contact]>a{font-size:11px;min-height:44px}.pw-banner-dialog{max-width:97vw}.pw-banner-dialog img{width:94vw}
- .trustbar{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-bottom:21px}.trustitem{font-size:9px;padding:11px 5px}.ct-section-head h2,.section-title{font-size:22px;letter-spacing:-.8px}.ct-kicker{font-size:8px}.ct-discover{margin-bottom:19px}.ct-shortcuts{gap:7px}.ct-shortcuts button{font-size:9px;min-height:73px;padding:10px 4px;border-radius:9px}.ct-shortcuts button span{font-size:24px;margin-bottom:5px}.ct-commerce-strip{padding:14px 12px;gap:11px;align-items:flex-start;border-radius:10px;margin-bottom:23px}.ct-commerce-strip strong{font-size:10px;line-height:1.6}.ct-commerce-strip span{font-size:9px;line-height:1.7}.ct-commerce-strip a{font-size:9px;max-width:119px;padding:9px 10px;min-height:43px;flex-shrink:0}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.featured-card{padding:10px;border-radius:10px}.featured-card .product-img{height:125px!important}.featured-card .name{font-size:11px;line-height:1.5;min-height:34px}.featured-card .promo{font-size:23px}.featured-card .pvp{font-size:10px}.featured-card .wa{min-height:41px;font-size:10px}#catalogo{padding-top:21px;scroll-margin-top:15px;margin-bottom:13px}.chip{font-size:9px;min-height:37px;padding:9px}.ct-category-controls{padding:10px;gap:7px;border-radius:9px}.ct-category-controls label{flex:auto;width:100%;font-size:10px}.ct-category-controls select{font-size:11px;min-height:40px}.ct-category-controls a,.ct-category-controls button{font-size:9px;min-height:38px;padding:8px 9px}.meta{font-size:10px;flex-wrap:wrap;gap:11px}.ct-sort{width:100%;font-size:10px;justify-content:space-between}.ct-sort select{min-height:40px;font-size:10px}.ct-av-filter{font-size:11px;margin:12px 0 14px}#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#grid .ct-compact-card{padding:9px;border-radius:10px}#grid .ct-compact-card .product-img{height:145px!important;padding:3px;margin-bottom:10px}#grid .ct-compact-card .cat{font-size:7px;line-height:1.7}#grid .ct-compact-card .name,#grid .ct-compact-card .ct-pro-title{font-size:11px;line-height:1.5;min-height:34px;max-height:none;-webkit-line-clamp:unset;overflow:visible}#grid .ct-compact-card .ct-pro-subtitle{font-size:9px;line-height:1.6}#grid .ct-compact-card .ct-availability{font-size:8px;margin-bottom:10px}#grid .ct-compact-card .promo{font-size:24px}#grid .ct-compact-card .promo-label{font-size:7px;letter-spacing:.25px}#grid .ct-compact-card .pvp{font-size:9px}#grid .ct-compact-card .detail,#grid .ct-compact-card .wa{min-height:40px;font-size:9px;padding:9px 2px}.ct-pagination{gap:12px}.ct-page-controls{gap:6px}.ct-pagination button{font-size:10px;padding:10px}.ct-page-jump{font-size:10px}.ct-page-numbers{gap:5px}footer>img{width:94px!important;height:94px!important}footer>b{max-width:290px}
+ .trustbar{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-bottom:21px}.trustitem{font-size:9px;padding:11px 5px}.ct-section-head h2,.section-title{font-size:22px;letter-spacing:-.8px}.ct-kicker{font-size:8px}.ct-discover{margin-bottom:19px}.ct-shortcuts{gap:7px}.ct-shortcuts button{font-size:9px;min-height:73px;padding:10px 4px;border-radius:9px}.ct-shortcuts button span{font-size:24px;margin-bottom:5px}.ct-commerce-strip{padding:14px 12px;gap:11px;align-items:flex-start;border-radius:10px;margin-bottom:23px}.ct-commerce-strip strong{font-size:10px;line-height:1.6}.ct-commerce-strip span{font-size:9px;line-height:1.7}.ct-commerce-strip a{font-size:9px;max-width:119px;padding:9px 10px;min-height:43px;flex-shrink:0}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.featured-card{padding:10px;border-radius:10px}.featured-card .product-img{height:125px!important}.featured-card .name{font-size:11px;line-height:1.5;min-height:34px}.featured-card .promo{font-size:23px}.featured-card .pvp{font-size:10px}.featured-card .wa{min-height:41px;font-size:10px}#catalogo{padding-top:21px;scroll-margin-top:15px;margin-bottom:13px}.chip{font-size:9px;min-height:37px;padding:9px}.ct-category-controls{padding:10px;gap:7px;border-radius:9px}.ct-category-controls label{flex:auto;width:100%;font-size:10px}.ct-category-controls select{font-size:11px;min-height:40px}.ct-category-controls a,.ct-category-controls button{font-size:9px;min-height:38px;padding:8px 9px}.meta{font-size:10px;flex-wrap:wrap;gap:11px}.ct-sort{width:100%;font-size:10px;justify-content:space-between}.ct-sort select{min-height:40px;font-size:10px}.ct-av-filter{font-size:11px;margin:12px 0 14px}#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#grid .ct-compact-card{padding:9px;border-radius:10px}#grid .ct-compact-card .product-img{height:145px!important;padding:3px;margin-bottom:10px}#grid .ct-compact-card .cat{font-size:7.5px;line-height:1.45;padding:4px 5px;margin-bottom:5px}#grid .ct-compact-card .name,#grid .ct-compact-card .ct-pro-title{font-size:12px;line-height:1.4;min-height:0;max-height:none;-webkit-line-clamp:unset;overflow:visible}#grid .ct-compact-card .ct-pro-subtitle{font-size:9px;line-height:1.6}#grid .ct-compact-card .ct-availability{font-size:8px;margin-bottom:10px}#grid .ct-compact-card .promo{font-size:24px}#grid .ct-compact-card .promo-label{font-size:7px;letter-spacing:.25px}#grid .ct-compact-card .pvp{font-size:9px}#grid .ct-compact-card .detail,#grid .ct-compact-card .wa{min-height:40px;font-size:9px;padding:9px 2px}.ct-pagination{gap:12px}.ct-page-controls{gap:6px}.ct-pagination button{font-size:10px;padding:10px}.ct-page-jump{font-size:10px}.ct-page-numbers{gap:5px}footer>img{width:94px!important;height:94px!important}footer>b{max-width:290px}
 }
 @media(max-width:359px){header .brandlogo{width:84px;height:84px}header .brandrow{gap:12px}header .pw-brand-values{font-size:4.6px}.pw-hero{padding:22px 16px 17px}.pw-hero h1{font-size:32px}.pw-hero .ct-hero-actions a{font-size:8px;padding:10px}.pw-slide{gap:10px}.pw-slide-title{font-size:11px}.pw-slide-prices strong{font-size:24px}.pw-slide-photo{height:219px}.pw-carousel{height:260px}.pw-slide-link{font-size:7px;padding:9px 7px}.pw-carousel-controls{gap:2px}.pw-carousel-controls button{width:35px}.pw-carousel-dots button{width:23px}#grid .ct-compact-card .product-img{height:123px!important}.pw-store-label{font-size:6px;padding:5px}.pw-campaign-heading{padding:14px 11px}.pw-campaign-heading h2{font-size:17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pw-slide,.pw-carousel-dots button span,.card,.ct-shortcuts button{transition:none!important;animation:none!important}.pw-slide{transform:none}}
@@ -187,7 +187,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 @media(max-width:600px){
  #grid .ct-compact-card{padding:8px}
  #grid .ct-compact-card .product-img{height:135px!important;margin-bottom:8px}
- #grid .ct-compact-card .name,#grid .ct-compact-card .ct-pro-title{margin:4px 0}
+ #grid .ct-compact-card .name,#grid .ct-compact-card .ct-pro-title{margin:0 0 3px}
  #grid .ct-compact-card .ct-availability{margin:2px 0 6px}
  #grid .ct-compact-card .ct-compact-prices{flex-direction:row;justify-content:space-between;align-items:flex-end;gap:3px;margin-bottom:8px}
  #grid .ct-compact-card .actions{gap:5px}
@@ -229,58 +229,72 @@ header .brand{position:relative;z-index:3}
 @media(max-width:359px){header .brandrow{--pw-logo-size:84px}}
 @media(prefers-reduced-motion:reduce){.pw-slide{transition:none!important}.pw-tech-effect{display:none!important;animation:none!important}.pw-tech-effect path{animation:none!important}}
 
-/* Escena nocturna ilustrada: la ambientación queda detrás del contenido comercial. */
-[data-ct-temporada=halloween] header .brandlogo{box-shadow:0 0 0 1px #f4d5a855,0 3px 12px #10070188}
-[data-ct-temporada=halloween] .pw-hero{padding:54px 36px 32px;gap:30px;background:linear-gradient(90deg,#080d13c9 0%,#0a0e15a3 34%,#1010171a 66%,#100d1233),url('./halloween-escena.svg?v=5') center center/cover no-repeat,#111219;border:1px solid #d68b454f;box-shadow:0 14px 38px #2b160b24,inset 0 0 0 5px #ffad3510}
-[data-ct-temporada=halloween] .pw-hero:before{inset:0 8%;height:1px;background:linear-gradient(90deg,transparent,#ffdba3 45%,#ff9f40 65%,transparent)}
-[data-ct-temporada=halloween] .pw-hero:after{inset:9px;right:9px;bottom:9px;width:auto;height:auto;border:1px solid #ebae6a21;border-radius:16px;box-shadow:none;z-index:-1}
+/* Hero Halloween luminoso: subfondo naranja, luna visible y producto protagonista. */
+.pw-logo-season{left:calc(var(--pw-logo-size) / 2 - 26px);top:calc(var(--pw-logo-size) - 12px);width:52px;height:52px;filter:drop-shadow(0 0 7px #ffbd4c45);z-index:3}
+[data-ct-temporada=halloween] header .brandlogo{z-index:4;box-shadow:0 0 0 2px #ffffffb3,0 0 24px #8bd12f38}
+.pw-luna-iluminada{display:none;position:absolute;right:25px;top:-12px;width:170px;height:170px;object-fit:contain;filter:drop-shadow(0 0 19px #fff1b47a);pointer-events:none}
+[data-ct-temporada=halloween] .pw-luna-iluminada{display:block;animation:pwMoonLight 5s ease-in-out infinite alternate}
+[data-ct-temporada=halloween] .pw-hero{padding:124px 34px 30px;gap:28px;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);background:linear-gradient(100deg,#ffd178b3 0%,#ffb7563d 48%,transparent 75%),url('./halloween-ambiente-luminoso.svg?v=6') center/cover no-repeat,#f0841d;border:1px solid #ffbf62;box-shadow:0 15px 42px #e16d1736,0 0 0 7px #ffac3821,inset 0 0 45px #ffe1a53b}
+[data-ct-temporada=halloween] .pw-hero:before{inset:0 4%;height:2px;background:linear-gradient(90deg,transparent,#fff2bf 45%,#ffe8a1 65%,transparent);box-shadow:0 0 17px #fff1b4}
+[data-ct-temporada=halloween] .pw-hero:after{inset:9px;width:auto;height:auto;border:1px solid #ffe4b46b;border-radius:16px;box-shadow:inset 0 0 25px #fff1b412;z-index:-1}
 [data-ct-temporada=halloween] .pw-hero .pw-moon,[data-ct-temporada=halloween] .pw-hero .pw-bats,[data-ct-temporada=halloween] .pw-hero .pw-web{display:none}
-[data-ct-temporada=halloween] .pw-hero .eyebrow{color:#f1cba5;letter-spacing:1.65px}
-[data-ct-temporada=halloween] .pw-hero h1{color:#fff8ee;text-shadow:0 3px 20px #0005}
-[data-ct-temporada=halloween] .pw-hero h1 strong{color:#b2ed70}
-[data-ct-temporada=halloween] .pw-hero .ct-hero-copy>p{color:#e9dfd5}
-[data-ct-temporada=halloween] .pw-hero .ct-hero-proof{color:#d5ccb9}
-[data-ct-temporada=halloween] .pw-hero .ct-hero-secondary{background:#ffffff07;border-color:#dfb2825c}
-[data-ct-temporada=halloween] .pw-showcase{padding:16px;border:1px solid #e9b56c4d;border-radius:18px;background:linear-gradient(130deg,#17151bd9,#10121aec);box-shadow:0 12px 40px #0004,inset 0 1px 0 #ffe2b41a}
-[data-ct-temporada=halloween] .pw-showcase:before{content:'';position:absolute;inset:5px;pointer-events:none;border:1px solid #ebaf6421;border-radius:13px}
-[data-ct-temporada=halloween] .pw-showcase-heading{font-size:8px;color:#f2c58f;letter-spacing:1.45px;margin-bottom:13px}
-[data-ct-temporada=halloween] .pw-slide-counter{color:#ffd18b}
-[data-ct-temporada=halloween] .pw-slide-photo{border:1px solid #f4dbb8;border-radius:13px;box-shadow:0 0 0 4px #e9a7560a,0 12px 25px #0005}
-[data-ct-temporada=halloween] .pw-slide-title{font-size:14px;color:#fffaf2}
+[data-ct-temporada=halloween] .pw-hero .eyebrow{color:#573b1f;letter-spacing:1.4px;text-shadow:none}
+[data-ct-temporada=halloween] .pw-hero h1{font-size:45px;color:#112d46;text-shadow:none}
+[data-ct-temporada=halloween] .pw-hero h1 strong{color:#18592f}
+[data-ct-temporada=halloween] .pw-hero .ct-hero-copy>p{color:#533717;text-shadow:none}
+[data-ct-temporada=halloween] .pw-hero .ct-hero-proof{color:#523920;text-shadow:none}
+[data-ct-temporada=halloween] .pw-hero .ct-hero-secondary{background:#fff8e766;color:#173449;border-color:#e8d0ad}
+[data-ct-temporada=halloween] .pw-showcase{padding:16px;border:1px solid #fff0c5bd;border-radius:18px;background:linear-gradient(135deg,#ffd8a2cc,#ffb661bf);box-shadow:0 12px 32px #a243152b,inset 0 1px 0 #fff6de}
+[data-ct-temporada=halloween] .pw-showcase:before{content:'';position:absolute;inset:5px;pointer-events:none;border:1px solid #fff4dca3;border-radius:13px}
+[data-ct-temporada=halloween] .pw-showcase-heading{font-size:8px;color:#67310f;letter-spacing:1.45px;margin-bottom:13px}
+[data-ct-temporada=halloween] .pw-slide-counter{color:#763409}
+[data-ct-temporada=halloween] .pw-slide-photo{padding:13px;background:linear-gradient(145deg,#ffbd62,#ed7b28);border:1px solid #fff2c6;border-radius:14px;box-shadow:0 0 24px #fff1b84d,0 12px 23px #a64f1226}
+[data-ct-temporada=halloween] .pw-slide-photo img{background:white;border-radius:7px}
+[data-ct-temporada=halloween] .pw-slide-title{font-size:15px;color:#173044}
+[data-ct-temporada=halloween] .pw-slide-subtitle{color:#66401d!important}
+[data-ct-temporada=halloween] .pw-slide-condition{color:#673412!important}
+[data-ct-temporada=halloween] .pw-slide-copy .ct-availability span{background:#f3ffe6;color:#295e28}
+[data-ct-temporada=halloween] .pw-slide-prices>span{color:#2e5c31}
+[data-ct-temporada=halloween] .pw-slide-prices strong{color:#125d37}
+[data-ct-temporada=halloween] .pw-slide-prices small{color:#65421d}
+[data-ct-temporada=halloween] .pw-slide-link{background:#103c54;color:white;border-color:#103c54;box-shadow:0 4px 10px #0b34521a}
+[data-ct-temporada=halloween] .pw-slide-link:hover{background:#164e69}
 [data-ct-temporada=halloween] .pw-carousel-controls{justify-content:flex-end;margin-top:10px}
-[data-ct-temporada=halloween] .pw-carousel-controls button{border-color:#c89c6a3d;background:#ffffff05;color:#f8dab2}
+[data-ct-temporada=halloween] .pw-carousel-controls button{border-color:#a5642c66;background:#fff7df66;color:#344321}
 [data-ct-temporada=halloween] .pw-carousel-dots button{border:0;background:none}
-[data-ct-temporada=halloween] .pw-carousel-dots button[aria-pressed=true] span{background:#ffb958;box-shadow:0 0 9px #ff9d2855}
-[data-ct-temporada=halloween] .pw-tech-effect{stroke:#ffb44e;filter:drop-shadow(0 0 4px #ff9e36a0)}
-[data-ct-temporada=halloween] .pw-tech-effect .pw-tech-trace{stroke:#adf26c}
-@media(max-width:1150px){[data-ct-temporada=halloween] .pw-hero{padding:52px 27px 28px;gap:25px}[data-ct-temporada=halloween] .pw-slide-title{font-size:13px}}
-@media(max-width:900px){[data-ct-temporada=halloween] .pw-hero{padding:57px 30px 30px;background-position:center top}[data-ct-temporada=halloween] .pw-showcase{max-width:100%}}
+[data-ct-temporada=halloween] .pw-carousel-dots button span{background:#97623166}
+[data-ct-temporada=halloween] .pw-carousel-dots button[aria-pressed=true] span{background:#1c6038;box-shadow:0 0 7px #efffc055}
+[data-ct-temporada=halloween] .pw-tech-effect{stroke:#fff0ab;filter:drop-shadow(0 0 5px #fff2b2)}
+[data-ct-temporada=halloween] .pw-tech-effect .pw-tech-trace{stroke:#3e8e46}
+@keyframes pwMoonLight{from{filter:drop-shadow(0 0 17px #fff1b470)}to{filter:drop-shadow(0 0 27px #fff4c9c9)}}
+@media(max-width:1150px){[data-ct-temporada=halloween] .pw-hero{padding:119px 26px 28px;gap:24px}[data-ct-temporada=halloween] .pw-hero h1{font-size:39px}[data-ct-temporada=halloween] .pw-slide-title{font-size:13px}}
+@media(max-width:900px){[data-ct-temporada=halloween] .pw-hero{grid-template-columns:1fr;padding:118px 30px 30px;gap:26px}[data-ct-temporada=halloween] .pw-showcase{max-width:100%}}
 @media(max-width:600px){
- .pw-logo-season{left:-10px;top:-10px;width:calc(var(--pw-logo-size) + 20px);height:calc(var(--pw-logo-size) + 20px)}
- [data-ct-temporada=halloween] .pw-hero{padding:60px 18px 19px;gap:28px;background-image:linear-gradient(180deg,#0b0e162b,#0a0e15d9 47%,#080d1399),url('./halloween-escena.svg?v=5');background-size:100% 100%,auto 470px;background-position:center,78% top;background-color:#101219;border-radius:18px}
+ .pw-logo-season{left:calc(var(--pw-logo-size) / 2 - 24px);top:calc(var(--pw-logo-size) - 12px);width:48px;height:48px}
+ [data-ct-temporada=halloween] header .brandrow{margin-bottom:6px}
+ .pw-luna-iluminada{right:6px;top:-5px;width:145px;height:145px}
+ [data-ct-temporada=halloween] .pw-hero{padding:113px 18px 19px;gap:26px;background-image:linear-gradient(180deg,#7c2f073b,transparent 42%),url('./halloween-ambiente-luminoso.svg?v=6');background-size:100% 100%,auto 100%;background-position:center,76% top;background-color:#ec7c19;border-radius:18px}
  [data-ct-temporada=halloween] .pw-hero:after{inset:7px;border-radius:12px}
  [data-ct-temporada=halloween] .pw-hero .eyebrow{font-size:7px;letter-spacing:1.2px}
  [data-ct-temporada=halloween] .pw-hero h1{font-size:36px;letter-spacing:-1.7px}
- [data-ct-temporada=halloween] .pw-hero h1 strong{color:#b8f578}
+ [data-ct-temporada=halloween] .pw-hero h1 strong{color:#18592f}
  [data-ct-temporada=halloween] .pw-hero .ct-hero-copy>p{font-size:11px;line-height:1.9}
  [data-ct-temporada=halloween] .pw-showcase{padding:13px 11px 9px;border-radius:13px}
  [data-ct-temporada=halloween] .pw-showcase:before{inset:4px;border-radius:9px}
  [data-ct-temporada=halloween] .pw-showcase-heading{font-size:6.5px;letter-spacing:1px;margin-bottom:9px}
  [data-ct-temporada=halloween] .pw-slide{gap:12px;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr)}
- [data-ct-temporada=halloween] .pw-slide-photo{height:221px;padding:7px;border-radius:10px}
+ [data-ct-temporada=halloween] .pw-slide-photo{height:221px;padding:9px;border-radius:10px}
  [data-ct-temporada=halloween] .pw-slide-title{font-size:11px;letter-spacing:-.3px;line-height:1.55}
  [data-ct-temporada=halloween] .pw-slide-prices strong{font-size:25px}
- [data-ct-temporada=halloween] .pw-slide-link{padding:8px;font-size:7px}
+ [data-ct-temporada=halloween] .pw-slide-link{padding:8px;font-size:8px}
  [data-ct-temporada=halloween] .pw-carousel{height:252px}
  [data-ct-temporada=halloween] .pw-carousel-controls{justify-content:center;margin-top:3px;gap:2px}
  [data-ct-temporada=halloween] .pw-carousel-controls button{width:34px;height:40px}
  [data-ct-temporada=halloween] .pw-carousel-dots{margin:0 2px}
  [data-ct-temporada=halloween] .pw-carousel-dots button{width:23px}
+ [data-ct-temporada=halloween] .pw-season-decoration:before,[data-ct-temporada=halloween] .pw-season-decoration:after{content:'';position:absolute;width:147px;height:153px;background:url('./halloween-telarana.svg?v=6') top left/contain no-repeat;pointer-events:none}
+ [data-ct-temporada=halloween] .pw-season-decoration:before{left:-3px;top:-3px;opacity:.65}
+ [data-ct-temporada=halloween] .pw-season-decoration:after{right:-6px;bottom:-5px;transform:rotate(180deg);opacity:.5}
 }
-@media(max-width:359px){[data-ct-temporada=halloween] .pw-hero{padding:56px 14px 16px}[data-ct-temporada=halloween] .pw-hero h1{font-size:31px}[data-ct-temporada=halloween] .pw-showcase{padding:12px 8px 7px}[data-ct-temporada=halloween] .pw-slide{gap:9px}[data-ct-temporada=halloween] .pw-slide-title{font-size:10px}[data-ct-temporada=halloween] .pw-slide-prices strong{font-size:23px}[data-ct-temporada=halloween] .pw-carousel-controls button{width:30px}[data-ct-temporada=halloween] .pw-carousel-dots button{width:20px}}
-
-@media(max-width:600px){
- [data-ct-temporada=halloween] .pw-season-decoration:before,[data-ct-temporada=halloween] .pw-season-decoration:after{content:'';position:absolute;width:147px;height:153px;background:url('./halloween-telarana.svg?v=5') top left/contain no-repeat;pointer-events:none}
- [data-ct-temporada=halloween] .pw-season-decoration:before{left:-3px;top:-3px;opacity:.5}
- [data-ct-temporada=halloween] .pw-season-decoration:after{right:-6px;bottom:-5px;transform:rotate(180deg);opacity:.35}
-}
+@media(max-width:359px){[data-ct-temporada=halloween] .pw-hero{padding:110px 14px 16px}[data-ct-temporada=halloween] .pw-hero h1{font-size:31px}[data-ct-temporada=halloween] .pw-showcase{padding:12px 8px 7px}[data-ct-temporada=halloween] .pw-slide{gap:9px}[data-ct-temporada=halloween] .pw-slide-title{font-size:10px}[data-ct-temporada=halloween] .pw-slide-prices strong{font-size:23px}[data-ct-temporada=halloween] .pw-carousel-controls button{width:30px}[data-ct-temporada=halloween] .pw-carousel-dots button{width:20px}}
+@media(prefers-reduced-motion:reduce){.pw-luna-iluminada{animation:none!important}}
