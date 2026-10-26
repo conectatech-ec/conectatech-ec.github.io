@@ -487,5 +487,60 @@
     "La captura Conectatech | Celulares no demuestra origen ni automatización.",
     "No modificar fuente CSV, inventario, precios, SKU ni fotografías para crear agrupaciones.",
     "Filtros conceptuales: verificar campos y operadores disponibles en la interfaz antes de aplicar."
-  ]
+  ],
+  "evidencia_interfaz": {
+    "fuente": "Captura del propietario: Editar conjunto de productos",
+    "nombre": "CONECTATECH | CELULARES",
+    "productos": 21,
+    "variantes": 21,
+    "filtros_periodicos_activados": true,
+    "coincidencia": "al menos un filtro",
+    "reglas": [
+      {
+        "atributo": "Tipo de producto",
+        "condicion": "contiene",
+        "valor": "celulares"
+      }
+    ],
+    "agregar_productos_recomendados": false,
+    "alcance": "Comprueba configuración periódica del conjunto Meta. La sección WhatsApp observada coincide por nombre; no comprueba aún propagación de un nuevo conjunto ni pertenencia de cada SKU."
+  },
+  "piloto_audio": {
+    "nombre": "CONECTATECH | AUDÍFONOS Y AUDIO",
+    "filtros_periodicos": true,
+    "coincidencia": "al menos un filtro",
+    "reglas": [
+      {
+        "atributo": "Tipo de producto",
+        "condicion": "contiene",
+        "valor": "AUDIFONOS"
+      },
+      {
+        "atributo": "Tipo de producto",
+        "condicion": "contiene",
+        "valor": "PARLANTES"
+      },
+      {
+        "atributo": "Tipo de producto",
+        "condicion": "contiene",
+        "valor": "BARRAS DE SONIDO"
+      },
+      {
+        "atributo": "Tipo de producto",
+        "condicion": "contiene",
+        "valor": "RADIOS"
+      },
+      {
+        "atributo": "Tipo de producto",
+        "condicion": "contiene",
+        "valor": "REPRODUCTORES"
+      }
+    ],
+    "agregar_productos_recomendados": false,
+    "observacion": "Cada categoría es una fila OR. No añadir disponibilidad como otra fila OR: incluiría productos ajenos a audio. Si en el futuro el mismo feed incorpora agotados, comprobar agrupación de condiciones para exigir disponibilidad Y categoría antes de habilitar selección sólo disponible.",
+    "conteo_orientativo": 105,
+    "conteo_no_es_visibilidad_whatsapp": true,
+    "guardado_en_meta": false,
+    "visible_whatsapp": false
+  }
 }

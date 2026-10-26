@@ -123,7 +123,7 @@
     },
     "alcance": "Identificadores transcritos de la captura. No verifica propiedad, permisos efectivos, WABA, número, feed ni productos visibles. La sesión del propietario no acredita acceso del agente."
   },
-  "siguiente_comprobacion": "Abrir Catálogo Maestro > Catálogo > Conjuntos. Comprobar si existe Conectatech | Celulares y cómo se define; verificar correspondencia con la sección WhatsApp antes de extender reglas.",
+  "siguiente_comprobacion": "Conservar Celulares sin cambios. Crear un único piloto Audífonos y audio con filtros por Tipo de producto y comprobar su pertenencia antes de guardar y su aparición posterior en WhatsApp; sólo entonces extender a las demás categorías.",
   "evidencia_origen_meta": {
     "fuente": "Capturas del propietario de Orígenes de datos y Configurar fuente",
     "nombre": "CONECTATECH | Sincronización automática 593",
@@ -225,7 +225,24 @@
   "organizacion_preparada": {
     "archivo": "reportes/integracion-whatsapp/plan-colecciones-meta.json",
     "grupos": 13,
-    "estado": "Reglas conceptuales por product_type del mismo feed; sin aplicar.",
+    "estado": "Filtros periódicos confirmados en conjunto Celulares; nuevas colecciones pendientes de aplicar y verificar en WhatsApp.",
     "siguiente_paso": "Abrir Catálogo Maestro > Catálogo > Conjuntos. Comprobar si existe Conectatech | Celulares y cómo se define; verificar correspondencia con la sección WhatsApp antes de extender reglas."
+  },
+  "evidencia_filtros_celulares": {
+    "fuente": "Captura del propietario: Editar conjunto de productos",
+    "nombre": "CONECTATECH | CELULARES",
+    "productos": 21,
+    "variantes": 21,
+    "filtros_periodicos_activados": true,
+    "coincidencia": "al menos un filtro",
+    "reglas": [
+      {
+        "atributo": "Tipo de producto",
+        "condicion": "contiene",
+        "valor": "celulares"
+      }
+    ],
+    "agregar_productos_recomendados": false,
+    "alcance": "Comprueba configuración periódica del conjunto Meta. La sección WhatsApp observada coincide por nombre; no comprueba aún propagación de un nuevo conjunto ni pertenencia de cada SKU."
   }
 }
