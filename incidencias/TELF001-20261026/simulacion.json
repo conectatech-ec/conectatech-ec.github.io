@@ -1,0 +1,34 @@
+{
+  "sku": "TELF001",
+  "applied": false,
+  "only_simulation": true,
+  "catalog_id": "1036301566100990",
+  "target_collection_id": "29304551402566106",
+  "before_collection_match": false,
+  "after_collection_match": true,
+  "row_count_before": 966,
+  "row_count_after": 966,
+  "changes": [
+    {
+      "sku": "TELF001",
+      "fields": [
+        "custom_label_0"
+      ]
+    }
+  ],
+  "non_target_rows_unchanged": true,
+  "other_target_fields_unchanged": true,
+  "source_feed_sha256": "badede0d0708ca83a019e74a11e81994289ce662035a785a83c8a4242c1df2a7",
+  "proposed_item_fields": {
+    "custom_label_0": "ct-web:celulares-y-smartphones"
+  },
+  "requires_meta_item_id_lookup": true,
+  "required_before_live_change": [
+    "Verificar vínculo de WhatsApp con el catálogo maestro para el número afectado",
+    "Leer la identidad Meta existente de retailer_id TELF001 y su estado de elegibilidad/visibilidad",
+    "Confirmar la revisión de imagen y aprobación comercial del SKU; no falsear comercialVerificado",
+    "Autorizar una excepción de enrutamiento por SKU o completar aprobación editorial real",
+    "Resolver persistencia ante la siguiente importación; la fuente actual vuelve a dejar vacía la etiqueta"
+  ],
+  "live_visibility_verified": false
+}
