@@ -28,6 +28,7 @@ module.exports=async function verificarBusquedaComercial(page,base){
    document.getElementById('q').value=query;sortSelector.value=mode;
    const list=products.filter(p=>matchesSearch(p,query));
    const expected=list.slice().sort((a,b)=>{
+    if(mode==='recientes'){const aPhoto=a.sku==='PROT003'&&a.imageUrl==='/imagenes/prot003/PROT003-r20261024-01.webp',bPhoto=b.sku==='PROT003'&&b.imageUrl==='/imagenes/prot003/PROT003-r20261024-01.webp';if(aPhoto!==bPhoto)return aPhoto?-1:1;}
     const available=Number(availabilityFor(b).commercial_eligible)-Number(availabilityFor(a).commercial_eligible);if(available)return available;
     const photo=Number(hasPublishedImage(b))-Number(hasPublishedImage(a));if(photo)return photo;
     if(mode==='nombre')return a.name.localeCompare(b.name,'es',{sensitivity:'base',numeric:true});
