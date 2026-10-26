@@ -2,11 +2,11 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict'),crypto=require('node:crypto'),cp=require('node:child_process');
 const dir=__dirname,root=path.resolve(dir,'../..'),sandbox={window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(dir,'config.js'),'utf8'),sandbox);
-const cfg=sandbox.window.CONECTATECH_PRESENTACION,api=require('./temporadas.js');let count=0;
+const cfg=sandbox.window.CONECTATECH_PRESENTACION,automatico={...cfg,tema:'automatico'},api=require('./temporadas.js');let count=0;
 function check(label,actual,expected){assert.deepEqual(actual,expected,label);count++}
-for(const [date,id] of [['2026-10-31','halloween'],['2026-11-01','black-month'],['2026-11-26','black-month'],['2026-11-27','black-friday'],['2026-11-29','black-friday'],['2026-11-30','black-month'],['2026-12-01','navidad'],['2026-12-31','navidad'],['2027-01-01','identidad'],['2027-11-26','black-friday']])check('Calendario '+date,api.resolver(cfg,date).id,id);
-check('Medianoche de Quito, antes',api.resolver(cfg,new Date('2026-11-01T04:59:59Z')).id,'halloween');
-check('Medianoche de Quito, después',api.resolver(cfg,new Date('2026-11-01T05:00:00Z')).id,'black-month');
+for(const [date,id] of [['2026-10-31','halloween'],['2026-11-01','black-month'],['2026-11-26','black-month'],['2026-11-27','black-friday'],['2026-11-29','black-friday'],['2026-11-30','black-month'],['2026-12-01','navidad'],['2026-12-31','navidad'],['2027-01-01','identidad'],['2027-11-26','black-friday']])check('Calendario '+date,api.resolver(automatico,date).id,id);
+check('Medianoche de Quito, antes',api.resolver(automatico,new Date('2026-11-01T04:59:59Z')).id,'halloween');
+check('Medianoche de Quito, después',api.resolver(automatico,new Date('2026-11-01T05:00:00Z')).id,'black-month');
 check('Cambio manual',api.resolver({...cfg,tema:'navidad'},'2026-10-25').id,'navidad');
 check('Valor inválido seguro',api.resolver(cfg,'2026-10-25','no-existe').id,'identidad');
 const custom={...cfg,blackFridayAutomatico:false,calendario:[{desde:'12-15',hasta:'01-06',tema:'navidad'}]};
