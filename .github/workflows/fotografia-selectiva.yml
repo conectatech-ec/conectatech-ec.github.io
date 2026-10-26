@@ -53,6 +53,7 @@ jobs:
                   try:
                       page = get(page_url).decode()
                       catalog = get(origin + '/').decode()
+                      assert 'ct-photo-priority-PROT003' in catalog, 'Esperando prioridad visual publicada'
                       ref = re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"', catalog)
                       assert ref, 'Referencia pública del catálogo'
                       metadata = get(origin + ref[1]).decode()
@@ -82,7 +83,7 @@ jobs:
                           self.first = attrs.get('data-sku')
               chrome = shutil.which('google-chrome') or shutil.which('chromium') or shutil.which('chromium-browser')
               assert chrome, 'Navegador de comprobación no disponible'
-              view = subprocess.run([chrome,'--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--virtual-time-budget=10000','--dump-dom',origin + '/?fotografia=PROT003'],capture_output=True,timeout=90)
+              view = subprocess.run([chrome,'--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--virtual-time-budget=10000','--dump-dom',origin + '/?fotografia=PROT003-prioridad-visual'],capture_output=True,timeout=90)
               assert view.returncode == 0, 'No se pudo comprobar el catálogo'
               parsed = Catalog(); parsed.feed(view.stdout.decode(errors='replace'))
               assert parsed.first == 'PROT003', 'PROT003 no aparece primero: ' + str(parsed.first)
