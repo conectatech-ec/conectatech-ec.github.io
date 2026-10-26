@@ -54,7 +54,7 @@ function checkRemote(plan,remote){
  for(const r of remote)if(String(r.custom_label_0||'').startsWith('ct-web:')&&stock(r.availability)==='in stock'&&!expected.has(r.retailer_id))throw Error('META_SKU_FUERA_DE_SELECCION_'+r.retailer_id);
  return true;
 }
-async function synchronize({plan,csv,api,wait=pause,attempts=20,onProgress=()=>{}}){
+async function synchronize({plan,csv,api,wait=pause,attempts=120,onProgress=()=>{}}){
  if(plan.catalog_id!==CATALOG||!plan.groups.length||!plan.productos_meta)throw Error('Plan Meta inválido');
  const catalog=await api.request('GET',CATALOG,{fields:'id,name'});
  if(catalog.id!==CATALOG||normal(catalog.name)!==normal('CONECTATECH | Catálogo Maestro'))throw Error('Identidad del Catálogo Maestro no coincide');
@@ -65,14 +65,20 @@ async function synchronize({plan,csv,api,wait=pause,attempts=20,onProgress=()=>{
  const digest=crypto.createHash('sha256').update(csv).digest('hex');
  const filename='ct-'+digest+'.csv',feed=candidates[0];
  const uploads=await api.list(feed.id+'/uploads','id,filename,end_time,error_count,num_invalid_items,num_persisted_items');
- let upload=uploads.find(u=>u.filename===filename&&u.end_time&&!u.error_count&&!u.num_invalid_items&&u.num_persisted_items>=plan.productos_meta);
+ let upload=uploads.find(u=>String(u.filename||'').endsWith(filename)&&!u.error_count&&!u.num_invalid_items);
  if(!upload){
   onProgress('IMPORTANDO_FEED_EXISTENTE');
   const submitted=await api.request('POST',feed.id+'/uploads',{update_only:true},{name:filename,content:csv});
   if(!/^\d+$/.test(submitted.id||''))throw Error('Respuesta de importación sin ID');
+  upload={id:submitted.id};
+ }
+ if(!upload.end_time){
+  onProgress('META_IMPORTACION_EN_CURSO_ID_'+upload.id);
   for(let i=0;i<attempts;i++){
-   upload=await api.request('GET',submitted.id,{fields:'id,end_time,error_count,num_invalid_items,num_persisted_items'});
-   if(upload.end_time)break;await wait(3000);
+   upload=await api.request('GET',upload.id,{fields:'id,end_time,error_count,num_invalid_items,num_persisted_items'});
+   if(upload.end_time)break;
+   if(i%10===0)onProgress('META_IMPORTACION_EN_CURSO');
+   await wait(3000);
   }
  }
  if(!upload?.end_time)throw Error('META_IMPORTACION_PENDIENTE');
@@ -117,4 +123,5 @@ async function main(){
  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nEstado de integración Meta: '+receipt.estado+'\nColecciones WhatsApp verificadas: no\n');
 }
 module.exports={Graph,reconcile,checkRemote,synchronize};
-if(require.main===module)main().catch(e=>{fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify({estado:'ERROR',codigo:(e.message.match(/^(META_[A-Z_]+(?:_\d+)?|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0],detalle:'La ejecución no pudo confirmar sincronización. Revisar autorización/importación y reejecutar; no se acreditó visibilidad WhatsApp.'},null,2)+'\n');console.error('ERROR_META: sincronización no verificada; no se imprimen credenciales ni respuestas privadas.');process.exitCode=1;});
+if(require.main===module)main().catch(e=>{fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify({estado:'ERROR',codigo:(e.message.match(/^(META_[A-Z_]+(?:_\d+)?|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0],detalle:'La ejecución no pudo confirmar sincronización. Revisar autorización/importación y reejecutar; no se acreditó visibilidad WhatsApp.'},null,2)+'\n');console.error('ERROR_META: '+(e.message.match(/^(META_[A-Z_]+(?:_\d+)?|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0]);process.exitCode=1;});
+
