@@ -1,6 +1,6 @@
 # Presentación web CONECTATECH
 
-Esta capa se carga al final del `index.html` vigente con cuatro referencias. No sustituir el catálogo por las instantáneas de revisión. Los productos, sus objetos, títulos, fotos, precios, stock, orden de publicaciones, fichas y WhatsApp siguen perteneciendo a los componentes existentes.
+Esta capa se carga al final del `index.html` vigente con cinco referencias. No sustituir el catálogo por las instantáneas de revisión. Los productos, sus objetos, títulos, fotos, precios, stock, orden de publicaciones, fichas y WhatsApp siguen perteneciendo a los componentes existentes.
 
 ## Cambiar la temporada
 
@@ -46,3 +46,16 @@ Referencia de composición indicada por el propietario: https://techtogoec.com/.
 ## Vitrina orientada a compra
 
 Cada transición agrupa fotografía y datos en una sola tarjeta, sin el mensaje de marca intercalado. Usa dos columnas en escritorio y fotografía completa arriba con título, precios y acciones debajo en móvil. El botón «Comprar por WhatsApp» reutiliza exactamente `availabilityContact(p)` del catálogo vigente; no construye mensajes, números ni destinos nuevos y conserva la consulta de disponibilidad. «Ver ficha del producto», la fotografía y el título conservan `productHref(p)`. La tarjeta se pausa al recibir hover o foco y, ahora, al tocarla en móvil; el botón de reproducción permite reanudarla. Fuera de esa interacción sigue avanzando cada tres segundos y vuelve al primero. Los enlaces de diapositivas inactivas siguen inertes.
+
+
+## Rotación diaria de vitrina y Destacados
+
+`config.js` → `rotacionDiaria` controla ambas selecciones. Está activa: cinco productos en la vitrina y cinco complementarios en Destacados. El módulo puro `rotacion.js` genera un plan determinista por fecha local de Quito a partir de los productos vigentes elegibles: stock disponible según el motor existente, fotografía publicada local, ficha existente y precios comerciales válidos. El catálogo, sus objetos, categorías, precios y fechas no se escriben ni reordenan.
+
+La planificación combina familias comerciales y rangos de precios existentes; da una preferencia moderada a actualizaciones de los últimos 21 días y abre cada selección con una familia visual de `categoriasApertura` cuando hay candidatos. No afirma popularidad, ventas ni descuentos nuevos. El historial se reproduce desde 2026-01-01 para todos los visitantes; se evita repetir un SKU en ambas secciones durante siete días con el mismo conjunto elegible. Si no hay suficientes candidatos, se libera primero el día más antiguo; nunca se duplican productos en la selección del día. El plan del día es estable mientras no cambien el catálogo, las disponibilidades o la configuración. No necesita almacenamiento local, cuentas, tareas externas ni servicios pagos. El cálculo queda memorizado para comprobaciones y fechas posteriores de la misma página.
+
+Un temporizador calcula la siguiente medianoche en `America/Guayaquil`; se revalida además cada minuto y al volver a la pestaña. Los productos que dejan de ser elegibles o cuya fotografía no carga se excluyen y sustituyen. La renovación limpia temporizadores y listeners del carrusel anterior para conservar flechas, pausa, gestos y efectos sin duplicarlos. El alto del carrusel se adapta a los títulos y subtítulos vigentes completos, incluyendo cambios de fuente y pantalla.
+
+Para impulsar una campaña, añadir SKU existentes a `fijadosVitrina` o `fijadosDestacados`. Las fijaciones válidas tienen prioridad y pueden repetirse entre días por decisión expresa; si están agotadas, sin fotografía o sin ficha, se omiten. Una misma fijación no se muestra en ambas secciones. Para desactivar la automatización, `activa:false` conserva `productosPortada` como selección manual de la vitrina; Destacados usa una selección disponible complementaria.
+
+Destacados conserva los componentes `productImage`, `nameHTML`, `statusHTML`, `productHref` y `availabilityContact` actuales. Su presentación usa cinco columnas en escritorio, tres en tamaños intermedios y dos en móvil; la quinta tarjeta móvil ocupa la fila completa con foto e información contiguas. Promo Contado es principal y PVP secundario. Marca, títulos/subtítulos, fotos, fichas, WhatsApp, orden editorial y datos593 intactos.

@@ -12,15 +12,15 @@ check('Valor inválido seguro',api.resolver(cfg,'2026-10-25','no-existe').id,'id
 const custom={...cfg,blackFridayAutomatico:false,calendario:[{desde:'12-15',hasta:'01-06',tema:'navidad'}]};
 check('Temporada configurable entre años',api.resolver(custom,'2027-01-05').id,'navidad');
 check('Fin de temporada entre años',api.resolver(custom,'2027-01-07').id,'identidad');
-for(const name of ['config.js','temporadas.js','portada.js'])new vm.Script(fs.readFileSync(path.join(dir,name),'utf8'),{filename:name});
+for(const name of ['config.js','temporadas.js','rotacion.js','portada.js'])new vm.Script(fs.readFileSync(path.join(dir,name),'utf8'),{filename:name});
 const index=fs.readFileSync(path.join(root,'index.html'),'utf8'),parse=s=>JSON.parse(s.match(/const products=(\[[\s\S]*?\]);\s*\n/)[1]),items=parse(index);
 check('SKU seleccionados existentes y únicos',new Set(cfg.productosPortada).size,cfg.productosPortada.length);
 for(const sku of cfg.productosPortada)check('SKU '+sku+' real',items.some(p=>p.sku===sku),true);
-for(const file of ['estilos.css','config.js','temporadas.js','portada.js'])check('Referencia única '+file,(index.match(new RegExp('/assets/presentacion-web/'+file.replace('.','\\.')+'\\?v=[^"\\s]+','g'))||[]).length,1);
+for(const file of ['estilos.css','config.js','temporadas.js','rotacion.js','portada.js'])check('Referencia única '+file,(index.match(new RegExp('/assets/presentacion-web/'+file.replace('.','\\.')+'\\?v=[^"\\s]+','g'))||[]).length,1);
 let parent;
 try{parent=cp.execFileSync('git',['show','HEAD^:index.html'],{cwd:root,encoding:'utf8',maxBuffer:8*1024*1024})}catch(_){throw Error('Se necesita al menos fetch-depth: 2 para comparar con el padre.')}
 check('Objetos comerciales intactos frente al padre',parse(index),parse(parent));
-const sinReferencias=s=>s.replace(/<link rel="stylesheet" href="\/assets\/presentacion-web\/estilos\.css\?v=[^"]+">\n/g,'').replace(/<script src="\/assets\/presentacion-web\/(?:config|temporadas|portada)\.js\?v=[^"]+"><\/script>\n/g,'');
+const sinReferencias=s=>s.replace(/<link rel="stylesheet" href="\/assets\/presentacion-web\/estilos\.css\?v=[^"]+">\n/g,'').replace(/<script src="\/assets\/presentacion-web\/(?:config|temporadas|rotacion|portada)\.js\?v=[^"]+"><\/script>\n/g,'');
 check('Índice sólo incorpora la capa de presentación',sinReferencias(index),sinReferencias(parent));
 const changed=cp.execFileSync('git',['diff','--name-only','HEAD^','HEAD'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
 check('Ámbito aislado y archivos de otros proyectos intactos',changed.filter(p=>!/^index\.html$|^assets\/presentacion-web\/|^revision\/presentacion-web-v2\/|^revision\/presentacion-web-v1\/(index|despues)\.html$|^\.github\/workflows\/presentacion-web\.yml$/.test(p)),[]);
@@ -29,3 +29,5 @@ for(const [name,ref] of [['encabezado-marca-aprobado.png',provenance.encabezado]
 check('Licencia Sora incluida',fs.existsSync(path.join(dir,'fonts/OFL-Sora.txt')),true);
 if(provenance.rotuloTransparente)check('Trazos originales transparentes intactos',crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,provenance.rotuloTransparente.archivo))).digest('hex'),provenance.rotuloTransparente.sha256);
 console.log(count+' verificaciones de presentación, calendario e integridad correctas. Sin generación ni publicación de datos.');
+
+require('./rotacion-pruebas.cjs');
