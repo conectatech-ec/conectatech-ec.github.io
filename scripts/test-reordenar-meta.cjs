@@ -10,12 +10,12 @@ function fixture(){
  const request={id:'test-autorizado',autorizado:true,catalog_id:C,respaldo_sha256:backup.respaldo_sha256,targets:sets.map((s,i)=>({prioridad:i+1,familia:families[i],old_id:s.id,retailer_id:s.retailer_id}))};
  const plan={catalog_id:C,fecha_corte:'2026-10-25',groups:sets.map((s,i)=>({retailer_id:s.retailer_id,filter:s.filter,sku:['SKU'+i]}))};
  const products=sets.map((s,i)=>({id:String(900+i),retailer_id:'SKU'+i,price:'10',availability:'in stock'}));
- sets.push({id:'800',name:'Otra colección',retailer_id:'otra',filter:{},ordering_info:[]},{id:'999',name:'All Products',filter:{}});
+ sets.push({id:'800',name:'Otra colección',retailer_id:'otra',filter:{},ordering_info:[]},{id:'1628823752127084',name:'All Products',filter:{}});
  const calls=[];let seq=200,loseReply=false,deleteFail=null,mutate=false;
  const api={sets,products,calls,set loseReply(v){loseReply=v;},set deleteFail(v){deleteFail=v;},set mutate(v){mutate=v;},
   async list(path){
    calls.push({method:'GET',path});
-   if(path===C+'/product_sets')return structuredClone(sets);
+   if(path===C+'/product_sets')return structuredClone([...sets.filter(s=>s.id==='1628823752127084'),...sets.filter(s=>s.id!=='1628823752127084')]);
    if(path===C+'/products')return structuredClone(products);
    const set=sets.find(s=>s.id===path.split('/')[0]);if(!set)throw Error('SET_AUSENTE');
    const i=Number(set.retailer_id.split(':')[1]);return [{id:String(900+i),retailer_id:'SKU'+i}];
@@ -41,7 +41,7 @@ function fixture(){
  assert.equal(result.estado,'RECREACION_META_VERIFICADA');assert.equal(result.productos_sin_cambios,6);assert(result.orden_lista_meta_coincide);
  assert.deepEqual(x.api.calls.filter(c=>c.method==='DELETE').map(c=>c.path),['105','104','103','102','101','100']);
  assert.equal(x.api.calls.filter(c=>c.method==='POST').length,6);assert.equal(x.api.sets.length,8);
- assert(x.api.sets.some(s=>s.id==='999'));assert(x.api.sets.some(s=>s.id==='800'));assert.equal(result.orden_whatsapp_verificado,false);
+ assert(x.api.sets.some(s=>s.id==='1628823752127084'));assert(x.api.sets.some(s=>s.id==='800'));assert.equal(result.orden_whatsapp_verificado,false);
  const count=x.api.calls.length;await recreate({...x,state:saved});assert.equal(x.api.calls.length,count,'Una operación completada no se repite');
  const denied=fixture();denied.request.autorizado=false;await assert.rejects(()=>recreate(denied),/AUTORIZACION/);assert.equal(denied.api.calls.length,0);
  const changed=fixture();changed.api.sets[0].filter={otro:true};await assert.rejects(()=>recreate(changed),/FILTRO_DISTINTO/);assert(!changed.api.calls.some(c=>c.method==='DELETE'));

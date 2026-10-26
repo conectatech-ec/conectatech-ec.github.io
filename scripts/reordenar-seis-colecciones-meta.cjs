@@ -113,7 +113,8 @@ async function recreate({request,backup,plan,api,state=null,onState=()=>{},onPro
  if(hash(sorted(finalProducts))!==baseline)throw Error('REORDEN_PRODUCTOS_CAMBIARON');
  const desired=[...request.targets].sort((a,b)=>a.prioridad-b.prioridad).map(t=>t.retailer_id);
  state.estado='RECREACION_META_VERIFICADA';state.orden_solicitado=FAMILIES;
- state.orden_lista_meta=finalSets.slice(0,6).map(s=>s.retailer_id);
+ // Meta antepone el conjunto general All Products; no es una colección comercial.
+ state.orden_lista_meta=finalSets.filter(s=>s.id!=='1628823752127084').slice(0,6).map(s=>s.retailer_id);
  state.orden_lista_meta_coincide=stable(state.orden_lista_meta)===stable(desired);
  state.productos_sin_cambios=finalProducts.length;state.finalizado_utc=new Date().toISOString();save();return state;
 }
