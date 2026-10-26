@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 580" fill="none">
+<defs>
+ <radialGradient id="sky" cx=".63" cy="0" r=".95"><stop stop-color="#ad3f0b"/><stop offset=".43" stop-color="#54200e"/><stop offset=".76" stop-color="#181416"/><stop offset="1" stop-color="#080d13"/></radialGradient>
+ <radialGradient id="halo"><stop stop-color="#ff942a" stop-opacity=".55"/><stop offset=".5" stop-color="#ed6b16" stop-opacity=".19"/><stop offset="1" stop-color="#ff7800" stop-opacity="0"/></radialGradient>
+ <radialGradient id="moon" cx=".35" cy=".24" r=".85"><stop stop-color="#ffe1a2"/><stop offset=".42" stop-color="#f6b85f"/><stop offset=".8" stop-color="#cc7127"/><stop offset="1" stop-color="#753818"/></radialGradient>
+ <linearGradient id="rim"><stop stop-color="#ffb948" stop-opacity=".02"/><stop offset=".5" stop-color="#ffad46" stop-opacity=".5"/><stop offset="1" stop-color="#ffb948" stop-opacity=".02"/></linearGradient>
+ <linearGradient id="fog" x2="0" y2="1"><stop stop-color="#e48a3b" stop-opacity="0"/><stop offset="1" stop-color="#c56b2f" stop-opacity=".14"/></linearGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+ <filter id="lunarGrain"><feTurbulence type="fractalNoise" baseFrequency=".095" numOctaves="3" seed="11" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+ <clipPath id="disc"><circle cx="1152" cy="62" r="114"/></clipPath>
+ <path id="bat" d="M1 27C15 24 24 13 28 2C29 18 36 23 44 24L48 14L53 23L58 14L62 24C72 22 79 16 82 2C87 14 97 24 111 27C94 27 86 33 84 44C76 36 68 35 61 38L55 48L49 38C40 34 33 37 27 44C23 33 15 27 1 27Z"/>
+ <g id="web" stroke="#f4c290" stroke-linecap="round" stroke-width=".85">
+  <path d="M0 0L220 0M0 0L211 58M0 0L187 109M0 0L145 165M0 0L80 205M0 0L0 228"/>
+  <path d="M25 0Q22 8 24 7Q18 16 21 13Q13 23 16 18Q8 28 9 23Q3 32 0 27M52 0Q46 17 50 14Q38 33 44 26Q27 49 34 38Q15 60 19 49Q6 64 0 57M85 0Q75 26 80 22Q63 51 72 42Q44 78 56 63Q25 95 31 80Q10 105 0 92M125 0Q110 38 118 32Q91 76 106 61Q65 115 82 94Q34 141 45 116Q13 151 0 133M172 0Q151 50 161 44Q123 102 144 84Q84 154 111 127Q48 188 62 159Q16 204 0 182M217 0Q191 66 205 56Q159 131 184 108Q110 196 143 163Q61 240 80 205Q21 257 0 228"/>
+ </g>
+</defs>
+<path fill="url(#sky)" d="M0 0H1440V580H0Z"/>
+<ellipse cx="1128" cy="52" rx="340" ry="245" fill="url(#halo)"/>
+<circle cx="1152" cy="62" r="121" stroke="#fac17b" stroke-opacity=".11"/>
+<circle cx="1152" cy="62" r="114" fill="url(#moon)"/>
+<g clip-path="url(#disc)"><circle cx="1152" cy="62" r="114" filter="url(#lunarGrain)" opacity=".14"/></g>
+<circle cx="1152" cy="62" r="113.5" stroke="#ffe4b4" stroke-opacity=".3"/>
+<g clip-path="url(#disc)" fill="#87441e" fill-opacity=".18">
+ <circle cx="1091" cy="18" r="24"/><circle cx="1178" cy="-18" r="37"/><circle cx="1207" cy="84" r="30"/><circle cx="1120" cy="119" r="16"/><circle cx="1090" cy="74" r="12"/><circle cx="1155" cy="58" r="9"/><circle cx="1178" cy="111" r="8"/>
+ <path d="M1041 83Q1096 147 1155 142Q1227 135 1256 45V196H1040Z" fill-opacity=".2"/>
+ <g stroke="#ffe9b6" stroke-opacity=".19"><circle cx="1091" cy="18" r="27"/><circle cx="1207" cy="84" r="32"/><circle cx="1120" cy="119" r="18"/></g>
+</g>
+<g fill="#100e12" stroke="#ffb04c" stroke-opacity=".17" stroke-width=".6">
+ <use href="#bat" transform="translate(1066 24) rotate(-16 55 24) scale(1.14)"/>
+ <use href="#bat" transform="translate(1227 92) rotate(13 55 24) scale(.82)"/>
+ <use href="#bat" transform="translate(936 43) rotate(10 55 24) scale(.53)"/>
+ <use href="#bat" transform="translate(1344 17) rotate(-10 55 24) scale(.45)"/>
+</g>
+<use href="#web" opacity=".58"/>
+<use href="#web" transform="translate(1440 580) rotate(180) scale(1.18)" opacity=".42"/>
+<path d="M53 18V112" stroke="#edbb8a" stroke-opacity=".45" stroke-width=".8"/>
+<g stroke="#100f14" stroke-width="1.7" stroke-linecap="round" fill="#100f14" transform="translate(53 119)"><ellipse rx="4.4" ry="6.5"/><circle cy="-7" r="2.5"/><path d="M-3-3L-8-7L-10-4M3-3L8-7L10-4M-3 0L-10-1L-12 3M3 0L10-1L12 3M-3 3L-8 7L-8 11M3 3L8 7L8 11"/></g>
+<path d="M0 450C234 494 363 387 652 445S1121 495 1440 436V580H0Z" fill="url(#fog)"/>
+<path d="M-40 534C225 414 395 541 652 498S1103 434 1496 544" stroke="#b56630" stroke-opacity=".08" stroke-width="40" filter="url(#soft)"/>
+<path d="M0 578H1440" stroke="url(#rim)" stroke-width="3"/>
+<g stroke="#ec9d50" stroke-opacity=".16" stroke-width=".75"><path d="M1 424H44L65 445H120M1322 1V24L1341 43H1439M672 580V546L694 524H746"/><circle cx="120" cy="445" r="3"/><circle cx="746" cy="524" r="3"/></g>
+<g fill="#f3bd76" fill-opacity=".55"><circle cx="899" cy="21" r="1.2"/><circle cx="1318" cy="50" r="1"/><circle cx="1380" cy="156" r="1.2"/><circle cx="959" cy="134" r=".8"/><circle cx="703" cy="29" r=".8"/><circle cx="510" cy="21" r=".7"/></g>
+</svg>

@@ -44,7 +44,7 @@ main>.notice{font-size:10px;line-height:1.7;color:#496078;background:#eaf1f7;bor
 .pw-moon{display:none;position:absolute;right:18%;top:24px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#ffedbd,var(--pw-season));opacity:.13;box-shadow:0 0 60px 20px color-mix(in srgb,var(--pw-season) 15%,transparent)}
 .pw-bats{display:none;position:absolute;right:16px;top:18px;width:143px;height:65px;fill:#091723;opacity:.65;transform:rotate(-9deg)}
 .pw-stars{display:none;position:absolute;right:5%;top:25px;color:var(--pw-season);font-size:40px;letter-spacing:25px;opacity:.3}
-[data-ct-temporada=halloween] .pw-moon,[data-ct-temporada=halloween] .pw-bats{display:block}
+[data-ct-temporada=halloween] .pw-moon,
 [data-ct-temporada=navidad] .pw-stars{display:block}
 [data-ct-temporada=black-month] .pw-hero,[data-ct-temporada=black-friday] .pw-hero{background:radial-gradient(ellipse at 100% 0%,color-mix(in srgb,var(--pw-season) 12%,transparent),transparent 60%),linear-gradient(120deg,#060e19,#142536)}
 [data-ct-temporada=navidad] .pw-hero{background:radial-gradient(ellipse at 100% 0%,#8f2e452e,transparent 58%),linear-gradient(120deg,#051f27,#0c3732)}
@@ -194,22 +194,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 }
 @media(max-width:359px){#grid .ct-compact-card .product-img{height:123px!important}}
 
-/* Ambientación de campaña: el emblema original se superpone a su adorno. */
+/* La marca original queda por encima de su marco estacional. */
 header .brandrow{position:relative;isolation:isolate;--pw-logo-size:112px}
 header .brandlogo{position:relative;z-index:2}
 header .brand{position:relative;z-index:3}
-[data-ct-temporada=halloween] header .brandrow:before{content:"";position:absolute;left:-5px;top:-5px;width:calc(var(--pw-logo-size) + 10px);height:calc(var(--pw-logo-size) + 10px);border-radius:50%;border:1px solid #ffad436b;box-shadow:3px 5px 24px #ff79052e,0 0 0 4px #ff8c0910;pointer-events:none;z-index:0}
-.pw-logo-season{display:none;position:absolute;left:calc(var(--pw-logo-size) * .65);top:calc(var(--pw-logo-size) * .60);width:64px;height:64px;pointer-events:none;filter:drop-shadow(0 4px 7px #0008) drop-shadow(0 0 7px #ff93053d);z-index:1}
+.pw-logo-season{display:none;position:absolute;left:-12px;top:-12px;width:calc(var(--pw-logo-size) + 24px);height:calc(var(--pw-logo-size) + 24px);pointer-events:none;filter:drop-shadow(0 2px 5px #0008) drop-shadow(0 0 9px #ee8a1830);z-index:1}
 [data-ct-temporada=halloween] .pw-logo-season{display:block}
 .pw-season-label{display:none!important}
 .pw-web{display:none;position:absolute;left:-6px;top:-6px;width:100px;height:100px;color:#f3a448;opacity:.21}
 [data-ct-temporada=halloween] .pw-web{display:block}
-[data-ct-temporada=halloween] .pw-hero{background:radial-gradient(ellipse at 55% -35%,#ff9e23a6,transparent 65%),linear-gradient(112deg,#a83a05 0%,#ba4207 28%,#602305 59%,#14100e 79%,#080b10 100%);box-shadow:0 18px 45px #a4390929}
-[data-ct-temporada=halloween] .pw-moon{right:4%;top:19px;width:108px;height:108px;opacity:.24;box-shadow:0 0 65px 16px #ffae431f}
-[data-ct-temporada=halloween] .pw-bats{right:15px;top:20px;width:170px;height:75px;fill:#100b08;opacity:.95}
-[data-ct-temporada=halloween] .pw-showcase-heading{color:#ffe6cf}
-[data-ct-temporada=halloween] .pw-hero .eyebrow,[data-ct-temporada=halloween] .pw-hero .ct-hero-copy>p,[data-ct-temporada=halloween] .pw-hero .ct-hero-proof{color:#fff0e2}
-[data-ct-temporada=halloween] .pw-hero:before{height:3px;background:linear-gradient(90deg,#ffb23e,#ff760b 55%,#21150c)}
+
 .pw-campaign-heading h2{font-size:27px;line-height:1.25}
 .pw-campaign-lead{display:block;font-size:10px;font-weight:650;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;color:#526c80}
 .pw-campaign-message{display:block;text-wrap:balance}
@@ -231,6 +225,62 @@ header .brand{position:relative;z-index:3}
 @keyframes pwTechPulse{0%{opacity:0}20%{opacity:.85}55%{opacity:.55}100%{opacity:0}}
 @keyframes pwTechTrace{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
 @media(max-width:1150px){header .brandrow{--pw-logo-size:100px}}
-@media(max-width:600px){header .brandrow{--pw-logo-size:88px}.pw-logo-season{width:52px;height:52px}.pw-web{width:67px;height:67px;opacity:.17}[data-ct-temporada=halloween] .pw-moon{right:15px;top:18px;width:88px;height:88px}[data-ct-temporada=halloween] .pw-bats{right:13px;top:20px;width:135px;height:61px}}
+@media(max-width:600px){header .brandrow{--pw-logo-size:88px}.pw-web{width:67px;height:67px;opacity:.17}}
 @media(max-width:359px){header .brandrow{--pw-logo-size:84px}}
 @media(prefers-reduced-motion:reduce){.pw-slide{transition:none!important}.pw-tech-effect{display:none!important;animation:none!important}.pw-tech-effect path{animation:none!important}}
+
+/* Escena nocturna ilustrada: la ambientación queda detrás del contenido comercial. */
+[data-ct-temporada=halloween] header .brandlogo{box-shadow:0 0 0 1px #f4d5a855,0 3px 12px #10070188}
+[data-ct-temporada=halloween] .pw-hero{padding:54px 36px 32px;gap:30px;background:linear-gradient(90deg,#080d13c9 0%,#0a0e15a3 34%,#1010171a 66%,#100d1233),url('./halloween-escena.svg?v=5') center center/cover no-repeat,#111219;border:1px solid #d68b454f;box-shadow:0 14px 38px #2b160b24,inset 0 0 0 5px #ffad3510}
+[data-ct-temporada=halloween] .pw-hero:before{inset:0 8%;height:1px;background:linear-gradient(90deg,transparent,#ffdba3 45%,#ff9f40 65%,transparent)}
+[data-ct-temporada=halloween] .pw-hero:after{inset:9px;right:9px;bottom:9px;width:auto;height:auto;border:1px solid #ebae6a21;border-radius:16px;box-shadow:none;z-index:-1}
+[data-ct-temporada=halloween] .pw-hero .pw-moon,[data-ct-temporada=halloween] .pw-hero .pw-bats,[data-ct-temporada=halloween] .pw-hero .pw-web{display:none}
+[data-ct-temporada=halloween] .pw-hero .eyebrow{color:#f1cba5;letter-spacing:1.65px}
+[data-ct-temporada=halloween] .pw-hero h1{color:#fff8ee;text-shadow:0 3px 20px #0005}
+[data-ct-temporada=halloween] .pw-hero h1 strong{color:#b2ed70}
+[data-ct-temporada=halloween] .pw-hero .ct-hero-copy>p{color:#e9dfd5}
+[data-ct-temporada=halloween] .pw-hero .ct-hero-proof{color:#d5ccb9}
+[data-ct-temporada=halloween] .pw-hero .ct-hero-secondary{background:#ffffff07;border-color:#dfb2825c}
+[data-ct-temporada=halloween] .pw-showcase{padding:16px;border:1px solid #e9b56c4d;border-radius:18px;background:linear-gradient(130deg,#17151bd9,#10121aec);box-shadow:0 12px 40px #0004,inset 0 1px 0 #ffe2b41a}
+[data-ct-temporada=halloween] .pw-showcase:before{content:'';position:absolute;inset:5px;pointer-events:none;border:1px solid #ebaf6421;border-radius:13px}
+[data-ct-temporada=halloween] .pw-showcase-heading{font-size:8px;color:#f2c58f;letter-spacing:1.45px;margin-bottom:13px}
+[data-ct-temporada=halloween] .pw-slide-counter{color:#ffd18b}
+[data-ct-temporada=halloween] .pw-slide-photo{border:1px solid #f4dbb8;border-radius:13px;box-shadow:0 0 0 4px #e9a7560a,0 12px 25px #0005}
+[data-ct-temporada=halloween] .pw-slide-title{font-size:14px;color:#fffaf2}
+[data-ct-temporada=halloween] .pw-carousel-controls{justify-content:flex-end;margin-top:10px}
+[data-ct-temporada=halloween] .pw-carousel-controls button{border-color:#c89c6a3d;background:#ffffff05;color:#f8dab2}
+[data-ct-temporada=halloween] .pw-carousel-dots button{border:0;background:none}
+[data-ct-temporada=halloween] .pw-carousel-dots button[aria-pressed=true] span{background:#ffb958;box-shadow:0 0 9px #ff9d2855}
+[data-ct-temporada=halloween] .pw-tech-effect{stroke:#ffb44e;filter:drop-shadow(0 0 4px #ff9e36a0)}
+[data-ct-temporada=halloween] .pw-tech-effect .pw-tech-trace{stroke:#adf26c}
+@media(max-width:1150px){[data-ct-temporada=halloween] .pw-hero{padding:52px 27px 28px;gap:25px}[data-ct-temporada=halloween] .pw-slide-title{font-size:13px}}
+@media(max-width:900px){[data-ct-temporada=halloween] .pw-hero{padding:57px 30px 30px;background-position:center top}[data-ct-temporada=halloween] .pw-showcase{max-width:100%}}
+@media(max-width:600px){
+ .pw-logo-season{left:-10px;top:-10px;width:calc(var(--pw-logo-size) + 20px);height:calc(var(--pw-logo-size) + 20px)}
+ [data-ct-temporada=halloween] .pw-hero{padding:60px 18px 19px;gap:28px;background-image:linear-gradient(180deg,#0b0e162b,#0a0e15d9 47%,#080d1399),url('./halloween-escena.svg?v=5');background-size:100% 100%,auto 470px;background-position:center,78% top;background-color:#101219;border-radius:18px}
+ [data-ct-temporada=halloween] .pw-hero:after{inset:7px;border-radius:12px}
+ [data-ct-temporada=halloween] .pw-hero .eyebrow{font-size:7px;letter-spacing:1.2px}
+ [data-ct-temporada=halloween] .pw-hero h1{font-size:36px;letter-spacing:-1.7px}
+ [data-ct-temporada=halloween] .pw-hero h1 strong{color:#b8f578}
+ [data-ct-temporada=halloween] .pw-hero .ct-hero-copy>p{font-size:11px;line-height:1.9}
+ [data-ct-temporada=halloween] .pw-showcase{padding:13px 11px 9px;border-radius:13px}
+ [data-ct-temporada=halloween] .pw-showcase:before{inset:4px;border-radius:9px}
+ [data-ct-temporada=halloween] .pw-showcase-heading{font-size:6.5px;letter-spacing:1px;margin-bottom:9px}
+ [data-ct-temporada=halloween] .pw-slide{gap:12px;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr)}
+ [data-ct-temporada=halloween] .pw-slide-photo{height:221px;padding:7px;border-radius:10px}
+ [data-ct-temporada=halloween] .pw-slide-title{font-size:11px;letter-spacing:-.3px;line-height:1.55}
+ [data-ct-temporada=halloween] .pw-slide-prices strong{font-size:25px}
+ [data-ct-temporada=halloween] .pw-slide-link{padding:8px;font-size:7px}
+ [data-ct-temporada=halloween] .pw-carousel{height:252px}
+ [data-ct-temporada=halloween] .pw-carousel-controls{justify-content:center;margin-top:3px;gap:2px}
+ [data-ct-temporada=halloween] .pw-carousel-controls button{width:34px;height:40px}
+ [data-ct-temporada=halloween] .pw-carousel-dots{margin:0 2px}
+ [data-ct-temporada=halloween] .pw-carousel-dots button{width:23px}
+}
+@media(max-width:359px){[data-ct-temporada=halloween] .pw-hero{padding:56px 14px 16px}[data-ct-temporada=halloween] .pw-hero h1{font-size:31px}[data-ct-temporada=halloween] .pw-showcase{padding:12px 8px 7px}[data-ct-temporada=halloween] .pw-slide{gap:9px}[data-ct-temporada=halloween] .pw-slide-title{font-size:10px}[data-ct-temporada=halloween] .pw-slide-prices strong{font-size:23px}[data-ct-temporada=halloween] .pw-carousel-controls button{width:30px}[data-ct-temporada=halloween] .pw-carousel-dots button{width:20px}}
+
+@media(max-width:600px){
+ [data-ct-temporada=halloween] .pw-season-decoration:before,[data-ct-temporada=halloween] .pw-season-decoration:after{content:'';position:absolute;width:147px;height:153px;background:url('./halloween-telarana.svg?v=5') top left/contain no-repeat;pointer-events:none}
+ [data-ct-temporada=halloween] .pw-season-decoration:before{left:-3px;top:-3px;opacity:.5}
+ [data-ct-temporada=halloween] .pw-season-decoration:after{right:-6px;bottom:-5px;transform:rotate(180deg);opacity:.35}
+}
