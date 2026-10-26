@@ -60,8 +60,7 @@ async function main() {
   const editorialFile=safe('importacion/editorial/publicados.json');
   const editorial=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile)):null;
   const entry=p=>editorial?.activo&&!editorial.excluirPrefijos?.some(x=>p.sku.startsWith(x))?editorial.productos[p.sku]:null;
-  const publicationDates=JSON.parse(fs.readFileSync(safe('importacion/actualizaciones-sku.json')));
-  const editorialDate=p=>{const e=entry(p),v=e?.publicacionVerificada||e?.publicacionAnterior,m=publicationDates.productos[p.sku]?.actualizadoEn||'';return v?.estado==='VERIFICADO_HTTP_CHROMIUM'&&(Date.parse(v.fecha)||0)>(Date.parse(m)||0)?v.fecha:'';};
+  const editorialDate=(p,payload)=>{const e=entry(p),v=e?.publicacionVerificada||e?.publicacionAnterior,m=payload.productos[p.sku]?.actualizadoEn||'';return v?.estado==='VERIFICADO_HTTP_CHROMIUM'&&(Date.parse(v.fecha)||0)>(Date.parse(m)||0)?v.fecha:'';};
   const pageSize = Number(index.match(/(?:const|let) pageSize\s*=\s*(\d+)/)?.[1] || 24);
   const report = {version: 1, fecha: new Date().toISOString(), base: opt.base, sku_solicitados: skus,
     alcance: 'Renderizado real, navegación y datos del catálogo; no certifica fidelidad visual del producto ni publicación.',
@@ -162,9 +161,9 @@ async function main() {
         // La disponibilidad central ya filtra agotados por defecto y los precios sólo son de elegibles.
         const order = mode => {
           const list=catalogProducts.filter(p=>availabilityCore.forProduct(p).main_catalog);
-          const updatedTime=p=>Date.parse(editorialDate(p)||payload.productos[p.sku]?.actualizadoEn||'')||0;
+          const updatedTime=p=>Date.parse(editorialDate(p,payload)||payload.productos[p.sku]?.actualizadoEn||'')||0;
           const hasPhoto=p=>Boolean(p.imageUrl||payload.productos[p.sku]?.imagen?.src);
-          const priority=p=>editorialDate(p)?1:({nuevo:0,actualizado:1}[payload.productos[p.sku]?.tipoCambio]??2);
+          const priority=p=>editorialDate(p,payload)?1:({nuevo:0,actualizado:1}[payload.productos[p.sku]?.tipoCambio]??2);
           return list.sort((a,b)=>{
   if(mode==='recientes'){
    const photoA=a.sku===photoPrioritySku;
@@ -250,7 +249,7 @@ async function main() {
           ensure(current.titulo===(entry(p)?.titulo||p.name),'Título visible distinto del mapa editorial/original.');
           if (published) {
             ensure(Number.isFinite(Date.parse(published.actualizadoEn)) && /^[a-f0-9]{64}$/.test(published.huella || ''), 'Metadatos publicados sin fecha o huella válidas.');
-            ensure(current.actualizado === (editorialDate(p)||published.actualizadoEn), 'Fecha de actualización no coincide con metadatos.');
+            ensure(current.actualizado === (editorialDate(p,payload)||published.actualizadoEn), 'Fecha de actualización no coincide con metadatos.');
           } else {
             ensure(current.actualizado === '', 'El candidato nuevo tiene una fecha de publicación artificial.');
             product.metadatos = 'CANDIDATO_LOCAL_SIN_FECHA_PUBLICA';
