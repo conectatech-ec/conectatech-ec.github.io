@@ -252,8 +252,25 @@ def register(root, report, previous, report_path, report_sha, previous_catalog=N
 
 
 def payload(state):
-    return {'ordenPredeterminado': state.get('ordenPredeterminado', 'recientes'), 'productos': {sku: {**{key: row[key] for key in ('actualizadoEn', 'huella', 'imagen')}, 'tipoCambio': row.get('tipoCambio', 'catalogo')}
+    result = {'ordenPredeterminado': state.get('ordenPredeterminado', 'recientes'), 'productos': {sku: {**{key: row[key] for key in ('actualizadoEn', 'huella', 'imagen')}, 'tipoCambio': row.get('tipoCambio', 'catalogo')}
             for sku, row in sorted(state['productos'].items())}}
+    # Conservar únicamente la modificación fotográfica publicada de PROT003.
+    photo_record = ROOT / 'importacion/fotografia-publicada/PROT003.json'
+    target = result['productos'].get('PROT003')
+    if target and photo_record.is_file():
+        approved = json.loads(photo_record.read_text())
+        photo = approved.get('imagenProfesional', {})
+        cover = photo.get('versiones', {}).get('1200', {})
+        if (approved.get('sku') == 'PROT003' and approved.get('publicacion_verificada') is True and
+                approved.get('maestro_aprobado_sha256') == 'ec2a21e15462f82bed2c87963ee69e46fc961ad998613a9176be5341f3393f53' and
+                cover.get('url') == '/imagenes/prot003/PROT003-r20261024-01.webp' and
+                target.get('imagen', {}).get('src') in (approved.get('imagen_anterior'), cover['url']) and
+                stamp(approved['fecha_publicacion']) >= stamp(target['actualizadoEn'])):
+            target.update(actualizadoEn=approved['fecha_publicacion'], tipoCambio='actualizado',
+                          huella=cover['sha256'], imagen={'src': cover['url'], 'srcset': ', '.join(
+                              photo['versiones'][s]['url'] + '?v=' + photo['versiones'][s]['sha256'][:16] + ' ' + s + 'w'
+                              for s in ('300', '600', '1200'))})
+    return result
 
 
 def version_asset_reference(index_data, js_data):

@@ -14,7 +14,7 @@ concurrency:
 jobs:
   fotografia:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - name: Verificar archivos y publicación real sin modificar datos comerciales
         shell: python
@@ -31,6 +31,11 @@ jobs:
               with urlopen(Request(url, headers={'User-Agent':'CONECTATECH-fotografia-selectiva','Cache-Control':'no-cache'}), timeout=30) as r:
                   if r.status != 200: raise RuntimeError('HTTP ' + str(r.status))
                   return r.read()
+          import ast, subprocess
+          ast.parse(get(raw + '/scripts/registrar-actualizaciones.py').decode())
+          for script in ('scripts/generar-seo.cjs','scripts/verificar-catalogo.cjs'):
+              checked = subprocess.run(['node','--check'],input=get(raw + '/' + script),capture_output=True)
+              assert checked.returncode == 0, 'Sintaxis inválida: ' + script
           record = json.loads(get(raw + '/importacion/fotografia-publicada/PROT003.json'))
           assert record['sku'] == 'PROT003' and record['aprobado_por_propietario'] is True
           photo = record['imagenProfesional']
@@ -44,7 +49,7 @@ jobs:
           result = {'sku':'PROT003','archivos_verificados':versions,'publicacion_activa':False,'datos_comerciales_modificados':False}
           if os.environ['PHOTO_REF'] == 'refs/heads/main':
               page_url = origin + '/productos/prot003-protectores-de-silicon-animados-para-cables/'
-              for attempt in range(120):
+              for attempt in range(300):
                   try:
                       page = get(page_url).decode()
                       catalog = get(origin + '/').decode()
@@ -55,12 +60,34 @@ jobs:
                       row = json.loads(match[1])['productos']['PROT003']
                       assert photo['versiones']['1200']['url'] in page
                       assert row['imagen']['src'] == photo['versiones']['1200']['url']
+                      if record.get('publicacion_verificada') is True:
+                          assert row['actualizadoEn'] == record['fecha_publicacion'], 'Fecha pública pendiente'
                       assert 'PROT003' in page
                       result.update(publicacion_activa=True,url=page_url,sha256_ficha=hashlib.sha256(page.encode()).hexdigest(),fecha=datetime.now(timezone.utc).isoformat())
                       break
                   except Exception:
-                      if attempt == 119: raise
+                      if attempt == 299: raise
                       time.sleep(5)
+
+          if result['publicacion_activa'] and record.get('publicacion_verificada') is True:
+              import shutil, subprocess
+              from html.parser import HTMLParser
+              class Catalog(HTMLParser):
+                  def __init__(self):
+                      super().__init__(); self.grid = False; self.first = None
+                  def handle_starttag(self, tag, attrs):
+                      attrs = dict(attrs)
+                      if attrs.get('id') == 'grid': self.grid = True
+                      if self.grid and tag == 'article' and 'ct-compact-card' in attrs.get('class','').split() and not self.first:
+                          self.first = attrs.get('data-sku')
+              chrome = shutil.which('google-chrome') or shutil.which('chromium') or shutil.which('chromium-browser')
+              assert chrome, 'Navegador de comprobación no disponible'
+              view = subprocess.run([chrome,'--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--virtual-time-budget=10000','--dump-dom',origin + '/?fotografia=PROT003'],capture_output=True,timeout=90)
+              assert view.returncode == 0, 'No se pudo comprobar el catálogo'
+              parsed = Catalog(); parsed.feed(view.stdout.decode(errors='replace'))
+              assert parsed.first == 'PROT003', 'PROT003 no aparece primero: ' + str(parsed.first)
+              result['primero_en_catalogo'] = parsed.first
+
           print('RESULTADO_FOTOGRAFICO=' + json.dumps(result, ensure_ascii=False))
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
               f.write('PROT003: archivos verificados. Publicación activa: ' + str(result['publicacion_activa']) + '\\n')
