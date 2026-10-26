@@ -57,7 +57,10 @@ jobs:
               try{
                 const api=new Graph({token:process.env.META_ACCESS_TOKEN,version:'v26.0'});
                 const catalog=await api.request('GET','1036301566100990',{fields:'id,name'});
-                const sets=await api.list('1036301566100990/product_sets','id,name,product_count');
+                const sets=await api.list('1036301566100990/product_sets','id,name,product_count,ordering_info');
+                const example=sets.find(s=>s.name==='CONECTATECH | TABLETS');
+                const tablets=example?await api.list(example.id+'/products','id,retailer_id'):[];
+                console.log('PRIORIDAD_META: '+JSON.stringify({sets,tablets}));
                 const feeds=await api.list('1036301566100990/product_feeds','id,name,schedule');
                 const uploads=[];
                 for(const f of feeds.filter(f=>f.schedule?.url==='https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv')){
