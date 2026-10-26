@@ -76,7 +76,8 @@ async function recreate({request,backup,plan,api,state=null,onState=()=>{},onPro
    const parent=typeof live.product_catalog==='object'?live.product_catalog?.id:live.product_catalog;
    if(parent!==CATALOG||live.retailer_id!==r.retailer_id||stable(live.filter)!==stable(r.snapshot.filter))throw Error('REORDEN_ULTIMA_IDENTIDAD_DISTINTA');
    r.estado='ELIMINANDO';save();
-   await api.request('DELETE',r.old_id,{allow_live_product_set_deletion:false});
+   const deleted=await api.request('DELETE',r.old_id,{allow_live_product_set_deletion:false});
+   if(deleted.success!==true)throw Error('REORDEN_ELIMINACION_NO_CONFIRMADA');
    r.estado='ELIMINADO';save();
   }else if(current[0]){
    if(!r.new_id&&r.estado==='CREANDO')r.new_id=current[0].id;
@@ -101,8 +102,13 @@ async function recreate({request,backup,plan,api,state=null,onState=()=>{},onPro
   }
   await verify(r,r.new_id);r.estado='VERIFICADO';save();onProgress('COLECCION_RECREADA: '+r.familia+' '+r.old_id+' -> '+r.new_id);
  }
- const finalSets=await api.list(CATALOG+'/product_sets',fields);
- if(finalSets.length!==all.length||hash(sorted(finalSets.filter(s=>!retailers.has(s.retailer_id))))!==others)throw Error('REORDEN_OTROS_CONJUNTOS_CAMBIARON');
+ let finalSets;
+ for(let i=0;i<attempts;i++){
+  finalSets=await api.list(CATALOG+'/product_sets',fields);
+  if(finalSets.length===all.length&&hash(sorted(finalSets.filter(s=>!retailers.has(s.retailer_id))))===others)break;
+  if(i===attempts-1)throw Error('REORDEN_OTROS_CONJUNTOS_CAMBIARON');
+  await wait(3000);
+ }
  const finalProducts=await api.list(CATALOG+'/products',productFields);
  if(hash(sorted(finalProducts))!==baseline)throw Error('REORDEN_PRODUCTOS_CAMBIARON');
  const desired=[...request.targets].sort((a,b)=>a.prioridad-b.prioridad).map(t=>t.retailer_id);
