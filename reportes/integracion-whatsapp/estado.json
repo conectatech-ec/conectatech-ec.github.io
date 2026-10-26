@@ -1,5 +1,5 @@
 {
-  "estado": "VINCULADO_PRODUCTOS_NO_VISIBLES_TAMBIEN_PARA_CLIENTE_SEGUN_PROPIETARIO",
+  "estado": "PRODUCTOS_CARGADOS_EN_ADMINISTRADOR_WHATSAPP_ORGANIZACION_PENDIENTE",
   "fecha_revision_local": "2026-10-23",
   "fecha_corte": "2026-10-22",
   "fuente_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
@@ -123,7 +123,7 @@
     },
     "alcance": "Identificadores transcritos de la captura. No verifica propiedad, permisos efectivos, WABA, número, feed ni productos visibles. La sesión del propietario no acredita acceso del agente."
   },
-  "siguiente_comprobacion": "En WhatsApp Business Android > Herramientas > Facebook e Instagram, comprobar qué página figura vinculada; contrastar su asociación con el Catálogo Maestro. No sustituir conexiones existentes.",
+  "siguiente_comprobacion": "Abrir Catálogo Maestro > Catálogo > Conjuntos. Comprobar si existe Conectatech | Celulares y cómo se define; verificar correspondencia con la sección WhatsApp antes de extender reglas.",
   "evidencia_origen_meta": {
     "fuente": "Capturas del propietario de Orígenes de datos y Configurar fuente",
     "nombre": "CONECTATECH | Sincronización automática 593",
@@ -212,5 +212,20 @@
     "referencia_oficial": "https://faq.whatsapp.com/1057141349534704/?cms_platform=web&eea=0&locale=es_MX",
     "borrador_soporte": "En WhatsApp Business Android de CONECTATECH el catálogo conectado aparece vacío, también al abrirlo desde otra cuenta cliente. Más detalles identifica CONECTATECH | Catálogo Maestro. En Meta, catálogo ID 1036301566100990, hay 939 productos; el origen programado Sincronización automática 593 usa https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv. ADAP007 y ADAP027 aparecen Elegibles y Disponibles. Solicitamos revisar publicación/elegibilidad del catálogo conectado para WhatsApp sin migrar ni cambiar el número. Adjuntamos capturas; facilitar fecha/hora exacta de conexión y versión de app para el diagnóstico.",
     "soporte_enviado": false
+  },
+  "evidencia_organizacion_whatsapp": {
+    "fuente": "Captura del propietario: 1001774571.jpg",
+    "pantalla": "Administrador de catálogo Android",
+    "numero_visible_en_captura": false,
+    "seccion_visible": "Conectatech | Celulares",
+    "productos_mostrados_en_seccion": 3,
+    "seccion_general": "Todos los artículos",
+    "alcance": "Productos y agrupación visibles en el administrador mostrado. No acredita cantidad total, cuenta/número, vista de cliente, correspondencia con conjuntos Meta ni mantenimiento automático."
+  },
+  "organizacion_preparada": {
+    "archivo": "reportes/integracion-whatsapp/plan-colecciones-meta.json",
+    "grupos": 13,
+    "estado": "Reglas conceptuales por product_type del mismo feed; sin aplicar.",
+    "siguiente_paso": "Abrir Catálogo Maestro > Catálogo > Conjuntos. Comprobar si existe Conectatech | Celulares y cómo se define; verificar correspondencia con la sección WhatsApp antes de extender reglas."
   }
 }
