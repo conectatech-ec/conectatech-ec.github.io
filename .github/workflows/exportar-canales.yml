@@ -100,6 +100,7 @@ jobs:
           node scripts/test-exportar-canales.cjs
           node scripts/test-validar-exportacion-593.cjs
   exportar:
+    timeout-minutes: 50
     # También se ejecuta tras publicaciones de bots 593: sus pushes no disparan otros workflows.
     if: ${{ github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository)) }}
     runs-on: ubuntu-latest
@@ -138,6 +139,25 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           META_GRAPH_VERSION: 'v26.0'
         run: node scripts/sincronizar-conjuntos-meta.cjs
+      - name: Conservar punto de reanudación de la importación
+        if: always()
+        run: |
+          if [ ! -f work/auto-meta/importacion.json ]; then exit 0; fi
+          cp work/auto-meta/importacion.json /tmp/conectatech-importacion.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for intento in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p reportes/integracion-whatsapp
+            cp /tmp/conectatech-importacion.json reportes/integracion-whatsapp/ultima-importacion.json
+            git add reportes/integracion-whatsapp/ultima-importacion.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Conservar referencia de importación Meta para reanudación"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
       - name: Conservar resultado verificable de Meta
         if: always()
         uses: actions/upload-artifact@v4

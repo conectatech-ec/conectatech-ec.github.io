@@ -15,11 +15,11 @@ assert.equal(plan.groups.flatMap(g=>g.sku).length,3);assert.equal(plan.groups.fi
 assert.deepEqual(plan.groups.find(g=>g.family==='Audio').filter,{and:[{custom_label_0:{eq:'ct-web:audio'}},{availability:{eq:'in stock'}}]});
 const catalog='1036301566100990';
 const existingPhone={id:'200',name:'CONECTATECH | CELULARES',filter:{product_type:{i_contains:'celulares'}}};
-function fake({duplicate=false,badImport=false,badMembers=false,pendingAtStart=false}={}){
+function fake({duplicate=false,badImport=false,badMembers=false,pendingAtStart=false,unnamedUpload=false}={}){
  const sets=[{id:'999',name:'All Products',filter:{}},structuredClone(existingPhone)];
  if(duplicate)sets.push({...existingPhone,id:'201'});
  const posts=[],remote=meta.map(p=>({id:'9'+p.id,retailer_id:p.id,custom_label_0:p.custom_label_0,availability:p.availability}));
- let uploaded=pendingAtStart?{id:'101',filename:'ct-'+crypto.createHash('sha256').update('data').digest('hex')+'.csv',error_count:0,num_invalid_items:0,num_persisted_items:meta.length}:null,seq=300;
+ let uploaded=pendingAtStart?{id:'101',filename:unnamedUpload?'file.csv':'ct-'+crypto.createHash('sha256').update('data').digest('hex')+'.csv',error_count:0,num_invalid_items:0,num_persisted_items:meta.length}:null,seq=300;
  return {posts,sets,async request(method,path,params={},file){
   if(method==='POST')posts.push({path,params});
   if(path===catalog&&method==='GET')return {id:catalog,name:'CONECTATECH | Catálogo Maestro'};
@@ -49,6 +49,7 @@ function fake({duplicate=false,badImport=false,badMembers=false,pendingAtStart=f
  assert(!api.posts.some(p=>p.path==='999'));assert(!api.posts.some(p=>/\/(ads|messages|phone_numbers)(\/|$)/.test(p.path)));
  const count=api.posts.length;await synchronize({plan,csv:'data',api,wait:async()=>{},attempts:1});assert.equal(api.posts.length,count,'Reejecutar no crea duplicados ni reimporta el mismo hash');
  const pending=fake({pendingAtStart:true});await synchronize({plan,csv:'data',api:pending,wait:async()=>{},attempts:1});assert(!pending.posts.some(p=>p.path==='100/uploads'),'Reutilizar importación en curso sin enviar otro archivo');
+ const unnamed=fake({pendingAtStart:true,unnamedUpload:true});await synchronize({plan,csv:'data',api:unnamed,checkpoint:{catalog_id:catalog,feed_id:'100',feed_sha256:crypto.createHash('sha256').update('data').digest('hex'),upload_id:'101'},wait:async()=>{},attempts:1});assert(!unnamed.posts.some(p=>p.path==='100/uploads'),'El checkpoint evita duplicar una carga cuyo nombre cambió en Meta');
  const dup=fake({duplicate:true});await assert.rejects(()=>synchronize({plan,csv:'data',api:dup,attempts:1}),/DUPLICADOS/);assert.equal(dup.posts.length,0);
  const bad=fake({badImport:true});await assert.rejects(()=>synchronize({plan,csv:'data',api:bad,attempts:1}),/IMPORTACION_CON_ERRORES/);assert.equal(bad.posts.length,1);
  await assert.rejects(()=>synchronize({plan:{...plan,catalog_id:'999'},csv:'data',api}),/Plan Meta inválido/);
