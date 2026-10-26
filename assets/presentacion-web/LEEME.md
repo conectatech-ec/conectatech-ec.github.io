@@ -29,4 +29,6 @@ Costo adicional: $0. No editar generadores, inventario, fotografías, títulos, 
 
 ## Ambientación sin etiquetas
 
-El cliente ve el ambiente visual, no una etiqueta de edición. Halloween utiliza fondo ciruela/ámbar, luna, murciélagos, telaraña y un pequeño adorno fuera del logo. La decoración del encabezado se oculta automáticamente fuera de Halloween, mantiene las dimensiones del emblema y no recibe clics. Los efectos se omiten con movimiento reducido; las fotos y los precios permanecen limpios.
+El cliente ve el ambiente visual, no una etiqueta de edición. Halloween utiliza un degradado naranja quemado y negro, luna, murciélagos y telaraña. Una calabaza vectorial de 64 px (52 px en móvil) se integra detrás del borde del emblema, con un halo compartido; el emblema y el rótulo originales quedan por encima, sin alterar sus archivos ni dimensiones. La decoración del encabezado se oculta automáticamente fuera de Halloween, mantiene las dimensiones del emblema y no recibe clics. Los efectos se omiten con movimiento reducido; las fotos y los precios permanecen limpios.
+
+El catálogo muestra cinco productos por fila desde 1200 px, tres entre 601 y 1199 px y dos hasta 600 px. El encabezado de regalos dice «En esta temporada tu compra tiene un regalo», con antetítulo y mensaje principal destacados; no cambia los montos ni las condiciones.
