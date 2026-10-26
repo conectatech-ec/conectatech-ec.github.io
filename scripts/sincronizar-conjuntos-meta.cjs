@@ -11,12 +11,13 @@ function canonical(x){if(Array.isArray(x))return x.map(canonical);if(x&&typeof x
 const stock=x=>normal(x).replace(/_/g,' ');
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 class Graph{
- constructor({token,version,transport=fetch}){
+ constructor({token,version,transport=fetch,deletableProductSetIds=[]}){
   if(!token||!/^v\d+\.\d+$/.test(version||''))throw Error('Falta credencial o versión Graph');
   this.token=token;this.version=version;this.transport=transport;
+  this.deletableProductSetIds=new Set(deletableProductSetIds.map(String));
  }
  async request(method,path,params={},file=null){
-  if(!['GET','POST'].includes(method)||!/^\d+(\/(product_sets|product_feeds|products|uploads))?$/.test(path))throw Error('Operación Meta fuera de alcance');
+  if((!['GET','POST'].includes(method)&&!(method==='DELETE'&&this.deletableProductSetIds.has(path)&&/^\d+$/.test(path)))||!/^\d+(\/(product_sets|product_feeds|products|uploads))?$/.test(path))throw Error('Operación Meta fuera de alcance');
   const url=new URL('https://graph.facebook.com/'+this.version+'/'+path);
   const options={method,headers:{Authorization:'Bearer '+this.token},redirect:'error',signal:AbortSignal.timeout(30000)};
   if(method==='GET')for(const [k,v] of Object.entries(params))url.searchParams.set(k,String(v));
