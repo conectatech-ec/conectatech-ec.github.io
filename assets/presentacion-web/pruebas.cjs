@@ -1,0 +1,30 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict'),crypto=require('node:crypto'),cp=require('node:child_process');
+const dir=__dirname,root=path.resolve(dir,'../..'),sandbox={window:{}};
+vm.runInNewContext(fs.readFileSync(path.join(dir,'config.js'),'utf8'),sandbox);
+const cfg=sandbox.window.CONECTATECH_PRESENTACION,api=require('./temporadas.js');let count=0;
+function check(label,actual,expected){assert.deepEqual(actual,expected,label);count++}
+for(const [date,id] of [['2026-10-31','halloween'],['2026-11-01','black-month'],['2026-11-26','black-month'],['2026-11-27','black-friday'],['2026-11-29','black-friday'],['2026-11-30','black-month'],['2026-12-01','navidad'],['2026-12-31','navidad'],['2027-01-01','identidad'],['2027-11-26','black-friday']])check('Calendario '+date,api.resolver(cfg,date).id,id);
+check('Medianoche de Quito, antes',api.resolver(cfg,new Date('2026-11-01T04:59:59Z')).id,'halloween');
+check('Medianoche de Quito, después',api.resolver(cfg,new Date('2026-11-01T05:00:00Z')).id,'black-month');
+check('Cambio manual',api.resolver({...cfg,tema:'navidad'},'2026-10-25').id,'navidad');
+check('Valor inválido seguro',api.resolver(cfg,'2026-10-25','no-existe').id,'identidad');
+const custom={...cfg,blackFridayAutomatico:false,calendario:[{desde:'12-15',hasta:'01-06',tema:'navidad'}]};
+check('Temporada configurable entre años',api.resolver(custom,'2027-01-05').id,'navidad');
+check('Fin de temporada entre años',api.resolver(custom,'2027-01-07').id,'identidad');
+for(const name of ['config.js','temporadas.js','portada.js'])new vm.Script(fs.readFileSync(path.join(dir,name),'utf8'),{filename:name});
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8'),parse=s=>JSON.parse(s.match(/const products=(\[[\s\S]*?\]);\s*\n/)[1]),items=parse(index);
+check('SKU seleccionados existentes y únicos',new Set(cfg.productosPortada).size,cfg.productosPortada.length);
+for(const sku of cfg.productosPortada)check('SKU '+sku+' real',items.some(p=>p.sku===sku),true);
+for(const file of ['estilos.css','config.js','temporadas.js','portada.js'])check('Referencia única '+file,(index.match(new RegExp('/assets/presentacion-web/'+file.replace('.','\\.')+'\\?v=2','g'))||[]).length,1);
+let parent;
+try{parent=cp.execFileSync('git',['show','HEAD^:index.html'],{cwd:root,encoding:'utf8',maxBuffer:8*1024*1024})}catch(_){throw Error('Se necesita al menos fetch-depth: 2 para comparar con el padre.')}
+check('Objetos comerciales intactos frente al padre',parse(index),parse(parent));
+const hooks='<link rel="stylesheet" href="/assets/presentacion-web/estilos.css?v=2">\n<script src="/assets/presentacion-web/config.js?v=2"></script>\n<script src="/assets/presentacion-web/temporadas.js?v=2"></script>\n<script src="/assets/presentacion-web/portada.js?v=2"></script>\n';
+check('Índice sólo incorpora la capa de presentación',index.replace(hooks,''),parent.replace(hooks,''));
+const changed=cp.execFileSync('git',['diff','--name-only','HEAD^','HEAD'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
+check('Ámbito aislado y archivos de otros proyectos intactos',changed.filter(p=>!/^index\.html$|^assets\/presentacion-web\/|^revision\/presentacion-web-v2\/|^revision\/presentacion-web-v1\/(index|despues)\.html$|^\.github\/workflows\/presentacion-web\.yml$/.test(p)),[]);
+const provenance=JSON.parse(fs.readFileSync(path.join(dir,'procedencia.json'),'utf8'));
+for(const [name,ref] of [['encabezado-marca-aprobado.png',provenance.encabezado],['banner-regalos-original.png',provenance.banner]])check('Arte original sin cambios: '+name,crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,name))).digest('hex'),ref.sha256);
+check('Licencia Sora incluida',fs.existsSync(path.join(dir,'fonts/OFL-Sora.txt')),true);
+console.log(count+' verificaciones de presentación, calendario e integridad correctas. Sin generación ni publicación de datos.');

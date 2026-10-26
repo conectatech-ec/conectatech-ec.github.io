@@ -1,0 +1,30 @@
+name: Verificar presentación web
+on:
+  push:
+    branches: ['presentacion-web/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: presentacion-web-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  integridad:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          sparse-checkout: assets/presentacion-web
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comprobar calendario, marca e integridad del catálogo
+        run: node assets/presentacion-web/pruebas.cjs
+      - name: Comprobar sintaxis y espacios
+        run: |
+          node --check assets/presentacion-web/portada.js
+          node --check assets/presentacion-web/temporadas.js
+          node --check assets/presentacion-web/config.js
+          git diff --check HEAD^ HEAD
