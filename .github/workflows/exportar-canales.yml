@@ -82,10 +82,16 @@ jobs:
             fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nAcceso Meta (solo lectura): '+result.estado+'\n');
           })().catch(()=>{console.error('No se pudo completar la comprobación de acceso');process.exitCode=1});
           JS
+      - name: Respaldar seis conjuntos prioritarios sin modificarlos
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: node scripts/preparar-orden-colecciones-meta.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
-          path: work/auto-meta/acceso-meta.json
+          path: |
+            work/auto-meta/acceso-meta.json
+            work/auto-meta/respaldo-orden-colecciones.json
           retention-days: 7
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
