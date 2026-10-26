@@ -7,6 +7,15 @@ window.CONECTATECH_PRESENTACION = {
   zonaHoraria: 'America/Guayaquil',
   intervaloMs: 3000,
   efectoTecnologico: true,
+  rotacionDiaria: {
+    activa: true,
+    cantidadVitrina: 5,
+    cantidadDestacados: 5,
+    evitarRepetirDias: 7,
+    categoriasApertura: ['Celulares y Smartphones', 'Tablets', 'Smartwatches y Wearables', 'Audio y Audífonos', 'Computación y Periféricos', 'TV y Entretenimiento'],
+    fijadosVitrina: [],
+    fijadosDestacados: []
+  },
   productosPortada: ['TELF036', 'PALA001', 'REL042', 'PARL001', 'TECL032'],
   marca: '/assets/presentacion-web/marca-trazos-originales.svg',
   banner: '/assets/presentacion-web/banner-regalos-original.png',
