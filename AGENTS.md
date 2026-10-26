@@ -266,3 +266,6 @@ Propietario exige50–100SKU o más por entrega,criterio ya aprobado,sin pilotos
 
 ## Integración de fechas fotográficas concurrentes
 El payloadcatalogo-publicado.js contiene fechas públicas directas de otras sesiones(ADAP063,HUB011,AUDI095,PROT003) que pueden ser posteriores alregistro histórico actualizaciones-sku.json. Al registrar una categoría, integrar sólo el SKUpropio enel payloadvigente yconservar literalmente los demás registros. Para comprobar orden,comparar fechas editoriales conelpayloadreal que usael navegador, nunca conunregistrohistóricomásantiguo. No regenerar ni re-fechar fotografías ajenas.
+
+## Continuación masiva editorial012–015,26oct2026Guayaquil
+Propietario ordena avanzar masivamente.80mejoras existentes en4lotes de20,367presentaciones acumuladas;no sonSKU nuevos. Conservar287previas,correctos,97reservas ycelulares/tablets. Código técnico sólo en especificaciones;marca/familia comercial donde identifica. Tipos,capacidad,conexiones,cantidad yvariantes sólo decontrato verificado. Fotografías,precios,stock,URLs,593,SEO yfeeds intactos;sin modelosdeclaradosoriginales porinferencia. Fechas únicamente trasHTTP/Chromium públicos;disponibles modificados primero,pinPROT003yfechasfotográficasajenas conservados.0costo.

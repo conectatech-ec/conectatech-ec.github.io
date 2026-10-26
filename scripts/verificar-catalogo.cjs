@@ -123,10 +123,12 @@ async function main() {
         }));
         const featuredSkus = row.destacados.map(card => Object.keys(slugs).find(sku =>
           card.url && new URL(card.url, PUBLIC).pathname === '/productos/' + slugs[sku] + '/'));
-        check('destacados_con_fotos_y_stock', row.destacados.length === 4 &&
-          new Set(featuredSkus).size === 4 && row.destacados.every((card, i) =>
+        const expectedFeaturedCount = await page.evaluate(() => window.CONECTATECH_PRESENTACION?.rotacionDiaria?.activa
+          ? window.CONECTATECH_PRESENTACION.rotacionDiaria.cantidadDestacados : window.CONECTATECH_PRESENTACION ? 5 : 4);
+        check('destacados_con_fotos_y_stock', Number.isInteger(expectedFeaturedCount) && expectedFeaturedCount > 0 &&
+          row.destacados.length === expectedFeaturedCount && new Set(featuredSkus).size === expectedFeaturedCount && row.destacados.every((card, i) =>
             card.cargada && card.imagen?.startsWith('/imagenes/') && bySku.get(featuredSkus[i])?.stock > 0),
-          'Destacados debe mostrar cuatro productos disponibles con fotografías locales cargadas y fichas válidas.');
+          'Destacados debe respetar la cantidad configurada, con productos disponibles, fotografías cargadas y fichas válidas.');
         const assets = await page.evaluate(() => Array.from(document.querySelectorAll('script[src],link[rel="stylesheet"]')).map(el => el.getAttribute('src') || el.getAttribute('href')));
         for (const value of assets) {
           const u = new URL(value, PUBLIC);
