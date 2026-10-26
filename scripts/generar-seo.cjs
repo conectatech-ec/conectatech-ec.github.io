@@ -47,8 +47,8 @@ for(const p of products){
  }
 
  // Secundarias verificadas: añadir vistas sin sustituir portadas vigentes.
- if(['HUB011','AUDI095'].includes(p.sku)){
-  const secondaryFile=path.join('importacion','fotografia-publicada','secundarias-20261026.json');
+ if(['HUB011','AUDI095','ADAP063'].includes(p.sku)){
+  const secondaryFile=path.join('importacion','fotografia-publicada',p.sku==='ADAP063'?'secundarias-conexiones-20261026-02.json':'secundarias-20261026.json');
   if(fs.existsSync(secondaryFile)){
    const row=JSON.parse(fs.readFileSync(secondaryFile,'utf8')).productos?.[p.sku];
    const coverHash=custom.imagenProfesional?.versiones?.['1200']?.sha256;
