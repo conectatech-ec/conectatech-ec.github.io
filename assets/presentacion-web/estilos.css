@@ -359,16 +359,17 @@ header .brand{position:relative;z-index:3}
 @media(max-width:359px){.pw-slide,[data-ct-temporada=halloween] .pw-slide{grid-template-rows:175px minmax(0,1fr)}.pw-carousel,[data-ct-temporada=halloween] .pw-carousel{height:400px}.pw-slide-commerce{gap:8px}.pw-slide-buy{font-size:9px}.pw-slide-title,[data-ct-temporada=halloween] .pw-slide-title{font-size:12px}}
 
 /* Destacados de hoy: colección diaria con la identidad azul/verde. */
-.pw-daily-featured{position:relative;padding:25px 22px 22px;border:1px solid #a61f37;border-radius:19px;background:radial-gradient(ellipse at 5% 0,#ff6b742b,transparent 45%),radial-gradient(ellipse at 100% 100%,#4a061b5c,transparent 50%),linear-gradient(120deg,#97152e,#bc2840 58%,#8d142d);box-shadow:0 12px 30px #9d183324;overflow:hidden}
-.pw-daily-featured:before{content:'';position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#f69ba8,#fff0dd 55%,#b5dc83)}
+.pw-daily-featured{position:relative;padding:25px 22px 22px;border:1px solid transparent;border-radius:19px;background:radial-gradient(ellipse at 48% -35%,#ff9c8e4d,transparent 65%) padding-box,linear-gradient(118deg,transparent 8%,#f9d58d12 31%,transparent 45%,#ffffff05 63%,transparent 77%) padding-box,radial-gradient(ellipse at 100% 100%,#25031780,transparent 65%) padding-box,linear-gradient(115deg,#620c24,#ae223b 46%,#8b102e 76%,#4d091e) padding-box,linear-gradient(135deg,#ad7a35,#f5d99e 22%,#bd8d42 48%,#fff0bc 71%,#a16b2a) border-box;box-shadow:0 14px 34px #58081930,0 0 0 1px #af7b2b33;overflow:hidden}
+.pw-daily-featured:before{content:'';position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#a06c29,#f3d490 28%,#fff4c8 56%,#b17d34)}
+.pw-daily-featured:after{content:'';position:absolute;inset:7px;border:1px solid #f5d18438;border-radius:12px;pointer-events:none}
 .pw-featured-heading{display:grid;grid-template-columns:1fr auto;gap:7px 20px;align-items:center;margin-bottom:20px}
-.pw-featured-heading .pw-kicker{font-size:8px;letter-spacing:1.5px;color:#ffe5e9}
+.pw-featured-heading .pw-kicker{font-size:8px;letter-spacing:1.5px;color:#f3d69e}
 .pw-featured-heading .section-title{margin:6px 0 0;font-size:27px;letter-spacing:-1px;color:#fff;line-height:1.25}
-.pw-featured-heading>a{display:flex;align-items:center;gap:18px;color:#fff;text-decoration:none;font-size:10px;font-weight:650;min-height:44px;padding:0 12px;border:1px solid #ffffff42;border-radius:8px;background:#ffffff10}
+.pw-featured-heading>a{display:flex;align-items:center;gap:18px;color:#fff1d4;text-decoration:none;font-size:10px;font-weight:650;min-height:44px;padding:0 12px;border:1px solid #e2bc7673;border-radius:8px;background:#4e0a2240}
 .pw-featured-heading>p{grid-column:1/-1;margin:0;color:#ffe0e5;font-size:11px;line-height:1.65}
 .pw-daily-featured .featured-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.pw-daily-featured .pw-featured-card{display:flex;flex-direction:column;min-width:0;padding:11px;border:1px solid #d9e5eb;border-radius:12px;background:#fff;box-shadow:0 5px 17px #123d5c08;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.pw-featured-card:hover{transform:translateY(-3px);border-color:#97bc9b;box-shadow:0 12px 23px #123d5c15}
+.pw-daily-featured .pw-featured-card{display:flex;flex-direction:column;min-width:0;padding:11px;border:1px solid #d3b16e;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px #e3c78766,0 7px 18px #3d061529;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.pw-featured-card:hover{transform:translateY(-3px);border-color:#bb8e3f;box-shadow:inset 0 0 0 1px #e3c78788,0 12px 23px #3d061536,0 0 15px #e7c36f1a}
 .pw-daily-featured .pw-featured-card .product-img{height:177px;flex:none;margin:0 0 9px;overflow:hidden}
 .pw-daily-featured .pw-featured-card .product-img img{width:100%;height:100%;object-fit:contain}
 .pw-featured-content{display:flex;flex:1;flex-direction:column;min-width:0}
