@@ -46,6 +46,20 @@ for(const p of products){
   }
  }
 
+ // Secundarias verificadas: añadir vistas sin sustituir portadas vigentes.
+ if(['HUB011','AUDI095'].includes(p.sku)){
+  const secondaryFile=path.join('importacion','fotografia-publicada','secundarias-20261026.json');
+  if(fs.existsSync(secondaryFile)){
+   const row=JSON.parse(fs.readFileSync(secondaryFile,'utf8')).productos?.[p.sku];
+   const coverHash=custom.imagenProfesional?.versiones?.['1200']?.sha256;
+   if(row?.sku===p.sku&&row.revisado_visual===true&&row.portada_sha256===coverHash){
+    const existing=custom.galeria||[];
+    const urls=new Set(existing.map(i=>i.versiones?.['1200']?.url));
+    custom.galeria=[...existing,...row.vistas.filter(i=>!urls.has(i.versiones['1200'].url))];
+   }
+  }
+ }
+
  const displayName=custom.nombre||p.name;
  const productImage=custom.imagen||p.imageUrl||'';
  const title=custom.tituloSeo||displayName+' en Quito | ConectaTech';
