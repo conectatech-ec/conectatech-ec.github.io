@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none">
+<defs><radialGradient id="halo"><stop stop-color="#fffbe8" stop-opacity=".85"/><stop offset=".53" stop-color="#fff3b6" stop-opacity=".47"/><stop offset="1" stop-color="#ffe28b" stop-opacity="0"/></radialGradient><radialGradient id="surface" cx=".34" cy=".24" r=".87"><stop stop-color="#fffdf0"/><stop offset=".42" stop-color="#fff1bc"/><stop offset=".8" stop-color="#efcc83"/><stop offset="1" stop-color="#d5a258"/></radialGradient><clipPath id="disc"><circle cx="110" cy="110" r="72"/></clipPath><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="4" seed="17" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs>
+<circle cx="110" cy="110" r="110" fill="url(#halo)"/>
+<circle cx="110" cy="110" r="79" stroke="#fff4c4" stroke-opacity=".2"/>
+<circle cx="110" cy="110" r="72" fill="url(#surface)" stroke="#fffce6" stroke-width="1.5"/>
+<g clip-path="url(#disc)"><circle cx="110" cy="110" r="72" filter="url(#grain)" opacity=".13"/><g fill="#b09567" fill-opacity=".18"><path d="M59 80Q77 68 87 84T82 104Q58 108 59 80M130 53Q153 49 165 69T152 96Q123 86 130 53M119 120Q145 102 161 125T145 153Q122 159 119 120"/><circle cx="90" cy="139" r="12"/><circle cx="67" cy="116" r="7"/><circle cx="110" cy="77" r="6"/><circle cx="113" cy="102" r="4"/></g><g stroke="#fff9d7" stroke-opacity=".5"><circle cx="90" cy="139" r="13"/><circle cx="67" cy="116" r="8"/></g></g>
+</svg>
