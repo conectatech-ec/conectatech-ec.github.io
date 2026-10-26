@@ -47,7 +47,7 @@ jobs:
               assert hashlib.sha256(payload).hexdigest() == v['sha256'], size
               versions.append({'tamano':size,'http':200,'sha256':v['sha256']})
           result = {'sku':'PROT003','archivos_verificados':versions,'publicacion_activa':False,'datos_comerciales_modificados':False}
-          if os.environ['PHOTO_REF'] == 'refs/heads/main':
+          if record.get('publicacion_verificada') is True:
               page_url = origin + '/productos/prot003-protectores-de-silicon-animados-para-cables/'
               for attempt in range(300):
                   try:
