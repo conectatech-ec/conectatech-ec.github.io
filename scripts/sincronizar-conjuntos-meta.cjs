@@ -21,7 +21,11 @@ class Graph{
   else options.body=new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k,v])=>[k,typeof v==='object'?JSON.stringify(v):String(v)])));
   let res,data;
   try{res=await this.transport(url,options);data=await res.json();}catch{throw Error('META_TRANSPORTE_O_RESPUESTA_INVALIDA');}
-  if(!res.ok||data.error)throw Error('META_HTTP_'+res.status+'_CODIGO_'+(Number(data.error?.code)||'NO_DISPONIBLE'));
+  if(!res.ok||data.error){
+   const e=new Error('META_HTTP_'+res.status+'_CODIGO_'+(Number(data.error?.code)||'NO_DISPONIBLE'));
+   const reason=String(data.error?.message||'').split(this.token).join('[OCULTO]').split(encodeURIComponent(this.token)).join('[OCULTO]').slice(0,500);
+   e.meta={code:Number(data.error?.code)||null,subcode:Number(data.error?.error_subcode)||null,reason};throw e;
+  }
   return data;
  }
  async list(path,fields){
@@ -123,5 +127,10 @@ async function main(){
  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nEstado de integración Meta: '+receipt.estado+'\nColecciones WhatsApp verificadas: no\n');
 }
 module.exports={Graph,reconcile,checkRemote,synchronize};
-if(require.main===module)main().catch(e=>{fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify({estado:'ERROR',codigo:(e.message.match(/^(META_[A-Z_]+(?:_\d+)?|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0],detalle:'La ejecución no pudo confirmar sincronización. Revisar autorización/importación y reejecutar; no se acreditó visibilidad WhatsApp.'},null,2)+'\n');console.error('ERROR_META: '+(e.message.match(/^(META_[A-Z_]+(?:_\d+)?|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0]);process.exitCode=1;});
-
+if(require.main===module)main().catch(e=>{
+ const code=/^META_HTTP_[0-9]+_CODIGO_[A-Z0-9_]+$/.test(e.message)?e.message:
+  (e.message.match(/^(META_[A-Z_]+|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0];
+ const result={estado:'ERROR',codigo:code,...(e.meta?{meta:e.meta}:{}),detalle:'Sincronización no confirmada; no se acreditó visibilidad WhatsApp.'};
+ fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify(result,null,2)+'\n');
+ console.error('ERROR_META: '+JSON.stringify(result));process.exitCode=1;
+});
