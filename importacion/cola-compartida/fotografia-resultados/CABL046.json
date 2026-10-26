@@ -1,7 +1,7 @@
 {
   "direccion_20261026_05": {
     "sku": "CABL046",
-    "estado": "CORRECCION_VERIFICADA_PENDIENTE_HTTP",
+    "estado": "PUBLICADO_VERIFICADO",
     "imagen_anterior_conservada": {
       "url": "/imagenes/cabl046/CABL046-01.webp",
       "sha256": "ebc73728b4cfbd37489caa9f82cae260e660fdb28636b027dbe8d132aa6ce9f2",
@@ -16,6 +16,15 @@
       "alto": 1200
     },
     "beneficio": "Color azul celeste confirmado por propietario; conservar los cuatro conectores existentes.",
-    "publicacion_real_verificada": false
+    "publicacion_real_verificada": true,
+    "fecha_primera_verificacion_publica": "2026-10-26T22:33:19.149270+00:00"
+  },
+  "solicitud_propietario_20261026": {
+    "sku": "CABL046",
+    "instruccion": "Color real del cable: azul celeste.",
+    "estado": "PUBLICADO_VERIFICADO",
+    "referencias_propias_localizadas": 2,
+    "imagen_auditada": "/imagenes/cabl046/CABL046-01.webp",
+    "conservar_imagen_hasta_alternativa_verificada": true
   }
 }
