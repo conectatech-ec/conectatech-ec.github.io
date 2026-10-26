@@ -301,3 +301,50 @@ jobs:
           print('RESULTADO_LOTE_RAPIDO='+json.dumps(result,ensure_ascii=False))
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
               f.write('Lote fotográfico de ocho SKU: '+str(result['publicacion_activa'])+'; portadas conservadas.\\n')
+  direccion_fotografica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Verificar siete correcciones y conservar originales
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json, os, hashlib, time, re
+          from urllib.request import Request, urlopen
+          from datetime import datetime, timezone
+          origin='https://conectatech-ec.github.io'
+          raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(url):
+              with urlopen(Request(url,headers={'User-Agent':'CONECTATECH-fotografia','Cache-Control':'no-cache'}),timeout=30) as response:
+                  assert response.status==200
+                  return response.read()
+          record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261026-05.json'))
+          published=os.environ['PHOTO_REF']=='refs/heads/main'
+          for attempt in range(300 if published else 1):
+              try:
+                  results=[]
+                  for sku,row in record['productos'].items():
+                      assert row['revisado_visual'] is True
+                      photo=row['imagenProfesional']
+                      versions=[{'url':photo['original'],'sha256':photo['sha256_original']},*photo['versiones'].values(),*row['versiones_anteriores'].values()]
+                      for version in versions:
+                          assert version['url'].startswith('/imagenes/'+sku.lower()+'/') and '..' not in version['url']
+                          assert hashlib.sha256(get((origin if published else raw)+version['url'])).hexdigest()==version['sha256']
+                      entry={'sku':sku,'archivos':len(versions),'original_conservado':True}
+                      if published:
+                          page=get(origin+row['pagina']).decode()
+                          assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+                          entry['url']=origin+row['pagina']
+                      results.append(entry)
+                  if published:
+                      catalog=get(origin+'/').decode()
+                      products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])
+                      by_sku={p['sku']:p for p in products}
+                      for sku,row in record['productos'].items():assert by_sku[sku]['imageUrl']==row['imagenProfesional']['versiones']['1200']['url']
+                  print('RESULTADO_DIRECCION='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'productos':results},ensure_ascii=False))
+                  break
+              except Exception:
+                  if not published or attempt==299:raise
+                  time.sleep(5)
