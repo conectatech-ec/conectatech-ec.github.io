@@ -1,0 +1,40 @@
+'use strict';
+// Misma clasificación que aplica index.html; no mantiene una taxonomía alternativa.
+function familiesFromHTML(html){
+ const m=html.match(/const categoryFamilies=({[^\n]*});/);
+ if(!m)throw Error('No se encontró la clasificación publicada de la web');
+ return JSON.parse(m[1]);
+}
+const key=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+function classify(products,content,families){
+ const bySKU=new Map(),groups=new Map();
+ for(const p of products){
+  if(bySKU.has(p.sku))throw Error('SKU duplicado: '+p.sku);
+  const family=p.categoriaComercial||families[p.category]||'Hogar y Accesorios';
+  if(typeof family!=='string'||!family.trim())throw Error('Categoría comercial inválida');
+  const label='ct-web:'+key(family),c=content[p.sku]||{};
+  const approved=c.comercialVerificado===true&&c.imagenPendiente!==true;
+  const row={sku:p.sku,categoria_web:p.category,familia_web:family,label:approved?label:'',aprobado:approved};
+  bySKU.set(p.sku,row);
+  if(!groups.has(label))groups.set(label,{label,retailer_id:'conectatech-web:'+key(family),name:'CONECTATECH | '+family.toUpperCase(),family,
+   aliases:family==='Celulares y Smartphones'?['CONECTATECH | CELULARES','Conectatech | Celulares']:[],
+   filter:{and:[{custom_label_0:{eq:label}},{availability:{eq:'in stock'}}]},sku:[]});
+ }
+ return {bySKU,groups};
+}
+function planFromFeed(classification,meta,inventoryState){
+ const groups=new Map([...classification.groups].map(([k,v])=>[k,{...v,sku:[]}]));
+ const exclusions=[];
+ for(const p of meta){
+  const c=classification.bySKU.get(p.id);if(!c)throw Error('SKU Meta no pertenece a la web: '+p.id);
+  if(c.label!==p.custom_label_0)throw Error('Etiqueta no coincide con la web: '+p.id);
+  if(p.custom_label_0&&p.availability==='in stock')groups.get(p.custom_label_0).sku.push(p.id);
+  else exclusions.push({sku:p.id,motivo:p.availability!=='in stock'?'AGOTADO':'PENDIENTE_APROBACIÓN'});
+ }
+ for(const g of groups.values())g.sku.sort();
+ return {version:1,catalog_id:'1036301566100990',fecha_corte:inventoryState.fecha_corte,fuente_sha256:inventoryState.origen_sha256,
+  fuente_categorias:'index.html: categoriaComercial || categoryFamilies[category] || Hogar y Accesorios',
+  groups:[...groups.values()].sort((a,b)=>a.retailer_id.localeCompare(b.retailer_id)),exclusions,
+  productos_meta:meta.length,colecciones_whatsapp_verificadas:false};
+}
+module.exports={familiesFromHTML,classify,planFromFeed};
