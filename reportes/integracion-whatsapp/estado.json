@@ -1,5 +1,5 @@
 {
-  "estado": "PRODUCTOS_CARGADOS_EN_ADMINISTRADOR_WHATSAPP_ORGANIZACION_PENDIENTE",
+  "estado": "AUTOMATIZACION_IMPLEMENTADA_EN_BORRADOR_PENDIENTE_CREDENCIAL_META",
   "fecha_revision_local": "2026-10-23",
   "fecha_corte": "2026-10-22",
   "fuente_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
@@ -73,10 +73,11 @@
   "nota_limite": "Referencia general oficial de WhatsApp Business App; no acredita el límite efectivo de CONECTATECH ni su modalidad.",
   "publicacion": "No integrar ni publicar carga masiva hasta comprobar límite, permisos y organización visible. No hay cambios en el número, mensajería, SIGNATURE, inventario ni web.",
   "pruebas": [
-    "node scripts/test-validar-exportacion-593.cjs",
-    "node scripts/test-colecciones-whatsapp.cjs",
+    "node scripts/test-meta-web.cjs",
     "node scripts/test-exportar-canales.cjs",
-    "node scripts/exportar-canales.cjs"
+    "node scripts/test-validar-exportacion-593.cjs",
+    "Exportador sobre snapshot del main 2a9275770d30f5fa45661eb45aa6359e14d1130f",
+    "YAML y git diff --check"
   ],
   "cobertura": {
     "sku_publicados": 1170,
@@ -123,7 +124,7 @@
     },
     "alcance": "Identificadores transcritos de la captura. No verifica propiedad, permisos efectivos, WABA, número, feed ni productos visibles. La sesión del propietario no acredita acceso del agente."
   },
-  "siguiente_comprobacion": "Conservar Celulares sin cambios. Crear un único piloto Audífonos y audio con filtros por Tipo de producto y comprobar su pertenencia antes de guardar y su aparición posterior en WhatsApp; sólo entonces extender a las demás categorías.",
+  "siguiente_comprobacion": "Autorizar credencial de catálogo de Meta mediante secreto GitHub; con el código publicado, ejecutar y verificar el resultado en Meta y WhatsApp.",
   "evidencia_origen_meta": {
     "fuente": "Capturas del propietario de Orígenes de datos y Configurar fuente",
     "nombre": "CONECTATECH | Sincronización automática 593",
@@ -224,9 +225,9 @@
   },
   "organizacion_preparada": {
     "archivo": "reportes/integracion-whatsapp/plan-colecciones-meta.json",
-    "grupos": 13,
-    "estado": "Filtros periódicos confirmados en conjunto Celulares; nuevas colecciones pendientes de aplicar y verificar en WhatsApp.",
-    "siguiente_paso": "Abrir Catálogo Maestro > Catálogo > Conjuntos. Comprobar si existe Conectatech | Celulares y cómo se define; verificar correspondencia con la sección WhatsApp antes de extender reglas."
+    "grupos": 19,
+    "estado": "Generación automática desde clasificación web; sustituye propuesta estática de 13 grupos.",
+    "siguiente_paso": "Autorizar credencial de catálogo de Meta mediante secreto GitHub; con el código publicado, ejecutar y verificar el resultado en Meta y WhatsApp."
   },
   "evidencia_filtros_celulares": {
     "fuente": "Captura del propietario: Editar conjunto de productos",
@@ -244,5 +245,119 @@
     ],
     "agregar_productos_recomendados": false,
     "alcance": "Comprueba configuración periódica del conjunto Meta. La sección WhatsApp observada coincide por nombre; no comprueba aún propagación de un nuevo conjunto ni pertenencia de cada SKU."
+  },
+  "automatizacion_web": {
+    "fuente": "Clasificación publicada en index.html (categoriaComercial y categoryFamilies), sin taxonomía paralela",
+    "commit_validado": "2a9275770d30f5fa45661eb45aa6359e14d1130f",
+    "fecha_corte": "2026-10-24",
+    "fuente_sha256": "55a5f7a64d421047538c0bed7ac0c26af1fece7e07b844080e57f81b9ff72707",
+    "productos_feed": 966,
+    "disponibles_clasificados": 935,
+    "agotados_en_feed": 29,
+    "pendientes_aprobacion": [
+      "TELF001",
+      "TELF012"
+    ],
+    "familias": [
+      {
+        "nombre": "Almacenamiento",
+        "cantidad": 38
+      },
+      {
+        "nombre": "Audio y Audífonos",
+        "cantidad": 128
+      },
+      {
+        "nombre": "Cables y Conectividad",
+        "cantidad": 238
+      },
+      {
+        "nombre": "Cargadores y Energía",
+        "cantidad": 142
+      },
+      {
+        "nombre": "Celulares y Smartphones",
+        "cantidad": 19
+      },
+      {
+        "nombre": "Computación y Periféricos",
+        "cantidad": 59
+      },
+      {
+        "nombre": "Deportes",
+        "cantidad": 1
+      },
+      {
+        "nombre": "Fotografía y Creación de Contenido",
+        "cantidad": 22
+      },
+      {
+        "nombre": "Gaming y Videojuegos",
+        "cantidad": 1
+      },
+      {
+        "nombre": "Hogar y Accesorios",
+        "cantidad": 38
+      },
+      {
+        "nombre": "Iluminación",
+        "cantidad": 17
+      },
+      {
+        "nombre": "Juguetes y Coleccionables",
+        "cantidad": 103
+      },
+      {
+        "nombre": "Protección para Dispositivos",
+        "cantidad": 10
+      },
+      {
+        "nombre": "Redes e Internet",
+        "cantidad": 7
+      },
+      {
+        "nombre": "Seguridad y Cámaras",
+        "cantidad": 9
+      },
+      {
+        "nombre": "Smartwatches y Wearables",
+        "cantidad": 32
+      },
+      {
+        "nombre": "Soportes y Accesorios",
+        "cantidad": 52
+      },
+      {
+        "nombre": "Tablets",
+        "cantidad": 4
+      },
+      {
+        "nombre": "TV y Entretenimiento",
+        "cantidad": 15
+      }
+    ],
+    "campos_feed": "Conserva las columnas anteriores y añade custom_label_0 para la familia comercial de la web. product_type maestro permanece intacto.",
+    "modo": "Importar en el feed existente, reutilizar conjuntos por retailer_id o nombre, adoptar Celulares sin cambiar su nombre, actualizar filtros por familia y disponibilidad; verificar importación y pertenencia mediante lecturas API.",
+    "disparadores": "Workflow multicanal existente, al publicar cambios y al finalizar los workflows 593 existentes (incluidos pushes de bots); sin cron nuevo.",
+    "pruebas_locales": [
+      "Clasificación por las reglas exactas de la web y excepciones por SKU",
+      "Fuente, fecha, cobertura, precios y stock 593",
+      "Reutilización de Celulares y no modificación de All Products",
+      "Reejecución sin duplicados y sin reimportar el mismo hash cuando Meta conserva el nombre de archivo",
+      "No crea conjuntos si la importación falla",
+      "Readback de filtro y pertenencia por SKU",
+      "No sigue URLs de paginación externas; credenciales sólo en cabecera y errores sin secretos"
+    ],
+    "aplicacion_meta_ejecutada": false,
+    "ejecucion_bloqueada_por": "No existe credencial Meta accesible a esta sesión; las conexiones de navegador del propietario no se comparten con el agente.",
+    "configuracion_pendiente": {
+      "secreto_github": "META_ACCESS_TOKEN",
+      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/settings/secrets/actions",
+      "permiso_meta": "catalog_management",
+      "activo": "CONECTATECH | Catálogo Maestro — 1036301566100990",
+      "instruccion": "Guardar la credencial de un usuario del sistema autorizado sobre ese catálogo directamente como secreto Actions. No enviarla por chat ni guardarla en el repositorio. Usar una app empresarial existente; la creación de anuncios y los permisos de mensajería no forman parte de esta integración."
+    },
+    "activacion": "Conservar PR borrador. Publicación de la integración y credencial necesarias para la ejecución real. El workflow comprueba autorización; si falta, registra PENDIENTE_AUTORIZACION_META sin llamadas remotas.",
+    "resultado_cliente": "Aún falta comprobar propagación y orden de los nuevos conjuntos en WhatsApp; no se afirma sincronización de colecciones visible."
   }
 }

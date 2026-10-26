@@ -1,13 +1,28 @@
 name: Exportar catálogo multicanal
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/*meta*.cjs'
+      - 'scripts/exportar-canales.cjs'
+      - 'scripts/test-exportar-canales.cjs'
+      - '.github/workflows/exportar-canales.yml'
+  workflow_run:
+    workflows:
+      - 'Publicar corte comercial 593 validado'
+      - 'Publicar stock, fecha y feeds comerciales desde 593 validado'
+      - 'Sincronizar catalogo desde 593'
+    types: [completed]
+    branches: [main]
   push:
     branches: [main]
     paths:
       - 'index.html'
       - 'seo-contenido.json'
       - 'scripts/exportar-canales.cjs'
-      - 'scripts/colecciones-whatsapp.cjs'
+      - 'scripts/categorias-meta-web.cjs'
+      - 'scripts/sincronizar-conjuntos-meta.cjs'
+      - '.github/workflows/exportar-canales.yml'
       - 'scripts/validar-exportacion-593.cjs'
       - 'datos-593/estado-ultimo-corte.json'
       - 'datos-593/inventario-publico.csv'
@@ -18,9 +33,25 @@ concurrency:
   group: exportacion-canales-main
   cancel-in-progress: false
 jobs:
+  validar-integracion:
+    if: ${{ github.event_name == 'pull_request' }}
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node scripts/test-meta-web.cjs
+          node scripts/test-exportar-canales.cjs
+          node scripts/test-validar-exportacion-593.cjs
   exportar:
-    # Los cambios [solo-web] no publican ni regeneran feeds de otros canales.
-    if: ${{ !contains(github.event.head_commit.message, '[solo-web]') }}
+    # También se ejecuta tras publicaciones de bots 593: sus pushes no disparan otros workflows.
+    if: ${{ github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository)) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,8 +63,8 @@ jobs:
           node-version: '22'
       - name: Generar archivos CSV
         run: |
+          node scripts/test-meta-web.cjs
           node scripts/test-validar-exportacion-593.cjs
-          node scripts/test-colecciones-whatsapp.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/exportar-canales.cjs
       - name: Guardar exportaciones
@@ -51,3 +82,17 @@ jobs:
             sleep 3
           done
           exit 1
+      - name: Sincronizar fuente existente y conjuntos de Meta
+        env:
+          META_SYNC_ENABLED: 'true'
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_GRAPH_VERSION: 'v26.0'
+        run: node scripts/sincronizar-conjuntos-meta.cjs
+      - name: Conservar resultado verificable de Meta
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultado-catalogo-meta
+          path: work/auto-meta/resultado.json
+          retention-days: 7
+          if-no-files-found: warn

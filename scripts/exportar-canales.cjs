@@ -7,6 +7,8 @@ const products=JSON.parse(m[1]);
 const content=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
 const urls=JSON.parse(fs.readFileSync('seo-pages.json','utf8'));
 const base='https://conectatech-ec.github.io';
+const categoriesWeb=require('./categorias-meta-web.cjs');
+const classificationWeb=categoriesWeb.classify(products,content,categoriesWeb.familiesFromHTML(html));
 const inventoryState=typeof fs.existsSync==='function'&&fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
 const {validar}=require('./validar-exportacion-593.cjs');
 const cutPaths={comercial:'datos-593/corte-comercial-publico-validado.json',stock:'datos-593/corte-stock-validado.json'};
@@ -74,9 +76,9 @@ const meta=products.filter(p=>p.promo>0).map(p=>{
  if(!/^https?:\/\//.test(image_link))return null;
  return {id:p.sku,title:o.nombre||p.name,description:o.descripcion||o.descripcionSeo||p.name,
  availability:p.stock>0?'in stock':'out of stock',condition:'new',price:p.promo.toFixed(2)+' USD',
- link:base+'/productos/'+urls[p.sku]+'/',image_link,brand:knownBrand(p.sku),product_type:productType(p.sku)};
+ link:base+'/productos/'+urls[p.sku]+'/',image_link,brand:knownBrand(p.sku),product_type:productType(p.sku),custom_label_0:classificationWeb.bySKU.get(p.sku).label};
 }).filter(Boolean);
-outputs.set('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand','product_type'],meta));
+outputs.set('exportaciones/meta-catalogo-piloto.csv',csv(['id','title','description','availability','condition','price','link','image_link','brand','product_type','custom_label_0'],meta));
 outputs.set('exportaciones/resumen-canales.json',JSON.stringify({
  generated_at:new Date().toISOString(),fecha_corte:inventoryState?.fecha_corte||null,fuente_sha256:inventoryState?.origen_sha256||null,total_products:rows.length,
  with_image_url:ready.length,without_image_url:rows.length-ready.length,
@@ -88,9 +90,19 @@ outputs.set('exportaciones/resumen-canales.json',JSON.stringify({
  note:'Archivo piloto para revisión en Commerce Manager; publicación, elegibilidad, fotografía y políticas requieren validación. No publica anuncios en Marketplace.'
 },null,2)+'\n');
 
-const {planificar}=require('./colecciones-whatsapp.cjs');
-outputs.set('exportaciones/whatsapp-organizacion-pendiente.json',JSON.stringify(planificar({products,content,masterCategories,urls,inventoryState}),null,2)+'\n');
-
+const webPlan=categoriesWeb.planFromFeed(classificationWeb,meta,inventoryState);
+outputs.set('exportaciones/meta-conjuntos-web.json',JSON.stringify(webPlan,null,2)+'\n');
+outputs.set('exportaciones/whatsapp-organizacion-pendiente.json',JSON.stringify({
+ catalogo_id:webPlan.catalog_id,fecha_corte:webPlan.fecha_corte,fuente_sha256:webPlan.fuente_sha256,
+ fuente_categorias:webPlan.fuente_categorias,publicacion_habilitada:false,colecciones_automaticas_verificadas:false,
+ colecciones:Object.fromEntries(webPlan.groups.filter(g=>g.sku.length).map(g=>[g.family,g.sku])),
+ registros:products.map(p=>{const c=classificationWeb.bySKU.get(p.sku),o=content[p.sku]||{};
+  const estados=[];if(!(p.stock>0))estados.push('AGOTADO');
+  if(o.imagenPendiente===true||!(o.imagen||p.imageUrl))estados.push('PENDIENTE_IMAGEN');
+  estados.push('PENDIENTE_APROBACIÓN');
+  return {sku:p.sku,categoria_web:c.categoria_web,familia_web:c.familia_web,aprobacion_editorial:c.aprobado,
+   estados,verificacion_meta_pendiente:true,visible_whatsapp:null};})
+},null,2)+'\n');
 fs.mkdirSync('exportaciones',{recursive:true});
 for(const [path,value] of outputs)fs.writeFileSync(path,value);
 console.log('Exportaciones preparadas: '+rows.length+' disponibles; Meta '+meta.length+' SKU, incluidos '+meta.filter(p=>p.availability==='out of stock').length+' agotados. Importación y visibilidad pendientes de Meta.');
