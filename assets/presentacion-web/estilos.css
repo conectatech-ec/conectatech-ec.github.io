@@ -397,3 +397,24 @@ header .brand{position:relative;z-index:3}
 @media(max-width:600px){#featured .pw-featured-card{padding:9px!important}#featured .pw-featured-card .product-img{height:137px!important}#featured .pw-featured-card .name{font-size:12px!important;line-height:1.45!important}#featured .pw-featured-card:last-child:nth-child(odd){display:grid!important}#featured .pw-featured-card:last-child:nth-child(odd) .product-img{height:190px!important;margin:0!important}.pw-featured-heading>a{min-height:44px}}
 @media(max-width:359px){#featured .pw-featured-card{padding:7px!important}#featured .pw-featured-card .product-img{height:120px!important}#featured .pw-featured-card .name{font-size:11px!important}}
 #featured .pw-featured-card .wa{height:auto!important;min-height:44px!important}
+
+/* Catálogo CONECTATECH: fondo azul/verde, fichas originales blancas. */
+.pw-catalog-frame{position:relative;isolation:isolate;padding:25px 22px 22px;margin:0 0 25px;border:1px solid #21687a;border-radius:19px;background:radial-gradient(ellipse at 100% 0,#96d34b28,transparent 40%),linear-gradient(90deg,#082c50 0%,#105479 38%,#0c665d 75%,#246e45 100%);box-shadow:0 12px 32px #0b495524}
+.pw-catalog-frame:before{content:'';position:absolute;inset:0 12px auto;height:3px;border-radius:3px;background:linear-gradient(90deg,#32a8df,#8bd12f 78%,#c1e38e)}
+.pw-catalog-frame #catalogo{border:0;padding:0;margin:0 0 18px;color:#fff;font-size:27px;line-height:1.25}
+.pw-catalog-frame .chips{scrollbar-color:#c1e09755 transparent}
+.pw-catalog-frame .chip{background:#ffffff0f;border-color:#a9d4e247;color:#e9f5fb}
+.pw-catalog-frame .chip:hover{background:#ffffff22;border-color:#b7d9e5}
+.pw-catalog-frame .chip.active{background:#a7df63;border-color:#bdec80;color:#123d31;box-shadow:0 3px 12px #092e3222}
+.pw-catalog-frame .ct-category-controls{background:#f0f7f9;border-color:#c3dce1;color:#173d54}
+.pw-catalog-frame .meta,.pw-catalog-frame .ct-sort,.pw-catalog-frame .ct-av-filter{color:#e0f0f4}
+.pw-catalog-frame .ct-sort select,.pw-catalog-frame .ct-pagination select{background:#fff;color:#21475d}
+.pw-catalog-frame .ct-av-filter input{accent-color:#a7df63}
+.pw-catalog-frame #grid .ct-compact-card{background:#fff;border-color:#d9e5eb;box-shadow:0 4px 15px #001e2924}
+.pw-catalog-frame .ct-pagination,.pw-catalog-frame .ct-page-controls label,.pw-catalog-frame .ct-page-numbers span{color:#e0f0f4}
+.pw-catalog-frame .ct-pagination button{background:#fff;color:#214c65;border-color:#c2d9df}
+.pw-catalog-frame .ct-pagination button[aria-current=page]{background:#a7df63;color:#123d31;border-color:#bdec80}
+.pw-catalog-frame .empty{color:#ecf7fa;background:#ffffff0d;border:1px solid #ffffff30;border-radius:10px;padding:24px 15px}
+.pw-catalog-frame a:focus-visible,.pw-catalog-frame button:focus-visible,.pw-catalog-frame select:focus-visible{outline:3px solid #b6ec79;outline-offset:3px}
+@media(max-width:600px){.pw-catalog-frame{padding:21px 10px 12px;border-radius:15px}.pw-catalog-frame #catalogo{font-size:24px;margin-bottom:14px}.pw-catalog-frame .ct-category-controls{padding:10px;gap:8px}.pw-catalog-frame .ct-category-controls button,.pw-catalog-frame .ct-category-controls a{padding:9px 8px;font-size:9px}}
+@media(max-width:359px){.pw-catalog-frame{padding-left:8px;padding-right:8px}.pw-catalog-frame .ct-category-controls button,.pw-catalog-frame .ct-category-controls a{font-size:8px;padding-left:7px;padding-right:7px}}
