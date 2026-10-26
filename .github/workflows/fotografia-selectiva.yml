@@ -241,3 +241,63 @@ jobs:
           print('RESULTADO_AUDIO_COMPUTACION='+json.dumps(result,ensure_ascii=False))
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
               f.write('Secundarias MOUS003/AUDI057: '+str(result['publicacion_activa'])+'; portadas conservadas.\\n')
+
+  lote_rapido:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Verificar secundarias publicadas y conservar portadas
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json, os, hashlib, time, subprocess
+          from urllib.request import Request, urlopen
+          from datetime import datetime, timezone
+          origin='https://conectatech-ec.github.io'
+          raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(url):
+              with urlopen(Request(url,headers={'User-Agent':'CONECTATECH-secundarias','Cache-Control':'no-cache'}),timeout=30) as r:
+                  assert r.status==200
+                  return r.read()
+          record=json.loads(get(raw+'/importacion/fotografia-publicada/secundarias-rapido-20261026-04.json'))
+          paths={'AUDI036': 'audi036-audifonos-ultra-open-earbuds', 'AUDI053': 'audi053-audifonos-galaxy-buds-pro-6', 'AUDI034': 'audi034-audifonos-inalambricos-monster-airmars-xkt01', 'AUDI025': 'audi025-audifonos-inalambricos-thinkplus-x15ii', 'AUDI026': 'audi026-audifonos-inalambricosthinkplus-lp1s', 'AUDI082': 'audi082-audifonos-galaxy-buds-pro-9', 'AUDI073': 'audi073-audifonos-inalambricos-galaxy-buds-6-pro', 'AUDI018': 'audi018-audifonos-inalambricos-tune-flex'}
+          result={'publicacion_activa':False,'productos':[]}
+          published=os.environ['PHOTO_REF']=='refs/heads/main'
+          for attempt in range(300 if published else 1):
+              try:
+                  rows=[]
+                  for sku,row in record['productos'].items():
+                      assert sku in paths and row['sku']==sku and row['revisado_visual'] is True
+                      prefix='/imagenes/'+sku.lower()+'/'
+                      files=[]
+                      for view in row['vistas']:
+                          assert view['posicion']>1 and view['contiene_caja'] is False
+                          for v in [view['maestro'],*view['versiones'].values()]:
+                              assert v['url'].startswith(prefix) and '..' not in v['url']
+                              data=get((origin if published else raw)+v['url'])
+                              assert hashlib.sha256(data).hexdigest()==v['sha256']
+                              files.append({'url':v['url'],'sha256':v['sha256'],'http':200})
+                      entry={'sku':sku,'vistas':len(row['vistas']),'archivos_verificados':files}
+                      if published:
+                          url=origin+'/productos/'+paths[sku]+'/'
+                          page=get(url).decode()
+                          assert row['portada_url'].startswith(prefix) and '..' not in row['portada_url']
+                          assert hashlib.sha256(get(origin+row['portada_url'])).hexdigest()==row['portada_sha256']
+                          for view in row['vistas']:
+                              assert view['versiones']['1200']['url'] in page and view['versiones']['300']['url'] in page
+                          for width in [1280,390]:
+                              dom=subprocess.check_output(['google-chrome','--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--window-size='+str(width)+',900','--virtual-time-budget=10000','--dump-dom',url+'?fotografia=secundarias-20261026'],timeout=90,stderr=subprocess.DEVNULL).decode()
+                              for view in row['vistas']: assert view['versiones']['300']['url'] in dom
+                          entry.update(url=url,portada_conservada=True,chromium=[1280,390])
+                      rows.append(entry)
+                  result.update(productos=rows,publicacion_activa=published)
+                  if published: result['fecha_primera_verificacion']=datetime.now(timezone.utc).isoformat()
+                  break
+              except Exception:
+                  if not published or attempt==299: raise
+                  time.sleep(5)
+          print('RESULTADO_LOTE_RAPIDO='+json.dumps(result,ensure_ascii=False))
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write('Lote fotográfico de ocho SKU: '+str(result['publicacion_activa'])+'; portadas conservadas.\\n')
