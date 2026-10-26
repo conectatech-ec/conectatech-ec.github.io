@@ -269,3 +269,6 @@ El payloadcatalogo-publicado.js contiene fechas públicas directas de otras sesi
 
 ## Continuación masiva editorial012–015,26oct2026Guayaquil
 Propietario ordena avanzar masivamente.80mejoras existentes en4lotes de20,367presentaciones acumuladas;no sonSKU nuevos. Conservar287previas,correctos,97reservas ycelulares/tablets. Código técnico sólo en especificaciones;marca/familia comercial donde identifica. Tipos,capacidad,conexiones,cantidad yvariantes sólo decontrato verificado. Fotografías,precios,stock,URLs,593,SEO yfeeds intactos;sin modelosdeclaradosoriginales porinferencia. Fechas únicamente trasHTTP/Chromium públicos;disponibles modificados primero,pinPROT003yfechasfotográficasajenas conservados.0costo.
+
+## Cierre público editorial012–015
+80títulos comprobados porHTTPS/Chromium público en4reportes inmutables;367presentaciones acumuladas,287previas idénticas. Aplicar fecha sólo de esos80;sin registrar de nuevo INVE002ni renovar007–011.703CORRECTO y97reservas conservados;4memorias con campo histórico de condición en modelo yREL066 sin diferenciador suficiente intactos. Integrar galerías yfechas fotográficasPR140/142deAUDI057/MOUS003sin reescribirlas. Mantener PROT003fijado ydisponibles modificados primero;0fotos/precios/stock/URLs/SEO/feeds/celulares/tablets editados.0costo.
