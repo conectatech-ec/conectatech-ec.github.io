@@ -165,6 +165,11 @@ async function main() {
           const hasPhoto=p=>Boolean(p.imageUrl||payload.productos[p.sku]?.imagen?.src);
           const priority=p=>editorialDate(p)?1:({nuevo:0,actualizado:1}[payload.productos[p.sku]?.tipoCambio]??2);
           return list.sort((a,b)=>{
+  if(mode==='recientes'){
+   const photoA=a.sku==='PROT003'&&a.imageUrl==='/imagenes/prot003/PROT003-r20261024-01.webp';
+   const photoB=b.sku==='PROT003'&&b.imageUrl==='/imagenes/prot003/PROT003-r20261024-01.webp';
+   if(photoA!==photoB)return photoA?-1:1;
+  }
             const eligible=Number(availabilityCore.forProduct(b).commercial_eligible)-Number(availabilityCore.forProduct(a).commercial_eligible);if(eligible)return eligible;
             const photo=Number(hasPhoto(b))-Number(hasPhoto(a));if(photo)return photo;
             if(mode==='nombre')return a.name.localeCompare(b.name,'es',{sensitivity:'base',numeric:true});
