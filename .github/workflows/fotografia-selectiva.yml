@@ -283,7 +283,8 @@ jobs:
                       if published:
                           url=origin+'/productos/'+paths[sku]+'/'
                           page=get(url).decode()
-                          assert hashlib.sha256(get(origin+prefix+sku+'-01.webp')).hexdigest()==row['portada_sha256']
+                          assert row['portada_url'].startswith(prefix) and '..' not in row['portada_url']
+                          assert hashlib.sha256(get(origin+row['portada_url'])).hexdigest()==row['portada_sha256']
                           for view in row['vistas']:
                               assert view['versiones']['1200']['url'] in page and view['versiones']['300']['url'] in page
                           for width in [1280,390]:
