@@ -460,5 +460,13 @@
       "fuente": "Clasificación comercial por familias del catálogo existente; no altera categoría original ni SKU."
     }
   },
-  "nota": "Otros y familias mixtas conservan clasificación general hasta revisión individual. Excepciones de cada SKU se guardan en su contrato y campo categoriaComercial."
+  "nota": "Otros y familias mixtas conservan clasificación general hasta revisión individual. Excepciones de cada SKU se guardan en su contrato y campo categoriaComercial.",
+  "excepciones_por_sku": {
+    "INVE002": {
+      "nombre": "Cargadores y Energía",
+      "categoria_original": "Conectividad",
+      "verificada": true,
+      "fuente": "Corrección expresa del propietario:inversor vehicular no esRedes eInternet. Aplicación en contrato,categoriaComercialdelproducto y ficha."
+    }
+  }
 }

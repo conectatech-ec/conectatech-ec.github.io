@@ -1,0 +1,11 @@
+const assert=require('node:assert/strict'),fs=require('fs'),crypto=require('crypto');
+module.exports=async function verificarCategoria(page,ctx,base){
+ await page.goto(base+'/');await page.locator('#q').fill('INVE002');const card=page.locator('#grid article[data-sku="INVE002"]');assert.equal(await card.count(),1);assert.match(await card.locator('.cat').textContent(),/Cargadores y Energía/);assert(!/Redes e Internet/.test(await card.locator('.cat').textContent()));
+ await page.locator('#chips [data-cat="Redes e Internet"]').click();assert.equal(await card.count(),0);
+ await page.locator('#chips [data-cat="Cargadores y Energía"]').click();assert.equal(await card.count(),1);
+ const source=await page.evaluate(()=>products.find(p=>p.sku==='INVE002'));assert.equal(source.category,'Conectividad');assert.equal(source.categoriaComercial,'Cargadores y Energía');
+ const e=JSON.parse(fs.readFileSync('importacion/editorial/publicados.json')).productos.INVE002,detail=await ctx.newPage();try{const url=base+new URL(e.url).pathname,r=await detail.goto(url);assert.equal(r.status(),200);assert.match(await detail.locator('.crumb').textContent(),/Cargadores y Energía/);assert.match(await detail.locator('.eyebrow').filter({hasText:/^ConectaTech ·/}).textContent(),/Cargadores y Energía/);assert.equal(await detail.locator('h1').textContent(),e.titulo);const hash=b=>crypto.createHash('sha256').update(b).digest('hex');assert.equal(hash(await r.body()),hash(fs.readFileSync(new URL(e.url).pathname.slice(1)+'index.html')));const seo=JSON.parse(fs.readFileSync('seo-contenido.json')).INVE002,versions=[];
+ for(const [size,v]of Object.entries(seo.imagenProfesional.versiones)){const response=await ctx.request.get(base+v.url);assert.equal(response.status(),200);assert.equal(hash(await response.body()),v.sha256);versions.push({tamano:'01-'+size,http:200,sha256:v.sha256});}
+ return {estado:'publicado_verificado',sku:'INVE002',http:200,url:e.url,promo:source.promo,pvp:source.pvp,stock_catalogo:source.stock,imagen_pendiente:false,imagen:'https://conectatech-ec.github.io'+source.imageUrl,sha256_ficha:hash(await r.body()),versiones_verificadas:versions,categoria:'Cargadores y Energía',categoria593Conservada:'Conectividad',excluidoDeRedes:true,incluidoEnEnergia:true,tituloConservado:true};
+ }finally{await detail.close();}
+};
