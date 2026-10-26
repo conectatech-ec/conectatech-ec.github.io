@@ -237,3 +237,8 @@ Título comercial: «Set de micrófonos inalámbricos Pack 2». Mantener recepto
 
 ## Lote editorial002 autorizado
 30SKU existentes,60acumulados; conservar los1110fuera del mapa y33celulares/tablets sin cambios. Subtítulo opcional cuando añadirlo sólo repite información. Modelos técnicos conservados en ficha y búsqueda. SOPO009 reservado en cola fotográfica por discrepancia entre referencia PNG y registro webp; sin cambiar sus textos ni imágenes. Fechas y prioridad después de prueba pública real.
+
+## Continuación editorial003,25oct2026Guayaquil
+Propietario aprueba todos los títulos y el formato; continuar más rápido sin pilotos ni confirmaciones rutinarias. Lote003:30mejoras,8de ellas duplicados diferenciados por conexiones/longitud/cubierta/serie ya verificados en contratos. Mantener reservas NO_DECLARAR sin atribuir PRO4/GReddy/Jeep a COBE004/JUGU104/JUGU133. Serie8K identifica el rótulo del empaque, sin prometer prestaciones ensayadas. TARJ008/CASE003conservan stock0. Preservar60títulos previos,33celulares/tablets,980CORRECTO,fotos,finanzas,593,URLs,SEOyfeeds. Sólo fechas después de prueba pública real;disponibles modificados primero. Costo0.
+
+Siete títulos antes clasificados CORRECTO bajo el criterio anterior conservaban JH-031,UAC270,ET-OT91A,ADA618,Q-T98,HDV-552,XTC360; se reclasifican sólo por la regla posterior expresa de retirar códigos técnicos del principal. Utilidad/marca/conexiones e identidad intactas; códigos en especificaciones. No extender esta regla a nombres comerciales reconocidos.

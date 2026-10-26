@@ -3,11 +3,11 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 78,
-    "REVISAR IDENTIDAD": 105,
-    "CORRECTO": 987
+    "MEJORAR TÍTULO": 93,
+    "REVISAR IDENTIDAD": 97,
+    "CORRECTO": 980
   },
-  "aplicados": 0,
+  "aplicados": 60,
   "cola": [
     {
       "sku": "AUDI098",
@@ -380,7 +380,7 @@
     },
     {
       "sku": "CABL004",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable USB-C a USB-C | 2 m",
       "propuesta": "Cable USB-C a USB-C | 2 m",
       "causa": "Título idéntico a CABL139; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -389,7 +389,22 @@
         "seo-contenido.json#CABL004"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CABL139; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionEditorial": {
+        "estado": "IDENTIDAD_Y_DIFERENCIADOR_VERIFICADOS",
+        "atributos": {
+          "Conexiones": "USB-C macho a USB-C macho",
+          "Longitud": "2 m",
+          "Diseño": "Cubierta lisa blanca"
+        },
+        "fuentes": [
+          "importacion/contratos/CABL004.json",
+          "seo-contenido.json#CABL004"
+        ],
+        "nota": "Conexiones, longitud y cubierta/serie ya verificadas. Serie8K reproduce el rótulo; no afirma rendimiento ensayado. CABL166 se enriquece individualmente; CABL030 conserva reserva sin concluir una diferencia física no documentada."
+      }
     },
     {
       "sku": "CABL017",
@@ -421,7 +436,7 @@
     },
     {
       "sku": "CABL093",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable HDMI Orvesion | 5 m",
       "propuesta": "Cable HDMI Orvesion | 5 m",
       "causa": "Título idéntico a CABL142; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -430,11 +445,26 @@
         "seo-contenido.json#CABL093"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CABL142; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionEditorial": {
+        "estado": "IDENTIDAD_Y_DIFERENCIADOR_VERIFICADOS",
+        "atributos": {
+          "Conexiones": "HDMI-A macho a HDMI-A macho",
+          "Longitud": "5 m",
+          "Diseño": "Cubierta plana"
+        },
+        "fuentes": [
+          "importacion/contratos/CABL093.json",
+          "seo-contenido.json#CABL093"
+        ],
+        "nota": "Conexiones, longitud y cubierta/serie ya verificadas. Serie8K reproduce el rótulo; no afirma rendimiento ensayado. CABL166 se enriquece individualmente; CABL030 conserva reserva sin concluir una diferencia física no documentada."
+      }
     },
     {
       "sku": "CABL111",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable HDMI Orvesion | 3 m",
       "propuesta": "Cable HDMI Orvesion | 3 m",
       "causa": "Título idéntico a CABL143,CABL092; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -443,11 +473,26 @@
         "seo-contenido.json#CABL111"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CABL143,CABL092; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionEditorial": {
+        "estado": "IDENTIDAD_Y_DIFERENCIADOR_VERIFICADOS",
+        "atributos": {
+          "Conexiones": "HDMI-A macho a HDMI-A macho",
+          "Longitud": "3 m",
+          "Diseño": "Cubierta plana/ribeteada"
+        },
+        "fuentes": [
+          "importacion/contratos/CABL111.json",
+          "seo-contenido.json#CABL111"
+        ],
+        "nota": "Conexiones, longitud y cubierta/serie ya verificadas. Serie8K reproduce el rótulo; no afirma rendimiento ensayado. CABL166 se enriquece individualmente; CABL030 conserva reserva sin concluir una diferencia física no documentada."
+      }
     },
     {
       "sku": "CABL139",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable USB-C a USB-C | 2 m",
       "propuesta": "Cable USB-C a USB-C | 2 m",
       "causa": "Título idéntico a CABL004; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -456,11 +501,26 @@
         "seo-contenido.json#CABL139"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CABL004; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionEditorial": {
+        "estado": "IDENTIDAD_Y_DIFERENCIADOR_VERIFICADOS",
+        "atributos": {
+          "Conexiones": "USB-C macho a USB-C macho",
+          "Longitud": "2 m",
+          "Diseño": "Cubierta trenzada"
+        },
+        "fuentes": [
+          "importacion/contratos/CABL139.json",
+          "seo-contenido.json#CABL139"
+        ],
+        "nota": "Conexiones, longitud y cubierta/serie ya verificadas. Serie8K reproduce el rótulo; no afirma rendimiento ensayado. CABL166 se enriquece individualmente; CABL030 conserva reserva sin concluir una diferencia física no documentada."
+      }
     },
     {
       "sku": "CABL142",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable HDMI Orvesion | 5 m",
       "propuesta": "Cable HDMI Orvesion | 5 m",
       "causa": "Título idéntico a CABL093; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -469,11 +529,26 @@
         "seo-contenido.json#CABL142"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CABL093; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionEditorial": {
+        "estado": "IDENTIDAD_Y_DIFERENCIADOR_VERIFICADOS",
+        "atributos": {
+          "Conexiones": "HDMI-A macho a HDMI-A macho",
+          "Longitud": "5 m",
+          "Diseño": "Serie 8K según empaque"
+        },
+        "fuentes": [
+          "importacion/contratos/CABL142.json",
+          "seo-contenido.json#CABL142"
+        ],
+        "nota": "Conexiones, longitud y cubierta/serie ya verificadas. Serie8K reproduce el rótulo; no afirma rendimiento ensayado. CABL166 se enriquece individualmente; CABL030 conserva reserva sin concluir una diferencia física no documentada."
+      }
     },
     {
       "sku": "CABL143",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable HDMI Orvesion | 3 m",
       "propuesta": "Cable HDMI Orvesion | 3 m",
       "causa": "Título idéntico a CABL111,CABL092; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -482,11 +557,26 @@
         "seo-contenido.json#CABL143"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CABL111,CABL092; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionEditorial": {
+        "estado": "IDENTIDAD_Y_DIFERENCIADOR_VERIFICADOS",
+        "atributos": {
+          "Conexiones": "HDMI-A macho a HDMI-A macho",
+          "Longitud": "3 m",
+          "Diseño": "Serie 8K según empaque"
+        },
+        "fuentes": [
+          "importacion/contratos/CABL143.json",
+          "seo-contenido.json#CABL143"
+        ],
+        "nota": "Conexiones, longitud y cubierta/serie ya verificadas. Serie8K reproduce el rótulo; no afirma rendimiento ensayado. CABL166 se enriquece individualmente; CABL030 conserva reserva sin concluir una diferencia física no documentada."
+      }
     },
     {
       "sku": "CABL166",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable USB-C a Lightning | 2 m",
       "propuesta": "Cable USB-C a Lightning | 2 m",
       "causa": "Título idéntico a CABL030; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -495,7 +585,22 @@
         "seo-contenido.json#CABL166"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CABL030; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionEditorial": {
+        "estado": "IDENTIDAD_Y_DIFERENCIADOR_VERIFICADOS",
+        "atributos": {
+          "Conexiones": "USB-C macho a Lightning macho",
+          "Longitud": "2 m",
+          "Diseño": "Cubierta lisa y cabezales blancos"
+        },
+        "fuentes": [
+          "importacion/contratos/CABL166.json",
+          "seo-contenido.json#CABL166"
+        ],
+        "nota": "Conexiones, longitud y cubierta/serie ya verificadas. Serie8K reproduce el rótulo; no afirma rendimiento ensayado. CABL166 se enriquece individualmente; CABL030 conserva reserva sin concluir una diferencia física no documentada."
+      }
     },
     {
       "sku": "CARG001",
@@ -2409,7 +2514,7 @@
     },
     {
       "sku": "CABL092",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable HDMI Orvesion | 3 m",
       "propuesta": "Cable HDMI Orvesion | 3 m",
       "causa": "Título idéntico a CABL111,CABL143; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -2418,7 +2523,22 @@
         "seo-contenido.json#CABL092"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CABL111,CABL143; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionEditorial": {
+        "estado": "IDENTIDAD_Y_DIFERENCIADOR_VERIFICADOS",
+        "atributos": {
+          "Conexiones": "HDMI-A macho a HDMI-A macho",
+          "Longitud": "3 m",
+          "Diseño": "Cubierta plana"
+        },
+        "fuentes": [
+          "importacion/contratos/CABL092.json",
+          "seo-contenido.json#CABL092"
+        ],
+        "nota": "Conexiones, longitud y cubierta/serie ya verificadas. Serie8K reproduce el rótulo; no afirma rendimiento ensayado. CABL166 se enriquece individualmente; CABL030 conserva reserva sin concluir una diferencia física no documentada."
+      }
     },
     {
       "sku": "CASE003",
@@ -2555,16 +2675,27 @@
     },
     {
       "sku": "ADAP012",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Adaptador USB-C a audio y carga | JH-031",
       "propuesta": "Adaptador USB-C a audio y carga | JH-031",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "causa": "El criterio maestro posterior retira códigos técnicos del título principal: JH-031. Conservar utilidad, marca y conexiones verificadas; código accesible en ficha.",
       "prioridad": 2,
       "evidencia": [
         "seo-contenido.json#ADAP012"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionEditorial": {
+        "estado": "CRITERIO_MAESTRO_POSTERIOR_VERIFICADO",
+        "codigoTrasladado": "JH-031",
+        "fuentes": [
+          "importacion/contratos/ADAP012.json",
+          "seo-contenido.json#ADAP012"
+        ],
+        "sinCambioDeIdentidad": true
+      }
     },
     {
       "sku": "ADAP016",
@@ -2581,16 +2712,27 @@
     },
     {
       "sku": "ADAP017",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Adaptador WiFi 5 USB 3.0 | UAC270 AC1300",
       "propuesta": "Adaptador WiFi 5 USB 3.0 | UAC270 AC1300",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "causa": "El criterio maestro posterior retira códigos técnicos del título principal: UAC270. Conservar utilidad, marca y conexiones verificadas; código accesible en ficha.",
       "prioridad": 2,
       "evidencia": [
         "seo-contenido.json#ADAP017"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionEditorial": {
+        "estado": "CRITERIO_MAESTRO_POSTERIOR_VERIFICADO",
+        "codigoTrasladado": "UAC270",
+        "fuentes": [
+          "importacion/contratos/ADAP017.json",
+          "seo-contenido.json#ADAP017"
+        ],
+        "sinCambioDeIdentidad": true
+      }
     },
     {
       "sku": "ADAP018",
@@ -2920,42 +3062,75 @@
     },
     {
       "sku": "ADAP047",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Adaptador Earldom USB-A a USB-C | ET-OT91A",
       "propuesta": "Adaptador Earldom USB-A a USB-C | ET-OT91A",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "causa": "El criterio maestro posterior retira códigos técnicos del título principal: ET-OT91A. Conservar utilidad, marca y conexiones verificadas; código accesible en ficha.",
       "prioridad": 2,
       "evidencia": [
         "seo-contenido.json#ADAP047"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionEditorial": {
+        "estado": "CRITERIO_MAESTRO_POSTERIOR_VERIFICADO",
+        "codigoTrasladado": "ET-OT91A",
+        "fuentes": [
+          "importacion/contratos/ADAP047.json",
+          "seo-contenido.json#ADAP047"
+        ],
+        "sinCambioDeIdentidad": true
+      }
     },
     {
       "sku": "ADAP050",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Convertidor Aiwa RCA a HDMI | ADA618",
       "propuesta": "Convertidor Aiwa RCA a HDMI | ADA618",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "causa": "El criterio maestro posterior retira códigos técnicos del título principal: ADA618. Conservar utilidad, marca y conexiones verificadas; código accesible en ficha.",
       "prioridad": 2,
       "evidencia": [
         "seo-contenido.json#ADAP050"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionEditorial": {
+        "estado": "CRITERIO_MAESTRO_POSTERIOR_VERIFICADO",
+        "codigoTrasladado": "ADA618",
+        "fuentes": [
+          "importacion/contratos/ADAP050.json",
+          "seo-contenido.json#ADAP050"
+        ],
+        "sinCambioDeIdentidad": true
+      }
     },
     {
       "sku": "ADAP051",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tarjeta de sonido Andowl USB-C | Q-T98",
       "propuesta": "Tarjeta de sonido Andowl USB-C | Q-T98",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "causa": "El criterio maestro posterior retira códigos técnicos del título principal: Q-T98. Conservar utilidad, marca y conexiones verificadas; código accesible en ficha.",
       "prioridad": 2,
       "evidencia": [
         "seo-contenido.json#ADAP051"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionEditorial": {
+        "estado": "CRITERIO_MAESTRO_POSTERIOR_VERIFICADO",
+        "codigoTrasladado": "Q-T98",
+        "fuentes": [
+          "importacion/contratos/ADAP051.json",
+          "seo-contenido.json#ADAP051"
+        ],
+        "sinCambioDeIdentidad": true
+      }
     },
     {
       "sku": "ADAP052",
@@ -3011,29 +3186,51 @@
     },
     {
       "sku": "ADAP057",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Convertidor Treqa VGA a HDMI | HDV-552",
       "propuesta": "Convertidor Treqa VGA a HDMI | HDV-552",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "causa": "El criterio maestro posterior retira códigos técnicos del título principal: HDV-552. Conservar utilidad, marca y conexiones verificadas; código accesible en ficha.",
       "prioridad": 2,
       "evidencia": [
         "seo-contenido.json#ADAP057"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionEditorial": {
+        "estado": "CRITERIO_MAESTRO_POSTERIOR_VERIFICADO",
+        "codigoTrasladado": "HDV-552",
+        "fuentes": [
+          "importacion/contratos/ADAP057.json",
+          "seo-contenido.json#ADAP057"
+        ],
+        "sinCambioDeIdentidad": true
+      }
     },
     {
       "sku": "ADAP058",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Adaptador OTG Xtech Micro-USB | XTC360",
       "propuesta": "Adaptador OTG Xtech Micro-USB | XTC360",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "causa": "El criterio maestro posterior retira códigos técnicos del título principal: XTC360. Conservar utilidad, marca y conexiones verificadas; código accesible en ficha.",
       "prioridad": 2,
       "evidencia": [
         "seo-contenido.json#ADAP058"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionEditorial": {
+        "estado": "CRITERIO_MAESTRO_POSTERIOR_VERIFICADO",
+        "codigoTrasladado": "XTC360",
+        "fuentes": [
+          "importacion/contratos/ADAP058.json",
+          "seo-contenido.json#ADAP058"
+        ],
+        "sinCambioDeIdentidad": true
+      }
     },
     {
       "sku": "ADAP059",
@@ -15425,5 +15622,12 @@
       "verificacionEditorialNecesaria": false,
       "aplicar": false
     }
-  ]
+  ],
+  "resolucionesEditorialesLote003": {
+    "candidatos": 30,
+    "duplicadosConAtributosVerificados": 8,
+    "evidencia": "importacion/editorial/lotes/lote-003.json",
+    "sinNuevaAuditoria": true,
+    "codigosTecnicosBajoCriterioPosterior": 7
+  }
 }
