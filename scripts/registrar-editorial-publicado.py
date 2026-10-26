@@ -1,7 +1,7 @@
 """Fecha únicamente cambios editoriales ya comprobados en web pública."""
-import json,hashlib,re
+import json,hashlib,re,os
 from pathlib import Path
-cfgPath=Path('importacion/editorial/publicados.json');cfg=json.loads(cfgPath.read_text());reportPath=Path('reportes/editorial-selectivo/lote-'+cfg['loteActual']+'/publicacion-http-chromium.json');raw=reportPath.read_bytes();report=json.loads(raw);manifestPath=Path('importacion/editorial/lotes/lote-'+cfg['loteActual']+'.json');manifest=json.loads(manifestPath.read_text())
+cfgPath=Path('importacion/editorial/publicados.json');cfg=json.loads(cfgPath.read_text());lote=os.environ.get('LOTE_EDITORIAL_VERIFICAR',cfg['loteActual']);assert re.fullmatch(r'[0-9]{3}(?:r[0-9]+)?',lote);reportPath=Path('reportes/editorial-selectivo/lote-'+lote+'/publicacion-http-chromium.json');raw=reportPath.read_bytes();report=json.loads(raw);manifestPath=Path('importacion/editorial/lotes/lote-'+lote+'.json');manifest=json.loads(manifestPath.read_text())
 assert report['estado']=='VERIFICADO_HTTP_CHROMIUM' and report['base']=='https://conectatech-ec.github.io'
 assert sorted(report['skus'])==sorted(manifest['skus']) and not report['errores']
 assert report['objetosOriginales1170Identicos'] and report['busquedaPorTituloNuevoOriginal593Modelo']
