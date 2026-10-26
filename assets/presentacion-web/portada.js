@@ -1,0 +1,101 @@
+/* Mejora incremental de la portada existente. No escribe ni modifica productos. */
+(function(){
+  'use strict';
+  const config=window.CONECTATECH_PRESENTACION,calendar=window.CONECTATECH_TEMPORADAS;
+  if(!config||!calendar||typeof products==='undefined')return;
+  if(window.CONECTATECH_PRESENTACION_ESTADO?.version===2)return;
+  const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const preview=location.pathname.startsWith('/revision/presentacion-web-v2/');
+  const requested=preview?new URLSearchParams(location.search).get('temporada'):null;
+  const state={version:2,tema:null,productos:[],pausado:false};
+  window.CONECTATECH_PRESENTACION_ESTADO=state;
+  const mark=()=>`<svg class="pw-brand-art" viewBox="330 70 920 130" role="img" aria-label="CONECTATECH, rótulo original aprobado"><image href="${escape(config.marca)}" width="1881" height="291"/></svg>`;
+  const brand=document.querySelector('header .brand');
+  if(brand&&!brand.querySelector('.pw-brand-art')){
+    const original=document.createElement('span');original.className='pw-sr-only';
+    while(brand.firstChild)original.appendChild(brand.firstChild);
+    brand.appendChild(original);brand.insertAdjacentHTML('beforeend',mark());
+    brand.insertAdjacentHTML('beforeend','<span class="pw-brand-values" aria-hidden="true">TECNOLOGÍA <i>·</i> CONECTIVIDAD <i>·</i> INNOVACIÓN</span>');
+  }
+  const footerBrand=document.querySelector('footer>b');
+  if(footerBrand)footerBrand.innerHTML=mark();
+  function applyTheme(){
+    const theme=calendar.resolver(config,new Date(),requested);state.tema=theme.id;
+    document.body.dataset.ctTemporada=theme.id;
+    document.documentElement.style.setProperty('--pw-season',theme.acento);
+    document.documentElement.style.setProperty('--pw-season-secondary',theme.secundario);
+    document.querySelectorAll('[data-pw-season-name]').forEach(el=>el.textContent=theme.nombre);
+    document.dispatchEvent(new CustomEvent('conectatech:temporada',{detail:theme}));
+  }
+  const hero=document.querySelector('.ct-hero'),showcase=hero?.querySelector('.ct-hero-showcase');
+  if(hero){
+    hero.classList.add('pw-hero');
+    hero.insertAdjacentHTML('afterbegin','<div class="pw-season-decoration" aria-hidden="true"><span class="pw-moon"></span><svg class="pw-bats" viewBox="0 0 160 70"><path d="M0 19Q18 11 26 2L31 11L36 2Q45 12 62 19Q46 17 38 30L31 25L24 30Q17 17 0 19M89 46Q107 36 116 27L121 36L126 27Q135 38 155 46Q137 43 128 57L121 51L113 57Q105 43 89 46"/></svg><span class="pw-stars">✦ · ✧</span></div>');
+    hero.querySelector('.eyebrow')?.insertAdjacentHTML('beforebegin','<span class="pw-season-label" data-pw-season-name></span>');
+  }
+  const eligible=p=>Boolean(p&&window.CONECTATECH_AVAILABILITY.forProduct(p).commercial_eligible&&(p.imageUrl||window.CONECTATECH_CATALOGO?.productos?.[p.sku]?.imagen?.src));
+  const bySku=new Map(products.map(p=>[p.sku,p]));
+  const selected=[...new Set(config.productosPortada||[])].map(s=>bySku.get(s)).filter(eligible);
+  if(showcase&&!selected.length){showcase.hidden=true;showcase.style.display='none';hero?.classList.add('pw-no-products')}
+  if(showcase&&selected.length){
+    state.productos=selected.map(p=>p.sku);showcase.classList.add('pw-showcase');
+    const titles=p=>{
+      const e=window.CONECTATECH_TITULOS_PRO?.entry(p),condition=window.CONECTATECH_TITULOS_PRO?.conditionText(p)||'';
+      return `<a class="pw-slide-title" href="${escape(productHref(p))}">${escape(e?.titulo||p.name)}</a>${e?.subtitulo?`<p class="pw-slide-subtitle">${escape(e.subtitulo)}</p>`:''}${condition?`<p class="pw-slide-condition">${escape(condition)}</p>`:''}`;
+    };
+    showcase.innerHTML=`<div class="pw-showcase-heading"><span>SELECCIÓN CONECTATECH</span><span class="pw-slide-counter" aria-hidden="true">01 / ${String(selected.length).padStart(2,'0')}</span></div><div class="pw-carousel" role="region" aria-roledescription="carrusel" aria-label="Productos seleccionados CONECTATECH">${selected.map((p,i)=>`<article class="pw-slide${i===0?' is-active':''}" data-sku="${escape(p.sku)}" aria-roledescription="diapositiva" aria-label="${i+1} de ${selected.length}" aria-hidden="${i!==0}"${i?' inert':''}><a class="pw-slide-photo" href="${escape(productHref(p))}" aria-label="Ver ${escape(p.name)}">${productImage(p,true)}</a><div class="pw-slide-copy">${statusHTML(availabilityFor(p))}${titles(p)}<div class="pw-slide-prices"><span>PROMO CONTADO</span><strong>${money(p.promo)}</strong><small>PVP ${money(p.pvp)}</small></div><a class="pw-slide-link" href="${escape(productHref(p))}">Ver producto <span aria-hidden="true">↗</span></a></div></article>`).join('')}</div><div class="pw-carousel-controls"><button type="button" data-pw-prev aria-label="Producto anterior">←</button><div class="pw-carousel-dots">${selected.map((p,i)=>`<button type="button" data-pw-slide="${i}" aria-label="Mostrar ${escape(p.name)}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button type="button" data-pw-next aria-label="Producto siguiente">→</button><button type="button" data-pw-play aria-pressed="false" aria-label="Pausar transición automática">Ⅱ</button></div><span class="pw-sr-only" role="status" data-pw-announcement></span>`;
+    const slides=[...showcase.querySelectorAll('.pw-slide')],dots=[...showcase.querySelectorAll('[data-pw-slide]')],reduce=matchMedia('(prefers-reduced-motion: reduce)');
+    showcase.querySelectorAll('.pw-slide-photo img').forEach(im=>{im.loading='eager';im.decoding='async'});
+    let current=0,timer,manualPause=reduce.matches,hover=false,focus=false,transitioning=false,touchStart=null;
+    function schedule(){
+      clearTimeout(timer);state.pausado=manualPause||hover||focus||document.hidden||slides.length<2;
+      if(!state.pausado)timer=setTimeout(()=>go(current+1,false),Math.max(3500,Number(config.intervaloMs)||6500));
+    }
+    async function go(n,manual){
+      if(transitioning||slides.length<2)return;
+      n=(n+slides.length)%slides.length;if(n===current){schedule();return}
+      transitioning=true;
+      const next=slides[n],image=next.querySelector('img');
+      if(image){try{await image.decode()}catch(_){if(!image.naturalWidth){transitioning=false;schedule();return}}}
+      slides[current].classList.remove('is-active');slides[current].setAttribute('aria-hidden','true');slides[current].inert=true;
+      current=n;next.classList.add('is-active');next.setAttribute('aria-hidden','false');next.inert=false;
+      dots.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===current)));
+      showcase.querySelector('.pw-slide-counter').textContent=`${String(current+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+      if(manual)showcase.querySelector('[data-pw-announcement]').textContent=`Producto ${current+1} de ${slides.length}: ${next.querySelector('.pw-slide-title').textContent}`;
+      transitioning=false;schedule();
+    }
+    const play=showcase.querySelector('[data-pw-play]');
+    function playLabel(){play.textContent=manualPause?'▶':'Ⅱ';play.setAttribute('aria-pressed',String(manualPause));play.setAttribute('aria-label',manualPause?'Reanudar transición automática':'Pausar transición automática')}
+    showcase.querySelector('[data-pw-prev]').onclick=()=>go(current-1,true);
+    showcase.querySelector('[data-pw-next]').onclick=()=>go(current+1,true);
+    dots.forEach(b=>b.onclick=()=>go(Number(b.dataset.pwSlide),true));
+    play.onclick=()=>{manualPause=!manualPause;focus=false;playLabel();schedule()};
+    showcase.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch'){hover=true;schedule()}});
+    showcase.addEventListener('pointerleave',()=>{hover=false;schedule()});
+    showcase.addEventListener('focusin',e=>{focus=e.target!==play;schedule()});
+    showcase.addEventListener('focusout',()=>{setTimeout(()=>{focus=showcase.contains(document.activeElement)&&document.activeElement!==play;schedule()},0)});
+    showcase.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(current+(e.key==='ArrowRight'?1:-1),true)}});
+    showcase.addEventListener('touchstart',e=>{touchStart={x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY}},{passive:true});
+    showcase.addEventListener('touchend',e=>{if(!touchStart)return;const t=e.changedTouches[0],dx=t.clientX-touchStart.x,dy=t.clientY-touchStart.y;touchStart=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(current+(dx<0?1:-1),true)},{passive:true});
+    document.addEventListener('visibilitychange',schedule);
+    reduce.addEventListener('change',e=>{if(e.matches)manualPause=true;playLabel();schedule()});
+    playLabel();schedule();
+  }
+  const campaign=document.querySelector('.ct-gift-campaign');
+  if(campaign&&config.banner){
+    const conditions=campaign.querySelector('details')?.cloneNode(true),contact=campaign.querySelector('.ct-gift-unified-footer>a')?.cloneNode(true);
+    const locationCopy=campaign.querySelector('.ct-gift-unified-footer>div>p')?.textContent||'';
+    campaign.className='ct-gift-campaign pw-campaign';
+    campaign.innerHTML=`<div class="pw-campaign-heading"><span class="pw-kicker">UNA RAZÓN MÁS PARA VISITARNOS</span><h2>Tu compra tiene <strong>un regalo.</strong></h2><span class="pw-store-label">PROMOCIÓN EN TIENDA</span></div><div class="pw-campaign-content"><button type="button" class="pw-banner-open" aria-label="Ampliar el banner original de regalos"><img src="${escape(config.banner)}" alt="Banner original CONECTATECH: llévate un regalo por tu compra, con llavero animado, trípode selfie o audífonos tipo AirPods. Aplican condiciones." width="1016" height="720" loading="lazy"><span>Ampliar promoción ↗</span></button><div class="pw-campaign-copy"><span class="pw-kicker">EN NUESTRO LOCAL DE QUITO</span><h3>Ven por tu tecnología.<br>Llévate algo más.</h3><p>Regalos por compras superiores a los siguientes montos, según las condiciones de la promoción.</p><div class="pw-gift-tiers"><div><strong>$10</strong><span>Llavero animado</span></div><div><strong>$25</strong><span>Trípode selfie</span></div><div><strong>$35</strong><span>Audífonos tipo AirPods</span></div></div><p class="pw-campaign-address">${escape(locationCopy)}</p><div data-pw-conditions></div><div data-pw-contact></div></div></div>`;
+    if(conditions)campaign.querySelector('[data-pw-conditions]').appendChild(conditions);
+    if(contact)campaign.querySelector('[data-pw-contact]').appendChild(contact);
+    const dialog=document.createElement('dialog');dialog.className='pw-banner-dialog';dialog.innerHTML=`<form method="dialog"><button aria-label="Cerrar banner ampliado">Cerrar ×</button></form><img src="${escape(config.banner)}" alt="Banner original completo de la promoción CONECTATECH" width="1016" height="720">`;
+    document.body.appendChild(dialog);
+    campaign.querySelector('.pw-banner-open').onclick=()=>dialog.showModal();
+    dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+  }
+  applyTheme();
+  // Revalida al volver a la pestaña y al cambiar de fecha; no necesita servicios ni tareas.
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)applyTheme()});
+  setInterval(applyTheme,60000);
+})();
