@@ -1,5 +1,8 @@
 'use strict';
 const fs=require('fs'),crypto=require('node:crypto');
+const {orderProducts}=require('./prioridad-comercial-meta.cjs');
+// Algunos campos Graph devuelven FBID como números JSON. Conservar los enteros exactos.
+const parseGraphData=s=>JSON.parse(s.replace(/("ordering_info"\s*:\s*\[)([\d,\s]*)(\])/g,(_,a,b,c)=>a+b.replace(/\d+/g,n=>JSON.stringify(n))+c));
 const CATALOG='1036301566100990';
 const FEED='https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv';
 const normal=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
@@ -20,7 +23,7 @@ class Graph{
   else if(file){const body=new FormData();for(const [k,v] of Object.entries(params))body.set(k,String(v));body.set('file',new Blob([file.content],{type:'text/csv'}),file.name);options.body=body;}
   else options.body=new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k,v])=>[k,typeof v==='object'?JSON.stringify(v):String(v)])));
   let res,data;
-  try{res=await this.transport(url,options);data=await res.json();}catch{throw Error('META_TRANSPORTE_O_RESPUESTA_INVALIDA');}
+  try{res=await this.transport(url,options);data=typeof res.text==='function'?parseGraphData(await res.text()):await res.json();}catch{throw Error('META_TRANSPORTE_O_RESPUESTA_INVALIDA');}
   if(!res.ok||data.error){
    const e=new Error('META_HTTP_'+res.status+'_CODIGO_'+(Number(data.error?.code)||'NO_DISPONIBLE'));
    const reason=String(data.error?.message||'').split(this.token).join('[OCULTO]').split(encodeURIComponent(this.token)).join('[OCULTO]').slice(0,500);
@@ -112,17 +115,21 @@ async function synchronize({plan,csv,api,wait=pause,attempts=40,onProgress=()=>{
   if(!/^\d+$/.test(id||''))throw Error('CONJUNTO_SIN_ID');
   const readback=await api.request('GET',id,{fields:'id,filter,retailer_id'});
   if(stable(readback.filter)!==stable(g.filter)||readback.retailer_id!==g.retailer_id)throw Error('CONJUNTO_NO_COINCIDE_'+id);
-  let matched=false;
+  let matched=false,members=[];
   for(let i=0;i<attempts;i++){
-   const members=await api.list(id+'/products','retailer_id');
+   members=await api.list(id+'/products','id,retailer_id');
    if(stable(members.map(p=>p.retailer_id).sort())===stable(g.sku)){matched=true;break;}
    await wait(3000);
   }
   if(!matched)throw Error('PERTENENCIA_NO_VERIFICADA_'+id);
-  results.push({id,familia:g.family,accion:action,sku:g.sku.length,estado:'CONJUNTO_META_VERIFICADO'});onProgress('CONJUNTO_META_VERIFICADO');
+  let orden;
+  try{orden=await orderProducts({api,id,group:g,members});}
+  catch(e){orden={estado:'ORDEN_PRODUCTOS_PENDIENTE',destacados:g.featured_sku||[],...(e.meta?{meta:e.meta}:{}),codigo:e.message.startsWith('META_HTTP_')?e.message:'ORDEN_NO_CONFIRMADO'};}
+  results.push({id,familia:g.family,accion:action,sku:g.sku.length,estado:'CONJUNTO_META_VERIFICADO',prioridad_solicitada:g.prioridad,orden});onProgress('CONJUNTO_META_VERIFICADO');
  }
  return {estado:'META_SINCRONIZADO',catalog_id:CATALOG,fuente_sha256:plan.fuente_sha256,feed_sha256:digest,importacion_id:upload.id,
   conjuntos:results,colecciones_whatsapp_verificadas:false,
+  orden_colecciones_whatsapp:'PENDIENTE_REORDENAR_EN_APLICACION',
   nota:'Importación y pertenencia comprobadas en Meta. Visibilidad y orden de colecciones en WhatsApp requieren evidencia de cliente.'};
 }
 async function main(){
@@ -136,7 +143,7 @@ async function main(){
  fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));
  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nEstado de integración Meta: '+receipt.estado+'\nColecciones WhatsApp verificadas: no\n');
 }
-module.exports={Graph,reconcile,checkRemote,synchronize};
+module.exports={Graph,reconcile,checkRemote,synchronize,parseGraphData};
 if(require.main===module)main().catch(e=>{
  const code=/^META_HTTP_[0-9]+_CODIGO_[A-Z0-9_]+$/.test(e.message)?e.message:
   (e.message.match(/^(META_[A-Z_]+|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0];
@@ -144,4 +151,3 @@ if(require.main===module)main().catch(e=>{
  fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify(result,null,2)+'\n');
  console.error('ERROR_META: '+JSON.stringify(result));process.exitCode=1;
 });
-

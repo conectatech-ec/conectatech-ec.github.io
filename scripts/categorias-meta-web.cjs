@@ -1,4 +1,5 @@
 'use strict';
+const merchandising=require('./prioridad-comercial-meta.cjs');
 // Misma clasificación que aplica index.html; no mantiene una taxonomía alternativa.
 function familiesFromHTML(html){
  const m=html.match(/const categoryFamilies=({[^\n]*});/);
@@ -12,11 +13,12 @@ function classify(products,content,families){
   if(bySKU.has(p.sku))throw Error('SKU duplicado: '+p.sku);
   const family=p.categoriaComercial||families[p.category]||'Hogar y Accesorios';
   if(typeof family!=='string'||!family.trim())throw Error('Categoría comercial inválida');
-  const label='ct-web:'+key(family),c=content[p.sku]||{};
+  const presentation=merchandising.presentationFamily(p,family);
+  const label='ct-web:'+key(presentation),c=content[p.sku]||{};
   const approved=c.comercialVerificado===true&&c.imagenPendiente!==true;
-  const row={sku:p.sku,categoria_web:p.category,familia_web:family,label:approved?label:'',aprobado:approved};
+  const row={sku:p.sku,categoria_web:p.category,familia_web:family,familia_whatsapp:presentation,stock:p.stock,price:p.promo,label:approved?label:'',aprobado:approved};
   bySKU.set(p.sku,row);
-  if(!groups.has(label))groups.set(label,{label,retailer_id:'conectatech-web:'+key(family),name:'CONECTATECH | '+family.toUpperCase(),family,
+  if(!groups.has(label))groups.set(label,{label,retailer_id:'conectatech-web:'+key(presentation),name:'CONECTATECH | '+presentation.toUpperCase(),family:presentation,
    aliases:family==='Celulares y Smartphones'?['CONECTATECH | CELULARES','Conectatech | Celulares']:[],
    filter:{and:[{custom_label_0:{eq:label}},{availability:{eq:'in stock'}}]},sku:[]});
  }
@@ -34,7 +36,9 @@ function planFromFeed(classification,meta,inventoryState){
  for(const g of groups.values())g.sku.sort();
  return {version:1,catalog_id:'1036301566100990',fecha_corte:inventoryState.fecha_corte,fuente_sha256:inventoryState.origen_sha256,
   fuente_categorias:'index.html: categoriaComercial || categoryFamilies[category] || Hogar y Accesorios',
-  groups:[...groups.values()].sort((a,b)=>a.retailer_id.localeCompare(b.retailer_id)),exclusions,
+  groups:merchandising.decorate([...groups.values()],classification.bySKU),exclusions,
+  prioridad_colecciones_whatsapp_verificada:false,
+  criterio_destacados:'Selección comercial por SKU, aprobación y disponibilidad del corte; sustitución automática al agotarse. No presupone ventas ni altera títulos o precios.',
   productos_meta:meta.length,colecciones_whatsapp_verificadas:false};
 }
 module.exports={familiesFromHTML,classify,planFromFeed};

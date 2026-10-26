@@ -1,0 +1,24 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {presentationFamily,decorate,orderProducts}=require('./prioridad-comercial-meta.cjs');
+const {parseGraphData}=require('./sincronizar-conjuntos-meta.cjs');
+assert.equal(presentationFamily({sku:'TELE002',category:'Otros'},'Hogar y Accesorios'),'Televisores');
+assert.equal(presentationFamily({sku:'MONI005',category:'Monitores'},'Computación y Periféricos'),'Monitores');
+assert.equal(presentationFamily({sku:'X',category:'Otros'},'Hogar y Accesorios'),'Hogar y Accesorios');
+const rows=new Map([['TABL001',{stock:3,price:215}],['TABL004',{stock:1,price:79}],['FUTURO',{stock:4,price:99}]]);
+let groups=decorate([{family:'Audio y Audífonos',retailer_id:'audio',sku:['A']},{family:'Tablets',retailer_id:'tablets',sku:['FUTURO','TABL001','TABL004']}],rows);
+const g=groups[0];assert.equal(g.family,'Tablets');assert.deepEqual(g.ordered_sku,['TABL001','TABL004','FUTURO']);
+assert.deepEqual([...g.ordered_sku].sort(),[...g.sku].sort());
+assert(!g.ordered_sku.includes('TABL002'),'Un destacado agotado o no aprobado nunca se reinserta');
+assert.deepEqual(parseGraphData('{"ordering_info":[28559671370365248,28759113107031496]}').ordering_info,['28559671370365248','28759113107031496']);
+const members=g.ordered_sku.map((s,i)=>({retailer_id:s,id:['28559671370365248','28759113107031496','29346795124928473'][i]}));
+(async()=>{
+ let order=[],posts=0;
+ const api={async request(method,id,params){if(method==='POST'){order=JSON.parse(params.ordering_info.replace(/\d+/g,n=>JSON.stringify(n)));posts++;return {success:true};}return {id,ordering_info:order};}};
+ const r=await orderProducts({api,id:'123',group:g,members});assert.equal(r.estado,'ORDEN_PRODUCTOS_VERIFICADO_META');assert.equal(posts,1);
+ await orderProducts({api,id:'123',group:g,members});assert.equal(posts,1,'No reescribir un orden ya verificado');
+ await assert.rejects(()=>orderProducts({api,id:'123',group:g,members:members.slice(1)}),/IDENTIDAD_COMPLETA/);
+ const ignored={async request(){return {ordering_info:[]};}};
+ assert.equal((await orderProducts({api:ignored,id:'123',group:g,members})).estado,'ORDEN_NO_CONFIRMADO_META');
+ console.log('Prioridad comercial: orden solicitado, sustitución por stock, cobertura sin duplicados, FBID exactos, persistencia e idempotencia comprobados.');
+})().catch(e=>{console.error(e);process.exitCode=1});

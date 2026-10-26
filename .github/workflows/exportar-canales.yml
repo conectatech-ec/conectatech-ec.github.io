@@ -22,6 +22,7 @@ on:
       - 'scripts/exportar-canales.cjs'
       - 'scripts/categorias-meta-web.cjs'
       - 'scripts/sincronizar-conjuntos-meta.cjs'
+      - 'scripts/prioridad-comercial-meta.cjs'
       - '.github/workflows/exportar-canales.yml'
       - 'scripts/validar-exportacion-593.cjs'
       - 'datos-593/estado-ultimo-corte.json'
@@ -30,7 +31,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: exportacion-canales-main
+  group: ${{ github.event_name == 'pull_request' && format('validacion-meta-{0}', github.event.pull_request.number) || 'exportacion-canales-main' }}
   cancel-in-progress: false
 jobs:
   comprobar-acceso-meta:
@@ -57,7 +58,10 @@ jobs:
               try{
                 const api=new Graph({token:process.env.META_ACCESS_TOKEN,version:'v26.0'});
                 const catalog=await api.request('GET','1036301566100990',{fields:'id,name'});
-                const sets=await api.list('1036301566100990/product_sets','id,name,product_count');
+                const sets=await api.list('1036301566100990/product_sets','id,name,product_count,ordering_info');
+                const example=sets.find(s=>s.name==='CONECTATECH | TABLETS');
+                const tablets=example?await api.list(example.id+'/products','id,retailer_id'):[];
+                console.log('PRIORIDAD_META: '+JSON.stringify({sets,tablets}));
                 const feeds=await api.list('1036301566100990/product_feeds','id,name,schedule');
                 const uploads=[];
                 for(const f of feeds.filter(f=>f.schedule?.url==='https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv')){
@@ -97,6 +101,7 @@ jobs:
           node-version: '22'
       - run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-prioridad-meta.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/test-validar-exportacion-593.cjs
   exportar:
@@ -115,6 +120,7 @@ jobs:
       - name: Generar archivos CSV
         run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-prioridad-meta.cjs
           node scripts/test-validar-exportacion-593.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/exportar-canales.cjs
