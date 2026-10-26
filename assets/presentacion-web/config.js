@@ -5,9 +5,10 @@ window.CONECTATECH_PRESENTACION = {
   version: 2,
   tema: 'automatico',
   zonaHoraria: 'America/Guayaquil',
-  intervaloMs: 6500,
+  intervaloMs: 3000,
+  efectoTecnologico: true,
   productosPortada: ['TELF036', 'PALA001', 'REL042', 'PARL001', 'TECL032'],
-  marca: '/assets/presentacion-web/encabezado-marca-aprobado.png',
+  marca: '/assets/presentacion-web/marca-trazos-originales.svg',
   banner: '/assets/presentacion-web/banner-regalos-original.png',
   calendario: [
     { desde: '10-01', hasta: '10-31', tema: 'halloween' },

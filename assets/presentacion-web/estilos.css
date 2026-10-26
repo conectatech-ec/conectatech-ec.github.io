@@ -193,3 +193,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
  #grid .ct-compact-card .actions{gap:5px}
 }
 @media(max-width:359px){#grid .ct-compact-card .product-img{height:123px!important}}
+
+/* Ambientación de campaña: marca intacta y decoración fuera del emblema. */
+header .brandrow{position:relative;--pw-logo-size:112px}
+.pw-logo-season{display:none;position:absolute;left:calc(var(--pw-logo-size) + 1px);top:-15px;width:28px;height:28px;pointer-events:none;filter:drop-shadow(0 0 6px #ffae4345)}
+[data-ct-temporada=halloween] .pw-logo-season{display:block}
+.pw-season-label{display:none!important}
+.pw-web{display:none;position:absolute;left:-6px;top:-6px;width:100px;height:100px;color:#f3a448;opacity:.21}
+[data-ct-temporada=halloween] .pw-web{display:block}
+[data-ct-temporada=halloween] .pw-hero{background:radial-gradient(ellipse at 92% 5%,#b94c245c,transparent 54%),radial-gradient(ellipse at 6% 100%,#642c8652,transparent 63%),linear-gradient(115deg,#1e142b,#29132a 60%,#201c36);box-shadow:0 18px 45px #31103726}
+[data-ct-temporada=halloween] .pw-moon{right:4%;top:19px;width:108px;height:108px;opacity:.24;box-shadow:0 0 65px 16px #ffae431f}
+[data-ct-temporada=halloween] .pw-bats{right:15px;top:20px;width:170px;height:75px;fill:#160f23;opacity:.85}
+[data-ct-temporada=halloween] .pw-showcase-heading{color:#fbd6b5}
+.pw-slide{transition:opacity .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.pw-tech-effect{position:absolute;inset:-7px;width:calc(100% + 14px);height:calc(100% + 14px);pointer-events:none;opacity:0;fill:none;stroke:var(--pw-season-secondary);stroke-width:1.25;filter:drop-shadow(0 0 4px color-mix(in srgb,var(--pw-season-secondary) 75%,transparent));z-index:3}
+.pw-tech-effect path{vector-effect:non-scaling-stroke}
+.pw-tech-effect .pw-tech-trace{stroke:var(--pw-season);stroke-dasharray:600;stroke-dashoffset:600}
+.pw-tech-flash .pw-tech-effect{animation:pwTechPulse .75s ease-out both}
+.pw-tech-flash .pw-tech-trace{animation:pwTechTrace .7s ease-out both}
+@keyframes pwTechPulse{0%{opacity:0}20%{opacity:.85}55%{opacity:.55}100%{opacity:0}}
+@keyframes pwTechTrace{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
+@media(max-width:1150px){header .brandrow{--pw-logo-size:100px}}
+@media(max-width:600px){header .brandrow{--pw-logo-size:88px}.pw-logo-season{width:25px;height:25px;top:-13px}.pw-web{width:67px;height:67px;opacity:.17}[data-ct-temporada=halloween] .pw-moon{right:15px;top:18px;width:88px;height:88px}[data-ct-temporada=halloween] .pw-bats{right:13px;top:20px;width:135px;height:61px}}
+@media(max-width:359px){header .brandrow{--pw-logo-size:84px}}
+@media(prefers-reduced-motion:reduce){.pw-slide{transition:none!important}.pw-tech-effect{display:none!important;animation:none!important}.pw-tech-effect path{animation:none!important}}

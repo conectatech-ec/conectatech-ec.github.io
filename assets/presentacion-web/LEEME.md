@@ -17,12 +17,16 @@ Las vistas `/revision/presentacion-web-v2/despues.html?temporada=navidad` permit
 
 `productosPortada` contiene exclusivamente SKU existentes. El carrusel toma título y subtítulo editoriales vigentes, fotografía, ficha, Promo Contado y PVP del catálogo actual. Omite automáticamente los no elegibles según disponibilidad inteligente y los que no tengan imagen. Si no queda ningún elegido, oculta la vitrina. Cambiar esta selección no altera el orden del catálogo ni fechas editoriales.
 
-Autoplay suave, precarga de imágenes, flechas, indicadores, pausa, teclado y gestos táctiles. Pausa con foco/hover/pestaña oculta y respeta movimiento reducido. La inicialización es idempotente.
+Autoplay cada 3 segundos, vuelta automática al primero tras el último producto, precarga de imágenes, flechas, indicadores, pausa, teclado y gestos táctiles. Un barrido de circuito breve termina cada cambio; `efectoTecnologico:false` lo desactiva. Pausa con foco/hover/pestaña oculta y respeta movimiento reducido. La inicialización es idempotente.
 
 ## Marca y banner
 
-El logo `/logo-conectatech.png` conserva exactamente sus bytes. La marca visible reutiliza uniformemente los trazos del encabezado que está en «Marca y encabezado aprobados» de Drive: no se redibuja ni se reemplaza con Arial, Sora u otra fuente. El PNG aprobado está copiado sin cambios; la ventana SVG sólo presenta el rótulo. Los archivos del proyecto SIGNATURE permanecen intactos. Sora es la fuente de interfaz y su licencia OFL está incluida; no sustituye la marca.
+El logo `/logo-conectatech.png` conserva exactamente sus bytes. La marca visible reutiliza uniformemente los trazos del encabezado que está en «Marca y encabezado aprobados» de Drive: no se redibuja ni se reemplaza con Arial, Sora u otra fuente. El PNG aprobado está copiado sin cambios. La marca visible usa ahora una instancia transparente de los nodos vectoriales del maestro aprobado: los mismos trazos, gradientes y transformaciones, sin su rectángulo de fondo. El maestro y el emblema original no se editan. Los archivos del proyecto SIGNATURE permanecen intactos. Sora es la fuente de interfaz y su licencia OFL está incluida; no sustituye la marca.
 
 `banner-regalos-original.png` es una copia exacta del archivo entregado por el propietario, «Banner promo regalos WEB.png», Drive ID 14h8P9JIrLkETdymi9Nm44Ui7uA1iQLIP. Se muestra completo, sin filtros ni recorte, y permite ampliación. Se conserva «MÍNIMA DE» en el arte original conforme a la tolerancia expresada por el propietario el 25/10/2026; el texto y las condiciones de la web mantienen su preferencia «compras superiores a». No se inventan condiciones ni se eliminan las restricciones existentes.
 
 Costo adicional: $0. No editar generadores, inventario, fotografías, títulos, SIGNATURE ni WhatsApp desde esta capa.
+
+## Ambientación sin etiquetas
+
+El cliente ve el ambiente visual, no una etiqueta de edición. Halloween utiliza fondo ciruela/ámbar, luna, murciélagos, telaraña y un pequeño adorno fuera del logo. La decoración del encabezado se oculta automáticamente fuera de Halloween, mantiene las dimensiones del emblema y no recibe clics. Los efectos se omiten con movimiento reducido; las fotos y los precios permanecen limpios.
