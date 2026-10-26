@@ -254,3 +254,6 @@ Segundo lote30mantiene la regla IIN&ZII en los9SKU. Tipos,conexiones,colores y c
 
 ## Marcas sin protagonismo y búsqueda comercial007
 RetirarAndowl de12SKU,LINT001YEMAOyCARG007Jiabao,título/sub/tooltip;conservarMarca de referenciaen especificaciones,nombre593,marca/modelo,searchTerms,SEO/schema yURLs. IIN9anteriorintacto,total23reglas.14cambios,6revisionesprevias/8nuevaspresentaciones=187acumuladas. BuscarcableAndowl debeencontrar cablesfácilmente:índice/matches originalno cambia,relevanciasóloen modo predeterminado yfotografías,despuésdedisponibilidad/foto,antesdefecha;manualprecio/nombre/catálogorespetados. EtiquetaRelevancia y másrecientesalbuscar. Ningunapromesadepuesto1enGoogle,nopérdidaaseguradadeSEO:preservarseñales,datosymarcasrastreables. Fechastraspruebapública.Costo0,nofotos/fin/URLs/feeds/cel/tablets/presWebeditados.
+
+## Cierre público editorial007
+14 fichas verificadas porHTTP/Chromium el2026-10-26T04:02:50.417Z (25octGuayaquil),23marcas protegidas y5cablesAndowl primeros albuscar. Sólo estos14cambios reciben fecha;187presentaciones únicas,173previas intactas. Prioridad editorial alinicio despuésdelPROT003 fijado por sesiónfotográfica,conservar ese parche ajeno y eldiseñovigente5columnas/2móvil. No renovar fechas porreverificar. Originales/finanzas/fotos/URLs/SEO ycontenido6feeds conservados;0costo.
