@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "marcaOmitidaEnTitulosSubtitulos": "IIN&ZII",
   "aliasEnDatosOriginales": [
     "IIN&ZIII"
@@ -15,7 +15,21 @@
     "CABL027",
     "CARG033",
     "CARG035",
-    "CUBO003"
+    "CUBO003",
+    "LINT001",
+    "CARG007",
+    "ADAP051",
+    "TVBO006",
+    "CABL146",
+    "CABL147",
+    "CABL110",
+    "CABL129",
+    "CABL128",
+    "CAMA010",
+    "INVE002",
+    "LECT004",
+    "TECL019",
+    "TIMB001"
   ],
   "valoresOriginales": {
     "CABL024": "IIN&ZII",
@@ -26,6 +40,54 @@
     "CABL083": "IIN&ZII",
     "CARG033": "IIN&ZII",
     "CARG035": "IIN&ZIII",
-    "CUBO003": "IIN&ZII"
-  }
+    "CUBO003": "IIN&ZII",
+    "LINT001": "YEMAO",
+    "CARG007": "Jiabao",
+    "ADAP051": "Andowl",
+    "TVBO006": "Andowl",
+    "CABL146": "Andowl",
+    "CABL147": "Andowl",
+    "CABL110": "Andowl",
+    "CABL129": "Andowl",
+    "CABL128": "Andowl",
+    "CAMA010": "Andowl",
+    "INVE002": "Andowl",
+    "LECT004": "Andowl",
+    "TECL019": "Andowl",
+    "TIMB001": "Andowl"
+  },
+  "historialOrdenes": [
+    {
+      "instruccionPropietario": "LINT001eliminaYEMAO;losSKUAndowltambién,marcaen especificación;CARG007eliminaJiabao.BuscarcableAndowldebeencontrarlo fácilmente ybuscamosprimerosresultados.",
+      "skus": [
+        "LINT001",
+        "CARG007",
+        "ADAP051",
+        "TVBO006",
+        "CABL146",
+        "CABL147",
+        "CABL110",
+        "CABL129",
+        "CABL128",
+        "CAMA010",
+        "INVE002",
+        "LECT004",
+        "TECL019",
+        "TIMB001"
+      ],
+      "marcas": [
+        "Andowl",
+        "YEMAO",
+        "Jiabao"
+      ],
+      "reglaDeBusqueda": "Retener nombreoriginal593,marca/modelo,searchTerms yespecificaciones;priorizar coincidencia del producto ymarca en búsquedas internas.No prometerposiciónGoogle."
+    }
+  ],
+  "marcasOmitidasEnTitulosSubtitulos": [
+    "IIN&ZII",
+    "IIN&ZIII",
+    "Andowl",
+    "YEMAO",
+    "Jiabao"
+  ]
 }
