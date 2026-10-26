@@ -58,6 +58,16 @@ jobs:
               try{
                 const api=new Graph({token:process.env.META_ACCESS_TOKEN,version:'v26.0'});
                 const catalog=await api.request('GET','1036301566100990',{fields:'id,name'});
+                const inspect={};
+                for(const [key,fields] of Object.entries({catalogo:'id,name',conjunto:'id,name'})){
+                  try{
+                    const m=await api.request('GET',key==='catalogo'?'1036301566100990':'29168143356202712',{fields,metadata:'1'});
+                    inspect[key]={campos:m.metadata?.fields,conexiones:Object.keys(m.metadata?.connections||{})};
+                  }catch(e){inspect[key]={error:e.meta||e.message};}
+                }
+                try{inspect.tienda=await api.request('GET','1036301566100990',{fields:'id,commerce_merchant_settings,store_catalog_settings'});}catch(e){inspect.tienda={error:e.meta||e.message};}
+                console.log('CONTROL_ORDEN_REAL: '+JSON.stringify(inspect));
+
                 const sets=await api.list('1036301566100990/product_sets','id,name,product_count,ordering_info');
                 const example=sets.find(s=>s.name==='CONECTATECH | TABLETS');
                 const tablets=example?await api.list(example.id+'/products','id,retailer_id'):[];
