@@ -263,3 +263,6 @@ Propietario exige50–100SKU o más por entrega,criterio ya aprobado,sin pilotos
 
 ## Verificación pública tanda100008–011
 100títulos+categoríaINVE002comprobados enHTTPS/Chromium con4reportes públicos inmutables. Registrar fechas editoriales sólo de esos100;la categoría INVE porregistrosemántico existente cambia1SKU,nunca otros.287presentaciones acumuladas,783CORRECTO y97reservas conservados. Total101SKUmodificados;95disponibles alinicio trasPROT003,6stock0conaviso:TVBO001,ADAP014,CORT03,ESTAB005,MICR14,MOUS010. Fotos/finanzas/593/URL/SEO intactos;mainajeno preservado,sin cambiar hosting ni automatizaciónMeta. No sobrescribir reportespublicacion-http-chromium trasregistrar susSHA.
+
+## Integración de fechas fotográficas concurrentes
+El payloadcatalogo-publicado.js contiene fechas públicas directas de otras sesiones(ADAP063,HUB011,AUDI095,PROT003) que pueden ser posteriores alregistro histórico actualizaciones-sku.json. Al registrar una categoría, integrar sólo el SKUpropio enel payloadvigente yconservar literalmente los demás registros. Para comprobar orden,comparar fechas editoriales conelpayloadreal que usael navegador, nunca conunregistrohistóricomásantiguo. No regenerar ni re-fechar fotografías ajenas.
