@@ -396,8 +396,8 @@ filterHomePromotions();
 document.querySelectorAll('[data-quick-cat]').forEach(button=>button.addEventListener('click',()=>{const category=({"Celulares":"Celulares y Smartphones","Audio":"Audio y Audífonos","Carga y Energía":"Cargadores y Energía","Computación":"Computación y Periféricos","Adaptadores":"Cables y Conectividad","Smartwatch":"Smartwatches y Wearables"})[button.dataset.quickCat]||button.dataset.quickCat;const chip=Array.from(document.querySelectorAll('#chips .chip')).find(c=>c.dataset.cat===category);if(chip){chip.click();document.getElementById('catalogo').scrollIntoView({behavior:'smooth',block:'start'});}else{document.getElementById('catalogo').scrollIntoView({behavior:'smooth',block:'start'});}}));
 
 </script>
-<link rel="stylesheet" href="/assets/presentacion-web/estilos.css?v=6">
-<script src="/assets/presentacion-web/config.js?v=6"></script>
-<script src="/assets/presentacion-web/temporadas.js?v=6"></script>
-<script src="/assets/presentacion-web/portada.js?v=6"></script>
+<link rel="stylesheet" href="/assets/presentacion-web/estilos.css?v=7">
+<script src="/assets/presentacion-web/config.js?v=7"></script>
+<script src="/assets/presentacion-web/temporadas.js?v=7"></script>
+<script src="/assets/presentacion-web/portada.js?v=7"></script>
 </body></html>

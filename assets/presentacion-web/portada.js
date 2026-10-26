@@ -20,7 +20,12 @@
   const footerBrand=document.querySelector('footer>b');
   if(footerBrand)footerBrand.innerHTML=mark();
   const brandRow=document.querySelector('header .brandrow');
-  if(brandRow)brandRow.insertAdjacentHTML('beforeend','<img class="pw-logo-season" src="/assets/presentacion-web/halloween-calabaza-luz.svg?v=6" alt="" aria-hidden="true" width="160" height="160" decoding="async">');
+  if(brandRow)brandRow.insertAdjacentHTML('beforeend','<img class="pw-logo-season" src="/assets/presentacion-web/halloween-calabaza-corona.webp?v=7" alt="" aria-hidden="true" width="160" height="160" decoding="async">');
+  const presentationHeader=document.querySelector('header');
+  const syncHeaderOffset=()=>{if(presentationHeader)document.documentElement.style.setProperty('--pw-header-height',Math.ceil(presentationHeader.getBoundingClientRect().height)+'px')};
+  if(presentationHeader&&typeof ResizeObserver!=='undefined')new ResizeObserver(syncHeaderOffset).observe(presentationHeader);
+  else window.addEventListener('resize',syncHeaderOffset,{passive:true});
+  document.addEventListener('conectatech:temporada',syncHeaderOffset);
   function applyTheme(){
     const theme=calendar.resolver(config,new Date(),requested);state.tema=theme.id;
     document.body.dataset.ctTemporada=theme.id;
