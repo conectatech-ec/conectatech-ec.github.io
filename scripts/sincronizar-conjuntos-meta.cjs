@@ -21,7 +21,11 @@ class Graph{
   else options.body=new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k,v])=>[k,typeof v==='object'?JSON.stringify(v):String(v)])));
   let res,data;
   try{res=await this.transport(url,options);data=await res.json();}catch{throw Error('META_TRANSPORTE_O_RESPUESTA_INVALIDA');}
-  if(!res.ok||data.error)throw Error('META_HTTP_'+res.status+'_CODIGO_'+(Number(data.error?.code)||'NO_DISPONIBLE'));
+  if(!res.ok||data.error){
+   const e=new Error('META_HTTP_'+res.status+'_CODIGO_'+(Number(data.error?.code)||'NO_DISPONIBLE'));
+   const reason=String(data.error?.message||'').split(this.token).join('[OCULTO]').split(encodeURIComponent(this.token)).join('[OCULTO]').slice(0,500);
+   e.meta={code:Number(data.error?.code)||null,subcode:Number(data.error?.error_subcode)||null,reason};throw e;
+  }
   return data;
  }
  async list(path,fields){
@@ -54,7 +58,7 @@ function checkRemote(plan,remote){
  for(const r of remote)if(String(r.custom_label_0||'').startsWith('ct-web:')&&stock(r.availability)==='in stock'&&!expected.has(r.retailer_id))throw Error('META_SKU_FUERA_DE_SELECCION_'+r.retailer_id);
  return true;
 }
-async function synchronize({plan,csv,api,wait=pause,attempts=120,onProgress=()=>{}}){
+async function synchronize({plan,csv,api,wait=pause,attempts=40,onProgress=()=>{},checkpoint=null,onCheckpoint=()=>{}}){
  if(plan.catalog_id!==CATALOG||!plan.groups.length||!plan.productos_meta)throw Error('Plan Meta inválido');
  const catalog=await api.request('GET',CATALOG,{fields:'id,name'});
  if(catalog.id!==CATALOG||normal(catalog.name)!==normal('CONECTATECH | Catálogo Maestro'))throw Error('Identidad del Catálogo Maestro no coincide');
@@ -65,22 +69,30 @@ async function synchronize({plan,csv,api,wait=pause,attempts=120,onProgress=()=>
  const digest=crypto.createHash('sha256').update(csv).digest('hex');
  const filename='ct-'+digest+'.csv',feed=candidates[0];
  const uploads=await api.list(feed.id+'/uploads','id,filename,end_time,error_count,num_invalid_items,num_persisted_items');
- let upload=uploads.find(u=>String(u.filename||'').endsWith(filename)&&!u.error_count&&!u.num_invalid_items);
+ const poll=async current=>{
+  if(current.end_time)return current;
+  onProgress('META_IMPORTACION_EN_CURSO_ID_'+current.id);
+  for(let i=0;i<attempts;i++){
+   current=await api.request('GET',current.id,{fields:'id,end_time,error_count,num_invalid_items,num_persisted_items'});
+   if(current.end_time)return current;
+   if(i%2===0)onProgress('META_IMPORTACION_EN_CURSO_PERSISTIDOS_'+(current.num_persisted_items??0));
+   await wait(30000);
+  }
+  return current;
+ };
+ const recorded=checkpoint?.catalog_id===CATALOG&&checkpoint.feed_id===feed.id&&checkpoint.feed_sha256===digest;
+ let upload=uploads.find(u=>String(u.filename||'').endsWith(filename)&&!u.error_count&&!u.num_invalid_items)||
+  (recorded?uploads.find(u=>u.id===checkpoint.upload_id):null);
  if(!upload){
+  const pending=uploads.find(u=>!u.end_time&&!u.error_count);
+  if(pending){const prior=await poll(pending);if(!prior.end_time)throw Error('META_IMPORTACION_PREVIA_EN_CURSO');}
   onProgress('IMPORTANDO_FEED_EXISTENTE');
   const submitted=await api.request('POST',feed.id+'/uploads',{update_only:true},{name:filename,content:csv});
   if(!/^\d+$/.test(submitted.id||''))throw Error('Respuesta de importación sin ID');
   upload={id:submitted.id};
  }
- if(!upload.end_time){
-  onProgress('META_IMPORTACION_EN_CURSO_ID_'+upload.id);
-  for(let i=0;i<attempts;i++){
-   upload=await api.request('GET',upload.id,{fields:'id,end_time,error_count,num_invalid_items,num_persisted_items'});
-   if(upload.end_time)break;
-   if(i%10===0)onProgress('META_IMPORTACION_EN_CURSO');
-   await wait(3000);
-  }
- }
+ onCheckpoint({catalog_id:CATALOG,feed_id:feed.id,feed_sha256:digest,upload_id:upload.id});
+ upload=await poll(upload);
  if(!upload?.end_time)throw Error('META_IMPORTACION_PENDIENTE');
  if(upload.error_count||upload.num_invalid_items||upload.num_persisted_items<plan.productos_meta)throw Error('META_IMPORTACION_CON_ERRORES_O_INCOMPLETA');
  // Verificar primero la importación y disponibilidad; no crear conjuntos sobre datos antiguos.
@@ -117,11 +129,19 @@ async function main(){
  const plan=JSON.parse(fs.readFileSync('exportaciones/meta-conjuntos-web.json','utf8'));
  let receipt={estado:'PENDIENTE_AUTORIZACION_META',familias:plan.groups.filter(g=>g.sku.length).length,sku_clasificados:plan.groups.reduce((n,g)=>n+g.sku.length,0),colecciones_whatsapp_verificadas:false};
  if(!process.argv.includes('--plan')&&process.env.META_SYNC_ENABLED==='true'&&process.env.META_ACCESS_TOKEN&&process.env.META_GRAPH_VERSION){
-  receipt=await synchronize({plan,csv:fs.readFileSync('exportaciones/meta-catalogo-piloto.csv','utf8'),api:new Graph({token:process.env.META_ACCESS_TOKEN,version:process.env.META_GRAPH_VERSION}),onProgress:s=>console.log(s)});
+  const cp='reportes/integracion-whatsapp/ultima-importacion.json';
+  const checkpoint=fs.existsSync(cp)?JSON.parse(fs.readFileSync(cp,'utf8')):null;
+  receipt=await synchronize({plan,checkpoint,onCheckpoint:c=>{fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/importacion.json',JSON.stringify(c,null,2)+'\n');},csv:fs.readFileSync('exportaciones/meta-catalogo-piloto.csv','utf8'),api:new Graph({token:process.env.META_ACCESS_TOKEN,version:process.env.META_GRAPH_VERSION}),onProgress:s=>console.log(s)});
  }
  fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));
  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nEstado de integración Meta: '+receipt.estado+'\nColecciones WhatsApp verificadas: no\n');
 }
 module.exports={Graph,reconcile,checkRemote,synchronize};
-if(require.main===module)main().catch(e=>{fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify({estado:'ERROR',codigo:(e.message.match(/^(META_[A-Z_]+(?:_\d+)?|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0],detalle:'La ejecución no pudo confirmar sincronización. Revisar autorización/importación y reejecutar; no se acreditó visibilidad WhatsApp.'},null,2)+'\n');console.error('ERROR_META: '+(e.message.match(/^(META_[A-Z_]+(?:_\d+)?|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0]);process.exitCode=1;});
+if(require.main===module)main().catch(e=>{
+ const code=/^META_HTTP_[0-9]+_CODIGO_[A-Z0-9_]+$/.test(e.message)?e.message:
+  (e.message.match(/^(META_[A-Z_]+|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0];
+ const result={estado:'ERROR',codigo:code,...(e.meta?{meta:e.meta}:{}),detalle:'Sincronización no confirmada; no se acreditó visibilidad WhatsApp.'};
+ fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify(result,null,2)+'\n');
+ console.error('ERROR_META: '+JSON.stringify(result));process.exitCode=1;
+});
 
