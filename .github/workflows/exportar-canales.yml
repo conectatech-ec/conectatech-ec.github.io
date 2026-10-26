@@ -33,6 +33,47 @@ concurrency:
   group: exportacion-canales-main
   cancel-in-progress: false
 jobs:
+  comprobar-acceso-meta:
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comprobar credencial existente sin modificar activos
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),{Graph}=require('./scripts/sincronizar-conjuntos-meta.cjs');
+          (async()=>{
+            let result={estado:'SIN_CREDENCIAL_META_DISPONIBLE_EN_ACTIONS',solo_lectura:true};
+            if(process.env.META_ACCESS_TOKEN){
+              try{
+                const api=new Graph({token:process.env.META_ACCESS_TOKEN,version:'v26.0'});
+                const catalog=await api.request('GET','1036301566100990',{fields:'id,name'});
+                const sets=await api.list('1036301566100990/product_sets','id,name,product_count');
+                result={estado:'CREDENCIAL_META_REUTILIZABLE',solo_lectura:true,catalogo:catalog,conjuntos:sets};
+              }catch{
+                result={estado:'CREDENCIAL_EXISTENTE_SIN_ACCESO_VERIFICADO',solo_lectura:true};
+              }
+            }
+            fs.mkdirSync('work/auto-meta',{recursive:true});
+            fs.writeFileSync('work/auto-meta/acceso-meta.json',JSON.stringify(result,null,2));
+            console.log('COMPROBACION_META: '+JSON.stringify(result));
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nAcceso Meta (solo lectura): '+result.estado+'\n');
+          })().catch(()=>{console.error('No se pudo completar la comprobación de acceso');process.exitCode=1});
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: comprobacion-acceso-meta
+          path: work/auto-meta/acceso-meta.json
+          retention-days: 7
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
     permissions:
