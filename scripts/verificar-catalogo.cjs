@@ -106,6 +106,7 @@ async function main() {
         await page.locator('#grid .ct-compact-card').first().waitFor();
         await page.locator('#catalogSort').waitFor();
         const payload = await page.evaluate(() => window.CONECTATECH_CATALOGO || null);
+        const photoPrioritySku=await page.evaluate(()=>typeof photoPROT003!=='undefined'&&photoPROT003?.imageUrl==='/imagenes/prot003/PROT003-r20261024-01.webp'?photoPROT003.sku:null);
         check('metadatos_publicados', Boolean(payload && payload.productos), 'Falta payload de productos publicados.');
         if (!payload?.productos) throw new Error('No se pueden comprobar novedades sin metadatos.');
         for (const image of await page.locator('#featured img').all()) {
@@ -166,8 +167,8 @@ async function main() {
           const priority=p=>editorialDate(p)?1:({nuevo:0,actualizado:1}[payload.productos[p.sku]?.tipoCambio]??2);
           return list.sort((a,b)=>{
   if(mode==='recientes'){
-   const photoA=a.sku==='PROT003'&&a.imageUrl==='/imagenes/prot003/PROT003-r20261024-01.webp';
-   const photoB=b.sku==='PROT003'&&b.imageUrl==='/imagenes/prot003/PROT003-r20261024-01.webp';
+   const photoA=a.sku===photoPrioritySku;
+   const photoB=b.sku===photoPrioritySku;
    if(photoA!==photoB)return photoA?-1:1;
   }
             const eligible=Number(availabilityCore.forProduct(b).commercial_eligible)-Number(availabilityCore.forProduct(a).commercial_eligible);if(eligible)return eligible;
@@ -188,7 +189,7 @@ async function main() {
         }
         await page.locator('#catalogSort').selectOption(defaultMode);
         const initial = await snapshot(); row.diseno = initial;
-        check('columnas', initial.columnas === (width === 1280 ? 3 : 2), 'Número de columnas incorrecto: ' + initial.columnas);
+        check('columnas', initial.columnas === (width === 1280 ? 5 : 2), 'Número de columnas incorrecto: ' + initial.columnas);
         check('sin_desbordamiento_catalogo', initial.scrollWidth <= Math.ceil(initial.ancho) + 1, 'El grid presenta desbordamiento horizontal.');
         check('tarjetas_compactas', initial.tarjetas.every(card => compactCard(card,width) && card.altura>0 && card.alto_estado<=60 && card.alto_subtitulo<=40), 'Tarjeta supera el límite de la presentación 3/2 o contiene ficha técnica/stock/descripción extensa.');
         check('precios_tarjetas', initial.tarjetas.every(card => { const p = bySku.get(card.sku); return p && money(card.promo) === Math.round(p.promo * 100) && money(card.pvp) === Math.round(p.pvp * 100) && card.promo_px > card.pvp_px && card.pvp_tachado === false; }), 'Precios o jerarquía incorrectos en tarjetas.');

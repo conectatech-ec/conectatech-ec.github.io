@@ -251,3 +251,6 @@ Omitir IIN&ZII (incluida variante IIN&ZIII de datos originales) en títulos/subt
 
 ## Continuación editorial006
 Segundo lote30mantiene la regla IIN&ZII en los9SKU. Tipos,conexiones,colores y cantidades proceden de contratos verificados;MICR13Pack2conpowerbankUSB-C,0Lightning. Códigos técnicos en especificaciones/buscador; conservar modelos reconocibles según manifiesto006. No intervenir fotos,presentaciónweb,navegación,finanzas,SKU,593,URLs,SEO/feeds ni celulares/tablets.Costo0. Verificar ambos lotes por separado en despliegue acumulado,fechas realesdespuésdeHTTP/Chromium;modificadosprimero.
+
+## Marcas sin protagonismo y búsqueda comercial007
+RetirarAndowl de12SKU,LINT001YEMAOyCARG007Jiabao,título/sub/tooltip;conservarMarca de referenciaen especificaciones,nombre593,marca/modelo,searchTerms,SEO/schema yURLs. IIN9anteriorintacto,total23reglas.14cambios,6revisionesprevias/8nuevaspresentaciones=187acumuladas. BuscarcableAndowl debeencontrar cablesfácilmente:índice/matches originalno cambia,relevanciasóloen modo predeterminado yfotografías,despuésdedisponibilidad/foto,antesdefecha;manualprecio/nombre/catálogorespetados. EtiquetaRelevancia y másrecientesalbuscar. Ningunapromesadepuesto1enGoogle,nopérdidaaseguradadeSEO:preservarseñales,datosymarcasrastreables. Fechastraspruebapública.Costo0,nofotos/fin/URLs/feeds/cel/tablets/presWebeditados.
