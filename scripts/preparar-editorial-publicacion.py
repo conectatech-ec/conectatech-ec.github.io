@@ -30,6 +30,13 @@ for sku,e in cfg['productos'].items():
  if e.get('publicacionVerificada'):
   v=e['publicacionVerificada'];report=Path(v['informe']);assert report.is_file() and hashlib.sha256(report.read_bytes()).hexdigest()==v['sha256Informe'],sku
   data=json.loads(report.read_text());assert data['estado']=='VERIFICADO_HTTP_CHROMIUM' and sku in data['skus'],sku
+# Regla expresa de marca: sólo títulos/subtítulos/tooltip; originales y búsqueda se conservan.
+for sku,e in cfg['productos'].items():
+ for brand in cfg.get('marcasOmitidasEnTitulosSubtitulos',[]):assert norm(brand) not in norm(e['titulo']+' '+e['subtitulo']),(sku,brand)
+for p in products:
+ if any(norm(brand) in norm(p['name']) for brand in cfg.get('marcasOmitidasEnTitulosSubtitulos',[])):
+  assert p['sku'] in cfg['productos'],p['sku']
+  assert 'Marca de referencia' in seo[p['sku']]['caracteristicas'],p['sku']
 out='window.CONECTATECH_TITULOS_PRO_DATOS='+json.dumps(cfg,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')+';\n';Path('assets/editorial-titulos-datos.js').write_text(out)
 # Versionar sólo estos tres recursos evita servir datos de un lote anterior.
 for name in ['editorial-titulos-datos.js','editorial-titulos.js','editorial-titulos.css']:

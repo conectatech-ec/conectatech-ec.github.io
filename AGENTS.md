@@ -245,3 +245,6 @@ Siete títulos antes clasificados CORRECTO bajo el criterio anterior conservaban
 
 ## Continuación editorial004,25oct2026Guayaquil
 Segundo lote30 con modelo técnico fuera del principal y atributos existentes; conservar nombres comerciales Sekual,VoxCom,Khione,Spider-Man y las demás series reconocibles. AUDI119/AUDI057/AUDI110/AROD02 conservados según explicación del manifiesto. No inventar USB-C salida de video universal,compatibilidad de reloj,diámetro ni capacidades. Datos originales/precios/stock/fotos/URLs/SEO/feeds y33celulares/tablets intactos. Los lotes003y004 se verifican por separado en el despliegue acumulado;fechas únicamente trasHTTP/Chromiumreales.
+
+## Regla expresa IIN&ZII y continuación005
+Omitir IIN&ZII (incluida variante IIN&ZIII de datos originales) en títulos/subtítulos y tooltip del título. Conservar marca visible en especificaciones como Marca de referencia, sin alterar fabricante/autenticidad,nombres593,SEO,buscador,precios,stock,fotos,SKU niURLs. Regla en importacion/editorial/reglas-marcas.json;9SKU. Lote00530cambios incluye9de marca y21adicionales,CABL032es revisión previa(29nuevaspresentaciones,149acumuladas). Fechas sólo después de pruebas públicas;modificados primero. Celulares/tablets alfinal,costo0. Preservar nueva presentación web ajena de main,sin rediseñar.
