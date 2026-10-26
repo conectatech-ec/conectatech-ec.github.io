@@ -3,9 +3,9 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 290,
+    "MEJORAR TÍTULO": 370,
     "REVISAR IDENTIDAD": 97,
-    "CORRECTO": 783
+    "CORRECTO": 703
   },
   "aplicados": 287,
   "cola": [
@@ -3554,7 +3554,7 @@
     },
     {
       "sku": "ADAP080",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Adaptador OTG V3 | Mini-USB a toma USB-A",
       "propuesta": "Adaptador OTG V3 | Mini-USB a toma USB-A",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3563,7 +3563,17 @@
         "seo-contenido.json#ADAP080"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar V3 del principal y nombrar ambos extremos sin código S-K07.",
+        "propuesta": "Adaptador OTG Mini-USB a USB-A",
+        "evidencia": [
+          "seo-contenido.json#ADAP080",
+          "importacion/contratos/ADAP080.json"
+        ]
+      }
     },
     {
       "sku": "ADAP081",
@@ -3836,7 +3846,7 @@
     },
     {
       "sku": "AIRT003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Localizador UGREEN Smart Finder CM816",
       "propuesta": "Localizador UGREEN Smart Finder CM816",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3845,7 +3855,17 @@
         "seo-contenido.json#AIRT003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar CM816 y conservar familia comercial y función verificadas.",
+        "propuesta": "Localizador UGREEN Smart Finder",
+        "evidencia": [
+          "seo-contenido.json#AIRT003",
+          "importacion/contratos/AIRT003.json"
+        ]
+      }
     },
     {
       "sku": "AIRT004",
@@ -3963,7 +3983,7 @@
     },
     {
       "sku": "AROD02",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Aro de luz RGB 3D-26",
       "propuesta": "Aro de luz RGB 3D-26",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3972,7 +3992,17 @@
         "seo-contenido.json#AROD02"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código 3D-26 sin deducir diámetro ni efecto tridimensional.",
+        "propuesta": "Aro de luz RGB orientable",
+        "evidencia": [
+          "seo-contenido.json#AROD02",
+          "importacion/contratos/AROD02.json"
+        ]
+      }
     },
     {
       "sku": "AROD03",
@@ -4053,7 +4083,7 @@
     },
     {
       "sku": "AUDI008",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos tipo EarPods Lightning blanca",
       "propuesta": "Audífonos tipo EarPods Lightning blanca",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4062,11 +4092,21 @@
         "seo-contenido.json#AUDI008"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Corregir concordancia de color y compactar información complementaria.",
+        "propuesta": "Audífonos tipo EarPods Lightning",
+        "evidencia": [
+          "seo-contenido.json#AUDI008",
+          "importacion/contratos/AUDI008.json"
+        ]
+      }
     },
     {
       "sku": "AUDI009",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos tipo EarPods USB-C blanca",
       "propuesta": "Audífonos tipo EarPods USB-C blanca",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4075,7 +4115,17 @@
         "seo-contenido.json#AUDI009"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Corregir concordancia de color y distinguir conexión sin modelo técnico.",
+        "propuesta": "Audífonos tipo EarPods USB-C",
+        "evidencia": [
+          "seo-contenido.json#AUDI009",
+          "importacion/contratos/AUDI009.json"
+        ]
+      }
     },
     {
       "sku": "AUDI012",
@@ -4143,7 +4193,7 @@
     },
     {
       "sku": "AUDI025",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audifonos Inalambricos Thinkplus X15 II",
       "propuesta": "Audifonos Inalambricos Thinkplus X15 II",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4152,11 +4202,21 @@
         "seo-contenido.json#AUDI025"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código X15 II y evitar atribuir fabricante no confirmado.",
+        "propuesta": "Audífonos inalámbricos Thinkplus",
+        "evidencia": [
+          "seo-contenido.json#AUDI025",
+          "importacion/contratos/AUDI025.json"
+        ]
+      }
     },
     {
       "sku": "AUDI026",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos inalámbricos tipo Thinkplus LP1S | negros",
       "propuesta": "Audífonos inalámbricos tipo Thinkplus LP1S | negros",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4165,7 +4225,17 @@
         "seo-contenido.json#AUDI026"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar LP1S y referencia de fabricante de tercero; diseño verificado primero.",
+        "propuesta": "Audífonos de almohadilla negros",
+        "evidencia": [
+          "seo-contenido.json#AUDI026",
+          "importacion/contratos/AUDI026.json"
+        ]
+      }
     },
     {
       "sku": "AUDI028",
@@ -4359,7 +4429,7 @@
     },
     {
       "sku": "AUDI057",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos abiertos OWS-03 | clip y estuche compacto",
       "propuesta": "Audífonos abiertos OWS-03 | clip y estuche compacto",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4368,7 +4438,17 @@
         "seo-contenido.json#AUDI057"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código OWS-03; formato de uso identifica el artículo.",
+        "propuesta": "Audífonos abiertos de clip",
+        "evidencia": [
+          "seo-contenido.json#AUDI057",
+          "importacion/contratos/AUDI057.json"
+        ]
+      }
     },
     {
       "sku": "AUDI061",
@@ -4435,7 +4515,7 @@
     },
     {
       "sku": "AUDI066",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos Saiva SY-MT1 Metal | estuche oscuro compacto",
       "propuesta": "Audífonos Saiva SY-MT1 Metal | estuche oscuro compacto",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4444,7 +4524,17 @@
         "seo-contenido.json#AUDI066"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código SY-MT1; conservar nombre comercial Metal y acabado.",
+        "propuesta": "Audífonos Saiva Metal",
+        "evidencia": [
+          "seo-contenido.json#AUDI066",
+          "importacion/contratos/AUDI066.json"
+        ]
+      }
     },
     {
       "sku": "AUDI067",
@@ -4638,7 +4728,7 @@
     },
     {
       "sku": "AUDI088",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audifonos Inalambricos 1HORA",
       "propuesta": "Audifonos Inalambricos 1HORA",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4647,7 +4737,17 @@
         "seo-contenido.json#AUDI088"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Corregir acentos y aportar diseño diferenciador sin código AUT206.",
+        "propuesta": "Audífonos inalámbricos 1HORA",
+        "evidencia": [
+          "seo-contenido.json#AUDI088",
+          "importacion/contratos/AUDI088.json"
+        ]
+      }
     },
     {
       "sku": "AUDI093",
@@ -4677,7 +4777,7 @@
     },
     {
       "sku": "AUDI095",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos deportivos tipo Thinkplus X15pro | negros,",
       "propuesta": "Audífonos deportivos tipo Thinkplus X15pro | negros,",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4686,7 +4786,17 @@
         "seo-contenido.json#AUDI095"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar X15pro y referencia de fabricante de tercero del principal; destacar diseño comprobado.",
+        "propuesta": "Audífonos deportivos con gancho",
+        "evidencia": [
+          "seo-contenido.json#AUDI095",
+          "importacion/contratos/AUDI095.json"
+        ]
+      }
     },
     {
       "sku": "AUDI096",
@@ -4714,7 +4824,7 @@
     },
     {
       "sku": "AUDI097",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audifonos Alambricos Tune 310C",
       "propuesta": "Audifonos Alambricos Tune 310C",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4723,7 +4833,17 @@
         "seo-contenido.json#AUDI097"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Corregir acentos y hacer visible conexión verificada, conservando nombre comercial.",
+        "propuesta": "Audífonos Tune 310C con USB-C",
+        "evidencia": [
+          "seo-contenido.json#AUDI097",
+          "importacion/contratos/AUDI097.json"
+        ]
+      }
     },
     {
       "sku": "AUDI099",
@@ -4804,7 +4924,7 @@
     },
     {
       "sku": "AUDI109",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "AUDIFONOS HONOR INALAMBRICOS HONOR X7E ACTIVE",
       "propuesta": "AUDIFONOS HONOR INALAMBRICOS HONOR X7E ACTIVE",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4813,7 +4933,17 @@
         "seo-contenido.json#AUDI109"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Eliminar duplicación HONOR y mayúsculas de inventario; conservar familia comercial.",
+        "propuesta": "Audífonos HONOR X7e Active",
+        "evidencia": [
+          "seo-contenido.json#AUDI109",
+          "importacion/contratos/AUDI109.json"
+        ]
+      }
     },
     {
       "sku": "AUDI110",
@@ -4989,7 +5119,7 @@
     },
     {
       "sku": "AUDI122",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos Saiva YB4 | estuche blanco compacto",
       "propuesta": "Audífonos Saiva YB4 | estuche blanco compacto",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4998,7 +5128,17 @@
         "seo-contenido.json#AUDI122"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código YB4 y conservar marca y presentación diferenciadora.",
+        "propuesta": "Audífonos Saiva con estuche blanco",
+        "evidencia": [
+          "seo-contenido.json#AUDI122",
+          "importacion/contratos/AUDI122.json"
+        ]
+      }
     },
     {
       "sku": "AUDI123",
@@ -6269,7 +6409,7 @@
     },
     {
       "sku": "CABL102",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable Klipxtreme PowerGo 050 | USB-A a USB-C 1,8 m",
       "propuesta": "Cable Klipxtreme PowerGo 050 | USB-A a USB-C 1,8 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -6278,7 +6418,17 @@
         "seo-contenido.json#CABL102"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Principal anterior muy largo; conexiones completas y longitud visibles.",
+        "propuesta": "Cable PowerGo USB-A a USB-C 1,8 m",
+        "evidencia": [
+          "seo-contenido.json#CABL102",
+          "importacion/contratos/CABL102.json"
+        ]
+      }
     },
     {
       "sku": "CABL103",
@@ -6705,7 +6855,7 @@
     },
     {
       "sku": "CABL136",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable Klipxtreme PowerGo 050 | USB-C 1 m",
       "propuesta": "Cable Klipxtreme PowerGo 050 | USB-C 1 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -6714,11 +6864,21 @@
         "seo-contenido.json#CABL136"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Principal anterior omite extremo USB-A; diferenciar longitud y conservar familia.",
+        "propuesta": "Cable PowerGo USB-A a USB-C 1 m",
+        "evidencia": [
+          "seo-contenido.json#CABL136",
+          "importacion/contratos/CABL136.json"
+        ]
+      }
     },
     {
       "sku": "CABL137",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable Klipxtreme PowerGo 050 | USB-C 3 m",
       "propuesta": "Cable Klipxtreme PowerGo 050 | USB-C 3 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -6727,7 +6887,17 @@
         "seo-contenido.json#CABL137"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Principal anterior omite extremo USB-A; diferenciar longitud y conservar familia.",
+        "propuesta": "Cable PowerGo USB-A a USB-C 3 m",
+        "evidencia": [
+          "seo-contenido.json#CABL137",
+          "importacion/contratos/CABL137.json"
+        ]
+      }
     },
     {
       "sku": "CABL138",
@@ -7274,7 +7444,7 @@
     },
     {
       "sku": "CAMA008",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cámara de seguridad TP-Link Tapo C202 Full HD 1080p",
       "propuesta": "Cámara de seguridad TP-Link Tapo C202 Full HD 1080p",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7283,7 +7453,17 @@
         "seo-contenido.json#CAMA008"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Compactar principal largo; sustituir código C202 por movimiento verificado.",
+        "propuesta": "Cámara Tapo Full HD con giro 360°",
+        "evidencia": [
+          "seo-contenido.json#CAMA008",
+          "importacion/contratos/CAMA008.json"
+        ]
+      }
     },
     {
       "sku": "CAMA009",
@@ -7452,7 +7632,7 @@
     },
     {
       "sku": "CARG014",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador Monster PowerRocket | USB-C y USB-A",
       "propuesta": "Cargador Monster PowerRocket | USB-C y USB-A",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7461,7 +7641,17 @@
         "seo-contenido.json#CARG014"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Precisar uso vehicular y potencia nominal verificados; conservar familia comercial.",
+        "propuesta": "Cargador vehicular Monster de 38 W",
+        "evidencia": [
+          "seo-contenido.json#CARG014",
+          "importacion/contratos/CARG014.json"
+        ]
+      }
     },
     {
       "sku": "CARG015",
@@ -7774,7 +7964,7 @@
     },
     {
       "sku": "CARG050",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador Klipxtreme PowerCar 60 | 3 puertos",
       "propuesta": "Cargador Klipxtreme PowerCar 60 | 3 puertos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7783,11 +7973,21 @@
         "seo-contenido.json#CARG050"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Nombre anterior no explica uso vehicular; conservar familia y potencia combinada.",
+        "propuesta": "Cargador vehicular de 3 puertos",
+        "evidencia": [
+          "seo-contenido.json#CARG050",
+          "importacion/contratos/CARG050.json"
+        ]
+      }
     },
     {
       "sku": "CARG051",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador vehicular Klip Xtreme PowerCar 100 de 6 puertos",
       "propuesta": "Cargador vehicular Klip Xtreme PowerCar 100 de 6 puertos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7796,7 +7996,17 @@
         "seo-contenido.json#CARG051"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Compactar principal muy largo sin perder composición ni familia comercial.",
+        "propuesta": "Cargador vehicular de 6 puertos",
+        "evidencia": [
+          "seo-contenido.json#CARG051",
+          "importacion/contratos/CARG051.json"
+        ]
+      }
     },
     {
       "sku": "CARG053",
@@ -7970,7 +8180,7 @@
     },
     {
       "sku": "CARG070",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador vehicular Klipxtreme PowerCar 140",
       "propuesta": "Cargador vehicular Klipxtreme PowerCar 140",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7979,11 +8189,21 @@
         "seo-contenido.json#CARG070"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Priorizar potencia combinada y conservar familia y composición verificadas.",
+        "propuesta": "Cargador vehicular de hasta 140 W",
+        "evidencia": [
+          "seo-contenido.json#CARG070",
+          "importacion/contratos/CARG070.json"
+        ]
+      }
     },
     {
       "sku": "CARP001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Adaptador CarPlay XO-CZ026 Mini",
       "propuesta": "Adaptador CarPlay XO-CZ026 Mini",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7992,7 +8212,17 @@
         "seo-contenido.json#CARP001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código CZ026 y conservar marca, utilidad y accesorios comprobados.",
+        "propuesta": "Adaptador CarPlay XO Mini",
+        "evidencia": [
+          "seo-contenido.json#CARP001",
+          "importacion/contratos/CARP001.json"
+        ]
+      }
     },
     {
       "sku": "CASE002",
@@ -8171,7 +8401,7 @@
     },
     {
       "sku": "CONT004",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Control Air Mouse M8 con teclado",
       "propuesta": "Control Air Mouse M8 con teclado",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8180,7 +8410,17 @@
         "seo-contenido.json#CONT004"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código M8 y conservar utilidad de control y escritura.",
+        "propuesta": "Control Air Mouse con teclado",
+        "evidencia": [
+          "seo-contenido.json#CONT004",
+          "importacion/contratos/CONT004.json"
+        ]
+      }
     },
     {
       "sku": "CORR001",
@@ -8552,7 +8792,7 @@
     },
     {
       "sku": "DISC003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Disco duro externo ADATA HD710 Pro 2 TB USB 3.2",
       "propuesta": "Disco duro externo ADATA HD710 Pro 2 TB USB 3.2",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8561,11 +8801,21 @@
         "seo-contenido.json#DISC003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Aplicar criterio aprobado de DISC005: modelo en subtítulo y capacidad destacada.",
+        "propuesta": "Disco externo ADATA de 2 TB",
+        "evidencia": [
+          "seo-contenido.json#DISC003",
+          "importacion/contratos/DISC003.json"
+        ]
+      }
     },
     {
       "sku": "DISC004",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "SSD externo ADATA SC610 500 GB | formato USB compacto",
       "propuesta": "SSD externo ADATA SC610 500 GB | formato USB compacto",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8574,11 +8824,21 @@
         "seo-contenido.json#DISC004"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código SC610 del principal; destacar formato verificado.",
+        "propuesta": "SSD externo ADATA de 500 GB",
+        "evidencia": [
+          "seo-contenido.json#DISC004",
+          "importacion/contratos/DISC004.json"
+        ]
+      }
     },
     {
       "sku": "DISC009",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Disco Duro Externo Western Digital 1TB WD Elements",
       "propuesta": "Disco Duro Externo Western Digital 1TB WD Elements",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8587,7 +8847,17 @@
         "seo-contenido.json#DISC009"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Normalizar nombre largo y conservar familia comercial reconocible.",
+        "propuesta": "Disco externo WD Elements de 1 TB",
+        "evidencia": [
+          "seo-contenido.json#DISC009",
+          "importacion/contratos/DISC009.json"
+        ]
+      }
     },
     {
       "sku": "ESTA002",
@@ -9144,7 +9414,7 @@
     },
     {
       "sku": "FLAS008",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 64GB Kingston Usb-c 3.2",
       "propuesta": "Flash Memory 64GB Kingston Usb-c 3.2",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9153,11 +9423,21 @@
         "seo-contenido.json#FLAS008"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Capacidad y conexión legibles, sin formato de inventario.",
+        "propuesta": "Memoria USB-C Kingston de 64 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS008",
+          "importacion/contratos/FLAS008.json"
+        ]
+      }
     },
     {
       "sku": "FLAS009",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 64GB HP V222W",
       "propuesta": "Flash Memory 64GB HP V222W",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9166,7 +9446,17 @@
         "seo-contenido.json#FLAS009"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código técnico v222w del principal.",
+        "propuesta": "Memoria USB HP de 64 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS009",
+          "importacion/contratos/FLAS009.json"
+        ]
+      }
     },
     {
       "sku": "FLAS013",
@@ -9235,7 +9525,7 @@
     },
     {
       "sku": "FLAS023",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 64GB ENV",
       "propuesta": "Flash Memory 64GB ENV",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9244,11 +9534,21 @@
         "seo-contenido.json#FLAS023"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Nombre poco natural; familia e interfaz verificadas en subtítulo.",
+        "propuesta": "Memoria USB ENV de 64 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS023",
+          "importacion/contratos/FLAS023.json"
+        ]
+      }
     },
     {
       "sku": "FLAS027",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 512GB Kingston 220MB/S",
       "propuesta": "Flash Memory 512GB Kingston 220MB/S",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9257,7 +9557,17 @@
         "seo-contenido.json#FLAS027"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Capacidad primero; evitar cifra de velocidad sin unidad completa en el principal.",
+        "propuesta": "Memoria USB Kingston de 512 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS027",
+          "importacion/contratos/FLAS027.json"
+        ]
+      }
     },
     {
       "sku": "FLAS031",
@@ -9275,7 +9585,7 @@
     },
     {
       "sku": "FLAS032",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 64GB Kingston Morada",
       "propuesta": "Flash Memory 64GB Kingston Morada",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9284,7 +9594,17 @@
         "seo-contenido.json#FLAS032"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Identificar familia comercial; color complementario en subtítulo.",
+        "propuesta": "Memoria USB Kingston Exodia de 64 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS032",
+          "importacion/contratos/FLAS032.json"
+        ]
+      }
     },
     {
       "sku": "FLAS033",
@@ -9301,7 +9621,7 @@
     },
     {
       "sku": "FLAS035",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 128GB Kingston Exodia 3.2",
       "propuesta": "Flash Memory 128GB Kingston Exodia 3.2",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9310,11 +9630,21 @@
         "seo-contenido.json#FLAS035"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Reemplazar denominación poco legible y precisar familia comercial verificada.",
+        "propuesta": "Memoria USB Kingston Exodia de 128 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS035",
+          "importacion/contratos/FLAS035.json"
+        ]
+      }
     },
     {
       "sku": "FLAS036",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 64GB Sandisk 3.2 GEN 1 100MB",
       "propuesta": "Flash Memory 64GB Sandisk 3.2 GEN 1 100MB",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9323,11 +9653,21 @@
         "seo-contenido.json#FLAS036"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Eliminar abreviación ambigua 100MB y priorizar capacidad.",
+        "propuesta": "Memoria USB SanDisk de 64 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS036",
+          "importacion/contratos/FLAS036.json"
+        ]
+      }
     },
     {
       "sku": "FLAS037",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 16GB Sandisk 16GB 2.0",
       "propuesta": "Flash Memory 16GB Sandisk 16GB 2.0",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9336,11 +9676,21 @@
         "seo-contenido.json#FLAS037"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Eliminar capacidad duplicada y distinguir familia comercial.",
+        "propuesta": "Memoria USB SanDisk de 16 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS037",
+          "importacion/contratos/FLAS037.json"
+        ]
+      }
     },
     {
       "sku": "FLAS038",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 128GB Sandisk 3.2 100MB",
       "propuesta": "Flash Memory 128GB Sandisk 3.2 100MB",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9349,7 +9699,17 @@
         "seo-contenido.json#FLAS038"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Eliminar abreviación ambigua 100MB del principal; conservar interfaz verificada.",
+        "propuesta": "Memoria USB SanDisk de 128 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS038",
+          "importacion/contratos/FLAS038.json"
+        ]
+      }
     },
     {
       "sku": "FOCO001",
@@ -10049,7 +10409,7 @@
     },
     {
       "sku": "JUGU007",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto clásica de colección 6011",
       "propuesta": "Moto clásica de colección 6011",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -10058,7 +10418,17 @@
         "seo-contenido.json#JUGU007"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Sustituir código 6011 por acabado verificado.",
+        "propuesta": "Moto clásica verde de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU007",
+          "importacion/contratos/JUGU007.json"
+        ]
+      }
     },
     {
       "sku": "JUGU009",
@@ -10232,7 +10602,7 @@
     },
     {
       "sku": "JUGU038",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Auto de carreras armable 8412 de 826 piezas",
       "propuesta": "Auto de carreras armable 8412 de 826 piezas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -10241,7 +10611,17 @@
         "seo-contenido.json#JUGU038"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código 8412 y conservar cantidad diferenciadora.",
+        "propuesta": "Auto de carreras de 826 piezas",
+        "evidencia": [
+          "seo-contenido.json#JUGU038",
+          "importacion/contratos/JUGU038.json"
+        ]
+      }
     },
     {
       "sku": "JUGU039",
@@ -10323,7 +10703,7 @@
     },
     {
       "sku": "JUGU058",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Dinosaurio mecánico armable 13087",
       "propuesta": "Dinosaurio mecánico armable 13087",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -10332,7 +10712,17 @@
         "seo-contenido.json#JUGU058"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código 13087 y hacer visible complejidad del conjunto sin inventar mecanismos.",
+        "propuesta": "Dinosaurio mecánico de 1.268 piezas",
+        "evidencia": [
+          "seo-contenido.json#JUGU058",
+          "importacion/contratos/JUGU058.json"
+        ]
+      }
     },
     {
       "sku": "JUGU061",
@@ -10675,7 +11065,7 @@
     },
     {
       "sku": "JUGU101",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Auto armable 33001 | 244 piezas",
       "propuesta": "Auto armable 33001 | 244 piezas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -10684,7 +11074,17 @@
         "seo-contenido.json#JUGU101"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código 33001 y destacar diseño y cantidad comprobados.",
+        "propuesta": "Auto clásico armable de 244 piezas",
+        "evidencia": [
+          "seo-contenido.json#JUGU101",
+          "importacion/contratos/JUGU101.json"
+        ]
+      }
     },
     {
       "sku": "JUGU102",
@@ -10714,7 +11114,7 @@
     },
     {
       "sku": "JUGU105",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto armable Sembo 701108 de 255 piezas",
       "propuesta": "Moto armable Sembo 701108 de 255 piezas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -10723,7 +11123,17 @@
         "seo-contenido.json#JUGU105"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código 701108 y conservar marca y cantidad comprobadas.",
+        "propuesta": "Moto armable Sembo de 255 piezas",
+        "evidencia": [
+          "seo-contenido.json#JUGU105",
+          "importacion/contratos/JUGU105.json"
+        ]
+      }
     },
     {
       "sku": "JUGU106",
@@ -11081,7 +11491,7 @@
     },
     {
       "sku": "JUGU141",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Parlante karaoke K52 | con micrófono",
       "propuesta": "Parlante karaoke K52 | con micrófono",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11090,7 +11500,17 @@
         "seo-contenido.json#JUGU141"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código K52; diferenciar forma frente a los otros mini karaoke.",
+        "propuesta": "Parlante karaoke cilíndrico",
+        "evidencia": [
+          "seo-contenido.json#JUGU141",
+          "importacion/contratos/JUGU141.json"
+        ]
+      }
     },
     {
       "sku": "JUGU142",
@@ -11226,7 +11646,7 @@
     },
     {
       "sku": "JUGU153",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Local armable Street View 88090",
       "propuesta": "Local armable Street View 88090",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11235,7 +11655,17 @@
         "seo-contenido.json#JUGU153"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código 88090 y aportar cantidad verificada en subtítulo.",
+        "propuesta": "Local armable Street View",
+        "evidencia": [
+          "seo-contenido.json#JUGU153",
+          "importacion/contratos/JUGU153.json"
+        ]
+      }
     },
     {
       "sku": "JUGU154",
@@ -11265,7 +11695,7 @@
     },
     {
       "sku": "JUGU160",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Carrusel armable Creative Music Box 656009",
       "propuesta": "Carrusel armable Creative Music Box 656009",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11274,7 +11704,17 @@
         "seo-contenido.json#JUGU160"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código 656009 y destacar cantidad comprobada, sin prometer funcionamiento musical.",
+        "propuesta": "Carrusel armable de 1.488 piezas",
+        "evidencia": [
+          "seo-contenido.json#JUGU160",
+          "importacion/contratos/JUGU160.json"
+        ]
+      }
     },
     {
       "sku": "JUGU161",
@@ -11883,7 +12323,7 @@
     },
     {
       "sku": "MICR037",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Micrófono lavalier M1 | cable de 6 m",
       "propuesta": "Micrófono lavalier M1 | cable de 6 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11892,7 +12332,17 @@
         "seo-contenido.json#MICR037"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar M1 y hacer visible longitud diferenciadora comprobada.",
+        "propuesta": "Micrófono de solapa con cable de 6 m",
+        "evidencia": [
+          "seo-contenido.json#MICR037",
+          "importacion/contratos/MICR037.json"
+        ]
+      }
     },
     {
       "sku": "MICR06",
@@ -12098,7 +12548,7 @@
     },
     {
       "sku": "MICR24",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Micrófonos Primus VOX01 | kit con estuche",
       "propuesta": "Micrófonos Primus VOX01 | kit con estuche",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12107,7 +12557,17 @@
         "seo-contenido.json#MICR24"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar VOX01; aplicar fórmula Pack 2 y contenido comprobados.",
+        "propuesta": "Set Primus de micrófonos Pack 2",
+        "evidencia": [
+          "seo-contenido.json#MICR24",
+          "importacion/contratos/MICR24.json"
+        ]
+      }
     },
     {
       "sku": "MICR25",
@@ -13010,7 +13470,7 @@
     },
     {
       "sku": "PARL020",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Parlante mini karaoke ZQS1343W | negro y verde,",
       "propuesta": "Parlante mini karaoke ZQS1343W | negro y verde,",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13019,7 +13479,17 @@
         "seo-contenido.json#PARL020"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar ZQS1343W; diferenciar variantes y conjunto verificados.",
+        "propuesta": "Mini karaoke con micrófono a juego",
+        "evidencia": [
+          "seo-contenido.json#PARL020",
+          "importacion/contratos/PARL020.json"
+        ]
+      }
     },
     {
       "sku": "PARL022",
@@ -13073,7 +13543,7 @@
     },
     {
       "sku": "PARL029",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Parlante mini karaoke ZQS-W3103 | negro con micrófono,",
       "propuesta": "Parlante mini karaoke ZQS-W3103 | negro con micrófono,",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13082,7 +13552,17 @@
         "seo-contenido.json#PARL029"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar ZQS-W3103 y puntuación sobrante; destacar forma diferenciadora.",
+        "propuesta": "Mini karaoke con asa rectangular",
+        "evidencia": [
+          "seo-contenido.json#PARL029",
+          "importacion/contratos/PARL029.json"
+        ]
+      }
     },
     {
       "sku": "PARL031",
@@ -13123,7 +13603,7 @@
     },
     {
       "sku": "PARL033",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Parlantes Para Pc-laptop ENV Thunder 1306",
       "propuesta": "Parlantes Para Pc-laptop ENV Thunder 1306",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13132,7 +13612,17 @@
         "seo-contenido.json#PARL033"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código 1306 y describir conjunto de una central y dos satélites.",
+        "propuesta": "Parlantes ENV Thunder para PC",
+        "evidencia": [
+          "seo-contenido.json#PARL033",
+          "importacion/contratos/PARL033.json"
+        ]
+      }
     },
     {
       "sku": "PARL034",
@@ -13273,7 +13763,7 @@
     },
     {
       "sku": "PARL044",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Parlante Ultrablaster Klipxtreme",
       "propuesta": "Parlante Ultrablaster Klipxtreme",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13282,7 +13772,17 @@
         "seo-contenido.json#PARL044"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Añadir composición comercial verificada sin introducir el código KLS-653.",
+        "propuesta": "Parlante Klipxtreme UltraBlaster",
+        "evidencia": [
+          "seo-contenido.json#PARL044",
+          "importacion/contratos/PARL044.json"
+        ]
+      }
     },
     {
       "sku": "PILA001",
@@ -14132,7 +14632,7 @@
     },
     {
       "sku": "POWE004",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Powerbank 66 W de 30000 mAh con cables integrados",
       "propuesta": "Powerbank 66 W de 30000 mAh con cables integrados",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14141,7 +14641,17 @@
         "seo-contenido.json#POWE004"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Nombre anterior demasiado largo; capacidad nominal y cables verificables diferenciados.",
+        "propuesta": "Powerbank de 30.000 mAh y 66 W",
+        "evidencia": [
+          "seo-contenido.json#POWE004",
+          "importacion/contratos/POWE004.json"
+        ]
+      }
     },
     {
       "sku": "POWE008",
@@ -14185,7 +14695,7 @@
     },
     {
       "sku": "POWE014",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Powerbank Klipxtreme PowerMag | 5000 mAh",
       "propuesta": "Powerbank Klipxtreme PowerMag | 5000 mAh",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14194,7 +14704,17 @@
         "seo-contenido.json#POWE014"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Hacer visible carga magnética y capacidad para diferenciar producto.",
+        "propuesta": "Powerbank magnética de 5.000 mAh",
+        "evidencia": [
+          "seo-contenido.json#POWE014",
+          "importacion/contratos/POWE014.json"
+        ]
+      }
     },
     {
       "sku": "POWE015",
@@ -14308,7 +14828,7 @@
     },
     {
       "sku": "POWE020",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Powerbank Klipxtreme PowerWatch | 2 en 1",
       "propuesta": "Powerbank Klipxtreme PowerWatch | 2 en 1",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14317,7 +14837,17 @@
         "seo-contenido.json#POWE020"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Explicar utilidad del 2 en 1 y capacidad nominal comprobadas, sin código KPB-050.",
+        "propuesta": "Powerbank 2 en 1 para Apple Watch",
+        "evidencia": [
+          "seo-contenido.json#POWE020",
+          "importacion/contratos/POWE020.json"
+        ]
+      }
     },
     {
       "sku": "PRES001",
@@ -14438,7 +14968,7 @@
     },
     {
       "sku": "PROY006",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Proyector gamer HCS350 Max con dos controles",
       "propuesta": "Proyector gamer HCS350 Max con dos controles",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14447,7 +14977,17 @@
         "seo-contenido.json#PROY006"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar HCS350 Max y conservar composición verificada del conjunto.",
+        "propuesta": "Proyector gamer con dos controles",
+        "evidencia": [
+          "seo-contenido.json#PROY006",
+          "importacion/contratos/PROY006.json"
+        ]
+      }
     },
     {
       "sku": "PROY007",
@@ -14587,7 +15127,7 @@
     },
     {
       "sku": "REL001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj despertador DCX-670 | pantalla LED y temperatura",
       "propuesta": "Reloj despertador DCX-670 | pantalla LED y temperatura",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14596,7 +15136,17 @@
         "seo-contenido.json#REL001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código DCX-670 y distribuir información legible en dos niveles.",
+        "propuesta": "Reloj despertador con pantalla LED",
+        "evidencia": [
+          "seo-contenido.json#REL001",
+          "importacion/contratos/REL001.json"
+        ]
+      }
     },
     {
       "sku": "REL006",
@@ -14626,7 +15176,7 @@
     },
     {
       "sku": "REL012",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch Aemai YX6",
       "propuesta": "Reloj Smartwatch Aemai YX6",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14635,11 +15185,21 @@
         "seo-contenido.json#REL012"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Sustituir código YX6 por formato y color verificados.",
+        "propuesta": "Smartwatch Aemai redondo negro",
+        "evidencia": [
+          "seo-contenido.json#REL012",
+          "importacion/contratos/REL012.json"
+        ]
+      }
     },
     {
       "sku": "REL014",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch RCA Ultra",
       "propuesta": "Reloj Smartwatch RCA Ultra",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14648,7 +15208,17 @@
         "seo-contenido.json#REL014"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Quitar redundancia Reloj Smartwatch y añadir variante verificable.",
+        "propuesta": "Smartwatch RCA Ultra",
+        "evidencia": [
+          "seo-contenido.json#REL014",
+          "importacion/contratos/REL014.json"
+        ]
+      }
     },
     {
       "sku": "REL015",
@@ -14704,7 +15274,7 @@
     },
     {
       "sku": "REL031",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch Ultra 9",
       "propuesta": "Reloj Smartwatch Ultra 9",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14713,7 +15283,17 @@
         "seo-contenido.json#REL031"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Eliminar redundancia y diferenciar variante sin perder familia comercial.",
+        "propuesta": "Smartwatch Ultra 9 con correa verde",
+        "evidencia": [
+          "seo-contenido.json#REL031",
+          "importacion/contratos/REL031.json"
+        ]
+      }
     },
     {
       "sku": "REL032",
@@ -14731,7 +15311,7 @@
     },
     {
       "sku": "REL033",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch RCA Model Exact",
       "propuesta": "Reloj Smartwatch RCA Model Exact",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14740,7 +15320,17 @@
         "seo-contenido.json#REL033"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Eliminar redundancia Reloj Smartwatch y palabra de inventario Model.",
+        "propuesta": "Smartwatch RCA Exact",
+        "evidencia": [
+          "seo-contenido.json#REL033",
+          "importacion/contratos/REL033.json"
+        ]
+      }
     },
     {
       "sku": "REL034",
@@ -14771,7 +15361,7 @@
     },
     {
       "sku": "REL038",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch Saiva SY10 Ultra",
       "propuesta": "Reloj Smartwatch Saiva SY10 Ultra",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14780,7 +15370,17 @@
         "seo-contenido.json#REL038"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Sustituir código SY10 por presentación verificada.",
+        "propuesta": "Smartwatch Saiva de correa acanalada",
+        "evidencia": [
+          "seo-contenido.json#REL038",
+          "importacion/contratos/REL038.json"
+        ]
+      }
     },
     {
       "sku": "REL040",
@@ -14798,7 +15398,7 @@
     },
     {
       "sku": "REL041",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch Riversong Motive 9 PRO",
       "propuesta": "Reloj Smartwatch Riversong Motive 9 PRO",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14807,11 +15407,21 @@
         "seo-contenido.json#REL041"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Quitar redundancia Reloj Smartwatch y precisar formato sin repetir familia.",
+        "propuesta": "Smartwatch Riversong Motive 9 Pro",
+        "evidencia": [
+          "seo-contenido.json#REL041",
+          "importacion/contratos/REL041.json"
+        ]
+      }
     },
     {
       "sku": "REL042",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwath Riversong Motive 9 MAX",
       "propuesta": "Reloj Smartwath Riversong Motive 9 MAX",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14820,7 +15430,17 @@
         "seo-contenido.json#REL042"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Corregir Smartwath; conservar familia comercial reconocible.",
+        "propuesta": "Smartwatch Riversong Motive 9 MAX",
+        "evidencia": [
+          "seo-contenido.json#REL042",
+          "importacion/contratos/REL042.json"
+        ]
+      }
     },
     {
       "sku": "REL043",
@@ -14837,7 +15457,7 @@
     },
     {
       "sku": "REL056",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smarwatch Kalobee Para Dama SK9 Mini",
       "propuesta": "Reloj Smarwatch Kalobee Para Dama SK9 Mini",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14846,11 +15466,21 @@
         "seo-contenido.json#REL056"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Corregir Smarwatch y sustituir código SK9 por variante real diferenciadora.",
+        "propuesta": "Smartwatch Kalobee Mini lila",
+        "evidencia": [
+          "seo-contenido.json#REL056",
+          "importacion/contratos/REL056.json"
+        ]
+      }
     },
     {
       "sku": "REL057",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch V36 Redondo Wearfit",
       "propuesta": "Reloj Smartwatch V36 Redondo Wearfit",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14859,11 +15489,21 @@
         "seo-contenido.json#REL057"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código V36; acabado verificado identifica el producto.",
+        "propuesta": "Smartwatch redondo dorado y rosa",
+        "evidencia": [
+          "seo-contenido.json#REL057",
+          "importacion/contratos/REL057.json"
+        ]
+      }
     },
     {
       "sku": "REL059",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch Ultra 2 YY-20",
       "propuesta": "Reloj Smartwatch Ultra 2 YY-20",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14872,11 +15512,21 @@
         "seo-contenido.json#REL059"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código YY-20 y conservar familia comercial y variante.",
+        "propuesta": "Smartwatch Ultra 2 con correa azul",
+        "evidencia": [
+          "seo-contenido.json#REL059",
+          "importacion/contratos/REL059.json"
+        ]
+      }
     },
     {
       "sku": "REL060",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch Kieslect Lora 3",
       "propuesta": "Reloj Smartwatch Kieslect Lora 3",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14885,11 +15535,21 @@
         "seo-contenido.json#REL060"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Quitar redundancia Reloj Smartwatch y añadir variante útil verificada.",
+        "propuesta": "Smartwatch Kieslect Lora 3",
+        "evidencia": [
+          "seo-contenido.json#REL060",
+          "importacion/contratos/REL060.json"
+        ]
+      }
     },
     {
       "sku": "REL062",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Smartwatch Kalobee SK43 | brazalete metálico",
       "propuesta": "Smartwatch Kalobee SK43 | brazalete metálico",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14898,7 +15558,17 @@
         "seo-contenido.json#REL062"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código SK43 y destacar presentación real.",
+        "propuesta": "Smartwatch Kalobee con brazalete",
+        "evidencia": [
+          "seo-contenido.json#REL062",
+          "importacion/contratos/REL062.json"
+        ]
+      }
     },
     {
       "sku": "REL063",
@@ -14915,7 +15585,7 @@
     },
     {
       "sku": "REL065",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch S11 PRO",
       "propuesta": "Reloj Smartwatch S11 PRO",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14924,7 +15594,17 @@
         "seo-contenido.json#REL065"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código S11 PRO; diferenciar con presentación y variantes verificadas.",
+        "propuesta": "Smartwatch con correa lisa surtida",
+        "evidencia": [
+          "seo-contenido.json#REL065",
+          "importacion/contratos/REL065.json"
+        ]
+      }
     },
     {
       "sku": "REL066",
@@ -14981,7 +15661,7 @@
     },
     {
       "sku": "REL070",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch Kalobee GW11 Mini",
       "propuesta": "Reloj Smartwatch Kalobee GW11 Mini",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14990,7 +15670,17 @@
         "seo-contenido.json#REL070"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código GW11 sin perder tamaño comercial Mini ni color.",
+        "propuesta": "Smartwatch Kalobee Mini rosado",
+        "evidencia": [
+          "seo-contenido.json#REL070",
+          "importacion/contratos/REL070.json"
+        ]
+      }
     },
     {
       "sku": "REPR001",
@@ -15633,7 +16323,7 @@
     },
     {
       "sku": "SOPO056",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte KlipXtreme DockStar | estación 9 en 1",
       "propuesta": "Soporte KlipXtreme DockStar | estación 9 en 1",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15642,7 +16332,17 @@
         "seo-contenido.json#SOPO056"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Hacer explícito uso laptop y hub, ambos verificados.",
+        "propuesta": "Soporte para laptop con hub 9 en 1",
+        "evidencia": [
+          "seo-contenido.json#SOPO056",
+          "importacion/contratos/SOPO056.json"
+        ]
+      }
     },
     {
       "sku": "SOPO057",
@@ -15696,7 +16396,7 @@
     },
     {
       "sku": "SOPO061",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte Magnetico Para Vehiculo Klip Xtreme",
       "propuesta": "Soporte Magnetico Para Vehiculo Klip Xtreme",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15705,7 +16405,17 @@
         "seo-contenido.json#SOPO061"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Nombre largo y mayúsculas de inventario; utilidad principal y familia en subtítulo.",
+        "propuesta": "Soporte magnético Klipxtreme",
+        "evidencia": [
+          "seo-contenido.json#SOPO061",
+          "importacion/contratos/SOPO061.json"
+        ]
+      }
     },
     {
       "sku": "STYL001",
@@ -15798,7 +16508,7 @@
     },
     {
       "sku": "SWIT001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Switch TP-Link LiteWave LS1005 de cinco puertos",
       "propuesta": "Switch TP-Link LiteWave LS1005 de cinco puertos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15807,11 +16517,21 @@
         "seo-contenido.json#SWIT001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código LS1005 y destacar puertos y velocidad comprobada.",
+        "propuesta": "Switch TP-Link de 5 puertos",
+        "evidencia": [
+          "seo-contenido.json#SWIT001",
+          "importacion/contratos/SWIT001.json"
+        ]
+      }
     },
     {
       "sku": "SWIT002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Switch TP-Link LiteWave LS1008G Gigabit de 8 puertos",
       "propuesta": "Switch TP-Link LiteWave LS1008G Gigabit de 8 puertos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15820,7 +16540,17 @@
         "seo-contenido.json#SWIT002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar código LS1008G y conservar puertos y clase de red.",
+        "propuesta": "Switch TP-Link Gigabit de 8 puertos",
+        "evidencia": [
+          "seo-contenido.json#SWIT002",
+          "importacion/contratos/SWIT002.json"
+        ]
+      }
     },
     {
       "sku": "TABL001",
@@ -15902,7 +16632,7 @@
     },
     {
       "sku": "TECL002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Combo inalámbrico HP CS700: teclado y mouse",
       "propuesta": "Combo inalámbrico HP CS700: teclado y mouse",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15911,7 +16641,17 @@
         "seo-contenido.json#TECL002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar CS700; utilidad y composición verificadas.",
+        "propuesta": "Combo HP inalámbrico para PC",
+        "evidencia": [
+          "seo-contenido.json#TECL002",
+          "importacion/contratos/TECL002.json"
+        ]
+      }
     },
     {
       "sku": "TECL005",
@@ -16823,7 +17563,7 @@
     },
     {
       "sku": "TRIP017",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Trípode selfie estabilizador K50",
       "propuesta": "Trípode selfie estabilizador K50",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -16832,7 +17572,17 @@
         "seo-contenido.json#TRIP017"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar K50; no extender afirmación de estabilización sin evidencia técnica adicional.",
+        "propuesta": "Trípode selfie extensible",
+        "evidencia": [
+          "seo-contenido.json#TRIP017",
+          "importacion/contratos/TRIP017.json"
+        ]
+      }
     },
     {
       "sku": "TRIP018",
@@ -17028,7 +17778,7 @@
     },
     {
       "sku": "TVBO002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "TV Stick TV98 — Kit con Mando y Cable USB",
       "propuesta": "TV Stick TV98 — Kit con Mando y Cable USB",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -17037,11 +17787,21 @@
         "seo-contenido.json#TVBO002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar TV98; describir contenido confirmado por propietario sin cargador.",
+        "propuesta": "TV Stick con mando de voz",
+        "evidencia": [
+          "seo-contenido.json#TVBO002",
+          "importacion/contratos/TVBO002.json"
+        ]
+      }
     },
     {
       "sku": "TVBO004",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "TV Stick TV98 5G ATV X8 Redondo",
       "propuesta": "TV Stick TV98 5G ATV X8 Redondo",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -17050,7 +17810,17 @@
         "seo-contenido.json#TVBO004"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Retirar X8 y denominación ambigua 5G; diferenciar formato sin inventar conectividad.",
+        "propuesta": "TV Stick de diseño redondo",
+        "evidencia": [
+          "seo-contenido.json#TVBO004",
+          "importacion/contratos/TVBO004.json"
+        ]
+      }
     },
     {
       "sku": "TVBO005",
@@ -17263,7 +18033,7 @@
     },
     {
       "sku": "VENT009",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Base KlipXtreme CoolingStation | ventilador y hub",
       "propuesta": "Base KlipXtreme CoolingStation | ventilador y hub",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -17272,7 +18042,17 @@
         "seo-contenido.json#VENT009"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Hacer visible utilidad sin perder familia comercial en subtítulo.",
+        "propuesta": "Base refrigerante con hub USB",
+        "evidencia": [
+          "seo-contenido.json#VENT009",
+          "importacion/contratos/VENT009.json"
+        ]
+      }
     },
     {
       "sku": "WEBC001",
@@ -17505,7 +18285,7 @@
     },
     {
       "sku": "FLAS021",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 32GB Monster",
       "propuesta": "Flash Memory 32GB Monster",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -17514,11 +18294,21 @@
         "seo-contenido.json#FLAS021"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Nombre poco natural; capacidad primero y código técnico en especificaciones.",
+        "propuesta": "Memoria USB Monster de 32 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS021",
+          "importacion/contratos/FLAS021.json"
+        ]
+      }
     },
     {
       "sku": "FLAS034",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flash Memory 32GB Sandisk",
       "propuesta": "Flash Memory 32GB Sandisk",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -17527,7 +18317,17 @@
         "seo-contenido.json#FLAS034"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda012015": {
+        "causa": "Añadir familia verificada como diferenciador sin alargar el principal.",
+        "propuesta": "Memoria USB SanDisk de 32 GB",
+        "evidencia": [
+          "seo-contenido.json#FLAS034",
+          "importacion/contratos/FLAS034.json"
+        ]
+      }
     },
     {
       "sku": "JUGU045",
@@ -17842,6 +18642,12 @@
   "resolucionesTanda008011": {
     "mejorasSeleccionadas": 100,
     "correctosConservados": 783,
+    "identidadesReservadasSinCambios": 97,
+    "modelosConservadosEnEspecificacionesYBusqueda": true
+  },
+  "resolucionesTanda012015": {
+    "mejorasSeleccionadas": 80,
+    "correctosConservados": 703,
     "identidadesReservadasSinCambios": 97,
     "modelosConservadosEnEspecificacionesYBusqueda": true
   }
