@@ -132,6 +132,12 @@
   showcase?.addEventListener('error',replaceBrokenImage,true);featured?.addEventListener('error',replaceBrokenImage,true);
   state.revalidar=refreshSelection;
   refreshSelection();
+  // Agrupa los nodos existentes sin recrear fichas, controles ni sus listeners.
+  const catalogHeading=document.getElementById('catalogo'),catalogEnd=document.getElementById('empty');
+  if(catalogHeading&&catalogEnd&&catalogHeading.parentNode===catalogEnd.parentNode&&!catalogHeading.closest('.pw-catalog-frame')){
+    const frame=document.createElement('section');frame.className='pw-catalog-frame';frame.setAttribute('aria-labelledby','catalogo');catalogHeading.before(frame);
+    let node=catalogHeading;while(node){const next=node.nextSibling;frame.appendChild(node);if(node===catalogEnd)break;node=next}
+  }
   const campaign=document.querySelector('.ct-gift-campaign');
   if(campaign&&config.banner){
     const conditions=campaign.querySelector('details')?.cloneNode(true),contact=campaign.querySelector('.ct-gift-unified-footer>a')?.cloneNode(true);

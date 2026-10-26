@@ -59,3 +59,8 @@ Un temporizador calcula la siguiente medianoche en `America/Guayaquil`; se reval
 Para impulsar una campaña, añadir SKU existentes a `fijadosVitrina` o `fijadosDestacados`. Las fijaciones válidas tienen prioridad y pueden repetirse entre días por decisión expresa; si están agotadas, sin fotografía o sin ficha, se omiten. Una misma fijación no se muestra en ambas secciones. Para desactivar la automatización, `activa:false` conserva `productosPortada` como selección manual de la vitrina; Destacados usa una selección disponible complementaria.
 
 Destacados conserva los componentes `productImage`, `nameHTML`, `statusHTML`, `productHref` y `availabilityContact` actuales. Su presentación usa cinco columnas en escritorio, tres en tamaños intermedios y dos en móvil; la quinta tarjeta móvil ocupa la fila completa con foto e información contiguas. Promo Contado es principal y PVP secundario. Marca, títulos/subtítulos, fotos, fichas, WhatsApp, orden editorial y datos593 intactos.
+
+
+## Fondo del catálogo
+
+La presentación agrupa los nodos existentes desde `#catalogo` hasta `#empty` en `.pw-catalog-frame`, sin recrearlos: se conservan IDs, fichas, enlaces, orden y eventos de búsqueda, categorías, ordenación y paginación. El contenedor usa un degradado azul profundo hacia verde CONECTATECH; las fichas conservan su fondo blanco, fotografías y tipografía. Los controles mantienen contraste claro y el ancla conserva el margen del encabezado. No se escriben productos ni fechas.
