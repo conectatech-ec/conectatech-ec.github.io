@@ -47,8 +47,8 @@ for(const p of products){
  }
 
  // Secundarias verificadas: añadir vistas sin sustituir portadas vigentes.
- if(['HUB011','AUDI095','ADAP063','MOUS003','AUDI057'].includes(p.sku)){
-  const secondaryFile=path.join('importacion','fotografia-publicada',['MOUS003','AUDI057'].includes(p.sku)?'secundarias-audio-computacion-20261026-03.json':p.sku==='ADAP063'?'secundarias-conexiones-20261026-02.json':'secundarias-20261026.json');
+ if(['HUB011', 'AUDI095', 'ADAP063', 'MOUS003', 'AUDI057', 'AUDI036', 'AUDI053', 'AUDI034', 'AUDI025', 'AUDI026', 'AUDI082', 'AUDI073', 'AUDI018'].includes(p.sku)){
+  const secondaryFile=path.join('importacion','fotografia-publicada',['AUDI036', 'AUDI053', 'AUDI034', 'AUDI025', 'AUDI026', 'AUDI082', 'AUDI073', 'AUDI018'].includes(p.sku)?'secundarias-rapido-20261026-04.json':['MOUS003','AUDI057'].includes(p.sku)?'secundarias-audio-computacion-20261026-03.json':p.sku==='ADAP063'?'secundarias-conexiones-20261026-02.json':'secundarias-20261026.json');
   if(fs.existsSync(secondaryFile)){
    const row=JSON.parse(fs.readFileSync(secondaryFile,'utf8')).productos?.[p.sku];
    const coverHash=custom.imagenProfesional?.versiones?.['1200']?.sha256;
