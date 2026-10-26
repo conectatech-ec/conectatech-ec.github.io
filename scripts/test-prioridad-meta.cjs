@@ -20,5 +20,9 @@ const members=g.ordered_sku.map((s,i)=>({retailer_id:s,id:['28559671370365248','
  await assert.rejects(()=>orderProducts({api,id:'123',group:g,members:members.slice(1)}),/IDENTIDAD_COMPLETA/);
  const ignored={async request(){return {ordering_info:[]};}};
  assert.equal((await orderProducts({api:ignored,id:'123',group:g,members})).estado,'ORDEN_NO_CONFIRMADO_META');
+ const large={sku:Array.from({length:238},(_,i)=>'SKU'+i)};large.ordered_sku=[...large.sku];large.featured_sku=large.sku.slice(0,3);
+ const many=large.sku.map((s,i)=>({retailer_id:s,id:String(28559671370365248n+BigInt(i))}));
+ const capped=await orderProducts({api,id:'124',group:large,members:many});
+ assert.equal(order.length,100);assert.equal(capped.articulos,238);assert.equal(capped.posiciones_explicitas,100);assert.equal(large.sku.length,238);
  console.log('Prioridad comercial: orden solicitado, sustitución por stock, cobertura sin duplicados, FBID exactos, persistencia e idempotencia comprobados.');
 })().catch(e=>{console.error(e);process.exitCode=1});
