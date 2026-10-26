@@ -29,7 +29,7 @@ Costo adicional: $0. No editar generadores, inventario, fotografías, títulos, 
 
 ## Ambientación sin etiquetas
 
-La sección superior se denomina **hero de portada** o **banner principal**; contiene la vitrina de productos con carrusel. En Halloween tiene un subfondo naranja luminoso, una luna completa con halo, murciélagos, telarañas y reflejos cálidos. La vitrina translúcida mantiene las fotos originales y usa azul/verde para títulos, precios y acciones. La luna pulsa suavemente y respeta movimiento reducido. Una calabaza completa se sitúa al pie del emblema, con el logo original por encima; conserva su tamaño, rótulo y archivos. En móvil se reservan 6 px adicionales para que la decoración no alcance el buscador. El calendario oculta la ambientación fuera de Halloween. Los recursos son SVG propios y locales.
+La sección superior se denomina **hero de portada** o **banner principal** y contiene la vitrina con carrusel. Halloween utiliza una ilustración ambiental original de aspecto fotográfico: calabaza gigante iluminada, luna, árboles, murciélagos, telarañas y reflejos ámbar. En escritorio el fondo ocupa toda la sección, con fotografía real a un lado, mensaje central y título/precio al otro. En móvil se presenta la escena completa y se mezcla gradualmente con el contenido. Las imágenes de los productos permanecen íntegras, con su fondo original. No se recortan ni se generan productos nuevos. Una calabaza propia con transparencia corona el emblema, con su base integrada al borde superior; el logo original queda por encima y conserva su tamaño y rótulo. Se reserva espacio superior durante Halloween. La altura real del encabezado alimenta el margen de las anclas para conservar la navegación. El calendario retira esta ambientación al cambiar de temporada.
 
 El catálogo muestra cinco productos por fila desde 1200 px, tres entre 601 y 1199 px y dos hasta 600 px. El encabezado de regalos dice «En esta temporada tu compra tiene un regalo», con antetítulo y mensaje principal destacados; no cambia los montos ni las condiciones.
 
@@ -38,3 +38,7 @@ El catálogo muestra cinco productos por fila desde 1200 px, tres entre 601 y 11
 Categoría y SKU comparten una franja secundaria; el título mantiene su texto editorial y usa 14 px en escritorio y 12 px en móvil, con mayor peso. Se elimina su altura mínima reservada: el subtítulo queda a 3 px del título, sin renglones vacíos. Se conservan imágenes, datos, enlaces, disponibilidad, orden y cinco columnas/dos en móvil. No se editan componentes editoriales ni sus datos.
 
 Referencia de composición indicada por el propietario: https://techtogoec.com/. Orienta el protagonismo comercial del producto; las ilustraciones, colores, recursos y composición de CONECTATECH son propios.
+
+## Procedencia de la ambientación inmersiva
+
+`halloween-escena-original.webp` y `halloween-calabaza-corona.webp` son recursos decorativos originales generados con la herramienta integrada `image_gen`. No contienen productos ni textos comerciales. Sus PNG fuente permanecen intactos en el espacio de trabajo; los WebP sólo optimizan su entrega en web. Se conserva la transparencia de la corona. No se utiliza el arte del sitio de referencia ni se editan logo, imágenes del catálogo o banner promocional. Sin servicios adicionales de pago.
