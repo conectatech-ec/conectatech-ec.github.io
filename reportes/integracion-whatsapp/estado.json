@@ -1,363 +1,42 @@
 {
-  "estado": "AUTOMATIZACION_IMPLEMENTADA_EN_BORRADOR_PENDIENTE_CREDENCIAL_META",
-  "fecha_revision_local": "2026-10-23",
-  "fecha_corte": "2026-10-22",
-  "fuente_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
-  "sku_web": 1170,
-  "candidatos_locales": 881,
-  "agotados": 38,
-  "pendientes_imagen": 204,
-  "sin_categoria_maestra": 71,
-  "colecciones_propuestas": {
-    "Audífonos y audio": 105,
-    "Computación y almacenamiento": 102,
-    "Smartwatches y correas": 32,
-    "Cargadores, cables y energía": 313,
-    "Estuches y protectores": 6,
-    "Juguetes": 103,
-    "Pilas y powerbanks": 72,
-    "Soportes y accesorios": 52,
-    "TV y entretenimiento": 15,
-    "Micrófonos y creación de contenido": 47,
-    "Celulares y tablets": 23,
-    "Hogar inteligente": 2,
-    "Cámaras y seguridad": 9
-  },
+  "estado": "META_SINCRONIZADO_Y_ORDEN_WHATSAPP_CONFIRMADO_POR_PROPIETARIO",
+  "fecha_revision_local": "2026-10-26",
+  "zona_horaria": "America/Guayaquil",
   "catalogo_maestro_id": "1036301566100990",
-  "whatsapp_product_catalog_id": "665080484330219",
+  "catalogo_reutilizado": true,
+  "numero_principal_reportado": "+593998576759",
+  "fecha_corte": "2026-10-25",
+  "fuente_sha256": "6c86d1d06c064f741a6d8483da69e0ae2f2a5b1cc27c5d1c5367d4edb214dc2a",
+  "productos_importados_meta": 966,
+  "sku_disponibles_clasificados": 935,
+  "conjuntos_meta": 21,
+  "autorizacion_catalogo_api_verificada": true,
+  "automatizacion_importacion_meta_verificada": true,
+  "pertenencia_por_sku_verificada_meta": true,
+  "recreacion_seis_conjuntos": "COMPLETADA_UNA_VEZ; reejecución comprobada sin cambios",
+  "orden_general_whatsapp_automatico": false,
+  "nota_orden": "El orden visual se consiguió mediante la recreación puntual autorizada de seis conjuntos. No se declara una API automática de posición de colecciones WhatsApp.",
+  "evidencia_visual": {
+    "fecha": "2026-10-26",
+    "zona_horaria": "America/Guayaquil",
+    "fuente": "Confirmación explícita del propietario en la aplicación WhatsApp",
+    "pregunta": "¿Ahora ves primero Teléfonos → Tablets → Televisores → Monitores → Smartwatches → Almacenamiento?",
+    "respuesta_literal": "Sí, aparecen en ese orden",
+    "orden_confirmado": [
+      "Teléfonos",
+      "Tablets",
+      "Televisores",
+      "Monitores",
+      "Smartwatches",
+      "Almacenamiento"
+    ],
+    "alcance": "Verifica la secuencia de estas seis colecciones en la aplicación usada por el propietario. No constituye un conteo de todos los productos visibles ni una inspección independiente desde otra cuenta."
+  },
+  "productos_visibles_whatsapp": null,
+  "limite_efectivo_whatsapp": null,
   "waba_id": null,
-  "propiedad_verificada": false,
-  "numero_asociado_verificado": false,
-  "limite_efectivo": null,
-  "productos_importados": null,
-  "productos_visibles": null,
-  "ultima_importacion_meta": null,
-  "evidencia_whatsapp": null,
-  "automatizacion_importacion_verificada": false,
-  "automatizacion_colecciones_verificada": false,
-  "hallazgos": [
-    "Feed existente: exportaciones/meta-catalogo-piloto.csv; no se creó otro feed ni inventario.",
-    "El exportador existente excluye agotados; la corrección conserva el SKU y emite out of stock.",
-    "Los flujos actuales de publicación de cortes llaman al exportador; se reutilizan sin añadir horarios.",
-    "Las colecciones propuestas son referencias SKU; no son colecciones publicadas en WhatsApp.",
-    "La categoría maestra vacía no se infiere del título ni del prefijo SKU.",
-    "No se seleccionan Ofertas destacadas sin aprobación editorial.",
-    "El exportador deja de aplicar reglas de imágenes/títulos: sólo consume el contenido ya publicado.",
-    "La clasificación conserva 379 SKU maestros sin ficha publicada como pendientes, sin asumir ausencia de fotos.",
-    "Categorías maestras: 1.549 SKU; último corte reporta 1.566. Diferencia neta de cobertura: 17; no se inventan SKU ni categorías faltantes.",
-    "Validación previa a cualquier escritura: un error de datos no produce un lote parcial de exportaciones.",
-    "Pruebas simulan alta de SKU y cambios editoriales aprobados conservando identificadores; no prueban importación Meta.",
-    "Capturas del propietario confirman el feed existente y su reemplazo diario activo; no añadir otro horario ni otra fuente.",
-    "Captura de Más detalles en WhatsApp confirma conexión al Catálogo Maestro por nombre. El administrador de la aplicación muestra cero productos y avisa de un plazo de hasta 24 horas."
-  ],
-  "bloqueos": [
-    "No hay conexión autenticada a Meta en esta sesión ni credenciales Meta configuradas en el entorno.",
-    "La política de red del entorno no incluye graph.facebook.com ni business.facebook.com.",
-    "No se puede comprobar capacidad, propiedad, WABA, origen del catálogo ni visibilidad desde el repositorio.",
-    "No se ha verificado una API oficial que mantenga colecciones visibles de esta modalidad de WhatsApp; product_type y conjuntos Meta no acreditan esa función."
-  ],
-  "pasos_propietario": [
-    "En Configuración del negocio de Meta > Orígenes de datos > Catálogos, localizar CONECTATECH | Catálogo Maestro y WhatsApp Product Catalog. Revisar ID, propietario, Personas y Activos conectados, sin crear otro catálogo.",
-    "En Commerce Manager > Catálogo Maestro > Orígenes de datos, comprobar que el origen usa https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv y revisar última importación y diagnósticos; no reemplazarlo sin verificar el origen actual.",
-    "En Configuración del negocio > Cuentas > Cuentas de WhatsApp, verificar WABA, propietario, personas autorizadas y número comercial existente, sin migrarlo ni cambiarlo.",
-    "Habilitar una conexión autenticada para esta sesión con acceso al catálogo existente; conceder los permisos faltantes del activo desde Personas si corresponde. No enviar secretos por chat.",
-    "Con acceso, verificar la modalidad y límite efectivo antes de seleccionar productos. Vincular únicamente el catálogo verificado por el mecanismo oficial que presente Meta.",
-    "Si la modalidad sólo ofrece edición manual de colecciones: WhatsApp Business > Herramientas para la empresa > Catálogo > Añadir nueva colección; reutilizar los SKU seleccionados. Confirmar primero el menú real de la cuenta.",
-    "Desde otro WhatsApp de cliente, abrir el perfil comercial > catálogo; comprobar colecciones, productos, precio, agotados y navegación. Registrar captura, cantidad visible y fecha real."
-  ],
-  "referencias_oficiales": [
-    "https://whatsappbusiness.com/resources/resource-library/whatsapp-business-app-resources-whatsapp-business-catalog/",
-    "https://faq.whatsapp.com/2929318000711140/?cms_platform=android&locale=es_ES"
-  ],
-  "limite_documentado_app": 500,
-  "nota_limite": "Referencia general oficial de WhatsApp Business App; no acredita el límite efectivo de CONECTATECH ni su modalidad.",
-  "publicacion": "No integrar ni publicar carga masiva hasta comprobar límite, permisos y organización visible. No hay cambios en el número, mensajería, SIGNATURE, inventario ni web.",
-  "pruebas": [
-    "node scripts/test-meta-web.cjs",
-    "node scripts/test-exportar-canales.cjs",
-    "node scripts/test-validar-exportacion-593.cjs",
-    "Exportador sobre snapshot del main 2a9275770d30f5fa45661eb45aa6359e14d1130f",
-    "YAML y git diff --check"
-  ],
-  "cobertura": {
-    "sku_publicados": 1170,
-    "sku_categorias_maestras": 1549,
-    "sku_fuente_ultimo_corte": 1566,
-    "sku_sin_ficha": 379
-  },
-  "registros_preparados": 1549,
-  "sin_categoria_maestra_con_ficha": 71,
-  "control_593": "Antes de escribir, exige fecha y hash del corte aplicado, cobertura exacta de SKU publicados, stock y precios coincidentes. No altera Data Hub ni inventario.",
-  "autorizacion": {
-    "meta_autenticado": false,
-    "navegador_interactivo_disponible": false,
-    "credenciales_meta_configuradas": false,
-    "conexion_meta_disponible_en_herramientas": false,
-    "drive_configuracion_meta_encontrada": false,
-    "comprobaciones": [
-      "Herramientas disponibles: sin acciones Meta/WhatsApp ni navegador interactivo.",
-      "Estado del entorno: sin secretos ni identidades Meta; red aplicada sin dominios Meta.",
-      "Búsquedas en plugins: sin integración adecuada de catálogo WhatsApp.",
-      "Drive CONECTATECH: búsquedas Catálogo Maestro, WhatsApp y Meta sin documento de configuración identificado."
-    ],
-    "procedimiento_propietario": [
-      "Abrir https://business.facebook.com/commerce/ en el navegador habitual e iniciar sesión directamente en Meta; completar MFA allí si se solicita.",
-      "Seleccionar CONECTATECH y el catálogo existente CONECTATECH | Catálogo Maestro. No crear ni migrar un catálogo.",
-      "En Configuración del negocio, comprobar acceso de la cuenta conectada al catálogo (gestionar catálogo) y a la WABA existente para consultar su asociación.",
-      "Para operar desde esta sesión hace falta una conexión oficial autenticada o un navegador interactivo con toma de control. Ninguno está disponible actualmente; iniciar sesión en un navegador personal no comparte la sesión con el agente.",
-      "Cuando la interfaz proporcione ese mecanismo, autorizarse dentro de él. No copiar contraseñas, tokens, cookies ni perfiles de navegador al chat."
-    ]
-  },
-  "evidencia_activos_meta": {
-    "fuente": "Captura aportada por el propietario en este chat",
-    "tipo": "Captura de Administrador de ventas > Activos",
-    "negocio_mostrado": "Conectatech",
-    "catalogo_maestro": {
-      "nombre": "CONECTATECH | Catálogo Maestro",
-      "id": "1036301566100990",
-      "etiqueta_sin_acceso_visible": false
-    },
-    "catalogo_whatsapp": {
-      "nombre": "WhatsApp Product Catalog",
-      "id": "665080484330219",
-      "etiqueta_sin_acceso_visible": true
-    },
-    "alcance": "Identificadores transcritos de la captura. No verifica propiedad, permisos efectivos, WABA, número, feed ni productos visibles. La sesión del propietario no acredita acceso del agente."
-  },
-  "siguiente_comprobacion": "Autorizar credencial de catálogo de Meta mediante secreto GitHub; con el código publicado, ejecutar y verificar el resultado en Meta y WhatsApp.",
-  "evidencia_origen_meta": {
-    "fuente": "Capturas del propietario de Orígenes de datos y Configurar fuente",
-    "nombre": "CONECTATECH | Sincronización automática 593",
-    "tipo": "Archivo de datos (Programada)",
-    "url": "https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv",
-    "divisa_predeterminada": "USD",
-    "productos_asociados_al_origen": 939,
-    "estado_mostrado": "Sin errores",
-    "ultima_actualizacion_mostrada": "23 de oct a las 11:43 a. m.",
-    "proxima_actualizacion_mostrada": "Oct 24, 2026, 11:43 AM",
-    "programacion": {
-      "operacion": "reemplazo",
-      "estado": "Activa",
-      "frecuencia": "Cada día",
-      "hora": "11:43",
-      "zona_mostrada": "GMT-05:00"
-    },
-    "lista_complementaria_vinculada": false,
-    "alcance": "Configuración transcrita de capturas. Confirma feed y programación existentes en Meta; no acredita acceso del agente, aprobación de cada SKU, WABA, asociación al número ni visibilidad WhatsApp."
-  },
-  "evidencia_vinculacion_app": {
-    "fuente": "Captura del propietario: WhatsApp Business Android > Catálogo > Más detalles",
-    "catalogo_nombre_mostrado": "CONECTATECH | Catálogo Maestro",
-    "texto_vinculacion": "Meta Business Suite que se conectó a esta cuenta de WhatsApp",
-    "id_mostrado_en_app": null,
-    "correspondencia_id": "ID del Maestro documentado previamente en captura Meta; el cuadro de WhatsApp sólo muestra nombre.",
-    "productos_en_administrador_app": 0,
-    "mensaje_app": "El catálogo no contiene productos. Administra el catálogo con Meta Business Suite.",
-    "plazo_mostrado": "Pueden transcurrir hasta 24 horas para que los cambios o productos se muestren aquí.",
-    "visibilidad_cliente_verificada": false,
-    "colecciones_visibles_verificadas": false,
-    "alcance": "Confirma nombre del catálogo conectado en la aplicación del propietario. No acredita número mediante pantalla de perfil, propiedad/permisos del activo, cantidad visible al cliente ni sincronización final."
-  },
-  "evidencia_importacion_meta": {
-    "fuente": "Captura del propietario: Resumen de la subida de productos",
-    "fecha_hora_mostrada": "23 de oct a las 11:43am GMT-05:00",
-    "actualizados_o_agregados": 939,
-    "eliminados": 22,
-    "no_subidos": 0,
-    "problemas": 0,
-    "alcance": "Resultado de esa subida en Meta. No establece motivo de cada eliminación ni visibilidad WhatsApp."
-  },
-  "diagnostico_visibilidad": {
-    "fecha_registro_local": "2026-10-24",
-    "evidencias": [
-      {
-        "fuente": "Captura Meta: Productos",
-        "total_catalogo": 939,
-        "muestra": {
-          "sku": [
-            "ADAP007",
-            "ADAP027"
-          ],
-          "estado": "Elegible",
-          "disponibilidad": "Disponible"
-        },
-        "alcance": "Muestra de productos; no prueba elegibilidad de los 939 por canal."
-      },
-      {
-        "fuente": "Captura Meta: Acciones 1",
-        "texto": "Configura un conjunto de datos para optimizar el rendimiento de los anuncios",
-        "alcance": "Recomendación de píxel/SDK para publicidad; no se ha identificado como causa del catálogo vacío."
-      },
-      {
-        "fuente": "Captura ficha ADAP007",
-        "precio": "6.00 USD",
-        "disponibilidad": "In stock",
-        "condicion": "new",
-        "imagen": "presente",
-        "estado": "Elegible",
-        "alcance": "No muestra rechazo específico WhatsApp. Campos Incompleto no se modifican sin determinar requisitos."
-      },
-      {
-        "fuente": "Respuesta del propietario tras abrir enlace de catálogo desde cuenta cliente",
-        "resultado": "mismo mensaje de catálogo vacío",
-        "alcance": "Prueba reportada por propietario; no es inspección directa del agente."
-      }
-    ],
-    "hipotesis_pendientes": [
-      "Página Facebook asociada al catálogo y vinculada al mismo WhatsApp Business; aún no comprobado.",
-      "Estado de publicación y elegibilidad específicos del canal WhatsApp.",
-      "Capacidad efectiva de catálogo conectado para esta cuenta: sin confirmar; no inferir causa por 939 SKU.",
-      "Retraso o incidencia de la conexión Meta/WhatsApp; sin confirmación de causa."
-    ],
-    "siguiente_paso": "En WhatsApp Business Android > Herramientas > Facebook e Instagram, comprobar qué página figura vinculada; contrastar su asociación con el Catálogo Maestro. No sustituir conexiones existentes.",
-    "referencia_oficial": "https://faq.whatsapp.com/1057141349534704/?cms_platform=web&eea=0&locale=es_MX",
-    "borrador_soporte": "En WhatsApp Business Android de CONECTATECH el catálogo conectado aparece vacío, también al abrirlo desde otra cuenta cliente. Más detalles identifica CONECTATECH | Catálogo Maestro. En Meta, catálogo ID 1036301566100990, hay 939 productos; el origen programado Sincronización automática 593 usa https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv. ADAP007 y ADAP027 aparecen Elegibles y Disponibles. Solicitamos revisar publicación/elegibilidad del catálogo conectado para WhatsApp sin migrar ni cambiar el número. Adjuntamos capturas; facilitar fecha/hora exacta de conexión y versión de app para el diagnóstico.",
-    "soporte_enviado": false
-  },
-  "evidencia_organizacion_whatsapp": {
-    "fuente": "Captura del propietario: 1001774571.jpg",
-    "pantalla": "Administrador de catálogo Android",
-    "numero_visible_en_captura": false,
-    "seccion_visible": "Conectatech | Celulares",
-    "productos_mostrados_en_seccion": 3,
-    "seccion_general": "Todos los artículos",
-    "alcance": "Productos y agrupación visibles en el administrador mostrado. No acredita cantidad total, cuenta/número, vista de cliente, correspondencia con conjuntos Meta ni mantenimiento automático."
-  },
-  "organizacion_preparada": {
-    "archivo": "reportes/integracion-whatsapp/plan-colecciones-meta.json",
-    "grupos": 19,
-    "estado": "Generación automática desde clasificación web; sustituye propuesta estática de 13 grupos.",
-    "siguiente_paso": "Autorizar credencial de catálogo de Meta mediante secreto GitHub; con el código publicado, ejecutar y verificar el resultado en Meta y WhatsApp."
-  },
-  "evidencia_filtros_celulares": {
-    "fuente": "Captura del propietario: Editar conjunto de productos",
-    "nombre": "CONECTATECH | CELULARES",
-    "productos": 21,
-    "variantes": 21,
-    "filtros_periodicos_activados": true,
-    "coincidencia": "al menos un filtro",
-    "reglas": [
-      {
-        "atributo": "Tipo de producto",
-        "condicion": "contiene",
-        "valor": "celulares"
-      }
-    ],
-    "agregar_productos_recomendados": false,
-    "alcance": "Comprueba configuración periódica del conjunto Meta. La sección WhatsApp observada coincide por nombre; no comprueba aún propagación de un nuevo conjunto ni pertenencia de cada SKU."
-  },
-  "automatizacion_web": {
-    "fuente": "Clasificación publicada en index.html (categoriaComercial y categoryFamilies), sin taxonomía paralela",
-    "commit_validado": "2a9275770d30f5fa45661eb45aa6359e14d1130f",
-    "fecha_corte": "2026-10-24",
-    "fuente_sha256": "55a5f7a64d421047538c0bed7ac0c26af1fece7e07b844080e57f81b9ff72707",
-    "productos_feed": 966,
-    "disponibles_clasificados": 935,
-    "agotados_en_feed": 29,
-    "pendientes_aprobacion": [
-      "TELF001",
-      "TELF012"
-    ],
-    "familias": [
-      {
-        "nombre": "Almacenamiento",
-        "cantidad": 38
-      },
-      {
-        "nombre": "Audio y Audífonos",
-        "cantidad": 128
-      },
-      {
-        "nombre": "Cables y Conectividad",
-        "cantidad": 238
-      },
-      {
-        "nombre": "Cargadores y Energía",
-        "cantidad": 142
-      },
-      {
-        "nombre": "Celulares y Smartphones",
-        "cantidad": 19
-      },
-      {
-        "nombre": "Computación y Periféricos",
-        "cantidad": 59
-      },
-      {
-        "nombre": "Deportes",
-        "cantidad": 1
-      },
-      {
-        "nombre": "Fotografía y Creación de Contenido",
-        "cantidad": 22
-      },
-      {
-        "nombre": "Gaming y Videojuegos",
-        "cantidad": 1
-      },
-      {
-        "nombre": "Hogar y Accesorios",
-        "cantidad": 38
-      },
-      {
-        "nombre": "Iluminación",
-        "cantidad": 17
-      },
-      {
-        "nombre": "Juguetes y Coleccionables",
-        "cantidad": 103
-      },
-      {
-        "nombre": "Protección para Dispositivos",
-        "cantidad": 10
-      },
-      {
-        "nombre": "Redes e Internet",
-        "cantidad": 7
-      },
-      {
-        "nombre": "Seguridad y Cámaras",
-        "cantidad": 9
-      },
-      {
-        "nombre": "Smartwatches y Wearables",
-        "cantidad": 32
-      },
-      {
-        "nombre": "Soportes y Accesorios",
-        "cantidad": 52
-      },
-      {
-        "nombre": "Tablets",
-        "cantidad": 4
-      },
-      {
-        "nombre": "TV y Entretenimiento",
-        "cantidad": 15
-      }
-    ],
-    "campos_feed": "Conserva las columnas anteriores y añade custom_label_0 para la familia comercial de la web. product_type maestro permanece intacto.",
-    "modo": "Importar en el feed existente, reutilizar conjuntos por retailer_id o nombre, adoptar Celulares sin cambiar su nombre, actualizar filtros por familia y disponibilidad; verificar importación y pertenencia mediante lecturas API.",
-    "disparadores": "Workflow multicanal existente, al publicar cambios y al finalizar los workflows 593 existentes (incluidos pushes de bots); sin cron nuevo.",
-    "pruebas_locales": [
-      "Clasificación por las reglas exactas de la web y excepciones por SKU",
-      "Fuente, fecha, cobertura, precios y stock 593",
-      "Reutilización de Celulares y no modificación de All Products",
-      "Reejecución sin duplicados y sin reimportar el mismo hash cuando Meta conserva el nombre de archivo",
-      "No crea conjuntos si la importación falla",
-      "Readback de filtro y pertenencia por SKU",
-      "No sigue URLs de paginación externas; credenciales sólo en cabecera y errores sin secretos"
-    ],
-    "aplicacion_meta_ejecutada": false,
-    "ejecucion_bloqueada_por": "No existe credencial Meta accesible a esta sesión; las conexiones de navegador del propietario no se comparten con el agente.",
-    "configuracion_pendiente": {
-      "secreto_github": "META_ACCESS_TOKEN",
-      "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/settings/secrets/actions",
-      "permiso_meta": "catalog_management",
-      "activo": "CONECTATECH | Catálogo Maestro — 1036301566100990",
-      "instruccion": "Guardar la credencial de un usuario del sistema autorizado sobre ese catálogo directamente como secreto Actions. No enviarla por chat ni guardarla en el repositorio. Usar una app empresarial existente; la creación de anuncios y los permisos de mensajería no forman parte de esta integración."
-    },
-    "activacion": "Conservar PR borrador. Publicación de la integración y credencial necesarias para la ejecución real. El workflow comprueba autorización; si falta, registra PENDIENTE_AUTORIZACION_META sin llamadas remotas.",
-    "resultado_cliente": "Aún falta comprobar propagación y orden de los nuevos conjuntos en WhatsApp; no se afirma sincronización de colecciones visible."
-  }
+  "verificacion_meta_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/40273874340",
+  "resultado_detallado": "reportes/integracion-whatsapp/resultado-reordenar-seis-colecciones.json",
+  "alcance_restante": "La cantidad total visible, el límite efectivo, la identidad WABA y los permisos del segundo número no quedan acreditados por esta confirmación de orden. Los diagnósticos previos se conservan en el historial Git.",
+  "infraestructura": "Mismo Catálogo Maestro, fuente, Data Hub, flujo de publicación 593 y números. Sin nuevo cron, publicidad, mensajería ni servicios de pago."
 }
