@@ -1,4 +1,7 @@
+const photoDirection=require('./fotografia-direccion.cjs');
+const photoSelection=photoDirection.capture();
 require('./aplicar-reglas-medios.cjs')();
+photoDirection.restore(photoSelection);
 const frameFs=require('fs');
 const frameFile='importacion/encuadres-producto.json';
 if(frameFs.existsSync(frameFile)){const frames=JSON.parse(frameFs.readFileSync(frameFile)).productos;let page=frameFs.readFileSync('index.html','utf8');const line='const productFrames='+JSON.stringify(frames)+';\n';page=/const productFrames=.*?;\n/.test(page)?page.replace(/const productFrames=.*?;\n/,()=>line):page.replace('const products=',line+'const products=');frameFs.writeFileSync('index.html',page);}
@@ -60,6 +63,7 @@ for(const p of products){
   }
  }
 
+ photoDirection.overlay(p,custom,photoSelection);
  const displayName=custom.nombre||p.name;
  const productImage=custom.imagen||p.imageUrl||'';
  const title=custom.tituloSeo||displayName+' en Quito | ConectaTech';
