@@ -23,6 +23,7 @@ on:
       - 'scripts/categorias-meta-web.cjs'
       - 'scripts/sincronizar-conjuntos-meta.cjs'
       - 'scripts/prioridad-comercial-meta.cjs'
+      - 'scripts/reordenar-seis-colecciones-meta.cjs'
       - '.github/workflows/exportar-canales.yml'
       - 'scripts/validar-exportacion-593.cjs'
       - 'datos-593/estado-ultimo-corte.json'
@@ -82,16 +83,10 @@ jobs:
             fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nAcceso Meta (solo lectura): '+result.estado+'\n');
           })().catch(()=>{console.error('No se pudo completar la comprobación de acceso');process.exitCode=1});
           JS
-      - name: Respaldar seis conjuntos prioritarios sin modificarlos
-        env:
-          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
-        run: node scripts/preparar-orden-colecciones-meta.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
-          path: |
-            work/auto-meta/acceso-meta.json
-            work/auto-meta/respaldo-orden-colecciones.json
+          path: work/auto-meta/acceso-meta.json
           retention-days: 7
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
@@ -108,6 +103,7 @@ jobs:
       - run: |
           node scripts/test-meta-web.cjs
           node scripts/test-prioridad-meta.cjs
+          node scripts/test-reordenar-meta.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/test-validar-exportacion-593.cjs
   exportar:
@@ -127,6 +123,7 @@ jobs:
         run: |
           node scripts/test-meta-web.cjs
           node scripts/test-prioridad-meta.cjs
+          node scripts/test-reordenar-meta.cjs
           node scripts/test-validar-exportacion-593.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/exportar-canales.cjs
@@ -151,19 +148,33 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           META_GRAPH_VERSION: 'v26.0'
         run: node scripts/sincronizar-conjuntos-meta.cjs
-      - name: Conservar punto de reanudación de la importación
+      - name: Ejecutar una vez la recreación de seis conjuntos autorizada por Dirección
+        env:
+          META_RECREATE_SIX_ENABLED: 'true'
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_GRAPH_VERSION: 'v26.0'
+        run: node scripts/reordenar-seis-colecciones-meta.cjs --apply
+      - name: Conservar puntos de reanudación de Meta
         if: always()
         run: |
-          if [ ! -f work/auto-meta/importacion.json ]; then exit 0; fi
-          cp work/auto-meta/importacion.json /tmp/conectatech-importacion.json
+          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ]; then exit 0; fi
+          mkdir -p /tmp/conectatech-meta-puntos
+          if [ -f work/auto-meta/importacion.json ]; then cp work/auto-meta/importacion.json /tmp/conectatech-meta-puntos/importacion.json; fi
+          if [ -f work/auto-meta/reordenacion.json ]; then cp work/auto-meta/reordenacion.json /tmp/conectatech-meta-puntos/reordenacion.json; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for intento in 1 2 3 4; do
             git fetch origin main
             git reset --hard origin/main
             mkdir -p reportes/integracion-whatsapp
-            cp /tmp/conectatech-importacion.json reportes/integracion-whatsapp/ultima-importacion.json
-            git add reportes/integracion-whatsapp/ultima-importacion.json
+            if [ -f /tmp/conectatech-meta-puntos/importacion.json ]; then
+              cp /tmp/conectatech-meta-puntos/importacion.json reportes/integracion-whatsapp/ultima-importacion.json
+              git add reportes/integracion-whatsapp/ultima-importacion.json
+            fi
+            if [ -f /tmp/conectatech-meta-puntos/reordenacion.json ]; then
+              cp /tmp/conectatech-meta-puntos/reordenacion.json reportes/integracion-whatsapp/resultado-reordenar-seis-colecciones.json
+              git add reportes/integracion-whatsapp/resultado-reordenar-seis-colecciones.json
+            fi
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "Conservar referencia de importación Meta para reanudación"
             if git push origin HEAD:main; then exit 0; fi
@@ -175,6 +186,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resultado-catalogo-meta
-          path: work/auto-meta/resultado.json
+          path: |
+            work/auto-meta/resultado.json
+            work/auto-meta/reordenacion.json
           retention-days: 7
           if-no-files-found: warn
