@@ -30,7 +30,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: exportacion-canales-main
+  group: ${{ github.event_name == 'pull_request' && format('validacion-meta-{0}', github.event.pull_request.number) || 'exportacion-canales-main' }}
   cancel-in-progress: false
 jobs:
   comprobar-acceso-meta:
