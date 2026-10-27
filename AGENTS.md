@@ -305,3 +305,9 @@ Propietario ordena continuar automáticamente.50mejoras existentes en2lotes25,67
 
 ## Cierre público editorial029–030
 50títulos comprobados enHTTPS/Chromium público,2reportes inmutables de25;677acumuladas y627previas idénticas. Registrar sólo esas50fechas reales.393CORRECTO,97reservas y3pendientes anteriores intactos;33celulares/tablets sin editar.49disponibles primero en catálogo,vitrina ydestacados,sin pin artificialPROT003;EXTE003mantiene stock0/NoDisponible. Preservar fotografíaPROT003yarchivosdeotra sesión. Datos593,SKU,precios,PVP,stock,fotos,URLs,SEO/schema yfeeds conservados;0costo. No sobrescribirinformes despuésdeguardarSHA.
+
+## Recuperación comercial de marca y lote031,27oct2026Guayaquil
+Orden expresa del propietario: recuperar JBL/Samsung y modelos comerciales, especialmente AUDI017.30presentaciones:7revisiones+23adicionales,700únicas;sin pilotos. Referencias de terceros llevan tipo/para más condición visible y ficha compatibleAAA;no declarar fabricación original por logo,precio o empaque. Signature procede de nombre593y etiqueta;marca/modelo originales permanecen intactos. Conservar los23títulos principales correctos cuando corresponda y añadir subtítulos útiles verificados. Fotografías/finanzas/stock/SKU/URLs/SEO/feeds y33celulares/tablets intactos. Fecha sólo trasHTTP/Chromium público;disponibles modificados primero en catálogo/vitrina/destacados,sin pinPROT003.0costo.
+
+## Extensión verificada de marca032
+Dos referencias propias adicionales recuperan JBLtipoTuneA6yTuneA16:1presentación adicional+1revisión,32cambios conjuntos y701únicas. Mantener condiciones de terceros,no inferir fabricación original. Main título previo ajeno yfotografías intactos;celulares/tablets alfinal. Registrar fechas031/032sólotrasHTTP/Chromium ypreservar669entradas fuera de8revisiones.0costo.

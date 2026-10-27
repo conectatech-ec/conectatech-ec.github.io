@@ -3,9 +3,9 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 680,
+    "MEJORAR TÍTULO": 704,
     "REVISAR IDENTIDAD": 97,
-    "CORRECTO": 393
+    "CORRECTO": 369
   },
   "aplicados": 677,
   "cola": [
@@ -20,7 +20,15 @@
         "seo-contenido.json#AUDI098"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "resolucionLote031": {
+        "causa": "Restituir marca de referencia y modelo comercial aprobado, con condición de terceros visible.",
+        "propuesta": "Audífonos tipo JBL Tune Beam 150",
+        "evidencia": [
+          "seo-contenido.json#AUDI098",
+          "importacion/contratos/AUDI098.json"
+        ]
+      }
     },
     {
       "sku": "MONI004",
@@ -164,7 +172,15 @@
         "seo-contenido.json#AUDI018"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "resolucionLote031": {
+        "causa": "Restituir marca de referencia y familia comercial ya confirmada por propietario, sin atribuir fabricación original.",
+        "propuesta": "Audífonos tipo JBL Tune Flex",
+        "evidencia": [
+          "seo-contenido.json#AUDI018",
+          "importacion/contratos/AUDI018.json"
+        ]
+      }
     },
     {
       "sku": "AUDI037",
@@ -4233,7 +4249,7 @@
     },
     {
       "sku": "AIRT002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Localizador Loshall Card para billetera",
       "propuesta": "Localizador Loshall Card para billetera",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4242,7 +4258,17 @@
         "seo-contenido.json#AIRT002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Conservar título identificable y añadir ecosistema de localización verificado.",
+        "propuesta": "Localizador Loshall Card para billetera",
+        "evidencia": [
+          "seo-contenido.json#AIRT002",
+          "importacion/contratos/AIRT002.json"
+        ]
+      }
     },
     {
       "sku": "AIRT003",
@@ -4593,7 +4619,7 @@
     },
     {
       "sku": "AUDI016",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos Tune A6 | diadema inalámbrica",
       "propuesta": "Audífonos Tune A6 | diadema inalámbrica",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4602,7 +4628,17 @@
         "seo-contenido.json#AUDI016"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote032": {
+        "causa": "Recuperar marca de referencia JBL y modelo comercial cotejados con fotografías propias; mantener condición de terceros.",
+        "propuesta": "Audífonos tipo JBL Tune A6",
+        "evidencia": [
+          "seo-contenido.json#AUDI016",
+          "importacion/contratos/AUDI016.json"
+        ]
+      }
     },
     {
       "sku": "AUDI017",
@@ -4621,6 +4657,14 @@
       "resolucionTanda029030": {
         "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
         "propuesta": "Audífonos negro y dorado",
+        "evidencia": [
+          "seo-contenido.json#AUDI017",
+          "importacion/contratos/AUDI017.json"
+        ]
+      },
+      "resolucionLote031": {
+        "causa": "Recuperar referencia JBL de fotos propias y denominación Signature de etiqueta593; conservar identificación de terceros.",
+        "propuesta": "Audífonos tipo JBL Signature",
         "evidencia": [
           "seo-contenido.json#AUDI017",
           "importacion/contratos/AUDI017.json"
@@ -4838,6 +4882,14 @@
           "seo-contenido.json#AUDI044",
           "importacion/contratos/AUDI044.json"
         ]
+      },
+      "resolucionLote031": {
+        "causa": "Restituir referencia Samsung sin atribuir fabricación original; conservar familia comercial.",
+        "propuesta": "Audífonos tipo Galaxy Buds Pro",
+        "evidencia": [
+          "seo-contenido.json#AUDI044",
+          "importacion/contratos/AUDI044.json"
+        ]
       }
     },
     {
@@ -4881,6 +4933,14 @@
       "resolucionTanda026028": {
         "causa": "Reducir 3 líneas reales en móvil a dos; conservar tipo, familia o atributo diferenciador y trasladar datos complementarios al subtítulo.",
         "propuesta": "Audífonos estilo Tune 760BT",
+        "evidencia": [
+          "seo-contenido.json#AUDI047",
+          "importacion/contratos/AUDI047.json"
+        ]
+      },
+      "resolucionLote031": {
+        "causa": "Restituir referencia JBL cotejada con fotografía de empaque, sin atribuir fabricación original.",
+        "propuesta": "Audífonos tipo JBL Tune 760BT",
         "evidencia": [
           "seo-contenido.json#AUDI047",
           "importacion/contratos/AUDI047.json"
@@ -5057,6 +5117,14 @@
       "resolucionTanda016018": {
         "causa": "Compactar principal largo y conservar familia de referencia sin atribuir fabricación JBL.",
         "propuesta": "Audífonos estilo Tune 220",
+        "evidencia": [
+          "seo-contenido.json#AUDI065",
+          "importacion/contratos/AUDI065.json"
+        ]
+      },
+      "resolucionLote031": {
+        "causa": "Restituir referencia de empaque JBL y familia comercial, manteniendo condición de terceros.",
+        "propuesta": "Audífonos tipo JBL Tune 220",
         "evidencia": [
           "seo-contenido.json#AUDI065",
           "importacion/contratos/AUDI065.json"
@@ -5449,6 +5517,14 @@
       "resolucionTanda012015": {
         "causa": "Corregir acentos y hacer visible conexión verificada, conservando nombre comercial.",
         "propuesta": "Audífonos Tune 310C con USB-C",
+        "evidencia": [
+          "seo-contenido.json#AUDI097",
+          "importacion/contratos/AUDI097.json"
+        ]
+      },
+      "resolucionLote031": {
+        "causa": "Restituir referencia JBL verificada sin perder modelo ni conexión.",
+        "propuesta": "Audífonos tipo JBL Tune 310C",
         "evidencia": [
           "seo-contenido.json#AUDI097",
           "importacion/contratos/AUDI097.json"
@@ -8592,7 +8668,7 @@
     },
     {
       "sku": "CAMA002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cámara de seguridad tipo foco | rosca E27",
       "propuesta": "Cámara de seguridad tipo foco | rosca E27",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8601,7 +8677,17 @@
         "seo-contenido.json#CAMA002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Recuperar conexión Wi-Fi y paneles plegables documentados, sin inventar resolución.",
+        "propuesta": "Cámara Wi-Fi tipo foco E27",
+        "evidencia": [
+          "seo-contenido.json#CAMA002",
+          "importacion/contratos/CAMA002.json"
+        ]
+      }
     },
     {
       "sku": "CAMA003",
@@ -8651,7 +8737,7 @@
     },
     {
       "sku": "CAMA007",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cámara Nexxt Indoor | 2K",
       "propuesta": "Cámara Nexxt Indoor | 2K",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8660,7 +8746,17 @@
         "seo-contenido.json#CAMA007"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Conservar familia y resolución; aclarar uso interior y montaje fijo verificados.",
+        "propuesta": "Cámara Nexxt Indoor 2K",
+        "evidencia": [
+          "seo-contenido.json#CAMA007",
+          "importacion/contratos/CAMA007.json"
+        ]
+      }
     },
     {
       "sku": "CAMA008",
@@ -10363,7 +10459,7 @@
     },
     {
       "sku": "CUBO019",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador USB-C Samsung de 25 W",
       "propuesta": "Cargador USB-C Samsung de 25 W",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -10372,7 +10468,17 @@
         "seo-contenido.json#CUBO019"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Aclarar compatibilidad sin atribuir fabricación Samsung; recuperar modelo útil en subtítulo.",
+        "propuesta": "Cargador USB-C para Samsung 25 W",
+        "evidencia": [
+          "seo-contenido.json#CUBO019",
+          "importacion/contratos/CUBO019.json"
+        ]
+      }
     },
     {
       "sku": "CUBO023",
@@ -10399,7 +10505,7 @@
     },
     {
       "sku": "CUBO025",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador Samsung USB-C de 45 W",
       "propuesta": "Cargador Samsung USB-C de 45 W",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -10408,7 +10514,17 @@
         "seo-contenido.json#CUBO025"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Aclarar compatibilidad sin atribuir fabricación Samsung; distinguir potencia y referencia técnica.",
+        "propuesta": "Cargador USB-C para Samsung 45 W",
+        "evidencia": [
+          "seo-contenido.json#CUBO025",
+          "importacion/contratos/CUBO025.json"
+        ]
+      }
     },
     {
       "sku": "DISC003",
@@ -11664,7 +11780,7 @@
     },
     {
       "sku": "GRAM003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Gramera portátil digital de gancho",
       "propuesta": "Gramera portátil digital de gancho",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11673,11 +11789,21 @@
         "seo-contenido.json#GRAM003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Usar nombre comercial claro del instrumento; no inventar capacidad de pesaje.",
+        "propuesta": "Balanza digital portátil de gancho",
+        "evidencia": [
+          "seo-contenido.json#GRAM003",
+          "importacion/contratos/GRAM003.json"
+        ]
+      }
     },
     {
       "sku": "GRAM004",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Gramera digital con plataforma metálica",
       "propuesta": "Gramera digital con plataforma metálica",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11686,11 +11812,21 @@
         "seo-contenido.json#GRAM004"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Aclarar instrumento y controles comprobados, sin inventar capacidad o precisión.",
+        "propuesta": "Balanza digital con plataforma metálica",
+        "evidencia": [
+          "seo-contenido.json#GRAM004",
+          "importacion/contratos/GRAM004.json"
+        ]
+      }
     },
     {
       "sku": "HUB001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Hub USB 3.0 de 4 puertos USB-A",
       "propuesta": "Hub USB 3.0 de 4 puertos USB-A",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11699,7 +11835,17 @@
         "seo-contenido.json#HUB001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Conservar título claro; añadir velocidad nominal y longitud verificadas para diferenciar accesorios.",
+        "propuesta": "Hub USB 3.0 de 4 puertos USB-A",
+        "evidencia": [
+          "seo-contenido.json#HUB001",
+          "importacion/contratos/HUB001.json"
+        ]
+      }
     },
     {
       "sku": "HUB004",
@@ -11749,7 +11895,7 @@
     },
     {
       "sku": "HUB006",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Hub USB-C con tres USB-A y Ethernet",
       "propuesta": "Hub USB-C con tres USB-A y Ethernet",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11758,7 +11904,17 @@
         "seo-contenido.json#HUB006"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Aclarar utilidad de red y entrada USB-C con expansión comprobada.",
+        "propuesta": "Hub USB-C con red y 3 USB-A",
+        "evidencia": [
+          "seo-contenido.json#HUB006",
+          "importacion/contratos/HUB006.json"
+        ]
+      }
     },
     {
       "sku": "HUB007",
@@ -11785,7 +11941,7 @@
     },
     {
       "sku": "HUB008",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Hub Orvesion USB 3.0 de siete puertos",
       "propuesta": "Hub Orvesion USB 3.0 de siete puertos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11794,7 +11950,17 @@
         "seo-contenido.json#HUB008"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Compactar título conservando marca/interfaz/cantidad; añadir longitud del cable verificada.",
+        "propuesta": "Hub Orvesion USB 3.0 de 7 puertos",
+        "evidencia": [
+          "seo-contenido.json#HUB008",
+          "importacion/contratos/HUB008.json"
+        ]
+      }
     },
     {
       "sku": "HUB009",
@@ -11891,7 +12057,7 @@
     },
     {
       "sku": "HUB014",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Hub Targus USB 2.0 de cuatro puertos",
       "propuesta": "Hub Targus USB 2.0 de cuatro puertos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11900,11 +12066,21 @@
         "seo-contenido.json#HUB014"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Compactar título y aclarar tipo de salida sin suponer USB 3.0.",
+        "propuesta": "Hub Targus USB 2.0 de 4 puertos",
+        "evidencia": [
+          "seo-contenido.json#HUB014",
+          "importacion/contratos/HUB014.json"
+        ]
+      }
     },
     {
       "sku": "HUB015",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Hub HP USB 2.0 de cuatro puertos",
       "propuesta": "Hub HP USB 2.0 de cuatro puertos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11913,7 +12089,17 @@
         "seo-contenido.json#HUB015"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Conservar distinción por marca e interfaz; aclarar conexión de las cuatro salidas.",
+        "propuesta": "Hub HP USB 2.0 de 4 puertos",
+        "evidencia": [
+          "seo-contenido.json#HUB015",
+          "importacion/contratos/HUB015.json"
+        ]
+      }
     },
     {
       "sku": "HUB016",
@@ -12083,7 +12269,7 @@
     },
     {
       "sku": "HUB027",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Hub USB-A De 7 Puertos",
       "propuesta": "Hub USB-A De 7 Puertos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12092,7 +12278,17 @@
         "seo-contenido.json#HUB027"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Aclarar conexión de entrada y salidas en el accesorio de siete puertos, sin inventar velocidad.",
+        "propuesta": "Hub USB-A de 7 puertos",
+        "evidencia": [
+          "seo-contenido.json#HUB027",
+          "importacion/contratos/HUB027.json"
+        ]
+      }
     },
     {
       "sku": "HUB028",
@@ -14039,7 +14235,7 @@
     },
     {
       "sku": "LAMP001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Lámpara LED plegable de escritorio mediana",
       "propuesta": "Lámpara LED plegable de escritorio mediana",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14048,7 +14244,17 @@
         "seo-contenido.json#LAMP001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Sustituir tamaño mediana no cuantificado por mecanismo verificable que diferencia el producto.",
+        "propuesta": "Lámpara LED de escritorio articulada",
+        "evidencia": [
+          "seo-contenido.json#LAMP001",
+          "importacion/contratos/LAMP001.json"
+        ]
+      }
     },
     {
       "sku": "LAMP002",
@@ -14240,7 +14446,7 @@
     },
     {
       "sku": "LED002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tira LED RGB de 5 metros",
       "propuesta": "Tira LED RGB de 5 metros",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14249,11 +14455,21 @@
         "seo-contenido.json#LED002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Conservar título claro y añadir tensión verificada para elegir la alimentación correcta.",
+        "propuesta": "Tira LED RGB de 5 metros",
+        "evidencia": [
+          "seo-contenido.json#LED002",
+          "importacion/contratos/LED002.json"
+        ]
+      }
     },
     {
       "sku": "LED003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tira LED RGB de 10 metros",
       "propuesta": "Tira LED RGB de 10 metros",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14262,7 +14478,17 @@
         "seo-contenido.json#LED003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Conservar título claro; añadir característica recortable verificada para elegir el formato adecuado.",
+        "propuesta": "Tira LED RGB de 10 metros",
+        "evidencia": [
+          "seo-contenido.json#LED003",
+          "importacion/contratos/LED003.json"
+        ]
+      }
     },
     {
       "sku": "LINT001",
@@ -15512,7 +15738,7 @@
     },
     {
       "sku": "MOUS035",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mouse recargable Klipxtreme ErgoLast",
       "propuesta": "Mouse recargable Klipxtreme ErgoLast",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15521,7 +15747,17 @@
         "seo-contenido.json#MOUS035"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Conservar título que identifica bien; completar conexión y número de botones comprobados.",
+        "propuesta": "Mouse recargable Klipxtreme ErgoLast",
+        "evidencia": [
+          "seo-contenido.json#MOUS035",
+          "importacion/contratos/MOUS035.json"
+        ]
+      }
     },
     {
       "sku": "MOUS036",
@@ -15584,7 +15820,7 @@
     },
     {
       "sku": "MOUS040",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mouse recargable Meetion MiniGo",
       "propuesta": "Mouse recargable Meetion MiniGo",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15593,7 +15829,17 @@
         "seo-contenido.json#MOUS040"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Conservar título comercial; añadir conexión inalámbrica comprobada sin inferir Bluetooth.",
+        "propuesta": "Mouse recargable Meetion MiniGo",
+        "evidencia": [
+          "seo-contenido.json#MOUS040",
+          "importacion/contratos/MOUS040.json"
+        ]
+      }
     },
     {
       "sku": "MOUS041",
@@ -18453,7 +18699,7 @@
     },
     {
       "sku": "SOPO002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte para celular | ventosa compacta",
       "propuesta": "Soporte para celular | ventosa compacta",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -18462,7 +18708,17 @@
         "seo-contenido.json#SOPO002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Distinguir soporte compacto mediante orientación comprobada y conservar mecanismo de fijación.",
+        "propuesta": "Soporte compacto de celular con ventosa",
+        "evidencia": [
+          "seo-contenido.json#SOPO002",
+          "importacion/contratos/SOPO002.json"
+        ]
+      }
     },
     {
       "sku": "SOPO006",
@@ -18514,7 +18770,7 @@
     },
     {
       "sku": "SOPO011",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte RCA para audífonos de diadema",
       "propuesta": "Soporte RCA para audífonos de diadema",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -18523,7 +18779,17 @@
         "seo-contenido.json#SOPO011"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Mostrar iluminación RGB verificada, ausente del título anterior.",
+        "propuesta": "Soporte RCA RGB para audífonos",
+        "evidencia": [
+          "seo-contenido.json#SOPO011",
+          "importacion/contratos/SOPO011.json"
+        ]
+      }
     },
     {
       "sku": "SOPO012",
@@ -18704,7 +18970,7 @@
     },
     {
       "sku": "SOPO025",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte para guitarra | estructura de pie",
       "propuesta": "Soporte para guitarra | estructura de pie",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -18713,7 +18979,17 @@
         "seo-contenido.json#SOPO025"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Destacar estructura plegable comprobada, en lugar de estructura de pie genérica.",
+        "propuesta": "Soporte plegable para guitarra",
+        "evidencia": [
+          "seo-contenido.json#SOPO025",
+          "importacion/contratos/SOPO025.json"
+        ]
+      }
     },
     {
       "sku": "SOPO027",
@@ -19073,7 +19349,7 @@
     },
     {
       "sku": "SOPO052",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte para celular | brazo y ventosa",
       "propuesta": "Soporte para celular | brazo y ventosa",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -19082,7 +19358,17 @@
         "seo-contenido.json#SOPO052"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Distinguir mecanismo y alcance ajustable frente a otros soportes de ventosa.",
+        "propuesta": "Soporte de celular con brazo ajustable",
+        "evidencia": [
+          "seo-contenido.json#SOPO052",
+          "importacion/contratos/SOPO052.json"
+        ]
+      }
     },
     {
       "sku": "SOPO053",
@@ -20928,7 +21214,7 @@
     },
     {
       "sku": "VENT001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mini ventilador portátil con base",
       "propuesta": "Mini ventilador portátil con base",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -20937,7 +21223,17 @@
         "seo-contenido.json#VENT001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionLote031": {
+        "causa": "Aclarar doble uso de mano y sobremesa sin atribuir batería recargable no verificada.",
+        "propuesta": "Mini ventilador de mano con base",
+        "evidencia": [
+          "seo-contenido.json#VENT001",
+          "importacion/contratos/VENT001.json"
+        ]
+      }
     },
     {
       "sku": "VENT003",
@@ -21190,6 +21486,14 @@
       "resolucionTanda026028": {
         "causa": "Reducir 3 líneas reales en móvil a dos; conservar tipo, familia o atributo diferenciador y trasladar datos complementarios al subtítulo.",
         "propuesta": "Audífonos Tune A16",
+        "evidencia": [
+          "seo-contenido.json#AUDI089",
+          "importacion/contratos/AUDI089.json"
+        ]
+      },
+      "resolucionLote032": {
+        "causa": "Recuperar marca de referencia JBL y modelo comercial cotejados con fotografías propias; mantener condición de terceros.",
+        "propuesta": "Audífonos tipo JBL Tune A16",
         "evidencia": [
           "seo-contenido.json#AUDI089",
           "importacion/contratos/AUDI089.json"
@@ -21778,5 +22082,17 @@
     "correctosConservados": 393,
     "identidadesReservadasSinCambios": 97,
     "modelosConservadosEnEspecificacionesYBusqueda": true
+  },
+  "resolucionesLote031": {
+    "presentacionesSeleccionadas": 30,
+    "revisionesPrevias": 7,
+    "nuevasPresentaciones": 23,
+    "correctosConservados": 370,
+    "identidadesReservadasSinCambios": 97
+  },
+  "resolucionesLote032": {
+    "presentacionesSeleccionadas": 2,
+    "revisionPrevia": 1,
+    "nuevaPresentacion": 1
   }
 }
