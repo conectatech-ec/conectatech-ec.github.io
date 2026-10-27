@@ -1,42 +1,36 @@
 # CONECTATECH BANNERS PRO MÓVIL
-Prototipo independiente de solo lectura para Issue #91. No desplegado. No modificar main ni publicar por GitHub Pages.
+Prototipo independiente de solo lectura para Issue #91. Sin despliegue; main, producción y archivos comerciales intactos.
 
-## Estado verificable de esta entrega
-Se reutilizaron el backend y la interfaz de la instalación previa de BANNERS PRO. Se separó la configuración privada del código público. Se revalida la vigencia al ampliar, descargar y compartir, y se muestra la fecha del archivo. El filtro PDF exige APROBADO exacto: NO_APROBADO ya no pasa por coincidencia parcial. No se publican imágenes, manifiestos, correos ni IDs privados.
-Sintaxis de frontend/backend comprobada en el runtime JavaScript disponible y 11 comprobaciones de autorización/aprobación ejecutadas. Para repetir con Node: node prototipos/banners-pro-movil/contract.test.cjs.
-Estas comprobaciones NO prueban OAuth, Drive en nube, vigencia actual de los cinco originales ni WhatsApp en Android. Los reportes de pruebas anteriores son evidencia histórica, no pruebas repetidas en esta entrega.
+## Resultado verificado
+Reutiliza el backend y la interfaz previos de BANNERS PRO, con configuración privada fuera del repositorio público. Búsqueda instantánea, categorías, recientes, vista ampliada, descarga PNG/PDF y Web Share con fallback de descarga. Se comprueba vigencia antes de ampliar, descargar y compartir.
+Se corrigió el filtro de PDF: exige los estados exactos APROBADO_DRIVE_VERIFICADO o APROBADO_VERIFICADO_DRIVE observados en el manifiesto, además de publicación VERIFICADO/APROBADO, fecha/huella del corte, ID y checksum coincidentes. NO_APROBADO no se acepta.
+19 comprobaciones de autorización/contrato aprobadas con Node. Verificación del manifiesto privado real contra el corte público del 26-10-2026 y SHA de cinco PNG originales y un PDF descargados de Drive. Integración con runtime Google simulado: 5 banners y 1 PDF servidos con bytes idénticos.
+Chromium emulado 412×915: búsqueda SKU/marca/modelo, cinco imágenes a 1200px, filtro, descarga PNG/PDF, ausencia de desbordamiento y errores JS, bloqueo de ID arbitrario y versión anterior, revalidación antes de descarga y actualización en pantalla. Web Share comprobado con API simulada. Las capturas y fixtures privadas no se publican en este repositorio.
 
-## Instalación pendiente, privada y sin servicios nuevos de pago
-No ejecutar implementación de producción sin aprobación de Supervisión General.
-1. Crear un proyecto Apps Script independiente en la cuenta propietaria de la biblioteca; copiar Code.gs, Index.html y appsscript.json.
-2. Configurar BANNERS_PRO_CONFIG como propiedad de script (JSON privado, nunca en GitHub):
-   users: array de uno o dos correos Google autorizados;
-   manifestId: ID del manifiesto vigente existente;
-   rootId: ID de la biblioteca oficial;
-   approvedFolders: array de IDs de carpetas verificadas dentro de la biblioteca;
-   hubUrl: https://conectatech-ec.github.io/datos-593/estado-ultimo-corte.json
-3. La configuración MYSELF/USER_DEPLOYING incluida sirve únicamente cuando ambos teléfonos usan la misma identidad propietaria. No equivale a dos usuarios revocables individualmente. Para dos identidades distintas hace falta validar la política de acceso Google antes de cambiar la implementación. No ampliar acceso a cualquiera.
-4. Para una prueba previa al despliegue, el propietario puede usar Implementar > Probar implementaciones y obtener la URL /dev restringida a editores. Requiere autorización inicial de Google; no añadir trabajadores como editores solo para darles acceso a la galería. El conector disponible no crea ni despliega proyectos Apps Script.
-5. El acceso se rechaza si Session.getActiveUser().getEmail() está vacío o no autorizado. Debe comprobarse en el runtime real. No retirar este control para hacer funcionar una instalación.
+## Cuenta y privacidad
+El propietario confirmó que ambos teléfonos usan la misma cuenta empresarial. Se entrega configuración privada para esa cuenta; no se necesita su correo personal en Apps Script. Una identidad compartida no permite revocar a cada trabajador por separado.
+No hay contraseñas, correos de usuarios, IDs privados, manifiestos ni banners en el código público. No se usan GitHub Pages, triggers nuevos ni sincronizaciones horarias. La revisión cada 60 segundos solo opera con la pantalla visible. Archivos en memoria de sesión, sin service worker ni almacenamiento persistente comercial.
+Las miniaturas usan los originales; cinco PNG suman unos 4 MB. Medir rendimiento en Android físico antes de aceptarlo.
 
-## Contrato de lectura reutilizado
-El manifiesto existente contiene fecha_datos, fuente_593_sha256, productos y catalogos. Se compara fecha/huella con el corte publicado, sin guardar otra fuente de precios/inventario.
-Cada producto debe tener estado APROBADO, material_vigente_verificado y disponibilidad_comercial verdaderos; publicacion_drive con estado_publicacion VERIFICADO, fecha_corte y sha256_fuente coincidentes y checksum_archivo igual a banner_sha256. Se exige SKU piloto e ID, carpeta, MIME, SHA y versión del original verificables.
-Piloto previsto: TELF001, REL046, TARJ018, FLAS003, TELE001. Solo aparecen si el manifiesto actual y los bytes cumplen el contrato. La documentación previa afirma que estos cinco se usaron en sus pruebas; esta sesión aún no pudo comprobar los bytes privados.
-PDF: estado APROBADO exacto y archivo version ligero, URL Drive y SHA válido. Si el productor usa otro estado, solicitar su contrato; no ampliar con búsquedas parciales. No inferir vigencia por nombre o fecha de modificación.
-No hay triggers, sincronización horaria, escritura comercial ni caché persistente de archivos en el teléfono. La revisión cada 60 segundos solo opera mientras la página está visible. Los archivos de la sesión se conservan temporalmente en memoria y se invalidan al cambiar de versión.
-La interfaz usa los bytes originales para las miniaturas: cinco PNG pueden consumir varios MB. No hay pipeline de miniaturas adicional; medir velocidad en Android antes de declarar rendimiento aceptado.
+## Instalación privada pendiente
+No implementar producción sin aprobación de Supervisión General.
+Crear un proyecto Apps Script independiente bajo la cuenta empresarial, copiar Code.gs, Index.html y appsscript.json. El paquete privado entregado incluye una función de configuración inicial para evitar copiar IDs manualmente. No subir ese archivo privado al repositorio.
+La propiedad BANNERS_PRO_CONFIG contiene users, manifestId, rootId, approvedFolders y hubUrl. La única URL de corte admitida es https://conectatech-ec.github.io/datos-593/estado-ultimo-corte.json .
+MYSELF/USER_DEPLOYING limita la instalación a la cuenta propietaria compartida. Session.getActiveUser().getEmail() debe ser esa cuenta; vacío o ajeno se rechaza. No retirar el control ante fallos.
+El propietario puede obtener una URL /dev mediante Implementar > Probar implementaciones, restringida a editores. No agregar trabajadores como editores para dar acceso comercial. La herramienta conectada no ofrece creación/despliegue de Apps Script; falta autorización Google inicial y URL real.
+Para evitar conflictos de varias cuentas, usar un perfil de Chrome exclusivo para la cuenta empresarial; comprobar avatar/correo antes de crear el proyecto. No depender de índices /u/0 o /u/1, que cambian según sesión.
+El Site previo reservado sigue con versión 0, sin URL preview/live. Las URL desplegadas de Sites son producción y quedan fuera de esta entrega.
 
-## Demostración de aceptación pendiente
-- Autenticar las identidades acordadas y rechazar una ajena y sesión vacía.
-- Comprobar cinco originales aprobados contra el manifiesto/corte vigente y SHA.
-- Buscar TELF001, ZTE y A56; validar resultados reales.
-- Abrir imagen, descargar PNG y comparar SHA; descargar PDF.
-- Compartir archivo desde Chrome hacia WhatsApp y confirmar adjunto recibido. Web Share abre el selector del sistema; no puede forzar WhatsApp. Fallback: descarga y envío manual.
-- Verificar Añadir a pantalla de inicio en ambos Android (acceso directo, sin APK ni servicio offline).
-- Cambiar una versión desde el productor autorizado y comprobar bloqueo de la anterior sin modificar aquí la fábrica.
+## Contrato existente
+No se crea otra fuente de precios/inventario. Se compara fecha_datos/fuente_593_sha256 del manifiesto con fecha_corte/origen_sha256 del Hub.
+Productos piloto TELF001, REL046, TARJ018, FLAS003, TELE001: estado APROBADO, material_vigente_verificado y disponibilidad_comercial verdaderos; publicacion_drive VERIFICADO con fecha/huella y checksum coincidentes. Carpeta, MIME, SHA y versión del original se validan en servidor.
+PDF: estados exactos arriba, fecha_datos del corte y publicacion_drive.ligero verificada; ID y SHA iguales al archivo ligero. Diseño pendiente, corte anterior, alteración o aprobación ausente bloquean la entrega.
+La galería no regenera materiales, cambia precios ni modifica la fábrica.
 
-## Dependencias detectadas
-El entorno de ejecución de esta sesión permanece pendiente/offline; no fue posible abrir un checkout, ejecutar Node/Chromium ni materializar el manifiesto JSON para validar los originales.
-El Site previo reservado tiene versión 0 y no tiene URL live/preview. Las URL desplegadas de Sites son producción y quedan fuera de la autorización actual.
-Faltan confirmación de identidades y una URL privada de prueba generada por el propietario mediante el mecanismo Google autorizado. No se ha declarado una URL inventada ni una galería funcional en nube.
+## Repetir pruebas
+node prototipos/banners-pro-movil/contract.test.cjs
+Las pruebas QA con originales requieren fixtures privadas externas y Playwright ya instalado; no incorporarlas al Git público. El servidor QA solo escucha en 127.0.0.1, usa una sesión SIMULADA y nunca debe desplegarse.
+El Git remoto por CLI no estuvo accesible por conexión fallida al proxy. La rama y los commits se prepararon con el conector GitHub, sin tocar el checkout activo.
+
+## Aceptación aún pendiente
+OAuth y lectura de Drive desde Apps Script real, rechazo de una cuenta ajena, acceso desde ambos Android, añadir a pantalla de inicio, rendimiento y envío recibido en WhatsApp. Web Share abre el selector del sistema; no fuerza WhatsApp. La URL de prueba controlada aún no existe.
