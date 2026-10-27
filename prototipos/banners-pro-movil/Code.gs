@@ -44,9 +44,11 @@ function rows_(source,cut){
   const products=source.productos.filter(p=>approved_(p,cut)).map(p=>({sku:p.sku,name:p.titulo,category:categories[p.coleccion]||p.coleccion,driveId:p.publicacion_drive.id_drive,sha256:p.banner_sha256,dataDate:cut.fecha_corte,mime:'image/png'}));
   const pdfs=[];
   for(const [key,c]of Object.entries(source.catalogos||{})){
-    if(!c.archivos_privados||c.estado!=='APROBADO')continue;
+    if(!c.archivos_privados||!['APROBADO_DRIVE_VERIFICADO','APROBADO_VERIFICADO_DRIVE'].includes(c.estado)||c.fecha_datos!==cut.fecha_corte)continue;
     for(const a of c.archivos_privados.filter(a=>a.version==='ligero')){
-      const match=String(a.url).match(/\/d\/([A-Za-z0-9_-]+)/);if(!match||!a.sha256)continue;
+      const publication=c.publicacion_drive?.ligero;
+      if(!publication||publication.estado_aprobacion!=='APROBADO'||publication.estado_publicacion!=='VERIFICADO'||publication.fecha_corte!==cut.fecha_corte||publication.sha256_fuente!==cut.origen_sha256||publication.checksum_archivo!==a.sha256)continue;
+      const match=String(a.url).match(/\/d\/([A-Za-z0-9_-]+)/);if(!match||!a.sha256||match[1]!==publication.id_drive)continue;
       pdfs.push({name:categories[key]||key,driveId:match[1],sha256:a.sha256,mime:'application/pdf'});
     }
   }
