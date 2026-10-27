@@ -2,7 +2,7 @@ const {test}=require('node:test'),assert=require('node:assert/strict'),fs=requir
 const source=fs.readFileSync('Code.gs','utf8')+'\n'+fs.readFileSync('Auth.gs','utf8');
 function runtime(){
  const config={users:['first@example.test','second@example.test'],manifestId:'private',rootId:'private',approvedFolders:['private'],hubUrl:'https://conectatech-ec.github.io/datos-593/estado-ultimo-corte.json'};
- const props=new Map(Object.entries({BANNERS_PRO_CONFIG:JSON.stringify(config),BANNERS_PRO_OAUTH_CLIENT_ID:'test.apps.googleusercontent.com',BANNERS_PRO_OAUTH_CLIENT_SECRET:'server-secret',BANNERS_PRO_OAUTH_REDIRECT_URI:'https://script.google.com/macros/s/existing/exec'}));
+ const props=new Map(Object.entries({BANNERS_PRO_PUBLIC_BANNERS:'false',BANNERS_PRO_CONFIG:JSON.stringify(config),BANNERS_PRO_OAUTH_CLIENT_ID:'test.apps.googleusercontent.com',BANNERS_PRO_OAUTH_CLIENT_SECRET:'server-secret',BANNERS_PRO_OAUTH_REDIRECT_URI:'https://script.google.com/macros/s/existing/exec'}));
  const values=new Map(),calls=[],control={claims:{},status:200,driveReads:0},cache={get:k=>values.get(k)||null,put:(k,v)=>values.set(k,v),remove:k=>values.delete(k)};
  let held=false,nonce;
  const api=vm.runInNewContext(source+';({startGoogleSignIn,completeGoogleSignIn,googleCallback_,authorize_,signOut,getLibrary,validateAsset,getAsset,doGet})',{

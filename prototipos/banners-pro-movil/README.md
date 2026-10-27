@@ -1,14 +1,8 @@
-# BANNERS PRO — autenticación Google en servidor
-Corrección aislada de autenticación; sin cambios en la fábrica, main, producción o biblioteca oficial.
+# BANNERS PRO — acceso público autorizado
+El propietario autorizó expresamente que cualquier persona con el enlace vea y descargue los banners sin cuenta Google. El modo público excluye catálogos PDF y el enlace a la carpeta privada. Los originales, manifiesto y credenciales continúan en Drive privado; la galería sirve únicamente los cinco banners piloto que superen aprobación, vigencia, carpeta, MIME y SHA.
 
-OAuth authorization-code con cliente confidencial, PKCE, state y nonce. El servidor verifica el ID token con Google tokeninfo y valida issuer/audience/azp/exp/iat/sub/email_verified/nonce y whitelist antes de emitir una sesión opaca. No usa Session como identidad del visitante ni acepta correos o JWT enviados por el navegador. ID/access tokens Google y client secret nunca se entregan al cliente ni se registran.
+Instalación simplificada: reemplazar SOLO el contenido del archivo principal Código.gs/Code.gs por publico/Codigo-PUBLICO.txt. Incluye interfaz y backend; Index.html y Auth.gs anteriores dejan de intervenir en la galería pública. Mantener BANNERS_PRO_CONFIG. No requiere cliente ni secreto OAuth. Gestionar implementaciones > editar la implementación actual > Nueva versión, ejecutar como propietario empresarial y acceso Cualquiera. Conservar la misma /exec. No cambiar permisos de Drive.
 
-La sesión aleatoria dura como máximo30min y su registro se guarda por SHA256 en ScriptCache. Su pérdida niega acceso. Whitelist y epoch se verifican en cada llamada. Login usa binding secreto mantenido en memoria del navegador y entrega de sesión de un solo uso; state por sí solo no permite obtenerla. Todas las operaciones de Drive exigen sesión. Código e interfaz deben actualizarse juntos.
+Se probó el backend con cinco PNG reales y manifiesto, sin sesión, verificando SHA; se bloquearon PDF e ID arbitrario. Chromium móvil sin cookies: entrada directa, búsqueda, vista1200px, descarga idéntica y Web Share simulado. No aplicado a la implementación remota: el conector no opera Apps Script.
 
-La pantalla de login puede abrir con ANYONE_ANONYMOUS y ejecución USER_DEPLOYING; ello no autoriza lecturas privadas. El OAuth del visitante solicita solo openid/email. Los permisos Drive readonly pertenecen al desplegador empresarial. Mantener los originales privados.
-
-Ver ACTUALIZAR-AUTENTICACION.txt para la configuración OAuth y actualización de la implementación existente que conserva /exec. Se mantiene la configuración privada previa; el segundo correo debe autorizarse expresamente. No crear otro proyecto Apps Script ni otra implementación.
-
-Pruebas: node auth.test.cjs; node contract.test.cjs. QA del navegador usa OAuth SIMULADO y originales privados fuera de Git; no desplegar qa/server.cjs. La verificación real contra Google requiere /exec, client ID, secreto guardado por propietario y consentimiento configurado. Aún no aplicada a la instancia desplegada.
-
-Dependencias de runtime: UrlFetchApp debe poder acceder por HTTPS a oauth2.googleapis.com/token y /tokeninfo y al Hub oficial. Fallos de Google, cuota o caché se rechazan de forma cerrada. Los errores de autenticación son genéricos y exceptionLogging está en NONE. Tokeninfo se usa únicamente al iniciar sesión; no se cachean tokens Google.
+Los archivos modulares Code.gs/Auth.gs/Index.html también representan el modo público (desactivable mediante BANNERS_PRO_PUBLIC_BANNERS=false). Para instalación de un solo archivo usar exclusivamente el TXT indicado, que es deliberadamente público. No instalar ambos backends como archivos adicionales.

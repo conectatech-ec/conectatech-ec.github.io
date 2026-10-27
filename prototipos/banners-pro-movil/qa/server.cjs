@@ -2,13 +2,15 @@
 const http=require('node:http'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const base=path.resolve(__dirname,'..'),fixtures=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures.json')));
 const pdfs=JSON.parse(fs.readFileSync(path.join(__dirname,'pdf-fixtures.json')));
+const publicMode=process.env.BANNERS_PRO_QA_PUBLIC==='1';
 const state={revision:1,assetReads:0};
-function library(){return {mode:'qa-local',date:'2026-10-26',products:fixtures.map(p=>({...p,filename:p.sku+'-SIGNATURE.png',version:state.revision,updatedAt:'2026-10-26T22:30:00Z',path:undefined})),pdfs:pdfs.map(p=>({...p,version:state.revision,path:undefined}))};}
+function library(){return {mode:'qa-local',date:'2026-10-26',products:fixtures.map(p=>({...p,filename:p.sku+'-SIGNATURE.png',version:state.revision,updatedAt:'2026-10-26T22:30:00Z',path:undefined})),pdfs:(publicMode?[]:pdfs).map(p=>({...p,version:state.revision,path:undefined}))};}
 const server=http.createServer(async(req,res)=>{
  res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','no-referrer');
  function reply(status,data,type='application/json'){res.writeHead(status,{'Content-Type':type});res.end(type==='application/json'?JSON.stringify(data):data);}
+ if(req.url==='/api/getAccessMode')return reply(200,{publicBanners:publicMode});
  if(req.url==='/__qa_login'){res.setHeader('Set-Cookie','qa-session=local-only; HttpOnly; SameSite=Strict; Path=/');return reply(200,{qa:true});}
- if(!req.headers.cookie?.split(';').some(v=>v.trim()==='qa-session=local-only'))return reply(403,{error:'Acceso privado — prueba local'});
+ if(!publicMode&&!req.headers.cookie?.split(';').some(v=>v.trim()==='qa-session=local-only'))return reply(403,{error:'Acceso privado — prueba local'});
  if(req.url==='/')return reply(200,fs.readFileSync(path.join(base,'Index.html')),'text/html; charset=utf-8');
  if(req.url==='/__qa_google_login')return reply(200,'Inicio de sesión simulado para QA local','text/plain');
  if(req.method!=='POST')return reply(404,{error:'No encontrado'});
@@ -16,11 +18,11 @@ const server=http.createServer(async(req,res)=>{
  if(req.url==='/api/startGoogleSignIn')return reply(200,{state:'a'.repeat(64),binding:'b'.repeat(64),url:'http://127.0.0.1:'+server.address().port+'/__qa_google_login'});
  if(req.url==='/api/completeGoogleSignIn')return reply(200,{session:'c'.repeat(64),expires:Date.now()+1800000});
  if(req.url==='/api/signOut')return reply(200,{ok:true});
- if(args.at(-1)!=='c'.repeat(64))return reply(403,{error:'ACCESO_DENEGADO'});
+ if(!publicMode&&args.at(-1)!=='c'.repeat(64))return reply(403,{error:'ACCESO_DENEGADO'});
  if(req.url==='/api/getLibrary')return reply(200,library());
  if(req.url==='/__qa_change_version'){state.revision++;return reply(200,state);}
  if(req.url==='/api/getAsset'||req.url==='/api/validateAsset'){
-  const row=[...fixtures,...pdfs].find(p=>p.driveId===args[0]);if(!row)return reply(403,{error:'Archivo no autorizado'});
+  const row=[...fixtures,...(publicMode?[]:pdfs)].find(p=>p.driveId===args[0]);if(!row)return reply(403,{error:'Archivo no autorizado'});
   if(args[1]!==state.revision)return reply(409,{error:'VERSION_CAMBIO'});
   const b=fs.readFileSync(row.path),sha=crypto.createHash('sha256').update(b).digest('hex');
   if(sha!==row.sha256)return reply(409,{error:'SHA256 no coincide'});if(req.url==='/api/validateAsset')return reply(200,{...row,path:undefined,version:state.revision});state.assetReads++;

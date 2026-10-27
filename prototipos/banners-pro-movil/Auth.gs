@@ -66,7 +66,10 @@ function completeGoogleSignIn(state,binding){
     return {session,expires:identity.expires};
   });
 }
+function publicBanners_(){return PropertiesService.getScriptProperties().getProperty('BANNERS_PRO_PUBLIC_BANNERS')!=='false';}
+function getAccessMode(){return {publicBanners:publicBanners_()};}
 function authorize_(session){
+  if(publicBanners_())return 'public-banner-visitor';
   if(!validSecret_(session))throw denied_();
   const identity=cached_(authKey_('session',session)),epoch=PropertiesService.getScriptProperties().getProperty('BANNERS_PRO_AUTH_EPOCH')||'1';
   if(!identity||identity.expires<=Date.now()||identity.epoch!==epoch||!currentUsers_().includes(identity.email))throw denied_();

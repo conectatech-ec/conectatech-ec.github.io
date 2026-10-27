@@ -68,13 +68,13 @@ function checkedFile_(row){
 function getLibrary(session){
   const {source,cut}=base_(session),rows=rows_(source,cut),warnings=[];
   function checked(list){const result=[];for(const row of list){try{result.push(checkedFile_(row).row);}catch(e){warnings.push({sku:row.sku||null,nombre:row.name,motivo:'Archivo pendiente de verificación o sin acceso vigente'});}}return result;}
-  const products=checked(rows.products),pdfs=checked(rows.pdfs);
+  const products=checked(rows.products),pdfs=publicBanners_()?[]:checked(rows.pdfs);
   products.sort((a,b)=>b.version-a.version||a.sku.localeCompare(b.sku));
-  return {mode:'drive-live',date:cut.fecha_corte,products,pdfs,warnings,sourceUrl:'https://drive.google.com/drive/folders/'+SETTINGS.rootId,checkedAt:new Date().toISOString()};
+  return {mode:'drive-live',date:cut.fecha_corte,products,pdfs,warnings,sourceUrl:publicBanners_()?null:'https://drive.google.com/drive/folders/'+SETTINGS.rootId,checkedAt:new Date().toISOString()};
 }
 function selected_(id,version,session){
   authorize_(session);if(typeof id!=='string'||!/^[A-Za-z0-9_-]+$/.test(id))throw new Error('Archivo inválido');
-  const {source,cut}=base_(session),rows=rows_(source,cut),selected=[...rows.products,...rows.pdfs].find(p=>p.driveId===id);
+  const {source,cut}=base_(session),rows=rows_(source,cut),selected=[...rows.products,...(publicBanners_()?[]:rows.pdfs)].find(p=>p.driveId===id);
   if(!selected)throw new Error('Este archivo no está aprobado o ya no está vigente.');
   const result=checkedFile_(selected);
   if(String(result.row.version)!==String(version))throw new Error('VERSION_CAMBIO: actualiza la galería antes de compartir.');
