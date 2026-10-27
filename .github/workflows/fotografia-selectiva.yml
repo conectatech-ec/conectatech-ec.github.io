@@ -811,7 +811,7 @@ jobs:
                   for sku,row in record['productos'].items():
                       assert row['revisado_visual'] is True
                       photos=[row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas']
-                      versions=[row['maestro_anterior'],row['referencia_visual'],*row['versiones_anteriores'].values(),*row.get('vistas_retira_archivos_conservados',[])]
+                      versions=[*row.get('archivos_originales_conservados',[]),row['maestro_anterior'],row['referencia_visual'],*row['versiones_anteriores'].values(),*row.get('vistas_retira_archivos_conservados',[])]
                       for kept in row.get('mantener_vistas',[]):versions.extend([{'url':kept['original'],'sha256':kept['sha256_original']},*kept['versiones'].values()])
                       for photo in photos:versions.extend([{'url':photo['original'],'sha256':photo['sha256_original']},*photo['versiones'].values()])
                       for version in versions:
