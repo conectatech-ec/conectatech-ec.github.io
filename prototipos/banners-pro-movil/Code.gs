@@ -1,0 +1,91 @@
+/* Prototipo independiente, solo lectura. No desplegar sin aprobación. */
+function configuration_() {
+  const raw=PropertiesService.getScriptProperties().getProperty('BANNERS_PRO_CONFIG');
+  if(!raw) throw new Error('Configuración privada pendiente.');
+  const c=JSON.parse(raw);
+  if(!Array.isArray(c.users)||c.users.length<1||c.users.length>2||c.users.some(e=>typeof e!=='string'||!e.includes('@')))throw new Error('Configura una o dos identidades autorizadas.');
+  for(const k of ['manifestId','rootId','interfaceId','interfaceSha256','hubUrl'])if(typeof c[k]!=='string'||!c[k])throw new Error('Configuración incompleta: '+k);
+  if(!Array.isArray(c.approvedFolders)||!c.approvedFolders.length)throw new Error('Carpetas autorizadas pendientes.');
+  if(c.hubUrl!=='https://conectatech-ec.github.io/datos-593/estado-ultimo-corte.json')throw new Error('Fuente de corte no autorizada.');
+  c.users=c.users.map(e=>e.toLowerCase().trim());
+  c.pilot=['TELF001','REL046','TARJ018','FLAS003','TELE001'];
+  return Object.freeze(c);
+}
+const SETTINGS=configuration_();
+function authorize_() {
+  const email=Session.getActiveUser().getEmail().toLowerCase().trim();
+  if(!email||!SETTINGS.users.includes(email))throw new Error('ACCESO_DENEGADO: inicia sesión con la cuenta autorizada.');
+  return email;
+}
+const INTERFAZ_PRIVADA=Object.freeze({id:SETTINGS.interfaceId,sha256:SETTINGS.interfaceSha256});
+function doGet() {
+  try {authorize_();} catch(e) {return HtmlService.createHtmlOutput('<h1>Acceso privado</h1><p>Inicia sesión con la cuenta autorizada de CONECTATECH.</p>').setTitle('Banners Pro — acceso privado');}
+  try {
+    const file=DriveApp.getFileById(INTERFAZ_PRIVADA.id);
+    if(file.isTrashed()||file.getMimeType()!=='text/html')throw new Error('Interfaz no disponible');
+    const blob=file.getBlob();if(hash_(blob.getBytes())!==INTERFAZ_PRIVADA.sha256)throw new Error('Interfaz pendiente de revisión');
+    return HtmlService.createHtmlOutput(blob.getDataAsString('UTF-8')).setTitle('CONECTATECH BANNERS PRO').setFaviconUrl('https://conectatech-ec.github.io/logo-conectatech.png').addMetaTag('viewport','width=device-width, initial-scale=1, viewport-fit=cover');
+  } catch(e) {return HtmlService.createHtmlOutput('<h1>Banners Pro</h1><p>La interfaz está en verificación. Vuelve a abrir la aplicación cuando termine su actualización.</p>').setTitle('Banners Pro — en verificación');}
+}
+function hash_(bytes){return Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256,bytes).map(v=>(v&255).toString(16).padStart(2,'0')).join('');}
+function inside_(file){const it=file.getParents();while(it.hasNext())if(SETTINGS.approvedFolders.includes(it.next().getId()))return true;return false;}
+function base_(){
+  authorize_();
+  const source=JSON.parse(DriveApp.getFileById(SETTINGS.manifestId).getBlob().getDataAsString('UTF-8'));
+  const response=UrlFetchApp.fetch(SETTINGS.hubUrl,{muteHttpExceptions:true,followRedirects:true});
+  if(response.getResponseCode()!==200)throw new Error('No se pudo comprobar la vigencia del inventario. Intenta actualizar.');
+  const cut=JSON.parse(response.getContentText());
+  if(source.fecha_datos!==cut.fecha_corte||source.fuente_593_sha256!==cut.origen_sha256)throw new Error('La biblioteca está actualizándose al nuevo corte. No se compartirán materiales anteriores.');
+  return {source,cut};
+}
+function approved_(p,cut){
+  const d=p.publicacion_drive;
+  return SETTINGS.pilot.includes(p.sku)&&p.estado==='APROBADO'&&p.material_vigente_verificado===true&&p.disponibilidad_comercial===true&&
+    d&&d.estado_publicacion==='VERIFICADO'&&d.fecha_corte===cut.fecha_corte&&d.sha256_fuente===cut.origen_sha256&&d.checksum_archivo===p.banner_sha256;
+}
+function rows_(source,cut){
+  const categories={TELEFONOS_TABLETS:'Teléfonos y tablets',SMARTWATCHES:'Smartwatch',ALMACENAMIENTO:'Almacenamiento',TELEVISORES_MONITORES:'Televisores y monitores',CABLES_ADAPTADORES:'Cables y adaptadores'};
+  const products=source.productos.filter(p=>approved_(p,cut)).map(p=>({sku:p.sku,name:p.titulo,category:categories[p.coleccion]||p.coleccion,driveId:p.publicacion_drive.id_drive,sha256:p.banner_sha256,dataDate:cut.fecha_corte,mime:'image/png'}));
+  const pdfs=[];
+  for(const [key,c]of Object.entries(source.catalogos||{})){
+    if(!c.archivos_privados||c.estado!=='APROBADO')continue;
+    for(const a of c.archivos_privados.filter(a=>a.version==='ligero')){
+      const match=String(a.url).match(/\/d\/([A-Za-z0-9_-]+)/);if(!match||!a.sha256)continue;
+      pdfs.push({name:categories[key]||key,driveId:match[1],sha256:a.sha256,mime:'application/pdf'});
+    }
+  }
+  return {products,pdfs};
+}
+function checkedFile_(row){
+  if(!row||!/^[A-Za-z0-9_-]+$/.test(row.driveId)||!/^[a-f0-9]{64}$/.test(row.sha256))throw new Error('Referencia de archivo inválida.');
+  const file=DriveApp.getFileById(row.driveId),version=file.getLastUpdated().getTime();
+  if(file.isTrashed()||file.getMimeType()!==row.mime||!inside_(file))throw new Error('Archivo fuera de la biblioteca autorizada.');
+  const key='bp:verified:'+hash_([row.driveId,version,row.sha256].join(':'));
+  const cache=typeof CacheService!=='undefined'?CacheService.getUserCache():null;
+  if(!cache||cache.get(key)!=='OK'){
+    if(hash_(file.getBlob().getBytes())!==row.sha256||file.getLastUpdated().getTime()!==version)throw new Error('VERIFICACION_PENDIENTE: el archivo cambió antes de su aprobación.');
+    if(cache)cache.put(key,'OK',300);
+  }
+  return {file,row:{...row,version,updatedAt:new Date(version).toISOString(),filename:file.getName()}};
+}
+function getLibrary(){
+  const {source,cut}=base_(),rows=rows_(source,cut),warnings=[];
+  function checked(list){const result=[];for(const row of list){try{result.push(checkedFile_(row).row);}catch(e){warnings.push({sku:row.sku||null,nombre:row.name,motivo:'Archivo pendiente de verificación o sin acceso vigente'});}}return result;}
+  const products=checked(rows.products),pdfs=checked(rows.pdfs);
+  products.sort((a,b)=>b.version-a.version||a.sku.localeCompare(b.sku));
+  return {mode:'drive-live',date:cut.fecha_corte,products,pdfs,warnings,sourceUrl:'https://drive.google.com/drive/folders/'+SETTINGS.rootId,checkedAt:new Date().toISOString()};
+}
+function selected_(id,version){
+  authorize_();if(typeof id!=='string'||!/^[A-Za-z0-9_-]+$/.test(id))throw new Error('Archivo inválido');
+  const {source,cut}=base_(),rows=rows_(source,cut),selected=[...rows.products,...rows.pdfs].find(p=>p.driveId===id);
+  if(!selected)throw new Error('Este archivo no está aprobado o ya no está vigente.');
+  const result=checkedFile_(selected);
+  if(String(result.row.version)!==String(version))throw new Error('VERSION_CAMBIO: actualiza la galería antes de compartir.');
+  return {...result,cut};
+}
+function validateAsset(id,version){const result=selected_(id,version);return result.row;}
+function getAsset(id,version){
+  const {file:f,row,cut}=selected_(id,version),bytes=f.getBlob().getBytes();
+  if(hash_(bytes)!==row.sha256||String(f.getLastUpdated().getTime())!==String(row.version))throw new Error('VERIFICACION_PENDIENTE: el archivo cambió. Espera la validación de la fábrica.');
+  return {id,version:row.version,filename:f.getName(),mime:f.getMimeType(),sha256:row.sha256,base64:Utilities.base64Encode(bytes)};
+}
