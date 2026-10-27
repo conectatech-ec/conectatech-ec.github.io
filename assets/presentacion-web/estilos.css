@@ -231,7 +231,7 @@ header .brand{position:relative;z-index:3}
 
 /* Halloween: escena original con profundidad y vitrina abierta. */
 [data-ct-temporada=halloween] header{padding-top:57px}
-.pw-logo-season{left:calc(var(--pw-logo-size) / 2 - 31px);top:-50px;width:62px;height:62px;object-fit:contain;filter:drop-shadow(0 2px 5px #0007) drop-shadow(0 0 9px #ffb83345);z-index:3}
+.pw-logo-season{left:calc(var(--pw-logo-size) / 2 - 32px);top:-50px;width:72px;height:72px;transform:rotate(-14deg);transform-origin:50% 75%;object-fit:contain;filter:drop-shadow(0 2px 5px #0007) drop-shadow(0 0 9px #ffb83345);z-index:3}
 [data-ct-temporada=halloween] header .brandlogo{z-index:4;box-shadow:0 0 0 2px #ffffffb3,0 0 25px #8bd12f38}
 .pw-luna-iluminada{display:none}
 [data-ct-temporada=halloween] .pw-hero{display:block;padding:34px;min-height:520px;background:linear-gradient(90deg,#0812241c,transparent 43%,#0914212b),url('./halloween-escena-original.webp?v=7') center top/cover no-repeat,#4e260e;border:1px solid #d59a4e8c;box-shadow:0 15px 38px #b6581a35,0 0 0 5px #ffb33b14;overflow:hidden}
@@ -292,7 +292,7 @@ header .brand{position:relative;z-index:3}
 @media(max-width:600px){
  [data-ct-temporada=halloween] header{padding-top:53px}
  [data-ct-temporada=halloween] header .brandrow{margin-bottom:0}
- .pw-logo-season{left:calc(var(--pw-logo-size) / 2 - 28px);top:-44px;width:56px;height:56px}
+ .pw-logo-season{left:calc(var(--pw-logo-size) / 2 - 28px);top:-44px;width:64px;height:64px}
  [data-ct-temporada=halloween] .pw-hero{--pw-scene-edge:calc((100vw - 24px) * .5625);padding:calc((100vw - 24px) * .5625 + 18px) 17px 19px;border-radius:17px}
  [data-ct-temporada=halloween] .pw-hero:after{inset:7px;border-radius:11px}
  [data-ct-temporada=halloween] .pw-hero .ct-hero-copy{margin-bottom:25px}
