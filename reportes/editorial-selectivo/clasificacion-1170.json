@@ -3,9 +3,9 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 510,
+    "MEJORAR TÍTULO": 570,
     "REVISAR IDENTIDAD": 97,
-    "CORRECTO": 563
+    "CORRECTO": 503
   },
   "aplicados": 507,
   "cola": [
@@ -2762,7 +2762,7 @@
     },
     {
       "sku": "ADAP023",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Unión RCA triple | audio y video",
       "propuesta": "Unión RCA triple | audio y video",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -2771,7 +2771,17 @@
         "seo-contenido.json#ADAP023"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Aclarar función y número de conexiones sin fragmentación.",
+        "propuesta": "Unión triple RCA para audio y video",
+        "evidencia": [
+          "seo-contenido.json#ADAP023",
+          "importacion/contratos/ADAP023.json"
+        ]
+      }
     },
     {
       "sku": "ADAP024",
@@ -2788,7 +2798,7 @@
     },
     {
       "sku": "ADAP025",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Unión metálica | 3,5 mm hembra a hembra",
       "propuesta": "Unión metálica | 3,5 mm hembra a hembra",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -2797,7 +2807,17 @@
         "seo-contenido.json#ADAP025"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Añadir uso de audio y separar detalle técnico de conectores.",
+        "propuesta": "Unión metálica de audio 3,5 mm",
+        "evidencia": [
+          "seo-contenido.json#ADAP025",
+          "importacion/contratos/ADAP025.json"
+        ]
+      }
     },
     {
       "sku": "ADAP026",
@@ -2851,7 +2871,7 @@
     },
     {
       "sku": "ADAP029",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Convertidor HDMI a RCA | MINI HDMI2AV",
       "propuesta": "Convertidor HDMI a RCA | MINI HDMI2AV",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -2860,7 +2880,17 @@
         "seo-contenido.json#ADAP029"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Reemplazar denominación técnica MINI HDMI2AV por la función comercial.",
+        "propuesta": "Convertidor HDMI a audio y video RCA",
+        "evidencia": [
+          "seo-contenido.json#ADAP029",
+          "importacion/contratos/ADAP029.json"
+        ]
+      }
     },
     {
       "sku": "ADAP030",
@@ -2877,7 +2907,7 @@
     },
     {
       "sku": "ADAP031",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Divisor Besser Sound | micrófono y audífonos",
       "propuesta": "Divisor Besser Sound | micrófono y audífonos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -2886,11 +2916,21 @@
         "seo-contenido.json#ADAP031"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Explicar la función del divisor conservando marca y conexión.",
+        "propuesta": "Divisor de audio Besser Sound",
+        "evidencia": [
+          "seo-contenido.json#ADAP031",
+          "importacion/contratos/ADAP031.json"
+        ]
+      }
     },
     {
       "sku": "ADAP032",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Divisor de audio | 3,5 mm a doble salida",
       "propuesta": "Divisor de audio | 3,5 mm a doble salida",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -2899,7 +2939,17 @@
         "seo-contenido.json#ADAP032"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Integrar conexión y función en un título legible sin fragmentos.",
+        "propuesta": "Divisor de audio 3,5 mm de doble salida",
+        "evidencia": [
+          "seo-contenido.json#ADAP032",
+          "importacion/contratos/ADAP032.json"
+        ]
+      }
     },
     {
       "sku": "ADAP033",
@@ -3436,7 +3486,7 @@
     },
     {
       "sku": "ADAP065",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Divisor Lightning | doble toma",
       "propuesta": "Divisor Lightning | doble toma",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3445,7 +3495,17 @@
         "seo-contenido.json#ADAP065"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Integrar conector y cantidad de tomas sin prometer funciones no comprobadas.",
+        "propuesta": "Divisor Lightning de doble toma",
+        "evidencia": [
+          "seo-contenido.json#ADAP065",
+          "importacion/contratos/ADAP065.json"
+        ]
+      }
     },
     {
       "sku": "ADAP066",
@@ -3499,7 +3559,7 @@
     },
     {
       "sku": "ADAP069",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Convertidor de audio digital a RCA",
       "propuesta": "Convertidor de audio digital a RCA",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3508,7 +3568,17 @@
         "seo-contenido.json#ADAP069"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Precisar canales de salida y entradas verificadas.",
+        "propuesta": "Convertidor de audio digital a RCA estéreo",
+        "evidencia": [
+          "seo-contenido.json#ADAP069",
+          "importacion/contratos/ADAP069.json"
+        ]
+      }
     },
     {
       "sku": "ADAP070",
@@ -3575,7 +3645,7 @@
     },
     {
       "sku": "ADAP075",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Divisor RJ45 | 1 a 2 tomas",
       "propuesta": "Divisor RJ45 | 1 a 2 tomas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3584,7 +3654,17 @@
         "seo-contenido.json#ADAP075"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Aclarar que es un divisor pasivo y evitar confundirlo con un switch de red.",
+        "propuesta": "Divisor pasivo RJ45 de dos tomas",
+        "evidencia": [
+          "seo-contenido.json#ADAP075",
+          "importacion/contratos/ADAP075.json"
+        ]
+      }
     },
     {
       "sku": "ADAP076",
@@ -3650,7 +3730,7 @@
     },
     {
       "sku": "ADAP082",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Fuente de alimentación 5 V | 2 A",
       "propuesta": "Fuente de alimentación 5 V | 2 A",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3659,11 +3739,21 @@
         "seo-contenido.json#ADAP082"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Unir voltaje y corriente para reconocer variante rápidamente.",
+        "propuesta": "Fuente de 5 V y 2 A",
+        "evidencia": [
+          "seo-contenido.json#ADAP082",
+          "importacion/contratos/ADAP082.json"
+        ]
+      }
     },
     {
       "sku": "ADAP083",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Fuente de alimentación 9 V | 2 A",
       "propuesta": "Fuente de alimentación 9 V | 2 A",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3672,11 +3762,21 @@
         "seo-contenido.json#ADAP083"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Unir voltaje y corriente para reconocer variante rápidamente.",
+        "propuesta": "Fuente de 9 V y 2 A",
+        "evidencia": [
+          "seo-contenido.json#ADAP083",
+          "importacion/contratos/ADAP083.json"
+        ]
+      }
     },
     {
       "sku": "ADAP084",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Fuente de alimentación 12 V | 2 A",
       "propuesta": "Fuente de alimentación 12 V | 2 A",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3685,11 +3785,21 @@
         "seo-contenido.json#ADAP084"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Unir voltaje y corriente para reconocer variante rápidamente.",
+        "propuesta": "Fuente de 12 V y 2 A",
+        "evidencia": [
+          "seo-contenido.json#ADAP084",
+          "importacion/contratos/ADAP084.json"
+        ]
+      }
     },
     {
       "sku": "ADAP085",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Fuente de alimentación 12 V | 5 A",
       "propuesta": "Fuente de alimentación 12 V | 5 A",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3698,11 +3808,21 @@
         "seo-contenido.json#ADAP085"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Unir voltaje y corriente diferenciando formato verificado.",
+        "propuesta": "Fuente de 12 V y 5 A",
+        "evidencia": [
+          "seo-contenido.json#ADAP085",
+          "importacion/contratos/ADAP085.json"
+        ]
+      }
     },
     {
       "sku": "ADAP086",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Adaptador HDMI en L | conexión en ángulo",
       "propuesta": "Adaptador HDMI en L | conexión en ángulo",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3711,7 +3831,17 @@
         "seo-contenido.json#ADAP086"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Eliminar redundancia del formato en L y explicar conectores.",
+        "propuesta": "Adaptador HDMI en ángulo recto",
+        "evidencia": [
+          "seo-contenido.json#ADAP086",
+          "importacion/contratos/ADAP086.json"
+        ]
+      }
     },
     {
       "sku": "ADAP087",
@@ -3815,7 +3945,7 @@
     },
     {
       "sku": "ADAP093",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable adaptador USB-A | plug mini",
       "propuesta": "Cable adaptador USB-A | plug mini",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -3824,7 +3954,17 @@
         "seo-contenido.json#ADAP093"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Unir entrada y salida del cable para entender su función.",
+        "propuesta": "Cable adaptador USB-A a plug mini",
+        "evidencia": [
+          "seo-contenido.json#ADAP093",
+          "importacion/contratos/ADAP093.json"
+        ]
+      }
     },
     {
       "sku": "ADAP094",
@@ -4629,7 +4769,7 @@
     },
     {
       "sku": "AUDI064",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos abiertos estilo Soundgear Sense negra",
       "propuesta": "Audífonos abiertos estilo Soundgear Sense negra",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4638,7 +4778,17 @@
         "seo-contenido.json#AUDI064"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Corregir concordancia y reducir título manteniendo familia comercial y condición independiente.",
+        "propuesta": "Audífonos abiertos Soundgear Sense",
+        "evidencia": [
+          "seo-contenido.json#AUDI064",
+          "importacion/contratos/AUDI064.json"
+        ]
+      }
     },
     {
       "sku": "AUDI065",
@@ -4749,7 +4899,7 @@
     },
     {
       "sku": "AUDI073",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos inalámbricos Buds 6 Pro negra",
       "propuesta": "Audífonos inalámbricos Buds 6 Pro negra",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4758,7 +4908,17 @@
         "seo-contenido.json#AUDI073"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Corregir concordancia de variante conservando familia comercial identificable.",
+        "propuesta": "Audífonos Buds 6 Pro",
+        "evidencia": [
+          "seo-contenido.json#AUDI073",
+          "importacion/contratos/AUDI073.json"
+        ]
+      }
     },
     {
       "sku": "AUDI074",
@@ -5027,7 +5187,7 @@
     },
     {
       "sku": "AUDI099",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos Black Shark T13 ANC | estuche negro compacto",
       "propuesta": "Audífonos Black Shark T13 ANC | estuche negro compacto",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -5036,7 +5196,17 @@
         "seo-contenido.json#AUDI099"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir código técnico del título por formato de estuche comprobado; modelo conservado en especificaciones.",
+        "propuesta": "Audífonos Black Shark",
+        "evidencia": [
+          "seo-contenido.json#AUDI099",
+          "importacion/contratos/AUDI099.json"
+        ]
+      }
     },
     {
       "sku": "AUDI101",
@@ -5669,7 +5839,7 @@
     },
     {
       "sku": "CABL013",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Extensión USB-A Mindpure | 1,5 m",
       "propuesta": "Extensión USB-A Mindpure | 1,5 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -5678,11 +5848,21 @@
         "seo-contenido.json#CABL013"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Mantener longitud en el título para distinguir variantes sin abrir ficha.",
+        "propuesta": "Extensión USB-A Mindpure de 1,5 m",
+        "evidencia": [
+          "seo-contenido.json#CABL013",
+          "importacion/contratos/CABL013.json"
+        ]
+      }
     },
     {
       "sku": "CABL014",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Extensión USB-A Mindpure | 3 m",
       "propuesta": "Extensión USB-A Mindpure | 3 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -5691,11 +5871,21 @@
         "seo-contenido.json#CABL014"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Mantener longitud en el título para distinguir variantes sin abrir ficha.",
+        "propuesta": "Extensión USB-A Mindpure de 3 m",
+        "evidencia": [
+          "seo-contenido.json#CABL014",
+          "importacion/contratos/CABL014.json"
+        ]
+      }
     },
     {
       "sku": "CABL015",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable de alimentación trébol | enchufe de 3 pines",
       "propuesta": "Cable de alimentación trébol | enchufe de 3 pines",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -5704,7 +5894,17 @@
         "seo-contenido.json#CABL015"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Dar prioridad a la forma del conector y conservar norma técnica.",
+        "propuesta": "Cable de alimentación trébol de 3 pines",
+        "evidencia": [
+          "seo-contenido.json#CABL015",
+          "importacion/contratos/CABL015.json"
+        ]
+      }
     },
     {
       "sku": "CABL016",
@@ -5721,7 +5921,7 @@
     },
     {
       "sku": "CABL018",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable de alimentación blanco | enchufe de dos clavijas",
       "propuesta": "Cable de alimentación blanco | enchufe de dos clavijas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -5730,7 +5930,17 @@
         "seo-contenido.json#CABL018"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Identificar conector de dos orificios en lugar de describir sólo enchufe.",
+        "propuesta": "Cable de alimentación tipo 8 blanco",
+        "evidencia": [
+          "seo-contenido.json#CABL018",
+          "importacion/contratos/CABL018.json"
+        ]
+      }
     },
     {
       "sku": "CABL024",
@@ -5900,7 +6110,7 @@
     },
     {
       "sku": "CABL035",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable Monster PowerFlex | USB-C a USB-C 2 m",
       "propuesta": "Cable Monster PowerFlex | USB-C a USB-C 2 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -5909,7 +6119,17 @@
         "seo-contenido.json#CABL035"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Priorizar nombre comercial y longitud con conexión completa en subtítulo.",
+        "propuesta": "Cable Monster PowerFlex de 2 m",
+        "evidencia": [
+          "seo-contenido.json#CABL035",
+          "importacion/contratos/CABL035.json"
+        ]
+      }
     },
     {
       "sku": "CABL037",
@@ -6216,7 +6436,7 @@
     },
     {
       "sku": "CABL059",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable de audio | 2 RCA a 2 RCA 3 m",
       "propuesta": "Cable de audio | 2 RCA a 2 RCA 3 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -6225,11 +6445,21 @@
         "seo-contenido.json#CABL059"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Diferenciar longitud y explicar conexión de dos canales.",
+        "propuesta": "Cable de audio estéreo RCA de 3 m",
+        "evidencia": [
+          "seo-contenido.json#CABL059",
+          "importacion/contratos/CABL059.json"
+        ]
+      }
     },
     {
       "sku": "CABL060",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable de audio | 2 RCA a 2 RCA 1,8 m",
       "propuesta": "Cable de audio | 2 RCA a 2 RCA 1,8 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -6238,7 +6468,17 @@
         "seo-contenido.json#CABL060"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Identificar uso estéreo y longitud con conectores en subtítulo.",
+        "propuesta": "Cable de audio estéreo RCA de 1,8 m",
+        "evidencia": [
+          "seo-contenido.json#CABL060",
+          "importacion/contratos/CABL060.json"
+        ]
+      }
     },
     {
       "sku": "CABL063",
@@ -6279,7 +6519,7 @@
     },
     {
       "sku": "CABL068",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable USB-C a USB-C | trenzado 1 m",
       "propuesta": "Cable USB-C a USB-C | trenzado 1 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -6288,7 +6528,17 @@
         "seo-contenido.json#CABL068"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Hacer visible longitud y acabado para distinguir variantes.",
+        "propuesta": "Cable USB-C trenzado de 1 m",
+        "evidencia": [
+          "seo-contenido.json#CABL068",
+          "importacion/contratos/CABL068.json"
+        ]
+      }
     },
     {
       "sku": "CABL069",
@@ -6516,7 +6766,7 @@
     },
     {
       "sku": "CABL084",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable USB-C a USB-C | trenzado 1,8 m",
       "propuesta": "Cable USB-C a USB-C | trenzado 1,8 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -6525,7 +6775,17 @@
         "seo-contenido.json#CABL084"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Distinguir longitud sin ocultarla en un fragmento del nombre.",
+        "propuesta": "Cable USB-C trenzado de 1,8 m",
+        "evidencia": [
+          "seo-contenido.json#CABL084",
+          "importacion/contratos/CABL084.json"
+        ]
+      }
     },
     {
       "sku": "CABL085",
@@ -6987,7 +7247,7 @@
     },
     {
       "sku": "CABL115",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Extensión USB-A activa | 8 m",
       "propuesta": "Extensión USB-A activa | 8 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -6996,7 +7256,17 @@
         "seo-contenido.json#CABL115"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Destacar distancia diferenciadora y conservar función comprobada.",
+        "propuesta": "Extensión USB-A activa de 8 m",
+        "evidencia": [
+          "seo-contenido.json#CABL115",
+          "importacion/contratos/CABL115.json"
+        ]
+      }
     },
     {
       "sku": "CABL116",
@@ -7457,7 +7727,7 @@
     },
     {
       "sku": "CABL141",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable USB-C a USB-C | naranja 1 m",
       "propuesta": "Cable USB-C a USB-C | naranja 1 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7466,7 +7736,17 @@
         "seo-contenido.json#CABL141"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Distinguir longitud y color sin fragmentación.",
+        "propuesta": "Cable USB-C naranja de 1 m",
+        "evidencia": [
+          "seo-contenido.json#CABL141",
+          "importacion/contratos/CABL141.json"
+        ]
+      }
     },
     {
       "sku": "CABL144",
@@ -7714,7 +7994,7 @@
     },
     {
       "sku": "CABL159",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable plano | kit 4 en 1",
       "propuesta": "Cable plano | kit 4 en 1",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7723,7 +8003,17 @@
         "seo-contenido.json#CABL159"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Precisar contenido y conexiones sin prometer capacidades no verificadas.",
+        "propuesta": "Cable plano 4 en 1 con adaptadores",
+        "evidencia": [
+          "seo-contenido.json#CABL159",
+          "importacion/contratos/CABL159.json"
+        ]
+      }
     },
     {
       "sku": "CABL160",
@@ -7875,7 +8165,7 @@
     },
     {
       "sku": "CABL171",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Extensión eléctrica Universal | 5 m",
       "propuesta": "Extensión eléctrica Universal | 5 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7884,7 +8174,17 @@
         "seo-contenido.json#CABL171"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Añadir número de tomas y variante visual verificada.",
+        "propuesta": "Extensión eléctrica Universal de 5 m",
+        "evidencia": [
+          "seo-contenido.json#CABL171",
+          "importacion/contratos/CABL171.json"
+        ]
+      }
     },
     {
       "sku": "CALC001",
@@ -8265,7 +8565,7 @@
     },
     {
       "sku": "CARG015",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador Power Trio | 2 USB-C y 1 USB-A",
       "propuesta": "Cargador Power Trio | 2 USB-C y 1 USB-A",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8274,7 +8574,17 @@
         "seo-contenido.json#CARG015"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Hacer comprensible expansión de puertos y contenido de venta.",
+        "propuesta": "Cargador Power Trio de tres puertos",
+        "evidencia": [
+          "seo-contenido.json#CARG015",
+          "importacion/contratos/CARG015.json"
+        ]
+      }
     },
     {
       "sku": "CARG016",
@@ -8370,7 +8680,7 @@
     },
     {
       "sku": "CARG028",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 20 W | kit USB-C a Lightning",
       "propuesta": "Cargador 20 W | kit USB-C a Lightning",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8379,11 +8689,21 @@
         "seo-contenido.json#CARG028"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Diferenciar potencia y contenido de venta comprobados.",
+        "propuesta": "Cargador 20 W con cable Lightning",
+        "evidencia": [
+          "seo-contenido.json#CARG028",
+          "importacion/contratos/CARG028.json"
+        ]
+      }
     },
     {
       "sku": "CARG029",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 25 W | kit USB-C a Lightning",
       "propuesta": "Cargador 25 W | kit USB-C a Lightning",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8392,7 +8712,17 @@
         "seo-contenido.json#CARG029"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Mostrar contenido del kit y conexión antes de abrir la ficha.",
+        "propuesta": "Cargador 25 W con cable Lightning",
+        "evidencia": [
+          "seo-contenido.json#CARG029",
+          "importacion/contratos/CARG029.json"
+        ]
+      }
     },
     {
       "sku": "CARG033",
@@ -8582,7 +8912,7 @@
     },
     {
       "sku": "CARG046",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 50 W | kit USB-C a USB-C",
       "propuesta": "Cargador 50 W | kit USB-C a USB-C",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8591,7 +8921,17 @@
         "seo-contenido.json#CARG046"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir título fragmentado por potencia y contenido claros.",
+        "propuesta": "Cargador de 50 W con cable USB-C",
+        "evidencia": [
+          "seo-contenido.json#CARG046",
+          "importacion/contratos/CARG046.json"
+        ]
+      }
     },
     {
       "sku": "CARG047",
@@ -8608,7 +8948,7 @@
     },
     {
       "sku": "CARG048",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 35 W | kit USB-C a USB-C",
       "propuesta": "Cargador 35 W | kit USB-C a USB-C",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8617,11 +8957,21 @@
         "seo-contenido.json#CARG048"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir título fragmentado por potencia y contenido claros.",
+        "propuesta": "Cargador de 35 W con cable USB-C",
+        "evidencia": [
+          "seo-contenido.json#CARG048",
+          "importacion/contratos/CARG048.json"
+        ]
+      }
     },
     {
       "sku": "CARG049",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 40 W | kit USB-C a USB-C",
       "propuesta": "Cargador 40 W | kit USB-C a USB-C",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8630,7 +8980,17 @@
         "seo-contenido.json#CARG049"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir título fragmentado por potencia y contenido claros.",
+        "propuesta": "Cargador de 40 W con cable USB-C",
+        "evidencia": [
+          "seo-contenido.json#CARG049",
+          "importacion/contratos/CARG049.json"
+        ]
+      }
     },
     {
       "sku": "CARG050",
@@ -8822,7 +9182,7 @@
     },
     {
       "sku": "CARG063",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador Pro 40+ | kit USB-C a USB-C",
       "propuesta": "Cargador Pro 40+ | kit USB-C a USB-C",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8831,7 +9191,17 @@
         "seo-contenido.json#CARG063"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Conservar nombre comercial sin convertir 40+ en potencia no verificada.",
+        "propuesta": "Cargador Pro 40+ con cable USB-C",
+        "evidencia": [
+          "seo-contenido.json#CARG063",
+          "importacion/contratos/CARG063.json"
+        ]
+      }
     },
     {
       "sku": "CARG064",
@@ -8871,7 +9241,7 @@
     },
     {
       "sku": "CARG066",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable de carga para smartwatch | 2 pines",
       "propuesta": "Cable de carga para smartwatch | 2 pines",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8880,11 +9250,21 @@
         "seo-contenido.json#CARG066"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Hacer explícitos cabezal magnético y número de contactos verificados.",
+        "propuesta": "Cable de smartwatch de 2 pines",
+        "evidencia": [
+          "seo-contenido.json#CARG066",
+          "importacion/contratos/CARG066.json"
+        ]
+      }
     },
     {
       "sku": "CARG067",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cable de carga para smartwatch | base circular",
       "propuesta": "Cable de carga para smartwatch | base circular",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8893,7 +9273,17 @@
         "seo-contenido.json#CARG067"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Integrar formato de base en el título y conservar conexión útil en subtítulo.",
+        "propuesta": "Base circular para smartwatch",
+        "evidencia": [
+          "seo-contenido.json#CARG067",
+          "importacion/contratos/CARG067.json"
+        ]
+      }
     },
     {
       "sku": "CARG069",
@@ -12871,7 +13261,7 @@
     },
     {
       "sku": "LASE002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Laser Puntero Color Rojo Simple",
       "propuesta": "Laser Puntero Color Rojo Simple",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12880,7 +13270,17 @@
         "seo-contenido.json#LASE002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir nombre poco natural por tipo, color de luz y sujeción comprobada.",
+        "propuesta": "Puntero láser rojo con mosquetón",
+        "evidencia": [
+          "seo-contenido.json#LASE002",
+          "importacion/contratos/LASE002.json"
+        ]
+      }
     },
     {
       "sku": "LASE004",
@@ -13320,7 +13720,7 @@
     },
     {
       "sku": "MICR03",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Micrófonos K9 | kit doble Lightning",
       "propuesta": "Micrófonos K9 | kit doble Lightning",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13329,7 +13729,17 @@
         "seo-contenido.json#MICR03"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir código técnico por uso, cantidad y conexión comprobados.",
+        "propuesta": "Set de micrófonos de solapa Pack 2",
+        "evidencia": [
+          "seo-contenido.json#MICR03",
+          "importacion/contratos/MICR03.json"
+        ]
+      }
     },
     {
       "sku": "MICR037",
@@ -13449,7 +13859,7 @@
     },
     {
       "sku": "MICR12",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Micrófono inalámbrico | receptor de triple conector",
       "propuesta": "Micrófono inalámbrico | receptor de triple conector",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13458,7 +13868,17 @@
         "seo-contenido.json#MICR12"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Hacer útil el diferenciador del receptor sin omitir sus conexiones.",
+        "propuesta": "Micrófono con receptor 3 en 1",
+        "evidencia": [
+          "seo-contenido.json#MICR12",
+          "importacion/contratos/MICR12.json"
+        ]
+      }
     },
     {
       "sku": "MICR13",
@@ -13521,7 +13941,7 @@
     },
     {
       "sku": "MICR21",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Micrófonos F9 | kit doble Lightning",
       "propuesta": "Micrófonos F9 | kit doble Lightning",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13530,7 +13950,17 @@
         "seo-contenido.json#MICR21"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir código técnico por conexión, cantidad y formato comprobados.",
+        "propuesta": "Set de micrófonos Lightning Pack 2",
+        "evidencia": [
+          "seo-contenido.json#MICR21",
+          "importacion/contratos/MICR21.json"
+        ]
+      }
     },
     {
       "sku": "MICR23",
@@ -13668,7 +14098,7 @@
     },
     {
       "sku": "MICR33",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Micrófono de Mesa con Soporte",
       "propuesta": "Micrófono de Mesa con Soporte",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13677,7 +14107,17 @@
         "seo-contenido.json#MICR33"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Aclarar que el soporte forma parte del precio confirmado por propietario.",
+        "propuesta": "Micrófono de mesa con soporte incluido",
+        "evidencia": [
+          "seo-contenido.json#MICR33",
+          "importacion/contratos/MICR33.json"
+        ]
+      }
     },
     {
       "sku": "MICR34",
@@ -13755,7 +14195,7 @@
     },
     {
       "sku": "MONI005",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Monitor Portatil ONE 15.6 Pulgadas",
       "propuesta": "Monitor Portatil ONE 15.6 Pulgadas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13764,7 +14204,17 @@
         "seo-contenido.json#MONI005"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Normalizar tamaño y destacar resolución verificada sin alargar el título.",
+        "propuesta": "Monitor portátil ONE de 15,6″",
+        "evidencia": [
+          "seo-contenido.json#MONI005",
+          "importacion/contratos/MONI005.json"
+        ]
+      }
     },
     {
       "sku": "MOUS001",
@@ -13781,7 +14231,7 @@
     },
     {
       "sku": "MOUS003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mouse Ergonomico Meetion BTM010R",
       "propuesta": "Mouse Ergonomico Meetion BTM010R",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13790,7 +14240,17 @@
         "seo-contenido.json#MOUS003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir el código técnico por el formato vertical verificado.",
+        "propuesta": "Mouse vertical ergonómico Meetion",
+        "evidencia": [
+          "seo-contenido.json#MOUS003",
+          "importacion/contratos/MOUS003.json"
+        ]
+      }
     },
     {
       "sku": "MOUS005",
@@ -13915,7 +14375,7 @@
     },
     {
       "sku": "MOUS016",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mouse Inalambrico Delgado",
       "propuesta": "Mouse Inalambrico Delgado",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13924,7 +14384,17 @@
         "seo-contenido.json#MOUS016"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Precisar el formato de uso y normalizar ortografía sin inventar conectividad.",
+        "propuesta": "Mouse inalámbrico de perfil delgado",
+        "evidencia": [
+          "seo-contenido.json#MOUS016",
+          "importacion/contratos/MOUS016.json"
+        ]
+      }
     },
     {
       "sku": "MOUS017",
@@ -14024,7 +14494,7 @@
     },
     {
       "sku": "MOUS022",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mouse Monster | inalámbrico con ajuste DPI",
       "propuesta": "Mouse Monster | inalámbrico con ajuste DPI",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14033,7 +14503,17 @@
         "seo-contenido.json#MOUS022"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Reordenar nombre fragmentado y explicar los niveles de ajuste verificados.",
+        "propuesta": "Mouse Monster con ajuste DPI",
+        "evidencia": [
+          "seo-contenido.json#MOUS022",
+          "importacion/contratos/MOUS022.json"
+        ]
+      }
     },
     {
       "sku": "MOUS025",
@@ -14198,7 +14678,7 @@
     },
     {
       "sku": "MOUS037",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mouse Klipxtreme Slimsurfer",
       "propuesta": "Mouse Klipxtreme Slimsurfer",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14207,7 +14687,17 @@
         "seo-contenido.json#MOUS037"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Hacer explícita la conexión verificada conservando familia comercial.",
+        "propuesta": "Mouse inalámbrico Klipxtreme SlimSurfer",
+        "evidencia": [
+          "seo-contenido.json#MOUS037",
+          "importacion/contratos/MOUS037.json"
+        ]
+      }
     },
     {
       "sku": "MOUS039",
@@ -15070,7 +15560,7 @@
     },
     {
       "sku": "PILA030",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Pila D RCA",
       "propuesta": "Pila D RCA",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15079,11 +15569,21 @@
         "seo-contenido.json#PILA030"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Aclarar que la venta es un blíster de dos pilas y no una celda.",
+        "propuesta": "Pilas D RCA en blíster de 2",
+        "evidencia": [
+          "seo-contenido.json#PILA030",
+          "importacion/contratos/PILA030.json"
+        ]
+      }
     },
     {
       "sku": "PILA031",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Pila C RCA",
       "propuesta": "Pila C RCA",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15092,7 +15592,17 @@
         "seo-contenido.json#PILA031"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Aclarar que la unidad comercial es un blíster y no una sola pila.",
+        "propuesta": "Pilas C RCA en blíster de 2",
+        "evidencia": [
+          "seo-contenido.json#PILA031",
+          "importacion/contratos/PILA031.json"
+        ]
+      }
     },
     {
       "sku": "PILA032",
@@ -15564,7 +16074,7 @@
     },
     {
       "sku": "PILA070",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Pila D Maxday",
       "propuesta": "Pila D Maxday",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15573,7 +16083,17 @@
         "seo-contenido.json#PILA070"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Aclarar unidad comercial comprobada y evitar vender como celda individual.",
+        "propuesta": "Pilas D Maxday en blíster de 2",
+        "evidencia": [
+          "seo-contenido.json#PILA070",
+          "importacion/contratos/PILA070.json"
+        ]
+      }
     },
     {
       "sku": "PILA071",
@@ -16454,7 +16974,7 @@
     },
     {
       "sku": "REL034",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Reloj Smartwatch Fitcluodpro Amoled",
       "propuesta": "Reloj Smartwatch Fitcluodpro Amoled",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -16463,7 +16983,17 @@
         "seo-contenido.json#REL034"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Sustituir nombre confuso por diseño y variante verificados sin atribuir AMOLED no acreditado en atributos.",
+        "propuesta": "Smartwatch redondo con correa deportiva",
+        "evidencia": [
+          "seo-contenido.json#REL034",
+          "importacion/contratos/REL034.json"
+        ]
+      }
     },
     {
       "sku": "REL036",
@@ -18444,7 +18974,7 @@
     },
     {
       "sku": "TELE001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Televisor ENV De 32 Pulgadas",
       "propuesta": "Televisor ENV De 32 Pulgadas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -18453,11 +18983,21 @@
         "seo-contenido.json#TELE001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Normalizar nombre y unidad para lectura comercial clara.",
+        "propuesta": "Televisor ENV de 32 pulgadas",
+        "evidencia": [
+          "seo-contenido.json#TELE001",
+          "importacion/contratos/TELE001.json"
+        ]
+      }
     },
     {
       "sku": "TELE002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Televisor ENV De 40 Pulgadas Full HD",
       "propuesta": "Televisor ENV De 40 Pulgadas Full HD",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -18466,11 +19006,21 @@
         "seo-contenido.json#TELE002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Destacar resolución y tamaño sin capitalización irregular.",
+        "propuesta": "Televisor ENV Full HD de 40 pulgadas",
+        "evidencia": [
+          "seo-contenido.json#TELE002",
+          "importacion/contratos/TELE002.json"
+        ]
+      }
     },
     {
       "sku": "TELE003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Televisor House TV De 43 Pulgadas Full HD",
       "propuesta": "Televisor House TV De 43 Pulgadas Full HD",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -18479,7 +19029,17 @@
         "seo-contenido.json#TELE003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Normalizar jerarquía y mantener marca, resolución y tamaño comprobados.",
+        "propuesta": "Televisor House TV Full HD de 43 pulgadas",
+        "evidencia": [
+          "seo-contenido.json#TELE003",
+          "importacion/contratos/TELE003.json"
+        ]
+      }
     },
     {
       "sku": "TELF001",
@@ -19231,7 +19791,7 @@
     },
     {
       "sku": "TVBO007",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Fire TV Stick Amazon 4K MAX 16GB Wifi 6E",
       "propuesta": "Fire TV Stick Amazon 4K MAX 16GB Wifi 6E",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -19240,11 +19800,21 @@
         "seo-contenido.json#TVBO007"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Conservar familia Max diferenciada y trasladar capacidad al subtítulo.",
+        "propuesta": "Amazon Fire TV Stick 4K Max",
+        "evidencia": [
+          "seo-contenido.json#TVBO007",
+          "importacion/contratos/TVBO007.json"
+        ]
+      }
     },
     {
       "sku": "TVBO008",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "TV BOX ONN 4K",
       "propuesta": "TV BOX ONN 4K",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -19253,11 +19823,21 @@
         "seo-contenido.json#TVBO008"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Aclarar el contenido de venta verificado en lugar de un nombre en mayúsculas.",
+        "propuesta": "TV Box onn 4K con control remoto",
+        "evidencia": [
+          "seo-contenido.json#TVBO008",
+          "importacion/contratos/TVBO008.json"
+        ]
+      }
     },
     {
       "sku": "TVBO010",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Fire TV Stick Amazon 4K 8GB Wifi 6",
       "propuesta": "Fire TV Stick Amazon 4K 8GB Wifi 6",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -19266,7 +19846,17 @@
         "seo-contenido.json#TVBO010"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Separar capacidad y conexión del nombre comercial para lectura compacta.",
+        "propuesta": "Amazon Fire TV Stick 4K",
+        "evidencia": [
+          "seo-contenido.json#TVBO010",
+          "importacion/contratos/TVBO010.json"
+        ]
+      }
     },
     {
       "sku": "UPS001",
@@ -19588,7 +20178,7 @@
     },
     {
       "sku": "CABL170",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Extensión eléctrica Volteck | 4 m",
       "propuesta": "Extensión eléctrica Volteck | 4 m",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -19597,7 +20187,17 @@
         "seo-contenido.json#CABL170"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda023025": {
+        "causa": "Añadir número de tomas y separar detalle técnico del título.",
+        "propuesta": "Extensión eléctrica Volteck de 4 m",
+        "evidencia": [
+          "seo-contenido.json#CABL170",
+          "importacion/contratos/CABL170.json"
+        ]
+      }
     },
     {
       "sku": "CORT03",
@@ -20060,6 +20660,12 @@
   "resolucionesTanda019022": {
     "mejorasSeleccionadas": 80,
     "correctosConservados": 563,
+    "identidadesReservadasSinCambios": 97,
+    "modelosConservadosEnEspecificacionesYBusqueda": true
+  },
+  "resolucionesTanda023025": {
+    "mejorasSeleccionadas": 60,
+    "correctosConservados": 503,
     "identidadesReservadasSinCambios": 97,
     "modelosConservadosEnEspecificacionesYBusqueda": true
   }
