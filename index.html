@@ -151,11 +151,6 @@ function orderedProducts(list){
  const query=document.getElementById("q").value.trim();
  const relevance=query&&["recientes","fotos"].includes(mode)?new Map(list.map(p=>[p.sku,searchRelevance(p,query)])):null;
  return list.sort((a,b)=>{
-  if(mode==="recientes"){
-   const photoA=a.sku==="PROT003"&&a.imageUrl==="/imagenes/prot003/PROT003-r20261024-01.webp";
-   const photoB=b.sku==="PROT003"&&b.imageUrl==="/imagenes/prot003/PROT003-r20261024-01.webp";
-   if(photoA!==photoB)return photoA?-1:1;
-  }
   const availabilityPriority=Number(availabilityFor(b).commercial_eligible)-Number(availabilityFor(a).commercial_eligible);
   if(availabilityPriority)return availabilityPriority;
   const photoPriority=Number(hasPublishedImage(b))-Number(hasPublishedImage(a));
@@ -400,5 +395,6 @@ document.querySelectorAll('[data-quick-cat]').forEach(button=>button.addEventLis
 <script src="/assets/presentacion-web/config.js?v=9"></script>
 <script src="/assets/presentacion-web/temporadas.js?v=9"></script>
 <script src="/assets/presentacion-web/rotacion.js?v=9"></script>
+<script src="/assets/editorial-prioridad.js?v=2861eba6084f"></script>
 <script src="/assets/presentacion-web/portada.js?v=12"></script>
 </body></html>

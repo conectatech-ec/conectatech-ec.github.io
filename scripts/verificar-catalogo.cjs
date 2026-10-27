@@ -107,7 +107,6 @@ async function main() {
         await page.locator('#grid .ct-compact-card').first().waitFor();
         await page.locator('#catalogSort').waitFor();
         const payload = await page.evaluate(() => window.CONECTATECH_CATALOGO || null);
-        const photoPrioritySku=await page.evaluate(()=>typeof photoPROT003!=='undefined'&&photoPROT003?.imageUrl==='/imagenes/prot003/PROT003-r20261024-01.webp'?photoPROT003.sku:null);
         check('metadatos_publicados', Boolean(payload && payload.productos), 'Falta payload de productos publicados.');
         if (!payload?.productos) throw new Error('No se pueden comprobar novedades sin metadatos.');
         for (const image of await page.locator('#featured img').all()) {
@@ -169,11 +168,6 @@ async function main() {
           const hasPhoto=p=>Boolean(p.imageUrl||payload.productos[p.sku]?.imagen?.src);
           const priority=p=>editorialDate(p,payload)?1:({nuevo:0,actualizado:1}[payload.productos[p.sku]?.tipoCambio]??2);
           return list.sort((a,b)=>{
-  if(mode==='recientes'){
-   const photoA=a.sku===photoPrioritySku;
-   const photoB=b.sku===photoPrioritySku;
-   if(photoA!==photoB)return photoA?-1:1;
-  }
             const eligible=Number(availabilityCore.forProduct(b).commercial_eligible)-Number(availabilityCore.forProduct(a).commercial_eligible);if(eligible)return eligible;
             const photo=Number(hasPhoto(b))-Number(hasPhoto(a));if(photo)return photo;
             if(mode==='nombre')return a.name.localeCompare(b.name,'es',{sensitivity:'base',numeric:true});
