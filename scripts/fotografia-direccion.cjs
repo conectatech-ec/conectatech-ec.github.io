@@ -18,7 +18,7 @@ function valid(r){return r&&allowed.has(r.sku)&&r.revisado_visual===true&&
 function capture(){
  const products=JSON.parse(fs.readFileSync('index.html','utf8').match(/const products=(\[[\s\S]*?\]);\s*\n/)[1]);
  const registry=rows();
- return new Set(products.filter(p=>{const r=registry[p.sku];return valid(r)&&[r.portada_anterior.url,r.imagenProfesional?.versiones['1200'].url].includes(p.imageUrl);}).map(p=>p.sku));
+ return new Set(products.filter(p=>{const r=registry[p.sku];return valid(r)&&[r.portada_anterior.url,r.imagenProfesional?.versiones['1200'].url,...(r.portadas_previas_autorizadas||[]).map(v=>v.url)].includes(p.imageUrl);}).map(p=>p.sku));
 }
 function patchObjects(source,selected){
  // Sólo cambia imageUrl dentro del objeto de cada SKU; conserva los demás bytes.
@@ -31,7 +31,7 @@ function patchObjects(source,selected){
   if(c==='{'){if(depth===0)start=i;depth++;}
   if(c==='}'&&--depth===0&&start>=0){
    const original=text.slice(start,i+1),p=JSON.parse(original),r=registry[p.sku];let updated=original;
-   if(selected.has(p.sku)&&valid(r)&&r.imagenProfesional&&[r.portada_anterior.url,r.imagenProfesional.versiones['1200'].url].includes(p.imageUrl)){
+   if(selected.has(p.sku)&&valid(r)&&r.imagenProfesional&&[r.portada_anterior.url,r.imagenProfesional.versiones['1200'].url,...(r.portadas_previas_autorizadas||[]).map(v=>v.url)].includes(p.imageUrl)){
     updated=original.replace(/("imageUrl"\s*:\s*)"(?:\\.|[^"\\])*"/,(_,key)=>key+JSON.stringify(r.imagenProfesional.versiones['1200'].url));
    }
    const title=premium();
