@@ -36,4 +36,4 @@ Si las herramientas están en otra ruta, definir `VITRINA_PLAYWRIGHT` con el mó
 
 ## Alcance de la validación Android
 
-Se comprobó Chromium146 con perfil Pixel7, eventos táctiles nativos de CDP y viewport móvil, además de escritorio. No hay teléfono Android, ADB ni emulador Android de sistema disponibles en este entorno. Por tanto, **la prueba en Chrome Android físico queda pendiente**; la emulación no se presenta como una prueba en un dispositivo real. No se despliega para suplir esa limitación sin autorización del propietario.
+Se comprobó Chromium154.0.8037.57 con perfil Pixel7, eventos táctiles nativos de CDP y viewport móvil, además de escritorio. No hay teléfono Android, ADB ni emulador Android de sistema disponibles en este entorno. Por tanto, **la prueba en Chrome Android físico queda pendiente**; la emulación no se presenta como una prueba en un dispositivo real. No se despliega para suplir esa limitación sin autorización del propietario.
