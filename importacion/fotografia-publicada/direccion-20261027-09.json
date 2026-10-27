@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Ajustes expresos del propietario; conservar todos los demás productos, originales, precios, existencias, títulos y URL.",
   "productos": {
     "JUGU163": {
@@ -2036,5 +2036,16 @@
         }
       ]
     }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-27T03:31:35.317887+00:00",
+  "verificacion": {
+    "workflow_run": 40444534286,
+    "http_verificacion_directa": true,
+    "ambito_prueba_inicial": "Fichas, recursos y galería; las tarjetas del catálogo se verificarán al cierre del parche de restauración.",
+    "chromium": [
+      1280,
+      390
+    ],
+    "originales_conservados": true
   }
 }
