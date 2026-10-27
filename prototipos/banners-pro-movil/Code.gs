@@ -4,7 +4,7 @@ function configuration_() {
   if(!raw) throw new Error('Configuración privada pendiente.');
   const c=JSON.parse(raw);
   if(!Array.isArray(c.users)||c.users.length<1||c.users.length>2||c.users.some(e=>typeof e!=='string'||!e.includes('@')))throw new Error('Configura una o dos identidades autorizadas.');
-  for(const k of ['manifestId','rootId','interfaceId','interfaceSha256','hubUrl'])if(typeof c[k]!=='string'||!c[k])throw new Error('Configuración incompleta: '+k);
+  for(const k of ['manifestId','rootId','hubUrl'])if(typeof c[k]!=='string'||!c[k])throw new Error('Configuración incompleta: '+k);
   if(!Array.isArray(c.approvedFolders)||!c.approvedFolders.length)throw new Error('Carpetas autorizadas pendientes.');
   if(c.hubUrl!=='https://conectatech-ec.github.io/datos-593/estado-ultimo-corte.json')throw new Error('Fuente de corte no autorizada.');
   c.users=c.users.map(e=>e.toLowerCase().trim());
@@ -17,15 +17,11 @@ function authorize_() {
   if(!email||!SETTINGS.users.includes(email))throw new Error('ACCESO_DENEGADO: inicia sesión con la cuenta autorizada.');
   return email;
 }
-const INTERFAZ_PRIVADA=Object.freeze({id:SETTINGS.interfaceId,sha256:SETTINGS.interfaceSha256});
 function doGet() {
-  try {authorize_();} catch(e) {return HtmlService.createHtmlOutput('<h1>Acceso privado</h1><p>Inicia sesión con la cuenta autorizada de CONECTATECH.</p>').setTitle('Banners Pro — acceso privado');}
-  try {
-    const file=DriveApp.getFileById(INTERFAZ_PRIVADA.id);
-    if(file.isTrashed()||file.getMimeType()!=='text/html')throw new Error('Interfaz no disponible');
-    const blob=file.getBlob();if(hash_(blob.getBytes())!==INTERFAZ_PRIVADA.sha256)throw new Error('Interfaz pendiente de revisión');
-    return HtmlService.createHtmlOutput(blob.getDataAsString('UTF-8')).setTitle('CONECTATECH BANNERS PRO').setFaviconUrl('https://conectatech-ec.github.io/logo-conectatech.png').addMetaTag('viewport','width=device-width, initial-scale=1, viewport-fit=cover');
-  } catch(e) {return HtmlService.createHtmlOutput('<h1>Banners Pro</h1><p>La interfaz está en verificación. Vuelve a abrir la aplicación cuando termine su actualización.</p>').setTitle('Banners Pro — en verificación');}
+  try { authorize_(); } catch(e) {
+    return HtmlService.createHtmlOutput('<h1>Acceso privado</h1><p>Inicia sesión con una cuenta autorizada de CONECTATECH.</p>').setTitle('Banners Pro — acceso privado');
+  }
+  return HtmlService.createHtmlOutputFromFile('Index').setTitle('CONECTATECH BANNERS PRO').addMetaTag('viewport','width=device-width, initial-scale=1, viewport-fit=cover');
 }
 function hash_(bytes){return Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256,bytes).map(v=>(v&255).toString(16).padStart(2,'0')).join('');}
 function inside_(file){const it=file.getParents();while(it.hasNext())if(SETTINGS.approvedFolders.includes(it.next().getId()))return true;return false;}
