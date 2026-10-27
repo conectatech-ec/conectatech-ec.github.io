@@ -46,7 +46,16 @@ export function catalogMatches(query,products){
  const q=fold(query).replace(/\bredmi\s*15\s*c\b/g,'redmi 15c').replace(/\b15\s+c\b/g,'15c'),exact=products.filter(p=>new RegExp('\\b'+p.sku.toLowerCase()+'\\b').test(q));if(exact.length)return exact.slice(0,2);
  const models=(q.match(/\b(?:[a-z]{1,12}\d+[a-z0-9]*|\d+[a-z]{1,5})\b/g)||[]).filter(x=>!/^telf\d+|^gb\d+|^\d+(?:gb|mah|w)$/.test(x));if(!models.length)return [];
  const label=p=>fold([p.nombre,p.public_name,p.catalog_identity].filter(Boolean).join(' '));
- const matches=products.filter(p=>models.some(m=>new RegExp('\\b'+m+'\\b').test(label(p))));
+ let matches=products.filter(p=>models.some(m=>new RegExp('\\b'+m+'\\b').test(label(p))));
+ const brands=['infinix','redmi','xiaomi','zte','samsung','jbl','philco'].filter(b=>new RegExp('\\b'+b+'\\b').test(q));
+ if(brands.length)matches=matches.filter(p=>brands.some(b=>new RegExp('\\b'+b+'\\b').test(label(p))));
+ if(/\bxwatch\b|\bsmartwatch\b|\breloj\b/.test(q))matches=matches.filter(p=>/xwatch|smartwatch|smarwatch|reloj/.test(label(p)));
+ const qualifiers=['pro','max','plus','ultra'].filter(x=>new RegExp('\\b'+x+'\\b').test(q));
+ if(qualifiers.length)matches=matches.filter(p=>qualifiers.every(x=>new RegExp('\\b'+x+'\\b').test(label(p))));
+ const accessory=/^(?:cable|cargador|correa|protector|mica|estuche|funda|soporte|repuesto|adaptador|carcasa)\b/;
+ const wantsAccessory=/\b(?:cable|cargador|correa|protector|mica|estuche|funda|soporte|repuesto|adaptador|carcasa)\b/.test(q)&&!/\b(?:incluye|trae|viene)\b/.test(q);
+ const typed=matches.filter(p=>accessory.test(fold(p.nombre))===wantsAccessory);if(typed.length)matches=typed;
+ if(wantsAccessory){const noun=q.match(/\b(cable|cargador|correa|protector|mica|estuche|funda|soporte|repuesto|adaptador|carcasa)\b/)[1],head=['cable','cargador'].includes(noun)?'(?:cable|cargador)':noun;matches=matches.filter(p=>new RegExp('^'+head+'\\b').test(fold(p.nombre)));}
  const capacities=q.match(/\b(\d+)\s*gb\b/g)||[];
  return matches.filter(p=>!capacities.length||capacities.every(c=>label(p).replace(/\s/g,'').includes(c.replace(/\s/g,'')))).slice(0,2);
 }

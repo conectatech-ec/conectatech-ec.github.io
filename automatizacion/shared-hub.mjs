@@ -5,6 +5,7 @@ const isoDate=/^\d{4}-\d{2}-\d{2}$/;
 export function adaptSharedHub(pointer,cut,fallback,now=Date.now()){
  const date=cut?.fecha_corte,sha=cut?.sha256_original;
  if(!isoDate.test(date||'')||!/^[a-f0-9]{64}$/.test(sha||'')||pointer?.fecha_corte!==date||pointer?.origen_sha256!==sha||pointer?.referencia!=='datos-593/corte-comercial-publico-validado.json')throw Error('SHARED_HUB_VERSION_MISMATCH');
+ if(sha===fallback.source.sha256){if(date!==fallback.source.cut_date)throw Error('SHARED_HUB_RELABELED_REPORT');return fallback;}
  const evidence=attestations[sha];
  if(evidence&&evidence.cut_date!==date)throw Error('SHARED_HUB_RELABELED_REPORT');
  // When the shared contract supplies only a date, start of that Quito day is a conservative bound.

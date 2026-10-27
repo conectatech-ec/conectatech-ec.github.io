@@ -1,6 +1,6 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
 import {central,sourceToAlex} from '../central-source.mjs';import {adaptSharedHub} from '../shared-hub.mjs';
-import {alexBaseline,refreshAlexCatalog,quoteCurrent} from '../alex-catalog.mjs';import {generateAlex,quickReplies} from '../alex.mjs';
+import {alexBaseline,refreshAlexCatalog,quoteCurrent,catalogMatches} from '../alex-catalog.mjs';import {generateAlex,quickReplies,candidates} from '../alex.mjs';
 import {marketplaceContext,marketplacePage} from '../marketplace-pilot.mjs';import {normalizeAlexAction,normalizeEvents} from '../channels.mjs';import worker from '../worker.mjs';
 const sha='f37f364dfb30f005bf07f5fb0d7052e8f1dad7e1ae73a9baeacc2ce88aa5eadc',date='2026-10-26',reference='datos-593/corte-comercial-publico-validado.json';
 function fixture(){const rows={TELF017:{stock:1,promo_centavos:15990,pvp_centavos:19988},TELF018:{stock:1,promo_centavos:17590,pvp_centavos:21988},TELF019:{stock:0,promo_centavos:20590,pvp_centavos:25738},TELF001:{stock:1,promo_centavos:9890,pvp_centavos:12363},REL046:{stock:1,promo_centavos:3900,pvp_centavos:4485}};return [{fecha_corte:date,origen_sha256:sha,referencia:reference},{fecha_corte:date,sha256_original:sha,fuente:'Synthetic source transport fixture; not production evidence',cantidad_sku_web:5,productos:rows}];}
@@ -30,6 +30,13 @@ test('Exact approved photos/specs are linked by SKU; a rejected identity cannot 
  const source=await refreshAlexCatalog();const p=source.productos.find(p=>p.sku==='TELF017');assert.ok(p.foto.endsWith('/TELF017-01.webp'));assert.equal(p.caracteristicas.Almacenamiento,'128 GB');assert.equal(p.caracteristicas['RAM física'],'4 GB');
  const b=structuredClone(central);const target=b.products.find(p=>p.sku==='TELF017');target.source_name='Different product 256 GB';target.variant_gb=[256];
  const wrong=sourceToAlex({productos:[{sku:'TELF017',nombre:'Unknown',caracteristicas:{},foto:null}]},b).productos[0];assert.equal(wrong.foto,null);
+});
+test('A smartwatch and its charger sharing H4 never become the same requested product',async()=>{
+ const s=await refreshAlexCatalog(undefined,fetch,Date.now(),{input:'Busco un Infinix XWATCH H4'});
+ assert.deepEqual(candidates('Busco un Infinix XWATCH H4',{},s),['REL046']);
+ const all=central.products.map(p=>({sku:p.sku,nombre:p.name,catalog_identity:p.source_name}));
+ assert.deepEqual(catalogMatches('Busco un Infinix XWATCH H4',all).map(p=>p.sku),['REL046']);
+ assert.deepEqual(catalogMatches('Busco un cable de carga para Infinix H4',all).map(p=>p.sku),['CARG061']);
 });
 test('Marketplace, Page and WhatsApp have distinct transports; approved but unreleased banners never become deliverable',()=>{
  const reply={focus:['TELF017'],source_sha256:sha,source_fresh:true};

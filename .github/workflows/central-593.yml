@@ -52,6 +52,7 @@ jobs:
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
           EXPECTED_RELEASE: ${{ steps.revision.outputs.sha }}
       - name: Verificar version comercial recibida por Alex y registrar destinos pendientes
+        if: steps.reporte.outputs.ready == 'true'
         run: python automatizacion/data_hub_593.py --verify-alex
         env:
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
