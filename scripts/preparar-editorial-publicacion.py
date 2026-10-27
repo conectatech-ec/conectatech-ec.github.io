@@ -1,11 +1,12 @@
 """Compila mapas incrementales verificados, sin tocar productos, precios ni páginas."""
-import json,re,hashlib,unicodedata
+import json,re,hashlib,unicodedata,subprocess
 from pathlib import Path
 cfg=json.loads(Path('importacion/editorial/publicados.json').read_text());manifest=json.loads(Path('importacion/editorial/lotes/lote-'+cfg['loteActual']+'.json').read_text());html=Path('index.html').read_text();products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',html)[1]);by={p['sku']:p for p in products};queue=json.loads(Path('reportes/editorial-selectivo/clasificacion-1170.json').read_text());states={e['sku']:e['estado'] for e in queue['cola']}
 assert len(manifest['skus'])<=30 and len(set(manifest['skus']))==len(manifest['skus'])
 assert cfg['criterioAprobado'] and cfg['excluirPrefijos']==['TELF','TABL']
 norm=lambda s:re.sub('[^a-z0-9]','',unicodedata.normalize('NFD',s.lower()).encode('ascii','ignore').decode())
 seen={};seo=json.loads(Path('seo-contenido.json').read_text())
+effectivePhotos=json.loads(subprocess.check_output(['node','scripts/editorial-fotografia-efectiva.cjs'],text=True))
 for sku,e in cfg['productos'].items():
  assert sku in by and not sku.startswith(('TELF','TABL')),sku
  lot=Path('importacion/editorial/lotes/lote-'+e['lote'].split('-')[-1]+'.json');m=json.loads(lot.read_text());assert len(m['skus'])<=30 and sku in m['skus'],sku
@@ -20,8 +21,8 @@ for sku,e in cfg['productos'].items():
  assert all(not (len(norm(v))>=4 and norm(v) in norm(e['titulo'])) for v in e['subtitulo'].split('·')),sku
  # El renderer usa la portada vigente, incluida una corrección aprobada por la sesión fotográfica.
  # Se comprueban URL y bytes contra el registro fotográfico actual; la referencia editorial anterior es histórica.
- photo=seo[sku]['imagenProfesional']['versiones']['1200']
- assert photo['url']==seo[sku]['imagen']==by[sku]['imageUrl'],sku
+ photo=effectivePhotos[sku]['imagenProfesional']['versiones']['1200']
+ assert photo['url']==effectivePhotos[sku]['imagen']==by[sku]['imageUrl'],sku
  assert photo['sha256']==hashlib.sha256(Path(photo['url'].lstrip('/')).read_bytes()).hexdigest(),sku
  assert e['condicionTarjeta']==('De terceros' if seo[sku]['reglaSKU']['autenticidad']=='genérico/compatible' else ''),sku
  if cfg.get('criterioCodigosTecnicosFueraDeTitulos'):
