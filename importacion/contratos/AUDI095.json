@@ -129,7 +129,9 @@
     "datos-593/inventario-publico.csv"
   ],
   "imagen_principal": "/imagenes/audi095/AUDI095-01.webp",
-  "imagenes_secundarias": [],
+  "imagenes_secundarias": [
+    "/imagenes/audi095/AUDI095-02.webp"
+  ],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
@@ -141,6 +143,10 @@
       {
         "sha256": "d9ef8eebb2b4203f437f7e5c877351eaa7a33af510ddb72526193a60f6bcc029",
         "fuente": "https://drive.google.com/file/d/1-WL_bCuXarAWfdvqBHurFVj5AX51zyP5/view?usp=drivesdk"
+      },
+      {
+        "sha256": "cb6c6eb11ad3f852d29f47c7ac22101503c1a64809ed04cd994d787f9316dee4",
+        "fuente": "https://drive.google.com/file/d/11RDg_x48IdCF3NIg8OevgPxiMW7o2Zfr/view?usp=drivesdk"
       }
     ],
     "material_externo_utilizado": false,
@@ -195,7 +201,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
   "fecha_verificacion": "2026-10-11T23:30:50.325055+00:00",
   "descripcion": "Audífonos deportivos AAA con diseño de gancho y estuche de carga ovalado negro. La vista principal conserva el estuche cerrado con su tapa translúcida. Producto genérico/compatible, no Lenovo original. No se declara resistencia al agua ni autonomía sin verificación adicional.",
@@ -204,7 +210,7 @@
   "stock_tiempo_real": false,
   "pendientes": [],
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: LENOVO; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 975,976,977,978,979; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "revision_regla": 3,
+  "revision_regla": 4,
   "maestro": {
     "archivo_maestro": "/imagenes/audi095/original-d9ef8eebb2b4203f.png",
     "sha256_maestro": "d9ef8eebb2b4203f437f7e5c877351eaa7a33af510ddb72526193a60f6bcc029",
@@ -294,102 +300,68 @@
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas. Estuche cerrado, tapa translúcida, silueta ovalada y ganchos internos cotejados; no se generan vistas ocultas."
     },
     "movil": {
-      "solicitado": "AUDI095",
       "sku": "AUDI095",
       "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:55.643Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "fecha": "2026-10-27T03:08:18.505Z",
       "url": "https://conectatech-ec.github.io/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
-      "archivo_html": "productos/audi095-audifonos-deportivos-thinkplus-x15pro/index.html",
-      "http": 200,
-      "sha256_html": "5ed1bde9f4a388e85a857a5e3e00888c831e466acfe17bc92d63e8cc81574632",
-      "sha256_html_local": "5ed1bde9f4a388e85a857a5e3e00888c831e466acfe17bc92d63e8cc81574632",
+      "url_comprobada": "http://127.0.0.1:8768/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
       "ancho_viewport": 390,
       "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi095/AUDI095-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/audi095/AUDI095-01-600.webp?v=cb1b4ebcb284f436",
-        "naturalWidth": 499,
-        "naturalHeight": 499,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/audi095/AUDI095-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/parl016-parlante-bluetooth-rca-rgb-53hsrcr/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/parl043-parlante-mini-xtech-halen/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-066/qa-local/movil/AUDI095-390.png",
-      "sha256": "075e4ad41b1008dc41b26510a535e871ad30b092bbbdf626d2a72b386c494ed0",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/AUDI095-1280.png",
-        "sha256": "be730768410b9f2259058387e5d4c4a12b7676266963ed77ae73687e88e971d2",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
+      "archivo": "reportes/correccion-audio-20261026/qa/AUDI095-390.png",
+      "sha256": "70c17c901891c4f761d2e9dd3693d4f5bc92ea98717e26c6fee5b33ddea9a881",
+      "archivo_html": "productos/audi095-audifonos-deportivos-thinkplus-x15pro/index.html",
+      "sha256_html": "3cb1c64d9dcf6561da03451f59ce393ed252735262552553210321bc27f9d01b",
+      "revision_visual_producto": "COTEJADA_MANUALMENTE_CON_FOTOGRAFIAS_FISICAS_PROPIAS"
     },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
       "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
+    },
+    "revision_visual_secundaria": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-10-27T03:02:28.368895+00:00",
+      "sha256_maestro": "cb6c6eb11ad3f852d29f47c7ac22101503c1a64809ed04cd994d787f9316dee4",
+      "evidencia": "Representación comercial asistida desde fotografía física propia, cotejada con todas las vistas. Conjunto completo en estuche translúcido negro, perspectiva de tres cuartos y conexión visible documentada en foto lateral; sin el auricular aislado y estuche vacío rechazados. Portada conservada."
     }
+  },
+  "correccion_propietario_20261026": {
+    "instruccion": "Orden del propietario, 26oct2026: rechaza imagen secundaria y solicita «Otra toma del conjunto completo, más limpia y comercial». Sustituir únicamente secundaria; conservar portada aprobada y datos comerciales.",
+    "metodo": "Representación comercial asistida desde fotografía física propia, cotejada con todas las vistas. Conjunto completo en estuche translúcido negro, perspectiva de tres cuartos y conexión visible documentada en foto lateral; sin el auricular aislado y estuche vacío rechazados. Portada conservada.",
+    "fuentes_fisicas": [
+      {
+        "nombre": "AUDI095_20261009_183704.jpg",
+        "drive_id": "1-WL_bCuXarAWfdvqBHurFVj5AX51zyP5",
+        "url": "https://drive.google.com/file/d/1-WL_bCuXarAWfdvqBHurFVj5AX51zyP5/view?usp=drivesdk",
+        "sha256": "e818a2670d5300d43abe5e95901b7f43009d6e6079cb55d8431d267a40205b5b"
+      },
+      {
+        "nombre": "AUDI095_20261009_183656.jpg",
+        "drive_id": "11RDg_x48IdCF3NIg8OevgPxiMW7o2Zfr",
+        "url": "https://drive.google.com/file/d/11RDg_x48IdCF3NIg8OevgPxiMW7o2Zfr/view?usp=drivesdk",
+        "sha256": "334c1676a9df2867e22b05b042123f88ee53d9d9e7f5435e8891c758283dd4fa"
+      },
+      {
+        "nombre": "AUDI095_20261009_183651.jpg",
+        "drive_id": "12sPb8l-aeeQMmV1qEaxnH4ktIMpBBv96",
+        "url": "https://drive.google.com/file/d/12sPb8l-aeeQMmV1qEaxnH4ktIMpBBv96/view?usp=drivesdk",
+        "sha256": "e250fda172c7618fc14c02ec576e08c162405364ea0e3f63d0f66a19dde0d163"
+      },
+      {
+        "nombre": "AUDI095_20261009_183701.jpg",
+        "drive_id": "16uHiyRA9AavFG6sfYT0zs03D23l5ksNd",
+        "url": "https://drive.google.com/file/d/16uHiyRA9AavFG6sfYT0zs03D23l5ksNd/view?usp=drivesdk",
+        "sha256": "7fc5c1bf02eaec18cadb86329614472df3a74cdb39cbe275f659c2d7c1c24718"
+      },
+      {
+        "nombre": "AUDI095.jpg",
+        "drive_id": "1CzC13d1km9x7W-GjbPM-tgx3iAcnYw40",
+        "url": "https://drive.google.com/file/d/1CzC13d1km9x7W-GjbPM-tgx3iAcnYw40/view?usp=drivesdk",
+        "sha256": "3fbbca6ee23e68e31f994bc1d5726f81ff54a20d9d16cdec53f474d4140dc7ed"
+      }
+    ],
+    "maestro_edicion": "/imagenes/audi095/original-cb6c6eb11ad3f852.png",
+    "sha256_maestro": "cb6c6eb11ad3f852d29f47c7ac22101503c1a64809ed04cd994d787f9316dee4",
+    "estado": "APROBADO_LOCAL",
+    "fecha_revision": "2026-10-27T03:02:28.368895+00:00"
   }
 }
