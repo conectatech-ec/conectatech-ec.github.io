@@ -11,8 +11,9 @@ const eighthFile='importacion/fotografia-publicada/direccion-20261027-12.json';
 const ninthFile='importacion/fotografia-publicada/direccion-20261027-13.json';
 const tenthFile='importacion/fotografia-publicada/direccion-20261027-14.json';
 const eleventhFile='importacion/fotografia-publicada/direccion-20261027-15.json';
-const allowed=new Set(['SOPO002','REL050','ADAP086','ADAP053','ADAP091','CAPT004','HUB016','CORT04','CUBO018','SOPO057','CUBO019','CUBO025','ADAP075','ADAP080','LINT008','CABL046','PAD001','SOPO007','MOUS003','JUGU067','REL028','LAMP003','ESTA002','MICR32','STYL002','MOUS031','MOUS032','MOUS043','POWE015','CABL171','CUBO003','SOPO005','AUDI098','RADI007','POWE016','AIRT002','MOUS020','PADM002','JUGU163','MOUS040','REL011','REL016','PANE002','PANE003','BINO001','MICR08','PROT005','MOUS001','JUGU022','PROT002','PROT004','AUDI044','CUBO002']);
-function rows(){return Object.assign({},... [file,secondFile,thirdFile,fourthFile,fifthFile,sixthFile,seventhFile,eighthFile,ninthFile,tenthFile,eleventhFile].map(f=>fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')).productos:{}));}
+const twelfthFile='importacion/fotografia-publicada/direccion-20261027-16.json';
+const allowed=new Set(['CUBO009','CUBO010','SOPO002','REL050','ADAP086','ADAP053','ADAP091','CAPT004','HUB016','CORT04','CUBO018','SOPO057','CUBO019','CUBO025','ADAP075','ADAP080','LINT008','CABL046','PAD001','SOPO007','MOUS003','JUGU067','REL028','LAMP003','ESTA002','MICR32','STYL002','MOUS031','MOUS032','MOUS043','POWE015','CABL171','CUBO003','SOPO005','AUDI098','RADI007','POWE016','AIRT002','MOUS020','PADM002','JUGU163','MOUS040','REL011','REL016','PANE002','PANE003','BINO001','MICR08','PROT005','MOUS001','JUGU022','PROT002','PROT004','AUDI044','CUBO002']);
+function rows(){return Object.assign({},... [file,secondFile,thirdFile,fourthFile,fifthFile,sixthFile,seventhFile,eighthFile,ninthFile,tenthFile,eleventhFile,twelfthFile].map(f=>fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')).productos:{}));}
 function premium(){return fs.existsSync(secondFile)?JSON.parse(fs.readFileSync(secondFile,'utf8')).ajuste_titulo:null;}
 function hash(url){const f='.'+url;return fs.existsSync(f)?crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'):null;}
 function valid(r){return r&&allowed.has(r.sku)&&r.revisado_visual===true&&
