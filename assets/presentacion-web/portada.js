@@ -58,10 +58,12 @@
     showcase.querySelector('.pw-carousel').insertAdjacentHTML('beforeend','<svg class="pw-tech-effect" viewBox="0 0 600 285" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M3 40V3H93M507 3H597V40M597 245V282H507M93 282H3V245"/><path class="pw-tech-trace" d="M12 279H588"/></svg>');
     const slides=[...showcase.querySelectorAll('.pw-slide')],dots=[...showcase.querySelectorAll('[data-pw-slide]')],reduce=matchMedia('(prefers-reduced-motion: reduce)');
     showcase.querySelectorAll('.pw-slide-photo img').forEach(im=>{im.loading='eager';im.decoding='async'});
-    let current=0,timer,techTimer,manualPause=reduce.matches,hover=false,focus=false,transitioning=false,touchStart=null;
+    const touchPointers=new Set();
+    let current=0,timer,techTimer,manualPause=false,hover=false,focus=false,transitioning=false,touchStart=null,touching=false;
+    const isPaused=()=>manualPause||reduce.matches||hover||focus||touching||touchPointers.size>0||document.hidden||slides.length<2;
     function schedule(){
-      clearTimeout(timer);if(controller.signal.aborted)return;state.pausado=manualPause||hover||focus||document.hidden||slides.length<2;
-      if(!state.pausado)timer=setTimeout(()=>go(current+1,false),Math.max(2400,Number(config.intervaloMs)||3000));
+      clearTimeout(timer);if(controller.signal.aborted)return;state.pausado=isPaused();
+      if(!state.pausado)timer=setTimeout(()=>go(current+1,false),Math.max(2400,Number(config.intervaloMs)||4000));
     }
     async function go(n,manual){
       if(transitioning||slides.length<2)return;
@@ -70,6 +72,7 @@
       const next=slides[n],image=next.querySelector('img');
       if(image){try{await image.decode()}catch(_){if(!image.naturalWidth){transitioning=false;schedule();return}}}
       if(controller.signal.aborted)return;
+      if(!manual&&isPaused()){transitioning=false;schedule();return}
       slides[current].classList.remove('is-active');slides[current].setAttribute('aria-hidden','true');slides[current].inert=true;
       current=n;next.classList.add('is-active');next.setAttribute('aria-hidden','false');next.inert=false;
       clearTimeout(techTimer);showcase.classList.remove('pw-tech-flash');
@@ -80,21 +83,27 @@
       transitioning=false;schedule();
     }
     const play=showcase.querySelector('[data-pw-play]');
-    function playLabel(){play.textContent=manualPause?'▶':'Ⅱ';play.setAttribute('aria-pressed',String(manualPause));play.setAttribute('aria-label',manualPause?'Reanudar transición automática':'Pausar transición automática')}
+    function playLabel(){const paused=manualPause||reduce.matches;play.textContent=paused?'▶':'Ⅱ';play.setAttribute('aria-pressed',String(paused));play.setAttribute('aria-disabled',String(reduce.matches));play.setAttribute('aria-label',reduce.matches?'Movimiento reducido: avance automático desactivado':manualPause?'Reanudar transición automática':'Pausar transición automática')}
     showcase.querySelector('[data-pw-prev]').onclick=()=>go(current-1,true);
     showcase.querySelector('[data-pw-next]').onclick=()=>go(current+1,true);
     dots.forEach(b=>b.onclick=()=>go(Number(b.dataset.pwSlide),true));
-    play.onclick=()=>{manualPause=!manualPause;focus=false;playLabel();schedule()};
-    on(showcase,'pointerenter',e=>{if(e.pointerType!=='touch'){hover=true;schedule()}});
+    play.onclick=()=>{if(reduce.matches)return;manualPause=!manualPause;focus=false;playLabel();schedule()};
+    on(showcase,'pointerenter',e=>{if(e.pointerType!=='touch'&&matchMedia('(hover: hover)').matches){hover=true;schedule()}});
     on(showcase,'pointerleave',()=>{hover=false;schedule()});
-    on(showcase,'focusin',e=>{focus=e.target!==play;schedule()});
-    on(showcase,'focusout',()=>{setTimeout(()=>{focus=showcase.contains(document.activeElement)&&document.activeElement!==play;schedule()},0)});
+    on(showcase,'focusin',e=>{focus=e.target!==play&&e.target.matches(':focus-visible');schedule()});
+    on(showcase,'focusout',()=>{setTimeout(()=>{focus=showcase.contains(document.activeElement)&&document.activeElement!==play&&document.activeElement.matches(':focus-visible');schedule()},0)});
     on(showcase,'keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(current+(e.key==='ArrowRight'?1:-1),true)}});
-    on(showcase,'pointerdown',e=>{if(e.pointerType==='touch'&&e.target.closest('.pw-slide')){manualPause=true;playLabel();schedule()}});
-    on(showcase,'touchstart',e=>{touchStart={x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY}},{passive:true});
-    on(showcase,'touchend',e=>{if(!touchStart)return;const t=e.changedTouches[0],dx=t.clientX-touchStart.x,dy=t.clientY-touchStart.y;touchStart=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(current+(dx<0?1:-1),true)},{passive:true});
+    on(showcase,'pointerdown',e=>{if(e.pointerType==='touch'){touchPointers.add(e.pointerId);focus=false;schedule()}});
+    const endPointer=e=>{if(touchPointers.delete(e.pointerId))schedule()};
+    on(window,'pointerup',endPointer);
+    on(window,'pointercancel',e=>{touchStart=null;endPointer(e)});
+    on(showcase,'touchstart',e=>{touching=true;focus=false;touchStart=e.touches.length===1?{x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY}:null;schedule()},{passive:true});
+    on(showcase,'touchend',e=>{touching=e.touches.length>0;const start=touchStart;touchStart=null;schedule();if(!touching&&start){const t=e.changedTouches[0],dx=t.clientX-start.x,dy=t.clientY-start.y;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(current+(dx<0?1:-1),true)}},{passive:true});
+    on(window,'touchend',e=>{if(touching&&!e.touches.length){touching=false;touchStart=null;schedule()}},{passive:true});
+    on(window,'touchcancel',e=>{touching=e.touches.length>0;touchStart=null;touchPointers.clear();schedule()},{passive:true});
+    on(window,'blur',()=>{touching=false;touchStart=null;touchPointers.clear();schedule()});
     on(document,'visibilitychange',schedule);
-    on(reduce,'change',e=>{if(e.matches){manualPause=true;clearTimeout(techTimer);showcase.classList.remove('pw-tech-flash')}playLabel();schedule()});
+    on(reduce,'change',e=>{if(e.matches){clearTimeout(techTimer);showcase.classList.remove('pw-tech-flash')}playLabel();schedule()});
     const carousel=showcase.querySelector('.pw-carousel');let sizeFrame;
     function fitCarousel(){
       if(controller.signal.aborted)return;
