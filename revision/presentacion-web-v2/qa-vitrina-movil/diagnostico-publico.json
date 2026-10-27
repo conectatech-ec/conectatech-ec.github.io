@@ -1,0 +1,28 @@
+{
+  "motor": "154.0.8037.57",
+  "android_emulado": true,
+  "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7499.4 Mobile Safari/537.36",
+  "rows": [
+    {
+      "momento": "carga",
+      "indice": 0,
+      "pausado": false,
+      "intervalo": 3000
+    },
+    {
+      "momento": "3100ms sin interacción",
+      "indice": 1
+    },
+    {
+      "momento": "deslizamiento táctil",
+      "indice": 2,
+      "pausado": true,
+      "boton": "Reanudar transición automática"
+    },
+    {
+      "momento": "12000ms después del deslizamiento",
+      "indice": 2,
+      "pausado": true
+    }
+  ]
+}

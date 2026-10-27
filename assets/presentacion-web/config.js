@@ -5,7 +5,7 @@ window.CONECTATECH_PRESENTACION = {
   version: 2,
   tema: 'automatico',
   zonaHoraria: 'America/Guayaquil',
-  intervaloMs: 3000,
+  intervaloMs: 4000,
   efectoTecnologico: true,
   rotacionDiaria: {
     activa: true,
