@@ -54,3 +54,9 @@ No se encontró documentación pública suficiente para una API/exportación pro
 Las pruebas de dos XLSX sintéticos acreditan importación única, nueva versión, propagación de candidatos, invalidación por SKU/categoría y conservación de última versión válida. No acreditan destinos externos. El job verifica por HTTPS la fuente realmente cargada en Alex con secretos ya existentes. El recorrido de un nuevo Excel real desde recepción hasta todos los canales sigue pendiente; `fully_automated` permanece falso.
 
 Presupuesto adicional $0. Sin publicación de producción ni acceso de compradores externos.
+
+## Resolución compartida del piloto Marketplace — 27-10-2026
+
+La fuente pública compartida existente evolucionó en otra sesión: `datos-593/estado-ultimo-corte.json` identifica `datos-593/corte-comercial-publico-validado.json`. Alex la consulta en lectura mediante `shared-hub.mjs`, que adapta el mismo contrato y mantiene la política de vigencia. No se crea otro proceso de extracción de 593. El corte del 26 fue contrastado con su Excel original.
+
+`central/current.json` y `/commercial/catalog` conservan el snapshot compilado de respaldo y de recepción. Después de esta integración, no deben confundirse con la versión que una respuesta de Alex adoptó del Hub compartido: consultar `source_sha256`, `source_kind` e `inventory_cut_date` de la respuesta y la evidencia HTTPS. Un reporte compilado más reciente tiene prioridad sobre un puntero público anterior. Las publicaciones de otros canales siguen a cargo de sus propias sesiones y necesitan recibos. El corte compartido actual está vencido para cotizar, aunque identifica productos; no se renueva por este despliegue.
