@@ -18,6 +18,7 @@ function valid(r){return r&&allowed.has(r.sku)&&r.revisado_visual===true&&
  hash(r.portada_anterior.url)===r.portada_anterior.sha256&&
  (r.mantener_vistas||[]).every(p=>hash(p.original)===p.sha256_original&&Object.values(p.versiones).every(v=>hash(v.url)===v.sha256))&&
  (r.portadas_previas_autorizadas||[]).every(p=>hash(p.url)===p.sha256)&&
+ (r.archivos_originales_conservados||[]).every(p=>hash(p.url)===p.sha256)&&
  (r.vistas_retira_archivos_conservados||[]).every(p=>hash(p.url)===p.sha256)&&
  (r.imagenProfesional?[r.imagenProfesional]:r.vistas||[]).every(p=>hash(p.original)===p.sha256_original&&Object.values(p.versiones).every(v=>hash(v.url)===v.sha256));}
 function capture(){
