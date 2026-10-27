@@ -53,6 +53,8 @@ async function main() {
   const skus = [...new Set(opt.sku.map(sku => aliases[sku] || sku))];
   const slugs = JSON.parse(fs.readFileSync(safe('seo-pages.json')));
   const enriched = JSON.parse(fs.readFileSync(safe('seo-contenido.json')));
+  const effectivePhotos=require('./editorial-fotografia-efectiva.cjs')(products,enriched);
+  for(const [sku,photo]of Object.entries(effectivePhotos))Object.assign(enriched[sku],photo);
   const familyMatch = index.match(/const categoryFamilies=(\{[^\n]+\});/);
   const families = familyMatch ? JSON.parse(familyMatch[1]) : {};
   const category = p => p.categoriaComercial || families[p.category] || 'Hogar y Accesorios';

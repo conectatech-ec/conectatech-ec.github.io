@@ -151,6 +151,28 @@
     campaign.querySelector('.pw-banner-open').onclick=()=>dialog.showModal();
     dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
   }
+  // El enlace de confianza tiene su propio destino; la vitrina conserva un ancla propia.
+  const trustbar=document.querySelector('.trustbar'),contactLink=document.querySelector('header .ct-nav-wa');
+  if(trustbar&&!document.querySelector('.pw-why')){
+    if(hero?.id==='beneficios')hero.id='vitrina';
+    const why=document.createElement('section');why.className='pw-why';why.id='beneficios';why.tabIndex=-1;why.setAttribute('aria-labelledby','pw-why-title');
+    trustbar.before(why);
+    why.innerHTML='<div class="pw-why-intro"><span class="pw-kicker">CONECTATECH · CERCA DE TI</span><h2 id="pw-why-title">¿Por qué<br><strong>elegirnos?</strong></h2><p>Tecnología para ti.<br>Atención de persona a persona.</p><div class="pw-why-actions"></div></div>';
+    if(contactLink){const contact=contactLink.cloneNode(false);contact.className='pw-why-contact';contact.textContent='Habla con nuestro equipo';why.querySelector('.pw-why-actions').appendChild(contact)}
+    const icons=[
+      '<path d="M4 10V21H20V10M3 10L5 3H19L21 10M8 21V15H13V21M3 10Q6 14 9 10Q12 14 15 10Q18 14 21 10"/>',
+      '<path d="M6 3H18V22L15 20L12 22L9 20L6 22ZM9 8H15M9 12H15M9 16H12"/>',
+      '<path d="M12 2L21 6V12Q21 18 12 22Q3 18 3 12V6ZM8 12L11 15L16 9"/>',
+      '<path d="M2 6H15V18H2ZM15 10H19L22 14V18H15M6 6V3H12M7 21A2 2 0 1 0 7 17A2 2 0 1 0 7 21M18 21A2 2 0 1 0 18 17A2 2 0 1 0 18 21"/>'
+    ];
+    const descriptions=['Visítanos y consulta los productos con nuestro equipo.','Compra con factura y consulta los detalles de tu compra.','Consulta las condiciones aplicables a cada producto.','Confirma cobertura y disponibilidad para coordinar tu entrega.'];
+    [...trustbar.querySelectorAll('.trustitem')].forEach((item,i)=>{
+      const label=item.textContent.trim().replace(/^[^\p{L}]+/u,'');
+      item.replaceChildren();item.insertAdjacentHTML('beforeend',`<span class="pw-why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${icons[i]||icons[0]}</svg></span><h3>${escape(label)}</h3><p>${escape(descriptions[i]||'Consulta los detalles con nuestro equipo.')}</p>`);
+    });
+    why.appendChild(trustbar);
+    if(location.hash==='#beneficios')document.fonts.ready.then(()=>{if(location.hash==='#beneficios')requestAnimationFrame(()=>{syncHeaderOffset();why.scrollIntoView({behavior:'instant',block:'start'})})});
+  }
   applyTheme();
   // Revalida al volver a la pestaña y al cambiar de fecha; no necesita servicios ni tareas.
   document.addEventListener('visibilitychange',()=>{if(!document.hidden){applyTheme();refreshSelection()}});
