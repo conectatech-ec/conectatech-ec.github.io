@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Vista adicional de REL050 con píxeles reales conservados. No publicar borradores que alteran el bisel.",
   "productos": {
     "REL050": {
@@ -199,5 +199,16 @@
       },
       "alcance": "Mejora parcial: vista real adicional. No declara resuelta la petición de una portada más premium."
     }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-27T19:43:56.489670+00:00",
+  "verificacion": {
+    "workflow_run": 40570637217,
+    "http_verificacion_directa": true,
+    "ambito_prueba_inicial": "Fichas, recursos y catálogo comprobados por HTTP público.",
+    "chromium": [
+      1280,
+      390
+    ],
+    "originales_conservados": true
   }
 }
