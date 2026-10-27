@@ -10,8 +10,13 @@ const server=http.createServer(async(req,res)=>{
  if(req.url==='/__qa_login'){res.setHeader('Set-Cookie','qa-session=local-only; HttpOnly; SameSite=Strict; Path=/');return reply(200,{qa:true});}
  if(!req.headers.cookie?.split(';').some(v=>v.trim()==='qa-session=local-only'))return reply(403,{error:'Acceso privado — prueba local'});
  if(req.url==='/')return reply(200,fs.readFileSync(path.join(base,'Index.html')),'text/html; charset=utf-8');
+ if(req.url==='/__qa_google_login')return reply(200,'Inicio de sesión simulado para QA local','text/plain');
  if(req.method!=='POST')return reply(404,{error:'No encontrado'});
  let raw='';for await(const part of req){raw+=part;if(raw.length>4096)return reply(413,{error:'Solicitud demasiado grande'});}let args;try{args=JSON.parse(raw||'[]')}catch{return reply(400,{error:'JSON inválido'});}
+ if(req.url==='/api/startGoogleSignIn')return reply(200,{state:'a'.repeat(64),binding:'b'.repeat(64),url:'http://127.0.0.1:'+server.address().port+'/__qa_google_login'});
+ if(req.url==='/api/completeGoogleSignIn')return reply(200,{session:'c'.repeat(64),expires:Date.now()+1800000});
+ if(req.url==='/api/signOut')return reply(200,{ok:true});
+ if(args.at(-1)!=='c'.repeat(64))return reply(403,{error:'ACCESO_DENEGADO'});
  if(req.url==='/api/getLibrary')return reply(200,library());
  if(req.url==='/__qa_change_version'){state.revision++;return reply(200,state);}
  if(req.url==='/api/getAsset'||req.url==='/api/validateAsset'){

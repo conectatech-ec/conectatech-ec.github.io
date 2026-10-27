@@ -1,0 +1,30 @@
+CONECTATECH BANNERS PRO — CORRECCIÓN DE AUTENTICACIÓN
+Estado: código corregido y probado localmente; todavía NO aplicado a la /exec existente.
+
+QUÉ CORRIGE
+La identidad del visitante ya no depende de Session.getActiveUser ni getEffectiveUser. El navegador inicia OAuth de Google con selección de cuenta. El servidor intercambia el código con el cliente OAuth empresarial y PKCE; Google confirma la firma del ID token por tokeninfo. Se validan emisor, audiencia, azp, nonce, fechas, sub, correo verificado y lista blanca. Solo después se emite una sesión opaca de hasta 30 minutos. Google tokens y secreto OAuth quedan en servidor, sin logs.
+La pantalla inicial es pública y no lee Drive. getLibrary(session), validateAsset(id,version,session) y getAsset(id,version,session) rechazan antes de leer archivos si falta autorización. No reutilizar el HTML anterior: también debe actualizarse para adjuntar la sesión.
+Cerrar sesión elimina los materiales visibles y revoca la sesión del servidor. La sesión permanece solo en memoria del navegador; al recargar se vuelve a entrar con Google. La expulsión de caché obliga a volver a entrar, nunca concede acceso. Se revalida la lista blanca en cada solicitud.
+
+CUENTA AUTORIZADA
+El propietario desea mantener conectatech.ecu@gmail.com. Conservarla en BANNERS_PRO_CONFIG.users. El código admite hasta dos correos; añadir el segundo únicamente cuando se identifique expresamente. No se añadió el correo personal ni se habilitó acceso comercial para cualquiera con el enlace.
+
+APLICAR AL PROYECTO EXISTENTE, SIN CREAR OTRA /exec
+1. Abrir el proyecto Apps Script existente bajo la cuenta empresarial. Conservar su ID y su implementación actual.
+2. Sustituir Code.gs e Index.html; añadir Auth.gs. Actualizar appsscript.json con el incluido. Conservar la propiedad BANNERS_PRO_CONFIG y la biblioteca oficial: no ejecutar el Setup antiguo ni crear otro inventario.
+3. En el proyecto estándar de Google Cloud asociado, configurar un cliente OAuth de tipo Aplicación web y consentimiento para openid/email. No requiere contratar servicios ni activar facturación. Si el consentimiento está en pruebas externas, incluir únicamente las cuentas autorizadas como usuarios de prueba.
+4. En ese cliente, registrar como URI de redirección autorizada la URL /exec EXISTENTE completa y exacta. No usar la URL temporal script.googleusercontent.com ni /dev. No hacen falta orígenes JavaScript GIS: esta solución usa el flujo de código en servidor.
+5. En Propiedades de script guardar:
+   BANNERS_PRO_OAUTH_CLIENT_ID = client ID del cliente web
+   BANNERS_PRO_OAUTH_CLIENT_SECRET = secreto del mismo cliente (solo aquí; nunca en HTML, Drive compartido, Git o chat)
+   BANNERS_PRO_OAUTH_REDIRECT_URI = la /exec existente exacta
+6. Mantener executeAs USER_DEPLOYING y access ANYONE_ANONYMOUS. Este permiso solo permite llegar al login: los materiales están detrás de la sesión OAuth y la lista blanca. La cuenta desplegadora debe ser la empresarial con lectura de la biblioteca. No compartir Drive públicamente.
+7. Para conservar /exec, usar Implementar > Gestionar implementaciones > lápiz en la implementación EXISTENTE > Nueva versión > Implementar. No usar Nueva implementación. Verificar que el ID y la URL no cambiaron. Aplicar solo con autorización de Supervisión General para esa implementación.
+8. Entrar con Google desde la galería. Se abre una ventana de selección; después volver a la pestaña de la galería. Permitir ventanas emergentes para la app. Si aparece redirect_uri_mismatch, comparar la URI exacta del paso4 con la propiedad del paso5; no modificar la whitelist para resolver errores OAuth.
+
+REVOCACIÓN
+Quitar un correo de BANNERS_PRO_CONFIG.users revoca sus siguientes operaciones. Para revocar todas las sesiones, cambiar BANNERS_PRO_AUTH_EPOCH a un valor nuevo en propiedades. El cierre de sesión de esta aplicación no cierra la sesión general de Google.
+
+VERIFICACIÓN REAL PENDIENTE
+Probar la /exec con la cuenta empresarial y luego con el segundo correo si se autoriza; probar un correo ajeno; intentar llamadas RPC sin sesión; comprobar búsqueda, vista, descarga y WhatsApp en ambos Android. Se requiere cliente OAuth configurado, secreto guardado en el proyecto y URL /exec exacta. El conector actual no puede editar ni desplegar proyectos Apps Script, y aún no se proporcionó la /exec ni el client ID. No se declara corregida la aplicación desplegada.
+No se modifica la Fábrica de Banners, el manifiesto, permisos Drive, precios, stock ni sincronizadores.

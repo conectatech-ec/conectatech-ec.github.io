@@ -12,21 +12,20 @@ function configuration_() {
   return Object.freeze(c);
 }
 const SETTINGS=configuration_();
-function authorize_() {
-  const email=Session.getActiveUser().getEmail().toLowerCase().trim();
-  if(!email||!SETTINGS.users.includes(email))throw new Error('ACCESO_DENEGADO: inicia sesión con la cuenta autorizada.');
-  return email;
-}
-function doGet() {
-  try { authorize_(); } catch(e) {
-    return HtmlService.createHtmlOutput('<h1>Acceso privado</h1><p>Inicia sesión con una cuenta autorizada de CONECTATECH.</p>').setTitle('Banners Pro — acceso privado');
+function doGet(e) {
+  const params=e&&e.parameter||{};
+  if(params.code||params.state||params.error){
+    let message='No se pudo autorizar la cuenta. Vuelve a la galería e inténtalo de nuevo.';
+    try{googleCallback_(params);message='Inicio de sesión procesado. Vuelve a la pestaña de Banners Pro; puedes cerrar esta ventana.';}catch(error){}
+    return HtmlService.createHtmlOutput('<!doctype html><html lang="es"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Banners Pro — acceso</title><p>'+message+'</p></html>');
   }
+  // Public shell only: no Drive read, library metadata or Google tokens.
   return HtmlService.createHtmlOutputFromFile('Index').setTitle('CONECTATECH BANNERS PRO').addMetaTag('viewport','width=device-width, initial-scale=1, viewport-fit=cover');
 }
 function hash_(bytes){return Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256,bytes).map(v=>(v&255).toString(16).padStart(2,'0')).join('');}
 function inside_(file){const it=file.getParents();while(it.hasNext())if(SETTINGS.approvedFolders.includes(it.next().getId()))return true;return false;}
-function base_(){
-  authorize_();
+function base_(session){
+  authorize_(session);
   const source=JSON.parse(DriveApp.getFileById(SETTINGS.manifestId).getBlob().getDataAsString('UTF-8'));
   const response=UrlFetchApp.fetch(SETTINGS.hubUrl,{muteHttpExceptions:true,followRedirects:true});
   if(response.getResponseCode()!==200)throw new Error('No se pudo comprobar la vigencia del inventario. Intenta actualizar.');
@@ -66,24 +65,24 @@ function checkedFile_(row){
   }
   return {file,row:{...row,version,updatedAt:new Date(version).toISOString(),filename:file.getName()}};
 }
-function getLibrary(){
-  const {source,cut}=base_(),rows=rows_(source,cut),warnings=[];
+function getLibrary(session){
+  const {source,cut}=base_(session),rows=rows_(source,cut),warnings=[];
   function checked(list){const result=[];for(const row of list){try{result.push(checkedFile_(row).row);}catch(e){warnings.push({sku:row.sku||null,nombre:row.name,motivo:'Archivo pendiente de verificación o sin acceso vigente'});}}return result;}
   const products=checked(rows.products),pdfs=checked(rows.pdfs);
   products.sort((a,b)=>b.version-a.version||a.sku.localeCompare(b.sku));
   return {mode:'drive-live',date:cut.fecha_corte,products,pdfs,warnings,sourceUrl:'https://drive.google.com/drive/folders/'+SETTINGS.rootId,checkedAt:new Date().toISOString()};
 }
-function selected_(id,version){
-  authorize_();if(typeof id!=='string'||!/^[A-Za-z0-9_-]+$/.test(id))throw new Error('Archivo inválido');
-  const {source,cut}=base_(),rows=rows_(source,cut),selected=[...rows.products,...rows.pdfs].find(p=>p.driveId===id);
+function selected_(id,version,session){
+  authorize_(session);if(typeof id!=='string'||!/^[A-Za-z0-9_-]+$/.test(id))throw new Error('Archivo inválido');
+  const {source,cut}=base_(session),rows=rows_(source,cut),selected=[...rows.products,...rows.pdfs].find(p=>p.driveId===id);
   if(!selected)throw new Error('Este archivo no está aprobado o ya no está vigente.');
   const result=checkedFile_(selected);
   if(String(result.row.version)!==String(version))throw new Error('VERSION_CAMBIO: actualiza la galería antes de compartir.');
   return {...result,cut};
 }
-function validateAsset(id,version){const result=selected_(id,version);return result.row;}
-function getAsset(id,version){
-  const {file:f,row,cut}=selected_(id,version),bytes=f.getBlob().getBytes();
+function validateAsset(id,version,session){const result=selected_(id,version,session);return result.row;}
+function getAsset(id,version,session){
+  const {file:f,row,cut}=selected_(id,version,session),bytes=f.getBlob().getBytes();
   if(hash_(bytes)!==row.sha256||String(f.getLastUpdated().getTime())!==String(row.version))throw new Error('VERIFICACION_PENDIENTE: el archivo cambió. Espera la validación de la fábrica.');
   return {id,version:row.version,filename:f.getName(),mime:f.getMimeType(),sha256:row.sha256,base64:Utilities.base64Encode(bytes)};
 }
