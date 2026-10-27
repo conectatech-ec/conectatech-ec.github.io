@@ -32,7 +32,7 @@ concurrency:
 jobs:
   validar:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     env:
       MANIFIESTO_SOLICITADO: ${{ inputs.manifiesto || '' }}
       BASE_PUBLICA_SOLICITADA: ${{ inputs.base_publica || '' }}

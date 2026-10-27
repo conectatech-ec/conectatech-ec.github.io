@@ -1,0 +1,58 @@
+{
+  "estado": "TODOS_LOS_CONTROLES_CI_APROBADOS_CABEZA_EXACTA",
+  "head": "2eb3d36c113017127b57d548d89e348896d4f766",
+  "run": 40559184201,
+  "conclusionWorkflow": "cancelled",
+  "causa": "Cancelación manual por estado atrasado; registros definitivos confirman todos los controles exigidos aprobados antes de terminar. Sólo limpieza de setup omitida.",
+  "controles": [
+    {
+      "name": "Preparar únicamente los SKU aprobados del lote",
+      "conclusion": "success",
+      "started_at": "2026-10-27T18:24:42Z",
+      "completed_at": "2026-10-27T18:24:43Z"
+    },
+    {
+      "name": "Renderizar y comprobar fichas con Chromium real",
+      "conclusion": "success",
+      "started_at": "2026-10-27T18:31:28Z",
+      "completed_at": "2026-10-27T18:31:30Z"
+    },
+    {
+      "name": "Comprobar catálogo compacto, novedades, filtros y enlaces",
+      "conclusion": "success",
+      "started_at": "2026-10-27T18:31:30Z",
+      "completed_at": "2026-10-27T18:31:39Z"
+    },
+    {
+      "name": "Comprobar títulos editoriales activos y datos conservados",
+      "conclusion": "success",
+      "started_at": "2026-10-27T18:31:39Z",
+      "completed_at": "2026-10-27T18:32:53Z"
+    },
+    {
+      "name": "Incorporar únicamente evidencia móvil válida",
+      "conclusion": "success",
+      "started_at": "2026-10-27T18:32:53Z",
+      "completed_at": "2026-10-27T18:32:53Z"
+    },
+    {
+      "name": "Validar contrato completo antes de publicar",
+      "conclusion": "success",
+      "started_at": "2026-10-27T18:32:53Z",
+      "completed_at": "2026-10-27T18:32:53Z"
+    },
+    {
+      "name": "Guardar contratos revisados, capturas y reportes",
+      "conclusion": "success",
+      "started_at": "2026-10-27T18:32:53Z",
+      "completed_at": "2026-10-27T18:32:59Z"
+    },
+    {
+      "name": "Exigir todos los controles sin publicar",
+      "conclusion": "success",
+      "started_at": "2026-10-27T18:32:59Z",
+      "completed_at": "2026-10-27T18:32:59Z"
+    }
+  ],
+  "repeticionSinCambiosDeCodigo": 40560950854
+}
