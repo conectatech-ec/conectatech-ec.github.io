@@ -3,9 +3,9 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 630,
+    "MEJORAR TÍTULO": 680,
     "REVISAR IDENTIDAD": 97,
-    "CORRECTO": 443
+    "CORRECTO": 393
   },
   "aplicados": 627,
   "cola": [
@@ -4342,7 +4342,7 @@
     },
     {
       "sku": "ANTE001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Antena mini para TV",
       "propuesta": "Antena mini para TV",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4351,7 +4351,17 @@
         "seo-contenido.json#ANTE001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Distinguir la antena genérica mediante base y cable integrado comprobados.",
+        "propuesta": "Antena compacta de TV con base",
+        "evidencia": [
+          "seo-contenido.json#ANTE001",
+          "importacion/contratos/ANTE001.json"
+        ]
+      }
     },
     {
       "sku": "ANTE002",
@@ -4596,7 +4606,7 @@
     },
     {
       "sku": "AUDI017",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audífonos inalámbricos negro y dorado",
       "propuesta": "Audífonos inalámbricos negro y dorado",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -4605,7 +4615,17 @@
         "seo-contenido.json#AUDI017"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Audífonos negro y dorado",
+        "evidencia": [
+          "seo-contenido.json#AUDI017",
+          "importacion/contratos/AUDI017.json"
+        ]
+      }
     },
     {
       "sku": "AUDI020",
@@ -8549,7 +8569,7 @@
     },
     {
       "sku": "CAMA001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mini cámara de seguridad | formato compacto",
       "propuesta": "Mini cámara de seguridad | formato compacto",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8558,7 +8578,17 @@
         "seo-contenido.json#CAMA001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Mini cámara de seguridad",
+        "evidencia": [
+          "seo-contenido.json#CAMA001",
+          "importacion/contratos/CAMA001.json"
+        ]
+      }
     },
     {
       "sku": "CAMA002",
@@ -8575,7 +8605,7 @@
     },
     {
       "sku": "CAMA003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cámara exterior Xiaomi BW300 2K",
       "propuesta": "Cámara exterior Xiaomi BW300 2K",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8584,11 +8614,21 @@
         "seo-contenido.json#CAMA003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Sustituir código técnico por uso exterior y resolución; añadir batería/protección verificadas.",
+        "propuesta": "Cámara Xiaomi exterior 2K",
+        "evidencia": [
+          "seo-contenido.json#CAMA003",
+          "importacion/contratos/CAMA003.json"
+        ]
+      }
     },
     {
       "sku": "CAMA005",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cámara Xiaomi C301 | 2K Wi-Fi",
       "propuesta": "Cámara Xiaomi C301 | 2K Wi-Fi",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8597,7 +8637,17 @@
         "seo-contenido.json#CAMA005"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Sustituir código técnico por uso interior y resolución; conexión y orientación verificadas.",
+        "propuesta": "Cámara Xiaomi interior 2K",
+        "evidencia": [
+          "seo-contenido.json#CAMA005",
+          "importacion/contratos/CAMA005.json"
+        ]
+      }
     },
     {
       "sku": "CAMA007",
@@ -8637,7 +8687,7 @@
     },
     {
       "sku": "CAMA009",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cámara VIGI EasyCam C320 | exterior 2 MP",
       "propuesta": "Cámara VIGI EasyCam C320 | exterior 2 MP",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -8646,7 +8696,17 @@
         "seo-contenido.json#CAMA009"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Sustituir código técnico por uso exterior y resolución; conservar familia y PoE verificados.",
+        "propuesta": "Cámara VIGI exterior 2 MP",
+        "evidencia": [
+          "seo-contenido.json#CAMA009",
+          "importacion/contratos/CAMA009.json"
+        ]
+      }
     },
     {
       "sku": "CAMA010",
@@ -9745,7 +9805,7 @@
     },
     {
       "sku": "COBE001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cobertor decorativo para cargador",
       "propuesta": "Cobertor decorativo para cargador",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -9754,7 +9814,17 @@
         "seo-contenido.json#COBE001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Identificar diseño Pepsi-Cola comprobado en vez de cobertor decorativo genérico.",
+        "propuesta": "Cobertor diseño Pepsi-Cola",
+        "evidencia": [
+          "seo-contenido.json#COBE001",
+          "importacion/contratos/COBE001.json"
+        ]
+      }
     },
     {
       "sku": "COBE002",
@@ -11798,7 +11868,7 @@
     },
     {
       "sku": "HUB012",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Hub Orvesion USB-C con HDMI y VGA",
       "propuesta": "Hub Orvesion USB-C con HDMI y VGA",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -11807,7 +11877,17 @@
         "seo-contenido.json#HUB012"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Destacar uso de video y conexiones/resolución verificadas, sin alargar el título.",
+        "propuesta": "Hub Orvesion USB-C con video",
+        "evidencia": [
+          "seo-contenido.json#HUB012",
+          "importacion/contratos/HUB012.json"
+        ]
+      }
     },
     {
       "sku": "HUB014",
@@ -12109,7 +12189,7 @@
     },
     {
       "sku": "JUGU002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Bicicleta de colección | miniatura negra y amarilla",
       "propuesta": "Bicicleta de colección | miniatura negra y amarilla",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12118,7 +12198,17 @@
         "seo-contenido.json#JUGU002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Bicicleta de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU002",
+          "importacion/contratos/JUGU002.json"
+        ]
+      }
     },
     {
       "sku": "JUGU003",
@@ -12339,7 +12429,7 @@
     },
     {
       "sku": "JUGU037",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Auto clásico descapotable | plateado",
       "propuesta": "Auto clásico descapotable | plateado",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12348,7 +12438,17 @@
         "seo-contenido.json#JUGU037"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Auto descapotable de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU037",
+          "importacion/contratos/JUGU037.json"
+        ]
+      }
     },
     {
       "sku": "JUGU038",
@@ -12388,7 +12488,7 @@
     },
     {
       "sku": "JUGU040",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Camioneta Combi Coleccionable Grande Disenos Surtidos",
       "propuesta": "Camioneta Combi Coleccionable Grande Disenos Surtidos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12397,7 +12497,17 @@
         "seo-contenido.json#JUGU040"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Combi coleccionable grande",
+        "evidencia": [
+          "seo-contenido.json#JUGU040",
+          "importacion/contratos/JUGU040.json"
+        ]
+      }
     },
     {
       "sku": "JUGU043",
@@ -12414,7 +12524,7 @@
     },
     {
       "sku": "JUGU048",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Motocicleta decorativa vintage | verde",
       "propuesta": "Motocicleta decorativa vintage | verde",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12423,11 +12533,21 @@
         "seo-contenido.json#JUGU048"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Moto vintage decorativa",
+        "evidencia": [
+          "seo-contenido.json#JUGU048",
+          "importacion/contratos/JUGU048.json"
+        ]
+      }
     },
     {
       "sku": "JUGU051",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto coleccionable | roja con chasis a la vista",
       "propuesta": "Moto coleccionable | roja con chasis a la vista",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12436,11 +12556,21 @@
         "seo-contenido.json#JUGU051"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Moto roja de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU051",
+          "importacion/contratos/JUGU051.json"
+        ]
+      }
     },
     {
       "sku": "JUGU054",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto pequeña coleccionable | diseño trail",
       "propuesta": "Moto pequeña coleccionable | diseño trail",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12449,7 +12579,17 @@
         "seo-contenido.json#JUGU054"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Moto trail de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU054",
+          "importacion/contratos/JUGU054.json"
+        ]
+      }
     },
     {
       "sku": "JUGU058",
@@ -12540,7 +12680,7 @@
     },
     {
       "sku": "JUGU068",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Miniatura Vespa clásica | scooter celeste de colección",
       "propuesta": "Miniatura Vespa clásica | scooter celeste de colección",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12549,7 +12689,17 @@
         "seo-contenido.json#JUGU068"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Vespa clásica de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU068",
+          "importacion/contratos/JUGU068.json"
+        ]
+      }
     },
     {
       "sku": "JUGU069",
@@ -12589,7 +12739,7 @@
     },
     {
       "sku": "JUGU072",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Carrito clásico descapotable | burdeos",
       "propuesta": "Carrito clásico descapotable | burdeos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12598,7 +12748,17 @@
         "seo-contenido.json#JUGU072"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Carrito clásico descapotable",
+        "evidencia": [
+          "seo-contenido.json#JUGU072",
+          "importacion/contratos/JUGU072.json"
+        ]
+      }
     },
     {
       "sku": "JUGU074",
@@ -12616,7 +12776,7 @@
     },
     {
       "sku": "JUGU076",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Carro Clasico Lada Coleccionable Colores Surtidos",
       "propuesta": "Carro Clasico Lada Coleccionable Colores Surtidos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12625,7 +12785,17 @@
         "seo-contenido.json#JUGU076"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Carro clásico Lada",
+        "evidencia": [
+          "seo-contenido.json#JUGU076",
+          "importacion/contratos/JUGU076.json"
+        ]
+      }
     },
     {
       "sku": "JUGU077",
@@ -12656,7 +12826,7 @@
     },
     {
       "sku": "JUGU080",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Carrito fórmula coleccionable | blanco y azul",
       "propuesta": "Carrito fórmula coleccionable | blanco y azul",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12665,7 +12835,17 @@
         "seo-contenido.json#JUGU080"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Carrito fórmula blanco y azul",
+        "evidencia": [
+          "seo-contenido.json#JUGU080",
+          "importacion/contratos/JUGU080.json"
+        ]
+      }
     },
     {
       "sku": "JUGU082",
@@ -12682,7 +12862,7 @@
     },
     {
       "sku": "JUGU087",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto de colección | miniatura azul, blanca y roja",
       "propuesta": "Moto de colección | miniatura azul, blanca y roja",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12691,7 +12871,17 @@
         "seo-contenido.json#JUGU087"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Moto tricolor de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU087",
+          "importacion/contratos/JUGU087.json"
+        ]
+      }
     },
     {
       "sku": "JUGU089",
@@ -12741,7 +12931,7 @@
     },
     {
       "sku": "JUGU091",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Deportivo de colección | miniatura azul número 6",
       "propuesta": "Deportivo de colección | miniatura azul número 6",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12750,11 +12940,21 @@
         "seo-contenido.json#JUGU091"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Deportivo azul de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU091",
+          "importacion/contratos/JUGU091.json"
+        ]
+      }
     },
     {
       "sku": "JUGU093",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Camioneta F150 de colección | miniatura amarilla",
       "propuesta": "Camioneta F150 de colección | miniatura amarilla",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12763,7 +12963,17 @@
         "seo-contenido.json#JUGU093"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Camioneta F150 de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU093",
+          "importacion/contratos/JUGU093.json"
+        ]
+      }
     },
     {
       "sku": "JUGU094",
@@ -12881,7 +13091,7 @@
     },
     {
       "sku": "JUGU103",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Bus escolar de colección | miniatura amarilla",
       "propuesta": "Bus escolar de colección | miniatura amarilla",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12890,7 +13100,17 @@
         "seo-contenido.json#JUGU103"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Bus escolar de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU103",
+          "importacion/contratos/JUGU103.json"
+        ]
+      }
     },
     {
       "sku": "JUGU105",
@@ -12917,7 +13137,7 @@
     },
     {
       "sku": "JUGU106",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto de colección estilo Kawasaki | motocross verde",
       "propuesta": "Moto de colección estilo Kawasaki | motocross verde",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12926,7 +13146,17 @@
         "seo-contenido.json#JUGU106"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Moto de colección estilo Kawasaki",
+        "evidencia": [
+          "seo-contenido.json#JUGU106",
+          "importacion/contratos/JUGU106.json"
+        ]
+      }
     },
     {
       "sku": "JUGU108",
@@ -12956,7 +13186,7 @@
     },
     {
       "sku": "JUGU110",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Deportivo policial de colección | diseño S.W.A.T.",
       "propuesta": "Deportivo policial de colección | diseño S.W.A.T.",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12965,7 +13195,17 @@
         "seo-contenido.json#JUGU110"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Deportivo policial S.W.A.T.",
+        "evidencia": [
+          "seo-contenido.json#JUGU110",
+          "importacion/contratos/JUGU110.json"
+        ]
+      }
     },
     {
       "sku": "JUGU112",
@@ -13031,7 +13271,7 @@
     },
     {
       "sku": "JUGU119",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto de colección | diseño touring de tres ruedas",
       "propuesta": "Moto de colección | diseño touring de tres ruedas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13040,7 +13280,17 @@
         "seo-contenido.json#JUGU119"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Moto touring de tres ruedas",
+        "evidencia": [
+          "seo-contenido.json#JUGU119",
+          "importacion/contratos/JUGU119.json"
+        ]
+      }
     },
     {
       "sku": "JUGU120",
@@ -13098,7 +13348,7 @@
     },
     {
       "sku": "JUGU124",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Todoterreno de colección | miniatura naranja",
       "propuesta": "Todoterreno de colección | miniatura naranja",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13107,11 +13357,21 @@
         "seo-contenido.json#JUGU124"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Todoterreno de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU124",
+          "importacion/contratos/JUGU124.json"
+        ]
+      }
     },
     {
       "sku": "JUGU125",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Consola portátil R36XX | carcasa translúcida",
       "propuesta": "Consola portátil R36XX | carcasa translúcida",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13120,11 +13380,21 @@
         "seo-contenido.json#JUGU125"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Consola portátil R36XX",
+        "evidencia": [
+          "seo-contenido.json#JUGU125",
+          "importacion/contratos/JUGU125.json"
+        ]
+      }
     },
     {
       "sku": "JUGU126",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Consola portátil XF40H | doble joystick",
       "propuesta": "Consola portátil XF40H | doble joystick",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13133,11 +13403,21 @@
         "seo-contenido.json#JUGU126"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Consola portátil XF40H",
+        "evidencia": [
+          "seo-contenido.json#JUGU126",
+          "importacion/contratos/JUGU126.json"
+        ]
+      }
     },
     {
       "sku": "JUGU127",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cámara infantil instantánea | diseño rosa con arcoíris",
       "propuesta": "Cámara infantil instantánea | diseño rosa con arcoíris",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13146,7 +13426,17 @@
         "seo-contenido.json#JUGU127"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Cámara infantil instantánea",
+        "evidencia": [
+          "seo-contenido.json#JUGU127",
+          "importacion/contratos/JUGU127.json"
+        ]
+      }
     },
     {
       "sku": "JUGU128",
@@ -13202,7 +13492,7 @@
     },
     {
       "sku": "JUGU135",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Skyline Racing de colección | blanco o dorado",
       "propuesta": "Skyline Racing de colección | blanco o dorado",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13211,11 +13501,21 @@
         "seo-contenido.json#JUGU135"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Skyline Racing de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU135",
+          "importacion/contratos/JUGU135.json"
+        ]
+      }
     },
     {
       "sku": "JUGU136",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto R1M de colección | miniatura celeste",
       "propuesta": "Moto R1M de colección | miniatura celeste",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13224,7 +13524,17 @@
         "seo-contenido.json#JUGU136"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Moto R1M de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU136",
+          "importacion/contratos/JUGU136.json"
+        ]
+      }
     },
     {
       "sku": "JUGU137",
@@ -13242,7 +13552,7 @@
     },
     {
       "sku": "JUGU138",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Taxi clásico de colección | miniatura naranja",
       "propuesta": "Taxi clásico de colección | miniatura naranja",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13251,11 +13561,21 @@
         "seo-contenido.json#JUGU138"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Taxi clásico de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU138",
+          "importacion/contratos/JUGU138.json"
+        ]
+      }
     },
     {
       "sku": "JUGU139",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Taxi deportivo de colección | miniatura celeste",
       "propuesta": "Taxi deportivo de colección | miniatura celeste",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13264,11 +13584,21 @@
         "seo-contenido.json#JUGU139"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Taxi deportivo de colección",
+        "evidencia": [
+          "seo-contenido.json#JUGU139",
+          "importacion/contratos/JUGU139.json"
+        ]
+      }
     },
     {
       "sku": "JUGU140",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Moto adventure de colección | miniatura con maletas",
       "propuesta": "Moto adventure de colección | miniatura con maletas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13277,7 +13607,17 @@
         "seo-contenido.json#JUGU140"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Moto adventure con maletas",
+        "evidencia": [
+          "seo-contenido.json#JUGU140",
+          "importacion/contratos/JUGU140.json"
+        ]
+      }
     },
     {
       "sku": "JUGU141",
@@ -13394,7 +13734,7 @@
     },
     {
       "sku": "JUGU149",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Flores para armar | bouquet con florero rosado",
       "propuesta": "Flores para armar | bouquet con florero rosado",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13403,7 +13743,17 @@
         "seo-contenido.json#JUGU149"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Flores armables con florero rosado",
+        "evidencia": [
+          "seo-contenido.json#JUGU149",
+          "importacion/contratos/JUGU149.json"
+        ]
+      }
     },
     {
       "sku": "JUGU150",
@@ -13420,7 +13770,7 @@
     },
     {
       "sku": "JUGU151",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Carrito deportivo coleccionable | plateado",
       "propuesta": "Carrito deportivo coleccionable | plateado",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13429,11 +13779,21 @@
         "seo-contenido.json#JUGU151"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Carrito deportivo plateado",
+        "evidencia": [
+          "seo-contenido.json#JUGU151",
+          "importacion/contratos/JUGU151.json"
+        ]
+      }
     },
     {
       "sku": "JUGU152",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Carro Coleccionable Grande Disenos Surtidos",
       "propuesta": "Carro Coleccionable Grande Disenos Surtidos",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13442,7 +13802,17 @@
         "seo-contenido.json#JUGU152"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Carro coleccionable grande",
+        "evidencia": [
+          "seo-contenido.json#JUGU152",
+          "importacion/contratos/JUGU152.json"
+        ]
+      }
     },
     {
       "sku": "JUGU153",
@@ -13528,7 +13898,7 @@
     },
     {
       "sku": "JUGU161",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Juguete de Combate con Depósito y Extensión",
       "propuesta": "Juguete de Combate con Depósito y Extensión",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13537,7 +13907,17 @@
         "seo-contenido.json#JUGU161"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Juguete de combate con depósito",
+        "evidencia": [
+          "seo-contenido.json#JUGU161",
+          "importacion/contratos/JUGU161.json"
+        ]
+      }
     },
     {
       "sku": "JUGU163",
@@ -13567,7 +13947,7 @@
     },
     {
       "sku": "JUGU166",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Carro coleccionable con parlante | diseño clásico",
       "propuesta": "Carro coleccionable con parlante | diseño clásico",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13576,7 +13956,17 @@
         "seo-contenido.json#JUGU166"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Carro clásico con parlante",
+        "evidencia": [
+          "seo-contenido.json#JUGU166",
+          "importacion/contratos/JUGU166.json"
+        ]
+      }
     },
     {
       "sku": "JUGU167",
@@ -13662,7 +14052,7 @@
     },
     {
       "sku": "LAMP002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Lámpara LED plegable compacta recargable",
       "propuesta": "Lámpara LED plegable compacta recargable",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13671,7 +14061,17 @@
         "seo-contenido.json#LAMP002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Identificar recarga USB-C y cantidad LED verificadas en vez de calificadores genéricos.",
+        "propuesta": "Lámpara LED recargable USB-C",
+        "evidencia": [
+          "seo-contenido.json#LAMP002",
+          "importacion/contratos/LAMP002.json"
+        ]
+      }
     },
     {
       "sku": "LAMP003",
@@ -15868,7 +16268,7 @@
     },
     {
       "sku": "PILA007",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Pilas recargables MP Multiple Power AA, paquete de 2",
       "propuesta": "Pilas recargables MP Multiple Power AA, paquete de 2",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -15877,7 +16277,17 @@
         "seo-contenido.json#PILA007"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Pilas MP AA Pack 2",
+        "evidencia": [
+          "seo-contenido.json#PILA007",
+          "importacion/contratos/PILA007.json"
+        ]
+      }
     },
     {
       "sku": "PILA010",
@@ -16226,7 +16636,7 @@
     },
     {
       "sku": "PILA043",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Pilas recargables Maxday AAA, paquete de 4",
       "propuesta": "Pilas recargables Maxday AAA, paquete de 4",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -16235,7 +16645,17 @@
         "seo-contenido.json#PILA043"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Pilas Maxday AAA Pack 4",
+        "evidencia": [
+          "seo-contenido.json#PILA043",
+          "importacion/contratos/PILA043.json"
+        ]
+      }
     },
     {
       "sku": "PILA044",
@@ -16265,7 +16685,7 @@
     },
     {
       "sku": "PILA046",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Pilas recargables Maxday AAA, paquete de 2",
       "propuesta": "Pilas recargables Maxday AAA, paquete de 2",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -16274,11 +16694,21 @@
         "seo-contenido.json#PILA046"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Pilas Maxday AAA Pack 2",
+        "evidencia": [
+          "seo-contenido.json#PILA046",
+          "importacion/contratos/PILA046.json"
+        ]
+      }
     },
     {
       "sku": "PILA047",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Pilas recargables Maxday AA, paquete de 2",
       "propuesta": "Pilas recargables Maxday AA, paquete de 2",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -16287,7 +16717,17 @@
         "seo-contenido.json#PILA047"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Pilas Maxday AA Pack 2",
+        "evidencia": [
+          "seo-contenido.json#PILA047",
+          "importacion/contratos/PILA047.json"
+        ]
+      }
     },
     {
       "sku": "PILA048",
@@ -18550,7 +18990,7 @@
     },
     {
       "sku": "SOPO043",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte metálico articulado | base para laptop",
       "propuesta": "Soporte metálico articulado | base para laptop",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -18559,7 +18999,17 @@
         "seo-contenido.json#SOPO043"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Soporte metálico para laptop",
+        "evidencia": [
+          "seo-contenido.json#SOPO043",
+          "importacion/contratos/SOPO043.json"
+        ]
+      }
     },
     {
       "sku": "SOPO046",
@@ -18636,7 +19086,7 @@
     },
     {
       "sku": "SOPO053",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte articulado para laptop | base metálica",
       "propuesta": "Soporte articulado para laptop | base metálica",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -18645,7 +19095,17 @@
         "seo-contenido.json#SOPO053"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "Soporte de laptop inclinable",
+        "evidencia": [
+          "seo-contenido.json#SOPO053",
+          "importacion/contratos/SOPO053.json"
+        ]
+      }
     },
     {
       "sku": "SOPO054",
@@ -20304,7 +20764,7 @@
     },
     {
       "sku": "TVBO005",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "TV Box consola G1 | entretenimiento en casa",
       "propuesta": "TV Box consola G1 | entretenimiento en casa",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -20313,7 +20773,17 @@
         "seo-contenido.json#TVBO005"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Reducir 3 líneas reales en móvil sin perder tipo, familia o atributo diferenciador; datos complementarios en subtítulo.",
+        "propuesta": "TV Box consola G1",
+        "evidencia": [
+          "seo-contenido.json#TVBO005",
+          "importacion/contratos/TVBO005.json"
+        ]
+      }
     },
     {
       "sku": "TVBO006",
@@ -20566,7 +21036,7 @@
     },
     {
       "sku": "WEBC001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Webcam X7 Full HD 1080p",
       "propuesta": "Webcam X7 Full HD 1080p",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -20575,7 +21045,17 @@
         "seo-contenido.json#WEBC001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Sustituir código X7 por sujeción articulada verificada.",
+        "propuesta": "Webcam con clip articulado",
+        "evidencia": [
+          "seo-contenido.json#WEBC001",
+          "importacion/contratos/WEBC001.json"
+        ]
+      }
     },
     {
       "sku": "WEBC002",
@@ -20602,7 +21082,7 @@
     },
     {
       "sku": "WEBC003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Webcam X13 Full HD 1080p",
       "propuesta": "Webcam X13 Full HD 1080p",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -20611,7 +21091,17 @@
         "seo-contenido.json#WEBC003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Sustituir código X13 por resolución y micrófono verificados.",
+        "propuesta": "Webcam Full HD con micrófono",
+        "evidencia": [
+          "seo-contenido.json#WEBC003",
+          "importacion/contratos/WEBC003.json"
+        ]
+      }
     },
     {
       "sku": "WEBC004",
@@ -20842,7 +21332,7 @@
     },
     {
       "sku": "EXTE003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Extensor Wi-Fi 1200 Mbps de seis antenas",
       "propuesta": "Extensor Wi-Fi 1200 Mbps de seis antenas",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -20851,7 +21341,17 @@
         "seo-contenido.json#EXTE003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "CORRECTO",
+      "causaInicial": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "resolucionTanda029030": {
+        "causa": "Usar función comercial repetidor y separar antenas/modos comprobados.",
+        "propuesta": "Repetidor Wi-Fi 1200 Mbps",
+        "evidencia": [
+          "seo-contenido.json#EXTE003",
+          "importacion/contratos/EXTE003.json"
+        ]
+      }
     },
     {
       "sku": "FLAS021",
@@ -21271,6 +21771,12 @@
   "resolucionesTanda026028": {
     "mejorasSeleccionadas": 60,
     "correctosConservados": 443,
+    "identidadesReservadasSinCambios": 97,
+    "modelosConservadosEnEspecificacionesYBusqueda": true
+  },
+  "resolucionesTanda029030": {
+    "mejorasSeleccionadas": 50,
+    "correctosConservados": 393,
     "identidadesReservadasSinCambios": 97,
     "modelosConservadosEnEspecificacionesYBusqueda": true
   }
