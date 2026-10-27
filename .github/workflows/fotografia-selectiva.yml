@@ -729,3 +729,58 @@ jobs:
           npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa" playwright@1.51.1
           curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-encuadres-12-qa.cjs" -o "$RUNNER_TEMP/foto-qa/qa.cjs"
           NODE_PATH="$RUNNER_TEMP/foto-qa/node_modules" node "$RUNNER_TEMP/foto-qa/qa.cjs"
+  vista_real_rel050_13:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Verificar SKU aptos y conservar originales
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json, os, hashlib, time, re
+          from urllib.request import Request, urlopen
+          from datetime import datetime, timezone
+          origin='https://conectatech-ec.github.io'
+          raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(url):
+              with urlopen(Request(url,headers={'User-Agent':'CONECTATECH-fotografia','Cache-Control':'no-cache'}),timeout=30) as response:
+                  assert response.status==200
+                  return response.read()
+          record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-13.json'))
+          published=os.environ['PHOTO_REF']=='refs/heads/main'
+          for attempt in range(300 if published else 1):
+              try:
+                  results=[]
+                  for sku,row in record['productos'].items():
+                      assert row['revisado_visual'] is True
+                      photos=[row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas']
+                      versions=[row['maestro_anterior'],row['referencia_visual'],*row['versiones_anteriores'].values(),*row.get('vistas_retira_archivos_conservados',[])]
+                      for kept in row.get('mantener_vistas',[]):versions.extend([{'url':kept['original'],'sha256':kept['sha256_original']},*kept['versiones'].values()])
+                      for photo in photos:versions.extend([{'url':photo['original'],'sha256':photo['sha256_original']},*photo['versiones'].values()])
+                      for version in versions:
+                          assert version['url'].startswith('/imagenes/'+sku.lower()+'/') and '..' not in version['url']
+                          assert hashlib.sha256(get((origin if published else raw)+version['url'])).hexdigest()==version['sha256']
+                      entry={'sku':sku,'archivos':len(versions),'original_conservado':True}
+                      if published:
+                          page=get(origin+row['pagina']).decode()
+                          for photo in photos:assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+                          for retired in row.get('retirar_vistas',[]):assert retired not in page
+                          entry['url']=origin+row['pagina']
+                      results.append(entry)
+                  if published:
+                      catalog=get(origin+'/').decode()
+                      products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])
+                      by_sku={p['sku']:p for p in products}
+                      for sku,row in record['productos'].items():assert by_sku[sku]['imageUrl']==(row['imagenProfesional']['versiones']['1200']['url'] if 'imagenProfesional' in row else row['portada_anterior']['url'])
+                      assert 'Premium' in by_sku['CUBO024']['name']
+                      if record.get('publicacion_verificada'):
+                          ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',catalog)[1]
+                          dates=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
+                          assert all(datetime.fromisoformat(dates[sku]['actualizadoEn'])>=datetime.fromisoformat(record['fecha_primera_verificacion_publica']) for sku in record['productos'])
+                  print('RESULTADO_DIRECCION_13='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'productos':results},ensure_ascii=False))
+                  break
+              except Exception:
+                  if not published or attempt==299:raise
+                  time.sleep(5)
