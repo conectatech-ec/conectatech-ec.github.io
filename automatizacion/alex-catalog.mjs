@@ -2,6 +2,8 @@ import original from './generated/catalogo.json' with {type:'json'};
 import extra from './generated/alex-productos-extra.json' with {type:'json'};
 import {readCatalogSnapshot} from './live.mjs';
 import {central,sourceToAlex} from './central-source.mjs';
+import enrichment from './central/enrichment.json' with {type:'json'};
+import {readSharedHub} from './shared-hub.mjs';
 export const INVENTORY_FEED='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/main/datos-593/inventario-publico.csv';
 export const INVENTORY_HISTORY='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/commits?path=datos-593%2Finventario-publico.csv&sha=main&per_page=1';
 // A new catalogue build is not a new stock check. Pin CSV to its own last changed commit.
@@ -23,6 +25,8 @@ export async function inventorySnapshot(fetcher=fetch,now=Date.now()){
  if(!Number.isFinite(bound)||new Date(bound-5*3600000).toISOString().slice(0,10)!==date||bound>now+300000||bound>stamp+300000)throw Error('INVENTORY_CUT_INVALID');
  return {rows:csvRows(body),updated_at:new Date(stamp).toISOString(),cut_date:date,freshness_bound:new Date(bound).toISOString(),commit:sha,url};
 }
+const pilotIds=['TELF017','TELF018','TELF019','TELF001','REL046'];
+const pilotProducts=pilotIds.filter(s=>![...original.productos,...extra.productos].some(p=>p.sku===s)).map(s=>{const p=central.products.find(p=>p.sku===s),e=enrichment.products[s]||{};return {sku:s,nombre:p.name,public_name:e.display_name||p.name,descripcion:e.description||'',caracteristicas:e.specifications||{},foto:e.photo_url||null,foto_sha256:e.photo_sha256||null,banner:null,banner_sha256:null,url:p.web?.url||null,stock:0,promo:0,pvp:0,price_verified:false};});
 export const alexBaseline={...original,productos:[...original.productos,...extra.productos]};
 export const alexIds=alexBaseline.productos.map(p=>p.sku);
 export const publicName=p=>(p.public_name||({MICR27:'JBL Quantum Stream',POWE003:'Philco FLP8202CV',ADAP005:'adaptador Europa a Latino'}[p.sku])||p.nombre).replace(new RegExp('\\b'+p.sku+'\\b','g'),'').trim();
@@ -39,15 +43,20 @@ export function csvRows(text){
 }
 const fold=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 export function catalogMatches(query,products){
- const q=fold(query),exact=products.filter(p=>new RegExp('\\b'+p.sku.toLowerCase()+'\\b').test(q));if(exact.length)return exact.slice(0,2);
- const models=(q.match(/\b[a-z]{1,12}\d+[a-z0-9]*\b/g)||[]).filter(x=>!/^telf\d+|^gb\d+/.test(x));if(!models.length)return [];
- const matches=products.filter(p=>models.some(m=>new RegExp('\\b'+m+'\\b').test(fold(p.nombre))));
+ const q=fold(query).replace(/\bredmi\s*15\s*c\b/g,'redmi 15c').replace(/\b15\s+c\b/g,'15c'),exact=products.filter(p=>new RegExp('\\b'+p.sku.toLowerCase()+'\\b').test(q));if(exact.length)return exact.slice(0,2);
+ const models=(q.match(/\b(?:[a-z]{1,12}\d+[a-z0-9]*|\d+[a-z]{1,5})\b/g)||[]).filter(x=>!/^telf\d+|^gb\d+|^\d+(?:gb|mah|w)$/.test(x));if(!models.length)return [];
+ const label=p=>fold([p.nombre,p.public_name,p.catalog_identity].filter(Boolean).join(' '));
+ const matches=products.filter(p=>models.some(m=>new RegExp('\\b'+m+'\\b').test(label(p))));
  const capacities=q.match(/\b(\d+)\s*gb\b/g)||[];
- return matches.filter(p=>!capacities.length||capacities.every(c=>fold(p.nombre).replace(/\s/g,'').includes(c.replace(/\s/g,'')))).slice(0,2);
+ return matches.filter(p=>!capacities.length||capacities.every(c=>label(p).replace(/\s/g,'').includes(c.replace(/\s/g,'')))).slice(0,2);
 }
 export async function refreshAlexCatalog(seed=alexBaseline,fetcher=fetch,now=Date.now(),query='',centralData=fetcher===fetch?central:null){
  const input=typeof query==='string'?query:query.input||'',focus=typeof query==='object'?query.focus||[]:[];
- if(centralData)return sourceToAlex(seed,centralData,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
+ if(centralData){
+  if(typeof query==='object'&&query.sharedHub===true){try{centralData=await readSharedHub(centralData,fetcher,now);}catch{/* Last valid compiled source keeps its original expiry; never renew it on a read error. */}}
+  const extended={...seed,productos:[...seed.productos,...pilotProducts.filter(p=>centralData.products.some(c=>c.sku===p.sku)&&!seed.productos.some(s=>s.sku===p.sku))]};
+  return sourceToAlex(extended,centralData,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
+ }
  const source=await readCatalogSnapshot(seed,fetcher,now,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},true);
  let inventory=[],snapshot=null;
  try{snapshot=await inventorySnapshot(fetcher,now);inventory=snapshot.rows;}catch{/* Missing provenance blocks quotes, never the technical catalogue or logistics. */}

@@ -41,6 +41,7 @@ jobs:
       - run: python automatizacion/tests/central_593_test.py
       - run: python automatizacion/tests/data_hub_test.py
       - run: node automatizacion/tests/central.test.mjs
+      - run: node automatizacion/tests/marketplace.test.mjs
       - name: Ensayo integral Messenger en runner HTTP local con SQLite real
         run: node automatizacion/messenger-runner-e2e.mjs
       - run: python automatizacion/tests/deploy_test.py

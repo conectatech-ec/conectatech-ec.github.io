@@ -5,6 +5,8 @@ export {policy};
 const ids=alexIds;
 export function candidates(input,memory={},source=null){
  const matched=source?catalogMatches(input,source.productos):[];if(matched.length)return matched.map(p=>p.sku);
+ const brand=/\b(?:redmi|xiaomi)\b/i.test(input)?'REDMI':/\bZTE\b/i.test(input)?'ZTE':/\b(?:xwatch|smartwatch|reloj|infinix)\b/i.test(input)?'INFINIX':null;
+ if(brand&&source){const found=source.productos.filter(p=>p.nombre.toUpperCase().includes(brand));if(found.length)return found.slice(0,2).map(p=>p.sku);}
  const permitted=source?source.productos.map(p=>p.sku):ids;
  const phones=['TELF011','TELF012'];
  if(/\bTELF011\b/i.test(input))return ['TELF011'];if(/\bTELF012\b/i.test(input))return ['TELF012'];
@@ -109,7 +111,7 @@ export function factBook(source,now=Date.now()){
  if(source?.productos?.some(p=>p.sku==='MICR27')){facts['MICR27.audio']='El Quantum Stream permite grabar hasta 96 kHz y 24 bits, con monitoreo por audífonos.';facts['MICR27.patterns']='Su patrón cardioide enfoca una voz; el omnidireccional permite captar varias personas.';facts['MICR27.benefit']='El JBL Quantum Stream sirve para streaming, podcasts y videollamadas, con control de silencio e indicador RGB.';}
  if(source?.productos?.some(p=>p.sku==='ADAP005')){facts['ADAP005.plug']='El adaptador Europa a Latino tiene dos clavijas planas; comprueba el ajuste y la tensión admitida por tu equipo.';facts['ADAP005.benefit']='Es un adaptador compacto, con relieves para sujetarlo al colocar o retirar el enchufe.';}
  for(const p of source?.productos||[]){
-  if(!/^TELF01[12]$/.test(p.sku))continue;
+  if(!/^TELF/.test(p.sku))continue;
   const c=p.caracteristicas||{},name=publicName(p);
   if(!p.foto)facts[p.sku+'.photo_missing']='Todavía no tengo una fotografía confirmada de esa versión.';
   for(const [key,label] of [['Pantalla','screen'],['Batería','battery'],['Cámara principal','camera'],['Red móvil','network']])if(c[key])facts[p.sku+'.'+label]=`${name}: ${key.toLowerCase()} ${c[key]}.`;
@@ -121,7 +123,7 @@ export function factBook(source,now=Date.now()){
 const cleanFree=text=>String(text||'').trim().replace(/\s+/g,' ');
 // Commercial assertions belong to source-backed slots. Generative prose supplies tone and questions.
 export function freeProseSafe(text,question=false){
- if(text.length>190||/[\d$€]|https?:|\{\{|\}\}|\b(?:MICR\d|POWE\d|ADAP\d|TELF\d)/i.test(text))return false;
+ if(text.length>190||/[\d$€]|https?:|\{\{|\}\}|\b(?:MICR\d|POWE\d|ADAP\d|TELF\d|REL\d)/i.test(text))return false;
  if(/gratis|regal|sin costo|garantiz|aseguro|confirmad|reservad|descuent[oa].*(?:doy|tienes)|te llega|llega hoy|entregamos hoy|sin recargo|sin intereses|impermeable|resiste|original|duraci[oó]n|bater[ií]a dura|incluye|compatible con|recib[ií] tu pago|ya (?:pagaste|compraste)|Jotacell|soy (?:una )?persona/i.test(text))return false;
  if(/soy (?:un[ao]? )?human[oa]|no soy (?:un )?(?:bot|robot)|(?:lo|yo) (?:prob[eé]|us[eé]|compr[eé])|en mi experiencia/i.test(text))return false;
  if(!question&&/\b(?:tenemos|disponemos|disponibilidad|tiene|tienen|trae|ofrece|cuenta|dura|funciona|soporta|admite|rinde|pesa|mide|viene|aguanta|mejor|peor|memoria|c[aá]mara|procesador|bluetooth|wifi)\b/i.test(text))return false;
@@ -158,7 +160,7 @@ export function renderPlan(plan,source,memory={}){
  keys=keys.filter(k=>!rejected.has(k)&&!(k==='plans'&&(rejected.size||memory.card_declined))&&!(memory.card_declined&&Object.hasOwn(bankNames,k)));
  for(const id of rejected){const label=bankNames[id]?.split(' / ')[0];if(label&&new RegExp(label,'i').test(say+' '+ask)){say='';ask='';}}
  keys=keys.filter(k=>!(k.endsWith('.pvp')&&keys.includes(k.replace('.pvp','.card')))&&!(k==='plans'&&keys.some(x=>['pacifico','guayaquil_amex','diners','pichincha'].includes(x))));
- keys=keys.filter(k=>!k.endsWith('.name')||!keys.some(other=>other!==k&&other.startsWith(k.split('.')[0]+'.'))&&!(keys.length>1&&(memory.focus||[]).includes(k.split('.')[0])));
+ keys=keys.filter(k=>!k.endsWith('.name')||!keys.some(other=>other!==k&&other.startsWith(k.split('.')[0]+'.')));
  keys.sort((a,b)=>Number(/\.(?:cash|card|pvp)$/.test(b))-Number(/\.(?:cash|card|pvp)$/.test(a)));
  const factualProducts=[...new Set(keys.filter(k=>k.includes('.')).map(k=>k.split('.')[0]))];
  if(factualProducts.length)focus=factualProducts;
@@ -175,8 +177,8 @@ export function renderPlan(plan,source,memory={}){
  const priceFirst=plan.intent==='price'||keys.some(k=>/\.(?:cash|card|pvp)$/.test(k));
  const compose=()=> (priceFirst?[...keys.map(k=>facts[k]),say,ask]:[say,...keys.map(k=>facts[k]),ask]).filter(Boolean).join('\n').trim();
  let text=compose();if(text.length>440){ask='';text=compose();}if(text.length>440){say='';text=compose();}
- if(!text||text.length>440||/\b(?:MICR27|MICR027|POWE003|ADAP005|TELF011|TELF012)\b/.test(text))throw Error('BAD_LENGTH_OR_INTERNAL_ID');
- const image=ids.includes(plan.image)&&focus.includes(plan.image)&&(keys.some(k=>k.startsWith(plan.image+'.'))||plan.intent==='photo')?plan.image:null;
+ if(!text||text.length>440||allowed.some(id=>new RegExp('\\b'+id+'\\b').test(text)))throw Error('BAD_LENGTH_OR_INTERNAL_ID');
+ const image=allowed.includes(plan.image)&&focus.includes(plan.image)&&(keys.some(k=>k.startsWith(plan.image+'.'))||plan.intent==='photo')?plan.image:null;
  return {text,focus,action,intent:String(plan.intent||'other').slice(0,30),image,facts:keys,generative:true,model:policy.model,prose_filtered,has_verified_photo:focus.length===1&&!!source.productos.find(p=>p.sku===focus[0])?.foto,purchasable:focus.length===1&&source.productos.some(p=>p.sku===focus[0]&&quoteCurrent(source,p)&&p.stock>0)};
 }
 function memoryPatch(plan,input,memory){
@@ -298,7 +300,7 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
  }
 }
 export function quickReplies(result){
- const focus=result.focus?.[0],memory=result.memory||{},facts=result.facts||[],names={MICR27:'Elegir JBL',POWE003:'Elegir Philco',ADAP005:'Elegir adaptador',TELF011:'A17 de 128 GB',TELF012:'A17 de 256 GB'};let options;
+ const focus=result.focus?.[0],memory=result.memory||{},facts=result.facts||[],names={MICR27:'Elegir JBL',POWE003:'Elegir Philco',ADAP005:'Elegir adaptador',TELF011:'A17 de 128 GB',TELF012:'A17 de 256 GB',TELF017:'Redmi 128 GB',TELF018:'Redmi 256 GB / 4 GB',TELF019:'Redmi 256 GB / 8 GB',TELF001:'ZTE A56 Pro',REL046:'Infinix XWATCH H4'};let options;
  if(result.action==='handoff')return [];
  if(memory.purchase_deferred)options=[['Características','specs'],['Ver fotografía','photo'],['Hablar con persona','human']];
  else if(result.intent==='payment'&&memory.payment_change_pending)options=memory.card_declined?[['Precio de contado','cash'],['Características','specs'],['Hablar con persona','human']]:[['Otra tarjeta','anothercard'],['Precio de contado','cash'],['Características','specs']];

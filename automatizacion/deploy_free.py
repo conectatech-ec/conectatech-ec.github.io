@@ -156,7 +156,7 @@ def main():
     if sync_only:
         sync_meta_verify_token(api,existing,settings['CLOUDFLARE_PILOT_URL'],os.environ.get('META_VERIFY_TOKEN',''));return
     metadata=worker_metadata(config);files=[]
-    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','alex-context.mjs','alex-catalog.mjs','central-source.mjs','commercial-reception.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs']:
+    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','alex-context.mjs','alex-catalog.mjs','central-source.mjs','commercial-reception.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs','shared-hub.mjs','marketplace-pilot.mjs']:
         source=(ROOT/name).read_text()
         source=source.replace("import catalog from './generated/catalogo.json' with {type:'json'};","import catalog from './catalog.mjs';")
         source=source.replace("import baseline from './generated/catalogo.json' with {type:'json'};","import baseline from './catalog.mjs';")
@@ -164,10 +164,15 @@ def main():
         source=source.replace("import original from './generated/catalogo.json' with {type:'json'};","import original from './catalog.mjs';")
         source=source.replace("import extra from './generated/alex-productos-extra.json' with {type:'json'};","import extra from './alex-extra.mjs';")
         source=source.replace("import central from './central/current.json' with {type:'json'};","import central from './central-data.mjs';")
+        source=source.replace("import enrichment from './central/enrichment.json' with {type:'json'};","import enrichment from './central-enrichment.mjs';")
+        source=source.replace("import attestations from './central/source-attestations.json' with {type:'json'};","import attestations from './source-attestations.mjs';")
+        source=source.replace("import library from './marketplace-library.json' with {type:'json'};","import library from './marketplace-library.mjs';")
         files.append((name,'application/javascript+module',source.encode()))
     files.append(('catalog.mjs','application/javascript+module',b'export default '+(ROOT/'generated/catalogo.json').read_bytes()+b';\n'))
     files.append(('alex-policy.mjs','application/javascript+module',b'export default '+(ROOT/'alex-policy.json').read_bytes()+b';\n'))
     files.append(('alex-extra.mjs','application/javascript+module',b'export default '+(ROOT/'generated/alex-productos-extra.json').read_bytes()+b';\n'))
+    for module,path in [('central-enrichment.mjs','central/enrichment.json'),('source-attestations.mjs','central/source-attestations.json'),('marketplace-library.mjs','marketplace-library.json')]:
+        files.append((module,'application/javascript+module',b'export default '+(ROOT/path).read_bytes()+b';\n'))
     source_data=(ROOT/'central/current.json').read_bytes()
     # Code-only deployments must not restore an older report after a cloud ingestion.
     readback=subprocess.run(['node',str(ROOT/'central-http.mjs'),'/commercial/catalog'],input='',text=True,capture_output=True,timeout=55)

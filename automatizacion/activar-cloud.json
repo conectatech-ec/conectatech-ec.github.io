@@ -1,15 +1,15 @@
 {
-  "activar": false,
+  "activar": true,
   "sincronizar_meta_verify_token": false,
   "meta_page_id": "105549695770538",
   "costo_maximo_usd": 0,
   "alcance": "Solo Worker piloto: Messenger oficial para probadores con permiso verificado; sin Billing, D1, cron, rutas, main ni catálogo de producción",
   "url_publica": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev",
-  "nota": "Fuente central 21-10-2026 desplegada en 1057a398 y verificada por veinte consultas HTTPS, sin IA. 1554 SKU reales, cinco exclusiones de origen y dos ausentes protegidos. Precios A17/3 SKU correctos y conflictos/agotados bloqueados. Receptor cloud privado listo; procesamiento con autenticación existente, sin exigir PAT adicional. Disparo desatendido pendiente de mecanismo autorizado. Sin reemplazar feeds, main, catálogo, banners ni PDF de producción; presupuesto $0. Cerrar disparador de despliegue.",
+  "nota": "Desplegar solo el Worker piloto: reutilizar Data Hub compartido de main en lectura, memoria y transporte de probadores existentes. Vista privada Marketplace/Page/WhatsApp sin envíos, sin API personal ni WA, cuotas intactas. No publicar biblioteca Drive. Corte 26 verificado contra original, caducidad original conservada; banners privados aprobados pero entrega bloqueada por biblioteca. No modificar main ni producción.",
   "habilitar_vendedor_probadores": false,
   "procesar_cola_probadores": false,
   "alex_generativo": true,
-  "alex_validation": "central_source",
+  "alex_validation": "marketplace_pilot",
   "diagnosticar_alex": false,
   "catalogo_primero": true
 }

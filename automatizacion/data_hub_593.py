@@ -8,7 +8,7 @@ CHANNELS = ('web_catalog', 'webstore', 'alex_messenger', 'signature',
             'pdf_categories', 'meta_commerce', 'google_merchant', 'whatsapp_business')
 COMMERCIAL = ('source_name', 'category', 'variant_gb', 'prices', 'availability', 'blocked_reasons')
 ENRICHMENT = {'display_name', 'description', 'specifications', 'photo_url', 'photo_sha256',
-              'banner_url', 'banner_sha256', 'web_url', 'provenance', 'identity_signature'}
+              'banner_url', 'banner_sha256', 'web_url', 'provenance', 'identity_signature', 'source_name', 'variant_gb'}
 
 def version(data):
     return '593-v1-' + data['source']['sha256']

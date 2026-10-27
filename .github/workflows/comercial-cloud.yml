@@ -148,6 +148,7 @@ jobs:
       - run: node automatizacion/tests/alex-objections.test.mjs
       - run: python automatizacion/tests/central_593_test.py
       - run: node automatizacion/tests/central.test.mjs
+      - run: node automatizacion/tests/marketplace.test.mjs
       - id: deploy
         run: python automatizacion/deploy_free.py
         env:
@@ -164,7 +165,7 @@ jobs:
           META_APP_ID: ${{ vars.META_APP_ID }}
           COMMERCIAL_ACTIONS_TOKEN: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
       - name: Verificar piloto previo si el alcance no es la nueva conversación
-        run: node --input-type=module -e 'import fs from "node:fs"; const c=JSON.parse(fs.readFileSync("automatizacion/activar-cloud.json")); if(!["conversation_flow","samsung_recovery","commercial_objections","central_source"].includes(c.alex_validation)) await import("./automatizacion/e2e.mjs");'
+        run: node --input-type=module -e 'import fs from "node:fs"; const c=JSON.parse(fs.readFileSync("automatizacion/activar-cloud.json")); if(!["conversation_flow","samsung_recovery","commercial_objections","central_source","marketplace_pilot"].includes(c.alex_validation)) await import("./automatizacion/e2e.mjs");'
         env:
           PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}

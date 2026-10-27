@@ -11,6 +11,7 @@ import {setupPage} from './messenger-setup.mjs';
 import {reserveAI} from './alex-store.mjs';
 import {alexPage,privacyPage} from './alex-ui.mjs';
 import {reviewPage} from './alex-review.mjs';
+import {marketplacePage,marketplaceContext} from './marketplace-pilot.mjs';
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 async function authorized(req,env) {
   // All pilot endpoints are private; no customer data in GitHub or public logs.
@@ -39,8 +40,16 @@ export default {
   if(['/privacy','/data-deletion'].includes(path)&&req.method==='GET')return privacyPage(path==='/data-deletion');
   if(path==='/messenger/setup'&&req.method==='GET') return setupPage();
   if(path==='/commercial/upload'&&req.method==='GET')return uploadPage();
+  if(path==='/marketplace/pilot'&&req.method==='GET')return marketplacePage();
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {
+   if(path==='/marketplace/preview'&&req.method==='POST'){
+    const b=await body(req);if(!['marketplace_personal','messenger_page','whatsapp_business'].includes(b.channel)||!/^[a-zA-Z0-9_-]{16,64}$/.test(b.session_id||'')||typeof b.message!=='string'||b.message.length>1000)return json({error:'Invalid preview'},400);
+    if(!env.MESSENGER_TEST_INBOX)return json({error:'Storage unavailable'},503);
+    const stub=env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('alex-demo-mp-'+b.session_id));
+    const r=await stub.fetch('https://inbox/alex/chat',{method:'POST',body:JSON.stringify({message:b.message,quick_reply_payload:b.quick_reply_payload,reset:b.reset===true,catalog_only:true})});
+    if(!r.ok)return json({error:'Preview unavailable'},503);const reply=await r.json();return json({...reply,acquisition:marketplaceContext(b.channel,reply)});
+   }
    if(path==='/commercial/catalog'&&req.method==='GET')return json(central);
    if(path==='/commercial/catalog/status'&&req.method==='GET')return json(centralStatus());
    if(/^\/commercial\/(status|report|complete)$/.test(path)){
