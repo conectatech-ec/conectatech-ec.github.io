@@ -1,0 +1,79 @@
+{
+  "version": 3,
+  "skus": [
+    "AUDI088",
+    "AUDI095"
+  ],
+  "imagenes": {
+    "AUDI088": [
+      {
+        "archivo": "imagenes/audi088/original-f0ca514a5e0c8233.png",
+        "sha256": "f0ca514a5e0c8233df6707a8e15039613f80c725d8b90e80a6615648a0577ae9",
+        "posicion": 1,
+        "revision_regla": 4,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/1EnmplslWr4ng9Z3gIUBwQ4TJSOubf7E3/view?usp=drivesdk",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "nota_revision": "Representación comercial asistida desde fotografía física propia, cotejada con todas las vistas. Estuche compacto y profundo con tapa transparente, dos auriculares ovalados en sus alojamientos y detalle azul central; sin el puerto USB frontal de la imagen rechazada.",
+        "revision_publicacion": 20261026
+      }
+    ],
+    "AUDI095": [
+      {
+        "archivo": "imagenes/audi095/original-d9ef8eebb2b4203f.png",
+        "sha256": "d9ef8eebb2b4203f437f7e5c877351eaa7a33af510ddb72526193a60f6bcc029",
+        "posicion": 1,
+        "revision_regla": 4,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/1-WL_bCuXarAWfdvqBHurFVj5AX51zyP5/view?usp=drivesdk",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "nota_revision": "Portada aprobada conservada byte a byte; instrucción nueva afecta únicamente a la secundaria."
+      },
+      {
+        "archivo": "imagenes/audi095/original-cb6c6eb11ad3f852.png",
+        "sha256": "cb6c6eb11ad3f852d29f47c7ac22101503c1a64809ed04cd994d787f9316dee4",
+        "posicion": 2,
+        "revision_regla": 4,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/11RDg_x48IdCF3NIg8OevgPxiMW7o2Zfr/view?usp=drivesdk",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "nota_revision": "Representación comercial asistida desde fotografía física propia, cotejada con todas las vistas. Conjunto completo en estuche translúcido negro, perspectiva de tres cuartos y conexión visible documentada en foto lateral; sin el auricular aislado y estuche vacío rechazados. Portada conservada."
+      }
+    ]
+  },
+  "contratos": {
+    "AUDI088": "importacion/contratos/AUDI088.json",
+    "AUDI095": "importacion/contratos/AUDI095.json"
+  },
+  "aprobaciones": {
+    "AUDI088": {
+      "estado": "APROBADO",
+      "identidad_verificada": true,
+      "ficha_verificada": true,
+      "uso_comercial_permitido": true
+    },
+    "AUDI095": {
+      "estado": "APROBADO",
+      "identidad_verificada": true,
+      "ficha_verificada": true,
+      "uso_comercial_permitido": true
+    }
+  },
+  "categorias_comerciales": {
+    "Audifonos": {
+      "nombre": "Audio y Audífonos",
+      "subcategoria": "Audifonos",
+      "verificada": true,
+      "fuente": "importacion/categorias-comerciales.json"
+    }
+  }
+}
