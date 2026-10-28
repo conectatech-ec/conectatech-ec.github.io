@@ -180,9 +180,45 @@
     ]
   },
   "publicacion_por_lotes": {
-    "estado": "PENDIENTE_COMPROBAR_EN_CUENTA",
-    "metodo": "Revisión del menú Crear publicación por el propietario; no hay acceso autenticado Facebook en esta sesión",
-    "no_investigacion_general": true
+    "estado": "NO_DISPONIBLE_EN_MENU_REVISADO",
+    "fuente": "Confirmación del propietario en chat, 28/10/2026",
+    "perfil": "Rafa Valderrama",
+    "opciones_no_visibles": [
+      "Crear varias publicaciones",
+      "Cargar hoja de cálculo"
+    ],
+    "alcance": "Sólo el menú revisado; no acredita ausencia universal de funciones oficiales",
+    "ruta_actual": "PUBLICACION_INDIVIDUAL_ASISTIDA",
+    "carga_masiva": "PENDIENTE_METODO_OFICIAL_COMPATIBLE"
   },
-  "nota": "La auditoría histórica previa se conserva en el historial Git; esta actualización contiene únicamente evidencia comercial pública y confirmación del propietario."
+  "nota": "La auditoría histórica previa se conserva en el historial Git; esta actualización contiene únicamente evidencia comercial pública y confirmación del propietario.",
+  "duplicados": {
+    "anuncios_conocidos": [
+      {
+        "sku": "TELF017",
+        "producto": "Redmi 15C 128 GB",
+        "url": "https://www.facebook.com/share/1H2BLNTXjW/",
+        "estado": "PUBLICADO_CONFIRMADO_PROPIETARIO"
+      },
+      {
+        "sku": "TELF001",
+        "producto": "ZTE A56 Pro",
+        "url": null,
+        "estado": "ANUNCIO_ANTERIOR_REPORTADO_PROPIETARIO",
+        "identidad_sku": "Correspondencia del nombre con el catálogo; anuncio no inspeccionado"
+      }
+    ],
+    "excluidos_del_paquete": [
+      "TELF017",
+      "TELF001"
+    ],
+    "seleccion": [
+      "TELF018",
+      "TELF011",
+      "TELF020"
+    ],
+    "coincidencias_con_anuncios_conocidos": 0,
+    "comparacion_total_cuenta": "PENDIENTE; hay otros anuncios anteriores no identificados",
+    "sin_duplicados_totales_acreditado": false
+  }
 }
