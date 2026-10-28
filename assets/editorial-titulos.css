@@ -5,5 +5,5 @@
 @media(max-width:520px){#grid .ct-pro-card .ct-pro-title{min-height:0;max-height:none;font-size:12px}#grid .ct-pro-card .ct-pro-subtitle{font-size:10px;line-height:1.3}}
 
 #grid .ct-pro-card .ct-pro-token{white-space:nowrap}
-/* El título literal aprobado de POWE001 requiere este ajuste sólo en móvil estrecho. */
-@media(max-width:390px){#grid .ct-pro-card[data-sku="POWE001"] .ct-pro-title{font-size:11px}}
+/* Conservar títulos literales y referencias de iPhone en dos líneas en móvil estrecho. */
+@media(max-width:390px){#grid .ct-pro-card[data-sku="POWE001"] .ct-pro-title,#grid .ct-pro-card[data-sku="CUBO005"] .ct-pro-title,#grid .ct-pro-card[data-sku="CUBO024"] .ct-pro-title{font-size:11px}}

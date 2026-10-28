@@ -15,7 +15,7 @@ module.exports=function(){
   if(registry.politica_general?.titulos_comerciales?.condicion_en_titulo===false){
     // La presentación editorial conserva el nombre base, la URL y el SEO originales.
     // La condición se muestra mediante su etiqueta, sin reescribir esos nombres.
-    if(!(editorial?.activo&&editorial.productos?.[p.sku])){
+    if(!(editorial?.activo&&(editorial.productos?.[p.sku]||editorial.actualizacionesFicha?.[p.sku]))){
       p.name=titleCommercial(p.name,p.sku,r.autenticidad);
       if(c.nombre)c.nombre=titleCommercial(c.nombre,p.sku,r.autenticidad);
       if(c.tituloSeo)c.tituloSeo=titleCommercial(c.tituloSeo,p.sku,r.autenticidad);

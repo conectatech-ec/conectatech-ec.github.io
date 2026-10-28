@@ -31,6 +31,16 @@ for sku,e in cfg['productos'].items():
  if e.get('publicacionVerificada'):
   v=e['publicacionVerificada'];report=Path(v['informe']);assert report.is_file() and hashlib.sha256(report.read_bytes()).hexdigest()==v['sha256Informe'],sku
   data=json.loads(report.read_text());assert data['estado']=='VERIFICADO_HTTP_CHROMIUM' and sku in data['skus'],sku
+# Cambios de ficha separados: no crean títulos ni resuelven la cola editorial.
+for sku,u in cfg.get('actualizacionesFicha',{}).items():
+ assert sku in by and not sku.startswith(('TELF','TABL')),sku
+ assert u['autenticidad']==seo[sku]['reglaSKU']['autenticidad'],sku
+ assert u['condicionTarjeta']==('De terceros' if u['autenticidad']=='genérico/compatible' else ''),sku
+ assert u['tituloTarjetaConservado']==cfg['productos'].get(sku,{}).get('titulo',by[sku]['name']),sku
+ v=u.get('publicacionVerificada')
+ if v:
+  raw=Path(v['informe']).read_bytes();r=json.loads(raw)
+  assert hashlib.sha256(raw).hexdigest()==v['sha256Informe'] and r['estado']=='VERIFICADO_HTTP_CHROMIUM' and sku in r['skus'],sku
 # Regla expresa de marca: sólo títulos/subtítulos/tooltip; originales y búsqueda se conservan.
 for sku,e in cfg['productos'].items():
  for brand in cfg.get('marcasOmitidasEnTitulosSubtitulos',[]):assert norm(brand) not in norm(e['titulo']+' '+e['subtitulo']),(sku,brand)

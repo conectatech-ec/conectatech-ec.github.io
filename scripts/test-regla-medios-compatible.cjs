@@ -4,6 +4,7 @@ const rule={...media.regla,revision:3,autenticidad:'genérico/compatible',eviden
 assert(compatible(media,media.regla));assert(!compatible(media,rule));
 rule.conservar_medios_comercial={revision_medios:2,revision_comercial:3,sha256_medios:crypto.createHash('sha256').update(JSON.stringify(media)).digest('hex'),motivo:'Sólo cambia la condición comercial; mismos medios aprobados'};
 assert(compatible(media,rule));
+assert(compatible(media,{...rule,rotulo_ficha:'AAA'}));
 assert(!compatible({...media,imagenes:[{posicion:1,sha256_original:'b'.repeat(64)}]},rule));
 assert(!compatible(media,{...rule,presentacion:'con caja'}));
 assert(!compatible(media,{...rule,instrucciones:'Otro encuadre'}));

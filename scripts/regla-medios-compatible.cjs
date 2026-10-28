@@ -1,7 +1,7 @@
 // Una corrección comercial puede conservar la aprobación de los mismos medios.
 // Requiere un registro explícito ligado por SHA y la misma política fotográfica.
 const crypto=require('node:crypto');
-const ignored=new Set(['autenticidad','evidencia_autenticidad','revision','conservar_medios_comercial']);
+const ignored=new Set(['autenticidad','evidencia_autenticidad','revision','rotulo_ficha','conservar_medios_comercial']);
 const photoPolicy=r=>JSON.stringify(Object.fromEntries(Object.entries(r||{}).filter(([k])=>!ignored.has(k)).sort(([a],[b])=>a.localeCompare(b))));
 module.exports=function compatibleRevision(media,rule){
  if(!media)return false;

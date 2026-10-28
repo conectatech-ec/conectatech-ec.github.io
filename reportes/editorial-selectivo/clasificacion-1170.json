@@ -3,8 +3,8 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 756,
-    "REVISAR IDENTIDAD": 94,
+    "MEJORAR TÍTULO": 760,
+    "REVISAR IDENTIDAD": 90,
     "CORRECTO": 320
   },
   "aplicados": 753,
@@ -629,7 +629,17 @@
         "seo-contenido.json#CARG001"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 35 W Lightning",
+        "subtitulo": "Apple compatible · doble USB-C",
+        "evidencia": [
+          "seo-contenido.json#CARG001",
+          "importacion/contratos/CARG001.json",
+          "datos-593/inventario-publico.csv#CARG001"
+        ]
+      }
     },
     {
       "sku": "CARG010",
@@ -654,11 +664,21 @@
           "importacion/editorial/alias-marcas.json",
           "importacion/contratos/CARG010.json"
         ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador Samsung de 45 W blanco",
+        "subtitulo": "Cable USB-C a USB-C incluido",
+        "evidencia": [
+          "seo-contenido.json#CARG010",
+          "importacion/contratos/CARG010.json",
+          "datos-593/inventario-publico.csv#CARG010"
+        ]
       }
     },
     {
       "sku": "CARG034",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 25 W | kit USB-C a USB-C",
       "propuesta": "Cargador 25 W | kit USB-C a USB-C",
       "causa": "Título idéntico a CARG037; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -667,7 +687,19 @@
         "seo-contenido.json#CARG034"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CARG037; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 25 W con cable USB-C",
+        "subtitulo": "Apple compatible · patas planas",
+        "evidencia": [
+          "seo-contenido.json#CARG034",
+          "importacion/contratos/CARG034.json",
+          "datos-593/inventario-publico.csv#CARG034"
+        ]
+      }
     },
     {
       "sku": "CARG037",
@@ -760,7 +792,7 @@
     },
     {
       "sku": "CARG068",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 45 W | kit USB-C a USB-C",
       "propuesta": "Cargador 45 W | kit USB-C a USB-C",
       "causa": "Título idéntico a CARG010; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -769,7 +801,19 @@
         "seo-contenido.json#CARG068"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CARG010; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador Samsung de 45 W negro",
+        "subtitulo": "Cable USB-C a USB-C incluido",
+        "evidencia": [
+          "seo-contenido.json#CARG068",
+          "importacion/contratos/CARG068.json",
+          "datos-593/inventario-publico.csv#CARG068"
+        ]
+      }
     },
     {
       "sku": "COBE004",
@@ -814,7 +858,7 @@
     },
     {
       "sku": "CUBO005",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador USB-C de 35 W para iPhone",
       "propuesta": "Cargador USB-C de 35 W para iPhone",
       "causa": "Título idéntico a CUBO024; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -823,11 +867,23 @@
         "seo-contenido.json#CUBO005"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CUBO024; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 15 Pro Max 35 W USB-C",
+        "subtitulo": "Apple compatible · compacto",
+        "evidencia": [
+          "seo-contenido.json#CUBO005",
+          "importacion/contratos/CUBO005.json",
+          "datos-593/inventario-publico.csv#CUBO005"
+        ]
+      }
     },
     {
       "sku": "CUBO024",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador USB-C de 35 W para iPhone",
       "propuesta": "Cargador USB-C de 35 W para iPhone",
       "causa": "Título idéntico a CUBO005; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -836,7 +892,19 @@
         "seo-contenido.json#CUBO024"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CUBO005; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 17 Pro Max 35 W USB-C",
+        "subtitulo": "Apple compatible · compacto",
+        "evidencia": [
+          "seo-contenido.json#CUBO024",
+          "importacion/contratos/CUBO024.json",
+          "datos-593/inventario-publico.csv#CUBO024"
+        ]
+      }
     },
     {
       "sku": "DEST001",
@@ -9557,6 +9625,16 @@
           "seo-contenido.json#CARG028",
           "importacion/contratos/CARG028.json"
         ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 20 W Lightning",
+        "subtitulo": "Apple compatible · cable incluido",
+        "evidencia": [
+          "seo-contenido.json#CARG028",
+          "importacion/contratos/CARG028.json",
+          "datos-593/inventario-publico.csv#CARG028"
+        ]
       }
     },
     {
@@ -9579,6 +9657,16 @@
         "evidencia": [
           "seo-contenido.json#CARG029",
           "importacion/contratos/CARG029.json"
+        ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 25 W Lightning",
+        "subtitulo": "Apple compatible · cable incluido",
+        "evidencia": [
+          "seo-contenido.json#CARG029",
+          "importacion/contratos/CARG029.json",
+          "datos-593/inventario-publico.csv#CARG029"
         ]
       }
     },
@@ -9809,6 +9897,16 @@
           "seo-contenido.json#CARG046",
           "importacion/contratos/CARG046.json"
         ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 50 W con cable USB-C",
+        "subtitulo": "Apple compatible · patas planas",
+        "evidencia": [
+          "seo-contenido.json#CARG046",
+          "importacion/contratos/CARG046.json",
+          "datos-593/inventario-publico.csv#CARG046"
+        ]
       }
     },
     {
@@ -9857,6 +9955,16 @@
           "seo-contenido.json#CARG048",
           "importacion/contratos/CARG048.json"
         ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 35 W con cable USB-C",
+        "subtitulo": "Apple compatible · patas planas",
+        "evidencia": [
+          "seo-contenido.json#CARG048",
+          "importacion/contratos/CARG048.json",
+          "datos-593/inventario-publico.csv#CARG048"
+        ]
       }
     },
     {
@@ -9879,6 +9987,16 @@
         "evidencia": [
           "seo-contenido.json#CARG049",
           "importacion/contratos/CARG049.json"
+        ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 40 W con cable USB-C",
+        "subtitulo": "Apple compatible · patas planas",
+        "evidencia": [
+          "seo-contenido.json#CARG049",
+          "importacion/contratos/CARG049.json",
+          "datos-593/inventario-publico.csv#CARG049"
         ]
       }
     },
@@ -10017,6 +10135,16 @@
         "evidencia": [
           "seo-contenido.json#CARG058",
           "importacion/contratos/CARG058.json"
+        ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para Mac 85 W MagSafe 2",
+        "subtitulo": "Apple compatible · cable integrado",
+        "evidencia": [
+          "seo-contenido.json#CARG058",
+          "importacion/contratos/CARG058.json",
+          "datos-593/inventario-publico.csv#CARG058"
         ]
       }
     },
@@ -10787,6 +10915,14 @@
           "importacion/editorial/alias-marcas.json",
           "importacion/contratos/CUBO009.json"
         ]
+      },
+      "resolucionLote037": {
+        "causa": "Confirmación expresa del propietario: es AAA, sustituir Producto original por AAA en ficha, conservando título Xiaomi y fotografías.",
+        "propuesta": "Cargador Xiaomi de 33 W",
+        "subtitulo": "USB-A · dos patas planas",
+        "evidencia": [
+          "importacion/editorial/instrucciones-037.json"
+        ]
       }
     },
     {
@@ -10820,6 +10956,14 @@
           "importacion/editorial/alias-marcas.json",
           "importacion/contratos/CUBO010.json"
         ]
+      },
+      "resolucionLote037": {
+        "causa": "Confirmación expresa del propietario: es AAA, sustituir Producto original por AAA en ficha, conservando título Xiaomi y fotografías.",
+        "propuesta": "Cargador Xiaomi de 67 W",
+        "subtitulo": "USB-A · dos patas planas",
+        "evidencia": [
+          "importacion/editorial/instrucciones-037.json"
+        ]
       }
     },
     {
@@ -10842,6 +10986,16 @@
         "evidencia": [
           "seo-contenido.json#CUBO011",
           "importacion/contratos/CUBO011.json"
+        ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 5 W USB-A",
+        "subtitulo": "Apple compatible · compacto",
+        "evidencia": [
+          "seo-contenido.json#CUBO011",
+          "importacion/contratos/CUBO011.json",
+          "datos-593/inventario-publico.csv#CUBO011"
         ]
       }
     },
@@ -22292,6 +22446,16 @@
           "seo-contenido.json#CUBO021",
           "importacion/contratos/CUBO021.json"
         ]
+      },
+      "resolucionLote037": {
+        "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+        "propuesta": "Cargador para iPhone 40 W USB-C",
+        "subtitulo": "Apple compatible · de pared",
+        "evidencia": [
+          "seo-contenido.json#CUBO021",
+          "importacion/contratos/CUBO021.json",
+          "datos-593/inventario-publico.csv#CUBO021"
+        ]
       }
     },
     {
@@ -22808,5 +22972,36 @@
       "CARG015",
       "CARG037"
     ]
+  },
+  "resolucionesLote037": {
+    "presentaciones": 14,
+    "revisiones": 10,
+    "adicionales": 4,
+    "acumuladasTrasCierre": 757,
+    "reservasResueltas": [
+      "CARG034",
+      "CUBO005",
+      "CUBO024",
+      "CARG068"
+    ],
+    "condicionesAAACorregidasDesdeRegistro": [
+      "CARG028",
+      "CARG029",
+      "CARG048",
+      "CARG034",
+      "CARG001",
+      "CARG058"
+    ],
+    "clasificacionesTecnicasCorregidas": [
+      "CARG001",
+      "CARG058"
+    ],
+    "SamsungCorrectosConservados": [
+      "CARG015",
+      "CARG037",
+      "CUBO019",
+      "CUBO025"
+    ],
+    "vehicularUniversalConservado": "CARG039"
   }
 }

@@ -2,6 +2,7 @@ const fs=require('fs'),path=require('path');
 const editorialFile=path.join(__dirname,'../importacion/editorial/publicados.json');
 const editorialMap=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile,'utf8')):null;
 const renderBeneficios=require('./ficha-beneficios.cjs');
+const condicion=require('./condicion-ficha.cjs');
 const origin='https://conectatech-ec.github.io';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>'$'+Number(n).toFixed(2).replace('.',',');
@@ -16,7 +17,7 @@ module.exports=function ficha(p,c,url){
  const versionUrl=v=>v.url+(v.sha256?'?v='+v.sha256.slice(0,16):'');
  const photo=img?`<a class="product-frame" href="${esc(img)}" target="_blank" rel="noopener" aria-label="Ampliar imagen de ${esc(name)}"><img class="photo" style="${frameStyle}" src="${esc(img)}" ${cover?`srcset="${Object.entries(cover.versiones).map(([size,v])=>esc(versionUrl(v))+' '+size+'w').join(', ')}" sizes="${responsiveSizes}"`:''} alt="${esc(name)}${cover?.contiene_caja?' con caja':''}" fetchpriority="high" width="1200" height="1200"></a><a class="zoom" href="${esc(img)}" target="_blank" rel="noopener">Ver imagen completa ↗</a>${cover?.referencia_fabricante||cover?.referencia_distribuidor?`<p class="note">Imagen de referencia del ${cover.referencia_fabricante?'fabricante':'distribuidor'}. Consulta la presentación disponible.</p>`:''}`:`<div class="photo pending"><span>Fotografía en actualización</span><small>Consulta la presentación por WhatsApp.</small></div>`;
  const available=p.stock>0, specs=c.caracteristicas||p.specs||{};
- const classification=c.reglaSKU?.autenticidad==='original verificado'?'Producto original':c.reglaSKU?.autenticidad==='genérico/compatible'?'Producto compatible (AAA)':'';
+ const classification=condicion.label(p,c);
  const availability=available?(c.fechaInventario?`Inventario actualizado al ${c.fechaInventario} · confirma disponibilidad`:'Disponible · confirma antes de comprar'):`Stock: 0 · No disponible${c.fechaInventario?' · Corte: '+c.fechaInventario:''}`;
  const wa='https://wa.me/593998576759?text='+encodeURIComponent(`Hola ConectaTech, me interesa ${name} (${p.sku}), promo contado ${money(p.promo)}. ¿Está disponible?`);
  const schema={'@context':'https://schema.org','@type':'Product',name,sku:p.sku,description:c.descripcion,...(img?{image:[img]}:{}),...(specs.Marca?{brand:{'@type':'Brand',name:specs.Marca}}:{}),offers:{'@type':'Offer',url,priceCurrency:'USD',price:p.promo.toFixed(2),availability:'https://schema.org/'+(available?'InStock':'OutOfStock'),itemCondition:'https://schema.org/NewCondition',seller:{'@type':'Organization',name:'ConectaTech'}}};
@@ -38,5 +39,8 @@ module.exports=function ficha(p,c,url){
 <div class="details"><section class="panel"><h2>Conoce tu próximo equipo</h2><p>${esc(c.descripcion)}</p>${c.contenidoVenta?`<p><strong>Contenido de venta:</strong> ${esc(c.contenidoVenta)}</p>`:""}${c.compatibilidad?`<p><strong>Compatibilidad:</strong> ${esc(c.compatibilidad)}</p>`:""}<h2>Compra en ConectaTech</h2><p class="service"><strong>Atención en tienda y entregas</strong>Av. 6 de Diciembre y La Niña, C.C. Multicentro Shopping, subsuelo, local 3. Quito.</p><p class="service">Envíos contraentrega en Quito. Consulta cobertura, costo de envío y condiciones de garantía por WhatsApp.</p>${c.relacionados?.length?`<h2>Productos relacionados</h2><ul>${c.relacionados.map(r=>`<li><a href="${esc(r.url)}">${esc(r.nombre)}</a></li>`).join('')}</ul>`:""}</section>
 <section class="panel"><h2>Características</h2><dl>${Object.entries(specs).map(([k,v])=>`<div class="spec"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>${c.fuenteOficial?`<p class="note" style="margin-top:18px"><a href="${esc(c.fuenteOficial)}" target="_blank" rel="noopener">Ficha oficial del fabricante ↗</a></p>`:''}</section></div>
 <footer>ConectaTech · Todo en tecnología en un solo lugar.</footer></main></body></html>`;
- return c.beneficios?.length ? renderBeneficios(result,p,c,wa) : result;
+ const rendered=c.beneficios?.length ? renderBeneficios(result,p,c,wa) : result;
+ // Sólo texto del cuerpo visible: las fuentes, metaetiquetas y JSON-LD siguen intactos.
+ const bodyStart=rendered.indexOf('</head>');
+ return rendered.slice(0,bodyStart)+condicion.visible(p,c,rendered.slice(bodyStart));
 };
