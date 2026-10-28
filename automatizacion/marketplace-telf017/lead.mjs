@@ -1,5 +1,11 @@
 import association from './association.json' with {type:'json'};
 export {association};
+export function publicationState(pointer,cut,candidate){
+ const reference_compatible=pointer.referencia==='datos-593/corte-comercial-publico-validado.json';
+ const pointer_matches_candidate=pointer.origen_sha256===candidate.source.sha256&&pointer.fecha_corte===candidate.source.cut_date;
+ const snapshot_matches_candidate=cut.sha256_original===candidate.source.sha256&&cut.fecha_corte===candidate.source.cut_date;
+ return {pointer_cut:pointer.fecha_corte,pointer_sha256:pointer.origen_sha256,snapshot_cut:cut.fecha_corte,snapshot_sha256:cut.sha256_original,reference_compatible,pointer_matches_candidate,snapshot_matches_candidate,version_consistent:pointer_matches_candidate&&snapshot_matches_candidate&&reference_compatible};
+}
 export function handoff(){
  const message='Vengo de Marketplace por el Redmi 15C de 128 GB. Anuncio: '+association.listing_url+' Quiero confirmar precio, disponibilidad y entrega.';
  return {message,url:'https://wa.me/593998576759?text='+encodeURIComponent(message),requires_customer_send:true,automatic_history_transfer:false,Alex_connected_to_WhatsApp:false};

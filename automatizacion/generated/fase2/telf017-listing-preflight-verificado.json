@@ -1,0 +1,124 @@
+{
+  "at": "2026-10-28T05:10:50.346Z",
+  "scope": "read_only_observation_and_isolated_operator_preview",
+  "association": {
+    "schema": "conectatech.marketplace_association.v1",
+    "association_id": "marketplace-redmi15c-128-01",
+    "sku": "TELF017",
+    "product": "Redmi 15C 128 GB",
+    "storage_gb": 128,
+    "listing_url": "https://www.facebook.com/share/1H2BLNTXjW/",
+    "canonical_listing_id": null,
+    "publication_evidence": "owner_confirmed_real_listing",
+    "independent_public_verification": "not_confirmed_fetch_throttled",
+    "origin": "marketplace_personal",
+    "personal_inbox_access_authorized": false,
+    "native_auto_reply_available_in_account": null,
+    "production_changes_authorized": false
+  },
+  "prepared": {
+    "at": "2026-10-28T05:10:50.346Z",
+    "association": {
+      "schema": "conectatech.marketplace_association.v1",
+      "association_id": "marketplace-redmi15c-128-01",
+      "sku": "TELF017",
+      "product": "Redmi 15C 128 GB",
+      "storage_gb": 128,
+      "listing_url": "https://www.facebook.com/share/1H2BLNTXjW/",
+      "canonical_listing_id": null,
+      "publication_evidence": "owner_confirmed_real_listing",
+      "independent_public_verification": "not_confirmed_fetch_throttled",
+      "origin": "marketplace_personal",
+      "personal_inbox_access_authorized": false,
+      "native_auto_reply_available_in_account": null,
+      "production_changes_authorized": false
+    },
+    "source": {
+      "mode": "normalized_candidate_not_published",
+      "cut_date": "2026-10-27",
+      "generated_at": "2026-10-28T04:41:08Z",
+      "expires_at": "2026-10-29T04:41:08Z",
+      "sha256": "04f51aa6796f5c61026e414b98f76b51b3453fcbea7e6d2277db02e8368855bd",
+      "fresh": true,
+      "shared_Hub_updated": false,
+      "existing_Alex_updated": false
+    },
+    "availability": {
+      "confirmed_at_report": true,
+      "public_quantity": null
+    },
+    "reply": {
+      "text": "El Redmi 15C de 128 GB figura disponible según el corte validado.\n💵 Redmi 15C 128 GB / 4 GB RAM: $159.90 en PROMO CONTADO.\n💳 Redmi 15C 128 GB / 4 GB RAM: $199.88 con tarjeta, más intereses cuando correspondan.\n¿Prefieres retiro en tienda o entrega?",
+      "catalog_url": "https://conectatech-ec.github.io/productos/telf017-telefono-redmi-15c-128gb-4gb-4gb/",
+      "banner_attachment": null,
+      "send_enabled": false
+    },
+    "banner": {
+      "approved": true,
+      "sha256": "f93111ef2785304656bbe214cf2bdf7c1c142e28bd1b481f0eaef46e1df11ce0",
+      "bytes_verified": true,
+      "prices_match_current_candidate": true,
+      "regeneration_required_by_price": false,
+      "revalidation_required": true,
+      "delivery_enabled": false,
+      "block_reasons": [
+        "BANNER_REVALIDATION_FOR_NEW_SOURCE_REQUIRED",
+        "LIBRARY_DELIVERY_NOT_RELEASED"
+      ]
+    },
+    "handoff": {
+      "message": "Vengo de Marketplace por el Redmi 15C de 128 GB. Anuncio: https://www.facebook.com/share/1H2BLNTXjW/ Quiero confirmar precio, disponibilidad y entrega.",
+      "url": "https://wa.me/593998576759?text=Vengo%20de%20Marketplace%20por%20el%20Redmi%2015C%20de%20128%20GB.%20Anuncio%3A%20https%3A%2F%2Fwww.facebook.com%2Fshare%2F1H2BLNTXjW%2F%20Quiero%20confirmar%20precio%2C%20disponibilidad%20y%20entrega.",
+      "requires_customer_send": true,
+      "automatic_history_transfer": false,
+      "Alex_connected_to_WhatsApp": false
+    },
+    "personal_messages_read": 0,
+    "external_e2e_complete": false,
+    "customer_messages_sent": 0
+  },
+  "personal_inbox_access": false,
+  "outgoing_messages": 0,
+  "existing_automations_changed": false,
+  "real_channel_e2e_complete": false,
+  "published_Hub": {
+    "cut_date": "2026-10-27",
+    "sha256": "04f51aa6796f5c61026e414b98f76b51b3453fcbea7e6d2277db02e8368855bd",
+    "matches_candidate": true
+  },
+  "catalog_anonymous_http": 200,
+  "handoff_roundtrip": {
+    "association_id": "marketplace-redmi15c-128-01",
+    "listing_sku": "TELF017",
+    "requested_sku": "TELF017",
+    "needs_variant_clarification": false,
+    "attribution_only": true,
+    "grants_sender_authorization": false
+  },
+  "Worker": {
+    "release": "e1aac3c7c78e7b34acb813515019d1b8d723ee8e",
+    "meta_ingress_enabled": false
+  },
+  "existing_pilot": {
+    "http": 200,
+    "focus": [
+      "TELF017"
+    ],
+    "text": "No tengo precio ni disponibilidad vigentes del Redmi 15C 128 GB / 4 GB RAM.",
+    "source_cut": "2026-10-21",
+    "source_sha256": "84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8",
+    "source_fresh": false,
+    "ad_association_installed_in_live_Worker": false,
+    "real_customer_message": false
+  },
+  "WhatsApp": {
+    "token_provided_to_this_observer": false,
+    "phone_provided": false,
+    "WABA_provided": false,
+    "asset_read_verified": false,
+    "cost_zero_verified": false,
+    "send_enabled": false
+  },
+  "technical_preflight_passed": true,
+  "workflow_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/40636447407"
+}

@@ -8,7 +8,7 @@
 
 `candidate.json` es una vista derivada de TELF017 de la versión normalizada del reporte del 27-10-2026. Se usó el **normalizador único existente**, sin modificarlo. El corte se generó el 27 a las 23:41:08 Quito y su vigencia de 24 horas termina el 28 a las 23:41:08 Quito. Contado $159,90; PVP tarjeta $199,88, antes de intereses cuando correspondan. Disponibilidad positiva en ese corte; no se exportan cantidades. El original completo y la normalización completa permanecen privados, fuera del repositorio.
 
-El Data Hub público consultado continúa en el corte del 26, vencido. No se lo actualizó, no se desplegó este candidato en Alex ni se modificaron las automatizaciones existentes. `public-hub-status.json` distingue ambas versiones. `prepared.json` y `prepared.txt` contienen una respuesta utilizable mientras el candidato siga vigente; `prepare.mjs` vuelve a comprobar su caducidad antes de generar otra respuesta y reutiliza los hechos comerciales de Alex.
+El Data Hub publicó después un puntero del 27 con el mismo SHA del candidato, pero el archivo de datos consultado continúa en el 26 y el puntero ya no incluye la referencia exigida por el adaptador desplegado. La reproducción de solo lectura devuelve SHARED_HUB_VERSION_MISMATCH: Alex vuelve a su respaldo del 21 y bloquea la cotización. No se modificó ese Hub, no se desplegó este candidato en Alex ni se modificaron las automatizaciones existentes. `public-hub-status.json` distingue ambas versiones. `prepared.json` y `prepared.txt` contienen una respuesta utilizable mientras el candidato siga vigente; `prepare.mjs` vuelve a comprobar su caducidad antes de generar otra respuesta y reutiliza los hechos comerciales de Alex.
 
 La ficha pública de TELF017 se comprobó por HTTPS sin iniciar sesión, HTTP 200. El banner privado TELF017-Signature-1200.png está aprobado y sus bytes se descargaron mediante Drive autorizado: SHA-256 idéntico al manifiesto, `f93111ef2785304656bbe214cf2bdf7c1c142e28bd1b481f0eaef46e1df11ce0`. Los precios impresos coinciden con el nuevo candidato. Por precio no hace falta regenerarlo; hace falta revalidarlo contra la nueva versión y liberar su entrega. La biblioteca sigue bloqueando envío a compradores. No se copió la imagen al repositorio, no se publicó su enlace privado ni se retiraron sus controles.
 
@@ -31,3 +31,9 @@ El workflow compara por HTTPS el Hub publicado y la vista de Alex ya existente. 
 Fuentes oficiales: [respuestas nativas de Meta](https://about.fb.com/news/2026/03/facebook-marketplace-new-meta-ai-tools-make-selling-faster-and-easier/), [enlaces WhatsApp con mensaje prellenado](https://faq.whatsapp.com/5913398998672934), [Cloud API de WhatsApp](https://developers.facebook.com/docs/whatsapp/cloud-api/overview/).
 
 Rama independiente existente. Sin cambios de producción, otras sesiones, workflows existentes, Worker desplegado o permisos. Costo adicional autorizado $0.
+
+## Bloqueo técnico comprobado sin otra cuenta
+
+El observador HTTPS obtuvo HTTP 200 de la vista privada y foco TELF017, pero Alex respondió con fuente del 21 y precio bloqueado. El reporte del 27 sí está validado y vigente en la preparación. Un puntero nuevo por sí solo no prueba que el archivo completo ni el consumidor estén sincronizados. El observador nuevo compara fecha, SHA y referencia de ambos; no marca completa la integración.
+
+Para que Alex use los importes preparados hace falta publicar/entregar una versión coherente del Hub mediante el flujo autorizado o promover el corte ya validado al piloto con aprobación. No se aplicó un parche al Worker ni a los procesos de la otra sesión. Esto es independiente de probar una conversación de cliente.

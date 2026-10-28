@@ -1,11 +1,12 @@
 // New isolated observer. No deployment, Graph sends, billing calls or changes to existing automations.
 import assert from 'node:assert/strict';import {writeFile} from 'node:fs/promises';
-import {association,handoff,resolveLead} from './lead.mjs';import candidate from './candidate.json' with {type:'json'};
+import {association,handoff,resolveLead,publicationState} from './lead.mjs';import candidate from './candidate.json' with {type:'json'};
 import library from './library-evidence.json' with {type:'json'};import {prepare} from './prepare.mjs';
 const base='https://conectatech-comercial-piloto.conectatech-ecu.workers.dev';
 const report={at:new Date().toISOString(),scope:'read_only_observation_and_isolated_operator_preview',association,prepared:prepare(candidate,library),personal_inbox_access:false,outgoing_messages:0,existing_automations_changed:false,real_channel_e2e_complete:false};
 try{
- const p=await fetch('https://conectatech-ec.github.io/datos-593/estado-ultimo-corte.json',{signal:AbortSignal.timeout(15000)});assert.equal(p.status,200);const pointer=await p.json();report.published_Hub={cut_date:pointer.fecha_corte,sha256:pointer.origen_sha256,matches_candidate:pointer.origen_sha256===candidate.source.sha256};
+ const p=await fetch('https://conectatech-ec.github.io/datos-593/estado-ultimo-corte.json',{signal:AbortSignal.timeout(15000)});assert.equal(p.status,200);const pointer=await p.json();
+ const snapshot=await fetch('https://conectatech-ec.github.io/datos-593/corte-comercial-publico-validado.json',{signal:AbortSignal.timeout(15000)});assert.equal(snapshot.status,200);const cut=await snapshot.json();report.published_Hub=publicationState(pointer,cut,candidate);report.readiness_blockers=report.published_Hub.version_consistent?[]:['PUBLISHED_HUB_CONTRACT_OR_VERSION_MISMATCH'];
  const page=await fetch(report.prepared.reply.catalog_url,{signal:AbortSignal.timeout(15000)});assert.equal(page.status,200);report.catalog_anonymous_http=page.status;
  report.handoff_roundtrip=resolveLead(new URL(handoff().url).searchParams.get('text'));assert.equal(report.handoff_roundtrip.requested_sku,'TELF017');
  const health=await fetch(base+'/health',{signal:AbortSignal.timeout(15000)});assert.equal(health.status,200);const h=await health.json();report.Worker={release:h.release,meta_ingress_enabled:h.meta_ingress_enabled};

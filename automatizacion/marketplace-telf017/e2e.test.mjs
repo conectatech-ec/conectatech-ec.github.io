@@ -1,5 +1,5 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
-import {association,handoff,resolveLead} from './lead.mjs';import {prepare} from './prepare.mjs';
+import {association,handoff,resolveLead,publicationState} from './lead.mjs';import {prepare} from './prepare.mjs';
 import candidate from './candidate.json' with {type:'json'};import library from './library-evidence.json' with {type:'json'};
 import {verifyMetaSignature,normalizeEvents,prepareOfficialReply} from '../channels.mjs';
 test('Published listing maps to its exact SKU without private profile access or a guessed item ID',()=>{
@@ -12,6 +12,12 @@ test('Prepared response uses the same validated central facts; stale or unavaila
  const r=prepare(candidate,library);assert.equal(r.source.sha256,candidate.source.sha256);assert.equal(r.reply.banner_attachment,null);assert.equal(r.banner.delivery_enabled,false);assert.ok(r.banner.block_reasons.includes('LIBRARY_DELIVERY_NOT_RELEASED'));
  const expired=prepare(candidate,library,Date.parse(candidate.expires_at)+1);assert.equal(expired.source.fresh,false);assert.ok(!expired.reply.text.includes('$'));assert.equal(expired.banner.regeneration_required_by_price,null);
  const zero=structuredClone(candidate);zero.products[0].availability='out_of_stock';assert.ok(!prepare(zero,library).reply.text.includes('$'));
+});
+test('A new pointer with an old data file or missing reference cannot certify Hub synchronization',()=>{
+ const p={fecha_corte:candidate.source.cut_date,origen_sha256:candidate.source.sha256,referencia:'datos-593/corte-comercial-publico-validado.json'},cut={fecha_corte:p.fecha_corte,sha256_original:p.origen_sha256};
+ assert.equal(publicationState(p,cut,candidate).version_consistent,true);
+ assert.equal(publicationState({...p,referencia:undefined},cut,candidate).version_consistent,false);
+ assert.equal(publicationState(p,{...cut,fecha_corte:'2026-10-26'},candidate).version_consistent,false);
 });
 test('Prepared WhatsApp chain validates HMAC, correct business number, referral and 24h window; no external sender exists',async()=>{
  const now=Date.now(),body={object:'whatsapp_business_account',entry:[{id:'synthetic_WABA',changes:[{value:{metadata:{phone_number_id:'synthetic_phone'},messages:[{id:'wamid.synthetic.only',from:'synthetic_sender',timestamp:String(Math.floor(now/1000)),type:'text',text:{body:handoff().message}}]}}]}]};
