@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Priorizar la salida USB-C: corregir CARG010/CARG037 conforme al diagrama del mismo SKU y reutilizar vistas aprobadas de CUBO019/CUBO025 como principales. Conservar las imágenes aprobadas, títulos, datos comerciales, originales y URLs.",
   "productos": {
     "CARG010": {
@@ -2318,5 +2318,25 @@
       "CUBO016"
     ],
     "banners_signature_no_usados_como_evidencia_fisica": true
-  }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-28T05:05:23.477683+00:00",
+  "verificacion": {
+    "workflow_run": 40633474664,
+    "http_verificacion_directa": true,
+    "ambito_prueba_inicial": "Once cargadores: fichas, galería, portada y metadatos públicos; originales, referencias y versiones comprobados por SHA-256.",
+    "chromium": [
+      1280,
+      390
+    ],
+    "originales_conservados": true,
+    "repeticion_flujo_publico": "Se repite sólo el control que agotó sus intentos con HTTP404 mientras GitHub Pages reiniciaba despliegues concurrentes. Tras la activación se comprobaron 99 hashes y 11 fichas/galería en 1280 y 390."
+  },
+  "excepciones_previas_resueltas": [
+    "CARG010",
+    "CARG028",
+    "CARG034",
+    "CARG048",
+    "CUBO005",
+    "CUBO024"
+  ]
 }

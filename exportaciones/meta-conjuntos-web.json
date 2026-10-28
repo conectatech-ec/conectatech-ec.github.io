@@ -1,8 +1,8 @@
 {
   "version": 1,
   "catalog_id": "1036301566100990",
-  "fecha_corte": "2026-10-26",
-  "fuente_sha256": "f37f364dfb30f005bf07f5fb0d7052e8f1dad7e1ae73a9baeacc2ce88aa5eadc",
+  "fecha_corte": "2026-10-27",
+  "fuente_sha256": "04f51aa6796f5c61026e414b98f76b51b3453fcbea7e6d2277db02e8368855bd",
   "fuente_categorias": "index.html: categoriaComercial || categoryFamilies[category] || Hogar y Accesorios",
   "groups": [
     {
@@ -29,12 +29,14 @@
         ]
       },
       "sku": [
+        "TELF001",
         "TELF002",
         "TELF003",
         "TELF004",
         "TELF008",
         "TELF010",
         "TELF011",
+        "TELF012",
         "TELF016",
         "TELF017",
         "TELF018",
@@ -54,12 +56,13 @@
         "TELF018",
         "TELF011",
         "TELF036",
-        "TELF016",
-        "TELF027",
+        "TELF001",
         "TELF025",
         "TELF022",
         "TELF020",
         "TELF037",
+        "TELF016",
+        "TELF027",
         "TELF023",
         "TELF026",
         "TELF034",
@@ -69,7 +72,8 @@
         "TELF003",
         "TELF010",
         "TELF004",
-        "TELF002"
+        "TELF002",
+        "TELF012"
       ],
       "featured_sku": [
         "TELF018",
@@ -407,12 +411,12 @@
         ]
       },
       "sku": [
+        "AUDI001",
         "AUDI002",
         "AUDI003",
         "AUDI005",
         "AUDI007",
         "AUDI008",
-        "AUDI009",
         "AUDI012",
         "AUDI015",
         "AUDI016",
@@ -543,6 +547,7 @@
         "AUDI112",
         "AUDI097",
         "AUDI111",
+        "AUDI001",
         "AUDI044",
         "REPR002",
         "AUDI082",
@@ -597,7 +602,6 @@
         "PARL009",
         "MICR037",
         "AUDI110",
-        "AUDI009",
         "PARL013",
         "PARL043",
         "PARL001",
@@ -730,7 +734,6 @@
         "CARG055",
         "CARG056",
         "CARG057",
-        "CARG058",
         "CARG059",
         "CARG061",
         "CARG063",
@@ -756,6 +759,7 @@
         "CUBO016",
         "CUBO018",
         "CUBO019",
+        "CUBO021",
         "CUBO023",
         "CUBO024",
         "CUBO025",
@@ -904,6 +908,7 @@
         "CUBO009",
         "CUBO019",
         "CARG010",
+        "CUBO021",
         "PILA015",
         "PILA065",
         "CARG007",
@@ -916,7 +921,6 @@
         "POWE008",
         "CARG068",
         "PILA004",
-        "CUBO016",
         "PILA070",
         "PILA003",
         "PILA044",
@@ -935,6 +939,7 @@
         "POWE004",
         "PILA023",
         "PILA001",
+        "CUBO016",
         "PILA046",
         "PILA047",
         "CARG066",
@@ -977,7 +982,6 @@
         "CARG055",
         "CARG070",
         "POWE018",
-        "CARG058",
         "ESTAB006",
         "CARG059",
         "UPS002",
@@ -1670,7 +1674,6 @@
         "ADAP019",
         "LECT002",
         "HUB009",
-        "CABL137",
         "ADAP038",
         "ADAP039",
         "CABL166",
@@ -1689,6 +1692,7 @@
         "CABL006",
         "CABL002",
         "CABL042",
+        "CABL137",
         "CABL041",
         "ADAP040",
         "CABL103",
@@ -2183,7 +2187,6 @@
         "FOCO001",
         "FOCO002",
         "FOCO003",
-        "FOCO004",
         "LAMP001",
         "LAMP002",
         "LAMP003",
@@ -2205,15 +2208,14 @@
         "LED003",
         "FOCO001",
         "PANE003",
-        "PANE002",
         "LINT007",
+        "PANE002",
         "LINT001",
         "LINT008",
         "FOCO002",
         "LINT005",
         "LINT010",
         "LED002",
-        "FOCO004",
         "LAMP002",
         "LINT009",
         "LAMP003"
@@ -2526,11 +2528,7 @@
   ],
   "exclusions": [
     {
-      "sku": "TELF001",
-      "motivo": "PENDIENTE_APROBACIÓN"
-    },
-    {
-      "sku": "AUDI001",
+      "sku": "AUDI009",
       "motivo": "AGOTADO"
     },
     {
@@ -2578,10 +2576,6 @@
       "motivo": "AGOTADO"
     },
     {
-      "sku": "TELF012",
-      "motivo": "PENDIENTE_APROBACIÓN"
-    },
-    {
       "sku": "ADAP014",
       "motivo": "AGOTADO"
     },
@@ -2594,11 +2588,11 @@
       "motivo": "AGOTADO"
     },
     {
-      "sku": "CORT03",
+      "sku": "CARG058",
       "motivo": "AGOTADO"
     },
     {
-      "sku": "CUBO021",
+      "sku": "CORT03",
       "motivo": "AGOTADO"
     },
     {
@@ -2627,6 +2621,10 @@
     },
     {
       "sku": "CABL155",
+      "motivo": "AGOTADO"
+    },
+    {
+      "sku": "FOCO004",
       "motivo": "AGOTADO"
     },
     {

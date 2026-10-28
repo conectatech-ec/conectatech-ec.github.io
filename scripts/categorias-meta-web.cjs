@@ -7,6 +7,7 @@ function familiesFromHTML(html){
  return JSON.parse(m[1]);
 }
 const key=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const aprobacionesTelefonos27Oct=new Set(['TELF001','TELF012','TELF015']);
 function classify(products,content,families){
  const bySKU=new Map(),groups=new Map();
  for(const p of products){
@@ -15,7 +16,11 @@ function classify(products,content,families){
   if(typeof family!=='string'||!family.trim())throw Error('Categoría comercial inválida');
   const presentation=merchandising.presentationFamily(p,family);
   const label='ct-web:'+key(presentation),c=content[p.sku]||{};
-  const approved=c.comercialVerificado===true&&c.imagenPendiente!==true;
+  // Dirección aprobó TODOS los teléfonos del catálogo vigente el 27/10/2026.
+  // Estos son los tres SKU aún sin comercialVerificado; los demás ya estaban aprobados.
+  // Lista cerrada: un teléfono futuro seguirá requiriendo autorización editorial.
+  // Nunca se omite una imagen expresamente pendiente ni se altera disponibilidad.
+  const approved=c.imagenPendiente!==true&&(c.comercialVerificado===true||(p.category==='Telefonos'&&aprobacionesTelefonos27Oct.has(p.sku)));
   const row={sku:p.sku,categoria_web:p.category,familia_web:family,familia_whatsapp:presentation,stock:p.stock,price:p.promo,label:approved?label:'',aprobado:approved};
   bySKU.set(p.sku,row);
   if(!groups.has(label))groups.set(label,{label,retailer_id:'conectatech-web:'+key(presentation),name:'CONECTATECH | '+presentation.toUpperCase(),family:presentation,
