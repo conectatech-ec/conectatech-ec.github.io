@@ -18,8 +18,9 @@ const fifteenthFile='importacion/fotografia-publicada/direccion-20261027-19.json
 const sixteenthFile='importacion/fotografia-publicada/direccion-20261027-20.json';
 const seventeenthFile='importacion/fotografia-publicada/direccion-20261028-21.json';
 const eighteenthFile='importacion/fotografia-publicada/direccion-20261028-22.json';
+const nineteenthFile='importacion/fotografia-publicada/direccion-20261028-23.json';
 const allowed=new Set(['CARG028','CARG029','CARG034','CARG046','CARG048','CUBO005','CUBO024','CARG010','CARG037','TERM001','CUBO009','CUBO010','CARG069','HUB025','MOUS035','MOUS029','CORT06','SOPO002','REL050','ADAP086','ADAP053','ADAP091','CAPT004','HUB016','CORT04','CUBO018','SOPO057','CUBO019','CUBO025','ADAP075','ADAP080','LINT008','CABL046','PAD001','SOPO007','MOUS003','JUGU067','REL028','LAMP003','ESTA002','MICR32','STYL002','MOUS031','MOUS032','MOUS043','POWE015','CABL171','CUBO003','SOPO005','AUDI098','RADI007','POWE016','AIRT002','MOUS020','PADM002','JUGU163','MOUS040','REL011','REL016','PANE002','PANE003','BINO001','MICR08','PROT005','MOUS001','JUGU022','PROT002','PROT004','AUDI044','CUBO002']);
-function rows(){return Object.assign({},... [file,secondFile,thirdFile,fourthFile,fifthFile,sixthFile,seventhFile,eighthFile,ninthFile,tenthFile,eleventhFile,twelfthFile,thirteenthFile,fourteenthFile,fifteenthFile,sixteenthFile,seventeenthFile,eighteenthFile].map(f=>fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')).productos:{}));}
+function rows(){return Object.assign({},... [file,secondFile,thirdFile,fourthFile,fifthFile,sixthFile,seventhFile,eighthFile,ninthFile,tenthFile,eleventhFile,twelfthFile,thirteenthFile,fourteenthFile,fifteenthFile,sixteenthFile,seventeenthFile,eighteenthFile,nineteenthFile].map(f=>fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')).productos:{}));}
 function premium(){return fs.existsSync(secondFile)?JSON.parse(fs.readFileSync(secondFile,'utf8')).ajuste_titulo:null;}
 function hash(url){const f='.'+url;return fs.existsSync(f)?crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'):null;}
 function valid(r){return r&&allowed.has(r.sku)&&r.revisado_visual===true&&
