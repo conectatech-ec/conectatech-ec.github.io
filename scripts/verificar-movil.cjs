@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const potencia=require('../assets/formato-potencia.js').text;
 'use strict';
 
 // Renderiza la ficha real. No modifica contratos, catálogo, precios ni publicación.
@@ -149,7 +150,7 @@ async function main() {
         check('http', row.http === 200, 'Ficha HTTP ' + row.http);
         check('html_coincide_local', row.sha256_html === row.sha256_html_local, 'HTML servido distinto del archivo local de revisión.');
         check('sin_desbordamiento_horizontal', data.ancho_documento <= data.ancho_viewport, 'Desbordamiento horizontal: ' + data.ancho_documento + '/' + data.ancho_viewport);
-        check('titulo', data.titulo_visible && data.titulo === expectedHeading && data.schema?.name === expectedName, 'Título visible/schema distinto de la ficha local.');
+        check('titulo', data.titulo_visible && data.titulo === potencia(expectedHeading) && data.schema?.name === expectedName, 'Título visible/schema distinto de la ficha local.');
         check('sku', new RegExp('(^|[^A-Z0-9])' + sku + '([^A-Z0-9]|$)').test(data.sku_visible) && data.schema?.sku === sku, 'SKU visible/schema incorrecto.');
         check('canonical', data.canonical === canonical, 'Canonical distinto de la URL estable.');
         check('promo_contado', data.precio_visible && money(data.precio) === Math.round(p.promo * 100) && Math.round(Number(data.schema?.offers?.price) * 100) === Math.round(p.promo * 100) && data.schema?.offers?.priceCurrency === 'USD', 'Promo contado visible/schema distinta del catálogo.');
@@ -174,7 +175,7 @@ async function main() {
         check('javascript', pageErrors.length === 0, 'Errores JavaScript: ' + pageErrors.join('; '));
         if (content.beneficios?.length) {
           const actual = await page.locator('.benefit').evaluateAll(els => els.map(e => ({valor:e.querySelector('strong')?.textContent,titulo:e.querySelector('span')?.textContent,descripcion:e.querySelector('p')?.textContent})));
-          check('beneficios_verificados', JSON.stringify(actual) === JSON.stringify(content.beneficios), 'Beneficios no coinciden con el contenido revisado.');
+          check('beneficios_verificados', JSON.stringify(actual) === JSON.stringify(content.beneficios.map(b=>({...b,valor:potencia(b.valor),titulo:potencia(b.titulo),descripcion:potencia(b.descripcion)}))), 'Beneficios no coinciden con el contenido revisado.');
           const accordion = page.locator('#especificaciones');
           check('detalles_cerrados', await accordion.getAttribute('open') === null, 'Especificaciones deben comenzar recogidas.');
           await accordion.locator('summary').focus(); await page.keyboard.press('Enter');

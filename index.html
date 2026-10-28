@@ -121,6 +121,7 @@ body.ct-category-view .ct-hero,body.ct-category-view .ct-gift-campaign,body.ct-c
  </div>
 </div>
 
+<script src="/assets/formato-potencia.js?v=d3aae9e82056"></script>
 <script src="/assets/catalogo-publicado.js?v=db1630efd009"></script>
 <link rel="stylesheet" href="/assets/editorial-titulos.css?v=09cb57640dcb">
 <script src="/assets/editorial-titulos-datos.js?v=1c7eb1689d74"></script>
@@ -204,7 +205,7 @@ cats.forEach(c=>{const b=document.createElement("button");b.className="chip";b.d
 chips.onclick=e=>{const chip=e.target.closest(".chip");if(!chip)return;selectCategory(null,chip.dataset.cat)};
 const searchBox=document.getElementById("q");
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"");
-const tokens=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+const tokens=s=>String(window.CONECTATECH_POTENCIA?.text(s)??s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
 const exactSkuSearch=new Set(products.map(p=>norm(p.sku)));
 const aliases={cel:["celular","telefono","smartphone"],telf:["telefono","celular"],audif:["audifono","auricular"],reloj:["smartwatch"],tv:["televisor"],mem:["memoria","flash"]};
 function searchable(p){
