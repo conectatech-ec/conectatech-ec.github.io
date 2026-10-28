@@ -128,11 +128,17 @@
       "revision": 2
     },
     "CARG037": {
-      "autenticidad": "original verificado",
+      "autenticidad": "genérico/compatible",
       "presentacion": "sin caja",
       "instrucciones": "",
-      "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 389; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: SAMSUNG; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 389; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas. Confirmación expresa del propietario: SAM significa Samsung. Se aplica la excepción AAA vigente a la fila AAA existente, sin inferir originalidad por la abreviatura.",
+      "revision": 3,
+      "conservar_medios_comercial": {
+        "revision_medios": 2,
+        "revision_comercial": 3,
+        "sha256_medios": "3f12b5a666a706d7d9d51ccfb529ce369b7805ffc974fecdb61618146ae9b0c4",
+        "motivo": "Clasificación comercial corregida por alias SAM=Samsung y Registro AAA. Conservar exactamente los medios ya aprobados; política de imagen sin cambios."
+      }
     },
     "CARG029": {
       "autenticidad": "original verificado",
@@ -4324,11 +4330,17 @@
       "revision": 2
     },
     "CARG015": {
-      "autenticidad": "original verificado",
+      "autenticidad": "genérico/compatible",
       "presentacion": "sin caja",
       "instrucciones": "",
-      "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 385,386; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
-      "revision": 2
+      "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: SAMSUNG; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 385,386; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas. Confirmación expresa del propietario: SAM significa Samsung. Se aplica la excepción AAA vigente a la fila AAA existente, sin inferir originalidad por la abreviatura.",
+      "revision": 3,
+      "conservar_medios_comercial": {
+        "revision_medios": 2,
+        "revision_comercial": 3,
+        "sha256_medios": "4fcc3b4fc02ce7321a3d39f94c33ab18357b3e75348e036c1d1406e4102a271b",
+        "motivo": "Clasificación comercial corregida por alias SAM=Samsung y Registro AAA. Conservar exactamente los medios ya aprobados; política de imagen sin cambios."
+      }
     },
     "CARG054": {
       "autenticidad": "original verificado",
@@ -55733,6 +55745,45 @@
             "instrucciones": "Orden del propietario, 26oct2026: rechaza imagen secundaria y solicita «Otra toma del conjunto completo, más limpia y comercial». Sustituir únicamente secundaria; conservar portada aprobada y datos comerciales.",
             "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: LENOVO; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 975,976,977,978,979; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
             "revision": 4
+          }
+        }
+      ]
+    },
+    {
+      "fecha": "2026-10-28T03:36:45.907829+00:00",
+      "cambios": [
+        {
+          "sku": "CARG015",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 385,386; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 2
+          },
+          "despues": {
+            "autenticidad": "genérico/compatible",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: SAMSUNG; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 385,386; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas. Confirmación expresa del propietario: SAM significa Samsung. Se aplica la excepción AAA vigente a la fila AAA existente, sin inferir originalidad por la abreviatura.",
+            "revision": 3
+          }
+        },
+        {
+          "sku": "CARG037",
+          "antes": {
+            "autenticidad": "original verificado",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 389; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas.",
+            "revision": 2
+          },
+          "despues": {
+            "autenticidad": "genérico/compatible",
+            "presentacion": "sin caja",
+            "instrucciones": "",
+            "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: SAMSUNG; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 389; Tipo: AAA (genérico). No acredita derechos de fotografías externas ni especificaciones técnicas. Confirmación expresa del propietario: SAM significa Samsung. Se aplica la excepción AAA vigente a la fila AAA existente, sin inferir originalidad por la abreviatura.",
+            "revision": 3
           }
         }
       ]
