@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const potencia=require('../assets/formato-potencia.js').text;
 'use strict';
 
 // QA de catálogo real; solo produce evidencia. No publica ni modifica datos.
@@ -244,7 +245,7 @@ async function main() {
           if (!current) { product.errores.push('Tarjeta deSKU no localizada.'); continue; }
           product.tarjeta = current;
           ensure(current.estado_disponibilidad===availabilityCore.forProduct(p).status,'Estado visible distinto de disponibilidad central.');
-          ensure(current.titulo===(entry(p)?.titulo||p.name),'Título visible distinto del mapa editorial/original.');
+          ensure(current.titulo===potencia(entry(p)?.titulo||p.name),'Título visible distinto del mapa editorial/original.');
           if (published) {
             ensure(Number.isFinite(Date.parse(published.actualizadoEn)) && /^[a-f0-9]{64}$/.test(published.huella || ''), 'Metadatos publicados sin fecha o huella válidas.');
             ensure(current.actualizado === (editorialDate(p,payload)||published.actualizadoEn), 'Fecha de actualización no coincide con metadatos.');

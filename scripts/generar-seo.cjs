@@ -10,6 +10,7 @@ const fs=require('fs'),path=require('path');
 const estadoStock=fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
 const fechaPublicada=estadoStock&&/^\d{4}-\d{2}-\d{2}$/.test(estadoStock.fecha_corte)?estadoStock.fecha_corte.split('-').reverse().join('/'):null;
 const fichaComercial=require('./ficha-comercial.cjs');
+const formatoPotencia=require('../assets/formato-potencia.js');
 const condicionFicha=require('./condicion-ficha.cjs');
 const ventaCruzada=require('./venta-cruzada.cjs');
 const disponibilidadWeb=require('./disponibilidad-web.cjs');
@@ -79,7 +80,7 @@ for(const p of products){
   : content;
  const visibleContent=publicContent.slice(0,publicContent.indexOf('</head>'))+condicionFicha.visible(p,custom,publicContent.slice(publicContent.indexOf('</head>')));
  const contentFecha=fechaPublicada&&!custom.comercialVerificado?visibleContent.replace('<h2>Consulta y compra</h2>','<p class="muted">'+(p.stock>0?'Inventario actualizado al ':'Stock: 0 · No disponible · Corte: ')+fechaPublicada+' · confirma disponibilidad</p><h2>Consulta y compra</h2>'):visibleContent;
- const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),disponibilidadWeb.renderPage(ventaCruzada.inyectar(contentFecha,p,products,stable).replace(/^[ \t]+$/gm,''),p,fechaPublicada));
+ const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),formatoPotencia.html(disponibilidadWeb.renderPage(ventaCruzada.inyectar(contentFecha,p,products,stable).replace(/^[ \t]+$/gm,''),p,fechaPublicada)));
 }
 const xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(u=>'  <url><loc>'+u+'</loc></url>').join('\n')+'\n</urlset>\n';
 fs.writeFileSync('sitemap.xml',xml);

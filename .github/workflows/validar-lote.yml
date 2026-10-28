@@ -173,6 +173,10 @@ jobs:
             git diff --exit-code -- index.html assets/editorial-titulos-datos.js
             node scripts/verificar-editorial-publicacion.cjs
             node scripts/test-condicion-ficha.cjs
+            if [ -f assets/formato-potencia.js ]; then
+              node scripts/test-formato-potencia.cjs
+              node scripts/verificar-formato-potencia.cjs
+            fi
             if [ -f importacion/editorial/lotes/lote-038.json ]; then
               node scripts/verificar-airpods-anc-ia.cjs
             fi
