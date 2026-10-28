@@ -120,7 +120,7 @@ def commercial_brand(sku, root=ROOT):
         text += ' ' + ' '.join(str(c.get(k) or '') for k in ('marca','modelo','titulo_comercial'))
     names = {
         'JBL': r'\bJBL\b|\b(?:Tune|Endurance|Soundgear|Flip|Charge)\b',
-        'SAMSUNG': r'\bSamsung\b|\bGalaxy\b',
+        'SAMSUNG': r'\b(?:Samsung|SAM)\b|\bGalaxy\b',
         'APPLE': r'\bApple\b|\bAirpods\b|\biPhone\b|\biPad\b',
         'BOSE': r'\bBose\b|\b(?:Quietcomfort|Quitcomfort)\b|Ultra\s+Open\s+Earbuds',
         'LENOVO': r'\bLenovo\b|\bThinkplus\b'

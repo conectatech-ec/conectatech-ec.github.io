@@ -3,8 +3,8 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 753,
-    "REVISAR IDENTIDAD": 97,
+    "MEJORAR TÍTULO": 756,
+    "REVISAR IDENTIDAD": 94,
     "CORRECTO": 320
   },
   "aplicados": 750,
@@ -633,7 +633,7 @@
     },
     {
       "sku": "CARG010",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 45 W | kit USB-C a USB-C",
       "propuesta": "Cargador 45 W | kit USB-C a USB-C",
       "causa": "Título idéntico a CARG068; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -642,7 +642,19 @@
         "seo-contenido.json#CARG010"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CARG068; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionLote036": {
+        "causa": "Desarrollar la abreviatura comercial SAM como Samsung según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+        "propuesta": "Cargador Samsung de 45 W",
+        "subtitulo": "Cable USB-C a USB-C incluido",
+        "evidencia": [
+          "datos-593/inventario-publico.csv#CARG010",
+          "importacion/editorial/alias-marcas.json",
+          "importacion/contratos/CARG010.json"
+        ]
+      }
     },
     {
       "sku": "CARG034",
@@ -659,7 +671,7 @@
     },
     {
       "sku": "CARG037",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador 25 W | kit USB-C a USB-C",
       "propuesta": "Cargador 25 W | kit USB-C a USB-C",
       "causa": "Título idéntico a CARG034; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -668,7 +680,19 @@
         "seo-contenido.json#CARG037"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CARG034; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionLote036": {
+        "causa": "Desarrollar la abreviatura comercial SAM como Samsung según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+        "propuesta": "Cargador Samsung de 25 W",
+        "subtitulo": "Cable USB-C a USB-C incluido",
+        "evidencia": [
+          "datos-593/inventario-publico.csv#CARG037",
+          "importacion/editorial/alias-marcas.json",
+          "importacion/contratos/CARG037.json"
+        ]
+      }
     },
     {
       "sku": "CARG041",
@@ -711,7 +735,7 @@
     },
     {
       "sku": "CARG057",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Cargador Micro-USB | cable incorporado",
       "propuesta": "Cargador Micro-USB | cable incorporado",
       "causa": "Título idéntico a CARG056; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
@@ -720,7 +744,19 @@
         "seo-contenido.json#CARG057"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoInicial": "REVISAR IDENTIDAD",
+      "causaInicial": "Título idéntico a CARG056; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
+      "resolucionLote036": {
+        "causa": "Desarrollar la abreviatura comercial XIA como Xiaomi según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+        "propuesta": "Cargador Xiaomi Micro-USB",
+        "subtitulo": "Cable incorporado",
+        "evidencia": [
+          "datos-593/inventario-publico.csv#CARG057",
+          "importacion/editorial/alias-marcas.json",
+          "importacion/contratos/CARG057.json"
+        ]
+      }
     },
     {
       "sku": "CARG068",
@@ -9396,6 +9432,16 @@
           "seo-contenido.json#CARG015",
           "importacion/contratos/CARG015.json"
         ]
+      },
+      "resolucionLote036": {
+        "causa": "Desarrollar la abreviatura comercial SAM como Samsung según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+        "propuesta": "Cargador Samsung Power Trio",
+        "subtitulo": "2 USB-C · 1 USB-A · incluye cable",
+        "evidencia": [
+          "datos-593/inventario-publico.csv#CARG015",
+          "importacion/editorial/alias-marcas.json",
+          "importacion/contratos/CARG015.json"
+        ]
       }
     },
     {
@@ -9605,6 +9651,16 @@
           "seo-contenido.json#CARG036",
           "importacion/contratos/CARG036.json"
         ]
+      },
+      "resolucionLote036": {
+        "causa": "Desarrollar la abreviatura comercial XIA como Xiaomi según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+        "propuesta": "Cargador Xiaomi GaN con cable",
+        "subtitulo": "USB-A a USB-C · de pared",
+        "evidencia": [
+          "datos-593/inventario-publico.csv#CARG036",
+          "importacion/editorial/alias-marcas.json",
+          "importacion/contratos/CARG036.json"
+        ]
       }
     },
     {
@@ -9672,6 +9728,16 @@
         "propuesta": "Cargador de pared de 3 puertos",
         "evidencia": [
           "seo-contenido.json#CARG040",
+          "importacion/contratos/CARG040.json"
+        ]
+      },
+      "resolucionLote036": {
+        "causa": "Desarrollar la abreviatura comercial XIA como Xiaomi según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+        "propuesta": "Cargador Xiaomi de 3 puertos",
+        "subtitulo": "2 USB-C y 1 USB-A · sin cable",
+        "evidencia": [
+          "datos-593/inventario-publico.csv#CARG040",
+          "importacion/editorial/alias-marcas.json",
           "importacion/contratos/CARG040.json"
         ]
       }
@@ -10711,6 +10777,16 @@
           "seo-contenido.json#CUBO009",
           "importacion/contratos/CUBO009.json"
         ]
+      },
+      "resolucionLote036": {
+        "causa": "Desarrollar la abreviatura comercial XIA como Xiaomi según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+        "propuesta": "Cargador Xiaomi de 33 W",
+        "subtitulo": "USB-A · dos patas planas",
+        "evidencia": [
+          "datos-593/inventario-publico.csv#CUBO009",
+          "importacion/editorial/alias-marcas.json",
+          "importacion/contratos/CUBO009.json"
+        ]
       }
     },
     {
@@ -10732,6 +10808,16 @@
         "propuesta": "Cargador XIA de 67 W",
         "evidencia": [
           "seo-contenido.json#CUBO010",
+          "importacion/contratos/CUBO010.json"
+        ]
+      },
+      "resolucionLote036": {
+        "causa": "Desarrollar la abreviatura comercial XIA como Xiaomi según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+        "propuesta": "Cargador Xiaomi de 67 W",
+        "subtitulo": "USB-A · dos patas planas",
+        "evidencia": [
+          "datos-593/inventario-publico.csv#CUBO010",
+          "importacion/editorial/alias-marcas.json",
           "importacion/contratos/CUBO010.json"
         ]
       }
@@ -22707,5 +22793,20 @@
     "nuevasPresentaciones": 0,
     "presentacionesUnicas": 750,
     "condicionDeTercerosYAAAConservada": true
+  },
+  "resolucionesLote036": {
+    "presentaciones": 8,
+    "revisiones": 5,
+    "adicionales": 3,
+    "acumuladasTrasCierre": 753,
+    "reservasResueltasPorConfirmacionMarca": [
+      "CARG037",
+      "CARG010",
+      "CARG057"
+    ],
+    "condicionesAAACorregidasDesdeRegistro": [
+      "CARG015",
+      "CARG037"
+    ]
   }
 }
