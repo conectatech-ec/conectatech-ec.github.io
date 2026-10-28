@@ -168,6 +168,26 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "Cancelación de ruido",
+      "valor": "ANC",
+      "fuentes": [
+        "https://drive.google.com/file/d/1IN6ih-GAc0d-zF23gSSJfWpDXI8LQ_DX/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Reducción de ruido adicional",
+      "valor": "ENC",
+      "fuentes": [
+        "https://drive.google.com/file/d/1IN6ih-GAc0d-zF23gSSJfWpDXI8LQ_DX/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
@@ -364,5 +384,14 @@
       "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
       "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
+  },
+  "evidencia_atributos_038": {
+    "fuente": "https://drive.google.com/file/d/1IN6ih-GAc0d-zF23gSSJfWpDXI8LQ_DX/view?usp=drivesdk",
+    "sha256": "95099760a381d023c3565b08e62325252dd47eff291490e749518c12513f5f5b",
+    "archivoOriginal": "AUDI063.jpg",
+    "cotejo": "Empaque propio muestra ANC/ENC y control ANC en pantalla; inventario593 coincide.",
+    "ANC": true,
+    "IA": false,
+    "ENC": true
   }
 }

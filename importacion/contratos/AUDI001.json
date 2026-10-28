@@ -192,6 +192,16 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "Cancelación de ruido",
+      "valor": "ANC",
+      "fuentes": [
+        "https://drive.google.com/file/d/1TUXdtQEpUoaP-3omr9IzWk0jcr9Kco0W/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
@@ -391,5 +401,14 @@
       "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
       "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
+  },
+  "evidencia_atributos_038": {
+    "fuente": "https://drive.google.com/file/d/1TUXdtQEpUoaP-3omr9IzWk0jcr9Kco0W/view?usp=drivesdk",
+    "sha256": "5c6dd64e274e2727d4e507bf7d584cadf711be6e9f8c846c4cfbc2b7b93d6d12",
+    "archivoOriginal": "AUDI001.jpg",
+    "cotejo": "Etiqueta ANC en empaque propio; producto y código asociados al contrato.",
+    "ANC": true,
+    "IA": false,
+    "ENC": false
   }
 }

@@ -235,7 +235,19 @@
         "seo-contenido.json#AUDI063"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "correccionANCIA038": {
+        "propuesta": "Audífonos ANC con pantalla",
+        "evidencia": {
+          "fuente": "https://drive.google.com/file/d/1IN6ih-GAc0d-zF23gSSJfWpDXI8LQ_DX/view?usp=drivesdk",
+          "sha256": "95099760a381d023c3565b08e62325252dd47eff291490e749518c12513f5f5b",
+          "archivoOriginal": "AUDI063.jpg",
+          "cotejo": "Empaque propio muestra ANC/ENC y control ANC en pantalla; inventario593 coincide.",
+          "ANC": true,
+          "IA": false,
+          "ENC": true
+        }
+      }
     },
     {
       "sku": "AUDI076",
@@ -5309,6 +5321,18 @@
           "seo-contenido.json#AUDI061",
           "importacion/contratos/AUDI061.json"
         ]
+      },
+      "correccionANCIA038": {
+        "propuesta": "Audífonos AirPods 4 ANC",
+        "evidencia": {
+          "fuente": "https://drive.google.com/file/d/1odgBkkzm3kDvB8r2MKx5TvopN2NO4wr7/view?usp=drivesdk",
+          "sha256": "9fac77e0e8936e619439e561c51cf410a55bf83d73e50ef59243103c108c27de",
+          "archivoOriginal": "AUDI061.jpg",
+          "cotejo": "Etiqueta ANC en empaque propio; producto y código asociados al contrato.",
+          "ANC": true,
+          "IA": false,
+          "ENC": false
+        }
       }
     },
     {
@@ -6165,6 +6189,18 @@
           "seo-contenido.json#AUDI123",
           "importacion/contratos/AUDI123.json"
         ]
+      },
+      "correccionANCIA038": {
+        "propuesta": "Audífonos AirPods Pro 3 con IA",
+        "evidencia": {
+          "fuente": "https://drive.google.com/file/d/1MHXBPzQRAiKFPQLzK_ZEBkR-Lgz6Eyrk/view?usp=drivesdk",
+          "sha256": "ceb0af923d1adfd33fb07ef4fe6c6cbc0fb9ce5ed3b70ab2614382cb3d3e0c0b",
+          "archivoOriginal": "AUDI123.jpg",
+          "cotejo": "Etiquetas AI y ANC en empaque propio; AI se presenta como IA en español, sin inventar funciones concretas.",
+          "ANC": true,
+          "IA": true,
+          "ENC": false
+        }
       }
     },
     {
@@ -22293,6 +22329,18 @@
           "seo-contenido.json#AUDI001",
           "importacion/contratos/AUDI001.json"
         ]
+      },
+      "correccionANCIA038": {
+        "propuesta": "Audífonos AirPods Pro 2 ANC",
+        "evidencia": {
+          "fuente": "https://drive.google.com/file/d/1TUXdtQEpUoaP-3omr9IzWk0jcr9Kco0W/view?usp=drivesdk",
+          "sha256": "5c6dd64e274e2727d4e507bf7d584cadf711be6e9f8c846c4cfbc2b7b93d6d12",
+          "archivoOriginal": "AUDI001.jpg",
+          "cotejo": "Etiqueta ANC en empaque propio; producto y código asociados al contrato.",
+          "ANC": true,
+          "IA": false,
+          "ENC": false
+        }
       }
     },
     {
@@ -23003,5 +23051,20 @@
       "CUBO025"
     ],
     "vehicularUniversalConservado": "CARG039"
+  },
+  "resolucionesLote038": {
+    "revisiones": 4,
+    "presentacionesAdicionales": 0,
+    "acumuladas": 757,
+    "fueraDelLoteIntactas": 753,
+    "IAConfirmada": [
+      "AUDI123"
+    ],
+    "ANCConfirmado": [
+      "AUDI061",
+      "AUDI001",
+      "AUDI063",
+      "AUDI123"
+    ]
   }
 }
