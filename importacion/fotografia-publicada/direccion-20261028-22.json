@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Corregir CARG028 y CUBO024 desde siete referencias nuevas: mismo cuerpo físico confirmado por propietario, con cable sólo CARG028; sin caja y producto compatible. Conservar las imágenes aprobadas, títulos, datos comerciales, originales y URLs.",
   "productos": {
     "CARG028": {
@@ -1671,5 +1671,16 @@
       }
     ]
   },
-  "regla_del_propietario": "SIN CAJA y PRODUCTO COMPATIBLE prevalecen en la presentación fotográfica. No modificar los datos comerciales ni inferir autenticidad."
+  "regla_del_propietario": "SIN CAJA y PRODUCTO COMPATIBLE prevalecen en la presentación fotográfica. No modificar los datos comerciales ni inferir autenticidad.",
+  "fecha_primera_verificacion_publica": "2026-10-28T18:01:09.476611+00:00",
+  "verificacion": {
+    "workflow_run": 40735830853,
+    "http_verificacion_directa": true,
+    "ambito_prueba_inicial": "CARG028/CUBO024: fichas, galería, portada y metadatos públicos; originales, referencias y versiones comprobados por SHA-256.",
+    "chromium": [
+      1280,
+      390
+    ],
+    "originales_conservados": true
+  }
 }
