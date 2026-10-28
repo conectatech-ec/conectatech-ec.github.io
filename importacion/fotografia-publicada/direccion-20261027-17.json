@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Ajuste de enchufes de CUBO009/CUBO010 desde vistas físicas propias y encuadres conservadores de maestros vigentes, conservando datos y fotografías ajenas. Conservar las imágenes aprobadas, títulos, datos comerciales, originales y URLs.",
   "productos": {
     "CUBO009": {
@@ -1736,5 +1736,16 @@
       },
       "vistas": []
     }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-28T03:19:53.866668+00:00",
+  "verificacion": {
+    "workflow_run": 40625193015,
+    "http_verificacion_directa": true,
+    "ambito_prueba_inicial": "Siete fichas, ambas galerías HTML, portada y metadatos públicos; hashes de originales, fuentes, secundarios y nuevas versiones.",
+    "chromium": [
+      1280,
+      390
+    ],
+    "originales_conservados": true
   }
 }
