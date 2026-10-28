@@ -8,14 +8,20 @@ const families=familiesFromHTML('const categoryFamilies={"Telefonos":"Celulares 
 const classification=classify(products,content,families);
 assert.equal(classification.bySKU.get('LUZ001').familia_web,'Fotografía');
 assert.equal(classification.bySKU.get('NOVER001').label,'');
-// Aprobación específica TELF001, sin abrir otros teléfonos ni imágenes pendientes.
-const liberados=classify([{sku:'TELF001',category:'Telefonos'},{sku:'TELF012',category:'Telefonos'}],{
- TELF001:{telefonoLiberado:true},TELF012:{telefonoLiberado:true}
+// Dirección aprobó todos los teléfonos existentes: estos tres faltaban en el control editorial.
+const liberados=classify([
+ {sku:'TELF001',category:'Telefonos'},{sku:'TELF012',category:'Telefonos'},
+ {sku:'TELF015',category:'Telefonos'},{sku:'TELF099',category:'Telefonos'},
+ {sku:'AUDI001',category:'Audifonos'}
+],{
+ TELF001:{telefonoLiberado:true},TELF012:{telefonoLiberado:true},TELF015:{},
+ TELF099:{telefonoLiberado:true},AUDI001:{telefonoLiberado:true}
 },families);
-assert.equal(liberados.bySKU.get('TELF001').aprobado,true);
-assert.equal(liberados.bySKU.get('TELF012').aprobado,false);
-const sinImagenAprobada=classify([{sku:'TELF001',category:'Telefonos'}],{TELF001:{telefonoLiberado:true,imagenPendiente:true}},families);
-assert.equal(sinImagenAprobada.bySKU.get('TELF001').aprobado,false);
+for(const sku of ['TELF001','TELF012','TELF015'])assert.equal(liberados.bySKU.get(sku).aprobado,true);
+assert.equal(liberados.bySKU.get('TELF099').aprobado,false,'No aprobar automáticamente teléfonos futuros');
+assert.equal(liberados.bySKU.get('AUDI001').aprobado,false,'Sin cambios de aprobación en otros rubros');
+const sinImagenAprobada=classify([{sku:'TELF012',category:'Telefonos'}],{TELF012:{telefonoLiberado:true,imagenPendiente:true}},families);
+assert.equal(sinImagenAprobada.bySKU.get('TELF012').aprobado,false);
 
 assert.throws(()=>classify([products[0],products[0]],content,families),/duplicado/);
 const meta=products.map(p=>({id:p.sku,custom_label_0:classification.bySKU.get(p.sku).label,availability:p.sku==='CERO001'?'out of stock':'in stock'}));
