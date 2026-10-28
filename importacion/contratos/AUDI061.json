@@ -1,10 +1,10 @@
 {
   "sku": "AUDI061",
   "nombre_original": "Audifonos Inalambricos Airpods 4 Anc 4Ta",
-  "titulo_comercial": "Audífonos inalámbricos estilo AirPods 4 AI",
+  "titulo_comercial": "Audífonos inalámbricos estilo AirPods 4 ANC",
   "tipo": "generico",
   "marca": "Genérico",
-  "modelo": "Estilo AirPods 4 AI",
+  "modelo": "Estilo AirPods 4 ANC",
   "variante": "Blanco",
   "categoria_original": "Audifonos",
   "categoria_comercial": "Audio y Audífonos",
@@ -135,7 +135,7 @@
   "especificaciones": [
     {
       "nombre": "Modelo",
-      "valor": "Estilo AirPods 4 AI",
+      "valor": "Estilo AirPods 4 ANC",
       "fuentes": [
         "https://drive.google.com/file/d/1L3pJ6syhLx5g0wy1YUXsuI6xGNjcvXYC/view?usp=drivesdk",
         "https://drive.google.com/file/d/1hrLb4m8VoH58jkKivDAcdoRPXqd67wzV/view?usp=drivesdk",
@@ -165,6 +165,16 @@
         "https://drive.google.com/file/d/1hrLb4m8VoH58jkKivDAcdoRPXqd67wzV/view?usp=drivesdk",
         "https://drive.google.com/file/d/1odgBkkzm3kDvB8r2MKx5TvopN2NO4wr7/view?usp=drivesdk",
         "https://drive.google.com/file/d/1uWPS4RCB_Z-j2mKIeRvYjmMMn7H52x9c/view?usp=drivesdk"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Cancelación de ruido",
+      "valor": "ANC",
+      "fuentes": [
+        "https://drive.google.com/file/d/1odgBkkzm3kDvB8r2MKx5TvopN2NO4wr7/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -364,5 +374,29 @@
       "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
       "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
+  },
+  "correccion_atributo_038": {
+    "modeloIncorrectoAnterior": "Estilo AirPods 4 AI",
+    "modeloCorregido": "Estilo AirPods 4 ANC",
+    "motivo": "Rectificación expresa del propietario: ANC no es IA; nombre original593 y foto de empaque ANC coinciden.",
+    "fuente": {
+      "fuente": "https://drive.google.com/file/d/1odgBkkzm3kDvB8r2MKx5TvopN2NO4wr7/view?usp=drivesdk",
+      "sha256": "9fac77e0e8936e619439e561c51cf410a55bf83d73e50ef59243103c108c27de",
+      "archivoOriginal": "AUDI061.jpg",
+      "cotejo": "Etiqueta ANC en empaque propio; producto y código asociados al contrato.",
+      "ANC": true,
+      "IA": false,
+      "ENC": false
+    },
+    "nombreOriginal593Intacto": true
+  },
+  "evidencia_atributos_038": {
+    "fuente": "https://drive.google.com/file/d/1odgBkkzm3kDvB8r2MKx5TvopN2NO4wr7/view?usp=drivesdk",
+    "sha256": "9fac77e0e8936e619439e561c51cf410a55bf83d73e50ef59243103c108c27de",
+    "archivoOriginal": "AUDI061.jpg",
+    "cotejo": "Etiqueta ANC en empaque propio; producto y código asociados al contrato.",
+    "ANC": true,
+    "IA": false,
+    "ENC": false
   }
 }

@@ -192,6 +192,26 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "Cancelación de ruido",
+      "valor": "ANC",
+      "fuentes": [
+        "https://drive.google.com/file/d/1MHXBPzQRAiKFPQLzK_ZEBkR-Lgz6Eyrk/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Inteligencia artificial",
+      "valor": "IA (AI en el empaque)",
+      "fuentes": [
+        "https://drive.google.com/file/d/1MHXBPzQRAiKFPQLzK_ZEBkR-Lgz6Eyrk/view?usp=drivesdk",
+        "datos-593/inventario-publico.csv"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
@@ -391,5 +411,14 @@
       "archivo": "reportes/lote-066/http-publicacion.json",
       "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
+  },
+  "evidencia_atributos_038": {
+    "fuente": "https://drive.google.com/file/d/1MHXBPzQRAiKFPQLzK_ZEBkR-Lgz6Eyrk/view?usp=drivesdk",
+    "sha256": "ceb0af923d1adfd33fb07ef4fe6c6cbc0fb9ce5ed3b70ab2614382cb3d3e0c0b",
+    "archivoOriginal": "AUDI123.jpg",
+    "cotejo": "Etiquetas AI y ANC en empaque propio; AI se presenta como IA en español, sin inventar funciones concretas.",
+    "ANC": true,
+    "IA": true,
+    "ENC": false
   }
 }
