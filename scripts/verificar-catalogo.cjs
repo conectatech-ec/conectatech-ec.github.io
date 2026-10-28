@@ -62,7 +62,7 @@ async function main() {
   const editorialFile=safe('importacion/editorial/publicados.json');
   const editorial=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile)):null;
   const entry=p=>editorial?.activo&&!editorial.excluirPrefijos?.some(x=>p.sku.startsWith(x))?editorial.productos[p.sku]:null;
-  const editorialDate=(p,payload)=>{const e=entry(p),v=e?.publicacionVerificada||e?.publicacionAnterior,m=payload.productos[p.sku]?.actualizadoEn||'';return v?.estado==='VERIFICADO_HTTP_CHROMIUM'&&(Date.parse(v.fecha)||0)>(Date.parse(m)||0)?v.fecha:'';};
+  const editorialDate=(p,payload)=>{const e=entry(p),events=[e?.publicacionVerificada||e?.publicacionAnterior,editorial?.actualizacionesFicha?.[p.sku]?.publicacionVerificada],v=events.filter(x=>x?.estado==='VERIFICADO_HTTP_CHROMIUM'&&x.sha256Informe&&Number.isFinite(Date.parse(x.fecha))).sort((a,b)=>Date.parse(b.fecha)-Date.parse(a.fecha))[0],m=payload.productos[p.sku]?.actualizadoEn||'';return v&&(Date.parse(v.fecha)||0)>(Date.parse(m)||0)?v.fecha:'';};
   const pageSize = Number(index.match(/(?:const|let) pageSize\s*=\s*(\d+)/)?.[1] || 24);
   const report = {version: 1, fecha: new Date().toISOString(), base: opt.base, sku_solicitados: skus,
     alcance: 'Renderizado real, navegación y datos del catálogo; no certifica fidelidad visual del producto ni publicación.',
@@ -249,8 +249,9 @@ async function main() {
             ensure(Number.isFinite(Date.parse(published.actualizadoEn)) && /^[a-f0-9]{64}$/.test(published.huella || ''), 'Metadatos publicados sin fecha o huella válidas.');
             ensure(current.actualizado === (editorialDate(p,payload)||published.actualizadoEn), 'Fecha de actualización no coincide con metadatos.');
           } else {
-            ensure(current.actualizado === '', 'El candidato nuevo tiene una fecha de publicación artificial.');
-            product.metadatos = 'CANDIDATO_LOCAL_SIN_FECHA_PUBLICA';
+            const verified=editorialDate(p,payload);
+            ensure(current.actualizado === verified, 'Fecha distinta del cambio de ficha verificado o fecha artificial en candidato nuevo.');
+            product.metadatos = verified?'CAMBIO_FICHA_VERIFICADO_SIN_FOTO':'CANDIDATO_LOCAL_SIN_FECHA_PUBLICA';
           }
           ensure(compactCard(current,width) && current.alto_estado<=(availabilityCore.forProduct(p).replenishment?90:60) && current.alto_subtitulo<=40, 'Tarjeta del producto pierde diseño compacto.');
           ensure(current.imagen?.cargada && current.imagen?.ajuste === 'contain', 'Imagen no carga o usa ajuste diferente decontain.');
