@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-28T05:10:50.346Z",
+  "at": "2026-10-28T05:15:04.135Z",
   "scope": "read_only_observation_and_isolated_operator_preview",
   "association": {
     "schema": "conectatech.marketplace_association.v1",
@@ -17,7 +17,7 @@
     "production_changes_authorized": false
   },
   "prepared": {
-    "at": "2026-10-28T05:10:50.346Z",
+    "at": "2026-10-28T05:15:04.135Z",
     "association": {
       "schema": "conectatech.marketplace_association.v1",
       "association_id": "marketplace-redmi15c-128-01",
@@ -82,10 +82,18 @@
   "existing_automations_changed": false,
   "real_channel_e2e_complete": false,
   "published_Hub": {
-    "cut_date": "2026-10-27",
-    "sha256": "04f51aa6796f5c61026e414b98f76b51b3453fcbea7e6d2277db02e8368855bd",
-    "matches_candidate": true
+    "pointer_cut": "2026-10-27",
+    "pointer_sha256": "04f51aa6796f5c61026e414b98f76b51b3453fcbea7e6d2277db02e8368855bd",
+    "snapshot_cut": "2026-10-26",
+    "snapshot_sha256": "f37f364dfb30f005bf07f5fb0d7052e8f1dad7e1ae73a9baeacc2ce88aa5eadc",
+    "reference_compatible": false,
+    "pointer_matches_candidate": true,
+    "snapshot_matches_candidate": false,
+    "version_consistent": false
   },
+  "readiness_blockers": [
+    "PUBLISHED_HUB_CONTRACT_OR_VERSION_MISMATCH"
+  ],
   "catalog_anonymous_http": 200,
   "handoff_roundtrip": {
     "association_id": "marketplace-redmi15c-128-01",
@@ -120,5 +128,5 @@
     "send_enabled": false
   },
   "technical_preflight_passed": true,
-  "workflow_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/40636447407"
+  "workflow_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/40636859452"
 }
