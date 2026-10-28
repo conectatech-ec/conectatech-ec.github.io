@@ -1,0 +1,38 @@
+name: Verificar oportunidad Marketplace TELF017 sin despliegue
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['automatizacion/marketplace-telf017/**', '.github/workflows/marketplace-telf017.yml']
+permissions:
+  contents: read
+concurrency:
+  group: marketplace-telf017-observador
+  cancel-in-progress: false
+jobs:
+  observar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: conectatech-piloto-gratis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: automatizacion
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node automatizacion/marketplace-telf017/e2e.test.mjs
+      - name: Leer Hub y consultar vista privada; nunca desplegar ni enviar mensajes
+        run: node automatizacion/marketplace-telf017/preflight.mjs
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          WHATSAPP_ACCESS_TOKEN: ${{ secrets.WHATSAPP_ACCESS_TOKEN }}
+          META_WABA_ID: ${{ vars.META_WABA_ID }}
+          META_PHONE_NUMBER_ID: ${{ vars.META_PHONE_NUMBER_ID }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: TELF017-oportunidad-y-limites-verificados
+          path: automatizacion/marketplace-telf017/cloud-preflight.json
+          retention-days: 7

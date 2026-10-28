@@ -1,0 +1,60 @@
+{
+  "schema": "conectatech.commercial.v1",
+  "source": {
+    "file_name": "Reporte-Inventario.xlsx",
+    "sha256": "04f51aa6796f5c61026e414b98f76b51b3453fcbea7e6d2277db02e8368855bd",
+    "cut_date": "2026-10-27",
+    "generated_at": "2026-10-28T04:41:08Z",
+    "received_at": "2026-10-28T05:01:58.001148Z",
+    "sheet": "reporte-inventario",
+    "mapping": {
+      "sku": "D",
+      "name": "C",
+      "availability": "B>0",
+      "promo_cash": "Q",
+      "pvp_card": "X+Y"
+    }
+  },
+  "normalized_at": "2026-10-28T05:01:58.001148Z",
+  "published_at": null,
+  "expires_at": "2026-10-29T04:41:08Z",
+  "products": [
+    {
+      "sku": "TELF017",
+      "source_name": "TELEFONO REDMI 15C 128GB 4GB+4GB",
+      "name": "Teléfono Redmi 15C 128 GB | 8 GB RAM total",
+      "category": "TELEFONOS",
+      "variant_gb": [
+        4,
+        128
+      ],
+      "availability": "in_stock",
+      "blocked_reasons": [],
+      "prices": {
+        "currency": "USD",
+        "promo_cash_cents": 15990,
+        "pvp_card_cents": 19988
+      },
+      "provenance": {
+        "sheet": "reporte-inventario",
+        "row": 1500,
+        "cells": {
+          "sku": "D1500",
+          "name": "C1500",
+          "cash": "Q1500",
+          "pvp_base": "X1500",
+          "pvp_vat": "Y1500",
+          "availability": "B1500"
+        },
+        "cash_source": "159.9",
+        "pvp_base_source": "173.81",
+        "pvp_vat_source": "26.07"
+      },
+      "web": {
+        "url": "https://conectatech-ec.github.io/productos/telf017-telefono-redmi-15c-128gb-4gb-4gb/",
+        "price_matches": true
+      }
+    }
+  ],
+  "view_scope": "derived_TELF017_candidate_same_normalizer_not_a_new_source"
+}
