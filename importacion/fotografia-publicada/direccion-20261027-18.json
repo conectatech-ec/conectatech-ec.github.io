@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Corregir TERM001 a la variante azul confirmada expresamente por el propietario; conservar el modelo y los datos vigentes. Conservar las imágenes aprobadas, títulos, datos comerciales, originales y URLs.",
   "productos": {
     "TERM001": {
@@ -1134,5 +1134,16 @@
     ],
     "original_y_versiones_verificados_por_sha256": true,
     "revision_visual": "Azul en tapa, cuerpo y base; aro metálico plateado, bandas negras y geometría del modelo conservados."
+  },
+  "fecha_primera_verificacion_publica": "2026-10-28T03:41:54.348531+00:00",
+  "verificacion": {
+    "workflow_run": 40627332830,
+    "http_verificacion_directa": true,
+    "ambito_prueba_inicial": "TERM001: ficha, galería HTML, portada y metadatos públicos; hashes del original, referencias y nuevas versiones.",
+    "chromium": [
+      1280,
+      390
+    ],
+    "originales_conservados": true
   }
 }
