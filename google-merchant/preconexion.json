@@ -1,15 +1,15 @@
 {
   "merchant_center": "5874003439",
-  "verificado_en_utc": "2026-10-27T13:09:53.626326+00:00",
-  "fuente_commit": "1b16915c4cc5f2fd529b2be23b3b4f825589fca1",
+  "verificado_en_utc": "2026-10-28T13:39:25.869347+00:00",
+  "fuente_commit": "181228c3d01de57dda0199e10315647f2fa06424",
   "fuente_rama": "main (lectura solamente)",
   "inventario_sha256": "6b81ccf7bbbd619e2181e3d27594250bb2ed439ad49730128f2a17b348e17018",
   "fecha_corte": "2026-10-22",
-  "antiguedad_corte_dias": 5,
+  "antiguedad_corte_dias": 6,
   "inventario_origen": "Reporte-Inventario al 22-10-2026.xlsx",
   "origen_privado_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
-  "articulos_feed": 642,
-  "articulos_con_http_publico_verificado": 642,
+  "articulos_feed": 620,
+  "articulos_con_http_publico_verificado": 620,
   "coherencia_catalogo_maestro": {
     "sku_web": 1170,
     "sku_con_revision_corte16": 674,
@@ -17,19 +17,27 @@
       {
         "sku": "REL071",
         "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "CUBO021",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "FOCO004",
+        "motivo": "disponibilidad_web_difiere_corte16"
       }
     ],
     "nota": "Revisión limitada a los SKU del feed anterior, sin cantidades internas ni precios privados. SKU sin esta revisión quedan excluidos; diferencias de precio o de disponibilidad con la ficha excluyen el artículo."
   },
   "precio_final_documentado": "Corte corregido16: Q V. TOTAL = contado; X PVP + Y importe de IVA = PVP final. IVA incluido. Sin recalcular porcentajes ni modificar precios web.",
   "fechas_inventario_en_articulos": {
-    "22/10/2026": 642
+    "22/10/2026": 620
   },
   "stock_tiempo_real_acreditado": 0,
   "observaciones_fichas": {
-    "fichas_con_whatsapp": 642,
-    "fichas_con_contraentrega_quito": 642,
-    "fichas_con_precio_sujeto_confirmacion": 642,
+    "fichas_con_whatsapp": 620,
+    "fichas_con_contraentrega_quito": 620,
+    "fichas_con_precio_sujeto_confirmacion": 620,
     "fichas_con_formulario": 0
   },
   "enlaces_politicas_en_fichas": [],
