@@ -121,7 +121,7 @@ def commercial_brand(sku, root=ROOT):
     names = {
         'JBL': r'\bJBL\b|\b(?:Tune|Endurance|Soundgear|Flip|Charge)\b',
         'SAMSUNG': r'\b(?:Samsung|SAM)\b|\bGalaxy\b',
-        'APPLE': r'\bApple\b|\bAirpods\b|\biPhone\b|\biPad\b',
+        'APPLE': r'\bApple\b|\bAirpods\b|\biPhone\b|\biPad\b|\bIPH\b|\bMagSafe\s*2\b',
         'BOSE': r'\bBose\b|\b(?:Quietcomfort|Quitcomfort)\b|Ultra\s+Open\s+Earbuds',
         'LENOVO': r'\bLenovo\b|\bThinkplus\b'
     }

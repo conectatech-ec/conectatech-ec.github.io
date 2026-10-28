@@ -1,0 +1,9 @@
+const assert=require('node:assert/strict'),{label,apple,visible}=require('./condicion-ficha.cjs');
+const generic={reglaSKU:{autenticidad:'genérico/compatible',rotulo_ficha:'AAA'},caracteristicas:{}};
+for(const name of ['Cargador para iPhone 20 W','Audífonos EarPods Lightning','Cable USB-A a Lightning','Cargador para Mac MagSafe 2'])assert.equal(label({sku:'CABL005',name},generic),'Producto compatible');
+for(const name of ['Cargador Xiaomi de 33 W','Control inalámbrico PlayStation 4','Cargador Samsung de 45 W'])assert.equal(label({sku:'CARG036',name},generic),'AAA');
+assert.equal(apple({sku:'CARG039',name:'Cargador para vehículo 4 en 1'},{...generic,caracteristicas:{Conexiones:'Lightning y USB-C'}}),false);
+assert.equal(label({sku:'MICR03',name:'Micrófonos para iPhone'},{...generic,reglaSKU:{autenticidad:'original verificado'}}),'Producto original');
+assert.equal(visible({sku:'ADAP007',name:'Adaptador Lightning'},generic,'Clasificación: Producto compatible (AAA)'),'Clasificación: Producto compatible');
+assert.equal(visible({sku:'CUBO009',name:'Cargador Xiaomi'},generic,'Producto compatible (AAA)'),'Producto compatible (AAA)');
+console.log('Condición en ficha: Apple compatible, otras marcas AAA y originales preservados.');

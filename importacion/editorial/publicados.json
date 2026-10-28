@@ -823,36 +823,52 @@
       }
     },
     "CARG001": {
-      "titulo": "Cargador 35 W con doble USB-C",
-      "subtitulo": "Cable USB-C a Lightning incluido",
+      "titulo": "Cargador para iPhone 35 W Lightning",
+      "subtitulo": "Apple compatible · doble USB-C",
       "tituloAnterior": "Cargador compatible 35 W de doble USB-C con cable Lightning",
       "nombre593": "Cargador Iph 35W Doble Conector Usb-C + Usb-C Y Cable Usb-C A Lightning",
       "marca": "",
       "modelo": "Adaptador 35 W USB-C + USB-C",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CARG001",
         "importacion/contratos/CARG001.json"
       ],
       "evidenciaAtributos": {
-        "Potencia": "35 W, según empaque",
-        "Puertos": "2 USB-C",
-        "Cable incluido": "USB-C a Lightning",
-        "Color": "Blanco",
-        "Clasificación": "Producto original"
+        "tituloOriginalVerificado": "Cargador compatible 35 W de doble USB-C con cable Lightning",
+        "atributos": {
+          "Potencia": "35 W, según empaque",
+          "Puertos": "2 USB-C",
+          "Cable incluido": "USB-C a Lightning",
+          "Color": "Blanco",
+          "Clasificación": "Producto compatible (AAA)",
+          "Modelo técnico": "Adaptador 35 W USB-C + USB-C"
+        },
+        "varianteContractual": "Blanco con cable USB-C a Lightning",
+        "nombre593": "CARGADOR IPH 35W DOBLE CONECTOR USB-C + USB-C Y CABLE USB-C A LIGHTNING"
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
       "foto": "/imagenes/carg001/CARG001-01.webp",
       "sha256Foto": "361eecf37325826a65b545e2913dee7e917c855eda92cc6f14054fa6e4347ab7",
-      "causa": "Título extenso; revisar distribución en título/subtítulo antes de acortar.",
-      "lote": "editorial-001",
-      "publicacionVerificada": {
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "tituloEditorialAnterior": "Cargador 35 W con doble USB-C",
+      "subtituloEditorialAnterior": "Cable USB-C a Lightning incluido",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-24T03:39:06.751Z",
         "informe": "reportes/editorial-selectivo/lote-001/publicacion-http-chromium.json",
         "sha256Informe": "4682bb1876c9601481f7a67e8f999316f732f430af12e7bbd4e155e3f7a4bd00",
         "huellaTitulo": "a2c356641e5d61415399087b21e001f7190eabf9fbd1cdd73afdc4d5c1f4c4ef"
+      },
+      "mostrarTituloEnFicha": true,
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR IPH 35W DOBLE CONECTOR USB-C + USB-C Y CABLE USB-C A LIGHTNING",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
       }
     },
     "CARG041": {
@@ -12131,7 +12147,7 @@
       "nombre593": "Audifonos Alambricos Earpods Lightning",
       "marca": "",
       "modelo": "Estilo EarPods Lightning",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#AUDI008",
         "importacion/contratos/AUDI008.json"
@@ -12145,20 +12161,21 @@
           "Conector": "Lightning"
         }
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
       "foto": "/imagenes/audi008/AUDI008-01.webp",
       "sha256Foto": "2458f4991f7da31395fd1c7c34452f80740da1ec0a4846b52633f8f09b0d9d32",
       "causa": "Corregir concordancia de color y compactar información complementaria.",
       "lote": "editorial-014",
-      "publicacionVerificada": {
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-26T19:55:56.925Z",
         "informe": "reportes/editorial-selectivo/lote-014/publicacion-http-chromium.json",
         "sha256Informe": "8ae692a26c89c499d27b0074f5dc2b93ee4fe3078b00dbb7bf74ad6db1b74e9d",
         "huellaTitulo": "1d9372a9e6302a77399f62b4aa36e8efa879818193368b27aecfe33248abe4f3"
-      },
-      "mostrarTituloEnFicha": true
+      }
     },
     "AUDI009": {
       "titulo": "Audífonos tipo EarPods USB-C",
@@ -14077,7 +14094,7 @@
       "nombre593": "Cargador 120W XIA GAN Charger SET",
       "marca": "",
       "modelo": "BHR7525CN",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CARG036",
         "importacion/contratos/CARG036.json"
@@ -14090,28 +14107,22 @@
           "Presentación": "Cargador de pared y cable separado"
         }
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/carg036-cargador-120w-xia-gan-charger-set/",
       "foto": "/imagenes/carg036/CARG036-01.webp",
       "sha256Foto": "239ece2f3496ce594799d391509cd6dd6c8cfaf47877485c83a9f6dde377120f",
       "causa": "Desarrollar la abreviatura comercial XIA como Xiaomi según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
       "lote": "editorial-036",
-      "publicacionVerificada": {
-        "estado": "VERIFICADO_HTTP_CHROMIUM",
-        "fecha": "2026-10-28T04:08:40.531Z",
-        "informe": "reportes/editorial-selectivo/lote-036/publicacion-http-chromium.json",
-        "sha256Informe": "f84ca93246dc137c6246dd669a4be1ab5aa304deff406d2b52942c972c397bd5",
-        "huellaTitulo": "9d72f9c21b36d16465a02e0a7fcd5c69523ca941f23c5bd8cb98bb3ea348f9f1"
-      },
+      "publicacionVerificada": null,
       "mostrarTituloEnFicha": true,
       "tituloEditorialAnterior": "Cargador GaN con cable incluido",
       "subtituloEditorialAnterior": "USB-A a USB-C · de pared",
       "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
-        "fecha": "2026-10-26T21:57:24.104Z",
-        "informe": "reportes/editorial-selectivo/lote-016/publicacion-http-chromium.json",
-        "sha256Informe": "78a59af56bd3e44b13654c7cf9dca94992efc7c7061953d2276c628f48862719",
-        "huellaTitulo": "d3e09c61a1166cd77b87dbaa4c02779fe89176349ac0cbcff0ae862f1bdafff5"
+        "fecha": "2026-10-28T04:08:40.531Z",
+        "informe": "reportes/editorial-selectivo/lote-036/publicacion-http-chromium.json",
+        "sha256Informe": "f84ca93246dc137c6246dd669a4be1ab5aa304deff406d2b52942c972c397bd5",
+        "huellaTitulo": "9d72f9c21b36d16465a02e0a7fcd5c69523ca941f23c5bd8cb98bb3ea348f9f1"
       },
       "aliasMarcaConfirmadoPropietario": {
         "alias": "XIA",
@@ -14122,13 +14133,13 @@
       }
     },
     "CARG058": {
-      "titulo": "Cargador MagSafe 2 de 85 W",
-      "subtitulo": "Compatible con Mac · cable integrado",
+      "titulo": "Cargador para Mac 85 W MagSafe 2",
+      "subtitulo": "Apple compatible · cable integrado",
       "tituloAnterior": "Cargador compatible MagSafe 2 de 85 W para Mac",
       "nombre593": "Cargador Para Mac Magsafe 2 85W",
       "marca": "",
       "modelo": "Adaptador MagSafe 2 85 W",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CARG058",
         "importacion/contratos/CARG058.json"
@@ -14140,24 +14151,36 @@
           "Conector": "Compatible con MagSafe 2",
           "Cable": "Integrado",
           "Color": "Blanco",
-          "Clasificación": "Producto original",
+          "Clasificación": "Producto compatible (AAA)",
           "Modelo técnico": "Adaptador MagSafe 2 85 W"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CARGADOR PARA MAC MAGSAFE 2 85W"
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/carg058-cargador-para-mac-magsafe-2-85w/",
       "foto": "/imagenes/carg058/CARG058-01.webp",
       "sha256Foto": "c01d19cd908e23563504eaeea36da4d7786afb324fea4b48f3735d06779435eb",
-      "causa": "Compactar título largo manteniendo compatibilidad y potencia indicadas.",
-      "lote": "editorial-016",
-      "publicacionVerificada": {
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "tituloEditorialAnterior": "Cargador MagSafe 2 de 85 W",
+      "subtituloEditorialAnterior": "Compatible con Mac · cable integrado",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-26T21:57:24.104Z",
         "informe": "reportes/editorial-selectivo/lote-016/publicacion-http-chromium.json",
         "sha256Informe": "78a59af56bd3e44b13654c7cf9dca94992efc7c7061953d2276c628f48862719",
         "huellaTitulo": "0a196e111e7e6e10e236b3fac485d2a237479732578806cc3ca59267fb6a5254"
       },
-      "mostrarTituloEnFicha": true
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR PARA MAC MAGSAFE 2 85W",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      },
+      "excepcionDispositivoVerificada": "Mac con MagSafe 2; no anunciar para iPhone."
     },
     "CARG059": {
       "titulo": "Cargador USB-C de 96 W para Mac",
@@ -16930,8 +16953,8 @@
       "modelosBusquedaVerificados": []
     },
     "CUBO021": {
-      "titulo": "Cargador USB-C de 40 W",
-      "subtitulo": "Compatible con iPhone",
+      "titulo": "Cargador para iPhone 40 W USB-C",
+      "subtitulo": "Apple compatible · de pared",
       "tituloAnterior": "Cargador USB-C de 40 W para iPhone",
       "nombre593": "Cubo 40W Usb-c",
       "marca": "",
@@ -16947,24 +16970,35 @@
           "Potencia": "40 W nominales según referencia",
           "Conexión": "Un puerto USB-C",
           "Formato": "Adaptador compacto de pared"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CUBO 40W USB-C"
       },
       "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/cubo021-cubo-40w-usb-c/",
       "foto": "/imagenes/cubo021/CUBO021-01.webp",
       "sha256Foto": "cf3ce5cf4525c4d07b92b47d5a9e4bc43f9442f9f80fd778ba0751be61fd2eb9",
-      "causa": "Compactar principal y dejar compatibilidad explícita sin atribuir fabricación Apple.",
-      "lote": "editorial-020",
-      "publicacionVerificada": {
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador USB-C de 40 W",
+      "subtituloEditorialAnterior": "Compatible con iPhone",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T03:28:21.908Z",
         "informe": "reportes/editorial-selectivo/lote-020/publicacion-http-chromium.json",
         "sha256Informe": "0f51905ff101138f690a465236d83dde5503848e3a4ded53734e272d8bbd727c",
         "huellaTitulo": "bf0ebf10166218753dfef61dd199f6f5938fcd19c566d81d7889449408e81f3c"
       },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CUBO 40W USB-C",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      }
     },
     "CUBO018": {
       "titulo": "Cargador Monster de 20 W",
@@ -17010,7 +17044,7 @@
       "nombre593": "Cubo Cargador 33W XIA",
       "marca": "Xiaomi",
       "modelo": "",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CUBO009",
         "importacion/contratos/CUBO009.json"
@@ -17024,30 +17058,24 @@
           "Contenido de venta": "Un cargador de pared."
         }
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
       "foto": "/imagenes/cubo009/CUBO009-r2026102717-01.webp",
       "sha256Foto": "ef512c5f81a0af71c8b430f6e72980e3d656852c74771913bcf9bf0dc8e4692c",
-      "causa": "Desarrollar la abreviatura comercial XIA como Xiaomi según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
-      "lote": "editorial-036",
-      "publicacionVerificada": {
+      "causa": "Confirmación expresa del propietario: es AAA, sustituir Producto original por AAA en ficha, conservando título Xiaomi y fotografías.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador Xiaomi de 33 W",
+      "subtituloEditorialAnterior": "USB-A · dos patas planas",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-28T04:08:40.531Z",
         "informe": "reportes/editorial-selectivo/lote-036/publicacion-http-chromium.json",
         "sha256Informe": "f84ca93246dc137c6246dd669a4be1ab5aa304deff406d2b52942c972c397bd5",
         "huellaTitulo": "b3dc5d087c247fdaf9bf5f75575290d683450bd7f0598a0748555bc37104537f"
-      },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": [],
-      "tituloEditorialAnterior": "Cargador XIA de 33 W",
-      "subtituloEditorialAnterior": "USB-A · dos patas planas",
-      "publicacionAnterior": {
-        "estado": "VERIFICADO_HTTP_CHROMIUM",
-        "fecha": "2026-10-27T03:28:21.908Z",
-        "informe": "reportes/editorial-selectivo/lote-020/publicacion-http-chromium.json",
-        "sha256Informe": "0f51905ff101138f690a465236d83dde5503848e3a4ded53734e272d8bbd727c",
-        "huellaTitulo": "5832531fe13f9b2954045292057fc9c8b8bdbbefc7e75a112f9dc21ba475a3fe"
       },
       "aliasMarcaConfirmadoPropietario": {
         "alias": "XIA",
@@ -17055,7 +17083,9 @@
         "nombre593Original": "CUBO CARGADOR 33W XIA",
         "fuente": "Confirmación expresa del propietario: todo XIA es Xiaomi y todo SAM es Samsung.",
         "noAcreditaPorSiSoloFabricacionOriginal": true
-      }
+      },
+      "rotuloFichaVerificado": "AAA",
+      "evidenciaConfirmacionAAA": "importacion/editorial/instrucciones-037.json"
     },
     "CUBO008": {
       "titulo": "Cargador USB-C doble de 35 W",
@@ -17101,7 +17131,7 @@
       "nombre593": "Cubo Cargador 67W XIA",
       "marca": "Xiaomi",
       "modelo": "",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CUBO010",
         "importacion/contratos/CUBO010.json"
@@ -17115,30 +17145,24 @@
           "Contenido de venta": "Un cargador de pared."
         }
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/cubo010-cubo-cargador-67w-xia/",
       "foto": "/imagenes/cubo010/CUBO010-r2026102717-01.webp",
       "sha256Foto": "8b53faca2628db48e734bbbd896bf8a01e89dfad108b7df2f3524d0a21354e7d",
-      "causa": "Desarrollar la abreviatura comercial XIA como Xiaomi según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
-      "lote": "editorial-036",
-      "publicacionVerificada": {
+      "causa": "Confirmación expresa del propietario: es AAA, sustituir Producto original por AAA en ficha, conservando título Xiaomi y fotografías.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador Xiaomi de 67 W",
+      "subtituloEditorialAnterior": "USB-A · dos patas planas",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-28T04:08:40.531Z",
         "informe": "reportes/editorial-selectivo/lote-036/publicacion-http-chromium.json",
         "sha256Informe": "f84ca93246dc137c6246dd669a4be1ab5aa304deff406d2b52942c972c397bd5",
         "huellaTitulo": "f4e1333941d5062d28614b7ca49c437cb72a0a52243237a2b146d4a01bd654e9"
-      },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": [],
-      "tituloEditorialAnterior": "Cargador XIA de 67 W",
-      "subtituloEditorialAnterior": "USB-A · dos patas planas",
-      "publicacionAnterior": {
-        "estado": "VERIFICADO_HTTP_CHROMIUM",
-        "fecha": "2026-10-27T03:28:21.908Z",
-        "informe": "reportes/editorial-selectivo/lote-020/publicacion-http-chromium.json",
-        "sha256Informe": "0f51905ff101138f690a465236d83dde5503848e3a4ded53734e272d8bbd727c",
-        "huellaTitulo": "a1075c39d3c7a1359ab6360d0afc9c5d294c5b2828471213067b8db6b619120a"
       },
       "aliasMarcaConfirmadoPropietario": {
         "alias": "XIA",
@@ -17146,11 +17170,13 @@
         "nombre593Original": "CUBO CARGADOR 67W XIA",
         "fuente": "Confirmación expresa del propietario: todo XIA es Xiaomi y todo SAM es Samsung.",
         "noAcreditaPorSiSoloFabricacionOriginal": true
-      }
+      },
+      "rotuloFichaVerificado": "AAA",
+      "evidenciaConfirmacionAAA": "importacion/editorial/instrucciones-037.json"
     },
     "CUBO011": {
-      "titulo": "Cargador USB-A de 5 W",
-      "subtitulo": "Compatible con iPhone · compacto",
+      "titulo": "Cargador para iPhone 5 W USB-A",
+      "subtitulo": "Apple compatible · compacto",
       "tituloAnterior": "Cargador USB-A de 5 W para iPhone",
       "nombre593": "Cubo USB Power Adapter 5W Usb-a 18245",
       "marca": "",
@@ -17166,24 +17192,36 @@
           "Potencia": "5 W según referencia",
           "Conexión": "USB-A según empaque",
           "Transporte": "Formato compacto"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CUBO USB POWER ADAPTER 5W USB-A 18245"
       },
       "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/",
       "foto": "/imagenes/cubo011/CUBO011-01.webp",
       "sha256Foto": "250953f2f84f057169f3e76edcbeefa6ff40f6e2d9ce0fd189faa2eb3a75d205",
-      "causa": "Compactar principal y mantener compatibilidad visible sin atribuir fabricación Apple.",
-      "lote": "editorial-020",
-      "publicacionVerificada": {
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador USB-A de 5 W",
+      "subtituloEditorialAnterior": "Compatible con iPhone · compacto",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T03:28:21.908Z",
         "informe": "reportes/editorial-selectivo/lote-020/publicacion-http-chromium.json",
         "sha256Informe": "0f51905ff101138f690a465236d83dde5503848e3a4ded53734e272d8bbd727c",
         "huellaTitulo": "aa87cbeaec81b9ff24242e27a001c9a3304eca44064e3f65fe9aec0704b0a071"
       },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CUBO USB POWER ADAPTER 5W USB-A 18245",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      },
+      "excepcionConexionVerificada": "USB-A: no llamarlo USB-C/Lightning ni incluir un cable no documentado."
     },
     "POWE010": {
       "titulo": "Powerbank Monster con cables",
@@ -17784,7 +17822,7 @@
       "nombre593": "Cable Usb-c A Usb-c + Adaptador Usb-c Hembra A Lightning",
       "marca": "",
       "modelo": "",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CABL097",
         "importacion/contratos/CABL097.json"
@@ -17797,22 +17835,23 @@
           "Diseño": "Cable trenzado con adaptador sujeto"
         }
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/",
       "foto": "/imagenes/cabl097/CABL097-01.webp",
       "sha256Foto": "8e7467b6fa3df4d2c7f52ea93da8eedf77ac833dcd8038eda530cd84f8cacf1b",
       "causa": "Explicar presentación con adaptador sin hacer parecer que incluye dos cables.",
       "lote": "editorial-021",
-      "publicacionVerificada": {
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T03:29:02.481Z",
         "informe": "reportes/editorial-selectivo/lote-021/publicacion-http-chromium.json",
         "sha256Informe": "33f246294a7334b4472dddd39cb07539eade8ff4e2f4bd11625f28918facc84a",
         "huellaTitulo": "be62754f7717cb6de926c19d804b465460c8a4461e344bc3bc7eb435344f85e6"
-      },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      }
     },
     "CABL094": {
       "titulo": "Cable DisplayPort a HDMI de 3 m",
@@ -19335,7 +19374,7 @@
       "nombre593": "Microfono Inalambrico Doble Para Iphone K9",
       "marca": "",
       "modelo": "K9",
-      "condicionTarjeta": "De terceros",
+      "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#MICR03",
         "importacion/contratos/MICR03.json"
@@ -19349,22 +19388,23 @@
           "Modelo técnico": "K9"
         }
       },
-      "clasificacionReal": "genérico/compatible",
+      "clasificacionReal": "original verificado",
       "url": "https://conectatech-ec.github.io/productos/micr03-microfono-inalambrico-doble-para-iphone-k9/",
       "foto": "/imagenes/micr03/MICR03-01.webp",
       "sha256Foto": "ca74c81736e7d67b7c6daa3640b4933c691b446bf08350ca348c406298168506",
       "causa": "Sustituir código técnico por uso, cantidad y conexión comprobados.",
       "lote": "editorial-023",
-      "publicacionVerificada": {
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": false,
+      "modelosBusquedaVerificados": [],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T06:22:46.551Z",
         "informe": "reportes/editorial-selectivo/lote-023/publicacion-http-chromium.json",
         "sha256Informe": "836aa4b10a4b6703b4a2abceac0ad91b5ca7d2ce3a8a94815e5655a5b2367e19",
         "huellaTitulo": "fd938c5fb94b8fbd9e05ab822eb2ca336536c6bbe3ed43184717ee072f03d25c"
-      },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": false,
-      "modelosBusquedaVerificados": []
+      }
     },
     "MICR12": {
       "titulo": "Micrófono con receptor 3 en 1",
@@ -20285,13 +20325,13 @@
       "modelosBusquedaVerificados": []
     },
     "CARG029": {
-      "titulo": "Cargador 25 W con cable Lightning",
-      "subtitulo": "Puerto USB-C · patas planas",
+      "titulo": "Cargador para iPhone 25 W Lightning",
+      "subtitulo": "Apple compatible · cable incluido",
       "tituloAnterior": "Cargador 25 W | kit USB-C a Lightning",
       "nombre593": "Cargador IPH 14PM 25W Usb-c A Lightning",
       "marca": "",
       "modelo": "",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CARG029",
         "importacion/contratos/CARG029.json"
@@ -20302,33 +20342,44 @@
           "Puertos": "1 USB-C hembra",
           "Conexiones": "USB-C macho a Lightning macho",
           "Presentación": "Cargador de pared con dos patas planas fijas y cable separado"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CARGADOR IPH 14PM 25W USB-C A LIGHTNING"
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/carg029-cargador-iph-14pm-25w-usb-c-a-lightning/",
-      "foto": "/imagenes/carg029/CARG029-01.webp",
-      "sha256Foto": "5d4f8e16729938ab99542b5d57ad96483bb18da1ae39c7761a0c961650f54fd5",
-      "causa": "Mostrar contenido del kit y conexión antes de abrir la ficha.",
-      "lote": "editorial-025",
-      "publicacionVerificada": {
+      "foto": "/imagenes/carg029/CARG029-r2026102720-01.webp",
+      "sha256Foto": "9905ebd2aa83ec9fd4658f7eabf7abdf70cff72123ff39aca88fd674181694b9",
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador 25 W con cable Lightning",
+      "subtituloEditorialAnterior": "Puerto USB-C · patas planas",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T06:23:25.797Z",
         "informe": "reportes/editorial-selectivo/lote-025/publicacion-http-chromium.json",
         "sha256Informe": "7068fb7e1bfc6083a6bc5650b3bb65069d468cabcea9deb6b68edf30f8e717c0",
         "huellaTitulo": "91ea2a145324acfd9e0bab365feecd800eec1f42925c67ef20b36e89372c6964"
       },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR IPH 14PM 25W USB-C A LIGHTNING",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      }
     },
     "CARG028": {
-      "titulo": "Cargador 20 W con cable Lightning",
-      "subtitulo": "Puerto USB-C · patas planas",
+      "titulo": "Cargador para iPhone 20 W Lightning",
+      "subtitulo": "Apple compatible · cable incluido",
       "tituloAnterior": "Cargador 20 W | kit USB-C a Lightning",
       "nombre593": "Cargador IPH 14PM 20W Usb-c A Lightning",
       "marca": "",
       "modelo": "",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CARG028",
         "importacion/contratos/CARG028.json"
@@ -20339,33 +20390,44 @@
           "Puertos": "1 USB-C hembra",
           "Conexiones": "USB-C macho a Lightning macho",
           "Presentación": "Cargador de pared con dos patas planas fijas y cable separado"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CARGADOR IPH 14PM 20W USB-C A LIGHTNING"
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/",
-      "foto": "/imagenes/carg028/CARG028-01.webp",
-      "sha256Foto": "93820e051248c84888d75fee39274fa89c9d4995dc6fa1fab0a2411212bfe939",
-      "causa": "Diferenciar potencia y contenido de venta comprobados.",
-      "lote": "editorial-025",
-      "publicacionVerificada": {
+      "foto": "/imagenes/carg028/CARG028-r2026102720-01.webp",
+      "sha256Foto": "996b233b94e9d8230c6ec31143b210194605bebeda3f8569dad690fe4d842e45",
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador 20 W con cable Lightning",
+      "subtituloEditorialAnterior": "Puerto USB-C · patas planas",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T06:23:25.797Z",
         "informe": "reportes/editorial-selectivo/lote-025/publicacion-http-chromium.json",
         "sha256Informe": "7068fb7e1bfc6083a6bc5650b3bb65069d468cabcea9deb6b68edf30f8e717c0",
         "huellaTitulo": "27324bbc35c76e572b91f27280e256f9beb009ff1f48990d362fff252cd79326"
       },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR IPH 14PM 20W USB-C A LIGHTNING",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      }
     },
     "CARG048": {
-      "titulo": "Cargador de 35 W con cable USB-C",
-      "subtitulo": "Dos patas planas",
+      "titulo": "Cargador para iPhone 35 W con cable USB-C",
+      "subtitulo": "Apple compatible · patas planas",
       "tituloAnterior": "Cargador 35 W | kit USB-C a USB-C",
       "nombre593": "Cargador IPH 16PH 35W Usb-c A Usb-c",
       "marca": "",
       "modelo": "",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#CARG048",
         "importacion/contratos/CARG048.json"
@@ -20376,28 +20438,39 @@
           "Puertos": "1 USB-C hembra",
           "Conexiones": "USB-C macho a USB-C macho",
           "Presentación": "Cargador de pared con dos patas planas fijas y cable separado"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CARGADOR IPH 16PH 35W USB-C A USB-C"
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/carg048-cargador-iph-16ph-35w-usb-c-a-usb-c/",
-      "foto": "/imagenes/carg048/CARG048-01.webp",
-      "sha256Foto": "2294c6e2bc83ae91a59a8195466ce167a9ba37e4b930f54313bcd124d6d7f80a",
-      "causa": "Sustituir título fragmentado por potencia y contenido claros.",
-      "lote": "editorial-025",
-      "publicacionVerificada": {
+      "foto": "/imagenes/carg048/CARG048-r2026102720-01.webp",
+      "sha256Foto": "64fdfd22837bcb9e2d0853fd1926ce443a6b8afdde99d31a81c95908b6862dfa",
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador de 35 W con cable USB-C",
+      "subtituloEditorialAnterior": "Dos patas planas",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T06:23:25.797Z",
         "informe": "reportes/editorial-selectivo/lote-025/publicacion-http-chromium.json",
         "sha256Informe": "7068fb7e1bfc6083a6bc5650b3bb65069d468cabcea9deb6b68edf30f8e717c0",
         "huellaTitulo": "9c40f00e604bfce9d1bd3460a60cc34b49b8c09b5eec33549ffaecc3c38298cf"
       },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR IPH 16PH 35W USB-C A USB-C",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      }
     },
     "CARG049": {
-      "titulo": "Cargador de 40 W con cable USB-C",
-      "subtitulo": "Dos patas planas",
+      "titulo": "Cargador para iPhone 40 W con cable USB-C",
+      "subtitulo": "Apple compatible · patas planas",
       "tituloAnterior": "Cargador 40 W | kit USB-C a USB-C",
       "nombre593": "Cargador IPH 17PM 40W",
       "marca": "",
@@ -20413,28 +20486,39 @@
           "Puertos": "1 USB-C hembra",
           "Conexiones": "USB-C macho a USB-C macho",
           "Presentación": "Cargador de pared con dos patas planas fijas y cable separado"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CARGADOR IPH 17PM 40W"
       },
       "clasificacionReal": "original verificado",
       "url": "https://conectatech-ec.github.io/productos/carg049-cargador-iph-17pm-40w/",
       "foto": "/imagenes/carg049/CARG049-01.webp",
       "sha256Foto": "9220746744497cb31fe9b31c896bcb2ca313d2efcc247354b551d80bf74d0319",
-      "causa": "Sustituir título fragmentado por potencia y contenido claros.",
-      "lote": "editorial-025",
-      "publicacionVerificada": {
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador de 40 W con cable USB-C",
+      "subtituloEditorialAnterior": "Dos patas planas",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T06:23:25.797Z",
         "informe": "reportes/editorial-selectivo/lote-025/publicacion-http-chromium.json",
         "sha256Informe": "7068fb7e1bfc6083a6bc5650b3bb65069d468cabcea9deb6b68edf30f8e717c0",
         "huellaTitulo": "e903c7d08756c11cc53186e84bd8d4d77a1908ac0ff182280f06b3a37ef403fa"
       },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR IPH 17PM 40W",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      }
     },
     "CARG046": {
-      "titulo": "Cargador de 50 W con cable USB-C",
-      "subtitulo": "Dos patas planas",
+      "titulo": "Cargador para iPhone 50 W con cable USB-C",
+      "subtitulo": "Apple compatible · patas planas",
       "tituloAnterior": "Cargador 50 W | kit USB-C a USB-C",
       "nombre593": "Cargador IPH 50W Usb-c + Usb-c",
       "marca": "",
@@ -20450,24 +20534,35 @@
           "Puertos": "1 USB-C hembra",
           "Conexiones": "USB-C macho a USB-C macho",
           "Presentación": "Cargador de pared con dos patas planas fijas y cable separado"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CARGADOR IPH 50W USB-C + USB-C"
       },
       "clasificacionReal": "original verificado",
       "url": "https://conectatech-ec.github.io/productos/carg046-cargador-iph-50w-usb-c-usb-c/",
-      "foto": "/imagenes/carg046/CARG046-01.webp",
-      "sha256Foto": "faf1c93381c3970a21d56157102e8c378cfc28bf3f707cd5e3df43d66e2461d1",
-      "causa": "Sustituir título fragmentado por potencia y contenido claros.",
-      "lote": "editorial-025",
-      "publicacionVerificada": {
+      "foto": "/imagenes/carg046/CARG046-r2026102720-01.webp",
+      "sha256Foto": "bd1099a1a4b8b682b45903e74c425897037f68a73bee7c7b8dc1150c1c79a23c",
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "tituloEditorialAnterior": "Cargador de 50 W con cable USB-C",
+      "subtituloEditorialAnterior": "Dos patas planas",
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T06:23:25.797Z",
         "informe": "reportes/editorial-selectivo/lote-025/publicacion-http-chromium.json",
         "sha256Informe": "7068fb7e1bfc6083a6bc5650b3bb65069d468cabcea9deb6b68edf30f8e717c0",
         "huellaTitulo": "5a3e56542b5d5c7448977878fd056b593af9b72b6074c90b4e14875028b642b4"
       },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR IPH 50W USB-C + USB-C",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      }
     },
     "CARG063": {
       "titulo": "Cargador Pro 40+ con cable USB-C",
@@ -26347,7 +26442,7 @@
       "nombre593": "Adaptador Lightning A 3.5MM",
       "marca": "",
       "modelo": "Lightning a 3,5 mm",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#ADAP007",
         "importacion/contratos/ADAP007.json"
@@ -26363,22 +26458,23 @@
           "Modelo técnico": "Lightning a 3,5 mm"
         }
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/adap007-adaptador-lightning-a-3-5mm/",
       "foto": "/imagenes/adap007/ADAP007-01.webp",
       "sha256Foto": "e6ba28a5f25c232f8950b647d34e2bfb6ea426e436c73d942bfe640b9f35122d",
       "causa": "Aclarar uso y salida hembra para distinguirlo del cable Lightning a plug macho.",
       "lote": "editorial-033",
-      "publicacionVerificada": {
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": false,
+      "modelosBusquedaVerificados": [],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T21:37:40.368Z",
         "informe": "reportes/editorial-selectivo/lote-033/publicacion-http-chromium.json",
         "sha256Informe": "654b557ea371b9361061229443938453820a7773225895abcd50cd7713fdef57",
         "huellaTitulo": "400dc010d07545064d98ee6b5d1c678c945961f2a3559a2f910b849b589393bc"
-      },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": false,
-      "modelosBusquedaVerificados": []
+      }
     },
     "ADAP009": {
       "titulo": "Adaptador OTG | Lightning a USB-A",
@@ -27690,7 +27786,7 @@
       "nombre593": "Palanca Para Play Station 4 - PS4",
       "marca": "",
       "modelo": "",
-      "condicionTarjeta": "",
+      "condicionTarjeta": "De terceros",
       "fuentes": [
         "seo-contenido.json#PALA001",
         "importacion/contratos/PALA001.json"
@@ -27703,22 +27799,23 @@
           "Interacción": "Panel táctil central"
         }
       },
-      "clasificacionReal": "original verificado",
+      "clasificacionReal": "genérico/compatible",
       "url": "https://conectatech-ec.github.io/productos/pala001-palanca-para-play-station-4-ps4/",
       "foto": "/imagenes/pala001/PALA001-01.webp",
       "sha256Foto": "93f85e2134969c1f5401b16b264a1c7c74e9321fa2853fadc3544aeea45ccaf9",
       "causa": "Conservar compatibilidad y añadir controles comprobados, sin atribuir fabricación Sony.",
       "lote": "editorial-034",
-      "publicacionVerificada": {
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-27T21:38:19.836Z",
         "informe": "reportes/editorial-selectivo/lote-034/publicacion-http-chromium.json",
         "sha256Informe": "616f4689d8dc2eaf084cb34f7b1aa1eda56ce72d0a879ee3f7821a7678150381",
         "huellaTitulo": "acb15cf373d81d72718afc872f054b2fe1c753633f0cfcea7ecfc74a4929c59c"
-      },
-      "mostrarTituloEnFicha": true,
-      "modeloNoDeclaradoVerificado": true,
-      "modelosBusquedaVerificados": []
+      }
     },
     "REPR001": {
       "titulo": "Reproductor MP4 portátil Mrobo",
@@ -28222,22 +28319,16 @@
       "url": "https://conectatech-ec.github.io/productos/carg010-cargador-45w-sam-con-cable-usb-c-a-usb-c/",
       "modeloNoDeclaradoVerificado": true,
       "modelosBusquedaVerificados": [],
-      "titulo": "Cargador Samsung de 45 W",
+      "titulo": "Cargador Samsung de 45 W blanco",
       "subtitulo": "Cable USB-C a USB-C incluido",
       "condicionTarjeta": "",
       "clasificacionReal": "original verificado",
-      "foto": "/imagenes/carg010/CARG010-01.webp",
-      "sha256Foto": "ab3983195b905afa8c7d55564438bdd0269411f697765a2125e554f515848ad0",
-      "lote": "editorial-036",
-      "publicacionVerificada": {
-        "estado": "VERIFICADO_HTTP_CHROMIUM",
-        "fecha": "2026-10-28T04:08:40.531Z",
-        "informe": "reportes/editorial-selectivo/lote-036/publicacion-http-chromium.json",
-        "sha256Informe": "f84ca93246dc137c6246dd669a4be1ab5aa304deff406d2b52942c972c397bd5",
-        "huellaTitulo": "1335bac735acba10f639174ce4e6f9fda5f3bffa2f8bc5bb448abac2e882b247"
-      },
+      "foto": "/imagenes/carg010/CARG010-r2026102720-01.webp",
+      "sha256Foto": "384448eda9c7749e5d6ff3dcfef19aa61886fbf8d7a9cf0ac04824ce69c8cce6",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
       "mostrarTituloEnFicha": true,
-      "causa": "Desarrollar la abreviatura comercial SAM como Samsung según confirmación expresa del propietario, conservando atributos comprobados y nombres originales.",
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
       "aliasMarcaConfirmadoPropietario": {
         "alias": "SAM",
         "marcaComercial": "Samsung",
@@ -28251,7 +28342,24 @@
           "Puertos": "1 USB-C hembra",
           "Conexiones": "USB-C macho a USB-C macho",
           "Presentación": "Cargador de pared con dos patas planas fijas y cable separado"
-        }
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CARGADOR 45W SAM CON CABLE USB-C A USB-C"
+      },
+      "tituloEditorialAnterior": "Cargador Samsung de 45 W",
+      "subtituloEditorialAnterior": "Cable USB-C a USB-C incluido",
+      "publicacionAnterior": {
+        "estado": "VERIFICADO_HTTP_CHROMIUM",
+        "fecha": "2026-10-28T04:08:40.531Z",
+        "informe": "reportes/editorial-selectivo/lote-036/publicacion-http-chromium.json",
+        "sha256Informe": "f84ca93246dc137c6246dd669a4be1ab5aa304deff406d2b52942c972c397bd5",
+        "huellaTitulo": "1335bac735acba10f639174ce4e6f9fda5f3bffa2f8bc5bb448abac2e882b247"
+      },
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR 45W SAM CON CABLE USB-C A USB-C",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
       }
     },
     "CARG057": {
@@ -28297,9 +28405,179 @@
           "Presentación": "Cable incorporado al cargador"
         }
       }
+    },
+    "CARG034": {
+      "tituloAnterior": "Cargador 25 W | kit USB-C a USB-C",
+      "nombre593": "Cargador IPH 25W 15PM Usb-c A Usb-c",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "seo-contenido.json#CARG034",
+        "importacion/contratos/CARG034.json"
+      ],
+      "url": "https://conectatech-ec.github.io/productos/carg034-cargador-iph-25w-15pm-usb-c-a-usb-c/",
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "titulo": "Cargador para iPhone 25 W con cable USB-C",
+      "subtitulo": "Apple compatible · patas planas",
+      "condicionTarjeta": "De terceros",
+      "clasificacionReal": "genérico/compatible",
+      "foto": "/imagenes/carg034/CARG034-r2026102720-01.webp",
+      "sha256Foto": "16208230d9038dc0b01d995a9b6806aae7150bc8075fd0dda430cf0dedcb81eb",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "evidenciaAtributos": {
+        "tituloOriginalVerificado": "Cargador 25 W | kit USB-C a USB-C",
+        "atributos": {
+          "Puertos": "1 USB-C hembra",
+          "Conexiones": "USB-C macho a USB-C macho",
+          "Presentación": "Cargador de pared con dos patas planas fijas y cable separado"
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CARGADOR IPH 25W 15PM USB-C A USB-C"
+      },
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR IPH 25W 15PM USB-C A USB-C",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      }
+    },
+    "CUBO005": {
+      "tituloAnterior": "Cargador USB-C de 35 W para iPhone",
+      "nombre593": "Cubo Cargador IPH 15PM 35W 5G",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "seo-contenido.json#CUBO005",
+        "importacion/contratos/CUBO005.json"
+      ],
+      "url": "https://conectatech-ec.github.io/productos/cubo005-cubo-cargador-iph-15pm-35w-5g/",
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "titulo": "Cargador para iPhone 15 Pro Max 35 W USB-C",
+      "subtitulo": "Apple compatible · compacto",
+      "condicionTarjeta": "De terceros",
+      "clasificacionReal": "genérico/compatible",
+      "foto": "/imagenes/cubo005/CUBO005-r2026102720-01.webp",
+      "sha256Foto": "c417b2ffca2aba259e5944cdf802e4d113607a539e211d356f40a26220a3e266",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "evidenciaAtributos": {
+        "tituloOriginalVerificado": "Cargador USB-C de 35 W para iPhone",
+        "atributos": {
+          "Potencia": "Hasta 35 W según referencia",
+          "Conexión": "USB-C según empaque",
+          "Formato": "Adaptador compacto de pared"
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CUBO CARGADOR IPH 15PM 35W 5G"
+      },
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CUBO CARGADOR IPH 15PM 35W 5G",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      },
+      "referenciaIPhoneDeclarada": {
+        "referencia": "15 Pro Max",
+        "fuente593": "CUBO CARGADOR IPH 15PM 35W 5G",
+        "empaquePropio": "imagenes/cubo005/CUBO005-referencia-usbc-20261027-20.jpg",
+        "sha256": "567c043017eb48c23a714dfe7d4c7d2b55b2c500564f6767c91103d5159bff1e",
+        "sinExclusividadDeCompatibilidad": true
+      }
+    },
+    "CUBO024": {
+      "tituloAnterior": "Cargador USB-C de 35 W para iPhone Premium",
+      "nombre593": "Cubo DE Carga IPH 17PM 35W Usb-c",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "seo-contenido.json#CUBO024",
+        "importacion/contratos/CUBO024.json"
+      ],
+      "url": "https://conectatech-ec.github.io/productos/cubo024-cubo-de-carga-iph-17pm-35w-usb-c/",
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "titulo": "Cargador para iPhone 17 Pro Max 35 W USB-C",
+      "subtitulo": "Apple compatible · compacto",
+      "condicionTarjeta": "De terceros",
+      "clasificacionReal": "genérico/compatible",
+      "foto": "/imagenes/cubo024/CUBO024-r2026102720-01.webp",
+      "sha256Foto": "86e6d2815b740679bb1a78fcef8697f94ea7d60fb0bd10d426a31d28d820fc95",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "evidenciaAtributos": {
+        "tituloOriginalVerificado": "Cargador USB-C de 35 W para iPhone Premium",
+        "atributos": {
+          "Potencia": "Hasta 35 W según referencia",
+          "Conexión": "USB-C según empaque",
+          "Formato": "Adaptador compacto"
+        },
+        "varianteContractual": "Blanco",
+        "nombre593": "CUBO DE CARGA IPH 17PM 35W USB-C"
+      },
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CUBO DE CARGA IPH 17PM 35W USB-C",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      },
+      "referenciaIPhoneDeclarada": {
+        "referencia": "17 Pro Max",
+        "fuente593": "CUBO DE CARGA IPH 17PM 35W USB-C",
+        "empaquePropio": "imagenes/cubo024/CUBO024-referencia-usbc-20261027-20.jpg",
+        "sha256": "2916560d2206215a410137b8c9cdec2a2f10786e3f92046cda9e401eb94d75cf",
+        "sinExclusividadDeCompatibilidad": true
+      }
+    },
+    "CARG068": {
+      "tituloAnterior": "Cargador 45 W | kit USB-C a USB-C",
+      "nombre593": "Cargador Samsung Cubo 45W + Cable Usb-c A Usb-c",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "seo-contenido.json#CARG068",
+        "importacion/contratos/CARG068.json"
+      ],
+      "url": "https://conectatech-ec.github.io/productos/carg068-cargador-samsung-cubo-45w-cable-usb-c-a-usb-c/",
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "titulo": "Cargador Samsung de 45 W negro",
+      "subtitulo": "Cable USB-C a USB-C incluido",
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "foto": "/imagenes/carg068/CARG068-01.webp",
+      "sha256Foto": "94074a8d379e8239fc4191b119530014d18dab9473d57517d934c347385a695b",
+      "lote": "editorial-037",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "causa": "Aplicar formato comercial confirmado: destino iPhone, potencia y conexión verificadas, Apple compatible en subtítulo; conservar marcas importantes y diferencias comprobadas.",
+      "evidenciaAtributos": {
+        "tituloOriginalVerificado": "Cargador 45 W | kit USB-C a USB-C",
+        "atributos": {
+          "Puertos": "1 USB-C hembra",
+          "Conexiones": "USB-C macho a USB-C macho",
+          "Presentación": "Cargador de pared con dos patas planas fijas y cable separado"
+        },
+        "varianteContractual": "Negro",
+        "nombre593": "CARGADOR SAMSUNG CUBO 45W + CABLE USB-C A USB-C"
+      },
+      "criterioCargador037": {
+        "fuente": "Orden del propietario: Cargador para iPhone + potencia + USB-C/Lightning; Apple compatible en subtítulo; Samsung e importantes identificados.",
+        "nombre593Conservado": "CARGADOR SAMSUNG CUBO 45W + CABLE USB-C A USB-C",
+        "noAcreditaFabricacionOriginal": true,
+        "conexionRealConservada": true
+      }
     }
   },
-  "loteActual": "036",
+  "loteActual": "037",
   "escaladoMasivo": "AUTORIZADO_EN_LOTES_HASTA_30_EXCLUYENDO_CELULARES_TABLETS",
   "criterioCodigosTecnicosFueraDeTitulos": [
     "UID-10",
@@ -28651,25 +28929,592 @@
     "Jiabao"
   ],
   "tandaActual": {
-    "id": "036",
+    "id": "037",
     "lotes": [
-      "036"
+      "037"
     ],
     "skus": [
+      "CARG028",
+      "CARG029",
+      "CARG048",
+      "CARG049",
+      "CARG034",
+      "CARG001",
+      "CARG046",
+      "CUBO021",
+      "CUBO005",
+      "CUBO024",
+      "CUBO011",
+      "CARG010",
+      "CARG068",
+      "CARG058",
+      "CUBO009",
+      "CUBO010"
+    ],
+    "cantidad": 16,
+    "autorizacion": "Orden expresa: cargadores para iPhone con potencia/conexión comprobadas y Apple compatible en subtítulo; Samsung/marcas importantes identificados. Publicación automática autorizada. Confirmación explícita posterior: CUBO009 yCUBO010 sonAAA,rótuloAAAenficha,sintocarfotos.",
+    "fichasCondicionActualizadas": [
+      "ADAP007",
+      "AUDI001",
+      "AUDI005",
+      "AUDI008",
+      "AUDI042",
+      "AUDI061",
+      "AUDI062",
+      "AUDI069",
+      "AUDI094",
+      "AUDI111",
+      "AUDI123",
+      "BILL002",
+      "CABL005",
+      "CABL031",
+      "CABL074",
+      "CABL097",
+      "CARG001",
+      "CARG028",
+      "CARG029",
+      "CARG034",
       "CARG036",
-      "CARG040",
-      "CARG015",
+      "CARG048",
+      "CARG058",
+      "COBE002",
+      "COBE005",
+      "COBE006",
+      "COBE007",
+      "COBE009",
+      "CUBO005",
       "CUBO009",
       "CUBO010",
-      "CARG037",
-      "CARG010",
-      "CARG057"
+      "CUBO011",
+      "CUBO021",
+      "CUBO024",
+      "MICR03",
+      "PALA001",
+      "POWE001",
+      "REL013",
+      "STYL006"
     ],
-    "cantidad": 8,
-    "autorizacion": "Confirmación expresa: XIA es Xiaomi y SAM es Samsung, debe reflejarse en títulos comerciales. Publicación automática verificada autorizada."
+    "firmasCondicionPendientes": [
+      "AUDI008",
+      "CARG036",
+      "CABL097",
+      "MICR03",
+      "ADAP007",
+      "PALA001"
+    ]
   },
   "aliasMarcasConfirmadasPorPropietario": {
     "XIA": "Xiaomi",
-    "SAM": "Samsung"
+    "SAM": "Samsung",
+    "IPH": "Apple"
+  },
+  "actualizacionesFicha": {
+    "ADAP007": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Adaptador Lightning para audífonos",
+      "tituloTarjetaConservado": "Adaptador Lightning para audífonos",
+      "url": "https://conectatech-ec.github.io/productos/adap007-adaptador-lightning-a-3-5mm/",
+      "autenticidadAnterior": "original verificado",
+      "rotuloAnterior": "Código ADAP007 · Producto original",
+      "publicacionVerificada": null
+    },
+    "AUDI001": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos AirPods Pro 2",
+      "tituloTarjetaConservado": "Audífonos AirPods Pro 2",
+      "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código AUDI001 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "AUDI005": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos AirPods Max",
+      "tituloTarjetaConservado": "Audífonos AirPods Max",
+      "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código AUDI005 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "AUDI008": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos tipo EarPods Lightning",
+      "tituloTarjetaConservado": "Audífonos tipo EarPods Lightning",
+      "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
+      "autenticidadAnterior": "original verificado",
+      "rotuloAnterior": "Código AUDI008 · Producto original",
+      "publicacionVerificada": null
+    },
+    "AUDI042": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos AirPods 4",
+      "tituloTarjetaConservado": "Audífonos AirPods 4",
+      "url": "https://conectatech-ec.github.io/productos/audi042-audifonos-inalambricos-airpods-4-4ta/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código AUDI042 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "AUDI061": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos AirPods 4 AI",
+      "tituloTarjetaConservado": "Audífonos AirPods 4 AI",
+      "url": "https://conectatech-ec.github.io/productos/audi061-audifonos-inalambricos-airpods-4-anc-4ta/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código AUDI061 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "AUDI062": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos con estuche de cinco botones",
+      "tituloTarjetaConservado": "Audífonos con estuche de cinco botones",
+      "url": "https://conectatech-ec.github.io/productos/audi062-audifonos-inalambricos-airpods-xft-01/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código AUDI062 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "AUDI069": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audifonos Inalambricos Airpods Animados",
+      "tituloTarjetaConservado": "Audifonos Inalambricos Airpods Animados",
+      "url": "https://conectatech-ec.github.io/productos/audi069-audifonos-inalambricos-airpods-animados/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Condición: Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "AUDI094": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos AirPods 3",
+      "tituloTarjetaConservado": "Audífonos AirPods 3",
+      "url": "https://conectatech-ec.github.io/productos/audi094-audifonos-airpods-3-3era/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código AUDI094 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "AUDI111": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos inalámbricos blancos",
+      "tituloTarjetaConservado": "Audífonos inalámbricos blancos",
+      "url": "https://conectatech-ec.github.io/productos/audi111-audifonos-inalambricos-airpods/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código AUDI111 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "AUDI123": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Audífonos AirPods Pro 3",
+      "tituloTarjetaConservado": "Audífonos AirPods Pro 3",
+      "url": "https://conectatech-ec.github.io/productos/audi123-airpods-pro-3-con-ai/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código AUDI123 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "BILL002": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Billetera magnética de silicona para iPhone",
+      "tituloTarjetaConservado": "Billetera magnética de silicona para iPhone",
+      "url": "https://conectatech-ec.github.io/productos/bill002-billetera-magsafe-iph-silicon-wallet/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código BILL002 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CABL005": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cable USB-A a Lightning | 2 m",
+      "tituloTarjetaConservado": "Cable USB-A a Lightning | 2 m",
+      "url": "https://conectatech-ec.github.io/productos/cabl005-cable-lightning-a-usb-a-2m/",
+      "autenticidadAnterior": "original verificado",
+      "rotuloAnterior": "Código CABL005 · Producto original",
+      "publicacionVerificada": null
+    },
+    "CABL031": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cable USB-C a Lightning | 1 m",
+      "tituloTarjetaConservado": "Cable USB-C a Lightning | 1 m",
+      "url": "https://conectatech-ec.github.io/productos/cabl031-cable-usb-c-a-lightning-1m/",
+      "autenticidadAnterior": "original verificado",
+      "rotuloAnterior": "Código CABL031 · Producto original",
+      "publicacionVerificada": null
+    },
+    "CABL074": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cable USB-A a Lightning | 1 m",
+      "tituloTarjetaConservado": "Cable USB-A a Lightning | 1 m",
+      "url": "https://conectatech-ec.github.io/productos/cabl074-cable-iph-usb-a-a-lightning-1m/",
+      "autenticidadAnterior": "original verificado",
+      "rotuloAnterior": "Código CABL074 · Producto original",
+      "publicacionVerificada": null
+    },
+    "CABL097": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cable USB-C y Lightning de 1 m",
+      "tituloTarjetaConservado": "Cable USB-C y Lightning de 1 m",
+      "url": "https://conectatech-ec.github.io/productos/cabl097-cable-usb-c-a-usb-c-adaptador-usb-c-hembra-a-lightning/",
+      "autenticidadAnterior": "original verificado",
+      "rotuloAnterior": "Código CABL097 · Producto original",
+      "publicacionVerificada": null
+    },
+    "CARG001": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 35 W Lightning",
+      "tituloTarjetaConservado": "Cargador para iPhone 35 W Lightning",
+      "url": "https://conectatech-ec.github.io/productos/carg001-cargador-iph-35w-doble-conector-usb-c-usb-c-y-cable-usb-c-a-lightning/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CARG001 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CARG028": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 20 W Lightning",
+      "tituloTarjetaConservado": "Cargador para iPhone 20 W Lightning",
+      "url": "https://conectatech-ec.github.io/productos/carg028-cargador-iph-14pm-20w-usb-c-a-lightning/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CARG028 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CARG029": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 25 W Lightning",
+      "tituloTarjetaConservado": "Cargador para iPhone 25 W Lightning",
+      "url": "https://conectatech-ec.github.io/productos/carg029-cargador-iph-14pm-25w-usb-c-a-lightning/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CARG029 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CARG034": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 25 W con cable USB-C",
+      "tituloTarjetaConservado": "Cargador para iPhone 25 W con cable USB-C",
+      "url": "https://conectatech-ec.github.io/productos/carg034-cargador-iph-25w-15pm-usb-c-a-usb-c/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CARG034 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CARG036": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "AAA",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador Xiaomi GaN con cable",
+      "tituloTarjetaConservado": "Cargador Xiaomi GaN con cable",
+      "url": "https://conectatech-ec.github.io/productos/carg036-cargador-120w-xia-gan-charger-set/",
+      "autenticidadAnterior": "original verificado",
+      "rotuloAnterior": "Código CARG036 · Producto original",
+      "publicacionVerificada": null
+    },
+    "CARG048": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 35 W con cable USB-C",
+      "tituloTarjetaConservado": "Cargador para iPhone 35 W con cable USB-C",
+      "url": "https://conectatech-ec.github.io/productos/carg048-cargador-iph-16ph-35w-usb-c-a-usb-c/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CARG048 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CARG058": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para Mac 85 W MagSafe 2",
+      "tituloTarjetaConservado": "Cargador para Mac 85 W MagSafe 2",
+      "url": "https://conectatech-ec.github.io/productos/carg058-cargador-para-mac-magsafe-2-85w/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CARG058 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "COBE002": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cobertor - Estuche Airpods PRO 2 Mickey",
+      "tituloTarjetaConservado": "Cobertor - Estuche Airpods PRO 2 Mickey",
+      "url": "https://conectatech-ec.github.io/productos/cobe002-cobertor-estuche-airpods-pro-2-mickey/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Condición: Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "COBE005": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cobertor - Estuche Airpods PRO 2",
+      "tituloTarjetaConservado": "Cobertor - Estuche Airpods PRO 2",
+      "url": "https://conectatech-ec.github.io/productos/cobe005-cobertor-estuche-airpods-pro-2/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Condición: Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "COBE006": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cobertor floral para estuche AirPods Pro 2",
+      "tituloTarjetaConservado": "Cobertor floral para estuche AirPods Pro 2",
+      "url": "https://conectatech-ec.github.io/productos/cobe006-cobertor-estuche-airpods-pro-2-floreados/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código COBE006 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "COBE007": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cobertor tipo amplificador",
+      "tituloTarjetaConservado": "Cobertor tipo amplificador",
+      "url": "https://conectatech-ec.github.io/productos/cobe007-cobertor-estuche-para-airpods-blister-varios-colores/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código COBE007 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "COBE009": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Estuche Spigen para AirPods Pro 2",
+      "tituloTarjetaConservado": "Estuche Spigen para AirPods Pro 2",
+      "url": "https://conectatech-ec.github.io/productos/cobe009-cobertor-estuche-airpods-pro-2-spigen/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código COBE009 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CUBO005": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 15 Pro Max 35 W USB-C",
+      "tituloTarjetaConservado": "Cargador para iPhone 15 Pro Max 35 W USB-C",
+      "url": "https://conectatech-ec.github.io/productos/cubo005-cubo-cargador-iph-15pm-35w-5g/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CUBO005 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CUBO009": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "AAA",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación AAA Xiaomi anterior",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador Xiaomi de 33 W",
+      "tituloTarjetaConservado": "Cargador Xiaomi de 33 W",
+      "url": "https://conectatech-ec.github.io/productos/cubo009-cubo-cargador-33w-xia/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CUBO009 · AAA",
+      "publicacionVerificada": null
+    },
+    "CUBO010": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "AAA",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación AAA Xiaomi anterior",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador Xiaomi de 67 W",
+      "tituloTarjetaConservado": "Cargador Xiaomi de 67 W",
+      "url": "https://conectatech-ec.github.io/productos/cubo010-cubo-cargador-67w-xia/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CUBO010 · AAA",
+      "publicacionVerificada": null
+    },
+    "CUBO011": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 5 W USB-A",
+      "tituloTarjetaConservado": "Cargador para iPhone 5 W USB-A",
+      "url": "https://conectatech-ec.github.io/productos/cubo011-cubo-usb-power-adapter-5w-usb-a-18245/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CUBO011 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CUBO021": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 40 W USB-C",
+      "tituloTarjetaConservado": "Cargador para iPhone 40 W USB-C",
+      "url": "https://conectatech-ec.github.io/productos/cubo021-cubo-40w-usb-c/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CUBO021 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "CUBO024": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Cargador para iPhone 17 Pro Max 35 W USB-C",
+      "tituloTarjetaConservado": "Cargador para iPhone 17 Pro Max 35 W USB-C",
+      "url": "https://conectatech-ec.github.io/productos/cubo024-cubo-de-carga-iph-17pm-35w-usb-c/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código CUBO024 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "MICR03": {
+      "autenticidad": "original verificado",
+      "rotuloFicha": "Producto original",
+      "condicionTarjeta": "",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Set de micrófonos de solapa Pack 2",
+      "tituloTarjetaConservado": "Set de micrófonos de solapa Pack 2",
+      "url": "https://conectatech-ec.github.io/productos/micr03-microfono-inalambrico-doble-para-iphone-k9/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código MICR03 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "PALA001": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "AAA",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Confirmación individual del propietario",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Control inalámbrico para PlayStation 4",
+      "tituloTarjetaConservado": "Control inalámbrico para PlayStation 4",
+      "url": "https://conectatech-ec.github.io/productos/pala001-palanca-para-play-station-4-ps4/",
+      "autenticidadAnterior": "original verificado",
+      "rotuloAnterior": "Código PALA001 · Producto original",
+      "publicacionVerificada": null
+    },
+    "POWE001": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Powerbank Inalámbrica para iPhone — 10.000 mAh, USB-C",
+      "tituloTarjetaConservado": "Powerbank inalámbrica para iPhone de 10.000 mAh",
+      "url": "https://conectatech-ec.github.io/productos/powe001-powerbank-inamabrica-iph-10000mah-lightning/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código POWE001 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "REL013": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Smartwatch Series 10",
+      "tituloTarjetaConservado": "Smartwatch Series 10",
+      "url": "https://conectatech-ec.github.io/productos/rel013-reloj-smartwatch-para-iphone-watch-series-10-46mm/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código REL013 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    },
+    "STYL006": {
+      "autenticidad": "genérico/compatible",
+      "rotuloFicha": "Producto compatible",
+      "condicionTarjeta": "De terceros",
+      "motivo": "Rótulo Apple compatible sin AAA",
+      "fuente": "importacion/editorial/instrucciones-037.json",
+      "tituloFichaConservado": "Lápiz táctil para iPhone y iPad",
+      "tituloTarjetaConservado": "Lápiz táctil para iPhone y iPad",
+      "url": "https://conectatech-ec.github.io/productos/styl006-stylus-pencil-inalambrico-para-iphone-ipad/",
+      "autenticidadAnterior": "genérico/compatible",
+      "rotuloAnterior": "Código STYL006 · Producto compatible (AAA)",
+      "publicacionVerificada": null
+    }
   }
 }

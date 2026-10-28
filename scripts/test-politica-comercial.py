@@ -37,17 +37,22 @@ class OwnerPolicy(unittest.TestCase):
  def test_owner_sam_alias_respects_registration_condition(self):
   with tempfile.TemporaryDirectory() as tmp:
    root=Path(tmp);(root/'datos-593').mkdir();(root/'importacion').mkdir()
-   products={'CARG001':'CARGADOR POWER TRIO SAM','CARG002':'CARGADOR 45W SAM','CARG003':'CARGADOR SAMSON','CARG004':'CARGADOR XIA'}
+   products={'CARG001':'CARGADOR POWER TRIO SAM','CARG002':'CARGADOR 45W SAM','CARG003':'CARGADOR SAMSON','CARG004':'CARGADOR XIA','CARG005':'CARGADOR IPH 20W','CARG006':'CARGADOR PARA MAC MAGSAFE 2 85W'}
    with (root/'datos-593/inventario-publico.csv').open('w') as f:
     w=csv.DictWriter(f,fieldnames=['sku','nombre']);w.writeheader();w.writerows({'sku':s,'nombre':n}for s,n in products.items())
    (root/'importacion/reglas-sku.json').write_text(json.dumps({'productos':{s:{}for s in products}}))
    self.assertEqual(commercial_brand('CARG001',root),'SAMSUNG')
    self.assertIsNone(commercial_brand('CARG003',root))
    self.assertIsNone(commercial_brand('CARG004',root))
+   self.assertEqual(commercial_brand('CARG005',root),'APPLE')
+   self.assertEqual(commercial_brand('CARG006',root),'APPLE')
    policy={'confirmado_por_propietario':True,'modo':'ORIGINAL_POR_DEFECTO_EXCEPTO_MARCAS_AAA','marcas_excepcion_aaa':['JBL','SAMSUNG','APPLE','BOSE','LENOVO'],'fecha_confirmacion':'2026-10-27','documento_url':'https://docs.google.com/spreadsheets/d/test','valores_tipo':{}}
-   rows=[['Fecha','SKU','Archivo','URL','Tipo','Presentación']]+[['',s,s+' - PRINCIPAL.png','','Caja original'if s=='CARG002'else'AAA (genérico)','Sin caja']for s in products]
+   rows=[['Fecha','SKU','Archivo','URL','Tipo','Presentación']]+[['',s,s+' - PRINCIPAL.png','','Caja original'if s in ['CARG002','CARG004']else'AAA (genérico)','Sin caja']for s in products]
    updates,issues=registration_rules(rows,list(products),{},policy,root);self.assertFalse(issues);result={x['sku']:x['autenticidad']for x in updates}
    self.assertEqual(result['CARG001'],'genérico/compatible')
+   for s in ['CARG005','CARG006']:self.assertEqual(result[s],'genérico/compatible')
    for s in ['CARG002','CARG003','CARG004']:self.assertEqual(result[s],'original verificado')
+   policy['confirmaciones_sku_propietario']={'CARG004':{'autenticidad':'genérico/compatible','evidencia_autenticidad':'El propietario confirma AAA para este cargador Xiaomi aunque Registro indique Caja original.'}}
+   updates,_=registration_rules(rows,list(products),{},policy,root);result={x['sku']:x['autenticidad']for x in updates};self.assertEqual(result['CARG004'],'genérico/compatible');self.assertEqual(result['CARG002'],'original verificado')
 
 if __name__=='__main__':unittest.main()
