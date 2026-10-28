@@ -1,0 +1,66 @@
+{
+  "estado": "ALIAS_Y_CONDICIONES_VERIFICADOS",
+  "fecha": "2026-10-28T04:08:44.868Z",
+  "base": "https://conectatech-ec.github.io",
+  "consultas": [
+    {
+      "consulta": "XIA",
+      "skuEsperados": [
+        "CARG036",
+        "CARG040",
+        "CUBO009",
+        "CUBO010",
+        "CARG057"
+      ],
+      "verificados": true
+    },
+    {
+      "consulta": "Xiaomi",
+      "skuEsperados": [
+        "CARG036",
+        "CARG040",
+        "CUBO009",
+        "CUBO010",
+        "CARG057"
+      ],
+      "verificados": true
+    },
+    {
+      "consulta": "SAM",
+      "skuEsperados": [
+        "CARG015",
+        "CARG037",
+        "CARG010"
+      ],
+      "verificados": true
+    },
+    {
+      "consulta": "Samsung",
+      "skuEsperados": [
+        "CARG015",
+        "CARG037",
+        "CARG010"
+      ],
+      "verificados": true
+    }
+  ],
+  "condiciones": [
+    {
+      "sku": "CARG015",
+      "etiqueta": "Código CARG015 · Producto compatible (AAA)",
+      "visibleAntesDelPrecio": true
+    },
+    {
+      "sku": "CARG037",
+      "etiqueta": "Código CARG037 · Producto compatible (AAA)",
+      "visibleAntesDelPrecio": true
+    },
+    {
+      "sku": "CARG010",
+      "etiqueta": "Código CARG010 · Producto original",
+      "visibleAntesDelPrecio": true
+    }
+  ],
+  "originales593Intactos": true,
+  "costoAdicional": 0
+}
