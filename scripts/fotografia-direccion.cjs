@@ -15,8 +15,9 @@ const twelfthFile='importacion/fotografia-publicada/direccion-20261027-16.json';
 const thirteenthFile='importacion/fotografia-publicada/direccion-20261027-17.json';
 const fourteenthFile='importacion/fotografia-publicada/direccion-20261027-18.json';
 const fifteenthFile='importacion/fotografia-publicada/direccion-20261027-19.json';
-const allowed=new Set(['TERM001','CUBO009','CUBO010','CARG069','HUB025','MOUS035','MOUS029','CORT06','SOPO002','REL050','ADAP086','ADAP053','ADAP091','CAPT004','HUB016','CORT04','CUBO018','SOPO057','CUBO019','CUBO025','ADAP075','ADAP080','LINT008','CABL046','PAD001','SOPO007','MOUS003','JUGU067','REL028','LAMP003','ESTA002','MICR32','STYL002','MOUS031','MOUS032','MOUS043','POWE015','CABL171','CUBO003','SOPO005','AUDI098','RADI007','POWE016','AIRT002','MOUS020','PADM002','JUGU163','MOUS040','REL011','REL016','PANE002','PANE003','BINO001','MICR08','PROT005','MOUS001','JUGU022','PROT002','PROT004','AUDI044','CUBO002']);
-function rows(){return Object.assign({},... [file,secondFile,thirdFile,fourthFile,fifthFile,sixthFile,seventhFile,eighthFile,ninthFile,tenthFile,eleventhFile,twelfthFile,thirteenthFile,fourteenthFile,fifteenthFile].map(f=>fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')).productos:{}));}
+const sixteenthFile='importacion/fotografia-publicada/direccion-20261027-20.json';
+const allowed=new Set(['CARG028','CARG029','CARG034','CARG046','CARG048','CUBO005','CUBO024','CARG010','CARG037','TERM001','CUBO009','CUBO010','CARG069','HUB025','MOUS035','MOUS029','CORT06','SOPO002','REL050','ADAP086','ADAP053','ADAP091','CAPT004','HUB016','CORT04','CUBO018','SOPO057','CUBO019','CUBO025','ADAP075','ADAP080','LINT008','CABL046','PAD001','SOPO007','MOUS003','JUGU067','REL028','LAMP003','ESTA002','MICR32','STYL002','MOUS031','MOUS032','MOUS043','POWE015','CABL171','CUBO003','SOPO005','AUDI098','RADI007','POWE016','AIRT002','MOUS020','PADM002','JUGU163','MOUS040','REL011','REL016','PANE002','PANE003','BINO001','MICR08','PROT005','MOUS001','JUGU022','PROT002','PROT004','AUDI044','CUBO002']);
+function rows(){return Object.assign({},... [file,secondFile,thirdFile,fourthFile,fifthFile,sixthFile,seventhFile,eighthFile,ninthFile,tenthFile,eleventhFile,twelfthFile,thirteenthFile,fourteenthFile,fifteenthFile,sixteenthFile].map(f=>fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')).productos:{}));}
 function premium(){return fs.existsSync(secondFile)?JSON.parse(fs.readFileSync(secondFile,'utf8')).ajuste_titulo:null;}
 function hash(url){const f='.'+url;return fs.existsSync(f)?crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'):null;}
 function valid(r){return r&&allowed.has(r.sku)&&r.revisado_visual===true&&
@@ -63,7 +64,7 @@ function overlay(p,custom,selected){
  const next=r.imagenProfesional?.versiones['1200'];
  if(!old||![[r.portada_anterior.url,r.portada_anterior.sha256],...(next?[[next.url,next.sha256]]:[]),...(r.portadas_previas_autorizadas||[]).map(p=>[p.url,p.sha256])].some(([url,sha])=>old.url===url&&old.sha256===sha))return;
  if(r.vistas){const kept=(custom.galeria||[]).filter(i=>!(r.retirar_vistas||[]).includes(i.versiones['1200'].url));const urls=new Set(kept.map(i=>i.versiones['1200'].url));custom.galeria=[...kept,...r.vistas.filter(i=>!urls.has(i.versiones['1200'].url))];return;}
- const secondary=(custom.galeria||[]).filter(i=>i.posicion!==1);
+ const secondary=(custom.galeria||[]).filter(i=>i.posicion!==1&&i.versiones['1200'].url!==r.imagenProfesional.versiones['1200'].url);
  const urls=new Set(secondary.map(i=>i.versiones['1200'].url));
  secondary.push(...(r.mantener_vistas||[]).filter(i=>!urls.has(i.versiones['1200'].url)));
  custom.imagen=r.imagenProfesional.versiones['1200'].url;custom.imagenProfesional=r.imagenProfesional;

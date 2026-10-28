@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Cambiar la perspectiva de CUBO009/CUBO010 para distinguir ambas patas, a solicitud del propietario y contrastando las fotografías físicas propias. Conservar las imágenes aprobadas, títulos, datos comerciales, originales y URLs.",
   "productos": {
     "CUBO009": {
@@ -1260,5 +1260,16 @@
       },
       "vistas": []
     }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-28T04:25:51.503145+00:00",
+  "verificacion": {
+    "workflow_run": 40630749244,
+    "http_verificacion_directa": true,
+    "ambito_prueba_inicial": "Dos fichas, galería nueva y enlace anterior, portada y metadatos públicos; 26 hashes de originales, referencias, secundarios y nuevas versiones.",
+    "chromium": [
+      1280,
+      390
+    ],
+    "originales_conservados": true
   }
 }
