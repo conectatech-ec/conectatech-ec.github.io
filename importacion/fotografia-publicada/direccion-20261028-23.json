@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Corregir exclusivamente las proporciones de CARG029/CARG048/CARG034/CARG046/CUBO005 usando CUBO024 como referencia expresa del propietario; conservar contenido de cada kit, sin caja y producto compatible. Conservar las imágenes aprobadas, títulos, datos comerciales, originales y URLs.",
   "productos": {
     "CARG029": {
@@ -2151,5 +2151,16 @@
       }
     ]
   },
-  "regla_del_propietario": "SIN CAJA y PRODUCTO COMPATIBLE. Conservar datos comerciales, originales y maestros ya correctos."
+  "regla_del_propietario": "SIN CAJA y PRODUCTO COMPATIBLE. Conservar datos comerciales, originales y maestros ya correctos.",
+  "fecha_primera_verificacion_publica": "2026-10-28T19:49:34.201203+00:00",
+  "verificacion": {
+    "workflow_run": 40755576328,
+    "http_verificacion_directa": true,
+    "ambito_prueba_inicial": "Cinco cargadores: fichas, galería, portada y metadatos públicos; originales, referencias y versiones comprobados por SHA-256.",
+    "chromium": [
+      1280,
+      390
+    ],
+    "originales_conservados": true
+  }
 }

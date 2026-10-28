@@ -1334,6 +1334,8 @@ jobs:
                   assert response.status==200
                   return response.read()
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261028-23.json'))
+          # La condición comercial pertenece a las fuentes vigentes de Títulos, no a una foto histórica.
+          expected_sku={sku:re.search(r'<div class="sku">.*?</div>',get(raw+row['pagina']+'index.html').decode(),re.S)[0] for sku,row in record['productos'].items()}
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -1351,7 +1353,7 @@ jobs:
                       entry={'sku':sku,'archivos':len(versions),'original_conservado':True}
                       if published:
                           page=get(origin+row['pagina']).decode()
-                          assert row['condicion_comercial_vigente'] in page
+                          assert expected_sku[sku] in page
                           for photo in photos:assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
                           for retired in row.get('retirar_vistas',[]):assert retired not in page
                           entry['url']=origin+row['pagina']
