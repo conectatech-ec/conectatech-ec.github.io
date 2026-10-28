@@ -15,7 +15,9 @@ function classify(products,content,families){
   if(typeof family!=='string'||!family.trim())throw Error('Categoría comercial inválida');
   const presentation=merchandising.presentationFamily(p,family);
   const label='ct-web:'+key(presentation),c=content[p.sku]||{};
-  const approved=c.comercialVerificado===true&&c.imagenPendiente!==true;
+  // TELF001: liberación editorial previa + autorización comercial expresa de Dirección (2026-10-27).
+  // Excepción puntual; no habilitar TELF012 ni imágenes expresamente pendientes.
+  const approved=c.imagenPendiente!==true&&(c.comercialVerificado===true||(p.sku==='TELF001'&&c.telefonoLiberado===true));
   const row={sku:p.sku,categoria_web:p.category,familia_web:family,familia_whatsapp:presentation,stock:p.stock,price:p.promo,label:approved?label:'',aprobado:approved};
   bySKU.set(p.sku,row);
   if(!groups.has(label))groups.set(label,{label,retailer_id:'conectatech-web:'+key(presentation),name:'CONECTATECH | '+presentation.toUpperCase(),family:presentation,
