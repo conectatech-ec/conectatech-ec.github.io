@@ -182,6 +182,7 @@ function productImage(p,large=false){
 
 let selected="TODOS";
 let selectedExactCategory=null;
+let hdmiOnly=false;
 const iconFor=c=>{
  c=c.toLowerCase();
  if(c.includes("telefono"))return "📱"; if(c.includes("tablet"))return "▣";
@@ -256,7 +257,7 @@ sortSelector.addEventListener("change",()=>{currentPage=1;render()});
 function render(){
  const q=searchBox.value;
  sortSelector.querySelector('option[value="recientes"]').textContent=q.trim()?"Relevancia y más recientes":"Nuevos y actualizados";
- const list=orderedProducts(products.filter(p=>(selectedExactCategory?p.category===selectedExactCategory:(selected==="TODOS"||p.commercialCategory===selected))&&matchesSearch(p,q)&&(q.trim()||document.getElementById("showOutOfStock").checked||availabilityFor(p).main_catalog)));
+ const list=orderedProducts(products.filter(p=>(selectedExactCategory?p.category===selectedExactCategory:(selected==="TODOS"||p.commercialCategory===selected))&&(!hdmiOnly||(p.category==="Cables"&&/^Cable HDMI(?:\s|$)/i.test(p.name)))&&matchesSearch(p,q)&&(q.trim()||document.getElementById("showOutOfStock").checked||availabilityFor(p).main_catalog)));
  const totalPages=Math.max(1,Math.ceil(list.length/pageSize));currentPage=Math.min(currentPage,totalPages);
  const shown=list.slice((currentPage-1)*pageSize,currentPage*pageSize);
  document.getElementById("count").textContent=list.length+" productos · Página "+currentPage+" de "+totalPages;
@@ -286,15 +287,16 @@ const categorySlug=s=>String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").
 const categoryLabels={Microfonos:"Micrófonos",Telefonos:"Celulares",Audifonos:"Audífonos",Camaras:"Cámaras",Lamparas:"Lámparas"};
 originalCategories.forEach(c=>{const option=document.createElement("option");option.value=c;option.textContent=categoryLabels[c]||c;categorySelect.appendChild(option)});
 function categoryShareUrl(){
- const url=new URL(window.location.href);url.searchParams.delete("categoria");url.searchParams.delete("familia");
+ const url=new URL(window.location.href);url.searchParams.delete("categoria");url.searchParams.delete("familia");url.searchParams.delete("tipo");
  if(selectedExactCategory)url.searchParams.set("categoria",categorySlug(selectedExactCategory));
  else if(selected!=="TODOS")url.searchParams.set("familia",categorySlug(selected));
+ if(hdmiOnly)url.searchParams.set("tipo","hdmi");
  url.hash="catalogo";return url;
 }
 function syncCategoryControls(){
  const focused=!!selectedExactCategory||selected!=="TODOS";
  document.body.classList.toggle("ct-category-view",focused);
- document.getElementById("catalogo").textContent=selectedExactCategory?(categoryLabels[selectedExactCategory]||selectedExactCategory):focused?selected:"Explora el catálogo";
+ document.getElementById("catalogo").textContent=hdmiOnly?"Cables HDMI":selectedExactCategory?(categoryLabels[selectedExactCategory]||selectedExactCategory):focused?selected:"Explora el catálogo";
  document.querySelectorAll(".topnav a").forEach(link=>{const original=link.dataset.originalHref||link.getAttribute("href");link.dataset.originalHref=original;if(["#destacados","#beneficios"].includes(original))link.setAttribute("href",focused?"/"+original:original)});
  categorySelect.value=selectedExactCategory||"TODOS";
  chips.querySelectorAll(".chip").forEach(chip=>chip.classList.toggle("active",chip.dataset.cat===selected));
@@ -302,7 +304,7 @@ function syncCategoryControls(){
 }
 function readCategoryLocation(){
  const params=new URLSearchParams(window.location.search);const rawCategory=params.get("categoria");const rawFamily=params.get("familia");
- selectedExactCategory=null;selected="TODOS";categoryStatus.textContent="";
+ selectedExactCategory=null;selected="TODOS";hdmiOnly=false;categoryStatus.textContent="";
  if(rawCategory){
   const key=norm(rawCategory);const aliases={celulares:"Telefonos",smartphones:"Telefonos",auriculares:"Audifonos"};
   const found=originalCategories.find(c=>norm(c)===key)||originalCategories.find(c=>c===aliases[key]);
@@ -312,10 +314,11 @@ function readCategoryLocation(){
   const found=cats.find(c=>norm(c)===norm(rawFamily));
   if(found)selected=found;else categoryStatus.textContent="No encontramos esa categoría. Puedes elegir una categoría del catálogo.";
  }
+ hdmiOnly=selectedExactCategory==="Cables"&&norm(params.get("tipo"))==="hdmi";
  syncCategoryControls();
 }
 function selectCategory(category,family="TODOS"){
- selectedExactCategory=category;selected=category?(categoryFamilies[category]||products.find(p=>p.category===category).commercialCategory):family;
+ hdmiOnly=false;selectedExactCategory=category;selected=category?(categoryFamilies[category]||products.find(p=>p.category===category).commercialCategory):family;
  searchBox.value="";currentPage=1;categoryStatus.textContent="";syncCategoryControls();
  history.pushState(null,"",categoryShareUrl());render();
 }
