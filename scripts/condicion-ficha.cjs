@@ -10,5 +10,13 @@ function apple(p,c){
   (/\bLightning\b/i.test(name)&&/^(?:CABL|ADAP|AUDI|CARG|CUBO)/.test(p.sku));
 }
 function label(p,c){const r=c.reglaSKU||{};return r.autenticidad==='original verificado'?'Producto original':r.autenticidad==='genérico/compatible'?(apple(p,c)?'Producto compatible':r.rotulo_ficha==='AAA'?'AAA':'Producto compatible (AAA)'):'';}
-function visible(p,c,value){return c.reglaSKU?.autenticidad==='genérico/compatible'&&apple(p,c)?String(value??'').replace(/Producto compatible\s*\(AAA\)/gi,'Producto compatible'):value;}
+function visible(p,c,value){
+ if(c.reglaSKU?.autenticidad!=='genérico/compatible'||!apple(p,c))return value;
+ const clean=text=>text.replace(/Producto compatible\s*\(AAA\)/gi,'Producto compatible')
+  .replace(/versión AAA\s*(?:\/\s*genérica|genérica\s*\/\s*compatible)/gi,m=>m[0]==='V'?'Versión compatible':'versión compatible')
+  .replace(/versión AAA\b/gi,m=>m[0]==='V'?'Versión compatible':'versión compatible').replace(/Producto AAA\b/gi,'Producto compatible')
+  .replace(/\bAAA genéricos\b/gi,'compatibles').replace(/\bAAA plateados\b/gi,'Plateados');
+ // Sólo nodos de texto: conservar enlaces, fotografías, atributos y nombres de origen.
+ return String(value??'').split(/(<[^>]*>)/g).map(part=>part.startsWith('<')?part:clean(part)).join('');
+}
 module.exports={apple,label,visible};
