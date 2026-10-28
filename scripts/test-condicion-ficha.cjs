@@ -6,4 +6,6 @@ assert.equal(apple({sku:'CARG039',name:'Cargador para vehículo 4 en 1'},{...gen
 assert.equal(label({sku:'MICR03',name:'Micrófonos para iPhone'},{...generic,reglaSKU:{autenticidad:'original verificado'}}),'Producto original');
 assert.equal(visible({sku:'ADAP007',name:'Adaptador Lightning'},generic,'Clasificación: Producto compatible (AAA)'),'Clasificación: Producto compatible');
 assert.equal(visible({sku:'CUBO009',name:'Cargador Xiaomi'},generic,'Producto compatible (AAA)'),'Producto compatible (AAA)');
+assert.equal(visible({sku:'AUDI005',name:'AirPods Max'},generic,'<img alt="AAA plateados"><p>AAA plateados. Versión AAA genérica/compatible.</p>'),'<img alt="AAA plateados"><p>Plateados. Versión compatible.</p>');
+assert.equal(visible({sku:'AUDI111',name:'AirPods'},generic,'Audífonos inalámbricos AAA genéricos.'),'Audífonos inalámbricos compatibles.');
 console.log('Condición en ficha: Apple compatible, otras marcas AAA y originales preservados.');

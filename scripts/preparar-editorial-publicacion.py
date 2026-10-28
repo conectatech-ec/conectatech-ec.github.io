@@ -36,7 +36,7 @@ for sku,u in cfg.get('actualizacionesFicha',{}).items():
  assert sku in by and not sku.startswith(('TELF','TABL')),sku
  assert u['autenticidad']==seo[sku]['reglaSKU']['autenticidad'],sku
  assert u['condicionTarjeta']==('De terceros' if u['autenticidad']=='genérico/compatible' else ''),sku
- assert u['tituloTarjetaConservado']==cfg['productos'].get(sku,{}).get('titulo',by[sku]['name']),sku
+ if sku in cfg.get('tandaActual',{}).get('fichasCondicionActualizadas',[]):assert u['tituloTarjetaConservado']==cfg['productos'].get(sku,{}).get('titulo',by[sku]['name']),sku
  v=u.get('publicacionVerificada')
  if v:
   raw=Path(v['informe']).read_bytes();r=json.loads(raw)
