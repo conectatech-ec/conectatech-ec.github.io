@@ -8,6 +8,15 @@ const families=familiesFromHTML('const categoryFamilies={"Telefonos":"Celulares 
 const classification=classify(products,content,families);
 assert.equal(classification.bySKU.get('LUZ001').familia_web,'Fotografía');
 assert.equal(classification.bySKU.get('NOVER001').label,'');
+// Aprobación específica TELF001, sin abrir otros teléfonos ni imágenes pendientes.
+const liberados=classify([{sku:'TELF001',category:'Telefonos'},{sku:'TELF012',category:'Telefonos'}],{
+ TELF001:{telefonoLiberado:true},TELF012:{telefonoLiberado:true}
+},families);
+assert.equal(liberados.bySKU.get('TELF001').aprobado,true);
+assert.equal(liberados.bySKU.get('TELF012').aprobado,false);
+const sinImagenAprobada=classify([{sku:'TELF001',category:'Telefonos'}],{TELF001:{telefonoLiberado:true,imagenPendiente:true}},families);
+assert.equal(sinImagenAprobada.bySKU.get('TELF001').aprobado,false);
+
 assert.throws(()=>classify([products[0],products[0]],content,families),/duplicado/);
 const meta=products.map(p=>({id:p.sku,custom_label_0:classification.bySKU.get(p.sku).label,availability:p.sku==='CERO001'?'out of stock':'in stock'}));
 const plan=planFromFeed(classification,meta,{fecha_corte:'2026-10-22',origen_sha256:'a'.repeat(64)});
