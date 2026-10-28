@@ -1154,7 +1154,7 @@ jobs:
                   assert response.status==200
                   return response.read()
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-20.json'))
-          current=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261028-21.json'))['productos']
+          current=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261028-22.json'))['productos']
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -1214,6 +1214,7 @@ jobs:
                   assert response.status==200
                   return response.read()
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261028-21.json'))
+          current=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261028-22.json'))['productos']
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -1230,11 +1231,73 @@ jobs:
                       entry={'sku':sku,'archivos':len(versions),'original_conservado':True}
                       if published:
                           page=get(origin+row['pagina']).decode()
+                          active=current.get(sku,row)
+                          for photo in [active['imagenProfesional'],*active.get('mantener_vistas',[])]:assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+                          for retired in row.get('retirar_vistas',[]):assert retired not in page
+                          entry['url']=origin+row['pagina']
+                      results.append(entry)
+                  if published:
+                      catalog=get(origin+'/').decode()
+                      products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])
+                      by_sku={p['sku']:p for p in products}
+                      for sku,row in record['productos'].items():assert by_sku[sku]['imageUrl']==current.get(sku,row)['imagenProfesional']['versiones']['1200']['url']
+                      assert 'Premium' in by_sku['CUBO024']['name']
+                      if record.get('publicacion_verificada'):
+                          ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',catalog)[1]
+                          dates=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
+                          assert all(datetime.fromisoformat(dates[sku]['actualizadoEn'])>=datetime.fromisoformat(record['fecha_primera_verificacion_publica']) for sku in record['productos'])
+                  print('RESULTADO_DIRECCION_21='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'productos':results},ensure_ascii=False))
+                  break
+              except Exception:
+                  if not published or attempt==299:raise
+                  time.sleep(5)
+
+  carg028_cubo024_fisicos_22:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Verificar SKU aptos y conservar originales
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json, os, hashlib, time, re
+          from urllib.request import Request, urlopen
+          from datetime import datetime, timezone
+          origin='https://conectatech-ec.github.io'
+          raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(url):
+              with urlopen(Request(url,headers={'User-Agent':'CONECTATECH-fotografia','Cache-Control':'no-cache'}),timeout=30) as response:
+                  assert response.status==200
+                  return response.read()
+          record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261028-22.json'))
+          published=os.environ['PHOTO_REF']=='refs/heads/main'
+          for attempt in range(300 if published else 1):
+              try:
+                  results=[]
+                  for sku,row in record['productos'].items():
+                      assert row['revisado_visual'] is True
+                      assert row['qa_geometria']['sin_caja'] and row['qa_geometria']['compatible_sin_autenticidad_inferida']
+                      photos=[row['imagenProfesional'],*row.get('mantener_vistas',[])]
+                      versions=[*row.get('archivos_originales_conservados',[]),row['maestro_anterior'],row['referencia_visual'],*row['versiones_anteriores'].values(),*row.get('vistas_retira_archivos_conservados',[])]
+                      for kept in row.get('mantener_vistas',[]):versions.extend([{'url':kept['original'],'sha256':kept['sha256_original']},*kept['versiones'].values()])
+                      for photo in photos:versions.extend([{'url':photo['original'],'sha256':photo['sha256_original']},*photo['versiones'].values()])
+                      for version in versions:
+                          assert version['url'].startswith('/imagenes/'+sku.lower()+'/') and '..' not in version['url']
+                          assert hashlib.sha256(get((origin if published else raw)+version['url'])).hexdigest()==version['sha256']
+                      entry={'sku':sku,'archivos':len(versions),'original_conservado':True}
+                      if published:
+                          page=get(origin+row['pagina']).decode()
+                          assert 'Producto compatible' in page
                           for photo in photos:assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
                           for retired in row.get('retirar_vistas',[]):assert retired not in page
                           entry['url']=origin+row['pagina']
                       results.append(entry)
                   if published:
+                      gallery=get(origin+'/revision/fotografia-carg028-cubo024-fisicos-20261028-22/').decode()
+                      assert gallery.count('<article')==2
+                      assert all(row['imagenProfesional']['versiones']['1200']['url'] in gallery and row['mantener_vistas'][0]['versiones']['1200']['url'] in gallery for row in record['productos'].values())
                       catalog=get(origin+'/').decode()
                       products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])
                       by_sku={p['sku']:p for p in products}
@@ -1244,7 +1307,7 @@ jobs:
                           ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',catalog)[1]
                           dates=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
                           assert all(datetime.fromisoformat(dates[sku]['actualizadoEn'])>=datetime.fromisoformat(record['fecha_primera_verificacion_publica']) for sku in record['productos'])
-                  print('RESULTADO_DIRECCION_21='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'productos':results},ensure_ascii=False))
+                  print('RESULTADO_DIRECCION_22='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'productos':results},ensure_ascii=False))
                   break
               except Exception:
                   if not published or attempt==299:raise

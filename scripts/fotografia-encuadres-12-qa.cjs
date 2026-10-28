@@ -6,7 +6,7 @@ const {chromium}=require('playwright'),assert=require('assert');
  const record=await get(raw+'/importacion/fotografia-publicada/direccion-20261027-12.json');
  const names=['20261026-05','20261026-06','20261026-07','20261026-08','20261027-09','20261027-10','20261027-11'];
  const prior=Object.assign({},...await Promise.all(names.map(async n=>(await get(raw+'/importacion/fotografia-publicada/direccion-'+n+'.json')).productos)));
- const laterNames=['20261027-13','20261027-14','20261027-15','20261027-16','20261027-17','20261027-18','20261027-19','20261027-20','20261028-21'];
+ const laterNames=['20261027-13','20261027-14','20261027-15','20261027-16','20261027-17','20261027-18','20261027-19','20261027-20','20261028-21','20261028-22'];
  const later=Object.assign({},...await Promise.all(laterNames.map(async n=>(await get(raw+'/importacion/fotografia-publicada/direccion-'+n+'.json')).productos)));
  const all={...prior,...record.productos,...later},results=[];
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
