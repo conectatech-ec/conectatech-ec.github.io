@@ -373,3 +373,6 @@ Ocho condiciones verificadas por HTTPS/Chromium, fotos cargadas y tarjetas coher
 
 ## Continuación editorial041 y rótulo CARG010
 CARG010 Producto compatible sin AAA visible, clasificación interna intacta. Cinco títulos adicionales:SOPO009,TARJ002,ADAP019,ADAP020,CARG056; referencias propias y variantes contractuales verificadas. Tres reservas resueltas sin inventar hardware;320CORRECTO conservados,87reservas incluyendo32celulares/tablets,un teléfono enMEJORAR aplazado:33al final. 762presentaciones tras cierre,0SKU nuevos. TARJ002 conserva modelo histórico de clasificación sin tratarlo como código técnico ni cambiar su condición. Contratos,1170datos,precios,stock,fotos,URLs,SEO/schema/feeds intactos. Fechas sólo tras HTTP/Chromium público, seis cambios primero respetando fotos ajenas.0costo.
+
+## Editorial041 comprobado en web pública
+Cinco títulos y rótulo CARG010 Producto compatible verificados HTTPS/Chromium público, búsquedas y cuatro tamaños. Cinco presentaciones adicionales,762acumuladas,757previas intactas. Registrar sólo cinco fechas editoriales y una de condición desde informes públicos inmutables con SHA;seis cambios primero según disponibilidad, respetando fotos ajenas posteriores.320CORRECTO conservados,55reservas de otros SKU,33celulares/tablets al final. Datos1170,contratos,fotos,finanzas,stock,URLs,SEO/schema/feeds intactos.0costo.
