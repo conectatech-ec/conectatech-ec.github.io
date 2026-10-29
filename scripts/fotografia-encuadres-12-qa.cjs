@@ -6,9 +6,11 @@ const {chromium}=require('playwright'),assert=require('assert');
  const record=await get(raw+'/importacion/fotografia-publicada/direccion-20261027-12.json');
  const names=['20261026-05','20261026-06','20261026-07','20261026-08','20261027-09','20261027-10','20261027-11'];
  const prior=Object.assign({},...await Promise.all(names.map(async n=>(await get(raw+'/importacion/fotografia-publicada/direccion-'+n+'.json')).productos)));
- const laterNames=['20261027-13','20261027-14','20261027-15','20261027-16','20261027-17','20261027-18','20261027-19','20261027-20','20261028-21','20261028-22','20261028-23','20261028-24'];
+ const laterNames=['20261027-13','20261027-14','20261027-15','20261027-16','20261027-17','20261027-18','20261027-19','20261027-20','20261028-21','20261028-22','20261028-23','20261028-24','20261029-25'];
  const later=Object.assign({},...await Promise.all(laterNames.map(async n=>(await get(raw+'/importacion/fotografia-publicada/direccion-'+n+'.json')).productos)));
  const all={...prior,...record.productos,...later},results=[];
+ // Esperar las referencias activas del despliegue; conservar todas las aserciones del navegador.
+ let ready=false;for(let attempt=0;attempt<240;attempt++){const response=await fetch(origin+'/?foto='+process.env.PHOTO_SHA,{headers:{'Cache-Control':'no-cache'}});const text=await response.text();const match=text.match(/const products=(\[[\s\S]*?\]);\s*\n/);if(match){const by=Object.fromEntries(JSON.parse(match[1]).map(p=>[p.sku,p.imageUrl]));ready=Object.entries(all).every(([s,r])=>by[s]===(r.imagenProfesional?.versiones['1200'].url||r.portada_anterior.url));}if(ready)break;await new Promise(resolve=>setTimeout(resolve,5000));}assert(ready,'Referencias actuales del catálogo aún no desplegadas');
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
  for(const width of [1280,390]){
   const page=await browser.newPage({viewport:{width,height:950}});
