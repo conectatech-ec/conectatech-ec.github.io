@@ -9,3 +9,5 @@ assert.equal(visible({sku:'CUBO009',name:'Cargador Xiaomi'},generic,'Producto co
 assert.equal(visible({sku:'AUDI005',name:'AirPods Max'},generic,'<img alt="AAA plateados"><p>AAA plateados. Versión AAA genérica/compatible.</p>'),'<img alt="AAA plateados"><p>Plateados. Versión compatible.</p>');
 assert.equal(visible({sku:'AUDI111',name:'AirPods'},generic,'Audífonos inalámbricos AAA genéricos.'),'Audífonos inalámbricos compatibles.');
 console.log('Condición en ficha: Apple compatible, otras marcas AAA y originales preservados.');
+
+for(const name of ['Cargador Samsung','Cargador Xiaomi']){const c={...generic,reglaSKU:{...generic.reglaSKU,rotulo_ficha:'Producto compatible'}};assert.equal(label({sku:'CARG036',name},c),'Producto compatible');assert.equal(visible({sku:'CARG036',name},c,'Producto compatible (AAA)'),'Producto compatible');}

@@ -173,6 +173,9 @@ jobs:
             git diff --exit-code -- index.html assets/editorial-titulos-datos.js
             node scripts/verificar-editorial-publicacion.cjs
             node scripts/test-condicion-ficha.cjs
+            if [ -f reportes/condiciones-040/seleccion.json ]; then
+              MANIFIESTO_CONDICIONES=reportes/condiciones-040/seleccion.json REPORTE_CONDICIONES=reportes/condiciones-040 node scripts/verificar-condiciones-ficha.cjs
+            fi
             if [ -f assets/formato-potencia.js ]; then
               node scripts/test-formato-potencia.cjs
               node scripts/verificar-formato-potencia.cjs
