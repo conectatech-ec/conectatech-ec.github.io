@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Normalizar encuadre de hasta30 productos con margen excesivo en sus versiones web; reutilizar íntegros los maestros vigentes sin regenerar ni retocar producto. No son errores de identidad ni SKU nuevos.",
   "productos": {
     "AIRT003": {
@@ -5137,5 +5137,18 @@
       ]
     }
   },
-  "base_integracion_verificada": "231b1ed179ce73ec631910a231609c2105e1c01d"
+  "base_integracion_verificada": "231b1ed179ce73ec631910a231609c2105e1c01d",
+  "fecha_primera_verificacion_publica": "2026-10-29T03:48:04.051379+00:00",
+  "verificacion": {
+    "workflow_run": 40813281696,
+    "http_verificacion_directa": true,
+    "chromium": [
+      1280,
+      390
+    ],
+    "casos_chromium": 60,
+    "maestros_originales_integros": true,
+    "hardware_regenerado": false,
+    "ambito": "Mejoras de encuadre desde maestros íntegros; fichas, catálogo y galerías públicos comprobados. No son SKU nuevos ni correcciones de identidad."
+  }
 }
