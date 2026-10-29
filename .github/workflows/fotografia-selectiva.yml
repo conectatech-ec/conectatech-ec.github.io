@@ -1570,6 +1570,7 @@ jobs:
               results.append({'sku':s,'archivos':len(files),'maestro_integro_conservado':True})
           if published:
               gallery=get(origin+'/revision/fotografia-reencuadres-masivos-20261029-26/').decode();assert gallery.count('<article')==28 and gallery.count('<img ')==56
+              joint=get(origin+record['galeria_conjunta']).decode();assert joint.count('<article')==58 and joint.count('<img ')==116
           print('RESULTADO_DIRECCION_26='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'archivos_unicos':len(cache),'productos':results},ensure_ascii=False))
       - name: Comprobar veintiocho fichas y galería en móvil y escritorio
         if: github.ref == 'refs/heads/main'
