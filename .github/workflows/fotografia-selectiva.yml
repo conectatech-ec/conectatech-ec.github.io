@@ -1365,6 +1365,41 @@ jobs:
                   if not published or attempt==299:raise
                   time.sleep(5)
 
+      - name: Comprobar ADAP069 y galería en navegador público móvil y escritorio
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/foto-conexiones24"
+          npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-conexiones24" playwright@1.51.1
+          NODE_PATH="$RUNNER_TEMP/foto-conexiones24/node_modules" node <<'JS'
+          const {chromium}=require('playwright'),assert=require('assert');
+          (async()=>{
+            const origin='https://conectatech-ec.github.io';
+            const response=await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261028-24.json');assert(response.ok);
+            const manifest=await response.json(),row=manifest.productos.ADAP069,photo=row.vistas[0],out=[];
+            const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
+            for(const width of [1280,390]){
+              const page=await browser.newPage({viewport:{width,height:950}});
+              await page.goto(origin+row.pagina,{waitUntil:'commit',timeout:60000});
+              await page.locator('.product-frame img').waitFor();await page.locator('.product-frame').scrollIntoViewIfNeeded();
+              await page.locator('.product-frame img').evaluate(i=>i.decode());
+              for(const img of await page.locator('.gallery img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode());}
+              const data=await page.evaluate(()=>({cover:new URL(document.querySelector('.product-frame img').src).pathname,count:document.querySelectorAll('.gallery img').length,secondary:[...document.querySelectorAll('.gallery a')].map(a=>new URL(a.href).pathname),broken:[...document.querySelectorAll('.product-frame img,.gallery img')].filter(i=>!i.complete||!i.naturalWidth).length,overflow:document.documentElement.scrollWidth>innerWidth}));
+              assert.equal(data.cover,row.portada_anterior.url);assert.equal(data.count,row.miniaturas_esperadas);assert(data.secondary.includes(photo.versiones['1200'].url));assert(!data.broken&&!data.overflow);
+              await page.goto(origin+'/revision/fotografia-conexiones-verificables-20261028-24/',{waitUntil:'commit',timeout:60000});
+              for(const img of await page.locator('article img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode());}
+              assert.equal(await page.locator('article').count(),1);assert.equal(await page.locator('article img').count(),3);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+              await page.goto(origin+'/',{waitUntil:'commit',timeout:60000});await page.locator('#grid article').first().waitFor();
+              const catalog=await page.evaluate(()=>{const sku='ADAP069',a=orderedProducts([...products]),m=window.CONECTATECH_CATALOGO.productos[sku];return{position:a.findIndex(p=>p.sku===sku)+1,cover:products.find(p=>p.sku===sku).imageUrl,metaCover:m.imagen.src,date:m.actualizadoEn,overflow:document.documentElement.scrollWidth>innerWidth};});
+              assert.equal(catalog.cover,row.portada_anterior.url);assert.equal(catalog.metaCover,catalog.cover);assert(!catalog.overflow);
+              if(process.env.PHOTO_REF==='refs/heads/main'&&manifest.publicacion_verificada){assert(Date.parse(catalog.date)>=Date.parse(manifest.fecha_primera_verificacion_publica));assert(catalog.position>0&&catalog.position<=30);}
+              out.push({sku:'ADAP069',width,...data,galeria_imagenes:3,catalogo:catalog});await page.close();
+            }
+            await browser.close();console.log('RESULTADO_CHROMIUM24='+JSON.stringify({publicacion_activa:true,fecha:new Date().toISOString(),resultados:out}));
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+
   proporciones_cargadores_23:
     runs-on: ubuntu-latest
     timeout-minutes: 30
