@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Normalizar encuadre de hasta30 productos con margen excesivo en sus versiones web; reutilizar íntegros los maestros vigentes sin regenerar ni retocar producto. No son errores de identidad ni SKU nuevos.",
   "productos": {
     "CABL037": {
@@ -6575,5 +6575,23 @@
       "vistas": []
     }
   },
-  "base_integracion_verificada": "2a8ec855effb886e3920df865a81e4b9c65c7510"
+  "base_integracion_verificada": "2a8ec855effb886e3920df865a81e4b9c65c7510",
+  "fecha_primera_verificacion_publica": "2026-10-29T23:17:32.864457+00:00",
+  "verificacion": {
+    "workflow_run": 40970137914,
+    "http_verificacion_directa": true,
+    "chromium": [
+      1300,
+      390
+    ],
+    "casos_chromium": 60,
+    "maestros_originales_integros": true,
+    "hardware_regenerado": false,
+    "ambito": "Encuadre comercial desde maestro completo; fichas, catálogo y galería públicos comprobados. No son nuevos SKU ni errores de identidad.",
+    "base_integracion_fechas": "5fb385645eb6619edc7cd65a07ce4e187f5bad00",
+    "workflow_ambito": "CI de rama final: SUCCESS; pruebas públicas ejecutadas directamente con scripts versionados.",
+    "sha_fuente_prueba_publica": "c9152a444063b237bf816d64b54c01ae0a4499b9",
+    "http_archivos_conjuntos": 420,
+    "galeria_conjunta_publica_verificada": true
+  }
 }
