@@ -376,3 +376,6 @@ CARG010 Producto compatible sin AAA visible, clasificación interna intacta. Cin
 
 ## Editorial041 comprobado en web pública
 Cinco títulos y rótulo CARG010 Producto compatible verificados HTTPS/Chromium público, búsquedas y cuatro tamaños. Cinco presentaciones adicionales,762acumuladas,757previas intactas. Registrar sólo cinco fechas editoriales y una de condición desde informes públicos inmutables con SHA;seis cambios primero según disponibilidad, respetando fotos ajenas posteriores.320CORRECTO conservados,87reservas de otros SKU,33celulares/tablets al final. Datos1170,contratos,fotos,finanzas,stock,URLs,SEO/schema/feeds intactos.0costo.
+
+## Títulos042–043: orden expresa de lote50,29oct2026
+Cincuenta nombres originales593 se editan conservadoramente en25+25, sin esperar fotografías de otra sesión. Snapshot por SKU/nombre y SHA, sin atributos nuevos ni contratos/fotos ficticios. No confundir verificación editorial de redacción con identidad fotográfica o técnica. Mantener ausencia de fotos y reservas fotográficas;320CORRECTO y762presentaciones previas intactas;37reservas restantes y33celulares/tablets sineditar. No datos593,SKU,precios,stock,clasificación,URLs,SEO/schema ni feeds modificados.812presentaciones tras cierre sólo después de HTTPS/Chromium.0costo.

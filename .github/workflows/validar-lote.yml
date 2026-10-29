@@ -170,6 +170,7 @@ jobs:
         run: |
           if [ -f importacion/editorial/publicados.json ]; then
             python scripts/preparar-editorial-publicacion.py
+            if [ -f scripts/test-editorial-texto593.py ]; then python scripts/test-editorial-texto593.py; fi
             git diff --exit-code -- index.html assets/editorial-titulos-datos.js
             node scripts/verificar-editorial-publicacion.cjs
             node scripts/test-condicion-ficha.cjs
