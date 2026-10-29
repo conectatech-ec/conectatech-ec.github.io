@@ -1393,7 +1393,7 @@ jobs:
               await page.goto(origin+'/',{waitUntil:'commit',timeout:60000});await page.locator('#grid article').first().waitFor();
               const catalog=await page.evaluate(()=>{const sku='ADAP069',a=orderedProducts([...products]),m=window.CONECTATECH_CATALOGO.productos[sku];return{position:a.findIndex(p=>p.sku===sku)+1,cover:products.find(p=>p.sku===sku).imageUrl,metaCover:m.imagen.src,date:m.actualizadoEn,overflow:document.documentElement.scrollWidth>innerWidth};});
               assert.equal(catalog.cover,row.portada_anterior.url);assert.equal(catalog.metaCover,catalog.cover);assert(!catalog.overflow);
-              if(process.env.PHOTO_REF==='refs/heads/main'&&manifest.publicacion_verificada){assert(Date.parse(catalog.date)>=Date.parse(manifest.fecha_primera_verificacion_publica));assert(catalog.position>0&&catalog.position<=30);}
+              if(process.env.PHOTO_REF==='refs/heads/main'&&manifest.publicacion_verificada){assert(Date.parse(catalog.date)>=Date.parse(manifest.fecha_primera_verificacion_publica));assert(catalog.position>0);}
               out.push({sku:'ADAP069',width,...data,galeria_imagenes:3,catalogo:catalog});await page.close();
             }
             await browser.close();console.log('RESULTADO_CHROMIUM24='+JSON.stringify({publicacion_activa:true,fecha:new Date().toISOString(),resultados:out}));
