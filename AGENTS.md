@@ -387,3 +387,6 @@ Dos informes inmutables25+25 HTTPS/Chromium verifican nombres y búsquedas, sin 
 
 ## Tanda044–045 ycorrección ADAP054,29oct2026
 Propietario confirmaADAP054:adaptador3,5mm a1/4pulgada;título corregido,sin alterar género contractual1/4macho/3,5hembra.50mejoras adicionales conservadoras delnombre593,27reservas de redacción y23reclasificaciones puntuales por errores/redundancia/jerarquía;297CORRECTO conservados,10reservas abiertas y33celulares/tablets sineditar.51cambios26+25,862presentaciones sólo trasHTTP/Chromium público.50fotos pendientes conservadas;sin nuevosatributos,contratos oimágenes. Precios,stock,SKU,URLs,SEO/schema,593yfeeds intactos.0costo.
+
+## Tanda044–045 comprobada en web pública
+51tarjetas/fichas HTTPS/Chromium verificadas:50presentaciones adicionales yADAP0543,5mm a1/4pulgada,con especificacionesmacho/hembra originales. Registrar sólo51fechas reales desde2informes inmutables26+25conSHA.862presentaciones;811anteriores fueraADAP054idénticas,297CORRECTO conservados,9reservas activas yBILL006anulado.50fotos pendientes;prioridad primero fotos aprobadas y46disponibles sinfoto al inicio desugrupo;ESTU026/ESTU072/JUGU030/JUGU085conservan stock0 yaccesoporSKU.33celulares/tablets,datos1170,precios,stock,fotos,URLs,SEO/schema,593yfeeds intactos.0costo.
