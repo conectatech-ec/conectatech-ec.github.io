@@ -9,9 +9,9 @@ function apple(p,c){
   /Marca de referencia:\s*APPLE\b/i.test(r.evidencia_autenticidad||'')||
   (/\bLightning\b/i.test(name)&&/^(?:CABL|ADAP|AUDI|CARG|CUBO)/.test(p.sku));
 }
-function label(p,c){const r=c.reglaSKU||{};return r.autenticidad==='original verificado'?'Producto original':r.autenticidad==='genérico/compatible'?(apple(p,c)?'Producto compatible':r.rotulo_ficha==='AAA'?'AAA':'Producto compatible (AAA)'):'';}
+function label(p,c){const r=c.reglaSKU||{};return r.autenticidad==='original verificado'?'Producto original':r.autenticidad==='genérico/compatible'?(apple(p,c)||r.rotulo_ficha==='Producto compatible'?'Producto compatible':r.rotulo_ficha==='AAA'?'AAA':'Producto compatible (AAA)'):'';}
 function visible(p,c,value){
- if(c.reglaSKU?.autenticidad!=='genérico/compatible'||!apple(p,c))return value;
+ if(c.reglaSKU?.autenticidad!=='genérico/compatible'||(!apple(p,c)&&c.reglaSKU?.rotulo_ficha!=='Producto compatible'))return value;
  const clean=text=>text.replace(/Producto compatible\s*\(AAA\)/gi,'Producto compatible')
   .replace(/versión AAA\s*(?:\/\s*genérica|genérica\s*\/\s*compatible)/gi,m=>m[0]==='V'?'Versión compatible':'versión compatible')
   .replace(/versión AAA\b/gi,m=>m[0]==='V'?'Versión compatible':'versión compatible').replace(/Producto AAA\b/gi,'Producto compatible')
