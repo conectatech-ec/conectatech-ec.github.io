@@ -1314,6 +1314,57 @@ jobs:
                   if not published or attempt==299:raise
                   time.sleep(5)
 
+  conexiones_verificables_24:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Verificar secundaria RCA y DC5V y conservar principal
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json, os, hashlib, re, time
+          from datetime import datetime, timezone
+          from urllib.request import Request, urlopen
+          origin='https://conectatech-ec.github.io'
+          raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(url):
+              with urlopen(Request(url,headers={'Cache-Control':'no-cache'}),timeout=30) as r:
+                  assert r.status==200
+                  return r.read()
+          record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261028-24.json'))
+          assert set(record['productos'])=={'ADAP069'}
+          row=record['productos']['ADAP069'];photo=row['vistas'][0]
+          assert row['revisado_visual'] and all(row['qa_geometria'].values()) and row['uso']=='SECUNDARIA'
+          assert photo['contiene_caja'] is False and row['pendiente_no_resuelto']
+          published=os.environ['PHOTO_REF']=='refs/heads/main'
+          versions=[row['maestro_anterior'],row['referencia_visual'],*row['versiones_anteriores'].values(),{'url':photo['original'],'sha256':photo['sha256_original']},*photo['versiones'].values()]
+          for attempt in range(300 if published else 1):
+              try:
+                  for v in versions:
+                      assert v['url'].startswith('/imagenes/adap069/') and '..' not in v['url']
+                      assert hashlib.sha256(get((origin if published else raw)+v['url'])).hexdigest()==v['sha256']
+                  if published:
+                      page=get(origin+row['pagina']).decode()
+                      assert row['portada_anterior']['url'] in page
+                      assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+                      assert page.count('<div class="gallery">')==1
+                      gallery=get(origin+'/revision/fotografia-conexiones-verificables-20261028-24/').decode()
+                      assert gallery.count('<article')==1 and photo['versiones']['1200']['url'] in gallery
+                      catalog=get(origin+'/').decode()
+                      products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])
+                      assert next(p for p in products if p['sku']=='ADAP069')['imageUrl']==row['portada_anterior']['url']
+                      if record.get('publicacion_verificada'):
+                          ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',catalog)[1]
+                          dates=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
+                          assert datetime.fromisoformat(dates['ADAP069']['actualizadoEn'])>=datetime.fromisoformat(record['fecha_primera_verificacion_publica'])
+                  print('RESULTADO_DIRECCION_24='+json.dumps({'publicacion_activa':published,'sku':'ADAP069','archivos':len(versions),'portada_conservada':True,'fecha':datetime.now(timezone.utc).isoformat()}))
+                  break
+              except Exception:
+                  if not published or attempt==299:raise
+                  time.sleep(5)
+
   proporciones_cargadores_23:
     runs-on: ubuntu-latest
     timeout-minutes: 30
