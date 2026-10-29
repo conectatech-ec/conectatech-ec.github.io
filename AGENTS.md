@@ -379,3 +379,5 @@ Cinco títulos y rótulo CARG010 Producto compatible verificados HTTPS/Chromium 
 
 ## Títulos042–043: orden expresa de lote50,29oct2026
 Cincuenta nombres originales593 se editan conservadoramente en25+25, sin esperar fotografías de otra sesión. Snapshot por SKU/nombre y SHA, sin atributos nuevos ni contratos/fotos ficticios. No confundir verificación editorial de redacción con identidad fotográfica o técnica. Mantener ausencia de fotos y reservas fotográficas;320CORRECTO y762presentaciones previas intactas;37reservas restantes y33celulares/tablets sineditar. No datos593,SKU,precios,stock,clasificación,URLs,SEO/schema ni feeds modificados.812presentaciones tras cierre sólo después de HTTPS/Chromium.0costo.
+
+El CI heredado POWE001 debe comparar la portada vigente con el mismo lector validado porSHA que usa generar-seo. El contrato original y medios históricos permanecen intactos. En prepublicación sólo aceptar sustitución con catálogo actual coincidente, fuenteSEO todavía anclada al contrato original y archivo actual conSHA válido;mantener controles de carga,derechos,originales yvistas. No silenciar ni saltar pruebas por reencuadres ajenos.

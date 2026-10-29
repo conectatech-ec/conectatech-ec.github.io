@@ -68,6 +68,7 @@ async function main() {
   const products = new Map(JSON.parse(match[1]).map(p => [p.sku, p]));
   const load = name => JSON.parse(fs.readFileSync(path.join(ROOT, name), 'utf8'));
   const slugs = load('seo-pages.json'), seo = load('seo-contenido.json'), aliases = load('importacion/alias-sku.json');
+  const effectivePhotos=require('./editorial-fotografia-efectiva.cjs')([...products.values()],seo);
   const report = {version: 1, fecha: new Date().toISOString(), base: opt.base,
     alcance: 'Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.',
     resultados: [], errores_herramienta: []};
@@ -157,7 +158,7 @@ async function main() {
         check('pvp', data.pvp_visible && money(data.pvp) === Math.round(p.pvp * 100), 'PVP visible distinto del catálogo.');
         check('jerarquia_precio', /PROMO\s+CONTADO/i.test(data.etiqueta_contado) && data.promo_tamano > data.pvp_tamano && data.pvp_tachado === false, 'Promo contado sin jerarquía o PVP tachado.');
         check('disponibilidad', data.schema?.offers?.availability === 'https://schema.org/' + (p.stock > 0 ? 'InStock' : 'OutOfStock'), 'Disponibilidad schema distinta del último catálogo local.');
-        const expectedImage = content.imagen || p.imageUrl;
+        const expectedImage = effectivePhotos[sku]?.imagen || content.imagen || p.imageUrl;
         const sameImage = expectedImage && data.imagen?.src && new URL(data.imagen.src, canonical).href === new URL(expectedImage, PUBLIC).href;
         check('imagen_principal', sameImage && data.imagen?.completa && data.imagen.naturalWidth > 0 && data.imagen.naturalHeight > 0 && data.imagen.visible, 'Portada ausente, incorrecta o no cargada.');
         check('imagenes_cargadas', data.imagenes_fallidas.length === 0, 'Imágenes sin cargar: ' + data.imagenes_fallidas.join(', '));

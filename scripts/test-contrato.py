@@ -20,6 +20,20 @@ validator = pipeline.contracts
 
 
 class ContractTests(unittest.TestCase):
+    def test_reencuadre_actual_exige_anclaje_y_bytes(self):
+        sku='TEST001'; legacy='/imagenes/test001/TEST001-01.webp'; current='/imagenes/test001/TEST001-r26-01.webp'
+        file=self.root/current.lstrip('/');file.parent.mkdir(parents=True,exist_ok=True);file.write_bytes(b'fixture de bytes de reencuadre, no evidencia comercial')
+        (self.root/'seo-contenido.json').write_text(json.dumps({sku:{'imagen':legacy}}))
+        contract={'sku':sku,'imagen_principal':legacy};ctx={'productos':{sku:{'imageUrl':current}},'fotografia_actual':{sku:{'imagen':current,'imagenProfesional':{'versiones':{'1200':{'url':current,'sha256':validator.sha(file.read_bytes())}}}}}}
+        self.assertEqual(validator.active_cover(self.root,contract,ctx),current)
+        bad=copy.deepcopy(ctx);bad['fotografia_actual'][sku]['imagenProfesional']['versiones']['1200']['sha256']='0'*64
+        self.assertEqual(validator.active_cover(self.root,contract,bad),legacy)
+        bad=copy.deepcopy(ctx);bad['productos'][sku]['imageUrl']='/imagen-no-coincidente.webp'
+        self.assertEqual(validator.active_cover(self.root,contract,bad),legacy)
+        self.assertEqual(validator.active_cover(self.root,contract,{'productos':ctx['productos']}),legacy)
+        file.write_bytes(b'bytes modificados tras seleccion')
+        self.assertEqual(validator.active_cover(self.root,contract,ctx),legacy)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)

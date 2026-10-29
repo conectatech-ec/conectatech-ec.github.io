@@ -11,6 +11,7 @@ import io
 import json
 from pathlib import Path
 import re
+import subprocess
 from urllib.parse import urlparse, urljoin, unquote
 from PIL import Image
 from reglas_sku import rule, compatible, source_resolution_allowed
@@ -78,6 +79,21 @@ def context(root):
             'base_593': {r['sku']: r for r in rows}, 'duplicados_593': {s for s, n in counts_593.items() if n > 1},
             'sha256_593': sha(data), 'slugs': json.loads((root / 'seo-pages.json').read_text()),
             'categorias': {p.get('category') for p in products if p.get('category')}}
+
+
+def active_cover(root, contract, ctx):
+    """Admite sólo el reencuadre que validó el mismo lector de generar-seo."""
+    sku = contract.get('sku'); legacy = contract.get('imagen_principal')
+    current = ctx.get('fotografia_actual', {}).get(sku, {})
+    if not current or current.get('imagen') == legacy:
+        return legacy
+    source = json.loads((Path(root) / 'seo-contenido.json').read_text()).get(sku, {})
+    cover = current.get('imagenProfesional', {}).get('versiones', {}).get('1200', {})
+    if (source.get('imagen') == legacy and ctx['productos'][sku].get('imageUrl') == current.get('imagen')
+            and cover.get('url') == current.get('imagen') and SHA.fullmatch(str(cover.get('sha256', '')))
+            and sha(safe(root, cover['url'].lstrip('/')).read_bytes()) == cover['sha256']):
+        return current['imagen']
+    return legacy
 
 
 def load_contract(root, manifest, sku):
@@ -333,7 +349,7 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
         if not dated(mobile.get('fecha')) or not SHA.fullmatch(str(mobile.get('sha256_html', ''))):
             raise ValueError('Captura móvil sin fecha/hash de HTML revisado')
         html_source = artifact(root, {'archivo': mobile.get('archivo_html'), 'sha256': mobile.get('sha256_html')})
-        if sku not in html_source.decode() or contract.get('imagen_principal') not in html_source.decode():
+        if sku not in html_source.decode() or active_cover(root, contract, ctx) not in html_source.decode():
             raise ValueError('HTML de revisión no contiene SKU y portada previstos')
     except (ValueError, OSError, TypeError, KeyError) as exc:
         fail('movil', str(exc))
@@ -392,7 +408,8 @@ def validate_editorial(root, contract, ctx):
             raise ValueError('Descripción comercial todavía no aplicada y verificada')
         if 'descripcion' in contract and editorial['descripcion'] != contract['descripcion']:
             raise ValueError('Descripción aplicada distinta de la revisión editorial')
-        if product.get('imageUrl') != contract['imagen_principal'] or editorial.get('imagen') != contract['imagen_principal'] or editorial.get('imagenPendiente'):
+        current_cover = active_cover(root, contract, ctx)
+        if product.get('imageUrl') != current_cover or (editorial.get('imagen') != contract['imagen_principal'] and editorial.get('imagen') != current_cover) or editorial.get('imagenPendiente'):
             raise ValueError('Catálogo/ficha aún no vinculan la portada aprobada')
     except (ValueError, OSError, KeyError, TypeError) as exc:
         errors.append({'codigo': 'editorial_aplicada', 'motivo': str(exc)})
@@ -478,6 +495,9 @@ def main():
     parser.add_argument('--reporte', default='reportes/contratos.json')
     args = parser.parse_args(); root = Path(args.root).resolve()
     manifest = json.loads(safe(root, args.manifiesto).read_text()); ctx = context(root)
+    photo_reader = root / 'scripts/editorial-fotografia-efectiva.cjs'
+    if args.fase in ('prepublicacion', 'publicacion') and photo_reader.is_file():
+        ctx['fotografia_actual'] = json.loads(subprocess.check_output(['node', str(photo_reader)], cwd=root, text=True))
     aliases = json.loads((root / 'importacion/alias-sku.json').read_text())
     skus = [aliases.get(s, s) for s in manifest['skus']]; counts = Counter(skus)
     media_path = root / 'importacion/medios.json'; media = json.loads(media_path.read_text()) if media_path.exists() else {}
