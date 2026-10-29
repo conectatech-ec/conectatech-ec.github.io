@@ -10,4 +10,4 @@ for change in mutations:
  try:validate(s,sample,ps[s])
  except AssertionError:pass
  else:raise AssertionError('Se aceptó evidencia alterada')
-print('Nombre593:50 entradas comprobadas;7 alteraciones de evidencia/cifras/modelos rechazadas.')
+print(f'Nombre593:{len(entries)} entradas comprobadas;7 alteraciones de evidencia/cifras/modelos rechazadas.')
