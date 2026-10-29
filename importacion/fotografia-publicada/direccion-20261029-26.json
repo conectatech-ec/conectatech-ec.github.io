@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Normalizar encuadre de hasta30 productos con margen excesivo en sus versiones web; reutilizar íntegros los maestros vigentes sin regenerar ni retocar producto. No son errores de identidad ni SKU nuevos.",
   "productos": {
     "CABL025": {
@@ -5270,5 +5270,20 @@
     }
   },
   "base_integracion_verificada": "e699b91792d3b89b02a0fb654fbce2fd950f1c3d",
-  "galeria_conjunta": "/revision/fotografia-produccion-masiva-20261029/"
+  "galeria_conjunta": "/revision/fotografia-produccion-masiva-20261029/",
+  "fecha_primera_verificacion_publica": "2026-10-29T03:48:40.396397+00:00",
+  "verificacion": {
+    "workflow_run": 40813281696,
+    "http_verificacion_directa": true,
+    "chromium": [
+      1280,
+      390
+    ],
+    "casos_chromium": 56,
+    "maestros_originales_integros": true,
+    "hardware_regenerado": false,
+    "ambito": "Mejoras de encuadre desde maestros íntegros; fichas, catálogo y galerías públicos comprobados. No son SKU nuevos ni correcciones de identidad.",
+    "chromium_job_id": 123251382137,
+    "base_integracion_fechas": "d7abcce67c8c0a827d36547851261eb46a1264fb"
+  }
 }
