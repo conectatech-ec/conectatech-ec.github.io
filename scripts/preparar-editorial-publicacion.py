@@ -22,7 +22,12 @@ for sku,e in cfg['productos'].items():
  # El renderer usa la portada vigente, incluida una corrección aprobada por la sesión fotográfica.
  # Se comprueban URL y bytes contra el registro fotográfico actual; la referencia editorial anterior es histórica.
  photo=effectivePhotos[sku]['imagenProfesional']['versiones']['1200']
- assert photo['url']==effectivePhotos[sku]['imagen']==by[sku]['imageUrl'],sku
+ assert effectivePhotos[sku]['imagen']==by[sku]['imageUrl'],sku
+ if photo['url']!=effectivePhotos[sku]['imagen']:
+  approved=json.loads(Path('importacion/premium-activo.json').read_text())['productos'][sku]
+  assert approved['aprobacion_visual']['aprobado_por_propietario'] is True,sku
+  assert approved['ruta_publicada']==effectivePhotos[sku]['imagen'],sku
+  assert approved['sha256_maestro']==hashlib.sha256(Path(approved['ruta_publicada'].lstrip('/')).read_bytes()).hexdigest(),sku
  assert photo['sha256']==hashlib.sha256(Path(photo['url'].lstrip('/')).read_bytes()).hexdigest(),sku
  assert e['condicionTarjeta']==('De terceros' if seo[sku]['reglaSKU']['autenticidad']=='genérico/compatible' else ''),sku
  if cfg.get('criterioCodigosTecnicosFueraDeTitulos'):
