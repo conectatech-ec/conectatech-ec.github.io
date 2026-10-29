@@ -384,3 +384,6 @@ El CI heredado POWE001 debe comparar la portada vigente con el mismo lector vali
 
 ## Tanda042–043 de50títulos comprobada en web pública
 Dos informes inmutables25+25 HTTPS/Chromium verifican nombres y búsquedas, sin atributos nuevos ni fotos aprobadas ficticias. Registrar sólo50fechas reales editoriales según esos informes conSHA;50fotos siguen pendientes, prioridad fotográfica actual conservada y50enlaces públicos de revisión directa.812presentaciones acumuladas;762previas y320CORRECTO intactos,37nombres reservados,33celulares/tablets sineditar. Datos1170,finanzas,stock,URLs,SEO/schema,clasificación yfeeds intactos.0costo.
+
+## Tanda044–045 ycorrección ADAP054,29oct2026
+Propietario confirmaADAP054:adaptador3,5mm a1/4pulgada;título corregido,sin alterar género contractual1/4macho/3,5hembra.50mejoras adicionales conservadoras delnombre593,27reservas de redacción y23reclasificaciones puntuales por errores/redundancia/jerarquía;297CORRECTO conservados,10reservas abiertas y33celulares/tablets sineditar.51cambios26+25,862presentaciones sólo trasHTTP/Chromium público.50fotos pendientes conservadas;sin nuevosatributos,contratos oimágenes. Precios,stock,SKU,URLs,SEO/schema,593yfeeds intactos.0costo.
