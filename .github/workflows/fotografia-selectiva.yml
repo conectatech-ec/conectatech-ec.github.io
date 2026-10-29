@@ -1712,3 +1712,68 @@ jobs:
           npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa28" playwright@1.51.1
           curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-reencuadres-28-qa.cjs" -o "$RUNNER_TEMP/foto-qa28/qa.cjs"
           NODE_PATH="$RUNNER_TEMP/foto-qa28/node_modules" node "$RUNNER_TEMP/foto-qa28/qa.cjs"
+
+  reencuadres_masivos_29:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Verificar maestros íntegros y treinta versiones comerciales
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json,os,re,time,hashlib
+          from datetime import datetime,timezone
+          from urllib.request import urlopen,Request
+          origin='https://conectatech-ec.github.io';raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(url):
+              for attempt in range(4):
+                  try:
+                      with urlopen(Request(url,headers={'Cache-Control':'no-cache'}),timeout=30) as r:
+                          assert r.status==200
+                          return r.read()
+                  except Exception:
+                      if attempt==3:raise
+                      time.sleep(2*(attempt+1))
+          record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-29.json'));assert len(record['productos'])==30
+          published=os.environ['PHOTO_REF']=='refs/heads/main'
+          if published:
+              for attempt in range(300):
+                  try:
+                      catalog=get(origin+'/').decode();products={p['sku']:p for p in json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])}
+                      assert all(products[s]['imageUrl']==r['imagenProfesional']['versiones']['1200']['url'] for s,r in record['productos'].items())
+                      ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',catalog)[1];meta=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
+                      for s,row in record['productos'].items():
+                          assert meta[s]['imagen']['src']==row['imagenProfesional']['versiones']['1200']['url']
+                          if record['publicacion_verificada']:assert datetime.fromisoformat(meta[s]['actualizadoEn'])>=datetime.fromisoformat(record['fecha_primera_verificacion_publica'])
+                      break
+                  except Exception:
+                      if attempt==299:raise
+                      time.sleep(5)
+          cache={};results=[]
+          for s,row in record['productos'].items():
+              photo=row['imagenProfesional'];assert row['revisado_visual'] and row['maestro_reutilizado_sin_regenerar'] and all(row['qa_geometria'].values())
+              assert photo['original']==row['maestro_anterior']['url'] and photo['sha256_original']==row['maestro_anterior']['sha256']
+              files=[row['maestro_anterior'],*row['versiones_anteriores'].values(),*photo['versiones'].values()]
+              for kept in row['mantener_vistas']:files.extend([{'url':kept['original'],'sha256':kept['sha256_original']},*kept['versiones'].values()])
+              for v in files:
+                  assert v['url'].startswith('/imagenes/'+s.lower()+'/') and '..' not in v['url']
+                  if v['url'] not in cache:cache[v['url']]=hashlib.sha256(get((origin if published else raw)+v['url'])).hexdigest()
+                  assert cache[v['url']]==v['sha256']
+              if published:
+                  page=get(origin+row['pagina']).decode();assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+              results.append({'sku':s,'archivos':len(files),'maestro_integro_conservado':True})
+          if published:
+              gallery=get(origin+'/revision/fotografia-reencuadres-masivos-20261029-29/').decode();assert gallery.count('<article')==30 and gallery.count('<img ')==60
+          print('RESULTADO_DIRECCION_29='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'archivos_unicos':len(cache),'productos':results},ensure_ascii=False))
+      - name: Comprobar treinta fichas y galería en móvil y escritorio
+        if: github.ref == 'refs/heads/main'
+        env:
+          PHOTO_SHA: ${{ github.sha }}
+          PHOTO_PUBLIC: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/foto-qa29"
+          npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa29" playwright@1.51.1
+          curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-reencuadres-29-qa.cjs" -o "$RUNNER_TEMP/foto-qa29/qa.cjs"
+          NODE_PATH="$RUNNER_TEMP/foto-qa29/node_modules" node "$RUNNER_TEMP/foto-qa29/qa.cjs"
