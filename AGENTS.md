@@ -367,3 +367,6 @@ Formato039 se integra sobremain43f8ab22 con fotografía23 deCARG029/CARG034/CARG
 
 ## Condiciones040, orden del propietario 28oct2026 Guayaquil
 CARG010 AAA; CARG046 y CARG049 compatibles Apple, nunca original. CARG036,CARG037,CUBO025,CARG015: Producto compatible sin (AAA); conservar clasificación interna. CUBO019 original. Ocho fichas existentes, no nuevos títulos ni SKU. Confirmaciones individuales persistentes, fotos conservadas por SHA y política idéntica. Precios/stock/URLs/593/títulos intactos. Fechas exclusivamente tras HTTP/Chromium público. 0costo.
+
+## Contenido040 público comprobado
+Ocho condiciones verificadas por HTTPS/Chromium, fotos cargadas y tarjetas coherentes. Registrar exclusivamente ocho fechas de condición según informe inmutable reportes/condiciones-040/condiciones-publicas.json y SHA. CARG010AAA; seis compatibles sin AAA; CUBO019original. Títulos,1170datos,757presentaciones,precios/stock/fotos/URLs/593/feeds intactos. Mantener prioridad reciente y respetar fechas fotográficas ajenas posteriores.0costo.
