@@ -24,7 +24,9 @@ for(const [sku,e] of Object.entries(entries)){
  if(sku==='PARL026'){const text=await detail.locator('body').textContent();assert(/3 pulgadas/.test(text));assert(/Tamaño nominal/.test(text));assert(html.toString().includes('Parlante portátil Sing-e de 3 pulgadas'));}
  if(manifest.modelosTrasladadosAEspecificaciones?.[sku])assert(html.toString().includes(manifest.modelosTrasladadosAEspecificaciones[sku]),sku+' modelo técnico desaparecido');
  const contract=JSON.parse(fs.readFileSync('importacion/contratos/'+sku+'.json'));
- if(contract.modelo){const normalize=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');const specs=(await detail.locator('.spec').allTextContents()).join(' ');assert(normalize(specs).includes(normalize(contract.modelo)),sku+' modelo contractual no accesible en especificaciones');}
+ const historicalClassification=manifest.modelosClasificacionHistorica?.[sku];
+ if(historicalClassification){assert.equal(contract.modelo,'Versión AAA / genérica');assert.equal(historicalClassification.valorConservado,contract.modelo);assert.equal(sha(fs.readFileSync('importacion/contratos/'+sku+'.json')),historicalClassification.sha256ContratoConservado);}
+ if(contract.modelo&&!historicalClassification){const normalize=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');const specs=(await detail.locator('.spec').allTextContents()).join(' ');assert(normalize(specs).includes(normalize(contract.modelo)),sku+' modelo contractual no accesible en especificaciones');}
  if(e.modelosBusquedaVerificados?.length){const specs=(await detail.locator('.spec').allTextContents()).join(' ').toLowerCase();for(const code of e.modelosBusquedaVerificados)assert(specs.includes(code.toLowerCase()),sku+' código de atributo no accesible: '+code);}
  report.fichasVerificadas.push({sku,http:200,sha256:sha(local),encabezado:await detail.locator('h1').textContent()});
 }

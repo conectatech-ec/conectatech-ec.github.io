@@ -370,3 +370,6 @@ CARG010 AAA; CARG046 y CARG049 compatibles Apple, nunca original. CARG036,CARG03
 
 ## Contenido040 público comprobado
 Ocho condiciones verificadas por HTTPS/Chromium, fotos cargadas y tarjetas coherentes. Registrar exclusivamente ocho fechas de condición según informe inmutable reportes/condiciones-040/condiciones-publicas.json y SHA. CARG010AAA; seis compatibles sin AAA; CUBO019original. Títulos,1170datos,757presentaciones,precios/stock/fotos/URLs/593/feeds intactos. Mantener prioridad reciente y respetar fechas fotográficas ajenas posteriores.0costo.
+
+## Continuación editorial041 y rótulo CARG010
+CARG010 Producto compatible sin AAA visible, clasificación interna intacta. Cinco títulos adicionales:SOPO009,TARJ002,ADAP019,ADAP020,CARG056; referencias propias y variantes contractuales verificadas. Tres reservas resueltas sin inventar hardware;320CORRECTO conservados,87reservas incluyendo32celulares/tablets,un teléfono enMEJORAR aplazado:33al final. 762presentaciones tras cierre,0SKU nuevos. TARJ002 conserva modelo histórico de clasificación sin tratarlo como código técnico ni cambiar su condición. Contratos,1170datos,precios,stock,fotos,URLs,SEO/schema/feeds intactos. Fechas sólo tras HTTP/Chromium público, seis cambios primero respetando fotos ajenas.0costo.
