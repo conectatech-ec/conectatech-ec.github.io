@@ -6,7 +6,7 @@
   "costo_autorizado": 0,
   "publicacion_habilitada": false,
   "estado": "SOLO_VALIDACION_COMERCIAL_PENDIENTE",
-  "source_commit": "7de90c11646006de889165854a1e36b228b951a4",
+  "source_commit": "9699b817b9bc92e5fcd2ba5501fe8dd4693d7e0e",
   "validacion": "local_y_http_publico",
   "inventario_corregido": {
     "fecha_corte": "2026-10-22",
@@ -46,11 +46,12 @@
     "sha256_productos": "d0d214534189fb99d3dc641834f2d786b381cf276dab74b9bafd58663f173a0a"
   },
   "productos_origen": 1170,
-  "incluidos": 586,
-  "excluidos": 584,
+  "incluidos": 480,
+  "excluidos": 690,
   "motivos": {
+    "http_publico: HTTP Error 503: Service Unavailable": 10,
     "identidad_pendiente": 4,
-    "imagen_no_coincide": 82,
+    "imagen_no_coincide": 178,
     "precio_inventario_no_coincide": 1,
     "producto_no_aprobado": 206,
     "publicacion_no_verificada": 249,
@@ -59,7 +60,7 @@
     "stock_ficha_no_coincide": 4,
     "titulo_catalogo_no_coincide": 1
   },
-  "feed_sha256": "913945bb611c2661557f668ecc8e8ddee501a369f09a89140e5faea140fef959",
+  "feed_sha256": "809b9d4f58bc48926104b219d60cec7500e059d361b3fd30e60f697d5f51b791",
   "advertencias": [
     "Stock registrado: no implica inventario en tiempo real.",
     "Faltan verificar compra online, precio final, envíos y devoluciones; XML válido no garantiza aprobación de Google.",
