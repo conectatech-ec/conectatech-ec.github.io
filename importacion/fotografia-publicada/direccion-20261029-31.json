@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Trípodes abiertos completos como portada, cabezal en secundaria y fidelidad a las nuevas fotografías físicas del propietario. Edición comercial asistida cotejada visualmente; no son fotografías oficiales ni recuperación óptica de detalle. Sin cambios editoriales o comerciales.",
   "productos": {
     "TRIP002": {
@@ -5011,5 +5011,17 @@
       },
       "vistas": []
     }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-30T00:31:12.823462+00:00",
+  "verificacion": {
+    "workflow_run": 40978346381,
+    "workflow_ambito": "CI de rama final SUCCESS; HTTP y Chromium públicos ejecutados directamente con scripts versionados.",
+    "http_archivos": 120,
+    "chromium": [
+      1280,
+      390
+    ],
+    "chromium_casos": 18,
+    "originales_conservados": true
   }
 }
