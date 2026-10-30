@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Normalizar encuadre de hasta30 productos con margen excesivo en sus versiones web; reutilizar íntegros los maestros vigentes sin regenerar ni retocar producto. No son errores de identidad ni SKU nuevos.",
   "productos": {
     "PARL022": {
@@ -7202,5 +7202,19 @@
         }
       ]
     }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-30T17:18:29.153110+00:00",
+  "verificacion": {
+    "workflow_run": 41095947001,
+    "http_verificacion_directa": true,
+    "chromium": [
+      1280,
+      390
+    ],
+    "casos_chromium": 60,
+    "maestros_originales_integros": true,
+    "hardware_regenerado": false,
+    "ambito": "Encuadre comercial desde maestro completo; fichas, catálogo y galería públicos comprobados. No son nuevos SKU ni errores de identidad.",
+    "base_integracion_fechas": "368b5e1e749550899055ed96371b06ee7e48c187"
   }
 }
