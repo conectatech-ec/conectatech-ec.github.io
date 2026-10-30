@@ -3,6 +3,8 @@ const fs=require('fs'),path=require('path'),assert=require('assert'),{chromium}=
 (async()=>{
  const pub=process.env.PHOTO_PUBLIC==='1',root=process.env.CATALOG_ROOT||process.cwd(),origin=pub?'https://conectatech-ec.github.io':'http://fotografia.local';
  const manifest=pub?await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261029-31.json')).json():JSON.parse(fs.readFileSync(path.join(root,'importacion/fotografia-publicada/direccion-20261029-31.json')));
+ const revision32=pub?await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261029-32.json')).json():JSON.parse(fs.readFileSync(path.join(root,'importacion/fotografia-publicada/direccion-20261029-32.json')));
+ for(const[s,r]of Object.entries(revision32.productos))if(manifest.productos[s]){const old=manifest.productos[s];assert(r.revisado_visual&&r.archivos_originales_conservados.some(v=>v.url===old.imagenProfesional.versiones['1200'].url&&v.sha256===old.imagenProfesional.versiones['1200'].sha256));manifest.productos[s]={...old,imagenProfesional:r.imagenProfesional,mantener_vistas:r.mantener_vistas,miniaturas_esperadas:r.miniaturas_esperadas};}
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||(process.env.GITHUB_ACTIONS?'/usr/bin/google-chrome':'/usr/bin/chromium'),headless:true,args:['--no-sandbox'],...(process.env.PHOTO_PROXY==='1'?{proxy:{server:process.env.HTTPS_PROXY}}:{})}),results=[];
  for(const width of [1280,390]){
   const page=await browser.newPage({viewport:{width,height:950}});
