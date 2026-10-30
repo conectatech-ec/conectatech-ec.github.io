@@ -1,0 +1,30 @@
+// Sólo lectura: portadas abiertas, vistas secundarias y referencia física; móvil/escritorio.
+const fs=require('fs'),path=require('path'),assert=require('assert'),{chromium}=require('playwright');
+(async()=>{
+ const pub=process.env.PHOTO_PUBLIC==='1',root=process.env.CATALOG_ROOT||process.cwd(),origin=pub?'https://conectatech-ec.github.io':'http://fotografia.local';
+ const manifest=pub?await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261029-31.json')).json():JSON.parse(fs.readFileSync(path.join(root,'importacion/fotografia-publicada/direccion-20261029-31.json')));
+ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||(process.env.GITHUB_ACTIONS?'/usr/bin/google-chrome':'/usr/bin/chromium'),headless:true,args:['--no-sandbox'],...(process.env.PHOTO_PROXY==='1'?{proxy:{server:process.env.HTTPS_PROXY}}:{})}),results=[];
+ for(const width of [1280,390]){
+  const page=await browser.newPage({viewport:{width,height:950}});
+  if(!pub)await page.route('**/*',async route=>{let f=path.join(root,decodeURIComponent(new URL(route.request().url()).pathname));if(fs.existsSync(f)&&fs.statSync(f).isDirectory())f=path.join(f,'index.html');if(!fs.existsSync(f))f=path.join('/workspace/conectatech-ec.github.io',new URL(route.request().url()).pathname);if(fs.existsSync(f)&&fs.statSync(f).isFile())await route.fulfill({path:f});else await route.abort();});
+  for(const [sku,row]of Object.entries(manifest.productos)){
+   await page.goto(origin+row.pagina,{waitUntil:'commit',timeout:60000});await page.locator('.product-frame img').waitFor();await page.locator('.product-frame').scrollIntoViewIfNeeded();await page.locator('.product-frame img').evaluate(i=>i.decode());
+   for(const img of await page.locator('.gallery img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode());}
+   const data=await page.evaluate(()=>({cover:new URL(document.querySelector('.product-frame img').src).pathname,current:new URL(document.querySelector('.product-frame img').currentSrc).pathname,fit:getComputedStyle(document.querySelector('.product-frame img')).objectFit,count:document.querySelectorAll('.gallery img').length,broken:[...document.querySelectorAll('.product-frame img,.gallery img')].filter(i=>!i.complete||!i.naturalWidth).length,overflow:document.documentElement.scrollWidth>innerWidth}));
+   if(process.env.QA_SAVE_DIR)await page.screenshot({path:path.join(process.env.QA_SAVE_DIR,sku+'-'+(pub?'publica':'local')+'-'+width+'.png')});
+   assert.equal(data.cover,row.imagenProfesional.versiones['1200'].url);assert.equal(await page.locator('.gallery img').evaluateAll(a=>a.map(i=>new URL(i.src).pathname)).then(a=>a[0]),row.mantener_vistas[0].versiones['300'].url);assert(Object.values(row.imagenProfesional.versiones).some(v=>v.url===data.current));assert.equal(data.fit,'contain');assert.equal(data.count,row.miniaturas_esperadas);assert(!data.broken&&!data.overflow);results.push({sku,width,...data});
+  }
+  await page.goto(origin+'/revision/fotografia-tripodes-selfies-20261029-31/',{waitUntil:'commit',timeout:60000});await page.locator('article').first().waitFor();
+  for(const img of await page.locator('article img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode());}
+  assert.equal(await page.locator('article').count(),Object.keys(manifest.productos).length);assert.equal(await page.locator('article img').count(),Object.keys(manifest.productos).length*4);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  if(process.env.QA_SAVE_DIR)await page.screenshot({path:path.join(process.env.QA_SAVE_DIR,'galeria-'+(pub?'publica':'local')+'-'+width+'.png')});
+  if(pub){
+   await page.goto(origin+'/',{waitUntil:'commit',timeout:60000});await page.locator('#grid article').first().waitFor();
+   const catalog=await page.evaluate(rows=>{const a=orderedProducts([...products]),m=window.CONECTATECH_CATALOGO.productos;return Object.fromEntries(Object.keys(rows).map(s=>[s,{position:a.findIndex(p=>p.sku===s)+1,image:products.find(p=>p.sku===s).imageUrl,metaImage:m[s].imagen.src,date:m[s].actualizadoEn}]));},manifest.productos);
+   for(const [s,row]of Object.entries(manifest.productos)){assert.equal(catalog[s].image,row.imagenProfesional.versiones['1200'].url);assert.equal(catalog[s].metaImage,catalog[s].image);assert(catalog[s].position>0);if(manifest.publicacion_verificada)assert(Date.parse(catalog[s].date)>=Date.parse(manifest.fecha_primera_verificacion_publica));}
+   console.log('CATALOGO_TRIPODES31='+JSON.stringify({width,productos:catalog}));
+  }
+  await page.close();
+ }
+ await browser.close();if(process.env.QA_SAVE_DIR)fs.writeFileSync(path.join(process.env.QA_SAVE_DIR,pub?'qa-publica-31.json':'qa-local-31.json'),JSON.stringify(results,null,2)+'\n');console.log('QA_TRIPODES31='+JSON.stringify({publico:pub,fecha:new Date().toISOString(),casos:results.length,resultados:results}));
+})().catch(e=>{console.error(e);process.exit(1)});
