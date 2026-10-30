@@ -37,7 +37,12 @@ for sku,e in cfg['productos'].items():
  assert e['condicionTarjeta']==('De terceros' if seo[sku]['reglaSKU']['autenticidad']=='genérico/compatible' else ''),sku
  if cfg.get('criterioCodigosTecnicosFueraDeTitulos'):
   forbidden=cfg['criterioCodigosTecnicosFueraDeTitulos']
-  for code in forbidden:assert code.casefold() not in (e['titulo']+' '+e['subtitulo']).casefold(),(sku,code)
+  for code in forbidden:
+   # M2 no equivale al modelo comercial de consola M26/M27. Mantener el control
+   # de referencias cortas completas sin confundirlas con otra identidad.
+   text=e['titulo']+' '+e['subtitulo']
+   match=re.search(r'(?<![A-Za-z0-9])'+re.escape(code)+r'(?![A-Za-z0-9])',text,re.I) if len(code)<=3 else code.casefold() in text.casefold()
+   assert not match,(sku,code)
  if e.get('publicacionVerificada'):
   v=e['publicacionVerificada'];report=Path(v['informe']);assert report.is_file() and hashlib.sha256(report.read_bytes()).hexdigest()==v['sha256Informe'],sku
   data=json.loads(report.read_text());assert data['estado']=='VERIFICADO_HTTP_CHROMIUM' and sku in data['skus'],sku
