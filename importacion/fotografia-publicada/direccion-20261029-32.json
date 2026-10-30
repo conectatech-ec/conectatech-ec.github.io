@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Ajustes selectivos solicitados tras revisar la galería31. Conservar portadas aprobadas, recuperar presentación compacta de Antes en secundarias y restaurar portada anterior de TRIP016.",
   "aclaracion_trip010": "El propietario confirmó: la portada está bien; mejorar únicamente la segunda foto al estilo de la portada de Antes.",
   "productos": {
@@ -2504,5 +2504,17 @@
         "maestro_anterior_reutilizado": true
       }
     }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-30T03:11:18.742242+00:00",
+  "verificacion": {
+    "workflow_run": 40994771258,
+    "workflow_ambito": "CI de rama final SUCCESS; HTTP y Chromium públicos ejecutados directamente con scripts versionados.",
+    "http_archivos": 123,
+    "chromium": [
+      1280,
+      390
+    ],
+    "chromium_casos": 16,
+    "originales_conservados": true
   }
 }
