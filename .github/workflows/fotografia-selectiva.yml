@@ -1608,6 +1608,7 @@ jobs:
                       time.sleep(2*(attempt+1))
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-27.json'));assert len(record['productos'])==30
           posterior=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-31.json'))['productos']
+          posterior.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-32.json'))['productos'])
           active={s:posterior.get(s,r) for s,r in record['productos'].items()}
           for s,r in active.items():
               if s in posterior:assert r['revisado_visual'] and any(v['url']==record['productos'][s]['imagenProfesional']['versiones']['1200']['url'] and v['sha256']==record['productos'][s]['imagenProfesional']['versiones']['1200']['sha256'] for v in r['archivos_originales_conservados'])
@@ -1677,6 +1678,7 @@ jobs:
                       time.sleep(2*(attempt+1))
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-28.json'));assert len(record['productos'])==30
           posterior=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-31.json'))['productos']
+          posterior.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-32.json'))['productos'])
           active={s:posterior.get(s,r) for s,r in record['productos'].items()}
           for s,r in active.items():
               if s in posterior:assert r['revisado_visual'] and any(v['url']==record['productos'][s]['imagenProfesional']['versiones']['1200']['url'] and v['sha256']==record['productos'][s]['imagenProfesional']['versiones']['1200']['sha256'] for v in r['archivos_originales_conservados'])
@@ -1746,6 +1748,7 @@ jobs:
                       time.sleep(2*(attempt+1))
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-29.json'));assert len(record['productos'])==30
           posterior=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-31.json'))['productos']
+          posterior.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-32.json'))['productos'])
           active={s:posterior.get(s,r) for s,r in record['productos'].items()}
           for s,r in active.items():
               if s in posterior:assert r['revisado_visual'] and any(v['url']==record['productos'][s]['imagenProfesional']['versiones']['1200']['url'] and v['sha256']==record['productos'][s]['imagenProfesional']['versiones']['1200']['sha256'] for v in r['archivos_originales_conservados'])
@@ -1880,6 +1883,74 @@ jobs:
                       if attempt==3:raise
                       time.sleep(2*(attempt+1))
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-31.json'));assert len(record['productos'])==9
+          posterior=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-32.json'))['productos']
+          active={s:posterior.get(s,r) for s,r in record['productos'].items()}
+          for s,r in posterior.items():assert r['revisado_visual'] and any(v['url']==record['productos'][s]['imagenProfesional']['versiones']['1200']['url'] and v['sha256']==record['productos'][s]['imagenProfesional']['versiones']['1200']['sha256'] for v in r['archivos_originales_conservados'])
+          published=os.environ['PHOTO_REF']=='refs/heads/main'
+          if published:
+              for attempt in range(300):
+                  try:
+                      catalog=get(origin+'/').decode();products={p['sku']:p for p in json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])}
+                      assert all(products[s]['imageUrl']==r['imagenProfesional']['versiones']['1200']['url'] for s,r in active.items())
+                      ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',catalog)[1];meta=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
+                      for s,row in active.items():
+                          assert meta[s]['imagen']['src']==row['imagenProfesional']['versiones']['1200']['url']
+                          if record['publicacion_verificada']:assert datetime.fromisoformat(meta[s]['actualizadoEn'])>=datetime.fromisoformat(record['fecha_primera_verificacion_publica'])
+                      break
+                  except Exception:
+                      if attempt==299:raise
+                      time.sleep(5)
+          cache={};results=[]
+          for s,row in record['productos'].items():
+              photo=row['imagenProfesional'];assert row['revisado_visual'] and all(row['qa_geometria'].values()) and row['referencias'] and row['revision_fisica']
+              files=[row['maestro_anterior'],*row['versiones_anteriores'].values(),{'url':photo['original'],'sha256':photo['sha256_original']},*photo['versiones'].values(),row['referencia_visual']]
+              for kept in row['mantener_vistas']:files.extend([{'url':kept['original'],'sha256':kept['sha256_original']},*kept['versiones'].values()])
+              for v in files:
+                  assert v['url'].startswith('/imagenes/'+s.lower()+'/') and '..' not in v['url']
+                  if v['url'] not in cache:cache[v['url']]=hashlib.sha256(get((origin if published else raw)+v['url'])).hexdigest()
+                  assert cache[v['url']]==v['sha256']
+              if published:
+                  page=get(origin+row['pagina']).decode();assert active[s]['imagenProfesional']['versiones']['1200']['url'] in page and active[s]['mantener_vistas'][0]['versiones']['300']['url'] in page
+              results.append({'sku':s,'archivos':len(files),'original_anterior_conservado':True})
+          if published:
+              gallery=get(origin+'/revision/fotografia-tripodes-selfies-20261029-31/').decode();assert gallery.count('<article')==9 and gallery.count('<img ')==36
+          print('RESULTADO_DIRECCION_31='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'archivos_unicos':len(cache),'productos':results},ensure_ascii=False))
+      - name: Comprobar nueve fichas y galería en móvil y escritorio
+        if: github.ref == 'refs/heads/main'
+        env:
+          PHOTO_SHA: ${{ github.sha }}
+          PHOTO_PUBLIC: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/foto-qa31"
+          npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa31" playwright@1.51.1
+          curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-tripodes-31-qa.cjs" -o "$RUNNER_TEMP/foto-qa31/qa.cjs"
+          NODE_PATH="$RUNNER_TEMP/foto-qa31/node_modules" node "$RUNNER_TEMP/foto-qa31/qa.cjs"
+
+
+  ajustes_tripodes_32:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Verificar maestros íntegros y ocho SKU y nueve ajustes solicitados
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json,os,re,time,hashlib
+          from datetime import datetime,timezone
+          from urllib.request import urlopen,Request
+          origin='https://conectatech-ec.github.io';raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(url):
+              for attempt in range(4):
+                  try:
+                      with urlopen(Request(url,headers={'Cache-Control':'no-cache'}),timeout=30) as r:
+                          assert r.status==200
+                          return r.read()
+                  except Exception:
+                      if attempt==3:raise
+                      time.sleep(2*(attempt+1))
+          record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-32.json'));assert len(record['productos'])==8
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           if published:
               for attempt in range(300):
@@ -1897,7 +1968,7 @@ jobs:
           cache={};results=[]
           for s,row in record['productos'].items():
               photo=row['imagenProfesional'];assert row['revisado_visual'] and all(row['qa_geometria'].values()) and row['referencias'] and row['revision_fisica']
-              files=[row['maestro_anterior'],*row['versiones_anteriores'].values(),{'url':photo['original'],'sha256':photo['sha256_original']},*photo['versiones'].values(),row['referencia_visual']]
+              files=[*row['archivos_originales_conservados'],row['maestro_anterior'],*row['versiones_anteriores'].values(),{'url':photo['original'],'sha256':photo['sha256_original']},*photo['versiones'].values(),row['referencia_visual']]
               for kept in row['mantener_vistas']:files.extend([{'url':kept['original'],'sha256':kept['sha256_original']},*kept['versiones'].values()])
               for v in files:
                   assert v['url'].startswith('/imagenes/'+s.lower()+'/') and '..' not in v['url']
@@ -1907,15 +1978,15 @@ jobs:
                   page=get(origin+row['pagina']).decode();assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
               results.append({'sku':s,'archivos':len(files),'original_anterior_conservado':True})
           if published:
-              gallery=get(origin+'/revision/fotografia-tripodes-selfies-20261029-31/').decode();assert gallery.count('<article')==9 and gallery.count('<img ')==36
-          print('RESULTADO_DIRECCION_31='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'archivos_unicos':len(cache),'productos':results},ensure_ascii=False))
-      - name: Comprobar nueve fichas y galería en móvil y escritorio
+              gallery=get(origin+'/revision/fotografia-ajustes-tripodes-20261029-32/').decode();assert gallery.count('<article')==8 and gallery.count('<img ')==25
+          print('RESULTADO_DIRECCION_32='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'archivos_unicos':len(cache),'productos':results},ensure_ascii=False))
+      - name: Comprobar ocho fichas y galería en móvil y escritorio
         if: github.ref == 'refs/heads/main'
         env:
           PHOTO_SHA: ${{ github.sha }}
           PHOTO_PUBLIC: '1'
         run: |
-          mkdir -p "$RUNNER_TEMP/foto-qa31"
-          npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa31" playwright@1.51.1
-          curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-tripodes-31-qa.cjs" -o "$RUNNER_TEMP/foto-qa31/qa.cjs"
-          NODE_PATH="$RUNNER_TEMP/foto-qa31/node_modules" node "$RUNNER_TEMP/foto-qa31/qa.cjs"
+          mkdir -p "$RUNNER_TEMP/foto-qa32"
+          npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa32" playwright@1.51.1
+          curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-tripodes-32-qa.cjs" -o "$RUNNER_TEMP/foto-qa32/qa.cjs"
+          NODE_PATH="$RUNNER_TEMP/foto-qa32/node_modules" node "$RUNNER_TEMP/foto-qa32/qa.cjs"
