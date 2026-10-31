@@ -62,7 +62,7 @@ async function main() {
   const catalogProducts = products;
   const editorialFile=safe('importacion/editorial/publicados.json');
   const editorial=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile)):null;
-  const entry=p=>editorial?.activo&&!editorial.excluirPrefijos?.some(x=>p.sku.startsWith(x))?editorial.productos[p.sku]:null;
+  const entry=p=>require('../assets/editorial-titulos.js').entry(p,editorial);
   const editorialDate=(p,payload)=>{const e=entry(p),events=[e?.publicacionVerificada||e?.publicacionAnterior,editorial?.actualizacionesFicha?.[p.sku]?.publicacionVerificada],v=events.filter(x=>x?.estado==='VERIFICADO_HTTP_CHROMIUM'&&x.sha256Informe&&Number.isFinite(Date.parse(x.fecha))).sort((a,b)=>Date.parse(b.fecha)-Date.parse(a.fecha))[0],m=payload.productos[p.sku]?.actualizadoEn||'';return v&&(Date.parse(v.fecha)||0)>(Date.parse(m)||0)?v.fecha:'';};
   const pageSize = Number(index.match(/(?:const|let) pageSize\s*=\s*(\d+)/)?.[1] || 24);
   const report = {version: 1, fecha: new Date().toISOString(), base: opt.base, sku_solicitados: skus,

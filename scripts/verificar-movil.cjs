@@ -114,7 +114,7 @@ async function main() {
         const p = products.get(sku), content = seo[sku] || {};
         const slug = slugs[sku], expectedName = content.nombre || p.name;
         const editorialPath=safe('importacion/editorial/publicados.json');const editorial=fs.existsSync(editorialPath)?JSON.parse(fs.readFileSync(editorialPath)):null;
-        const entry=editorial?.activo&&!editorial.excluirPrefijos?.some(prefix=>sku.startsWith(prefix))?editorial.productos?.[sku]:null;
+        const entry=require('../assets/editorial-titulos.js').entry({sku},editorial);
         const expectedHeading=entry?.mostrarTituloEnFicha?entry.titulo:expectedName;
         const canonical = PUBLIC + '/productos/' + slug + '/';
         row.url = canonical; row.url_comprobada = opt.base + '/productos/' + slug + '/';
