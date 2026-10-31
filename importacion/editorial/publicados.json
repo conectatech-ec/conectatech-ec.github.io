@@ -43226,6 +43226,42 @@
       "publicacionVerificada": null,
       "mostrarTituloEnFicha": true,
       "causa": "Reserva resuelta: propietario confirma mismo tipo de cable ycalidad Premium sóloCABL166.Conservar los atributos conocidos del nombre593, sin inventar variantes."
+    },
+    "TOMA001": {
+      "titulo": "Tomatodo con parlante Bluetooth",
+      "subtitulo": "473 ml · acero inoxidable 304",
+      "tituloAnterior": "Tomatodo",
+      "nombre593": "TOMATODO",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "datos-593/inventario-publico.csv#TOMA001",
+        "importacion/editorial/identidad-toma001-058.json#TOMA001"
+      ],
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "evidenciaAtributos": {
+        "atributos": {
+          "Capacidad según empaque": "473 ml",
+          "Material según empaque": "Acero inoxidable 304",
+          "Audio": "Parlante Bluetooth integrado"
+        }
+      },
+      "foto": "",
+      "sha256Foto": "",
+      "verificacionReferenciaPropia": {
+        "modo": "FOTOS_PROPIAS_IDENTIDAD_SIN_PORTADA",
+        "evidencia": "importacion/editorial/identidad-toma001-058.json",
+        "sha256Evidencia": "332da7b3cac1a35f8706c50c97648df09e540611a0014e0604e1851a08d9f716",
+        "noApruebaFotografiaComercial": true
+      },
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "url": "https://conectatech-ec.github.io/productos/toma001-tomatodo/",
+      "lote": "editorial-058",
+      "mostrarTituloEnFicha": true,
+      "publicacionVerificada": null,
+      "causa": "Identidad confirmada por propietario: fotos nuevas nombradasTERM001 sonTOMA001;atributos visibles enunidad yempaque."
     }
   },
   "loteActual": "058",
@@ -43580,7 +43616,7 @@
     "Jiabao"
   ],
   "tandaActual": {
-    "id": "058-ram-fisica",
+    "id": "058-ram-cables-tomatodo",
     "lotes": [
       "058"
     ],
@@ -43589,10 +43625,11 @@
       "TELF011",
       "TABL004",
       "CABL166",
-      "CABL030"
+      "CABL030",
+      "TOMA001"
     ],
-    "cantidad": 5,
-    "presentacionesAdicionales": 1,
+    "cantidad": 6,
+    "presentacionesAdicionales": 2,
     "revisionesPrevias": [
       "TELF010",
       "TELF011",

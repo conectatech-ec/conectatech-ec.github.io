@@ -9,7 +9,8 @@
     "TELF011",
     "TABL004",
     "CABL166",
-    "CABL030"
+    "CABL030",
+    "TOMA001"
   ],
   "productos": {
     "TELF010": {
@@ -206,6 +207,42 @@
       "publicacionVerificada": null,
       "mostrarTituloEnFicha": true,
       "causa": "Reserva resuelta: propietario confirma mismo tipo de cable ycalidad Premium sóloCABL166.Conservar los atributos conocidos del nombre593, sin inventar variantes."
+    },
+    "TOMA001": {
+      "titulo": "Tomatodo con parlante Bluetooth",
+      "subtitulo": "473 ml · acero inoxidable 304",
+      "tituloAnterior": "Tomatodo",
+      "nombre593": "TOMATODO",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "datos-593/inventario-publico.csv#TOMA001",
+        "importacion/editorial/identidad-toma001-058.json#TOMA001"
+      ],
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "evidenciaAtributos": {
+        "atributos": {
+          "Capacidad según empaque": "473 ml",
+          "Material según empaque": "Acero inoxidable 304",
+          "Audio": "Parlante Bluetooth integrado"
+        }
+      },
+      "foto": "",
+      "sha256Foto": "",
+      "verificacionReferenciaPropia": {
+        "modo": "FOTOS_PROPIAS_IDENTIDAD_SIN_PORTADA",
+        "evidencia": "importacion/editorial/identidad-toma001-058.json",
+        "sha256Evidencia": "332da7b3cac1a35f8706c50c97648df09e540611a0014e0604e1851a08d9f716",
+        "noApruebaFotografiaComercial": true
+      },
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "url": "https://conectatech-ec.github.io/productos/toma001-tomatodo/",
+      "lote": "editorial-058",
+      "mostrarTituloEnFicha": true,
+      "publicacionVerificada": null,
+      "causa": "Identidad confirmada por propietario: fotos nuevas nombradasTERM001 sonTOMA001;atributos visibles enunidad yempaque."
     }
   },
   "fichasConPresentacionComercial": [
@@ -213,17 +250,18 @@
     "TELF011",
     "TABL004",
     "CABL166",
-    "CABL030"
+    "CABL030",
+    "TOMA001"
   ],
   "modelosTrasladadosAEspecificaciones": {},
   "noSonSKUNuevos": true,
-  "nuevasPresentaciones": 1,
+  "nuevasPresentaciones": 2,
   "revisionesPrevias": [
     "TELF010",
     "TELF011",
     "TABL004",
     "CABL166"
   ],
-  "autorizacion": "el caso de los telf, cuando la ram ponemos solo la fisica como los samsung y la tablet K2 de mario, no debe ir la palabra Total;CABL166Premium confirmado en nueva base ypor propietario;estuches omitidos por orden expresa.",
+  "autorizacion": "el caso de los telf, cuando la ram ponemos solo la fisica como los samsung y la tablet K2 de mario, no debe ir la palabra Total;CABL166Premium confirmado en nueva base ypor propietario;estuches omitidos por orden expresa.;realmente term001 es toma001 yo me equivoque en el codigo porque el puse manual, entonces procede",
   "restricciones": "Mantener1111presentaciones,SKU,modelos,nombres593,precios,stock,fotos,URLs,metaSEO,JSONLD yfeeds. Actualizar sólo rótulos RAM física en tarjetas,beneficios yspecs;K2 confirmada por propietario."
 }
