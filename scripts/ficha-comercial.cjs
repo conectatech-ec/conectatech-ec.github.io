@@ -7,7 +7,7 @@ const origin='https://conectatech-ec.github.io';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>'$'+Number(n).toFixed(2).replace('.',',');
 module.exports=function ficha(p,c,url){
- const editorial=editorialMap?.activo&&!editorialMap.excluirPrefijos?.some(prefix=>p.sku.startsWith(prefix))?editorialMap.productos?.[p.sku]:null;
+ const editorial=require('../assets/editorial-titulos.js').entry(p,editorialMap);
  const presentation=editorial?.mostrarTituloEnFicha?editorial:null;
  const name=c.nombre||p.name, img=c.imagen?new URL(c.imagen,origin).href:'';
  const cover=c.imagenProfesional;

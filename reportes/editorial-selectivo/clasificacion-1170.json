@@ -3,9 +3,9 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 1063,
+    "MEJORAR TÍTULO": 1109,
     "REVISAR IDENTIDAD": 10,
-    "CORRECTO": 97
+    "CORRECTO": 51
   },
   "aplicados": 1062,
   "cola": [
@@ -80,7 +80,17 @@
         "seo-contenido.json#TELF036"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "MEJORAR TÍTULO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi Note 15 Pro 4G 512 GB",
+        "subtitulo": "24 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF036",
+          "importacion/contratos/TELF036.json"
+        ]
+      }
     },
     {
       "sku": "ADAP019",
@@ -5788,7 +5798,7 @@
     },
     {
       "sku": "AIRT004",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Airtag Portatil Tipo Llavero Cuadrado",
       "propuesta": "Airtag Portatil Tipo Llavero Cuadrado",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -5798,7 +5808,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Airtag cuadrado tipo llavero",
+        "subtitulo": "Portátil",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#AIRT004",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#AIRT004"
+        ]
+      }
     },
     {
       "sku": "ALEX001",
@@ -7198,7 +7218,7 @@
     },
     {
       "sku": "AUDI101",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audifonos Galaxy Buds 5 PRO",
       "propuesta": "Audifonos Galaxy Buds 5 PRO",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7208,7 +7228,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Audífonos Galaxy Buds 5 Pro",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#AUDI101",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#AUDI101"
+        ]
+      }
     },
     {
       "sku": "AUDI103",
@@ -7578,7 +7608,7 @@
     },
     {
       "sku": "AUDI124",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audifonos Inalmabricos LMN-K21",
       "propuesta": "Audifonos Inalmabricos LMN-K21",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7588,11 +7618,21 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Audífonos LMN-K21",
+        "subtitulo": "Inalámbricos",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#AUDI124",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#AUDI124"
+        ]
+      }
     },
     {
       "sku": "AUDI125",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Audifonos Inalambricos LMN-K5",
       "propuesta": "Audifonos Inalambricos LMN-K5",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -7602,7 +7642,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Audífonos LMN-K5",
+        "subtitulo": "Inalámbricos",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#AUDI125",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#AUDI125"
+        ]
+      }
     },
     {
       "sku": "BASE002",
@@ -12555,7 +12605,7 @@
     },
     {
       "sku": "CORR006",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Correa Smartwatch Mario-luigi",
       "propuesta": "Correa Smartwatch Mario-luigi",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12565,11 +12615,21 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Correa smartwatch Mario y Luigi",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#CORR006",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#CORR006"
+        ]
+      }
     },
     {
       "sku": "CORR007",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Correa Para Reloj Smarwatch Varios Modelos - Colores",
       "propuesta": "Correa Para Reloj Smarwatch Varios Modelos - Colores",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -12579,7 +12639,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Correa smartwatch surtida",
+        "subtitulo": "Modelos y colores variados",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#CORR007",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#CORR007"
+        ]
+      }
     },
     {
       "sku": "CORR008",
@@ -13794,7 +13864,7 @@
     },
     {
       "sku": "ESTU082",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Estuche Para Iphone Escarhados Dingend",
       "propuesta": "Estuche Para Iphone Escarhados Dingend",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -13804,7 +13874,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Estuche escarchado para iPhone",
+        "subtitulo": "Dingend",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#ESTU082",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#ESTU082"
+        ]
+      }
     },
     {
       "sku": "ESTU089",
@@ -14574,7 +14654,7 @@
     },
     {
       "sku": "GADG002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Gadget Llaveros Animados",
       "propuesta": "Gadget Llaveros Animados",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14584,11 +14664,21 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Llaveros con diseños animados",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#GADG002",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#GADG002"
+        ]
+      }
     },
     {
       "sku": "GADG003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Gadget Sobres Mario Sobresa",
       "propuesta": "Gadget Sobres Mario Sobresa",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -14598,7 +14688,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Sobres sorpresa de Mario",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#GADG003",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#GADG003"
+        ]
+      }
     },
     {
       "sku": "GADG004",
@@ -19397,7 +19497,7 @@
     },
     {
       "sku": "MOUS007",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mouse Game Mouse RCA X103",
       "propuesta": "Mouse Game Mouse RCA X103",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -19407,7 +19507,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Mouse gamer RCA X103",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#MOUS007",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#MOUS007"
+        ]
+      }
     },
     {
       "sku": "MOUS009",
@@ -19724,7 +19834,7 @@
     },
     {
       "sku": "MOUS030",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Mouse Alambrico Gaming RCA Game ON 5RCA555",
       "propuesta": "Mouse Alambrico Gaming RCA Game ON 5RCA555",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -19734,7 +19844,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Mouse gamer RCA Game On",
+        "subtitulo": "Con cable · 5RCA555",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#MOUS030",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#MOUS030"
+        ]
+      }
     },
     {
       "sku": "MOUS031",
@@ -24193,7 +24313,7 @@
     },
     {
       "sku": "SOPO050",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Soporte Para Celular Microcell L-309",
       "propuesta": "Soporte Para Celular Microcell L-309",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -24203,7 +24323,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Soporte Microcell para celular",
+        "subtitulo": "L-309",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#SOPO050",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#SOPO050"
+        ]
+      }
     },
     {
       "sku": "SOPO052",
@@ -24575,7 +24705,7 @@
     },
     {
       "sku": "TABL001",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tablet Redmi Pad 2 128 GB | 8 GB RAM total",
       "propuesta": "Tablet Redmi Pad 2 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -24584,11 +24714,21 @@
         "seo-contenido.json#TABL001"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi Pad 2 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TABL001",
+          "importacion/contratos/TABL001.json"
+        ]
+      }
     },
     {
       "sku": "TABL002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tablet Redmi Pad 2 | 256 GB y 16 GB RAM total",
       "propuesta": "Tablet Redmi Pad 2 | 256 GB y 16 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -24597,11 +24737,21 @@
         "seo-contenido.json#TABL002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi Pad 2 256 GB",
+        "subtitulo": "16 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TABL002",
+          "importacion/contratos/TABL002.json"
+        ]
+      }
     },
     {
       "sku": "TABL003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tablet Redmi Pad 2 9.7 128 GB | 8 GB RAM total",
       "propuesta": "Tablet Redmi Pad 2 9.7 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -24610,11 +24760,21 @@
         "seo-contenido.json#TABL003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi Pad 2 9.7 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TABL003",
+          "importacion/contratos/TABL003.json"
+        ]
+      }
     },
     {
       "sku": "TABL004",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tablet K2 edición Mario 256 GB | 8 GB RAM total",
       "propuesta": "Tablet K2 edición Mario 256 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -24623,7 +24783,17 @@
         "seo-contenido.json#TABL004"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Tablet K2 Mario 256 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TABL004",
+          "importacion/contratos/TABL004.json"
+        ]
+      }
     },
     {
       "sku": "TARJ004",
@@ -24816,7 +24986,7 @@
     },
     {
       "sku": "TECL014",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teclado Gaming Corto RCA 5RCA559",
       "propuesta": "Teclado Gaming Corto RCA 5RCA559",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -24826,7 +24996,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Teclado gamer compacto RCA",
+        "subtitulo": "5RCA559",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#TECL014",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#TECL014"
+        ]
+      }
     },
     {
       "sku": "TECL015",
@@ -25020,7 +25200,7 @@
     },
     {
       "sku": "TECL027",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teclado Mini Bluetooth Modelo M7",
       "propuesta": "Teclado Mini Bluetooth Modelo M7",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25030,11 +25210,21 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Mini teclado Bluetooth M7",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#TECL027",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#TECL027"
+        ]
+      }
     },
     {
       "sku": "TECL028",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teclado Ergonomico Klipxtreme KBK-530S",
       "propuesta": "Teclado Ergonomico Klipxtreme KBK-530S",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25044,7 +25234,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Teclado ergonómico Klipxtreme",
+        "subtitulo": "KBK-530S",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#TECL028",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#TECL028"
+        ]
+      }
     },
     {
       "sku": "TECL029",
@@ -25248,7 +25448,7 @@
     },
     {
       "sku": "TELF002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono ZTE Nubia V80 Pro 256 GB | 20 GB RAM total",
       "propuesta": "Teléfono ZTE Nubia V80 Pro 256 GB | 20 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25257,11 +25457,21 @@
         "seo-contenido.json#TELF002"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "ZTE Nubia V80 Pro 256 GB",
+        "subtitulo": "20 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF002",
+          "importacion/contratos/TELF002.json"
+        ]
+      }
     },
     {
       "sku": "TELF003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono ZTE Nubia V80 Max 256 GB | 14 GB RAM total",
       "propuesta": "Teléfono ZTE Nubia V80 Max 256 GB | 14 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25270,11 +25480,21 @@
         "seo-contenido.json#TELF003"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "ZTE Nubia V80 Max 256 GB · 4GB",
+        "subtitulo": "14 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF003",
+          "importacion/contratos/TELF003.json"
+        ]
+      }
     },
     {
       "sku": "TELF004",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono ZTE Nubia V80 Max 256 GB | 20 GB RAM total",
       "propuesta": "Teléfono ZTE Nubia V80 Max 256 GB | 20 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25283,11 +25503,21 @@
         "seo-contenido.json#TELF004"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "ZTE Nubia V80 Max 256 GB · 8GB",
+        "subtitulo": "20 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF004",
+          "importacion/contratos/TELF004.json"
+        ]
+      }
     },
     {
       "sku": "TELF008",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Infinix Smart 20 128 GB | 8 GB RAM total",
       "propuesta": "Teléfono Infinix Smart 20 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25296,11 +25526,21 @@
         "seo-contenido.json#TELF008"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Infinix Smart 20 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF008",
+          "importacion/contratos/TELF008.json"
+        ]
+      }
     },
     {
       "sku": "TELF010",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Samsung Galaxy A07 128 GB | 6 GB RAM total",
       "propuesta": "Teléfono Samsung Galaxy A07 128 GB | 6 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25309,11 +25549,21 @@
         "seo-contenido.json#TELF010"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Samsung Galaxy A07 128 GB",
+        "subtitulo": "6 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF010",
+          "importacion/contratos/TELF010.json"
+        ]
+      }
     },
     {
       "sku": "TELF011",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Samsung Galaxy A17 128 GB | 4 GB RAM total",
       "propuesta": "Teléfono Samsung Galaxy A17 128 GB | 4 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25322,7 +25572,17 @@
         "seo-contenido.json#TELF011"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Samsung Galaxy A17 128 GB",
+        "subtitulo": "4 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF011",
+          "importacion/contratos/TELF011.json"
+        ]
+      }
     },
     {
       "sku": "TELF012",
@@ -25353,7 +25613,7 @@
     },
     {
       "sku": "TELF017",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Redmi 15C 128 GB | 8 GB RAM total",
       "propuesta": "Teléfono Redmi 15C 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25362,11 +25622,21 @@
         "seo-contenido.json#TELF017"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi 15C 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF017",
+          "importacion/contratos/TELF017.json"
+        ]
+      }
     },
     {
       "sku": "TELF018",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Redmi 15C 256 GB | 8 GB RAM total",
       "propuesta": "Teléfono Redmi 15C 256 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25375,7 +25645,17 @@
         "seo-contenido.json#TELF018"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi 15C 256 GB · 4GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF018",
+          "importacion/contratos/TELF018.json"
+        ]
+      }
     },
     {
       "sku": "TELF020",
@@ -25392,7 +25672,7 @@
     },
     {
       "sku": "TELF022",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Redmi A7 Pro 128 GB | 8 GB RAM total",
       "propuesta": "Teléfono Redmi A7 Pro 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25401,11 +25681,21 @@
         "seo-contenido.json#TELF022"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi A7 Pro 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF022",
+          "importacion/contratos/TELF022.json"
+        ]
+      }
     },
     {
       "sku": "TELF023",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Honor X5c 128 GB | 8 GB RAM total",
       "propuesta": "Teléfono Honor X5c 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25414,11 +25704,21 @@
         "seo-contenido.json#TELF023"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Honor X5c 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF023",
+          "importacion/contratos/TELF023.json"
+        ]
+      }
     },
     {
       "sku": "TELF024",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Honor X5c Plus 256 GB | 8 GB RAM total",
       "propuesta": "Teléfono Honor X5c Plus 256 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25427,11 +25727,21 @@
         "seo-contenido.json#TELF024"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Honor X5c Plus 256 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF024",
+          "importacion/contratos/TELF024.json"
+        ]
+      }
     },
     {
       "sku": "TELF025",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Tecno Spark Go 3 64 GB | 8 GB RAM total",
       "propuesta": "Teléfono Tecno Spark Go 3 64 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25440,11 +25750,21 @@
         "seo-contenido.json#TELF025"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Tecno Spark Go 3 64 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF025",
+          "importacion/contratos/TELF025.json"
+        ]
+      }
     },
     {
       "sku": "TELF026",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Tecno Spark Go 3 128 GB | 8 GB RAM total",
       "propuesta": "Teléfono Tecno Spark Go 3 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25453,11 +25773,21 @@
         "seo-contenido.json#TELF026"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Tecno Spark Go 3 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF026",
+          "importacion/contratos/TELF026.json"
+        ]
+      }
     },
     {
       "sku": "TELF027",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono ZTE Blade A35e 64 GB | 6 GB RAM total",
       "propuesta": "Teléfono ZTE Blade A35e 64 GB | 6 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25466,11 +25796,21 @@
         "seo-contenido.json#TELF027"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "ZTE Blade A35e 64 GB",
+        "subtitulo": "6 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF027",
+          "importacion/contratos/TELF027.json"
+        ]
+      }
     },
     {
       "sku": "TELF034",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Honor X5d 128 GB | 8 GB RAM total",
       "propuesta": "Teléfono Honor X5d 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25479,11 +25819,21 @@
         "seo-contenido.json#TELF034"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Honor X5d 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF034",
+          "importacion/contratos/TELF034.json"
+        ]
+      }
     },
     {
       "sku": "TELF037",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Redmi Note 17 256 GB | 12 GB RAM total",
       "propuesta": "Teléfono Redmi Note 17 256 GB | 12 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25492,7 +25842,17 @@
         "seo-contenido.json#TELF037"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi Note 17 256 GB",
+        "subtitulo": "12 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF037",
+          "importacion/contratos/TELF037.json"
+        ]
+      }
     },
     {
       "sku": "TERM001",
@@ -25617,7 +25977,7 @@
     },
     {
       "sku": "TRIP012",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tripode Selfie Q07",
       "propuesta": "Tripode Selfie Q07",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25627,11 +25987,21 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Trípode selfie Q07",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#TRIP012",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#TRIP012"
+        ]
+      }
     },
     {
       "sku": "TRIP013",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tripode Selfie P20S",
       "propuesta": "Tripode Selfie P20S",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25641,7 +26011,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Trípode selfie P20S",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#TRIP013",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#TRIP013"
+        ]
+      }
     },
     {
       "sku": "TRIP014",
@@ -25670,7 +26050,7 @@
     },
     {
       "sku": "TRIP015",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tripode Selfie Mini JC-02",
       "propuesta": "Tripode Selfie Mini JC-02",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -25680,7 +26060,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Mini trípode selfie JC-02",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#TRIP015",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#TRIP015"
+        ]
+      }
     },
     {
       "sku": "TRIP016",
@@ -26671,7 +27061,7 @@
     },
     {
       "sku": "JUGU045",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Juguete Carro Coleccionable Porsche",
       "propuesta": "Juguete Carro Coleccionable Porsche",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -26681,7 +27071,17 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Carro Porsche de colección",
+        "subtitulo": "",
+        "causa": "Corregir redacción/ortografía o sacar códigos técnicos del principal, conservando identidad593 y sin añadir atributos no acreditados.",
+        "fuentes": [
+          "datos-593/inventario-publico.csv#JUGU045",
+          "reportes/editorial-selectivo/cierre-055-056/fuente-593.json#JUGU045"
+        ]
+      }
     },
     {
       "sku": "JUGU057",
@@ -26869,7 +27269,7 @@
     },
     {
       "sku": "TELF005",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Infinix Hot 70 256 GB | 8 GB RAM total",
       "propuesta": "Teléfono Infinix Hot 70 256 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -26878,11 +27278,21 @@
         "seo-contenido.json#TELF005"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Infinix Hot 70 256 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF005",
+          "importacion/contratos/TELF005.json"
+        ]
+      }
     },
     {
       "sku": "TELF013",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono POCO C71 128 GB | 8 GB RAM total",
       "propuesta": "Teléfono POCO C71 128 GB | 8 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -26891,11 +27301,21 @@
         "seo-contenido.json#TELF013"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "POCO C71 128 GB",
+        "subtitulo": "8 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF013",
+          "importacion/contratos/TELF013.json"
+        ]
+      }
     },
     {
       "sku": "TELF014",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Tecno Spark 50 256 GB | 12 GB RAM total",
       "propuesta": "Teléfono Tecno Spark 50 256 GB | 12 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -26904,7 +27324,17 @@
         "seo-contenido.json#TELF014"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Tecno Spark 50 256 GB",
+        "subtitulo": "12 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF014",
+          "importacion/contratos/TELF014.json"
+        ]
+      }
     },
     {
       "sku": "TELF015",
@@ -26922,7 +27352,7 @@
     },
     {
       "sku": "TELF019",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Redmi 15C 256 GB | 16 GB RAM total",
       "propuesta": "Teléfono Redmi 15C 256 GB | 16 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -26931,11 +27361,21 @@
         "seo-contenido.json#TELF019"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi 15C 256 GB · 8GB",
+        "subtitulo": "16 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF019",
+          "importacion/contratos/TELF019.json"
+        ]
+      }
     },
     {
       "sku": "TELF021",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Redmi Note 15 Pro 4G 256 GB | 16 GB RAM total",
       "propuesta": "Teléfono Redmi Note 15 Pro 4G 256 GB | 16 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -26944,11 +27384,21 @@
         "seo-contenido.json#TELF021"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Redmi Note 15 Pro 4G 256 GB",
+        "subtitulo": "16 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF021",
+          "importacion/contratos/TELF021.json"
+        ]
+      }
     },
     {
       "sku": "TELF028",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Honor X8d 256 GB | 16 GB RAM total",
       "propuesta": "Teléfono Honor X8d 256 GB | 16 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -26957,11 +27407,21 @@
         "seo-contenido.json#TELF028"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Honor X8d 256 GB",
+        "subtitulo": "16 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF028",
+          "importacion/contratos/TELF028.json"
+        ]
+      }
     },
     {
       "sku": "TELF035",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teléfono Honor X7e 256 GB | 12 GB RAM total",
       "propuesta": "Teléfono Honor X7e 256 GB | 12 GB RAM total",
       "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
@@ -26970,7 +27430,17 @@
         "seo-contenido.json#TELF035"
       ],
       "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesCierre055056": "CORRECTO",
+      "resolucionCierre055056": {
+        "titulo": "Honor X7e 256 GB",
+        "subtitulo": "12 GB RAM total",
+        "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada.",
+        "fuentes": [
+          "seo-contenido.json#TELF035",
+          "importacion/contratos/TELF035.json"
+        ]
+      }
     },
     {
       "sku": "TVBO001",

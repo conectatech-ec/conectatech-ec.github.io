@@ -171,6 +171,7 @@ jobs:
           if [ -f importacion/editorial/publicados.json ]; then
             python scripts/preparar-editorial-publicacion.py
             if [ -f scripts/test-editorial-texto593.py ]; then python scripts/test-editorial-texto593.py; fi
+            if [ -f scripts/test-editorial-fase-final.cjs ]; then node scripts/test-editorial-fase-final.cjs; fi
             python scripts/test-contrato.py
             git diff --exit-code -- index.html assets/editorial-titulos-datos.js
             node scripts/verificar-editorial-publicacion.cjs

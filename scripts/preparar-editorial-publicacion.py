@@ -6,13 +6,14 @@ cfg=json.loads(Path('importacion/editorial/publicados.json').read_text());manife
 assert len(manifest['skus'])<=30 and len(set(manifest['skus']))==len(manifest['skus'])
 assert cfg['criterioAprobado'] and cfg['excluirPrefijos']==['TELF','TABL']
 norm=lambda s:re.sub('[^a-z0-9]','',unicodedata.normalize('NFD',s.lower()).encode('ascii','ignore').decode())
+final=cfg.get('faseFinalCelularesTablets',{});permitidos=set(final.get('skus',[]))if final.get('autorizada')is True else set();assert all(s.startswith(('TELF','TABL'))for s in permitidos)
 seen={};seo=json.loads(Path('seo-contenido.json').read_text())
 effectivePhotos=json.loads(subprocess.check_output(['node','scripts/editorial-fotografia-efectiva.cjs'],text=True))
 for sku,e in cfg['productos'].items():
- assert sku in by and not sku.startswith(('TELF','TABL')),sku
+ assert sku in by and (not sku.startswith(('TELF','TABL'))or sku in permitidos),sku
  lot=Path('importacion/editorial/lotes/lote-'+e['lote'].split('-')[-1]+'.json');m=json.loads(lot.read_text());assert len(m['skus'])<=30 and sku in m['skus'],sku
  assert e['titulo']==m['productos'][sku]['titulo'] and e['subtitulo']==m['productos'][sku]['subtitulo'],sku
- assert by[sku]['category'].lower() not in ['telefonos','tablets','celulares'],sku
+ assert by[sku]['category'].lower() not in ['telefonos','tablets','celulares']or sku in permitidos,sku
  assert states[sku]=='MEJORAR TÍTULO' and e['tituloAnterior']==by[sku]['name'],sku
  assert e['titulo'] and isinstance(e['subtitulo'],str) and e['fuentes'],sku
  assert not re.search(r'producto gen[eé]rico|compatible\s*\(AAA\)',e['titulo']+' '+e['subtitulo'],re.I),sku
@@ -69,4 +70,4 @@ for name in ['editorial-titulos-datos.js','editorial-titulos.js','editorial-titu
  digest=hashlib.sha256(Path('assets',name).read_bytes()).hexdigest()[:12]
  html=re.sub(r'(/assets/'+re.escape(name)+r')(?:\?v=[a-f0-9]+)?',lambda m:m[1]+'?v='+digest,html)
 Path('index.html').write_text(html)
-print('Compilados',len(cfg['productos']),'SKU; máximo30/lote,0celulares/tablets y fechas sólo tras verificación pública.')
+print('Compilados',len(cfg['productos']),'SKU; máximo30/lote,celulares/tablets sólo lista final explícita y fechas sólo tras verificación pública.')
