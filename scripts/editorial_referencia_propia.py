@@ -2,6 +2,18 @@
 import json,csv,hashlib,re
 from pathlib import Path
 
+def validate_source_assignment(sku, source, row):
+ if source['nombre'].startswith(sku):return True
+ # Un nombre de archivo equivocado sólo se admite con asignación expresa
+ # del propietario, ligada al ID, nombre original y SHA exactos de cada foto.
+ assignment=row.get('asignacionFotosConfirmadaPorPropietario',{})
+ assert assignment.get('skuDestino')==sku and assignment.get('fuente')=='Confirmación expresa del propietario en este chat',sku
+ assert assignment.get('confirmacion') and assignment.get('prefijoErroneo')!=sku,sku
+ assert source['nombre'].startswith(assignment['prefijoErroneo']),sku
+ expected=assignment.get('archivos',{}).get(source['id'])
+ assert expected=={'nombre':source['nombre'],'sha256':source['sha256']},sku
+ return True
+
 def validate(sku,entry,product):
  proof=entry['verificacionReferenciaPropia'];assert proof['modo']=='FOTOS_PROPIAS_IDENTIDAD_SIN_PORTADA'and proof['noApruebaFotografiaComercial']is True,sku
  p=Path(proof['evidencia']);raw=p.read_bytes();assert hashlib.sha256(raw).hexdigest()==proof['sha256Evidencia'],sku
@@ -14,7 +26,7 @@ def validate(sku,entry,product):
  assert not entry['foto']and not entry['sha256Foto']and not entry['marca']and not entry['modelo'],sku
  assert len(row['fuentesPropias'])>=2,sku
  for s in row['fuentesPropias']:
-  assert s['nombre'].startswith(sku)and s['mimeType'].startswith('image/')and re.fullmatch('[a-f0-9]{64}',s['sha256']),sku
+  assert validate_source_assignment(sku,s,row)and s['mimeType'].startswith('image/')and re.fullmatch('[a-f0-9]{64}',s['sha256']),sku
   assert s['url'].startswith('https://drive.google.com/file/d/'+s['id']+'/'),sku
  current=next(r for r in csv.DictReader(Path('datos-593/inventario-publico.csv').open())if r['sku']==sku);assert current['nombre']==row['nombre593'],sku
  return True

@@ -25,3 +25,21 @@ for s,e in refs.items():
   except AssertionError:pass
   else:raise AssertionError('La referencia propia aceptó un atributo o portada no verificados:'+s)
 if refs:print(f'Referencias propias:{len(refs)} identidades;atributos,marca yportada no acreditados rechazados.')
+
+# Error real de código en nombres de Drive: exigir la asignación del propietario
+# y rechazar otra foto, un nombre o bytes distintos y la ausencia de confirmación.
+from editorial_referencia_propia import validate_source_assignment
+for s,e in refs.items():
+ row=json.loads(Path(e['verificacionReferenciaPropia']['evidencia']).read_text())['productos'][s]
+ if not row.get('asignacionFotosConfirmadaPorPropietario'):continue
+ src=row['fuentesPropias'][0];assert validate_source_assignment(s,src,row)
+ for field,value in [('id','ID_NO_CONFIRMADO'),('nombre','TERM001_otro.jpg'),('sha256','0'*64)]:
+  changed=dict(src);changed[field]=value
+  try:validate_source_assignment(s,changed,row)
+  except AssertionError:pass
+  else:raise AssertionError('Se aceptó una foto sin asignación exacta:'+field)
+ missing=copy.deepcopy(row);missing.pop('asignacionFotosConfirmadaPorPropietario')
+ try:validate_source_assignment(s,src,missing)
+ except AssertionError:pass
+ else:raise AssertionError('Se aceptó el prefijo equivocado sin confirmación del propietario')
+ print('Asignación de fotos:'+s+'; ID,nombre,SHA yconfirmación obligatorios comprobados.')

@@ -3,9 +3,9 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 1112,
+    "MEJORAR TÍTULO": 1113,
     "OMITIDO POR PROPIETARIO": 5,
-    "REVISAR IDENTIDAD": 2,
+    "REVISAR IDENTIDAD": 1,
     "CORRECTO": 51
   },
   "aplicados": 1111,
@@ -3712,7 +3712,7 @@
     },
     {
       "sku": "TOMA001",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Tomatodo",
       "propuesta": "Tomatodo",
       "causa": "Nombre poco específico; faltan diferenciadores para reconocer variante. Faltan atributos comerciales revisados en fuenteSEO; no proponer características.",
@@ -3722,7 +3722,13 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesIdentidad058": "REVISAR IDENTIDAD",
+      "resolucion058": {
+        "titulo": "Tomatodo con parlante Bluetooth",
+        "fuente": "importacion/editorial/identidad-toma001-058.json#TOMA001",
+        "asignacionPropietario": "realmente term001 es toma001 yo me equivoque en el codigo porque el puse manual, entonces procede"
+      }
     },
     {
       "sku": "BILL006",
@@ -27798,7 +27804,5 @@
     "ESTU088",
     "ESTU090"
   ],
-  "pendientesIdentidadActivosSinAnuladosNiOmitidos": [
-    "TOMA001"
-  ]
+  "pendientesIdentidadActivosSinAnuladosNiOmitidos": []
 }
