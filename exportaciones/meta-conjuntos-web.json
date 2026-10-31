@@ -1,8 +1,8 @@
 {
   "version": 1,
   "catalog_id": "1036301566100990",
-  "fecha_corte": "2026-10-28",
-  "fuente_sha256": "0232b5c922fbeee9b23bd405628f53f230dc205353f1278f440f235115797005",
+  "fecha_corte": "2026-10-31",
+  "fuente_sha256": "5473e48908cbb9bc541e3b544265d85e3dfbfcb4e44edf6db260cd6781210e52",
   "fuente_categorias": "index.html: categoriaComercial || categoryFamilies[category] || Hogar y Accesorios",
   "groups": [
     {
@@ -40,10 +40,10 @@
         "TELF016",
         "TELF017",
         "TELF018",
+        "TELF019",
         "TELF020",
         "TELF022",
         "TELF023",
-        "TELF024",
         "TELF025",
         "TELF026",
         "TELF027",
@@ -58,6 +58,7 @@
         "TELF036",
         "TELF025",
         "TELF022",
+        "TELF019",
         "TELF020",
         "TELF037",
         "TELF016",
@@ -68,7 +69,6 @@
         "TELF034",
         "TELF008",
         "TELF017",
-        "TELF024",
         "TELF003",
         "TELF010",
         "TELF004",
@@ -474,7 +474,6 @@
         "AUDI114",
         "AUDI118",
         "AUDI119",
-        "AUDI120",
         "AUDI122",
         "AUDI123",
         "BARR002",
@@ -546,17 +545,18 @@
         "AUDI112",
         "AUDI097",
         "AUDI111",
-        "AUDI001",
         "AUDI044",
+        "AUDI123",
         "REPR002",
         "AUDI082",
+        "AUDI001",
         "AUDI003",
-        "AUDI062",
         "AUDI063",
         "AUDI109",
         "PARL026",
         "AUDI094",
         "AUDI007",
+        "AUDI062",
         "MICR23",
         "RADI006",
         "MICR24",
@@ -611,7 +611,6 @@
         "MICR28",
         "PARL002",
         "AUDI098",
-        "AUDI120",
         "AUDI122",
         "REPR001",
         "RADI008",
@@ -637,7 +636,6 @@
         "PARL034",
         "AUDI025",
         "MICR21",
-        "AUDI123",
         "RADI005",
         "AUDI080",
         "MICR12",
@@ -732,6 +730,7 @@
         "CARG055",
         "CARG056",
         "CARG057",
+        "CARG058",
         "CARG059",
         "CARG061",
         "CARG063",
@@ -801,7 +800,6 @@
         "PILA045",
         "PILA046",
         "PILA047",
-        "PILA048",
         "PILA049",
         "PILA050",
         "PILA051",
@@ -867,7 +865,6 @@
         "PILA059",
         "PILA062",
         "PILA016",
-        "PILA048",
         "PILA049",
         "PILA013",
         "PILA018",
@@ -905,15 +902,14 @@
         "CARG057",
         "CUBO009",
         "CUBO019",
-        "CARG010",
         "CUBO021",
         "PILA015",
         "PILA065",
         "CARG007",
         "CARG047",
         "CARG044",
+        "CARG010",
         "CARG048",
-        "POWE017",
         "CARG040",
         "CARG015",
         "POWE008",
@@ -931,6 +927,7 @@
         "CUBO003",
         "CARG014",
         "CARG036",
+        "POWE017",
         "POWE001",
         "CARG051",
         "POWE010",
@@ -980,6 +977,7 @@
         "CARG055",
         "CARG070",
         "POWE018",
+        "CARG058",
         "ESTAB006",
         "CARG059",
         "UPS002",
@@ -1088,7 +1086,6 @@
         "MOUS021",
         "TECL016",
         "LASE004",
-        "MOUS020",
         "MOUS025",
         "MOUS013",
         "MOUS027",
@@ -1108,6 +1105,7 @@
         "MOUS018",
         "TECL017",
         "MOUS017",
+        "MOUS020",
         "MOUS041",
         "TECL010",
         "MOUS045",
@@ -2120,11 +2118,11 @@
         "VENT008",
         "GADG001",
         "PILA075",
+        "TRIP026",
         "PAD001",
         "AUDI115",
         "CABL163",
         "CABL159",
-        "TRIP026",
         "AROD02",
         "AROD03",
         "COBE010",
@@ -2368,7 +2366,6 @@
         "JUGU151",
         "JUGU152",
         "JUGU153",
-        "JUGU154",
         "JUGU159",
         "JUGU160",
         "JUGU161",
@@ -2460,7 +2457,6 @@
         "JUGU104",
         "JUGU014",
         "JUGU022",
-        "JUGU154",
         "JUGU145",
         "JUGU023",
         "JUGU084",
@@ -2524,7 +2520,15 @@
   ],
   "exclusions": [
     {
+      "sku": "PILA048",
+      "motivo": "AGOTADO"
+    },
+    {
       "sku": "AUDI009",
+      "motivo": "AGOTADO"
+    },
+    {
+      "sku": "AUDI120",
       "motivo": "AGOTADO"
     },
     {
@@ -2568,11 +2572,11 @@
       "motivo": "AGOTADO"
     },
     {
-      "sku": "TELF013",
+      "sku": "TELF024",
       "motivo": "AGOTADO"
     },
     {
-      "sku": "TELF019",
+      "sku": "TELF013",
       "motivo": "AGOTADO"
     },
     {
@@ -2588,10 +2592,6 @@
       "motivo": "AGOTADO"
     },
     {
-      "sku": "CARG058",
-      "motivo": "AGOTADO"
-    },
-    {
       "sku": "CORT03",
       "motivo": "AGOTADO"
     },
@@ -2601,6 +2601,10 @@
     },
     {
       "sku": "EXTE003",
+      "motivo": "AGOTADO"
+    },
+    {
+      "sku": "JUGU154",
       "motivo": "AGOTADO"
     },
     {
