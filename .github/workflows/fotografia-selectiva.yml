@@ -2280,7 +2280,7 @@ jobs:
                       for s,row in rec['productos'].items():
                           ph=row.get('imagenProfesional');expected=ph['versiones']['1200']['url'] if ph else row['portada_anterior']['url'];assert products[s]['imageUrl']==expected
                           page=get(origin+row['pagina']).decode()
-                          for v in row.get('vistas',[]):assert v['versiones']['300']['url'] in page
+                          for v in ([ph] if ph else [])+row.get('vistas',[])+row.get('mantener_vistas',[]):assert v['versiones']['300']['url'] in page
                       break
                   except Exception:
                       if a==299:raise
@@ -2289,7 +2289,7 @@ jobs:
           for s,row in rec['productos'].items():
               assert row['revisado_visual']
               files=list(row['archivos_originales_conservados'])
-              for ph in ([row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas']):files += [{'url':ph['original'],'sha256':ph['sha256_original']},*ph['versiones'].values()]
+              for ph in ([row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas'])+row.get('mantener_vistas',[]):files += [{'url':ph['original'],'sha256':ph['sha256_original']},*ph['versiones'].values()]
               for v in files:
                   assert v['url'].startswith('/imagenes/'+s.lower()+'/') and '..' not in v['url']
                   if v['url'] not in cache:cache[v['url']]=hashlib.sha256(get((origin if pub else raw)+v['url'])).hexdigest()
