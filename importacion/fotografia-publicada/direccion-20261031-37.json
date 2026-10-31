@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Lote de 100 SKU evaluados por encuadre: mejorar sólo las versiones con beneficio verificable y conservar las demás. Maestros íntegros, sin regeneración ni reconstrucción de hardware. No son cien errores de identidad.",
   "productos": {
     "JUGU040": {
@@ -14240,5 +14240,21 @@
     ],
     "ganancia_minima_webp_real": 1.1746724890829694,
     "catalogo_intacto": 1170
+  },
+  "fecha_primera_verificacion_publica": "2026-10-31T16:34:30.845932+00:00",
+  "verificacion": {
+    "workflow_run": 41219382135,
+    "http_verificacion_directa": true,
+    "archivos_http_sha256": 574,
+    "chromium": [
+      1280,
+      390
+    ],
+    "casos_chromium": 148,
+    "sku_evaluados": 100,
+    "conservados": 26,
+    "maestros_originales_integros": true,
+    "hardware_regenerado": false,
+    "base_integracion_fechas": "15e9556f7803967427f14b59e88be578041dbaa0"
   }
 }
