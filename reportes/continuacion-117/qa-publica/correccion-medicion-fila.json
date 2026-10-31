@@ -1,0 +1,46 @@
+{
+  "causa": "CSS Grid estira REL066 para igualar la fila de REL031; el contenido natural cumple el límite.",
+  "informeAnteriorConservado": "reportes/continuacion-117/qa-publica/catalogo-falso-positivo-fila.json",
+  "sha256": "1d7ee82e9bbe1a10356d1cdfed95e88e16dd569bc480e2e1765ba7b47ae893f8",
+  "medicion": {
+    "before": [
+      {
+        "sku": "REL031",
+        "height": 438.71875,
+        "title": null,
+        "sub": null,
+        "alignSelf": "auto",
+        "display": "flex",
+        "gridAlign": "stretch"
+      },
+      {
+        "sku": "REL066",
+        "height": 438.71875,
+        "title": null,
+        "sub": null,
+        "alignSelf": "auto",
+        "display": "flex",
+        "gridAlign": "stretch"
+      }
+    ],
+    "natural": {
+      "sku": "REL066",
+      "height": 404.9375,
+      "title": null,
+      "sub": null,
+      "alignSelf": "start",
+      "display": "flex",
+      "gridAlign": "stretch"
+    }
+  },
+  "limitesContenidoSinCambios": {
+    "movil": 410,
+    "escritorio": 520
+  },
+  "limitesAlturaVisibleSinCambios": {
+    "movil": 470,
+    "escritorio": 600
+  },
+  "seConservanTodosLosControles": true,
+  "sinCambiarDiseñoDatosNiFotografias": true
+}

@@ -1,5 +1,5 @@
 {
-  "estado": "FICHAS_VERIFICADAS_REGISTRO_PENDIENTE_VALIDACION_PUBLICA_CATALOGO",
+  "estado": "REGISTRO_PUBLICO_CATALOGO_VERIFICADO",
   "seCierraSoloTrasPruebaPublicaCompleta": true,
   "procedimiento": "importacion/PRODUCCION-MAESTRA.md:66-68",
   "httpFichasVerificadas": 2,
@@ -11,5 +11,13 @@
   "snapshotPublicoHistoricoReutilizado": "reportes/continuacion-116/catalogo-publico-anterior.json",
   "fechaSnapshotPublico": "2026-10-19T03:28:59.261948+00:00",
   "ausenciaCorroboradaEnMainAntesActivar": "0f8311d416e0b9621bff8f8108c453bba7871b1e",
-  "noSeFabricaFechaNiHashDeSnapshot": true
+  "noSeFabricaFechaNiHashDeSnapshot": true,
+  "estadoAnterior": "FICHAS_VERIFICADAS_REGISTRO_PENDIENTE_VALIDACION_PUBLICA_CATALOGO",
+  "validacionFinal": {
+    "reporte": "reportes/continuacion-117/qa-publica/catalogo.json",
+    "sha256": "b8b9fdd294b6ed06bbe47fc9aba26d5600b38c01b671a7b872d87d9abab8a1d4",
+    "vistasVerificadas": 2,
+    "errores": 0
+  },
+  "elInformeActualSeActualizoMedianteVerificacionRealSinEliminarArchivoHistorico": true
 }

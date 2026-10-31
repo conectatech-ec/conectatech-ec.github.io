@@ -8,7 +8,9 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const ROOT = path.resolve(__dirname, '..');
 const availabilityCore=require('../assets/disponibilidad-core.js');
-const compactCard=(c,width)=>c.altura-(c.alto_estado||0)-(c.alto_subtitulo||0)<=(width===1280?520:410)&&c.altura<=(width===1280?600:470)&&!c.contenido_largo.length;
+// Medir contenido sin el espacio que CSS Grid añade para igualar la fila.
+// Los límites de contenido (520/410) y de altura visible (600/470) se conservan.
+const compactCard=(c,width)=>{const content=c.altura_contenido??c.altura;return content>0&&content<=c.altura+1&&content-(c.alto_estado||0)-(c.alto_subtitulo||0)<=(width===1280?520:410)&&c.altura<=(width===1280?600:470)&&!c.contenido_largo.length;};
 const PUBLIC = 'https://conectatech-ec.github.io';
 const sha = data => crypto.createHash('sha256').update(data).digest('hex');
 const safe = file => { const p = path.resolve(ROOT, file); if (!p.startsWith(ROOT + path.sep)) throw new Error('Ruta fuera del repositorio'); return p; };
@@ -147,10 +149,14 @@ async function main() {
             ancho_documento: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth),
             tarjetas: Array.from(grid.querySelectorAll('.ct-compact-card')).map(card => {
               const r = card.getBoundingClientRect(), image = card.querySelector('.product-img img'), promo = card.querySelector('.promo'), pvp = card.querySelector('.pvp'), title = card.querySelector('.name');
+              // El estilo se restaura antes de capturar la web; no se cambia el diseño publicado.
+              const originalStyle=card.getAttribute('style');let contentHeight;
+              try{card.style.alignSelf='start';contentHeight=card.getBoundingClientRect().height;}
+              finally{if(originalStyle===null)card.removeAttribute('style');else card.setAttribute('style',originalStyle);}
               const anchor = element => element?.closest('a')?.getAttribute('href') || element?.querySelector('a')?.getAttribute('href') || null;
               const detail = Array.from(card.querySelectorAll('a')).find(a => /Ver detalles/i.test(a.textContent));
               const extraHeight=selector=>{const el=card.querySelector(selector);if(!el)return 0;const st=getComputedStyle(el);return el.getBoundingClientRect().height+(parseFloat(st.marginTop)||0)+(parseFloat(st.marginBottom)||0);};
-              return {alto_estado:extraHeight('.ct-availability'),alto_subtitulo:extraHeight('.ct-pro-subtitle'),estado_disponibilidad:card.querySelector('.ct-availability')?.dataset.availability,sku: card.dataset.sku, actualizado: card.dataset.actualizado || '', altura: r.height, ancho: r.width,
+              return {alto_estado:extraHeight('.ct-availability'),alto_subtitulo:extraHeight('.ct-pro-subtitle'),estado_disponibilidad:card.querySelector('.ct-availability')?.dataset.availability,sku: card.dataset.sku, actualizado: card.dataset.actualizado || '', altura: r.height, altura_contenido: contentHeight, ancho: r.width,
                 titulo: title?.textContent.trim(), categoria: card.querySelector('.cat')?.textContent.trim(),
                 promo: promo?.textContent, pvp: pvp?.textContent, promo_px: promo ? parseFloat(getComputedStyle(promo).fontSize) : 0,
                 pvp_px: pvp ? parseFloat(getComputedStyle(pvp).fontSize) : 0,
