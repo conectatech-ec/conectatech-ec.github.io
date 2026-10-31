@@ -11,3 +11,13 @@ for change in mutations:
  except AssertionError:pass
  else:raise AssertionError('Se aceptó evidencia alterada')
 print(f'Nombre593:{len(entries)} entradas comprobadas;7 alteraciones de evidencia/cifras/modelos rechazadas.')
+from editorial_referencia_propia import validate as validate_reference
+refs={s:e for s,e in cfg['productos'].items()if e.get('verificacionReferenciaPropia')}
+for s,e in refs.items():
+ assert validate_reference(s,e,ps[s])
+ for mutate in [lambda x:x.update(titulo=x['titulo']+' Bluetooth'),lambda x:x['evidenciaAtributos']['atributos'].update(Conexion='Inventada'),lambda x:x.update(marca='FABRICANTE-NO-VERIFICADO'),lambda x:x.update(foto='/imagen-no-aprobada.webp'),lambda x:x['verificacionReferenciaPropia'].update(noApruebaFotografiaComercial=False)]:
+  sample=copy.deepcopy(e);mutate(sample)
+  try:validate_reference(s,sample,ps[s])
+  except AssertionError:pass
+  else:raise AssertionError('La referencia propia aceptó un atributo o portada no verificados:'+s)
+if refs:print(f'Referencias propias:{len(refs)} identidades;atributos,marca yportada no acreditados rechazados.')

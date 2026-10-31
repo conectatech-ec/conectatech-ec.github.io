@@ -42822,9 +42822,79 @@
       "condicionTarjeta": "",
       "clasificacionReal": "original verificado",
       "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada."
+    },
+    "BILL004": {
+      "titulo": "Billetera Paper Mario",
+      "subtitulo": "The Origami King",
+      "tituloAnterior": "Billetera Animada",
+      "nombre593": "BILLETERA ANIMADA",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "datos-593/inventario-publico.csv#BILL004",
+        "importacion/editorial/identidades-057.json#BILL004"
+      ],
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "evidenciaAtributos": {
+        "atributos": {
+          "Diseño de referencia": "Paper Mario: The Origami King"
+        }
+      },
+      "foto": "",
+      "sha256Foto": "",
+      "verificacionReferenciaPropia": {
+        "modo": "FOTOS_PROPIAS_IDENTIDAD_SIN_PORTADA",
+        "evidencia": "importacion/editorial/identidades-057.json",
+        "sha256Evidencia": "aa267d2a65c6c43006da0eba4ec793a6c07684ed94dc71be924fbbe2fac9c60e",
+        "noApruebaFotografiaComercial": true
+      },
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "url": "https://conectatech-ec.github.io/productos/bill004-billetera-animada/",
+      "lote": "editorial-057",
+      "mostrarTituloEnFicha": true,
+      "publicacionVerificada": null,
+      "causa": "Resolver reserva de identidad mediante fotografías propias recuperadas en Drive; no publicar fotografías ni interpretar atributos no observados."
+    },
+    "TECL001": {
+      "titulo": "Teclado flexible de silicona",
+      "subtitulo": "Enrollable",
+      "tituloAnterior": "Teclado Flexible S/R",
+      "nombre593": "TECLADO FLEXIBLE S/R",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "datos-593/inventario-publico.csv#TECL001",
+        "importacion/editorial/identidades-057.json#TECL001"
+      ],
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "evidenciaAtributos": {
+        "atributos": {
+          "Material según empaque": "Silicona",
+          "Formato": "Enrollable",
+          "Referencia de catálogo593": "S/R"
+        }
+      },
+      "foto": "",
+      "sha256Foto": "",
+      "verificacionReferenciaPropia": {
+        "modo": "FOTOS_PROPIAS_IDENTIDAD_SIN_PORTADA",
+        "evidencia": "importacion/editorial/identidades-057.json",
+        "sha256Evidencia": "aa267d2a65c6c43006da0eba4ec793a6c07684ed94dc71be924fbbe2fac9c60e",
+        "noApruebaFotografiaComercial": true
+      },
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "url": "https://conectatech-ec.github.io/productos/tecl001-teclado-flexible-s-r/",
+      "lote": "editorial-057",
+      "mostrarTituloEnFicha": true,
+      "publicacionVerificada": null,
+      "causa": "Resolver reserva de identidad mediante fotografías propias recuperadas en Drive; no publicar fotografías ni interpretar atributos no observados."
     }
   },
-  "loteActual": "056",
+  "loteActual": "057",
   "escaladoMasivo": "AUTORIZADO_EN_LOTES_HASTA_30_EXCLUYENDO_CELULARES_TABLETS",
   "criterioCodigosTecnicosFueraDeTitulos": [
     "UID-10",
@@ -43176,10 +43246,11 @@
     "Jiabao"
   ],
   "tandaActual": {
-    "id": "055-056-cierre",
+    "id": "055-057-cierre",
     "lotes": [
       "055",
-      "056"
+      "056",
+      "057"
     ],
     "skus": [
       "AIRT004",
@@ -43228,10 +43299,12 @@
       "TELF019",
       "TELF021",
       "TELF028",
-      "TELF035"
+      "TELF035",
+      "BILL004",
+      "TECL001"
     ],
-    "cantidad": 47,
-    "presentacionesAdicionales": 47,
+    "cantidad": 49,
+    "presentacionesAdicionales": 49,
     "revisionesPrevias": [],
     "fichasCondicionActualizadas": []
   },

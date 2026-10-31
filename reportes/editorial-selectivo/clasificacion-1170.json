@@ -3,8 +3,8 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 1109,
-    "REVISAR IDENTIDAD": 10,
+    "MEJORAR TÍTULO": 1111,
+    "REVISAR IDENTIDAD": 8,
     "CORRECTO": 51
   },
   "aplicados": 1062,
@@ -510,7 +510,7 @@
     },
     {
       "sku": "BILL004",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Billetera Animada",
       "propuesta": "Billetera Animada",
       "causa": "Nombre poco específico; faltan diferenciadores para reconocer variante. Faltan atributos comerciales revisados en fuenteSEO; no proponer características.",
@@ -520,7 +520,13 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesIdentidades057": "REVISAR IDENTIDAD",
+      "resolucion057": {
+        "titulo": "Billetera Paper Mario",
+        "subtitulo": "The Origami King",
+        "fuente": "importacion/editorial/identidades-057.json#BILL004"
+      }
     },
     {
       "sku": "CABL004",
@@ -3636,7 +3642,7 @@
     },
     {
       "sku": "TECL001",
-      "estado": "REVISAR IDENTIDAD",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Teclado Flexible S/R",
       "propuesta": "Teclado Flexible S/R",
       "causa": "Abreviatura S/R sin significado verificado; aclarar antes de cambiar. Faltan atributos comerciales revisados en fuenteSEO; no proponer características.",
@@ -3646,7 +3652,13 @@
         "datos593: identidad por completar"
       ],
       "verificacionEditorialNecesaria": true,
-      "aplicar": false
+      "aplicar": false,
+      "estadoAntesIdentidades057": "REVISAR IDENTIDAD",
+      "resolucion057": {
+        "titulo": "Teclado flexible de silicona",
+        "subtitulo": "Enrollable",
+        "fuente": "importacion/editorial/identidades-057.json#TECL001"
+      }
     },
     {
       "sku": "TECL004",
