@@ -1,0 +1,18 @@
+"""Identidad editorial por fotos propias: no aprueba ni publica una portada."""
+import json,csv,hashlib,re
+from pathlib import Path
+
+def validate(sku,entry,product):
+ proof=entry['verificacionReferenciaPropia'];assert proof['modo']=='FOTOS_PROPIAS_IDENTIDAD_SIN_PORTADA'and proof['noApruebaFotografiaComercial']is True,sku
+ p=Path(proof['evidencia']);raw=p.read_bytes();assert hashlib.sha256(raw).hexdigest()==proof['sha256Evidencia'],sku
+ row=json.loads(raw)['productos'][sku];assert row['sku']==sku and row['nombre593']==entry['nombre593']and entry['tituloAnterior']==product['name'],sku
+ assert row['revisionVisualManual']=='VERIFICADA'and row['sinDiscrepanciasDeIdentidad']is True and row['sinAfirmarLicenciaOFabricanteNoVerificado']is True,sku
+ assert [entry['titulo'],entry['subtitulo']]==[row['titulo'],row['subtitulo']],sku
+ assert entry['evidenciaAtributos']['atributos']==row['atributosObservados'],sku
+ assert not product.get('imageUrl')and not entry['foto']and not entry['sha256Foto']and not entry['marca']and not entry['modelo'],sku
+ assert len(row['fuentesPropias'])>=2,sku
+ for s in row['fuentesPropias']:
+  assert s['nombre'].startswith(sku)and s['mimeType'].startswith('image/')and re.fullmatch('[a-f0-9]{64}',s['sha256']),sku
+  assert s['url'].startswith('https://drive.google.com/file/d/'+s['id']+'/'),sku
+ current=next(r for r in csv.DictReader(Path('datos-593/inventario-publico.csv').open())if r['sku']==sku);assert current['nombre']==row['nombre593'],sku
+ return True

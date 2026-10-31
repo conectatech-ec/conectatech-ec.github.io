@@ -2,6 +2,7 @@
 import json,re,hashlib,unicodedata,subprocess
 from pathlib import Path
 from editorial_texto593 import validate as validate_text593
+from editorial_referencia_propia import validate as validate_reference
 cfg=json.loads(Path('importacion/editorial/publicados.json').read_text());manifest=json.loads(Path('importacion/editorial/lotes/lote-'+cfg['loteActual']+'.json').read_text());html=Path('index.html').read_text();products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',html)[1]);by={p['sku']:p for p in products};queue=json.loads(Path('reportes/editorial-selectivo/clasificacion-1170.json').read_text());states={e['sku']:e['estado'] for e in queue['cola']}
 assert len(manifest['skus'])<=30 and len(set(manifest['skus']))==len(manifest['skus'])
 assert cfg['criterioAprobado'] and cfg['excluirPrefijos']==['TELF','TABL']
@@ -24,6 +25,7 @@ for sku,e in cfg['productos'].items():
  # El renderer usa la portada vigente, incluida una corrección aprobada por la sesión fotográfica.
  # Se comprueban URL y bytes contra el registro fotográfico actual; la referencia editorial anterior es histórica.
  if e.get('verificacionTexto593'):validate_text593(sku,e,by[sku])
+ if e.get('verificacionReferenciaPropia'):validate_reference(sku,e,by[sku])
  if by[sku].get('imageUrl'):
   photo=effectivePhotos[sku]['imagenProfesional']['versiones']['1200']
   assert effectivePhotos[sku]['imagen']==by[sku]['imageUrl'],sku
@@ -34,7 +36,7 @@ for sku,e in cfg['productos'].items():
    assert approved['sha256_maestro']==hashlib.sha256(Path(approved['ruta_publicada'].lstrip('/')).read_bytes()).hexdigest(),sku
   assert photo['sha256']==hashlib.sha256(Path(photo['url'].lstrip('/')).read_bytes()).hexdigest(),sku
  else:
-  assert e.get('verificacionTexto593') and not effectivePhotos[sku].get('imagen'),sku
+  assert (e.get('verificacionTexto593')or e.get('verificacionReferenciaPropia')) and not effectivePhotos[sku].get('imagen'),sku
  assert e['condicionTarjeta']==('De terceros' if seo[sku]['reglaSKU']['autenticidad']=='genérico/compatible' else ''),sku
  if cfg.get('criterioCodigosTecnicosFueraDeTitulos'):
   forbidden=cfg['criterioCodigosTecnicosFueraDeTitulos']
