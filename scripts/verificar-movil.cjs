@@ -114,7 +114,7 @@ async function main() {
         const p = products.get(sku), content = seo[sku] || {};
         const slug = slugs[sku], expectedName = content.nombre || p.name;
         const editorialPath=safe('importacion/editorial/publicados.json');const editorial=fs.existsSync(editorialPath)?JSON.parse(fs.readFileSync(editorialPath)):null;
-        const entry=editorial?.activo&&!editorial.excluirPrefijos?.some(prefix=>sku.startsWith(prefix))?editorial.productos?.[sku]:null;
+        const entry=require('../assets/editorial-titulos.js').entry({sku},editorial);
         const expectedHeading=entry?.mostrarTituloEnFicha?entry.titulo:expectedName;
         const canonical = PUBLIC + '/productos/' + slug + '/';
         row.url = canonical; row.url_comprobada = opt.base + '/productos/' + slug + '/';
@@ -126,10 +126,16 @@ async function main() {
         row.http = response.status(); row.sha256_html = sha(await response.body());
         row.sha256_html_local = sha(fs.readFileSync(safe(row.archivo_html)));
         try { await page.locator('img.photo').waitFor({state: 'visible', timeout: 10000}); } catch (_) { /* Se registra como error por SKU. */ }
-        await page.evaluate(async () => {
-          if (document.fonts && document.fonts.ready) await document.fonts.ready;
-          await Promise.all(Array.from(document.images).map(img => img.decode().catch(() => {})));
+        const loadImages=()=>page.evaluate(async()=>{
+          if(document.fonts?.ready)await document.fonts.ready;
+          await Promise.all(Array.from(document.images).map(img=>{
+            // Sólo el navegador de prueba: activar los recursos diferidos antes
+            // de decodificar. Los ausentes siguen fallando en imagenes_cargadas.
+            img.loading='eager';
+            return Promise.race([img.decode().catch(()=>{}),new Promise(resolve=>setTimeout(resolve,15000))]);
+          }));
         });
+        await loadImages();
         const inspect = () => page.evaluate(() => {
           const text = selector => document.querySelector(selector)?.textContent.trim() || '';
           const visible = selector => { const el = document.querySelector(selector); if (!el) return false; const r = el.getBoundingClientRect(), s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none' && Number(s.opacity) !== 0; };
@@ -205,7 +211,7 @@ async function main() {
           // Esperar el nuevo srcset después del cambio de viewport, antes de inspeccionar.
           await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
           await page.waitForFunction(() => { const im = document.querySelector('img.photo'); return im && im.complete && im.naturalWidth > 0; });
-          await page.evaluate(async () => { await Promise.all(Array.from(document.images).map(im => im.decode().catch(() => {}))); });
+          await loadImages();
           const desk = await inspect(), file = relative(path.join(opt.capturas, sku + '-1280.png'));
           row.escritorio = {ancho_viewport: 1280, ancho_documento: desk.ancho_documento, archivo: file,
             sha256: sha(await page.screenshot({path: safe(file), fullPage: true, animations: 'disabled'})),

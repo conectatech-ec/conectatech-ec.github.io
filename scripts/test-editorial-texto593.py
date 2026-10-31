@@ -15,6 +15,10 @@ from editorial_referencia_propia import validate as validate_reference
 refs={s:e for s,e in cfg['productos'].items()if e.get('verificacionReferenciaPropia')}
 for s,e in refs.items():
  assert validate_reference(s,e,ps[s])
+ # El historial de identidad no impide una portada posterior de otra sesión;
+ # su aprobación/SHA corresponde a los controles fotográficos del compilador.
+ future=dict(ps[s],imageUrl='/portada-posterior-controlada-por-modulo-fotografico.webp')
+ assert validate_reference(s,e,future)
  for mutate in [lambda x:x.update(titulo=x['titulo']+' Bluetooth'),lambda x:x['evidenciaAtributos']['atributos'].update(Conexion='Inventada'),lambda x:x.update(marca='FABRICANTE-NO-VERIFICADO'),lambda x:x.update(foto='/imagen-no-aprobada.webp'),lambda x:x['verificacionReferenciaPropia'].update(noApruebaFotografiaComercial=False)]:
   sample=copy.deepcopy(e);mutate(sample)
   try:validate_reference(s,sample,ps[s])
