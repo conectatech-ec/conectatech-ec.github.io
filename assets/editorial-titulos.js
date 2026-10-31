@@ -11,7 +11,7 @@
   function entry(p,c=config()){
     if(!c?.activo)return null;
     if(typeof location!=='undefined'&&new URLSearchParams(location.search).get('titulos')==='original')return null;
-    if((c.excluirPrefijos||[]).some(prefix=>p.sku.startsWith(prefix)))return null;
+    if((c.excluirPrefijos||[]).some(prefix=>p.sku.startsWith(prefix))&&!(c.faseFinalCelularesTablets?.autorizada===true&&c.faseFinalCelularesTablets.skus.includes(p.sku)))return null;
     const e=c.productos?.[p.sku];return e&&typeof e.titulo==='string'&&e.titulo.trim()&&typeof e.subtitulo==='string'?e:null;
   }
   return {entry,verifiedDate(p){const e=entry(p),v=e?.publicacionVerificada||e?.publicacionAnterior,f=config()?.actualizacionesFicha?.[p.sku]?.publicacionVerificada;return [v,f].filter(x=>x?.estado==='VERIFICADO_HTTP_CHROMIUM'&&x.sha256Informe&&Number.isFinite(Date.parse(x.fecha))).map(x=>x.fecha).sort((a,b)=>Date.parse(b)-Date.parse(a))[0]||'';},conditionText(p){return config()?.actualizacionesFicha?.[p.sku]?.condicionTarjeta??entry(p)?.condicionTarjeta??'';},searchText(p){const e=entry(p);return e?[e.nombre593,e.titulo,e.subtitulo,e.marca,e.modelo,...(e.modelosBusquedaVerificados||[])].join(' '):'';},

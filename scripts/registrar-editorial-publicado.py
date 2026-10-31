@@ -8,7 +8,7 @@ assert report['objetosOriginales1170Identicos'] and report['busquedaPorTituloNue
 fichas=report.get('fichasVerificadas',report.get('fichasSinCambios',[]));assert len(fichas)==len(manifest['skus']) and all(e['http']==200 for e in fichas)
 updated=[]
 for sku in manifest['skus']:
- e=cfg['productos'][sku];assert not sku.startswith(('TELF','TABL'))
+ e=cfg['productos'][sku];assert not sku.startswith(('TELF','TABL'))or(cfg.get('faseFinalCelularesTablets',{}).get('autorizada')is True and sku in cfg['faseFinalCelularesTablets']['skus'])
  content={k:e[k] for k in ['titulo','subtitulo','condicionTarjeta']};fingerprint=hashlib.sha256(json.dumps(content,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
  if e.get('publicacionVerificada',{}):
   assert e['publicacionVerificada']['huellaTitulo']==fingerprint,'Cambio diferente requiere nueva publicación verificada: '+sku
