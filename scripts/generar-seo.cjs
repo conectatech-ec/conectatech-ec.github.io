@@ -79,7 +79,7 @@ for(const p of products){
  let publicContent=!custom.comercialVerificado&&custom.tipo==='generico'
   ? content.replace('<p>⚡ PROMO CONTADO</p>','<p class="muted"><strong>Condición: '+esc(condicionFicha.label(p,custom))+'</strong></p><p>⚡ PROMO CONTADO</p>')
   : content;
- const textualEditorial=editorialConfig.activo&&!editorialConfig.excluirPrefijos.some(prefix=>p.sku.startsWith(prefix))?editorialConfig.productos[p.sku]:null;
+ const textualEditorial=require('../assets/editorial-titulos.js').entry(p,editorialConfig);
  if(!custom.comercialVerificado&&textualEditorial?.verificacionTexto593&&textualEditorial.mostrarTituloEnFicha){publicContent=publicContent.replace(/<h1>[\s\S]*?<\/h1>/,'<h1>'+esc(textualEditorial.titulo)+'</h1>'+(textualEditorial.subtitulo?'<p class="ct-editorial-subtitle" style="color:#68788b;margin:-6px 0 16px;font-size:15px;line-height:1.4">'+esc(textualEditorial.subtitulo)+'</p>':''));}
  const visibleContent=publicContent.slice(0,publicContent.indexOf('</head>'))+condicionFicha.visible(p,custom,publicContent.slice(publicContent.indexOf('</head>')));
  const contentFecha=fechaPublicada&&!custom.comercialVerificado?visibleContent.replace('<h2>Consulta y compra</h2>','<p class="muted">'+(p.stock>0?'Inventario actualizado al ':'Stock: 0 · No disponible · Corte: ')+fechaPublicada+' · confirma disponibilidad</p><h2>Consulta y compra</h2>'):visibleContent;
