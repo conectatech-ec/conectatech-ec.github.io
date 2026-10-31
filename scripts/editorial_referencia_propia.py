@@ -9,7 +9,9 @@ def validate(sku,entry,product):
  assert row['revisionVisualManual']=='VERIFICADA'and row['sinDiscrepanciasDeIdentidad']is True and row['sinAfirmarLicenciaOFabricanteNoVerificado']is True,sku
  assert [entry['titulo'],entry['subtitulo']]==[row['titulo'],row['subtitulo']],sku
  assert entry['evidenciaAtributos']['atributos']==row['atributosObservados'],sku
- assert not product.get('imageUrl')and not entry['foto']and not entry['sha256Foto']and not entry['marca']and not entry['modelo'],sku
+ # La ausencia de portada pertenece al momento de esta edición. Una futura foto
+ # se valida por el controlador fotográfico general, sin invalidar esta identidad.
+ assert not entry['foto']and not entry['sha256Foto']and not entry['marca']and not entry['modelo'],sku
  assert len(row['fuentesPropias'])>=2,sku
  for s in row['fuentesPropias']:
   assert s['nombre'].startswith(sku)and s['mimeType'].startswith('image/')and re.fullmatch('[a-f0-9]{64}',s['sha256']),sku
