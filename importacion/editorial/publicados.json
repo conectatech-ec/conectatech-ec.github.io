@@ -3393,36 +3393,42 @@
       "mostrarTituloEnFicha": true
     },
     "CABL166": {
-      "titulo": "Cable USB-C a Lightning blanco de 2 m",
-      "subtitulo": "Cubierta lisa",
+      "titulo": "Cable USB-C a Lightning Premium",
+      "subtitulo": "2 m · blanco",
       "tituloAnterior": "Cable USB-C a Lightning | 2 m",
-      "nombre593": "Cable Usb-c A Lightning VER.2",
+      "nombre593": "CABLE USB-C A LIGHTNING PREMIUM",
       "marca": "",
       "modelo": "",
       "condicionTarjeta": "",
       "fuentes": [
         "seo-contenido.json#CABL166",
-        "importacion/contratos/CABL166.json"
+        "importacion/contratos/CABL166.json",
+        "importacion/editorial/cables-premium-058.json#CABL166"
       ],
       "evidenciaAtributos": {
         "Conexiones": "USB-C macho a Lightning macho",
         "Longitud": "2 m",
-        "Diseño": "Cubierta lisa y cabezales blancos"
+        "Diseño": "Cubierta lisa y cabezales blancos",
+        "Calidad comercial": "Premium"
       },
       "clasificacionReal": "original verificado",
       "url": "https://conectatech-ec.github.io/productos/cabl166-cable-usb-c-a-lightning-ver-2/",
       "foto": "/imagenes/cabl166/CABL166-01.webp",
       "sha256Foto": "c6eef91723731696e57535b7ead174128cc5bb33392585140a19e89b8ea363f4",
-      "causa": "Título idéntico a CABL030; comprobar variante y unidad antes de diferenciarlos. Atributos deben distinguir losSKU duplicados antes de publicar.",
-      "lote": "editorial-003",
-      "publicacionVerificada": {
+      "causa": "Calidad Premium y nombre actual593 confirmados por propietario ybase nueva; mantener conexiones,longitud,color y búsqueda histórica.",
+      "lote": "editorial-058",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "nombres593Anteriores": [
+        "Cable Usb-c A Lightning VER.2"
+      ],
+      "publicacionAnteriorConservadaComoHistoria": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-26T01:15:29.416Z",
         "informe": "reportes/editorial-selectivo/lote-003/publicacion-http-chromium.json",
         "sha256Informe": "cd8c467e96e944112d9d0ef52c99b2ccd79f52f4cb3045b881abfbc561a68d02",
         "huellaTitulo": "5a7746b7e5d19cb1da3dbd0d908dc33713a6d56d158c990473de2db226de8e74"
-      },
-      "mostrarTituloEnFicha": true
+      }
     },
     "ADAP012": {
       "titulo": "Adaptador USB-C para audio y carga",
@@ -42127,7 +42133,8 @@
       "modelo": "K2 edición Mario",
       "fuentes": [
         "seo-contenido.json#TABL004",
-        "importacion/contratos/TABL004.json"
+        "importacion/contratos/TABL004.json",
+        "importacion/editorial/reglas-ram-fisica-058.json#TABL004"
       ],
       "modeloNoDeclaradoVerificado": false,
       "modelosBusquedaVerificados": [],
@@ -42139,28 +42146,28 @@
         "Cámara principal": "8 MP",
         "Procesador": "Quad-Core 2 GHz",
         "Almacenamiento": "256 GB",
-        "RAM indicada en catálogo": "8 GB; el catálogo no distingue memoria física y extensión virtual",
-        "Conectividad": "Wi-Fi",
-        "RAM total comercial": "8 GB RAM total"
+        "RAM física": "8 GB",
+        "Conectividad": "Wi-Fi"
       },
       "foto": "/imagenes/tabl004/TABL004-01.webp",
       "sha256Foto": "af10b9a40c7aa33d4ed7c8db467dc49a87ffcf756db00df3906db5347283466e",
       "titulo": "Tablet K2 Mario 256 GB",
-      "subtitulo": "8 GB RAM total",
+      "subtitulo": "8 GB RAM",
       "tituloAnterior": "Tablet K2 edición Mario 256 GB | 8 GB RAM total",
-      "lote": "editorial-056",
-      "publicacionVerificada": {
+      "lote": "editorial-058",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "url": "https://conectatech-ec.github.io/productos/tabl004-tablet-k2-edicion-mario-bros/",
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "causa": "Corrección expresa: cantidad de RAM física sin la palabra total; no alterar modelos,capacidades,precios niimágenes.",
+      "publicacionAnteriorConservadaComoHistoria": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-31T16:35:13.145Z",
         "informe": "reportes/editorial-selectivo/lote-056/publicacion-http-chromium.json",
         "sha256Informe": "e544674a5968b7a5f105ecdb68d37b2c9bed3c4337e8ec779d112f71a4ee820a",
         "huellaTitulo": "1df0e3cf9d0ac7f4db3f22895d277f4328a835cae7ac4bcae56480bfafb3fb93"
-      },
-      "mostrarTituloEnFicha": true,
-      "url": "https://conectatech-ec.github.io/productos/tabl004-tablet-k2-edicion-mario-bros/",
-      "condicionTarjeta": "",
-      "clasificacionReal": "original verificado",
-      "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada."
+      }
     },
     "TELF002": {
       "nombre593": "TELEFONO ZTE NUBIA V80 PRO",
@@ -42330,7 +42337,8 @@
       "modelo": "Galaxy A07",
       "fuentes": [
         "seo-contenido.json#TELF010",
-        "importacion/contratos/TELF010.json"
+        "importacion/contratos/TELF010.json",
+        "importacion/editorial/reglas-ram-fisica-058.json#TELF010"
       ],
       "modeloNoDeclaradoVerificado": false,
       "modelosBusquedaVerificados": [],
@@ -42343,27 +42351,27 @@
         "Procesador": "Helio G99",
         "Almacenamiento": "128 GB",
         "RAM física": "6 GB",
-        "Red móvil": "4G LTE",
-        "RAM total comercial": "6 GB RAM total"
+        "Red móvil": "4G LTE"
       },
       "foto": "/imagenes/telf010/TELF010-01.webp",
       "sha256Foto": "6a14d9e23fcb8d30e84b6d8ed80f26466b649f0af218b165f0b36f24ed94adef",
       "titulo": "Samsung Galaxy A07 128 GB",
-      "subtitulo": "6 GB RAM total",
+      "subtitulo": "6 GB RAM",
       "tituloAnterior": "Teléfono Samsung Galaxy A07 128 GB | 6 GB RAM total",
-      "lote": "editorial-056",
-      "publicacionVerificada": {
+      "lote": "editorial-058",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "url": "https://conectatech-ec.github.io/productos/telf010-telefono-samsung-a07-6gb-128gb/",
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "causa": "Corrección expresa: cantidad de RAM física sin la palabra total; no alterar modelos,capacidades,precios niimágenes.",
+      "publicacionAnteriorConservadaComoHistoria": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-31T16:35:13.145Z",
         "informe": "reportes/editorial-selectivo/lote-056/publicacion-http-chromium.json",
         "sha256Informe": "e544674a5968b7a5f105ecdb68d37b2c9bed3c4337e8ec779d112f71a4ee820a",
         "huellaTitulo": "5f3f7797f7ad9d3df647fd9ab2ca983dc2f77e297bf066bdbdcfdb91eecfce82"
-      },
-      "mostrarTituloEnFicha": true,
-      "url": "https://conectatech-ec.github.io/productos/telf010-telefono-samsung-a07-6gb-128gb/",
-      "condicionTarjeta": "",
-      "clasificacionReal": "original verificado",
-      "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada."
+      }
     },
     "TELF011": {
       "nombre593": "TELEFONO SAMSUNG A17 4GB+128GB",
@@ -42371,7 +42379,8 @@
       "modelo": "Galaxy A17",
       "fuentes": [
         "seo-contenido.json#TELF011",
-        "importacion/contratos/TELF011.json"
+        "importacion/contratos/TELF011.json",
+        "importacion/editorial/reglas-ram-fisica-058.json#TELF011"
       ],
       "modeloNoDeclaradoVerificado": false,
       "modelosBusquedaVerificados": [],
@@ -42384,27 +42393,27 @@
         "Procesador": "Helio G99",
         "Almacenamiento": "128 GB",
         "RAM física": "4 GB",
-        "Red móvil": "4G LTE",
-        "RAM total comercial": "4 GB RAM total"
+        "Red móvil": "4G LTE"
       },
       "foto": "/imagenes/telf011/TELF011-01.webp",
       "sha256Foto": "0da0539d03def77d3149db2bbef57793ab120533af855049a896c60303eee4ec",
       "titulo": "Samsung Galaxy A17 128 GB",
-      "subtitulo": "4 GB RAM total",
+      "subtitulo": "4 GB RAM",
       "tituloAnterior": "Teléfono Samsung Galaxy A17 128 GB | 4 GB RAM total",
-      "lote": "editorial-056",
-      "publicacionVerificada": {
+      "lote": "editorial-058",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "url": "https://conectatech-ec.github.io/productos/telf011-telefono-samsung-a17-4gb-128gb/",
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "causa": "Corrección expresa: cantidad de RAM física sin la palabra total; no alterar modelos,capacidades,precios niimágenes.",
+      "publicacionAnteriorConservadaComoHistoria": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-31T16:35:13.145Z",
         "informe": "reportes/editorial-selectivo/lote-056/publicacion-http-chromium.json",
         "sha256Informe": "e544674a5968b7a5f105ecdb68d37b2c9bed3c4337e8ec779d112f71a4ee820a",
         "huellaTitulo": "fb52623b31531d8d398f2e6c7dc8d472920f6126a306ebc87aaa2018e96d8342"
-      },
-      "mostrarTituloEnFicha": true,
-      "url": "https://conectatech-ec.github.io/productos/telf011-telefono-samsung-a17-4gb-128gb/",
-      "condicionTarjeta": "",
-      "clasificacionReal": "original verificado",
-      "causa": "Dividir el título de tres líneas y conservar modelo/capacidad/RAM total verificada."
+      }
     },
     "TELF017": {
       "nombre593": "TELEFONO REDMI 15C 128GB 4GB+4GB",
@@ -43186,9 +43195,40 @@
         "huellaTitulo": "5a31beb70bcd8f2a138e794f707823d6b3d39abf4be7cbb27fba88703b7e72a7"
       },
       "causa": "Resolver reserva de identidad mediante fotografías propias recuperadas en Drive; no publicar fotografías ni interpretar atributos no observados."
+    },
+    "CABL030": {
+      "titulo": "Cable USB-C a Lightning de 2 m",
+      "subtitulo": "",
+      "tituloAnterior": "Cable Usb-c A Lightning 2M",
+      "nombre593": "CABLE USB-C A LIGHTNING 2M",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "datos-593/inventario-publico.csv#CABL030",
+        "reportes/editorial-selectivo/ram-fisica-058/fuente-593-cabl030.json#CABL030"
+      ],
+      "modeloNoDeclaradoVerificado": false,
+      "modelosBusquedaVerificados": [],
+      "foto": "",
+      "sha256Foto": "",
+      "verificacionTexto593": {
+        "modo": "NOMBRE_593_SIN_ATRIBUTOS_NUEVOS",
+        "sinAtributosAdicionales": true,
+        "snapshot": "reportes/editorial-selectivo/ram-fisica-058/fuente-593-cabl030.json",
+        "sha256Snapshot": "7974a227b257f7bb9f3424d97919b00bdf0897c3c8c503a7fe461711dd52842c",
+        "sha256Identidad": "e156074177d2d09669d8899ad145650522c4560c31d91a15ba7e24b8b16e418f",
+        "fotoPendienteAlEditar": true
+      },
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "url": "https://conectatech-ec.github.io/productos/cabl030-cable-usb-c-a-lightning-2m/",
+      "lote": "editorial-058",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "causa": "Reserva resuelta: propietario confirma mismo tipo de cable ycalidad Premium sóloCABL166.Conservar los atributos conocidos del nombre593, sin inventar variantes."
     }
   },
-  "loteActual": "057",
+  "loteActual": "058",
   "escaladoMasivo": "AUTORIZADO_EN_LOTES_HASTA_30_EXCLUYENDO_CELULARES_TABLETS",
   "criterioCodigosTecnicosFueraDeTitulos": [
     "UID-10",
@@ -43540,66 +43580,25 @@
     "Jiabao"
   ],
   "tandaActual": {
-    "id": "055-057-cierre",
+    "id": "058-ram-fisica",
     "lotes": [
-      "055",
-      "056",
-      "057"
+      "058"
     ],
     "skus": [
-      "AIRT004",
-      "AUDI101",
-      "AUDI124",
-      "AUDI125",
-      "CORR006",
-      "CORR007",
-      "ESTU082",
-      "GADG002",
-      "GADG003",
-      "MOUS007",
-      "MOUS030",
-      "SOPO050",
-      "TECL014",
-      "TECL027",
-      "TECL028",
-      "TRIP012",
-      "TRIP013",
-      "TRIP015",
-      "JUGU045",
-      "TELF036",
-      "TABL001",
-      "TABL002",
-      "TABL003",
-      "TABL004",
-      "TELF002",
-      "TELF003",
-      "TELF004",
-      "TELF008",
       "TELF010",
       "TELF011",
-      "TELF017",
-      "TELF018",
-      "TELF022",
-      "TELF023",
-      "TELF024",
-      "TELF025",
-      "TELF026",
-      "TELF027",
-      "TELF034",
-      "TELF037",
-      "TELF005",
-      "TELF013",
-      "TELF014",
-      "TELF019",
-      "TELF021",
-      "TELF028",
-      "TELF035",
-      "BILL004",
-      "TECL001"
+      "TABL004",
+      "CABL166",
+      "CABL030"
     ],
-    "cantidad": 49,
-    "presentacionesAdicionales": 49,
-    "revisionesPrevias": [],
+    "cantidad": 5,
+    "presentacionesAdicionales": 1,
+    "revisionesPrevias": [
+      "TELF010",
+      "TELF011",
+      "TABL004",
+      "CABL166"
+    ],
     "fichasCondicionActualizadas": []
   },
   "aliasMarcasConfirmadasPorPropietario": {
