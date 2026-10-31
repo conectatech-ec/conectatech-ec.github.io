@@ -1315,9 +1315,7 @@
       "beneficio": "Vista adicional de uso: una mano dibujando con el único lápiz incluido. Portada conservada.",
       "evidencia_pantalla": "Edición conservadora solicitada por el propietario.",
       "referencia_oficial": null,
-      "mantener_vistas": [],
-      "miniaturas_esperadas": 1,
-      "vistas": [
+      "mantener_vistas": [
         {
           "posicion": 2,
           "contiene_caja": false,
@@ -1352,6 +1350,7 @@
           }
         }
       ],
+      "miniaturas_esperadas": 1,
       "retirar_vistas": [],
       "portadas_previas_autorizadas": [
         {
@@ -1361,7 +1360,54 @@
           "ancho": 1200,
           "alto": 1200
         }
-      ]
+      ],
+      "imagenProfesional": {
+        "posicion": 1,
+        "contiene_caja": false,
+        "referencia_fabricante": false,
+        "referencia_distribuidor": false,
+        "fuente": "Maestro vigente íntegro reutilizado por SHA-256; sólo versiones WebP normalizadas sin el margen adicional anterior. Sin generación, recorte, reconstrucción ni retoque del artículo.",
+        "original": "/imagenes/jugu057/original-10c67b376d6dca03.png",
+        "sha256_original": "10c67b376d6dca03ea09241a9a298a8761693df4a37bcd7b93ed2d2a0ba6eeac",
+        "resolucion_original": [
+          1254,
+          1254
+        ],
+        "resolucion_util": [
+          1008,
+          1008
+        ],
+        "versiones": {
+          "1200": {
+            "url": "/imagenes/jugu057/JUGU057-r2026103137-01.webp",
+            "sha256": "f08b93fab16c2b31ca749e578de7a455e54f236099dd1e8aadff72689319245f",
+            "ancho": 1200,
+            "alto": 1200
+          },
+          "600": {
+            "url": "/imagenes/jugu057/JUGU057-r2026103137-01-600.webp",
+            "sha256": "f7bbe2c14ebc77fce3b36dd38e425da96184e0412d820aee3c561aa9a7f6831e",
+            "ancho": 600,
+            "alto": 600
+          },
+          "300": {
+            "url": "/imagenes/jugu057/JUGU057-r2026103137-01-300.webp",
+            "sha256": "b3da627937aec637884aa35db94e54768237ff30dd54ecaed1e1e5db6463c959",
+            "ancho": 300,
+            "alto": 300
+          }
+        },
+        "revision_regla": 2,
+        "revision_visual": true,
+        "recorte": null,
+        "silueta_revisada": null,
+        "ajustes": {},
+        "dhash": "0606161616160606",
+        "huella_proceso": "18753080d266b195a82f9c7d07516c8e862c770aaf0acb8ac25514157b875314",
+        "version_proceso": 2,
+        "descripcion": "Producto completo más visible en su encuadre; conserva íntegro el maestro vigente, sin regenerar ni alterar el artículo."
+      },
+      "portada_conservada_explicita": true
     }
   },
   "pendientes": {
@@ -1379,6 +1425,8 @@
     ],
     "resultado": "CORRECTO",
     "originales_modificados": 0,
-    "base_integracion": "3acca45b4c2f117c55ad192a0dbd9270dd572212"
+    "base_integracion": "3acca45b4c2f117c55ad192a0dbd9270dd572212",
+    "portada_JUGU057_conservada_en_tarjeta_ficha_payload": true,
+    "fuente_original_restaurada_y_secundaria_visible": true
   }
 }
