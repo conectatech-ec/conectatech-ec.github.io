@@ -321,6 +321,7 @@ jobs:
                   assert response.status==200
                   return response.read()
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261026-05.json'))
+          successors39=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'))['productos']
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -335,14 +336,14 @@ jobs:
                       entry={'sku':sku,'archivos':len(versions),'original_conservado':True}
                       if published:
                           page=get(origin+row['pagina']).decode()
-                          assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+                          active=successors39.get(sku,row)['imagenProfesional'];assert active['versiones']['1200']['url'] in page and active['versiones']['300']['url'] in page
                           entry['url']=origin+row['pagina']
                       results.append(entry)
                   if published:
                       catalog=get(origin+'/').decode()
                       products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])
                       by_sku={p['sku']:p for p in products}
-                      for sku,row in record['productos'].items():assert by_sku[sku]['imageUrl']==row['imagenProfesional']['versiones']['1200']['url']
+                      for sku,row in record['productos'].items():assert by_sku[sku]['imageUrl']==successors39.get(sku,row)['imagenProfesional']['versiones']['1200']['url']
                   print('RESULTADO_DIRECCION='+json.dumps({'publicacion_activa':published,'fecha':datetime.now(timezone.utc).isoformat(),'productos':results},ensure_ascii=False))
                   break
               except Exception:
@@ -427,6 +428,7 @@ jobs:
           overrides=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-09.json'))['productos']
           overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-10.json'))['productos'])
           overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-11.json'))['productos'])
+          overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'))['productos'])
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -752,6 +754,7 @@ jobs:
                   assert response.status==200
                   return response.read()
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-13.json'))
+          successors39=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'))['productos']
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -768,7 +771,8 @@ jobs:
                       entry={'sku':sku,'archivos':len(versions),'original_conservado':True}
                       if published:
                           page=get(origin+row['pagina']).decode()
-                          for photo in photos:assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+                          shown=([successors39[sku]['imagenProfesional']]+successors39[sku].get('mantener_vistas',[]))if sku in successors39 else photos
+                          for photo in shown:assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
                           for retired in row.get('retirar_vistas',[]):assert retired not in page
                           entry['url']=origin+row['pagina']
                       results.append(entry)
@@ -777,6 +781,7 @@ jobs:
                       products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])
                       by_sku={p['sku']:p for p in products}
                       current=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-15.json'))['productos']
+                      current.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'))['productos'])
                       for sku,row in record['productos'].items():
                           active=current.get(sku,row)
                           assert by_sku[sku]['imageUrl']==(active['imagenProfesional']['versiones']['1200']['url'] if 'imagenProfesional' in active else active['portada_anterior']['url'])
@@ -866,6 +871,7 @@ jobs:
                   assert response.status==200
                   return response.read()
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-15.json'))
+          successors39=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'))['productos']
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -882,7 +888,8 @@ jobs:
                       entry={'sku':sku,'archivos':len(versions),'original_conservado':True}
                       if published:
                           page=get(origin+row['pagina']).decode()
-                          for photo in photos:assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+                          shown=([successors39[sku]['imagenProfesional']]+successors39[sku].get('mantener_vistas',[]))if sku in successors39 else photos
+                          for photo in shown:assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
                           for retired in row.get('retirar_vistas',[]):assert retired not in page
                           entry['url']=origin+row['pagina']
                       results.append(entry)
@@ -890,7 +897,8 @@ jobs:
                       catalog=get(origin+'/').decode()
                       products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])
                       by_sku={p['sku']:p for p in products}
-                      for sku,row in record['productos'].items():assert by_sku[sku]['imageUrl']==(row['imagenProfesional']['versiones']['1200']['url'] if 'imagenProfesional' in row else row['portada_anterior']['url'])
+                      for sku,row in record['productos'].items():
+                          active=successors39.get(sku,row);assert by_sku[sku]['imageUrl']==(active['imagenProfesional']['versiones']['1200']['url'] if 'imagenProfesional' in active else active['portada_anterior']['url'])
                       assert 'Premium' in by_sku['CUBO024']['name']
                       if record.get('publicacion_verificada'):
                           ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',catalog)[1]
@@ -1679,6 +1687,7 @@ jobs:
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-28.json'));assert len(record['productos'])==30
           posterior=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-31.json'))['productos']
           posterior.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261029-32.json'))['productos'])
+          posterior.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'))['productos'])
           active={s:posterior.get(s,r) for s,r in record['productos'].items()}
           for s,r in active.items():
               if s in posterior:assert r['revisado_visual'] and any(v['url']==record['productos'][s]['imagenProfesional']['versiones']['1200']['url'] and v['sha256']==record['productos'][s]['imagenProfesional']['versiones']['1200']['sha256'] for v in r['archivos_originales_conservados'])
@@ -2272,15 +2281,16 @@ jobs:
                       if a==3:raise
                       time.sleep(2+a)
           rec=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-38.json'));assert len(rec['productos'])==12
+          successors39=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'))['productos']
           pub=os.environ['PHOTO_REF']=='refs/heads/main'
           if pub:
               for a in range(300):
                   try:
                       root=get(origin+'/').decode();products={p['sku']:p for p in json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',root)[1])}
                       for s,row in rec['productos'].items():
-                          ph=row.get('imagenProfesional');expected=ph['versiones']['1200']['url'] if ph else row['portada_anterior']['url'];assert products[s]['imageUrl']==expected
+                          visible=successors39.get(s,row);ph=visible.get('imagenProfesional');expected=ph['versiones']['1200']['url'] if ph else row['portada_anterior']['url'];assert products[s]['imageUrl']==expected
                           page=get(origin+row['pagina']).decode()
-                          for v in ([ph] if ph else [])+row.get('vistas',[])+row.get('mantener_vistas',[]):assert v['versiones']['300']['url'] in page
+                          for v in ([ph] if ph else [])+visible.get('vistas',[])+visible.get('mantener_vistas',[]):assert v['versiones']['300']['url'] in page
                       break
                   except Exception:
                       if a==299:raise
@@ -2332,6 +2342,7 @@ jobs:
                       time.sleep(2*(attempt+1))
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-37.json'));assert len(record['productos'])==74
           successors=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-38.json'))['productos']
+          successors.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'))['productos'])
           def expected(s,row):return successors.get(s,{}).get('imagenProfesional',row['imagenProfesional'])
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           if published:
@@ -2379,3 +2390,65 @@ jobs:
           npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa37" playwright@1.51.1
           curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-reencuadres-37-qa.cjs" -o "$RUNNER_TEMP/foto-qa37/qa.cjs"
           NODE_PATH="$RUNNER_TEMP/foto-qa37/node_modules" node "$RUNNER_TEMP/foto-qa37/qa.cjs"
+
+  pantallas_lote100_39:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Verificar imágenes corregidas y originales conservados
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json,os,time,hashlib,re
+          from datetime import datetime
+          from urllib.request import urlopen,Request
+          origin='https://conectatech-ec.github.io';raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(u):
+              for a in range(4):
+                  try:
+                      with urlopen(Request(u,headers={'Cache-Control':'no-cache'}),timeout=30) as r:return r.read()
+                  except Exception:
+                      if a==3:raise
+                      time.sleep(2+a)
+          rec=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261031-39.json'));assert len(rec['productos'])==47 and rec['imagenes_corregidas']==49 and rec['total_evaluado']==100 and len(rec['conservados_en_lote'])==53
+          pub=os.environ['PHOTO_REF']=='refs/heads/main'
+          if pub:
+              for a in range(300):
+                  try:
+                      root=get(origin+'/').decode();products={p['sku']:p for p in json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',root)[1])}
+                      for s,row in rec['productos'].items():
+                          ph=row.get('imagenProfesional');expected=ph['versiones']['1200']['url'] if ph else row['portada_anterior']['url'];assert products[s]['imageUrl']==expected
+                          page=get(origin+row['pagina']).decode()
+                          for v in ([ph] if ph else [])+row.get('vistas',[])+row.get('mantener_vistas',[]):assert v['versiones']['300']['url'] in page
+                      if rec['publicacion_verificada']:
+                          ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',root)[1];metadata=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
+                          for s,row in rec['productos'].items():
+                              assert metadata[s]['imagen']['src']==row['imagenProfesional']['versiones']['1200']['url']
+                              assert datetime.fromisoformat(metadata[s]['actualizadoEn'])>=datetime.fromisoformat(rec['fecha_primera_verificacion_publica'])
+                      break
+                  except Exception:
+                      if a==299:raise
+                      time.sleep(5)
+          cache={}
+          for s,row in rec['productos'].items():
+              assert row['revisado_visual']
+              files=list(row['archivos_originales_conservados'])
+              for ph in ([row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas'])+row.get('mantener_vistas',[]):files += [{'url':ph['original'],'sha256':ph['sha256_original']},*ph['versiones'].values()]
+              for v in files:
+                  assert v['url'].startswith('/imagenes/'+s.lower()+'/') and '..' not in v['url']
+                  if v['url'] not in cache:cache[v['url']]=hashlib.sha256(get((origin if pub else raw)+v['url'])).hexdigest()
+                  assert cache[v['url']]==v['sha256']
+          print('PANTALLAS39',len(rec['productos']),'HASHES',len(cache),'PUBLICO',pub)
+      - name: Verificar presentación pública en móvil y escritorio
+        if: github.ref == 'refs/heads/main'
+        env:
+          PHOTO_SHA: ${{ github.sha }}
+          PHOTO_PUBLIC: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/foto-qa39"
+          npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa39" playwright@1.51.1
+          curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-pantallas-39-qa.cjs" -o "$RUNNER_TEMP/foto-qa39/qa.cjs"
+          NODE_PATH="$RUNNER_TEMP/foto-qa39/node_modules" node "$RUNNER_TEMP/foto-qa39/qa.cjs"
+
