@@ -1,0 +1,46 @@
+{
+  "fecha": "2026-10-31T21:59:01.039748+00:00",
+  "nuevos": 2,
+  "actualizados": 0,
+  "ajustes_disponibilidad": [
+    {
+      "sku": "HUB017",
+      "stockWebHistorico": 2,
+      "stockVigente593": 1,
+      "fechaCorte": "2026-10-31",
+      "fuente": "datos-593/inventario-publico.csv",
+      "sha256CSV": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
+      "sha256InventarioPropietario": "5473e48908cbb9bc541e3b544265d85e3dfbfcb4e44edf6db260cd6781210e52",
+      "motivo": "Ficha pendiente de producción no había recibido actualización de losSKUpublicados; preservar elstockreal delúltimocorte593 alcompletarSKU. Noinventarcantidad,nocambiarprecios niniveles de otrosSKU.",
+      "preciosSinCambios": true
+    }
+  ],
+  "productos": [
+    {
+      "sku": "TOMA001",
+      "titulo": "Tomatodo con parlante Bluetooth",
+      "subtitulo": "473 ml · acero inoxidable 304",
+      "estado": "publicado_verificado",
+      "tipo": "nuevo",
+      "revision_regla": 3,
+      "pendientes": [],
+      "contado": 9.15,
+      "pvp": 10.52,
+      "stock": 3,
+      "url": "https://conectatech-ec.github.io/productos/toma001-tomatodo/"
+    },
+    {
+      "sku": "HUB017",
+      "titulo": "HUB USB-A a Ethernet RJ45",
+      "subtitulo": "USB 3.0",
+      "estado": "publicado_verificado",
+      "tipo": "nuevo",
+      "revision_regla": 3,
+      "pendientes": [],
+      "contado": 11.9,
+      "pvp": 13.69,
+      "stock": 1,
+      "url": "https://conectatech-ec.github.io/productos/hub017-hub-3-0-usb-a-a-lan-ethernet-rj45/"
+    }
+  ]
+}
