@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "criterio": "Normalizar encuadre de hasta30 productos con margen excesivo en sus versiones web; reutilizar íntegros los maestros vigentes sin regenerar ni retocar producto. No son errores de identidad ni SKU nuevos.",
   "productos": {
     "CABL097": {
@@ -8012,5 +8012,19 @@
       },
       "vistas": []
     }
+  },
+  "fecha_primera_verificacion_publica": "2026-10-31T03:29:42.889410+00:00",
+  "verificacion": {
+    "workflow_run": 41163829506,
+    "http_verificacion_directa": true,
+    "chromium": [
+      1280,
+      390
+    ],
+    "casos_chromium": 60,
+    "maestros_originales_integros": true,
+    "hardware_regenerado": false,
+    "ambito": "Encuadre comercial desde maestro completo; fichas, catálogo y galería públicos comprobados. No son nuevos SKU ni errores de identidad.",
+    "base_integracion_fechas": "c8b2ce9e20458052e2973cba649f345835b88231"
   }
 }
