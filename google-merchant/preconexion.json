@@ -1,19 +1,27 @@
 {
   "merchant_center": "5874003439",
-  "verificado_en_utc": "2026-10-31T13:25:14.142324+00:00",
-  "fuente_commit": "0c23dead439d44db94410f0fcdbef02d9d842aac",
+  "verificado_en_utc": "2026-11-01T13:18:28.589036+00:00",
+  "fuente_commit": "c8517410a9b185dfa1e536c54534f0e0089a4300",
   "fuente_rama": "main (lectura solamente)",
   "inventario_sha256": "6b81ccf7bbbd619e2181e3d27594250bb2ed439ad49730128f2a17b348e17018",
   "fecha_corte": "2026-10-22",
-  "antiguedad_corte_dias": 9,
+  "antiguedad_corte_dias": 10,
   "inventario_origen": "Reporte-Inventario al 22-10-2026.xlsx",
   "origen_privado_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
-  "articulos_feed": 401,
-  "articulos_con_http_publico_verificado": 401,
+  "articulos_feed": 330,
+  "articulos_con_http_publico_verificado": 330,
   "coherencia_catalogo_maestro": {
     "sku_web": 1170,
     "sku_con_revision_corte16": 674,
     "discrepancias": [
+      {
+        "sku": "PILA048",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
+        "sku": "AUDI120",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
       {
         "sku": "AUDI103",
         "motivo": "disponibilidad_web_difiere_corte16"
@@ -31,6 +39,10 @@
         "motivo": "precio_web_no_validado_con_corte16"
       },
       {
+        "sku": "JUGU154",
+        "motivo": "disponibilidad_web_difiere_corte16"
+      },
+      {
         "sku": "MOUS011",
         "motivo": "disponibilidad_web_difiere_corte16"
       },
@@ -43,13 +55,13 @@
   },
   "precio_final_documentado": "Corte corregido16: Q V. TOTAL = contado; X PVP + Y importe de IVA = PVP final. IVA incluido. Sin recalcular porcentajes ni modificar precios web.",
   "fechas_inventario_en_articulos": {
-    "22/10/2026": 401
+    "22/10/2026": 330
   },
   "stock_tiempo_real_acreditado": 0,
   "observaciones_fichas": {
-    "fichas_con_whatsapp": 401,
-    "fichas_con_contraentrega_quito": 401,
-    "fichas_con_precio_sujeto_confirmacion": 401,
+    "fichas_con_whatsapp": 330,
+    "fichas_con_contraentrega_quito": 330,
+    "fichas_con_precio_sujeto_confirmacion": 330,
     "fichas_con_formulario": 0
   },
   "enlaces_politicas_en_fichas": [],
