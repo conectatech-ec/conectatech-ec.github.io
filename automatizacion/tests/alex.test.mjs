@@ -17,7 +17,7 @@ function setup(name='messenger-development'){
 }
 test('PVP is card price; authorized October plans expire at midnight Ecuador',()=>{
  const f=factBook(source,Date.parse('2026-11-01T04:59:59Z'));assert.match(f['POWE003.card'],new RegExp(source.productos[1].pvp.toFixed(2).replace('.','\\.')));assert.match(f.pacifico,/tres meses sin intereses/);assert.match(f.guayaquil_amex,/tres meses/);assert.match(f.diners,/seis.*doce.*más intereses/);assert.match(f.pichincha,/seis/);
- assert.equal(factBook(source,Date.parse('2026-11-01T05:00:00Z')).plans,undefined);assert.match(f.interest,/deben confirmarse/);
+ for(const key of ['plans','pacifico','guayaquil_amex','diners','pichincha'])assert.equal(factBook(source,Date.parse('2026-11-01T05:00:00Z'))[key],undefined);assert.match(f.interest,/deben confirmarse/);
 });
 test('Only fresh verified facts can supply price, stock, specs and product IDs stay internal',()=>{
  const r=renderPlan(plan(),source);assert.ok(r.text.startsWith('💵 Philco'));assert.match(r.text,/\$/);assert.ok(!r.text.includes('POWE003'));
@@ -88,7 +88,9 @@ test('Interest-bearing terms cannot be quoted as bare PVP even when model select
 test('Transparency never depends on quota or model and does not trigger human handoff',async()=>{
  for(const text of ['¿Eres una persona?','¿Eres humano?','¿Eres un bot?']){const r=await generateAlex(text,source,{focus:['POWE003']},{});assert.match(r.text,/automatizado/);assert.equal(r.action,'answer');assert.equal(r.memory.focus[0],'POWE003');}
 });
-test('An authorized current bank plan is answered without an unnecessary model handoff',async()=>{
+test('An authorized October bank plan is answered without an unnecessary model handoff',async t=>{
+ t.mock.timers.enable({apis:['Date'],now:Date.parse('2026-10-31T16:00:00Z')});
+ const historicalSource={...source,fuente_fecha:new Date().toISOString()};
  const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:JSON.stringify(plan({facts:['human'],action:'handoff'}))})}};
- const r=await generateAlex('¿Pichincha a seis meses tiene intereses?',source,{focus:['POWE003']},env);assert.equal(r.action,'answer');assert.match(r.text,/seis meses sin intereses/);assert.equal(r.image,null);
+ const r=await generateAlex('¿Pichincha a seis meses tiene intereses?',historicalSource,{focus:['POWE003']},env);assert.equal(r.action,'answer');assert.match(r.text,/seis meses sin intereses/);assert.equal(r.image,null);
 });

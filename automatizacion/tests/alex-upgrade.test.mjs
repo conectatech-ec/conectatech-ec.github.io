@@ -46,9 +46,11 @@ test('A negated human request does not pause the conversation; explicit requests
  const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:JSON.stringify({...plan(),say:'',facts:['human'],action:'handoff'})})}};
  const r=await generateAlex('No quiero una persona todavía, sigo aquí',source,{focus:['POWE003']},env);assert.equal(r.action,'answer');assert.equal(r.generative,true);assert.ok(!r.text.includes('pendiente de atención'));
 });
-test('Already known preferences remove repeated questions and optional prose never forces a long factual answer to fail',()=>{
+test('Already known preferences remove repeated questions and optional prose never forces a long factual answer to fail',t=>{
  for(const [ask,m]of [['¿Cuál es tu presupuesto?',{budget:40}],['¿En qué sector estás?',{sector:'La Carolina'}],['¿Prefieres contado o tarjeta?',{payment:'tarjeta'}],['¿Qué banco usarías?',{bank:'pichincha'}],['¿Prefieres retirarla o recibirla en Quito?',{delivery:'quito'}]]){assert.equal(redundantQuestion(ask,m),true);assert.equal(renderPlan({...plan(),ask},source,m).text.includes('?'),false);}
- const r=renderPlan({...plan(),say:'',facts:['plans','payment'],ask:'¿Quieres que revisemos juntos las opciones que podríamos considerar para decidir qué alternativa te conviene según lo que buscas hoy?'},source);assert.ok(r.text.length<=440);assert.match(r.text,/Pacífico/);assert.match(r.text,/Aceptamos/);
+ t.mock.timers.enable({apis:['Date'],now:Date.parse('2026-10-31T16:00:00Z')});
+ const historicalSource={...source,fuente_fecha:new Date().toISOString()};
+ const r=renderPlan({...plan(),say:'',facts:['plans','payment'],ask:'¿Quieres que revisemos juntos las opciones que podríamos considerar para decidir qué alternativa te conviene según lo que buscas hoy?'},historicalSource);assert.ok(r.text.length<=440);assert.match(r.text,/Pacífico/);assert.match(r.text,/Aceptamos/);
 });
 test('Named product wins over an ambiguous feature and native quick replies preserve exact product context',()=>{
  assert.deepEqual(candidates('¿Qué batería tiene el JBL Quantum Stream?'),['MICR27']);assert.deepEqual(candidates('Compara Philco y JBL'),['MICR27','POWE003']);
