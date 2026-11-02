@@ -18,7 +18,8 @@ test('Bank denial, mixed correction and pronouns distinguish ownership from hypo
  assert.equal(paymentContext('No a doce meses',{bank:'diners',months:12}).requires_interest,false);
  const preferred=commercialFallback('No quiero comprar con tarjeta, prefiero contado',source,{focus:['TELF011'],bank:'diners',payment:'tarjeta'});assert.equal(preferred.memory.payment,'contado');assert.ok(preferred.facts.includes('TELF011.cash_pending'));assert.ok(!preferred.text.includes('?'));assert.equal(preferred.memory.purchase_deferred||false,false);
 });
-test('A rejected bank is excluded from model context and final rendering even after the short history expires',async()=>{
+test('A rejected bank is excluded from model context and final rendering even after the short history expires',async t=>{
+ t.mock.timers.enable({apis:['Date'],now:Date.parse('2026-10-31T16:00:00Z')});
  const m={focus:['TELF011'],bank:'pichincha',rejected_banks:['pacifico'],budget:200,history:[]};
  const prompt=makePrompt('¿Qué batería tiene ese?',source,m)[0].content;assert.ok(!prompt.includes('"pacifico":'));assert.ok(!prompt.includes('"pichincha":'));assert.ok(prompt.includes('rejected_banks'));
  const r=renderPlan({...plan,say:'Claro, revisemos juntos.',ask:'',facts:['pacifico','TELF011.battery']},source,m);assert.ok(!/Pacífico/.test(r.text));assert.match(r.text,/5000 mAh/);
