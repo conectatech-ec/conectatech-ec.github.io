@@ -1,7 +1,7 @@
 {
-  "fecha_corte": "2026-10-31",
+  "fecha_corte": "2026-11-02",
   "fuente": "Reporte-Inventario.xlsx",
-  "sha256_original": "5473e48908cbb9bc541e3b544265d85e3dfbfcb4e44edf6db260cd6781210e52",
+  "sha256_original": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
   "cantidad_sku_original": 1573,
   "cantidad_sku_web": 1170,
   "productos": {
@@ -1816,7 +1816,7 @@
       "pvp_centavos": 20738
     },
     "TELF004": {
-      "stock": 1,
+      "stock": 0,
       "promo_centavos": 17989,
       "pvp_centavos": 22488
     },
@@ -5666,7 +5666,7 @@
       "pvp_centavos": 3220
     },
     "AUDI111": {
-      "stock": 54,
+      "stock": 53,
       "promo_centavos": 1500,
       "pvp_centavos": 1725
     },
@@ -5857,20 +5857,10 @@
     }
   },
   "verificacion": {
-    "stock_cambiado": 22,
-    "disponibilidad_cambiada": 6,
+    "stock_cambiado": 3,
+    "disponibilidad_cambiada": 1,
     "promo_cambiado": 0,
-    "pvp_cambiado": 1,
-    "precios_productos_cambiados": 1
-  },
-  "ajustes_publicacion_sku": [
-    {
-      "sku": "HUB017",
-      "stock_web_anterior": 2,
-      "stock_corte_593": 1,
-      "fuente": "datos-593/inventario-publico.csv",
-      "evidencia": "reportes/continuacion-117/stock-vigente-593.json",
-      "motivo": "Al completar la primera publicación con imagen,aplicar existencia vigente593, que nohabía recibidoesteSKUpendiente deproducción. Precios intactos."
-    }
-  ]
+    "pvp_cambiado": 0,
+    "precios_productos_cambiados": 0
+  }
 }
