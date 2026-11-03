@@ -31,7 +31,7 @@ else{
   if(report.quota_before.remaining_calls>=2){
    const natural=crypto.randomUUID();
    for(const message of ['Busco un Redmi 15C de 128 GB para trabajar y usar WhatsApp, tengo presupuesto de 180 dólares. ¿Qué me aconsejas?','¿Me haces una rebajita? 😂']){
-    const a=await ask(natural,message,false);assert.equal(a.source_sha256,sourceSHA);assert.notEqual(a.action,'handoff');report.AI_probes.push({message,text:a.text,generative:a.generative,model:a.model,error_code:a.error_code,response_mode:a.response_mode,focus:a.focus});
+    const a=await ask(natural,message,false);assert.equal(a.source_sha256,sourceSHA);assert.notEqual(a.action,'handoff');if(message.startsWith('Busco'))assert.ok(!/\?.*(?:entrega|retiro)|(?:entrega|retiro).*\?/i.test(a.text),'NO_PREMATURE_DELIVERY_CLOSING');report.AI_probes.push({message,text:a.text,generative:a.generative,model:a.model,error_code:a.error_code,response_mode:a.response_mode,focus:a.focus});
    }
   }
   report.real_generative_response_verified=report.AI_probes.some(a=>a.generative===true);

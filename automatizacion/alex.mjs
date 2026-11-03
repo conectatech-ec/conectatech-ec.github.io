@@ -65,7 +65,7 @@ function conversationFacts(input,source,memory={}){
 function contextPlan(input,source,memory,model={}){
  const bank=bankIntent(input,memory),buy=buyingIntent(input),focus=candidates(input,memory,source),p=focus.length===1?source.productos.find(p=>p.sku===focus[0]):null;
  const base={...model,facts:[],focus:p?[p.sku]:memory.focus||[],image:null,action:'answer',intent:'other'};
- const warm=fallback=>model.say&&freeProseSafe(model.say)&&! /pac[ií]fico|pichincha|diners|guayaquil|amex|intereses|compra|pago|tarjeta/i.test(model.say)?model.say:fallback;
+ const warm=fallback=>model.say&&freeProseSafe(model.say)&&!model.say.includes('?')&&! /pac[ií]fico|pichincha|diners|guayaquil|amex|intereses|compra|pago|tarjeta/i.test(model.say)?model.say:fallback;
  const social=String(input).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z\s]/g,'').trim();
  if(/^(?:hola|epa|buenas|buenos dias|buenas tardes|buenas noches|que tal|hey)(?:\s+(?:hola|buenas|alex))*$/.test(social))return {...base,focus:memory.focus||[],say:memory.greeted?'¡Por aquí seguimos!':warm('¡Epa! Soy Alex, tu asesor de CONECTATECH. 😊'),ask:p?'¿Qué te gustaría resolver de este equipo?':'¿Qué equipo andas buscando?'};
  if(/^(?:muchas )?gracias(?: alex)?$|^listo gracias$/.test(social))return {...base,focus:memory.focus||[],say:warm('¡Con gusto! 😊'),ask:''};
@@ -205,6 +205,8 @@ export function renderPlan(plan,source,memory={}){
  if(keys.includes('pickup')&&/d[oó]nde|ubicaci[oó]n|direcci[oó]n|quieres retirar/i.test(ask))ask='';
  if(/sector|barrio|zona/i.test(ask)&&!memory.delivery&&!keys.some(k=>['delivery','national','pickup'].includes(k))&&action!=='interest')ask='';
  if(/(?:sector|zona).*(?:trabaj|estudi)/i.test(ask))ask='';
+ // Exploring a product or asking its price is not yet a decision to buy.
+ if(action!=='interest'&&plan.intent!=='delivery'&&memory.stage!=='compra_pendiente'&&!keys.some(k=>['delivery','national','pickup'].includes(k))&&/prefier|preferenc|quieres|gustar[ií]a/i.test(ask)&&/retiro|entrega|env[ií]o|domicilio|retirar/i.test(ask))ask='';
  if(keys.some(k=>k.endsWith('.cash'))&&/banco|tarjeta/i.test(ask))ask='';
  const priceFirst=plan.intent==='price'||keys.some(k=>/\.(?:cash|card|pvp)$/.test(k));
  const compose=()=> (priceFirst?[...keys.map(k=>facts[k]),say,ask]:[say,...keys.map(k=>facts[k]),ask]).filter(Boolean).join('\n').trim();

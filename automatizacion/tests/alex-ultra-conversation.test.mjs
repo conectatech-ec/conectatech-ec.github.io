@@ -61,6 +61,13 @@ test('Generative voice is retained while repeated greetings and invented prose a
  const a=await generateAlex('Busco un Redmi 15C de 128 GB',source,{},env);safe(a,source);assert.equal(a.generative,true);assert.match(a.text,/Alex/);
  const b=await generateAlex('Ya sé el modelo, cuéntame algo útil',source,a.memory,env);safe(b,source);assert.equal(b.generative,true);assert.ok(!/hola|env[ií]o gratis|\$1\b/i.test(b.text));assert.ok(b.facts.some(k=>k.startsWith('TELF017.')));assert.equal(calls,2);
 });
+test('A generative recommendation does not rush to delivery and malformed humor still keeps a safe warm reply',async t=>{
+ clock(t);const source=fixture();
+ const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:{say:'Claro, revisemos.',facts:['TELF017.cash'],ask:'¿Tienes alguna preferencia para la entrega, como retiro en tienda o envío a domicilio?',focus:['TELF017'],image:null,intent:'recommend',action:'recommend',remember:{}}})}};
+ const first=await generateAlex('Busco un Redmi 15C de 128 GB para trabajar',source,{},env);safe(first,source);assert.ok(!/retiro|entrega/i.test(first.text));
+ env.AI.run=async()=>({response:{say:'Jajaja, ¿y tú qué dices?',facts:['discount'],ask:'',focus:['TELF017'],image:null,intent:'other',action:'answer',remember:{}}});
+ const joke=await generateAlex('¿Me haces una rebajita? 😂',source,first.memory,env);safe(joke,source);assert.match(joke.text,/Jajaja|presupuesto/);assert.ok(joke.facts.includes('discount'));
+});
 test('A complete 24-turn conversation keeps commercial context and ends with requested human handoff',async t=>{
  clock(t);const source=fixture(),script=[
   'Hola buenas 😊','Busco un Redmi 15C de 128 GB','Mi presupuesto es de 180 dólares',

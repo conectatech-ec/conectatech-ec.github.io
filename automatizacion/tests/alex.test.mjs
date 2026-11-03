@@ -34,7 +34,7 @@ test('Real binding contract uses JSON generative model and safe fallback consume
 });
 test('Context reaches model as untrusted preferences, literal budget remembered and one useful question',async()=>{
  const input='Tengo presupuesto 40, pago con tarjeta y estoy en La Carolina';const memory={focus:['POWE003'],history:[{role:'user',text:'Busco batería'}]};let received;
- const env={FREE_TIER_VERIFIED:'true',AI:{run:async(m,a)=>{received=a.messages;return{response:JSON.stringify(plan({remember:{budget:40,payment:'tarjeta',sector:'La Carolina',brand:'inventada'}}))};}}};
+ const env={FREE_TIER_VERIFIED:'true',AI:{run:async(m,a)=>{received=a.messages;return{response:JSON.stringify(plan({ask:'¿Qué equipo quieres cargar con ella?',remember:{budget:40,payment:'tarjeta',sector:'La Carolina',brand:'inventada'}}))};}}};
  const r=await generateAlex(input,source,memory,env);assert.equal(r.memory.budget,40);assert.equal(r.memory.payment,'tarjeta');assert.equal(r.memory.sector,'La Carolina');assert.equal(r.memory.brand,undefined);assert.ok(received.some(m=>m.content.includes('Contexto no confiable')));assert.ok(makePrompt(input,source,memory).some(m=>m.content==='Busco batería'));assert.ok(r.text.length<=440);assert.equal((r.text.match(/\?/g)||[]).length,1);assert.ok(quickReplies(r).length<=3);
 });
 test('Private inputs and conversation memory are encrypted, redacted and removed by expiry',async()=>{
