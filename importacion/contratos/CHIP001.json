@@ -97,9 +97,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/chip001-chip-simcard-claro/",
-  "fecha_verificacion": "2026-11-03T21:19:31.152052+00:00",
+  "fecha_verificacion": "2026-11-03T22:54:02.036773+00:00",
   "descripcion": "Chip SIM Claro en la presentación comercial sellada de la referencia fotografiada.",
   "contenido_venta": "Un chip SIM Claro en su presentación comercial sellada.",
   "presentacion": "con caja",
@@ -204,7 +204,7 @@
       "solicitado": "CHIP001",
       "sku": "CHIP001",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T22:06:36.471Z",
+      "fecha": "2026-11-03T22:54:30.834Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -229,7 +229,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/chip001-chip-simcard-claro/",
-      "url_comprobada": "http://127.0.0.1:8876/productos/chip001-chip-simcard-claro/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/chip001-chip-simcard-claro/",
       "archivo_html": "productos/chip001-chip-simcard-claro/index.html",
       "http": 200,
       "sha256_html": "b4f124547679165827cefe532482ba821cdf8982832c54d275543d918462b7ed",
@@ -239,7 +239,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/chip001/CHIP001-r123-01.webp",
-        "url_cargada": "http://127.0.0.1:8876/imagenes/chip001/CHIP001-r123-01-600.webp?v=50ced6175d2b111a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/chip001/CHIP001-r123-01-600.webp?v=50ced6175d2b111a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -249,41 +249,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8876/productos/chip001-chip-simcard-claro/",
+          "url": "https://conectatech-ec.github.io/productos/chip001-chip-simcard-claro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/imagenes/chip001/CHIP001-r123-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/chip001/CHIP001-r123-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-123/qa-local/movil/CHIP001-390.png",
+      "archivo": "reportes/continuacion-123/qa-publica/movil/CHIP001-390.png",
       "sha256": "6d47352465fa02c333d7cdeaad067fc0d526c35ffa9970d11fdcb68754ed1517",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-123/qa-local/movil/CHIP001-1280.png",
+        "archivo": "reportes/continuacion-123/qa-publica/movil/CHIP001-1280.png",
         "sha256": "060c449c8e2e8c97632e913abea23a535bbeea3c2bc07a2d6f2281f99b59b9fe",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T22:54:02.036773+00:00",
+      "archivo": "reportes/continuacion-123/http-publicacion.json",
+      "reporte": "reportes/continuacion-123/http-publicacion.json",
+      "sha256": "5117893745f6a3d79f8ecbd802220e36268e8441d88490487d79485f0e04e3d1",
+      "sku": "CHIP001"
     }
   }
 }
