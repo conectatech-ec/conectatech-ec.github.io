@@ -31,6 +31,14 @@
     document.body.dataset.ctTemporada=theme.id;
     document.documentElement.style.setProperty('--pw-season',theme.acento);
     document.documentElement.style.setProperty('--pw-season-secondary',theme.secundario);
+    const copy=document.querySelector('.ct-hero-copy');
+    let seasonLabel=copy?.querySelector('[data-pw-season-name]');
+    const showSeasonLabel=theme.id==='black-friday'||theme.id==='black-month';
+    if(copy&&showSeasonLabel&&!seasonLabel){
+      seasonLabel=document.createElement('span');seasonLabel.className='pw-season-label';seasonLabel.setAttribute('data-pw-season-name','');
+      const heading=copy.querySelector('h1');if(heading)heading.before(seasonLabel);else copy.prepend(seasonLabel);
+    }
+    if(!showSeasonLabel)seasonLabel?.remove();
     document.querySelectorAll('[data-pw-season-name]').forEach(el=>el.textContent=theme.nombre);
     document.dispatchEvent(new CustomEvent('conectatech:temporada',{detail:theme}));
   }
