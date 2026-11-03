@@ -1,0 +1,62 @@
+name: Personalidades Alex aisladas en simulador propietario
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['automatizacion/alex-collaborators.mjs', 'automatizacion/alex-store.mjs', 'automatizacion/alex-ui.mjs', 'automatizacion/alex.mjs', 'automatizacion/worker.mjs', 'automatizacion/tests/alex-collaborators.test.mjs', 'automatizacion/tests/alex-simulator.test.mjs', '.github/alex-collaborators.json', '.github/scripts/deploy_alex_collaborators.py', '.github/scripts/test_deploy_alex_collaborators.py', '.github/scripts/alex_collaborators_https.mjs', '.github/workflows/alex-colaboradores.yml']
+permissions:
+  contents: read
+concurrency:
+  group: comercial-cloud-piloto
+  cancel-in-progress: false
+jobs:
+  probar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    environment: conectatech-piloto-gratis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: node automatizacion/tests/alex-collaborators.test.mjs
+      - run: node automatizacion/tests/alex-simulator.test.mjs
+      - run: python .github/scripts/test_deploy_alex_collaborators.py
+      - id: control
+        run: |
+          python - <<'PY'
+          import json,os
+          c=json.load(open('.github/alex-collaborators.json'))
+          assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              out.write('deploy='+str(c['deploy']).lower()+'\n')
+          PY
+      - name: Actualizar únicamente módulos propios y ruta del simulador; conservar datos, secretos y Messenger
+        if: steps.control.outputs.deploy == 'true'
+        run: python .github/scripts/deploy_alex_collaborators.py
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Probar ambos perfiles, cuota común, memoria aislada y medio autorizado por HTTPS sin Meta sends
+        if: steps.control.outputs.deploy == 'true'
+        run: node .github/scripts/alex_collaborators_https.mjs
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.control.outputs.deploy == 'true'
+        with:
+          name: alex-colaboradores-simulador-verificado
+          path: |
+            automatizacion/generated/fase2/alex-collaborators-deploy.json
+            automatizacion/generated/fase2/alex-collaborators-https.json
+          retention-days: 7

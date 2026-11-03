@@ -13,6 +13,7 @@ import {reserveAI} from './alex-store.mjs';
 import {alexPage,privacyPage} from './alex-ui.mjs';
 import {reviewPage} from './alex-review.mjs';
 import {marketplacePage,marketplaceContext} from './marketplace-pilot.mjs';
+import {profilesForOwner,routeSimulator} from './alex-collaborators.mjs';
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 async function authorized(req,env) {
   // All pilot endpoints are private; no customer data in GitHub or public logs.
@@ -70,8 +71,14 @@ export default {
    if(path==='/alex/chat'&&req.method==='POST'){
     const b=await body(req);if(!/^[a-zA-Z0-9_-]{16,64}$/.test(b.session_id||''))return json({error:'Invalid session'},400);
     if(!env.MESSENGER_TEST_INBOX)return json({error:'Storage unavailable'},503);
+    if(b.collaborator_id!==undefined){
+     let routed;try{routed=routeSimulator(b);}catch{return json({error:'Invalid collaborator simulation'},400);}
+     return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName(routed.namespace)).fetch('https://inbox/alex/chat',{method:'POST',body:JSON.stringify(routed.body)});
+    }
+    if(b.channel!==undefined&&b.channel!=='simulator')return json({error:'Invalid simulator channel'},400);
     return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('alex-demo-'+b.session_id)).fetch('https://inbox/alex/chat',{method:'POST',body:JSON.stringify(b)});
    }
+   if(path==='/alex/collaborators'&&req.method==='GET')return json(profilesForOwner());
    if(['/alex/status','/alex/handoffs'].includes(path)&&req.method==='GET')return env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox'+path);
    if(path==='/messenger/status'&&req.method==='GET') {
     let seller=null;if(env.MESSENGER_TEST_INBOX&&env.META_PAGE_ACCESS_TOKEN)seller=await (await env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox/seller/status')).json();
