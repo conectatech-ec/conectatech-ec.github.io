@@ -376,6 +376,7 @@ jobs:
           overrides=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-09.json'))['productos']
           overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-10.json'))['productos'])
           overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-11.json'))['productos'])
+          overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261103-42.json'))['productos'])
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -543,6 +544,7 @@ jobs:
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-09.json'))
           overrides=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-10.json'))['productos']
           overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-11.json'))['productos'])
+          overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261103-42.json'))['productos'])
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -2243,15 +2245,17 @@ jobs:
                       if attempt==3:raise
                       time.sleep(2*(attempt+1))
           record=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261030-36.json'));assert len(record['productos'])==30
+          successors42=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261103-42.json'))['productos']
+          def current(s,row):return successors42.get(s,row)['imagenProfesional']
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           if published:
               for attempt in range(300):
                   try:
                       catalog=get(origin+'/').decode();products={p['sku']:p for p in json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',catalog)[1])}
-                      assert all(products[s]['imageUrl']==r['imagenProfesional']['versiones']['1200']['url'] for s,r in record['productos'].items())
+                      assert all(products[s]['imageUrl']==current(s,r)['versiones']['1200']['url'] for s,r in record['productos'].items())
                       ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',catalog)[1];meta=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
                       for s,row in record['productos'].items():
-                          assert meta[s]['imagen']['src']==row['imagenProfesional']['versiones']['1200']['url']
+                          assert meta[s]['imagen']['src']==current(s,row)['versiones']['1200']['url']
                           if record['publicacion_verificada']:assert datetime.fromisoformat(meta[s]['actualizadoEn'])>=datetime.fromisoformat(record['fecha_primera_verificacion_publica'])
                       break
                   except Exception:
@@ -2268,7 +2272,7 @@ jobs:
                   if v['url'] not in cache:cache[v['url']]=hashlib.sha256(get((origin if published else raw)+v['url'])).hexdigest()
                   assert cache[v['url']]==v['sha256']
               if published:
-                  page=get(origin+row['pagina']).decode();assert photo['versiones']['1200']['url'] in page and photo['versiones']['300']['url'] in page
+                  page=get(origin+row['pagina']).decode();visible=current(s,row);assert visible['versiones']['1200']['url'] in page and visible['versiones']['300']['url'] in page
               results.append({'sku':s,'archivos':len(files),'maestro_integro_conservado':True})
           if published:
               gallery=get(origin+'/revision/fotografia-reencuadres-masivos-20261030-36/').decode();assert gallery.count('<article')==30 and gallery.count('<img ')==60
