@@ -291,7 +291,9 @@ class ScopedDeployer:
     def inspect(self):
         capture=self.capture()
         if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('INSPECT_RUNTIME_CHANGED')
+        observed=self.timestamp()
         return self.receipt(capture,'inspect',read_only=True,ready=True,worker_puts=0,module_count=len(capture['bundle'].parts),processor_release=processor_release_of(capture['bundle']),processor_code_sha256=processor_code_of(capture['bundle']),
+            observed_at=observed.isoformat().replace('+00:00','Z'),source_fresh=source_time(capture['source']['expires_at'])>=observed,
             runtime_bundle_readable=True,provider_version_observed=False)
     def check_before_put(self,capture):
         if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('RUNTIME_CHANGED_BEFORE_PUT')

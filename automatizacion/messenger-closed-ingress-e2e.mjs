@@ -6,7 +6,9 @@ const fail=code=>{throw Error(code);};
 const check=(condition,code)=>{if(!condition)fail(code);};
 export const PRIVATE_SOURCE_PREFLIGHT_PATH='automatizacion/generated/fase2/private-source-pre.json';
 export function expectedTesterOutboundFromReceipt(receipt){
- check(receipt?.schema==='conectatech.private-source-gate.v1'&&receipt.phase==='pre'&&receipt.ok===true&&receipt.audit_only===true&&receipt.catalog_http_200===true&&receipt.source_stable===true&&receipt.equal_except_published_at===true&&receipt.original_expiry_preserved===true&&receipt.general_reception_enabled===false&&typeof receipt.tester_transport_enabled==='boolean','CLOSED_PROBE_PREFLIGHT_RECEIPT');
+ const legacy=receipt?.equal_except_published_at===true&&receipt.original_expiry_preserved===true;
+ const runtime=receipt?.scope==='authenticated_runtime'&&receipt.comparison_policy==='metadata_only_authenticated_runtime'&&receipt.equal_except_published_at===false&&receipt.full_comparison_deferred_to_deployer===true&&receipt.catalog_structure_validated===true&&receipt.source_metadata_stable===true&&receipt.expiry_matches_metadata===true;
+ check(receipt?.schema==='conectatech.private-source-gate.v1'&&receipt.phase==='pre'&&receipt.ok===true&&receipt.audit_only===true&&receipt.catalog_http_200===true&&receipt.source_stable===true&&(legacy||runtime)&&receipt.general_reception_enabled===false&&typeof receipt.tester_transport_enabled==='boolean','CLOSED_PROBE_PREFLIGHT_RECEIPT');
  return receipt.tester_transport_enabled;
 }
 export async function readTesterBaseline(path,reader=readFile){

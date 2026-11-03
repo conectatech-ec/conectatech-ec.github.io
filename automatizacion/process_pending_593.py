@@ -2,6 +2,8 @@
 import hashlib,json,os,re,sys,tempfile,time,urllib.request,urllib.error,urllib.parse,subprocess,base64,io
 from pathlib import Path
 from normalizar_593 import normalize,write_bundle,iso,stamp
+from report_identity import report_name
+import processing_lease
 ROOT=Path(__file__).resolve().parent
 BASE='https://conectatech-comercial-piloto.conectatech-ecu.workers.dev'
 def request(path,body=None):
@@ -11,9 +13,12 @@ def request(path,body=None):
  if result.returncode or data.get('status',0)==0:raise RuntimeError('PRIVATE_SOURCE_TRANSPORT')
  if data['status']>=400:raise urllib.error.HTTPError(BASE+path,data['status'],'PRIVATE_SOURCE_HTTP',{},None)
  response=io.BytesIO(base64.b64decode(data['bytes_b64']));response.headers={'X-Report-Filename':data.get('filename')};return response
-def output(ready):
+def output(ready,validated_source_sha256=None):
+ if ready and not re.fullmatch(r'[a-f0-9]{64}',validated_source_sha256 or ''):raise ValueError('VALIDATED_SOURCE_SHA_REQUIRED')
  if os.environ.get('GITHUB_OUTPUT'):
-  with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('ready='+str(ready).lower()+'\n')
+  with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+   f.write('ready='+str(ready).lower()+'\n')
+   if ready:f.write('validated_source_sha256='+validated_source_sha256+'\n')
 def main():
  if os.environ.get('GITHUB_REF')!='refs/heads/automatizacion/piloto-cloud-3sku-20261015':raise ValueError('PILOT_BRANCH_REQUIRED')
  try:
@@ -22,19 +27,28 @@ def main():
   if error.code==404:output(False);print('Receiver bootstrap pending deployment; no source changed.');return
   raise
  if not state.get('pending'):output(False);print('No pending report; no deployment or source change.');return
+ lease_acquired=False
  sha=state['file_sha256'];report={'at':iso(stamp()),'source_sha256':sha,'raw_source_public':False,'stock_quantities_public':False,'production_channels_changed':False}
  try:
+  with request('/commercial/complete',{'sha256':sha,'status':'claim'}) as r:claim=json.load(r)
+  processing_lease.save(sha,claim['lease_token']);lease_acquired=True
+  with request('/commercial/catalog') as r:previous=json.load(r)
+  if previous['source']['sha256']==sha:
+   processing_lease.finish(request,'processed',validation=previous['source'])
+   output(False);print('Same validated version already deployed; receipt recovered without redeployment.');return
   with request('/commercial/report?sha256='+sha) as r:raw=r.read(1000001);filename=urllib.parse.unquote(r.headers['X-Report-Filename'])
-  if len(raw)>1000000 or hashlib.sha256(raw).hexdigest()!=sha or not re.fullmatch(r'Reporte-Inventario \d{2}-\d{2}-\d{4}\.xlsx',filename):raise ValueError('SOURCE_INTEGRITY')
+  if len(raw)>1000000 or hashlib.sha256(raw).hexdigest()!=sha:raise ValueError('SOURCE_INTEGRITY')
+  report_name(filename)
   prefix='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/main/'
   def public(name):
    with urllib.request.urlopen(prefix+name,timeout=30) as r:return r.read(4000000)
   baseline=public('datos-593/inventario-publico.csv').decode('utf-8-sig');published=json.loads(public('exportaciones/catalogo-ventas.json'))
-  with request('/commercial/catalog') as r:previous=json.load(r)
   media={p['sku']:p['web']['image_url'] for p in previous['products'] if p.get('web',{}).get('image_url')}
   units=[p['sku'] for p in previous['products'] if p.get('sale_unit')]
   with tempfile.TemporaryDirectory(prefix='private-593-') as folder:
    p=Path(folder)/filename;p.write_bytes(raw);p.chmod(0o600);canonical,validation=normalize(p,baseline,published,media=media,sale_units=units)
+  if state.get('received_at'):canonical['source']['received_at']=state['received_at']
+  report.update(original_name=filename,received_at=canonical['source']['received_at'],cut_date=canonical['source']['cut_date'],cut_date_evidence=canonical['source']['cut_date_evidence'])
   if canonical['source']['generated_at']<previous['source']['generated_at']:raise ValueError('REPORT_OLDER_THAN_LAST_VALID')
   before={p['sku']:p for p in previous['products']};after={p['sku']:p for p in canonical['products']}
   validation['comparison_last_valid_central']={'generated_at':previous['source']['generated_at'],'source_sha256':previous['source']['sha256'],'new_sku':sorted(set(after)-set(before)),'not_in_new_source':sorted(set(before)-set(after)),'price_changed':sum(after[s].get('prices')!=before[s].get('prices') for s in set(after)&set(before)),'availability_changed':sum(after[s]['availability']!=before[s]['availability'] for s in set(after)&set(before)),'quantity_changes':'Not inferred from public availability; original private reports required.'}
@@ -42,13 +56,14 @@ def main():
    p=before[sku];canonical['products'].append({'sku':sku,'source_name':p['source_name'],'name':p['name'],'category':p['category'],'variant_gb':p.get('variant_gb',[]),'availability':'blocked','blocked_reasons':['ABSENT_LATEST_REPORT'],'prices':None,'provenance':{'note':'Absent in latest report; discontinuation not asserted'},'web':{'url':p.get('web',{}).get('url'),'price_matches':False}})
   canonical['products'].sort(key=lambda p:p['sku'])
   write_bundle(ROOT/'central',canonical,validation,previous_central=previous)
-  c=json.loads((ROOT/'activar-cloud.json').read_text());c['activar']=True;(ROOT/'activar-cloud.json').write_text(json.dumps(c))
-  report.update(validated=True,products=len(canonical['products']),blocked=validation['blocked_count']);output(True)
+  report.update(validated=True,products=len(canonical['products']),blocked=validation['blocked_count']);output(True,canonical['source']['sha256'])
  except Exception as error:
   code=str(error) if re.fullmatch(r'[A-Z0-9_]{1,80}',str(error)) else 'SOURCE_VALIDATION_FAILED';report.update(validated=False,error_code=code)
-  if isinstance(error,ValueError):
-   with request('/commercial/complete',{'sha256':sha,'status':'rejected','error_code':code}) as r:r.read()
-  else:report['retryable']=True
+  if isinstance(error,ValueError) and lease_acquired:
+   processing_lease.finish(request,'rejected',error_code=code)
+  else:
+   report['retryable']=True
+   if lease_acquired:processing_lease.finish(request,'release')
   output(False)
  (ROOT/'generated/fase2').mkdir(parents=True,exist_ok=True);(ROOT/'generated/fase2/central-processing.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))
  if not report.get('validated'):raise SystemExit(1)

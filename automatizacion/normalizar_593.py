@@ -1,8 +1,10 @@
 """One commercial contract; XLSX remains private. Standard library only, never executes Excel."""
+import fcntl
 import argparse,collections,csv,hashlib,io,json,re,zipfile,tempfile,shutil,os,xml.etree.ElementTree as ET
 from datetime import datetime,timedelta,timezone
 from decimal import Decimal,InvalidOperation,ROUND_HALF_UP
 from pathlib import Path
+from report_identity import report_name,confirm_cut
 NS={'s':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
 SCHEMA='conectatech.commercial.v1'
 HEADERS={'B':'Stock','C':'Producto','D':'Cod. Principal','F':'Tipo','J':'Categoría','Q':'V. TOTAL','X':'PVP','Y':'PVP % IVA'}
@@ -18,38 +20,50 @@ def cents(v):
   return int(q*100)
  except (InvalidOperation,ValueError,TypeError):raise ValueError('INVALID_PRICE')
 def variants(name):return sorted(set(int(x) for x in re.findall(r'\b(\d+)\s*GB\b',str(name),re.I)))
-def read_xlsx(path,now=None,historical=False):
- now=now or stamp();path=Path(path);raw=path.read_bytes()
+def _read_xlsx(path,now=None,historical=False):
+ now=now or stamp();path=Path(path);report_name(path.name);raw=path.read_bytes()
  if len(raw)>2000000:raise ValueError('FILE_SIZE_LIMIT')
  with zipfile.ZipFile(io.BytesIO(raw)) as z:
   if sum(f.file_size for f in z.infolist())>16000000 or any('vbaProject' in f.filename or 'externalLinks/' in f.filename for f in z.infolist()):raise ValueError('UNSAFE_WORKBOOK')
-  core=xml(z.read('docProps/core.xml'));created=core.find('{http://purl.org/dc/terms/}created');generated=datetime.fromisoformat(created.text.replace('Z','+00:00')) if created is not None else None
-  if generated is None or generated.tzinfo is None:raise ValueError('REPORT_TIMESTAMP_REQUIRED')
-  match=re.search(r'(\d{2})-(\d{2})-(\d{4})',path.name)
-  local_date=generated.astimezone(timezone(timedelta(hours=-5))).date().isoformat()
-  if match and local_date!=f'{match[3]}-{match[2]}-{match[1]}':raise ValueError('REPORT_DATE_MISMATCH')
-  if generated>now+timedelta(minutes=5):raise ValueError('REPORT_FROM_FUTURE')
-  if now-generated>timedelta(hours=24) and not historical:raise ValueError('REPORT_EXPIRED')
+  if len(z.namelist())!=len(set(z.namelist())):raise ValueError('DUPLICATE_ZIP_MEMBER')
+  core=xml(z.read('docProps/core.xml'))
+  created=core.find('{http://purl.org/dc/terms/}created')
+  modified=core.find('{http://purl.org/dc/terms/}modified')
   shared=[]
   if 'xl/sharedStrings.xml' in z.namelist():shared=[''.join(e.itertext()) for e in xml(z.read('xl/sharedStrings.xml')).findall('s:si',NS)]
   workbook=xml(z.read('xl/workbook.xml'));sheets=workbook.findall('s:sheets/s:sheet',NS)
   if len(sheets)!=1:raise ValueError('SINGLE_INVENTORY_SHEET_REQUIRED')
-  rows=[];headers=None
+  rows=[];headers=None;heading_dates=[]
   for row in xml(z.read('xl/worksheets/sheet1.xml')).findall('s:sheetData/s:row',NS):
    values={};formulas=[]
    for cell in row.findall('s:c',NS):
     col=re.sub(r'\d','',cell.get('r',''))
-    if col not in HEADERS:continue
+    if col not in HEADERS and int(row.get('r'))>=4:continue
     v=cell.find('s:v',NS);value=v.text if v is not None else ''
     if cell.get('t')=='s' and value:value=shared[int(value)]
     elif cell.get('t')=='inlineStr':value=''.join(cell.find('s:is',NS).itertext())
     values[col]=str(value or '').strip()
     if cell.find('s:f',NS) is not None:formulas.append(col)
+   if int(row.get('r'))<4:
+    heading=' '.join(values.values())
+    dates=re.findall(r'(?:fecha de corte|inventario al|corte al)\s*:?\s*(\d{2}[-/]\d{2}[-/]\d{4})',heading,re.I)
+    if re.search(r'fecha de corte|inventario al|corte al',heading,re.I) and not dates:raise ValueError('REPORT_CUT_DATE_UNCONFIRMED')
+    for d in dates:
+     try:heading_dates.append(datetime.strptime(d.replace('/','-'),'%d-%m-%Y').date())
+     except ValueError:raise ValueError('REPORT_DATE_MISMATCH')
    if int(row.get('r'))==4:headers=values;continue
    if int(row.get('r'))<5 or not values.get('D'):continue
    rows.append({'row':int(row.get('r')),'values':values,'formulas':formulas})
   if headers!=HEADERS or len(rows)>5000 or not rows:raise ValueError('INVENTORY_SCHEMA_MISMATCH')
- return {'file_name':path.name,'sha256':hashlib.sha256(raw).hexdigest(),'cut_date':local_date,'generated_at':iso(generated),'received_at':iso(now),'sheet':sheets[0].get('name'),'mapping':{'sku':'D','name':'C','availability':'B>0','promo_cash':'Q','pvp_card':'X+Y'}},rows
+  generated,local_date,date_evidence=confirm_cut(path.name,created.text if created is not None else None,modified.text if modified is not None else None,heading_dates)
+  if generated>now+timedelta(minutes=5):raise ValueError('REPORT_FROM_FUTURE')
+  if now-generated>timedelta(hours=24) and not historical:raise ValueError('REPORT_EXPIRED')
+ return {'file_name':path.name,'original_name':path.name,'cut_date_evidence':date_evidence,'sha256':hashlib.sha256(raw).hexdigest(),'cut_date':local_date,'generated_at':iso(generated),'received_at':iso(now),'sheet':sheets[0].get('name'),'mapping':{'sku':'D','name':'C','availability':'B>0','promo_cash':'Q','pvp_card':'X+Y'}},rows
+def read_xlsx(path,now=None,historical=False):
+ try:return _read_xlsx(path,now,historical)
+ except (zipfile.BadZipFile,ET.ParseError,KeyError,IndexError,TypeError):
+  raise ValueError('INVENTORY_STRUCTURE_INVALID') from None
+
 def normalize(path,baseline_csv,published,now=None,historical=False,media=None,sale_units=None,baseline_cut_date=None):
  now=now or stamp();source,rows=read_xlsx(path,now,historical);old=list(csv.DictReader(io.StringIO(baseline_csv)));oldmap={p['sku']:p for p in old};web={p['sku']:p for p in published['productos']};counts=collections.Counter(r['values']['D'] for r in rows);products=[];stocks={};issues=[];seen=set()
  if len(rows)<len(oldmap)*.9:raise ValueError('INCOMPLETE_FULL_REPORT')
@@ -112,25 +126,45 @@ def adapters(canonical,outdir):
  # Cash prices are payment-conditional, so Google candidate uses card PVP without an unconditional sale claim.
  google=[{**r,'availability':'in_stock'} for r in rows];csvout('google.csv',list(google[0]) if google else ['id','title','description','availability','condition','price','link','image_link','product_type'],google)
  return {'source_sha256':canonical['source']['sha256'],'data_version':'593-v1-'+canonical['source']['sha256'],'destinations':8,'active_products':len(active),'meta_google_candidate_rows':len(rows),'publishing_enabled':False,'skipped_until_web_and_media_match':len(active)-len(rows),'conditional_sale_price_omitted':'Promo contado is conditional on payment method; no invented unconditional discount in automatic channel feeds.','external_validation_pending':['landing-page structured price/payment consistency','brand/GTIN requirements where applicable','destination account authorization']}
-def write_bundle(out,canonical,report,previous_central=None):
+def _write_bundle(out,canonical,report,previous_central=None):
  from data_hub_593 import write_hub
  out=Path(out);out.parent.mkdir(parents=True,exist_ok=True)
  previous=None
  if (out/'current.json').exists():
   previous=json.loads((out/'current.json').read_text())
  reference=previous_central or previous
+ if previous and previous['source']['sha256']==canonical['source']['sha256']:return False
  if reference and reference['source']['generated_at']>canonical['source']['generated_at']:raise ValueError('REPORT_OLDER_THAN_LAST_VALID')
  with tempfile.TemporaryDirectory(prefix='central-stage-',dir=out.parent) as directory:
   stage=Path(directory);channels=adapters(canonical,stage/'adapters');(stage/'current.json').write_text(json.dumps(canonical,ensure_ascii=False,separators=(',',':'))+'\n');(stage/'validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');(stage/'channels.json').write_text(json.dumps(channels,ensure_ascii=False,indent=2)+'\n')
   enrichment=json.loads((out/'enrichment.json').read_text()) if (out/'enrichment.json').exists() else None
   write_hub(stage,canonical,reference,existing_enrichment=enrichment)
   out.mkdir(exist_ok=True)
-  if reference and reference['source']['sha256']!=canonical['source']['sha256']:(out/'last-valid.json').write_text(json.dumps(reference,ensure_ascii=False,separators=(',',':'))+'\n')
+  history=out/'history';history.mkdir(exist_ok=True)
+  for record in (reference,canonical):
+   if record:
+    digest=record['source']['sha256']
+    if not re.fullmatch(r'[a-f0-9]{64}',digest):raise ValueError('SOURCE_INTEGRITY')
+    destination=history/(digest+'.json')
+    if not destination.exists():
+     temp=stage/(digest+'.history');temp.write_text(json.dumps(record,ensure_ascii=False,separators=(',',':'))+'\n');os.replace(temp,destination)
+  if reference and reference['source']['sha256']!=canonical['source']['sha256']:
+   last=stage/'last-valid.json';last.write_text(json.dumps(reference,ensure_ascii=False,separators=(',',':'))+'\n');os.replace(last,out/'last-valid.json')
   for f in stage.iterdir():
    if f.name=='current.json':continue
    if f.is_dir():shutil.copytree(f,out/f.name,dirs_exist_ok=True)
    else:os.replace(f,out/f.name)
   os.replace(stage/'current.json',out/'current.json')
+def write_bundle(out,canonical,report,previous_central=None):
+ # This local lock is supplemental to the receiver lease and existing CI group.
+ # Preparing all payloads first keeps current.json valid on validation/I/O failure.
+ out=Path(out);out.parent.mkdir(parents=True,exist_ok=True)
+ with (out.parent/('.'+out.name+'-593.lock')).open('a') as lock:
+  try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+  except BlockingIOError:raise RuntimeError('REPORT_BUSY') from None
+  try:return _write_bundle(out,canonical,report,previous_central)
+  finally:fcntl.flock(lock,fcntl.LOCK_UN)
+
 def main():
  a=argparse.ArgumentParser();a.add_argument('xlsx');a.add_argument('--baseline-csv',required=True);a.add_argument('--baseline-cut-date');a.add_argument('--published',required=True);a.add_argument('--media');a.add_argument('--sale-units');a.add_argument('--out',required=True);a.add_argument('--historical',action='store_true');args=a.parse_args()
  media=json.loads(Path(args.media).read_text()) if args.media else {};units=json.loads(Path(args.sale_units).read_text()).get('skus_aplicados',[]) if args.sale_units else []

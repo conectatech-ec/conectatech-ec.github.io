@@ -1,12 +1,184 @@
 """Update one existing pilot Worker with a per-Worker Editor token.
 Free plan is verified by owner in dashboard; no Billing/D1/account-list API access.
 """
-import json, os, re, secrets, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
+import base64, json, os, re, secrets, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 WORKER='conectatech-comercial-piloto'
 BRANCH='refs/heads/automatizacion/piloto-cloud-3sku-20261015'
 SCRIPT='/workers/scripts/'+WORKER
+
+def private_worker_json(path):
+    """Capture fixed private GETs in RAM. Never print/persist bodies or child stderr."""
+    if path not in {'/health','/commercial/catalog','/messenger/status','/messenger/seller/status'}:
+        raise ValueError('PRIVATE_READ_PATH')
+    try:
+        child=subprocess.run(['node',str(ROOT/'central-http.mjs'),path],input='',text=True,capture_output=True,timeout=55)
+        probe=json.loads(child.stdout)
+        if child.returncode or probe.get('status')!=200:raise ValueError()
+        data=base64.b64decode(probe['bytes_b64'],validate=True)
+        if len(data)>2_000_000:raise ValueError()
+        def unique(pairs):
+            result={}
+            for key,value in pairs:
+                if key in result:raise ValueError()
+                result[key]=value
+            return result
+        def invalid_constant(_):raise ValueError()
+        result=json.loads(data,object_pairs_hook=unique,parse_constant=invalid_constant)
+        if not isinstance(result,dict):raise ValueError()
+        return result
+    except (OSError,ValueError,KeyError,TypeError,subprocess.TimeoutExpired):
+        raise RuntimeError('PRIVATE_READ_FAILED; response values withheld') from None
+
+def source_time(value):
+    try:
+        result=datetime.fromisoformat(value.replace('Z','+00:00'))
+        if result.tzinfo is None:raise ValueError()
+        return result
+    except (ValueError,TypeError,AttributeError):raise ValueError('SOURCE_DATE_INVALID') from None
+
+def validate_source(data):
+    """Structural validation only; identity/finance preservation uses the whole body."""
+    if not isinstance(data,dict) or data.get('schema')!='conectatech.commercial.v1' or not isinstance(data.get('source'),dict):
+        raise ValueError('SOURCE_SCHEMA_INVALID')
+    source=data['source'];products=data.get('products')
+    if (not isinstance(source.get('sha256'),str) or not re.fullmatch(r'[a-f0-9]{64}',source['sha256']) or
+        not isinstance(source.get('cut_date'),str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',source['cut_date'])):
+        raise ValueError('SOURCE_METADATA_INVALID')
+    generated=source_time(source.get('generated_at'));expires=source_time(data.get('expires_at'))
+    if (expires-generated).total_seconds()!=86400 or generated.timestamp()>time.time()+300:
+        raise ValueError('SOURCE_DATE_INVALID')
+    if generated.astimezone(timezone(timedelta(hours=-5))).date().isoformat()!=source['cut_date']:
+        raise ValueError('SOURCE_CUT_DATE_INVALID')
+    if not isinstance(products,list) or not 1<=len(products)<=5000:raise ValueError('SOURCE_PRODUCTS_INVALID')
+    seen=set()
+    for product in products:
+        if not isinstance(product,dict):raise ValueError('SOURCE_PRODUCT_INVALID')
+        sku=product.get('sku')
+        if not isinstance(sku,str) or not re.fullmatch(r'[A-Z0-9_-]{3,40}',sku) or sku in seen:
+            raise ValueError('SOURCE_PRODUCT_INVALID')
+        seen.add(sku)
+        if (not isinstance(product.get('availability'),str) or product['availability'] not in {'in_stock','out_of_stock','blocked'} or not isinstance(product.get('blocked_reasons'),list) or
+            any(not isinstance(reason,str) for reason in product['blocked_reasons']) or
+            any(not isinstance(product.get(key),str) or not product[key] for key in ('source_name','name')) or
+            not isinstance(product.get('variant_gb'),list) or any(type(n) is not int or n<0 for n in product['variant_gb'])):
+            raise ValueError('SOURCE_PRODUCT_INVALID')
+        if any(key in product for key in ('stock','cost','quantity')):raise ValueError('SOURCE_PRIVATE_FIELD')
+        if product['availability']!='blocked':
+            prices=product.get('prices')
+            if not isinstance(prices,dict) or prices.get('currency')!='USD':raise ValueError('SOURCE_PRICE_INVALID')
+            values=[prices.get('promo_cash_cents'),prices.get('pvp_card_cents')]
+            if any(type(value) is not int or not 0<value<=9007199254740991 for value in values) or values[1]<values[0]:
+                raise ValueError('SOURCE_PRICE_INVALID')
+    return data
+
+def same_source(a,b):
+    # Intentionally no private fingerprint, identity array or snapshot on disk.
+    def equal(x,y):
+        if type(x) is not type(y):return False
+        if isinstance(x,dict):return x.keys()==y.keys() and all(equal(x[key],y[key]) for key in x)
+        if isinstance(x,list):return len(x)==len(y) and all(equal(u,v) for u,v in zip(x,y))
+        return x==y
+    return equal({k:v for k,v in a.items() if k!='published_at'},{k:v for k,v in b.items() if k!='published_at'})
+
+def closed_health(health,expected_tester=None,expected_release=None):
+    if health.get('ok') is not True or health.get('pilot') is not True or health.get('meta_ingress_enabled') is not False:
+        raise ValueError('SOURCE_HEALTH_OR_INGRESS_INVALID')
+    if (type(health.get('messenger_outbound')) is not bool or not isinstance(health.get('release'),str) or
+        not re.fullmatch(r'[A-Za-z0-9_.-]{1,160}',health['release'])):
+        raise ValueError('SOURCE_HEALTH_INVALID')
+    if expected_tester is not None and health['messenger_outbound']!=expected_tester:raise ValueError('SOURCE_TESTER_TRANSPORT_CHANGED')
+    if expected_release is not None and health['release']!=expected_release:raise ValueError('SOURCE_RELEASE_CHANGED')
+    return health
+
+def tester_scope(get_json,enabled):
+    messaging=get_json('/messenger/status');seller=get_json('/messenger/seller/status')
+    if (messaging.get('mode')!='development-only' or messaging.get('reception_enabled') is not False or
+        messaging.get('outbound_enabled') is not enabled or seller.get('mode')!='authorized-testers-only' or
+        seller.get('enabled') is not enabled or seller.get('live_customers_enabled') is not False):
+        raise ValueError('SOURCE_TESTER_SCOPE_CHANGED')
+
+def source_update_lease():
+    try:
+        import processing_lease
+        path=processing_lease.location()
+        if path.stat().st_size>4096:raise ValueError()
+        return json.loads(path.read_text())
+    except (ImportError,OSError,ValueError):raise ValueError('SOURCE_UPDATE_LEASE_REQUIRED') from None
+
+def select_source(compiled,current,config,environ,lease=None,now=None):
+    """Code-only always preserves live data, even if a compiled date is newer."""
+    validate_source(current)
+    expected=environ.get('CENTRAL_EXPECTED_SOURCE_SHA256','')
+    rollback=config.get('source_rollback_confirmed') is True
+    if not expected and not rollback:return current,'preserve_current'
+    validate_source(compiled)
+    if expected and rollback:raise ValueError('SOURCE_UPDATE_AND_ROLLBACK_CONFLICT')
+    if rollback:
+        if (config.get('rollback_source_sha256')!=compiled['source']['sha256'] or
+            environ.get('CENTRAL_ROLLBACK_EXPECTED_CURRENT_SHA256')!=current['source']['sha256']):
+            raise ValueError('SOURCE_ROLLBACK_NOT_PINNED')
+        return compiled,'explicit_rollback'
+    if not re.fullmatch(r'[a-f0-9]{64}',expected) or expected!=compiled['source']['sha256']:
+        raise ValueError('SOURCE_UPDATE_SHA_MISMATCH')
+    if (not isinstance(lease,dict) or lease.get('sha256')!=expected or
+        not isinstance(lease.get('lease_token'),str) or
+        not re.fullmatch(r'[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}',lease['lease_token'])):
+        raise ValueError('SOURCE_UPDATE_LEASE_REQUIRED')
+    if expected==current['source']['sha256']:
+        if not same_source(compiled,current):raise ValueError('SOURCE_UPDATE_SAME_SHA_DIFFERENT_BODY')
+        return current,'validated_source_already_current'
+    if source_time(compiled['source']['generated_at'])<=source_time(current['source']['generated_at']):
+        raise ValueError('SOURCE_UPDATE_MUST_ADVANCE_GENERATION')
+    now=now or datetime.now(timezone.utc)
+    generated=source_time(compiled['source']['generated_at'])
+    if source_time(compiled['expires_at'])<now or generated>now+timedelta(minutes=5):raise ValueError('SOURCE_UPDATE_NOT_FRESH')
+    if generated.astimezone(timezone(timedelta(hours=-5))).date().isoformat()!=compiled['source']['cut_date']:
+        raise ValueError('SOURCE_UPDATE_CUT_DATE_MISMATCH')
+    if (compiled['source'].get('cut_date_evidence') not in {'593_matching_created_modified','report_heading_and_export_timestamp','legacy_filename_and_export_timestamp'} or
+        compiled['source'].get('mapping')!={'sku':'D','name':'C','availability':'B>0','promo_cash':'Q','pvp_card':'X+Y'}):
+        raise ValueError('SOURCE_UPDATE_VALIDATION_EVIDENCE_REQUIRED')
+    return compiled,'validated_source_update'
+
+def capture_source(compiled,config,environ,get_json=private_worker_json,lease=None):
+    before=closed_health(get_json('/health'))
+    tester_scope(get_json,before['messenger_outbound'])
+    current=validate_source(get_json('/commercial/catalog'))
+    closed_health(get_json('/health'),before['messenger_outbound'],before['release'])
+    if environ.get('CENTRAL_EXPECTED_SOURCE_SHA256') and lease is None:lease=source_update_lease()
+    selected,mode=select_source(compiled,current,config,environ,lease)
+    return {'current':current,'selected':selected,'health':before,'mode':mode}
+
+def upload_preserving_source(api,body,ctype,capture,expected_release,get_json=private_worker_json,sleep=time.sleep,before_put=None):
+    if not re.fullmatch(r'[A-Za-z0-9_.-]{1,160}',expected_release or ''):raise ValueError('SOURCE_EXPECTED_RELEASE_REQUIRED')
+    enabled=capture['health']['messenger_outbound']
+    # Recheck immediately before the single code PUT. Concurrent ingestion aborts.
+    closed_health(get_json('/health'),enabled,capture['health']['release'])
+    if not same_source(validate_source(get_json('/commercial/catalog')),capture['current']):
+        raise ValueError('SOURCE_CHANGED_BEFORE_UPLOAD')
+    tester_scope(get_json,enabled)
+    if before_put is not None:before_put()
+    api.call(SCRIPT,'PUT',body,ctype)
+    # No retry of PUT. Data-only ingestion can retain the same code release, so
+    # accept propagation only when the complete selected source also arrives.
+    for attempt in range(1,13):
+        health=closed_health(get_json('/health'),enabled)
+        if health['release']==expected_release:
+            tester_scope(get_json,enabled)
+            actual=validate_source(get_json('/commercial/catalog'))
+            if same_source(actual,capture['selected']):
+                closed_health(get_json('/health'),enabled,expected_release)
+                break
+            if capture['mode'] not in {'validated_source_update','explicit_rollback'} or not same_source(actual,capture['current']):
+                raise RuntimeError('SOURCE_FULL_COMPARISON_FAILED; private values withheld')
+        if attempt==12:raise RuntimeError('SOURCE_RELEASE_OR_DATA_PROPAGATION_FAILED; no repeated upload')
+        sleep(2)
+    return {'policy':'preserve-current-or-explicit-validated-update','mode':capture['mode'],
+            'full_comparison_in_deployer_memory':True,'equal_except_published_at':True,
+            'original_expiry_preserved':True,'private_body_recorded':False,'private_identity_fingerprint_recorded':False,
+            'tester_transport_enabled':enabled,'general_reception_enabled':False,'health_attempts':attempt}
 def permitted_request(path,method):
     allowed={(SCRIPT+'/settings','GET'),(SCRIPT+'/tails','GET'),(SCRIPT+'/tails','POST'),(SCRIPT,'PUT'),(SCRIPT+'/secrets','PUT')}
     if method=='DELETE' and re.fullmatch(re.escape(SCRIPT)+r'/tails/[a-f0-9]{32}',path):return
@@ -155,6 +327,10 @@ def main():
         report_connection({'ready':True,'status':'existing_worker_read_check_passed','plan_verification':'owner_dashboard_attestation','resources_created':False,'d1_enabled':False,'messenger_reception_audit':reception_settings(existing),'tail_read_status':tail_read_status(api)});return
     if sync_only:
         sync_meta_verify_token(api,existing,settings['CLOUDFLARE_PILOT_URL'],os.environ.get('META_VERIFY_TOKEN',''));return
+    # Preserve the receiver actually live in this Worker, never a repository template.
+    from scoped_content import CFClient
+    from generic_receiver_guard import preserve_live_receiver
+    content_client=CFClient(settings['CLOUDFLARE_ACCOUNT_ID'],settings['CLOUDFLARE_API_TOKEN'])
     metadata=worker_metadata(config);files=[]
     for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','alex-context.mjs','alex-catalog.mjs','central-source.mjs','commercial-reception.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs','shared-hub.mjs','marketplace-pilot.mjs']:
         source=(ROOT/name).read_text()
@@ -173,25 +349,12 @@ def main():
     files.append(('alex-extra.mjs','application/javascript+module',b'export default '+(ROOT/'generated/alex-productos-extra.json').read_bytes()+b';\n'))
     for module,path in [('central-enrichment.mjs','central/enrichment.json'),('source-attestations.mjs','central/source-attestations.json'),('marketplace-library.mjs','marketplace-library.json')]:
         files.append((module,'application/javascript+module',b'export default '+(ROOT/path).read_bytes()+b';\n'))
-    source_data=(ROOT/'central/current.json').read_bytes()
-    # Code-only deployments must not restore an older report after a cloud ingestion.
-    readback=subprocess.run(['node',str(ROOT/'central-http.mjs'),'/commercial/catalog'],input='',text=True,capture_output=True,timeout=55)
-    try:probe=json.loads(readback.stdout)
-    except Exception:raise RuntimeError('Could not preserve existing commercial source; deployment stopped') from None
-    if readback.returncode or probe.get('status') not in (200,404):raise RuntimeError('Could not preserve existing commercial source; deployment stopped')
-    if probe['status']==200:
-        import base64
-        current=base64.b64decode(probe['bytes_b64'])
-        if len(current)>2000000:raise ValueError('Runtime commercial source too large')
-        from datetime import datetime
-        a=json.loads(source_data);b=json.loads(current)
-        if b.get('schema')!='conectatech.commercial.v1':raise ValueError('Runtime commercial source schema mismatch')
-        if datetime.fromisoformat(b['source']['generated_at'].replace('Z','+00:00'))>datetime.fromisoformat(a['source']['generated_at'].replace('Z','+00:00')):
-            rollback=config.get('source_rollback_confirmed') is True and config.get('rollback_source_sha256')==a['source']['sha256']
-            if not rollback:source_data=current
-    from datetime import datetime,timezone
-    source_record=json.loads(source_data);source_record['published_at']=datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
+    try:compiled=json.loads((ROOT/'central/current.json').read_bytes())
+    except (ValueError,OSError):raise ValueError('COMPILED_SOURCE_INVALID') from None
+    capture=capture_source(compiled,config,os.environ)
+    source_record={**capture['selected'],'published_at':datetime.now(timezone.utc).isoformat().replace('+00:00','Z')}
     files.append(('central-data.mjs','application/javascript+module',b'export default '+json.dumps(source_record,ensure_ascii=False,separators=(',',':')).encode()+b';\n'))
+    files,verify_live_bundle=preserve_live_receiver(files,content_client,expected_source=capture['current'])
     body,ctype=multipart(metadata,files)
     # Synchronize secrets first. The final mutation uploads the complete code bundle,
     # preventing subsequent secret deployments from restoring an earlier bundle.
@@ -199,11 +362,12 @@ def main():
     for name in ['META_APP_SECRET','META_VERIFY_TOKEN','META_TEST_SENDER_IDS','META_PAGE_ACCESS_TOKEN','COMMERCIAL_ACTIONS_TOKEN']:
         value=os.environ.get(name,'')
         if value:api.call(SCRIPT+'/secrets','PUT',{'name':name,'text':value,'type':'secret_text'})
-    api.call(SCRIPT,'PUT',body,ctype)
+    release=next(binding['text'] for binding in metadata['bindings'] if binding['name']=='PILOT_RELEASE')
+    preservation=upload_preserving_source(api,body,ctype,capture,release,before_put=verify_live_bundle)
     # workers.dev is enabled manually in the panel; no account/subdomain/route changes.
     url=settings['CLOUDFLARE_PILOT_URL']
     path=ROOT/'generated/fase2/deployment.json';path.parent.mkdir(parents=True,exist_ok=True)
-    path.write_text(json.dumps({'url':url,'worker':WORKER,'plan_verification':'owner_dashboard_attestation','d1_enabled':False,'real_ai':'pending_smoke_test'},indent=2)+'\n')
+    path.write_text(json.dumps({'url':url,'worker':WORKER,'plan_verification':'owner_dashboard_attestation','d1_enabled':False,'real_ai':'pending_smoke_test','source_preservation':preservation},indent=2)+'\n')
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('url='+url+'\n')
     print('Isolated pilot uploaded; HTTPS and real AI must pass smoke test')

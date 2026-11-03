@@ -22,6 +22,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             /automatizacion/
+            /.github/workflows/
             /exportaciones/catalogo-ventas.json
             /seo-contenido.json
             /importacion/medios.json
@@ -68,8 +69,14 @@ jobs:
       - name: Ensayo integral Messenger en runner HTTP local con SQLite real
         run: node automatizacion/messenger-runner-e2e.mjs
       - run: python automatizacion/tests/deploy_test.py
+      - run: python automatizacion/tests/source_preservation_test.py
+      - run: python automatizacion/tests/generic_receiver_guard_test.py
+      - run: node automatizacion/tests/central-http.test.mjs
       - run: python automatizacion/tests/scoped_content_test.py
       - run: node automatizacion/tests/scoped-http.test.mjs
+      - run: python automatizacion/tests/sync_593_test.py
+      - run: node automatizacion/tests/sync-receiver.test.mjs
+      - run: python automatizacion/tests/scoped_integration_test.py
       - name: Prueba integral con fuentes y medios públicos reales
         run: node automatizacion/alex-catalog-e2e.mjs
       - uses: actions/upload-artifact@v4
