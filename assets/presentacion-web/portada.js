@@ -26,19 +26,25 @@
   if(presentationHeader&&typeof ResizeObserver!=='undefined')new ResizeObserver(syncHeaderOffset).observe(presentationHeader);
   else window.addEventListener('resize',syncHeaderOffset,{passive:true});
   document.addEventListener('conectatech:temporada',syncHeaderOffset);
+  const heroCopy=document.querySelector('.ct-hero-copy'),heroHeading=heroCopy?.querySelector('h1'),heroIntro=heroCopy?.querySelector(':scope > p');
+  const originalHeroCopy=heroHeading&&heroIntro?{heading:heroHeading.innerHTML,intro:heroIntro.innerHTML}:null;
   function applyTheme(){
     const theme=calendar.resolver(config,new Date(),requested);state.tema=theme.id;
     document.body.dataset.ctTemporada=theme.id;
     document.documentElement.style.setProperty('--pw-season',theme.acento);
     document.documentElement.style.setProperty('--pw-season-secondary',theme.secundario);
-    const copy=document.querySelector('.ct-hero-copy');
-    let seasonLabel=copy?.querySelector('[data-pw-season-name]');
-    const showSeasonLabel=theme.id==='black-friday';
-    if(copy&&showSeasonLabel&&!seasonLabel){
-      seasonLabel=document.createElement('span');seasonLabel.className='pw-season-label';seasonLabel.setAttribute('data-pw-season-name','');
-      const heading=copy.querySelector('h1');if(heading)heading.before(seasonLabel);else copy.prepend(seasonLabel);
+    const copy=document.querySelector('.ct-hero-copy'),heading=copy?.querySelector('h1'),intro=copy?.querySelector(':scope > p');
+    if(copy&&heading&&intro&&originalHeroCopy){
+      const blackFriday=theme.id==='black-friday'||theme.id==='black-month';
+      copy.querySelector('span.pw-season-label')?.remove();
+      heading.classList.toggle('pw-bf-title',blackFriday);intro.classList.toggle('pw-bf-intro',blackFriday);
+      if(blackFriday){
+        heading.setAttribute('data-pw-season-name','');
+        intro.innerHTML='<strong>Tu próximo favorito está aquí.</strong><span>Consulta su Promo Contado y compra con asesoría por WhatsApp.</span>';
+      }else{
+        heading.removeAttribute('data-pw-season-name');heading.innerHTML=originalHeroCopy.heading;intro.innerHTML=originalHeroCopy.intro;
+      }
     }
-    if(!showSeasonLabel)seasonLabel?.remove();
     document.querySelectorAll('[data-pw-season-name]').forEach(el=>el.textContent=theme.nombre);
     document.dispatchEvent(new CustomEvent('conectatech:temporada',{detail:theme}));
   }
