@@ -84,7 +84,7 @@ function contextPlan(input,source,memory,model={}){
  if(/otra tarjeta|otro banco|cambiar de banco/i.test(input)&&!bank.named&&!bank.chosen&&!bank.objection)return {...base,intent:'payment',say:'Claro, revisemos otra opción.',ask:'¿De qué banco es la tarjeta que quieres usar?'};
  const requestedBank=bank.named||memory.last_bank_mentioned||memory.bank,book=factBook(source);
  if(!bank.objection&&requestedBank&&!book[requestedBank]&&(bank.named||/meses|cuotas|intereses|planes|banco|tarjeta/i.test(input))){
-  const price=p&&/precio|cu[aá]nto/i.test(input)?[book[p.sku+'.card']?p.sku+'.card':p.sku+'.card_pending']:[];
+  const price=p&&/precio|cu[aá]nto|con tarjeta|\bPVP\b/i.test(input)?[book[p.sku+'.card']?p.sku+'.card':p.sku+'.card_pending']:[];
   const terms=paymentContext(input,memory);
   // Explain interest conditionally; an expired promotion never supplies a current bank offer or installment total.
   return {...base,intent:'payment',say:'',facts:[...(terms.months>=12?['interest']:price),'bank_terms_pending'],ask:''};

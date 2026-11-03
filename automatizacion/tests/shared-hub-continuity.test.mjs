@@ -7,7 +7,7 @@ const sha='265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80';
 const time=Date.parse('2026-11-02T23:00:00Z');
 function fixture(){return [{fecha_corte:'2026-11-02',origen_sha256:sha,referencia:'datos-593/corte-comercial-publico-validado.json'},
  {fecha_corte:'2026-11-02',sha256_original:sha,fuente:'synthetic transport fixture',cantidad_sku_web:1,productos:{TELF017:{stock:1,promo_centavos:15990,pvp_centavos:19988}}}];}
-const getter=(pair,check=()=>{})=>async(url,options)=>{check(url,options);return Response.json(url.endsWith('estado-ultimo-corte.json')?pair[0]:url.endsWith('corte-comercial-publico-validado.json')?pair[1]:{});};
+const getter=(pair,check=()=>{})=>async(url,options)=>{assert.equal(options.redirect,'manual','Workers does not support redirect:error');check(url,options);return Response.json(url.endsWith('estado-ultimo-corte.json')?pair[0]:url.endsWith('corte-comercial-publico-validado.json')?pair[1]:{});};
 test('A split publication retries once without cache; coherent prices keep original expiry',async()=>{
  const f=structuredClone(central),pair=fixture();
  const data=await readSharedHub(f,getter(pair),time);

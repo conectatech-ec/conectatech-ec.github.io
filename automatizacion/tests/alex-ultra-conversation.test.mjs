@@ -93,6 +93,7 @@ test('A complete 24-turn conversation keeps commercial context and ends with req
   if(i===18)assert.equal(memory.purchase_deferred,false);
   if(i===19)assert.ok(r.focus.length&&r.focus.every(id=>['TELF018','TELF019'].includes(id)));
   if(i===20||i===21||i===22)assert.deepEqual(r.focus,['TELF018']);
+  if(i===21){assert.ok(r.facts.includes('TELF018.card'));assert.ok(r.text.includes('$219.88'),'Card base price must not be displaced by an old bank discussion');}
   if(i===22){assert.equal(r.action,'interest');assert.equal(memory.delivery,'retiro');}
   if(i===23)assert.equal(r.action,'handoff');else assert.notEqual(r.action,'handoff');
   turns.push({input,text:r.text,focus:r.focus,intent:r.intent,action:r.action,facts:r.facts,buttons:quickReplies(r).map(q=>q.title),memory:{budget:memory.budget,need:memory.need,payment:memory.payment,bank:memory.bank||null,delivery:memory.delivery,sector:memory.sector,purchase_deferred:memory.purchase_deferred===true}});

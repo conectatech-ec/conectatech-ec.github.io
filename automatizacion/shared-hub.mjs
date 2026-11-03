@@ -32,7 +32,7 @@ export function adaptSharedHub(pointer,cut,fallback,now=Date.now()){
  return {...fallback,source:{file_name:cut.fuente,sha256:sha,cut_date:date,generated_at:new Date(time).toISOString(),timestamp_basis:evidence?'original_workbook_core':'conservative_Quito_day_start',published_reference:base+pointer.referencia},normalized_at:new Date(now).toISOString(),published_at:null,expires_at:new Date(time+86400000).toISOString(),products};
 }
 export async function readSharedHub(fallback,fetcher=fetch,now=Date.now()){
- async function get(path,revalidate=false){const r=await fetcher(base+path,{signal:AbortSignal.timeout(10000),redirect:'error',...(revalidate?{headers:{'Cache-Control':'no-cache'},cache:'no-store'}:{cf:{cacheTtl:60,cacheEverything:true}})});if(!r.ok)throw Error('SHARED_HUB_UNAVAILABLE');const t=await r.text();if(t.length>1500000)throw Error('SHARED_HUB_SIZE');return JSON.parse(t);}
+ async function get(path,revalidate=false){const r=await fetcher(base+path,{signal:AbortSignal.timeout(10000),redirect:'manual',...(revalidate?{headers:{'Cache-Control':'no-cache'},cache:'no-store'}:{cf:{cacheTtl:60,cacheEverything:true}})});if(!r.ok)throw Error('SHARED_HUB_UNAVAILABLE');const t=await r.text();if(t.length>1500000)throw Error('SHARED_HUB_SIZE');return JSON.parse(t);}
  let effective;
  try{
   // Two independently cached files can straddle a publication. Retry the pair
