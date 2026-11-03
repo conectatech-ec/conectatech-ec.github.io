@@ -1,0 +1,37 @@
+name: QA aislado - capa tematica SIGNATURE
+on:
+  push:
+    branches: ['banners/campanas-20261103']
+    paths:
+      - 'banner-factory/revision-premium/signature-v2-20261018/tema_campana.py'
+      - 'banner-factory/revision-premium/signature-v2-20261018/campana-tematica.json'
+      - 'banner-factory/revision-premium/signature-v2-20261018/tests/test_tema_campana.py'
+      - 'banner-factory/revision-premium/signature-v2-20261018/tests/benchmark_tema_campana.py'
+      - '.github/workflows/qa-campana-signature.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: qa-campana-signature-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validar:
+    if: github.repository == 'conectatech-ec/conectatech-ec.github.io' && github.ref == 'refs/heads/banners/campanas-20261103'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            /banner-factory/revision-premium/signature-v2-20261018/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencia ya utilizada por la fabrica
+        run: python -m pip install --disable-pip-version-check 'Pillow==11.3.0'
+      - name: Pruebas de fechas, geometria, fidelidad y cache
+        run: python -m unittest discover -s 'banner-factory/revision-premium/signature-v2-20261018/tests' -p 'test_tema_campana.py' -v
+      - name: Medicion sintetica de la capa
+        run: python 'banner-factory/revision-premium/signature-v2-20261018/tests/benchmark_tema_campana.py'
