@@ -97,9 +97,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/chip002-chip-simcard-movistar/",
-  "fecha_verificacion": "2026-11-03T21:19:31.152052+00:00",
+  "fecha_verificacion": "2026-11-03T22:54:02.036773+00:00",
   "descripcion": "Chip SIM Movistar en la presentación comercial sellada de la referencia fotografiada.",
   "contenido_venta": "Un chip SIM Movistar en su presentación comercial sellada.",
   "presentacion": "con caja",
@@ -204,7 +204,7 @@
       "solicitado": "CHIP002",
       "sku": "CHIP002",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T22:06:38.067Z",
+      "fecha": "2026-11-03T22:54:34.513Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -229,7 +229,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/chip002-chip-simcard-movistar/",
-      "url_comprobada": "http://127.0.0.1:8876/productos/chip002-chip-simcard-movistar/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/chip002-chip-simcard-movistar/",
       "archivo_html": "productos/chip002-chip-simcard-movistar/index.html",
       "http": 200,
       "sha256_html": "b2f9da3de8a997f1c2a83d29e72e987d12f16f8e9b8f5652bdc0b361a7958a21",
@@ -239,7 +239,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/chip002/CHIP002-r123-01.webp",
-        "url_cargada": "http://127.0.0.1:8876/imagenes/chip002/CHIP002-r123-01-600.webp?v=8f0f084db73d79c1",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/chip002/CHIP002-r123-01-600.webp?v=8f0f084db73d79c1",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -249,41 +249,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8876/productos/chip002-chip-simcard-movistar/",
+          "url": "https://conectatech-ec.github.io/productos/chip002-chip-simcard-movistar/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/imagenes/chip002/CHIP002-r123-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/chip002/CHIP002-r123-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-123/qa-local/movil/CHIP002-390.png",
+      "archivo": "reportes/continuacion-123/qa-publica/movil/CHIP002-390.png",
       "sha256": "9ddcf46bf540816e2eff35623499e92d9f243e12051f456d6bab6c13cfd1897e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-123/qa-local/movil/CHIP002-1280.png",
+        "archivo": "reportes/continuacion-123/qa-publica/movil/CHIP002-1280.png",
         "sha256": "1d29b16a010cc0b211e5e3b351688961aa8924c5ab69c30bf991e6f63f097ba5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T22:54:02.036773+00:00",
+      "archivo": "reportes/continuacion-123/http-publicacion.json",
+      "reporte": "reportes/continuacion-123/http-publicacion.json",
+      "sha256": "5117893745f6a3d79f8ecbd802220e36268e8441d88490487d79485f0e04e3d1",
+      "sku": "CHIP002"
     }
   }
 }

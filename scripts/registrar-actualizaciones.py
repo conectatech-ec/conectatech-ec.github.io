@@ -106,7 +106,14 @@ def inspect_sku(root, sku, product, custom, slug, row):
         raise ValueError('El HTML local todavía no corresponde a la publicación comprobada')
     page = Page(); page.feed(data.decode()); schema = json.loads(page.schema)
     title = custom.get('nombre') or product['name']; description = custom.get('descripcion', '')
-    if page.canonical != expected_url or schema.get('sku') != sku or schema.get('name') != title or product['name'] != title:
+    title_matches = product['name'] == title
+    if not title_matches:
+        # Una presentación editorial revisada puede conservar el nombre593 anterior.
+        contract = json.loads(safe(root, 'importacion/contratos/' + sku + '.json').read_text())
+        spec = importlib.util.spec_from_file_location('registration_editorial_contract', safe(root, 'scripts/validar-contrato.py'))
+        validator = importlib.util.module_from_spec(spec); spec.loader.exec_module(validator)
+        title_matches = contract.get('sku') == sku and contract.get('titulo_comercial') == title and not validator.validate_editorial(root, contract, {'productos': {sku: product}})
+    if page.canonical != expected_url or schema.get('sku') != sku or schema.get('name') != title or not title_matches:
         raise ValueError('Identidad/título local no coincide con la ficha servida')
     if schema.get('description', '') != description:
         raise ValueError('Descripción local no corresponde al HTML publicado')

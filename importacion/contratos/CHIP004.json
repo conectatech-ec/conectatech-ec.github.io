@@ -97,9 +97,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/chip004-chip-simcard-cnt/",
-  "fecha_verificacion": "2026-11-03T21:19:31.152052+00:00",
+  "fecha_verificacion": "2026-11-03T22:54:02.036773+00:00",
   "descripcion": "Chip SIM CNT en la presentación comercial sellada de la referencia fotografiada.",
   "contenido_venta": "Un chip SIM CNT en su presentación comercial sellada.",
   "presentacion": "con caja",
@@ -204,7 +204,7 @@
       "solicitado": "CHIP004",
       "sku": "CHIP004",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T22:06:39.753Z",
+      "fecha": "2026-11-03T22:54:37.336Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -229,7 +229,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/chip004-chip-simcard-cnt/",
-      "url_comprobada": "http://127.0.0.1:8876/productos/chip004-chip-simcard-cnt/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/chip004-chip-simcard-cnt/",
       "archivo_html": "productos/chip004-chip-simcard-cnt/index.html",
       "http": 200,
       "sha256_html": "38ef1ef480945a6890e7c7fc48ea8e413d210b852dd2ac2cf17578a9cce9d005",
@@ -239,7 +239,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/chip004/CHIP004-r123-01.webp",
-        "url_cargada": "http://127.0.0.1:8876/imagenes/chip004/CHIP004-r123-01-600.webp?v=024eb3cc5efdc5a3",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/chip004/CHIP004-r123-01-600.webp?v=024eb3cc5efdc5a3",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -249,41 +249,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8876/productos/chip004-chip-simcard-cnt/",
+          "url": "https://conectatech-ec.github.io/productos/chip004-chip-simcard-cnt/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8876/imagenes/chip004/CHIP004-r123-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/chip004/CHIP004-r123-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-123/qa-local/movil/CHIP004-390.png",
+      "archivo": "reportes/continuacion-123/qa-publica/movil/CHIP004-390.png",
       "sha256": "b124817e4fce522c720c4c601b9f46915e637d1cda8d15eaf89119c9bc5bf1b7",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-123/qa-local/movil/CHIP004-1280.png",
+        "archivo": "reportes/continuacion-123/qa-publica/movil/CHIP004-1280.png",
         "sha256": "d35f5e28d8d1c6e7c8a4d7b99e18c9796f9a17b695637000eb63a7bcaef8abb5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T22:54:02.036773+00:00",
+      "archivo": "reportes/continuacion-123/http-publicacion.json",
+      "reporte": "reportes/continuacion-123/http-publicacion.json",
+      "sha256": "5117893745f6a3d79f8ecbd802220e36268e8441d88490487d79485f0e04e3d1",
+      "sku": "CHIP004"
     }
   }
 }
