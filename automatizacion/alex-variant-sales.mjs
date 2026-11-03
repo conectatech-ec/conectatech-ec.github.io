@@ -7,6 +7,7 @@ const available=(source,p,now)=>quoteCurrent(source,p,now)&&p.price_verified!==f
  (!p.central_availability||p.central_availability==='in_stock')&&!(p.blocked_reasons||[]).length;
 export function variantSalesReply(input,source,memory={},now=Date.now()){
  const buying=buyingIntent(input);
+ if(/regalo|tr[ií]pode|obsequio|promoci[oó]n.{0,25}banner/i.test(input))return null;
  if(buying.deferred||buying.resume||bankIntent(input,memory).objection)return null;
  // A native choice advances with the selected product; do not reopen the same
  // family menu after the buyer just chose one of its options.

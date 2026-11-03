@@ -45,6 +45,11 @@ export default {
   if(path==='/marketplace/pilot'&&req.method==='GET')return marketplacePage();
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
   try {
+   if(/^\/alex\/signature\/(?:upload\/)?(?:TELF011|TELF012|REL046)(?:\/[a-f0-9]{64}\.png)?$/.test(path)){
+    if(!env.MESSENGER_TEST_INBOX)return json({error:'Private image storage unavailable'},503);
+    const stub=env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('alex-private-signature'));
+    return stub.fetch('https://inbox'+path,{method:req.method,headers:{'Content-Type':req.headers.get('Content-Type')||'application/octet-stream'},...(['GET','HEAD'].includes(req.method)?{}:{body:req.body,duplex:'half'})});
+   }
    if(path==='/marketplace/preview'&&req.method==='POST'){
     const b=await body(req);if(!['marketplace_personal','messenger_page','whatsapp_business'].includes(b.channel)||!/^[a-zA-Z0-9_-]{16,64}$/.test(b.session_id||'')||typeof b.message!=='string'||b.message.length>1000)return json({error:'Invalid preview'},400);
     if(!env.MESSENGER_TEST_INBOX)return json({error:'Storage unavailable'},503);

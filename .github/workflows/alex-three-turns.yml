@@ -30,10 +30,12 @@ jobs:
           python - <<'PY'
           import json,os
           c=json.load(open('.github/alex-three-turns.json'))
-          assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0 and type(c['probe']) is bool and type(c.get('baseline',False)) is bool
+          assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0 and type(c['probe']) is bool and type(c.get('baseline',False)) is bool and type(c.get('media_only',False)) is bool and type(c.get('signature_only',False)) is bool
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:
               out.write('probe='+str(c['probe']).lower()+'\n')
               out.write('baseline='+str(c.get('baseline',False)).lower()+'\n')
+              out.write('media_only='+str(c.get('media_only',False)).lower()+'\n')
+              out.write('signature_only='+str(c.get('signature_only',False)).lower()+'\n')
           PY
       - name: Conversar desde el HTML real con Rafa y Jessy; verificar datos e imágenes renderizadas
         if: steps.control.outputs.probe == 'true'
@@ -41,12 +43,20 @@ jobs:
         env:
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
           ALEX_BASELINE_PROBE: ${{ steps.control.outputs.baseline }}
+          ALEX_MEDIA_ONLY: ${{ steps.control.outputs.media_only }}
+          ALEX_SIGNATURE_ONLY: ${{ steps.control.outputs.signature_only }}
       - uses: actions/upload-artifact@v4
-        if: always() && steps.control.outputs.probe == 'true'
+        if: always() && steps.control.outputs.probe == 'true' && steps.control.outputs.signature_only != 'true'
         with:
           name: alex-tres-consultas-navegador-real
           path: |
             automatizacion/generated/fase2/alex-three-turns-cloud.json
             automatizacion/generated/fase2/alex-three-turns-COL001.png
             automatizacion/generated/fase2/alex-three-turns-COL002.png
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.control.outputs.probe == 'true' && steps.control.outputs.signature_only == 'true'
+        with:
+          name: alex-tres-consultas-navegador-real
+          path: automatizacion/generated/fase2/alex-three-turns-cloud.json
           retention-days: 7

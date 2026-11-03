@@ -1,0 +1,945 @@
+{
+  "schema": "conectatech.alex.reported-failures.verified.v1",
+  "simulator": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/alex",
+  "before": {
+    "run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41729046307",
+    "schema": "conectatech.alex.three-turns.browser.v1",
+    "at": "2026-11-03T22:14:40.947Z",
+    "passed": false,
+    "scope": "authenticated_owner_actual_simulator_browser",
+    "browser": "installed_Chromium_native_CDP",
+    "normal_UI_messages": 6,
+    "maximum_normal_UI_messages": 6,
+    "Graph_sends": 0,
+    "customer_events": 0,
+    "external_customers_enabled": false,
+    "worker_deployed": false,
+    "new_paid_services": 0,
+    "branch_revision": "42bdc1b68783ad934583b3da97baf7c54295dc5c",
+    "baseline_probe": true,
+    "profiles": [
+      {
+        "collaborator": "COL001",
+        "commercial_name": "Rafa Valderrama",
+        "turns": [
+          {
+            "question": "Busco un Samsung A17",
+            "text": "Samsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB\n¿Cuál de estas versiones te interesa?",
+            "HTTP": 200,
+            "generative": true,
+            "response_mode": "generative",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [],
+            "browser": {
+              "new_images": 0,
+              "loaded_images": 0
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "both_verified_variants": false
+            },
+            "verified_available_variants": 0,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              },
+              {
+                "sku": "TELF012",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              }
+            ],
+            "variants": []
+          },
+          {
+            "question": "¿Cuánto cuesta con tarjeta?",
+            "text": "Samsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB",
+            "HTTP": 200,
+            "generative": false,
+            "response_mode": "verified_catalog",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [],
+            "browser": {
+              "new_images": 0,
+              "loaded_images": 0
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "card_prices": false
+            },
+            "verified_available_variants": 0,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              },
+              {
+                "sku": "TELF012",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              }
+            ],
+            "variants": []
+          },
+          {
+            "question": "Muéstrame una imagen y compárame las versiones",
+            "text": "Samsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB",
+            "HTTP": 200,
+            "generative": false,
+            "response_mode": "verified_catalog",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [],
+            "browser": {
+              "new_images": 0,
+              "loaded_images": 0
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "image_delivered": false,
+              "comparison": false
+            },
+            "verified_available_variants": 0,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              },
+              {
+                "sku": "TELF012",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              }
+            ],
+            "variants": []
+          }
+        ],
+        "same_conversation": true,
+        "screenshot": "automatizacion/generated/fase2/alex-three-turns-COL001.png"
+      },
+      {
+        "collaborator": "COL002",
+        "commercial_name": "Jessy Fox",
+        "turns": [
+          {
+            "question": "Busco un Samsung A17",
+            "text": "Samsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB\n¿Cuál de estas versiones te interesa?",
+            "HTTP": 200,
+            "generative": true,
+            "response_mode": "generative",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [],
+            "browser": {
+              "new_images": 0,
+              "loaded_images": 0
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "both_verified_variants": false
+            },
+            "verified_available_variants": 0,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              },
+              {
+                "sku": "TELF012",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              }
+            ],
+            "variants": []
+          },
+          {
+            "question": "¿Cuánto cuesta con tarjeta?",
+            "text": "Samsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB",
+            "HTTP": 200,
+            "generative": false,
+            "response_mode": "verified_catalog",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [],
+            "browser": {
+              "new_images": 0,
+              "loaded_images": 0
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "card_prices": false
+            },
+            "verified_available_variants": 0,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              },
+              {
+                "sku": "TELF012",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              }
+            ],
+            "variants": []
+          },
+          {
+            "question": "Muéstrame una imagen y compárame las versiones",
+            "text": "Samsung Galaxy A17 128 GB\nSamsung Galaxy A17 256 GB",
+            "HTTP": 200,
+            "generative": false,
+            "response_mode": "verified_catalog",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [],
+            "browser": {
+              "new_images": 0,
+              "loaded_images": 0
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "image_delivered": false,
+              "comparison": false
+            },
+            "verified_available_variants": 0,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              },
+              {
+                "sku": "TELF012",
+                "availability": "blocked",
+                "blocked_reasons": [
+                  "SHARED_IDENTITY_NOT_VERIFIED"
+                ]
+              }
+            ],
+            "variants": []
+          }
+        ],
+        "same_conversation": true,
+        "screenshot": "automatizacion/generated/fase2/alex-three-turns-COL002.png"
+      }
+    ],
+    "checks": {
+      "profile_sessions_separate": true,
+      "generative_reply_proven": true,
+      "controls_unchanged": true,
+      "image_assets_verified": 0
+    },
+    "signature": {
+      "released": false,
+      "held_banners_not_bypassed": true
+    },
+    "failures": [
+      {
+        "stage": "conversation_COL001",
+        "code": "A17_VERIFIED_SOURCE_VARIANTS_REQUIRED",
+        "collaborator": "COL001",
+        "turn": 1
+      },
+      {
+        "stage": "conversation_COL001",
+        "code": "A17_VARIANTS_MISSING",
+        "collaborator": "COL001",
+        "turn": 1
+      },
+      {
+        "stage": "conversation_COL001",
+        "code": "A17_VARIANT_EXPLANATION_MISSING",
+        "collaborator": "COL001",
+        "turn": 1
+      },
+      {
+        "stage": "conversation_COL001",
+        "code": "A17_VERIFIED_SOURCE_VARIANTS_REQUIRED",
+        "collaborator": "COL001",
+        "turn": 2
+      },
+      {
+        "stage": "conversation_COL001",
+        "code": "CARD_VARIANTS_MISSING",
+        "collaborator": "COL001",
+        "turn": 2
+      },
+      {
+        "stage": "conversation_COL001",
+        "code": "A17_VERIFIED_SOURCE_VARIANTS_REQUIRED",
+        "collaborator": "COL001",
+        "turn": 3
+      },
+      {
+        "stage": "conversation_COL001",
+        "code": "EXPLICIT_IMAGE_NOT_RENDERED",
+        "collaborator": "COL001",
+        "turn": 3
+      },
+      {
+        "stage": "conversation_COL001",
+        "code": "VARIANT_COMPARISON_MISSING",
+        "collaborator": "COL001",
+        "turn": 3
+      },
+      {
+        "stage": "conversation_COL002",
+        "code": "A17_VERIFIED_SOURCE_VARIANTS_REQUIRED",
+        "collaborator": "COL002",
+        "turn": 1
+      },
+      {
+        "stage": "conversation_COL002",
+        "code": "A17_VARIANTS_MISSING",
+        "collaborator": "COL002",
+        "turn": 1
+      },
+      {
+        "stage": "conversation_COL002",
+        "code": "A17_VARIANT_EXPLANATION_MISSING",
+        "collaborator": "COL002",
+        "turn": 1
+      },
+      {
+        "stage": "conversation_COL002",
+        "code": "A17_VERIFIED_SOURCE_VARIANTS_REQUIRED",
+        "collaborator": "COL002",
+        "turn": 2
+      },
+      {
+        "stage": "conversation_COL002",
+        "code": "CARD_VARIANTS_MISSING",
+        "collaborator": "COL002",
+        "turn": 2
+      },
+      {
+        "stage": "conversation_COL002",
+        "code": "A17_VERIFIED_SOURCE_VARIANTS_REQUIRED",
+        "collaborator": "COL002",
+        "turn": 3
+      },
+      {
+        "stage": "conversation_COL002",
+        "code": "EXPLICIT_IMAGE_NOT_RENDERED",
+        "collaborator": "COL002",
+        "turn": 3
+      },
+      {
+        "stage": "conversation_COL002",
+        "code": "VARIANT_COMPARISON_MISSING",
+        "collaborator": "COL002",
+        "turn": 3
+      }
+    ],
+    "quota_before": {
+      "preventive_remaining_calls": 72,
+      "limit_preserved": true,
+      "provider_meter": false
+    },
+    "source": {
+      "cut_date": "2026-11-03",
+      "sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+      "generated_at": "2026-11-03T05:00:00.000Z",
+      "expires_at": "2026-11-04T05:00:00.000Z",
+      "fresh": true
+    },
+    "quota": {
+      "limit_preserved": true,
+      "observed_reservations_delta": 2,
+      "maximum_UI_turns": 6,
+      "provider_meter": false
+    }
+  },
+  "after": {
+    "run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41730446724",
+    "schema": "conectatech.alex.three-turns.browser.v1",
+    "at": "2026-11-03T22:24:08.373Z",
+    "passed": true,
+    "scope": "authenticated_owner_actual_simulator_browser",
+    "browser": "installed_Chromium_native_CDP",
+    "normal_UI_messages": 6,
+    "maximum_normal_UI_messages": 6,
+    "Graph_sends": 0,
+    "customer_events": 0,
+    "external_customers_enabled": false,
+    "worker_deployed": false,
+    "new_paid_services": 0,
+    "branch_revision": "4569ec0f800107f28f4579600a44db2c7e5eb278",
+    "baseline_probe": false,
+    "profiles": [
+      {
+        "collaborator": "COL001",
+        "commercial_name": "Rafa Valderrama",
+        "turns": [
+          {
+            "question": "Busco un Samsung A17",
+            "text": "Samsung A17 · 💵 contado / 💳 tarjeta (PVP)\n• 128 GB · 4 GB RAM física · 4G: $185.90 / $232.38\n• 256 GB · 8 GB RAM física: $239.90 / $299.88\n128 GB para uso diario; 256 GB si quieres más espacio.\nDisponibilidad según la última actualización; confirmamos al comprar.",
+            "HTTP": 200,
+            "generative": true,
+            "response_mode": "generative",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [
+              {
+                "sku": "TELF011",
+                "url": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+                "kind": "approved_photo",
+                "sha256": "0da0539d03def77d3149db2bbef57793ab120533af855049a896c60303eee4ec",
+                "HTTP": 200,
+                "approved_bytes_verified": true
+              }
+            ],
+            "browser": {
+              "new_images": 1,
+              "loaded_images": 1
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "both_verified_variants": true
+            },
+            "verified_available_variants": 2,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              },
+              {
+                "sku": "TELF012",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              }
+            ],
+            "variants": [
+              {
+                "sku": "TELF011",
+                "storage_gb": 128,
+                "ram_physical_gb": 4,
+                "ram_virtual_gb": null,
+                "cash": 185.9,
+                "card": 232.38,
+                "current": true,
+                "availability": "in_stock"
+              },
+              {
+                "sku": "TELF012",
+                "storage_gb": 256,
+                "ram_physical_gb": 8,
+                "ram_virtual_gb": null,
+                "cash": 239.9,
+                "card": 299.88,
+                "current": true,
+                "availability": "in_stock"
+              }
+            ]
+          },
+          {
+            "question": "¿Cuánto cuesta con tarjeta?",
+            "text": "Samsung A17 · 💳 con tarjeta (PVP)\n• 128 GB · 4 GB RAM física · 4G: $232.38\n• 256 GB · 8 GB RAM física: $299.88",
+            "HTTP": 200,
+            "generative": false,
+            "response_mode": "verified_catalog",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [],
+            "browser": {
+              "new_images": 0,
+              "loaded_images": 0
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "card_prices": true
+            },
+            "verified_available_variants": 2,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              },
+              {
+                "sku": "TELF012",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              }
+            ],
+            "variants": [
+              {
+                "sku": "TELF011",
+                "storage_gb": 128,
+                "ram_physical_gb": 4,
+                "ram_virtual_gb": null,
+                "cash": 185.9,
+                "card": 232.38,
+                "current": true,
+                "availability": "in_stock"
+              },
+              {
+                "sku": "TELF012",
+                "storage_gb": 256,
+                "ram_physical_gb": 8,
+                "ram_virtual_gb": null,
+                "cash": 239.9,
+                "card": 299.88,
+                "current": true,
+                "availability": "in_stock"
+              }
+            ]
+          },
+          {
+            "question": "Muéstrame una imagen y compárame las versiones",
+            "text": "Entiendo que quieres ver las opciones y compararlas.\nSamsung A17 · Comparación\n• 128 GB · 4 GB RAM física · 4G\n• 256 GB · 8 GB RAM física\n128 GB si priorizas ahorrar; 256 GB y 8 GB RAM si necesitas más espacio y multitarea.\nDisponibilidad según la última actualización; confirmamos al comprar.",
+            "HTTP": 200,
+            "generative": true,
+            "response_mode": "generative",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [
+              {
+                "sku": "TELF011",
+                "url": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+                "kind": "approved_photo",
+                "sha256": "0da0539d03def77d3149db2bbef57793ab120533af855049a896c60303eee4ec",
+                "HTTP": 200,
+                "approved_bytes_verified": true
+              }
+            ],
+            "browser": {
+              "new_images": 1,
+              "loaded_images": 1
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "image_delivered": true,
+              "comparison": true
+            },
+            "verified_available_variants": 2,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              },
+              {
+                "sku": "TELF012",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              }
+            ],
+            "variants": [
+              {
+                "sku": "TELF011",
+                "storage_gb": 128,
+                "ram_physical_gb": 4,
+                "ram_virtual_gb": null,
+                "cash": 185.9,
+                "card": 232.38,
+                "current": true,
+                "availability": "in_stock"
+              },
+              {
+                "sku": "TELF012",
+                "storage_gb": 256,
+                "ram_physical_gb": 8,
+                "ram_virtual_gb": null,
+                "cash": 239.9,
+                "card": 299.88,
+                "current": true,
+                "availability": "in_stock"
+              }
+            ]
+          }
+        ],
+        "same_conversation": true,
+        "screenshot": "automatizacion/generated/fase2/alex-three-turns-COL001.png"
+      },
+      {
+        "collaborator": "COL002",
+        "commercial_name": "Jessy Fox",
+        "turns": [
+          {
+            "question": "Busco un Samsung A17",
+            "text": "Samsung A17 · 💵 contado / 💳 tarjeta (PVP)\n• 128 GB · 4 GB RAM física · 4G: $185.90 / $232.38\n• 256 GB · 8 GB RAM física: $239.90 / $299.88\n128 GB para uso diario; 256 GB si quieres más espacio.\nDisponibilidad según la última actualización; confirmamos al comprar.\n¿Lo usarías para lo básico o para guardar muchas fotos?",
+            "HTTP": 200,
+            "generative": true,
+            "response_mode": "generative",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [
+              {
+                "sku": "TELF011",
+                "url": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+                "kind": "approved_photo",
+                "sha256": "0da0539d03def77d3149db2bbef57793ab120533af855049a896c60303eee4ec",
+                "HTTP": 200,
+                "approved_bytes_verified": true
+              }
+            ],
+            "browser": {
+              "new_images": 1,
+              "loaded_images": 1
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "both_verified_variants": true
+            },
+            "verified_available_variants": 2,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              },
+              {
+                "sku": "TELF012",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              }
+            ],
+            "variants": [
+              {
+                "sku": "TELF011",
+                "storage_gb": 128,
+                "ram_physical_gb": 4,
+                "ram_virtual_gb": null,
+                "cash": 185.9,
+                "card": 232.38,
+                "current": true,
+                "availability": "in_stock"
+              },
+              {
+                "sku": "TELF012",
+                "storage_gb": 256,
+                "ram_physical_gb": 8,
+                "ram_virtual_gb": null,
+                "cash": 239.9,
+                "card": 299.88,
+                "current": true,
+                "availability": "in_stock"
+              }
+            ]
+          },
+          {
+            "question": "¿Cuánto cuesta con tarjeta?",
+            "text": "Samsung A17 · 💳 con tarjeta (PVP)\n• 128 GB · 4 GB RAM física · 4G: $232.38\n• 256 GB · 8 GB RAM física: $299.88",
+            "HTTP": 200,
+            "generative": false,
+            "response_mode": "verified_catalog",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [],
+            "browser": {
+              "new_images": 0,
+              "loaded_images": 0
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "card_prices": true
+            },
+            "verified_available_variants": 2,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              },
+              {
+                "sku": "TELF012",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              }
+            ],
+            "variants": [
+              {
+                "sku": "TELF011",
+                "storage_gb": 128,
+                "ram_physical_gb": 4,
+                "ram_virtual_gb": null,
+                "cash": 185.9,
+                "card": 232.38,
+                "current": true,
+                "availability": "in_stock"
+              },
+              {
+                "sku": "TELF012",
+                "storage_gb": 256,
+                "ram_physical_gb": 8,
+                "ram_virtual_gb": null,
+                "cash": 239.9,
+                "card": 299.88,
+                "current": true,
+                "availability": "in_stock"
+              }
+            ]
+          },
+          {
+            "question": "Muéstrame una imagen y compárame las versiones",
+            "text": "Samsung A17 · Comparación\n• 128 GB · 4 GB RAM física · 4G\n• 256 GB · 8 GB RAM física\n128 GB si priorizas ahorrar; 256 GB y 8 GB RAM si necesitas más espacio y multitarea.\nDisponibilidad según la última actualización; confirmamos al comprar.",
+            "HTTP": 200,
+            "generative": true,
+            "response_mode": "generative",
+            "error_code": null,
+            "source_fresh": true,
+            "cut_date": "2026-11-03",
+            "source_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+            "images": [
+              {
+                "sku": "TELF011",
+                "url": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+                "kind": "approved_photo",
+                "sha256": "0da0539d03def77d3149db2bbef57793ab120533af855049a896c60303eee4ec",
+                "HTTP": 200,
+                "approved_bytes_verified": true
+              }
+            ],
+            "browser": {
+              "new_images": 1,
+              "loaded_images": 1
+            },
+            "checks": {
+              "exact_verified_prices": true,
+              "product_context": true,
+              "image_delivered": true,
+              "comparison": true
+            },
+            "verified_available_variants": 2,
+            "source_variant_status": [
+              {
+                "sku": "TELF011",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              },
+              {
+                "sku": "TELF012",
+                "availability": "in_stock",
+                "blocked_reasons": []
+              }
+            ],
+            "variants": [
+              {
+                "sku": "TELF011",
+                "storage_gb": 128,
+                "ram_physical_gb": 4,
+                "ram_virtual_gb": null,
+                "cash": 185.9,
+                "card": 232.38,
+                "current": true,
+                "availability": "in_stock"
+              },
+              {
+                "sku": "TELF012",
+                "storage_gb": 256,
+                "ram_physical_gb": 8,
+                "ram_virtual_gb": null,
+                "cash": 239.9,
+                "card": 299.88,
+                "current": true,
+                "availability": "in_stock"
+              }
+            ]
+          }
+        ],
+        "same_conversation": true,
+        "screenshot": "automatizacion/generated/fase2/alex-three-turns-COL002.png"
+      }
+    ],
+    "checks": {
+      "profile_sessions_separate": true,
+      "generative_reply_proven": true,
+      "controls_unchanged": true,
+      "image_assets_verified": 1
+    },
+    "signature": {
+      "released": false,
+      "held_banners_not_bypassed": true
+    },
+    "failures": [],
+    "quota_before": {
+      "preventive_remaining_calls": 68,
+      "limit_preserved": true,
+      "provider_meter": false
+    },
+    "source": {
+      "cut_date": "2026-11-03",
+      "sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+      "generated_at": "2026-11-03T18:55:23.000Z",
+      "expires_at": "2026-11-04T18:55:23.000Z",
+      "fresh": true
+    },
+    "quota": {
+      "limit_preserved": true,
+      "observed_reservations_delta": 4,
+      "maximum_UI_turns": 6,
+      "provider_meter": false
+    }
+  },
+  "deployment": [
+    {
+      "schema": "conectatech.alex.variants-deployment.v1",
+      "passed": true,
+      "variants_revision": "97c9c54c78203bd618c0a1ce048bc9d597237d8a",
+      "base_release_preserved": "acfc00763dfbc7ac34c2c62f9ccecea4f613c870",
+      "baseline_code_revision": "3c0bf77a3a0b41942d7c8c6f039bb6cb37d18343",
+      "changed_modules": [
+        "alex-media.mjs",
+        "alex-store.mjs",
+        "alex-ui.mjs",
+        "alex-variant-sales.mjs",
+        "alex.mjs",
+        "source-attestations.mjs"
+      ],
+      "worker_puts": 1,
+      "settings_and_secrets_preserved": true,
+      "unowned_module_bodies_preserved": true,
+      "worker_unchanged": true,
+      "central_source_module_unchanged": true,
+      "commercial_source_preserved_exactly": true,
+      "tester_transport_preserved": true,
+      "external_customers_enabled": false,
+      "new_cost_usd": 0,
+      "private_content_recorded": false
+    },
+    {
+      "schema": "conectatech.alex.variants.cloud.v1",
+      "at": "2026-11-03T22:22:27.712Z",
+      "passed": true,
+      "scope": "authenticated_owner_simulator_HTTPS_only",
+      "real_Meta_delivery": false,
+      "Graph_sends": 0,
+      "customer_events": 0,
+      "deployment_requests": 0,
+      "external_customers_enabled": false,
+      "maximum_AI_attempts": 2,
+      "AI_attempts": 2,
+      "generative_replies": 2,
+      "checks": {
+        "registry_private": true,
+        "free_model_configuration": true,
+        "owner_profiles": true,
+        "hub_coherent": true,
+        "two_personas": true,
+        "variant_prices_and_image_dedup": true,
+        "real_generative_bargaining": true,
+        "persona_memory_and_reset_isolated": true,
+        "controls_and_quota_unchanged": true,
+        "no_Meta_or_customer_transport": true,
+        "held_signature_banners_not_sent": true
+      },
+      "families": [
+        {
+          "family": "samsunga17",
+          "verified_variants": 2,
+          "available_variants": 2,
+          "source_fresh": true,
+          "returned_variants": 2,
+          "price_validation": true,
+          "real_generative_reply": true,
+          "images_verified": 1,
+          "next_reply_images_verified": 0
+        },
+        {
+          "family": "redmi15c",
+          "verified_variants": 3,
+          "available_variants": 3,
+          "source_fresh": true,
+          "returned_variants": 3,
+          "price_validation": true,
+          "real_generative_reply": false,
+          "images_verified": 2,
+          "next_reply_images_verified": 1
+        },
+        {
+          "family": "tecnosparkgo3",
+          "verified_variants": 2,
+          "available_variants": 2,
+          "source_fresh": true,
+          "returned_variants": 2,
+          "price_validation": true,
+          "real_generative_reply": false,
+          "images_verified": 2,
+          "next_reply_images_verified": 0
+        }
+      ],
+      "media": {
+        "verified_photos": 6,
+        "verified_banners": 0,
+        "duplicate_default_images": 0,
+        "distinct_public_assets_verified": 6
+      },
+      "source": {
+        "cut_date": "2026-11-03",
+        "sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+        "generated_at": "2026-11-03T18:55:23.000Z",
+        "expires_at": "2026-11-04T18:55:23.000Z",
+        "fresh": true
+      },
+      "release": "acfc00763dfbc7ac34c2c62f9ccecea4f613c870"
+    }
+  ],
+  "signature_activation_complete": false,
+  "external_customers_enabled": false,
+  "extra_cost_usd": 0
+}

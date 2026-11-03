@@ -7,6 +7,7 @@ import {reviewInit,reviewCleanup,reviewNext,reviewFetch,cancelConversationReview
 import {personaForNamespace,withPersona,attributionFor} from './alex-collaborators.mjs';
 import {collectAlexMedia} from './alex-media.mjs';
 import signatureLibrary from './marketplace-library.json' with {type:'json'};
+import {signatureAssetFetch,privateSignatureReady} from './alex-signature-store.mjs';
 const json=(x,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
 export function alexInit(box){
  for(const q of [
@@ -32,14 +33,14 @@ export async function approvedImage(product,verifier=verifyAssets,allowBanner=tr
  if(!product.presentation_photo&&product.banner&&allowBanner&&old&&product.promo===old.promo&&product.pvp===old.pvp&&product.stock===old.stock){try{await verifier(product);return product.banner;}catch{/* An unavailable banner never replaces the verified exact photo. */}}
  await verifier({...product,banner:null});return product.foto;
 }
-export async function resolveAlexMedia(result,source,memory,{verify=verifyAssets,deliveryScope='messenger',library=signatureLibrary}={}){
+export async function resolveAlexMedia(result,source,memory,{verify=verifyAssets,deliveryScope='messenger',library=signatureLibrary,privateAssetReady}={}){
  if(!['messenger','private_simulator'].includes(deliveryScope))throw Error('INVALID_MEDIA_SCOPE');
  if(['erase','handoff'].includes(result.action))return {image:null,images:[],deliveryScope};
  const explicit=result.media_requested===true||result.intent==='photo',variants=Array.isArray(result.variant_options)?result.variant_options:null;
- if(variants||explicit){
+ if(variants||explicit||deliveryScope==='private_simulator'){
   const focus=[...new Set([...(result.focus||[]),...(variants||[]).map(p=>p.sku)])];
-  const requested=Array.isArray(result.images)&&result.images.length?result.images:result.image?[result.image]:explicit?focus:[];
-  const media=await collectAlexMedia({...result,focus,images:requested},source,memory,{verify,signatureLibrary:library,deliveryScope});
+  const requested=Array.isArray(result.images)&&result.images.length?result.images:result.image?[result.image]:explicit||deliveryScope==='private_simulator'?focus:[];
+  const media=await collectAlexMedia({...result,focus,images:requested},source,memory,{verify,signatureLibrary:library,deliveryScope,privateAssetReady});
   result.memory.shown=media.shown;result.memory.shown_media=media.shown_media;
   const images=media.images.map(image=>{
    const labels=(image.skus||[image.sku]).map(sku=>(variants||[]).find(p=>p.sku===sku)?.label||publicName(source.productos.find(p=>p.sku===sku)));
@@ -82,6 +83,7 @@ export async function prepareAlex(box,row,deps={refreshCatalog:refreshAlexCatalo
 }
 export async function alexFetch(path,req,box){
  const q=box.sql,now=Date.now();
+ const asset=await signatureAssetFetch(path,req,box);if(asset)return asset;
  const review=await reviewFetch(path,req,box);if(review)return review;
  if(path==='/alex/quota/status'&&req.method==='GET'){
   if(box.name!=='alex-ai-quota')return json({error:'Quota scope'},409);
@@ -116,7 +118,7 @@ export async function alexFetch(path,req,box){
   }
   if(!result.image&&result.focus.length===1&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
   if(result.action==='erase'){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}else await saveMemory(box,'demo',result.memory);
-  const {image,images}=await resolveAlexMedia(result,source,memory,{deliveryScope:'private_simulator'});
+  const {image,images}=await resolveAlexMedia(result,source,memory,{deliveryScope:persona?'private_simulator':'messenger',privateAssetReady:persona?request=>privateSignatureReady(box,request):undefined});
   if(result.action!=='erase')await saveMemory(box,'demo',result.memory);
   if(Number.isFinite(alexNext(box)))await box.state.storage.setAlarm(alexNext(box));
   return json({name:'Alex',collaborator:persona?{id:persona.id,commercial_name:persona.commercial_name,gender:persona.gender}:null,attribution,text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,images,variant_options:result.variant_options,quick_replies:quickReplies(result),facts:result.facts||[],memory:{focus:result.memory.focus,recent_products:result.memory.recent_products||[],budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,bank:result.memory.bank||null,last_bank_mentioned:result.memory.last_bank_mentioned||null,months:result.memory.months||null,last_bank_months:result.memory.last_bank_months||null,rejected_banks:result.memory.rejected_banks||[],card_declined:result.memory.card_declined===true,payment_change_pending:result.memory.payment_change_pending===true,stage:result.memory.stage||null,purchase_deferred:result.memory.purchase_deferred===true,delivery:result.memory.delivery,turn_count:result.memory.turn_count||0,turns:result.memory.history?.length||0},presentation_version:source.presentation_version||null,presentation_state:source.presentation_state||'unavailable',presentation_error_code:source.presentation_error_code||null,presentation_ignored_unknown_count:source.presentation_ignored_unknown_count||0,source_fresh:fresh(source),source_kind:source.source_kind||null,source_sha256:source.source_sha256||null,source_published_at:source.feed_published_at||source.fuente_fecha,source_verified_at:source.fuente_fecha,inventory_cut_date:source.inventory_cut_date||null,inventory_updated_at:source.inventory_updated_at||null,inventory_commit:source.inventory_commit||null,shared_hub_status:source.shared_hub_status||null,source_error_code:source.source_error_code||null,response_mode:result.response_mode||(result.generative?'generative':'control'),quote_current:result.focus.every(s=>quoteCurrent(source,source.productos.find(p=>p.sku===s))),outbound_enabled:false});

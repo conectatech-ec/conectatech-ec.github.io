@@ -1,0 +1,62 @@
+name: Ingresar SIGNATURE aprobado al almacenamiento privado de Alex
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['.github/alex-signature-ingest.json', '.github/scripts/alex-signature-ingest.mjs', '.github/workflows/alex-signature-ingest.yml']
+permissions:
+  contents: read
+concurrency:
+  group: alex-signature-private-ingest
+  cancel-in-progress: false
+jobs:
+  ingresar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check .github/scripts/alex-signature-ingest.mjs
+      - run: node .github/scripts/alex-signature-ingest.mjs selftest
+      - id: control
+        run: |
+          python - <<'PY'
+          import json,os
+          c=json.load(open('.github/alex-signature-ingest.json'))
+          assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0 and type(c['ingest']) is bool
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              out.write('ingest='+str(c['ingest']).lower()+'\n')
+          PY
+      - id: key
+        name: Crear clave efímera de esta ejecución sin publicarla
+        if: steps.control.outputs.ingest == 'true'
+        run: node .github/scripts/alex-signature-ingest.mjs keygen
+      - uses: actions/upload-artifact@v4
+        if: steps.control.outputs.ingest == 'true'
+        with:
+          name: ${{ steps.key.outputs.artifact_name }}
+          path: ${{ steps.key.outputs.public_path }}
+          retention-days: 1
+      - name: Recibir capacidades cifradas e ingresar únicamente los PNG aprobados al Worker privado
+        if: steps.control.outputs.ingest == 'true'
+        run: node .github/scripts/alex-signature-ingest.mjs ingest
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Eliminar la clave privada efímera
+        if: always() && steps.control.outputs.ingest == 'true'
+        run: node .github/scripts/alex-signature-ingest.mjs cleanup
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.control.outputs.ingest == 'true'
+        with:
+          name: alex-signature-ingreso-privado-verificado
+          path: automatizacion/generated/fase2/alex-signature-ingest.json
+          retention-days: 7

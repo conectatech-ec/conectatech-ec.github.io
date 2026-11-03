@@ -214,3 +214,11 @@ test('Mentioning the model never overrides a buying deferral or rejected bank',a
  }
  const a=await generateAlex('Precios del Samsung A17, pero no tengo tarjeta Pacífico',source,memory,fallback);assertSafe(a,source);assert.ok(a.memory.rejected_banks.includes('pacifico'));assert.ok(!/Pac[ií]fico|sin intereses/.test(a.text));assert.match(a.text,/otra|forma de pago/i);
 });
+
+test('Private visual approval never becomes a confirmed gift or campaign claim',async t=>{
+ clock(t);const source=fixture();
+ for(const env of [fallback,conservativeModel()]){
+  const a=await generateAlex('¿El Samsung A17 incluye el trípode de regalo que aparece en el banner?',source,{focus:['TELF011']},env);
+  assertSafe(a,source);assert.ok(a.facts.includes('promotion_pending'));assert.match(a.text,/confirmar.*vigencia.*condiciones.*disponibilidad/);assert.ok(!/te regal|incluye.{0,20}tr[ií]pode|de regalo|gratis/i.test(a.text));assert.equal(a.image,null);
+ }
+});

@@ -73,6 +73,7 @@ function contextPlan(input,source,memory,model={}){
  const warm=fallback=>model.say&&freeProseSafe(model.say)&&!model.say.includes('?')&&! /pac[ií]fico|pichincha|diners|guayaquil|amex|intereses|compra|pago|tarjeta/i.test(model.say)?model.say:fallback;
  const social=String(input).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z\s]/g,'').trim();
  const persona=getProfile(source.advisor_persona?.id);
+ if(/regalo|tr[ií]pode|obsequio|promoci[oó]n.{0,25}banner/i.test(input))return {...base,say:'',facts:['promotion_pending'],ask:'',image:null};
  if(/^(?:hola|epa|buenas|buenos dias|buenas tardes|buenas noches|que tal|hey)(?:\s+(?:hola|buenas|alex))*$/.test(social))return {...base,focus:memory.focus||[],say:memory.greeted?'¡Por aquí seguimos!':persona?persona.greeting:warm('¡Epa! Soy Alex, tu asesor de CONECTATECH. 😊'),ask:p?'¿Qué te gustaría resolver de este equipo?':persona?.id==='COL002'?'¿Qué equipo te gustaría encontrar?':'¿Qué equipo andas buscando?'};
  if(/^(?:muchas )?gracias(?: alex)?$|^listo gracias$/.test(social))return {...base,focus:memory.focus||[],say:warm('¡Con gusto! 😊'),ask:''};
  if(buy.deferred)return {...base,say:warm('Claro, vamos con calma. Podemos seguir cuando te venga bien.'),ask:''};
@@ -123,6 +124,7 @@ export function factBook(source,now=Date.now()){
   bank_pending:'💳 Las condiciones de esa tarjeta requieren confirmación; no tengo un plan autorizado para ese banco.',
   bank_terms_pending:'💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.',
   discount:'La oferta de contado publicada es la autorizada; un descuento adicional necesita aprobación.',
+  promotion_pending:'La promoción mostrada en el banner requiere confirmar su vigencia, condiciones y disponibilidad; no la doy por incluida en la compra.',
   warranty:'🛡️ Un vendedor te confirma la cobertura y condiciones de garantía de este producto.',
   request:'Avancemos con tu compra; todavía debe confirmarla un vendedor.',
   human:'Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.',

@@ -2,6 +2,9 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
+import {createHash,webcrypto} from 'node:crypto';
+const PRIVATE_ORIGIN='https://conectatech-comercial-piloto.conectatech-ecu.workers.dev';
+const PNG=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO/aS0sAAAAASUVORK5CYII=','base64'),PNG_SHA=createHash('sha256').update(PNG).digest('hex');
 import {alexPage} from '../alex-ui.mjs';
 
 class Element {
@@ -28,30 +31,32 @@ const registryFixture=()=>({max_collaborators:10,scope:'owner_simulator_only',ex
  {id:'COL001',commercial_name:'Rafa Valderrama',gender:'masculine',style:'jocoso,directo'},
  {id:'COL002',commercial_name:'Jessy Fox',gender:'feminine',style:'amable,cercana'}
 ]});
-async function harness({chat=()=>Response.json(answer()),status=200,registry=registryFixture(),imageDelivery='loaded'}={}){
+async function harness({chat=()=>Response.json(answer()),status=200,registry=registryFixture(),imageDelivery='loaded',asset=()=>new Response(PNG,{headers:{'Content-Type':'image/png'}})}={}){
  const response=alexPage(),html=await response.text(),script=html.match(/<script nonce="[^"]+">([\s\S]*?)<\/script>/)?.[1];assert.ok(script);
  const nodes=new Map();for(const match of html.matchAll(/<(\w+)[^>]*\bid="([^"]+)"[^>]*>/g)){const n=new Element(match[1]);n.id=match[2];n.disabled=/\bdisabled\b/.test(match[0]);nodes.set(n.id,n);}
- const calls=[],timers=new Map(),windowEvents={};let uuid=0,timerId=0;
+ const calls=[],timers=new Map(),windowEvents={},objectUrls=new Map(),revoked=[];let uuid=0,timerId=0,blobId=0;
+ class BrowserURL extends URL {static createObjectURL(blob){const url='blob:'+PRIVATE_ORIGIN+'/fixture-'+(++blobId);objectUrls.set(url,blob);return url;}static revokeObjectURL(url){revoked.push(url);objectUrls.delete(url);}}
  function deliverImage(image,delivery='loaded'){image.naturalWidth=delivery==='loaded'?800:0;image.naturalHeight=delivery==='loaded'?1000:0;if(delivery==='error')image.onerror?.();else image.onload?.();}
  const document={getElementById:id=>{assert.ok(nodes.has(id),'Unknown DOM id '+id);return nodes.get(id);},createElement:tag=>{const n=new Element(tag);if(tag.toLowerCase()==='img'){n.naturalWidth=0;n.naturalHeight=0;Object.defineProperty(n,'src',{get(){return this._src;},set(value){this._src=value;if(imageDelivery!=='manual')Promise.resolve().then(()=>deliverImage(this,imageDelivery));}});}return n;},createTextNode:text=>{const n=new Element();n.textContent=text;return n;},querySelectorAll:()=>[],addEventListener(){}};
  const fetch=async(url,options={})=>{
   const call={url,options,body:options.body?JSON.parse(options.body):null};calls.push(call);
+  if(url.startsWith('/alex/signature/'))return asset(call);
   if(url==='/alex/status')return Response.json({name:'Alex, tu asesor de CONECTATECH',generative:true,free_only:true,memory_hours:24},{status});
   if(url==='/alex/collaborators')return Response.json(registry);
   if(url==='/alex/quota')return Response.json({remaining_calls:20,reset_at:'2026-11-04T00:00:00Z'});
   if(url==='/alex/chat')return /olvida.*conversaci[oó]n/i.test(call.body.message)?Response.json(answer({action:'erase'})):chat(call);
   throw Error('Unapproved request in UI test');
  };
- const context=vm.createContext({document,fetch,Response,Request,Headers,URL,AbortController,DOMException,Date,Intl,Promise,console,
-  crypto:{randomUUID:()=>`01234567-89ab-4cde-8000-${String(++uuid).padStart(12,'0')}`},
+ const context=vm.createContext({document,fetch,Response,Request,Headers,URL:BrowserURL,Blob,Uint8Array,AbortController,DOMException,Date,Intl,Promise,console,
+  crypto:{subtle:webcrypto.subtle,randomUUID:()=>`01234567-89ab-4cde-8000-${String(++uuid).padStart(12,'0')}`},
   setTimeout:(fn,ms)=>{const id=++timerId;timers.set(id,{fn,ms});return id;},clearTimeout:id=>timers.delete(id),
-  requestAnimationFrame:fn=>fn(),window:{addEventListener:(name,fn)=>windowEvents[name]=fn},location:{origin:'https://pilot.test'}});
+  requestAnimationFrame:fn=>fn(),window:{addEventListener:(name,fn)=>windowEvents[name]=fn},location:{origin:PRIVATE_ORIGIN}});
  vm.runInContext(script,context,{timeout:1000});
  async function click(id){const n=nodes.get(id);assert.ok(n);if(!n.disabled)await n.onclick?.(event());await settle();}
  async function connect(){nodes.get('key').value='synthetic-private-operator-key-for-browser-tests';await click('connect');}
  async function switchProfile(id){nodes.get('collaborator').value=id;await nodes.get('collaborator').onchange?.(event());await settle();}
  async function send(text){nodes.get('message').value=text;await nodes.get('form').onsubmit?.(event());await settle();}
- return {response,html,nodes,calls,timers,windowEvents,click,connect,send,switchProfile,deliverImage,text:()=>[...nodes.values()].map(n=>n.textContent).join('\n')};
+ return {response,html,nodes,calls,timers,windowEvents,objectUrls,revoked,click,connect,send,switchProfile,deliverImage,text:()=>[...nodes.values()].map(n=>n.textContent).join('\n')};
 }
 
 test('The HTML is a protected same-origin client, without credentials, local persistence or executable reply markup',async()=>{
@@ -211,8 +216,44 @@ test('A shared approved photograph can describe both variants without leaking th
 });
 test('Only an explicitly attested signature banner receives the SIGNATURE caption',async()=>{
  const h=await harness({chat:()=>Response.json(answer({images:[
-  {sku:'TELF011',kind:'approved_banner',signature_verified:true,url:'https://conectatech-ec.github.io/imagenes/a17-approved.png',label:'Samsung A17 128 GB'},
+  {sku:'TELF011',kind:'approved_banner',signature_verified:true,scope:'private_simulator',url:'https://conectatech-ec.github.io/imagenes/a17-approved.png',label:'Samsung A17 128 GB'},
   {sku:'TELF012',kind:'approved_banner',url:'https://conectatech-ec.github.io/imagenes/a17-other.png',label:'Samsung A17 256 GB'}
  ]}))});await h.connect();await h.send('Muéstrame los banners');const captions=descendants(h.nodes.get('chat')).filter(n=>n.tagName==='FIGCAPTION').map(n=>n.textContent);
  assert.match(captions[0],/^Banner SIGNATURE aprobado.*128 GB/);assert.match(captions[1],/^Banner comercial aprobado.*256 GB/);assert.ok(!captions[1].includes('SIGNATURE'));
+});
+
+
+const privateEntry=(sku='TELF011',extra={})=>({sku,url:PRIVATE_ORIGIN+'/alex/signature/'+sku+'/'+PNG_SHA+'.png',kind:'approved_banner',signature_verified:true,private_scope:true,scope:'private_simulator',sha256:PNG_SHA,label:'Samsung A17 128 GB',...extra});
+async function waitFor(check){for(let i=0;i<100;i++){if(check())return;await new Promise(resolve=>setTimeout(resolve,5));}assert.ok(check(),'Expected asynchronous private media delivery');}
+test('A private signature is fetched only with same-origin header auth, verified as PNG/SHA and decoded from a revocable Blob',async()=>{
+ const entry=privateEntry('TELF011',{promotion_status:'not_confirmed'}),h=await harness({chat:()=>Response.json(answer({images:[entry]}))});
+ await h.connect();await h.send('Muéstrame el banner aprobado');await waitFor(()=>h.nodes.get('media-note').textContent.includes('mostrada'));
+ const rendered=descendants(h.nodes.get('chat')),image=rendered.find(n=>n.tagName==='IMG'),caption=rendered.find(n=>n.tagName==='FIGCAPTION').textContent,request=h.calls.find(c=>c.url.startsWith('/alex/signature/'));
+ assert.ok(image.src.startsWith('blob:'+PRIVATE_ORIGIN+'/'));assert.equal(image.dataset.sourceUrl,entry.url);assert.equal(image.referrerPolicy,'no-referrer');assert.equal(request.options.headers.Authorization,'Bearer synthetic-private-operator-key-for-browser-tests');assert.equal(request.options.cache,'no-store');assert.equal(request.options.redirect,'error');
+ assert.ok(h.calls.every(c=>c.url.startsWith('/')&&!c.url.includes('?')));assert.match(caption,/SIGNATURE aprobado \(solo prueba\)/);assert.match(caption,/Promoción mostrada pendiente de confirmar; no se ofrece como beneficio/);
+ const csp=h.response.headers.get('content-security-policy');assert.match(csp,/img-src 'self' blob: https:\/\/conectatech-ec\.github\.io;/);assert.match(csp,/connect-src 'self';/);assert.ok(!csp.includes('raw.githubusercontent.com'));
+ const loadedUrl=image.src;await h.click('leave');assert.ok(h.revoked.includes(loadedUrl));assert.equal(h.objectUrls.size,0);
+});
+test('Private banners reject raw/public repositories, foreign origins, wrong SKU/hash and missing scope before fetching',async()=>{
+ const entry=privateEntry(),invalid=[{...entry,url:'https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+ 'a'.repeat(40)+'/automatizacion/approved-signature/TELF011/'+PNG_SHA+'.png'},
+ {...entry,url:entry.url.replace(PRIVATE_ORIGIN,'https://evil.test')},{...entry,url:entry.url.replace('/TELF011/','/TELF012/')},{...entry,sha256:'c'.repeat(64)},
+ {...entry,private_scope:false},{...entry,scope:'messenger'},{...entry,scope:undefined},{...entry,signature_verified:false},{...entry,kind:'approved_photo'},
+ {...entry,url:entry.url+'?token=private'},{...entry,url:entry.url+'#unapproved'},{...entry,url:entry.url.replace('https://','https://user:password@')},{...entry,url:entry.url.replace('/TELF011/','/UNUSED/../TELF011/')}];
+ for(const image of invalid){const h=await harness({chat:()=>Response.json(answer({images:[image]}))});await h.connect();await h.send('Ver banner');assert.equal(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').length,0);assert.equal(h.calls.filter(c=>c.url.startsWith('/alex/signature/')).length,0);assert.match(h.nodes.get('media-note').textContent,/Sin imagen autorizada/);}
+});
+test('Private image MIME, PNG signature, size and served hash must all validate before creating a Blob',async()=>{
+ const fixtures=[()=>new Response(PNG,{headers:{'Content-Type':'text/html'}}),()=>new Response(PNG,{headers:{'Content-Type':'image/png','Content-Length':'2097153'}}),
+ ()=>new Response('not a png',{headers:{'Content-Type':'image/png'}}),()=>new Response(Buffer.concat([PNG,Buffer.from('changed')]),{headers:{'Content-Type':'image/png'}}),()=>new Response(PNG,{status:403,headers:{'Content-Type':'image/png'}})];
+ for(const asset of fixtures){const h=await harness({asset,chat:()=>Response.json(answer({images:[privateEntry()]}))});await h.connect();await h.send('Ver banner');await waitFor(()=>h.nodes.get('media-note').textContent.includes('No se pudo mostrar'));assert.equal(h.objectUrls.size,0);assert.equal(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').length,0);assert.ok(!/Bearer|private_image_hash/.test(h.nodes.get('chat').textContent));}
+});
+test('Switching profiles cancels a private download; its late response cannot reveal a Blob in either profile',async()=>{
+ let release;const pending=new Promise(resolve=>release=resolve),h=await harness({asset:()=>pending,chat:()=>Response.json(answer({images:[privateEntry()]}))});
+ await h.connect();await h.send('Banner de Rafa');const request=h.calls.find(c=>c.url.startsWith('/alex/signature/'));await h.switchProfile('COL002');const summary=h.nodes.get('media-note').textContent;assert.equal(request.options.signal.aborted,true);
+ release(new Response(PNG,{headers:{'Content-Type':'image/png'}}));await settle();assert.equal(h.objectUrls.size,0);assert.equal(h.nodes.get('media-note').textContent,summary);assert.equal(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').length,0);
+ await h.switchProfile('COL001');assert.match(h.nodes.get('media-note').textContent,/No se pudo mostrar/);
+});
+test('Reset revokes only the selected profile private images while preserving the other profile Blob history',async()=>{
+ const h=await harness({chat:c=>Response.json(answer({images:[privateEntry(c.body.collaborator_id==='COL001'?'TELF011':'TELF012')]}))});await h.connect();await h.send('Banner Rafa');await waitFor(()=>h.objectUrls.size===1);const rafa=descendants(h.nodes.get('chat')).find(n=>n.tagName==='IMG').src;
+ await h.switchProfile('COL002');await h.send('Banner Jessy');await waitFor(()=>h.objectUrls.size===2);const jessy=descendants(h.nodes.get('chat')).find(n=>n.tagName==='IMG').src;
+ await h.switchProfile('COL001');await h.click('reset');assert.ok(h.revoked.includes(rafa));assert.ok(!h.revoked.includes(jessy));assert.equal(h.objectUrls.size,1);await h.switchProfile('COL002');assert.equal(descendants(h.nodes.get('chat')).find(n=>n.tagName==='IMG').src,jessy);
 });

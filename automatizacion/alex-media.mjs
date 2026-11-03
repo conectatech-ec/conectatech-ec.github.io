@@ -2,10 +2,37 @@
 // asset: it only consumes already approved, source-bound metadata and verifies bytes.
 import {verifyAssets} from './live.mjs';
 import {quoteCurrent} from './alex-catalog.mjs';
+import release from './alex-signature-release.json' with {type:'json'};
 
 const ORIGIN='https://conectatech-ec.github.io';
 const SHA=/^[a-f0-9]{64}$/;
 const SKU=/^[A-Z0-9_-]{3,40}$/;
+const PRIVATE_SKUS=new Set(['TELF011','TELF012','REL046']);
+
+export function privateAlexSignatureUrl(value,sku,sha){
+ if(typeof value!=='string'||!SKU.test(sku||'')||!SHA.test(sha||''))return false;
+ const match=/^https:\/\/conectatech-comercial-piloto\.conectatech-ecu\.workers\.dev\/alex\/signature\/([A-Z0-9_-]{3,40})\/([a-f0-9]{64})\.png$/.exec(value);
+ if(!match||match[1]!==sku||match[2]!==sha)return false;
+ try{const u=new URL(value);return u.href===value&&!u.username&&!u.password&&!u.search&&!u.hash;}catch{return false;}
+}
+const exactCents=amount=>{
+ if(typeof amount!=='number'||!Number.isFinite(amount)||amount<=0)return null;
+ const cents=Math.round(amount*100);return Number.isSafeInteger(cents)&&Math.abs(amount*100-cents)<0.000001?cents:null;
+};
+export function privateAlexSignature(product,source,{deliveryScope='messenger',now=Date.now(),manifest=release}={}){
+ const entry=manifest?.products?.[product?.sku];
+ if(deliveryScope!=='private_simulator'||manifest?.schema!=='conectatech.alex.signature.private.v1'||
+    manifest.scope!=='private_simulator'||manifest.owner_approved!==true||!PRIVATE_SKUS.has(product?.sku)||
+    entry?.owner_approved!==true||entry.approved_scope!=='private_simulator'||
+    typeof entry.identity!=='string'||!entry.identity||![product.source_name,product.catalog_identity].includes(entry.identity)||
+    product.price_verified!==true||!quoteCurrent(source,product,now)||!(product.stock>0)||product.disponible===false||
+    product.central_availability&&product.central_availability!=='in_stock'||(product.blocked_reasons||[]).length||
+    !Number.isSafeInteger(entry.promo_cash_cents)||!Number.isSafeInteger(entry.pvp_card_cents)||entry.promo_cash_cents<=0||entry.pvp_card_cents<entry.promo_cash_cents||
+    exactCents(product.promo)!==entry.promo_cash_cents||exactCents(product.pvp)!==entry.pvp_card_cents||
+    !privateAlexSignatureUrl(entry.url,product.sku,entry.sha256))return null;
+ return {url:entry.url,sha:entry.sha256,kind:'approved_banner',owner_approved:true,private_scope:true,scope:'private_simulator',
+  promotion_status:['TELF011','TELF012'].includes(product.sku)?'not_confirmed':entry.promotion_status};
+}
 
 export function publicAlexImage(value){
  if(typeof value!=='string')return false;
@@ -48,7 +75,7 @@ export async function collectAlexMedia(result,source,memory={},options={}){
  // not turn the image into an unsolicited repeat.
  const repeat=result.media_requested===true||result.intent==='photo';
  for(const sku of [...new Set(requested)]){
-  if(!focus.has(sku)||shown.has(sku)&&!repeat)continue;
+  if(!focus.has(sku))continue;
   const matches=source.productos.filter(p=>p.sku===sku);if(matches.length!==1)continue;
   const product=matches[0];
   // Invalid identity can never inherit old media. An explicitly requested photo
@@ -57,14 +84,27 @@ export async function collectAlexMedia(result,source,memory={},options={}){
      (product.blocked_reasons||[]).some(x=>/IDENTITY|VARIANT/i.test(x)))continue;
   if(!repeat&&(product.central_availability==='out_of_stock'||product.disponible===false||product.stock<=0))continue;
   const allowBanner=signatureAllowed(product,source,options.signatureLibrary,now,options.deliveryScope||'messenger');
+  let privateBanner=privateAlexSignature(product,source,{deliveryScope:options.deliveryScope,now});
+  if(privateBanner){
+   // Private bytes never go through an unauthenticated external HTTP fetch.
+   // The trusted server callback checks the uploaded, encrypted asset and its
+   // verified SHA. Public manifest metadata alone cannot release an image.
+   if(!repeat&&shownMedia.has(privateBanner.url+'|'+privateBanner.sha))privateBanner=null;
+   else{
+    let proof;try{if(typeof options.privateAssetReady==='function')proof=await options.privateAssetReady({sku,sha256:privateBanner.sha});}catch{}
+    const ready=proof===true||proof?.ready===true&&proof.sku===sku&&proof.sha256===privateBanner.sha;
+    privateBanner=ready?{...privateBanner,signature_verified:true}:null;
+   }
+  }
   const photo=publicAlexImage(product.foto)&&SHA.test(product.foto_sha256||'')?product.foto:null;
   let candidates=[];
+  if(privateBanner)candidates.push(privateBanner);
   if(allowBanner)candidates.push({url:product.banner,sha:product.banner_sha256,kind:'approved_banner'});
   if(photo)candidates.push({url:photo,sha:product.foto_sha256,kind:'approved_photo'});
   if(options.chooseImage){
    try{
-    const restricted={...product,banner:allowBanner?product.banner:null,banner_sha256:allowBanner?product.banner_sha256:null};
-    const choice=await options.chooseImage(restricted,{allowBanner,source,now});
+    const restricted={...product,banner:privateBanner?.url||(allowBanner?product.banner:null),banner_sha256:privateBanner?.sha||(allowBanner?product.banner_sha256:null)};
+    const choice=await options.chooseImage(restricted,{allowBanner:!!privateBanner||allowBanner,source,now});
     if(typeof choice==='string'){
      const chosen=candidates.find(c=>c.url===choice);
      if(!chosen)continue; // A private URL or another SKU's asset is never accepted.
@@ -73,6 +113,9 @@ export async function collectAlexMedia(result,source,memory={},options={}){
    }catch{continue;}
   }
   for(const candidate of candidates){
+   // A newly approved private SIGNATURE is a new asset even if this SKU's old
+   // photo was shown. Existing photo/other-channel repeat policy stays intact.
+   if(shown.has(sku)&&!repeat&&candidate.private_scope!==true)continue;
    const assetKey=candidate.url+'|'+candidate.sha;
    const shared=usedAssets.get(assetKey);
    if(shared){
@@ -88,8 +131,9 @@ export async function collectAlexMedia(result,source,memory={},options={}){
     const media=candidate.kind==='approved_banner'
      ?{...product,foto:null,foto_sha256:null,banner:candidate.url,banner_sha256:candidate.sha}
      :{...product,foto:candidate.url,foto_sha256:candidate.sha,banner:null,banner_sha256:null};
-    await verify(media);
-    const image={sku,skus:[sku],url:candidate.url,kind:candidate.kind};
+    if(candidate.private_scope!==true)await verify(media);
+    const image={sku,skus:[sku],url:candidate.url,kind:candidate.kind,sha256:candidate.sha,
+     ...(candidate.signature_verified===true?{signature_verified:true,private_scope:true,scope:'private_simulator',promotion_status:candidate.promotion_status}:{} )};
     images.push(image);
     shown.add(sku);shownMedia.add(assetKey);usedAssets.set(assetKey,image);usedUrls.set(candidate.url,assetKey);break;
    }catch{/* Preserve the useful factual response and try the exact photo. */}

@@ -9,20 +9,30 @@ from scoped_content import CFClient,ScopedDeployer,Bundle,Part,same_bundle,same_
 from scoped_policy import closed_health,tester_scope
 
 BASE_RELEASE='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
-CODE_REVISION='3c0bf77a3a0b41942d7c8c6f039bb6cb37d18343'
+CODE_REVISION='97c9c54c78203bd618c0a1ce048bc9d597237d8a'
 REPLACED=frozenset({'alex.mjs','alex-context.mjs','alex-store.mjs','alex-ui.mjs','alex-catalog.mjs','channels.mjs','phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs','source-attestations.mjs'})
-ADDED=frozenset()
+ADDED=frozenset({'alex-signature-release.mjs','alex-signature-store.mjs'})
 OWNED=REPLACED|ADDED
-SOURCE_PATHS={'source-attestations.mjs':'central/source-attestations.json'}
+PATCHED=frozenset({'worker.mjs'})
+SOURCE_PATHS={'source-attestations.mjs':'central/source-attestations.json','alex-signature-release.mjs':'alex-signature-release.json'}
 CONTROL='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/contents/.github/alex-variants.json?ref=automatizacion%2Fpiloto-cloud-3sku-20261015'
 RAW='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'
 PRIVACY=b'export function privacyPage'
+WORKER_AUTH=b"  if(!await authorized(req,env)) return json({error:'Unauthorized'},401);"
+WORKER_ANCHOR=b"   if(path==='/marketplace/preview'&&req.method==='POST'){"
+PRIVATE_SIGNATURE_ROUTE=br"""   if(/^\/alex\/signature\/(?:upload\/)?(?:TELF011|TELF012|REL046)(?:\/[a-f0-9]{64}\.png)?$/.test(path)){
+    if(!env.MESSENGER_TEST_INBOX)return json({error:'Private image storage unavailable'},503);
+    const stub=env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('alex-private-signature'));
+    return stub.fetch('https://inbox'+path,{method:req.method,headers:{'Content-Type':req.headers.get('Content-Type')||'application/octet-stream'},...(['GET','HEAD'].includes(req.method)?{}:{body:req.body,duplex:'half'})});
+   }
+"""
 IMPORTS=(
  (b"import policy from './alex-policy.json' with {type:'json'};",b"import policy from './alex-policy.mjs';"),
  (b"import original from './generated/catalogo.json' with {type:'json'};",b"import original from './catalog.mjs';"),
  (b"import extra from './generated/alex-productos-extra.json' with {type:'json'};",b"import extra from './alex-extra.mjs';"),
  (b"import enrichment from './central/enrichment.json' with {type:'json'};",b"import enrichment from './central-enrichment.mjs';"),
  (b"import signatureLibrary from './marketplace-library.json' with {type:'json'};",b"import signatureLibrary from './marketplace-library.mjs';"),
+ (b"import release from './alex-signature-release.json' with {type:'json'};",b"import release from './alex-signature-release.mjs';"),
 )
 
 def fail(code):raise ValueError(code)
@@ -47,7 +57,7 @@ def require_control():
 def compiled(name,body):
     if name not in OWNED or not isinstance(body,bytes):fail('VAR_COMPILE_SCOPE_INVALID')
     if name in SOURCE_PATHS:
-        if not isinstance(strict_json(body),dict):fail('VAR_ATTESTATIONS_OBJECT_REQUIRED')
+        if not isinstance(strict_json(body),dict):fail('VAR_ATTESTATIONS_OBJECT_REQUIRED' if name=='source-attestations.mjs' else 'VAR_DATA_MODULE_OBJECT_REQUIRED')
         # Match the original deploy_free.py packaging byte for byte, including
         # the JSON file's own whitespace. Do not renew or reserialize evidence.
         return b'export default '+body+b';\n'
@@ -65,11 +75,24 @@ def fetch_baselines():
         result[name]=compiled(name,value)
     return result
 
+def patch_live_worker(body):
+    if not isinstance(body,bytes) or body.count(WORKER_AUTH)!=1 or body.count(WORKER_ANCHOR)!=1:
+        fail('VAR_WORKER_PATCH_ANCHOR_INVALID')
+    if body.index(WORKER_AUTH)>body.index(WORKER_ANCHOR):fail('VAR_WORKER_AUTHORIZATION_ORDER_INVALID')
+    if b'\\/alex\\/signature\\/' in body or b"'alex-private-signature'" in body:
+        fail('VAR_WORKER_SIGNATURE_ROUTE_ALREADY_PRESENT')
+    patched=body.replace(WORKER_ANCHOR,PRIVATE_SIGNATURE_ROUTE+WORKER_ANCHOR,1)
+    # Reversing this single insertion must reproduce the entire live host.
+    # Never use the working-tree worker as a replacement or baseline.
+    if patched.count(PRIVATE_SIGNATURE_ROUTE)!=1 or patched.replace(PRIVATE_SIGNATURE_ROUTE,b'',1)!=body:
+        fail('VAR_WORKER_UNOWNED_REGION_CHANGED')
+    return patched
+
 def prepare_variants(bundle,replacements,baselines):
     names=[part.name for part in bundle.parts]
     if bundle.entrypoint!='worker.mjs' or set(replacements)!=OWNED or set(baselines)!=REPLACED or len(names)!=len(set(names)):
         fail('VAR_MODULE_SET_INVALID')
-    if not REPLACED.issubset(names) or ADDED.intersection(names):fail('VAR_LIVE_MODULE_LAYOUT_CHANGED')
+    if not (REPLACED|PATCHED).issubset(names) or ADDED.intersection(names):fail('VAR_LIVE_MODULE_LAYOUT_CHANGED')
     for body in replacements.values():
         if not isinstance(body,bytes) or not 100<=len(body)<=200000:fail('VAR_REPLACEMENT_INVALID')
     parts={part.name:part for part in bundle.parts}
@@ -78,18 +101,19 @@ def prepare_variants(bundle,replacements,baselines):
     old_ui=parts['alex-ui.mjs'].body;new_ui=replacements['alex-ui.mjs']
     if old_ui.count(PRIVACY)!=1 or new_ui.count(PRIVACY)!=1 or old_ui.split(PRIVACY)[1]!=new_ui.split(PRIVACY)[1]:
         fail('VAR_PRIVACY_PAGE_CHANGED')
+    patched_worker=patch_live_worker(parts['worker.mjs'].body)
     updated=[]
     for part in bundle.parts:
-        if part.name in REPLACED:
-            body=replacements[part.name]
+        if part.name in REPLACED|PATCHED:
+            body=patched_worker if part.name=='worker.mjs' else replacements[part.name]
             headers=tuple((key,str(len(body)) if key.lower()=='content-length' else value) for key,value in part.headers)
             part=replace(part,body=body,headers=headers)
         updated.append(part)
     updated.extend(Part(name,name,'application/javascript+module',replacements[name]) for name in sorted(ADDED))
     result=Bundle(bundle.entrypoint,tuple(updated))
-    # Only the explicitly authorized identity-proof registry joins the business
-    # modules. Host, receivers, central-source and master data remain unowned.
-    if any(part!=next(p for p in result.parts if p.name==part.name) for part in bundle.parts if part.name not in OWNED):
+    # The host changes only by the fixed authenticated private-asset route.
+    # All other host bytes, receivers, central-source and masters stay unowned.
+    if any(part!=next(p for p in result.parts if p.name==part.name) for part in bundle.parts if part.name not in OWNED|PATCHED):
         fail('VAR_UNOWNED_MODULE_CHANGED')
     return result
 
@@ -116,8 +140,9 @@ def main():
         if attempt==11:fail('VAR_PROPAGATION_NOT_VERIFIED')
         time.sleep(2)
     report={'schema':'conectatech.alex.variants-deployment.v1','passed':True,'variants_revision':os.environ['GITHUB_SHA'],
-      'base_release_preserved':capture['health']['release'],'baseline_code_revision':CODE_REVISION,'changed_modules':sorted(name for name in OWNED if baselines.get(name)!=replacements[name]),
-      'worker_puts':1,'settings_and_secrets_preserved':True,'unowned_module_bodies_preserved':True,'worker_unchanged':True,
+      'base_release_preserved':capture['health']['release'],'baseline_code_revision':CODE_REVISION,'changed_modules':sorted(PATCHED|{name for name in OWNED if baselines.get(name)!=replacements[name]}),
+      'worker_puts':1,'settings_and_secrets_preserved':True,'unowned_module_bodies_preserved':True,'worker_unchanged':False,
+      'worker_patch':'private_signature_route_only','unowned_worker_regions_preserved':True,
       'central_source_module_unchanged':True,'commercial_source_preserved_exactly':True,'tester_transport_preserved':True,
       'external_customers_enabled':False,'new_cost_usd':0,'private_content_recorded':False}
     target=ROOT/'automatizacion/generated/fase2/alex-variants-deploy.json';target.parent.mkdir(parents=True,exist_ok=True)
