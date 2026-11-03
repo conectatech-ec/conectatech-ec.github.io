@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "total_evaluado": 100,
   "total_sku_evaluados": 100,
   "criterio": "100 SKU revisados:10 encuadres del maestro existente y1 conjunto completo AROD02, cotejado con4 nuevas fotografías físicas propias;89 SKU conservados. Sin cuotas de sustitución ni cambios comerciales.",
@@ -2400,7 +2400,7 @@
     }
   },
   "comprobaciones_prepublicacion": {
-    "prueba_publica_pendiente": true,
+    "prueba_publica_pendiente": false,
     "titulos_precios_pvp_stock_sku_urls_sin_modificar": true,
     "originales_sin_sobrescribir": true
   },
@@ -2409,7 +2409,7 @@
     "con_fotografia": 997,
     "fotografias_actuales_revisadas": 869,
     "faltan_auditar_con_foto": 128,
-    "revisados_con_pendiente": 32,
+    "revisados_con_pendiente": 31,
     "sin_fotografia_etapa_posterior": 201,
     "sin_foto_por_categoria": {
       "Otros": 44,
@@ -2445,5 +2445,16 @@
     },
     "lote_actual": 100,
     "criterio": "Revisión de presentación y excepciones de la imagen actual; no equivale a identidad física definitivamente aprobada. URL y SHA deben coincidir con evidencia registrada."
+  },
+  "fecha_primera_verificacion_publica": "2026-11-03T06:20:45.254033+00:00",
+  "verificacion": {
+    "hashes_http": 175,
+    "casos_chromium": 22,
+    "anchos": [
+      1280,
+      390
+    ],
+    "sha256_informe_http": "ef2c979407e30fe2ceb2d72359faf81f338cf2cbfacbac3bb9f81f364c8f8bf3",
+    "sha256_informe_chromium": "84380e22b03eec6a23272edc36d7fbbce57e8d02185eb472cb81bb190edf1051"
   }
 }

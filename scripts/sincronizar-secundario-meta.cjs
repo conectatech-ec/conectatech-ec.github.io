@@ -6,6 +6,7 @@ const NAME='CONECTATECH | Catálogo WhatsApp 0964206977';
 const FEED_NAME='CONECTATECH | Fuente 593 WhatsApp 0964206977';
 const protectedIds=new Set([MASTER,'974449225015463','2639516313038513','291534458544743','100630632770993','105264852297951','61595580884742']);
 const CHECKPOINT='reportes/integracion-whatsapp/ultima-importacion-secundario.json';
+const failureObservations=new WeakMap();
 function validateConfig(c){
  if(c?.version!==1||c.phone!==PHONE||c.catalog_name!==NAME||c.feed_name!==FEED_NAME||typeof c.enabled!=='boolean')throw Error('CONFIGURACION_SECUNDARIA_INVALIDA');
  if(c.catalog_id!==null&&(!/^\d+$/.test(c.catalog_id)||protectedIds.has(c.catalog_id)))throw Error('DESTINO_SECUNDARIO_NO_PERMITIDO');
@@ -41,6 +42,8 @@ class SecondaryGraph extends Graph{
     if(!['filter,retailer_id','ordering_info'].includes(keys)||file)throw Error('ACTUALIZACION_SECUNDARIA_INVALIDA');
    }else throw Error('ESCRITURA_SECUNDARIA_FUERA_DE_ALCANCE');
   }
+  this.observedStage=type==='catalog'?(edge==='products'?'verify_catalog_products':edge==='product_sets'?'catalog_sets':edge==='product_feeds'?'catalog_feeds':'verify_catalog_identity'):
+   type==='feed'?(method==='POST'?'submit_upload':'list_uploads'):type==='upload'?'poll_upload':edge==='products'?'verify_set_membership':method==='POST'?'update_set':'read_set';
   const data=await super.request(method,path,params,file);
   const childType=edge==='product_feeds'?'feed':edge==='product_sets'?'set':edge==='uploads'?'upload':null;
   if(childType){
@@ -98,7 +101,15 @@ async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,
   csv=csv??fs.readFileSync('exportaciones/meta-catalogo-piloto.csv','utf8');
   checkpoint=checkpoint??(fs.existsSync(CHECKPOINT)?JSON.parse(fs.readFileSync(CHECKPOINT,'utf8')):null);
   // Una carga pendiente se reanuda en la siguiente ejecución; no retener el flujo principal 20 minutos.
-  receipt=await syncSecondary({config,plan,csv,checkpoint,api,uploadAttempts:1,onCheckpoint:c=>write('work/auto-meta/importacion-secundario.json',c),onProgress:log});
+  const observed={sets_verified:0,feed_submission_attempts:0,pending_upload_polls:0};
+  try{
+   receipt=await syncSecondary({config,plan,csv,checkpoint,api,uploadAttempts:1,onCheckpoint:c=>write('work/auto-meta/importacion-secundario.json',c),onProgress:message=>{
+    if(message==='CONJUNTO_META_VERIFICADO')observed.sets_verified++;
+    if(message==='IMPORTANDO_FEED_EXISTENTE')observed.feed_submission_attempts++;
+    if(/^META_IMPORTACION_EN_CURSO_ID_\d+$/.test(message))observed.pending_upload_polls++;
+    log(message);
+   }});
+  }catch(error){if(error&&typeof error==='object')failureObservations.set(error,{...observed,stage:api.observedStage});throw error;}
   }
  }
  write('work/auto-meta/resultado-secundario.json',receipt);log('META_SECUNDARIO: '+JSON.stringify(receipt));
@@ -106,9 +117,21 @@ async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,
  return receipt;
 }
 function failureReceipt(e){
- const known=new Set(['META_IMPORTACION_PENDIENTE','META_IMPORTACION_PREVIA_EN_CURSO','META_IMPORTACION_CON_ERRORES_O_INCOMPLETA','META_IMPORTACION_NO_VERIFICADA','TOTALES_SECUNDARIOS_NO_COINCIDEN']);
- const pending=['META_IMPORTACION_PENDIENTE','META_IMPORTACION_PREVIA_EN_CURSO'].includes(e.message);
- return {estado:pending?'SECUNDARIO_IMPORTACION_PENDIENTE':'ERROR_SECUNDARIO',codigo:/^META_HTTP_\d+_CODIGO_[A-Z0-9_]+$/.test(e.message)||known.has(e.message)?e.message:'VALIDACION_SECUNDARIA_NO_CONFIRMADA',...(e.meta?{meta:e.meta}:{}),colecciones_whatsapp_verificadas:false};
+ const message=typeof e?.message==='string'?e.message:'',http=message.match(/^META_HTTP_(\d{3})_CODIGO_(\d+|NO_DISPONIBLE)$/);
+ const safeNumber=value=>typeof value==='number'&&Number.isSafeInteger(value)&&value>=0&&value<=1000000000?value:null;
+ const status=http&&Number(http[1])>=100&&Number(http[1])<=599?Number(http[1]):null;
+ const code=safeNumber(e?.meta?.code)??(http&&http[2]!=='NO_DISPONIBLE'?safeNumber(Number(http[2])):null),subcode=safeNumber(e?.meta?.subcode);
+ const known=new Set(['META_IMPORTACION_PENDIENTE','META_IMPORTACION_PREVIA_EN_CURSO','META_IMPORTACION_CON_ERRORES_O_INCOMPLETA','META_IMPORTACION_NO_VERIFICADA','TOTALES_SECUNDARIOS_NO_COINCIDEN','CONJUNTO_SIN_ID','FUENTES_SECUNDARIAS_DUPLICADAS','FUENTE_SECUNDARIA_CON_HORARIO_NO_AUTORIZADO','IDENTIDAD_SECUNDARIA_NO_COINCIDE','FUENTE_MAESTRA_INVALIDA','FALTA_CREDENCIAL_SECUNDARIA','CONFIGURACION_SECUNDARIA_INVALIDA','DESTINO_SECUNDARIO_NO_PERMITIDO','FALTA_CATALOGO_SECUNDARIO','ADAPTADOR_SECUNDARIO_INVALIDO','OPERACION_SECUNDARIA_FUERA_DE_ALCANCE','DESCENDIENTE_SECUNDARIO_INVALIDO','META_TRANSPORTE_O_RESPUESTA_INVALIDA']);
+ const safeHttp=!!http&&status!==null;
+ let codigo=safeHttp?'META_HTTP_'+status+'_CODIGO_'+(code??'NO_DISPONIBLE'):known.has(message)?message:'VALIDACION_SECUNDARIA_NO_CONFIRMADA',stage;
+ for(const [pattern,safe,where]of [[/^PERTENENCIA_NO_VERIFICADA_\d+$/,'PERTENENCIA_NO_VERIFICADA','verify_set_membership'],[/^CONJUNTO_NO_COINCIDE_\d+$/,'CONJUNTO_NO_COINCIDE','verify_set_identity'],[/^META_IMPORTACION_NO_COINCIDE_[A-Z0-9_-]+$/,'META_IMPORTACION_NO_COINCIDE','verify_catalog_products'],[/^META_SKU_FUERA_DE_SELECCION_[A-Z0-9_-]+$/,'META_SKU_FUERA_DE_SELECCION','verify_catalog_products']])if(pattern.test(message)){codigo=safe;stage=where;break;}
+ const pending=['META_IMPORTACION_PENDIENTE','META_IMPORTACION_PREVIA_EN_CURSO'].includes(codigo);
+ let category=pending?'pending_import':status===429||[4,17,32,613,80004].includes(code)?'rate_limit':[401,403].includes(status)||[10,190,200,294].includes(code)?'permission_denied':[100,2500].includes(code)?'unsupported_or_invalid_request':status>=500||codigo==='META_TRANSPORTE_O_RESPUESTA_INVALIDA'?'transport':safeHttp?'graph_api':codigo!=='VALIDACION_SECUNDARIA_NO_CONFIRMADA'?'validation':'unclassified';
+ const observation=e&&typeof e==='object'?failureObservations.get(e)||{}:{};
+ const stages=new Set(['verify_catalog_identity','catalog_sets','catalog_feeds','verify_catalog_products','submit_upload','list_uploads','poll_upload','verify_set_membership','update_set','read_set']);
+ stage=stage||(codigo==='TOTALES_SECUNDARIOS_NO_COINCIDEN'?'verify_catalog_totals':codigo.startsWith('META_IMPORTACION_')?'verify_upload':stages.has(observation.stage)?observation.stage:'unknown');
+ const count=value=>Number.isSafeInteger(value)&&value>=0&&value<=1000000?value:0;
+ return {estado:pending?'SECUNDARIO_IMPORTACION_PENDIENTE':'ERROR_SECUNDARIO',codigo,diagnostico:{category,stage,http_status:status,graph_code:code,graph_subcode:subcode,sets_verified:count(observation.sets_verified),feed_submission_attempts:count(observation.feed_submission_attempts),pending_upload_polls:count(observation.pending_upload_polls)},colecciones_whatsapp_verificadas:false};
 }
 module.exports={MASTER,PHONE,NAME,FEED_NAME,CHECKPOINT,validateConfig,SecondaryGraph,syncSecondary,main,failureReceipt};
 if(require.main===module)main({inspect:process.argv.includes('--inspect')}).catch(e=>{
