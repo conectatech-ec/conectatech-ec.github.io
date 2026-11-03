@@ -37,7 +37,7 @@ jobs:
           c=json.load(open('.github/alex-variants.json'))
           assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0
           assert c['expected_base_release']=='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
-          assert c['baseline_code_revision']=='9d065226ff042f531ef3b82e17ea2aba8405373f'
+          assert c['baseline_code_revision']=='2c705726351b9f3a6725da35bdc54450916606f4'
           assert type(c['deploy']) is bool
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:
               out.write('deploy='+str(c['deploy']).lower()+'\n')

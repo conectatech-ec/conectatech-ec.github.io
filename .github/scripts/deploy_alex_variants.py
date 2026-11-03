@@ -9,9 +9,9 @@ from scoped_content import CFClient,ScopedDeployer,Bundle,Part,same_bundle,same_
 from scoped_policy import closed_health,tester_scope
 
 BASE_RELEASE='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
-CODE_REVISION='9d065226ff042f531ef3b82e17ea2aba8405373f'
-REPLACED=frozenset({'alex.mjs','alex-context.mjs','alex-store.mjs','alex-ui.mjs','alex-catalog.mjs','channels.mjs'})
-ADDED=frozenset({'phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs'})
+CODE_REVISION='2c705726351b9f3a6725da35bdc54450916606f4'
+REPLACED=frozenset({'alex.mjs','alex-context.mjs','alex-store.mjs','alex-ui.mjs','alex-catalog.mjs','channels.mjs','phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs'})
+ADDED=frozenset()
 OWNED=REPLACED|ADDED
 CONTROL='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/contents/.github/alex-variants.json?ref=automatizacion%2Fpiloto-cloud-3sku-20261015'
 RAW='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'
@@ -107,7 +107,7 @@ def main():
         if attempt==11:fail('VAR_PROPAGATION_NOT_VERIFIED')
         time.sleep(2)
     report={'schema':'conectatech.alex.variants-deployment.v1','passed':True,'variants_revision':os.environ['GITHUB_SHA'],
-      'base_release_preserved':capture['health']['release'],'baseline_code_revision':CODE_REVISION,'changed_modules':sorted(OWNED),
+      'base_release_preserved':capture['health']['release'],'baseline_code_revision':CODE_REVISION,'changed_modules':sorted(name for name in OWNED if baselines.get(name)!=replacements[name]),
       'worker_puts':1,'settings_and_secrets_preserved':True,'unowned_module_bodies_preserved':True,'worker_unchanged':True,
       'central_source_module_unchanged':True,'commercial_source_preserved_exactly':True,'tester_transport_preserved':True,
       'external_customers_enabled':False,'new_cost_usd':0,'private_content_recorded':False}

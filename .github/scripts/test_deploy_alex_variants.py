@@ -26,7 +26,7 @@ class VariantScopeTests(unittest.TestCase):
         old={part.name:part for part in before.parts};new={part.name:part for part in after.parts}
         self.assertEqual(before.entrypoint,after.entrypoint)
         self.assertEqual(set(new)-set(old),module.ADDED)
-        self.assertEqual(len(new),len(old)+3)
+        self.assertEqual(len(new),len(old)+len(module.ADDED))
         for name in set(old)-module.OWNED:
             self.assertIs(new[name],old[name])
             self.assertEqual(new[name].body,old[name].body)
@@ -69,7 +69,7 @@ class VariantScopeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'VAR_LIVE_MODULE_LAYOUT_CHANGED'):
             module.prepare_variants(missing,desired,baseline)
         after=module.prepare_variants(before,desired,baseline)
-        with self.assertRaisesRegex(ValueError,'VAR_LIVE_MODULE_LAYOUT_CHANGED'):
+        with self.assertRaisesRegex(ValueError,'VAR_LIVE_OWNED_MODULE_CHANGED'):
             module.prepare_variants(after,desired,baseline)
 
     def test_duplicate_modules_wrong_entrypoint_baseline_scope_and_invalid_body_are_rejected(self):
