@@ -44,20 +44,25 @@
     "https://drive.google.com/file/d/1JDWYHATiQmxq1b1AhWV4tbIe4WTttgDc/view?usp=drivesdk",
     "https://drive.google.com/file/d/1UwBSV1_T1BJE3lYKuF8LUkatTooRWAhM/view?usp=drivesdk",
     "reportes/continuacion-118/orden-y-fuentes.json",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/continuacion-119/orden-y-fuentes.json"
   ],
-  "imagen_principal": "/imagenes/cabl173/CABL173-01.webp",
+  "imagen_principal": "/imagenes/cabl173/CABL173-r119-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/1JDWYHATiQmxq1b1AhWV4tbIe4WTttgDc/view?usp=drivesdk",
-    "evidencia": "Fuentes propias del propietario en Drive empresarial. Representación asistida autorizada078 y orden actual118; no se afirma que el resultado sea una captura física directa. Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados.",
+    "evidencia": "Fuentes propias del propietario en Drive empresarial. Representación asistida autorizada078 y orden actual118; no se afirma que el resultado sea una captura física directa. Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados. Corrección119 por orden expresa del propietario: Extensión blanca Volteck 48000 ED-2B de 2 m. Cable plano de dos conductores y clavija plana polarizada cotejados con el producto físico. Conector hembra representado según el dibujo del propio empaque exacto: dos pares de ranuras visibles, detalle central y argolla superior; no se representa su reverso oculto. Representación asistida de empaque y fotos propias, no captura física directa.",
     "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
     "edicion_asistida_ia": true,
     "archivos": [
       {
         "sha256": "4afdd997e9f87346bd193b4619a4ccedf2ea05083cbb98d81e7ca90c35c2ff68",
+        "fuente": "https://drive.google.com/file/d/1JDWYHATiQmxq1b1AhWV4tbIe4WTttgDc/view?usp=drivesdk"
+      },
+      {
+        "sha256": "505662bbdb832e05120383d01fadee9f8feb5647ed5b762454cc3cd8a5b6ee0b",
         "fuente": "https://drive.google.com/file/d/1JDWYHATiQmxq1b1AhWV4tbIe4WTttgDc/view?usp=drivesdk"
       }
     ]
@@ -131,7 +136,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "PENDIENTE",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl173-cable-extension-volteck-2m-polarizada-domestica/",
   "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Extensión eléctrica Volteck polarizada de 2 m, en color blanco. La etiqueta indica calibre 16 AWG. Se vende una extensión; no se declara una potencia admisible no verificada.",
@@ -226,15 +231,15 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:28:44.259624+00:00",
-      "sha256_maestro": "4afdd997e9f87346bd193b4619a4ccedf2ea05083cbb98d81e7ca90c35c2ff68",
-      "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados."
+      "fecha": "2026-11-03T05:24:22.183438+00:00",
+      "sha256_maestro": "505662bbdb832e05120383d01fadee9f8feb5647ed5b762454cc3cd8a5b6ee0b",
+      "evidencia": "Extensión blanca Volteck 48000 ED-2B de 2 m. Cable plano de dos conductores y clavija plana polarizada cotejados con el producto físico. Conector hembra representado según el dibujo del propio empaque exacto: dos pares de ranuras visibles, detalle central y argolla superior; no se representa su reverso oculto. Representación asistida de empaque y fotos propias, no captura física directa."
     },
     "movil": {
       "solicitado": "CABL173",
       "sku": "CABL173",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T03:08:49.523Z",
+      "fecha": "2026-11-03T05:35:52.184Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -259,17 +264,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl173-cable-extension-volteck-2m-polarizada-domestica/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl173-cable-extension-volteck-2m-polarizada-domestica/",
+      "url_comprobada": "http://127.0.0.1:8873/productos/cabl173-cable-extension-volteck-2m-polarizada-domestica/",
       "archivo_html": "productos/cabl173-cable-extension-volteck-2m-polarizada-domestica/index.html",
       "http": 200,
-      "sha256_html": "e8819be919a8d5e8e228953fdb6ae337899b25caf4455b75e8805fdfdf9e343b",
-      "sha256_html_local": "e8819be919a8d5e8e228953fdb6ae337899b25caf4455b75e8805fdfdf9e343b",
+      "sha256_html": "e0278c9fc6df3228a344f2e668a5716d37e79e063614a77fe5a6da53b9a2ae6a",
+      "sha256_html_local": "e0278c9fc6df3228a344f2e668a5716d37e79e063614a77fe5a6da53b9a2ae6a",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/cabl173/CABL173-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl173/CABL173-01-600.webp?v=b2f7876dc131d6e4",
+        "src": "https://conectatech-ec.github.io/imagenes/cabl173/CABL173-r119-01.webp",
+        "url_cargada": "http://127.0.0.1:8873/imagenes/cabl173/CABL173-r119-01-600.webp?v=1521a3e719f08133",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -278,38 +283,38 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/cabl173-cable-extension-volteck-2m-polarizada-domestica/",
+          "url": "http://127.0.0.1:8873/productos/cabl173-cable-extension-volteck-2m-polarizada-domestica/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8873/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+          "url": "http://127.0.0.1:8873/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8873/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/cabl173/CABL173-01.webp",
+          "url": "http://127.0.0.1:8873/imagenes/cabl173/CABL173-r119-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-publica/movil/CABL173-390.png",
-      "sha256": "f436e5b0ab1da0645f4cadfa4a350f522dd19223479a2f4aee3d4969e04782b5",
+      "archivo": "reportes/continuacion-119/qa-local/movil/CABL173-390.png",
+      "sha256": "2f4bd5a5766429c681d97ad41c52c11cf56e8358b359486ab82e8ffa1d3445b3",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-publica/movil/CABL173-1280.png",
-        "sha256": "7a0a1072f57b699908850bc72ca675a1c3c6877b36e20bebe8ce26ca29e2d5d5",
+        "archivo": "reportes/continuacion-119/qa-local/movil/CABL173-1280.png",
+        "sha256": "04e01cd65fd7fe07e32e3d9e5a44ff4b2f41a83e8ebbc40a63a9ab580a8751d9",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -322,5 +327,24 @@
       "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
       "sku": "CABL173"
     }
-  }
+  },
+  "historial_imagen_principal": [
+    {
+      "url": "/imagenes/cabl173/CABL173-01.webp",
+      "verificacion": {
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T03:07:57.709464+00:00",
+        "archivo": "reportes/continuacion-118/http-publicacion.json",
+        "reporte": "reportes/continuacion-118/http-publicacion.json",
+        "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+        "sku": "CABL173"
+      },
+      "revision_visual": {
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T02:28:44.259624+00:00",
+        "sha256_maestro": "4afdd997e9f87346bd193b4619a4ccedf2ea05083cbb98d81e7ca90c35c2ff68",
+        "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados."
+      }
+    }
+  ]
 }

@@ -93,20 +93,25 @@
     "https://drive.google.com/file/d/1vVB9aIBOlHUSxZFrXNTgn66hH9vo3diA/view?usp=drivesdk",
     "https://drive.google.com/file/d/1BStmtxHnzpJpfR1WsaLd-E7IwzVoXehX/view?usp=drivesdk",
     "reportes/continuacion-118/orden-y-fuentes.json",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/continuacion-119/orden-y-fuentes.json"
   ],
-  "imagen_principal": "/imagenes/audi130/AUDI130-01.webp",
+  "imagen_principal": "/imagenes/audi130/AUDI130-r119-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
     "fuente": "https://drive.google.com/file/d/13TgpUVKSjxMc-i_2MAoVkp1TwEabpFv-/view?usp=drivesdk",
-    "evidencia": "Fuentes propias del propietario en Drive empresarial. Representación asistida autorizada078 y orden actual118; no se afirma que el resultado sea una captura física directa. Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados. Se usa variante física blanca/dorada; no versión negra dibujada en caja. Exactamente2auriculares y1estuche.",
+    "evidencia": "Fuentes propias del propietario en Drive empresarial. Representación asistida autorizada078 y orden actual118; no se afirma que el resultado sea una captura física directa. Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados. Se usa variante física blanca/dorada; no versión negra dibujada en caja. Exactamente2auriculares y1estuche. Corrección119 por orden expresa del propietario: Vista de tres cuartos del estuche abierto con los dos auriculares blancos y dorados colocados en el puente central. Abertura amplia, borde dorado y argolla lateral observados en las fotografías físicas. No se inventan alojamientos vacíos ni un powerbank separado. Condición AAA conservada.",
     "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
     "edicion_asistida_ia": true,
     "archivos": [
       {
         "sha256": "f7a61660edafa12f1b5c5c60d3e6eb5bed51e31cbd941be0f4fb77c98c22f10d",
+        "fuente": "https://drive.google.com/file/d/13TgpUVKSjxMc-i_2MAoVkp1TwEabpFv-/view?usp=drivesdk"
+      },
+      {
+        "sha256": "bcd16842d5db724825bebfd042344b250b5f426c342654cdbb6bcf0a673b60a4",
         "fuente": "https://drive.google.com/file/d/13TgpUVKSjxMc-i_2MAoVkp1TwEabpFv-/view?usp=drivesdk"
       }
     ]
@@ -240,7 +245,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "PENDIENTE",
   "url_publica": "https://conectatech-ec.github.io/productos/audi130-audifonos-buds-pro-50-tipo-arete/",
   "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Audífonos de terceros con referencia comercial Sony Buds Pro50, diseño abierto tipo arete y estuche de carga. La unidad fotografiada es blanca con detalles dorados. Producto compatible (AAA); no se atribuye fabricación Sony.",
@@ -363,15 +368,15 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:28:44.259624+00:00",
-      "sha256_maestro": "f7a61660edafa12f1b5c5c60d3e6eb5bed51e31cbd941be0f4fb77c98c22f10d",
-      "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados. Se usa variante física blanca/dorada; no versión negra dibujada en caja. Exactamente2auriculares y1estuche."
+      "fecha": "2026-11-03T05:24:22.183438+00:00",
+      "sha256_maestro": "bcd16842d5db724825bebfd042344b250b5f426c342654cdbb6bcf0a673b60a4",
+      "evidencia": "Vista de tres cuartos del estuche abierto con los dos auriculares blancos y dorados colocados en el puente central. Abertura amplia, borde dorado y argolla lateral observados en las fotografías físicas. No se inventan alojamientos vacíos ni un powerbank separado. Condición AAA conservada."
     },
     "movil": {
       "solicitado": "AUDI130",
       "sku": "AUDI130",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T03:08:33.316Z",
+      "fecha": "2026-11-03T05:35:50.510Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -396,17 +401,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi130-audifonos-buds-pro-50-tipo-arete/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi130-audifonos-buds-pro-50-tipo-arete/",
+      "url_comprobada": "http://127.0.0.1:8873/productos/audi130-audifonos-buds-pro-50-tipo-arete/",
       "archivo_html": "productos/audi130-audifonos-buds-pro-50-tipo-arete/index.html",
       "http": 200,
-      "sha256_html": "1821a2a85edfabdc813e8e90fe36f9360a3ef5d7796f32949a240908f24f719b",
-      "sha256_html_local": "1821a2a85edfabdc813e8e90fe36f9360a3ef5d7796f32949a240908f24f719b",
+      "sha256_html": "3be1fc3d9641c5b298e1db4aaa45713e6f00dcb423a2a00ae20b32e0835bd860",
+      "sha256_html_local": "3be1fc3d9641c5b298e1db4aaa45713e6f00dcb423a2a00ae20b32e0835bd860",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi130/AUDI130-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi130/AUDI130-01-600.webp?v=ed95f079118484e9",
+        "src": "https://conectatech-ec.github.io/imagenes/audi130/AUDI130-r119-01.webp",
+        "url_cargada": "http://127.0.0.1:8873/imagenes/audi130/AUDI130-r119-01-600.webp?v=7a3918d9ab955523",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -415,38 +420,38 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/audi130-audifonos-buds-pro-50-tipo-arete/",
+          "url": "http://127.0.0.1:8873/productos/audi130-audifonos-buds-pro-50-tipo-arete/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8873/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+          "url": "http://127.0.0.1:8873/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8873/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/audi130/AUDI130-01.webp",
+          "url": "http://127.0.0.1:8873/imagenes/audi130/AUDI130-r119-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI130-390.png",
-      "sha256": "7258abc64b8d8aee109822394c73a44916585d85212a1bb8b17e674988eef0f1",
+      "archivo": "reportes/continuacion-119/qa-local/movil/AUDI130-390.png",
+      "sha256": "86c2e84c4314c1d042145c83ca73d60bc9c7612363de897034987ac06e88742e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI130-1280.png",
-        "sha256": "59369602787a2956f46c417c22e534c4f17677216d5015971c6d8f2a8b535048",
+        "archivo": "reportes/continuacion-119/qa-local/movil/AUDI130-1280.png",
+        "sha256": "2679655c5b7e378895831147b58b60f5dbfba93311ee4a759b5e0cf6e62ead33",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
@@ -459,5 +464,24 @@
       "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
       "sku": "AUDI130"
     }
-  }
+  },
+  "historial_imagen_principal": [
+    {
+      "url": "/imagenes/audi130/AUDI130-01.webp",
+      "verificacion": {
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T03:07:57.709464+00:00",
+        "archivo": "reportes/continuacion-118/http-publicacion.json",
+        "reporte": "reportes/continuacion-118/http-publicacion.json",
+        "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+        "sku": "AUDI130"
+      },
+      "revision_visual": {
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T02:28:44.259624+00:00",
+        "sha256_maestro": "f7a61660edafa12f1b5c5c60d3e6eb5bed51e31cbd941be0f4fb77c98c22f10d",
+        "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados. Se usa variante física blanca/dorada; no versión negra dibujada en caja. Exactamente2auriculares y1estuche."
+      }
+    }
+  ]
 }
