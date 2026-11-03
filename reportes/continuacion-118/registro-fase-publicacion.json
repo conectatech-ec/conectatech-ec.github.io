@@ -1,0 +1,18 @@
+{
+  "estado": "REGISTRO_PREPARADO_TRAS_HTTP_CHROMIUM",
+  "nuevos": 28,
+  "fuenteHTTP": {
+    "archivo": "reportes/continuacion-118/http-publicacion.json",
+    "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d"
+  },
+  "fechaReal": "2026-11-03T03:07:57.709464+00:00",
+  "noEsCierreHastaCatalogoPublicoVerificado": true,
+  "registrosFotograficosPreviosConservados": true,
+  "catalogoAntesDeRegistrarMetadatos": {
+    "archivo": "reportes/continuacion-118/qa-activacion-publica/catalogo.json",
+    "sha256": "bacd00d0025105aeebb52c9c226a2f5740d0168c9c7024c9727b57c8147a6f3f",
+    "vistasVerificadas": 0,
+    "causa": "Los 28 SKU existen y sus fichas están verificadas; falta su alta en el payload público de fechas/miniaturas, por lo que el gate público rechaza el catálogo hasta publicar este registro.",
+    "noSeEliminaNiSeOmiteGate": true
+  }
+}
