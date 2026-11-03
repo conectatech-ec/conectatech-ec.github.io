@@ -1,0 +1,53 @@
+{
+  "fecha": "2026-11-03",
+  "base_commit": "5131e09133336a996c810cb68fcdcfc9ebd08204",
+  "estado": "PREPARACION_NO_PUBLICADA",
+  "pruebas": {
+    "motor": 20,
+    "integracion_preservacion": 3,
+    "politicas_reutilizadas": 10,
+    "fallos": 0
+  },
+  "navegador": {
+    "registro_pedido_prueba": true,
+    "id": "PRUEBA-c50ac024-6d50-4b55-9600-ce1f2c998cfe",
+    "sku": "ADAP004",
+    "cantidad": 2,
+    "producto_centavos": 700,
+    "envio_fixture_centavos": 290,
+    "total_centavos": 990,
+    "pago": "contraentrega_sin_cobro",
+    "fixture_no_tarifa_comercial": true,
+    "ancho_marco_qa_px": 390,
+    "ancho_util_px": 375,
+    "desbordamiento_horizontal": false,
+    "ficha_enlaza_compra": true,
+    "politica_accesible_sin_login": true
+  },
+  "fuentes": {
+    "sku_catalogo": 1198,
+    "fecha_corte_593": "2026-11-02",
+    "inventario_tiempo_real": false,
+    "feed_remoto_items": 370,
+    "feed_sha256": "dd9e188add0555910ca703a9aa223019f3882bccacf4a61a71bf9fa9e9d1fb84",
+    "feed_regenerado": false,
+    "recepcion_merchant_370_verificada": false,
+    "motivo": "Sesion Google cerrada en navegador Work"
+  },
+  "protecciones": {
+    "produccion_modificada": false,
+    "worker_modificado": false,
+    "ads_activados": false,
+    "fichas_gratuitas_habilitadas": false,
+    "nuevo_data_hub": false,
+    "nuevo_inventario": false,
+    "costo_adicional": 0
+  },
+  "pendientes_tecnicos": [
+    "Transaccion atomica de pedido/reserva dentro del DataHub existente",
+    "Persistencia operativa privada y controles de acceso/abuso",
+    "HTTPS y validacion integral en entorno aprobado",
+    "Revisar textos sujetos a confirmacion al habilitar compra firme",
+    "Recuperar sesion y comprobar importacion Merchant370"
+  ]
+}

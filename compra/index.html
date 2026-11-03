@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es-EC">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Tu compra | CONECTATECH</title>
+  <link rel="icon" href="/logo-conectatech.png">
+  <link rel="stylesheet" href="/compra/compra.css">
+  <script src="/compra/compra.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Ir a la compra</a>
+  <div class="review" role="note">Vista de prueba · No realiza cobros ni pedidos comerciales. Usa únicamente datos ficticios.</div>
+  <header><nav aria-label="Principal"><a class="brand" href="/"><span>CONECTA</span>TECH</a><a href="/#catalogo">Volver al catálogo →</a></nav></header>
+  <main id="contenido">
+    <div class="intro"><p class="eyebrow">QUITO · ECUADOR</p><h1>Tu compra, paso a paso.</h1><p>Elige tus productos, revisa la entrega y conoce el total antes de confirmar.</p></div>
+    <p id="global-status" role="status" aria-live="polite">Cargando catálogo…</p>
+    <div id="checkout" class="layout" hidden>
+      <div class="steps">
+        <section class="panel" aria-labelledby="productos-titulo">
+          <h2 id="productos-titulo"><span class="step">1</span> Tus productos</h2>
+          <label for="buscar">Buscar por nombre o código</label>
+          <input id="buscar" type="search" placeholder="Ej. ventilador, cargador o VENT009" autocomplete="off">
+          <div id="resultados" class="results" aria-live="polite"></div>
+          <div id="carrito" aria-live="polite"></div>
+          <p id="corte" class="small"></p>
+        </section>
+        <section class="panel" aria-labelledby="entrega-titulo">
+          <h2 id="entrega-titulo"><span class="step">2</span> Entrega y pago</h2>
+          <label for="entrega">Forma de entrega</label><select id="entrega"></select>
+          <p id="entrega-detalle" class="small"></p>
+          <label for="pago">Método de pago</label><select id="pago"></select>
+          <p class="small">La transferencia requiere los datos bancarios comerciales y las instrucciones de pago aprobadas. Todavía no está habilitada.</p>
+        </section>
+        <section class="panel" aria-labelledby="datos-titulo">
+          <h2 id="datos-titulo"><span class="step">3</span> Datos de entrega</h2>
+          <button type="button" id="datos-prueba" class="text-button">Usar datos ficticios para la prueba</button>
+          <form id="datos" autocomplete="off">
+            <div class="fields"><div><label for="nombre">Nombre</label><input id="nombre" name="name" required maxlength="100" autocomplete="name"></div><div><label for="telefono">Teléfono</label><input id="telefono" name="phone" type="tel" required maxlength="25" autocomplete="tel"></div></div>
+            <label for="correo">Correo electrónico <span class="optional">(opcional)</span></label><input id="correo" name="email" type="email" maxlength="150" autocomplete="email">
+            <label for="ciudad">Ciudad</label><input id="ciudad" name="city" required maxlength="80" autocomplete="address-level2">
+            <label for="direccion">Dirección de entrega</label><textarea id="direccion" name="address" required maxlength="250" rows="2" autocomplete="street-address"></textarea>
+            <label class="consent"><input id="consentimiento" type="checkbox" required><span>He revisado las <a href="/cambios-devoluciones-garantias/" target="_blank" rel="noopener">condiciones de cambios, devoluciones y garantías</a> y el <a href="/compra/privacidad.html" target="_blank" rel="noopener">uso de datos del pedido</a>.</span></label>
+            <button id="revisar" type="submit" class="primary">Revisar total y entrega</button>
+          </form>
+        </section>
+      </div>
+      <aside class="panel summary" aria-labelledby="resumen-titulo">
+        <p class="eyebrow">ANTES DE CONFIRMAR</p><h2 id="resumen-titulo">Resumen de compra</h2>
+        <div id="resumen-lineas"><p class="muted">Añade un producto para comenzar.</p></div>
+        <dl class="totals"><div><dt>Productos</dt><dd id="subtotal">$0.00</dd></div><div><dt>Envío</dt><dd id="envio">Por seleccionar</dd></div><div class="grand"><dt>Total USD</dt><dd id="total">—</dd></div></dl>
+        <p id="total-nota" class="small">El total final se verifica antes de registrar el pedido. No se añadirán cargos ocultos.</p>
+        <div id="revision" hidden><p id="revision-detalle"></p><button id="confirmar" class="primary">Registrar pedido de prueba</button><button id="editar" class="text-button">Editar la compra</button></div>
+        <p id="error" role="alert"></p>
+        <div class="support"><strong>¿Necesitas ayuda?</strong><a href="https://wa.me/593998576759" target="_blank" rel="noopener">Consultar por WhatsApp ↗</a><p>También puedes visitarnos en C.C. Multicentro Shopping, subsuelo, local 3, Quito.</p></div>
+      </aside>
+    </div>
+    <section id="confirmacion" class="panel receipt" aria-live="polite" hidden></section>
+  </main>
+  <footer>CONECTATECH · Quito, Ecuador<br><a href="/cambios-devoluciones-garantias/">Cambios, devoluciones y garantías</a><a href="/compra/privacidad.html">Datos del pedido</a><a href="tel:+593998576759">099 857 6759</a></footer>
+</body>
+</html>
