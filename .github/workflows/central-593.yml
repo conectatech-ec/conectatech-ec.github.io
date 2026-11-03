@@ -30,6 +30,7 @@ jobs:
           node-version: '22'
       - name: Validar nucleo 593 aislado antes de leer la fuente privada
         run: |
+          python automatizacion/tests/inventory_completeness_test.py
           python automatizacion/tests/sync_593_test.py
           node automatizacion/tests/sync-receiver.test.mjs
           python automatizacion/tests/scoped_integration_test.py

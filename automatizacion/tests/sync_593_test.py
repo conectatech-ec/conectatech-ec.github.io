@@ -29,6 +29,10 @@ def report(folder, name='Reporte-Inventario.xlsx', *, modified=True, header=True
 
 
 class Sync593(unittest.TestCase):
+    def setUp(self):
+        small=patch('inventory_completeness.MIN_UNIQUE_PRODUCTS',1)
+        small.start();self.addCleanup(small.stop)
+
     def normalized(self, p, **kw):
         return normalizer.normalize(p, fixtures.BASE, fixtures.WEB, now=fixtures.NOW, **kw)
 

@@ -1,4 +1,5 @@
 import importlib.util,json,sys,tempfile,unittest,zipfile,xml.sax.saxutils as esc
+from unittest.mock import patch
 from datetime import datetime,timedelta,timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
@@ -19,6 +20,9 @@ def row(sku='TEST001',**overrides):return {'B':'7','C':'Producto verificado','D'
 BASE='sku,nombre,stock,promo_contado,pvp_final,categoria\nTEST001,Producto verificado,9,2.50,2.87,Accesorios\n'
 WEB={'fechaCatalogo':NOW.isoformat(),'productos':[{'sku':'TEST001','nombre':'Producto verificado','promo':2.50,'pvp':2.87,'stock':9,'url':'https://conectatech-ec.github.io/productos/test001/'}]}
 class Central593(unittest.TestCase):
+ def setUp(self):
+  # These legacy unit fixtures intentionally contain a single product.
+  small=patch('inventory_completeness.MIN_UNIQUE_PRODUCTS',1);small.start();self.addCleanup(small.stop)
  def test_exact_exported_prices_trace_dates_and_no_private_fields(self):
   with tempfile.TemporaryDirectory() as folder:
    d,r=normalize(workbook(folder,[row()]),BASE,WEB,now=NOW)

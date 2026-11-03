@@ -17,6 +17,7 @@ CODE_PLACEHOLDER='__COMMERCIAL_PROCESSOR_CODE_SHA256__'
 PUBLIC_CONFIG_URL='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/contents/automatizacion/activar-cloud.json?ref=automatizacion%2Fpiloto-cloud-3sku-20261015'
 PUBLIC_REF_URL='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/git/ref/heads/automatizacion/piloto-cloud-3sku-20261015'
 CRITICAL_FILES=('automatizacion/commercial-reception.mjs','automatizacion/normalizar_593.py',
+    'automatizacion/inventory_completeness.py',
     'automatizacion/report_identity.py','automatizacion/processing_lease.py','automatizacion/process_pending_593.py',
     'automatizacion/data_hub_593.py','automatizacion/scoped_content.py','automatizacion/scoped_policy.py',
     'automatizacion/scoped-http.mjs','automatizacion/central-e2e.mjs','.github/workflows/central-593.yml')
