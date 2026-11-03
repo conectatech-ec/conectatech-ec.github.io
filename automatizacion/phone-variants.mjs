@@ -96,7 +96,8 @@ export function phoneFamily(input,products,{focus=[]}={}){
  if(!rows.length)return null;
  const skuRows=rows.filter(r=>new RegExp('\\b'+escape(fold(r.product.sku))+'\\b').test(q));
  const requestedBrand=brandOf(q)?.brand||(/\bgalaxy\b/.test(q)?'Samsung':null);
- const queryQualifiers=QUALIFIERS.filter(w=>new RegExp('\\b'+w+'\\b').test(q));
+ const queryQualifiers=QUALIFIERS.filter(w=>new RegExp('\\b'+w+'\\b').test(q)&&
+  (!['se','fe'].includes(w)||rows.some(r=>{const parts=fold(r.identity.base_model).match(/[a-z]+|\d+[a-z]*/g)||[];return parts.length&&new RegExp('\\b'+parts.map(escape).join('\\s*')+'\\s+'+w+'\\b').test(q);}))); // Spanish «se» before the model is not a Galaxy SE variant.
  // A mixed-model comparison belongs to the existing comparison resolver. A
  // preferred sub-brand token must not erase another explicitly named model.
  const namedModels=new Set(rows.filter(r=>matchesModel(q,r.identity)&&JSON.stringify(r.identity.qualifiers)===JSON.stringify(queryQualifiers)).map(r=>fold(r.identity.base_model).replace(/\s/g,'')));

@@ -188,3 +188,8 @@ test('Absent 5G and Pro versions never fall through to prices of a different con
   assert.equal(amounts(a.text).length,0);assert.match(a.text,/no tengo verificada/i);assert.deepEqual(a.focus,[]);assert.equal(a.purchasable,false);
  }
 });
+
+test('Spanish se in a payment question is not an SE model suffix',async t=>{
+ clock(t);const source=fixture(),a=await generateAlex('¿Se puede comprar el Samsung A17 con tarjeta?',source,{},fallback);
+ assertCashOffers(a,source,['TELF011','TELF012']);assert.ok(!/A17 SE|configuraci[oó]n.*no tengo/i.test(a.text));
+});
