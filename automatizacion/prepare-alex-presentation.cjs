@@ -59,7 +59,7 @@ function preparePresentation(root=process.cwd()){
    if(typeof expectedTitle!=='string'||!expectedTitle.trim()||expectedTitle.length>300||/[\u0000-\u001f\u007f]/.test(expectedTitle))fail('PRESENTATION_TITLE');
    let approved_media=null;const professional=current?.imagenProfesional;
    // A published URL without official SHA/visual metadata cannot approve a new image.
-   if(expectedImage&&professional&&professional.contiene_caja===false&&typeof professional.revision_visual==='string'&&professional.revision_visual.trim()){
+   if(expectedImage&&professional&&professional.contiene_caja===false&&(professional.revision_visual===true||(typeof professional.revision_visual==='string'&&professional.revision_visual.trim()))){
     const version=Object.values(professional.versiones||{}).find(v=>new URL(v.url,ORIGIN).href===expectedUrl);
     if(version){verify(professional.original,professional.sha256_original);for(const asset of Object.values(professional.versiones))verify(asset.url,asset.sha256);approved_media={url:expectedUrl,sha256:version.sha256};}
    }
