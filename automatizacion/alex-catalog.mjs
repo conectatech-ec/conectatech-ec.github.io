@@ -62,13 +62,17 @@ export function catalogMatches(query,products){
 export async function refreshAlexCatalog(seed=alexBaseline,fetcher=fetch,now=Date.now(),query='',centralData=fetcher===fetch?central:null){
  const input=typeof query==='string'?query:query.input||'',focus=typeof query==='object'?query.focus||[]:[];
  if(centralData){
-  if(typeof query==='object'&&query.sharedHub===true){try{centralData=await readSharedHub(centralData,fetcher,now);}catch{/* Last valid compiled source keeps its original expiry; never renew it on a read error. */}}
+  if(typeof query==='object'&&query.sharedHub===true){try{centralData=await readSharedHub(centralData,fetcher,now);}catch(error){
+   // Preserve a safe diagnostic instead of silently disguising an old fallback as a successful sync.
+   const code=/^SHARED_HUB_[A-Z_]+$/.test(error.message)?error.message:'SHARED_HUB_READ_FAILED';
+   centralData={...centralData,shared_hub_status:{state:'compiled_fallback',error_code:code}};
+  }}
   let presentationError=centralData.presentation_transport_error||null;
   if(centralData.presentation){try{centralData=await bindPresentation(centralData,centralData.presentation,now);}catch{presentationError='PRESENTATION_REJECTED';centralData=lastValidPresentation(centralData);}}
   else centralData=lastValidPresentation(centralData);
   const extended={...seed,productos:[...seed.productos,...pilotProducts.filter(p=>centralData.products.some(c=>c.sku===p.sku)&&!seed.productos.some(s=>s.sku===p.sku))]};
   const source=sourceToAlex(extended,centralData,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
-  return {...source,presentation_error_code:presentationError};
+  return {...source,presentation_error_code:presentationError,shared_hub_status:centralData.shared_hub_status||null};
  }
  const source=await readCatalogSnapshot(seed,fetcher,now,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},true);
  let inventory=[],snapshot=null;

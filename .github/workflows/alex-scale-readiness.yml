@@ -1,0 +1,46 @@
+name: Verificar Alex multicanal sin desplegar ni activar clientes
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['automatizacion/shared-hub.mjs', 'automatizacion/alex-catalog.mjs', 'automatizacion/alex-channel-readiness.mjs', 'automatizacion/alex-scale-preflight.mjs', 'automatizacion/tests/shared-hub-continuity.test.mjs', 'automatizacion/tests/alex-channel-readiness.test.mjs', '.github/workflows/alex-scale-readiness.yml']
+permissions:
+  contents: read
+concurrency:
+  group: alex-scale-observar-sin-desplegar
+  cancel-in-progress: false
+jobs:
+  verificar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: automatizacion
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test automatizacion/tests/shared-hub-continuity.test.mjs automatizacion/tests/alex-channel-readiness.test.mjs automatizacion/tests/marketplace.test.mjs automatizacion/tests/central.test.mjs
+      - name: Consultas privadas, permisos existentes y una inferencia gratuita como máximo; sin Graph sends
+        run: node automatizacion/alex-scale-preflight.mjs
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+          META_APP_ID: ${{ vars.META_APP_ID }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          WHATSAPP_ACCESS_TOKEN: ${{ secrets.WHATSAPP_ACCESS_TOKEN }}
+          META_PHONE_NUMBER_ID: ${{ vars.META_PHONE_NUMBER_ID }}
+          META_WABA_ID: ${{ vars.META_WABA_ID }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: alex-multicanal-sin-despliegue
+          path: |
+            automatizacion/generated/fase2/alex-scale-cloud.json
+            automatizacion/generated/fase2/meta-account-check.json
+          retention-days: 7
