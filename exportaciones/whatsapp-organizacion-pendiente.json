@@ -78,6 +78,7 @@
     ],
     "Almacenamiento": [
       "CASE002",
+      "CASE004",
       "DISC003",
       "DISC004",
       "DISC005",
@@ -101,6 +102,7 @@
       "FLAS036",
       "FLAS037",
       "FLAS038",
+      "FLAS040",
       "TARJ002",
       "TARJ003",
       "TARJ004",
@@ -121,6 +123,7 @@
       "AUDI002",
       "AUDI003",
       "AUDI005",
+      "AUDI006",
       "AUDI007",
       "AUDI008",
       "AUDI012",
@@ -141,6 +144,7 @@
       "AUDI049",
       "AUDI053",
       "AUDI055",
+      "AUDI056",
       "AUDI057",
       "AUDI061",
       "AUDI062",
@@ -160,6 +164,7 @@
       "AUDI088",
       "AUDI090",
       "AUDI091",
+      "AUDI092",
       "AUDI093",
       "AUDI094",
       "AUDI095",
@@ -182,11 +187,18 @@
       "AUDI119",
       "AUDI122",
       "AUDI123",
+      "AUDI126",
+      "AUDI127",
+      "AUDI128",
+      "AUDI129",
+      "AUDI130",
       "BARR002",
       "MICR01",
       "MICR02",
       "MICR03",
       "MICR037",
+      "MICR038",
+      "MICR039",
       "MICR06",
       "MICR07",
       "MICR08",
@@ -292,6 +304,7 @@
       "CARG068",
       "CARG069",
       "CARG070",
+      "CARG071",
       "CORT01",
       "CORT04",
       "CORT06",
@@ -311,6 +324,8 @@
       "CUBO023",
       "CUBO024",
       "CUBO025",
+      "CUBO026",
+      "CUBO027",
       "ESTAB002",
       "ESTAB006",
       "ESTAB007",
@@ -386,6 +401,7 @@
       "POWE017",
       "POWE018",
       "POWE020",
+      "POWE022",
       "UPS001",
       "UPS002"
     ],
@@ -439,6 +455,7 @@
       "TECL017",
       "TECL018",
       "TECL019",
+      "TECL020",
       "TECL021",
       "TECL022",
       "TECL023",
@@ -589,6 +606,10 @@
       "ADAP096",
       "ADAP097",
       "ADAP099",
+      "ADAP100",
+      "ADAP101",
+      "ADAP102",
+      "ADAP104",
       "CABL001",
       "CABL002",
       "CABL004",
@@ -666,6 +687,7 @@
       "CABL108",
       "CABL110",
       "CABL111",
+      "CABL112",
       "CABL113",
       "CABL114",
       "CABL115",
@@ -719,6 +741,9 @@
       "CABL167",
       "CABL168",
       "CABL169",
+      "CABL172",
+      "CABL173",
+      "CABL174",
       "HUB001",
       "HUB004",
       "HUB005",
@@ -743,10 +768,13 @@
       "HUB028",
       "HUB029",
       "HUB030",
+      "HUB032",
+      "HUB033",
       "LECT001",
       "LECT002",
       "LECT004",
-      "LECT005"
+      "LECT005",
+      "LECT006"
     ],
     "Soportes y Accesorios": [
       "AIRT001",
@@ -14097,6 +14125,314 @@
       "aprobacion_editorial": true,
       "estados": [
         "AGOTADO",
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "ADAP102",
+      "categoria_web": "Adaptadores",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "ADAP104",
+      "categoria_web": "Adaptadores",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "ADAP101",
+      "categoria_web": "Adaptadores",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "ADAP100",
+      "categoria_web": "Adaptadores",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI130",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI129",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI127",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI128",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI126",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI056",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI006",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI092",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL112",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL173",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL174",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL172",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CARG071",
+      "categoria_web": "Cargadores",
+      "familia_web": "Cargadores y Energía",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CASE004",
+      "categoria_web": "Case",
+      "familia_web": "Almacenamiento",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CUBO026",
+      "categoria_web": "Cubos",
+      "familia_web": "Cargadores y Energía",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CUBO027",
+      "categoria_web": "Cubos",
+      "familia_web": "Cargadores y Energía",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "FLAS040",
+      "categoria_web": "Flash",
+      "familia_web": "Almacenamiento",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "HUB033",
+      "categoria_web": "Hub",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "HUB032",
+      "categoria_web": "Hub",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "LECT006",
+      "categoria_web": "Lectores",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "POWE022",
+      "categoria_web": "Powerbanks",
+      "familia_web": "Cargadores y Energía",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "MICR038",
+      "categoria_web": "Microfonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "MICR039",
+      "categoria_web": "Microfonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "TECL020",
+      "categoria_web": "Teclados",
+      "familia_web": "Computación y Periféricos",
+      "aprobacion_editorial": true,
+      "estados": [
         "PENDIENTE_APROBACIÓN"
       ],
       "verificacion_meta_pendiente": true,
