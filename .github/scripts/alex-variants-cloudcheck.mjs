@@ -96,20 +96,21 @@ try{
  try{const sales=await json(PUBLIC+'/exportaciones/catalogo-ventas.json');if(sales.fuente_sha256===cut.sha256_original&&sales.fecha_corte===cut.fecha_corte&&sales.presentation?.source_sha256===cut.sha256_original)presentation=sales.presentation;}catch{/* Only exact preapproved enrichment is an eligible fallback. */}
  quotaBefore=await get('/alex/quota');check(quotaBefore.paid_fallback===false&&quotaBefore.reserved_limit===policy.daily_neurons_reserved,'ECONOMIC_GUARD_REQUIRED');
  stage='personas';for(const id of ['COL001','COL002']){
-  const ai=status.generative===true&&quotaBefore.remaining_calls>=2,a=await ask(id,'Hola',{realAI:ai,reset:true});
+  const a=await ask(id,'Hola',{reset:true});
   const own=registry.profiles.find(p=>p.id===id),other=registry.profiles.find(p=>p.id!==id);
   check(a.text.includes(own.commercial_name)&&/asistente virtual/i.test(a.text)&&(!other||!a.text.includes(other.commercial_name)),'PERSONA_IDENTITY_MISMATCH');
  }
  report.checks.two_personas=true;
  stage='families';const groups=[['Samsung','A17'],['Redmi','15C'],['TECNO','Spark Go 3']];let chosen=null;
  for(const [brand,model]of groups){
-  const rows=familyRows(brand,model),a=await ask('COL001',`¿Qué variantes del ${brand} ${model} tienen y cuáles son sus precios?`),available=rows.filter(x=>x.r.stock>0);
+  const rows=familyRows(brand,model),realAI=brand==='Samsung'&&status.generative===true&&quotaBefore.remaining_calls>=2,
+   a=await ask('COL001',realAI?`Busco un ${brand} ${model} para guardar muchas fotos. ¿Qué variantes y precios tienen?`:`¿Qué variantes del ${brand} ${model} tienen y cuáles son sus precios?`,{realAI}),available=rows.filter(x=>x.r.stock>0);
   const item={family:fold(brand+'_'+model),verified_variants:rows.length,available_variants:available.length,source_fresh:a.source_fresh,returned_variants:a.variant_options?.length||0,price_validation:false};
   if(!rows.length){check(amounts(a.text).length===0,'UNVERIFIED_FAMILY_QUOTE');item.skipped_reason='NO_VERIFIED_PUBLISHED_IDENTITY';report.families.push(item);continue;}
   check(Array.isArray(a.variant_options),'VARIANT_CONTRACT_REQUIRED');const expectedRows=a.source_fresh?available:rows;
   check(a.variant_options.length===expectedRows.length&&a.variant_options.every(v=>expectedRows.some(x=>x.p.sku===v.sku)),'FAMILY_VARIANTS_MISSING_OR_MIXED');
   for(const o of a.variant_options){const x=rows.find(x=>x.p.sku===o.sku);check(o.storage_gb===x.v.storage_gb&&o.ram_physical_gb===x.v.ram_physical_gb,'VARIANT_IDENTITY_MISMATCH');if(a.source_fresh)check(Math.round(o.cash*100)===x.r.promo_centavos&&Math.round(o.card*100)===x.r.pvp_centavos&&a.text.includes(money(x.r.promo_centavos))&&a.text.includes(money(x.r.pvp_centavos)),'VARIANT_EXACT_PRICES_REQUIRED');}
-  item.price_validation=true;item.images_verified=await verifyImages(a,'COL001');
+  item.price_validation=true;item.real_generative_reply=a.generative===true;item.images_verified=await verifyImages(a,'COL001');
   const again=await ask('COL001',`Muéstrame las variantes y precios del ${brand} ${model}`);item.next_reply_images_verified=await verifyImages(again,'COL001');
   report.families.push(item);if(brand==='Samsung')chosen=(a.source_fresh?available:rows)[0]||null;
  }
@@ -121,6 +122,7 @@ try{
   await verifyImages(exact,'COL001');
   const peers=familyRows('Redmi','15C'),peer=peers.find(x=>x.r.stock>0)||peers[0]||chosen,peerBudget=Math.ceil(peer.r.promo_centavos/100)+50;
   await ask('COL002',`Me interesa el ${peer.v.brand} ${peer.v.model} de ${peer.v.storage_gb} GB con ${peer.v.ram_physical_gb} GB de RAM; mi presupuesto es de ${peerBudget} dólares`);
+  const bargain=await ask('COL002','¿Me haces una rebajita? 😂',{realAI:status.generative===true&&quotaBefore.remaining_calls>=2});check(bargain.action!=='handoff'&&!/te (?:hago|doy).{0,15}(?:rebaja|descuento)|te (?:lo|la) dejo/i.test(bargain.text),'UNAUTHORIZED_DISCOUNT');report.checks.real_generative_bargaining=bargain.generative===true;
   const card=await ask('COL001','¿Y ese con tarjeta?');check(card.memory?.focus?.includes(chosen.p.sku)&&card.memory.budget===budget,'PERSONA_MEMORY_LEAK');if(card.source_fresh)check(card.text.includes(money(chosen.r.pvp_centavos)),'EXACT_CARD_QUOTE_MISSING');await verifyImages(card,'COL001');
   const erased=await ask('COL001','olvida esta conversación');check(erased.action==='erase'&&erased.memory?.focus?.length===0,'RESET_NOT_CONFIRMED');used.set('COL001',new Set());
   const kept=await ask('COL002','¿Y ese con tarjeta?');check(kept.memory?.focus?.includes(peer.p.sku)&&kept.memory.budget===peerBudget,'RESET_ERASED_OTHER_PERSONA');report.checks.persona_memory_and_reset_isolated=true;

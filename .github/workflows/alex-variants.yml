@@ -38,9 +38,10 @@ jobs:
           assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0
           assert c['expected_base_release']=='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
           assert c['baseline_code_revision']=='2c705726351b9f3a6725da35bdc54450916606f4'
-          assert type(c['deploy']) is bool
+          assert type(c['deploy']) is bool and type(c.get('verify',False)) is bool
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:
               out.write('deploy='+str(c['deploy']).lower()+'\n')
+              out.write('verify='+str(c.get('verify',False)).lower()+'\n')
           PY
       - name: Actualizar solo módulos de variantes e imágenes sin modificar host, fuente ni secretos
         if: steps.control.outputs.deploy == 'true'
@@ -51,14 +52,14 @@ jobs:
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - name: Verificar variantes y medios reales por HTTPS sin mensajes externos
-        if: steps.control.outputs.deploy == 'true'
+        if: steps.control.outputs.deploy == 'true' || steps.control.outputs.verify == 'true'
         run: node .github/scripts/alex-variants-cloudcheck.mjs
         env:
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
           EXPECTED_BASE_RELEASE: acfc00763dfbc7ac34c2c62f9ccecea4f613c870
           EXPECTED_VARIANTS_REVISION: ${{ github.sha }}
       - uses: actions/upload-artifact@v4
-        if: always() && steps.control.outputs.deploy == 'true'
+        if: always() && (steps.control.outputs.deploy == 'true' || steps.control.outputs.verify == 'true')
         with:
           name: alex-variantes-medios-verificados
           path: |
