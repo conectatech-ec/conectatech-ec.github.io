@@ -5,6 +5,8 @@ on:
     branches: [main, integracion/google-merchant-20261016]
     paths:
       - 'google-merchant/generar.py'
+      - 'google-merchant/preparar_fuente.py'
+      - 'google-merchant/diagnostico.py'
       - 'google-merchant/test_feed.py'
       - 'google-merchant/preconexion.py'
       - 'google-merchant/fuentes/**'
@@ -50,6 +52,8 @@ jobs:
             /seo-pages.json
             /datos-593/inventario-publico.csv
             /datos-593/REFERENCIA-OFICIAL.md
+            /datos-593/corte-comercial-publico-validado.json
+            /datos-593/estado-ultimo-corte.json
             /importacion/contratos/
             /productos/
             /imagenes/*/*.webp
@@ -60,9 +64,11 @@ jobs:
         run: python -m pip install 'Pillow>=12.0,<13'
       - name: Pruebas y generación con verificación HTTPS
         run: |
-          python -m unittest discover -s google-merchant -p test_feed.py
+          python -m unittest discover -s google-merchant -p 'test_*.py'
+          python google-merchant/preparar_fuente.py
           python google-merchant/generar.py --root fuente-vigente --inventory google-merchant/fuentes/vigente.json --output google-merchant --verify-public
           python google-merchant/preconexion.py --root fuente-vigente --output google-merchant
+          python google-merchant/diagnostico.py
           git -C fuente-vigente diff --exit-code
           git diff --exit-code -- . ':!google-merchant'
       - name: Publicar exclusivamente en rama de feed
@@ -89,7 +95,7 @@ jobs:
               parent = (await github.rest.git.getRef({owner, repo, ref: 'heads/' + branch})).data.object.sha;
               previousTree = (await github.rest.git.getCommit({owner, repo, commit_sha: parent})).data.tree.sha;
             } catch (err) { if (err.status !== 404) throw err; }
-            const names = ['productos-ec.xml', 'validacion.json', 'exclusiones.json', 'evidencias.json', 'preconexion.json'];
+            const names = ['productos-ec.xml', 'validacion.json', 'exclusiones.json', 'evidencias.json', 'preconexion.json', 'diagnostico-activacion.json'];
             const tree = [];
             for (const name of names) {
               const blob = await github.rest.git.createBlob({owner, repo, content: fs.readFileSync('google-merchant/' + name).toString('base64'), encoding: 'base64'});
