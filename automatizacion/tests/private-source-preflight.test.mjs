@@ -17,7 +17,9 @@ function fixture() {
     calls.push({url,...options});
     if(url===BASELINE_URL)return structuredClone(catalog);
     if(url.endsWith('/health'))return {ok:true,pilot:true,release:'old-release',meta_ingress_enabled:false,messenger_outbound:false};
-    if(url.endsWith('/status')) {read++; return structuredClone(status);}
+    if(url.endsWith('/messenger/status'))return {mode:'development-only',reception_enabled:false,outbound_enabled:false};
+    if(url.endsWith('/messenger/seller/status'))return {mode:'authorized-testers-only',enabled:false,live_customers_enabled:false};
+    if(url.endsWith('/commercial/catalog/status')) {read++; return structuredClone(status);}
     return structuredClone(privateCatalog);
   },readCount:()=>read};
 }
@@ -28,7 +30,7 @@ test('expired fallback accepted, only published_at ignored; pre records old rele
   const r=await auditPrivateSource({getJson:f.get,phase:'pre',expectedRelease:'future-release',now});
   assert.equal(r.ok,true); assert.equal(r.observed_release,'old-release');
   assert.equal(r.original_expiry_preserved,true); assert.equal(r.freshness_required,false);
-  assert.equal(f.readCount(),2); assert.equal(f.calls.length,5);
+  assert.equal(f.readCount(),2); assert.equal(f.calls.length,7);
   assert.ok(!JSON.stringify(r).includes('synthetic'));
 });
 
@@ -51,7 +53,7 @@ test('source, expiry, financial or identity mutation rejected without private va
 
 test('status source changes during read fail closed; post must match candidate release',async()=>{
   const f=fixture(); let n=0;
-  const get=async(url,opts)=>{const d=await f.get(url,opts); if(url.endsWith('/status')&&++n===2)d.source_sha256='secret';return d;};
+  const get=async(url,opts)=>{const d=await f.get(url,opts); if(url.endsWith('/commercial/catalog/status')&&++n===2)d.source_sha256='secret';return d;};
   const unstable=await auditPrivateSource({getJson:get,now});
   assert.equal(unstable.error,'STATUS_AFTER_SOURCE_MISMATCH');
   assert.ok(!JSON.stringify(unstable).includes('secret'));
@@ -63,8 +65,8 @@ test('status source changes during read fail closed; post must match candidate r
 test('open or missing ingress/outbound flags stop the gate before catalog read',async()=>{
   for(const [field,value,code] of [
     ['meta_ingress_enabled',true,'INGRESS_MUST_BE_CLOSED'],
-    ['messenger_outbound',true,'OUTBOUND_MUST_BE_CLOSED'],
-    ['messenger_outbound',undefined,'OUTBOUND_MUST_BE_CLOSED'],
+    ['messenger_outbound',true,'TESTER_SCOPE_MISMATCH'],
+    ['messenger_outbound',undefined,'OUTBOUND_STATE_REQUIRED'],
   ]) {
     const f=fixture();
     const get=async(url,opts)=>{const data=await f.get(url,opts);if(url.endsWith('/health'))data[field]=value;return data;};
@@ -102,4 +104,17 @@ test('open ingress during propagation fails immediately without catalog read or 
  const get=async(url,opts)=>{const value=await f.get(url,opts);if(url.endsWith('/health')&&++healthReads===2)value.meta_ingress_enabled=true;return value;};
  const result=await auditPrivateSource({getJson:get,phase:'post',expectedRelease:'new-release',sleep:async ms=>waits.push(ms)});
  assert.equal(result.error,'INGRESS_MUST_BE_CLOSED');assert.equal(healthReads,2);assert.equal(f.readCount(),0);assert.deepEqual(waits,[2000]);
+});
+
+
+test('existing tester transport is preserved only with private authorized scope and unchanged post state',async()=>{
+ const f=fixture();
+ const get=async(url,opts)=>{const d=await f.get(url,opts);if(url.endsWith('/health'))d.messenger_outbound=true;if(url.endsWith('/messenger/status'))d.outbound_enabled=true;if(url.endsWith('/messenger/seller/status'))d.enabled=true;return d;};
+ const pre=await auditPrivateSource({getJson:get});assert.equal(pre.ok,true);assert.equal(pre.tester_transport_enabled,true);assert.equal(pre.general_reception_enabled,false);
+ const post=await auditPrivateSource({getJson:get,phase:'post',expectedRelease:'old-release',previous:pre});assert.equal(post.ok,true);assert.equal(post.previous_verified,true);
+ const changed=await auditPrivateSource({getJson:f.get,phase:'post',expectedRelease:'old-release',previous:pre});assert.equal(changed.error,'TESTER_TRANSPORT_CHANGED');
+ const publicScope=async(url,opts)=>{const d=await get(url,opts);if(url.endsWith('/messenger/seller/status'))d.mode='general';return d;};
+ assert.equal((await auditPrivateSource({getJson:publicScope})).error,'TESTER_SCOPE_MISMATCH');
+ const forged={...pre};delete forged.tester_transport_enabled;
+ assert.equal((await auditPrivateSource({getJson:get,phase:'post',expectedRelease:'old-release',previous:forged})).error,'PREVIOUS_RECEIPT_INVALID');
 });
