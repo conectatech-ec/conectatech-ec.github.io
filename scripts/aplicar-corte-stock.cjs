@@ -2,6 +2,7 @@
 // Publica exclusivamente cantidades y fecha del ultimo corte validado del Sistema 593.
 // Nunca modifica precio contado, PVP, costo, imagenes, nombres, URLs ni otros atributos.
 const fs=require('fs');
+const protection=require('./proteger-inventario-593.cjs');
 const input='datos-593/corte-stock-validado.json';
 const output='datos-593/estado-ultimo-corte.json';
 const catalog='index.html';
@@ -17,6 +18,7 @@ function planificar(html,source,prior){
  if(sku.length!==source.cantidad_sku||sku.length<1000)throw Error('Corte parcial o incompleto');
  if(sku.some(s=>!/^[A-Z0-9_-]{3,40}$/.test(s)||!Number.isInteger(inventory[s])||inventory[s]<-10000||inventory[s]>1000000))throw Error('SKU o stock inválidos');
  const products=JSON.parse(match[1]);
+ protection.comprobar({before:products,after:products,sourceSkus:sku,sourceCount:source.cantidad_sku});
  const expected=source.validacion_web||{};
  if(expected.sku_web_esperados && products.length!==expected.sku_web_esperados)throw Error('Cantidad web no coincide con corte');
  const seen=new Set();
@@ -28,6 +30,7 @@ function planificar(html,source,prior){
   beforeStock.set(p.sku,p.stock);
   return Object.assign({},p,{stock:inventory[p.sku]});
  });
+ protection.comprobar({before:products,after:updated,sourceSkus:sku,sourceCount:source.cantidad_sku});
  const changes=updated.filter(p=>p.stock!==beforeStock.get(p.sku));
  const availability=changes.filter(p=>(p.stock>0)!==(beforeStock.get(p.sku)>0));
  const positives=updated.filter(p=>p.stock>0).length;
@@ -72,4 +75,5 @@ function run(){
  return result;
 }
 module.exports={planificar,run};
-if(require.main===module)run();
+if(require.main===module)protection.ejecutar(run);
+

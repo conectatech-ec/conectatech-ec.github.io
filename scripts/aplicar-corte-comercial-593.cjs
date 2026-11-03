@@ -3,6 +3,7 @@
  * NO publicar Excel/costos, NO regenerar nombres, imagenes, SKU o URLs.
  */
 const fs=require('fs');
+const protection=require('./proteger-inventario-593.cjs');
 const INPUT='datos-593/corte-comercial-publico-validado.json';
 const STATE='datos-593/estado-ultimo-corte.json';
 const WEB='index.html';
@@ -14,6 +15,7 @@ function prepare(html,cut,prior){
  const m=html.match(RX);if(!m)throw Error('No se encontro array de productos');
  const all=JSON.parse(m[1]);
  const by=Object.keys(cut.productos||{});
+ protection.comprobar({before:all,after:all,sourceSkus:by,sourceCount:cut.cantidad_sku_original});
  if(all.length!==cut.cantidad_sku_web||all.length!==by.length||all.length<1000)throw Error('Cobertura de SKU insuficiente');
  if(cut.cantidad_sku_original<cut.cantidad_sku_web||cut.cantidad_sku_original<1000)throw Error('Excel no completo');
  const seen=new Set(),before=new Map(),updated=[];
@@ -29,6 +31,7 @@ function prepare(html,cut,prior){
   before.set(p.sku,p);
   updated.push({...p,stock,promo:promo_centavos/100,pvp:pvp_centavos/100});
  }
+ protection.comprobar({before:all,after:updated,sourceSkus:by,sourceCount:cut.cantidad_sku_original});
  const diff=updated.filter(p=>p.stock!==before.get(p.sku).stock||
     Math.round(p.promo*100)!==Math.round(before.get(p.sku).promo*100)||
     Math.round(p.pvp*100)!==Math.round(before.get(p.sku).pvp*100));
@@ -83,4 +86,5 @@ function run(){
  return result;
 }
 module.exports={prepare,run};
-if(require.main===module)run();
+if(require.main===module)protection.ejecutar(run);
+
