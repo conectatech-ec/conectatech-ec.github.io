@@ -31,7 +31,7 @@ export function referrals(sources=[{key:'rafa',listing_url:association.listing_u
   const u=new URL(s.listing_url);
   if(u.protocol!=='https:'||!['www.facebook.com','facebook.com'].includes(u.hostname)||u.username||u.password||u.port||!/^\/(?:share\/[A-Za-z0-9]+|marketplace\/item\/\d+)\/?$/.test(u.pathname))throw Error('LISTING_URL');
   u.search='';u.hash='';const listing=u.href;if(urls.has(listing))throw Error('DUPLICATE_LISTING');keys.add(s.key);urls.add(listing);
-  const text='Vengo de Marketplace. Anuncio: '+listing+' Me interesa '+s.sku+'. Quiero confirmar precio, disponibilidad y entrega.';
+  const text='Vengo de Marketplace. Anuncio: '+listing+' Me interesa el producto de este anuncio. Quiero confirmar precio, disponibilidad y entrega.';
   return {source:s.key,sku:s.sku,listing_url:listing,whatsapp_url:'https://wa.me/593998576759?text='+encodeURIComponent(text),
    messenger_url:'https://m.me/105549695770538',requires_customer_send:true,transfers_private_history:false,
    personal_inbox_access:false,attribution_grants_sender_authorization:false,whatsapp_Alex_connected:false};

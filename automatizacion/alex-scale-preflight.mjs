@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {central} from './central-source.mjs';
 import {readSharedHub} from './shared-hub.mjs';
+import {refreshAlexCatalog,alexBaseline} from './alex-catalog.mjs';
+import {generateAlex} from './alex.mjs';
 import {assessChannel,referrals} from './alex-channel-readiness.mjs';
 const base='https://conectatech-comercial-piloto.conectatech-ecu.workers.dev';
 const report={at:new Date().toISOString(),schema:'conectatech.alex.readiness.v1',production_modified:false,worker_deployed:false,
@@ -50,12 +52,26 @@ try{
  }
  report.conversations.push({scope:'private_HTTPS_conversation_not_Messenger',turns});
  const comparison=await ask('Compara el Redmi 15C 128 GB con el Samsung A17 128 GB');assert.equal(comparison.focus.length,2);report.comparison=comparison;
+ // Run pending branch code against the SAME real Hub; distinct from the unchanged live Worker.
+ let memory={history:[],focus:[],shown:[]};report.branch_conversation=[];
+ for(const input of ['Busco un Redmi 15C de 128 GB','¿Y con tarjeta cuánto cuesta?','Pero no tengo tarjeta Pacífico','Tengo Pichincha','¿Y a seis meses?','Quiero contraentrega en Quito','¿Y envíos nacionales?','Muéstrame la fotografía','No compraré todavía','Quiero continuar después','Sigamos con ese celular']){
+  const source=await refreshAlexCatalog(alexBaseline,fetch,Date.now(),{input,focus:memory.focus},hub);
+  const d=await generateAlex(input,source,memory,{CATALOG_FIRST:'true'});memory=d.memory;assert.deepEqual(d.focus,['TELF017']);assert.notEqual(d.action,'handoff');
+  if(input==='Tengo Pichincha'){assert.equal(d.intent,'payment');assert.ok(d.facts.includes('bank_terms_pending'));}
+  if(input==='Muéstrame la fotografía'){assert.equal(d.intent,'photo');assert.equal(d.image,'TELF017');}
+  if(input==='No compraré todavía'){assert.equal(memory.purchase_deferred,true);assert.ok(!d.text.includes('?'));}
+  report.branch_conversation.push({input,text:d.text,focus:d.focus,intent:d.intent,facts:d.facts,image_requested:d.image,bank:memory.bank||null,purchase_deferred:memory.purchase_deferred===true});
+ }
+ const comparing='Compara la batería del Samsung A17 128 GB con el Redmi 15C 128 GB';
+ const source=await refreshAlexCatalog(alexBaseline,fetch,Date.now(),{input:comparing},hub),d=await generateAlex(comparing,source,{},{});
+ assert.equal(d.intent,'compare');assert.ok(d.facts.includes('TELF011.battery')&&d.facts.includes('TELF017.battery'));
+ report.branch_comparison={input:comparing,text:d.text,facts:d.facts,source_sha256:source.source_sha256};
  const out=hub.products.find(p=>p.availability==='out_of_stock'&&!p.blocked_reasons.length);
  if(out){const d=await ask('Precio de '+out.sku);assert.ok(!d.text.includes('$'));report.out_of_stock_protection={sku:out.sku,passed:true};}
  const quota=await request('/alex/quota');report.internal_quota=quota;
  report.generative_probe={attempted:false,reason:'FREE_PLAN_ATTESTATION_OR_QUOTA_REQUIRED'};
  // At most one live inference, guarded by the existing Worker reservation and Free-only binding.
- if(process.env.CF_FREE_ONLY_CONFIRMED==='true'&&h.ai_binding&&h.alex_generative&&quota.remaining_calls>=2){
+ if(process.env.ALEX_RUN_SINGLE_AI_PROBE==='true'&&process.env.CF_FREE_ONLY_CONFIRMED==='true'&&h.ai_binding&&h.alex_generative&&quota.remaining_calls>=2){
   const a=await request('/alex/chat',{session_id:crypto.randomUUID(),message:'Estoy entre el Redmi 15C 128 GB y el Samsung A17 128 GB. Lo usaré para trabajar, ¿cómo los comparo?'});
   assert.equal(a.outbound_enabled,false);
   report.generative_probe={attempted:true,maximum_operator_turns:1,generative:a.generative,model:a.model,error_code:a.error_code,

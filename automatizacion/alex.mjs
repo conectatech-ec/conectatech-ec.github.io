@@ -63,6 +63,18 @@ function contextPlan(input,source,memory,model={}){
   return {...base,intent:'payment',say:'',facts:[...price,'bank_pending'],ask:price.length?'':'¿Quieres comparar con la opción de contado?'};
  }
  if(/otra tarjeta|otro banco|cambiar de banco/i.test(input)&&!bank.named&&!bank.chosen&&!bank.objection)return {...base,intent:'payment',say:'Claro, revisemos otra opción.',ask:'¿De qué banco es la tarjeta que quieres usar?'};
+ const requestedBank=bank.named||memory.last_bank_mentioned||memory.bank,book=factBook(source);
+ if(!bank.objection&&requestedBank&&!book[requestedBank]&&(bank.named||/meses|cuotas|intereses|planes|banco|tarjeta/i.test(input))){
+  const price=p&&/precio|cu[aá]nto/i.test(input)?[book[p.sku+'.card']?p.sku+'.card':p.sku+'.card_pending']:[];
+  const terms=paymentContext(input,memory);
+  // Explain interest conditionally; an expired promotion never supplies a current bank offer or installment total.
+  return {...base,intent:'payment',say:'',facts:[...(terms.months>=12?['interest']:price),'bank_terms_pending'],ask:''};
+ }
+ if(!bank.objection&&focus.length===2&&/compar|diferenc|versus|\bvs\b|\bentre\b|cu[aá]l.{0,20}(?:mejor|recomiendas)/i.test(input)){
+  const keys=focus.map(id=>id+'.'+(/bater[ií]a|autonom[ií]a/i.test(input)?'battery':/pantalla/i.test(input)?'screen':'memory'));
+  const comparable=keys.every(k=>book[k])?keys:focus.map(id=>book[id+'.benefit']?id+'.benefit':id+'.name');
+  return {...base,say:'',facts:comparable,focus,action:'compare',intent:'compare',ask:focus.every(id=>/^TELF/.test(id))?'¿Cuál te gustaría revisar con más detalle?':''};
+ }
  if(!bank.objection)return null;
  if(memory.payment==='contado'&&/prefiero|mejor|pago.{0,15}contado/i.test(input)&&p){const book=factBook(source);return {...base,intent:'price',say:'',facts:[book[p.sku+'.cash']?p.sku+'.cash':p.sku+'.cash_pending'],ask:''};}
  if(bank.chosen&&factBook(source)[bank.chosen])return {...base,intent:'payment',say:warm('Claro, revisemos esa opción.'),facts:[bank.chosen],ask:''};
@@ -83,6 +95,7 @@ export function factBook(source,now=Date.now()){
   national:'🛵 Envíos nacionales con costo adicional; confirmamos pago y condiciones antes de comprar.',
   payment:policy.pvp_is_final_card_price?'Aceptamos contado y tarjeta; PROMO CONTADO es el precio de contado y PVP es el precio con tarjeta, antes de intereses cuando correspondan.':'Aceptamos contado y tarjeta; el importe final con tarjeta se confirma con un vendedor.',
   bank_pending:'💳 Las condiciones de esa tarjeta requieren confirmación; no tengo un plan autorizado para ese banco.',
+  bank_terms_pending:'💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.',
   discount:'La oferta de contado publicada es la autorizada; un descuento adicional necesita aprobación.',
   warranty:'🛡️ Un vendedor te confirma la cobertura y condiciones de garantía de este producto.',
   request:'Avancemos con tu compra; todavía debe confirmarla un vendedor.',
@@ -226,7 +239,7 @@ export function commercialFallback(input,source,memory={},error_code='AI_UNAVAIL
  else if(/direcci[oó]n|d[oó]nde.{0,25}retir|ubicaci[oó]n|retiro|retirar/i.test(input)){facts=['pickup'];intent='delivery';}
  else if(products.length===2&&products.every(p=>/^TELF/.test(p.sku))){facts=products.map(p=>p.sku+'.name');ask='¿Cuál de estas versiones te interesa?';intent='recommend';}
  else if(p){
-  const id=p.sku,price=/precio|cu[aá]nto|cuesta|vale|contado|tarjeta|PVP/i.test(input),spec=/bater[ií]a|capacidad/i.test(input)?'battery':/pantalla/i.test(input)?'screen':/c[aá]mara/i.test(input)?'camera':/memoria|almacenamiento|RAM/i.test(input)?'memory':/USB|conexi[oó]n/i.test(input)?'power':/grabaci[oó]n|audio/i.test(input)?'audio':/cardioide|omnidireccional/i.test(input)?'patterns':null;
+  const id=p.sku,price=/precio|cu[aá]nto|cuesta|vale|contado|tarjeta|PVP/i.test(input),spec=/bater[ií]a|capacidad/i.test(input)?'battery':/pantalla/i.test(input)?'screen':/c[aá]mara/i.test(input)?'camera':/\b(?:memoria|almacenamiento|RAM)\b/i.test(input)?'memory':/USB|conexi[oó]n/i.test(input)?'power':/grabaci[oó]n|audio/i.test(input)?'audio':/cardioide|omnidireccional/i.test(input)?'patterns':null;
   if(/disponib|\bstock\b|\btienen\b|\bhay\b/i.test(input)){facts=[book[id+'.stock']?id+'.stock':id+'.unavailable'];}
   else if(price){const type=/tarjeta|PVP/i.test(input)||payment.named||memory.payment==='tarjeta'&&!/contado|efectivo/i.test(input)?'card':'cash',key=id+'.'+type;facts=[p.central_availability&&p.central_availability!=='in_stock'?id+'.unavailable':book[key]?key:id+'.'+type+'_pending'];intent='price';if(!book[key])ask=p.central_availability&&p.central_availability!=='in_stock'?'¿Quieres revisar otra opción?':'¿Quieres que te muestre las características verificadas?';}
   else if(spec&&book[id+'.'+spec]){facts=[id+'.'+spec];}

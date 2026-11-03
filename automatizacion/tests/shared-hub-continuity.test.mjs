@@ -9,10 +9,9 @@ function fixture(){return [{fecha_corte:'2026-11-02',origen_sha256:sha,referenci
  {fecha_corte:'2026-11-02',sha256_original:sha,fuente:'synthetic transport fixture',cantidad_sku_web:1,productos:{TELF017:{stock:1,promo_centavos:15990,pvp_centavos:19988}}}];}
 const getter=(pair,check=()=>{})=>async(url,options)=>{check(url,options);return Response.json(url.endsWith('estado-ultimo-corte.json')?pair[0]:url.endsWith('corte-comercial-publico-validado.json')?pair[1]:{});};
 test('A split publication retries once without cache; coherent prices keep original expiry',async()=>{
- const f=structuredClone(central),pair=fixture();let count=0;
- const data=await readSharedHub(f,getter(pair,(_url,opt)=>{if(count<2){count++;if(count===2)pair[0].origen_sha256=sha;}else if(count<4){assert.equal(opt.cache,'no-store');count++;}}),time);
+ const f=structuredClone(central),pair=fixture();
+ const data=await readSharedHub(f,getter(pair),time);
  assert.equal(data.source.sha256,sha);assert.equal(data.expires_at,'2026-11-03T22:48:22.000Z');
- // Explicit mismatch sequence rather than a fixture that becomes coherent before parsing.
  let reads=0;const broken={...pair[0],origen_sha256:'a'.repeat(64)};
  const fetcher=async(url,opt)=>{if(url.endsWith('catalogo-ventas.json'))return Response.json({});reads++;if(reads>2)assert.equal(opt.cache,'no-store');return Response.json(url.endsWith('estado-ultimo-corte.json')?(reads===1?broken:pair[0]):pair[1]);};
  const retry=await readSharedHub(structuredClone(central),fetcher,time);assert.equal(reads,4);assert.equal(retry.shared_hub_status.state,'verified');

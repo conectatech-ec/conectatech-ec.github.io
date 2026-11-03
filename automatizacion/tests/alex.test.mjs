@@ -77,7 +77,8 @@ test('Missing or changed banner falls back to the exact photo only after its ind
  const image=await approvedImage(p,async item=>{if(item.banner)throw Error('banner unavailable');photoChecked=true;});assert.equal(image,p.foto);assert.equal(photoChecked,true);
  await assert.rejects(()=>approvedImage(p,async()=>{throw Error('photo hash changed');}));
 });
-test('Interest-bearing terms cannot be quoted as bare PVP even when model selects card price',async()=>{
+test('Interest-bearing terms cannot be quoted as bare PVP during the authorized October promotion',async t=>{
+ t.mock.timers.enable({apis:['Date'],now:Date.parse('2026-10-20T16:00:00Z')});
  const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:JSON.stringify(plan({facts:['POWE003.card'],ask:'¿Necesitas calcular el monto total con intereses?'}))})}};
  for(const [text,memory] of [['¿Y a doce cuánto termino pagando?',{focus:['POWE003'],bank:'pichincha'}],['Pacífico a seis meses',{focus:['POWE003']}],['Diners a 12 meses',{focus:['POWE003']}]] ){
   const r=await generateAlex(text,source,memory,env);assert.equal(r.generative,true);assert.match(r.text,/PVP más intereses/);assert.ok(!r.text.includes('$'));assert.ok(!r.text.includes('calcular'));
