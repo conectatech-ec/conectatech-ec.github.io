@@ -1,14 +1,14 @@
 {
-  "estado": "CENSO_ACTUALIZADO_Y_CUATRO_FOTOS_NUEVAS_CONSERVADAS",
-  "fecha_UTC": "2026-11-03T22:42:59.924647+00:00",
+  "estado": "TELEFONOS_APROBADOS_CERRADOS_POR_PROPIETARIO_37_REFERENCIAS_PENDIENTES",
+  "fecha_UTC": "2026-11-03T22:55:43.227632+00:00",
   "base_main": "ad17100151687c6bf4d47152f7dca1c081c3f486",
   "rama": "fotografia/continuacion-20261103-49",
   "censo": {
     "catalogo": 1198,
     "con_fotografia": 1003,
     "fotografias_actuales_revisadas": 1001,
-    "faltan_auditar_con_foto": 2,
-    "externas_pendientes": 2,
+    "faltan_auditar_con_foto": 0,
+    "externas_pendientes": 0,
     "locales_nuevas_o_modificadas_pendientes": 0,
     "revisados_con_pendiente_referencia": 37,
     "sin_fotografia_etapa_posterior": 195,
@@ -44,8 +44,12 @@
       "Tripodes": 3
     },
     "base_main": "ad17100151687c6bf4d47152f7dca1c081c3f486",
-    "fecha_UTC": "2026-11-03T22:42:59.924647+00:00",
-    "criterio": "Revisión de presentación y excepciones, no aprobación física definitiva. Las propuestas no publicadas no se cuentan como nuevas publicaciones."
+    "fecha_UTC": "2026-11-03T22:55:43.227632+00:00",
+    "criterio": "1001 imágenes revisadas directamente y2 aprobadas y cerradas por confirmación expresa del propietario. No se atribuye inspección técnica externa a la aprobación del propietario.",
+    "externas_aprobadas_por_propietario": 2,
+    "fotografias_revisadas_directamente": 1001,
+    "fotografias_aprobadas_por_propietario": 2,
+    "casos_con_fotografia_revisados_o_cerrados": 1003
   },
   "revisados_en_esta_continuacion": {
     "CHIP003": {
@@ -201,5 +205,222 @@
   "main_modificado": false,
   "datos_comerciales_modificados": 0,
   "integracion": "No se repite la integración en main rechazada anteriormente por revisión automática. Entrega en rama independiente.",
-  "nota": "Revisado no equivale a identidad física definitivamente aprobada. Los37pendientes de referencia,195sin imagen y16propuestas son estados distintos; no deben sumarse como si todos fueran errores fotográficos."
+  "nota": "Revisado no equivale a identidad física definitivamente aprobada. Los37pendientes de referencia,195sin imagen y16propuestas son estados distintos; no deben sumarse como si todos fueran errores fotográficos.",
+  "aprobaciones_expresas": {
+    "TELF001": {
+      "sku": "TELF001",
+      "nombre": "Telefono ZTE A56 PRO 128GB",
+      "estado": "APROBADO",
+      "caso": "CERRADO",
+      "origen_aprobacion": "PROPIETARIO",
+      "imagen_actual_conservada": "https://advance.com.ec/web/image/product.template/3552/image_1920?unique=42c8e56",
+      "requiere_revision_fotografica": false,
+      "requiere_nueva_fotografia": false,
+      "pendientes": [],
+      "bloqueos": [],
+      "accion": "CONSERVAR_IMAGEN_ACTUAL",
+      "evidencia": "El propietario confirma que no observa problema y ordena cerrar el caso. No se presenta como una inspección automatizada de la imagen externa."
+    },
+    "TELF012": {
+      "sku": "TELF012",
+      "nombre": "Telefono Samsung A17 8GB+256GB",
+      "estado": "APROBADO",
+      "caso": "CERRADO",
+      "origen_aprobacion": "PROPIETARIO",
+      "imagen_actual_conservada": "https://shop.samsung.com/latin/ecu/pub/media/catalog/product/s/m/sm-a175_galaxy-a17_lte_00.png",
+      "requiere_revision_fotografica": false,
+      "requiere_nueva_fotografia": false,
+      "pendientes": [],
+      "bloqueos": [],
+      "accion": "CONSERVAR_IMAGEN_ACTUAL",
+      "evidencia": "El propietario confirma que no observa problema y ordena cerrar el caso. No se presenta como una inspección automatizada de la imagen externa."
+    }
+  },
+  "pendientes_referencia_37": [
+    {
+      "sku": "ADAP029",
+      "nombre": "Convertidor HDMI a RCA | MINI HDMI2AV",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "ADAP057",
+      "nombre": "Convertidor Treqa VGA a HDMI | HDV-552",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "ADAP069",
+      "nombre": "Convertidor de audio digital a RCA",
+      "motivo": "Se conserva la secundaria DC5V; la cara de entradas requiere una referencia legible adicional."
+    },
+    {
+      "sku": "ADAP071",
+      "nombre": "Divisor HDMI 1 a 2 | Orvesion AWX-HD1X2",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "ADAP072",
+      "nombre": "Adaptador USB-A 3.0 a HDMI",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "ADAP077",
+      "nombre": "Unión de red RJ45 | acoplador negro",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "ADAP094",
+      "nombre": "Adaptador de alimentación en L | blanco",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "CAPT003",
+      "nombre": "Capturadora HDMI a USB 3.0 con salida HDMI",
+      "motivo": "Mejora de encuadre preparada. La vista actual no permite verificar la cara opuesta; no se inventa una vista de conectores."
+    },
+    {
+      "sku": "CARG061",
+      "nombre": "Cable de carga para smartwatch Infinix H4",
+      "motivo": "Única fotografía física en ambas cuentas muestra el cable embolsado; no permite verificar número, separación ni disposición de pines. Conservar portada actual; falta vista física del extremo de contacto."
+    },
+    {
+      "sku": "COBE001",
+      "nombre": "Cobertor decorativo para cargador",
+      "motivo": "Mejora de encuadre preparada. Los orificios de carga requieren una referencia física legible adicional para mostrarlos sin reconstrucción."
+    },
+    {
+      "sku": "CUBO011",
+      "nombre": "Cargador USB-A de 5 W para iPhone",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "ESTAB006",
+      "nombre": "Estabilizador Q18 con luz de relleno",
+      "motivo": "Vista funcional abierta por verificar; no reconstruir el mecanismo desde la vista cerrada."
+    },
+    {
+      "sku": "ESTAB007",
+      "nombre": "Estabilizador selfie C08 con trípode",
+      "motivo": "Vista funcional abierta por verificar; conservar hasta cotejar el mecanismo exacto."
+    },
+    {
+      "sku": "GADG004",
+      "nombre": "Ciclocomputador Sunding SD-563A con cable",
+      "motivo": "Pantalla apagada; las referencias propias disponibles no permiten reproducir con fiabilidad la disposición de su información. Se conserva imagen publicada."
+    },
+    {
+      "sku": "HUB014",
+      "nombre": "Hub Targus USB 2.0 de cuatro puertos",
+      "motivo": "Los cuatro USB-A están declarados, pero las fotos recuperadas no muestran su disposición completa."
+    },
+    {
+      "sku": "HUB024",
+      "nombre": "Hub UGREEN USB-C con tres USB-A y Ethernet Gigabit",
+      "motivo": "Los puertos están declarados, pero la ubicación física de todos ellos no se distingue en las referencias recuperadas."
+    },
+    {
+      "sku": "HUB026",
+      "nombre": "Hub UGREEN Uno CM888 USB-C 6 en 1",
+      "motivo": "Indicador comprobado en empaque, pero debe cotejarse la geometría de los puertos antes de una nueva representación."
+    },
+    {
+      "sku": "JUGU034",
+      "nombre": "Carrito clásico con rayas | número 67",
+      "motivo": "Vehículo visualmente muy parecido a JUGU036, visto desde otro lado. Comparar referencias del SKU exacto antes de afirmar duplicado erróneo o sustituir."
+    },
+    {
+      "sku": "JUGU036",
+      "nombre": "Miniatura Volkswagen Escarabajo | diseño Gulf azul y naranja número 67",
+      "motivo": "Comparar variante con JUGU034: similitud visual por sí sola no confirma fotografía equivocada."
+    },
+    {
+      "sku": "LECT001",
+      "nombre": "Lector USB de Memorias — Modelos Surtidos",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "LECT002",
+      "nombre": "Lector Earldom ET-OT12 USB para tarjetas SD y microSD",
+      "motivo": "La vista disponible no muestra con claridad los puertos/ranuras requeridos; conservar hasta disponer de una vista física suficiente."
+    },
+    {
+      "sku": "PILA032",
+      "nombre": "Pila PKCELL AG10 / LR1130",
+      "motivo": "La cara visible no muestra la inscripción del modelo. Conservar la imagen y esperar una vista física legible de la cara marcada; no añadir texto ni sustituir la identidad."
+    },
+    {
+      "sku": "PILA044",
+      "nombre": "Pila Renata tamaño 10 para audífonos",
+      "motivo": "La cara visible no permite leer el modelo. Se conserva la foto actual; no publicar un reencuadre como solución de identidad ni añadir inscripciones sin una vista física legible."
+    },
+    {
+      "sku": "PILA045",
+      "nombre": "Pila Renata tamaño 312 para audífonos",
+      "motivo": "La cara visible no permite leer el modelo. Se conserva la foto actual; no publicar un reencuadre como solución de identidad ni añadir inscripciones sin una vista física legible."
+    },
+    {
+      "sku": "PILA051",
+      "nombre": "Pila Murata 379 / SR521SW",
+      "motivo": "La cara visible no muestra la inscripción del modelo. Conservar la imagen y esperar una vista física legible de la cara marcada; no añadir texto ni sustituir la identidad."
+    },
+    {
+      "sku": "PILA058",
+      "nombre": "Pila Maxday AG7",
+      "motivo": "La cara visible no muestra la inscripción del modelo. Conservar la imagen y esperar una vista física legible de la cara marcada; no añadir texto ni sustituir la identidad."
+    },
+    {
+      "sku": "PILA061",
+      "nombre": "Pila Maxday AG9",
+      "motivo": "La cara visible no muestra la inscripción del modelo. Conservar la imagen y esperar una vista física legible de la cara marcada; no añadir texto ni sustituir la identidad."
+    },
+    {
+      "sku": "POWE015",
+      "nombre": "Powerbank TR-967 | 20.000 mAh y cables integrados",
+      "motivo": "Indicador o ventana oscura: falta referencia legible para identificar su tipo y reproducirla encendida sin inventar cifras ni funciones. Se conserva."
+    },
+    {
+      "sku": "RADI008",
+      "nombre": "Radio portátil LP V52 | panel solar",
+      "motivo": "Pantalla apagada; las referencias propias disponibles no permiten reproducir con fiabilidad la disposición de su información. Se conserva imagen publicada."
+    },
+    {
+      "sku": "REPR001",
+      "nombre": "Reproductor MP4 portátil Mrobo",
+      "motivo": "Pantalla apagada; las referencias propias disponibles no permiten reproducir con fiabilidad la disposición de su información. Se conserva imagen publicada."
+    },
+    {
+      "sku": "TECL029",
+      "nombre": "Teclado plegable Meetion BTK001 Bluetooth",
+      "motivo": "Falta una referencia completa del teclado abierto para conservar exactamente sus teclas."
+    },
+    {
+      "sku": "TRIP021",
+      "nombre": "Trípode selfie K26 con control integrado",
+      "motivo": "Falta una vista verificable abierta del K26."
+    },
+    {
+      "sku": "TRIP023",
+      "nombre": "Trípode selfie mini K03 extensible",
+      "motivo": "Las referencias disponibles muestran el K03 cerrado; conservar hasta verificar el mecanismo abierto."
+    },
+    {
+      "sku": "TRIP025",
+      "nombre": "Trípode selfie K10-L extensible",
+      "motivo": "Falta una vista suficiente del K10-L con la base abierta."
+    },
+    {
+      "sku": "TRIP026",
+      "nombre": "Tripode Selfie Bluetooth N08S",
+      "motivo": "Las referencias muestran N08S y un manual Q07; verificar la correspondencia antes de reconstruir una vista abierta."
+    },
+    {
+      "sku": "UPS001",
+      "nombre": "Mini UPS DC1036P — 36 W, Negro",
+      "motivo": "Falta una vista legible de los conectores reales."
+    },
+    {
+      "sku": "UPS002",
+      "nombre": "Mini UPS OLAX POE-D3 de 10000 mAh",
+      "motivo": "El empaque muestra parte de los conectores; no basta para reconstruir toda la cara posterior."
+    }
+  ]
 }
