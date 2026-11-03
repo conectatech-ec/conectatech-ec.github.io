@@ -1,10 +1,10 @@
-# Entrega para aprobación — cambios, devoluciones y garantías
+# Política aprobada — garantías, cambios y devoluciones
 
-Estado: **BORRADOR NO PUBLICADO**. Rama preparada separadamente; no modifica main, producción, feed Merchant, datos593, fotos, banners ni Worker de Alex. Costo adicional $0.
+Estado: **REDACCIÓN COMERCIAL APROBADA; OPERATIVA PENDIENTE; NO PUBLICADA**. Rama preparada separadamente; no modifica main, producción, feed Merchant, datos593, fotos, banners ni Worker de Alex. Costo adicional $0.
 
 ## Archivos de revisión
 
-- `POLITICA-COMPLETA.md`: texto público breve generado para lectura y aprobación; la revisión final03/11 sustituye la redacción extensa y retira cortesías1–3/7.
+- `POLITICA-COMPLETA.md`: texto público breve aprobado el 03/11; el término legal de quince días se explicita para informar al comprador.
 - `../cambios-devoluciones-garantias/index.html`: página estática móvil/escritorio; navegación, pie y canal oficial. URL permanente prevista: `https://conectatech-ec.github.io/cambios-devoluciones-garantias/`. No presentarla como pública antes de aprobación y despliegue.
 - `politica.json`: única fuente de condiciones, contactos, reglas por categoría y excepciones SKU; incluye las condiciones de envíos/pagos recuperadas el03/11.
 - `../compra/envios-pagos.html`: vista de revisión generada con tarifa nacional, sobrecostos a cargo de tienda, contraentrega Quito y anticipo nacional. Enlazada desde la compra.
@@ -16,9 +16,9 @@ Estado: **BORRADOR NO PUBLICADO**. Rama preparada separadamente; no modifica mai
 
 ## Garantías configurables
 
-Llamar `garantia(config, {sku, categoriaGarantia, categoriaCatalogo})`. No se adivina la categoría por prefijo SKU. `categoriaGarantia` es una clasificación explícita documentada: celulares, accesorios, tablets, televisores, computacion u otros. Los alias actuales solo reconocen denominaciones exactas indicadas en JSON; clasificar las demás categorías antes de usarlas masivamente en Alex/PDF. Una categoría desconocida devuelve «plazo indicado para cada artículo», nunca cero garantía.
+Llamar `garantia(config, {sku, categoriaGarantia, categoriaCatalogo})`. No se adivina la categoría por prefijo SKU. `categoriaGarantia` es una clasificación explícita documentada: celulares, accesorios, tablets, televisores, computacion u otros. Los alias actuales solo reconocen denominaciones exactas indicadas en JSON; clasificar las demás categorías antes de usarlas masivamente en Alex/PDF. La regla general de los demás productos es 30 días, según la aprobación expresa del propietario. Antes de integrar etiquetas a fichas se debe confirmar la categoría para no asignar 30 días a un celular o tablet sin clasificar.
 
-Precedencia: excepción SKU aprobada y documentada → regla de categoría → plazo por artículo. Para ampliar una categoría se cambia el valor; para un SKU se registra categoría, valor, unidad, `aprobada:true` y evidencia. No se permiten plazos menores ni cambios de unidad sin revisión. Los textos de garantía se calculan desde datos: celulares1año conserva exactamente «1 año de garantía».
+Precedencia: excepción SKU aprobada y documentada → regla de categoría → regla general de otros productos. Para ampliar una categoría se cambia el valor; para un SKU se registra categoría, valor, unidad, `aprobada:true` y evidencia. No se permiten plazos menores ni cambios de unidad sin revisión. Los textos de garantía se calculan desde datos: celulares y tablets conservan «1 año de garantía»; accesorios y demás productos, «30 días de garantía».
 
 Ejemplo de **estructura**, no regla real que se deba publicar:
 
@@ -36,11 +36,11 @@ Las fichas actuales se mantienen intactas durante esta revisión. `preparar-enla
 
 ## Pendientes imprescindibles antes de publicación
 
-1. Cerrar la redacción operativa y aprobar la publicación posterior. La razón social recuperada de593 es VELASCO VALDERRAMA JOSE RAFAEL: ya está incorporada, no volver a solicitarla.
+1. Redacción comercial aprobada: completar únicamente datos operativos y autorizar la publicación posterior. La razón social recuperada de593 es VELASCO VALDERRAMA JOSE RAFAEL: ya está incorporada, no volver a solicitarla.
 2. Confirmar recepción de devoluciones en local y/o transporte, gastos cuando no hay defecto/error, etiqueta/transportista si aplica, si existe tarifa de reposición, y método/plazo operativo real del reembolso. No se inventó ninguno.
 3. Cerrar el cómputo del término legal de15 días para su correspondencia exacta con Google. La página conserva el texto legal; no se reemplazó por3/7 días ni se aseguró sin evidencia que los días sean naturales/hábiles.
 
-Para garantía por otros productos y excepciones SKU: mantener el plazo real ya documentado en cada artículo. No asignar uno masivo sin confirmación.
+Garantías aprobadas el 03/11: celulares y tablets, 1 año; accesorios y demás productos, 30 días. Cobertura de fabricación y funcionamiento en condiciones normales de uso. Se conservan los derechos legales y las ampliaciones o condiciones previamente ofrecidas. No aplicar retroactivamente plazos más cortos.
 
 ## Publicación posterior, solo con aprobación
 

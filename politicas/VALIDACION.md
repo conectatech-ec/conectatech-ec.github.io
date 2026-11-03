@@ -1,5 +1,7 @@
 # Validación de la entrega
 
+Revisión 5, 03/11/2026: redacción comercial aprobada, celulares/tablets 1 año y accesorios/demás productos 30 días. Diez pruebas de políticas repetidas y aprobadas; página local comprobada en navegador. La evidencia histórica siguiente no equivale a un despliegue de esta revisión. Publicación no autorizada.
+
 - Base de revisión: main `428927813d794aaa1d1a37886327d326100e33a8`.
 - Diez pruebas funcionales aprobadas: plazos y frase «1 año de garantía»; ausencia de categorías/SKU adivinados; ampliaciones por datos; excepción documentada; rechazo de reducciones/no aprobadas; protección del término legal; respuestas y escalamiento de Alex; enlaces idempotentes; Merchant bloqueado sin tarifas/plazos inventados; página de revisión completa.
 - Chromium real: anchuras320,390,768,1280; ancho del documento igual al viewport; logo cargado; todos los destinos de navegación interna presentes; aviso de revisión y contenido de garantías/ley visibles; sin errores de página.

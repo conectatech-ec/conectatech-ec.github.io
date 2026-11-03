@@ -1,8 +1,8 @@
 {
-  "version": "2026-11-03.revision-4",
-  "estado": "PENDIENTE_APROBACION",
+  "version": "2026-11-03.revision-5",
+  "estado": "APROBADA_PENDIENTE_OPERATIVA",
   "publicar": false,
-  "titulo": "Cambios, devoluciones y garantías — CONECTATECH",
+  "titulo": "Garantías, cambios y devoluciones — CONECTATECH",
   "url_prevista": "https://conectatech-ec.github.io/cambios-devoluciones-garantias/",
   "pais": "EC",
   "contacto": {
@@ -16,7 +16,7 @@
     "fuente": "Razón social indicada por el propietario para 593 el 26/08/2026 y corroborada en contexto comercial del 16/10/2026. Dirección y canal público conservados. No se incorporan identificadores tributarios ni datos bancarios."
   },
   "garantias": {
-    "cobertura_comercial": "defectos de fabricación",
+    "cobertura_comercial": "defectos de fabricación y funcionamiento en condiciones normales de uso",
     "inicio": "entrega del producto, de acuerdo con el comprobante y las condiciones documentadas",
     "reglas_categoria": {
       "celulares": {
@@ -30,20 +30,24 @@
         "ampliable": true
       },
       "tablets": {
-        "valor": null,
-        "unidad": null
+        "valor": 1,
+        "unidad": "anio",
+        "ampliable": true
       },
       "televisores": {
-        "valor": null,
-        "unidad": null
+        "valor": 30,
+        "unidad": "dia",
+        "ampliable": true
       },
       "computacion": {
-        "valor": null,
-        "unidad": null
+        "valor": 30,
+        "unidad": "dia",
+        "ampliable": true
       },
       "otros": {
-        "valor": null,
-        "unidad": null
+        "valor": 30,
+        "unidad": "dia",
+        "ampliable": true
       }
     },
     "alias_categoria": {
@@ -58,13 +62,13 @@
       "COMPUTACION": "computacion"
     },
     "excepciones_sku": {},
-    "regla_excepciones": "Solo ampliaciones documentadas y aprobadas. No inferir categoría del prefijo SKU ni del nombre. Plazos desconocidos permanecen sin asignar; no equivalen a ausencia de garantía legal."
+    "regla_excepciones": "Celulares y tablets: 1 año; accesorios y demás productos: 30 días, según aprobación expresa del propietario del 03/11/2026. Se conservan ampliaciones documentadas y condiciones previamente ofrecidas; no inferir la categoría del prefijo SKU ni del nombre. La regla general de otros productos no limita los derechos legales."
   },
   "cambios_voluntarios": {
     "ofrecidos": false,
     "plazos_adicionales": false,
     "restringe_derechos_legales": false,
-    "fuente": "Instrucción expresa del propietario03/11/2026: no ofrecer cortesías ni plazos voluntarios; sustituye1–3 días y excepción7."
+    "fuente": "Aprobación expresa del propietario del 03/11/2026: sin cambios ni devoluciones voluntarias por preferencias personales. Sustituye plazos voluntarios anteriores de 1–3 días y excepción de 7 días para la nueva modalidad, sin efecto retroactivo."
   },
   "devolucion_legal": {
     "articulo": "LODC 45, sustituido en 2022",
@@ -90,33 +94,43 @@
   "secciones": [
     {
       "id": "recepcion",
-      "titulo": "Al recibir tu compra",
+      "titulo": "1. Revisión al recibir tu compra",
       "parrafos": [
-        "Revisa el modelo, las características, los accesorios y el estado del producto. Comunícanos oportunamente cualquier novedad visible para revisar el caso y darte la atención correspondiente."
+        "Te recomendamos verificar el modelo, las características, los accesorios y el estado del producto al momento de recibirlo. Si detectas alguna novedad, comunícanosla oportunamente para brindarte una solución."
       ]
     },
     {
       "id": "cambios",
-      "titulo": "Cambios y devoluciones",
+      "titulo": "2. Cambios y devoluciones",
       "parrafos": [
-        "No ofrecemos cambios ni devoluciones por cortesía. En teléfonos y tablets utilizados o activados no se ofrecen cambios o devoluciones voluntarias por preferencias personales.",
-        "Las solicitudes se revisan según el producto, su estado y las condiciones aplicables. Cuando proceda legalmente, puedes solicitar devolución o cambio dentro del término de quince (15) días desde la recepción, siempre que la naturaleza del bien lo permita y conserve el estado en que fue recibido. Si el error es de CONECTATECH, gestionaremos la devolución o solución que corresponda."
+        "No ofrecemos cambios ni devoluciones voluntarias por preferencias personales. En teléfonos y tablets utilizados o activados, no realizamos cambios voluntarios por modelo, color o características.",
+        "Las solicitudes de devolución legalmente procedentes serán atendidas conforme a la normativa ecuatoriana, considerando el estado y la naturaleza del producto, dentro del término legal de quince (15) días desde la recepción."
       ]
     },
     {
       "id": "garantias",
-      "titulo": "Garantías",
+      "titulo": "3. Garantías",
+      "lista": [
+        {
+          "etiqueta": "Celulares y tablets",
+          "texto": "{{celulares_garantia}}."
+        },
+        {
+          "etiqueta": "Accesorios y demás productos",
+          "texto": "{{accesorios_garantia}}."
+        }
+      ],
       "parrafos": [
-        "Garantía comercial por defectos de fabricación: celulares, {{celulares_garantia}}; accesorios, {{accesorios_garantia}}, salvo ampliación documentada. Para tablets y demás productos se aplica la garantía indicada en su ficha o comprobante.",
-        "Los inconvenientes de funcionamiento se revisan mediante la garantía correspondiente. La garantía no implica un reembolso automático; se aplicará la solución que corresponda sin limitar tus derechos legales."
+        "La garantía cubre defectos de fabricación y funcionamiento en condiciones normales de uso, conforme a sus condiciones y a la normativa aplicable.",
+        "Los inconvenientes serán evaluados mediante el procedimiento de garantía correspondiente."
       ]
     },
     {
       "id": "solicitud",
-      "titulo": "Cómo solicitar atención",
+      "titulo": "4. Atención posventa",
       "parrafos": [
-        "Escríbenos al WhatsApp 099 857 6759 con tu factura o comprobante de compra, la identificación del producto y una descripción del inconveniente. Revisaremos la información y te indicaremos los pasos para su atención. Antes de enviar un producto, solicita las instrucciones de devolución.",
-        "Esta política no limita los derechos reconocidos por la legislación ecuatoriana."
+        "Para solicitar atención, comunícate con CONECTATECH por WhatsApp o visítanos en nuestro local, presentando tu factura o comprobante de compra y los detalles del inconveniente.",
+        "Nuestro equipo revisará tu solicitud y te informará los pasos correspondientes."
       ]
     }
   ],
@@ -183,5 +197,16 @@
     "aplicacion": "desde_publicacion_autorizada",
     "retroactiva": false,
     "preserva_condiciones_previamente_ofrecidas": true
-  }
+  },
+  "aprobacion": {
+    "fecha": "2026-11-03",
+    "zona_horaria": "America/Guayaquil",
+    "referencia": "Dirección General — Aprobación de política CONECTATECH; solicitud a959b050-b1f4-4032-9ade-f1c56dc8a9c6",
+    "redaccion_comercial_aprobada": true,
+    "publicacion_autorizada": false,
+    "operativa_completa": false,
+    "precision_informativa": "Se explicita el término legal de quince (15) días desde la recepción, sin añadir un plazo voluntario."
+  },
+  "introduccion": "En CONECTATECH queremos que compres con tranquilidad. Todos nuestros productos cuentan con respaldo y atención posventa.",
+  "cierre": "En todos los casos se respetarán los derechos establecidos por la legislación ecuatoriana."
 }

@@ -9,13 +9,15 @@ const clone = ()=>structuredClone(config);
 
 test('plazos y terminología aprobados',()=>{
   const c=clone();c.garantias.reglas_categoria.celulares.valor=1;c.garantias.reglas_categoria.accesorios.valor=30;
-  assert.equal(garantia(c,{categoriaCatalogo:'TELEFONOS'}).texto,'1 año de garantía por defectos de fabricación');
-  assert.equal(garantia(c,{categoriaGarantia:'accesorios'}).texto,'30 días de garantía por defectos de fabricación');
+  assert.equal(garantia(c,{categoriaCatalogo:'TELEFONOS'}).texto,'1 año de garantía por defectos de fabricación y funcionamiento en condiciones normales de uso');
+  assert.equal(garantia(c,{categoriaGarantia:'accesorios'}).texto,'30 días de garantía por defectos de fabricación y funcionamiento en condiciones normales de uso');
   assert.ok(!JSON.stringify(config).includes('12 meses'));
 });
 test('categorías desconocidas y SKU no se adivinan',()=>{
-  assert.equal(garantia(config,{sku:'TELF_PRUEBA'}).valor,null);
-  assert.equal(garantia(config,{categoriaGarantia:'tablets'}).valor,null);
+  assert.equal(garantia(config,{sku:'TELF_PRUEBA'}).categoria,'otros');
+  assert.equal(garantia(config,{sku:'TELF_PRUEBA'}).valor,30);
+  assert.equal(garantia(config,{categoriaCatalogo:'TABLETS'}).etiqueta,'1 año de garantía');
+  for (const categoriaGarantia of ['televisores','computacion','otros']) assert.equal(garantia(config,{categoriaGarantia}).etiqueta,'30 días de garantía');
 });
 test('categoría ampliable por datos, sin reescribir resolver',()=>{
   const c=clone();c.garantias.reglas_categoria.celulares.valor=2;
@@ -30,6 +32,8 @@ test('no reducir plazo ni ampliar sin evidencia',()=>{
   assert.throws(()=>validar(c),/reducir/);
   c.garantias.excepciones_sku.PRUEBA.valor=90;c.garantias.excepciones_sku.PRUEBA.aprobada=false;
   assert.throws(()=>validar(c),/evidencia/);
+  const tablet=clone();tablet.garantias.reglas_categoria.tablets.valor=null;
+  assert.throws(()=>validar(tablet),/Base de garantía/);
 });
 test('no acortar derecho legal a ventana comercial',()=>{
   const c=clone();c.devolucion_legal.valor=3;
@@ -39,7 +43,7 @@ test('no acortar derecho legal a ventana comercial',()=>{
   assert.equal(config.cambios_voluntarios.ofrecidos,false);
   const visible=fs.readFileSync(new URL('../cambios-devoluciones-garantias/index.html',import.meta.url),'utf8');
   assert.ok(!/De 1 a 3 días|hasta 7|excepcionalmente/.test(visible));
-  assert.match(visible,/No ofrecemos cambios ni devoluciones por cortesía/);
+  assert.match(visible,/No ofrecemos cambios ni devoluciones voluntarias por preferencias personales/);
   assert.match(visible,/quince \(15\) días/);
 });
 test('Alex evalúa daños y deriva errores sin prometer plazos',()=>{
@@ -67,7 +71,11 @@ test('Merchant no contiene tarifas, plazos de pago ni publicación inventados',(
 });
 test('página y texto completo generados, sin publicar ni datos estructurados de devolución incompletos',()=>{
   const page=fs.readFileSync(new URL('../cambios-devoluciones-garantias/index.html',import.meta.url),'utf8');
-  assert.match(page,/noindex,nofollow/);assert.match(page,/Borrador para aprobación/);
+  assert.match(page,/noindex,nofollow/);assert.match(page,/Política aprobada · operativa pendiente · no publicada/);
+  assert.equal(config.aprobacion.redaccion_comercial_aprobada,true);
+  assert.equal(config.aprobacion.publicacion_autorizada,false);
+  assert.match(page,/<strong>Celulares y tablets:<\/strong> 1 año de garantía/);
+  assert.match(page,/<strong>Accesorios y demás productos:<\/strong> 30 días de garantía/);
   assert.ok(!page.includes('MerchantReturnPolicy'));assert.ok(!page.includes('{{'));
   for(const section of config.secciones) assert.ok(page.includes('id="'+section.id+'"'));
 });
