@@ -64,7 +64,7 @@ async function readAsset({token,request,transport=fetch}){
  return {consulta:allowed.key,estado:'LEIDO',datos:record};
 }
 async function diagnose({token,transport=fetch}){
- if(!token)return {estado:'SIN_CREDENCIAL_EXISTENTE',solo_lectura:true};
+ if(!token)return {estado:'SIN_CREDENCIAL_WHATSAPP_SECUNDARIO',solo_lectura:true};
  const results=await Promise.all(REQUESTS.map(request=>readAsset({token,request,transport})));
  const master=results.find(r=>r.consulta==='catalogo_maestro');
  const secondary=results.find(r=>r.consulta==='catalogos_secundario');
@@ -74,11 +74,15 @@ async function diagnose({token,transport=fetch}){
    secondary.datos.some(c=>c.id===CATALOG):null,
   visibilidad_cliente_whatsapp_verificada:false,resultados:results};
 }
-module.exports={REQUESTS,redact,readAsset,diagnose};
+async function main({env=process.env,transport=fetch,log=console.log}={}){
+ // Secreto independiente: nunca recurrir al usado por la sincronización principal.
+ const result=await diagnose({token:env.META_WHATSAPP_SECONDARY_TOKEN,transport});
+ log('VINCULO_WHATSAPP_META: '+JSON.stringify(result));
+ return result;
+}
+module.exports={REQUESTS,redact,readAsset,diagnose,main};
 if(require.main===module){
- diagnose({token:process.env.META_ACCESS_TOKEN}).then(result=>{
-  console.log('VINCULO_WHATSAPP_META: '+JSON.stringify(result));
- }).catch(()=>{
+ main().catch(()=>{
   console.error('VINCULO_WHATSAPP_META: ERROR_DE_VALIDACION_SIN_DATOS_SENSIBLES');
   process.exitCode=1;
  });
