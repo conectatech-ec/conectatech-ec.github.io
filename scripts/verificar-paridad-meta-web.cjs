@@ -10,7 +10,7 @@ function parseCSV(text){
  const columns=rows.shift();assert(columns?.length,'CSV vacío');
  return {columns,rows:rows.map(row=>{assert.equal(row.length,columns.length,'Columnas CSV inconsistentes');return Object.fromEntries(columns.map((c,i)=>[c,row[i]]));})};
 }
-const protectedFiles=['index.html','seo-contenido.json','seo-pages.json','datos-593/estado-ultimo-corte.json','datos-593/inventario-publico.csv','importacion/editorial/publicados.json'];
+const protectedFiles=['index.html','seo-contenido.json','seo-pages.json','datos-593/estado-ultimo-corte.json','datos-593/inventario-publico.csv','importacion/editorial/publicados.json','assets/editorial-titulos-datos.js'];
 const state=JSON.parse(read('datos-593/estado-ultimo-corte.json'));protectedFiles.push(state.referencia);
 const directionSource=read('scripts/fotografia-direccion.cjs'),manifestFiles=[...directionSource.matchAll(/'(importacion\/fotografia-publicada\/direccion-[^']+\.json)'/g)].map(m=>m[1]).filter(f=>fs.existsSync(f));
 protectedFiles.push(...manifestFiles);
@@ -32,12 +32,10 @@ const sourceDigests=new Map(protectedFiles.map(file=>[file,hash(fs.readFileSync(
 const assetStats=new Map([...assetSHA.keys()].map(file=>[file,fs.statSync(file,{bigint:true})]));
 const products=JSON.parse(read('index.html').match(/const products=(\[[\s\S]*?\]);\s*\n/)[1]);
 const seo=JSON.parse(read('seo-contenido.json')),editorial=JSON.parse(read('importacion/editorial/publicados.json'));
-let browserSourceMatches=null;
-if(fs.existsSync('assets/editorial-titulos-datos.js')){
- const file='assets/editorial-titulos-datos.js',m=read(file).match(/^window\.CONECTATECH_TITULOS_PRO_DATOS=(\{[\s\S]*\});\s*$/);
- assert(m,'Formato de títulos de la Web no reconocido');assert.deepEqual(JSON.parse(m[1]),editorial,'Las aprobaciones consumidas deben coincidir con los títulos publicados en Web');
- sourceDigests.set(file,hash(fs.readFileSync(file)));browserSourceMatches=true;
-}
+const browser=read('assets/editorial-titulos-datos.js').match(/^\s*window\.CONECTATECH_TITULOS_PRO_DATOS=(\{[\s\S]*\});\s*$/);
+assert(browser,'Formato de títulos de la Web no reconocido');
+assert.deepEqual(JSON.parse(browser[1]),editorial,'Las aprobaciones consumidas deben coincidir con los títulos publicados en Web');
+const browserSourceMatches=true;
 const titleEntry=require('../assets/editorial-titulos.js').entry,photos=require('./editorial-fotografia-efectiva.cjs')(products,seo);
 const expected=new Map(products.map(p=>[p.sku,{title:titleEntry(p,editorial)?.titulo||seo[p.sku]?.nombre||p.name,image_link:(photos[p.sku]?.imagen||seo[p.sku]?.imagen||p.imageUrl)?new URL(photos[p.sku]?.imagen||seo[p.sku]?.imagen||p.imageUrl,'https://conectatech-ec.github.io').href:''}]));
 const files=fs.readdirSync('exportaciones').map(n=>'exportaciones/'+n).filter(f=>fs.statSync(f).isFile());
