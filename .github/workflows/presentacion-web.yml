@@ -28,3 +28,44 @@ jobs:
           node --check assets/presentacion-web/temporadas.js
           node --check assets/presentacion-web/config.js
           git diff --check HEAD^ HEAD
+
+  black-friday-visual:
+    if: startsWith(github.ref, 'refs/heads/presentacion-web/black-friday-')
+    needs: integridad
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          sparse-checkout: assets
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar controlador de navegador en espacio temporal
+        run: npm install --prefix "$RUNNER_TEMP/bf-qa" --no-package-lock --no-save playwright@1.56.1
+      - name: Verificar escritorio, móvil, catálogo y cambio de temporada
+        env:
+          BF_PLAYWRIGHT_PATH: ${{ runner.temp }}/bf-qa/node_modules/playwright
+          BF_REQUIRE_PUBLIC: ${{ github.run_attempt > 1 }}
+        run: |
+          git sparse-checkout add revision/presentacion-web-v2
+          git fetch --no-tags --depth=1 origin 66172c0bf2c0ee8da52f16f51052403686e0f728
+          node revision/presentacion-web-v2/qa-black-friday-20261103.cjs
+      - name: Conservar capturas e informe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: black-friday-${{ github.run_id }}-${{ github.run_attempt }}
+          path: revision/presentacion-web-v2/qa-black-friday-20261103/evidencia
+          if-no-files-found: warn
+      - name: Publicar evidencia en rama independiente, sin modificar producción
+        run: |
+          qa_ref="revision-web/black-friday-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git switch -c "$qa_ref"
+          git add revision/presentacion-web-v2/qa-black-friday-20261103/evidencia
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Registrar vistas Black Friday de $GITHUB_SHA"
+          git push origin "HEAD:refs/heads/$qa_ref"
+          echo "EVIDENCE_BRANCH=$qa_ref"
