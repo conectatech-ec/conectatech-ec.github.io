@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "fecha": "2026-11-03T20:56:17.197059+00:00",
+  "fuente": "CONFIRMACION_EXPRESA_PROPIETARIO_CHAT",
+  "sku": [
+    "CHIP001",
+    "CHIP002",
+    "CHIP003",
+    "CHIP004"
+  ],
+  "confirmacionPresentacion": "Sí, mostrar la presentación sellada.",
+  "instruccionPosterior": "en los chips no coloques seriales, y esta bien presentarlos como las sorpresas",
+  "interpretacion": "Mostrar la presentación comercial sellada propia de cada operador. Los chips no son productos sorpresa; no inventar contenido ni SIM suelta. Retirar seriales, ICCID, IMSI, PIN, PUK, códigos de activación, números de teléfono, QR y códigos de barras si aparecen. El USSD público impreso del operador no es un serial.",
+  "excepciones_presentacion_sellada": {
+    "CHIP001": {
+      "autorizada": true,
+      "mostrar_empaque": true,
+      "unidad_sellada": true
+    },
+    "CHIP002": {
+      "autorizada": true,
+      "mostrar_empaque": true,
+      "unidad_sellada": true
+    },
+    "CHIP003": {
+      "autorizada": true,
+      "mostrar_empaque": true,
+      "unidad_sellada": true
+    },
+    "CHIP004": {
+      "autorizada": true,
+      "mostrar_empaque": true,
+      "unidad_sellada": true
+    }
+  },
+  "noModificarPreciosStockTitulosURLs": true,
+  "estuchesExcluidos": true,
+  "costoAdicional": 0
+}
