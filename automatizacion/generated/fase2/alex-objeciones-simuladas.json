@@ -465,7 +465,7 @@
           "focus": [
             "TELF011"
           ],
-          "error_code": null,
+          "error_code": "FREE_QUOTA_REACHED",
           "buttons": [
             "Características",
             "Ver fotografía",
@@ -1037,7 +1037,7 @@
           "focus": [
             "TELF011"
           ],
-          "error_code": null,
+          "error_code": "AI_UNAVAILABLE",
           "buttons": [
             "Características",
             "Ver fotografía",
@@ -1590,15 +1590,14 @@
         },
         {
           "input": "Mejor pago al contado",
-          "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\n¿Quieres que te muestre las características verificadas?",
-          "generative": false,
+          "text": "💵 El precio de contado del Samsung Galaxy A17 128 GB requiere confirmación.\nClaro, revisemos juntos.",
+          "generative": true,
           "facts": [
             "TELF011.cash_pending"
           ],
           "focus": [
             "TELF011"
           ],
-          "error_code": null,
           "buttons": [
             "Características",
             "Ver fotografía",
@@ -2173,7 +2172,7 @@
           "focus": [
             "TELF011"
           ],
-          "error_code": null,
+          "error_code": "AI_NOT_FREE",
           "buttons": [
             "Características",
             "Ver fotografía",

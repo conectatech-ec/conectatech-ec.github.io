@@ -1,12 +1,22 @@
 import policy from './alex-policy.json' with {type:'json'};
-import {mergePreferences,redundantQuestion,asksHuman,statedBudget,bankIntent,bankNames,buyingIntent} from './alex-context.mjs';
+import {mergePreferences,redundantQuestion,asksHuman,statedBudget,bankIntent,bankNames,buyingIntent,brandIntent,purchaseRequested,imageRequested} from './alex-context.mjs';
 import {alexIds,publicName,quoteCurrent,catalogMatches} from './alex-catalog.mjs';
 export {policy};
 const ids=alexIds;
 export function candidates(input,memory={},source=null){
- const matched=source?catalogMatches(input,source.productos):[];if(matched.length)return matched.map(p=>p.sku);
- const brand=/\b(?:redmi|xiaomi)\b/i.test(input)?'REDMI':/\bZTE\b/i.test(input)?'ZTE':/\b(?:xwatch|smartwatch|reloj|infinix)\b/i.test(input)?'INFINIX':null;
- if(brand&&source){const found=source.productos.filter(p=>p.nombre.toUpperCase().includes(brand));if(found.length)return found.slice(0,2).map(p=>p.sku);}
+ const pref=brandIntent(input,memory),fold=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ const permittedProducts=source?.productos.filter(p=>!pref.rejected.some(b=>new RegExp('\\b'+b+'\\b','i').test([p.nombre,p.public_name,p.catalog_identity].join(' '))))||[];
+ const query=input.replace(/\b(?:samsung|redmi|xiaomi|zte|infinix|jbl|philco)\b/gi,b=>pref.rejected.some(r=>fold(r)===fold(b)||r==='Redmi'&&/xiaomi/i.test(b))?'':b);
+ const matched=source?catalogMatches(query,permittedProducts,{focus:memory.focus||[]}):[];if(matched.length)return matched.map(p=>p.sku);
+ const phoneSearch=/\b(?:celular|telefono|tel[eé]fono)\b/i.test(input)&&! /bater[ií]a port[aá]til|cargador|cable|adaptador/i.test(input);
+ const budget=statedBudget(input),brandChosen=pref.chosen;
+ if(phoneSearch&&budget!==null&&source){const eligible=permittedProducts.filter(p=>/^TELF/.test(p.sku)&&(!brandChosen||new RegExp('\\b'+brandChosen+'\\b','i').test(p.nombre))&&quoteCurrent(source,p)&&p.stock>0&&p.promo<=budget).sort((a,b)=>b.promo-a.promo);if(eligible.length)return eligible.slice(0,2).map(p=>p.sku);}
+ const brand=brandChosen?.toUpperCase()||/\b(?:redmi|xiaomi)\b/i.test(query)&&'REDMI'||/\bZTE\b/i.test(query)&&'ZTE'||/\b(?:xwatch|smartwatch|reloj|infinix)\b/i.test(query)&&'INFINIX';
+ if(brand&&source){
+  const prior=permittedProducts.filter(p=>(memory.focus||[]).includes(p.sku)&&p.nombre.toUpperCase().includes(brand));
+  if(prior.length===1&&!/busco|otro|cambiar|compar|diferenc|versus|\bvs\b/i.test(input))return [prior[0].sku];
+  const found=permittedProducts.filter(p=>p.nombre.toUpperCase().includes(brand));if(found.length)return found.slice(0,2).map(p=>p.sku);
+ }
  const permitted=source?source.productos.map(p=>p.sku):ids;
  const phones=['TELF011','TELF012'];
  if(/\bTELF011\b/i.test(input))return ['TELF011'];if(/\bTELF012\b/i.test(input))return ['TELF012'];
@@ -25,7 +35,7 @@ export function candidates(input,memory={},source=null){
  if(found.length)return found;
  const earlier=(memory.recent_products||[]).filter(x=>permitted.includes(x));
  if(/compar|\botro\b|anterior|primero/i.test(input)&&earlier.length>1)return earlier.slice(-2);
- return (memory.focus||[]).length?memory.focus.filter(x=>permitted.includes(x)):ids.slice(0,3);
+ return (memory.focus||[]).length?memory.focus.filter(x=>permitted.includes(x)&&(!source||permittedProducts.some(p=>p.sku===x))):ids.slice(0,3);
 }
 export function paymentContext(input,memory={}){
  const state=bankIntent(input,memory),named=state.named;
@@ -55,9 +65,18 @@ function conversationFacts(input,source,memory={}){
 function contextPlan(input,source,memory,model={}){
  const bank=bankIntent(input,memory),buy=buyingIntent(input),focus=candidates(input,memory,source),p=focus.length===1?source.productos.find(p=>p.sku===focus[0]):null;
  const base={...model,facts:[],focus:p?[p.sku]:memory.focus||[],image:null,action:'answer',intent:'other'};
- const warm=fallback=>freeProseSafe(model.say||'')&&/entiendo|entendido|claro|tranquil|busqu|revis|vamos|otra|sin problema|de acuerdo|calma/i.test(model.say||'')&&!/pac[ií]fico|pichincha|diners|guayaquil|amex|intereses|compra|pago|tarjeta/i.test(model.say||'')?model.say:fallback;
+ const warm=fallback=>model.say&&freeProseSafe(model.say)&&! /pac[ií]fico|pichincha|diners|guayaquil|amex|intereses|compra|pago|tarjeta/i.test(model.say)?model.say:fallback;
+ const social=String(input).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z\s]/g,'').trim();
+ if(/^(?:hola|epa|buenas|buenos dias|buenas tardes|buenas noches|que tal|hey)(?:\s+(?:hola|buenas|alex))*$/.test(social))return {...base,focus:memory.focus||[],say:memory.greeted?'¡Por aquí seguimos!':warm('¡Epa! Soy Alex, tu asesor de CONECTATECH. 😊'),ask:p?'¿Qué te gustaría resolver de este equipo?':'¿Qué equipo andas buscando?'};
+ if(/^(?:muchas )?gracias(?: alex)?$|^listo gracias$/.test(social))return {...base,focus:memory.focus||[],say:warm('¡Con gusto! 😊'),ask:''};
  if(buy.deferred)return {...base,say:warm('Claro, vamos con calma. Podemos seguir cuando te venga bien.'),ask:''};
  if(buy.resume)return {...base,say:'¡Retomemos por aquí!',facts:p?[p.sku+'.name']:[],ask:'¿Qué te gustaría aclarar antes de decidir?'};
+ if(purchaseRequested(input)&&p){
+  if(quoteCurrent(source,p)&&p.stock>0)return {...base,say:'',facts:['request'],action:'interest',ask:!memory.payment?'¿Prefieres contado o tarjeta?':!memory.delivery?'¿Prefieres retiro o entrega?':''};
+  return {...base,say:'',facts:[p.sku+'.unavailable'],ask:'¿Quieres revisar otra opción mientras confirmamos?'};
+ }
+ if(/rebaj|descuento|me (?:lo|la).{0,20}barato/i.test(input))return {...base,say:warm(/[😂😅🤣]/u.test(input)?'Jajaja, vamos a cuidar ese presupuesto. 😄':'Revisemos la opción que más te convenga.'),facts:['discount'],ask:memory.budget?'':'¿Qué presupuesto tienes en mente?'};
+ if(/(?:muy |est[aá] |parece |precio.{0,12})car[oa]|se (?:me )?sale.{0,15}presupuesto|no me alcanza/i.test(input))return {...base,say:warm('Entendido, cuidemos tu presupuesto.'),ask:memory.budget?'¿Quieres que revisemos una alternativa?':'¿Hasta qué presupuesto te gustaría llegar?'};
  if(bank.unsupported_bank||memory.last_bank_unsupported&&/banco|meses|cuotas|intereses|planes/i.test(input)){
   const book=factBook(source),price=p&&/precio|cu[aá]nto/i.test(input)?[book[p.sku+'.card']?p.sku+'.card':p.sku+'.card_pending']:[];
   return {...base,intent:'payment',say:'',facts:[...price,'bank_pending'],ask:price.length?'':'¿Quieres comparar con la opción de contado?'};
@@ -73,7 +92,7 @@ function contextPlan(input,source,memory,model={}){
  if(!bank.objection&&focus.length===2&&/compar|diferenc|versus|\bvs\b|\bentre\b|cu[aá]l.{0,20}(?:mejor|recomiendas)/i.test(input)){
   const keys=focus.map(id=>id+'.'+(/bater[ií]a|autonom[ií]a/i.test(input)?'battery':/pantalla/i.test(input)?'screen':'memory'));
   const comparable=keys.every(k=>book[k])?keys:focus.map(id=>book[id+'.benefit']?id+'.benefit':id+'.name');
-  return {...base,say:'',facts:comparable,focus,action:'compare',intent:'compare',ask:focus.every(id=>/^TELF/.test(id))?'¿Cuál te gustaría revisar con más detalle?':''};
+  return {...base,say:warm(''),facts:comparable,focus,action:'compare',intent:'compare',ask:focus.every(id=>/^TELF/.test(id))?(model.ask||'¿Cuál te gustaría revisar con más detalle?'):''};
  }
  if(!bank.objection)return null;
  if(memory.payment==='contado'&&/prefiero|mejor|pago.{0,15}contado/i.test(input)&&p){const book=factBook(source);return {...base,intent:'price',say:'',facts:[book[p.sku+'.cash']?p.sku+'.cash':p.sku+'.cash_pending'],ask:''};}
@@ -200,6 +219,7 @@ function memoryPatch(plan,input,memory){
 export function makePrompt(input,source,memory){
  const facts=conversationFacts(input,source,memory);
  const system=`Eres Alex, tu asesor de CONECTATECH. Conversas en español ecuatoriano cercano, simpático y comercial. Tu trabajo es escuchar y ayudar a elegir, no recitar fichas ni interrogar.
+VOZ Y CRITERIO: habla como un asesor atento y carismático. Humor breve solo cuando el comprador lo propicie; en reclamos o pagos, profesional y directo. No deduzcas emociones con certeza. Reacciona a su comentario antes de volver al producto. Si ya dio uso y presupuesto, ayúdalo a decidir con lo que sabes; no reinicies el interrogatorio ni repitas un menú. Recomienda una opción concreta solo si los hechos la respaldan; una cifra técnica aislada no prueba que sea superior. No fuerces el cierre si todavía está explorando.
 CÓMO CONVERSAR:
 - Responde a lo que acaba de decir el comprador, usando también lo que ya sabes. Una reacción original, cálida o con humor suave cabe en say; adapta el tono y no repitas saludos. Si bromea, puedes seguirle el juego sin inventar experiencias personales.
 - Después aporta la respuesta que necesita. Normalmente basta UN hecho; usa dos solo para una comparación o dos preguntas concretas. Si solo charla, saluda, cuenta una preocupación o expresa indecisión, puedes conversar SIN facts. No repitas un precio o una ficha porque sí.
@@ -210,7 +230,7 @@ DATOS Y SEGURIDAD: precio de contado=cash, tarjeta=card; en plazos con intereses
 CONTEXTO: conserva foco para «ese», banco y entrega. Un cambio explícito corrige la preferencia anterior; preguntar por otra forma de pago no cambia su elección. remember solo guarda preferencias dichas literalmente en el último mensaje; need conserva un fragmento exacto del uso o preocupación relevante, para retomarlo después. stage indica el estado previo, no obliga a cerrar la venta. image identifica el producto exacto al presentarlo o si pide foto, sin repetirla por rutina. Regateo: discount y una reacción original si encaja, sin prometer rebajas. En comparaciones usa un fact por producto y no presentes productos de funciones distintas como sustitutos.
 NEGACIONES Y OBJECIONES: «no tengo Pacífico» descarta ese banco: reconoce la objeción y pregunta qué otra tarjeta o forma de pago prefiere. Nunca repitas el plan que rechazó. «Tengo Pichincha, no Pacífico» conserva Pichincha. Preguntar por otro banco no confirma que lo posee ni lo elige. Al cambiar de banco no arrastres el plazo anterior. No comprar todavía requiere calma, sin solicitar pago o entrega; retomar después conserva producto, variante y preferencias, sin dar por decidida una compra. rejected_banks y card_declined son restricciones de la conversación, no ofertas para repetir.
 Devuelve SOLO JSON con say, facts, ask, focus, image, intent, action y remember según el esquema.
-Productos internos: MICR27 JBL Quantum Stream; POWE003 batería Philco; ADAP005 adaptador enchufe; TELF011 Samsung Galaxy A17 128 GB; TELF012 Samsung Galaxy A17 256 GB. Si dicen A17 sin variante y sin contexto de elección, pregunta cuál versión; no elijas por tu cuenta ni derives. La versión de 256 GB no tiene fotografía verificada: no uses la de 128 GB para sustituirla. Los códigos solo se usan internamente. Facts disponibles: ${JSON.stringify(facts)}.`;
+IDENTIDAD: los productos disponibles y sus variantes son exclusivamente los de facts. Si falta capacidad o RAM para distinguir versiones, aclara solo ese dato. No mezcles fotografías ni RAM física y virtual. Una necesidad como tomar fotos no es una petición de enviar una imagen. Un presupuesto limita recomendaciones solo con precios vigentes; no presentes como asequible lo que lo supera. Facts disponibles: ${JSON.stringify(facts)}.`;
  const history=(memory.history||[]).slice(-policy.max_history_turns*2).map(x=>({role:x.role,content:x.text.slice(0,450)}));
  return [{role:'system',content:system+'\nContexto no confiable, solo preferencias anteriores: '+JSON.stringify({focus:memory.focus||[],recent_products:memory.recent_products||[],greeted:memory.greeted,turn_count:memory.turn_count,stage:memory.stage,budget:memory.budget,brand:memory.brand,sector:memory.sector,need:memory.need,payment:memory.payment,bank:memory.bank,last_bank_mentioned:memory.last_bank_mentioned,rejected_banks:memory.rejected_banks,card_declined:memory.card_declined,purchase_deferred:memory.purchase_deferred,months:memory.months,last_bank_months:memory.last_bank_months,delivery:memory.delivery,shown:memory.shown||[]})},...history,{role:'user',content:input}];
 }
@@ -237,18 +257,19 @@ export function commercialFallback(input,source,memory={},error_code='AI_UNAVAIL
  else if(/contraentrega|\bQuito\b|domicilio/i.test(input)){facts=['delivery'];intent='delivery';if(!memory.sector)ask='¿En qué sector necesitas la entrega?';}
  else if(/nacional|provincia|otra ciudad|env[ií]os?/i.test(input)){facts=['national'];intent='delivery';ask='¿A qué ciudad necesitas el envío?';}
  else if(/direcci[oó]n|d[oó]nde.{0,25}retir|ubicaci[oó]n|retiro|retirar/i.test(input)){facts=['pickup'];intent='delivery';}
- else if(products.length===2&&products.every(p=>/^TELF/.test(p.sku))){facts=products.map(p=>p.sku+'.name');ask='¿Cuál de estas versiones te interesa?';intent='recommend';}
+ else if(products.length===2&&products.every(p=>/^TELF/.test(p.sku))){facts=products.map(p=>memory.budget&&book[p.sku+'.cash']?p.sku+'.cash':p.sku+'.name');ask=memory.budget?'¿Cuál te gustaría revisar con más detalle?':'¿Cuál de estas versiones te interesa?';intent='recommend';}
  else if(p){
   const id=p.sku,price=/precio|cu[aá]nto|cuesta|vale|contado|tarjeta|PVP/i.test(input),spec=/bater[ií]a|capacidad/i.test(input)?'battery':/pantalla/i.test(input)?'screen':/c[aá]mara/i.test(input)?'camera':/\b(?:memoria|almacenamiento|RAM)\b/i.test(input)?'memory':/USB|conexi[oó]n/i.test(input)?'power':/grabaci[oó]n|audio/i.test(input)?'audio':/cardioide|omnidireccional/i.test(input)?'patterns':null;
   if(/disponib|\bstock\b|\btienen\b|\bhay\b/i.test(input)){facts=[book[id+'.stock']?id+'.stock':id+'.unavailable'];}
   else if(price){const type=/tarjeta|PVP/i.test(input)||payment.named||memory.payment==='tarjeta'&&!/contado|efectivo/i.test(input)?'card':'cash',key=id+'.'+type;facts=[p.central_availability&&p.central_availability!=='in_stock'?id+'.unavailable':book[key]?key:id+'.'+type+'_pending'];intent='price';if(!book[key])ask=p.central_availability&&p.central_availability!=='in_stock'?'¿Quieres revisar otra opción?':'¿Quieres que te muestre las características verificadas?';}
   else if(spec&&book[id+'.'+spec]){facts=[id+'.'+spec];}
-  else if(/foto|imagen|banner/i.test(input)){facts=[book[id+'.photo_missing']?id+'.photo_missing':id+'.name'];image=p.foto?id:null;intent='photo';}
+  else if(imageRequested(input)){facts=[book[id+'.photo_missing']?id+'.photo_missing':id+'.name'];image=p.foto?id:null;intent='photo';}
   else {facts=[spec&&book[id+'.details']?id+'.details':book[id+'.benefit']?id+'.benefit':id+'.name'];ask='¿Qué te gustaría revisar de este modelo?';}
  }else{facts=['catalog'];ask='¿Qué modelo o tipo de equipo estás buscando?';}
  const patch=memoryPatch({remember:{}},input,memory),plan=guarded||{say:'',facts,ask,focus:p?[p.sku]:products.length===2?selected:(memory.focus||[]).filter(s=>source.productos.some(p=>p.sku===s)),image,intent,action:'answer'};
  rememberTerms(patch,payment);
- const rendered=renderPlan(plan,source,patch);patch.focus=rendered.focus;patch.greeted=true;patch.stage=patch.stage||'consulta';patch.turn_count=(memory.turn_count||0)+1;
+ const rendered=renderPlan(plan,source,patch);patch.focus=rendered.focus;patch.greeted=true;patch.stage=rendered.action==='interest'?'compra_pendiente':patch.stage||'consulta';patch.turn_count=(memory.turn_count||0)+1;
+ patch.recent_products=[...(memory.recent_products||memory.focus||[]).filter(s=>!patch.focus.includes(s)),...patch.focus].filter(s=>source.productos.some(p=>p.sku===s)).slice(-3);
  patch.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:rendered.text}].slice(-policy.max_history_turns*2);
  return {...rendered,generative:false,model:null,error_code,response_mode:'verified_catalog_fallback',memory:patch};
 }
@@ -261,7 +282,8 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
  }
  if(humanRequested(input))return {text:'Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.',focus:memory.focus||[],action:'handoff',intent:'human',image:null,generative:false,memory:{...memory,history:[...(memory.history||[]),{role:'user',text:input}].slice(-policy.max_history_turns*2)}};
  // Exact factual questions use verified catalog data without spending a model reservation.
- if(env.CATALOG_FIRST==='true'&&!bankIntent(input,memory).objection&&!buyingIntent(input).deferred&&!buyingIntent(input).resume&&(/precio|cu[aá]nto.{0,35}(?:cuesta|vale|sale)|contraentrega|env[ií]os? nacional(?:es)?|direcci[oó]n|foto|fotograf[ií]a|contado|tarjeta|\bPVP\b|disponib|\bstock\b|\btienen\b/i.test(input)||/^[¿]?(?:qu[eé]|cu[aá]nta|dime).{0,45}(?:bater[ií]a|pantalla|c[aá]mara|capacidad|almacenamiento)/i.test(input))){
+ const complex=/compar|diferenc|recomiend|mejor|car[oa]\b|rebaj|descuento|presupuesto|preocup|desconfi|no (?:tengo|quiero|me|entiendes)|\bpero\b|\bpara\b|[😂😅🤣]/iu.test(input)||(input.match(/\?/g)||[]).length>1;
+ if(env.CATALOG_FIRST==='true'&&!complex&&!bankIntent(input,memory).objection&&!buyingIntent(input).deferred&&!buyingIntent(input).resume&&(/precio|cu[aá]nto.{0,35}(?:cuesta|vale|sale)|contraentrega|env[ií]os? nacional(?:es)?|direcci[oó]n|contado|tarjeta|\bPVP\b|disponib|\bstock\b|\btienen\b/i.test(input)||imageRequested(input)||/^[¿]?(?:qu[eé]|cu[aá]nta|dime).{0,45}(?:bater[ií]a|pantalla|c[aá]mara|capacidad|almacenamiento)/i.test(input))){
   const a=commercialFallback(input,source,memory,null);return {...a,error_code:null,response_mode:'verified_catalog'};
  }
  try{
@@ -280,17 +302,17 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   const relevant=conversationFacts(input,context,memory);plan.facts=plan.facts.filter(k=>Object.hasOwn(relevant,k));
   // An approved interest-bearing term cannot be presented as the base PVP alone.
   const knownBank=factBook(context)[payment.bank];
-  const book=factBook(context),requestedPrice=/cu[aá]nto.{0,45}(?:cuesta|vale|sale|pago|pagar)|(?:precio|\bPVP\b)/i.test(input);
-  if(context.productos.length===2&&context.productos.every(p=>/^TELF/.test(p.sku))){plan.facts=context.productos.map(p=>p.sku+'.name');plan.focus=context.productos.map(p=>p.sku);plan.action='recommend';plan.intent='recommend';plan.ask='¿Cuál de estas versiones te interesa?';plan.image=null;}
+  const book=factBook(context),requestedPrice=/cu[aá]nto.{0,45}(?:cuesta|vale|sale|pago|pagar)|(?:precio|\bPVP\b)|\b(?:pago|pagar[eé]|prefiero|mejor)\b.{0,25}\b(?:contado|efectivo|tarjeta)\b/i.test(input);
+  if(context.productos.length===2&&context.productos.every(p=>/^TELF/.test(p.sku))&&!/compar|diferenc|versus|\bvs\b|\bentre\b|recomiend|para\b/i.test(input)&&!memory.need&&!memory.budget){plan.facts=context.productos.map(p=>p.sku+'.name');plan.focus=context.productos.map(p=>p.sku);plan.action='recommend';plan.intent='recommend';plan.ask='¿Cuál de estas versiones te interesa?';plan.image=null;}
   if(context.productos.length===1&&/interesa|busco|elijo|cu[eé]nta|mu[eé]stra/i.test(input)&&!/precio|contado|tarjeta|entrega|env[ií]o/i.test(input)){const sku=context.productos[0].sku;if(!plan.facts.some(k=>k.startsWith(sku+'.'))){plan.facts=[book[sku+'.benefit']?sku+'.benefit':sku+'.name'];}plan.focus=[sku];plan.action='recommend';plan.intent='recommend';}
   if(context.productos.length===1&&statedBudget(input)!==null&&/busco|necesito|recomiend/i.test(input)){const sku=context.productos[0].sku;if(book[sku+'.cash']){plan.facts=[sku+'.cash'];plan.focus=[sku];plan.action='recommend';plan.intent='recommend';}}
-  if(requestedPrice&&context.productos.length===1&&!payment.requires_interest){const sku=context.productos[0].sku,kind=/tarjeta|\bPVP\b/i.test(input)?'card':/contado|efectivo/i.test(input)?'cash':memory.payment==='tarjeta'?'card':'cash',key=sku+'.'+kind;if(book[key]){plan.facts=[key];if(/disponib|\bstock\b|\bhay\b/i.test(input)&&book[sku+'.stock'])plan.facts.push(sku+'.stock');plan.intent='price';plan.action='answer';plan.focus=[sku];}}
+  if(requestedPrice&&context.productos.length===1&&!payment.requires_interest){const p=context.productos[0],sku=p.sku,kind=/tarjeta|\bPVP\b/i.test(input)?'card':/contado|efectivo/i.test(input)?'cash':memory.payment==='tarjeta'?'card':'cash',key=sku+'.'+kind;plan.facts=[p.central_availability&&p.central_availability!=='in_stock'?sku+'.unavailable':book[key]?key:key+'_pending'];if(/disponib|\bstock\b|\bhay\b/i.test(input)&&book[sku+'.stock'])plan.facts.push(sku+'.stock');plan.intent='price';plan.action='answer';plan.focus=[sku];}
   if((payment.months||payment.named&&/intereses|tarjeta|pago|plan|banco|aceptan|diferir|cuotas|^\W*pichincha\W*$|^\W*diners\W*$|^\W*pac[ií]fico\W*$/i.test(input))&&knownBank){plan.facts=[payment.bank];plan.intent='payment';plan.action='answer';plan.image=null;}
   if(payment.requires_interest){plan.facts=['interest'];plan.say='';plan.intent='payment';plan.image=null;plan.action='answer';}
   if(/garant[ií]a/i.test(input)&&!humanRequested(input)){plan.facts=['warranty'];plan.say='';plan.ask='';plan.image=null;plan.action='answer';plan.intent='other';}
   if(bargaining&&!humanRequested(input)){plan.facts=['discount'];plan.action='answer';plan.intent='other';plan.image=null;}
   if(/direcci[oó]n|ubicaci[oó]n|d[oó]nde.{0,35}(?:retir|tienda|local)|(?:est[aá]n|est[aá]) ubicad/i.test(input)){plan.facts=['pickup'];plan.action='answer';plan.intent='delivery';plan.say='';plan.ask='';plan.image=null;}
-  if(/foto|fotograf[ií]a|imagen|banner/i.test(input)&&context.productos.length===1){const sku=context.productos[0].sku;plan.focus=[sku];plan.intent='photo';plan.image=sku;if(!plan.facts.some(k=>k.startsWith(sku+'.')))plan.facts=[sku+'.name'];}
+  if(imageRequested(input)&&context.productos.length===1){const sku=context.productos[0].sku;plan.focus=[sku];plan.intent='photo';plan.image=sku;if(!plan.facts.some(k=>k.startsWith(sku+'.')))plan.facts=[sku+'.name'];}
   if(context.productos.length===1&&plan.intent==='photo'&&!context.productos[0].foto){plan.facts=[context.productos[0].sku+'.photo_missing'];plan.image=null;plan.say='';}
   if(/cardioide|omnidireccional|patr[oó]n(?:es)?/i.test(input)&&context.productos.some(p=>p.sku==='MICR27')){plan.facts=['MICR27.patterns'];plan.focus=['MICR27'];plan.intent='other';plan.action='answer';plan.image=null;}
   if(plan.action==='compare'&&context.productos.length===2){plan.facts=context.productos.map(p=>/usos|sirven.*mismo/i.test(input)?p.sku+'.benefit':plan.facts.find(k=>k.startsWith(p.sku+'.')&&!k.endsWith('.name'))||p.sku+'.benefit');plan.focus=context.productos.map(p=>p.sku);plan.intent='compare';}
@@ -301,9 +323,9 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   const guarded=contextPlan(input,context,memory,plan);if(guarded)Object.assign(plan,guarded);
   const next=memoryPatch(plan,input,memory);rememberTerms(next,payment);
   // An explicit purchase request advances only to an unconfirmed request, using known preferences.
-  if(/\bquiero comprar(?:lo|la)?\b|\bme (?:lo|la) llevo\b/i.test(input)&&!/\bno\s+(?:quiero|me)\b/i.test(input)&&context.productos.length===1&&quoteCurrent(context,context.productos[0])&&context.productos[0].stock>0){plan.action='interest';plan.focus=[context.productos[0].sku];plan.facts=['request'];plan.image=null;plan.ask=!next.payment?'¿Prefieres contado o tarjeta?':!next.delivery?'¿Prefieres retiro o entrega?':'';}
+  if(purchaseRequested(input)&&context.productos.length===1&&quoteCurrent(context,context.productos[0])&&context.productos[0].stock>0){plan.action='interest';plan.focus=[context.productos[0].sku];plan.facts=['request'];plan.image=null;plan.ask=!next.payment?'¿Prefieres contado o tarjeta?':!next.delivery?'¿Prefieres retiro o entrega?':'';}
   const result=renderPlan(plan,context,next);next.focus=result.focus.length?result.focus:memory.focus||[];const changedFocus=JSON.stringify(next.focus)!==JSON.stringify(memory.focus||[]);next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':exploring||changedFocus?'consulta':next.stage||'consulta';
-  next.recent_products=[...(memory.recent_products||memory.focus||[]).filter(s=>!next.focus.includes(s)),...next.focus].filter(s=>ids.includes(s)).slice(-3);next.greeted=true;next.turn_count=(memory.turn_count||0)+1;
+  next.recent_products=[...(memory.recent_products||memory.focus||[]).filter(s=>!next.focus.includes(s)),...next.focus].filter(s=>source.productos.some(p=>p.sku===s)).slice(-3);next.greeted=true;next.turn_count=(memory.turn_count||0)+1;
   next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:result.text}].slice(-policy.max_history_turns*2);
   return {...result,memory:next};
  }catch(error){

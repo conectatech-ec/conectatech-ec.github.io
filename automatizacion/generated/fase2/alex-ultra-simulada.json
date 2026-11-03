@@ -1,0 +1,581 @@
+{
+  "schema": "conectatech.alex.ultra.synthetic.v1",
+  "passed": true,
+  "synthetic": true,
+  "real_AI": false,
+  "real_customer_conversation": false,
+  "provider_calls": 0,
+  "messages_sent": 0,
+  "turns": [
+    {
+      "input": "Hola buenas 😊",
+      "text": "¡Epa! Soy Alex, tu asesor de CONECTATECH. 😊\n¿Qué equipo andas buscando?",
+      "focus": [],
+      "intent": "other",
+      "action": "answer",
+      "facts": [],
+      "buttons": [
+        "Busco un micrófono",
+        "Busco una batería",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Busco un Redmi 15C de 128 GB",
+      "text": "Redmi 15C 128 GB / 4 GB RAM: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [
+        "TELF017.benefit"
+      ],
+      "buttons": [
+        "Ver fotografía",
+        "Precio de contado",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Mi presupuesto es de 180 dólares",
+      "text": "Redmi 15C 128 GB / 4 GB RAM: 128 GB de almacenamiento para tus fotos y aplicaciones.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [
+        "TELF017.benefit"
+      ],
+      "buttons": [
+        "Ver fotografía",
+        "Precio de contado",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Lo necesito para trabajar, tomar fotos y WhatsApp",
+      "text": "Redmi 15C 128 GB / 4 GB RAM: 128 GB de almacenamiento para tus fotos y aplicaciones.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [
+        "TELF017.benefit"
+      ],
+      "buttons": [
+        "Ver fotografía",
+        "Precio de contado",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "¿Qué batería tiene ese?",
+      "text": "Redmi 15C 128 GB / 4 GB RAM: batería 6000 mAh.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [
+        "TELF017.battery"
+      ],
+      "buttons": [
+        "Ver fotografía",
+        "Precio de contado",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "¿Y cuánto cuesta de contado?",
+      "text": "💵 Redmi 15C 128 GB / 4 GB RAM: $159.90 en PROMO CONTADO.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "price",
+      "action": "answer",
+      "facts": [
+        "TELF017.cash"
+      ],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "¿Y con tarjeta?",
+      "text": "💳 Redmi 15C 128 GB / 4 GB RAM: $199.88 con tarjeta, más intereses cuando correspondan.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "price",
+      "action": "answer",
+      "facts": [
+        "TELF017.card"
+      ],
+      "buttons": [
+        "Precio de contado",
+        "Retiro en tienda",
+        "Entrega en Quito"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Pero no tengo tarjeta Pacífico",
+      "text": "Entendido, buscamos otra opción.\n¿Con qué otra tarjeta o forma de pago te gustaría seguir?",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "payment",
+      "action": "answer",
+      "facts": [],
+      "buttons": [
+        "Otra tarjeta",
+        "Precio de contado",
+        "Características"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Tengo Pichincha",
+      "text": "💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "payment",
+      "action": "answer",
+      "facts": [
+        "bank_terms_pending"
+      ],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "tarjeta",
+        "bank": "pichincha",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "¿A seis meses?",
+      "text": "💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "payment",
+      "action": "answer",
+      "facts": [
+        "bank_terms_pending"
+      ],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "tarjeta",
+        "bank": "pichincha",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Mejor pago al contado",
+      "text": "💵 Redmi 15C 128 GB / 4 GB RAM: $159.90 en PROMO CONTADO.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "price",
+      "action": "answer",
+      "facts": [
+        "TELF017.cash"
+      ],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Quiero entrega en Quito",
+      "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.\n¿En qué sector necesitas la entrega?",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "delivery",
+      "action": "answer",
+      "facts": [
+        "delivery"
+      ],
+      "buttons": [
+        "Continuar compra",
+        "Ver fotografía",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Estoy en La Carolina, Quito",
+      "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "delivery",
+      "action": "answer",
+      "facts": [
+        "delivery"
+      ],
+      "buttons": [
+        "Continuar compra",
+        "Ver fotografía",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "¿Y si fuera envío nacional?",
+      "text": "🛵 Envíos nacionales con costo adicional; confirmamos pago y condiciones antes de comprar.\n¿A qué ciudad necesitas el envío?",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "delivery",
+      "action": "answer",
+      "facts": [
+        "national"
+      ],
+      "buttons": [
+        "Continuar compra",
+        "Ver fotografía",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Muéstrame la fotografía",
+      "text": "Redmi 15C 128 GB / 4 GB RAM",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "photo",
+      "action": "answer",
+      "facts": [
+        "TELF017.name"
+      ],
+      "buttons": [
+        "Precio de contado",
+        "Precio con tarjeta",
+        "Características"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "¿Me haces una rebajita? 😂",
+      "text": "Jajaja, vamos a cuidar ese presupuesto. 😄\nLa oferta de contado publicada es la autorizada; un descuento adicional necesita aprobación.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [
+        "discount"
+      ],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "No compraré todavía",
+      "text": "Claro, vamos con calma. Podemos seguir cuando te venga bien.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": true
+      }
+    },
+    {
+      "input": "Quiero continuar después",
+      "text": "Claro, vamos con calma. Podemos seguir cuando te venga bien.",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": true
+      }
+    },
+    {
+      "input": "Sigamos con ese celular",
+      "text": "¡Retomemos por aquí!\n¿Qué te gustaría aclarar antes de decidir?",
+      "focus": [
+        "TELF017"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "¿Y el de 256 GB?",
+      "text": "💵 Redmi 15C 256 GB / 4 GB RAM: $175.90 en PROMO CONTADO.\nRedmi 15C 256 GB / 8 GB RAM\n¿Cuál te gustaría revisar con más detalle?",
+      "focus": [
+        "TELF018",
+        "TELF019"
+      ],
+      "intent": "recommend",
+      "action": "answer",
+      "facts": [
+        "TELF018.cash",
+        "TELF019.name"
+      ],
+      "buttons": [
+        "Redmi 256 GB / 4 GB",
+        "Redmi 256 GB / 8 GB",
+        "Hablar con persona"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Prefiero el Redmi 15C de 256 GB con 4 GB de RAM",
+      "text": "Redmi 15C 256 GB / 4 GB RAM: 256 GB de almacenamiento, 4 GB de RAM física.",
+      "focus": [
+        "TELF018"
+      ],
+      "intent": "other",
+      "action": "answer",
+      "facts": [
+        "TELF018.memory"
+      ],
+      "buttons": [
+        "Ver fotografía",
+        "Precio de contado",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "¿Y con tarjeta el de 256 GB?",
+      "text": "💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.",
+      "focus": [
+        "TELF018"
+      ],
+      "intent": "payment",
+      "action": "answer",
+      "facts": [
+        "bank_terms_pending"
+      ],
+      "buttons": [
+        "Características",
+        "Ver fotografía",
+        "Precio con tarjeta"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "quito",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Quiero comprar ese, prefiero retiro en tienda",
+      "text": "Avancemos con tu compra; todavía debe confirmarla un vendedor.",
+      "focus": [
+        "TELF018"
+      ],
+      "intent": "other",
+      "action": "interest",
+      "facts": [
+        "request"
+      ],
+      "buttons": [
+        "Hablar con persona",
+        "Ver fotografía"
+      ],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "retiro",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    },
+    {
+      "input": "Necesito hablar con una persona",
+      "text": "Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.",
+      "focus": [
+        "TELF018"
+      ],
+      "intent": "human",
+      "action": "handoff",
+      "buttons": [],
+      "memory": {
+        "budget": 180,
+        "need": "trabajar, tomar fotos y WhatsApp",
+        "payment": "contado",
+        "bank": null,
+        "delivery": "retiro",
+        "sector": "La Carolina",
+        "purchase_deferred": false
+      }
+    }
+  ]
+}

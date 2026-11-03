@@ -42,10 +42,33 @@ export function csvRows(text){
  return rows.map(row=>Object.fromEntries(header.map((k,i)=>[k,row[i]])));
 }
 const fold=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-export function catalogMatches(query,products){
- const q=fold(query).replace(/\bredmi\s*15\s*c\b/g,'redmi 15c').replace(/\b15\s+c\b/g,'15c'),exact=products.filter(p=>new RegExp('\\b'+p.sku.toLowerCase()+'\\b').test(q));if(exact.length)return exact.slice(0,2);
- const models=(q.match(/\b(?:[a-z]{1,12}\d+[a-z0-9]*|\d+[a-z]{1,5})\b/g)||[]).filter(x=>!/^telf\d+|^gb\d+|^\d+(?:gb|mah|w)$/.test(x));if(!models.length)return [];
+export function catalogMatches(query,products,{focus=[]}={}){
+ const q=fold(query).replace(/\bredmi\s*15\s*c\b/g,'redmi 15c').replace(/\b15\s+c\b/g,'15c')
+  .replace(/\b(\d{2,4})\s*\/\s*(\d{1,2})\s*gb\b/g,'$1 gb $2 gb ram');
+ const exact=products.filter(p=>new RegExp('\\b'+p.sku.toLowerCase()+'\\b').test(q));if(exact.length)return exact.slice(0,2);
+ const modelTokens=text=>(text.match(/\b(?:[a-z]{1,12}\d+[a-z0-9]*|\d+[a-z]{1,5})\b/g)||[]).filter(x=>!/^telf\d+|^gb\d+|^\d+(?:gb|mah|w)$/.test(x));
+ let models=modelTokens(q);
  const label=p=>fold([p.nombre,p.public_name,p.catalog_identity].filter(Boolean).join(' '));
+ // Resolve capacity-only follow-ups against the already selected model family.
+ // Distinct model families remain ambiguous instead of silently switching phones.
+ if(!models.length&&/\b\d+\s*gb\b/.test(q)){
+  const prior=products.filter(p=>focus.includes(p.sku));
+  const common=prior.length?modelTokens(label(prior[0])).filter(m=>prior.every(p=>new RegExp('\\b'+m+'\\b').test(label(p)))):[];
+  if(!common.length)return [];
+  models=[common[0]];
+ }
+ if(!models.length)return [];
+ // A capacity belongs to its product mention, not to every product in a comparison.
+ // Keep an ambiguous group together (e.g. Redmi256 / 4GB vs 8GB) for clarification.
+ const starts='(?:(?:el|la|un|una)\\s+)?(?:samsung|galaxy|redmi|xiaomi|zte|infinix|jbl|philco|'+models.join('|')+')\\b';
+ const clauses=q.split(new RegExp('\\b(?:vs|versus|frente a|contra)\\b|\\s+(?:y|con|o)\\s+(?='+starts+')','i')).filter(s=>modelTokens(s).some(m=>models.includes(m)));
+ if(clauses.length>1){
+  const groups=clauses.map(s=>catalogMatches(s,products,{focus})).filter(g=>g.length);
+  if(groups.length>1){
+   const ambiguous=groups.find(g=>g.length>1);if(ambiguous)return ambiguous;
+   return [...new Map(groups.flat().map(p=>[p.sku,p])).values()].slice(0,2);
+  }
+ }
  let matches=products.filter(p=>models.some(m=>new RegExp('\\b'+m+'\\b').test(label(p))));
  const brands=['infinix','redmi','xiaomi','zte','samsung','jbl','philco'].filter(b=>new RegExp('\\b'+b+'\\b').test(q));
  if(brands.length)matches=matches.filter(p=>brands.some(b=>new RegExp('\\b'+b+'\\b').test(label(p))));
@@ -71,10 +94,10 @@ export async function refreshAlexCatalog(seed=alexBaseline,fetcher=fetch,now=Dat
   if(centralData.presentation){try{centralData=await bindPresentation(centralData,centralData.presentation,now);}catch{presentationError='PRESENTATION_REJECTED';centralData=lastValidPresentation(centralData);}}
   else centralData=lastValidPresentation(centralData);
   const extended={...seed,productos:[...seed.productos,...pilotProducts.filter(p=>centralData.products.some(c=>c.sku===p.sku)&&!seed.productos.some(s=>s.sku===p.sku))]};
-  const source=sourceToAlex(extended,centralData,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
+  const source=sourceToAlex(extended,centralData,products=>{const current=catalogMatches(input,products,{focus});return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
   return {...source,presentation_error_code:presentationError,shared_hub_status:centralData.shared_hub_status||null};
  }
- const source=await readCatalogSnapshot(seed,fetcher,now,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},true);
+ const source=await readCatalogSnapshot(seed,fetcher,now,products=>{const current=catalogMatches(input,products,{focus});return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},true);
  let inventory=[],snapshot=null;
  try{snapshot=await inventorySnapshot(fetcher,now);inventory=snapshot.rows;}catch{/* Missing provenance blocks quotes, never the technical catalogue or logistics. */}
  for(const p of source.productos){const matches=inventory.filter(r=>r.sku===p.sku),r=matches[0];p.price_verified=matches.length===1&&Number(r.promo_contado)===p.promo&&Number(r.pvp_final)===p.pvp&&Number(r.stock)===p.stock;}

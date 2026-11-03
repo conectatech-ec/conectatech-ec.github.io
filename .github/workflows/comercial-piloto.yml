@@ -53,6 +53,8 @@ jobs:
       - run: node automatizacion/tests/alex-commercial.test.mjs
       - run: node automatizacion/tests/alex-samsung.test.mjs
       - run: node automatizacion/tests/alex-objections.test.mjs
+      - run: node automatizacion/tests/alex-catalog-selection.test.mjs
+      - run: node automatizacion/tests/alex-ultra-conversation.test.mjs
       - run: node automatizacion/tests/alex-presentation.test.mjs
         env:
           ALEX_PUBLIC_HELPERS_REFERENCE: ${{ github.workspace }}/qa-public-reference

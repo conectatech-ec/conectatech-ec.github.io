@@ -2,6 +2,18 @@ const fold=t=>String(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLo
 const words={uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,quince:15,veinte:20,veinticinco:25,treinta:30,cuarenta:40,cincuenta:50,sesenta:60,setenta:70,ochenta:80,noventa:90,cien:100,doscientos:200,trescientos:300,quinientos:500,mil:1000};
 const vagueSector=/^(?:quito|guayaquil|ecuador|celular|telefono|casa|domicilio|tarjeta|contado|bateria|microfono|producto)$/;
 export const bankNames={pacifico:'Pacífico',guayaquil_amex:'Guayaquil / American Express',diners:'Diners',pichincha:'Pichincha'};
+const brandLabels={samsung:'Samsung',redmi:'Redmi',xiaomi:'Redmi',zte:'ZTE',infinix:'Infinix',jbl:'JBL',philco:'Philco'};
+export function brandIntent(input,memory={}){
+ const text=fold(input),mentions=[];
+ for(const clause of text.split(/\b(?:pero|sino|aunque|en cambio)\b|[,;.!?¿]/))for(const m of clause.matchAll(/\b(?:samsung|redmi|xiaomi|zte|infinix|jbl|philco)\b/g)){
+  const before=clause.slice(0,m.index),denied=/\b(?:no|tampoco)\s*(?:(?:quiero|prefiero|busco|uso|me gusta|me interesa)\s+)?(?:un(?:a)?\s+)?$/.test(before);
+  const chosen=!denied&&/\b(?:prefiero|quiero|busco|mejor|elijo|me quedo con)\b/.test(before)&&! /\b(?:si|y si|no se)\b/.test(before);
+  mentions.push({brand:brandLabels[m[0]],denied,chosen});
+ }
+ const rejected=new Set(memory.rejected_brands||[]);for(const m of mentions)if(m.denied)rejected.add(m.brand);
+ const chosen=mentions.filter(m=>m.chosen).at(-1)?.brand||null;if(chosen)rejected.delete(chosen);
+ return {chosen,rejected:[...rejected].slice(-7),positive:mentions.filter(m=>!m.denied).map(m=>m.brand)};
+}
 const bankPattern=/\b(?:pacifico|guayaquil|american express|amex|diners|pichincha)\b/g;
 const bankId=s=>/pacifico/.test(s)?'pacifico':/guayaquil|express|amex/.test(s)?'guayaquil_amex':/diners/.test(s)?'diners':'pichincha';
 export function bankIntent(input,memory={}){
@@ -29,10 +41,23 @@ export function buyingIntent(input){
  const resume=!deferred&&/\b(?:sigamos|continuemos|retomemos|quiero continuar|quiero seguir|podemos seguir|quiero retomar|volvi|ya volvi)\b/.test(text);
  return {deferred,resume};
 }
+export function purchaseRequested(input){
+ if(buyingIntent(input).deferred)return false;
+ return fold(input).split(/\bpero\b|[;.!?]/).some(clause=>{
+  const m=clause.match(/\b(?:quiero comprar(?:lo|la)?|me (?:lo|la) llevo)\b/);
+  return m&&!/\bno\s*$/.test(clause.slice(0,m.index));
+ });
+}
+export function imageRequested(input){
+ const text=fold(input);
+ if(/\b(?:tomar|sacar|hacer|editar)\s+(?:buenas\s+)?fotos\b/.test(text)&&!/muestra|enviame|mandame|quiero ver|ver (?:una |la )?foto/.test(text))return false;
+ return /\b(?:foto(?:grafia)?s?|imagen(?:es)?|banner)\b/.test(text)&&/muestra|ensena|envi|manda|quiero ver|puedo ver|ver (?:una |la )?foto|foto (?:de|del)|^(?:la |una )?(?:foto|fotografia|imagen|banner)\W*$/.test(text);
+}
 export function statedBudget(input){
  const text=fold(input),amount='(?:\\d{1,5}(?:[.,]\\d{1,2})?|'+Object.keys(words).join('|')+')';
  const pattern=new RegExp('(?:presupuesto(?:\\s+(?:ahora|maximo|es|de|hasta|son)){0,3}|puedo gastar|quiero gastar|no mas de|maximo de|hasta)\\s*\\$?\\s*('+amount+')(?!\\d|[.,]\\d)\\b','g');
- const matches=[...text.matchAll(pattern)];if(!matches.length)return null;
+ const colloquial=new RegExp('(?:tengo|dispongo de|cuento con|puedo invertir)\\s+(?:unos?\\s+)?(?:\\$\\s*('+amount+')|('+amount+')\\s*(?:dolares|usd|\\$))','g');
+ const matches=[...text.matchAll(pattern),...[...text.matchAll(colloquial)].map(m=>Object.assign([m[0],m[1]||m[2]],{index:m.index}))].sort((a,b)=>a.index-b.index);if(!matches.length)return null;
  const raw=matches.at(-1)[1],n=words[raw]||Number(raw.replace(',','.'));return n>0&&n<100000?n:null;
 }
 export function mergePreferences(input,proposed={},memory={}){
@@ -49,6 +74,11 @@ export function mergePreferences(input,proposed={},memory={}){
   if(key==='brand'&&/^(?:celular|telefono|bateria|microfono|producto|tarjeta|contado)$/.test(value))continue;
   next[key]=proposed[key];
  }
+ const brand=brandIntent(input,memory);next.rejected_brands=brand.rejected;
+ if(brand.rejected.some(b=>fold(b)===fold(next.brand)))delete next.brand;
+ if(brand.chosen)next.brand=brand.chosen;
+ const usage=String(input).match(/\b(?:necesito|quiero|uso|usar[eé]|busco)\b.{0,25}?\bpara\s+([^.;?!\n]{3,100})/i);
+ if(usage&&/trabaj|estudi|juga|fotos|whatsapp|grabar|clases|llamada|stream|redes|podcast/i.test(usage[1]))next.need=usage[1].trim();
  const location=String(input).match(/\b(?:estoy|vivo|me encuentro|estamos)\s+(?:en|por)\s+([^.;?!\n]{2,70})|\b(?:sector|barrio|zona)\s*(?:es\s+|de\s+)?([^.;?!\n]{2,70})/i);
  if(location){const value=(location[1]||location[2]).split(',')[0].replace(/\s+(?:Quito|Guayaquil)$/i,'').trim();if(value.length>=2&&value.length<=60&&!vagueSector.test(fold(value))&&!/\b(?:no se|todavia|busco|quiero|presupuesto)\b/i.test(value))next.sector=value;}
  const payments=[...text.matchAll(/(?:pago|pagare|prefiero(?:\s+pagar)?|mejor|quiero pagar|usare|comprar(?:lo|la)?)\s+(?:(?:al|en|con)\s+)?(contado|tarjeta|efectivo)\b/g)].filter(m=>{
