@@ -6,6 +6,7 @@ import re
 from functools import lru_cache
 from datetime import datetime, timezone
 from pathlib import Path
+from presentacion_sellada import authorized as sealed_authorized
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTH = {'original verificado', 'genérico/compatible', 'por verificar'}
@@ -39,7 +40,8 @@ def rule(sku, root=ROOT):
     if required:
         value['marcas_excluidas_imagen'] = sorted(required)
         value['variantes_marcas_excluidas'] = {b:policy[b]['variantes'] for b in required}
-    if registry.get('politica_general', {}).get('presentacion_obligatoria') == 'sin caja':
+    if registry.get('politica_general', {}).get('presentacion_obligatoria') == 'sin caja' and not (
+            value.get('presentacion')=='con caja' and sealed_authorized(root,sku)):
         value['presentacion'] = 'sin caja'
     if value['autenticidad'] not in AUTH or value['presentacion'] not in PRESENT:
         raise ValueError('Regla inválida: '+sku)
@@ -192,7 +194,8 @@ def apply_rows(rows, apply=False, root=ROOT):
             # Vacío conserva la regla anterior. Para borrar instrucciones usar [BORRAR].
             if row[k].strip(): new[k]='' if row[k].strip()=='[BORRAR]' else row[k].strip()
         if new['autenticidad'] not in AUTH or new['presentacion'] not in PRESENT: raise ValueError('Valores inválidos: '+sku)
-        if db.get('politica_general', {}).get('presentacion_obligatoria') == 'sin caja' and new['presentacion'] != 'sin caja':
+        if db.get('politica_general', {}).get('presentacion_obligatoria') == 'sin caja' and new['presentacion'] != 'sin caja' and not (
+                new['presentacion']=='con caja' and sealed_authorized(root,sku)):
             raise ValueError('La política comercial vigente exige SIN CAJA: '+sku)
         if new['autenticidad']=='original verificado' and not new['evidencia_autenticidad']:
             raise ValueError('Original verificado requiere evidencia explícita; un logotipo no es evidencia')

@@ -12,12 +12,14 @@ editorial=importlib.util.module_from_spec(spec);spec.loader.exec_module(editoria
 def digest(value):
     return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 
-def refresh_rule_revisions(state, registry):
+def refresh_rule_revisions(state, registry, root=ROOT):
     """Compara revisiones, sin repetir lectura visual ni investigación del catálogo."""
     changed=[]
     for sku,entry in state['productos'].items():
         revision=registry.get('productos',{}).get(sku,{}).get('revision')
         entry['revision_regla']=revision
+        configured=registry.get('productos',{}).get(sku,{})
+        entry['presentacion']='con caja' if (configured.get('presentacion')=='con caja' and reglas_sku.sealed_authorized(root,sku))else'sin caja'
         production=entry.get('produccion',{})
         if production and production.get('revision_regla_revisada')!=revision:
             changed.append(sku)
