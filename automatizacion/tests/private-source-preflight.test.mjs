@@ -118,3 +118,55 @@ test('existing tester transport is preserved only with private authorized scope 
  const forged={...pre};delete forged.tester_transport_enabled;
  assert.equal((await auditPrivateSource({getJson:get,phase:'post',expectedRelease:'old-release',previous:forged})).error,'PREVIOUS_RECEIPT_INVALID');
 });
+
+function runtimeFixture(){
+ const f=fixture();
+ const data={schema:'conectatech.commercial.v1',source:{sha256:'a'.repeat(64),cut_date:'2026-11-02',generated_at:'2026-11-02T22:48:22Z'},
+   normalized_at:'2026-11-02T23:00:00Z',expires_at:'2026-11-03T22:48:22Z',published_at:null,
+   products:[{sku:'SYNTHETIC01',source_name:'SYNTHETIC_PRIVATE_IDENTITY',name:'SYNTHETIC_PRIVATE_NAME',variant_gb:[],
+     availability:'in_stock',blocked_reasons:[],prices:{currency:'USD',promo_cash_cents:1234567,pvp_card_cents:2345678}}]};
+ const status=()=>({schema:data.schema,source_sha256:data.source.sha256,cut_date:data.source.cut_date,
+   generated_at:data.source.generated_at,expires_at:data.expires_at,products:data.products.length});
+ const get=async(url,options)=>{
+   if(url.endsWith('/commercial/catalog/status'))return status();
+   if(url.endsWith('/commercial/catalog'))return structuredClone(data);
+   const value=await f.get(url,options);
+   if(url.endsWith('/health'))value.messenger_outbound=true;
+   if(url.endsWith('/messenger/status'))value.outbound_enabled=true;
+   if(url.endsWith('/messenger/seller/status'))value.enabled=true;
+   return value;
+ };
+ return {data,get};
+}
+test('new private source gate attests authenticated metadata and structure; full equality belongs to deployer RAM',async()=>{
+ const f=runtimeFixture();
+ const pre=await auditPrivateSource({getJson:f.get,now});
+ assert.equal(pre.ok,true);assert.equal(pre.scope,'authenticated_runtime');assert.equal(pre.tester_transport_enabled,true);
+ assert.equal(pre.comparison_policy,'metadata_only_authenticated_runtime');assert.equal(pre.equal_except_published_at,false);
+ assert.equal(pre.full_comparison_deferred_to_deployer,true);assert.equal(pre.catalog_structure_validated,true);
+ assert.equal(pre.original_expiry_preserved,false);assert.equal(pre.expiry_matches_metadata,true);
+ for(const value of ['SYNTHETIC_PRIVATE_IDENTITY','SYNTHETIC_PRIVATE_NAME','1234567','2345678'])assert.ok(!JSON.stringify(pre).includes(value));
+ // A metadata receipt explicitly makes no cross-deployment identity comparison.
+ f.data.products[0].source_name='SYNTHETIC_PRIVATE_CHANGED';
+ const post=await auditPrivateSource({getJson:f.get,phase:'post',expectedRelease:'old-release',previous:pre,now});
+ assert.equal(post.ok,true);assert.equal(post.equal_except_published_at,false);assert.equal(post.original_expiry_preserved,true);
+ assert.equal(post.full_comparison_deferred_to_deployer,true);
+});
+test('new source post requires pre metadata and rejects concurrent replacements or partial pre receipts',async()=>{
+ const f=runtimeFixture();const pre=await auditPrivateSource({getJson:f.get,now});
+ assert.match((await auditPrivateSource({getJson:f.get,phase:'post',expectedRelease:'old-release',now})).error,/PREVIOUS_RECEIPT_REQUIRED|TESTER_TRANSPORT_CHANGED/);
+ const partial={...pre};delete partial.runtime_source_metadata;
+ assert.equal((await auditPrivateSource({getJson:f.get,phase:'post',expectedRelease:'old-release',previous:partial,now})).error,'PREVIOUS_RECEIPT_INVALID');
+ f.data.source.sha256='b'.repeat(64);
+ assert.equal((await auditPrivateSource({getJson:f.get,phase:'post',expectedRelease:'old-release',previous:pre,now})).error,'PREVIOUS_SOURCE_METADATA_CHANGED');
+});
+test('new runtime structure rejects relabelled dates, duplicate identity, private columns and invalid prices without values',async()=>{
+ for(const mutate of [
+  d=>d.source.cut_date='2026-11-01',d=>d.expires_at='2099-01-01T00:00:00Z',
+  d=>d.products.push(structuredClone(d.products[0])),d=>d.products[0].stock=1234567,
+  d=>d.products[0].prices.promo_cash_cents=true,d=>d.products[0].variant_gb=['PRIVATE_MUTATION'],
+ ]){
+  const f=runtimeFixture();mutate(f.data);const receipt=await auditPrivateSource({getJson:f.get,now});
+  assert.equal(receipt.ok,false);assert.ok(!JSON.stringify(receipt).includes('PRIVATE_MUTATION'));assert.ok(!JSON.stringify(receipt).includes('1234567'));
+ }
+});

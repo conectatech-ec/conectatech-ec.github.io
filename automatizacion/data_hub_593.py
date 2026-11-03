@@ -134,7 +134,7 @@ def verify_alex(out):
         with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as summary: summary.write('\n'.join(lines)+'\n')
     print(json.dumps({'hub_version':version(data), 'alex_source_verified':matches,
         'channels_pending':len(manifest['alerts']), 'fully_automated':False,
-        'receipt':receipt}))
+        'receipt_verified':matches,'commercial_signature_logged':False}))
     if not matches: raise RuntimeError('ALEX_SOURCE_NOT_CURRENT')
 
 if __name__ == '__main__':

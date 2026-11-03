@@ -67,6 +67,15 @@ test('Transport errors containing a credential URL are replaced by a fixed code 
 });
 
 function receipt(enabled=false){return {schema:'conectatech.private-source-gate.v1',phase:'pre',ok:true,audit_only:true,catalog_http_200:true,source_stable:true,equal_except_published_at:true,original_expiry_preserved:true,general_reception_enabled:false,tester_transport_enabled:enabled};}
+test('metadata-only runtime pre receipt truthfully defers full body comparison and preserves tester baseline',()=>{
+ const runtime={...receipt(true),scope:'authenticated_runtime',comparison_policy:'metadata_only_authenticated_runtime',
+   equal_except_published_at:false,original_expiry_preserved:false,full_comparison_deferred_to_deployer:true,
+   catalog_structure_validated:true,source_metadata_stable:true,expiry_matches_metadata:true};
+ assert.equal(expectedTesterOutboundFromReceipt(runtime),true);
+ for(const key of ['scope','comparison_policy','full_comparison_deferred_to_deployer','catalog_structure_validated','source_metadata_stable','expiry_matches_metadata']){
+  const partial={...runtime};delete partial[key];assert.throws(()=>expectedTesterOutboundFromReceipt(partial),/PREFLIGHT_RECEIPT/);
+ }
+});
 test('A complete successful pre receipt is the only CLI baseline source; default remains false',async()=>{
  for(const enabled of [false,true]){const r=receipt(enabled);assert.equal(expectedTesterOutboundFromReceipt(r),enabled);let reads=0;assert.equal(await readTesterBaseline(PRIVATE_SOURCE_PREFLIGHT_PATH,async path=>{reads++;assert.equal(path,PRIVATE_SOURCE_PREFLIGHT_PATH);return JSON.stringify(r);}),enabled);assert.equal(reads,1);}
  const h=harness({outbound:true});await assert.rejects(runClosedIngressProbe(options(h)),/TESTER_STATE_CHANGED/);assert.ok(h.calls.every(c=>c.method!=='POST'));

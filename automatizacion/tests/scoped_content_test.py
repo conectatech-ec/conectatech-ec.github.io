@@ -161,6 +161,12 @@ class MultipartContract(unittest.TestCase):
         self.assertEqual(get_part(changed,'asset.wasm'),get_part(original,'asset.wasm'))
 
 class ScopedDeploymentContract(unittest.TestCase):
+    def test_inspect_reports_original_source_freshness_and_observation_time_without_renewing(self):
+        for day,expected in [(1,False),(2,True)]:
+            runtime=Runtime();runtime.bundle=bundle(source('a',day));before=copy.deepcopy(runtime.bundle)
+            report=runtime.client().inspect()
+            self.assertIs(report['source_fresh'],expected);self.assertEqual(report['observed_at'],'2026-11-03T21:00:00Z')
+            self.assertTrue(scoped.same_bundle(before,runtime.bundle));self.assertEqual(runtime.puts,[])
     def test_inspect_has_no_put_no_receiver_trigger_and_no_private_body_or_fingerprint_receipt(self):
         runtime=Runtime();report=runtime.client().inspect()
         self.assertEqual(runtime.puts,[]);self.assertEqual(report['worker_puts'],0);self.assertTrue(report['read_only'])

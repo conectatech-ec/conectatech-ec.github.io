@@ -45,6 +45,35 @@ function validateStatus(status, expected, stage) {
   const count = Object.keys(EXPECTED).filter(key => status?.[key] !== expected[key]).length;
   if (count) fail(`STATUS_${stage}_SOURCE_MISMATCH`, {categories:['source_metadata'], mismatching_field_count:count});
 }
+function metadataFromStatus(status) {
+  return Object.fromEntries(Object.keys(EXPECTED).map(key=>[key,status?.[key]]));
+}
+function validateMetadata(metadata) {
+  const generated=Date.parse(metadata?.generated_at),expires=Date.parse(metadata?.expires_at);
+  if(metadata?.schema!=='conectatech.commercial.v1'||!/^[a-f0-9]{64}$/.test(metadata.source_sha256||'')||
+     !/^\d{4}-\d{2}-\d{2}$/.test(metadata.cut_date||'')||!Number.isFinite(generated)||
+     expires!==generated+86400000||new Date(generated-5*3600000).toISOString().slice(0,10)!==metadata.cut_date||
+     !Number.isSafeInteger(metadata.products)||metadata.products<1||metadata.products>5000)fail('SOURCE_METADATA_INVALID');
+}
+function validatePrivateStructure(data,now) {
+  const metadata=summary(data);validateMetadata(metadata);
+  if(Date.parse(metadata.generated_at)>now.getTime()+300000)fail('SOURCE_DATE_INVALID');
+  const seen=new Set();
+  for(const product of data.products){
+    if(!product||typeof product!=='object'||!/^[A-Z0-9_-]{3,40}$/.test(product.sku||'')||seen.has(product.sku)||
+       typeof product.source_name!=='string'||!product.source_name||typeof product.name!=='string'||!product.name||
+       !Array.isArray(product.variant_gb)||product.variant_gb.some(n=>!Number.isSafeInteger(n)||n<0)||
+       !['in_stock','out_of_stock','blocked'].includes(product.availability)||
+       !Array.isArray(product.blocked_reasons)||product.blocked_reasons.some(x=>typeof x!=='string'))fail('CATALOG_STRUCTURE_INVALID');
+    seen.add(product.sku);
+    if(['stock','cost','quantity'].some(key=>Object.hasOwn(product,key)))fail('CATALOG_PRIVATE_FIELD');
+    if(product.availability!=='blocked'){
+      const prices=product.prices;
+      if(prices?.currency!=='USD'||![prices.promo_cash_cents,prices.pvp_card_cents].every(n=>Number.isSafeInteger(n)&&n>0)||
+         prices.pvp_card_cents<prices.promo_cash_cents)fail('CATALOG_PRICE_INVALID');
+    }
+  }
+}
 function validateRelease(value) {
   return typeof value === 'string' && /^[A-Za-z0-9_.-]{1,160}$/.test(value);
 }
@@ -64,7 +93,13 @@ export async function auditPrivateSource({getJson, phase='pre', expectedRelease,
     if (previous !== undefined && (previous?.ok !== true || previous?.phase !== 'pre' ||
         previous?.baseline_commit !== BASELINE_COMMIT ||
         !isDeepStrictEqual(previous?.public_baseline, EXPECTED) ||
-        typeof previous?.tester_transport_enabled !== 'boolean' || previous.general_reception_enabled !== false)) fail('PREVIOUS_RECEIPT_INVALID');
+        typeof previous?.tester_transport_enabled !== 'boolean' || previous.general_reception_enabled !== false ||
+        previous.source_stable!==true || previous.catalog_http_200!==true ||
+        !(previous.scope==='compiled_fallback_only'&&previous.equal_except_published_at===true ||
+          previous.scope==='authenticated_runtime'&&previous.comparison_policy==='metadata_only_authenticated_runtime'&&
+          previous.equal_except_published_at===false&&previous.full_comparison_deferred_to_deployer===true&&
+          previous.catalog_structure_validated===true&&previous.source_metadata_stable===true&&previous.expiry_matches_metadata===true&&
+          previous.runtime_source_metadata&&typeof previous.runtime_source_metadata==='object'))) fail('PREVIOUS_RECEIPT_INVALID');
     const expectedTester = previous?.tester_transport_enabled ?? false;
     const baseline = await getJson(BASELINE_URL, {privateRequest:false});
     if (!isDeepStrictEqual(summary(baseline), EXPECTED)) fail('PUBLIC_BASELINE_CHANGED');
@@ -89,18 +124,39 @@ export async function auditPrivateSource({getJson, phase='pre', expectedRelease,
         messaging.outbound_enabled !== receipt.tester_transport_enabled ||
         seller?.mode !== 'authorized-testers-only' || seller.enabled !== receipt.tester_transport_enabled || seller.live_customers_enabled !== false) fail('TESTER_SCOPE_MISMATCH');
     const before = await getJson(`${WORKER_ORIGIN}/commercial/catalog/status`, {privateRequest:true});
-    validateStatus(before, EXPECTED, 'BEFORE');
+    const legacy=before?.source_sha256===BASELINE_SHA;
+    const expected=legacy?EXPECTED:metadataFromStatus(before);
+    if(legacy)validateStatus(before,EXPECTED,'BEFORE');
+    else{
+      validateMetadata(expected);
+      receipt.scope='authenticated_runtime';
+      receipt.comparison_policy='metadata_only_authenticated_runtime';
+      receipt.full_comparison_deferred_to_deployer=true;
+      receipt.equal_except_published_at=false;
+      receipt.runtime_source_metadata=expected;
+      if(phase==='post'&&previous===undefined)fail('PREVIOUS_RECEIPT_REQUIRED');
+    }
+    if(previous?.runtime_source_metadata&&!isDeepStrictEqual(expected,previous.runtime_source_metadata))fail('PREVIOUS_SOURCE_METADATA_CHANGED');
+    if(previous?.scope==='compiled_fallback_only'&&!legacy)fail('PREVIOUS_SOURCE_METADATA_CHANGED');
     const catalog = await getJson(`${WORKER_ORIGIN}/commercial/catalog`, {privateRequest:true});
     receipt.catalog_http_200 = true;
     const after = await getJson(`${WORKER_ORIGIN}/commercial/catalog/status`, {privateRequest:true});
-    validateStatus(after, EXPECTED, 'AFTER');
+    validateStatus(after, expected, 'AFTER');
     // A read sequence never accepts an unannounced concurrent source replacement.
-    if (!isDeepStrictEqual(summary(catalog), EXPECTED)) fail('CATALOG_SOURCE_MISMATCH', safeDifferences(catalog, baseline));
-    if (!isDeepStrictEqual(withoutPublishedAt(catalog), withoutPublishedAt(baseline)))
-      fail('CATALOG_BASELINE_MISMATCH', safeDifferences(catalog, baseline));
+    if (!isDeepStrictEqual(summary(catalog), expected)) fail('CATALOG_SOURCE_MISMATCH');
+    if(legacy){
+      if (!isDeepStrictEqual(withoutPublishedAt(catalog), withoutPublishedAt(baseline)))
+        fail('CATALOG_BASELINE_MISMATCH', safeDifferences(catalog, baseline));
+      receipt.comparison_policy='exact_public_legacy_baseline';
+      receipt.equal_except_published_at=true;
+    }else{
+      validatePrivateStructure(catalog,now);
+      receipt.catalog_structure_validated=true;
+      receipt.source_metadata_stable=true;
+      receipt.expiry_matches_metadata=true;
+    }
     receipt.source_stable = true;
-    receipt.equal_except_published_at = true;
-    receipt.original_expiry_preserved = true;
+    receipt.original_expiry_preserved = legacy || phase==='post'&&previous!==undefined;
     receipt.previous_verified = previous !== undefined;
     receipt.ok = true;
   } catch (error) {
