@@ -2,7 +2,7 @@ import policy from './alex-policy.json' with {type:'json'};
 import {mergePreferences,redundantQuestion,asksHuman,statedBudget,bankIntent,bankNames,buyingIntent,brandIntent,purchaseRequested,imageRequested} from './alex-context.mjs';
 import {alexIds,publicName,quoteCurrent,catalogMatches} from './alex-catalog.mjs';
 import {getProfile} from './alex-collaborators.mjs';
-import {phoneFamily} from './phone-variants.mjs';
+import {phoneFamily,phoneVariant} from './phone-variants.mjs';
 import {variantSalesReply} from './alex-variant-sales.mjs';
 export {policy};
 const ids=alexIds;
@@ -73,6 +73,8 @@ function contextPlan(input,source,memory,model={}){
  const warm=fallback=>model.say&&freeProseSafe(model.say)&&!model.say.includes('?')&&! /pac[ií]fico|pichincha|diners|guayaquil|amex|intereses|compra|pago|tarjeta/i.test(model.say)?model.say:fallback;
  const social=String(input).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z\s]/g,'').trim();
  const persona=getProfile(source.advisor_persona?.id);
+ if(/cuotas|meses|diferir|condiciones.{0,20}(?:pago|tarjeta)|intereses/i.test(input)&&!bank.named&&!memory.bank&&!bank.objection){const asked=(memory.history||[]).filter(t=>t.role==='assistant').slice(-2).some(t=>/de qu[eé] banco/i.test(t.text));return {...base,say:'',facts:['bank_terms_pending'],intent:'payment',ask:asked?'':'¿De qué banco es la tarjeta que quieres usar?'};}
+ if(/c[aá]mara|fotograf[ií]a.*(?:calidad|resoluci[oó]n)/i.test(input)&&focus.length===2){const book=factBook(source),keys=focus.map(s=>book[s+'.camera']?s+'.camera':s+'.camera_pending');if(keys.every(k=>book[k]))return {...base,focus,facts:keys,image:null,action:'compare',intent:'compare',say:'',ask:''};}
  if(/regalo|tr[ií]pode|obsequio|promoci[oó]n.{0,25}banner/i.test(input))return {...base,say:'',facts:['promotion_pending'],ask:'',image:null};
  if(/^(?:hola|epa|buenas|buenos dias|buenas tardes|buenas noches|que tal|hey)(?:\s+(?:hola|buenas|alex))*$/.test(social))return {...base,focus:memory.focus||[],say:memory.greeted?'¡Por aquí seguimos!':persona?persona.greeting:warm('¡Epa! Soy Alex, tu asesor de CONECTATECH. 😊'),ask:p?'¿Qué te gustaría resolver de este equipo?':persona?.id==='COL002'?'¿Qué equipo te gustaría encontrar?':'¿Qué equipo andas buscando?'};
  if(/^(?:muchas )?gracias(?: alex)?$|^listo gracias$/.test(social))return {...base,focus:memory.focus||[],say:warm('¡Con gusto! 😊'),ask:''};
@@ -156,6 +158,7 @@ export function factBook(source,now=Date.now()){
   const c=p.caracteristicas||{},name=publicName(p);
   if(!p.foto)facts[p.sku+'.photo_missing']='Todavía no tengo una fotografía confirmada de esa versión.';
   for(const [key,label] of [['Pantalla','screen'],['Batería','battery'],['Cámara principal','camera'],['Red móvil','network']])if(c[key])facts[p.sku+'.'+label]=`${name}: ${key.toLowerCase()} ${c[key]}.`;
+  if(!c['Cámara principal'])facts[p.sku+'.camera_pending']=`${name}: falta confirmar la característica de la cámara de esta versión.`;
   if(c.Almacenamiento)facts[p.sku+'.memory']=`${name}: ${c.Almacenamiento} de almacenamiento${c['RAM física']?', '+c['RAM física']+' de RAM física':''}.`;
   if(c.Almacenamiento)facts[p.sku+'.benefit']=`${name}: ${c.Almacenamiento} de almacenamiento para tus fotos y aplicaciones.`;
  }
@@ -396,4 +399,98 @@ export function quickReplies(result){
  if(result.purchasable===false)options=options.filter(([,action])=>action!=='buy');
  if(memory.card_declined)options=options.filter(([,action])=>!['card','anothercard'].includes(action));
  return options.map(([title,action])=>({content_type:'text',title,payload:'ALEX:'+action+(focus?':'+focus:'')}));
+}
+
+// Private simulator presentation and suggestions share the existing engine,
+// source and encrypted memory. No changes to Messenger transport or approved media.
+const simActions=Object.freeze({
+ recommend:'¿Cuál de estas opciones me recomiendas para lo que te he contado?',
+ compare:'¿Qué cambia entre estas versiones y cuál me conviene?',
+ installments:'¿Qué cuotas y condiciones vigentes puedo usar con mi tarjeta?',
+ terms:'¿Qué condiciones de pago e intereses están confirmadas?',
+ cash_compare:'Compara el precio de contado y con tarjeta de estas opciones',
+ camera:'¿Qué cámara tiene este equipo?',
+ camera_compare:'Compara las cámaras de estas versiones usando las características verificadas',
+ photo_need:'Quiero elegir según las fotos que voy a tomar. ¿Qué dato necesitas saber?',
+ camera_options:'Busco otras opciones de teléfono para fotografía dentro de mi presupuesto',
+ budget:'¿Qué opciones verificadas se ajustan a mi presupuesto?',
+ delivery_check:'¿Podría recibirlo hoy en Quito? ¿Qué falta confirmar?',
+ delivery_terms:'¿Qué cobertura, costo y fecha de entrega en Quito están confirmados?',
+ specs:'¿Qué característica verificada me conviene revisar antes de decidir?',
+ resume:'Sigamos con el equipo que estábamos revisando'
+});
+export function simulatorAction(payload,memory={}){const m=/^ALEX:sim:([a-z_]+)$/.exec(payload||'');if(!m||!Object.hasOwn(simActions,m[1]))return null;if(m[1]==='delivery_terms'&&memory.delivery==='nacional')return '¿Qué costo y condiciones están confirmados para el envío nacional?';return simActions[m[1]];}
+const simFold=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function simulatorTopic(input,payload){
+ const t=simFold(input),direct=/^ALEX:sim:([a-z_]+)$/.exec(payload||'')?.[1];if(direct)return direct;
+ if(/cuotas|meses|diferir/.test(t))return 'installments';if(/intereses|condiciones.*(?:pago|tarjeta)/.test(t))return 'terms';
+ if(/camara/.test(t))return /compar|diferenc/.test(t)?'camera_compare':'camera';
+ if(/presupuesto/.test(t))return 'budget';if(/compar.*(?:contado|tarjeta)|(?:contado.*tarjeta|tarjeta.*contado)/.test(t))return 'cash_compare';
+ if(/tarjeta|\bpvp\b/.test(t))return 'card';if(/contado|efectivo/.test(t))return 'cash';
+ if(/envio nacional|otra ciudad|provincia/.test(t))return 'nacional';if(/entreg|contraentrega|quito|domicilio/.test(t))return 'delivery_check';if(/retiro|retirar|ubicacion|direccion/.test(t))return 'retiro';
+ if(/compar|diferenc/.test(t))return 'compare';if(/recomiend|aconsej|conviene/.test(t))return 'recommend';
+ if(/garant/.test(t))return 'warranty';if(/caracteristic|bateria|pantalla|procesador|memoria|\bram\b/.test(t))return 'specs';if(/foto|imagen|banner/.test(t))return 'photo';
+ if(/quiero comprar|me lo llevo/.test(t))return 'buy';return 'explore';
+}
+function simulatorPresentation(result,source,input,images){
+ const options=result.variant_options||[],ids=options.length?options.map(v=>v.sku):result.focus||[];
+ const supplied=new Set(images.filter(i=>i.kind==='approved_banner'&&i.signature_verified===true&&i.private_scope===true).flatMap(i=>i.skus||[i.sku]));
+ if(!ids.length||!ids.every(s=>supplied.has(s))||['erase','handoff','interest'].includes(result.action))return null;
+ // Direct questions always retain their verified answer, even with a banner.
+ if(/precio|cu[aá]nto|cuesta|vale|contado|tarjeta|\bpvp\b|\bram\b|\bgb\b|memoria|almacenamiento|bater[ií]a|c[aá]mara|pantalla|procesador|caracter[ií]stic|garant[ií]a|pago|cuotas|meses|intereses|entrega|env[ií]o|hoy|retiro|direcci[oó]n|regalo|tr[ií]pode/i.test(input))return null;
+ const m=result.memory||{},female=source.advisor_persona?.id==='COL002',verified=options.filter(v=>v.current===true),budget=m.budget;
+ let text;
+ if(verified.length>1){
+  const affordable=budget?verified.filter(v=>v.cash<=budget):verified,stores=new Set(verified.map(v=>v.storage_gb));
+  if(budget&&!affordable.length)text='Estas opciones superan el presupuesto que me diste. Podemos buscar una alternativa que se ajuste.';
+  else if(budget&&affordable.length===1)text=female?'Para cuidar tu presupuesto, te recomiendo la opción más económica 😊.':'Vamos a cuidar ese bolsillo 😎. La opción más económica encaja en tu presupuesto.';
+  else if(m.need&&/foto|archiv|video|espacio|almacen/i.test(m.need)&&stores.size>1)text=female?'Para tus fotos y archivos, elegiría la opción con más espacio 😊.':'Para tus fotos y archivos, yo iría por la opción con más espacio 😎.';
+  else if(stores.size>1)text=female?'Te muestro ambas 😊. Una favorece el ahorro y la otra te da más espacio para fotos y aplicaciones.':'Aquí van las dos 😎. Una cuida más el bolsillo y la otra te da más espacio para fotos y aplicaciones.';
+  else text=female?'Te muestro las opciones 😊. Podemos elegir según el uso y el presupuesto que tengas.':'Aquí tienes las opciones 😎. Vamos a elegir según tu uso y presupuesto.';
+ }else text=female?'Aquí tienes el modelo que estamos revisando 😊. Cuéntame qué te gustaría aclarar antes de decidir.':'Aquí lo tienes 😎. Cuéntame qué te falta aclarar para decidir con confianza.';
+ return {with_banner:text,fallback:result.text,required_skus:ids,only_after_all_images_loaded:true};
+}
+export function simulatorConversation(result,source,{input='',payload=null,images=[]}={}){
+ const m=result.memory||{},topic=simulatorTopic(input,payload),book=factBook(source),rows=source.productos||[];
+ const offered=(result.variant_options?.length?result.variant_options.map(v=>v.sku):result.focus||[]),products=rows.filter(p=>offered.includes(p.sku));
+ const key=products.map(p=>phoneVariant(p)?.base_family_key||p.sku).sort().filter((v,i,a)=>i===0||v!==a[i-1]).join('|')||'general';
+ const prior=m.suggestion_state||{},used=new Set(prior.key===key?prior.used||[]:[]),declined=new Set(prior.key===key?prior.declined||[]:[]),t=simFold(input);
+ if(topic!=='explore')used.add(topic);
+ const chosen=/^ALEX:choose:([A-Z]{3,8}\d{2,6})$/.exec(payload||'')?.[1];if(chosen)used.add('choose_'+chosen);
+ if(result.action==='compare'&&(result.facts||[]).length>1&&result.facts.every(k=>k.endsWith('.camera')))used.add('camera_compare');
+ if(/no (?:quiero|me interesa|necesito).{0,18}compar/.test(t))declined.add('compare');
+ if(/no (?:quiero|me interesa|necesito).{0,18}(?:entrega|envio)/.test(t))declined.add('delivery');
+ if(/no (?:quiero|me interesa|necesito).{0,18}foto/.test(t))declined.add('photo');
+ m.suggestion_state={key,used:[...used].slice(-24),declined:[...declined].slice(-8),last_topic:topic==='explore'&&prior.key===key?prior.last_topic||topic:topic};
+ const current=m.suggestion_state.last_topic,valid=p=>quoteCurrent(source,p)&&p.stock>0&&p.price_verified!==false&&(!p.central_availability||p.central_availability==='in_stock')&&!(p.blocked_reasons||[]).length;
+ const available=products.filter(valid),selection=m.focus||result.focus||[],selected=selection.length===1?available.find(p=>p.sku===selection[0])||null:available.length===1?available[0]:null;
+ const list=[],add=(id,title,action=null,sku=null)=>list.push({id,title,payload:action?'ALEX:'+action+(sku?':'+sku:''):'ALEX:sim:'+id});
+ const card=()=>add('card','💳 ¿Con tarjeta?','card',selected?.sku);
+ const cash=()=>add('cash','💵 Ver contado','cash',selected?.sku);
+ const choose=()=>{const within=m.budget?available.filter(p=>p.promo<=m.budget):available;const p=within.slice().sort((a,b)=>a.promo-b.promo)[0];if(p){const v=phoneVariant(p);add('choose_'+p.sku,'Elegir '+(v?.storage_gb?v.storage_gb+' GB':'esta opción'),'choose',p.sku);}};
+ if(result.action==='erase'||result.action==='handoff')return {presentation:null,quick_replies:[]};
+ if(m.purchase_deferred){add('specs','Ver un detalle');add('photo','Ver imagen','photo',selected?.sku);add('resume','Seguir revisando');}
+ else if(result.action==='interest'||m.stage==='compra_pendiente'){
+  if(!m.payment){cash();card();}if(!m.delivery){add('retiro','📍 Retirar en tienda','retiro');add('delivery_check','🛵 Consultar entrega');}add('human','Revisión del vendedor','human');
+ }else if(m.card_declined){cash();if(m.budget)add('budget','Opciones a mi alcance');choose();add('delivery_check','🛵 Consultar entrega');}
+ else if(['card','installments','terms','cash_compare'].includes(current)||result.intent==='payment'){
+  add('installments','💳 Revisar cuotas');add('terms','Condiciones vigentes');add('cash_compare','💵 Comparar costos');if(m.payment!=='contado')cash();choose();if(selected)add('buy','Avanzar con compra','buy',selected.sku);add('delivery_check','🛵 Consultar entrega');
+ }else if(['camera','camera_compare','photo_need','camera_options'].includes(current)){
+  if(products.length>1&&products.every(p=>book[p.sku+'.camera']))add('camera_compare','📷 Comparar cámaras');add('photo_need','¿Qué fotos tomarás?');
+  const alternatives=rows.filter(p=>!offered.includes(p.sku)&&/^TELF/.test(p.sku)&&valid(p)&&book[p.sku+'.camera']&&(!m.budget||p.promo<=m.budget));if(alternatives.length)add('camera_options','Otras opciones 📷');
+  if(m.budget)add('budget','Ajustarlo a mi tope');choose();if(m.payment!=='contado')card();add('specs','Revisar otro detalle');
+ }else if(['delivery_check','delivery_terms','retiro','nacional'].includes(current)||result.intent==='delivery'){
+  add('delivery_terms','Cobertura y costo');if(!m.delivery||m.delivery!=='retiro')add('retiro','📍 Retiro en tienda','retiro');if(!m.payment){cash();card();}if(selected)add('buy','Avanzar con compra','buy',selected.sku);add('human','Confirmar con persona','human');
+ }else if(['specs','warranty'].includes(current)){
+  if(products.some(p=>book[p.sku+'.camera']))add('camera','📷 Ver la cámara');add('compare','🔥 Comparar opciones');if(m.payment!=='contado')card();choose();add('delivery_check','🛵 Consultar entrega');
+ }else{
+  add('recommend','🤔 ¿Cuál conviene?');if(products.length>1)add('compare','🔥 ¿Qué cambia?');if(m.budget)add('budget','¿Se ajusta a mi tope?');if(m.payment!=='contado')card();add('delivery_check','🛵 ¿Llega hoy?');choose();
+ }
+ // Never manufacture stock, financing terms, camera specifications or dates in a title.
+ const out=[],seen=new Set();for(const q of list){
+  if(out.length===4)break;if(seen.has(q.payload)||used.has(q.id)||declined.has(q.id)||declined.has('delivery')&&['delivery_check','delivery_terms','retiro','nacional'].includes(q.id)||m.card_declined&&['card','installments','terms'].includes(q.id)||q.id.startsWith('choose_')&&!available.some(p=>q.id==='choose_'+p.sku)||q.id==='buy'&&!selected)continue;
+  seen.add(q.payload);out.push({content_type:'text',title:q.title.slice(0,20),payload:q.payload});
+ }
+ if(out.length<3&&!m.purchase_deferred){for(const [id,title,action]of [['photo','Ver imagen','photo'],['human','Hablar con persona','human']])if(!seen.has('ALEX:'+action+(selected?':'+selected.sku:''))&&!used.has(id)&&!declined.has(id)){out.push({content_type:'text',title,payload:'ALEX:'+action+(selected?':'+selected.sku:'')});if(out.length>=3)break;}}
+ return {presentation:simulatorPresentation(result,source,input,images),quick_replies:out};
 }

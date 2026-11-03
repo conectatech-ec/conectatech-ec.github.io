@@ -1,0 +1,63 @@
+name: Conversación contextual del simulador privado Alex
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['.github/alex-conversation.json', '.github/workflows/alex-conversation.yml', '.github/scripts/deploy_alex_conversation.py', '.github/scripts/test_deploy_alex_conversation.py', '.github/scripts/alex-contextual-cloud.mjs']
+permissions:
+  contents: read
+concurrency:
+  group: comercial-cloud-piloto
+  cancel-in-progress: false
+jobs:
+  comprobar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    environment: conectatech-piloto-gratis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: node --test automatizacion/tests/alex-contextual-suggestions.test.mjs automatizacion/tests/alex-simulator.test.mjs automatizacion/tests/alex-variant-sales.test.mjs automatizacion/tests/alex-variant-media-store.test.mjs automatizacion/tests/alex-signature-private.test.mjs
+      - run: python .github/scripts/test_deploy_alex_conversation.py
+      - id: control
+        run: |
+          python - <<'PY'
+          import json,os
+          c=json.load(open('.github/alex-conversation.json'))
+          assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0
+          assert type(c['deploy']) is bool and type(c['verify']) is bool
+          assert not (c['deploy'] and c['verify'])
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              for k in ('deploy','verify'):f.write(k+'='+str(c[k]).lower()+'\n')
+          PY
+      - name: Actualizar únicamente tres módulos conversacionales existentes
+        if: steps.control.outputs.deploy == 'true'
+        run: python .github/scripts/deploy_alex_conversation.py
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Probar conversaciones reales en el simulador privado HTTPS
+        if: steps.control.outputs.verify == 'true'
+        run: node .github/scripts/alex-contextual-cloud.mjs
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always() && (steps.control.outputs.deploy == 'true' || steps.control.outputs.verify == 'true')
+        with:
+          name: alex-conversacion-verificada
+          path: |
+            automatizacion/generated/fase2/alex-conversation-deploy.json
+            automatizacion/generated/fase2/alex-contextual-cloud.json
+          retention-days: 7

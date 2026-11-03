@@ -257,3 +257,20 @@ test('Reset revokes only the selected profile private images while preserving th
  await h.switchProfile('COL002');await h.send('Banner Jessy');await waitFor(()=>h.objectUrls.size===2);const jessy=descendants(h.nodes.get('chat')).find(n=>n.tagName==='IMG').src;
  await h.switchProfile('COL001');await h.click('reset');assert.ok(h.revoked.includes(rafa));assert.ok(!h.revoked.includes(jessy));assert.equal(h.objectUrls.size,1);await h.switchProfile('COL002');assert.equal(descendants(h.nodes.get('chat')).find(n=>n.tagName==='IMG').src,jessy);
 });
+
+test('Compact sales copy replaces duplicate facts only after every required banner actually loads',async()=>{
+ const full='128 GB / 4 GB RAM: $185.90; 256 GB / 8 GB RAM: $239.90.',compact='Aquí van las dos 😎. Una cuida más el bolsillo y la otra ofrece más espacio.';
+ const h=await harness({imageDelivery:'manual',chat:()=>Response.json(answer({text:full,images:[privateEntry('TELF011'),privateEntry('TELF012')],presentation:{with_banner:compact,fallback:full,required_skus:['TELF011','TELF012'],only_after_all_images_loaded:true}}))});
+ await h.connect();await h.send('Busco Samsung A17');await waitFor(()=>h.objectUrls.size===2);
+ assert.ok(h.nodes.get('chat').textContent.includes(full));const imgs=descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG');h.deliverImage(imgs[0]);await settle();assert.ok(h.nodes.get('chat').textContent.includes(full));
+ h.deliverImage(imgs[1]);await settle();assert.ok(h.nodes.get('chat').textContent.includes(compact));assert.ok(!h.nodes.get('chat').textContent.includes(full));
+});
+test('Failed or rejected required banners keep indispensable verified text instead of a promise',async()=>{
+ for(const rejected of [false,true]){
+  const full='128 GB: $185.90; 256 GB: $239.90.',compact='Compara las opciones en las imágenes.';
+  const second=privateEntry('TELF012',rejected?{url:'https://other.test/private.png'}:{});
+  const h=await harness({imageDelivery:'manual',chat:()=>Response.json(answer({text:full,images:[privateEntry('TELF011'),second],presentation:{with_banner:compact,fallback:full,required_skus:['TELF011','TELF012'],only_after_all_images_loaded:true}}))});
+  await h.connect();await h.send('Busco Samsung A17');await waitFor(()=>h.objectUrls.size===(rejected?1:2));const imgs=descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG');h.deliverImage(imgs[0]);if(!rejected)h.deliverImage(imgs[1],'error');await settle();
+  assert.ok(h.nodes.get('chat').textContent.includes(full));assert.ok(!h.nodes.get('chat').textContent.includes(compact));
+ }
+});
