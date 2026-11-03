@@ -188,6 +188,7 @@ jobs:
         env:
           MESSENGER_E2E_SCOPE: ${{ needs.preparar.outputs.closed_ingress_only == 'true' && 'closed_ingress_only' || '' }}
           EXPECTED_RELEASE: ${{ github.sha }}
+          PRIVATE_SOURCE_PREFLIGHT: ${{ needs.preparar.outputs.closed_ingress_only == 'true' && 'automatizacion/generated/fase2/private-source-pre.json' || '' }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_BASE_URL: ${{ steps.deploy.outputs.url }}

@@ -7,7 +7,7 @@ export const BASELINE_COMMIT = '5ac33f55880361096238cfec4c3155609264b632';
 export const BASELINE_SHA = '84568d5865cb0f09380d200e6d08172a8820d4aaec5c970c0f7be53e3c68ffc8';
 export const BASELINE_URL = `https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/${BASELINE_COMMIT}/automatizacion/central/current.json`;
 export const WORKER_ORIGIN = 'https://conectatech-comercial-piloto.conectatech-ecu.workers.dev';
-const ALLOWED_PRIVATE_PATHS = new Set(['/health', '/commercial/catalog/status', '/commercial/catalog']);
+const ALLOWED_PRIVATE_PATHS = new Set(['/health', '/commercial/catalog/status', '/commercial/catalog', '/messenger/status', '/messenger/seller/status']);
 const EXPECTED = Object.freeze({schema:'conectatech.commercial.v1', source_sha256:BASELINE_SHA,
   cut_date:'2026-10-21', generated_at:'2026-10-22T00:25:22Z',
   expires_at:'2026-10-23T00:25:22Z', products:1556});
@@ -61,6 +61,11 @@ export async function auditPrivateSource({getJson, phase='pre', expectedRelease,
     if (!['pre','post'].includes(phase)) fail('PHASE_INVALID');
     if (typeof getJson !== 'function') fail('TRANSPORT_REQUIRED');
     if (phase === 'post' && !validateRelease(expectedRelease)) fail('EXPECTED_RELEASE_REQUIRED');
+    if (previous !== undefined && (previous?.ok !== true || previous?.phase !== 'pre' ||
+        previous?.baseline_commit !== BASELINE_COMMIT ||
+        !isDeepStrictEqual(previous?.public_baseline, EXPECTED) ||
+        typeof previous?.tester_transport_enabled !== 'boolean' || previous.general_reception_enabled !== false)) fail('PREVIOUS_RECEIPT_INVALID');
+    const expectedTester = previous?.tester_transport_enabled ?? false;
     const baseline = await getJson(BASELINE_URL, {privateRequest:false});
     if (!isDeepStrictEqual(summary(baseline), EXPECTED)) fail('PUBLIC_BASELINE_CHANGED');
     const attempts = phase === 'post' ? 12 : 1;
@@ -68,13 +73,21 @@ export async function auditPrivateSource({getJson, phase='pre', expectedRelease,
       const health = await getJson(`${WORKER_ORIGIN}/health`, {privateRequest:true});
       if (health?.ok !== true || health?.pilot !== true || !validateRelease(health?.release)) fail('HEALTH_INVALID');
       if (health.meta_ingress_enabled !== false) fail('INGRESS_MUST_BE_CLOSED');
-      if (health.messenger_outbound !== false) fail('OUTBOUND_MUST_BE_CLOSED');
+      if (typeof health.messenger_outbound !== 'boolean') fail('OUTBOUND_STATE_REQUIRED');
+      if (phase === 'post' && health.messenger_outbound !== expectedTester) fail('TESTER_TRANSPORT_CHANGED');
+      receipt.tester_transport_enabled = health.messenger_outbound;
+      receipt.general_reception_enabled = false;
       receipt.observed_release = health.release;
       receipt.health_attempts = attempt;
       if (phase !== 'post' || health.release === expectedRelease) break;
       if (attempt === attempts) fail('RELEASE_MISMATCH');
       await sleep(2000);
     }
+    const messaging = await getJson(`${WORKER_ORIGIN}/messenger/status`, {privateRequest:true});
+    const seller = await getJson(`${WORKER_ORIGIN}/messenger/seller/status`, {privateRequest:true});
+    if (messaging?.mode !== 'development-only' || messaging.reception_enabled !== false ||
+        messaging.outbound_enabled !== receipt.tester_transport_enabled ||
+        seller?.mode !== 'authorized-testers-only' || seller.enabled !== receipt.tester_transport_enabled || seller.live_customers_enabled !== false) fail('TESTER_SCOPE_MISMATCH');
     const before = await getJson(`${WORKER_ORIGIN}/commercial/catalog/status`, {privateRequest:true});
     validateStatus(before, EXPECTED, 'BEFORE');
     const catalog = await getJson(`${WORKER_ORIGIN}/commercial/catalog`, {privateRequest:true});
@@ -85,9 +98,6 @@ export async function auditPrivateSource({getJson, phase='pre', expectedRelease,
     if (!isDeepStrictEqual(summary(catalog), EXPECTED)) fail('CATALOG_SOURCE_MISMATCH', safeDifferences(catalog, baseline));
     if (!isDeepStrictEqual(withoutPublishedAt(catalog), withoutPublishedAt(baseline)))
       fail('CATALOG_BASELINE_MISMATCH', safeDifferences(catalog, baseline));
-    if (previous !== undefined && (previous?.ok !== true || previous?.phase !== 'pre' ||
-        previous?.baseline_commit !== BASELINE_COMMIT ||
-        !isDeepStrictEqual(previous?.public_baseline, EXPECTED))) fail('PREVIOUS_RECEIPT_INVALID');
     receipt.source_stable = true;
     receipt.equal_except_published_at = true;
     receipt.original_expiry_preserved = true;
