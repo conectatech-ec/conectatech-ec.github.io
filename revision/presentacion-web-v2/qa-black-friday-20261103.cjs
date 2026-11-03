@@ -10,7 +10,7 @@ async function gitFile(ref,name){const key=ref+':'+name.slice(1);if(!cache.has(k
 async function bytes(u,before,publicMode){
  const name=decodeURIComponent(u.pathname)+(u.pathname.endsWith('/')?'index.html':'');
  if(publicMode)return published(u.href);
- if(before&&changed.has(name))return gitFile('HEAD^',name);
+ if(before&&changed.has(name))return gitFile('66172c0bf2c0ee8da52f16f51052403686e0f728',name);
  const file=path.resolve(root,'.'+name);if(!file.startsWith(root+path.sep))throw Error('Ruta no permitida');
  if(fs.existsSync(file)&&fs.statSync(file).isFile())return fs.readFileSync(file);
  try{return await published(origin+u.pathname+u.search)}catch(_){return gitFile('HEAD',name)}
@@ -46,6 +46,7 @@ async function captures(p,mode,width){
 async function interactions(p,width,prefix){
  await p.evaluate(()=>{document.dispatchEvent(new Event('visibilitychange'));document.dispatchEvent(new Event('visibilitychange'));});
  check(prefix+width+' rótulo único',await p.locator('[data-pw-season-name]').count(),1);
+ check(prefix+width+' rótulo realmente visible',await p.locator('[data-pw-season-name]').isVisible(),true);
  await p.locator('.pw-campaign summary').click();check(prefix+width+' condiciones abren',await p.locator('.pw-campaign details').evaluate(e=>e.open),true);
  await p.locator('.pw-campaign summary').click();await p.locator('.pw-banner-open').click();check(prefix+width+' banner ampliable',await p.locator('.pw-banner-dialog').evaluate(e=>e.open),true);await p.locator('.pw-banner-dialog form button').click();
  const sku=await p.locator('#grid [data-sku]').first().getAttribute('data-sku');await p.locator('#q').fill(sku);

@@ -33,7 +33,7 @@
     document.documentElement.style.setProperty('--pw-season-secondary',theme.secundario);
     const copy=document.querySelector('.ct-hero-copy');
     let seasonLabel=copy?.querySelector('[data-pw-season-name]');
-    const showSeasonLabel=theme.id==='black-friday'||theme.id==='black-month';
+    const showSeasonLabel=theme.id==='black-friday';
     if(copy&&showSeasonLabel&&!seasonLabel){
       seasonLabel=document.createElement('span');seasonLabel.className='pw-season-label';seasonLabel.setAttribute('data-pw-season-name','');
       const heading=copy.querySelector('h1');if(heading)heading.before(seasonLabel);else copy.prepend(seasonLabel);

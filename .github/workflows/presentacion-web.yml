@@ -52,6 +52,7 @@ jobs:
           BF_REQUIRE_PUBLIC: ${{ github.run_attempt > 1 }}
         run: |
           git sparse-checkout add revision/presentacion-web-v2
+          git fetch --no-tags --depth=1 origin 66172c0bf2c0ee8da52f16f51052403686e0f728
           node revision/presentacion-web-v2/qa-black-friday-20261103.cjs
       - name: Conservar capturas e informe
         if: always()
