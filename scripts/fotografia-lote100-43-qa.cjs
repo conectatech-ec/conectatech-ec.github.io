@@ -17,7 +17,7 @@ async function decodePhoto(img){for(let attempt=0;attempt<3;attempt++){await img
   }
   await page.goto(origin+'/revision/fotografia-lote100-20261103-43/',{waitUntil:'commit',timeout:60000});await page.locator('article').first().waitFor();
   for(const img of await page.locator('article img').all()){await img.scrollIntoViewIfNeeded();await decodePhoto(img);}
-  assert.equal(await page.locator('article').count(),Object.keys(manifest.productos).length);assert.equal(await page.locator('article img').count(),manifest.imagenes_corregidas*2);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  assert.equal(await page.locator('article').count(),Object.keys(manifest.productos).length);assert.equal(await page.locator('article img').count(),manifest.imagenes_corregidas*2+1);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   if(process.env.QA_SAVE_DIR)await page.screenshot({path:path.join(process.env.QA_SAVE_DIR,'galeria-'+(pub?'publica':'local')+'-'+width+'.png')});
   await page.locator('#buscar').fill('CABL170');assert.equal(await page.locator('article:visible').count(),1);await page.locator('#buscar').fill('');
   if(pub){

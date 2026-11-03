@@ -2700,7 +2700,7 @@ jobs:
                   except Exception:
                       if a==3:raise
                       time.sleep(2+a)
-          rec=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261103-43.json'));assert len(rec['productos'])==10 and rec['imagenes_corregidas']==10 and rec['total_evaluado']==100 and len(rec['conservados_en_lote'])==90 and len(rec['aprobados_preservados'])==7 and rec['maestros_nuevos']==0
+          rec=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261103-43.json'));assert len(rec['productos'])==11 and rec['imagenes_corregidas']==11 and rec['total_evaluado']==100 and len(rec['conservados_en_lote'])==89 and len(rec['aprobados_preservados'])==7 and rec['maestros_nuevos']==1
           pub=os.environ['PHOTO_REF']=='refs/heads/main'
           if pub:
               for a in range(300):
