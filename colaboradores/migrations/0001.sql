@@ -1,0 +1,15 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE members (id TEXT PRIMARY KEY, subject TEXT UNIQUE NOT NULL, role TEXT NOT NULL CHECK(role IN ('ADMINISTRADOR','SUPERVISOR','COLABORADOR')), active INTEGER NOT NULL DEFAULT 1 CHECK(active IN (0,1)));
+CREATE TABLE supervision (supervisor_id TEXT REFERENCES members(id), member_id TEXT REFERENCES members(id), PRIMARY KEY(supervisor_id,member_id));
+CREATE TABLE products (sku TEXT PRIMARY KEY, data TEXT NOT NULL, promo REAL NOT NULL CHECK(promo>0), pvp REAL NOT NULL CHECK(pvp>0), available INTEGER NOT NULL CHECK(available IN (0,1)), verified_until INTEGER NOT NULL, inventory_digest TEXT NOT NULL);
+CREATE TABLE assignments (member_id TEXT REFERENCES members(id), sku TEXT REFERENCES products(sku), PRIMARY KEY(member_id,sku));
+CREATE TABLE referrals (id TEXT PRIMARY KEY, member_id TEXT NOT NULL REFERENCES members(id), sku TEXT NOT NULL REFERENCES products(sku), channel TEXT NOT NULL, expires INTEGER NOT NULL, created INTEGER NOT NULL);
+CREATE TABLE opportunities (id TEXT PRIMARY KEY, member_id TEXT NOT NULL REFERENCES members(id), sku TEXT NOT NULL REFERENCES products(sku), alias TEXT NOT NULL, dedupe TEXT NOT NULL UNIQUE, state TEXT NOT NULL, referral_id TEXT REFERENCES referrals(id), source TEXT NOT NULL, sale_reference TEXT UNIQUE, sale_amount REAL, created INTEGER NOT NULL, updated INTEGER NOT NULL);
+CREATE TABLE publications (id TEXT PRIMARY KEY, member_id TEXT NOT NULL REFERENCES members(id), sku TEXT NOT NULL REFERENCES products(sku), channel TEXT NOT NULL, state TEXT NOT NULL, inventory_digest TEXT NOT NULL, updated INTEGER NOT NULL);
+CREATE TABLE commission_policies (id TEXT PRIMARY KEY, rule_json TEXT NOT NULL, active INTEGER NOT NULL DEFAULT 0 CHECK(active IN (0,1)), authorized_by TEXT REFERENCES members(id), effective INTEGER);
+CREATE TABLE commissions (id TEXT PRIMARY KEY, opportunity_id TEXT UNIQUE NOT NULL REFERENCES opportunities(id), policy_id TEXT, amount REAL CHECK(amount>=0), state TEXT NOT NULL CHECK(state IN ('SIN_POLITICA','PENDIENTE','APROBADA','PAGADA')), updated INTEGER NOT NULL);
+CREATE TABLE audit (id TEXT PRIMARY KEY, actor TEXT NOT NULL, entity TEXT NOT NULL, action TEXT NOT NULL, detail TEXT NOT NULL, created INTEGER NOT NULL);
+CREATE TABLE rate_limits (key TEXT PRIMARY KEY, count INTEGER NOT NULL, expires INTEGER NOT NULL);
+CREATE INDEX own_opportunities ON opportunities(member_id,updated);
+CREATE INDEX retention_audit ON audit(created);
+CREATE UNIQUE INDEX dedupe_manual_active ON opportunities(member_id,sku,lower(alias)) WHERE source='declarado por colaborador' AND state NOT IN ('CANCELADA','VENTA CONFIRMADA');

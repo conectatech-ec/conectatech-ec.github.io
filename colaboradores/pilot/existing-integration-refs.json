@@ -1,0 +1,61 @@
+{
+  "repository": "conectatech-ec/conectatech-ec.github.io",
+  "hub": {
+    "branch": "automatizacion/piloto-cloud-3sku-20261015",
+    "reader": "automatizacion/shared-hub.mjs",
+    "validator": "automatizacion/central-source.mjs",
+    "contract": "automatizacion/DATA-HUB-CONTRATO.md",
+    "source_attestations": "automatizacion/central/source-attestations.json",
+    "branch_snapshot_is_live_source": false,
+    "source_generated_at": "2026-11-02T22:48:22Z",
+    "source_expires_at": "2026-11-03T22:48:22Z"
+  },
+  "storage": {
+    "binding": "existing env.DB",
+    "existing_table": "eventos_canal",
+    "schema": "automatizacion/schema.sql",
+    "new_tables": 0,
+    "new_database": false,
+    "activation": false
+  },
+  "rafa": {
+    "branch": "automatizacion/piloto-cloud-3sku-20261015",
+    "association": "automatizacion/marketplace-telf017/association.json",
+    "handoff": "automatizacion/marketplace-telf017/lead.mjs",
+    "operation_reused": true,
+    "canonical_listing_id_known": false
+  },
+  "signature": {
+    "materials_branch": "integracion/signature-pdf-banners-593-20261023",
+    "materials_generator": "scripts/generar-materiales-593.py",
+    "materials_input": "exportaciones/insumos-signature-593.json",
+    "materials_manifest": "catalogos-593/manifest.json",
+    "private_library_contract": "automatizacion/marketplace-library.json",
+    "live_registry_connection_verified": false,
+    "no_send_to_buyers": true,
+    "messaging_enabled": false,
+    "concrete_blocker": "El contrato encontrado conserva envío deshabilitado y registro privado sin readback vivo; no utilizar borradores de revisión como banners aprobados"
+  },
+  "alex": {
+    "branch": "automatizacion/piloto-cloud-3sku-20261015",
+    "catalog_adapter": "automatizacion/central-source.mjs:sourceToAlex",
+    "channels": "automatizacion/alex-channel-readiness.mjs",
+    "presentation_schema": "conectatech.alex.presentation.v1",
+    "new_assistant": false,
+    "personal_inbox_access": false
+  },
+  "sales_593": {
+    "source_inventory_contract_found": true,
+    "confirmed_sales_read_contract_found": false,
+    "concrete_blocker": "Los contratos localizados cubren inventario/precios; no acreditan una API de lectura de ventas confirmadas de 593. La confirmación permanece como contrato para prueba, sin inventar endpoint ni registrar ventas reales."
+  },
+  "coordination": {
+    "responsible_branches_untouched": true,
+    "external_messages_sent": false,
+    "integration_offer": [
+      "Montar colaboradorTransaction sobre eventos_canal con cifrado existente",
+      "Consumir sourceToAlex para hechos/precios y expiración originales",
+      "Resolver activos mediante la biblioteca SIGNATURE cuando su recibo lo autorice"
+    ]
+  }
+}

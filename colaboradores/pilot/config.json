@@ -1,0 +1,39 @@
+{
+  "version": "conectatech.collaborators.pilot.v2",
+  "max_collaborators": 10,
+  "mode": "REVIEW_ONLY",
+  "master_catalog_id": "1036301566100990",
+  "create_accounts": false,
+  "publish_external": false,
+  "create_data_hub": false,
+  "create_database": false,
+  "participants": [
+    {
+      "id": "COL001",
+      "alias": "Rafa Valderrama",
+      "status": "ACTIVE_EXISTING_REFERENCE",
+      "operation": "EXISTING_RAFA_WORK",
+      "create_ads": false,
+      "active": true
+    },
+    {
+      "id": "COL002",
+      "alias": null,
+      "status": "RESERVED_INACTIVE",
+      "operation": "PREPARE_FOR_REVIEW",
+      "create_ads": false,
+      "active": false
+    }
+  ],
+  "products": [
+    "POWE003",
+    "HUB001",
+    "AUDI055"
+  ],
+  "commission_policy": null,
+  "connections": {
+    "existing_data_hub": "automatizacion/shared-hub.mjs@automatizacion/piloto-cloud-3sku-20261015",
+    "signature_manifest": "automatizacion/marketplace-library.json (live_registry_connection_verified=false)",
+    "alex_permissions": "automatizacion/alex-channel-readiness.mjs"
+  }
+}

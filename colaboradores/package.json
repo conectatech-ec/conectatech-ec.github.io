@@ -1,0 +1,13 @@
+{
+  "name": "conectatech-colaboradores",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/*.test.mjs && python -m unittest discover -s tests -p \"test_*.py\"",
+    "check": "node --check src/worker.mjs && node --check public/app.js && node --check src/pilot/network.mjs && node --check src/pilot/adapters.mjs && node --check src/pilot/existing-contracts.mjs && node --check src/pilot/existing-events-ledger.mjs && node --check src/pilot/wire-existing-host.mjs",
+    "validate:pilot": "node scripts/validate-network-pilot.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
