@@ -109,6 +109,11 @@ export function phoneFamily(input,products,{focus=[]}={}){
   candidates=rows.filter(r=>brandMatches(requestedBrand,r.identity.brand)&&matchesModel(q,r.identity)&&JSON.stringify(r.identity.qualifiers)===JSON.stringify(queryQualifiers));
   named=candidates.length>0;
  }
+ if(!candidates.length&&queryQualifiers.length){
+  const known=rows.find(r=>brandMatches(requestedBrand,r.identity.brand)&&matchesModel(q,r.identity));
+  if(known)return {variants:[],exact:[],identity:{...known.identity,model:known.identity.base_model+' '+queryQualifiers.join(' ').toUpperCase()},
+   is_family_query:false,has_named_model:true,explicit_variant:true,requested:{storage_gb:memory.storage_gb,ram_physical_gb:memory.ram_physical_gb,connectivity:requestedNetwork},all_identities:[]};
+ }
  if(!candidates.length){
   const follow=memory.storage_gb!==null||memory.ram_physical_gb!==null||requestedNetwork||/\b(?:variantes|versiones|otra|otro|alternativas)\b/.test(q);
   if(!follow||!prior.length||new Set(prior.map(r=>r.identity.base_family_key)).size!==1)return null;
@@ -117,7 +122,8 @@ export function phoneFamily(input,products,{focus=[]}={}){
  const families=new Set(candidates.map(r=>r.identity.base_family_key));if(families.size!==1)return null;
  const key=candidates[0].identity.base_family_key;
  const variants=rows.filter(r=>r.identity.base_family_key===key&&(!requestedNetwork||r.identity.connectivity===requestedNetwork));
- if(!variants.length)return null;
+ if(!variants.length)return {variants:[],exact:[],identity:candidates[0].identity,is_family_query:false,has_named_model:named,explicit_variant:true,
+  requested:{storage_gb:memory.storage_gb,ram_physical_gb:memory.ram_physical_gb,connectivity:requestedNetwork},all_identities:[]};
  const explicit=skuRows.length>0||memory.storage_gb!==null||memory.ram_physical_gb!==null||requestedNetwork!==null;
  let exact=skuRows.length?variants.filter(r=>skuRows.some(x=>x.product.sku===r.product.sku)):variants.filter(r=>
   (memory.storage_gb===null||r.identity.storage_gb===memory.storage_gb)&&

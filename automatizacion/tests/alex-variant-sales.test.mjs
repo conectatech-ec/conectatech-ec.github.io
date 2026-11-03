@@ -180,3 +180,11 @@ test('Rafa and Jessy complete26 conversational turns with budget, objections, ex
   }
  }
 });
+
+test('Absent 5G and Pro versions never fall through to prices of a different configuration',async t=>{
+ clock(t);const source=fixture();
+ for(const input of ['¿Cuánto cuesta el Samsung A17 5G?','Precio del Samsung A17 Pro','Quiero un Redmi 15C Plus']){
+  const a=await generateAlex(input,source,{},fallback);assertSafe(a,source);
+  assert.equal(amounts(a.text).length,0);assert.match(a.text,/no tengo verificada/i);assert.deepEqual(a.focus,[]);assert.equal(a.purchasable,false);
+ }
+});

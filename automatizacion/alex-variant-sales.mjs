@@ -15,6 +15,7 @@ export function variantSalesReply(input,source,memory={},now=Date.now()){
  let family=phoneFamily(input,source.productos,{focus:memory.focus||[]});
  if(!family&&(memory.focus||[]).length>1&&/precio|tarjeta|contado|cu[aá]nto/i.test(input))family=phoneFamily('variantes',source.productos,{focus:memory.focus});
  if(!family||!family.has_named_model&&!family.explicit_variant&&!family.is_family_query)return null;
+ if(!family.variants.length)return {text:'No tengo verificada esa configuración del '+family.identity.brand+' '+family.identity.model+(family.requested.connectivity?' '+family.requested.connectivity:'')+'. ¿Quieres revisar las otras versiones verificadas?',focus:[],selection_focus:[],variant_options:[],facts:[],images:[],image:null,intent:'recommend',action:'answer',purchasable:false,has_verified_photo:false};
  const identities=new Map(family.all_identities.map(v=>[v.sku,v]));
  const valid=family.variants.filter(p=>identities.get(p.sku)?.verified_identity&&p.price_verified!==false&&p.central_availability!=='blocked'&&!(p.blocked_reasons||[]).length);
  if(!valid.length)return null;

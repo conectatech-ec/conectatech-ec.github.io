@@ -63,7 +63,7 @@ async function verifyImages(a,id,{repeat=false}={}){
 async function ask(id,message,{realAI=false,...extra}={}){
  if(realAI){check(report.AI_attempts<2,'AI_ATTEMPT_LIMIT');report.AI_attempts++;}
  const a=await json(base+'/alex/chat',{privateRequest:true,body:{session_id:session,collaborator_id:id,channel:'simulator',message,catalog_only:!realAI,...extra}});
- check(a.outbound_enabled===false&&a.collaborator?.id===id&&a.attribution?.collaborator_id===id&&a.attribution?.channel==='simulator'&&a.attribution?.sales_confirmed===false,'OWNER_SIMULATOR_SCOPE');
+ check(a.outbound_enabled===false&&a.collaborator?.id===id&&a.attribution?.collaborator_id===id&&a.attribution?.channel==='simulator'&&a.attribution?.origin_verification==='operator_authenticated'&&a.attribution?.sales_confirmed===false,'OWNER_SIMULATOR_SCOPE');
  check(a.source_sha256===cut.sha256_original&&a.inventory_cut_date===cut.fecha_corte,'ALEX_SOURCE_NOT_CURRENT_HUB');
  check(typeof a.text==='string'&&!/\b(?:TELF\d+|SKU|COL00\d)\b|stock referencial|\b\d+ unidades\b/i.test(a.text),'PRIVATE_OR_INTERNAL_COPY');
  const stamp=Date.parse(a.source_verified_at),fresh=Number.isFinite(stamp)&&stamp<=Date.now()+300000&&Date.now()-stamp<=86400000;
@@ -90,7 +90,7 @@ try{
  const expected=process.env.EXPECTED_BASE_RELEASE||process.env.EXPECTED_RELEASE||'acfc00763dfbc7ac34c2c62f9ccecea4f613c870';check(/^[a-f0-9]{40}$/.test(expected),'BASE_RELEASE_INVALID');
  stage='access';healthBefore=await get('/health');check(healthBefore.ok===true&&healthBefore.release===expected&&healthBefore.meta_ingress_enabled===false,'ISOLATED_RELEASE_REQUIRED');report.release=healthBefore.release;
  const unauthed=await fetch(base+'/alex/collaborators',{redirect:'error',signal:AbortSignal.timeout(15000)});check(unauthed.status===401,'REGISTRY_NOT_PRIVATE');report.checks.registry_private=true;
- const status=await get('/alex/status');check(status.free_only===true&&status.model===policy.model&&status.live_customers_enabled===false,'FREE_MODEL_CONFIGURATION_REQUIRED');report.checks.free_model_configuration=true;
+ const status=await get('/alex/status');check(status.generative===true&&status.free_only===true&&status.model===policy.model&&status.live_customers_enabled===false,'FREE_MODEL_CONFIGURATION_REQUIRED');report.checks.free_model_configuration=true;
  const registry=await get('/alex/collaborators');check(registry.scope==='owner_simulator_only'&&registry.external_enabled===false&&registry.max_collaborators===10&&['COL001','COL002'].every(id=>registry.profiles.some(p=>p.id===id)),'OWNER_REGISTRY_REQUIRED');report.checks.owner_profiles=true;
  stage='source';({p:pointer,c:cut}=await publicHub());report.checks.hub_coherent=true;
  try{const sales=await json(PUBLIC+'/exportaciones/catalogo-ventas.json');if(sales.fuente_sha256===cut.sha256_original&&sales.fecha_corte===cut.fecha_corte&&sales.presentation?.source_sha256===cut.sha256_original)presentation=sales.presentation;}catch{/* Only exact preapproved enrichment is an eligible fallback. */}
@@ -119,10 +119,11 @@ try{
   await ask('COL001',`Me interesa el ${label}; mi presupuesto es de ${budget} dólares`);
   const exact=await ask('COL001','¿Y ese de contado?');check(exact.memory?.focus?.includes(chosen.p.sku)&&exact.memory.budget===budget,'EXACT_VARIANT_MEMORY_LOST');if(exact.source_fresh)check(exact.text.includes(money(chosen.r.promo_centavos)),'EXACT_CASH_QUOTE_MISSING');
   await verifyImages(exact,'COL001');
-  await ask('COL002','Busco un Redmi 15C de 128 GB; mi presupuesto es de 180 dólares');
+  const peers=familyRows('Redmi','15C'),peer=peers.find(x=>x.r.stock>0)||peers[0]||chosen,peerBudget=Math.ceil(peer.r.promo_centavos/100)+50;
+  await ask('COL002',`Me interesa el ${peer.v.brand} ${peer.v.model} de ${peer.v.storage_gb} GB con ${peer.v.ram_physical_gb} GB de RAM; mi presupuesto es de ${peerBudget} dólares`);
   const card=await ask('COL001','¿Y ese con tarjeta?');check(card.memory?.focus?.includes(chosen.p.sku)&&card.memory.budget===budget,'PERSONA_MEMORY_LEAK');if(card.source_fresh)check(card.text.includes(money(chosen.r.pvp_centavos)),'EXACT_CARD_QUOTE_MISSING');await verifyImages(card,'COL001');
   const erased=await ask('COL001','olvida esta conversación');check(erased.action==='erase'&&erased.memory?.focus?.length===0,'RESET_NOT_CONFIRMED');used.set('COL001',new Set());
-  const kept=await ask('COL002','¿Y ese con tarjeta?');check(kept.memory?.focus?.includes('TELF017')&&kept.memory.budget===180,'RESET_ERASED_OTHER_PERSONA');report.checks.persona_memory_and_reset_isolated=true;
+  const kept=await ask('COL002','¿Y ese con tarjeta?');check(kept.memory?.focus?.includes(peer.p.sku)&&kept.memory.budget===peerBudget,'RESET_ERASED_OTHER_PERSONA');report.checks.persona_memory_and_reset_isolated=true;
   await ask('COL002','olvida esta conversación');used.set('COL002',new Set());
  }else report.checks.persona_memory_and_reset_isolated='not_exercised_no_verified_A17';
  stage='closure';const current=await publicHub();check(current.p.origen_sha256===pointer.origen_sha256&&current.p.fecha_corte===pointer.fecha_corte,'HUB_CHANGED_DURING_PROBE');
