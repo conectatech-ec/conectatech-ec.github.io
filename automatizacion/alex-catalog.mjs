@@ -53,6 +53,10 @@ export function catalogMatches(query,products,{focus=[]}={}){
  // Distinct model families remain ambiguous instead of silently switching phones.
  if(!models.length&&/\b\d+\s*gb\b/.test(q)){
   const prior=products.filter(p=>focus.includes(p.sku));
+  const repeated=q.match(/\b\d+\s*gb\b/g)||[];
+  // Once RAM/variant was chosen, repeating its storage in a price follow-up
+  // does not reopen the choice between all variants with the same storage.
+  if(prior.length===1&&repeated.every(c=>label(prior[0]).replace(/\s/g,'').includes(c.replace(/\s/g,''))))return prior;
   const common=prior.length?modelTokens(label(prior[0])).filter(m=>prior.every(p=>new RegExp('\\b'+m+'\\b').test(label(p)))):[];
   if(!common.length)return [];
   models=[common[0]];

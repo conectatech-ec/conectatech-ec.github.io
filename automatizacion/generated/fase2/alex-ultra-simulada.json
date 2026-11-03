@@ -509,19 +509,20 @@
     },
     {
       "input": "¿Y con tarjeta el de 256 GB?",
-      "text": "💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.",
+      "text": "💳 Redmi 15C 256 GB / 4 GB RAM: $219.88 con tarjeta, más intereses cuando correspondan.\n💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.",
       "focus": [
         "TELF018"
       ],
       "intent": "payment",
       "action": "answer",
       "facts": [
+        "TELF018.card",
         "bank_terms_pending"
       ],
       "buttons": [
-        "Características",
-        "Ver fotografía",
-        "Precio con tarjeta"
+        "Precio de contado",
+        "Retiro en tienda",
+        "Entrega en Quito"
       ],
       "memory": {
         "budget": 180,
