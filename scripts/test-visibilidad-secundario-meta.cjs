@@ -19,7 +19,7 @@ test('lee publicación y elegibilidad sólo con GET, y oculta token, URLs y prop
   if(url.pathname.endsWith('/products'))return reply({data:[{id:'31',retailer_id:'TELF001',availability:'in stock',review_status:'pending',visibility:'published',image_fetch_status:'FETCHED',origin_country:'CN'},{id:'32',retailer_id:'TABL002',availability:'out of stock',review_status:'rejected',visibility:'staging',review_rejection_reasons:['WHATSAPP_DISABLED_BY_USER']}]});
   return reply({data:[{channels:['WHATSAPP'],rejection_information:{reason:'WHATSAPP_DISABLED_BY_USER',access_token:TOKEN,detail:TOKEN+' https://other.test/?access_token=abc'}}]});
  }});
- assert.equal(r.productos,2);assert.equal(r.revision.pending,1);assert.equal(r.visibilidad.staging,1);assert.equal(r.origen_declarado,1);assert.equal(calls.length,3);
+ assert.equal(r.productos,2);assert.equal(r.revision.pending,1);assert.equal(r.visibilidad.staging,1);assert.equal(r.origen_declarado,1);assert.equal(calls.length,6);
  assert.equal(r.visibilidad_cliente_verificada,false);assert.equal(JSON.stringify(r).includes(TOKEN),false);assert.equal(JSON.stringify(r).includes('other.test'),false);assert.equal(JSON.stringify(r).includes('access_token'),false);
 });
 test('un campo no disponible permite leer la existencia sin asumir aprobación',async()=>{
