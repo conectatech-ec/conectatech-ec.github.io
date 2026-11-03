@@ -131,9 +131,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi092-audifonos-klipxtreme-wavezound-conduccion-osea/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Audífonos Klip Xtreme de la línea WaveZound. El empaque y el inventario anuncian conducción ósea; su banda pasa por detrás de la cabeza. Referencia fotografiada en negro.",
   "contenido_venta": "Unos audífonos deportivos Klip Xtreme WaveZound con banda integrada.",
   "presentacion": "sin caja",
@@ -234,7 +234,7 @@
       "solicitado": "AUDI092",
       "sku": "AUDI092",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:21.285Z",
+      "fecha": "2026-11-03T03:08:46.179Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -259,7 +259,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi092-audifonos-klipxtreme-wavezound-conduccion-osea/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/audi092-audifonos-klipxtreme-wavezound-conduccion-osea/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi092-audifonos-klipxtreme-wavezound-conduccion-osea/",
       "archivo_html": "productos/audi092-audifonos-klipxtreme-wavezound-conduccion-osea/index.html",
       "http": 200,
       "sha256_html": "595427782d1e51854bd8e4f8fb18aef25cc2de9ae02ee114a7885e4f626c0a59",
@@ -269,7 +269,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi092/AUDI092-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/audi092/AUDI092-01-600.webp?v=cdf877c34dcfccbc",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi092/AUDI092-01-600.webp?v=cdf877c34dcfccbc",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -278,41 +278,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/audi092-audifonos-klipxtreme-wavezound-conduccion-osea/",
+          "url": "https://conectatech-ec.github.io/productos/audi092-audifonos-klipxtreme-wavezound-conduccion-osea/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/audi092/AUDI092-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi092/AUDI092-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/AUDI092-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI092-390.png",
       "sha256": "9d98eff0c6fba2c4e44b3413cf9e6206a1211091f57a1c9addc1cfbd2c2d144f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/AUDI092-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI092-1280.png",
         "sha256": "aead03ebd6e8efb0315e1d214c1e8a57240dcea67bc103785f14e44ae115ee83",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "AUDI092"
     }
   }
 }

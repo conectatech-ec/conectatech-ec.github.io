@@ -156,9 +156,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/case004-case-disco-2-5-transparente/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Carcasa transparente ahumada para discos HDD o SSD de 2,5 pulgadas, con conexión USB 3.0 indicada en el empaque. Incluye el cable USB mostrado. Se vende la carcasa vacía: disco no incluido.",
   "contenido_venta": "Un case transparente para disco de 2,5 pulgadas y el cable USB mostrado. No incluye disco HDD ni SSD.",
   "presentacion": "sin caja",
@@ -271,7 +271,7 @@
       "solicitado": "CASE004",
       "sku": "CASE004",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:26.223Z",
+      "fecha": "2026-11-03T03:08:57.001Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -296,7 +296,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/case004-case-disco-2-5-transparente/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/case004-case-disco-2-5-transparente/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/case004-case-disco-2-5-transparente/",
       "archivo_html": "productos/case004-case-disco-2-5-transparente/index.html",
       "http": 200,
       "sha256_html": "87f54e37af776885e01ab74c66b5b1e56c6982f4c64755f8860dfc5889d9b754",
@@ -306,7 +306,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/case004/CASE004-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/case004/CASE004-01-600.webp?v=dd3e4768fce545f4",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/case004/CASE004-01-600.webp?v=dd3e4768fce545f4",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -315,41 +315,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/case004-case-disco-2-5-transparente/",
+          "url": "https://conectatech-ec.github.io/productos/case004-case-disco-2-5-transparente/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/case004/CASE004-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/case004/CASE004-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/CASE004-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/CASE004-390.png",
       "sha256": "7ffb29de08f4b979f05501454a9d8ee2ea13548a1ca52aee20c4a3d4abd3defc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/CASE004-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/CASE004-1280.png",
         "sha256": "3d28b4ba5a11c2e3f92992a610589b7c53804f97b69ccecd3aa94ccd1ca14eb3",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "CASE004"
     }
   }
 }

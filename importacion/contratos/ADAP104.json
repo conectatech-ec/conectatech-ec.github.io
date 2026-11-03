@@ -142,9 +142,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap104-adaptador-usb-a-a-red-ethernet-rj-45-andowl/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Adaptador con cable integrado para conectar un puerto USB-A a una red Ethernet RJ45. El empaque indica USB 3.0 y velocidad nominal de hasta 1000 Mbps; el rendimiento depende del equipo y la red.",
   "contenido_venta": "Un adaptador USB-A a Ethernet RJ45 con cable integrado.",
   "presentacion": "sin caja",
@@ -245,7 +245,7 @@
       "solicitado": "ADAP104",
       "sku": "ADAP104",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:12.666Z",
+      "fecha": "2026-11-03T03:08:28.720Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -270,7 +270,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap104-adaptador-usb-a-a-red-ethernet-rj-45-andowl/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/adap104-adaptador-usb-a-a-red-ethernet-rj-45-andowl/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap104-adaptador-usb-a-a-red-ethernet-rj-45-andowl/",
       "archivo_html": "productos/adap104-adaptador-usb-a-a-red-ethernet-rj-45-andowl/index.html",
       "http": 200,
       "sha256_html": "7cef8d60b8696c55bc90ed92f414f720d34fe6ff9bac0a9a0a3a03fb89aefa5e",
@@ -280,7 +280,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap104/ADAP104-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/adap104/ADAP104-01-600.webp?v=e9492720aa0530df",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap104/ADAP104-01-600.webp?v=e9492720aa0530df",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -289,41 +289,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/adap104-adaptador-usb-a-a-red-ethernet-rj-45-andowl/",
+          "url": "https://conectatech-ec.github.io/productos/adap104-adaptador-usb-a-a-red-ethernet-rj-45-andowl/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/adap104/ADAP104-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap104/ADAP104-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/ADAP104-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/ADAP104-390.png",
       "sha256": "1463efbc5892a4b8cf2d0a177f63046fb12071fc2a5a6de66a1947979e29f4dc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/ADAP104-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/ADAP104-1280.png",
         "sha256": "1d5de0a1b5e546fc9e326746cf6acf907e4efae70ffe90c266d7d49f896f5fb5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "ADAP104"
     }
   }
 }

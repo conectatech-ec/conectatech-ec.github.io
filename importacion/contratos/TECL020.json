@@ -142,9 +142,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl020-teclado-con-trackpad-senimo/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Teclado Senimo con panel táctil centrado debajo de las teclas. La fotografía propia muestra distribución con Ñ. Referencia en rosado; no se anuncia una conexión o compatibilidad no comprobada.",
   "contenido_venta": "Un teclado Senimo con panel táctil integrado en la presentación fotografiada; sin tablet, teléfono ni accesorios adicionales declarados.",
   "presentacion": "sin caja",
@@ -245,7 +245,7 @@
       "solicitado": "TECL020",
       "sku": "TECL020",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:33.871Z",
+      "fecha": "2026-11-03T03:09:13.701Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -270,7 +270,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl020-teclado-con-trackpad-senimo/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/tecl020-teclado-con-trackpad-senimo/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl020-teclado-con-trackpad-senimo/",
       "archivo_html": "productos/tecl020-teclado-con-trackpad-senimo/index.html",
       "http": 200,
       "sha256_html": "b250c29802cc427c4c14caa895721f33f3ceaf9cee2ab1c1fff21adae0c06b91",
@@ -280,7 +280,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl020/TECL020-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/tecl020/TECL020-01-600.webp?v=34c9e5bc9032a656",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl020/TECL020-01-600.webp?v=34c9e5bc9032a656",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -289,41 +289,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/tecl020-teclado-con-trackpad-senimo/",
+          "url": "https://conectatech-ec.github.io/productos/tecl020-teclado-con-trackpad-senimo/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/tecl020/TECL020-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl020/TECL020-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/TECL020-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/TECL020-390.png",
       "sha256": "cd63d5f6ec9916d524be0260f427a0806309524965e62837462b63d0c40e4199",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/TECL020-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/TECL020-1280.png",
         "sha256": "6114761d08faae286dde2e0829cad6d01f8400738f0525697192499b8120de38",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "TECL020"
     }
   }
 }

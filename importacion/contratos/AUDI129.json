@@ -131,9 +131,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi129-audifonos-de-diadema-b-studio/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Audífonos de diadema de terceros con referencia comercial Beats Studio Pro. La referencia fotografiada es azul oscuro. Producto compatible (AAA); no se atribuye fabricación Beats.",
   "contenido_venta": "Unos audífonos de diadema Beats Studio Pro; condición AAA confirmada por el propietario, accesorios adicionales no declarados.",
   "presentacion": "sin caja",
@@ -234,7 +234,7 @@
       "solicitado": "AUDI129",
       "sku": "AUDI129",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:16.280Z",
+      "fecha": "2026-11-03T03:08:34.610Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -259,7 +259,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi129-audifonos-de-diadema-b-studio/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/audi129-audifonos-de-diadema-b-studio/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi129-audifonos-de-diadema-b-studio/",
       "archivo_html": "productos/audi129-audifonos-de-diadema-b-studio/index.html",
       "http": 200,
       "sha256_html": "d8703e74294ec2933565b66424f680a3d3786bc170beaf62f2089b13ce3d9a0c",
@@ -269,7 +269,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi129/AUDI129-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/audi129/AUDI129-01-600.webp?v=d8a7bc1a007d41ae",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi129/AUDI129-01-600.webp?v=d8a7bc1a007d41ae",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -278,41 +278,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/audi129-audifonos-de-diadema-b-studio/",
+          "url": "https://conectatech-ec.github.io/productos/audi129-audifonos-de-diadema-b-studio/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/audi129/AUDI129-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi129/AUDI129-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/AUDI129-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI129-390.png",
       "sha256": "af8e3801d71a12cdae170f4f866414a8cba35fe2e59fc7d6e425e014702dc3f1",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/AUDI129-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI129-1280.png",
         "sha256": "266b2758c8892086838c967066b118ea2de8fea425f0163a711bc70b7eadbfb4",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "AUDI129"
     }
   }
 }

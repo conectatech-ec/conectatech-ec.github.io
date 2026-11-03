@@ -131,9 +131,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub032-hub-usb-c-3-puertos-con-ethernet-rj-45/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Hub con conector USB-C y cable integrado, tres puertos USB-A y una entrada Ethernet RJ45. El empaque indica velocidades nominales de red de 10/100/1000 Mbps. Carcasa blanca; el rendimiento depende del equipo y la red.",
   "contenido_venta": "Un hub blanco con conector USB-C integrado, tres puertos USB-A y un puerto Ethernet RJ45.",
   "presentacion": "sin caja",
@@ -234,7 +234,7 @@
       "solicitado": "HUB032",
       "sku": "HUB032",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:29.991Z",
+      "fecha": "2026-11-03T03:09:06.181Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -259,7 +259,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub032-hub-usb-c-3-puertos-con-ethernet-rj-45/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/hub032-hub-usb-c-3-puertos-con-ethernet-rj-45/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub032-hub-usb-c-3-puertos-con-ethernet-rj-45/",
       "archivo_html": "productos/hub032-hub-usb-c-3-puertos-con-ethernet-rj-45/index.html",
       "http": 200,
       "sha256_html": "0ba6ea08a1929b2c6a55d20c4ee6ea95cf9bd296b678401d981215ade65c346a",
@@ -269,7 +269,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub032/HUB032-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/hub032/HUB032-01-600.webp?v=addb846297b50fcf",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub032/HUB032-01-600.webp?v=addb846297b50fcf",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -278,41 +278,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/hub032-hub-usb-c-3-puertos-con-ethernet-rj-45/",
+          "url": "https://conectatech-ec.github.io/productos/hub032-hub-usb-c-3-puertos-con-ethernet-rj-45/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/hub032/HUB032-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub032/HUB032-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/HUB032-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/HUB032-390.png",
       "sha256": "fbcac9d13a2a6f35f9dc62468d6c100e44e97861d144e266e4db84d18c219dac",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/HUB032-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/HUB032-1280.png",
         "sha256": "9ab5bc720d540700be3bc6ab4fcb6e4565c36338d9fb1946e7f43bdcfa5fca3e",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "HUB032"
     }
   }
 }

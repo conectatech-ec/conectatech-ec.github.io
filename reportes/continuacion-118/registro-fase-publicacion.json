@@ -1,5 +1,5 @@
 {
-  "estado": "REGISTRO_PREPARADO_TRAS_HTTP_CHROMIUM",
+  "estado": "REGISTRO_PUBLICO_CATALOGO_VERIFICADO",
   "nuevos": 28,
   "fuenteHTTP": {
     "archivo": "reportes/continuacion-118/http-publicacion.json",
@@ -14,5 +14,11 @@
     "vistasVerificadas": 0,
     "causa": "Los 28 SKU existen y sus fichas están verificadas; falta su alta en el payload público de fechas/miniaturas, por lo que el gate público rechaza el catálogo hasta publicar este registro.",
     "noSeEliminaNiSeOmiteGate": true
+  },
+  "validacionFinal": {
+    "reporte": "reportes/continuacion-118/qa-registro-publico/catalogo.json",
+    "sha256": "d7627697ea480847f105e958457fe42aa6b998c768fa81717c6f1063b4215bde",
+    "vistasVerificadas": 2,
+    "errores": 0
   }
 }

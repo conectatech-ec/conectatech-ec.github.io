@@ -131,9 +131,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Cargador compatible para iPhone con dos puertos USB-C y potencia declarada de 50W. Este valor corresponde al cargador y no se anuncia para cada puerto. Producto compatible; no es fabricado por Apple.",
   "contenido_venta": "Un adaptador de pared de 50W con dos puertos USB-C; sin cables adicionales declarados.",
   "presentacion": "sin caja",
@@ -234,7 +234,7 @@
       "solicitado": "CUBO027",
       "sku": "CUBO027",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:27.716Z",
+      "fecha": "2026-11-03T03:09:00.225Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -259,7 +259,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
       "archivo_html": "productos/cubo027-cubo-iph-50w-usb-c-usb-c/index.html",
       "http": 200,
       "sha256_html": "85a7d19113f9d91fe3fd8a0fba4fccebf0cc0302ba37e73b4ab67d9aab4939c0",
@@ -269,7 +269,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/cubo027/CUBO027-01-600.webp?v=349c8a9ef88b1b95",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01-600.webp?v=349c8a9ef88b1b95",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -278,41 +278,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
+          "url": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/cubo027/CUBO027-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/CUBO027-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO027-390.png",
       "sha256": "7a4cadec7f51198308a019cb54e572474f5ac7f11e07ad3693eaae2f8af70f90",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/CUBO027-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO027-1280.png",
         "sha256": "4e82a5609011eeec62cc7076dcbbbfb980b536bfa34ec065015b37a7f4dbdcac",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "CUBO027"
     }
   }
 }

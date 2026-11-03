@@ -142,9 +142,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi127-audifonos-de-diadema-live-a35-nc/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Audífonos de diadema de terceros con referencia comercial JBL Live A35 NC. El empaque indica conexión Bluetooth y ANC. Producto compatible (AAA); no se atribuye fabricación JBL ni funciones de inteligencia artificial.",
   "contenido_venta": "Unos audífonos de diadema JBL Live A35; accesorios adicionales no declarados.",
   "presentacion": "sin caja",
@@ -245,7 +245,7 @@
       "solicitado": "AUDI127",
       "sku": "AUDI127",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:17.041Z",
+      "fecha": "2026-11-03T03:08:37.797Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -270,7 +270,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi127-audifonos-de-diadema-live-a35-nc/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/audi127-audifonos-de-diadema-live-a35-nc/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi127-audifonos-de-diadema-live-a35-nc/",
       "archivo_html": "productos/audi127-audifonos-de-diadema-live-a35-nc/index.html",
       "http": 200,
       "sha256_html": "1d206df6575f8256f9a8313c14bede70229b488eec8c02d4065e07caa8ce7ff2",
@@ -280,7 +280,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi127/AUDI127-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/audi127/AUDI127-01-600.webp?v=371ad860f37eea04",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi127/AUDI127-01-600.webp?v=371ad860f37eea04",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -289,41 +289,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/audi127-audifonos-de-diadema-live-a35-nc/",
+          "url": "https://conectatech-ec.github.io/productos/audi127-audifonos-de-diadema-live-a35-nc/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/audi127/AUDI127-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi127/AUDI127-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/AUDI127-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI127-390.png",
       "sha256": "9e37670e0c12a37a2fc8928eb4d0edf6285ddaf022ab43444e27a698629f2773",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/AUDI127-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI127-1280.png",
         "sha256": "f81fe01cff1b19022995018c99a32ce875ec4a29e1306678c4267839bddfdc68",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "AUDI127"
     }
   }
 }
