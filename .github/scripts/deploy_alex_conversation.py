@@ -7,7 +7,7 @@ sys.path.insert(0,str(ROOT/'automatizacion'))
 from scoped_content import CFClient,ScopedDeployer,Bundle,same_bundle,same_json,private_get,read_latest_revision,NoRedirect,strict_json
 from scoped_policy import closed_health,tester_scope
 BASE='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
-BASELINE='4dc5b86bb8f70177e407fb590dbeee38bdbb890d'
+BASELINE='e984fe95263fbf545d283e8ea7252ae3089f681d'
 OWNED=frozenset({'alex.mjs','alex-store.mjs','alex-ui.mjs'})
 CONTROL='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/contents/.github/alex-conversation.json?ref=automatizacion%2Fpiloto-cloud-3sku-20261015'
 RAW='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'

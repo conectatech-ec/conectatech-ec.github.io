@@ -73,3 +73,13 @@ test('partial camera facts remain specific to their exact variant without copyin
  assert.match(b.text,/128 GB.*50 MP/);assert.match(b.text,/256 GB.*confirmar/);assert.ok(!ids(b).includes('ALEX:sim:camera_compare'));
  assert.ok(!/256 GB.*50 MP/.test(b.text));
 });
+test('a model recommendation cannot silently turn a family inquiry into a buyer-selected variant',async t=>{
+ t.mock.timers.enable({apis:['Date'],now:NOW});const source=fixture();
+ const a=await generateAlex('Busco un Samsung A17',source,{}, {CATALOG_FIRST:'true'});
+ a.memory.focus=['TELF011']; // A model can recommend one while presenting both.
+ const view=simulatorConversation(a,source,{input:'Busco un Samsung A17',images});
+ assert.deepEqual(a.memory.focus,['TELF011','TELF012']);assert.ok(ids(view).includes('ALEX:card'));
+ const b=await turn('',source,a.memory,'ALEX:choose:TELF012');
+ assert.deepEqual(b.memory.focus,['TELF012']);
+ const c=await turn('¿Y con tarjeta?',source,b.memory);assert.deepEqual(c.memory.focus,['TELF012']);assert.match(c.text,/299\.88/);
+});

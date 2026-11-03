@@ -457,11 +457,17 @@ export function simulatorConversation(result,source,{input='',payload=null,image
  const prior=m.suggestion_state||{},used=new Set(prior.key===key?prior.used||[]:[]),declined=new Set(prior.key===key?prior.declined||[]:[]),t=simFold(input);
  if(topic!=='explore')used.add(topic);
  const chosen=/^ALEX:choose:([A-Z]{3,8}\d{2,6})$/.exec(payload||'')?.[1];if(chosen)used.add('choose_'+chosen);
+ // A model recommendation is not the buyer's choice. Preserve the whole
+ // offered family until a native selection or an explicit variant identifies it.
+ const family=phoneFamily(input,products,{focus:m.focus||[]}),explicit=family?.explicit_variant&&family.exact.length===1?family.exact[0].sku:null;
+ const selectedSku=chosen||explicit||(prior.key===key?prior.selected_sku:null);
+ if(selectedSku&&offered.includes(selectedSku))m.focus=[selectedSku];
+ else if(result.variant_options?.length>1)m.focus=[...offered];
  if(result.action==='compare'&&(result.facts||[]).length>1&&result.facts.every(k=>k.endsWith('.camera')))used.add('camera_compare');
  if(/no (?:quiero|me interesa|necesito).{0,18}compar/.test(t))declined.add('compare');
  if(/no (?:quiero|me interesa|necesito).{0,18}(?:entrega|envio)/.test(t))declined.add('delivery');
  if(/no (?:quiero|me interesa|necesito).{0,18}foto/.test(t))declined.add('photo');
- m.suggestion_state={key,used:[...used].slice(-24),declined:[...declined].slice(-8),last_topic:topic==='explore'&&prior.key===key?prior.last_topic||topic:topic};
+ m.suggestion_state={key,selected_sku:selectedSku||null,used:[...used].slice(-24),declined:[...declined].slice(-8),last_topic:topic==='explore'&&prior.key===key?prior.last_topic||topic:topic};
  const current=m.suggestion_state.last_topic,valid=p=>quoteCurrent(source,p)&&p.stock>0&&p.price_verified!==false&&(!p.central_availability||p.central_availability==='in_stock')&&!(p.blocked_reasons||[]).length;
  const available=products.filter(valid),selection=m.focus||result.focus||[],selected=selection.length===1?available.find(p=>p.sku===selection[0])||null:available.length===1?available[0]:null;
  const list=[],add=(id,title,action=null,sku=null)=>list.push({id,title,payload:action?'ALEX:'+action+(sku?':'+sku:''):'ALEX:sim:'+id});
