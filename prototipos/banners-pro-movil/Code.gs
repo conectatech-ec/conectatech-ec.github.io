@@ -31,22 +31,27 @@ function base_(session){
   if(response.getResponseCode()!==200)throw new Error('No se pudo comprobar la vigencia del inventario. Intenta actualizar.');
   const cut=JSON.parse(response.getContentText());
   if(source.fecha_datos!==cut.fecha_corte||source.fuente_593_sha256!==cut.origen_sha256)throw new Error('La biblioteca está actualizándose al nuevo corte. No se compartirán materiales anteriores.');
-  return {source,cut};
+  const priceResponse=UrlFetchApp.fetch('https://conectatech-ec.github.io/datos-593/corte-comercial-publico-validado.json',{muteHttpExceptions:true,followRedirects:true});
+  if(priceResponse.getResponseCode()!==200)throw new Error('No se pudieron comprobar los precios del corte. Intenta actualizar.');
+  const prices=JSON.parse(priceResponse.getContentText());
+  if(!BannersVigencia.cut(cut,prices))throw new Error('El corte de precios no coincide con la fuente validada.');
+  return {source,cut,prices};
 }
-function approved_(p,cut){
+function approved_(p,cut,prices){
   const d=p.publicacion_drive;
   return SETTINGS.pilot.includes(p.sku)&&p.estado==='APROBADO'&&p.material_vigente_verificado===true&&p.disponibilidad_comercial===true&&
-    d&&d.estado_publicacion==='VERIFICADO'&&d.fecha_corte===cut.fecha_corte&&d.sha256_fuente===cut.origen_sha256&&d.checksum_archivo===p.banner_sha256;
+    d&&d.estado_publicacion==='VERIFICADO'&&d.fecha_corte===cut.fecha_corte&&d.sha256_fuente===cut.origen_sha256&&d.checksum_archivo===p.banner_sha256&&BannersVigencia.banner(p,cut,prices);
 }
-function rows_(source,cut){
+function rows_(source,cut,prices){
   const categories={TELEFONOS_TABLETS:'Teléfonos y tablets',SMARTWATCHES:'Smartwatch',ALMACENAMIENTO:'Almacenamiento',TELEVISORES_MONITORES:'Televisores y monitores',CABLES_ADAPTADORES:'Cables y adaptadores'};
-  const products=source.productos.filter(p=>approved_(p,cut)).map(p=>({sku:p.sku,name:p.titulo,category:categories[p.coleccion]||p.coleccion,driveId:p.publicacion_drive.id_drive,sha256:p.banner_sha256,dataDate:cut.fecha_corte,mime:'image/png'}));
+  const products=source.productos.filter(p=>approved_(p,cut,prices)).map(p=>({sku:p.sku,name:p.titulo,category:categories[p.coleccion]||p.coleccion,driveId:p.publicacion_drive.id_drive,sha256:p.banner_sha256,dataDate:cut.fecha_corte,renderedAt:p.publicacion_drive.fecha_generacion||null,mime:'image/png'}));
   const pdfs=[];
   for(const [key,c]of Object.entries(source.catalogos||{})){
     if(!c.archivos_privados||!['APROBADO_DRIVE_VERIFICADO','APROBADO_VERIFICADO_DRIVE'].includes(c.estado)||c.fecha_datos!==cut.fecha_corte)continue;
     for(const a of c.archivos_privados.filter(a=>a.version==='ligero')){
       const publication=c.publicacion_drive?.ligero;
       if(!publication||publication.estado_aprobacion!=='APROBADO'||publication.estado_publicacion!=='VERIFICADO'||publication.fecha_corte!==cut.fecha_corte||publication.sha256_fuente!==cut.origen_sha256||publication.checksum_archivo!==a.sha256)continue;
+      if(!BannersVigencia.pdf(c,a,source.productos,cut,prices))continue;
       const match=String(a.url).match(/\/d\/([A-Za-z0-9_-]+)/);if(!match||!a.sha256||match[1]!==publication.id_drive)continue;
       pdfs.push({name:categories[key]||key,driveId:match[1],sha256:a.sha256,mime:'application/pdf'});
     }
@@ -66,7 +71,7 @@ function checkedFile_(row){
   return {file,row:{...row,version,updatedAt:new Date(version).toISOString(),filename:file.getName()}};
 }
 function getLibrary(session){
-  const {source,cut}=base_(session),rows=rows_(source,cut),warnings=[];
+  const {source,cut,prices}=base_(session),rows=rows_(source,cut,prices),warnings=[];
   function checked(list){const result=[];for(const row of list){try{result.push(checkedFile_(row).row);}catch(e){warnings.push({sku:row.sku||null,nombre:row.name,motivo:'Archivo pendiente de verificación o sin acceso vigente'});}}return result;}
   const products=checked(rows.products),pdfs=publicBanners_()?[]:checked(rows.pdfs);
   products.sort((a,b)=>b.version-a.version||a.sku.localeCompare(b.sku));
@@ -74,7 +79,7 @@ function getLibrary(session){
 }
 function selected_(id,version,session){
   authorize_(session);if(typeof id!=='string'||!/^[A-Za-z0-9_-]+$/.test(id))throw new Error('Archivo inválido');
-  const {source,cut}=base_(session),rows=rows_(source,cut),selected=[...rows.products,...(publicBanners_()?[]:rows.pdfs)].find(p=>p.driveId===id);
+  const {source,cut,prices}=base_(session),rows=rows_(source,cut,prices),selected=[...rows.products,...(publicBanners_()?[]:rows.pdfs)].find(p=>p.driveId===id);
   if(!selected)throw new Error('Este archivo no está aprobado o ya no está vigente.');
   const result=checkedFile_(selected);
   if(String(result.row.version)!==String(version))throw new Error('VERSION_CAMBIO: actualiza la galería antes de compartir.');
