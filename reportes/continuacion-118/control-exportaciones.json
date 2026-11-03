@@ -1,0 +1,10 @@
+{
+  "ejecucionInicial": 41567404439,
+  "headInicial": "420d70f6222ffc609eec49f85e864a76b195dc40",
+  "estadoInicial": "FAILURE",
+  "causa": "El CSV Meta no incluía las 28 altas, por lo que la paridad996 vs968 falló. El guard se mantuvo.",
+  "correccion": "Regenerar con scripts/exportar-canales.cjs sin cambiar exportador ni integración; 968 registros previos idénticos y28adicionales.",
+  "headCorregido": "8832203541baf7c1d0dc06f02889f9d493fdeb05",
+  "nuevaEjecucion": 41568437143,
+  "sinEliminarControl": true
+}
