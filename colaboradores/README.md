@@ -1,3 +1,5 @@
+> **Cierre de integración y candidata Jessy:** ver [resultado vigente](integration/RESULTADO.md). El montaje es solo revisión; no se ha desplegado.
+
 > **Reanudación 03/11/2026:** usar [PILOTO-VALIDACION.md](PILOTO-VALIDACION.md). La integración nueva se monta en el Data Hub existente. No provisionar D1 ni desplegar el Worker de la propuesta histórica. Las secciones de despliegue anteriores quedan como historial, no como instrucciones de activación.
 
 # Piloto de colaboradores CONECTATECH

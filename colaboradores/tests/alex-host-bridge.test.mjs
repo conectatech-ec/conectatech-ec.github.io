@@ -1,0 +1,23 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createAlexHostBridge} from '../src/pilot/alex-host-bridge.mjs';
+import {wireExistingHost} from '../src/pilot/wire-existing-host.mjs';
+import config from '../pilot/config.json' with {type:'json'};
+const token='UNIT_ONLY_LONG_EXISTING_HOST_OPERATOR_SECRET';
+const noDbWrites={prepare(){return {bind(){return this;},async first(){return null;},async run(){throw Error('UNEXPECTED_WRITE');}};}};
+const bindings={isAuthorized:async(req,env)=>req.headers.get('Authorization')==='Bearer '+env.PILOT_TOKEN,readAlexCatalog:async()=>({}),seal:async x=>x,unseal:async x=>x,limitedText:async(req,n)=>{const s=await req.text();if(s.length>n)throw Error('TOO_LARGE');return s;}};
+const env={PILOT_TOKEN:token,DB:noDbWrites,COLLABORATORS_REVIEW_ENABLED:'true'};
+const req=(path,options={})=>new Request('https://host.test'+path,{...options,headers:{Authorization:'Bearer '+token,...options.headers}});
+test('new host bridge has no effect outside its exact prefix',async()=>{assert.equal(await createAlexHostBridge(bindings)(req('/health'),env),null);});
+test('anonymous requests cannot inspect binding status',async()=>{assert.equal((await createAlexHostBridge(bindings)(new Request('https://host.test/commercial/collaborators/status'),env)).status,401);});
+test('operator status is read-only and never exposes host secrets',async()=>{const response=await createAlexHostBridge(bindings)(req('/commercial/collaborators/status'),env);assert.equal(response.status,200);const d=await response.json();assert.equal(d.operatorAccess,'EXISTING_HOST_OPERATOR_ONLY');assert.equal(d.collaboratorLoginEnabled,false);assert.doesNotMatch(JSON.stringify(d),new RegExp(token));});
+test('status fails closed without a configured existing database or strong operator credential',async()=>{for(const missing of [{DB:null},{PILOT_TOKEN:'short'}]){const e={...env,...missing};const r=req('/commercial/collaborators/status',{headers:{Authorization:'Bearer '+e.PILOT_TOKEN}});assert.equal((await createAlexHostBridge(bindings)(r,e)).status,503);}});
+test('source selector forwards the requested SKU through the mounted service',async()=>{
+ let seen;
+ const payload=JSON.stringify({ads:{'UNIT-AD':{id:'UNIT-AD',sku:'ADAP066',memberId:'COL001',fingerprint:'UNIT'}},references:{},opportunities:{},audit:[]});
+ const db={prepare(){return {bind(){return this;},async first(){return {payload};},async run(){throw Error('UNEXPECTED_WRITE');}};}};
+ const mount=wireExistingHost({db,readAlexCatalog:async sku=>{seen=sku;return {productos:[]};},seal:async()=>{throw Error('UNEXPECTED_WRITE');},unseal:async x=>JSON.parse(x),authenticateExistingSession:async()=>({verified:true,id:'ADMIN',role:'ADMINISTRADOR'})});
+ await assert.rejects(()=>mount.pilot.material({verified:true,id:'ADMIN',role:'ADMINISTRADOR'},'UNIT-AD'),{code:'PRODUCT'});
+ assert.equal(seen,'ADAP066');
+});
+test('Jessy is named as candidate but neither owner approval nor alias activates her',()=>{const j=config.participants.find(p=>p.id==='COL002');assert.equal(j.alias,'Jessy Fox');assert.equal(j.active,false);assert.equal(j.authorization.personalConsentVerified,false);assert.equal(j.authorization.facebookAccessVerified,false);assert.equal(config.participants.find(p=>p.id==='COL001').active,true);});

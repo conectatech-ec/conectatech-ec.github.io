@@ -16,10 +16,10 @@ export function wireExistingHost({db,readAlexCatalog,seal,unseal,authenticateExi
   authorizedAlexChannels:verifiedAlexChannels,
   listCollaboratorSlots:async()=>config.participants.map(p=>({id:p.id,alias:p.alias,active:p.active===true,operation:p.operation})),
   collaboratorTransaction:transaction,
-  readCommercialProduct:async sku=>fromExistingAlexCatalog(await readAlexCatalog(),sku),
+  readCommercialProduct:async sku=>fromExistingAlexCatalog(await readAlexCatalog(sku),sku),
   readConfirmed593Sale:sales.read,
-  readSignatureApprovedAsset:async(sku,sourceDigest)=>{const product=fromExistingAlexCatalog(await readAlexCatalog(),sku);return product&&product.sourceDigest===sourceDigest?(signature?signature.asset(product):signatureFromExistingLibrary(signatureLibrary,sku,sourceDigest,product.priceCents)):null;},
-  readSignatureReview:async sku=>{const product=fromExistingAlexCatalog(await readAlexCatalog(),sku);return signature&&product?(await signature.inspect(product)).status:null;}
+  readSignatureApprovedAsset:async(sku,sourceDigest)=>{const product=fromExistingAlexCatalog(await readAlexCatalog(sku),sku);return product&&product.sourceDigest===sourceDigest?(signature?signature.asset(product):signatureFromExistingLibrary(signatureLibrary,sku,sourceDigest,product.priceCents)):null;},
+  readSignatureReview:async sku=>{const product=fromExistingAlexCatalog(await readAlexCatalog(sku),sku);return signature&&product?(await signature.inspect(product)).status:null;}
  });
  return {...mounted,integrations:{sales:sales.status,signatureReaderConnected:!!signature}};
 }

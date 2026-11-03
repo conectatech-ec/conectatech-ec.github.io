@@ -1,5 +1,7 @@
 AVANCE — RED COMERCIAL CONECTATECH
 
+Actualización posterior: [montaje y estado de Jessy como candidata](integration/RESULTADO.md). El ensayo descrito a continuación conserva su evidencia histórica; no activa colaboradores.
+
 **Resultado: ensayo local parcial; activación bloqueada por evidencia real.** Rafa/COL001 es el único activo existente; COL002 reservado e inactivo; capacidad 10. Cero publicaciones, mensajes externos, ventas registradas en 593 o comisiones. Main, producción y las otras ramas intactas.
 
 | Tramo probado | Resultado |
