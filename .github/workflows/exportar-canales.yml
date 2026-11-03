@@ -56,47 +56,58 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Comprobar credencial existente sin modificar activos
+      - name: Verificar nombres y portadas importados mediante GET
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_GRAPH_VERSION: 'v26.0'
+          META_VERIFY_READ_ONLY: 'true'
         run: |
           node - <<'JS'
-          const fs=require('fs'),{Graph}=require('./scripts/sincronizar-conjuntos-meta.cjs');
+          const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+          const {Graph}=require('./scripts/sincronizar-conjuntos-meta.cjs');
+          const {verifyPostImport}=require('./scripts/verificar-postimport-meta.cjs');
           (async()=>{
-            let result={estado:'SIN_CREDENCIAL_META_DISPONIBLE_EN_ACTIONS',solo_lectura:true};
-            if(process.env.META_ACCESS_TOKEN){
-              try{
-                const api=new Graph({token:process.env.META_ACCESS_TOKEN,version:'v26.0'});
-                const catalog=await api.request('GET','1036301566100990',{fields:'id,name'});
-                const sets=await api.list('1036301566100990/product_sets','id,name,product_count,ordering_info');
-                const example=sets.find(s=>s.name==='CONECTATECH | TABLETS');
-                const tablets=example?await api.list(example.id+'/products','id,retailer_id'):[];
-                console.log('PRIORIDAD_META: '+JSON.stringify({sets,tablets}));
-                const feeds=await api.list('1036301566100990/product_feeds','id,name,schedule');
-                const uploads=[];
-                for(const f of feeds.filter(f=>f.schedule?.url==='https://conectatech-ec.github.io/exportaciones/meta-catalogo-piloto.csv')){
-                  const items=await api.list(f.id+'/uploads','id,filename,start_time,end_time,error_count,num_invalid_items,num_persisted_items');
-                  uploads.push({feed_id:f.id,cargas:items.slice(0,5).map(u=>({id:u.id,archivo_hash:String(u.filename||'').match(/ct-[a-f0-9]{64}/)?.[0]||'otro_nombre',inicio:u.start_time,fin:u.end_time,errores:u.error_count,invalidos:u.num_invalid_items,persistidos:u.num_persisted_items}))});
-                }
-                const products=await api.list('1036301566100990/products','retailer_id,custom_label_0,availability');
-                const labels={};for(const p of products){const k=p.custom_label_0||'(sin etiqueta)';labels[k]=(labels[k]||0)+1;}
-                let owner;try{owner=await api.request('GET','1036301566100990',{fields:'id,business{id,name},owner_business{id,name}'});}catch{owner={estado:'PROPIEDAD_NO_CONSULTABLE_CON_ESTE_PERMISO'};}
-                result={estado:'CREDENCIAL_META_REUTILIZABLE',solo_lectura:true,catalogo:catalog,propiedad:owner,conjuntos:sets,importaciones:uploads,productos_leidos:products.length,disponibles:products.filter(p=>String(p.availability).replace(/_/g,' ')==='in stock').length,agotados:products.filter(p=>String(p.availability).replace(/_/g,' ')==='out of stock').length,etiquetas:labels};
-              }catch{
-                result={estado:'CREDENCIAL_EXISTENTE_SIN_ACCESO_VERIFICADO',solo_lectura:true};
-              }
-            }
-            fs.mkdirSync('work/auto-meta',{recursive:true});
-            fs.writeFileSync('work/auto-meta/acceso-meta.json',JSON.stringify(result,null,2));
-            console.log('COMPROBACION_META: '+JSON.stringify(result));
-            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nAcceso Meta (solo lectura): '+result.estado+'\n');
-          })().catch(()=>{console.error('No se pudo completar la comprobación de acceso');process.exitCode=1});
+            const result={schema:'conectatech.meta_import_and_editorial_read_only.v1',read_only:true,write_requests:0,customer_messages:0,requests:0};
+            try{
+              const csv=fs.readFileSync('exportaciones/meta-catalogo-piloto.csv','utf8');
+              const plan=JSON.parse(fs.readFileSync('exportaciones/meta-conjuntos-web.json','utf8'));
+              const checkpoint=JSON.parse(fs.readFileSync('reportes/integracion-whatsapp/ultima-importacion.json','utf8'));
+              if(!/^\d+$/.test(String(plan.catalog_id))||String(checkpoint.catalog_id)!==String(plan.catalog_id)||!/^\d+$/.test(String(checkpoint.feed_id)))throw Error('PLAN_INVALID');
+              if(!process.env.META_ACCESS_TOKEN)throw Error('NO_ACCESS');
+              const transport=new Graph({token:process.env.META_ACCESS_TOKEN,version:'v26.0'});
+              const api={request:async(method,target,params)=>{
+                if(method!=='GET'||result.requests>=20)throw Error('READ_BUDGET');
+                result.requests++;return transport.request(method,target,params);
+              }};
+              const digest=crypto.createHash('sha256').update(csv).digest('hex');
+              result.expected_feed_sha256=digest;result.expected_items=plan.productos_meta;
+              const uploads=await api.request('GET',checkpoint.feed_id+'/uploads',{fields:'id,filename,end_time,error_count,num_invalid_items,num_persisted_items',limit:100});
+              if(!Array.isArray(uploads.data))throw Error('IMPORT_RESPONSE_INVALID');
+              const matches=uploads.data.filter(u=>String(u.filename||'').endsWith('ct-'+digest+'.csv'));
+              result.target_uploads_found=matches.length;
+              result.observed_pending_uploads=uploads.data.filter(u=>!u.end_time&&!u.error_count).length;
+              const upload=matches.length===1?matches[0]:null;
+              result.import_complete=!!upload?.end_time;
+              result.import_error_count=Number.isSafeInteger(upload?.error_count)?upload.error_count:null;
+              result.invalid_items=Number.isSafeInteger(upload?.num_invalid_items)?upload.num_invalid_items:null;
+              result.persisted_items=Number.isSafeInteger(upload?.num_persisted_items)?upload.num_persisted_items:null;
+              result.import_verified=!!upload?.end_time&&result.import_error_count===0&&result.invalid_items===0&&result.persisted_items>=plan.productos_meta;
+              if(result.import_verified){
+                result.postimport=await verifyPostImport({csv,api,catalogId:String(plan.catalog_id),maxRequests:19});
+                result.state='IMPORT_VERIFIED_EDITORIAL_READ_COMPLETE';
+              }else result.state='IMPORT_STATUS_READ_ONLY_PENDING_OR_UNKNOWN';
+            }catch{result.state='READ_ONLY_STATUS_UNAVAILABLE';}
+            fs.writeFileSync(path.join(process.env.RUNNER_TEMP,'meta-postimport-read-only.json'),JSON.stringify(result,null,2)+'\n');
+            console.log('META_IMPORT_EDITORIAL_READ_ONLY '+JSON.stringify(result));
+          })().catch(()=>{console.error('META_READ_ONLY_CHECK_FAILED');process.exitCode=1;});
           JS
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: comprobacion-acceso-meta
-          path: work/auto-meta/acceso-meta.json
-          retention-days: 7
+          name: meta-postimport-read-only
+          path: ${{ runner.temp }}/meta-postimport-read-only.json
+          retention-days: 3
+          if-no-files-found: error
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
     permissions:
@@ -117,6 +128,7 @@ jobs:
           node scripts/test-validar-exportacion-593.cjs
           node scripts/verificar-paridad-meta-web.cjs
           node scripts/test-verificar-paridad-meta-web.cjs
+          node scripts/test-verificar-postimport-meta.cjs
   exportar:
     timeout-minutes: 50
     # También se ejecuta tras publicaciones de bots 593: sus pushes no disparan otros workflows.
