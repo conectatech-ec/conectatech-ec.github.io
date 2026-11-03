@@ -7,7 +7,7 @@
   "evaluados_en_auditoria": 128,
   "revisados_visualmente_en_auditoria": 126,
   "sin_acceso_visual_en_auditoria": 2,
-  "criterio": "Tanda de29 portadas dentro de58 mejoras de encuadre. Escala uniforme del maestro existente completo; sin recrear el artículo ni añadir marcas, texto, unidades o capacidades. Conservar todos los originales y datos comerciales.",
+  "criterio": "Tanda de29 portadas dentro de56 mejoras de encuadre. Escala uniforme del maestro existente completo; sin recrear el artículo ni añadir marcas, texto, unidades o capacidades. Conservar todos los originales y datos comerciales.",
   "base_integracion_verificada": "5131e09133336a996c810cb68fcdcfc9ebd08204",
   "productos": {
     "PILA001": {
@@ -4022,8 +4022,8 @@
     }
   },
   "galeria_revision": "/revision/fotografia-masiva-20261103-44-45/",
-  "galeria_total_productos": 58,
-  "galeria_total_imagenes": 116,
+  "galeria_total_productos": 56,
+  "galeria_total_imagenes": 112,
   "conservados_en_lote": [
     {
       "sku": "PROT003",
@@ -4636,6 +4636,24 @@
         "url": "/imagenes/cabl174/CABL174-r119-01.webp",
         "sha256": "554f01a7b2036e87f1920080f9005c56e2b8c4bd8b30f02d162d3dd0197cf990"
       }
+    },
+    {
+      "sku": "PILA044",
+      "estado": "MEJORAR ÁNGULO",
+      "motivo": "La cara visible no permite leer el modelo. Se conserva la foto actual; no publicar un reencuadre como solución de identidad ni añadir inscripciones sin una vista física legible.",
+      "portada": {
+        "url": "/imagenes/pila044/PILA044-01.webp",
+        "sha256": "f22c6ccd52140ebd54eb45ff38f781c9e494b35884b4e64f2439cac0d1b67e5d"
+      }
+    },
+    {
+      "sku": "PILA045",
+      "estado": "MEJORAR ÁNGULO",
+      "motivo": "La cara visible no permite leer el modelo. Se conserva la foto actual; no publicar un reencuadre como solución de identidad ni añadir inscripciones sin una vista física legible.",
+      "portada": {
+        "url": "/imagenes/pila045/PILA045-01.webp",
+        "sha256": "bc5d616623e502cd61fb139505e080c59500aeca484d95095ec1db9c36359bfe"
+      }
     }
   ],
   "pendientes": {
@@ -4672,6 +4690,18 @@
     "TELF012": {
       "estado": "SIN ACCESO VISUAL",
       "motivo": "La imagen publicada procede de una URL externa; no hay copia local verificable en este lote. Conservar URL y fotografía, sin sustituirla por un modelo parecido.",
+      "mantener_foto_actual": true,
+      "no_bloquea_otros_sku": true
+    },
+    "PILA044": {
+      "estado": "MEJORAR ÁNGULO",
+      "motivo": "La cara visible no permite leer el modelo. Se conserva la foto actual; no publicar un reencuadre como solución de identidad ni añadir inscripciones sin una vista física legible.",
+      "mantener_foto_actual": true,
+      "no_bloquea_otros_sku": true
+    },
+    "PILA045": {
+      "estado": "MEJORAR ÁNGULO",
+      "motivo": "La cara visible no permite leer el modelo. Se conserva la foto actual; no publicar un reencuadre como solución de identidad ni añadir inscripciones sin una vista física legible.",
       "mantener_foto_actual": true,
       "no_bloquea_otros_sku": true
     }
