@@ -10,6 +10,7 @@ on:
       - 'scripts/fotografia-direccion.cjs'
       - 'assets/editorial-titulos*.js'
       - '.github/workflows/exportar-canales.yml'
+      - 'integraciones/whatsapp-secundario.json'
   workflow_run:
     workflows:
       - 'Publicar corte comercial 593 validado'
@@ -31,6 +32,8 @@ on:
       - 'scripts/exportar-canales.cjs'
       - 'scripts/categorias-meta-web.cjs'
       - 'scripts/sincronizar-conjuntos-meta.cjs'
+      - 'scripts/sincronizar-secundario-meta.cjs'
+      - 'integraciones/whatsapp-secundario.json'
       - 'scripts/prioridad-comercial-meta.cjs'
       - 'scripts/reordenar-seis-colecciones-meta.cjs'
       - '.github/workflows/exportar-canales.yml'
@@ -53,9 +56,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          sparse-checkout: |
+            .github
+            scripts
+            integraciones
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validar diagnóstico de vínculo sin acceso a Meta
+        run: node scripts/test-diagnostico-vinculo-meta.cjs
       - name: Comprobar credencial existente sin modificar activos
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
@@ -92,10 +101,20 @@ jobs:
             fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nAcceso Meta (solo lectura): '+result.estado+'\n');
           })().catch(()=>{console.error('No se pudo completar la comprobación de acceso');process.exitCode=1});
           JS
+      - name: Consultar vínculo WhatsApp con la credencial existente (sólo lectura)
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: node scripts/diagnosticar-vinculo-whatsapp-meta.cjs
+      - name: Verificar identidad del catálogo secundario sin activar sincronización
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: node scripts/sincronizar-secundario-meta.cjs --inspect
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
-          path: work/auto-meta/acceso-meta.json
+          path: |
+            work/auto-meta/acceso-meta.json
+            work/auto-meta/resultado-secundario.json
           retention-days: 7
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
@@ -111,6 +130,7 @@ jobs:
           node-version: '22'
       - run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-secundario-meta.cjs
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
           node scripts/test-exportar-canales.cjs
@@ -133,6 +153,7 @@ jobs:
       - name: Generar archivos CSV
         run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-secundario-meta.cjs
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
           node scripts/test-validar-exportacion-593.cjs
@@ -165,13 +186,20 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           META_GRAPH_VERSION: 'v26.0'
         run: node scripts/reordenar-seis-colecciones-meta.cjs --apply
+      - name: Sincronizar catálogo independiente de WhatsApp secundario
+        id: sync-secundario
+        continue-on-error: true
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: node scripts/sincronizar-secundario-meta.cjs
       - name: Conservar puntos de reanudación de Meta
         if: always()
         run: |
-          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ]; then exit 0; fi
+          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ] && [ ! -f work/auto-meta/importacion-secundario.json ]; then exit 0; fi
           mkdir -p /tmp/conectatech-meta-puntos
           if [ -f work/auto-meta/importacion.json ]; then cp work/auto-meta/importacion.json /tmp/conectatech-meta-puntos/importacion.json; fi
           if [ -f work/auto-meta/reordenacion.json ]; then cp work/auto-meta/reordenacion.json /tmp/conectatech-meta-puntos/reordenacion.json; fi
+          if [ -f work/auto-meta/importacion-secundario.json ]; then cp work/auto-meta/importacion-secundario.json /tmp/conectatech-meta-puntos/importacion-secundario.json; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for intento in 1 2 3 4; do
@@ -185,6 +213,10 @@ jobs:
             if [ -f /tmp/conectatech-meta-puntos/reordenacion.json ]; then
               cp /tmp/conectatech-meta-puntos/reordenacion.json reportes/integracion-whatsapp/resultado-reordenar-seis-colecciones.json
               git add reportes/integracion-whatsapp/resultado-reordenar-seis-colecciones.json
+            fi
+            if [ -f /tmp/conectatech-meta-puntos/importacion-secundario.json ]; then
+              cp /tmp/conectatech-meta-puntos/importacion-secundario.json reportes/integracion-whatsapp/ultima-importacion-secundario.json
+              git add reportes/integracion-whatsapp/ultima-importacion-secundario.json
             fi
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "Conservar referencia de importación Meta para reanudación"
@@ -200,6 +232,9 @@ jobs:
           path: |
             work/auto-meta/resultado.json
             work/auto-meta/reordenacion.json
+            work/auto-meta/importacion-secundario.json
+            work/auto-meta/resultado-secundario.json
           retention-days: 7
           if-no-files-found: warn
+
 
