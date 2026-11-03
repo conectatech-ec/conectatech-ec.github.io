@@ -235,8 +235,9 @@ def register(root, report, previous, report_path, report_sha, previous_catalog=N
             entry = dict(old or {})
             # No confundir incorporación al registro con una publicación nueva:
             # sólo el snapshot público anterior acredita ausencia de portada.
+            # Un SKU completamente nuevo también puede estar ausente del catálogo anterior.
             kind = 'actualizado' if old and (old.get('imagen') or {}).get('src') else 'catalogo'
-            if previous_catalog is not None and sku in previous_catalog['skus']:
+            if previous_catalog is not None and (sku in previous_catalog['skus'] or not old):
                 kind = 'actualizado' if sku in previous_catalog['sku_con_imagen'] else 'nuevo'
             entry.update(actualizadoEn=date, huella=fingerprint, imagen=image, contenido=content, historial=history,
                 tipoCambio=kind,

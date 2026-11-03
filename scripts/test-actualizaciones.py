@@ -189,6 +189,19 @@ class UpdateTests(unittest.TestCase):
         self.assertEqual(updated['productos']['TEST001']['tipoCambio'], 'actualizado')
         self.assertEqual(state['productos']['TEST001']['tipoCambio'], 'nuevo')
 
+    def test_brand_new_sku_absent_from_previous_public_catalog(self):
+        receipt = self.http_report()
+        snapshot = {'url': m.ORIGIN + '/', 'fecha': '2026-10-09T07:00:00+00:00',
+            'sha256': 'a' * 64, 'skus': ['TEST002'], 'sku_con_imagen': ['TEST002']}
+        state, _ = m.register(self.root, receipt, {}, 'reportes/prueba.json', 'b' * 64, snapshot)
+        self.assertEqual(state['productos']['TEST001']['tipoCambio'], 'nuevo')
+        self.assertEqual(state['productos']['TEST002']['tipoCambio'], 'actualizado')
+        # Un registro antiguo no se vuelve nuevo por omitirlo en un snapshot posterior.
+        self.seo['TEST001']['descripcion'] = 'Contenido realmente actualizado.'
+        later = self.http_report('2026-10-11T08:00:00+00:00')
+        updated, _ = m.register(self.root, later, state, 'reportes/cambio.json', 'c' * 64, snapshot)
+        self.assertEqual(updated['productos']['TEST001']['tipoCambio'], 'actualizado')
+
     def test_first_registration_is_not_proof_of_new_publication(self):
         state, _ = self.register(self.http_report())
         self.assertTrue(all(row['tipoCambio'] == 'catalogo' for row in state['productos'].values()))
