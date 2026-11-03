@@ -57,6 +57,8 @@ jobs:
         env:
           ALEX_PUBLIC_HELPERS_REFERENCE: ${{ github.workspace }}/qa-public-reference
       - run: node automatizacion/tests/messenger-runner-fixture.test.mjs
+      - run: node automatizacion/tests/messenger-closed-ingress.test.mjs
+      - run: node automatizacion/tests/private-source-preflight.test.mjs
       - run: python automatizacion/tests/central_593_test.py
       - run: python automatizacion/tests/data_hub_test.py
       - run: node automatizacion/tests/central.test.mjs
