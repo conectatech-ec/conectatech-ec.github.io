@@ -64,7 +64,7 @@ test('Generative voice is retained while repeated greetings and invented prose a
 test('A generative recommendation does not rush to delivery and malformed humor still keeps a safe warm reply',async t=>{
  clock(t);const source=fixture();
  const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:{say:'Claro, revisemos.',facts:['TELF017.cash'],ask:'¿Tienes alguna preferencia para la entrega, como retiro en tienda o envío a domicilio?',focus:['TELF017'],image:null,intent:'recommend',action:'recommend',remember:{}}})}};
- const first=await generateAlex('Busco un Redmi 15C de 128 GB para trabajar',source,{},env);safe(first,source);assert.ok(!/retiro|entrega/i.test(first.text));
+ const first=await generateAlex('Busco un Redmi 15C de 128 GB para trabajar, presupuesto 180. ¿Qué me aconsejas?',source,{},env);safe(first,source);assert.ok(!/retiro|entrega/i.test(first.text));assert.ok(first.facts.includes('TELF017.cash'));assert.ok(first.facts.some(k=>/\.(?:benefit|memory|battery)$/.test(k)),'Recommendation must include a verified reason, not just a price');
  env.AI.run=async()=>({response:{say:'Jajaja, ¿y tú qué dices?',facts:['discount'],ask:'',focus:['TELF017'],image:null,intent:'other',action:'answer',remember:{}}});
  const joke=await generateAlex('¿Me haces una rebajita? 😂',source,first.memory,env);safe(joke,source);assert.match(joke.text,/Jajaja|presupuesto/);assert.ok(joke.facts.includes('discount'));
 });
