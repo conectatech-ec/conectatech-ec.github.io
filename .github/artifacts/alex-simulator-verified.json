@@ -1,0 +1,74 @@
+{
+  "github_run_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41685928768",
+  "https": {
+    "schema": "conectatech.alex.simulator-https.v1",
+    "at": "2026-11-03T17:37:12.457Z",
+    "url": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/alex",
+    "passed": true,
+    "Graph_sends": 0,
+    "new_services": 0,
+    "external_customers_enabled": false,
+    "turns": [
+      {
+        "message": "Consulta natural de Redmi 15C 128 GB",
+        "text": "💵 Redmi 15C 128 GB: $159.90 en PROMO CONTADO.\nRedmi 15C 128 GB: 128 GB de almacenamiento para tus fotos y aplicaciones.",
+        "generative": true,
+        "error_code": null,
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "source_fresh": true
+      },
+      {
+        "message": "¿Y con tarjeta?",
+        "text": "💳 Redmi 15C 128 GB: $199.88 con tarjeta, más intereses cuando correspondan.",
+        "focus": [
+          "TELF017"
+        ]
+      }
+    ],
+    "engine_release": "acfc00763dfbc7ac34c2c62f9ccecea4f613c870",
+    "html_http": 200,
+    "unauthenticated_http": 401,
+    "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+    "quota_before": {
+      "reserved_neurons": 560,
+      "calls": 7,
+      "remaining_calls": 93,
+      "reset_at": "2026-11-04T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    },
+    "real_generative_response": true,
+    "context_verified": true,
+    "authorized_image_http": 200,
+    "context_erased": true,
+    "quota_after": {
+      "reserved_neurons": 640,
+      "calls": 8,
+      "remaining_calls": 92,
+      "reset_at": "2026-11-04T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    },
+    "maximum_operator_AI_turns": 1
+  },
+  "deployment": {
+    "schema": "conectatech.alex.ui-deployment.v1",
+    "passed": true,
+    "ui_revision": "a51a1d9d947dcf306a7035a3a6e014b14667b269",
+    "engine_release_preserved": "acfc00763dfbc7ac34c2c62f9ccecea4f613c870",
+    "changed_modules": [
+      "alex-ui.mjs"
+    ],
+    "worker_puts": 1,
+    "settings_and_secrets_preserved": true,
+    "all_other_module_bodies_preserved": true,
+    "commercial_source_preserved_exactly": true,
+    "tester_transport_preserved": true,
+    "external_customers_enabled": false,
+    "new_cost_usd": 0,
+    "private_content_recorded": false
+  }
+}
