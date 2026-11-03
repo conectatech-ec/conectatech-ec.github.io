@@ -64,13 +64,23 @@ function compareCSV(file,id,allowed){
 const meta=compareCSV('exportaciones/meta-catalogo-piloto.csv','id',['title','image_link']);
 const shared=compareCSV('exportaciones/contenido-multicanal.csv','sku',['title','facebook_title','image_link']);
 const oldSales=JSON.parse(before.get('exportaciones/catalogo-ventas.json')),sales=JSON.parse(read('exportaciones/catalogo-ventas.json'));
+const {validPresentation,preparePresentation}=require('./presentacion-publica-alex.cjs');
+if(sales.presentation!==null){
+ assert(validPresentation(sales.presentation),'Digest o esquema inválido de presentación opcional');
+ if(sales.presentation_status==='PRESENTATION_READY'){
+  const candidate=preparePresentation({source_sha256:state.origen_sha256,cut_date:state.fecha_corte,multichannel:read('exportaciones/contenido-multicanal.csv'),meta:read('exportaciones/meta-catalogo-piloto.csv'),webProducts:products,photos,previous:sales.presentation,readAsset:url=>fs.readFileSync('.'+url)});
+  assert.equal(candidate.status,'PRESENTATION_READY');assert.deepEqual(candidate.presentation,sales.presentation,'Presentación distinta de la proyección pública aprobada');
+ }else{assert.equal(sales.presentation_status,'PRESENTATION_PREPARATION_FAILED');assert.deepEqual(sales.presentation,oldSales.presentation,'Un fallo opcional conserva exactamente el documento anterior, sin cambiar corte');}
+}else assert.equal(sales.presentation_status,'PRESENTATION_PREPARATION_FAILED');
+const presentationReport={presentation_status:sales.presentation_status,presentation_products:sales.presentation?Object.keys(sales.presentation.products).length:0,presentation_integrity_valid:sales.presentation===null||validPresentation(sales.presentation)};
 assert.deepEqual(sales.productos.map(p=>p.sku),oldSales.productos.map(p=>p.sku));
 for(let i=0;i<sales.productos.length;i++){const p=sales.productos[i];assert.equal(p.nombre,expected.get(p.sku).title);assert.deepEqual({...p,nombre:null},{...oldSales.productos[i],nombre:null});}
-delete oldSales.fechaCatalogo;delete sales.fechaCatalogo;oldSales.productos=oldSales.productos.map(p=>({...p,nombre:null}));sales.productos=sales.productos.map(p=>({...p,nombre:null}));assert.deepEqual(sales,oldSales);
+delete oldSales.fechaCatalogo;delete sales.fechaCatalogo;delete oldSales.presentation;delete sales.presentation;delete oldSales.presentation_status;delete sales.presentation_status;oldSales.productos=oldSales.productos.map(p=>({...p,nombre:null}));sales.productos=sales.productos.map(p=>({...p,nombre:null}));assert.deepEqual(sales,oldSales);
 for(const [file,sha]of sourceDigests)assert.equal(hash(fs.readFileSync(file)),sha,'No modificar fuentes ni inventario: '+file);
 for(const [file,stat]of assetStats){const now=fs.statSync(file,{bigint:true});assert.equal(now.mtimeNs,stat.mtimeNs,'No modificar recursos fotográficos');assert.equal(now.size,stat.size);}
 const first=new Map(files.map(file=>[file,fs.readFileSync(file)]));
 assert.equal(generate(),0,'Repetir el mismo corte y aprobaciones debe producir cero escrituras');
 for(const [file,bytes]of first)assert.deepEqual(fs.readFileSync(file),bytes,'El reintento no cambia exportaciones');
 const report={solo_lectura_externa:true,sha_assets_validados:assetSHA.size,manifiestos:manifestFiles.length,browser_source_matches:browserSourceMatches,fecha_corte:state.fecha_corte,fuente_sha256:state.origen_sha256,meta_items_before:meta.items_before,meta_items_after:meta.items_after,meta_titles_changed:meta.changed.title.length,meta_images_changed:meta.changed.image_link.length,multichannel_items:shared.items_after,commercial_fields_unchanged:true,source_files_unchanged:true,first_generation_writes:writes,repeated_generation_writes:0,baseline_feed_sha256:hash(before.get('exportaciones/meta-catalogo-piloto.csv')),candidate_feed_sha256:hash(fs.readFileSync('exportaciones/meta-catalogo-piloto.csv')),examples:['AUDI044','AUDI115','REL069','CABL139'].map(sku=>({sku,title_changed:meta.changed.title.includes(sku),image_changed:meta.changed.image_link.includes(sku)}))};
+Object.assign(report,presentationReport);
 console.log('PARIDAD_META_WEB '+JSON.stringify(report));

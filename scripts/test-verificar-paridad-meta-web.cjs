@@ -8,7 +8,7 @@ function run(file){
  try{process.chdir(temp);console.log=(...args)=>output.push(args.join(' '));require(path.join(temp,file));return output.join('\n');}finally{process.chdir(cwd);console.log=log;}
 }
 try{
- for(const file of ['scripts/exportar-canales.cjs','scripts/validar-exportacion-593.cjs','scripts/categorias-meta-web.cjs','scripts/prioridad-comercial-meta.cjs','scripts/editorial-fotografia-efectiva.cjs','scripts/fotografia-direccion.cjs','scripts/verificar-paridad-meta-web.cjs','assets/editorial-titulos.js'])write(file,fs.readFileSync(path.join(project,file),'utf8'));
+ for(const file of ['scripts/exportar-canales.cjs','scripts/validar-exportacion-593.cjs','scripts/categorias-meta-web.cjs','scripts/prioridad-comercial-meta.cjs','scripts/editorial-fotografia-efectiva.cjs','scripts/fotografia-direccion.cjs','scripts/verificar-paridad-meta-web.cjs','scripts/presentacion-publica-alex.cjs','assets/editorial-titulos.js'])write(file,fs.readFileSync(path.join(project,file),'utf8'));
  const old='/imagenes/audi044/AUDI044-01.webp',next='/imagenes/audi044/AUDI044-r2026102709-01.webp',oldBytes='anterior aprobada',nextBytes='nueva aprobada';
  const p={sku:'AUDI044',name:'Audífonos anteriores',category:'Audio',stock:3,promo:10,pvp:12,imageUrl:next};
  write('index.html','const products='+JSON.stringify([p])+';\nconst categoryFamilies={"Audio":"Audio"};\n');

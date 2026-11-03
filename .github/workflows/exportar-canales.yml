@@ -6,6 +6,8 @@ on:
       - 'scripts/*meta*.cjs'
       - 'scripts/exportar-canales.cjs'
       - 'scripts/test-exportar-canales.cjs'
+      - 'scripts/presentacion-publica-alex.cjs'
+      - 'scripts/test-presentacion-publica-alex.cjs'
       - 'scripts/editorial-fotografia-efectiva.cjs'
       - 'scripts/fotografia-direccion.cjs'
       - 'assets/editorial-titulos*.js'
@@ -29,6 +31,8 @@ on:
       - 'scripts/fotografia-direccion.cjs'
       - 'importacion/fotografia-publicada/**'
       - 'scripts/exportar-canales.cjs'
+      - 'scripts/presentacion-publica-alex.cjs'
+      - 'scripts/test-presentacion-publica-alex.cjs'
       - 'scripts/categorias-meta-web.cjs'
       - 'scripts/sincronizar-conjuntos-meta.cjs'
       - 'scripts/prioridad-comercial-meta.cjs'
@@ -114,6 +118,7 @@ jobs:
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
           node scripts/test-exportar-canales.cjs
+          node scripts/test-presentacion-publica-alex.cjs
           node scripts/test-validar-exportacion-593.cjs
           node scripts/verificar-paridad-meta-web.cjs
           node scripts/test-verificar-paridad-meta-web.cjs
@@ -137,6 +142,7 @@ jobs:
           node scripts/test-reordenar-meta.cjs
           node scripts/test-validar-exportacion-593.cjs
           node scripts/test-exportar-canales.cjs
+          node scripts/test-presentacion-publica-alex.cjs
           node scripts/exportar-canales.cjs
       - name: Guardar exportaciones
         run: |
