@@ -39,6 +39,7 @@ jobs:
               out.write("closed_ingress_only="+str(c.get("alex_validation")=="marketplace_pilot").lower()+"\n")
               out.write("verificar_presentacion="+str(smoke).lower()+"\n")
               out.write("release_verificacion="+(release if smoke else "")+"\n")
+              out.write("hub017_identity="+str(c.get("aprobar_identidad_hub017") is True).lower()+"\n")
           PYCONFIG
       - uses: actions/setup-python@v5
         with:
@@ -71,6 +72,25 @@ jobs:
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Verificar y aplicar únicamente la identidad autorizada HUB017
+        if: steps.config.outputs.hub017_identity == 'true' && steps.config.outputs.activar == 'false' && steps.config.outputs.sincronizar_meta == 'false'
+        run: |
+          python automatizacion/tests/hub017_identity_test.py
+          python automatizacion/hub017_identity.py
+          node automatizacion/hub017_identity_e2e.mjs
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.config.outputs.hub017_identity == 'true'
+        with:
+          name: identidad-hub017-verificada
+          path: |
+            automatizacion/generated/fase2/hub017-identity-deploy.json
+            automatizacion/generated/fase2/hub017-identity-cloud.json
+          retention-days: 7
       - name: Comprobar token de Pagina y permisos Meta sin enviar mensajes
         run: node automatizacion/meta-account-check.mjs
         env:
