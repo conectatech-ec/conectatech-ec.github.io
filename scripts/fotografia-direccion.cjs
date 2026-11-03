@@ -86,7 +86,7 @@ function overlay(p,custom,selected){
  const next=r.imagenProfesional?.versiones['1200'];
  if(!old||![[r.portada_anterior.url,r.portada_anterior.sha256],...(next?[[next.url,next.sha256]]:[]),...(r.portadas_previas_autorizadas||[]).map(p=>[p.url,p.sha256])].some(([url,sha])=>old.url===url&&old.sha256===sha))return;
  if(r.vistas){const kept=(custom.galeria||[]).filter(i=>!(r.retirar_vistas||[]).includes(i.versiones['1200'].url));const urls=new Set(kept.map(i=>i.versiones['1200'].url));custom.galeria=[...kept,...r.vistas.filter(i=>!urls.has(i.versiones['1200'].url))];return;}
- const secondary=(custom.galeria||[]).filter(i=>i.posicion!==1&&!(r.retirar_vistas||[]).includes(i.versiones['1200'].url)&&i.versiones['1200'].url!==r.imagenProfesional.versiones['1200'].url);
+ const secondary=(custom.galeria||[]).filter(i=>i.posicion!==1&&!(r.retirar_vistas||[]).includes(i.versiones['1200'].url)&&i.versiones['1200'].url!==r.imagenProfesional.versiones['1200'].url&&(!r.excluir_portada_anterior_de_secundarias||![old.url,r.portada_anterior.url].includes(i.versiones['1200'].url)));
  const urls=new Set(secondary.map(i=>i.versiones['1200'].url));
  secondary.push(...(r.mantener_vistas||[]).filter(i=>!urls.has(i.versiones['1200'].url)));
  custom.imagen=r.imagenProfesional.versiones['1200'].url;custom.imagenProfesional=r.imagenProfesional;

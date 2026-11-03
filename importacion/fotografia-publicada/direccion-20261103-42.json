@@ -1308,7 +1308,8 @@
         "presencia_actual": 0.7667,
         "presencia_sin_margen_extra": 0.9133,
         "ganancia": 1.1913
-      }
+      },
+      "excluir_portada_anterior_de_secundarias": true
     },
     "HUB014": {
       "sku": "HUB014",
@@ -1673,6 +1674,14 @@
           "bytes": 59068,
           "ancho": 1200,
           "alto": 1200
+        },
+        {
+          "url": "/imagenes/audi098/AUDI098-02.webp",
+          "sha256": "400ce83091d21c14bc8e7a9d343789ca560cea7e6a34358739818a365105c745"
+        },
+        {
+          "url": "/imagenes/audi098/AUDI098-r2026102606-01.webp",
+          "sha256": "0f877fd26b829324f641b9364c5ba6950e0506b2c28a398c86aeeeaa41a63bd1"
         }
       ],
       "portadas_previas_autorizadas": [
@@ -1775,7 +1784,12 @@
         "presencia_actual": 0.6833,
         "presencia_sin_margen_extra": 0.8133,
         "ganancia": 1.1902
-      }
+      },
+      "excluir_portada_anterior_de_secundarias": true,
+      "retirar_vistas": [
+        "/imagenes/audi098/AUDI098-02.webp",
+        "/imagenes/audi098/AUDI098-r2026102606-01.webp"
+      ]
     },
     "SOPO020": {
       "sku": "SOPO020",

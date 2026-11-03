@@ -1401,7 +1401,8 @@ jobs:
             const origin='https://conectatech-ec.github.io';
             const response=await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261028-24.json');assert(response.ok);
             const manifest=await response.json(),row=manifest.productos.ADAP069,photo=row.vistas[0],out=[];
-            const successor42=await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261103-42.json')).json(),currentCover=process.env.PHOTO_REF==='refs/heads/main'?successor42.productos.ADAP069.imagenProfesional.versiones['1200'].url:row.portada_anterior.url;
+            const successor42=await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261103-42.json')).json(),targetCover=successor42.productos.ADAP069.imagenProfesional.versiones['1200'].url;
+            const live=await(await fetch(origin+'/')).text(),liveProducts=JSON.parse(live.match(/const products=(\[[\s\S]*?\]);\s*\n/)[1]),observedCover=liveProducts.find(p=>p.sku==='ADAP069').imageUrl;assert([row.portada_anterior.url,targetCover].includes(observedCover));const currentCover=process.env.PHOTO_REF==='refs/heads/main'?targetCover:observedCover;
             const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
             for(const width of [1280,390]){
               const page=await browser.newPage({viewport:{width,height:950}});
