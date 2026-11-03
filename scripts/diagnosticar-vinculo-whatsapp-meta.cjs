@@ -3,6 +3,8 @@
 // números, páginas, catálogos, plantillas, suscripciones ni configuración de mensajería.
 const REQUESTS=Object.freeze([
  {key:'catalogo_maestro',path:'1036301566100990',fields:'id,name'},
+ {key:'propietario_maestro',path:'1036301566100990',fields:'id,business{id,name}'},
+ {key:'catalogo_whatsapp_existente',path:'665080484330219',fields:'id,name,vertical'},
  {key:'permisos_credencial',path:'me/permissions',fields:'permission,status'},
  {key:'cuenta_principal',path:'2639516313038513',fields:'id,name'},
  {key:'cuenta_secundaria',path:'100630632770993',fields:'id,name'},
@@ -23,8 +25,12 @@ function redact(value,token){
 function project(item,token){
  const out={};
  if(/^\d+$/.test(String(item?.id||'')))out.id=String(item.id);
- for(const key of ['name','display_phone_number','verified_name']){
+ for(const key of ['name','display_phone_number','verified_name','vertical']){
   if(typeof item?.[key]==='string')out[key]=redact(item[key],token);
+ }
+ if(/^\d+$/.test(String(item?.business?.id||''))){
+  out.business={id:String(item.business.id)};
+  if(typeof item.business.name==='string')out.business.name=redact(item.business.name,token);
  }
  if(/^\d+$/.test(String(item?.whatsapp_business_account?.id||''))){
   out.whatsapp_business_account={id:String(item.whatsapp_business_account.id)};
@@ -104,3 +110,4 @@ if(require.main===module){
   process.exitCode=1;
  });
 }
+
