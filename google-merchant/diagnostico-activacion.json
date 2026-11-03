@@ -1,13 +1,14 @@
 {
   "publicacion_habilitada": false,
   "conteos": {
-    "imagen_no_coincide": 357,
+    "imagen_no_coincide": 370,
     "publicacion_no_verificada": 253,
-    "sin_revision_limitada_corte16": 63,
     "producto_no_aprobado": 203,
     "identidad_pendiente": 4,
     "titulo_catalogo_no_coincide": 1,
-    "sin_contrato": 1
+    "sin_contrato": 1,
+    "enlaces_ficha_no_coinciden": 1,
+    "http_publico: HTTP Error 503: Service Unavailable": 1
   },
   "imagenes": [
     {
@@ -4169,6 +4170,28 @@
       ]
     },
     {
+      "sku": "CUBO003",
+      "catalogo": "/imagenes/cubo003/CUBO003-r2026102606-01.webp",
+      "editorial": "/imagenes/cubo003/CUBO003-r106-01.webp",
+      "contrato": "/imagenes/cubo003/CUBO003-r106-01.webp",
+      "revision_visual": "Cargador blanco completo con dos puertos USB-C azules y ambas patas planas, cuerpo y proporciones cotejados con referencia propia de IZ-C523. Se mantienen impresiones regulatorias pequeñas y sin lectura fina certificada; no se publican valores eléctricos deducidos ni letras inventadas como especificaciones. Se descartaron tres variantes con texto fino inventado o panel borrado. La portada muestra producto entero, no panel recortado.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/cubo003/CUBO003-r106-01-300.webp",
+          "sha256": "d9ed3e29abf61f76924ec6fa6d5f1f1890e6c94b9221c4368d8507e52cabaca8"
+        },
+        {
+          "url": "/imagenes/cubo003/CUBO003-r106-01-600.webp",
+          "sha256": "88d2a78fbe368ca4977c8ccfdb7ba30d733f04236010d520e77724dad540b5fb"
+        },
+        {
+          "url": "/imagenes/cubo003/CUBO003-r106-01.webp",
+          "sha256": "9b65c5e6172d5a57f681af920d4e277a5386169493139be0302330fab29e051b"
+        }
+      ]
+    },
+    {
       "sku": "CUBO005",
       "catalogo": "/imagenes/cubo005/CUBO005-r2026102823-01.webp",
       "editorial": "/imagenes/cubo005/CUBO005-01.webp",
@@ -4209,6 +4232,50 @@
         {
           "url": "/imagenes/cubo008/CUBO008-01.webp",
           "sha256": "94ed89851d6b45b069f6873112f8ed4c820654987502cef9c0ebc3e3ba360977"
+        }
+      ]
+    },
+    {
+      "sku": "CUBO009",
+      "catalogo": "/imagenes/cubo009/CUBO009-r2026102719-01.webp",
+      "editorial": "/imagenes/cubo009/CUBO009-01.webp",
+      "contrato": "/imagenes/cubo009/CUBO009-01.webp",
+      "revision_visual": "Cargador blanco completo, un puerto USB-A y dos patas planas. Geometría cotejada con vistas de empaque y confirmación expresa del propietario; sin cables ni puertos adicionales. Representación asistida autorizada078, sin caja.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/cubo009/CUBO009-01-300.webp",
+          "sha256": "200c952597053dc5fffc42259204b5143787cb28b80559f02530907d00051d5e"
+        },
+        {
+          "url": "/imagenes/cubo009/CUBO009-01-600.webp",
+          "sha256": "f9af3538b0ec334f13636e571797b93de2c5092ca615cbd73bbab04a53515549"
+        },
+        {
+          "url": "/imagenes/cubo009/CUBO009-01.webp",
+          "sha256": "72e04bca08ca98d67a83a4bc6c87c534f24994e6d761b97e3bd69ce309612c48"
+        }
+      ]
+    },
+    {
+      "sku": "CUBO010",
+      "catalogo": "/imagenes/cubo010/CUBO010-r2026102719-01.webp",
+      "editorial": "/imagenes/cubo010/CUBO010-01.webp",
+      "contrato": "/imagenes/cubo010/CUBO010-01.webp",
+      "revision_visual": "Cargador blanco completo, un puerto USB-A y dos patas planas en el extremo opuesto. Se corrigió propuesta con clavijas mal orientadas antes de aprobar. Cotejo contra empaque propio y confirmación expresa del propietario; sin accesorios adicionales. Representación asistida autorizada078, sin caja.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/cubo010/CUBO010-01-300.webp",
+          "sha256": "dca54faf3aca16d41d727b4102526b66e9d48fee3c040c3ba6a9031c647f5bcf"
+        },
+        {
+          "url": "/imagenes/cubo010/CUBO010-01-600.webp",
+          "sha256": "0a316acefdf11a96e0559aff65c07659eef9f0e52949c78d985db3b17dce77d2"
+        },
+        {
+          "url": "/imagenes/cubo010/CUBO010-01.webp",
+          "sha256": "722b2cef836a33bcc57e646975d67a7e93f131ecaffaae9610d3ec16abb65130"
         }
       ]
     },
@@ -5335,6 +5402,28 @@
       ]
     },
     {
+      "sku": "JUGU128",
+      "catalogo": "/imagenes/jugu128/JUGU128-r2026103137-01.webp",
+      "editorial": "/imagenes/jugu128/JUGU128-r106-01.webp",
+      "contrato": "/imagenes/jugu128/JUGU128-r106-01.webp",
+      "revision_visual": "Seis figuras completas en dos filas, diseños/colores cotejados con blíster propio: amarillo/marrón, verde/rojo, azul/blanco, gris/naranja/verde, marrón/blanco/azul y sexta figura con accesorios celestes. Se representan conjunto y accesorios fotografiados, no seis copias del diseño aislado. Cantidad6 confirmada por propietario. Base pequeña acreditada por indicación del empaque.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/jugu128/JUGU128-r106-01-300.webp",
+          "sha256": "c6f583ab9d29ffd13feab66e02de83714e65da6f4f6ede9bf82ccf82a142e702"
+        },
+        {
+          "url": "/imagenes/jugu128/JUGU128-r106-01-600.webp",
+          "sha256": "08820d1886be35d2c1c5fe1e2fc9816dfab35fda9e8b3c79b4ca509ba6cdb647"
+        },
+        {
+          "url": "/imagenes/jugu128/JUGU128-r106-01.webp",
+          "sha256": "1cc38c4a812af35e76bad3704966b5d18c834ac7ee20e0890ebe374339d1c079"
+        }
+      ]
+    },
+    {
       "sku": "JUGU131",
       "catalogo": "/imagenes/jugu131/JUGU131-r2026110240-01.webp",
       "editorial": "/imagenes/jugu131/JUGU131-01.webp",
@@ -5665,6 +5754,28 @@
       ]
     },
     {
+      "sku": "MICR13",
+      "catalogo": "/imagenes/micr13/MICR13-r2026102929-01.webp",
+      "editorial": "/imagenes/micr13/MICR13-r106-01.webp",
+      "contrato": "/imagenes/micr13/MICR13-r106-01.webp",
+      "revision_visual": "Kit completo cotejado con referencias propias: estuche/powerbank abierto con interior crema y pantalla frontal, DOS transmisores redondos con banda central e indicadores y receptor rectangular con USB-C. La conexión USB-C únicamente fue confirmada por propietario. No se representa Lightning ni teléfono o accesorios no incluidos. Reemplaza micrófono frontal aislado.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/micr13/MICR13-r106-01-300.webp",
+          "sha256": "6fd324dda837eb0102be7f594d2d98113e03d6ac0da9b245cc2546e09525dde3"
+        },
+        {
+          "url": "/imagenes/micr13/MICR13-r106-01-600.webp",
+          "sha256": "3303c101d4b75857539774111ece6b71ab55e01e955fb4b4f022d531d109235a"
+        },
+        {
+          "url": "/imagenes/micr13/MICR13-r106-01.webp",
+          "sha256": "3a79c7e0418a3928471bd3ffae666a8c6654512730769c37f53ebfbf28d855c8"
+        }
+      ]
+    },
+    {
       "sku": "MICR14",
       "catalogo": "/imagenes/micr14/MICR14-r2026102928-01.webp",
       "editorial": "/imagenes/micr14/MICR14-01.webp",
@@ -5903,6 +6014,28 @@
         {
           "url": "/imagenes/mous009/MOUS009-01.webp",
           "sha256": "d4e5d9802cf9ec9e39ffbf7a9b984a53b3b8b63cae1811f0802188aa663ca889"
+        }
+      ]
+    },
+    {
+      "sku": "MOUS010",
+      "catalogo": "/imagenes/mous010/MOUS010-r2026102929-01.webp",
+      "editorial": "/imagenes/mous010/MOUS010-01.webp",
+      "contrato": "/imagenes/mous010/MOUS010-01.webp",
+      "revision_visual": "Mouse Monster completo, carcasa redondeada negra, rueda estriada y botón central en alojamiento oval, leyenda MONSTER blanca. Cable coiled con terminación no visible, sin inventar conector oculto. Foto física y empaque KM2 cotejados. Propietario confirma cable y resuelve antiguo nombre M5 inalámbrico. Representación asistida078 sin caja.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/mous010/MOUS010-01-300.webp",
+          "sha256": "bb6b17bdc72597443e2b381cf3c41b543d06f5ec2296aa56e981c3a482155811"
+        },
+        {
+          "url": "/imagenes/mous010/MOUS010-01-600.webp",
+          "sha256": "184c6d2565cb5088154dd0a353af124e9d784b9b8096cb68b7344879fd3e1b98"
+        },
+        {
+          "url": "/imagenes/mous010/MOUS010-01.webp",
+          "sha256": "05ad3ad296b893ec54e1212e23c40512f4ef9f996af85c0e321e3eeed357fd1b"
         }
       ]
     },
@@ -6435,6 +6568,28 @@
       ]
     },
     {
+      "sku": "POWE001",
+      "catalogo": "/imagenes/powe001/POWE001-r2026102926-01.webp",
+      "editorial": "/imagenes/powe001/POWE001-01.webp",
+      "contrato": "/imagenes/powe001/POWE001-01.webp",
+      "revision_visual": "Representación asistida078 desde fotos propias de caja y respuesta expresa: blanca, tal cual como la de apple, y es tipo-c. Frontal completo de una sola batería blanca, cuerpo rectangular vertical de esquinas redondeadas y marca tenue centrada como diseño de referencia confirmado. Sin caja ni texto impreso del empaque; sin teléfono/cables/accesorios ni caras ocultas inventadas. Vista frontal sin puerto visible: USB-C se acredita por respuesta, no por fotografía física. No representa una batería originalApple: unidad AAA según Registro y excepción de marca; no atribuir hardware/capacidad/rendimiento del original. Capacidadcomercial10000mAh indicada en etiqueta propia e inventario; sinW,certificaciones ni número de recargas.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/powe001/POWE001-01-300.webp",
+          "sha256": "4e44d985f2bd59bdcacc624bb2a098b7d04b2f88fee5c7ac86e7c8144d7d9589"
+        },
+        {
+          "url": "/imagenes/powe001/POWE001-01-600.webp",
+          "sha256": "3ead78d36cc2ea221c210d233402b32d044e8c641a041882b642f8fa5fab3e10"
+        },
+        {
+          "url": "/imagenes/powe001/POWE001-01.webp",
+          "sha256": "3395c45cc9d436c7aeff31ee3f4798f304ed2ae506da7444c2e1ba8731f724f2"
+        }
+      ]
+    },
+    {
       "sku": "POWE008",
       "catalogo": "/imagenes/powe008/POWE008-r2026103035-01.webp",
       "editorial": "/imagenes/powe008/POWE008-01.webp",
@@ -6743,6 +6898,28 @@
       ]
     },
     {
+      "sku": "REL016",
+      "catalogo": "/imagenes/rel016/REL016-r2026103139-01.webp",
+      "editorial": "/imagenes/rel016/REL016-01.webp",
+      "contrato": "/imagenes/rel016/REL016-01.webp",
+      "revision_visual": "Retoque cotejado con fotografía física gris: conserva caja plateada, pantalla apagada sin interfaz inventada, corona con anillo naranja, orificio y botón alargado, correa ondulada con orificios y aros metálicos. Fondo y soporte retirados, reflejo de fotógrafo limpiado. Colores surtidos según propietario. Se omiten modelo y tamaño de pantalla contradictorios, no se atribuyen IP, autonomía, métricas médicas ni funciones no comprobadas.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/rel016/REL016-01-300.webp",
+          "sha256": "9fdd7b8eaf3719efc10026d58742e792590c3c74358ca1926cc9817cbe944845"
+        },
+        {
+          "url": "/imagenes/rel016/REL016-01-600.webp",
+          "sha256": "7cd3b598e783cc6875eda8951c86502078d6708c19ffbdd2cbf317cfa8d25d2f"
+        },
+        {
+          "url": "/imagenes/rel016/REL016-01.webp",
+          "sha256": "86f82a2ed2063a29f9bad29285f0ee6cf426afbd753ef56d953ff74bb86a8bad"
+        }
+      ]
+    },
+    {
       "sku": "REL038",
       "catalogo": "/imagenes/rel038/REL038-r2026103139-01.webp",
       "editorial": "/imagenes/rel038/REL038-01.webp",
@@ -6871,6 +7048,28 @@
         {
           "url": "/imagenes/repr002/REPR002-01.webp",
           "sha256": "0fee31206e6a8fe7397bf01231b8d3fc90dc00d8acf322023eeb805c117eff61"
+        }
+      ]
+    },
+    {
+      "sku": "ROUT001",
+      "catalogo": "/imagenes/rout001/ROUT001-r2026103035-01.webp",
+      "editorial": "/imagenes/rout001/ROUT001-01.webp",
+      "contrato": "/imagenes/rout001/ROUT001-01.webp",
+      "revision_visual": "Dos módulos confirmados por propietario 2026-10-16. Cotejados con caja propia: cuerpo cilíndrico blanco, círculo superior gris, anillo radial verde, logo cudy y testigo V frontal. Maestro sin caja; no reconstruye puertos, accesorios o cara posterior.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/rout001/ROUT001-01-300.webp",
+          "sha256": "3feb4a9ed867d40614b87a5399b087a22342c27d7ffb66866f4552b5674181aa"
+        },
+        {
+          "url": "/imagenes/rout001/ROUT001-01-600.webp",
+          "sha256": "8af46fc36467c51346148e27c0e66c0855cb3591372152f1f32daa4afa52af9b"
+        },
+        {
+          "url": "/imagenes/rout001/ROUT001-01.webp",
+          "sha256": "e26a9094363e67b401a1ebb80528723f86bbd02439cc252f9a77ed077e217551"
         }
       ]
     },
@@ -7073,6 +7272,28 @@
       ]
     },
     {
+      "sku": "SOPO020",
+      "catalogo": "/imagenes/sopo020/SOPO020-r2026110342-01.webp",
+      "editorial": "/imagenes/sopo020/SOPO020-01.webp",
+      "contrato": "/imagenes/sopo020/SOPO020-01.webp",
+      "revision_visual": "Maestro cotejado con referencia propia de empaque T7-01: base circular, brazo compacto triangular con perilla lateral, respaldo rectangular, brazos de sujeción abiertos y dos apoyos inferiores. Sin caja ni celular. Excepción Yantech aplicada: sin nombre ni logotipo en los bytes del maestro; original de identificación intacto. Propietario autoriza omitir modelo comercial y equivalencia de variantes para el SKU; no se garantiza variante fija ni compatibilidad universal.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/sopo020/SOPO020-01-300.webp",
+          "sha256": "6702df6d18080b9a212e9fba754edc5e34693ecb8c9e8532350bf5a0d01f52b2"
+        },
+        {
+          "url": "/imagenes/sopo020/SOPO020-01-600.webp",
+          "sha256": "f310b2c9a40f6e4fd41c59fbf5129a21b7aa52bd836d01153bd7c4a9261f5b80"
+        },
+        {
+          "url": "/imagenes/sopo020/SOPO020-01.webp",
+          "sha256": "1a0b0b7da8d968a0ad7bd8ed2c4c12d18c097c16f48387209e6e51734ec23c16"
+        }
+      ]
+    },
+    {
       "sku": "SOPO027",
       "catalogo": "/imagenes/sopo027/SOPO027-r2026103137-01.webp",
       "editorial": "/imagenes/sopo027/SOPO027-01.webp",
@@ -7271,6 +7492,28 @@
       ]
     },
     {
+      "sku": "STYL004",
+      "catalogo": "/imagenes/styl004/STYL004-r2026103034-01.webp",
+      "editorial": "/imagenes/styl004/STYL004-r106-01.webp",
+      "contrato": "/imagenes/styl004/STYL004-r106-01.webp",
+      "revision_visual": "Cuerpo negro completo, banda plateada, extremo cerrado, punta cromada con articulación/disco transparente y tapa aparte cotejados con fotografías físicas0/1. Composición diagonal permite ver el lápiz entero. No se inventan clip, botones ni mecanismo expuesto del esfero. Reemplaza macro de la punta.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/styl004/STYL004-r106-01-300.webp",
+          "sha256": "379798d806474d19178c6a829b4f125e7a7c76253058f3eb2cac7ad89957379a"
+        },
+        {
+          "url": "/imagenes/styl004/STYL004-r106-01-600.webp",
+          "sha256": "3faea2d00890f241b0efd6e44fb660e0bf071e1ccb83e9e6cf0ad057954ec574"
+        },
+        {
+          "url": "/imagenes/styl004/STYL004-r106-01.webp",
+          "sha256": "44af4c33aeff985cfc1083fa74df81d4133a4bbbcb1e15bec2ff954340a53d16"
+        }
+      ]
+    },
+    {
       "sku": "SWIT001",
       "catalogo": "/imagenes/swit001/SWIT001-r2026103034-01.webp",
       "editorial": "/imagenes/swit001/SWIT001-01.webp",
@@ -7333,6 +7576,28 @@
         {
           "url": "/imagenes/tarj013/TARJ013-01.webp",
           "sha256": "4a505f59ca448be29896a4d89f592a3c48fa49a7ac4c2839024b4ea57d8d33ba"
+        }
+      ]
+    },
+    {
+      "sku": "TECL017",
+      "catalogo": "/imagenes/tecl017/TECL017-r2026102928-01.webp",
+      "editorial": "/imagenes/tecl017/TECL017-01.webp",
+      "contrato": "/imagenes/tecl017/TECL017-01.webp",
+      "revision_visual": "Teclado completo inalámbrico sin cable. Distribución frontal cotejada por filas: Num Lock/calculadora/Tab/correo; búsqueda/dividir/multiplicar/Back Space;7/8/9/menos;4/5/6/más;1/2/3/Enter;0/Space/Del y continuaciónEnter. No se fuerza número anunciado22 ni se publica cantidad de teclas, pues dibujo/frente y reverso genérico difieren. Propietario confirma inalámbrico. No se inventan accesorios, pilas ni conectores no visibles. Representación asistida078 sin caja.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/tecl017/TECL017-01-300.webp",
+          "sha256": "ea70bbefb6e3c7dee87ad5382914f345d5dd78454d11fe55d5a994995fbd8dce"
+        },
+        {
+          "url": "/imagenes/tecl017/TECL017-01-600.webp",
+          "sha256": "48b54da0454a0cb1183842dae83245c218fdb642f7df521898829aa8fcac849d"
+        },
+        {
+          "url": "/imagenes/tecl017/TECL017-01.webp",
+          "sha256": "33ee19630ca3fa0e7d891928381e8f40eeecd64f183baf160060980794966e3d"
         }
       ]
     },
@@ -7663,6 +7928,28 @@
         {
           "url": "/imagenes/tvbo001/TVBO001-01.webp",
           "sha256": "1362ed721f49f1ffea44ef4baa7714e4679cd4e852b349bd0e3f17e4a83b2d24"
+        }
+      ]
+    },
+    {
+      "sku": "TVBO002",
+      "catalogo": "/imagenes/tvbo002/TVBO002-r2026102930-01.webp",
+      "editorial": "/imagenes/tvbo002/TVBO002-01.webp",
+      "contrato": "/imagenes/tvbo002/TVBO002-01.webp",
+      "revision_visual": "Conjunto completo de stick TV98, mando y cableUSB confirmado por propietario. Vista lateral0 permite cotejar teclado numérico completo del mando antes oculto; se recuperó diagnóstico histórico de reserva por teclas ocultas, sin evidencia de rechazo de seguridad de este SKU. Nuevo contenido confirmado resuelve alimentación. Cotejo de HDMI, cuerpo negro/indicador azul, mando completo con filas1a9/0 y cuatro teclas de apps, cableUSB-A con terminación no identificable oculta naturalmente en bobina. Se corrigió conector antes de aprobar. Sin cargador de pared ni aplicaciones/suscripciones prometidas. Representación asistida078 desde empaque propio.",
+      "contiene_caja": false,
+      "versiones": [
+        {
+          "url": "/imagenes/tvbo002/TVBO002-01-300.webp",
+          "sha256": "e4d1504acc4ab13ecf0f51f05cd1eddefd1b69399bfe7bb0b1601da4a0ab32a1"
+        },
+        {
+          "url": "/imagenes/tvbo002/TVBO002-01-600.webp",
+          "sha256": "4016432370f9e55c4641a9dec9be88448e309afcc7f2582c86a5f9d7b4571656"
+        },
+        {
+          "url": "/imagenes/tvbo002/TVBO002-01.webp",
+          "sha256": "4ccd46621782e498f57c27ce021da89de0c85ae0e5d1b184d9e2ccfa6c3eab85"
         }
       ]
     },

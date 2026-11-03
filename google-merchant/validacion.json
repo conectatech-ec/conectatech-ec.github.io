@@ -15,9 +15,9 @@
     "fuente_publica": "datos-593/corte-comercial-publico-validado.json",
     "fuente_publica_sha256": "fbd358ac0cf0aa278c0067eda88a3845e3457f2b742e8f5d776dab1c2ab9a3b8",
     "fuente_commit": "7adf0f7dff9e9733e7645fdb5315204ba01361c1",
-    "alcance": "Solo SKU previamente revisados del feed; disponibilidad binaria y precio del corte comercial ya público. Sin cantidades.",
+    "alcance": "Solo SKU del catálogo web presentes en el corte comercial público validado; disponibilidad binaria y precios ya públicos. Sin cantidades.",
     "stock_tiempo_real": false,
-    "referencias_exportadas": 674,
+    "referencias_exportadas": 1198,
     "campos_publicos": [
       "sku",
       "availability",
@@ -31,21 +31,22 @@
       "costos",
       "márgenes"
     ],
-    "sha256_productos": "0589e56946ca0708aa955bad81bce20e1a2e0b638bf817f344bb89abbd3e762f"
+    "sha256_productos": "d7cb7fd2b43dca947cccf3551ce19b162c034b5ae875c02bb2f27076b579e11e"
   },
   "productos_origen": 1198,
-  "incluidos": 316,
-  "excluidos": 882,
+  "incluidos": 364,
+  "excluidos": 834,
   "motivos": {
+    "enlaces_ficha_no_coinciden": 1,
+    "http_publico: HTTP Error 503: Service Unavailable": 1,
     "identidad_pendiente": 4,
-    "imagen_no_coincide": 357,
+    "imagen_no_coincide": 370,
     "producto_no_aprobado": 203,
     "publicacion_no_verificada": 253,
     "sin_contrato": 1,
-    "sin_revision_limitada_corte16": 63,
     "titulo_catalogo_no_coincide": 1
   },
-  "feed_sha256": "51d63ae97197ce96d0cb36a21036a495f8fd3f89728a83f1f689ae858d7100f1",
+  "feed_sha256": "761e855e2f2e1bd00cc88969d48226de8decd8acd552a6e40f4e3e536f92dac8",
   "advertencias": [
     "Stock registrado: no implica inventario en tiempo real.",
     "Faltan verificar compra online, precio final, envíos y devoluciones; XML válido no garantiza aprobación de Google.",
