@@ -58,3 +58,15 @@ test('Same-cut equal/backward clock preserves last valid bytes, then real later 
   const recovered=preparePresentation({...input,previous:failed.presentation,now:()=> '2026-11-03T02:00:00.001Z'});assert.equal(recovered.status,'PRESENTATION_READY');assert.notEqual(recovered.presentation.version,previous.version);assert.equal(recovered.presentation.published_at,'2026-11-03T02:00:00.001Z');
  }
 });
+test('Official boolean visual approval accepts only the same original/version SHA contract as historical text',()=>{
+ const input=fixture(),seen=[];input.photos.AUDI044.imagenProfesional.revision_visual=true;input.readAsset=url=>{seen.push(url);return bytes[url];};
+ const result=preparePresentation(input);assert.equal(result.status,'PRESENTATION_READY');assert(validPresentation(result.presentation));assert.equal(result.presentation.products.AUDI044.approved_media.url,ORIGIN+cover.versiones[1200].url);assert.equal(result.presentation.products.AUDI044.approved_media.sha256,sha(bytes[cover.versiones[1200].url]));assert.equal(seen.length,3);
+});
+test('Boolean approval with a wrong original/version SHA preserves last valid and never approves changed bytes',()=>{
+ const previous=preparePresentation(fixture()).presentation;
+ for(const target of Object.keys(bytes)){const input=fixture({previous,readAsset:url=>url===target?Buffer.from('changed unapproved bytes'):bytes[url]});input.photos.AUDI044.imagenProfesional.revision_visual=true;const result=preparePresentation(input);assert.equal(result.status,'PRESENTATION_PREPARATION_FAILED');assert.equal(result.presentation,previous);assert(validPresentation(result.presentation));}
+});
+test('False/null review and truth-like values without the SHA contract cannot invent photographic approval',()=>{
+ for(const review of [false,null,undefined,0,'']){const input=fixture({readAsset(){assert.fail('Rejected visual review must not read media');}});input.photos.AUDI044.imagenProfesional.revision_visual=review;const result=preparePresentation(input);assert.equal(result.status,'PRESENTATION_READY');assert.equal(result.presentation.products.AUDI044.approved_media,null);}
+ for(const review of [true,'true','Aprobada visualmente']){const input=fixture({readAsset(){assert.fail('Missing SHA evidence must not read media');}});input.photos.AUDI044.imagenProfesional.revision_visual=review;delete input.photos.AUDI044.imagenProfesional.sha256_original;const result=preparePresentation(input);assert.equal(result.status,'PRESENTATION_READY');assert.equal(result.presentation.products.AUDI044.approved_media,null);}
+});

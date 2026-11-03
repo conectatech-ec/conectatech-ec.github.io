@@ -50,7 +50,7 @@ function preparePresentation({source_sha256,cut_date,multichannel,meta,webProduc
   for(const row of rows){
    if(!known.has(row.sku)||!title(row.title))throw Error('PRESENTATION_PUBLIC_SCOPE');
    let approved_media=null;const professional=photos[row.sku]?.imagenProfesional;
-   if(row.image_link&&professional?.contiene_caja===false&&typeof professional.revision_visual==='string'&&professional.revision_visual.trim()){
+   if(row.image_link&&professional?.contiene_caja===false&&(professional.revision_visual===true||typeof professional.revision_visual==='string'&&professional.revision_visual.trim())){
     const versions=Object.values(professional.versiones||{}),match=versions.find(v=>assetURL(v?.url)&&ORIGIN+v.url===row.image_link);
     const descriptors=[{url:professional.original,sha256:professional.sha256_original},...versions];
     if(match&&descriptors.every(v=>assetURL(v?.url)&&HEX.test(v?.sha256||''))){for(const v of descriptors)verify(v.url,v.sha256);approved_media={url:row.image_link,sha256:match.sha256};}
