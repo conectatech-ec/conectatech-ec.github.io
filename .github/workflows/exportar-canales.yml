@@ -6,12 +6,16 @@ on:
       - 'scripts/*meta*.cjs'
       - 'scripts/exportar-canales.cjs'
       - 'scripts/test-exportar-canales.cjs'
+      - 'scripts/editorial-fotografia-efectiva.cjs'
+      - 'scripts/fotografia-direccion.cjs'
+      - 'assets/editorial-titulos*.js'
       - '.github/workflows/exportar-canales.yml'
   workflow_run:
     workflows:
       - 'Publicar corte comercial 593 validado'
       - 'Publicar stock, fecha y feeds comerciales desde 593 validado'
       - 'Sincronizar catalogo desde 593'
+      - 'Producir catálogo profesional por SKU'
     types: [completed]
     branches: [main]
   push:
@@ -19,6 +23,11 @@ on:
     paths:
       - 'index.html'
       - 'seo-contenido.json'
+      - 'importacion/editorial/publicados.json'
+      - 'assets/editorial-titulos*.js'
+      - 'scripts/editorial-fotografia-efectiva.cjs'
+      - 'scripts/fotografia-direccion.cjs'
+      - 'importacion/fotografia-publicada/**'
       - 'scripts/exportar-canales.cjs'
       - 'scripts/categorias-meta-web.cjs'
       - 'scripts/sincronizar-conjuntos-meta.cjs'
@@ -106,6 +115,8 @@ jobs:
           node scripts/test-reordenar-meta.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/test-validar-exportacion-593.cjs
+          node scripts/verificar-paridad-meta-web.cjs
+          node scripts/test-verificar-paridad-meta-web.cjs
   exportar:
     timeout-minutes: 50
     # También se ejecuta tras publicaciones de bots 593: sus pushes no disparan otros workflows.
@@ -191,3 +202,4 @@ jobs:
             work/auto-meta/reordenacion.json
           retention-days: 7
           if-no-files-found: warn
+
