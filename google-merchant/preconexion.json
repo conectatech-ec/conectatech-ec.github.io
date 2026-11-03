@@ -1,6 +1,6 @@
 {
   "merchant_center": "5874003439",
-  "verificado_en_utc": "2026-11-03T06:14:25.260378+00:00",
+  "verificado_en_utc": "2026-11-03T06:16:11.893733+00:00",
   "fuente_commit": "7adf0f7dff9e9733e7645fdb5315204ba01361c1",
   "fuente_rama": "main (lectura solamente)",
   "inventario_sha256": "85627a050bf0c0d6f999bc7292ada1265c425a989d4ed85481b399a95abf5a36",
@@ -8,23 +8,23 @@
   "antiguedad_corte_dias": 1,
   "inventario_origen": "Reporte-Inventario.xlsx",
   "origen_privado_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
-  "articulos_feed": 364,
-  "articulos_con_http_publico_verificado": 364,
+  "articulos_feed": 365,
+  "articulos_con_http_publico_verificado": 365,
   "coherencia_catalogo_maestro": {
     "sku_web": 1198,
-    "sku_con_revision_corte16": 1198,
+    "sku_con_revision_corte_vigente": 1198,
     "discrepancias": [],
-    "nota": "Revisión limitada a los SKU del feed anterior, sin cantidades internas ni precios privados. SKU sin esta revisión quedan excluidos; diferencias de precio o de disponibilidad con la ficha excluyen el artículo."
+    "nota": "Revisión de los SKU web presentes en el corte comercial público validado vigente, sin exportar cantidades ni precios privados. SKU sin esta revisión quedan excluidos; diferencias de precio o de disponibilidad con la ficha excluyen el artículo."
   },
-  "precio_final_documentado": "Corte corregido16: Q V. TOTAL = contado; X PVP + Y importe de IVA = PVP final. IVA incluido. Sin recalcular porcentajes ni modificar precios web.",
+  "precio_final_documentado": "Precio procedente del corte comercial público validado vigente; coincide con la web y la ficha. Total final de compra y gastos de envío pendientes de acreditación.",
   "fechas_inventario_en_articulos": {
-    "02/11/2026": 364
+    "02/11/2026": 365
   },
   "stock_tiempo_real_acreditado": 0,
   "observaciones_fichas": {
-    "fichas_con_whatsapp": 364,
-    "fichas_con_contraentrega_quito": 364,
-    "fichas_con_precio_sujeto_confirmacion": 364,
+    "fichas_con_whatsapp": 365,
+    "fichas_con_contraentrega_quito": 365,
+    "fichas_con_precio_sujeto_confirmacion": 365,
     "fichas_con_formulario": 0
   },
   "enlaces_politicas_en_fichas": [],
@@ -47,8 +47,8 @@
   "bloqueos": [
     {
       "tema": "stock",
-      "estado": "CORTE16_APLICADO; NO_TIEMPO_REAL",
-      "accion": "Mantener actualizada la extracción de 593. El feed usa exclusivamente el corte16 corregido; excluye disponibilidad incompatible con la ficha y no modifica producción. Un corte no es inventario en tiempo real."
+      "estado": "CORTE_VIGENTE_APLICADO; NO_TIEMPO_REAL",
+      "accion": "Mantener actualizada la extracción de 593. El feed usa exclusivamente el corte_vigente corregido; excluye disponibilidad incompatible con la ficha y no modifica producción. Un corte no es inventario en tiempo real."
     },
     {
       "tema": "precio",
