@@ -4,23 +4,23 @@
 
 **56 portadas y prioridad pública verificadas.** 997 de 999 imágenes con revisión registrada; no equivale a 997 aprobaciones definitivas de identidad. Se conservan 39 excepciones abiertas:30 prioritarias aquí y 9 adicionales en el registro. 199 SKU sin foto declarada quedan para después.
 
-## TELF012: referencias de modelos diferentes
+## Asociación resuelta: TELF012 Samsung A17 · TELF022 Redmi A7 Pro
 
-| Referencia histórica | Referencia reciente |
+| TELF012 · Samsung A17 de 256 GB | TELF022 · Redmi A7 Pro |
 | --- | --- |
 | ![Samsung Galaxy A17](referencia-historica-a17.jpg) | ![Redmi A7 Pro](referencia-reciente-redmi.jpg) |
 
-**El Samsung A17 publicado se conserva.** Las cuatro fotos recientes bajo TELF012 muestran Redmi A7 Pro; falta confirmar su SKU. Estas cajas documentan el conflicto de asociación, no se proponen como fotos comerciales.
+**Asociación aclarada por el propietario y verificada en Drive.** TELF012 es Samsung A17 de 256 GB; las cuatro referencias del Redmi A7 Pro ahora se llaman TELF022 y conservan sus ID. Ambas fotografías comerciales se conservan. Las cajas sirven sólo como evidencia de identificación.
 
 ## TELF012
 
 [Abrir fotografía externa publicada](https://shop.samsung.com/latin/ecu/pub/media/catalog/product/s/m/sm-a175_galaxy-a17_lte_00.png) · acceso visual pendiente desde el entorno de auditoría.
 
-Las cuatro referencias subidas el 2 de noviembre con nombre TELF012 muestran Redmi A7 Pro. El catálogo y las referencias históricas corresponden a Samsung A17. Asociación de referencia incorrecta verificada; no significa error confirmado en la foto publicada. Conservar Samsung A17 y aclarar el SKU de las nuevas fotos.
+Samsung A17 de 256 GB confirmado por el propietario. Las cuatro fotos del Redmi A7 Pro ya fueron renombradas TELF022 en Drive y su asociación quedó resuelta por ID. La fotografía externa del Samsung se conserva; su comprobación visual externa sigue pendiente desde este entorno.
 
-Referencias propias: [1](https://drive.google.com/file/d/1ynDb9B0BI-nybpIWfZqZmkZUwf3VzsYI/view?usp=drivesdk) · [2](https://drive.google.com/file/d/17oi_AGXdMxyIDGvVZz1bRBiAIKctvORL/view?usp=drivesdk) · [3](https://drive.google.com/file/d/1b_FMO1rmWQ1dFXRayhuVYX38d-hy5Qso/view?usp=drivesdk) · [4](https://drive.google.com/file/d/1LAHKJACPcPq8UF9U_8oyxvkWz7THGyQ6/view?usp=drivesdk) · [5](https://drive.google.com/file/d/13iRcMxPrfGLGQooFGUC5_eHOOrrxBiBE/view?usp=drivesdk) · [6](https://drive.google.com/file/d/1W4Up0aMNdd-IVR38gHWK27LBjs8tBQXs/view?usp=drivesdk)
+Referencias propias: [1](https://drive.google.com/file/d/13iRcMxPrfGLGQooFGUC5_eHOOrrxBiBE/view?usp=drivesdk) · [2](https://drive.google.com/file/d/1W4Up0aMNdd-IVR38gHWK27LBjs8tBQXs/view?usp=drivesdk)
 
-**Acción:** conservar; nueva edición sólo con referencia física suficiente o aclaración de identidad.
+**Acción:** conservar la foto del Samsung; asociación del Redmi resuelta. Sólo queda la comprobación visual de la imagen externa.
 
 ## LECT001
 

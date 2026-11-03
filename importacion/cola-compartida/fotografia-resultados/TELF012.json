@@ -1,9 +1,9 @@
 {
   "sku": "TELF012",
   "direccion_20261103_46": {
-    "estado": "REVISAR_REFERENCIA",
+    "estado": "ASOCIACION_ACLARADA_POR_PROPIETARIO",
     "fecha_auditoria": "2026-11-03T20:26:19.798123+00:00",
-    "motivo": "Las cuatro referencias subidas el2noviembre con nombre TELF012 muestran Redmi A7 Pro. El catálogo y las referencias históricas corresponden a Samsung A17. Asociación de referencia incorrecta verificada; no significa error confirmado en la foto publicada. Conservar Samsung A17 y aclarar el SKU de las nuevas fotos.",
+    "motivo": "Samsung A17 de 256 GB confirmado por el propietario. Las cuatro fotos del Redmi A7 Pro ya fueron renombradas TELF022 en Drive y su asociación quedó resuelta por ID. La fotografía externa del Samsung se conserva; su comprobación visual externa sigue pendiente desde este entorno.",
     "referencias_conflictivas": [
       {
         "id": "1ynDb9B0BI-nybpIWfZqZmkZUwf3VzsYI",
@@ -33,6 +33,52 @@
     "imagen_actual_conservada": "https://shop.samsung.com/latin/ecu/pub/media/catalog/product/s/m/sm-a175_galaxy-a17_lte_00.png",
     "cambiar_titulos": false,
     "cambiar_fotografias": false,
-    "solicitud": "Confirmar a qué SKU corresponde el Redmi A7 Pro; no mover ni renombrar las fotos originales en Drive automáticamente."
+    "solicitud": "Asociación resuelta. Conservar la imagen actual del Samsung y usar las cuatro referencias renombradas sólo para TELF022.",
+    "resolucion": {
+      "fecha": "2026-11-03T20:42:21.509239+00:00",
+      "estado": "ASOCIACION_ACLARADA_POR_PROPIETARIO",
+      "instruccion": "telf012 es samsung a17 de 256 y TELF022 es a7 pro, ya renombre las imagenes para evitar confusiones en ese caso",
+      "identidades": {
+        "TELF012": "Samsung A17 de 256 GB",
+        "TELF022": "Redmi A7 Pro"
+      },
+      "renombrado_en_drive_verificado": true,
+      "archivos": [
+        {
+          "id": "1ynDb9B0BI-nybpIWfZqZmkZUwf3VzsYI",
+          "nombre_anterior": "TELF012_20261009_180345.jpg",
+          "nombre_vigente": "TELF022_20261009_180345.jpg",
+          "sku_correcto": "TELF022",
+          "url": "https://drive.google.com/file/d/1ynDb9B0BI-nybpIWfZqZmkZUwf3VzsYI/view?usp=drivesdk",
+          "modificado": "2026-11-03T20:38:52.036Z"
+        },
+        {
+          "id": "17oi_AGXdMxyIDGvVZz1bRBiAIKctvORL",
+          "nombre_anterior": "TELF012_20261009_180350.jpg",
+          "nombre_vigente": "TELF022_20261009_180350.jpg",
+          "sku_correcto": "TELF022",
+          "url": "https://drive.google.com/file/d/17oi_AGXdMxyIDGvVZz1bRBiAIKctvORL/view?usp=drivesdk",
+          "modificado": "2026-11-03T20:38:39.064Z"
+        },
+        {
+          "id": "1b_FMO1rmWQ1dFXRayhuVYX38d-hy5Qso",
+          "nombre_anterior": "TELF012_20261009_180353.jpg",
+          "nombre_vigente": "TELF022_20261009_180353.jpg",
+          "sku_correcto": "TELF022",
+          "url": "https://drive.google.com/file/d/1b_FMO1rmWQ1dFXRayhuVYX38d-hy5Qso/view?usp=drivesdk",
+          "modificado": "2026-11-03T20:39:00.563Z"
+        },
+        {
+          "id": "1LAHKJACPcPq8UF9U_8oyxvkWz7THGyQ6",
+          "nombre_anterior": "TELF012_20261009_180357.jpg",
+          "nombre_vigente": "TELF022_20261009_180357.jpg",
+          "sku_correcto": "TELF022",
+          "url": "https://drive.google.com/file/d/1LAHKJACPcPq8UF9U_8oyxvkWz7THGyQ6/view?usp=drivesdk",
+          "modificado": "2026-11-03T20:39:13.464Z"
+        }
+      ],
+      "operaciones_drive_realizadas_por_codex": 0,
+      "fotos_publicadas_modificadas": 0
+    }
   }
 }
