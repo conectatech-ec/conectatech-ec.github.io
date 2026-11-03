@@ -21,7 +21,7 @@ Se realizaron búsquedas dirigidas en Asamblea, Registro Oficial y portales de e
 
 | Regla | Consecuencia preparada |
 |---|---|
-| Art.11: bienes durables y deficiencias de fabricación/funcionamiento; información clara de garantía e identificación del garante | La garantía **comercial** se limita a fabricación como pidió el propietario, conservando aparte las obligaciones legales. Falta confirmar nombre/razón social del garante; no se inventa. |
+| Art.11: bienes durables y deficiencias de fabricación/funcionamiento; información clara de garantía e identificación del garante | La garantía **comercial** se limita a fabricación como pidió el propietario, conservando aparte las obligaciones legales. Actualización03/11: razón social recuperada de instrucciones del propietario para593, VELASCO VALDERRAMA JOSE RAFAEL. |
 | Art.20: defectos o vicios ocultos | La política no obliga siempre a reparar primero ni elimina opciones legales del consumidor. |
 | Art.45 reformado | Devolución o cambio dentro del término legal15 desde recepción, cualquier medio, sujeto a naturaleza/estado. No se limita por categorías ni por los3/7 días voluntarios. |
 | Art.71: remedios y límite legal en los supuestos que regula | Se respeta el límite de treinta días cuando sea aplicable; no se convierte en promesa universal de diagnóstico/reparación ni en plazo de reembolso para todo caso. |
@@ -36,4 +36,4 @@ Se realizaron búsquedas dirigidas en Asamblea, Registro Oficial y portales de e
 
 ## Trazabilidad de decisiones
 
-Plazos comerciales 1año/30días y 1–3/7días: instrucción expresa del propietario en esta conversación. Inicio desde entrega: redacción propuesta favorable al comprador, pendiente de aprobación de esta política. Dirección y WhatsApp: datos ya utilizados en las fichas públicas. Plazos de otras categorías/SKU, nombre legal del garante y logística/reembolsos: sin valores inventados.
+Plazos comerciales 1año/30días y 1–3/7días: instrucción expresa del propietario en esta conversación. Inicio desde entrega: redacción propuesta favorable al comprador, pendiente de aprobación de esta política. Dirección y WhatsApp: datos ya utilizados en las fichas públicas. Razón social recuperada el03/11 de instrucciones para593: VELASCO VALDERRAMA JOSE RAFAEL. Plazos de otras categorías/SKU y logística/reembolsos: sin valores inventados.

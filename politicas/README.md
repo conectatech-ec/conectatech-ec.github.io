@@ -6,7 +6,8 @@ Estado: **BORRADOR NO PUBLICADO**. Rama preparada separadamente; no modifica mai
 
 - `POLITICA-COMPLETA.md`: texto completo generado para lectura y aprobación.
 - `../cambios-devoluciones-garantias/index.html`: página estática móvil/escritorio; navegación, pie y canal oficial. URL permanente prevista: `https://conectatech-ec.github.io/cambios-devoluciones-garantias/`. No presentarla como pública antes de aprobación y despliegue.
-- `politica.json`: única fuente de condiciones, contactos, reglas por categoría y excepciones SKU.
+- `politica.json`: única fuente de condiciones, contactos, reglas por categoría y excepciones SKU; incluye las condiciones de envíos/pagos recuperadas el03/11.
+- `../compra/envios-pagos.html`: vista de revisión generada con tarifa nacional, sobrecostos a cargo de tienda, contraentrega Quito y anticipo nacional. Enlazada desde la compra.
 - `garantias.mjs`: resolver y mensajes cortos portables, sin llamadas de red ni cambios del Worker.
 - `alex-fuente.json`: fuente de respuestas y reglas de escalamiento. **No integrada**; coordinar con la sesión de Alex antes de importar.
 - `garantias-catalogos.csv`: etiquetas y cobertura para banners o catálogos; no modifica los actuales.
@@ -35,7 +36,7 @@ Las fichas actuales se mantienen intactas durante esta revisión. `preparar-enla
 
 ## Pendientes imprescindibles antes de publicación
 
-1. Aprobar la redacción y confirmar el nombre/razón social del proveedor garante; confirmar el inicio del plazo comercial desde entrega propuesto en el texto.
+1. Cerrar la redacción operativa y aprobar la publicación posterior. La razón social recuperada de593 es VELASCO VALDERRAMA JOSE RAFAEL: ya está incorporada, no volver a solicitarla.
 2. Confirmar recepción de devoluciones en local y/o transporte, gastos cuando no hay defecto/error, etiqueta/transportista si aplica, si existe tarifa de reposición, y método/plazo operativo real del reembolso. No se inventó ninguno.
 3. Cerrar el cómputo del término legal de15 días para su correspondencia exacta con Google. La página conserva el texto legal; no se reemplazó por3/7 días ni se aseguró sin evidencia que los días sean naturales/hábiles.
 
@@ -45,4 +46,4 @@ Para garantía por otros productos y excepciones SKU: mantener el plazo real ya 
 
 Revisar cambios concurrentes contra main fresco; conservar los contratos y medios actuales. Confirmar pendientes → aprobar versión y quitar el aviso de revisión/noindex mediante un cambio revisado → aplicar solo enlaces con hashes vigentes → comprobar móvil, HTTPS y canal oficial → configurar Google con los valores reales. La URL pública de política, la configuración Merchant y la integración del Worker de Alex siguen separadamente pendientes de autorización. No se solicita ni se da por hecha coordinación con otra sesión que no se puede controlar desde este chat.
 
-La política no modifica las tarifas/cobertura de envío ni crea checkout; esos requisitos pendientes del feed se mantienen. Las exclusiones del feed siguen intactas.
+La revisión03/11 se integra en el PR313 de compra directa. Recupera la tarifa nacional inicial $6.90 para todos los productos con sobrecosto a cargo de tienda y el plazo informado1–3 días; falta el cómputo operativo de entrega y las zonas Quito. No modifica producción ni configura Merchant. Las exclusiones del feed siguen intactas.

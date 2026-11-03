@@ -6,7 +6,8 @@
     "motor": 20,
     "integracion_preservacion": 3,
     "politicas_reutilizadas": 10,
-    "fallos": 0
+    "fallos": 0,
+    "repetidas_tras_revision_comercial": true
   },
   "navegador": {
     "registro_pedido_prueba": true,
@@ -22,7 +23,9 @@
     "ancho_util_px": 375,
     "desbordamiento_horizontal": false,
     "ficha_enlaza_compra": true,
-    "politica_accesible_sin_login": true
+    "politica_accesible_sin_login": true,
+    "politica_razon_social_y_error_tienda_verificados": true,
+    "pagina_envios_pagos_verificada": true
   },
   "fuentes": {
     "sku_catalogo": 1198,
@@ -31,8 +34,7 @@
     "feed_remoto_items": 370,
     "feed_sha256": "dd9e188add0555910ca703a9aa223019f3882bccacf4a61a71bf9fa9e9d1fb84",
     "feed_regenerado": false,
-    "recepcion_merchant_370_verificada": false,
-    "motivo": "Sesion Google cerrada en navegador Work"
+    "recepcion_merchant_370_verificada": true
   },
   "protecciones": {
     "produccion_modificada": false,
@@ -47,7 +49,32 @@
     "Transaccion atomica de pedido/reserva dentro del DataHub existente",
     "Persistencia operativa privada y controles de acceso/abuso",
     "HTTPS y validacion integral en entorno aprobado",
-    "Revisar textos sujetos a confirmacion al habilitar compra firme",
-    "Recuperar sesion y comprobar importacion Merchant370"
-  ]
+    "Revisar textos sujetos a confirmacion al habilitar compra firme"
+  ],
+  "merchant_observado": {
+    "cuenta": "5874003439",
+    "fuente": "10791678121",
+    "ultima_actualizacion_visible": "November 3, 2026 10:00 AM",
+    "productos_actualizados": 370,
+    "productos_nuevos": 5,
+    "atributos": "All recognized",
+    "archivo": "No issues found",
+    "diagnosticos_productos": "No se muestran incidencias",
+    "diagnosticos_cuenta": "No issues for you to fix",
+    "actualizacion_forzada": false,
+    "configuracion_modificada": false,
+    "aprobacion_fichas_gratuitas_acreditada": false,
+    "url_fuente": "https://merchants.google.com/mc/products/sources/detail?a=5874003439&afmDataSourceId=10791678121&tab=processing&hl=en",
+    "url_diagnosticos_cuenta": "https://merchants.google.com/mc/products/diagnostics/accountissues?a=5874003439&hl=en"
+  },
+  "condiciones_comerciales_recuperadas": {
+    "razon_social": true,
+    "tarifa_nacional_y_sobrecosto_tienda": true,
+    "plazo_nacional_informado": true,
+    "garantias_y_cambios": true,
+    "aceptacion_devolucion_error_tienda": true,
+    "cuenta_bancaria_completa": false,
+    "zonas_quito": false,
+    "operativa_reembolsos": false
+  }
 }

@@ -1,6 +1,6 @@
 # Cambios, devoluciones y garantías — CONECTATECH
 
-Borrador para aprobación · versión 2026-10-16.revision-1 · no publicado.
+Borrador para aprobación · versión 2026-11-03.revision-2 · no publicado.
 
 ## Tus derechos tienen prioridad
 
@@ -46,7 +46,7 @@ Los bienes defectuosos o no conformes se atienden conforme a los remedios legale
 
 ## Si el error es de CONECTATECH
 
-Si recibes un producto distinto del comprado, hay un error de despacho o se comprueba otra equivocación atribuible a la tienda, gestionaremos el error y ofreceremos la solución correspondiente.
+Si recibes un producto distinto del comprado, hay un error de despacho o se comprueba otra equivocación atribuible a la tienda, CONECTATECH acepta la devolución y gestionará la solución que corresponda.
 
 CONECTATECH asumirá los gastos que legalmente le correspondan. No trasladaremos al comprador costos de un error de la tienda cuando no proceda. Los casos que requieran revisión se derivarán a una persona responsable.
 
@@ -74,4 +74,4 @@ Av. 6 de Diciembre y La Niña, C.C. Multicentro Shopping, subsuelo, local 3. Qui
 
 WhatsApp y teléfono: +593 99 857 6759 · https://wa.me/593998576759
 
-Proveedor responsable: el identificado en el comprobante de compra bajo el nombre comercial CONECTATECH. La identificación legal exacta debe confirmarse antes de publicar.
+Proveedor responsable: VELASCO VALDERRAMA JOSE RAFAEL · nombre comercial CONECTATECH.
