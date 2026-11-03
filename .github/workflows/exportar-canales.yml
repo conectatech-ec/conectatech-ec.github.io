@@ -113,6 +113,12 @@ jobs:
         env:
           META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
         run: node scripts/sincronizar-secundario-meta.cjs --inspect
+      - name: Diagnosticar publicación y elegibilidad del secundario (sólo GET)
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: |
+          node scripts/test-visibilidad-secundario-meta.cjs
+          node scripts/diagnosticar-visibilidad-secundario-meta.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
@@ -242,5 +248,6 @@ jobs:
             work/auto-meta/resultado-secundario.json
           retention-days: 7
           if-no-files-found: warn
+
 
 
