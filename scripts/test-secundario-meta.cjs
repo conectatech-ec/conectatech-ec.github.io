@@ -1,13 +1,13 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
-const {MASTER,PHONE,NAME,FEED_NAME,SecondaryGraph,syncSecondary,main,validateConfig,CHECKPOINT}=require('./sincronizar-secundario-meta.cjs');
+const {MASTER,PHONE,NAME,FEED_NAME,SecondaryGraph,syncSecondary,main,validateConfig,CHECKPOINT,failureReceipt}=require('./sincronizar-secundario-meta.cjs');
 const {synchronize,reconcile}=require('./sincronizar-conjuntos-meta.cjs');
 const config={version:1,enabled:true,phone:PHONE,catalog_id:'123456789',catalog_name:NAME,feed_name:FEED_NAME};
 const plan={catalog_id:MASTER,productos_meta:2,fuente_sha256:'a'.repeat(64),groups:[{
  name:'CONECTATECH | TABLETS',retailer_id:'conectatech-web:tablets',family:'Tablets',label:'ct-web:tablets',
  filter:{and:[{custom_label_0:{eq:'ct-web:tablets'}},{availability:{eq:'in stock'}}]},sku:['TABL001']
 }]};
-function fixture({badName=false,badMembers=false,badImport=false,scheduled=false,duplicate=false,badFeedId=false,extraProducts=false}={}){
+function fixture({badName=false,badMembers=false,badImport=false,scheduled=false,duplicate=false,badFeedId=false,extraProducts=false,pendingUpload=false}={}){
  const calls=[],sets=[],feeds=[],uploads=[];
  let seq=200;
  if(scheduled)feeds.push({id:'20',name:FEED_NAME,schedule:{url:'https://example.test/duplicado.csv'}});
@@ -35,7 +35,7 @@ function fixture({badName=false,badMembers=false,badImport=false,scheduled=false
   else if(feeds.some(f=>path===f.id+'/uploads')){
    if(options.method==='POST'){
     assert.equal(params.update_only,'true');assert.equal(await params.file.text(),'csv-publico');
-    const u={id:String(seq++),filename:params.file.name,end_time:'done',error_count:badImport?1:0,num_invalid_items:0,num_persisted_items:2};uploads.push(u);data={id:u.id};
+    const u={id:String(seq++),filename:params.file.name,end_time:pendingUpload?null:'done',error_count:badImport?1:0,num_invalid_items:0,num_persisted_items:2};uploads.push(u);data={id:u.id};
    }else data={data:structuredClone(uploads)};
   }else if(uploads.some(u=>u.id===path))data=uploads.find(u=>u.id===path);
   else if(sets.some(s=>s.id===path))data=sets.find(s=>s.id===path);
@@ -124,8 +124,31 @@ test('inspección con ID configurado e inactivo verifica identidad y nunca escri
  const f=fixture();
  const result=await main({config:{...config,enabled:false},inspect:true,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:f.transport,write:()=>{},log:()=>{}});
  assert.equal(result.estado,'CATALOGO_SECUNDARIO_ACCESIBLE_SOLO_LECTURA');
- assert.equal(f.calls.length,1);assert.equal(f.calls[0].method,'GET');
+ assert.equal(result.productos_leidos,2);assert.equal(result.disponibles,1);assert.equal(result.agotados,1);
+ assert.equal(f.calls.length,3);assert.ok(f.calls.every(c=>c.method==='GET'));
  const bad=fixture({badName:true});
  await assert.rejects(main({config,inspect:true,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:bad.transport,write:()=>{},log:()=>{}}),/IDENTIDAD_SECUNDARIA/);
  assert.equal(bad.calls.filter(c=>c.method==='POST').length,0);
+});
+test('distingue importación pendiente de error y no imprime detalles desconocidos',()=>{
+ assert.equal(failureReceipt(Error('META_IMPORTACION_PENDIENTE')).estado,'SECUNDARIO_IMPORTACION_PENDIENTE');
+ assert.equal(failureReceipt(Error('META_IMPORTACION_CON_ERRORES_O_INCOMPLETA')).codigo,'META_IMPORTACION_CON_ERRORES_O_INCOMPLETA');
+ assert.equal(JSON.stringify(failureReceipt(Error('Bearer NEVER_PRINT'))).includes('NEVER_PRINT'),false);
+});
+test('inspección informa avance de la carga existente sin crear otra importación',async()=>{
+ const f=fixture();f.feeds.push({id:'20',name:FEED_NAME});
+ f.uploads.push({id:'900',start_time:'2026-11-03T00:00:00Z',error_count:0,num_invalid_items:0,num_persisted_items:1});
+ const r=await main({config,inspect:true,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:f.transport,write:()=>{},log:()=>{}});
+ assert.equal(r.importaciones[0].feed_id,'20');assert.equal(r.importaciones[0].cargas[0].persistidos,1);assert.equal(r.importaciones[0].cargas[0].fin,null);
+ assert.ok(f.calls.every(c=>c.method==='GET'));assert.equal(f.uploads.length,1);
+});
+test('la espera de importación secundaria se acota sin repetir la carga ni cambiar reintentos de pertenencia',async()=>{
+ const f=fixture({pendingUpload:true});let waits=0,checkpoint;
+ const opts={config,plan,csv:'csv-publico',api:f.api,wait:async()=>{waits++;},uploadAttempts:1,onCheckpoint:c=>{checkpoint=c;}};
+ await assert.rejects(syncSecondary(opts),/META_IMPORTACION_PENDIENTE/);
+ assert.equal(waits,1);assert.equal(f.uploads.length,1);assert.equal(f.sets.length,0);
+ await assert.rejects(syncSecondary({...opts,checkpoint}),/META_IMPORTACION_PENDIENTE/);
+ assert.equal(f.uploads.length,1);assert.equal(waits,2);
+ f.uploads[0].end_time='done';
+ const result=await syncSecondary({...opts,checkpoint});assert.equal(result.productos_verificados,2);assert.equal(f.uploads.length,1);
 });
