@@ -203,6 +203,15 @@ try{
  report.quota={limit_preserved:true,observed_reservations_delta:quota.calls-quotaBefore.calls,maximum_UI_turns:MAX_MESSAGES,provider_meter:false};if(MEDIA_ONLY){report.checks.no_AI_reservations=quota.calls===quotaBefore.calls;requireCheck(report.checks.no_AI_reservations,'CONCURRENT_OR_UNEXPECTED_AI_RESERVATION');}if(SIGNATURE_ONLY){report.checks.at_most_four_AI_reservations=quota.calls-quotaBefore.calls<=4;requireCheck(report.checks.at_most_four_AI_reservations,'CONCURRENT_OR_UNEXPECTED_AI_RESERVATION');}report.checks.image_assets_verified=assets.size;report.passed=report.failures.length===0;
 }catch(error){report.failure={stage,code:/^[A-Z0-9_]{3,100}$/.test(error.probeCode||'')?error.probeCode:'NETWORK_OR_RUNTIME_ERROR'};}
 finally{try{if(cdp?.readyState===WebSocket.OPEN){await evaluate("document.getElementById('leave')?.click();true");cdp.close();}}catch{}for(const p of pending.values()){clearTimeout(p.timer);p.reject(new Error('CLOSED'));}pending.clear();chrome?.kill('SIGTERM');if(profileDir)await rm(profileDir,{recursive:true,force:true,maxRetries:3,retryDelay:200}).catch(()=>{});}
-await mkdir(DIR,{recursive:true});await writeFile(DIR+'/alex-three-turns-cloud.json',JSON.stringify(report,null,2)+'\n');
+// Assertions above use complete private receipts in runner memory. Persist only
+// public-safe results: no protected image endpoints or image fingerprints.
+function redactPrivateReceipt(value){
+ if(Array.isArray(value))return value.map(redactPrivateReceipt);
+ if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).filter(([k])=>k!=='url'&&!/sha256/i.test(k)).map(([k,v])=>[k,redactPrivateReceipt(v)]));
+ if(typeof value==='string'&&value.includes('/alex/signature/'))return '[private image endpoint verified internally]';
+ return value;
+}
+const persisted=SIGNATURE_ONLY?{...redactPrivateReceipt(report),private_paths_and_image_hashes_redacted:true}:report;
+await mkdir(DIR,{recursive:true});await writeFile(DIR+'/alex-three-turns-cloud.json',JSON.stringify(persisted,null,2)+'\n');
 if(process.env.GITHUB_STEP_SUMMARY)await appendFile(process.env.GITHUB_STEP_SUMMARY,`Alex actual browser ${SIGNATURE_ONLY?'private approved SIGNATURE':MEDIA_ONLY?'complementary media':'three-turn'} test: ${report.passed?'PASS':'FAIL'} · ${report.normal_UI_messages}/${MAX_MESSAGES} normal messages · Graph sends 0\n`);
-console.log(JSON.stringify(report));if(!report.passed&&!report.baseline_probe)process.exitCode=1;
+console.log(JSON.stringify(persisted));if(!report.passed&&!report.baseline_probe)process.exitCode=1;
