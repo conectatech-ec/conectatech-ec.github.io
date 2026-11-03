@@ -32,10 +32,28 @@ export async function approvedImage(product,verifier=verifyAssets,allowBanner=tr
  if(!product.presentation_photo&&product.banner&&allowBanner&&old&&product.promo===old.promo&&product.pvp===old.pvp&&product.stock===old.stock){try{await verifier(product);return product.banner;}catch{/* An unavailable banner never replaces the verified exact photo. */}}
  await verifier({...product,banner:null});return product.foto;
 }
-async function variantMedia(result,source,memory,verify=verifyAssets){
- const media=await collectAlexMedia({...result,focus:result.variant_options.map(p=>p.sku)},source,memory,{verify,signatureLibrary});
- result.memory.shown=media.shown;result.memory.shown_media=media.shown_media;
- return media.images.map(image=>({...image,label:result.variant_options.find(p=>p.sku===image.sku)?.label||'Fotografía del producto'}));
+export async function resolveAlexMedia(result,source,memory,{verify=verifyAssets,deliveryScope='messenger',library=signatureLibrary}={}){
+ if(!['messenger','private_simulator'].includes(deliveryScope))throw Error('INVALID_MEDIA_SCOPE');
+ if(['erase','handoff'].includes(result.action))return {image:null,images:[],deliveryScope};
+ const explicit=result.media_requested===true||result.intent==='photo',variants=Array.isArray(result.variant_options)?result.variant_options:null;
+ if(variants||explicit){
+  const focus=[...new Set([...(result.focus||[]),...(variants||[]).map(p=>p.sku)])];
+  const requested=Array.isArray(result.images)&&result.images.length?result.images:result.image?[result.image]:explicit?focus:[];
+  const media=await collectAlexMedia({...result,focus,images:requested},source,memory,{verify,signatureLibrary:library,deliveryScope});
+  result.memory.shown=media.shown;result.memory.shown_media=media.shown_media;
+  const images=media.images.map(image=>{
+   const labels=(image.skus||[image.sku]).map(sku=>(variants||[]).find(p=>p.sku===sku)?.label||publicName(source.productos.find(p=>p.sku===sku)));
+   return {...image,label:labels.join(' / ')};
+  });
+  return {image:images[0]?.url||null,images,deliveryScope};
+ }
+ const product=source.productos.find(p=>p.sku===result.image),already=(memory.shown||[]).includes(result.image);
+ if(!product?.foto||already)return {image:null,images:[],deliveryScope};
+ try{
+  const url=await approvedImage(product,verify,quoteCurrent(source,product)),kind=url===product.banner?'approved_banner':'approved_photo';
+  result.memory.shown=[...new Set([...(memory.shown||[]),product.sku])];
+  return {image:url,images:[{sku:product.sku,skus:[product.sku],url,kind,label:publicName(product)}],deliveryScope};
+ }catch{return {image:null,images:[],deliveryScope};}
 }
 export async function prepareAlex(box,row,deps={refreshCatalog:refreshAlexCatalog,verifyAssets}){
  const data=box.sql.exec('SELECT sealed FROM alex_inputs WHERE job=?',row.k).toArray()[0];if(!data)throw Error('ALEX_INPUT_EXPIRED');
@@ -55,19 +73,10 @@ export async function prepareAlex(box,row,deps={refreshCatalog:refreshAlexCatalo
   const encrypted=await seal(JSON.stringify(context),box.env.PILOT_TOKEN);box.sql.exec('INSERT INTO alex_opportunities VALUES (?,?,?) ON CONFLICT(who) DO UPDATE SET sealed=excluded.sealed,expires=excluded.expires',row.who,encrypted,Date.now()+7*86400000);
  }
  const messages=[{text:result.text,quick_replies:quickReplies(result)}];if(!messages[0].quick_replies.length)delete messages[0].quick_replies;
- const product=source.productos.find(p=>p.sku===result.image);
- const already=(memory.shown||[]).includes(result.image);
- if(result.variant_options){
-  for(const media of await variantMedia(result,source,memory,deps.verifyAssets)){
-   const p=source.productos.find(p=>p.sku===media.sku);
-   messages.push({attachment:{type:'template',payload:{template_type:'generic',elements:[{title:publicName(p).slice(0,80),image_url:media.url,buttons:[{type:'web_url',title:'Ver ficha',url:p.url}]}]}}});
-  }
- }else if(product&&product.foto&&(!already||result.intent==='photo')){
-  try{
-   const image=await approvedImage(product,deps.verifyAssets,quoteCurrent(source,product));
-   messages.push({attachment:{type:'template',payload:{template_type:'generic',elements:[{title:publicName(product).slice(0,80),image_url:image,buttons:[{type:'web_url',title:'Ver ficha',url:product.url}]}]}}});
-   result.memory.shown=[...new Set([...(memory.shown||[]),product.sku])];
-  }catch{/* No unverified or changed image is sent. Text remains factual. */}
+ const media=await resolveAlexMedia(result,source,memory,{verify:deps.verifyAssets,deliveryScope:'messenger'});
+ for(const image of media.images){
+  const p=source.productos.find(p=>p.sku===image.sku),title=image.skus.length>1?publicName(p)+' · '+image.label:publicName(p);
+  messages.push({attachment:{type:'template',payload:{template_type:'generic',elements:[{title:title.slice(0,80),image_url:image.url,buttons:[{type:'web_url',title:'Ver ficha',url:p.url}]}]}}});
  }
  return {messages,result,source};
 }
@@ -107,9 +116,8 @@ export async function alexFetch(path,req,box){
   }
   if(!result.image&&result.focus.length===1&&result.facts?.some(k=>k.startsWith(result.focus[0]+'.'))&&!(memory.shown||[]).includes(result.focus[0]))result.image=result.focus[0];
   if(result.action==='erase'){q.exec('DELETE FROM alex_memory');q.exec('DELETE FROM alex_opportunities');}else await saveMemory(box,'demo',result.memory);
-  const p=source.productos.find(p=>p.sku===result.image);let image=null,images;
-  if(result.variant_options){images=await variantMedia(result,source,memory);image=images[0]?.url||null;if(result.action!=='erase')await saveMemory(box,'demo',result.memory);}
-  else if(p&&p.foto&&(!(memory.shown||[]).includes(p.sku)||result.intent==='photo')){try{image=await approvedImage(p,verifyAssets,quoteCurrent(source,p));result.memory.shown=[...new Set([...(memory.shown||[]),p.sku])];await saveMemory(box,'demo',result.memory);}catch{}}
+  const {image,images}=await resolveAlexMedia(result,source,memory,{deliveryScope:'private_simulator'});
+  if(result.action!=='erase')await saveMemory(box,'demo',result.memory);
   if(Number.isFinite(alexNext(box)))await box.state.storage.setAlarm(alexNext(box));
   return json({name:'Alex',collaborator:persona?{id:persona.id,commercial_name:persona.commercial_name,gender:persona.gender}:null,attribution,text:result.text,generative:result.generative,model:result.model||null,error_code:result.error_code||null,focus:result.focus,intent:result.intent,action:result.action,image,images,variant_options:result.variant_options,quick_replies:quickReplies(result),facts:result.facts||[],memory:{focus:result.memory.focus,recent_products:result.memory.recent_products||[],budget:result.memory.budget,sector:result.memory.sector,payment:result.memory.payment,bank:result.memory.bank||null,last_bank_mentioned:result.memory.last_bank_mentioned||null,months:result.memory.months||null,last_bank_months:result.memory.last_bank_months||null,rejected_banks:result.memory.rejected_banks||[],card_declined:result.memory.card_declined===true,payment_change_pending:result.memory.payment_change_pending===true,stage:result.memory.stage||null,purchase_deferred:result.memory.purchase_deferred===true,delivery:result.memory.delivery,turn_count:result.memory.turn_count||0,turns:result.memory.history?.length||0},presentation_version:source.presentation_version||null,presentation_state:source.presentation_state||'unavailable',presentation_error_code:source.presentation_error_code||null,presentation_ignored_unknown_count:source.presentation_ignored_unknown_count||0,source_fresh:fresh(source),source_kind:source.source_kind||null,source_sha256:source.source_sha256||null,source_published_at:source.feed_published_at||source.fuente_fecha,source_verified_at:source.fuente_fecha,inventory_cut_date:source.inventory_cut_date||null,inventory_updated_at:source.inventory_updated_at||null,inventory_commit:source.inventory_commit||null,shared_hub_status:source.shared_hub_status||null,source_error_code:source.source_error_code||null,response_mode:result.response_mode||(result.generative?'generative':'control'),quote_current:result.focus.every(s=>quoteCurrent(source,source.productos.find(p=>p.sku===s))),outbound_enabled:false});
  }

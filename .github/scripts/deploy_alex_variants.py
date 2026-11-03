@@ -9,10 +9,11 @@ from scoped_content import CFClient,ScopedDeployer,Bundle,Part,same_bundle,same_
 from scoped_policy import closed_health,tester_scope
 
 BASE_RELEASE='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
-CODE_REVISION='32a924a4961e07d00631fd59e3fb9416a94776fe'
-REPLACED=frozenset({'alex.mjs','alex-context.mjs','alex-store.mjs','alex-ui.mjs','alex-catalog.mjs','channels.mjs','phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs'})
+CODE_REVISION='3c0bf77a3a0b41942d7c8c6f039bb6cb37d18343'
+REPLACED=frozenset({'alex.mjs','alex-context.mjs','alex-store.mjs','alex-ui.mjs','alex-catalog.mjs','channels.mjs','phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs','source-attestations.mjs'})
 ADDED=frozenset()
 OWNED=REPLACED|ADDED
+SOURCE_PATHS={'source-attestations.mjs':'central/source-attestations.json'}
 CONTROL='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/contents/.github/alex-variants.json?ref=automatizacion%2Fpiloto-cloud-3sku-20261015'
 RAW='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'
 PRIVACY=b'export function privacyPage'
@@ -34,7 +35,10 @@ def require_control():
     envelope=strict_json(raw)
     value=strict_json(base64.b64decode(envelope['content'],validate=False))
     expected={'deploy':True,'worker':'conectatech-comercial-piloto','expected_base_release':BASE_RELEASE,'baseline_code_revision':CODE_REVISION,'cost_max_usd':0}
-    if value!=expected or type(value.get('deploy')) is not bool or type(value.get('cost_max_usd')) is not int:
+    # verify is the existing read-only smoke-test switch; it never authorizes a
+    # write. Accept its boolean form without weakening the deploy requirement.
+    selected={key:item for key,item in value.items() if key!='verify'} if isinstance(value,dict) else None
+    if selected!=expected or type(value.get('deploy')) is not bool or type(value.get('cost_max_usd')) is not int or type(value.get('verify',False)) is not bool:
         fail('VAR_PUBLIC_CONTROL_DISABLED_OR_CHANGED')
     if os.environ.get('EXPECTED_BASE_RELEASE',BASE_RELEASE)!=BASE_RELEASE or os.environ.get('EXPECTED_CODE_REVISION',CODE_REVISION)!=CODE_REVISION:
         fail('VAR_BASELINE_NOT_AUTHORIZED')
@@ -42,6 +46,11 @@ def require_control():
 
 def compiled(name,body):
     if name not in OWNED or not isinstance(body,bytes):fail('VAR_COMPILE_SCOPE_INVALID')
+    if name in SOURCE_PATHS:
+        if not isinstance(strict_json(body),dict):fail('VAR_ATTESTATIONS_OBJECT_REQUIRED')
+        # Match the original deploy_free.py packaging byte for byte, including
+        # the JSON file's own whitespace. Do not renew or reserialize evidence.
+        return b'export default '+body+b';\n'
     for old,new in IMPORTS:body=body.replace(old,new)
     if b"with {type:'json'}" in body:fail('VAR_UNSUPPORTED_JSON_IMPORT')
     return body
@@ -49,7 +58,7 @@ def compiled(name,body):
 def fetch_baselines():
     result={}
     for name in sorted(REPLACED):
-        request=urllib.request.Request(RAW+CODE_REVISION+'/automatizacion/'+name,headers={'Cache-Control':'no-cache','User-Agent':'CONECTATECH-Alex-Variants'})
+        request=urllib.request.Request(RAW+CODE_REVISION+'/automatizacion/'+SOURCE_PATHS.get(name,name),headers={'Cache-Control':'no-cache','User-Agent':'CONECTATECH-Alex-Variants'})
         with urllib.request.build_opener(NoRedirect()).open(request,timeout=30) as response:
             value=response.read(200001)
             if response.status!=200 or not 100<=len(value)<=200000:fail('VAR_PUBLIC_BASELINE_INVALID')
@@ -78,8 +87,8 @@ def prepare_variants(bundle,replacements,baselines):
         updated.append(part)
     updated.extend(Part(name,name,'application/javascript+module',replacements[name]) for name in sorted(ADDED))
     result=Bundle(bundle.entrypoint,tuple(updated))
-    # The host entrypoint, receivers, central-source and all data modules are
-    # deliberately outside the allowlist, even when their branch files changed.
+    # Only the explicitly authorized identity-proof registry joins the business
+    # modules. Host, receivers, central-source and master data remain unowned.
     if any(part!=next(p for p in result.parts if p.name==part.name) for part in bundle.parts if part.name not in OWNED):
         fail('VAR_UNOWNED_MODULE_CHANGED')
     return result
@@ -88,7 +97,7 @@ def main():
     if os.environ.get('GITHUB_REF')!='refs/heads/automatizacion/piloto-cloud-3sku-20261015' or os.environ.get('CF_FREE_ONLY_CONFIRMED')!='true':
         fail('VAR_PILOT_FREE_SCOPE_REQUIRED')
     require_control();baselines=fetch_baselines()
-    replacements={name:compiled(name,(ROOT/'automatizacion'/name).read_bytes()) for name in OWNED}
+    replacements={name:compiled(name,(ROOT/'automatizacion'/SOURCE_PATHS.get(name,name)).read_bytes()) for name in OWNED}
     api=CFClient(os.environ.get('CLOUDFLARE_ACCOUNT_ID'),os.environ.get('CLOUDFLARE_API_TOKEN'))
     guard=ScopedDeployer(api);capture=guard.capture();before=capture['bundle']
     if capture['health']['release']!=BASE_RELEASE:fail('VAR_BASE_RELEASE_CHANGED')

@@ -2,7 +2,7 @@ name: Variantes e imágenes Alex en el piloto aislado
 on:
   push:
     branches: ['automatizacion/piloto-cloud-3sku-20261015']
-    paths: ['automatizacion/alex.mjs', 'automatizacion/alex-context.mjs', 'automatizacion/alex-store.mjs', 'automatizacion/alex-ui.mjs', 'automatizacion/alex-catalog.mjs', 'automatizacion/channels.mjs', 'automatizacion/phone-variants.mjs', 'automatizacion/alex-variant-sales.mjs', 'automatizacion/alex-media.mjs', 'automatizacion/tests/phone-variants.test.mjs', 'automatizacion/tests/alex-variant-sales.test.mjs', 'automatizacion/tests/alex-media.test.mjs', '.github/alex-variants.json', '.github/scripts/deploy_alex_variants.py', '.github/scripts/test_deploy_alex_variants.py', '.github/scripts/alex-variants-cloudcheck.mjs', '.github/workflows/alex-variants.yml']
+    paths: ['automatizacion/alex.mjs', 'automatizacion/alex-context.mjs', 'automatizacion/alex-store.mjs', 'automatizacion/alex-ui.mjs', 'automatizacion/alex-catalog.mjs', 'automatizacion/channels.mjs', 'automatizacion/phone-variants.mjs', 'automatizacion/alex-variant-sales.mjs', 'automatizacion/alex-media.mjs', 'automatizacion/central/source-attestations.json', 'automatizacion/tests/phone-variants.test.mjs', 'automatizacion/tests/alex-variant-sales.test.mjs', 'automatizacion/tests/alex-media.test.mjs', 'automatizacion/tests/alex-explicit-image-delivery.test.mjs', '.github/alex-variants.json', '.github/scripts/deploy_alex_variants.py', '.github/scripts/test_deploy_alex_variants.py', '.github/scripts/alex-variants-cloudcheck.mjs', '.github/workflows/alex-variants.yml']
 permissions:
   contents: read
 concurrency:
@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: node --test automatizacion/tests/phone-variants.test.mjs automatizacion/tests/alex-variant-sales.test.mjs automatizacion/tests/alex-media.test.mjs automatizacion/tests/alex-collaborators.test.mjs automatizacion/tests/alex-simulator.test.mjs automatizacion/tests/alex-variant-media-store.test.mjs automatizacion/tests/alex-ultra-conversation.test.mjs
+      - run: node --test automatizacion/tests/phone-variants.test.mjs automatizacion/tests/alex-variant-sales.test.mjs automatizacion/tests/alex-media.test.mjs automatizacion/tests/alex-collaborators.test.mjs automatizacion/tests/alex-simulator.test.mjs automatizacion/tests/alex-variant-media-store.test.mjs automatizacion/tests/alex-ultra-conversation.test.mjs automatizacion/tests/alex-explicit-image-delivery.test.mjs
       - run: python -m py_compile .github/scripts/deploy_alex_variants.py
       - run: python .github/scripts/test_deploy_alex_variants.py
       - id: control
@@ -37,7 +37,7 @@ jobs:
           c=json.load(open('.github/alex-variants.json'))
           assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0
           assert c['expected_base_release']=='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
-          assert c['baseline_code_revision']=='32a924a4961e07d00631fd59e3fb9416a94776fe'
+          assert c['baseline_code_revision']=='3c0bf77a3a0b41942d7c8c6f039bb6cb37d18343'
           assert type(c['deploy']) is bool and type(c.get('verify',False)) is bool
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:
               out.write('deploy='+str(c['deploy']).lower()+'\n')

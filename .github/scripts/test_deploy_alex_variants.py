@@ -1,7 +1,9 @@
 """Offline scoped-deployment guards; all module bodies below are synthetic."""
-import importlib.util,unittest
+import base64,importlib.util,json,unittest
 from dataclasses import replace
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
 
 spec=importlib.util.spec_from_file_location('deploy_alex_variants',Path(__file__).with_name('deploy_alex_variants.py'))
 module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
@@ -94,5 +96,35 @@ class VariantScopeTests(unittest.TestCase):
             module.compiled('worker.mjs',original)
         with self.assertRaisesRegex(ValueError,'VAR_UNSUPPORTED_JSON_IMPORT'):
             module.compiled('alex-store.mjs',b"import unknown from './unreviewed.json' with {type:'json'};")
+
+    def test_only_the_authorized_attestation_json_is_packaged_without_reserializing(self):
+        raw=b'{\n  "'+b'a'*64+b'": {"cut_date": "2026-11-03", "identity_verified_skus": []}\n}\n'
+        self.assertEqual(module.SOURCE_PATHS,{'source-attestations.mjs':'central/source-attestations.json'})
+        self.assertEqual(module.compiled('source-attestations.mjs',raw),b'export default '+raw+b';\n')
+        self.assertIn('source-attestations.mjs',module.REPLACED)
+        self.assertNotIn('central-data.mjs',module.OWNED)
+        self.assertNotIn('central-source.mjs',module.OWNED)
+        self.assertNotIn('marketplace-library.mjs',module.OWNED)
+        for value in (b'[]',b'null',b'"not an evidence object"'):
+            with self.subTest(value=value),self.assertRaisesRegex(ValueError,'VAR_ATTESTATIONS_OBJECT_REQUIRED'):
+                module.compiled('source-attestations.mjs',value)
+
+    def test_verify_switch_is_read_only_and_never_substitutes_for_explicit_deploy(self):
+        expected={'deploy':True,'worker':'conectatech-comercial-piloto','expected_base_release':module.BASE_RELEASE,'baseline_code_revision':module.CODE_REVISION,'cost_max_usd':0}
+        class Response:
+            status=200
+            def __init__(self,value):self.value=json.dumps({'content':base64.b64encode(json.dumps(value).encode()).decode()}).encode()
+            def read(self,_limit):return self.value
+            def __enter__(self):return self
+            def __exit__(self,*_args):return False
+        env={'GITHUB_SHA':'d'*40,'EXPECTED_BASE_RELEASE':module.BASE_RELEASE,'EXPECTED_CODE_REVISION':module.CODE_REVISION}
+        with patch.dict(module.os.environ,env),patch.object(module,'read_latest_revision',return_value='d'*40):
+            for value in (expected,{**expected,'verify':False},{**expected,'verify':True}):
+                opener=SimpleNamespace(open=lambda *_args,**_kwargs:Response(value))
+                with patch.object(module.urllib.request,'build_opener',return_value=opener):module.require_control()
+            for value in ({**expected,'deploy':False,'verify':True},{**expected,'verify':'true'},{**expected,'cost_max_usd':False},{**expected,'arbitrary_permission':True}):
+                opener=SimpleNamespace(open=lambda *_args,**_kwargs:Response(value))
+                with patch.object(module.urllib.request,'build_opener',return_value=opener),self.assertRaisesRegex(ValueError,'VAR_PUBLIC_CONTROL_DISABLED_OR_CHANGED'):
+                    module.require_control()
 
 if __name__=='__main__':unittest.main()

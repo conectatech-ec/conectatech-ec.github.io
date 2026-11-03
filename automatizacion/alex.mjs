@@ -270,13 +270,17 @@ function finishVariants(input,source,memory,reply,mode,plan=null){
  const limit=reply.variant_options.length>2?700:440;
  if(!priceFirst&&safeVoice&&say.length+reply.text.length+1<=limit)reply={...reply,text:say+'\n'+reply.text};
  const next={...memory,focus:reply.selection_focus,stage:'consulta',greeted:true,turn_count:(memory.turn_count||0)+1};
+ if(reply.asked_topic)next.asked_topics=[...new Set([...(memory.asked_topics||[]),reply.asked_topic])].slice(-8);
  next.recent_products=[...(memory.recent_products||[]).filter(s=>!reply.focus.includes(s)),...reply.focus].slice(-10);
  next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:reply.text}].slice(-policy.max_history_turns*2);
  return {...reply,...mode,memory:next};
 }
 export function commercialFallback(input,source,memory={},error_code='AI_UNAVAILABLE'){
  memory=mergePreferences(input,{},memory);
- const variants=variantSalesReply(input,source,memory);if(variants)return finishVariants(input,source,memory,variants,{generative:false,model:null,error_code,response_mode:error_code?'verified_catalog_fallback':'verified_catalog'});
+ const variants=variantSalesReply(input,source,memory);if(variants){
+  const persona=getProfile(source.advisor_persona?.id),say=!memory.greeted&&!/precio|cu[aá]nto|cuesta|vale|contado|tarjeta|compar/i.test(input)?persona?.id==='COL002'?'¡Claro! Te cuento las opciones 😊.':'¡Vamos con ese equipo! 😎':'';
+  return finishVariants(input,source,memory,variants,{generative:false,model:null,error_code,response_mode:error_code?'verified_catalog_fallback':'verified_catalog'},{say});
+ }
  const selected=candidates(input,memory,source),products=source.productos.filter(p=>selected.includes(p.sku)),book=factBook(source),p=products.length===1?products[0]:null;
  let facts=[],ask='',intent='other',image=null;const payment=paymentContext(input,memory);
  const guarded=contextPlan(input,source,memory);
@@ -312,7 +316,7 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
  }
  if(humanRequested(input))return {text:'Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.',focus:memory.focus||[],action:'handoff',intent:'human',image:null,generative:false,memory:{...memory,history:[...(memory.history||[]),{role:'user',text:input}].slice(-policy.max_history_turns*2)}};
  // Exact factual questions use verified catalog data without spending a model reservation.
- const complex=/compar|diferenc|recomiend|mejor|car[oa]\b|rebaj|descuento|presupuesto|preocup|desconfi|no (?:tengo|quiero|me|entiendes)|\bpero\b|\bpara\b|[😂😅🤣]/iu.test(input)||(input.match(/\?/g)||[]).length>1;
+ const complex=/comp[aá]r|diferenc|recomiend|mejor|car[oa]\b|rebaj|descuento|presupuesto|preocup|desconfi|no (?:tengo|quiero|me|entiendes)|\bpero\b|\bpara\b|[😂😅🤣]/iu.test(input)||(input.match(/\?/g)||[]).length>1;
  if(env.CATALOG_FIRST==='true'&&!complex&&!bankIntent(input,memory).objection&&!buyingIntent(input).deferred&&!buyingIntent(input).resume&&(/precio|cu[aá]nto.{0,35}(?:cuesta|vale|sale)|contraentrega|env[ií]os? nacional(?:es)?|direcci[oó]n|contado|tarjeta|\bPVP\b|disponib|\bstock\b|\btienen\b/i.test(input)||imageRequested(input)||/^[¿]?(?:qu[eé]|cu[aá]nta|dime).{0,45}(?:bater[ií]a|pantalla|c[aá]mara|capacidad|almacenamiento)/i.test(input))){
   const a=commercialFallback(input,source,memory,null);return {...a,error_code:null,response_mode:'verified_catalog'};
  }

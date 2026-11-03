@@ -16,9 +16,10 @@ export function publicAlexImage(value){
  }catch{return false;}
 }
 
-function signatureAllowed(product,source,library,now){
+function signatureAllowed(product,source,library,now,deliveryScope){
  const entry=library?.products?.[product.sku];
  return library?.schema==='conectatech.approved_library.handoff.v1'&&
+  (!library.delivery_scope||library.delivery_scope===deliveryScope)&&
   library.live_registry_connection_verified===true&&library.no_send_to_buyers===false&&library.messaging_enabled===true&&
   entry?.visual_approved===true&&entry.publication_verified===true&&entry.delivery_allowed===true&&
   SHA.test(source?.source_sha256||'')&&entry.source_sha256===source.source_sha256&&
@@ -39,13 +40,14 @@ export async function collectAlexMedia(result,source,memory={},options={}){
  const limit=Number.isInteger(options.maxImages)?Math.max(0,Math.min(2,options.maxImages)):2;
  const shown=new Set((memory.shown||[]).filter(x=>typeof x==='string'&&SKU.test(x)));
  const shownMedia=new Set((memory.shown_media||[]).filter(x=>typeof x==='string'));
- const images=[],usedAssets=new Set();
+ const images=[],usedAssets=new Map(),usedUrls=new Map();
  if(!result||['erase','handoff'].includes(result.action)||!Array.isArray(source?.productos))return {images,shown:[...shown],shown_media:[...shownMedia]};
  const focus=new Set((result.focus||[]).filter(x=>typeof x==='string'&&SKU.test(x)));
  const requested=[...(Array.isArray(result.images)?result.images:[]),result.image].filter(x=>typeof x==='string'&&SKU.test(x));
- const repeat=result.intent==='photo';
+ // An explicit image request can accompany a comparison. Its sales intent does
+ // not turn the image into an unsolicited repeat.
+ const repeat=result.media_requested===true||result.intent==='photo';
  for(const sku of [...new Set(requested)]){
-  if(images.length>=limit)break;
   if(!focus.has(sku)||shown.has(sku)&&!repeat)continue;
   const matches=source.productos.filter(p=>p.sku===sku);if(matches.length!==1)continue;
   const product=matches[0];
@@ -54,7 +56,7 @@ export async function collectAlexMedia(result,source,memory={},options={}){
   if(product.central_availability==='blocked'||product.central_availability==='absent'||
      (product.blocked_reasons||[]).some(x=>/IDENTITY|VARIANT/i.test(x)))continue;
   if(!repeat&&(product.central_availability==='out_of_stock'||product.disponible===false||product.stock<=0))continue;
-  const allowBanner=signatureAllowed(product,source,options.signatureLibrary,now);
+  const allowBanner=signatureAllowed(product,source,options.signatureLibrary,now,options.deliveryScope||'messenger');
   const photo=publicAlexImage(product.foto)&&SHA.test(product.foto_sha256||'')?product.foto:null;
   let candidates=[];
   if(allowBanner)candidates.push({url:product.banner,sha:product.banner_sha256,kind:'approved_banner'});
@@ -72,7 +74,14 @@ export async function collectAlexMedia(result,source,memory={},options={}){
   }
   for(const candidate of candidates){
    const assetKey=candidate.url+'|'+candidate.sha;
-   if(usedAssets.has(assetKey)||shownMedia.has(assetKey)&&!repeat)continue;
+   const shared=usedAssets.get(assetKey);
+   if(shared){
+    // Some exact variants legitimately reference the same approved model photo.
+    // Deliver one verified file and explicitly retain every SKU it represents.
+    if(shared.kind===candidate.kind&&!shared.skus.includes(sku)){shared.skus.push(sku);shown.add(sku);}
+    break;
+   }
+   if(images.length>=limit||usedUrls.has(candidate.url)||shownMedia.has(assetKey)&&!repeat)continue;
    try{
     // Pass only the chosen asset to the existing verifier. An unavailable banner
     // must not prevent its independent, exact product photo from being verified.
@@ -80,8 +89,9 @@ export async function collectAlexMedia(result,source,memory={},options={}){
      ?{...product,foto:null,foto_sha256:null,banner:candidate.url,banner_sha256:candidate.sha}
      :{...product,foto:candidate.url,foto_sha256:candidate.sha,banner:null,banner_sha256:null};
     await verify(media);
-    images.push({sku,url:candidate.url,kind:candidate.kind});
-    shown.add(sku);shownMedia.add(assetKey);usedAssets.add(assetKey);break;
+    const image={sku,skus:[sku],url:candidate.url,kind:candidate.kind};
+    images.push(image);
+    shown.add(sku);shownMedia.add(assetKey);usedAssets.set(assetKey,image);usedUrls.set(candidate.url,assetKey);break;
    }catch{/* Preserve the useful factual response and try the exact photo. */}
   }
  }

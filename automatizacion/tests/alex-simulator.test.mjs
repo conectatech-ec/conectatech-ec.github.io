@@ -28,11 +28,12 @@ const registryFixture=()=>({max_collaborators:10,scope:'owner_simulator_only',ex
  {id:'COL001',commercial_name:'Rafa Valderrama',gender:'masculine',style:'jocoso,directo'},
  {id:'COL002',commercial_name:'Jessy Fox',gender:'feminine',style:'amable,cercana'}
 ]});
-async function harness({chat=()=>Response.json(answer()),status=200,registry=registryFixture()}={}){
+async function harness({chat=()=>Response.json(answer()),status=200,registry=registryFixture(),imageDelivery='loaded'}={}){
  const response=alexPage(),html=await response.text(),script=html.match(/<script nonce="[^"]+">([\s\S]*?)<\/script>/)?.[1];assert.ok(script);
  const nodes=new Map();for(const match of html.matchAll(/<(\w+)[^>]*\bid="([^"]+)"[^>]*>/g)){const n=new Element(match[1]);n.id=match[2];n.disabled=/\bdisabled\b/.test(match[0]);nodes.set(n.id,n);}
  const calls=[],timers=new Map(),windowEvents={};let uuid=0,timerId=0;
- const document={getElementById:id=>{assert.ok(nodes.has(id),'Unknown DOM id '+id);return nodes.get(id);},createElement:tag=>new Element(tag),createTextNode:text=>{const n=new Element();n.textContent=text;return n;},querySelectorAll:()=>[],addEventListener(){}};
+ function deliverImage(image,delivery='loaded'){image.naturalWidth=delivery==='loaded'?800:0;image.naturalHeight=delivery==='loaded'?1000:0;if(delivery==='error')image.onerror?.();else image.onload?.();}
+ const document={getElementById:id=>{assert.ok(nodes.has(id),'Unknown DOM id '+id);return nodes.get(id);},createElement:tag=>{const n=new Element(tag);if(tag.toLowerCase()==='img'){n.naturalWidth=0;n.naturalHeight=0;Object.defineProperty(n,'src',{get(){return this._src;},set(value){this._src=value;if(imageDelivery!=='manual')Promise.resolve().then(()=>deliverImage(this,imageDelivery));}});}return n;},createTextNode:text=>{const n=new Element();n.textContent=text;return n;},querySelectorAll:()=>[],addEventListener(){}};
  const fetch=async(url,options={})=>{
   const call={url,options,body:options.body?JSON.parse(options.body):null};calls.push(call);
   if(url==='/alex/status')return Response.json({name:'Alex, tu asesor de CONECTATECH',generative:true,free_only:true,memory_hours:24},{status});
@@ -50,7 +51,7 @@ async function harness({chat=()=>Response.json(answer()),status=200,registry=reg
  async function connect(){nodes.get('key').value='synthetic-private-operator-key-for-browser-tests';await click('connect');}
  async function switchProfile(id){nodes.get('collaborator').value=id;await nodes.get('collaborator').onchange?.(event());await settle();}
  async function send(text){nodes.get('message').value=text;await nodes.get('form').onsubmit?.(event());await settle();}
- return {response,html,nodes,calls,timers,windowEvents,click,connect,send,switchProfile,text:()=>[...nodes.values()].map(n=>n.textContent).join('\n')};
+ return {response,html,nodes,calls,timers,windowEvents,click,connect,send,switchProfile,deliverImage,text:()=>[...nodes.values()].map(n=>n.textContent).join('\n')};
 }
 
 test('The HTML is a protected same-origin client, without credentials, local persistence or executable reply markup',async()=>{
@@ -166,4 +167,52 @@ test('Media captions and alternative text ignore internal filenames or SKU metad
  assert.equal(images.length,2);assert.equal(captions[0],'Banner comercial aprobado');assert.match(captions[1],/Samsung Galaxy A17 256 GB/);
  assert.ok(!/TELF011|TELF012|PRIVATE_INTERNAL|SIGNATURE|\.png/.test([...captions,...images.map(n=>n.alt)].join(' ')));
  assert.equal(images[1].alt,'Fotografía del Samsung Galaxy A17 de 256 GB');
+});
+
+test('An inserted image is pending until the browser decodes it; a zero-sized load is never reported as delivered',async()=>{
+ const h=await harness({imageDelivery:'manual',chat:()=>Response.json(answer({images:[{sku:'TELF011',kind:'approved_photo',url:'https://conectatech-ec.github.io/imagenes/a17.webp',label:'Samsung A17 128 GB'}]}))});
+ await h.connect();await h.send('Muéstrame una imagen');
+ const figure=descendants(h.nodes.get('chat')).find(n=>n.tagName==='FIGURE'),image=descendants(figure).find(n=>n.tagName==='IMG');
+ assert.equal(image.loading,'eager');assert.equal(figure.dataset.mediaState,'loading');assert.match(h.nodes.get('media-note').textContent,/Cargando/);
+ assert.ok(!/mostrada|mostradas/.test(h.nodes.get('media-note').textContent),'Creating an img node is not successful delivery');
+ h.deliverImage(image,'zero');await settle();
+ assert.equal(figure.dataset.mediaState,'error');assert.equal(descendants(figure).filter(n=>n.tagName==='IMG').length,0);
+ assert.match(h.nodes.get('media-note').textContent,/No se pudo mostrar/);assert.match(figure.textContent,/ped[ií]rsela de nuevo|abrir el enlace/);
+});
+test('Successful and failed media are counted separately after real browser load/error callbacks',async()=>{
+ const h=await harness({imageDelivery:'manual',chat:()=>Response.json(answer({images:[
+  {sku:'TELF011',kind:'approved_photo',url:'https://conectatech-ec.github.io/imagenes/a17-128.webp',label:'Samsung A17 128 GB'},
+  {sku:'TELF012',kind:'approved_banner',url:'https://conectatech-ec.github.io/imagenes/a17-256-banner.png',label:'Samsung A17 256 GB'}
+ ]}))});await h.connect();await h.send('Muéstrame las dos versiones');
+ const images=descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG');h.deliverImage(images[0]);await settle();
+ assert.match(h.nodes.get('media-note').textContent,/1 imagen verificada mostrada; 1 imagen/);
+ h.deliverImage(images[1],'error');await settle();
+ assert.equal(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').length,1);
+ assert.match(h.nodes.get('media-note').textContent,/1 imagen verificada y mostrada.*1 no pudo cargarse/);
+ assert.ok(!/2 im[aá]genes.*mostradas/.test(h.nodes.get('media-note').textContent));
+});
+test('A late image load updates only its original profile history and cannot overwrite the selected profile summary',async()=>{
+ const h=await harness({imageDelivery:'manual',chat:c=>Response.json(answer(c.body.collaborator_id==='COL001'?{images:[{sku:'TELF011',kind:'approved_photo',url:'https://conectatech-ec.github.io/imagenes/a17.webp',label:'Samsung A17'}]}:{text:'Respuesta independiente de Jessy',images:[]}))});
+ await h.connect();await h.send('Busco A17');const originalImage=descendants(h.nodes.get('chat')).find(n=>n.tagName==='IMG');
+ await h.switchProfile('COL002');await h.send('Otra consulta');const jessySummary=h.nodes.get('media-note').textContent;
+ h.deliverImage(originalImage);await settle();assert.equal(h.nodes.get('media-note').textContent,jessySummary);assert.ok(!h.nodes.get('chat').textContent.includes('Samsung A17'));
+ await h.switchProfile('COL001');assert.match(h.nodes.get('media-note').textContent,/1 imagen verificada y mostrada/);assert.equal(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').length,1);
+});
+test('An old pending image cannot replace the latest reply summary or restore a reset conversation',async()=>{
+ let count=0;const h=await harness({imageDelivery:'manual',chat:()=>Response.json(answer(++count===1?{images:[{sku:'TELF011',kind:'approved_photo',url:'https://conectatech-ec.github.io/imagenes/a17.webp'}]}:{images:[]}))});
+ await h.connect();await h.send('Primera imagen');const oldImage=descendants(h.nodes.get('chat')).find(n=>n.tagName==='IMG');
+ await h.send('Sin imagen adicional');const currentSummary=h.nodes.get('media-note').textContent;h.deliverImage(oldImage);await settle();assert.equal(h.nodes.get('media-note').textContent,currentSummary);
+ await h.click('reset');oldImage.onerror?.();await settle();assert.equal(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').length,0);assert.match(h.nodes.get('media-note').textContent,/solo aparecen cuando/);
+});
+test('A shared approved photograph can describe both variants without leaking their internal codes',async()=>{
+ const h=await harness({chat:()=>Response.json(answer({images:[{sku:'TELF011',skus:['TELF011','TELF012'],kind:'approved_photo',url:'https://conectatech-ec.github.io/imagenes/a17.webp',label:'Samsung A17 · 128 GB / 4 GB RAM y 256 GB / 8 GB RAM'}]}))});
+ await h.connect();await h.send('Muéstrame las versiones');const image=descendants(h.nodes.get('chat')).find(n=>n.tagName==='IMG'),caption=descendants(h.nodes.get('chat')).find(n=>n.tagName==='FIGCAPTION').textContent;
+ assert.match(caption,/128 GB.*256 GB/);assert.match(image.alt,/128 GB.*256 GB/);assert.ok(!/TELF011|TELF012/.test(caption));assert.match(h.nodes.get('media-note').textContent,/1 imagen verificada y mostrada/);
+});
+test('Only an explicitly attested signature banner receives the SIGNATURE caption',async()=>{
+ const h=await harness({chat:()=>Response.json(answer({images:[
+  {sku:'TELF011',kind:'approved_banner',signature_verified:true,url:'https://conectatech-ec.github.io/imagenes/a17-approved.png',label:'Samsung A17 128 GB'},
+  {sku:'TELF012',kind:'approved_banner',url:'https://conectatech-ec.github.io/imagenes/a17-other.png',label:'Samsung A17 256 GB'}
+ ]}))});await h.connect();await h.send('Muéstrame los banners');const captions=descendants(h.nodes.get('chat')).filter(n=>n.tagName==='FIGCAPTION').map(n=>n.textContent);
+ assert.match(captions[0],/^Banner SIGNATURE aprobado.*128 GB/);assert.match(captions[1],/^Banner comercial aprobado.*256 GB/);assert.ok(!captions[1].includes('SIGNATURE'));
 });

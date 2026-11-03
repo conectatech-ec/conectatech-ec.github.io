@@ -191,7 +191,20 @@ test('Absent 5G and Pro versions never fall through to prices of a different con
 
 test('Spanish se in a payment question is not an SE model suffix',async t=>{
  clock(t);const source=fixture(),a=await generateAlex('¿Se puede comprar el Samsung A17 con tarjeta?',source,{},fallback);
- assertCashOffers(a,source,['TELF011','TELF012']);assert.ok(!/A17 SE|configuraci[oó]n.*no tengo/i.test(a.text));
+ assertSafe(a,source);assert.ok(a.text.includes('$232.38')&&a.text.includes('$299.88'));assert.ok(!/A17 SE|configuraci[oó]n.*no tengo/i.test(a.text));
+});
+
+test('The three requested turns progress from offers to card prices and a real media request without a repeated question',async t=>{
+ clock(t);const source=fixture();
+ for(const id of ['COL001','COL002'])for(const env of [fallback,conservativeModel()]){
+  const s=withPersona(source,getProfile(id));let memory={},replies=[];
+  for(const input of ['Busco un Samsung A17','¿Cuánto cuesta con tarjeta?','Muéstrame una imagen y compárame las versiones']){const a=await generateAlex(input,s,memory,env);assertSafe(a,s);memory=a.memory;replies.push(a);}
+  const [first,card,comparison]=replies;assert.ok(first.text.includes('$185.90')&&first.text.includes('$239.90'));
+  assert.ok(card.text.includes('$232.38')&&card.text.includes('$299.88'));assert.ok(!card.text.includes('$185.90')&&!card.text.includes('$239.90'));assert.ok(!card.text.includes('?'));
+  assert.equal(comparison.intent,'compare');assert.equal(comparison.media_requested,true);assert.deepEqual(new Set(comparison.images),new Set(['TELF011','TELF012']));
+  assert.match(comparison.text,/128 GB/);assert.match(comparison.text,/256 GB/);assert.match(comparison.text,/4 GB RAM f[ií]sica/);assert.match(comparison.text,/8 GB RAM f[ií]sica/);assert.match(comparison.text,/ahorrar|presupuesto|multitarea/);
+  assert.ok(!comparison.text.includes('¿Lo usarías'));assert.equal(memory.turn_count,3);assert.deepEqual(new Set(memory.focus),new Set(['TELF011','TELF012']));
+ }
 });
 
 test('Mentioning the model never overrides a buying deferral or rejected bank',async t=>{

@@ -1,7 +1,7 @@
 // Verified commercial rendering inside Alex, shared by generative and catalogue fallback paths.
 import {phoneFamily} from './phone-variants.mjs';
 import {quoteCurrent} from './alex-catalog.mjs';
-import {buyingIntent,bankIntent} from './alex-context.mjs';
+import {buyingIntent,bankIntent,imageRequested} from './alex-context.mjs';
 const money=n=>'$'+Number(n).toFixed(2);
 const available=(source,p,now)=>quoteCurrent(source,p,now)&&p.price_verified!==false&&p.stock>0&&
  (!p.central_availability||p.central_availability==='in_stock')&&!(p.blocked_reasons||[]).length;
@@ -13,6 +13,7 @@ export function variantSalesReply(input,source,memory={},now=Date.now()){
  if(/^Elijo este producto del producto [A-Z]{3,8}\d{2,6}$/.test(input))return null;
  if(!source?.productos||/rebaj|descuento|car[oa]\b|no me alcanza|garant[ií]a|reclamo|hablar.*persona|olvida|borra|no comprar|comprar[eé] todav[ií]a|continuar despu[eé]s|sigamos|retom|me lo llevo|quiero comprar/i.test(input))return null;
  const directList=/variant|version|configur|opciones|alternativas|disponib|precios|cu[aá]nto.*cuestan/i.test(input);
+ const mediaRequested=imageRequested(input),comparing=/comp[aá]r|diferenc|versus|\bvs\b/i.test(input);
  if(!directList&&/bater[ií]a|pantalla|c[aá]mara|garant[ií]a|direcci[oó]n|env[ií]o|contraentrega|retiro|foto(?:graf[ií]a)?|imagen|banner/i.test(input)&&!/busco|me interesa|necesito.*(?:Samsung|Redmi|HONOR|TECNO|Infinix|ZTE|Xiaomi)/i.test(input))return null;
  if(/banco|meses|cuotas|intereses|Pac[ií]fico|Pichincha|Diners|Guayaquil/i.test(input)&&!directList&&!/precio|cu[aá]nto/i.test(input))return null;
  let family=phoneFamily(input,source.productos,{focus:memory.focus||[]});
@@ -29,7 +30,7 @@ export function variantSalesReply(input,source,memory={},now=Date.now()){
   (identities.get(a.sku).ram_physical_gb||0)-(identities.get(b.sku).ram_physical_gb||0)||a.sku.localeCompare(b.sku));
  const title=family.identity.brand+' '+family.identity.model;
  if(!ordered.length)return {text:title+': no tengo disponibilidad confirmada de estas versiones. ¿Quieres revisar otra opción?',focus:family.exact.map(p=>p.sku),selection_focus:family.exact.map(p=>p.sku),variant_options:[],facts:[],images:[],image:null,intent:'recommend',action:'answer',purchasable:false,has_verified_photo:false};
- const label=p=>{const v=identities.get(p.sku);return [v.storage_gb?v.storage_gb+' GB':'Almacenamiento por confirmar',v.ram_physical_gb?'RAM física '+v.ram_physical_gb+' GB':'RAM por confirmar',v.ram_virtual_gb?'+'+v.ram_virtual_gb+' GB virtual':null,v.connectivity].filter(Boolean).join(' · ');};
+ const label=p=>{const v=identities.get(p.sku);return [v.storage_gb?v.storage_gb+' GB':'Almacenamiento por confirmar',v.ram_physical_gb?v.ram_physical_gb+' GB RAM física':'RAM por confirmar',v.ram_virtual_gb?'+'+v.ram_virtual_gb+' GB virtual':null,v.connectivity].filter(Boolean).join(' · ');};
  const options=ordered.map(p=>({sku:p.sku,label:label(p),storage_gb:identities.get(p.sku).storage_gb,ram_physical_gb:identities.get(p.sku).ram_physical_gb,ram_virtual_gb:identities.get(p.sku).ram_virtual_gb,connectivity:identities.get(p.sku).connectivity,cash:fresh?p.promo:null,card:fresh?p.pvp:null,current:fresh}));
  let recommendation='',suggested=null;
  if(fresh&&ordered.length>1){
@@ -45,12 +46,20 @@ export function variantSalesReply(input,source,memory={},now=Date.now()){
  let selected=exact.length?exact.map(p=>p.sku):suggested?[suggested.sku]:(memory.focus||[]).filter(s=>ordered.some(p=>p.sku===s));
  if(!selected.length)selected=ordered.map(p=>p.sku);
  const primaryUnavailable=fresh&&family.explicit_variant&&family.exact.length&&!family.exact.some(p=>offers.some(v=>v.sku===p.sku));
- const header=title+(fresh?' · 💵 contado / 💳 tarjeta (PVP)':' · precios y disponibilidad por confirmar');
- const rows=ordered.map(p=>'• '+label(p)+(fresh?': '+money(p.promo)+' / '+money(p.pvp):''));
- const usefulQuestion=!memory.purchase_deferred&&!memory.need&&!memory.budget&&ordered.length>1?'¿Lo usarías para lo básico o para guardar muchas fotos?':'';
- let text=[primaryUnavailable?'La versión que pediste no tiene disponibilidad confirmada.':null,header,...rows,recommendation,usefulQuestion].filter(Boolean).join('\n');
+ const cardOnly=/tarjeta|\bPVP\b/i.test(input)&&!/contado|efectivo/i.test(input),cashOnly=/contado|efectivo/i.test(input)&&!/tarjeta|\bPVP\b/i.test(input);
+ const compareOnly=comparing&&!/precio|cu[aá]nto|cuesta|vale|tarjeta|contado|\bPVP\b/i.test(input);
+ const header=title+(fresh?compareOnly?' · Comparación':cardOnly?' · 💳 con tarjeta (PVP)':cashOnly?' · 💵 de contado':' · 💵 contado / 💳 tarjeta (PVP)':' · precios y disponibilidad por confirmar');
+ const rowPrice=p=>!fresh||compareOnly?'':cardOnly?': '+money(p.pvp):cashOnly?': '+money(p.promo):': '+money(p.promo)+' / '+money(p.pvp);
+ const rows=ordered.map(p=>'• '+label(p)+rowPrice(p));
+ const useAlreadyAsked=(memory.asked_topics||[]).includes('phone_use')||(memory.history||[]).some(t=>t.role==='assistant'&&/lo usar[ií]as|uso diario|para qu[eé].*usar/i.test(t.text)&&/\?/.test(t.text));
+ const usefulQuestion=!cardOnly&&!cashOnly&&!comparing&&!memory.purchase_deferred&&!memory.need&&!memory.budget&&!useAlreadyAsked&&ordered.length>1?'¿Lo usarías para lo básico o para guardar muchas fotos?':'';
+ // Payment follow-ups answer payment; do not repeat the initial sales pitch.
+ if(cardOnly||cashOnly)recommendation='';
+ if(comparing&&fresh&&ordered.length>1){const low=identities.get(ordered[0].sku),high=identities.get(ordered.at(-1).sku);if(low.storage_gb!==high.storage_gb&&low.ram_physical_gb!==high.ram_physical_gb)recommendation=memory.budget&&suggested?'Por tu presupuesto, me quedo con '+identities.get(suggested.sku).storage_gb+' GB; la otra opción ofrece más espacio y RAM.':low.storage_gb+' GB si priorizas ahorrar; '+high.storage_gb+' GB y '+high.ram_physical_gb+' GB RAM si necesitas más espacio y multitarea.';}
+ const availability=fresh&&!cardOnly&&!cashOnly?'Disponibilidad según la última actualización; confirmamos al comprar.':'';
+ let text=[primaryUnavailable?'La versión que pediste no tiene disponibilidad confirmada.':null,header,...rows,recommendation,availability,usefulQuestion].filter(Boolean).join('\n');
  if(text.length>700)text=[header,...ordered.map(p=>'• '+(identities.get(p.sku).storage_gb||'?')+' GB / '+(identities.get(p.sku).ram_physical_gb||'?')+' GB RAM'+(identities.get(p.sku).connectivity?' '+identities.get(p.sku).connectivity:'')+(fresh?': '+money(p.promo)+' / '+money(p.pvp):'')),recommendation].filter(Boolean).join('\n');
  return {text,focus:family.explicit_variant&&exact.length?exact.map(p=>p.sku):ordered.map(p=>p.sku),selection_focus:selected,variant_options:options,
-  facts:fresh?ordered.flatMap(p=>[p.sku+'.cash',p.sku+'.card']):[],images:ordered.map(p=>p.sku),image:null,intent:'recommend',action:'recommend',
+  facts:fresh?ordered.flatMap(p=>compareOnly?[]:cardOnly?[p.sku+'.card']:cashOnly?[p.sku+'.cash']:[p.sku+'.cash',p.sku+'.card']):[],images:ordered.map(p=>p.sku),image:null,intent:comparing?'compare':mediaRequested?'photo':cardOnly||cashOnly?'price':'recommend',action:comparing?'compare':'recommend',media_requested:mediaRequested,asked_topic:usefulQuestion?'phone_use':null,
   purchasable:selected.length===1&&offers.some(p=>p.sku===selected[0]),has_verified_photo:ordered.some(p=>!!p.foto),recommendation_sku:suggested?.sku||null};
 }
