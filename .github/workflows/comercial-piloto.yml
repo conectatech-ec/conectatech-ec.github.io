@@ -1,5 +1,8 @@
 name: Piloto comercial aislado
 on:
+  pull_request:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['automatizacion/**', '.github/workflows/comercial-piloto.yml']
   push:
     branches: ['automatizacion/piloto-cloud-3sku-20261015']
     paths: ['automatizacion/**', '.github/workflows/comercial-piloto.yml']
@@ -15,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             /automatizacion/
@@ -22,6 +26,17 @@ jobs:
             /seo-contenido.json
             /importacion/medios.json
             /datos-593/inventario-publico.csv
+      - name: Read approved public resolver code for synthetic fixtures
+        uses: actions/checkout@v4
+        with:
+          ref: 67f5a762e9c702034b2450ba4fbc8cfdfb0bfbfb
+          path: qa-public-reference
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /assets/editorial-titulos.js
+            /scripts/editorial-fotografia-efectiva.cjs
+            /scripts/fotografia-direccion.cjs
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -38,6 +53,12 @@ jobs:
       - run: node automatizacion/tests/alex-commercial.test.mjs
       - run: node automatizacion/tests/alex-samsung.test.mjs
       - run: node automatizacion/tests/alex-objections.test.mjs
+      - run: node automatizacion/tests/alex-presentation.test.mjs
+        env:
+          ALEX_PUBLIC_HELPERS_REFERENCE: ${{ github.workspace }}/qa-public-reference
+      - run: node automatizacion/tests/messenger-runner-fixture.test.mjs
+      - run: node automatizacion/tests/messenger-closed-ingress.test.mjs
+      - run: node automatizacion/tests/private-source-preflight.test.mjs
       - run: python automatizacion/tests/central_593_test.py
       - run: python automatizacion/tests/data_hub_test.py
       - run: node automatizacion/tests/central.test.mjs

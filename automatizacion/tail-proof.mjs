@@ -1,6 +1,7 @@
 import {spawn} from 'node:child_process';
 import {mkdir,writeFile} from 'node:fs/promises';
 const worker='conectatech-comercial-piloto';
+export const messengerProbeScript=scope=>scope==='closed_ingress_only'?'automatizacion/messenger-closed-ingress-e2e.mjs':'automatizacion/messenger-e2e.mjs';
 const reasons=new Set(['ingress_disabled','pairing_claimed','pairing_phrase_format','pairing_message_not_phrase','pairing_phrase_ambiguous','pairing_recipient_mismatch','pairing_timestamp_rejected','pairing_not_current','pairing_standby_ignored','pairing_echo_ignored','pairing_no_user_text','ignored_object','invalid_json','event_limit','allowlist_missing','storage_unavailable','processed','not_configured','invalid_body','invalid_signature']);
 const sources=new Set(['external_https','authorized_ci_probe','synthetic_ci']);
 export function sanitizeTrace(t){
@@ -20,7 +21,7 @@ async function main(){
    report.tail_connected=await new Promise(resolve=>{const timeout=setTimeout(()=>resolve(false),8000);ws.addEventListener('open',()=>{clearTimeout(timeout);ws.send(JSON.stringify({debug:false}));resolve(true);},{once:true});ws.addEventListener('error',()=>{clearTimeout(timeout);resolve(false);},{once:true});});
   }
   if(report.tail_connected)await new Promise(resolve=>setTimeout(resolve,1000));
-  const exitCode=await new Promise(resolve=>{const child=spawn(process.execPath,['automatizacion/messenger-e2e.mjs'],{stdio:'inherit',env:process.env});child.on('error',()=>resolve(1));child.on('close',resolve);});
+  const exitCode=await new Promise(resolve=>{const child=spawn(process.execPath,[messengerProbeScript(process.env.MESSENGER_E2E_SCOPE)],{stdio:'inherit',env:process.env});child.on('error',()=>resolve(1));child.on('close',resolve);});
   if(report.tail_connected)await new Promise(resolve=>setTimeout(resolve,3000));
   report.signed_closed_probe_observed=report.observed.some(r=>r.source==='authorized_ci_probe'&&r.signature_valid===true&&r.http_status===200&&r.reason==='ingress_disabled');
   report.invalid_signature_probe_observed=report.observed.some(r=>r.source==='authorized_ci_probe'&&r.signature_valid===false&&r.http_status===403);

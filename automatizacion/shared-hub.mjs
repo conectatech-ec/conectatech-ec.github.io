@@ -31,5 +31,12 @@ export async function readSharedHub(fallback,fetcher=fetch,now=Date.now()){
  async function get(path){const r=await fetcher(base+path,{signal:AbortSignal.timeout(10000),cf:{cacheTtl:60,cacheEverything:true}});if(!r.ok)throw Error('SHARED_HUB_UNAVAILABLE');const t=await r.text();if(t.length>1500000)throw Error('SHARED_HUB_SIZE');return JSON.parse(t);}
  const pointer=await get('datos-593/estado-ultimo-corte.json');
  const cut=await get('datos-593/corte-comercial-publico-validado.json');
- return adaptSharedHub(pointer,cut,fallback,now);
+ const effective=adaptSharedHub(pointer,cut,fallback,now);
+ // Read the public presentation from the existing export, after resolving the effective 593 cut.
+ // A presentation outage never discards a valid newer commercial source or renews its expiry.
+ try{
+  const sales=await get('exportaciones/catalogo-ventas.json');
+  if(sales?.fuente_sha256!==effective.source.sha256||sales?.fecha_corte!==effective.source.cut_date||!sales.presentation)throw Error('PRESENTATION_SOURCE_MISMATCH');
+  return {...effective,presentation:sales.presentation,presentation_transport_error:null};
+ }catch{return {...effective,presentation_transport_error:'PUBLIC_PRESENTATION_UNAVAILABLE'};}
 }

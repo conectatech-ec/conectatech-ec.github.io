@@ -1,7 +1,7 @@
 import original from './generated/catalogo.json' with {type:'json'};
 import extra from './generated/alex-productos-extra.json' with {type:'json'};
 import {readCatalogSnapshot} from './live.mjs';
-import {central,sourceToAlex} from './central-source.mjs';
+import {central,sourceToAlex,bindPresentation,lastValidPresentation} from './central-source.mjs';
 import enrichment from './central/enrichment.json' with {type:'json'};
 import {readSharedHub} from './shared-hub.mjs';
 export const INVENTORY_FEED='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/main/datos-593/inventario-publico.csv';
@@ -63,8 +63,12 @@ export async function refreshAlexCatalog(seed=alexBaseline,fetcher=fetch,now=Dat
  const input=typeof query==='string'?query:query.input||'',focus=typeof query==='object'?query.focus||[]:[];
  if(centralData){
   if(typeof query==='object'&&query.sharedHub===true){try{centralData=await readSharedHub(centralData,fetcher,now);}catch{/* Last valid compiled source keeps its original expiry; never renew it on a read error. */}}
+  let presentationError=centralData.presentation_transport_error||null;
+  if(centralData.presentation){try{centralData=await bindPresentation(centralData,centralData.presentation,now);}catch{presentationError='PRESENTATION_REJECTED';centralData=lastValidPresentation(centralData);}}
+  else centralData=lastValidPresentation(centralData);
   const extended={...seed,productos:[...seed.productos,...pilotProducts.filter(p=>centralData.products.some(c=>c.sku===p.sku)&&!seed.productos.some(s=>s.sku===p.sku))]};
-  return sourceToAlex(extended,centralData,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
+  const source=sourceToAlex(extended,centralData,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
+  return {...source,presentation_error_code:presentationError};
  }
  const source=await readCatalogSnapshot(seed,fetcher,now,products=>{const current=catalogMatches(input,products);return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},true);
  let inventory=[],snapshot=null;
