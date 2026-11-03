@@ -1,0 +1,839 @@
+{
+  "at": "2026-11-03T06:05:46.218Z",
+  "schema": "conectatech.alex.readiness.v1",
+  "production_modified": false,
+  "worker_deployed": false,
+  "Graph_sends": 0,
+  "customer_webhook_events_posted": 0,
+  "external_customers_activated": false,
+  "new_paid_services": 0,
+  "evidence_kind": "public_Hub_and_private_operator_HTTPS_not_real_channel_delivery",
+  "checks": [
+    {
+      "path": "/alex/status",
+      "anonymous_http": 401
+    },
+    {
+      "path": "/alex/quota",
+      "anonymous_http": 401
+    },
+    {
+      "path": "/commercial/catalog",
+      "anonymous_http": 401
+    },
+    {
+      "path": "/messenger/status",
+      "anonymous_http": 401
+    },
+    {
+      "path": "/privacy",
+      "anonymous_http": 200
+    },
+    {
+      "path": "/data-deletion",
+      "anonymous_http": 200
+    }
+  ],
+  "conversations": [
+    {
+      "scope": "private_catalog_operator",
+      "sku": "TELF017",
+      "turns": [
+        {
+          "message": "Precio de contado TELF017",
+          "text": "💵 Redmi 15C 128 GB: $159.90 en PROMO CONTADO.",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": "https://conectatech-ec.github.io/imagenes/telf017/TELF017-01.webp",
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Precio con tarjeta TELF017",
+          "text": "💳 Redmi 15C 128 GB: $199.88 con tarjeta, más intereses cuando correspondan.",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": "https://conectatech-ec.github.io/imagenes/telf017/TELF017-01.webp",
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Precio de contado",
+            "Retiro en tienda",
+            "Entrega en Quito"
+          ],
+          "action": "answer"
+        }
+      ]
+    },
+    {
+      "scope": "private_catalog_operator",
+      "sku": "TELF018",
+      "turns": [
+        {
+          "message": "Precio de contado TELF018",
+          "text": "💵 Redmi 15C 256 GB · 4GB: $175.90 en PROMO CONTADO.",
+          "focus": [
+            "TELF018"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": "https://conectatech-ec.github.io/imagenes/telf018/TELF018-01.webp",
+          "banners": [
+            {
+              "sku": "TELF018",
+              "visual_approved": false,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "NO_VERIFIED_APPROVED_BANNER",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Precio con tarjeta TELF018",
+          "text": "💳 Redmi 15C 256 GB · 4GB: $219.88 con tarjeta, más intereses cuando correspondan.",
+          "focus": [
+            "TELF018"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": "https://conectatech-ec.github.io/imagenes/telf018/TELF018-01.webp",
+          "banners": [
+            {
+              "sku": "TELF018",
+              "visual_approved": false,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "NO_VERIFIED_APPROVED_BANNER",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Precio de contado",
+            "Retiro en tienda",
+            "Entrega en Quito"
+          ],
+          "action": "answer"
+        }
+      ]
+    },
+    {
+      "scope": "private_catalog_operator",
+      "sku": "TELF011",
+      "turns": [
+        {
+          "message": "Precio de contado TELF011",
+          "text": "💵 Samsung Galaxy A17 128 GB: $185.90 en PROMO CONTADO.",
+          "focus": [
+            "TELF011"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+          "banners": [
+            {
+              "sku": "TELF011",
+              "visual_approved": false,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "NO_VERIFIED_APPROVED_BANNER",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Características",
+            "Ver fotografía",
+            "Precio con tarjeta"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Precio con tarjeta TELF011",
+          "text": "💳 Samsung Galaxy A17 128 GB: $232.38 con tarjeta, más intereses cuando correspondan.",
+          "focus": [
+            "TELF011"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+          "banners": [
+            {
+              "sku": "TELF011",
+              "visual_approved": false,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "NO_VERIFIED_APPROVED_BANNER",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Precio de contado",
+            "Retiro en tienda",
+            "Entrega en Quito"
+          ],
+          "action": "answer"
+        }
+      ]
+    },
+    {
+      "scope": "private_catalog_operator",
+      "sku": "TELF012",
+      "turns": [
+        {
+          "message": "Precio de contado TELF012",
+          "text": "💵 Telefono Samsung A17 8GB+256GB: $239.90 en PROMO CONTADO.",
+          "focus": [
+            "TELF012"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF012",
+              "visual_approved": false,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "NO_VERIFIED_APPROVED_BANNER",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Características",
+            "Precio con tarjeta"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Precio con tarjeta TELF012",
+          "text": "💳 Telefono Samsung A17 8GB+256GB: $299.88 con tarjeta, más intereses cuando correspondan.",
+          "focus": [
+            "TELF012"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF012",
+              "visual_approved": false,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "NO_VERIFIED_APPROVED_BANNER",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Precio de contado",
+            "Retiro en tienda",
+            "Entrega en Quito"
+          ],
+          "action": "answer"
+        }
+      ]
+    },
+    {
+      "scope": "private_HTTPS_conversation_not_Messenger",
+      "turns": [
+        {
+          "message": "Busco un Redmi 15C de 128 GB",
+          "text": "Redmi 15C 128 GB: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": "https://conectatech-ec.github.io/imagenes/telf017/TELF017-01.webp",
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "¿Y con tarjeta cuánto cuesta?",
+          "text": "💳 Redmi 15C 128 GB: $199.88 con tarjeta, más intereses cuando correspondan.",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Precio de contado",
+            "Retiro en tienda",
+            "Entrega en Quito"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Pero no tengo tarjeta Pacífico",
+          "text": "Entendido, buscamos otra opción.\n¿Con qué otra tarjeta o forma de pago te gustaría seguir?",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Otra tarjeta",
+            "Precio de contado",
+            "Características"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Tengo Pichincha",
+          "text": "Redmi 15C 128 GB: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Quiero contraentrega en Quito",
+          "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.\n¿En qué sector necesitas la entrega?",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "¿Y envíos nacionales?",
+          "text": "🛵 Envíos nacionales con costo adicional; confirmamos pago y condiciones antes de comprar.\n¿A qué ciudad necesitas el envío?",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Continuar compra",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Muéstrame la fotografía",
+          "text": "Redmi 15C 128 GB: 128 GB de almacenamiento, 4 GB de RAM física.",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "No compraré todavía",
+          "text": "Redmi 15C 128 GB: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Ver fotografía",
+            "Precio de contado",
+            "Precio con tarjeta"
+          ],
+          "action": "answer"
+        },
+        {
+          "message": "Quiero continuar después",
+          "text": "Claro, vamos con calma. Podemos seguir cuando te venga bien.",
+          "focus": [
+            "TELF017"
+          ],
+          "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+          "cut": "2026-11-02",
+          "quote_current": true,
+          "source_fresh": true,
+          "image": null,
+          "banners": [
+            {
+              "sku": "TELF017",
+              "visual_approved": true,
+              "delivery_enabled": false,
+              "block_reasons": [
+                "BANNER_SOURCE_VERSION_MISMATCH",
+                "LIBRARY_DELIVERY_NOT_RELEASED",
+                "LIVE_LIBRARY_READBACK_REQUIRED"
+              ]
+            }
+          ],
+          "quick_replies": [
+            "Características",
+            "Ver fotografía",
+            "Hablar con persona"
+          ],
+          "action": "answer"
+        }
+      ]
+    }
+  ],
+  "Worker": {
+    "release": "81288c55384a584d15b6f3aa87f6c644add857f8",
+    "ai_binding": true,
+    "generative_configured": true,
+    "catalog_first": true,
+    "external_ingress": false,
+    "tester_outbound": true
+  },
+  "branch_Hub": {
+    "cut": "2026-11-02",
+    "sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+    "generated_at": "2026-11-02T22:48:22.000Z",
+    "expires_at": "2026-11-03T22:48:22.000Z",
+    "fresh": true,
+    "known_products": 1556,
+    "identity_and_business_valid": 1166,
+    "identity_blocked": 16,
+    "note": "Counts describe known compiled identities, not all new SKU in the master. No quantities copied."
+  },
+  "comparison": {
+    "message": "Compara el Redmi 15C 128 GB con el Samsung A17 128 GB",
+    "text": "Samsung Galaxy A17 128 GB\nRedmi 15C 128 GB\n¿Cuál de estas versiones te interesa?",
+    "focus": [
+      "TELF011",
+      "TELF017"
+    ],
+    "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+    "cut": "2026-11-02",
+    "quote_current": true,
+    "source_fresh": true,
+    "image": null,
+    "banners": [
+      {
+        "sku": "TELF011",
+        "visual_approved": false,
+        "delivery_enabled": false,
+        "block_reasons": [
+          "NO_VERIFIED_APPROVED_BANNER",
+          "LIBRARY_DELIVERY_NOT_RELEASED",
+          "LIVE_LIBRARY_READBACK_REQUIRED"
+        ]
+      },
+      {
+        "sku": "TELF017",
+        "visual_approved": true,
+        "delivery_enabled": false,
+        "block_reasons": [
+          "BANNER_SOURCE_VERSION_MISMATCH",
+          "LIBRARY_DELIVERY_NOT_RELEASED",
+          "LIVE_LIBRARY_READBACK_REQUIRED"
+        ]
+      }
+    ],
+    "quick_replies": [
+      "A17 de 128 GB",
+      "Redmi 128 GB",
+      "Hablar con persona"
+    ],
+    "action": "answer"
+  },
+  "out_of_stock_protection": {
+    "sku": "ADAP014",
+    "passed": true
+  },
+  "internal_quota": {
+    "reserved_neurons": 0,
+    "calls": 0,
+    "remaining_calls": 100,
+    "reset_at": "2026-11-04T00:00:00.000Z",
+    "reserved_limit": 8000,
+    "estimation_only_not_provider_meter": true,
+    "paid_fallback": false
+  },
+  "generative_probe": {
+    "attempted": true,
+    "maximum_operator_turns": 1,
+    "generative": true,
+    "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+    "error_code": null,
+    "text": "Entiendo que necesitas algo para trabajar, ambos son opciones interesantes. Un factor importante a considerar es la pantalla.\nSamsung Galaxy A17 128 GB\nRedmi 15C 128 GB\n¿Cuál de estas versiones te interesa?",
+    "focus": [
+      "TELF011",
+      "TELF017"
+    ],
+    "source_fresh": true,
+    "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+    "response_mode": "generative"
+  },
+  "Meta": {
+    "read_only": true,
+    "page_token_present": true,
+    "page_token_secret_name": "META_PAGE_ACCESS_TOKEN",
+    "test_sender_secret_present": false,
+    "app_secret_present": true,
+    "page_identity_http": 200,
+    "page_identity_matches": true,
+    "subscriptions_http": 403,
+    "subscriptions_error_code": 200,
+    "subscriptions_error_subcode": null,
+    "subscriptions_requires_manage_metadata": true,
+    "app_subscription_found": null,
+    "messages_subscribed": null,
+    "delivery_subscribed": null,
+    "app_identity_http": 200,
+    "app_name_matches": true,
+    "app_webhook_http": 200,
+    "app_webhook_error_code": null,
+    "app_page_webhook_found": true,
+    "app_page_webhook_active": true,
+    "app_messages_field": true,
+    "app_callback_matches": true,
+    "token_debug_http": 200,
+    "token_debug_error_code": null,
+    "token_valid": true,
+    "token_type": "PAGE",
+    "token_app_matches": true,
+    "pages_messaging_granted": true,
+    "pages_manage_metadata_granted": false,
+    "token_expired": false,
+    "advanced_access_verified": false,
+    "app_live_verified": false,
+    "pairing_http": 200,
+    "pairing": {
+      "pending": false,
+      "claimed": false,
+      "registered": false
+    },
+    "seller_http": 200,
+    "seller": {
+      "mode": "authorized-testers-only",
+      "enabled": true,
+      "human_review_required": false,
+      "enrollment_armed": true,
+      "page_token_present": true,
+      "testers_configured": true,
+      "permissions": {
+        "ready": true,
+        "reason": "AUTHORIZED_TEST_SEND_READY",
+        "pages_messaging": true,
+        "subscription_read_http": 403,
+        "messages_subscription_verified": false,
+        "delivery_subscribed": false,
+        "advanced_access_verified": false,
+        "app_live_verified": false,
+        "checked_at": 1792179595843
+      },
+      "window_hours": 24,
+      "retention_days": 7,
+      "daily_limit": 100,
+      "message_limit_source": "internal_pilot_policy",
+      "message_limit_window": "rolling_24_hours",
+      "accepted_last24h": 0,
+      "remaining_messages": 100,
+      "next_slot_at": null,
+      "counts": [],
+      "parts": [],
+      "live_customers_enabled": false
+    }
+  },
+  "Messenger": {
+    "mode": "development-only",
+    "registered_testers": true,
+    "tester_transport": true,
+    "external_ingress": false,
+    "window_hours": 24
+  },
+  "receipt_counts": {
+    "signed_external": 0,
+    "signed_CI": 4,
+    "real_new_Messenger_conversation_verified": false
+  },
+  "Instagram": {
+    "asset_link_read": true,
+    "professional_asset_found": false,
+    "transport_implemented_and_tested": false,
+    "asset_http": 200,
+    "error_code": null
+  },
+  "WhatsApp": {
+    "token_present": false,
+    "phone_configured": false,
+    "WABA_configured": false,
+    "asset_verified": false,
+    "zero_cost_account_verified": false,
+    "transport_implemented_and_tested": false
+  },
+  "channel_assessments": [
+    {
+      "channel": "messenger_page",
+      "tester_ready": false,
+      "external_send_enabled": false,
+      "blocked_by": [
+        "ACCOUNT_MESSAGES_SUBSCRIPTION_NOT_VERIFIED",
+        "EXTERNAL_ACCESS_NOT_VERIFIED",
+        "APP_LIVE_NOT_VERIFIED",
+        "REAL_CHANNEL_DELIVERY_REQUIRED",
+        "EXTERNAL_ACTIVATION_REQUIRES_OWNER_APPROVAL_AND_CONTROLLED_DEPLOYMENT"
+      ]
+    },
+    {
+      "channel": "instagram_professional",
+      "tester_ready": false,
+      "external_send_enabled": false,
+      "blocked_by": [
+        "ACCOUNT_IDENTITY_NOT_VERIFIED",
+        "MESSAGING_PERMISSION_NOT_VERIFIED",
+        "ACCOUNT_MESSAGES_SUBSCRIPTION_NOT_VERIFIED",
+        "CHANNEL_TRANSPORT_NOT_IMPLEMENTED_AND_TESTED",
+        "EXTERNAL_ACCESS_NOT_VERIFIED",
+        "APP_LIVE_NOT_VERIFIED",
+        "CURRENT_COMMERCIAL_SOURCE_REQUIRED",
+        "REAL_CHANNEL_DELIVERY_REQUIRED",
+        "EXTERNAL_ACTIVATION_REQUIRES_OWNER_APPROVAL_AND_CONTROLLED_DEPLOYMENT"
+      ]
+    },
+    {
+      "channel": "whatsapp_business",
+      "tester_ready": false,
+      "external_send_enabled": false,
+      "blocked_by": [
+        "ACCOUNT_IDENTITY_NOT_VERIFIED",
+        "MESSAGING_PERMISSION_NOT_VERIFIED",
+        "ACCOUNT_MESSAGES_SUBSCRIPTION_NOT_VERIFIED",
+        "CHANNEL_TRANSPORT_NOT_IMPLEMENTED_AND_TESTED",
+        "ZERO_COST_ACCOUNT_AND_SERVICE_WINDOW_NOT_VERIFIED",
+        "EXTERNAL_ACCESS_NOT_VERIFIED",
+        "APP_LIVE_NOT_VERIFIED",
+        "CURRENT_COMMERCIAL_SOURCE_REQUIRED",
+        "REAL_CHANNEL_DELIVERY_REQUIRED",
+        "EXTERNAL_ACTIVATION_REQUIRES_OWNER_APPROVAL_AND_CONTROLLED_DEPLOYMENT"
+      ]
+    },
+    {
+      "channel": "marketplace_personal",
+      "official_Alex_inbox_API_accredited": false,
+      "external_send_enabled": false,
+      "tester_ready": false,
+      "blocked_by": [
+        "NO_AUTHORIZED_PERSONAL_INBOX_API"
+      ],
+      "native_Meta_AI_account_verified": false,
+      "supported_now": "native_or_manual_consent_handoff",
+      "native_AI_uses_Alex_Data_Hub": false
+    }
+  ],
+  "marketplace_referrals": [
+    {
+      "source": "rafa",
+      "sku": "TELF017",
+      "listing_url": "https://www.facebook.com/share/1H2BLNTXjW/",
+      "whatsapp_url": "https://wa.me/593998576759?text=Vengo%20de%20Marketplace.%20Anuncio%3A%20https%3A%2F%2Fwww.facebook.com%2Fshare%2F1H2BLNTXjW%2F%20Me%20interesa%20TELF017.%20Quiero%20confirmar%20precio%2C%20disponibilidad%20y%20entrega.",
+      "messenger_url": "https://m.me/105549695770538",
+      "requires_customer_send": true,
+      "transfers_private_history": false,
+      "personal_inbox_access": false,
+      "attribution_grants_sender_authorization": false,
+      "whatsapp_Alex_connected": false
+    }
+  ],
+  "passed": true,
+  "github_run_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41587719916",
+  "branch_code_sha": "83b5da72029c218b132b2f9424e94cf81c1d7ca3"
+}

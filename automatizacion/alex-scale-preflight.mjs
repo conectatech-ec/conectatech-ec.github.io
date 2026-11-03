@@ -69,7 +69,7 @@ try{
  const out=hub.products.find(p=>p.availability==='out_of_stock'&&!p.blocked_reasons.length);
  if(out){const d=await ask('Precio de '+out.sku);assert.ok(!d.text.includes('$'));report.out_of_stock_protection={sku:out.sku,passed:true};}
  const quota=await request('/alex/quota');report.internal_quota=quota;
- report.generative_probe={attempted:false,reason:'FREE_PLAN_ATTESTATION_OR_QUOTA_REQUIRED'};
+ report.generative_probe={attempted:false,reason:process.env.ALEX_RUN_SINGLE_AI_PROBE==='true'?'FREE_PLAN_ATTESTATION_OR_QUOTA_REQUIRED':'NOT_REQUESTED_FOR_THIS_REPEAT'};
  // At most one live inference, guarded by the existing Worker reservation and Free-only binding.
  if(process.env.ALEX_RUN_SINGLE_AI_PROBE==='true'&&process.env.CF_FREE_ONLY_CONFIRMED==='true'&&h.ai_binding&&h.alex_generative&&quota.remaining_calls>=2){
   const a=await request('/alex/chat',{session_id:crypto.randomUUID(),message:'Estoy entre el Redmi 15C 128 GB y el Samsung A17 128 GB. Lo usaré para trabajar, ¿cómo los comparo?'});
