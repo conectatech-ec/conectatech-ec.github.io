@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "total_evaluado": 100,
   "revisiones_adicionales": 50,
   "total_sku_evaluados": 150,
@@ -2590,7 +2590,23 @@
       "maestro_reutilizado_sin_regenerar": false,
       "edicion_asistida": true,
       "limite": "La imagen comercial no certifica software incluido, funciones, resolución nativa ni rendimiento. No se altera hardware.",
-      "referencias_propias": []
+      "referencias_propias": [
+        {
+          "archivo": "AUDI063_20261009_185832.jpg",
+          "sha256": "79d8c3be0da818a8b3c844b8cdd91102ff87b66d3ad85fc6ff50cd8b445adc90",
+          "tipo": "Referencia propia del SKU; pantalla y vistas disponibles, sin extrapolar detalles ocultos."
+        },
+        {
+          "archivo": "AUDI063_20261009_185829.jpg",
+          "sha256": "126444e49a445439e75e79eef21e710d6d850148cf4ec4fdefc903b4d2d805f7",
+          "tipo": "Referencia propia del SKU; pantalla y vistas disponibles, sin extrapolar detalles ocultos."
+        },
+        {
+          "archivo": "AUDI063.jpg",
+          "sha256": "95099760a381d023c3565b08e62325252dd47eff291490e749518c12513f5f5b",
+          "tipo": "Referencia propia del SKU; pantalla y vistas disponibles, sin extrapolar detalles ocultos."
+        }
+      ]
     },
     "ALEX004": {
       "sku": "ALEX004",
@@ -2723,7 +2739,23 @@
       "maestro_reutilizado_sin_regenerar": false,
       "edicion_asistida": true,
       "limite": "La imagen comercial no certifica software incluido, funciones, resolución nativa ni rendimiento. No se altera hardware.",
-      "referencias_propias": []
+      "referencias_propias": [
+        {
+          "archivo": "ALEX004_20261009_222503.jpg",
+          "sha256": "c47e8ff46776a9d30d0f3ba5e039748689c524dc651ab723b980d198915dce8f",
+          "tipo": "Referencia propia del SKU; pantalla y vistas disponibles, sin extrapolar detalles ocultos."
+        },
+        {
+          "archivo": "ALEX004_20261009_222459.jpg",
+          "sha256": "dd698ea19092bd0498725923f2dc7435f663f5b85a499c2dc7df54346b8ca473",
+          "tipo": "Referencia propia del SKU; pantalla y vistas disponibles, sin extrapolar detalles ocultos."
+        },
+        {
+          "archivo": "ALEX004.jpg",
+          "sha256": "27b7fe7082bee70227bf8725a6755f90983700fbaacd07e7566304ee774dff07",
+          "tipo": "Referencia propia del SKU; pantalla y vistas disponibles, sin extrapolar detalles ocultos."
+        }
+      ]
     },
     "AUDI018": {
       "sku": "AUDI018",
@@ -3654,8 +3686,8 @@
   "conservados_en_lote": [
     {
       "sku": "POWE010",
-      "estado": "REVISAR",
-      "motivo": "Indicador o ventana oscura: falta referencia legible para identificar su tipo y reproducirla encendida sin inventar cifras ni funciones. Se conserva.",
+      "estado": "REFERENCIA_LOCALIZADA",
+      "motivo": "Referencia propia localizada: pantalla superior con porcentaje e icono verde en el empaque exacto. Conservar imagen actual; preparación del encendido en el siguiente lote.",
       "portada": {
         "url": "/imagenes/powe010/POWE010-r2026103036-01.webp",
         "sha256": "7b50a29262187cb1b5a8c33fd0e9bef4fdd4350d72f98c31e1ecb372403b15e0"
@@ -3672,8 +3704,8 @@
     },
     {
       "sku": "POWE018",
-      "estado": "REVISAR",
-      "motivo": "Indicador o ventana oscura: falta referencia legible para identificar su tipo y reproducirla encendida sin inventar cifras ni funciones. Se conserva.",
+      "estado": "REFERENCIA_LOCALIZADA",
+      "motivo": "Referencia propia localizada: indicador con símbolo solar y marcas25/50/75/100 en el empaque Xtech XPB-300. Conservar imagen actual; preparación del encendido en el siguiente lote.",
       "portada": {
         "url": "/imagenes/powe018/POWE018-01.webp",
         "sha256": "fb9daa117617d1351a094f303706ffe504aa6cda563a4a499ebb47489af933a5"
@@ -4835,8 +4867,8 @@
   ],
   "pendientes": {
     "POWE010": {
-      "estado": "REVISAR",
-      "motivo": "Indicador o ventana oscura: falta referencia legible para identificar su tipo y reproducirla encendida sin inventar cifras ni funciones. Se conserva.",
+      "estado": "REFERENCIA_LOCALIZADA",
+      "motivo": "Referencia propia localizada: pantalla superior con porcentaje e icono verde en el empaque exacto. Conservar imagen actual; preparación del encendido en el siguiente lote.",
       "mantener_foto_actual": true
     },
     "POWE015": {
@@ -4845,8 +4877,8 @@
       "mantener_foto_actual": true
     },
     "POWE018": {
-      "estado": "REVISAR",
-      "motivo": "Indicador o ventana oscura: falta referencia legible para identificar su tipo y reproducirla encendida sin inventar cifras ni funciones. Se conserva.",
+      "estado": "REFERENCIA_LOCALIZADA",
+      "motivo": "Referencia propia localizada: indicador con símbolo solar y marcas25/50/75/100 en el empaque Xtech XPB-300. Conservar imagen actual; preparación del encendido en el siguiente lote.",
       "mantener_foto_actual": true
     },
     "ADAP029": {
@@ -4897,8 +4929,17 @@
   },
   "imagenes_corregidas": 26,
   "comprobaciones_prepublicacion": {
-    "prueba_publica_pendiente": true,
+    "prueba_publica_pendiente": false,
     "titulos_precios_pvp_stock_sku_urls_sin_modificar": true,
     "originales_sin_sobrescribir": true
+  },
+  "fecha_primera_verificacion_publica": "2026-11-03T02:07:31.770961+00:00",
+  "verificacion": {
+    "hashes_http": 223,
+    "casos_chromium": 52,
+    "anchos": [
+      1280,
+      390
+    ]
   }
 }
