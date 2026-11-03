@@ -1,0 +1,435 @@
+{
+  "github_run_url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41690539451",
+  "deployment": {
+    "schema": "conectatech.alex.collaborators-deployment.v1",
+    "passed": true,
+    "collaborators_revision": "9d065226ff042f531ef3b82e17ea2aba8405373f",
+    "base_release_preserved": "acfc00763dfbc7ac34c2c62f9ccecea4f613c870",
+    "changed_modules": [
+      "alex-collaborators.mjs",
+      "alex-store.mjs",
+      "alex-ui.mjs",
+      "alex.mjs",
+      "worker.mjs"
+    ],
+    "worker_patch": "only_simulator_route_and_profile_import",
+    "worker_puts": 1,
+    "settings_and_secrets_preserved": true,
+    "unowned_module_bodies_preserved": true,
+    "unowned_worker_regions_preserved": true,
+    "commercial_source_preserved_exactly": true,
+    "tester_transport_preserved": true,
+    "external_customers_enabled": false,
+    "new_cost_usd": 0,
+    "private_content_recorded": false
+  },
+  "https": {
+    "schema": "conectatech.alex.collaborators-https.v1",
+    "at": "2026-11-03T18:06:51.114Z",
+    "url": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/alex",
+    "passed": true,
+    "real_Meta_delivery": false,
+    "external_send_enabled": false,
+    "Graph_sends": 0,
+    "confirmed_sales": 0,
+    "maximum_AI_attempts": 2,
+    "profiles": [
+      {
+        "id": "COL001",
+        "commercial_name": "Rafa Valderrama",
+        "gender": "masculine",
+        "style": "masculino, jocoso, directo y comercial"
+      },
+      {
+        "id": "COL002",
+        "commercial_name": "Jessy Fox",
+        "gender": "feminine",
+        "style": "femenina, amable, cercana y comercial"
+      }
+    ],
+    "turns": [
+      {
+        "collaborator_id": "COL001",
+        "message": "Hola",
+        "text": "¡Epa! Soy Alex, el asistente virtual de Rafa Valderrama en CONECTATECH. 😎\n¿Qué equipo andas buscando?",
+        "focus": [],
+        "generative": true,
+        "image": null,
+        "attribution": {
+          "memberId": "COL001",
+          "collaborator_id": "COL001",
+          "commercial_name": "Rafa Valderrama",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL002",
+        "message": "Hola",
+        "text": "¡Hola! Soy Alex, la asistente virtual de Jessy Fox en CONECTATECH. 😊\n¿Qué equipo te gustaría encontrar?",
+        "focus": [],
+        "generative": true,
+        "image": null,
+        "attribution": {
+          "memberId": "COL002",
+          "collaborator_id": "COL002",
+          "commercial_name": "Jessy Fox",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL001",
+        "message": "Me interesa el Samsung A17 de 128 GB; tengo presupuesto de 200 dólares",
+        "text": "Samsung Galaxy A17 128 GB: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
+        "focus": [
+          "TELF011"
+        ],
+        "generative": false,
+        "image": "https://conectatech-ec.github.io/imagenes/telf011/TELF011-01.webp",
+        "attribution": {
+          "memberId": "COL001",
+          "collaborator_id": "COL001",
+          "commercial_name": "Rafa Valderrama",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL001",
+        "message": "Tengo Pichincha",
+        "text": "💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.",
+        "focus": [
+          "TELF011"
+        ],
+        "generative": false,
+        "image": null,
+        "attribution": {
+          "memberId": "COL001",
+          "collaborator_id": "COL001",
+          "commercial_name": "Rafa Valderrama",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL002",
+        "message": "Busco una batería portátil, tengo presupuesto de 40 dólares",
+        "text": "La Philco tiene capacidad de 20.000 mAh y pantalla para consultar el nivel de carga.",
+        "focus": [
+          "POWE003"
+        ],
+        "generative": false,
+        "image": "https://conectatech-ec.github.io/imagenes/powe003/POWE003-01.webp",
+        "attribution": {
+          "memberId": "COL002",
+          "collaborator_id": "COL002",
+          "commercial_name": "Jessy Fox",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL001",
+        "message": "¿Qué batería tiene ese?",
+        "text": "Samsung Galaxy A17 128 GB: batería 5000 mAh.",
+        "focus": [
+          "TELF011"
+        ],
+        "generative": false,
+        "image": null,
+        "attribution": {
+          "memberId": "COL001",
+          "collaborator_id": "COL001",
+          "commercial_name": "Rafa Valderrama",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL001",
+        "message": "Precio de contado del Redmi 15C 128 GB",
+        "text": "💵 Redmi 15C 128 GB: $159.90 en PROMO CONTADO.",
+        "focus": [
+          "TELF017"
+        ],
+        "generative": false,
+        "image": "https://conectatech-ec.github.io/imagenes/telf017/TELF017-01.webp",
+        "attribution": {
+          "memberId": "COL001",
+          "collaborator_id": "COL001",
+          "commercial_name": "Rafa Valderrama",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL002",
+        "message": "Precio de contado del Redmi 15C 128 GB",
+        "text": "💵 Redmi 15C 128 GB: $159.90 en PROMO CONTADO.",
+        "focus": [
+          "TELF017"
+        ],
+        "generative": false,
+        "image": "https://conectatech-ec.github.io/imagenes/telf017/TELF017-01.webp",
+        "attribution": {
+          "memberId": "COL002",
+          "collaborator_id": "COL002",
+          "commercial_name": "Jessy Fox",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL002",
+        "message": "Muéstrame la fotografía",
+        "text": "Redmi 15C 128 GB",
+        "focus": [
+          "TELF017"
+        ],
+        "generative": false,
+        "image": "https://conectatech-ec.github.io/imagenes/telf017/TELF017-01.webp",
+        "attribution": {
+          "memberId": "COL002",
+          "collaborator_id": "COL002",
+          "commercial_name": "Jessy Fox",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL002",
+        "message": "Necesito hablar con una persona",
+        "text": "Dejo tu consulta pendiente de atención por una persona, sin prometer un horario de respuesta.",
+        "focus": [
+          "TELF017"
+        ],
+        "generative": false,
+        "image": null,
+        "attribution": {
+          "memberId": "COL002",
+          "collaborator_id": "COL002",
+          "commercial_name": "Jessy Fox",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "handoff_pending",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL001",
+        "message": "olvida esta conversación",
+        "text": "Listo, olvidé el contexto de esta conversación. ¿En qué te ayudo ahora?",
+        "focus": [],
+        "generative": false,
+        "image": null,
+        "attribution": {
+          "memberId": "COL001",
+          "collaborator_id": "COL001",
+          "commercial_name": "Rafa Valderrama",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      },
+      {
+        "collaborator_id": "COL002",
+        "message": "¿Y con tarjeta?",
+        "text": "💳 Redmi 15C 128 GB: $199.88 con tarjeta, más intereses cuando correspondan.",
+        "focus": [
+          "TELF017"
+        ],
+        "generative": false,
+        "image": null,
+        "attribution": {
+          "memberId": "COL002",
+          "collaborator_id": "COL002",
+          "commercial_name": "Jessy Fox",
+          "channel": "simulator",
+          "origin_verification": "operator_authenticated",
+          "stage": "conversation",
+          "sales_confirmed": false,
+          "saleConfirmed": false,
+          "network_sync_status": "not_delivered_review_only",
+          "network": {
+            "branch": "colaboradores/piloto-20261103",
+            "revision": "26485b6b1912be06dea5409e56fb28501436d59b",
+            "schema": "conectatech.collaborators.pilot.v2",
+            "config": "colaboradores/pilot/config.json"
+          }
+        },
+        "source_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "cut": "2026-11-02",
+        "quote_current": true
+      }
+    ],
+    "base_release": "acfc00763dfbc7ac34c2c62f9ccecea4f613c870",
+    "HTML_HTTP": 200,
+    "registry_without_key_HTTP": 401,
+    "quota_before": {
+      "reserved_neurons": 640,
+      "calls": 8,
+      "remaining_calls": 92,
+      "reset_at": "2026-11-04T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    },
+    "same_session_identifier_isolated": true,
+    "same_central_prices": true,
+    "authorized_media_HTTP": 200,
+    "network_ledger_delivery": "not_delivered_review_only",
+    "erase_isolated": true,
+    "spoofing_rejected": true,
+    "quota_after": {
+      "reserved_neurons": 800,
+      "calls": 10,
+      "remaining_calls": 90,
+      "reset_at": "2026-11-04T00:00:00.000Z",
+      "reserved_limit": 8000,
+      "estimation_only_not_provider_meter": true,
+      "paid_fallback": false
+    },
+    "shared_quota_unchanged": true
+  }
+}
