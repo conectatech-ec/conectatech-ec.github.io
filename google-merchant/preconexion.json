@@ -1,67 +1,30 @@
 {
   "merchant_center": "5874003439",
-  "verificado_en_utc": "2026-11-02T13:15:43.817018+00:00",
-  "fuente_commit": "c8517410a9b185dfa1e536c54534f0e0089a4300",
+  "verificado_en_utc": "2026-11-03T06:12:11.751186+00:00",
+  "fuente_commit": "7adf0f7dff9e9733e7645fdb5315204ba01361c1",
   "fuente_rama": "main (lectura solamente)",
-  "inventario_sha256": "6b81ccf7bbbd619e2181e3d27594250bb2ed439ad49730128f2a17b348e17018",
-  "fecha_corte": "2026-10-22",
-  "antiguedad_corte_dias": 11,
-  "inventario_origen": "Reporte-Inventario al 22-10-2026.xlsx",
-  "origen_privado_sha256": "be09f74b4b23b8a0746500ae75c1cc5825b328101110ba3e4515ad1b12fadc7d",
-  "articulos_feed": 330,
-  "articulos_con_http_publico_verificado": 330,
+  "inventario_sha256": "ea0c457f62c66d195f13204440c05b1f2911285db3a1495e62d0bdcfe389df84",
+  "fecha_corte": "2026-11-02",
+  "antiguedad_corte_dias": 1,
+  "inventario_origen": "Reporte-Inventario.xlsx",
+  "origen_privado_sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+  "articulos_feed": 316,
+  "articulos_con_http_publico_verificado": 316,
   "coherencia_catalogo_maestro": {
-    "sku_web": 1170,
+    "sku_web": 1198,
     "sku_con_revision_corte16": 674,
-    "discrepancias": [
-      {
-        "sku": "PILA048",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "AUDI120",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "AUDI103",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "REL071",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "CUBO021",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "CUBO021",
-        "motivo": "precio_web_no_validado_con_corte16"
-      },
-      {
-        "sku": "JUGU154",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "MOUS011",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      },
-      {
-        "sku": "FOCO004",
-        "motivo": "disponibilidad_web_difiere_corte16"
-      }
-    ],
+    "discrepancias": [],
     "nota": "Revisión limitada a los SKU del feed anterior, sin cantidades internas ni precios privados. SKU sin esta revisión quedan excluidos; diferencias de precio o de disponibilidad con la ficha excluyen el artículo."
   },
   "precio_final_documentado": "Corte corregido16: Q V. TOTAL = contado; X PVP + Y importe de IVA = PVP final. IVA incluido. Sin recalcular porcentajes ni modificar precios web.",
   "fechas_inventario_en_articulos": {
-    "22/10/2026": 330
+    "02/11/2026": 316
   },
   "stock_tiempo_real_acreditado": 0,
   "observaciones_fichas": {
-    "fichas_con_whatsapp": 330,
-    "fichas_con_contraentrega_quito": 330,
-    "fichas_con_precio_sujeto_confirmacion": 330,
+    "fichas_con_whatsapp": 316,
+    "fichas_con_contraentrega_quito": 316,
+    "fichas_con_precio_sujeto_confirmacion": 316,
     "fichas_con_formulario": 0
   },
   "enlaces_politicas_en_fichas": [],
