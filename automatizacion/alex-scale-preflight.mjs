@@ -5,6 +5,7 @@ import {central} from './central-source.mjs';
 import {readSharedHub} from './shared-hub.mjs';
 import {refreshAlexCatalog,alexBaseline} from './alex-catalog.mjs';
 import {generateAlex} from './alex.mjs';
+import {phoneVariant} from './phone-variants.mjs';
 import {assessChannel,referrals} from './alex-channel-readiness.mjs';
 const base='https://conectatech-comercial-piloto.conectatech-ecu.workers.dev';
 const report={at:new Date().toISOString(),schema:'conectatech.alex.readiness.v1',production_modified:false,worker_deployed:false,
@@ -36,7 +37,16 @@ try{
   assert.equal(d.source_sha256,hub.source.sha256);assert.equal(d.inventory_cut_date,hub.source.cut_date);
   if(!d.source_fresh)assert.ok(!d.text.includes('$'));
   const amounts=[...d.text.matchAll(/\$(\d+(?:\.\d{2})?)/g)].map(x=>Math.round(Number(x[1])*100));
-  const allowed=new Set(d.focus.flatMap(sku=>{const p=hub.products.find(p=>p.sku===sku);return p?.availability==='in_stock'&&p.prices?[p.prices.promo_cash_cents,p.prices.pvp_card_cents]:[];}));
+  // An exact selection may also display verified sibling offers. Validate each
+  // sibling against the same Hub; never allow arbitrary catalogue amounts.
+  for(const option of d.variant_options||[]){
+   const p=hub.products.find(p=>p.sku===option.sku),identity=phoneVariant(p);assert.ok(identity?.verified_identity);
+   for(const key of ['storage_gb','ram_physical_gb','ram_virtual_gb','connectivity'])assert.equal(option[key],identity[key]);
+   if(d.source_fresh){assert.equal(p.availability,'in_stock');assert.ok(p.prices);assert.equal(Math.round(option.cash*100),p.prices.promo_cash_cents);assert.equal(Math.round(option.card*100),p.prices.pvp_card_cents);}
+   else {assert.equal(option.cash,null);assert.equal(option.card,null);}
+  }
+  const quoteSkus=[...new Set([...d.focus,...(d.variant_options||[]).map(o=>o.sku)])];
+  const allowed=new Set(quoteSkus.flatMap(sku=>{const p=hub.products.find(p=>p.sku===sku);return p?.availability==='in_stock'&&p.prices?[p.prices.promo_cash_cents,p.prices.pvp_card_cents]:[];}));
   assert.ok(amounts.every(n=>allowed.has(n)));assert.ok(!/\d+ unidades|stock referencial/i.test(d.text));
   assert.ok(d.acquisition.banners.every(b=>b.delivery_enabled===false));
   return {message,text:d.text,focus:d.focus,source_sha256:d.source_sha256,cut:d.inventory_cut_date,quote_current:d.quote_current,source_fresh:d.source_fresh,

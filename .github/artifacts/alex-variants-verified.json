@@ -1,0 +1,108 @@
+{
+  "schema": "conectatech.alex.variants.verified.v1",
+  "simulator": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/alex",
+  "runtime_revision": "3c0bf77a3a0b41942d7c8c6f039bb6cb37d18343",
+  "workflow_run": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41698494037",
+  "reports": [
+    {
+      "schema": "conectatech.alex.variants-deployment.v1",
+      "passed": true,
+      "variants_revision": "3c0bf77a3a0b41942d7c8c6f039bb6cb37d18343",
+      "base_release_preserved": "acfc00763dfbc7ac34c2c62f9ccecea4f613c870",
+      "baseline_code_revision": "32a924a4961e07d00631fd59e3fb9416a94776fe",
+      "changed_modules": [
+        "alex-context.mjs",
+        "alex-variant-sales.mjs"
+      ],
+      "worker_puts": 1,
+      "settings_and_secrets_preserved": true,
+      "unowned_module_bodies_preserved": true,
+      "worker_unchanged": true,
+      "central_source_module_unchanged": true,
+      "commercial_source_preserved_exactly": true,
+      "tester_transport_preserved": true,
+      "external_customers_enabled": false,
+      "new_cost_usd": 0,
+      "private_content_recorded": false
+    },
+    {
+      "schema": "conectatech.alex.variants.cloud.v1",
+      "at": "2026-11-03T18:56:42.144Z",
+      "passed": true,
+      "scope": "authenticated_owner_simulator_HTTPS_only",
+      "real_Meta_delivery": false,
+      "Graph_sends": 0,
+      "customer_events": 0,
+      "deployment_requests": 0,
+      "external_customers_enabled": false,
+      "maximum_AI_attempts": 2,
+      "AI_attempts": 2,
+      "generative_replies": 2,
+      "checks": {
+        "registry_private": true,
+        "free_model_configuration": true,
+        "owner_profiles": true,
+        "hub_coherent": true,
+        "two_personas": true,
+        "variant_prices_and_image_dedup": true,
+        "real_generative_bargaining": true,
+        "persona_memory_and_reset_isolated": true,
+        "controls_and_quota_unchanged": true,
+        "no_Meta_or_customer_transport": true,
+        "held_signature_banners_not_sent": true
+      },
+      "families": [
+        {
+          "family": "samsunga17",
+          "verified_variants": 2,
+          "available_variants": 2,
+          "source_fresh": true,
+          "returned_variants": 2,
+          "price_validation": true,
+          "real_generative_reply": true,
+          "images_verified": 1,
+          "next_reply_images_verified": 0
+        },
+        {
+          "family": "redmi15c",
+          "verified_variants": 3,
+          "available_variants": 3,
+          "source_fresh": true,
+          "returned_variants": 3,
+          "price_validation": true,
+          "real_generative_reply": false,
+          "images_verified": 2,
+          "next_reply_images_verified": 1
+        },
+        {
+          "family": "tecnosparkgo3",
+          "verified_variants": 2,
+          "available_variants": 2,
+          "source_fresh": true,
+          "returned_variants": 2,
+          "price_validation": true,
+          "real_generative_reply": false,
+          "images_verified": 2,
+          "next_reply_images_verified": 0
+        }
+      ],
+      "media": {
+        "verified_photos": 6,
+        "verified_banners": 0,
+        "duplicate_default_images": 0,
+        "distinct_public_assets_verified": 6
+      },
+      "source": {
+        "cut_date": "2026-11-02",
+        "sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+        "generated_at": "2026-11-02T22:48:22.000Z",
+        "expires_at": "2026-11-03T22:48:22.000Z",
+        "fresh": true
+      },
+      "release": "acfc00763dfbc7ac34c2c62f9ccecea4f613c870"
+    }
+  ],
+  "real_Messenger_conversation_claimed": false,
+  "customer_activation": false,
+  "new_cost_usd": 0
+}
