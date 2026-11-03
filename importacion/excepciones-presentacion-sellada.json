@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "criterio": "Sólo unidades sorpresa que se venden cerradas, confirmadas por el propietario. No promete precinto, envoltura o sello de fábrica. La política general SIN CAJA se conserva.",
+  "criterio": "Sólo unidades selladas confirmadas expresamente porSKU, con prueba coincidente. No promete sello o precinto de fábrica. La política generalSINCAJA se conserva.",
   "productos": {
     "JUGU142": {
       "aprobado_por_propietario": true,
@@ -9,10 +9,43 @@
     "GADG003": {
       "aprobado_por_propietario": true,
       "tipo": "UNIDAD_SORPRESA_SELLADA"
+    },
+    "CHIP001": {
+      "aprobado_por_propietario": true,
+      "tipo": "UNIDAD_COMERCIAL_SELLADA",
+      "evidencia": {
+        "archivo": "reportes/continuacion-123/instrucciones-propietario.json",
+        "sha256": "80567e3bfa98e716d63925adcb79382398d3f6aa58099cc6e67dbeac847083ac"
+      }
+    },
+    "CHIP002": {
+      "aprobado_por_propietario": true,
+      "tipo": "UNIDAD_COMERCIAL_SELLADA",
+      "evidencia": {
+        "archivo": "reportes/continuacion-123/instrucciones-propietario.json",
+        "sha256": "80567e3bfa98e716d63925adcb79382398d3f6aa58099cc6e67dbeac847083ac"
+      }
+    },
+    "CHIP003": {
+      "aprobado_por_propietario": true,
+      "tipo": "UNIDAD_COMERCIAL_SELLADA",
+      "evidencia": {
+        "archivo": "reportes/continuacion-123/instrucciones-propietario.json",
+        "sha256": "80567e3bfa98e716d63925adcb79382398d3f6aa58099cc6e67dbeac847083ac"
+      }
+    },
+    "CHIP004": {
+      "aprobado_por_propietario": true,
+      "tipo": "UNIDAD_COMERCIAL_SELLADA",
+      "evidencia": {
+        "archivo": "reportes/continuacion-123/instrucciones-propietario.json",
+        "sha256": "80567e3bfa98e716d63925adcb79382398d3f6aa58099cc6e67dbeac847083ac"
+      }
     }
   },
   "evidencia": {
     "archivo": "reportes/continuacion-121/instrucciones-propietario.json",
     "sha256": "193f0bac6546e1ddddb38a163f5acda2983e0b2f4e333e5cdc9344c305c5a26b"
-  }
+  },
+  "criterio_comercial_123": "Cuatro chips confirmados como unidad comercial sellada; excepción sólo porSKU y prueba coincidente. Política generalSINCAJA sin cambios."
 }

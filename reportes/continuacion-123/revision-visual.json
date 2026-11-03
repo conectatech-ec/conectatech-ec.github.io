@@ -1,0 +1,29 @@
+{
+  "fecha": "2026-11-03T21:19:31.152052+00:00",
+  "productos": {
+    "CHIP001": {
+      "estado": "APROBADO_VISUAL_LOCAL",
+      "sha256_maestro": "bc342b5063a40074631fbe6d243e24c659cac4508a824ca628e4be2ec77ec606",
+      "revision": "Claro: frente rojo, logotipo y diseño impresos cotejados con el sobre real. SIM superior es ilustración impresa, no una SIM añadida. Sin seriales ni identificadores privados; el código público USSD impreso no es un serial. No se trasladan promociones impresas a prestaciones de la ficha.",
+      "sinSeriales": true
+    },
+    "CHIP002": {
+      "estado": "APROBADO_VISUAL_LOCAL",
+      "sha256_maestro": "621c3007fbb4a5732c3e499c164c10cc0f1bd4058975743402c4bed1b2a9e75e",
+      "revision": "Movistar: paquete azul, logotipo M y franja Nuevo Chip Movistar de la referencia real. Presentación sellada completa, sin SIM suelta añadida ni números privados. No se inventan planes, datos ni saldo.",
+      "sinSeriales": true
+    },
+    "CHIP003": {
+      "estado": "APROBADO_VISUAL_LOCAL",
+      "sha256_maestro": "67fae98d1bdf07ce81bb307b178dacf102437ad30cfd9c16ec21620bd8d7a92f",
+      "revision": "Tuenti: sobre magenta, arte del gato y campo blanco de privacidad conservados. Campo blanco completamente vacío, sin seriales ni códigos. Presentación sellada completa. Stock0 se conserva y debe mostrarse como no disponible. El propietario cambia el operador actual aTigo y confirma que todavía entrega el empaque anteriorTuenti; la foto se conserva sin cambiar logotipos.",
+      "sinSeriales": true
+    },
+    "CHIP004": {
+      "estado": "APROBADO_VISUAL_LOCAL",
+      "sha256_maestro": "fec0d1983ba97c0c49475e3b45be6a2833684cd5538b740efc6d08bae9293cd0",
+      "revision": "CNT: conjunto real con tarjeta SIM en su soporte dentro de envoltura y faldón oscuro CNT. Se conserva el solapamiento; no se inventa la parte oculta ni se añade SIM separada. Los pequeños códigos alfanuméricos del faldón se retiraron. Sin seriales, ICCID, PUK, QR o barras. El 5G que forma parte del arte impreso no se añade como especificación de servicio.",
+      "sinSeriales": true
+    }
+  }
+}

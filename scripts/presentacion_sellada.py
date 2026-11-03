@@ -1,4 +1,4 @@
-"""Excepciones por SKU para sorpresas selladas; el resto conserva SIN CAJA."""
+"""Excepciones por SKU para unidades selladas; el resto conserva SIN CAJA."""
 import hashlib,json,re
 from pathlib import Path
 
@@ -7,8 +7,8 @@ def authorization(root,sku):
     try:
         data=json.loads((root/'importacion/excepciones-presentacion-sellada.json').read_text())
         row=data['productos'].get(sku,{})
-        if data.get('version')!=1 or row.get('aprobado_por_propietario')is not True or row.get('tipo')!='UNIDAD_SORPRESA_SELLADA':return None
-        proof=data['evidencia'];rel=proof['archivo'];digest=proof['sha256']
+        if data.get('version')!=1 or row.get('aprobado_por_propietario')is not True or row.get('tipo')not in {'UNIDAD_SORPRESA_SELLADA','UNIDAD_COMERCIAL_SELLADA'}:return None
+        proof=row.get('evidencia') or data.get('evidencia');rel=proof['archivo'];digest=proof['sha256']
         if not isinstance(rel,str)or not rel.startswith('reportes/')or not rel.endswith('.json')or not re.fullmatch('[a-f0-9]{64}',str(digest)):return None
         file=(root/rel).resolve()
         if not file.is_relative_to(root):return None

@@ -1,0 +1,16 @@
+'use strict';
+const assert=require('node:assert/strict'),check=require('./validar-precios-ficha.cjs');
+const money=v=>Math.round(Number(String(v).replace(/[^0-9.,]/g,'').replace(',','.'))*100);
+const p={stock:0,promo:5,pvp:5.75};
+const d={precio:'$5,00',pvp:'PVP $5,75',precio_visible:false,pvp_visible:false,precio_archivado:true,agotado_visible:true,schema:{offers:{price:'5.00',priceCurrency:'USD',availability:'https://schema.org/OutOfStock'}}};
+let r=check(p,d,money);assert(r.archived&&r.promo&&r.pvp&&r.stockCeroVisible);
+assert(!check({...p,stock:3},d,money).promo,'Un disponible no puede ocultar su precio.');
+assert(!check(p,{...d,agotado_visible:false},money).promo,'El stock0 debe ser visible.');
+assert(!check(p,{...d,precio_archivado:false},money).promo,'No se permite ocultar precios sin presentación de agotado.');
+assert(!check(p,{...d,precio:'$6,00'},money).promo,'Un importe oculto incorrecto sigue siendo un error.');
+assert(!check(p,{...d,pvp:'PVP $6,75'},money).pvp,'Un PVP oculto incorrecto sigue siendo un error.');
+assert(!check(p,{...d,schema:{offers:{...d.schema.offers,price:'6.00'}}},money).promo);
+assert(!check(p,{...d,schema:{offers:{...d.schema.offers,availability:'https://schema.org/InStock'}}},money).promo);
+assert(!check(p,{...d,schema:{offers:{...d.schema.offers,priceCurrency:'EUR'}}},money).promo);
+r=check({...p,stock:3},{...d,precio_visible:true,pvp_visible:true,precio_archivado:false,schema:{offers:{...d.schema.offers,availability:'https://schema.org/InStock'}}},money);assert(!r.archived&&r.promo&&r.pvp);
+console.log('Precios de ficha: disponible, agotado y rechazos de importes/visibilidad incorrectos verificados.');

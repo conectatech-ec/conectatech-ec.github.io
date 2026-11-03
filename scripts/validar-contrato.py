@@ -416,7 +416,20 @@ def validate_editorial(root, contract, ctx):
     try:
         sku = contract['sku']; product = ctx['productos'][sku]
         editorial = json.loads((Path(root) / 'seo-contenido.json').read_text()).get(sku, {})
-        if product.get('name') != contract['titulo_comercial'] or editorial.get('nombre') != contract['titulo_comercial']:
+        title_matches = product.get('name') == contract['titulo_comercial']
+        if not title_matches:
+            # El nombre593 se conserva aunque una presentación editorial revisada cambie el título.
+            presentation = json.loads((Path(root) / 'importacion/editorial/publicados.json').read_text())
+            entry = presentation.get('productos', {}).get(sku, {})
+            lot = re.fullmatch(r'editorial-([0-9]{3}(?:r[0-9]+)?)', str(entry.get('lote', '')))
+            manifest = json.loads((Path(root) / ('importacion/editorial/lotes/lote-' + lot[1] + '.json')).read_text()) if lot else {}
+            reviewed = manifest.get('productos', {}).get(sku, {})
+            title_matches = bool(presentation.get('activo') is True and entry.get('mostrarTituloEnFicha') is True
+                and entry.get('tituloAnterior') == product.get('name') and entry.get('nombre593') == contract.get('nombre_original')
+                and entry.get('titulo') == contract['titulo_comercial'] and sku in manifest.get('skus', [])
+                and 0 < len(manifest.get('skus', [])) <= 30 and reviewed.get('titulo') == entry.get('titulo')
+                and reviewed.get('subtitulo') == entry.get('subtitulo'))
+        if not title_matches or editorial.get('nombre') != contract['titulo_comercial']:
             raise ValueError('Título aplicado distinto del título revisado')
         expected = {s['nombre']: s['valor'] for s in contract['especificaciones'] if s.get('publicar') is not False}
         if not expected or product.get('specs') != expected or editorial.get('caracteristicas') != expected:

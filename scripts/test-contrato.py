@@ -290,6 +290,20 @@ class SealedUnitPresentationTests(unittest.TestCase):
         self.assertFalse(self.sealed.authorized(self.root,'OTHER001'));self.assertFalse(self.js('OTHER001'))
     def test_changed_proof_bytes_revoke_both_readers(self):
         (self.root/'reportes/owner.json').write_text('{}');self.assertFalse(self.sealed.authorized(self.root,'JUGU142'));self.assertFalse(self.js())
+    def test_commercial_sealed_unit_requires_its_own_matching_proof(self):
+        claim={'origen':'CONFIRMACION_PROPIETARIO_CHAT','excepciones_presentacion_sellada':{'CHIP001':{'autorizada':True,'mostrar_empaque':True,'unidad_sellada':True}}}
+        file=self.root/'reportes/chips.json';file.write_text(json.dumps(claim))
+        self.data['productos']['CHIP001']={'aprobado_por_propietario':True,'tipo':'UNIDAD_COMERCIAL_SELLADA','evidencia':{'archivo':'reportes/chips.json','sha256':hashlib.sha256(file.read_bytes()).hexdigest()}}
+        self.write_data();self.assertTrue(self.sealed.authorized(self.root,'CHIP001'));self.assertTrue(self.js('CHIP001'))
+        self.assertTrue(self.sealed.authorized(self.root,'JUGU142'));self.assertTrue(self.js())
+        self.assertFalse(self.sealed.authorized(self.root,'CHIP002'));self.assertFalse(self.js('CHIP002'))
+        self.data['productos']['CHIP001'].pop('evidencia');self.write_data()
+        self.assertFalse(self.sealed.authorized(self.root,'CHIP001'));self.assertFalse(self.js('CHIP001'))
+    def test_changed_commercial_proof_revokes_only_that_exception(self):
+        file=self.root/'reportes/chips.json';file.write_text(json.dumps({'origen':'CONFIRMACION_PROPIETARIO_CHAT','excepciones_presentacion_sellada':{'CHIP001':{'autorizada':True,'mostrar_empaque':True,'unidad_sellada':True}}}))
+        self.data['productos']['CHIP001']={'aprobado_por_propietario':True,'tipo':'UNIDAD_COMERCIAL_SELLADA','evidencia':{'archivo':'reportes/chips.json','sha256':hashlib.sha256(file.read_bytes()).hexdigest()}};self.write_data()
+        file.write_text('{}');self.assertFalse(self.sealed.authorized(self.root,'CHIP001'));self.assertFalse(self.js('CHIP001'))
+        self.assertTrue(self.sealed.authorized(self.root,'JUGU142'));self.assertTrue(self.js())
     def test_truth_like_flags_do_not_authorize(self):
         self.data['productos']['JUGU142']['aprobado_por_propietario']='true';self.write_data();self.assertFalse(self.sealed.authorized(self.root,'JUGU142'));self.assertFalse(self.js())
     def test_valid_hash_without_explicit_sku_claim_does_not_authorize(self):
@@ -318,6 +332,30 @@ class SealedUnitPresentationTests(unittest.TestCase):
         before=file.read_bytes();update['sku']='OTHER001'
         with self.assertRaises(ValueError):rules.apply_rows([update],True,self.root)
         self.assertEqual(file.read_bytes(),before)
+
+class OutOfStockPricePresentationTests(unittest.TestCase):
+    def test_archived_prices_keep_amount_and_availability_checks(self):
+        subprocess.run(['node',str(ROOT/'scripts/test-precios-ficha.cjs')],check=True,capture_output=True,text=True)
+
+class CommercialEditorialNameTests(unittest.TestCase):
+    def test_commercial_name_requires_matching_review_and_original_identity(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'importacion/editorial/lotes').mkdir(parents=True)
+            c={'sku':'TEST001','nombre_original':'NOMBRE 593','titulo_comercial':'Título comercial','especificaciones':[{'nombre':'Operador','valor':'Ejemplo'}],'descripcion':'Descripción verificada','imagen_principal':'/imagenes/test.webp'}
+            product={'name':'Nombre anterior','specs':{'Operador':'Ejemplo'},'imageUrl':c['imagen_principal']}
+            seo={'nombre':c['titulo_comercial'],'caracteristicas':product['specs'],'descripcion':c['descripcion'],'comercialVerificado':True,'imagen':c['imagen_principal'],'imagenPendiente':False}
+            (root/'seo-contenido.json').write_text(json.dumps({'TEST001':seo}))
+            entry={'titulo':c['titulo_comercial'],'subtitulo':'Dato verificado','tituloAnterior':product['name'],'nombre593':c['nombre_original'],'mostrarTituloEnFicha':True,'lote':'editorial-123'}
+            mf={'skus':['TEST001'],'productos':{'TEST001':entry.copy()}}
+            (root/'importacion/editorial/lotes/lote-123.json').write_text(json.dumps(mf))
+            cfg=root/'importacion/editorial/publicados.json'
+            with patch.object(validator,'active_cover',return_value=c['imagen_principal']):
+                for key,bad in [(None,None),('tituloAnterior','Otra identidad'),('nombre593','Otro593'),('mostrarTituloEnFicha',False),('lote','../fuera')]:
+                    e=entry.copy()
+                    if key:e[key]=bad
+                    cfg.write_text(json.dumps({'activo':True,'productos':{'TEST001':e}}))
+                    errors=validator.validate_editorial(root,c,{'productos':{'TEST001':product}})
+                    self.assertEqual(not errors,key is None,(key,errors))
 
 if __name__ == '__main__':
     unittest.main()
