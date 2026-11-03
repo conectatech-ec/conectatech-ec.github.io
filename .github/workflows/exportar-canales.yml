@@ -83,10 +83,13 @@ jobs:
             fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nAcceso Meta (solo lectura): '+result.estado+'\n');
           })().catch(()=>{console.error('No se pudo completar la comprobación de acceso');process.exitCode=1});
           JS
+          node scripts/diagnosticar-whatsapp-meta.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
-          path: work/auto-meta/acceso-meta.json
+          path: |
+            work/auto-meta/acceso-meta.json
+            work/auto-meta/whatsapp-read-only.json
           retention-days: 7
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
@@ -106,6 +109,7 @@ jobs:
           node scripts/test-reordenar-meta.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/test-validar-exportacion-593.cjs
+          node scripts/test-diagnosticar-whatsapp-meta.cjs
   exportar:
     timeout-minutes: 50
     # También se ejecuta tras publicaciones de bots 593: sus pushes no disparan otros workflows.
