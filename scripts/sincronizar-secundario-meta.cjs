@@ -69,23 +69,29 @@ async function syncSecondary({config,plan,api,...options}){
   target:{id:config.catalog_id,name:NAME,selectFeed}});
 }
 function save(path,data){fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync(path,JSON.stringify(data,null,2)+'\n');}
-async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,write=save,log=console.log}={}){
+async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,inspect=false,write=save,log=console.log}={}){
  config=validateConfig(config||JSON.parse(fs.readFileSync('integraciones/whatsapp-secundario.json','utf8')));
  let receipt={estado:'SECUNDARIO_PENDIENTE_CONFIGURACION',phone:PHONE,colecciones_whatsapp_verificadas:false};
- if(config.enabled){
+ if(config.enabled||inspect&&config.catalog_id){
   if(!env.META_WHATSAPP_SECONDARY_TOKEN)throw Error('FALTA_CREDENCIAL_SECUNDARIA');
   const api=new SecondaryGraph({config,token:env.META_WHATSAPP_SECONDARY_TOKEN,version:'v26.0',transport});
+  if(inspect){
+   const identity=await api.request('GET',config.catalog_id,{fields:'id,name'});
+   if(identity.id!==config.catalog_id||identity.name!==NAME)throw Error('IDENTIDAD_SECUNDARIA_NO_COINCIDE');
+   receipt={estado:'CATALOGO_SECUNDARIO_ACCESIBLE_SOLO_LECTURA',phone:PHONE,catalog_id:identity.id,solo_lectura:true,colecciones_whatsapp_verificadas:false};
+  }else{
   plan=plan||JSON.parse(fs.readFileSync('exportaciones/meta-conjuntos-web.json','utf8'));
   csv=csv??fs.readFileSync('exportaciones/meta-catalogo-piloto.csv','utf8');
   checkpoint=checkpoint??(fs.existsSync(CHECKPOINT)?JSON.parse(fs.readFileSync(CHECKPOINT,'utf8')):null);
   receipt=await syncSecondary({config,plan,csv,checkpoint,api,onCheckpoint:c=>write('work/auto-meta/importacion-secundario.json',c),onProgress:log});
+  }
  }
  write('work/auto-meta/resultado-secundario.json',receipt);log('META_SECUNDARIO: '+JSON.stringify(receipt));
  if(env.GITHUB_STEP_SUMMARY)fs.appendFileSync(env.GITHUB_STEP_SUMMARY,'\nWhatsApp secundario 0964206977: '+receipt.estado+'\nVisibilidad en WhatsApp: pendiente de conexión nativa y comprobación.\n');
  return receipt;
 }
 module.exports={MASTER,PHONE,NAME,FEED_NAME,CHECKPOINT,validateConfig,SecondaryGraph,syncSecondary,main};
-if(require.main===module)main().catch(e=>{
+if(require.main===module)main({inspect:process.argv.includes('--inspect')}).catch(e=>{
  const receipt={estado:'ERROR_SECUNDARIO',codigo:e.message.startsWith('META_HTTP_')?e.message:'VALIDACION_SECUNDARIA_NO_CONFIRMADA',...(e.meta?{meta:e.meta}:{}),colecciones_whatsapp_verificadas:false};
  save('work/auto-meta/resultado-secundario.json',receipt);console.error('META_SECUNDARIO: '+JSON.stringify(receipt));
  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nWhatsApp secundario: ERROR. Sincronización no confirmada; consultar resultado-secundario.json.\n');

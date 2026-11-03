@@ -114,3 +114,12 @@ test('el workflow usa el secreto secundario sólo en su paso, sin cron y con fal
  assert.equal(w.includes('cron:'),false);
  assert.ok(p.includes('reportes/integracion-whatsapp/ultima-importacion-secundario.json'));
 });
+test('inspección con ID configurado e inactivo verifica identidad y nunca escribe en Meta',async()=>{
+ const f=fixture();
+ const result=await main({config:{...config,enabled:false},inspect:true,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:f.transport,write:()=>{},log:()=>{}});
+ assert.equal(result.estado,'CATALOGO_SECUNDARIO_ACCESIBLE_SOLO_LECTURA');
+ assert.equal(f.calls.length,1);assert.equal(f.calls[0].method,'GET');
+ const bad=fixture({badName:true});
+ await assert.rejects(main({config,inspect:true,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:bad.transport,write:()=>{},log:()=>{}}),/IDENTIDAD_SECUNDARIA/);
+ assert.equal(bad.calls.filter(c=>c.method==='POST').length,0);
+});

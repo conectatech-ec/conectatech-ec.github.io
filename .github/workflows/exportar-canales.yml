@@ -101,10 +101,16 @@ jobs:
         env:
           META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
         run: node scripts/diagnosticar-vinculo-whatsapp-meta.cjs
+      - name: Verificar identidad del catálogo secundario sin activar sincronización
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: node scripts/sincronizar-secundario-meta.cjs --inspect
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
-          path: work/auto-meta/acceso-meta.json
+          path: |
+            work/auto-meta/acceso-meta.json
+            work/auto-meta/resultado-secundario.json
           retention-days: 7
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
