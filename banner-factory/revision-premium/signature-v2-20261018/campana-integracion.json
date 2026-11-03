@@ -1,5 +1,5 @@
 {
-  "estado": "PREPARADO_PENDIENTE_INTEGRACION_EN_MOTOR_EXISTENTE",
+  "estado": "MODULO_VALIDADO_PENDIENTE_INTEGRACION_EN_MOTOR_EXISTENTE",
   "rama": "banners/campanas-20261103",
   "main_modificado": false,
   "publicacion_real": false,
@@ -35,5 +35,22 @@
     ],
     "nota": "La posición debe pasar el control de no solapamiento. Cambiar de campaña sobre una imagen sellada exige base limpia, no sobrepintar."
   },
-  "portadas_v2": "Siguen sin generarse ni subirse; no hay enlace visual de revisión. Este módulo no reemplaza ese pendiente."
+  "portadas_v2": "Siguen sin generarse ni subirse; no hay enlace visual de revisión. Este módulo no reemplaza ese pendiente.",
+  "validacion": {
+    "estado": "24_PRUEBAS_SUPERADAS_EN_GITHUB_ACTIONS",
+    "commit_codigo_probado": "88ea1c5620beee78af93e6809d63ee69bcffe300",
+    "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41738156481",
+    "fecha": "2026-11-03",
+    "pruebas": 24,
+    "duracion_pruebas_segundos": 0.523,
+    "medicion_sintetica": {
+      "iteraciones": 120,
+      "primera_aplicacion_ms": 6.4579,
+      "cache_mediana_ms": 0.3358,
+      "cache_p95_ms": 0.4036,
+      "cache_entradas": 1
+    },
+    "limites": "Prueba sintética del módulo. No acredita integración, publicación, rendimiento integral ni cambio de archivos comerciales.",
+    "entorno_original": "No disponible; sin herramienta de reinicio en esta sesión."
+  }
 }
