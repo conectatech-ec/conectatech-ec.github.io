@@ -46,6 +46,7 @@ jobs:
           python-version: '3.12'
       - run: python automatizacion/build.py
       - run: node automatizacion/tests/worker.test.mjs
+      - run: node automatizacion/tests/banner-source.test.mjs
       - run: node automatizacion/tests/live.test.mjs
       - run: node automatizacion/tests/messenger.test.mjs
       - run: node automatizacion/tests/seller.test.mjs

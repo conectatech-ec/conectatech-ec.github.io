@@ -1,7 +1,8 @@
 import {central} from './central-source.mjs';
 import {uploadPage,centralStatus} from './commercial-reception.mjs';
 import catalog from './generated/catalogo.json' with {type:'json'};
-import {renderBanner} from './banner.mjs';
+import {renderValidatedBanner} from './banner.mjs';
+import {refreshAlexCatalog} from './alex-catalog.mjs';
 import {refreshCatalog,verifyAssets} from './live.mjs';
 import {answer} from './commerce.mjs';
 export {answer} from './commerce.mjs';
@@ -91,13 +92,15 @@ export default {
     return json({ok:true,fuente_fecha:source.fuente_fecha,free_only:env.FREE_TIER_VERIFIED==='true',ai:!!env.AI,database:!!env.DB});
    }
    if(req.method==='GET' && /^\/banners\/[A-Z0-9]+$/.test(path)) {
-    const source=await refreshCatalog(catalog);
-    const result=answer(path.split('/').pop(),'opciones de compra',Date.now(),source);
-    if(result.error||!result.disponible) return json(result,409);
-    await verifyAssets(source.productos.find(p=>p.sku===result.sku));
-    const name=source.productos.find(p=>p.sku===result.sku).nombre;
+    const sku=path.split('/').pop(),now=Date.now();
+    const source=await refreshAlexCatalog(undefined,fetch,now,{input:sku,focus:[sku],sharedHub:true});
+    const result=answer(sku,'opciones de compra',now,source);
+    if(result.error||!result.disponible) return json({error:'BANNER_SOURCE_UNAVAILABLE'},409);
+    const product=source.productos.find(p=>p.sku===result.sku);
     result.banner_comercial={foto:result.foto,precio:result.precio,pvp:result.pvp,url_compra:result.url};
-    return new Response(renderBanner(result,name),{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','Content-Security-Policy':"default-src 'none'; img-src https://conectatech-ec.github.io; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'"}});
+    let html;try{html=renderValidatedBanner(result,product.public_name,source,now);}catch{return json({error:'BANNER_SOURCE_UNAVAILABLE'},409);}
+    await verifyAssets(product);
+    return new Response(html,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','Content-Security-Policy':"default-src 'none'; img-src https://conectatech-ec.github.io; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'"}});
    }
    if(req.method==='POST' && path==='/chat') {
     const b=await body(req); if(typeof b.sku!=='string'||typeof b.message!=='string'||b.message.length>1000) return json({error:'Invalid input'},400);
