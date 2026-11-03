@@ -1,0 +1,52 @@
+name: Tres consultas reales de Alex en el navegador del simulador
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['.github/alex-three-turns.json', '.github/scripts/alex-three-turns-cloud.mjs', '.github/workflows/alex-three-turns.yml']
+permissions:
+  contents: read
+concurrency:
+  group: alex-three-turns-probe
+  cancel-in-progress: false
+jobs:
+  comprobar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: conectatech-piloto-gratis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check .github/scripts/alex-three-turns-cloud.mjs
+      - id: control
+        run: |
+          python - <<'PY'
+          import json,os
+          c=json.load(open('.github/alex-three-turns.json'))
+          assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0 and type(c['probe']) is bool and type(c.get('baseline',False)) is bool
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              out.write('probe='+str(c['probe']).lower()+'\n')
+              out.write('baseline='+str(c.get('baseline',False)).lower()+'\n')
+          PY
+      - name: Conversar desde el HTML real con Rafa y Jessy; verificar datos e imágenes renderizadas
+        if: steps.control.outputs.probe == 'true'
+        run: node .github/scripts/alex-three-turns-cloud.mjs
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          ALEX_BASELINE_PROBE: ${{ steps.control.outputs.baseline }}
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.control.outputs.probe == 'true'
+        with:
+          name: alex-tres-consultas-navegador-real
+          path: |
+            automatizacion/generated/fase2/alex-three-turns-cloud.json
+            automatizacion/generated/fase2/alex-three-turns-COL001.png
+            automatizacion/generated/fase2/alex-three-turns-COL002.png
+          retention-days: 7
