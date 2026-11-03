@@ -111,6 +111,20 @@ outputs.set('exportaciones/whatsapp-organizacion-pendiente.json',JSON.stringify(
    estados,verificacion_meta_pendiente:true,visible_whatsapp:null};})
 },null,2)+'\n');
 // Repetir la misma versión no renueva fechas ni provoca commits/Pages innecesarios.
+const salesPath='exportaciones/catalogo-ventas.json';let previousSales=null;
+try{if(fs.existsSync(salesPath))previousSales=JSON.parse(fs.readFileSync(salesPath,'utf8'));}catch{/* Una proyección anterior ilegible nunca altera inventario ni Meta. */}
+const publicPresentation=require('./presentacion-publica-alex.cjs').preparePresentation({
+ source_sha256:inventoryState?.origen_sha256,cut_date:inventoryState?.fecha_corte,
+ multichannel:outputs.get('exportaciones/contenido-multicanal.csv'),meta:outputs.get('exportaciones/meta-catalogo-piloto.csv'),
+ webProducts:products,photos,previous:previousSales?.presentation,readAsset:url=>fs.readFileSync('.'+url)
+});
+const sales=JSON.parse(outputs.get(salesPath));
+sales.presentation=publicPresentation.presentation;sales.presentation_status=publicPresentation.status;
+if(previousSales){
+ const core=value=>{const copy={...value};delete copy.fechaCatalogo;delete copy.presentation;delete copy.presentation_status;return copy;};
+ if(isDeepStrictEqual(core(previousSales),core(sales)))sales.fechaCatalogo=previousSales.fechaCatalogo;
+}
+outputs.set(salesPath,JSON.stringify(sales)+'\n');
 for(const [path,field] of [['exportaciones/catalogo-ventas.json','fechaCatalogo'],['exportaciones/resumen-canales.json','generated_at']]){
  if(!fs.existsSync(path))continue;
  const previous=fs.readFileSync(path,'utf8');let before;

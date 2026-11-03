@@ -17,7 +17,8 @@ function generate(master,change=()=>{}){
  const modules=new Map();
  function fixtureRequire(n){
   if(n==='fs')return fakeFS;
-  if(['crypto','node:util'].includes(n))return require(n);
+  if(['crypto','node:crypto','node:util'].includes(n))return require(n);
+  if(n==='./presentacion-publica-alex.cjs')return require(n);
   if(['./editorial-fotografia-efectiva.cjs','./fotografia-direccion.cjs'].includes(n)){
    if(!modules.has(n)){const mod={exports:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/'+n,'utf8'),{module:mod,exports:mod.exports,require:fixtureRequire,console,process});modules.set(n,mod.exports);}
    return modules.get(n);
@@ -132,4 +133,25 @@ assert(changedAfterPrevious.has(metaFile));
 assert(changedAfterPrevious.has('exportaciones/catalogo-ventas.json'));
 assert(!changedAfterPrevious.has('exportaciones/resumen-canales.json'),'Resumen semánticamente idéntico conserva fecha');
 console.log('Reintento idéntico: 0 escrituras; cambios aprobados regeneran únicamente los archivos afectados.');
+
+// La proyección opcional no puede alterar datos comerciales ni detener su publicación.
+const presentationModule=require('./presentacion-publica-alex.cjs');
+const photoOriginal='/imagenes/audi999/original.png',photoCurrent='/imagenes/audi999/1200.webp';
+function publicPresentationInput(input,{previous=null,corrupt=false,newCut=false}={}){
+ if(previous)for(const [p,value]of previous)input[p]=value;
+ input['seo-contenido.json']=JSON.stringify({AUDI999:{imagen:photoCurrent,imagenProfesional:{contiene_caja:false,revision_visual:'Aprobado',original:photoOriginal,sha256_original:sha('original público'),versiones:{1200:{url:photoCurrent,sha256:sha('portada pública')}}}}});
+ input['.'+photoOriginal]='original público';input['.'+photoCurrent]=corrupt?'alterado sin aprobación':'portada pública';
+ if(newCut){const s=JSON.parse(input['datos-593/estado-ultimo-corte.json']),c=JSON.parse(input['datos-593/corte-comercial-publico-validado.json']);s.fecha_corte=c.fecha_corte='2026-10-23';s.origen_sha256=c.sha256_original='b'.repeat(64);input['datos-593/estado-ultimo-corte.json']=JSON.stringify(s);input['datos-593/corte-comercial-publico-validado.json']=JSON.stringify(c);}
+}
+const publicFiles=generate(inventory,input=>publicPresentationInput(input)),publicSales=JSON.parse(publicFiles.get('exportaciones/catalogo-ventas.json'));
+assert.equal(publicSales.presentation_status,'PRESENTATION_READY');assert(presentationModule.validPresentation(publicSales.presentation));assert.equal(publicSales.presentation.products.AUDI999.approved_media.sha256,sha('portada pública'));
+const brokenFiles=generate(inventory,input=>publicPresentationInput(input,{previous:publicFiles,corrupt:true})),brokenSales=JSON.parse(brokenFiles.get('exportaciones/catalogo-ventas.json'));
+assert.equal(brokenSales.presentation_status,'PRESENTATION_PREPARATION_FAILED');assert.deepEqual(brokenSales.presentation,publicSales.presentation);assert.deepEqual(brokenSales.productos,publicSales.productos);assert.equal(brokenSales.fechaCatalogo,publicSales.fechaCatalogo);assert(!brokenFiles.has(metaFile),'Un fallo de proyección no modifica ni detiene Meta CSV');assert(!brokenFiles.has('exportaciones/contenido-multicanal.csv'));
+const savedBroken=new Map([...publicFiles,...brokenFiles]);
+assert.equal(generate(inventory,input=>publicPresentationInput(input,{previous:savedBroken,corrupt:true})).size,0,'Error repetido: estado constante y cero escrituras');
+const crossCut=generate(inventory,input=>publicPresentationInput(input,{previous:publicFiles,corrupt:true,newCut:true})),crossSales=JSON.parse(crossCut.get('exportaciones/catalogo-ventas.json'));
+assert.equal(crossSales.fuente_sha256,'b'.repeat(64));assert.equal(crossSales.fecha_corte,'2026-10-23');assert.equal(crossSales.presentation.source_sha256,'a'.repeat(64));assert.equal(crossSales.presentation.cut_date,'2026-10-22');assert.deepEqual(crossSales.presentation,publicSales.presentation);assert.deepEqual(crossSales.productos,publicSales.productos);assert(!crossCut.has(metaFile));
+const malformed=generate(inventory,input=>{publicPresentationInput(input,{previous:publicFiles,corrupt:true});const s=JSON.parse(input['exportaciones/catalogo-ventas.json']);s.presentation.products.AUDI999.source_name='PRIVATE_MUST_NOT_LEAK';input['exportaciones/catalogo-ventas.json']=JSON.stringify(s);});
+const malformedSales=JSON.parse(malformed.get('exportaciones/catalogo-ventas.json'));assert.equal(malformedSales.presentation,null);assert.equal(malformedSales.presentation_status,'PRESENTATION_PREPARATION_FAILED');assert(!JSON.stringify(malformedSales).includes('PRIVATE_MUST_NOT_LEAK'));assert.deepEqual(malformedSales.productos,publicSales.productos);
+console.log('Proyección pública opcional: digest/medios aprobados, error sin impacto comercial, conservación de último válido sin reetiquetar y error repetido con 0 escrituras.');
 
