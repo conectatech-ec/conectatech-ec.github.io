@@ -8,6 +8,7 @@ class FuenteVigente(unittest.TestCase):
             subprocess.run(['git','init','-q',str(root)],check=True)
             subprocess.run(['git','-C',str(root),'-c','user.name=QA','-c','user.email=qa@example.invalid','commit','--allow-empty','-qm','fixture'],check=True)
             records=[dict(sku='T1',availability='in_stock',precio_coincide_corte=True,precio_publico_validado='2.00')]
+            (root/'index.html').write_text('const products=[{"sku":"T1"}];\n')
             target=root/'vigente.json'
             old=dict(fecha_corte='2026-10-22',referencias_exportadas=1,productos=records,sha256_productos=hashlib.sha256(json.dumps(records,sort_keys=True,separators=(',',':')).encode()).hexdigest())
             target.write_text(json.dumps(old))

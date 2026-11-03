@@ -12,9 +12,12 @@ def prepare(root, target):
     cut = date.fromisoformat(data['fecha_corte'])
     if cut < date.fromisoformat(old['fecha_corte']) or cut > date.today() or state['fecha_corte'] != data['fecha_corte'] or state['origen_sha256'] != data['sha256_original']:
         raise ValueError('Corte público incoherente o regresivo')
+    catalog = json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n', (root / 'index.html').read_text())[1])
+    if len({p['sku'] for p in catalog}) != len(catalog):
+        raise ValueError('SKU duplicados en catálogo')
     records = []
-    for row in previous:
-        sku = row['sku']
+    for item in sorted(catalog, key=lambda p: p['sku']):
+        sku = item['sku']
         p = data['productos'].get(sku)
         if not p:
             continue
@@ -30,7 +33,7 @@ def prepare(root, target):
         fuente_publica='datos-593/corte-comercial-publico-validado.json',
         fuente_publica_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
         fuente_commit=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip(),
-        alcance='Solo SKU previamente revisados del feed; disponibilidad binaria y precio del corte comercial ya público. Sin cantidades.',
+        alcance='Solo SKU del catálogo web presentes en el corte comercial público validado; disponibilidad binaria y precios ya públicos. Sin cantidades.',
         stock_tiempo_real=False, referencias_exportadas=len(records),
         campos_publicos=['sku','availability','precio_coincide_corte','precio_publico_validado'],
         no_publicado=['Excel original','CSV privado','cantidades internas','costos','márgenes'],
