@@ -499,3 +499,25 @@ footer{background:linear-gradient(110deg,#082235,#0a3a42)}
 .pw-campaign-footer details p{margin:10px 0 0;max-width:600px}
 .pw-campaign-footer [data-pw-contact]>a{margin:0;min-height:44px;padding:11px 16px;font-size:11px;white-space:nowrap;background:linear-gradient(110deg,#ffe6a0,#f4c45f);color:#63151b;border:1px solid #ffe7a7;box-shadow:0 5px 14px #64051033}
 @media(max-width:600px){.pw-campaign--compact .pw-campaign-heading{display:block;padding:17px 15px}.pw-campaign--compact .pw-store-label{position:static;margin-top:10px}.pw-campaign--compact .pw-campaign-lead{padding-right:0}.pw-campaign--compact .pw-campaign-content{padding:11px;gap:13px}.pw-campaign-footer{grid-template-columns:1fr;gap:14px;padding:13px 4px 5px}.pw-campaign-footer .pw-campaign-address,.pw-campaign-footer summary{font-size:10px}.pw-campaign-footer [data-pw-contact]>a{width:100%;font-size:11px}}
+
+/* Black Friday: ambientación estacional; precios, fotografías y marca originales. */
+[data-ct-temporada=black-friday] header{background:radial-gradient(ellipse at 100% 100%,#145b4633,transparent 58%),linear-gradient(105deg,#05080c,#10171d);border-bottom-color:#8bd12f}
+[data-ct-temporada=black-friday] .pw-hero{background:radial-gradient(ellipse at 100% 0,#d9b9662b,transparent 58%),radial-gradient(ellipse at 0 100%,#168bc41c,transparent 58%),repeating-linear-gradient(115deg,#e0c37b05 0 1px,transparent 1px 22px),linear-gradient(125deg,#07090c,#171b20 64%,#0b1718);border-color:#c4a46199;box-shadow:0 18px 45px #06090d38}
+[data-ct-temporada=black-friday] .pw-hero .pw-season-label{display:inline-flex!important;max-width:100%;margin:12px 0 0;padding:9px 14px;border-color:#d8bc797a;border-radius:8px;background:linear-gradient(110deg,#f5dda518,#b28c3910);color:#f1d797;font-size:24px;font-weight:800;line-height:1.2;letter-spacing:2.2px;text-transform:uppercase}
+[data-ct-temporada=black-friday] .pw-hero h1 strong{color:#f0d68d;text-shadow:0 0 25px #e4c47a18}
+[data-ct-temporada=black-friday] .pw-showcase-heading{color:#e5d6b7}
+[data-ct-temporada=black-friday] .pw-slide-photo{border-color:#e0c68b80;box-shadow:0 12px 30px #0004,0 0 0 1px #dab56a26}
+[data-ct-temporada=black-friday] .pw-slide-prices strong{color:#f2d78f}
+[data-ct-temporada=black-friday] .pw-slide{--pw-season:#e8cb84;--pw-season-secondary:#8bd12f}
+[data-ct-temporada=black-friday] .pw-daily-featured{border-color:#cba969;background:radial-gradient(ellipse at 50% -20%,#d4ab4b2b,transparent 65%),linear-gradient(115deg,#080b10,#1b1d20 55%,#0a1718);box-shadow:0 14px 34px #07090c26,0 0 0 1px #c19a4f42}
+[data-ct-temporada=black-friday] .pw-featured-heading>p{color:#e8dfcb}
+[data-ct-temporada=black-friday] .pw-featured-heading>a{background:#ffffff08;border-color:#d7b46b80;color:#f4dfab}
+[data-ct-temporada=black-friday] .pw-daily-featured .pw-featured-card .promo{color:#79521b}
+[data-ct-temporada=black-friday] .pw-daily-featured .pw-featured-card .promo-badge{color:#79521b}
+[data-ct-temporada=black-friday] .pw-campaign{border-color:#c7a569}
+[data-ct-temporada=black-friday] .pw-campaign--compact .pw-campaign-heading{background:linear-gradient(110deg,#090d12,#21221e);border-bottom-color:#c6a66599}
+[data-ct-temporada=black-friday] .pw-campaign--compact .pw-campaign-heading h2{color:#fff6e7}
+[data-ct-temporada=black-friday] .pw-campaign--compact .pw-campaign-message strong{color:#f0d58b;text-decoration-color:#b79750}
+[data-ct-temporada=black-friday] .pw-campaign--compact .pw-campaign-lead{color:#d9c9a6}
+[data-ct-temporada=black-friday] .pw-campaign--compact .pw-store-label{background:#ffffff08;border-color:#b99a5d;color:#f1dba5}
+@media(max-width:600px){[data-ct-temporada=black-friday] .pw-hero .pw-season-label{font-size:18px;letter-spacing:1.6px;padding:8px 12px;margin-top:11px}}
