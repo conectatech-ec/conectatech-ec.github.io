@@ -5,6 +5,8 @@ const REQUESTS=Object.freeze([
  {key:'catalogo_maestro',path:'1036301566100990',fields:'id,name'},
  {key:'propietario_maestro',path:'1036301566100990',fields:'id,business{id,name}'},
  {key:'catalogo_whatsapp_existente',path:'665080484330219',fields:'id,name,vertical'},
+ {key:'portafolio_comercial',path:'920039185684571',fields:'id,name'},
+ {key:'catalogos_del_portafolio',path:'920039185684571/owned_product_catalogs',fields:'id,name,vertical'},
  {key:'permisos_credencial',path:'me/permissions',fields:'permission,status'},
  {key:'cuenta_principal',path:'2639516313038513',fields:'id,name'},
  {key:'cuenta_secundaria',path:'100630632770993',fields:'id,name'},
@@ -75,7 +77,7 @@ async function readAsset({token,request,transport=fetch}){
    permiso:redact(p.permission,token),estado:redact(p.status,token)
   })),hay_mas_paginas:Boolean(data.paging?.next)};
  }
- if(allowed.path.endsWith('/product_catalogs')){
+ if(allowed.path.endsWith('/product_catalogs')||allowed.path.endsWith('/owned_product_catalogs')){
   if(!Array.isArray(data.data))return {consulta:allowed.key,estado:'NO_CONSULTABLE',motivo:'LISTA_INVALIDA'};
   return {consulta:allowed.key,estado:'LEIDO',datos:data.data.map(p=>project(p,token)),
    hay_mas_paginas:Boolean(data.paging?.next)};

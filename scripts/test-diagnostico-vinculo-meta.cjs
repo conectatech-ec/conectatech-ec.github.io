@@ -3,6 +3,15 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const {REQUESTS,redact,readAsset,diagnose,main}=require('./diagnosticar-vinculo-whatsapp-meta.cjs');
 const token='fake+secret&slash/';
+test('consulta propietario y catálogos comerciales sin recoger credenciales del negocio',async()=>{
+ const owner=REQUESTS.find(r=>r.key==='propietario_maestro');
+ const r=await readAsset({token,request:owner,transport:async()=>response({id:'1036301566100990',business:{id:'920039185684571',name:'Conectatech',access_token:token}})});
+ assert.deepEqual(r.datos.business,{id:'920039185684571',name:'Conectatech'});
+ assert.equal(JSON.stringify(r).includes(token),false);
+ const listing=REQUESTS.find(r=>r.key==='catalogos_del_portafolio');
+ const l=await readAsset({token,request:listing,transport:async()=>response({data:[{id:'1234',name:'Catálogo',vertical:'commerce',access_token:token}]})});
+ assert.deepEqual(l.datos,[{id:'1234',name:'Catálogo',vertical:'commerce'}]);
+});
 function response(data,status=200){return {ok:status>=200&&status<300,status,text:async()=>JSON.stringify(data)};}
 test('no envía solicitudes sin credencial; no presenta ausencia como cuenta inexistente',async()=>{
  let calls=0;
@@ -98,7 +107,7 @@ test('usa exclusivamente el secreto secundario aunque ambos estén definidos',as
  assert.equal(logs.join('\n').includes('principal_no_usar'),false);
  assert.equal(logs.join('\n').includes(token),false);
 });
-test('el workflow reserva el secreto secundario a la comprobación y conserva el principal en producción',()=>{
+test('el workflow aísla las credenciales y conserva los dos pasos principales de producción',()=>{
  const fs=require('node:fs'),path=require('node:path');
  const workflow=fs.readFileSync(path.join(__dirname,'../.github/workflows/exportar-canales.yml'),'utf8');
  const step=workflow.split('      - name: Consultar vínculo WhatsApp con la credencial existente (sólo lectura)\n')[1]?.split('      - uses:')[0];
@@ -107,7 +116,8 @@ test('el workflow reserva el secreto secundario a la comprobación y conserva el
  assert.equal(step.includes('secrets.META_ACCESS_TOKEN'),false);
  const production=workflow.split('  exportar:\n')[1];
  assert.ok(production);
- assert.equal(production.includes('META_WHATSAPP_SECONDARY_TOKEN'),false);
+ const secondary=production.split('      - name: Sincronizar catálogo independiente de WhatsApp secundario\n')[1]?.split('      - name:')[0];
+ assert.ok(secondary);assert.equal(secondary.includes('secrets.META_ACCESS_TOKEN'),false);
  assert.equal((production.match(/secrets\.META_ACCESS_TOKEN/g)||[]).length,2);
 });
 
@@ -138,3 +148,4 @@ test('la introspección no sigue ni imprime URLs de conexiones y valida el pará
  assert.equal(JSON.stringify(r).includes('other.test'),false);
  assert.equal(JSON.stringify(r).includes(token),false);
 });
+

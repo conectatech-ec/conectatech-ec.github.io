@@ -1,5 +1,5 @@
 // Exportación de sólo lectura: títulos e imágenes se aprueban en sus proyectos.
-const fs=require('fs');
+const fs=require('fs'),{isDeepStrictEqual}=require('node:util');
 const html=fs.readFileSync('index.html','utf8');
 const m=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
 if(!m)throw Error('No se encontró el catálogo');
@@ -7,6 +7,13 @@ const products=JSON.parse(m[1]);
 const content=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
 const urls=JSON.parse(fs.readFileSync('seo-pages.json','utf8'));
 const base='https://conectatech-ec.github.io';
+// Consumir las aprobaciones vigentes de la Web sin modificar sus fuentes.
+const editorialFile='importacion/editorial/publicados.json';
+const editorial=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile,'utf8')):null;
+const editorialTitles=require('../assets/editorial-titulos.js');
+const photos=require('./editorial-fotografia-efectiva.cjs')(products,content);
+const titleFor=p=>editorialTitles.entry(p,editorial)?.titulo||content[p.sku]?.nombre||p.name;
+const imageFor=p=>photos[p.sku]?.imagen||content[p.sku]?.imagen||p.imageUrl||'';
 const categoriesWeb=require('./categorias-meta-web.cjs');
 const classificationWeb=categoriesWeb.classify(products,content,categoriesWeb.familiesFromHTML(html));
 const inventoryState=typeof fs.existsSync==='function'&&fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
@@ -48,14 +55,14 @@ const csvField=x=>'"'+String(x??'').replace(/"/g,'""').replace(/\r?\n/g,' ').tri
 const csv=(columns,rows)=>[columns.join(','),...rows.map(row=>columns.map(key=>csvField(row[key])).join(','))].join('\n')+'\n';
 const rows=products.filter(p=>p.stock>0&&p.promo>0).map(p=>{
   const o=content[p.sku]||{};
-  return {sku:p.sku,title:o.nombre||p.name,description:o.descripcion||o.descripcionSeo||p.name,
+  return {sku:p.sku,title:titleFor(p),description:o.descripcion||o.descripcionSeo||p.name,
     price:p.promo.toFixed(2)+' USD',pvp:p.pvp.toFixed(2)+' USD',availability:'in stock',condition:'new',
-    link:base+'/productos/'+urls[p.sku]+'/',image_link:(o.imagen||p.imageUrl)?new URL(o.imagen||p.imageUrl,base).href:'',
+    link:base+'/productos/'+urls[p.sku]+'/',image_link:imageFor(p)?new URL(imageFor(p),base).href:'',
     category:p.category,stock:p.stock,
-    facebook_title:(o.nombre||p.name).slice(0,150),
+    facebook_title:titleFor(p).slice(0,150),
     facebook_copy:(o.descripcion||o.descripcionSeo||p.name)+'\nPROMO CONTADO $'+p.promo.toFixed(2)+' · PVP $'+p.pvp.toFixed(2)+'\nConsulta disponibilidad en Quito. '+base+'/productos/'+urls[p.sku]+'/'};
 });
-const salesProducts=products.filter(p=>p.stock>0&&p.promo>0).map(p=>({sku:p.sku,nombre:p.name,categoria:p.category,stock:p.stock,promo:p.promo,pvp:p.pvp,url:base+'/productos/'+urls[p.sku]+'/'}));
+const salesProducts=products.filter(p=>p.stock>0&&p.promo>0).map(p=>({sku:p.sku,nombre:titleFor(p),categoria:p.category,stock:p.stock,promo:p.promo,pvp:p.pvp,url:base+'/productos/'+urls[p.sku]+'/'}));
 outputs.set('exportaciones/catalogo-ventas.json',JSON.stringify({fechaCatalogo:new Date().toISOString(),fecha_corte:inventoryState?.fecha_corte||null,fuente_sha256:inventoryState?.origen_sha256||null,fuente:'Sistema 593: disponibilidad y precios sujetos a confirmación',productos:salesProducts})+'\n');
 outputs.set('exportaciones/contenido-multicanal.csv',csv(['sku','title','description','price','pvp','availability','link','image_link','category','stock','facebook_title','facebook_copy'],rows));
 const ready=rows.filter(p=>/^https?:\/\//.test(p.image_link));
@@ -70,11 +77,11 @@ const knownBrand=sku=>{
 };
 // Los agotados conservan su ID: omitirlos puede dejar disponibilidad anterior en Meta.
 const meta=products.filter(p=>p.promo>0).map(p=>{
- const o=content[p.sku]||{},image=o.imagen||p.imageUrl;
+ const o=content[p.sku]||{},image=imageFor(p);
  if(!image)return null;
  const image_link=new URL(image,base).href;
  if(!/^https?:\/\//.test(image_link))return null;
- return {id:p.sku,title:o.nombre||p.name,description:o.descripcion||o.descripcionSeo||p.name,
+ return {id:p.sku,title:titleFor(p),description:o.descripcion||o.descripcionSeo||p.name,
  availability:p.stock>0?'in stock':'out of stock',condition:'new',price:p.promo.toFixed(2)+' USD',
  link:base+'/productos/'+urls[p.sku]+'/',image_link,brand:knownBrand(p.sku),product_type:productType(p.sku),custom_label_0:classificationWeb.bySKU.get(p.sku).label};
 }).filter(Boolean);
@@ -103,6 +110,16 @@ outputs.set('exportaciones/whatsapp-organizacion-pendiente.json',JSON.stringify(
   return {sku:p.sku,categoria_web:c.categoria_web,familia_web:c.familia_web,aprobacion_editorial:c.aprobado,
    estados,verificacion_meta_pendiente:true,visible_whatsapp:null};})
 },null,2)+'\n');
+// Repetir la misma versión no renueva fechas ni provoca commits/Pages innecesarios.
+for(const [path,field] of [['exportaciones/catalogo-ventas.json','fechaCatalogo'],['exportaciones/resumen-canales.json','generated_at']]){
+ if(!fs.existsSync(path))continue;
+ const previous=fs.readFileSync(path,'utf8');let before;
+ try{before=JSON.parse(previous);}catch(error){if(error instanceof SyntaxError)continue;throw error;}
+ const after=JSON.parse(outputs.get(path));
+ delete before[field];delete after[field];
+ if(isDeepStrictEqual(before,after))outputs.set(path,previous);
+}
 fs.mkdirSync('exportaciones',{recursive:true});
-for(const [path,value] of outputs)fs.writeFileSync(path,value);
+for(const [path,value] of outputs)if(!fs.existsSync(path)||fs.readFileSync(path,'utf8')!==value)fs.writeFileSync(path,value);
 console.log('Exportaciones preparadas: '+rows.length+' disponibles; Meta '+meta.length+' SKU, incluidos '+meta.filter(p=>p.availability==='out of stock').length+' agotados. Importación y visibilidad pendientes de Meta.');
+

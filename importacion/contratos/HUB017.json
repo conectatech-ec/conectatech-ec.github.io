@@ -16,7 +16,7 @@
   "categoria_comercial": "Hub",
   "precio_contado": 11.9,
   "pvp": 13.69,
-  "stock": 1,
+  "stock": 2,
   "unidad_venta": {
     "descripcion": "Un adaptador USB-A a Ethernet RJ45 con cable integrado.",
     "cantidad": 1,
@@ -130,7 +130,7 @@
   "presentacion": "sin caja",
   "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas sin fila AAA aplicable; Tipo: sin registro. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "stock_fecha_corte": "2026-10-31",
+  "stock_fecha_corte": "2026-11-02",
   "stock_tiempo_real": false,
   "beneficios": [
     {
@@ -179,11 +179,11 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
+      "sha256": "21898c4f9df99e8029d82f184f46563af2d21f62a589bc64dff4353ad6e2a88e",
       "fila": {
         "sku": "HUB017",
         "nombre": "HUB 3.0 USB-A A LAN ETHERNET RJ45",
-        "stock": "1",
+        "stock": "2",
         "precio_general": "10.35",
         "iva": "15",
         "tipo": "PRODUCTO",
@@ -320,5 +320,11 @@
     "sha256InventarioPropietario": "5473e48908cbb9bc541e3b544265d85e3dfbfcb4e44edf6db260cd6781210e52",
     "motivo": "Ficha pendiente de producción no había recibido actualización de losSKUpublicados; preservar elstockreal delúltimocorte593 alcompletarSKU. Noinventarcantidad,nocambiarprecios niniveles de otrosSKU.",
     "preciosSinCambios": true
+  },
+  "alineacion_control_publicado_118": {
+    "fuente": "datos-593/corte-comercial-publico-validado.json",
+    "fecha_corte": "2026-11-02",
+    "sinCambiarValoresEnWeb": true,
+    "motivo": "El corte vigente ya publicó estos valores. Se alinea exclusivamente control CSV/contrato; no se renuevan fotos ni fechas editoriales."
   }
 }

@@ -6,12 +6,17 @@ on:
       - 'scripts/*meta*.cjs'
       - 'scripts/exportar-canales.cjs'
       - 'scripts/test-exportar-canales.cjs'
+      - 'scripts/editorial-fotografia-efectiva.cjs'
+      - 'scripts/fotografia-direccion.cjs'
+      - 'assets/editorial-titulos*.js'
       - '.github/workflows/exportar-canales.yml'
+      - 'integraciones/whatsapp-secundario.json'
   workflow_run:
     workflows:
       - 'Publicar corte comercial 593 validado'
       - 'Publicar stock, fecha y feeds comerciales desde 593 validado'
       - 'Sincronizar catalogo desde 593'
+      - 'Producir catálogo profesional por SKU'
     types: [completed]
     branches: [main]
   push:
@@ -19,9 +24,16 @@ on:
     paths:
       - 'index.html'
       - 'seo-contenido.json'
+      - 'importacion/editorial/publicados.json'
+      - 'assets/editorial-titulos*.js'
+      - 'scripts/editorial-fotografia-efectiva.cjs'
+      - 'scripts/fotografia-direccion.cjs'
+      - 'importacion/fotografia-publicada/**'
       - 'scripts/exportar-canales.cjs'
       - 'scripts/categorias-meta-web.cjs'
       - 'scripts/sincronizar-conjuntos-meta.cjs'
+      - 'scripts/sincronizar-secundario-meta.cjs'
+      - 'integraciones/whatsapp-secundario.json'
       - 'scripts/prioridad-comercial-meta.cjs'
       - 'scripts/reordenar-seis-colecciones-meta.cjs'
       - '.github/workflows/exportar-canales.yml'
@@ -48,7 +60,7 @@ jobs:
         with:
           node-version: '22'
       - name: Validar diagnóstico de vínculo sin acceso a Meta
-        run: node --test scripts/test-diagnostico-vinculo-meta.cjs
+        run: node scripts/test-diagnostico-vinculo-meta.cjs
       - name: Comprobar credencial existente sin modificar activos
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
@@ -108,10 +120,13 @@ jobs:
           node-version: '22'
       - run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-secundario-meta.cjs
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
           node scripts/test-exportar-canales.cjs
           node scripts/test-validar-exportacion-593.cjs
+          node scripts/verificar-paridad-meta-web.cjs
+          node scripts/test-verificar-paridad-meta-web.cjs
   exportar:
     timeout-minutes: 50
     # También se ejecuta tras publicaciones de bots 593: sus pushes no disparan otros workflows.
@@ -128,6 +143,7 @@ jobs:
       - name: Generar archivos CSV
         run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-secundario-meta.cjs
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
           node scripts/test-validar-exportacion-593.cjs
@@ -160,13 +176,20 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           META_GRAPH_VERSION: 'v26.0'
         run: node scripts/reordenar-seis-colecciones-meta.cjs --apply
+      - name: Sincronizar catálogo independiente de WhatsApp secundario
+        id: sync-secundario
+        continue-on-error: true
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: node scripts/sincronizar-secundario-meta.cjs
       - name: Conservar puntos de reanudación de Meta
         if: always()
         run: |
-          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ]; then exit 0; fi
+          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ] && [ ! -f work/auto-meta/importacion-secundario.json ]; then exit 0; fi
           mkdir -p /tmp/conectatech-meta-puntos
           if [ -f work/auto-meta/importacion.json ]; then cp work/auto-meta/importacion.json /tmp/conectatech-meta-puntos/importacion.json; fi
           if [ -f work/auto-meta/reordenacion.json ]; then cp work/auto-meta/reordenacion.json /tmp/conectatech-meta-puntos/reordenacion.json; fi
+          if [ -f work/auto-meta/importacion-secundario.json ]; then cp work/auto-meta/importacion-secundario.json /tmp/conectatech-meta-puntos/importacion-secundario.json; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for intento in 1 2 3 4; do
@@ -180,6 +203,10 @@ jobs:
             if [ -f /tmp/conectatech-meta-puntos/reordenacion.json ]; then
               cp /tmp/conectatech-meta-puntos/reordenacion.json reportes/integracion-whatsapp/resultado-reordenar-seis-colecciones.json
               git add reportes/integracion-whatsapp/resultado-reordenar-seis-colecciones.json
+            fi
+            if [ -f /tmp/conectatech-meta-puntos/importacion-secundario.json ]; then
+              cp /tmp/conectatech-meta-puntos/importacion-secundario.json reportes/integracion-whatsapp/ultima-importacion-secundario.json
+              git add reportes/integracion-whatsapp/ultima-importacion-secundario.json
             fi
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "Conservar referencia de importación Meta para reanudación"
@@ -195,5 +222,9 @@ jobs:
           path: |
             work/auto-meta/resultado.json
             work/auto-meta/reordenacion.json
+            work/auto-meta/importacion-secundario.json
+            work/auto-meta/resultado-secundario.json
           retention-days: 7
           if-no-files-found: warn
+
+

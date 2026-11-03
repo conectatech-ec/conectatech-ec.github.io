@@ -186,7 +186,7 @@
   "presentacion": "sin caja",
   "revision_regla": 3,
   "evidencia_clasificacion": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas sin fila AAA aplicable; Tipo: sin registro. No acredita derechos de fotografías externas ni especificaciones técnicas.",
-  "stock_fecha_corte": "2026-10-31",
+  "stock_fecha_corte": "2026-11-02",
   "stock_tiempo_real": false,
   "beneficios": [
     {
@@ -247,7 +247,7 @@
   "validaciones": {
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "5e25247541819e69b61656e1be3ed4f8b04dab591fa515d7e07b00682d82e0ac",
+      "sha256": "21898c4f9df99e8029d82f184f46563af2d21f62a589bc64dff4353ad6e2a88e",
       "fila": {
         "sku": "TOMA001",
         "nombre": "TOMATODO",
@@ -381,5 +381,11 @@
       "sha256": "d4eaa0335d67e115358c33e4c6132c3607d73bb5af1153a7341b2fda67076cda",
       "sku": "TOMA001"
     }
+  },
+  "alineacion_control_publicado_118": {
+    "fuente": "datos-593/corte-comercial-publico-validado.json",
+    "fecha_corte": "2026-11-02",
+    "sinCambiarValoresEnWeb": true,
+    "motivo": "El corte vigente ya publicó estos valores. Se alinea exclusivamente control CSV/contrato; no se renuevan fotos ni fechas editoriales."
   }
 }

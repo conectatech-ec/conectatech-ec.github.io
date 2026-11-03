@@ -45,6 +45,9 @@ class Graph{
 }
 function reconcile(plan,existing){
  if(plan.catalog_id!==CATALOG)throw Error('Catálogo distinto del Maestro');
+ return reconcileGroups(plan,existing);
+}
+function reconcileGroups(plan,existing){
  const used=new Set();
  return plan.groups.map(g=>{
   const names=[g.name,...(g.aliases||[])].map(normal);
@@ -62,16 +65,27 @@ function checkRemote(plan,remote){
  for(const r of remote)if(String(r.custom_label_0||'').startsWith('ct-web:')&&stock(r.availability)==='in stock'&&!expected.has(r.retailer_id))throw Error('META_SKU_FUERA_DE_SELECCION_'+r.retailer_id);
  return true;
 }
-async function synchronize({plan,csv,api,wait=pause,attempts=40,onProgress=()=>{},checkpoint=null,onCheckpoint=()=>{}}){
- if(plan.catalog_id!==CATALOG||!plan.groups.length||!plan.productos_meta)throw Error('Plan Meta inválido');
- const catalog=await api.request('GET',CATALOG,{fields:'id,name'});
- if(catalog.id!==CATALOG||normal(catalog.name)!==normal('CONECTATECH | Catálogo Maestro'))throw Error('Identidad del Catálogo Maestro no coincide');
- const feeds=await api.list(CATALOG+'/product_feeds','id,name,schedule');
- const candidates=feeds.filter(f=>f.schedule?.url===FEED);
- if(candidates.length!==1)throw Error('No se identificó una única fuente existente con la URL aprobada');
- const operations=reconcile(plan,await api.list(CATALOG+'/product_sets','id,name,retailer_id,filter'));
+async function synchronize(options){
+ if(options.plan?.catalog_id!==CATALOG)throw Error('Plan Meta inválido');
+ return synchronizeCatalog({...options,target:{id:CATALOG,name:'CONECTATECH | Catálogo Maestro',selectFeed:async(api,feeds)=>{
+  const candidates=feeds.filter(f=>f.schedule?.url===FEED);
+  if(candidates.length!==1)throw Error('No se identificó una única fuente existente con la URL aprobada');
+  return candidates[0];
+ }}});
+}
+// Motor compartido; el adaptador secundario valida identidad, descendientes y credencial propios.
+async function synchronizeCatalog({plan,csv,api,target,wait=pause,attempts=40,onProgress=()=>{},checkpoint=null,onCheckpoint=()=>{}}){
+ const catalogId=target?.id;
+ if(!/^\d+$/.test(catalogId||'')||!target.name||typeof target.selectFeed!=='function')throw Error('Destino Meta inválido');
+ if(plan.catalog_id!==catalogId||!plan.groups.length||!plan.productos_meta)throw Error('Plan Meta inválido');
+ const catalog=await api.request('GET',catalogId,{fields:'id,name'});
+ if(catalog.id!==catalogId||normal(catalog.name)!==normal(target.name))throw Error('Identidad del catálogo de destino no coincide');
+ const feeds=await api.list(catalogId+'/product_feeds','id,name,schedule');
+ const feed=await target.selectFeed(api,feeds);
+ if(!/^\d+$/.test(feed?.id||''))throw Error('Fuente Meta sin ID');
+ const operations=reconcileGroups(plan,await api.list(catalogId+'/product_sets','id,name,retailer_id,filter'));
  const digest=crypto.createHash('sha256').update(csv).digest('hex');
- const filename='ct-'+digest+'.csv',feed=candidates[0];
+ const filename='ct-'+digest+'.csv';
  const uploads=await api.list(feed.id+'/uploads','id,filename,end_time,error_count,num_invalid_items,num_persisted_items');
  const poll=async current=>{
   if(current.end_time)return current;
@@ -84,7 +98,7 @@ async function synchronize({plan,csv,api,wait=pause,attempts=40,onProgress=()=>{
   }
   return current;
  };
- const recorded=checkpoint?.catalog_id===CATALOG&&checkpoint.feed_id===feed.id&&checkpoint.feed_sha256===digest;
+ const recorded=checkpoint?.catalog_id===catalogId&&checkpoint.feed_id===feed.id&&checkpoint.feed_sha256===digest;
  let upload=uploads.find(u=>String(u.filename||'').endsWith(filename)&&!u.error_count&&!u.num_invalid_items)||
   (recorded?uploads.find(u=>u.id===checkpoint.upload_id):null);
  if(!upload){
@@ -95,14 +109,14 @@ async function synchronize({plan,csv,api,wait=pause,attempts=40,onProgress=()=>{
   if(!/^\d+$/.test(submitted.id||''))throw Error('Respuesta de importación sin ID');
   upload={id:submitted.id};
  }
- onCheckpoint({catalog_id:CATALOG,feed_id:feed.id,feed_sha256:digest,upload_id:upload.id});
+ onCheckpoint({catalog_id:catalogId,feed_id:feed.id,feed_sha256:digest,upload_id:upload.id});
  upload=await poll(upload);
  if(!upload?.end_time)throw Error('META_IMPORTACION_PENDIENTE');
  if(upload.error_count||upload.num_invalid_items||upload.num_persisted_items<plan.productos_meta)throw Error('META_IMPORTACION_CON_ERRORES_O_INCOMPLETA');
  // Verificar primero la importación y disponibilidad; no crear conjuntos sobre datos antiguos.
  let verified=false;
  for(let i=0;i<attempts;i++){
-  try{checkRemote(plan,await api.list(CATALOG+'/products','id,retailer_id,custom_label_0,availability'));verified=true;break;}
+  try{checkRemote(plan,await api.list(catalogId+'/products','id,retailer_id,custom_label_0,availability'));verified=true;break;}
   catch(e){if(!/^META_(IMPORTACION_NO_COINCIDE|SKU_FUERA_DE_SELECCION)_/.test(e.message)||i===attempts-1)throw e;await wait(3000);}
  }
  if(!verified)throw Error('META_IMPORTACION_NO_VERIFICADA');
@@ -111,7 +125,7 @@ async function synchronize({plan,csv,api,wait=pause,attempts=40,onProgress=()=>{
   const {group:g,found,action}=op;if(action==='OMITIR_VACIO')continue;
   let id=found?.id;
   if(action==='CREAR'){
-   const r=await api.request('POST',CATALOG+'/product_sets',{name:g.name,filter:g.filter,retailer_id:g.retailer_id});id=r.id;
+   const r=await api.request('POST',catalogId+'/product_sets',{name:g.name,filter:g.filter,retailer_id:g.retailer_id});id=r.id;
   }else if(action==='ACTUALIZAR')await api.request('POST',id,{filter:g.filter,retailer_id:g.retailer_id});
   if(!/^\d+$/.test(id||''))throw Error('CONJUNTO_SIN_ID');
   const readback=await api.request('GET',id,{fields:'id,filter,retailer_id'});
@@ -128,7 +142,7 @@ async function synchronize({plan,csv,api,wait=pause,attempts=40,onProgress=()=>{
   catch(e){orden={estado:'ORDEN_PRODUCTOS_PENDIENTE',destacados:g.featured_sku||[],...(e.meta?{meta:e.meta}:{}),codigo:e.message.startsWith('META_HTTP_')?e.message:'ORDEN_NO_CONFIRMADO'};}
   results.push({id,familia:g.family,accion:action,sku:g.sku.length,estado:'CONJUNTO_META_VERIFICADO',prioridad_solicitada:g.prioridad,orden});onProgress('CONJUNTO_META_VERIFICADO');
  }
- return {estado:'META_SINCRONIZADO',catalog_id:CATALOG,fuente_sha256:plan.fuente_sha256,feed_sha256:digest,importacion_id:upload.id,
+ return {estado:'META_SINCRONIZADO',catalog_id:catalogId,fuente_sha256:plan.fuente_sha256,feed_sha256:digest,importacion_id:upload.id,
   conjuntos:results,colecciones_whatsapp_verificadas:false,
   orden_colecciones_whatsapp:'PENDIENTE_REORDENAR_EN_APLICACION',
   nota:'Importación y pertenencia comprobadas en Meta. Visibilidad y orden de colecciones en WhatsApp requieren evidencia de cliente.'};
@@ -144,7 +158,7 @@ async function main(){
  fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));
  if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nEstado de integración Meta: '+receipt.estado+'\nColecciones WhatsApp verificadas: no\n');
 }
-module.exports={Graph,reconcile,checkRemote,synchronize,parseGraphData};
+module.exports={Graph,reconcile,checkRemote,synchronize,synchronizeCatalog,parseGraphData};
 if(require.main===module)main().catch(e=>{
  const code=/^META_HTTP_[0-9]+_CODIGO_[A-Z0-9_]+$/.test(e.message)?e.message:
   (e.message.match(/^(META_[A-Z_]+|CONJUNTO_[A-Z_]+|PERTENENCIA_NO_VERIFICADA|CONJUNTOS_DUPLICADOS)/)||['ERROR_DE_VALIDACION'])[0];
@@ -152,3 +166,4 @@ if(require.main===module)main().catch(e=>{
  fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/resultado.json',JSON.stringify(result,null,2)+'\n');
  console.error('ERROR_META: '+JSON.stringify(result));process.exitCode=1;
 });
+
