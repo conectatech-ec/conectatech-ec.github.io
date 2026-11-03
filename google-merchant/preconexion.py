@@ -29,9 +29,9 @@ def inspect(root, out):
             continue
         availability = 'in_stock' if product['stock'] > 0 else 'out_of_stock'
         if availability != row['availability']:
-            mismatches.append({'sku': product['sku'], 'motivo': 'disponibilidad_web_difiere_corte16'})
+            mismatches.append({'sku': product['sku'], 'motivo': 'disponibilidad_web_difiere_corte_vigente'})
         if row['precio_coincide_corte'] is not True or Decimal(str(product['promo'])) != Decimal(row['precio_publico_validado']):
-            mismatches.append({'sku': product['sku'], 'motivo': 'precio_web_no_validado_con_corte16'})
+            mismatches.append({'sku': product['sku'], 'motivo': 'precio_web_no_validado_con_corte_vigente'})
     counts = Counter()
     policy_links = set()
     urls = json.loads((root / 'seo-pages.json').read_text())
@@ -77,14 +77,14 @@ def inspect(root, out):
         inventario_sha256=hashlib.sha256(master_path.read_bytes()).hexdigest(), fecha_corte=cut, antiguedad_corte_dias=age,
         inventario_origen=inventory_meta['archivo_origen'], origen_privado_sha256=inventory_meta['sha256_xlsx_privado'],
         articulos_feed=summary['incluidos'], articulos_con_http_publico_verificado=live,
-        coherencia_catalogo_maestro={'sku_web': len(products), 'sku_con_revision_corte16': len(records), 'discrepancias': mismatches, 'nota': 'Revisión limitada a los SKU del feed anterior, sin cantidades internas ni precios privados. SKU sin esta revisión quedan excluidos; diferencias de precio o de disponibilidad con la ficha excluyen el artículo.'},
-        precio_final_documentado='Corte corregido16: Q V. TOTAL = contado; X PVP + Y importe de IVA = PVP final. IVA incluido. Sin recalcular porcentajes ni modificar precios web.',
+        coherencia_catalogo_maestro={'sku_web': len(products), 'sku_con_revision_corte_vigente': len(records), 'discrepancias': mismatches, 'nota': 'Revisión de los SKU web presentes en el corte comercial público validado vigente, sin exportar cantidades ni precios privados. SKU sin esta revisión quedan excluidos; diferencias de precio o de disponibilidad con la ficha excluyen el artículo.'},
+        precio_final_documentado='Precio procedente del corte comercial público validado vigente; coincide con la web y la ficha. Total final de compra y gastos de envío pendientes de acreditación.',
         fechas_inventario_en_articulos=dict(dates), stock_tiempo_real_acreditado=sum(p.get('stock_tiempo_real') is True for p in proofs),
         observaciones_fichas=dict(counts), enlaces_politicas_en_fichas=sorted(policy_links),
         dominio_merchant=domain,
         estado='BLOQUEADO_PARA_PUBLICACION', publicacion_habilitada=False,
         bloqueos=[
-            {'tema': 'stock', 'estado': 'CORTE16_APLICADO; NO_TIEMPO_REAL', 'accion': 'Mantener actualizada la extracción de 593. El feed usa exclusivamente el corte16 corregido; excluye disponibilidad incompatible con la ficha y no modifica producción. Un corte no es inventario en tiempo real.'},
+            {'tema': 'stock', 'estado': 'CORTE_VIGENTE_APLICADO; NO_TIEMPO_REAL', 'accion': 'Mantener actualizada la extracción de 593. El feed usa exclusivamente el corte_vigente corregido; excluye disponibilidad incompatible con la ficha y no modifica producción. Un corte no es inventario en tiempo real.'},
             {'tema': 'precio', 'estado': 'IVA_DOCUMENTADO; COMPRA_FINAL_PENDIENTE', 'accion': 'Confirmar que el precio contado es accesible al comprador y coincide con el total del producto al comprar, con gastos de envío separados y conocidos antes de confirmar.'},
             {'tema': 'compra', 'estado': 'NO_ACREDITADA_COMPRA_COMPLETA_EN_SITIO', 'accion': 'Demostrar proceso completo de pedido en el sitio, confirmación y entrega estimada; WhatsApp de consulta y panel de cotizaciones no acreditan este requisito. Contraentrega es admisible como método de pago, pero no reemplaza un proceso de compra verificable.'},
             {'tema': 'envios', 'estado': 'COBERTURA_COSTO_PLAZOS_PENDIENTES', 'accion': 'Documentar cobertura real (Quito u otras zonas), tarifas, manejo y tránsito. No asumir cobertura nacional ni envío gratis. Ecuador no aparece en la lista general de países donde el atributo shipping es obligatorio; eso no permite informar condiciones falsas o no aclarar gastos de compra.'},
