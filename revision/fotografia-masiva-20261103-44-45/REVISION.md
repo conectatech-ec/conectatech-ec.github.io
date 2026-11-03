@@ -1,14 +1,14 @@
 # CONECTATECH ·56 mejoras de encuadre
 
-**56 portadas publicadas y verificadas.** Se comprobaron482 archivos porSHA enHTTP y112 casos enChromium público, en móvil y escritorio. El parche de fechas reales y prioridad ya está integrado y está pendiente de su comprobación final enPages.
+**56 portadas publicadas y verificadas.** Se comprobaron 482 archivos por SHA en HTTP y 112 casos enChromium público, en móvil y escritorio. Las fechas y la prioridad se comprobaron en la web pública en móvil y escritorio:55 SKU ocupan los primeros55 puestos; uno conserva su posición según disponibilidad. Las46 comprobaciones fotográficas pasaron.
 
 [Ver la galería web](https://conectatech-ec.github.io/revision/fotografia-masiva-20261103-44-45/)
 
-126 fotografías revisadas:56 propuestas y70 conservadas. Dos imágenes externas sin acceso visual. Se reutilizan los maestros completos, sin modificar marcas, modelo, unidades, terminales ni proporciones.
+126 fotografías revisadas: 56 publicadas y 70 conservadas. Dos imágenes externas sin acceso visual. Se reutilizan los maestros completos, sin modificar marcas, modelo, unidades, terminales ni proporciones.
 
 ## Tanda 44 ·29 SKU
 
-| SKU y producto | Antes | Mejora preparada |
+| SKU y producto | Antes | Mejora publicada |
 | --- | --- | --- |
 | **PILA001** · Pila alcalina PKCELL de 9 V | [![Antes PILA001](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila001/PILA001-01-600.webp)](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila001/PILA001-01.webp) | [![Propuesta PILA001](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila001/PILA001-r2026110344-01-600.webp)](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila001/PILA001-r2026110344-01.webp) |
 | **PILA003** · Pila alcalina Rayovac de 9 V | [![Antes PILA003](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila003/PILA003-01-600.webp)](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila003/PILA003-01.webp) | [![Propuesta PILA003](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila003/PILA003-r2026110344-01-600.webp)](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila003/PILA003-r2026110344-01.webp) |
@@ -42,7 +42,7 @@
 
 ## Tanda 45 ·27 SKU
 
-| SKU y producto | Antes | Mejora preparada |
+| SKU y producto | Antes | Mejora publicada |
 | --- | --- | --- |
 | **PILA021** · Pila Maxday AG4 / 377A \| unidad | [![Antes PILA021](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila021/PILA021-01-600.webp)](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila021/PILA021-01.webp) | [![Propuesta PILA021](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila021/PILA021-r2026110345-01-600.webp)](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila021/PILA021-r2026110345-01.webp) |
 | **PILA022** · Pila Suncom AG4 / LR626 \| unidad | [![Antes PILA022](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila022/PILA022-01-600.webp)](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila022/PILA022-01.webp) | [![Propuesta PILA022](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila022/PILA022-r2026110345-01-600.webp)](https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/41bbf55862660043e826d2945b884728f2bfe9a6/imagenes/pila022/PILA022-r2026110345-01.webp) |
