@@ -1,0 +1,67 @@
+name: Variantes e imágenes Alex en el piloto aislado
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['automatizacion/alex.mjs', 'automatizacion/alex-context.mjs', 'automatizacion/alex-store.mjs', 'automatizacion/alex-ui.mjs', 'automatizacion/alex-catalog.mjs', 'automatizacion/channels.mjs', 'automatizacion/phone-variants.mjs', 'automatizacion/alex-variant-sales.mjs', 'automatizacion/alex-media.mjs', 'automatizacion/tests/phone-variants.test.mjs', 'automatizacion/tests/alex-variant-sales.test.mjs', 'automatizacion/tests/alex-media.test.mjs', '.github/alex-variants.json', '.github/scripts/deploy_alex_variants.py', '.github/scripts/test_deploy_alex_variants.py', '.github/scripts/alex-variants-cloudcheck.mjs', '.github/workflows/alex-variants.yml']
+permissions:
+  contents: read
+concurrency:
+  group: comercial-cloud-piloto
+  cancel-in-progress: false
+jobs:
+  comprobar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    environment: conectatech-piloto-gratis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: node --test automatizacion/tests/phone-variants.test.mjs automatizacion/tests/alex-variant-sales.test.mjs automatizacion/tests/alex-media.test.mjs automatizacion/tests/alex-collaborators.test.mjs automatizacion/tests/alex-simulator.test.mjs automatizacion/tests/alex-variant-media-store.test.mjs automatizacion/tests/alex-ultra-conversation.test.mjs
+      - run: python -m py_compile .github/scripts/deploy_alex_variants.py
+      - run: python .github/scripts/test_deploy_alex_variants.py
+      - id: control
+        run: |
+          python - <<'PY'
+          import json,os
+          c=json.load(open('.github/alex-variants.json'))
+          assert c['worker']=='conectatech-comercial-piloto' and c['cost_max_usd']==0
+          assert c['expected_base_release']=='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
+          assert c['baseline_code_revision']=='9d065226ff042f531ef3b82e17ea2aba8405373f'
+          assert type(c['deploy']) is bool
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              out.write('deploy='+str(c['deploy']).lower()+'\n')
+          PY
+      - name: Actualizar solo módulos de variantes e imágenes sin modificar host, fuente ni secretos
+        if: steps.control.outputs.deploy == 'true'
+        run: python .github/scripts/deploy_alex_variants.py
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Verificar variantes y medios reales por HTTPS sin mensajes externos
+        if: steps.control.outputs.deploy == 'true'
+        run: node .github/scripts/alex-variants-cloudcheck.mjs
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          EXPECTED_BASE_RELEASE: acfc00763dfbc7ac34c2c62f9ccecea4f613c870
+          EXPECTED_VARIANTS_REVISION: ${{ github.sha }}
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.control.outputs.deploy == 'true'
+        with:
+          name: alex-variantes-medios-verificados
+          path: |
+            automatizacion/generated/fase2/alex-variants-deploy.json
+            automatizacion/generated/fase2/alex-variants-cloud.json
+          retention-days: 7

@@ -127,3 +127,43 @@ test('Only approved catalogue image origins render, and old quick replies do not
  await h.send('Segunda');images=descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG');assert.equal(images.length,1,'An unapproved origin must not insert a new image');
  assert.equal(h.nodes.get('chat').querySelectorAll('[data-choice]').filter(n=>!n.disabled).length,0,'Old choices cannot remain active');
 });
+test('An authorized comparison shows two distinct variant images with public labels, bounded media and no legacy duplicate',async()=>{
+ const first='https://conectatech-ec.github.io/imagenes/TELF011-01.webp',second='https://conectatech-ec.github.io/imagenes/banners/TELF012-approved.png';
+ const h=await harness({chat:()=>Response.json(answer({image:first,images:[
+  {sku:'TELF011',url:first,kind:'approved_photo',label:'Samsung Galaxy A17 128 GB'},
+  {sku:'TELF011',url:first,kind:'approved_photo',label:'Samsung Galaxy A17 128 GB'},
+  {sku:'TELF012',url:second,kind:'approved_banner',label:'Samsung Galaxy A17 256 GB'},
+  {sku:'TELF017',url:'https://conectatech-ec.github.io/imagenes/TELF017-01.webp',kind:'approved_photo',label:'Redmi 15C 128 GB'}
+ ]}))});
+ await h.connect();await h.send('Compara las dos variantes');
+ const rendered=descendants(h.nodes.get('chat')),images=rendered.filter(n=>n.tagName==='IMG'),captions=rendered.filter(n=>n.tagName==='FIGCAPTION').map(n=>n.textContent);
+ assert.deepEqual(images.map(n=>n.src),[first,second]);assert.equal(images.filter(n=>n.src===first).length,1,'The legacy field and duplicate array entry cannot repeat the image');
+ assert.match(captions[0],/Fotograf[ií]a verificada.*Samsung Galaxy A17 128 GB/);assert.match(captions[1],/Banner comercial aprobado.*Samsung Galaxy A17 256 GB/);
+ assert.ok(!/TELF011|TELF012|TELF017|SIGNATURE/.test(captions.join(' ')),'Customer-facing captions must not expose internal SKU or claim a SIGNATURE authorization');
+ assert.match(h.nodes.get('media-note').textContent,/2 im[aá]genes verificadas/);
+ await h.switchProfile('COL002');assert.equal(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').length,0);
+ await h.switchProfile('COL001');assert.deepEqual(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').map(n=>n.src),[first,second],'Approved media belongs to its existing collaborator history');
+});
+test('An empty authoritative images array never falls back to a legacy image, and unapproved media kinds or origins stay hidden',async()=>{
+ const legacy='https://conectatech-ec.github.io/imagenes/TELF017-01.webp';
+ for(const images of [[],[
+  {sku:'TELF017',url:legacy,kind:'unapproved_banner'},
+  {sku:'TELF017',url:legacy,kind:'legacy_image'},
+  {sku:'TELF017',url:'https://conectatech-ec.github.io.evil.test/imagenes/leak.png',kind:'approved_photo'},
+  {sku:'TELF017',url:legacy+'?token=should-not-render',kind:'approved_photo'}
+ ]]){
+  const h=await harness({chat:()=>Response.json(answer({image:legacy,images}))});await h.connect();await h.send('Muéstrame la imagen');
+  assert.equal(descendants(h.nodes.get('chat')).filter(n=>n.tagName==='IMG').length,0,'Only the approved array is authoritative when present');
+  assert.match(h.nodes.get('media-note').textContent,/Sin imagen autorizada/);
+ }
+});
+test('Media captions and alternative text ignore internal filenames or SKU metadata while preserving safe public model names',async()=>{
+ const h=await harness({chat:()=>Response.json(answer({images:[
+  {sku:'TELF011',url:'https://conectatech-ec.github.io/imagenes/TELF011-01.webp',kind:'approved_banner',label:'SIGNATURE TELF011.png',alt:'TELF011 PRIVATE_INTERNAL_LABEL'},
+  {sku:'TELF012',url:'https://conectatech-ec.github.io/imagenes/TELF012-01.webp',kind:'approved_photo',label:'Samsung Galaxy A17 256 GB',alt:'Fotografía del Samsung Galaxy A17 de 256 GB'}
+ ]}))});await h.connect();await h.send('Ver imágenes');
+ const rendered=descendants(h.nodes.get('chat')),images=rendered.filter(n=>n.tagName==='IMG'),captions=rendered.filter(n=>n.tagName==='FIGCAPTION').map(n=>n.textContent);
+ assert.equal(images.length,2);assert.equal(captions[0],'Banner comercial aprobado');assert.match(captions[1],/Samsung Galaxy A17 256 GB/);
+ assert.ok(!/TELF011|TELF012|PRIVATE_INTERNAL|SIGNATURE|\.png/.test([...captions,...images.map(n=>n.alt)].join(' ')));
+ assert.equal(images[1].alt,'Fotografía del Samsung Galaxy A17 de 256 GB');
+});

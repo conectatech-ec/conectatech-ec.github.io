@@ -4,6 +4,7 @@ import {readCatalogSnapshot} from './live.mjs';
 import {central,sourceToAlex,bindPresentation,lastValidPresentation} from './central-source.mjs';
 import enrichment from './central/enrichment.json' with {type:'json'};
 import {readSharedHub} from './shared-hub.mjs';
+import {phoneFamily} from './phone-variants.mjs';
 export const INVENTORY_FEED='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/main/datos-593/inventario-publico.csv';
 export const INVENTORY_HISTORY='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/commits?path=datos-593%2Finventario-publico.csv&sha=main&per_page=1';
 // A new catalogue build is not a new stock check. Pin CSV to its own last changed commit.
@@ -98,7 +99,7 @@ export async function refreshAlexCatalog(seed=alexBaseline,fetcher=fetch,now=Dat
   if(centralData.presentation){try{centralData=await bindPresentation(centralData,centralData.presentation,now);}catch{presentationError='PRESENTATION_REJECTED';centralData=lastValidPresentation(centralData);}}
   else centralData=lastValidPresentation(centralData);
   const extended={...seed,productos:[...seed.productos,...pilotProducts.filter(p=>centralData.products.some(c=>c.sku===p.sku)&&!seed.productos.some(s=>s.sku===p.sku))]};
-  const source=sourceToAlex(extended,centralData,products=>{const current=catalogMatches(input,products,{focus});return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
+  const source=sourceToAlex(extended,centralData,products=>{const family=phoneFamily(input,products,{focus});if(family)return family.variants;const current=catalogMatches(input,products,{focus});return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},now);
   return {...source,presentation_error_code:presentationError,shared_hub_status:centralData.shared_hub_status||null};
  }
  const source=await readCatalogSnapshot(seed,fetcher,now,products=>{const current=catalogMatches(input,products,{focus});return current.length?current:products.filter(p=>focus.includes(p.sku)).slice(0,2);},true);

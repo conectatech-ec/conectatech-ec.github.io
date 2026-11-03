@@ -332,7 +332,7 @@ def main():
     from generic_receiver_guard import preserve_live_receiver
     content_client=CFClient(settings['CLOUDFLARE_ACCOUNT_ID'],settings['CLOUDFLARE_API_TOKEN'])
     metadata=worker_metadata(config);files=[]
-    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','alex-collaborators.mjs','alex-context.mjs','alex-catalog.mjs','central-source.mjs','commercial-reception.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs','shared-hub.mjs','marketplace-pilot.mjs']:
+    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs','alex-collaborators.mjs','alex-context.mjs','alex-catalog.mjs','central-source.mjs','commercial-reception.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs','shared-hub.mjs','marketplace-pilot.mjs']:
         source=(ROOT/name).read_text()
         source=source.replace("import catalog from './generated/catalogo.json' with {type:'json'};","import catalog from './catalog.mjs';")
         source=source.replace("import baseline from './generated/catalogo.json' with {type:'json'};","import baseline from './catalog.mjs';")
@@ -343,6 +343,7 @@ def main():
         source=source.replace("import enrichment from './central/enrichment.json' with {type:'json'};","import enrichment from './central-enrichment.mjs';")
         source=source.replace("import attestations from './central/source-attestations.json' with {type:'json'};","import attestations from './source-attestations.mjs';")
         source=source.replace("import library from './marketplace-library.json' with {type:'json'};","import library from './marketplace-library.mjs';")
+        source=source.replace("import signatureLibrary from './marketplace-library.json' with {type:'json'};","import signatureLibrary from './marketplace-library.mjs';")
         files.append((name,'application/javascript+module',source.encode()))
     files.append(('catalog.mjs','application/javascript+module',b'export default '+(ROOT/'generated/catalogo.json').read_bytes()+b';\n'))
     files.append(('alex-policy.mjs','application/javascript+module',b'export default '+(ROOT/'alex-policy.json').read_bytes()+b';\n'))

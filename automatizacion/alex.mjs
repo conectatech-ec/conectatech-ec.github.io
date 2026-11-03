@@ -2,12 +2,16 @@ import policy from './alex-policy.json' with {type:'json'};
 import {mergePreferences,redundantQuestion,asksHuman,statedBudget,bankIntent,bankNames,buyingIntent,brandIntent,purchaseRequested,imageRequested} from './alex-context.mjs';
 import {alexIds,publicName,quoteCurrent,catalogMatches} from './alex-catalog.mjs';
 import {getProfile} from './alex-collaborators.mjs';
+import {phoneFamily} from './phone-variants.mjs';
+import {variantSalesReply} from './alex-variant-sales.mjs';
 export {policy};
 const ids=alexIds;
 export function candidates(input,memory={},source=null){
  const pref=brandIntent(input,memory),fold=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
  const permittedProducts=source?.productos.filter(p=>!pref.rejected.some(b=>new RegExp('\\b'+b+'\\b','i').test([p.nombre,p.public_name,p.catalog_identity].join(' '))))||[];
- const query=input.replace(/\b(?:samsung|redmi|xiaomi|zte|infinix|jbl|philco)\b/gi,b=>pref.rejected.some(r=>fold(r)===fold(b)||r==='Redmi'&&/xiaomi/i.test(b))?'':b);
+ const query=input.replace(/\b(?:samsung|redmi|xiaomi|zte|infinix|honor|tecno|poco|motorola|realme|nokia|jbl|philco)\b/gi,b=>pref.rejected.some(r=>fold(r)===fold(b)||r==='Redmi'&&/xiaomi/i.test(b))?'':b);
+ const family=source?phoneFamily(query,permittedProducts,{focus:memory.focus||[]}):null;
+ if(family){const selected=family.explicit_variant?family.exact:family.variants;return selected.map(p=>p.sku);}
  const matched=source?catalogMatches(query,permittedProducts,{focus:memory.focus||[]}):[];if(matched.length)return matched.map(p=>p.sku);
  const phoneSearch=/\b(?:celular|telefono|tel[eé]fono)\b/i.test(input)&&! /bater[ií]a port[aá]til|cargador|cable|adaptador/i.test(input);
  const budget=statedBudget(input),brandChosen=pref.chosen;
@@ -257,8 +261,22 @@ export function outputSchema(source){
  },required:['say','facts','ask','focus','image','intent','action','remember']};
 }
 // A model/quota/format failure must not turn an ordinary sales inquiry into a human pause.
+function finishVariants(input,source,memory,reply,mode,plan=null){
+ // The model supplies conversational tone; every offer and comparison remains
+ // rendered from the verified family, never from generated prices or specs.
+ const say=cleanFree(plan?.say),persona=getProfile(source.advisor_persona?.id),other=persona?.id==='COL001'?'Jessy':'Rafa';
+ const greeting=/\b(?:hola|epa|bienvenid[oa]|soy alex)\b/i.test(say),priceFirst=/precio|cu[aá]nto|cuesta|vale|contado|tarjeta/i.test(input);
+ const safeVoice=say&&freeProseSafe(say)&&!say.includes('?')&&!/\bsoy\s+(?:Rafa|Jessy)\b/i.test(say)&&(!persona||!new RegExp('\\b'+other+'\\b','i').test(say))&&!(memory.greeted&&greeting);
+ const limit=reply.variant_options.length>2?700:440;
+ if(!priceFirst&&safeVoice&&say.length+reply.text.length+1<=limit)reply={...reply,text:say+'\n'+reply.text};
+ const next={...memory,focus:reply.selection_focus,stage:'consulta',greeted:true,turn_count:(memory.turn_count||0)+1};
+ next.recent_products=[...(memory.recent_products||[]).filter(s=>!reply.focus.includes(s)),...reply.focus].slice(-10);
+ next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:reply.text}].slice(-policy.max_history_turns*2);
+ return {...reply,...mode,memory:next};
+}
 export function commercialFallback(input,source,memory={},error_code='AI_UNAVAILABLE'){
  memory=mergePreferences(input,{},memory);
+ const variants=variantSalesReply(input,source,memory);if(variants)return finishVariants(input,source,memory,variants,{generative:false,model:null,error_code,response_mode:error_code?'verified_catalog_fallback':'verified_catalog'});
  const selected=candidates(input,memory,source),products=source.productos.filter(p=>selected.includes(p.sku)),book=factBook(source),p=products.length===1?products[0]:null;
  let facts=[],ask='',intent='other',image=null;const payment=paymentContext(input,memory);
  const guarded=contextPlan(input,source,memory);
@@ -339,6 +357,7 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
   const next=memoryPatch(plan,input,memory);rememberTerms(next,payment);
   // An explicit purchase request advances only to an unconfirmed request, using known preferences.
   if(purchaseRequested(input)&&context.productos.length===1&&quoteCurrent(context,context.productos[0])&&context.productos[0].stock>0){plan.action='interest';plan.focus=[context.productos[0].sku];plan.facts=['request'];plan.image=null;plan.ask=!next.payment?'¿Prefieres contado o tarjeta?':!next.delivery?'¿Prefieres retiro o entrega?':'';}
+  const variants=variantSalesReply(input,source,next);if(variants)return finishVariants(input,source,next,variants,{generative:true,model:policy.model,error_code:null,response_mode:'generative'},plan);
   const result=renderPlan(plan,context,next);next.focus=result.focus.length?result.focus:memory.focus||[];const changedFocus=JSON.stringify(next.focus)!==JSON.stringify(memory.focus||[]);next.stage=result.action==='interest'?'compra_pendiente':result.action==='handoff'?'derivado':exploring||changedFocus?'consulta':next.stage||'consulta';
   next.recent_products=[...(memory.recent_products||memory.focus||[]).filter(s=>!next.focus.includes(s)),...next.focus].filter(s=>source.productos.some(p=>p.sku===s)).slice(-3);next.greeted=true;next.turn_count=(memory.turn_count||0)+1;
   next.history=[...(memory.history||[]),{role:'user',text:input},{role:'assistant',text:result.text}].slice(-policy.max_history_turns*2);
@@ -352,11 +371,12 @@ export async function generateAlex(input,source,memory,env,reserve=async()=>true
 export function quickReplies(result){
  const focus=result.focus?.[0],memory=result.memory||{},facts=result.facts||[],names={MICR27:'Elegir JBL',POWE003:'Elegir Philco',ADAP005:'Elegir adaptador',TELF011:'A17 de 128 GB',TELF012:'A17 de 256 GB',TELF017:'Redmi 128 GB',TELF018:'Redmi 256 GB / 4 GB',TELF019:'Redmi 256 GB / 8 GB',TELF001:'ZTE A56 Pro',REL046:'Infinix XWATCH H4'};let options;
  if(result.action==='handoff')return [];
+ if(result.variant_options?.length>1)return result.variant_options.slice(0,3).map(v=>({content_type:'text',title:(String(v.storage_gb||'')+' GB · '+(v.ram_physical_gb||'?')+' RAM').slice(0,20),payload:'ALEX:choose:'+v.sku}));
  if(memory.purchase_deferred)options=[['Características','specs'],['Ver fotografía','photo'],['Hablar con persona','human']];
  else if(result.intent==='payment'&&memory.payment_change_pending)options=memory.card_declined?[['Precio de contado','cash'],['Características','specs'],['Hablar con persona','human']]:[['Otra tarjeta','anothercard'],['Precio de contado','cash'],['Características','specs']];
  else if(result.intent==='safe_fallback')options=[['Hablar con persona','human']];
  else if(result.facts?.some(k=>['warranty','compatibility','stale'].includes(k)))options=[['Hablar con persona','human']];
- else if(result.focus?.length===2&&(result.intent==='compare'||result.action==='compare'||result.focus.every(s=>/^TELF/.test(s))))return result.focus.map(s=>({content_type:'text',title:names[s],payload:'ALEX:choose:'+s})).concat({content_type:'text',title:'Hablar con persona',payload:'ALEX:human'});
+ else if(result.focus?.length===2&&(result.intent==='compare'||result.action==='compare'||result.focus.every(s=>/^TELF/.test(s))))return result.focus.map((s,i)=>({content_type:'text',title:names[s]||'Elegir opción '+(i+1),payload:'ALEX:choose:'+s})).concat({content_type:'text',title:'Hablar con persona',payload:'ALEX:human'});
  else if(result.intent==='photo')options=[['Precio de contado','cash'],['Precio con tarjeta','card'],['Características','specs']];
  else if(result.action==='interest')options=!memory.payment?[['Precio de contado','cash'],['Precio con tarjeta','card'],['Hablar con persona','human']]:!memory.delivery?[['Retiro en tienda','retiro'],['Entrega en Quito','quito'],['Envío nacional','nacional']]:[['Hablar con persona','human'],['Ver fotografía','photo']];
  else if(facts.some(k=>/\.(?:battery|power|audio|patterns|plug|benefit|memory|screen|camera|network)$/.test(k))&&!facts.some(k=>/\.(?:cash|card|pvp)$/.test(k)))options=[['Ver fotografía','photo'],['Precio de contado','cash'],['Precio con tarjeta','card']];

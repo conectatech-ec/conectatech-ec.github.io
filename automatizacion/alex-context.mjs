@@ -2,10 +2,10 @@ const fold=t=>String(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLo
 const words={uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,quince:15,veinte:20,veinticinco:25,treinta:30,cuarenta:40,cincuenta:50,sesenta:60,setenta:70,ochenta:80,noventa:90,cien:100,doscientos:200,trescientos:300,quinientos:500,mil:1000};
 const vagueSector=/^(?:quito|guayaquil|ecuador|celular|telefono|casa|domicilio|tarjeta|contado|bateria|microfono|producto)$/;
 export const bankNames={pacifico:'Pacífico',guayaquil_amex:'Guayaquil / American Express',diners:'Diners',pichincha:'Pichincha'};
-const brandLabels={samsung:'Samsung',redmi:'Redmi',xiaomi:'Redmi',zte:'ZTE',infinix:'Infinix',jbl:'JBL',philco:'Philco'};
+const brandLabels={samsung:'Samsung',redmi:'Redmi',xiaomi:'Redmi',zte:'ZTE',infinix:'Infinix',honor:'HONOR',tecno:'TECNO',poco:'POCO',motorola:'Motorola',realme:'Realme',nokia:'Nokia',jbl:'JBL',philco:'Philco'};
 export function brandIntent(input,memory={}){
  const text=fold(input),mentions=[];
- for(const clause of text.split(/\b(?:pero|sino|aunque|en cambio)\b|[,;.!?¿]/))for(const m of clause.matchAll(/\b(?:samsung|redmi|xiaomi|zte|infinix|jbl|philco)\b/g)){
+ for(const clause of text.split(/\b(?:pero|sino|aunque|en cambio)\b|[,;.!?¿]/))for(const m of clause.matchAll(/\b(?:samsung|redmi|xiaomi|zte|infinix|honor|tecno|poco|motorola|realme|nokia|jbl|philco)\b/g)){
   const before=clause.slice(0,m.index),denied=/\b(?:no|tampoco)\s*(?:(?:quiero|prefiero|busco|uso|me gusta|me interesa)\s+)?(?:un(?:a)?\s+)?$/.test(before);
   const chosen=!denied&&/\b(?:prefiero|quiero|busco|mejor|elijo|me quedo con)\b/.test(before)&&! /\b(?:si|y si|no se)\b/.test(before);
   mentions.push({brand:brandLabels[m[0]],denied,chosen});

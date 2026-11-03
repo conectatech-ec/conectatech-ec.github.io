@@ -26,19 +26,21 @@
     },
     {
       "input": "Busco un Redmi 15C de 128 GB",
-      "text": "Redmi 15C 128 GB / 4 GB RAM: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
+      "text": "Redmi 15C · 💵 contado / 💳 tarjeta (PVP)\n• 128 GB · RAM física 4 GB · +4 GB virtual · 4G: $159.90 / $199.88\n• 256 GB · RAM física 4 GB · +4 GB virtual · 4G: $175.90 / $219.88\n128 GB para uso diario; 256 GB si quieres más espacio.\n¿Lo usarías para lo básico o para guardar muchas fotos?",
       "focus": [
         "TELF017"
       ],
-      "intent": "other",
-      "action": "answer",
+      "intent": "recommend",
+      "action": "recommend",
       "facts": [
-        "TELF017.benefit"
+        "TELF017.cash",
+        "TELF017.card",
+        "TELF018.cash",
+        "TELF018.card"
       ],
       "buttons": [
-        "Ver fotografía",
-        "Precio de contado",
-        "Precio con tarjeta"
+        "128 GB · 4 RAM",
+        "256 GB · 4 RAM"
       ],
       "memory": {
         "bank": null,
@@ -47,7 +49,7 @@
     },
     {
       "input": "Mi presupuesto es de 180 dólares",
-      "text": "Redmi 15C 128 GB / 4 GB RAM: 128 GB de almacenamiento para tus fotos y aplicaciones.",
+      "text": "Redmi 15C 128 GB / 4 GB RAM: 128 GB de almacenamiento para tus fotos y aplicaciones.\n¿Qué te gustaría revisar de este modelo?",
       "focus": [
         "TELF017"
       ],
@@ -455,21 +457,21 @@
     },
     {
       "input": "¿Y el de 256 GB?",
-      "text": "💵 Redmi 15C 256 GB / 4 GB RAM: $175.90 en PROMO CONTADO.\nRedmi 15C 256 GB / 8 GB RAM\n¿Cuál te gustaría revisar con más detalle?",
+      "text": "Redmi 15C · 💵 contado / 💳 tarjeta (PVP)\n• 256 GB · RAM física 4 GB · +4 GB virtual · 4G: $175.90 / $219.88\n• 128 GB · RAM física 4 GB · +4 GB virtual · 4G: $159.90 / $199.88\nPara tu presupuesto, te recomiendo la de 256 GB.",
       "focus": [
-        "TELF018",
-        "TELF019"
+        "TELF018"
       ],
       "intent": "recommend",
-      "action": "answer",
+      "action": "recommend",
       "facts": [
         "TELF018.cash",
-        "TELF019.name"
+        "TELF018.card",
+        "TELF017.cash",
+        "TELF017.card"
       ],
       "buttons": [
-        "Redmi 256 GB / 4 GB",
-        "Redmi 256 GB / 8 GB",
-        "Hablar con persona"
+        "256 GB · 4 RAM",
+        "128 GB · 4 RAM"
       ],
       "memory": {
         "budget": 180,
@@ -483,19 +485,21 @@
     },
     {
       "input": "Prefiero el Redmi 15C de 256 GB con 4 GB de RAM",
-      "text": "Redmi 15C 256 GB / 4 GB RAM: 256 GB de almacenamiento, 4 GB de RAM física.",
+      "text": "Redmi 15C · 💵 contado / 💳 tarjeta (PVP)\n• 256 GB · RAM física 4 GB · +4 GB virtual · 4G: $175.90 / $219.88\n• 128 GB · RAM física 4 GB · +4 GB virtual · 4G: $159.90 / $199.88\nPara tu presupuesto, te recomiendo la de 256 GB.",
       "focus": [
         "TELF018"
       ],
-      "intent": "other",
-      "action": "answer",
+      "intent": "recommend",
+      "action": "recommend",
       "facts": [
-        "TELF018.memory"
+        "TELF018.cash",
+        "TELF018.card",
+        "TELF017.cash",
+        "TELF017.card"
       ],
       "buttons": [
-        "Ver fotografía",
-        "Precio de contado",
-        "Precio con tarjeta"
+        "256 GB · 4 RAM",
+        "128 GB · 4 RAM"
       ],
       "memory": {
         "budget": 180,
@@ -509,20 +513,21 @@
     },
     {
       "input": "¿Y con tarjeta el de 256 GB?",
-      "text": "💳 Redmi 15C 256 GB / 4 GB RAM: $219.88 con tarjeta, más intereses cuando correspondan.\n💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.",
+      "text": "Redmi 15C · 💵 contado / 💳 tarjeta (PVP)\n• 256 GB · RAM física 4 GB · +4 GB virtual · 4G: $175.90 / $219.88\n• 128 GB · RAM física 4 GB · +4 GB virtual · 4G: $159.90 / $199.88\nPara tu presupuesto, te recomiendo la de 256 GB.",
       "focus": [
         "TELF018"
       ],
-      "intent": "payment",
-      "action": "answer",
+      "intent": "recommend",
+      "action": "recommend",
       "facts": [
+        "TELF018.cash",
         "TELF018.card",
-        "bank_terms_pending"
+        "TELF017.cash",
+        "TELF017.card"
       ],
       "buttons": [
-        "Precio de contado",
-        "Retiro en tienda",
-        "Entrega en Quito"
+        "256 GB · 4 RAM",
+        "128 GB · 4 RAM"
       ],
       "memory": {
         "budget": 180,

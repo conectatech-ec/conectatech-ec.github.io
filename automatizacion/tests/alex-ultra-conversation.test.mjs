@@ -3,8 +3,9 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {central,sourceToAlex} from '../central-source.mjs';
-import {alexBaseline} from '../alex-catalog.mjs';
+import {alexBaseline,quoteCurrent} from '../alex-catalog.mjs';
 import {generateAlex,quickReplies} from '../alex.mjs';
+import {phoneVariant} from '../phone-variants.mjs';
 const NOW=Date.parse('2026-11-03T06:00:00Z');
 function clock(t){t.mock.timers.enable({apis:['Date'],now:NOW});}
 function fixture(stale=false){
@@ -15,11 +16,28 @@ function fixture(stale=false){
 }
 const fallback={CATALOG_FIRST:'true'};
 function safe(r,source,{stale=false}={}){
- assert.ok(r.text&&r.text.length<=440,'Response should stay brief and useful');
+ assert.ok(r.text&&r.text.length<=((r.variant_options?.length||0)>=3?700:440),'Response should stay brief and useful');
  assert.ok((r.text.match(/\?/g)||[]).length<=1,'Only one principal question');
  assert.ok(!/\b(?:TELF\d+|SKU)\b|stock referencial|\b\d+\s+unidades\b/i.test(r.text),'No internal identifiers or quantities');
  const values=[...r.text.matchAll(/\$(\d+(?:\.\d{2})?)/g)].map(m=>Math.round(Number(m[1])*100));
- const allowed=new Set(r.focus.flatMap(id=>{const p=source.productos.find(p=>p.sku===id);return p&&p.stock>0?[Math.round(p.promo*100),Math.round(p.pvp*100)]:[];}));
+ // A selected version may include verified sibling offers while conversational
+ // focus remains on that selected version. Every advertised amount must still
+ // come from a fresh, purchasable source record, never from model output.
+ const ids=new Set([...(r.focus||[]),...(r.variant_options||[]).map(v=>v.sku)]);
+ for(const option of r.variant_options||[]){
+  const product=source.productos.find(p=>p.sku===option.sku);
+  assert.ok(product,'Each proposed variant must exist in the source');
+  const identity=phoneVariant(product);
+  assert.ok(identity?.verified_identity,'Each variant identity must come from verified source fields');
+  for(const field of ['storage_gb','ram_physical_gb','ram_virtual_gb','connectivity'])assert.equal(option[field],identity[field],'Variant '+field+' must match its own verified SKU');
+  if(!stale){
+   assert.ok(quoteCurrent(source,product)&&product.price_verified!==false&&product.stock>0&&(!product.central_availability||product.central_availability==='in_stock')&&!(product.blocked_reasons||[]).length,'Every current variant offer must be verified and available');
+   assert.equal(option.cash,product.promo,'Variant cash quote must match its own source SKU');
+   assert.equal(option.card,product.pvp,'Variant card quote must match its own source SKU');
+   if(product.variant_gb)assert.equal(option.storage_gb,product.variant_gb,'Variant storage recommendation must match its own source SKU');
+  }
+ }
+ const allowed=new Set([...ids].flatMap(id=>{const p=source.productos.find(p=>p.sku===id);return p&&quoteCurrent(source,p)&&p.price_verified!==false&&p.stock>0&&(!p.central_availability||p.central_availability==='in_stock')&&!(p.blocked_reasons||[]).length?[Math.round(p.promo*100),Math.round(p.pvp*100)]:[];}));
  assert.ok(stale?values.length===0:values.every(v=>allowed.has(v)),'Only exact fixture prices, and none when stale');
  assert.ok(!/ya (?:est[aá]|queda).{0,20}reservad|pago confirmado|te llega hoy|env[ií]o gratis/i.test(r.text),'No invented confirmation or delivery');
  for(const q of quickReplies(r)){assert.ok(q.title&&q.title.length<=20);assert.ok(q.payload?.startsWith('ALEX:'));}
@@ -58,13 +76,18 @@ test('Safe fallback negotiates within policy and advances an explicit fresh purc
 test('Generative voice is retained while repeated greetings and invented prose are removed',async t=>{
  clock(t);const source=fixture();let calls=0;
  const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>{calls++;return {response:{say:calls===1?'¡Epa! Soy Alex, tu asesor de CONECTATECH.':'Hola, ¡te lo dejo en $1 y con envío gratis!',facts:['TELF017.memory'],ask:calls===1?'¿Para qué lo vas a usar?':'¿Y qué uso le vas a dar?',focus:['TELF017'],image:null,intent:'other',action:'answer',remember:{}}};}}};
- const a=await generateAlex('Busco un Redmi 15C de 128 GB',source,{},env);safe(a,source);assert.equal(a.generative,true);assert.match(a.text,/Alex/);
- const b=await generateAlex('Ya sé el modelo, cuéntame algo útil',source,a.memory,env);safe(b,source);assert.equal(b.generative,true);assert.ok(!/hola|env[ií]o gratis|\$1\b/i.test(b.text));assert.ok(b.facts.some(k=>k.startsWith('TELF017.')));assert.equal(calls,2);
+ // A direct model query now prioritizes verified variants over introductory
+ // prose. Exercise generative identity with an actual greeting instead.
+ const a=await generateAlex('Hola buenas',source,{},env);safe(a,source);assert.equal(a.generative,true);assert.match(a.text,/Alex/);
+ const selected=await generateAlex('Busco un Redmi 15C de 128 GB',source,a.memory,fallback);safe(selected,source);assert.deepEqual(selected.memory.focus,['TELF017']);
+ const b=await generateAlex('Ya sé el modelo, cuéntame algo útil',source,selected.memory,env);safe(b,source);assert.equal(b.generative,true);assert.ok(!/hola|env[ií]o gratis|\$1\b/i.test(b.text));assert.ok(b.facts.some(k=>k.startsWith('TELF017.')));assert.equal(calls,2);
 });
 test('A generative recommendation does not rush to delivery and malformed humor still keeps a safe warm reply',async t=>{
  clock(t);const source=fixture();
  const env={FREE_TIER_VERIFIED:'true',AI:{run:async()=>({response:{say:'Claro, revisemos.',facts:['TELF017.cash'],ask:'¿Tienes alguna preferencia para la entrega, como retiro en tienda o envío a domicilio?',focus:['TELF017'],image:null,intent:'recommend',action:'recommend',remember:{}}})}};
- const first=await generateAlex('Busco un Redmi 15C de 128 GB para trabajar, presupuesto 180. ¿Qué me aconsejas?',source,{},env);safe(first,source);assert.ok(!/retiro|entrega/i.test(first.text));assert.ok(first.facts.includes('TELF017.cash'));assert.ok(first.facts.some(k=>/\.(?:benefit|memory|battery)$/.test(k)),'Recommendation must include a verified reason, not just a price');
+ const first=await generateAlex('Busco un Redmi 15C de 128 GB para trabajar, presupuesto 180. ¿Qué me aconsejas?',source,{},env);safe(first,source);assert.ok(!/retiro|entrega/i.test(first.text));assert.ok(first.facts.includes('TELF017.cash'));
+ const verifiedVariantReason=(first.variant_options||[]).some(v=>v.storage_gb&&first.text.includes(v.storage_gb+' GB'))&&/te recomiendo|te conviene|uso diario|m[aá]s espacio|multitarea/i.test(first.text);
+ assert.ok(first.facts.some(k=>/\.(?:benefit|memory|battery)$/.test(k))||verifiedVariantReason,'Recommendation must include a verified reason, not just a price');
  env.AI.run=async()=>({response:{say:'Jajaja, ¿y tú qué dices?',facts:['discount'],ask:'',focus:['TELF017'],image:null,intent:'other',action:'answer',remember:{}}});
  const joke=await generateAlex('¿Me haces una rebajita? 😂',source,first.memory,env);safe(joke,source);assert.match(joke.text,/Jajaja|presupuesto/);assert.ok(joke.facts.includes('discount'));
 });
