@@ -23,7 +23,23 @@ jobs:
         with:
           sparse-checkout: automatizacion
       - id: config
-        run: python -c 'import json,os; c=json.load(open("automatizacion/activar-cloud.json")); open(os.environ["GITHUB_OUTPUT"],"a").write("activar="+str(c["activar"]).lower()+"\nsincronizar_meta="+str(c.get("sincronizar_meta_verify_token",False)).lower()+"\nclosed_ingress_only="+str(c.get("alex_validation")=="marketplace_pilot").lower()+"\n")'
+        run: |
+          python - <<'PYCONFIG'
+          import json, os, re
+          c=json.load(open("automatizacion/activar-cloud.json"))
+          smoke=c.get("verificar_presentacion_sin_desplegar") is True
+          release=c.get("release_verificacion", "")
+          if smoke and (c.get("activar") is not False or c.get("sincronizar_meta_verify_token", False) is not False):
+              raise ValueError("PRESENTATION_VERIFY_REQUIRES_DEPLOY_AND_SYNC_DISABLED")
+          if smoke and (not isinstance(release, str) or not re.fullmatch(r"[a-f0-9]{40}", release)):
+              raise ValueError("PRESENTATION_VERIFY_RELEASE_REQUIRED")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write("activar="+str(c["activar"]).lower()+"\n")
+              out.write("sincronizar_meta="+str(c.get("sincronizar_meta_verify_token", False)).lower()+"\n")
+              out.write("closed_ingress_only="+str(c.get("alex_validation")=="marketplace_pilot").lower()+"\n")
+              out.write("verificar_presentacion="+str(smoke).lower()+"\n")
+              out.write("release_verificacion="+(release if smoke else "")+"\n")
+          PYCONFIG
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -69,11 +85,20 @@ jobs:
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - name: Comprobar vigencia independiente de inventario 593 y feed sin IA ni escrituras
         run: node automatizacion/alex-catalog-e2e.mjs
+      - name: Verificar presentacion privada del Worker vigente sin desplegar
+        if: steps.config.outputs.verificar_presentacion == 'true' && steps.config.outputs.activar == 'false' && steps.config.outputs.sincronizar_meta == 'false'
+        run: node automatizacion/marketplace-e2e.mjs
+        env:
+          PILOT_BASE_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          EXPECTED_RELEASE: ${{ steps.config.outputs.release_verificacion }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: vigencia-comercial-593
-          path: automatizacion/generated/fase2/alex-live-catalog-check.json
+          path: |
+            automatizacion/generated/fase2/alex-live-catalog-check.json
+            ${{ steps.config.outputs.verificar_presentacion == 'true' && 'automatizacion/generated/fase2/marketplace-cloud.json' || '' }}
           retention-days: 7
       - uses: actions/upload-artifact@v4
         if: always()

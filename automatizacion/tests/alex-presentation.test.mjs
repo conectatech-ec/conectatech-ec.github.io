@@ -187,3 +187,19 @@ test('Unknown entries still belong to full digest and schema; all-unknown docume
  const injected=signed(d=>{d.published_at='2026-11-03T02:05:00.000Z';d.products.NEW999={display_title:'Injected public product',approved_media:null,source_name:'MUST_NOT_AUTHORIZE',prices:{promo_cash_cents:1}};});await assert.rejects(consumer.bindPresentation(source,injected,now),/PRESENTATION_FIELDS/);
  const after=consumer.sourceToAlex(seed,consumer.lastValidPresentation(source),all,now);assert.equal(after.presentation_version,prior.presentation_version);assert.equal(after.presentation_ignored_unknown_count,17);assert.deepEqual(after.productos,prior.productos);
 });
+
+
+test('Official boolean visual review and historical text both retain SHA validation; false or missing review cannot approve',()=>{
+ for(const [tag,review,expected]of [['boolean',true,true],['text','Explicit approved review',true],['false',false,false],['null',null,false],['empty','',false]]){
+  const f=fixture('review-format-'+tag),record=JSON.parse(fs.readFileSync(path.join(f.root,'importacion/fotografia-publicada/direccion-20261026-05.json')));
+  record.productos.REL046.imagenProfesional.revision_visual=review;write(f.root,'importacion/fotografia-publicada/direccion-20261026-05.json',record);
+  const doc=preparePresentation(f.root);assert.equal(!!doc.products.REL046.approved_media,expected);
+  if(expected)assert.equal(doc.products.REL046.approved_media.sha256,sha(f.next));
+ }
+});
+test('Boolean approval cannot authorize changed image bytes or substitute for official SHA evidence',()=>{
+ const f=fixture('boolean-review-corruption'),record=JSON.parse(fs.readFileSync(path.join(f.root,'importacion/fotografia-publicada/direccion-20261026-05.json')));
+ record.productos.REL046.imagenProfesional.revision_visual=true;write(f.root,'importacion/fotografia-publicada/direccion-20261026-05.json',record);
+ write(f.root,'.'+f.newPhoto.original,Buffer.from('CORRUPTED SYNTHETIC IMAGE'));
+ assert.throws(()=>preparePresentation(f.root));
+});
