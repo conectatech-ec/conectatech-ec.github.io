@@ -9,7 +9,7 @@ from scoped_content import CFClient,ScopedDeployer,Bundle,Part,same_bundle,same_
 from scoped_policy import closed_health,tester_scope
 
 BASE_RELEASE='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
-CODE_REVISION='2c705726351b9f3a6725da35bdc54450916606f4'
+CODE_REVISION='32a924a4961e07d00631fd59e3fb9416a94776fe'
 REPLACED=frozenset({'alex.mjs','alex-context.mjs','alex-store.mjs','alex-ui.mjs','alex-catalog.mjs','channels.mjs','phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs'})
 ADDED=frozenset()
 OWNED=REPLACED|ADDED

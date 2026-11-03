@@ -1,10 +1,13 @@
 // Verified commercial rendering inside Alex, shared by generative and catalogue fallback paths.
 import {phoneFamily} from './phone-variants.mjs';
 import {quoteCurrent} from './alex-catalog.mjs';
+import {buyingIntent,bankIntent} from './alex-context.mjs';
 const money=n=>'$'+Number(n).toFixed(2);
 const available=(source,p,now)=>quoteCurrent(source,p,now)&&p.price_verified!==false&&p.stock>0&&
  (!p.central_availability||p.central_availability==='in_stock')&&!(p.blocked_reasons||[]).length;
 export function variantSalesReply(input,source,memory={},now=Date.now()){
+ const buying=buyingIntent(input);
+ if(buying.deferred||buying.resume||bankIntent(input,memory).objection)return null;
  // A native choice advances with the selected product; do not reopen the same
  // family menu after the buyer just chose one of its options.
  if(/^Elijo este producto del producto [A-Z]{3,8}\d{2,6}$/.test(input))return null;

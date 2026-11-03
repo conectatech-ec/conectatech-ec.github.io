@@ -193,3 +193,11 @@ test('Spanish se in a payment question is not an SE model suffix',async t=>{
  clock(t);const source=fixture(),a=await generateAlex('¿Se puede comprar el Samsung A17 con tarjeta?',source,{},fallback);
  assertCashOffers(a,source,['TELF011','TELF012']);assert.ok(!/A17 SE|configuraci[oó]n.*no tengo/i.test(a.text));
 });
+
+test('Mentioning the model never overrides a buying deferral or rejected bank',async t=>{
+ clock(t);const source=fixture(),memory={focus:['TELF011'],budget:200};
+ for(const input of ['Samsung A17: no quiero comprar todavía','Voy a pensar lo del Samsung A17']){
+  const a=await generateAlex(input,source,memory,fallback);assertSafe(a,source);assert.equal(a.memory.purchase_deferred,true);assert.equal(a.action,'answer');assert.equal(amounts(a.text).length,0);assert.ok(!a.text.includes('?'));
+ }
+ const a=await generateAlex('Precios del Samsung A17, pero no tengo tarjeta Pacífico',source,memory,fallback);assertSafe(a,source);assert.ok(a.memory.rejected_banks.includes('pacifico'));assert.ok(!/Pac[ií]fico|sin intereses/.test(a.text));assert.match(a.text,/otra|forma de pago/i);
+});

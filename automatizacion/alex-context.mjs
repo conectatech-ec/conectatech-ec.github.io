@@ -37,7 +37,7 @@ export function bankIntent(input,memory={}){
  return {mentions,denied,chosen,named:positive.at(-1)?.bank||null,no_cards:noCards||refusedCard,objection:denied.length>0||noCards||refusedCard,unsupported_bank:unsupported,unsupported_chosen:!!unsupported&&/\b(?:tengo|uso|prefiero|mejor)\b/.test(text)&&! /\b(?:y si|que pasa si|si uso|si tengo|no tengo)\b/.test(text)};
 }
 export function buyingIntent(input){
- const text=fold(input),deferred=(/\bno\s+(?:(?:quiero|voy a|pienso)\s+comprar|comprare)\b/.test(text)&&!/\b(?:comprar|comprare)(?:lo|la)?\s+(?:con|en|al)\b/.test(text))||/\b(?:solo|solamente)\s+(?:estoy\s+)?(?:mirando|averiguando|cotizando)\b|\b(?:lo voy a pensar|voy a pensarlo|me lo pienso|por ahora no|luego te aviso|despues te escribo)\b|\b(?:despues|luego|otro dia|mas tarde)\b.{0,30}\b(?:continu|segu|vemos|retom|compr)|\b(?:continu|segu|compr|retom)\w*\b.{0,20}\b(?:despues|luego|otro dia|mas tarde)\b/.test(text);
+ const text=fold(input),deferred=(/\bno\s+(?:(?:quiero|voy a|pienso)\s+comprar|comprare)\b/.test(text)&&!/\b(?:comprar|comprare)(?:lo|la)?\s+(?:con|en|al)\b/.test(text))||/\b(?:solo|solamente)\s+(?:estoy\s+)?(?:mirando|averiguando|cotizando)\b|\b(?:lo voy a pensar|voy a pensarlo|voy a pensar|me lo pienso|por ahora no|luego te aviso|despues te escribo)\b|\b(?:despues|luego|otro dia|mas tarde)\b.{0,30}\b(?:continu|segu|vemos|retom|compr)|\b(?:continu|segu|compr|retom)\w*\b.{0,20}\b(?:despues|luego|otro dia|mas tarde)\b/.test(text);
  const resume=!deferred&&/\b(?:sigamos|continuemos|retomemos|quiero continuar|quiero seguir|podemos seguir|quiero retomar|volvi|ya volvi)\b/.test(text);
  return {deferred,resume};
 }
