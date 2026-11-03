@@ -5,6 +5,7 @@ from datetime import datetime,timedelta,timezone
 from decimal import Decimal,InvalidOperation,ROUND_HALF_UP
 from pathlib import Path
 from report_identity import report_name,confirm_cut
+from inventory_completeness import guard_rows,guard_impact
 NS={'s':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
 SCHEMA='conectatech.commercial.v1'
 HEADERS={'B':'Stock','C':'Producto','D':'Cod. Principal','F':'Tipo','J':'Categoría','Q':'V. TOTAL','X':'PVP','Y':'PVP % IVA'}
@@ -64,9 +65,9 @@ def read_xlsx(path,now=None,historical=False):
  except (zipfile.BadZipFile,ET.ParseError,KeyError,IndexError,TypeError):
   raise ValueError('INVENTORY_STRUCTURE_INVALID') from None
 
-def normalize(path,baseline_csv,published,now=None,historical=False,media=None,sale_units=None,baseline_cut_date=None):
+def normalize(path,baseline_csv,published,now=None,historical=False,media=None,sale_units=None,baseline_cut_date=None,previous_central=None):
  now=now or stamp();source,rows=read_xlsx(path,now,historical);old=list(csv.DictReader(io.StringIO(baseline_csv)));oldmap={p['sku']:p for p in old};web={p['sku']:p for p in published['productos']};counts=collections.Counter(r['values']['D'] for r in rows);products=[];stocks={};issues=[];seen=set()
- if len(rows)<len(oldmap)*.9:raise ValueError('INCOMPLETE_FULL_REPORT')
+ completeness=guard_rows(rows,oldmap,previous_central)
  for row in rows:
   v=row['values'];sku=v['D'];reasons=[]
   if sku in seen:continue
@@ -110,6 +111,8 @@ def normalize(path,baseline_csv,published,now=None,historical=False,media=None,s
    if prev['nombre']!=p['source_name']:fields.append('source_name')
   if fields:changes.append({'sku':p['sku'],'fields':fields})
  summary={'source':source,'sku_rows':len(rows),'unique_sku':len(counts),'product_count':sum(r['values'].get('F')=='PRODUCTO' for r in rows),'service_count':sum(r['values'].get('F')=='SERVICIO' for r in rows),'duplicate_sku':[s for s,n in counts.items() if n>1],'blocked':issues,'blocked_count':len(issues),'in_stock':sum(p['availability']=='in_stock' for p in products),'out_of_stock':sum(p['availability']=='out_of_stock' for p in products),'comparison_16_oct':{'status':'not_available_not_inferred'},'comparison_last_published_593':{'cut_date':baseline_cut_date,'sku_count':len(oldmap),'new_sku':sorted(set(counts)-set(oldmap)),'absent_sku_not_proven_discontinued':sorted(set(oldmap)-set(counts)),'changed_sku':len(changes),'change_counts':dict(collections.Counter(f for c in changes for f in c['fields'])),'changes':changes},'comparison_web_feed':{'published_at':published['fechaCatalogo'],'sku_count':len(web),'common_sku':len(set(web)&set(counts)),'cash_changed':sum(bool(p['prices'] and p['sku'] in web and cents(web[p['sku']]['promo'])!=p['prices']['promo_cash_cents']) for p in products),'pvp_changed':sum(bool(p['prices'] and p['sku'] in web and cents(web[p['sku']]['pvp'])!=p['prices']['pvp_card_cents']) for p in products),'became_unavailable':sorted(p['sku'] for p in products if p['sku'] in web and p['availability']!='in_stock')},'private_columns_exported':False,'stock_quantities_exported':False}
+ completeness.update(guard_impact(products,oldmap,previous_central))
+ summary['completeness']=completeness
  return canonical,summary
 def adapters(canonical,outdir):
  outdir=Path(outdir);outdir.mkdir(parents=True,exist_ok=True);active=[p for p in canonical['products'] if p['availability']=='in_stock'];allvalid=[p for p in canonical['products'] if not p['blocked_reasons']]

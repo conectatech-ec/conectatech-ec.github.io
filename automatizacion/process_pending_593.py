@@ -39,6 +39,7 @@ def main():
   with request('/commercial/report?sha256='+sha) as r:raw=r.read(1000001);filename=urllib.parse.unquote(r.headers['X-Report-Filename'])
   if len(raw)>1000000 or hashlib.sha256(raw).hexdigest()!=sha:raise ValueError('SOURCE_INTEGRITY')
   report_name(filename)
+  report.update(original_name=filename,received_at=state.get('received_at'))
   prefix='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/main/'
   def public(name):
    with urllib.request.urlopen(prefix+name,timeout=30) as r:return r.read(4000000)
@@ -46,7 +47,7 @@ def main():
   media={p['sku']:p['web']['image_url'] for p in previous['products'] if p.get('web',{}).get('image_url')}
   units=[p['sku'] for p in previous['products'] if p.get('sale_unit')]
   with tempfile.TemporaryDirectory(prefix='private-593-') as folder:
-   p=Path(folder)/filename;p.write_bytes(raw);p.chmod(0o600);canonical,validation=normalize(p,baseline,published,media=media,sale_units=units)
+   p=Path(folder)/filename;p.write_bytes(raw);p.chmod(0o600);canonical,validation=normalize(p,baseline,published,media=media,sale_units=units,previous_central=previous)
   if state.get('received_at'):canonical['source']['received_at']=state['received_at']
   report.update(original_name=filename,received_at=canonical['source']['received_at'],cut_date=canonical['source']['cut_date'],cut_date_evidence=canonical['source']['cut_date_evidence'])
   if canonical['source']['generated_at']<previous['source']['generated_at']:raise ValueError('REPORT_OLDER_THAN_LAST_VALID')
@@ -59,6 +60,8 @@ def main():
   report.update(validated=True,products=len(canonical['products']),blocked=validation['blocked_count']);output(True,canonical['source']['sha256'])
  except Exception as error:
   code=str(error) if re.fullmatch(r'[A-Z0-9_]{1,80}',str(error)) else 'SOURCE_VALIDATION_FAILED';report.update(validated=False,error_code=code)
+  if hasattr(error,'metrics'):
+   report.update(completeness=error.metrics,action='WAIT_FOR_CORRECTED_FULL_REPORT',last_valid_preserved=True)
   if isinstance(error,ValueError) and lease_acquired:
    processing_lease.finish(request,'rejected',error_code=code)
   else:

@@ -1,5 +1,6 @@
 """Multi-version contracts: channel preparation cannot masquerade as real delivery."""
 import copy, importlib.util, json, sys, tempfile, unittest
+from unittest.mock import patch
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
@@ -9,6 +10,8 @@ spec=importlib.util.spec_from_file_location('fixtures',ROOT/'tests/central_593_t
 fixtures=importlib.util.module_from_spec(spec);spec.loader.exec_module(fixtures)
 
 class DataHub(unittest.TestCase):
+ def setUp(self):
+  small=patch('inventory_completeness.MIN_UNIQUE_PRODUCTS',1);small.start();self.addCleanup(small.stop)
  def data(self): return json.loads((ROOT/'central/current.json').read_text())
  def test_same_source_does_not_regenerate_everything(self):
   d=self.data();p=changes(d,copy.deepcopy(d));self.assertEqual(p['changed_sku'],[])
