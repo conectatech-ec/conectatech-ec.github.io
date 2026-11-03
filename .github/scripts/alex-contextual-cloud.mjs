@@ -6,7 +6,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import policy from '../../automatizacion/alex-policy.json' with {type:'json'};
 const BASE='https://conectatech-comercial-piloto.conectatech-ecu.workers.dev',token=process.env.PILOT_TOKEN,DIR='automatizacion/generated/fase2';
-const report={schema:'conectatech.alex.contextual-browser.v1',at:new Date().toISOString(),passed:false,scope:'private_simulator_actual_Chromium',revision:process.env.GITHUB_SHA,profiles:[],messages:0,maximum_messages:15,checks:{},Graph_sends:0,customer_events:0,external_customers_enabled:false,new_cost_usd:0,private_images_recorded:false};
+const report={schema:'conectatech.alex.contextual-browser.v1',at:new Date().toISOString(),passed:false,scope:'private_simulator_actual_Chromium',revision:process.env.GITHUB_SHA,profiles:[],messages:0,privacy_resets:0,maximum_messages:15,checks:{},Graph_sends:0,customer_events:0,external_customers_enabled:false,new_cost_usd:0,private_images_recorded:false};
 let chrome,profileDir,cdp,session,nextId=0,stage='preflight';const pending=new Map();
 function check(value,code){if(!value)throw Object.assign(new Error(code),{code});}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -59,7 +59,7 @@ try{
   r=await send('Prefiero contraentrega en Quito',id);profile.turns.push(r.row);check(r.a.memory.delivery==='quito'&&r.a.memory.budget===250&&r.a.memory.focus.includes('TELF011')&&r.a.memory.focus.includes('TELF012'),'CONTEXT_LOST');check(includes(r,'ALEX:sim:delivery_terms'),'DELIVERY_BUTTONS_DID_NOT_EVOLVE');r.row.checks={product_budget_delivery_remembered:true,buttons_evolved:true};
   r=await send('Cobertura y costo',id,'ALEX:sim:delivery_terms');profile.turns.push(r.row);check(!/te llega hoy|gratis/i.test(r.ui.text),'UNVERIFIED_LOGISTICS_PROMISE');r.row.checks={no_delivery_promise:true};
  }
- stage='controlled_browser_image_failure';await evaluate("(()=>{document.getElementById('reset').click();return true;})()");await until("!document.getElementById('send').disabled");await evaluate('window.__failImage=true');
+ stage='controlled_browser_image_failure';report.privacy_resets++;await evaluate("(()=>{document.getElementById('reset').click();return true;})()");await until("!document.getElementById('send').disabled");await evaluate('window.__failImage=true');
  const fallback=await send('Busco un Samsung A17','COL002');check(fallback.a.presentation&&fallback.ui.text===fallback.a.text&&/185\.90/.test(fallback.ui.text)&&/239\.90/.test(fallback.ui.text),'FULL_VERIFIED_TEXT_REQUIRED_AFTER_IMAGE_FAILURE');
  report.image_failure={HTTP:200,controlled_browser_only:true,full_verified_text_preserved:true,loaded_images:fallback.row.loaded_images,no_assets_modified:true};
  const after=await json('/health'),lastQuota=await json('/alex/quota');check(after.meta_ingress_enabled===false&&after.release===health.release&&after.messenger_outbound===health.messenger_outbound,'RUNTIME_SAFETY_CHANGED');check(lastQuota.reserved_limit===quota.reserved_limit&&lastQuota.paid_fallback===false,'ECONOMIC_GUARDS_CHANGED');
