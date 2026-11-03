@@ -1,0 +1,195 @@
+{
+  "schema": "conectatech.alex.marketplace-official-access.v1",
+  "checked_at": "2026-11-03T18:52:20-05:00",
+  "branch": "automatizacion/piloto-cloud-3sku-20261015",
+  "result": "B_BLOCKED_WITH_CURRENT_DOCUMENTED_OFFICIAL_CAPABILITIES",
+  "collaborators": [
+    "COL001",
+    "COL002"
+  ],
+  "requested_operation": "Receive and automatically answer buyer messages and send approved images inside the same personal-profile Facebook Marketplace thread, using the existing external Alex engine.",
+  "conclusion": "The verified Messenger API is Page-scoped. No documented authorized connector or permission was identified that exposes personal-profile Marketplace conversations to Alex in Ecuador.",
+  "limits_of_conclusion": {
+    "formal_meta_support_denial_obtained": false,
+    "all_private_partner_agreements_ruled_out": false,
+    "seller_or_native_ai_availability_on_individual_accounts_verified": false,
+    "developer_docs_429_are_not_evidence_of_missing_capability": true,
+    "no_permission_named_marketplace_personal_messaging_was_identified": true
+  },
+  "verified_sources": [
+    {
+      "id": "messenger_api",
+      "url": "https://www.postman.com/meta/messenger-platform-api/documentation/iyp204x/messenger-platform-api",
+      "publisher": "Meta official Postman workspace",
+      "read_mode": "full_public_document",
+      "sections": [
+        "Requirements",
+        "Send API / Before You Start"
+      ],
+      "facts": [
+        "Requires a Facebook Page and pages_messaging.",
+        "Sending requires a Page access token with the MESSAGE task.",
+        "The endpoint is /PAGE-ID/messages and the recipient identifier is a Page-scoped ID."
+      ],
+      "implication": "A Page token and Page-scoped recipient identifiers do not provide a personal seller inbox transport."
+    },
+    {
+      "id": "native_meta_ai",
+      "url": "https://about.fb.com/news/2026/03/facebook-marketplace-new-meta-ai-tools-make-selling-faster-and-easier/",
+      "publisher": "Meta Newsroom",
+      "read_mode": "full_public_document",
+      "published": "2026-03-12",
+      "section": "Yes, It's Available",
+      "facts": [
+        "Native Meta AI availability auto replies use listing information and are enabled, previewed and edited in listing creation."
+      ],
+      "not_documented": [
+        "Third-party inference or webhook replacement with Alex",
+        "593/Data Hub access",
+        "Alex sending SIGNATURE assets in personal threads"
+      ],
+      "ecuador_or_account_eligibility_confirmed": false
+    },
+    {
+      "id": "seller",
+      "url": "https://about.fb.com/news/2026/07/introducing-seller-app-facebook-marketplace/",
+      "publisher": "Meta Newsroom",
+      "read_mode": "full_public_document",
+      "published": "2026-07-24",
+      "facts": [
+        "Seller provides listing management, inventory tools and a unified inbox organized by item.",
+        "The launch announcement specifies US users aged 18+ on the App Store, with Android testing."
+      ],
+      "not_documented": [
+        "External Alex engine integration",
+        "Personal-inbox third-party messaging API",
+        "Ecuador eligibility"
+      ],
+      "launch_scope_is_not_a_current_global_availability_check": true
+    },
+    {
+      "id": "marketplace_partner_program",
+      "url": "https://about.fb.com/news/2024/11/our-response-to-the-european-commissions-decision-on-facebook-marketplace/",
+      "publisher": "Meta Newsroom",
+      "read_mode": "full_public_document",
+      "updates_read": [
+        "2025-02-13",
+        "2025-05-22"
+      ],
+      "facts": [
+        "The described program distributes consumer-to-consumer inventory of classified-ad service partners to users in the European Economic Area.",
+        "The described purchase flow continues on partner websites."
+      ],
+      "not_documented": [
+        "Read/write access to independent collaborators' personal Marketplace chats",
+        "Ecuador authorization for the requested integration"
+      ],
+      "linked_partner_portal": "https://www.facebook.com/business/marketplace-partners",
+      "private_portal_form_inspected": false
+    },
+    {
+      "id": "business_suite",
+      "url": "https://www.facebook.com/business/help/27148728838061242",
+      "publisher": "Meta Help",
+      "read_mode": "official_search_index_only; direct document login-protected",
+      "facts": [
+        "The indexed description lists Facebook Pages, Instagram profiles and WhatsApp Business accounts."
+      ],
+      "implication": "Adding staff or assets to Business Suite is not evidence of a personal-inbox API grant."
+    },
+    {
+      "id": "conversation_routing",
+      "url": "https://www.facebook.com/business/help/415420934987251",
+      "publisher": "Meta Help",
+      "read_mode": "official_search_index_only; direct document login-protected",
+      "facts": [
+        "Messenger conversation routing is described for Pages using third-party apps integrated with Messenger API."
+      ],
+      "implication": "Partner status does not itself establish personal Marketplace inbox access."
+    },
+    {
+      "id": "meta_business_agent",
+      "url": "https://about.fb.com/ltam/news/2026/06/conversations-2026-presentamos-el-agente-comercial-de-meta/",
+      "publisher": "Meta Newsroom",
+      "read_mode": "independent_primary_source_research",
+      "facts": [
+        "The announced agent addresses business messaging channels."
+      ],
+      "not_documented": [
+        "Connecting the existing external Alex engine to personal-profile Marketplace conversations in Ecuador"
+      ]
+    }
+  ],
+  "repository_evidence": [
+    {
+      "path": "automatizacion/channels.mjs",
+      "lines": [
+        24,
+        25
+      ],
+      "finding": "Only object=page matching the configured Page produces Messenger inbound events."
+    },
+    {
+      "path": "automatizacion/messenger-graph.mjs",
+      "lines": [
+        20,
+        28
+      ],
+      "finding": "Token verification requires PAGE/pages_messaging; sends target the configured Page /messages endpoint."
+    },
+    {
+      "path": "automatizacion/alex-collaborators.mjs",
+      "lines": [
+        29,
+        33
+      ],
+      "finding": "The existing bridge supports business channels and explicitly does not claim verified personal Marketplace inbox access."
+    },
+    {
+      "path": "automatizacion/alex-signature-release.json",
+      "lines": [
+        3,
+        9
+      ],
+      "finding": "The three currently released private simulator banners do not authorize external delivery; no private image paths or hashes are included here."
+    },
+    {
+      "path": ".github/artifacts/alex-contextual-private-verified.json",
+      "finding": "The 13 prior browser messages prove the private simulator, not Marketplace transport."
+    }
+  ],
+  "live_test": {
+    "marketplace_receive_send_test_executed": false,
+    "real_marketplace_message_received": false,
+    "real_marketplace_reply_sent": false,
+    "real_marketplace_banner_sent": false,
+    "simulated_test_counted_as_real": false,
+    "reason": "No authorized personal-profile inbound or outbound transport has been established. No customer or private-profile sessions were accessed."
+  },
+  "required_before_controlled_pilot": [
+    "Meta must identify an authorized product or agreement covering personal-profile Marketplace inbound events and outbound text/images for an external app in Ecuador.",
+    "Obtain its documented endpoint, webhook object, permission names, token type, seller consent and listing/thread identity contract.",
+    "Verify approved account/country access, quotas and $0 operating terms; no paid enrollment.",
+    "Release exact approved banners for the authorized controlled external test; simulator-only approval must not be broadened silently.",
+    "Then test Rafa, then Jessy with legitimate testers, receipts and per-seller attribution; general customer automation remains disabled."
+  ],
+  "owner_next_step": {
+    "action": "Ask Meta a capability question from the existing authenticated app/business support available to the owner.",
+    "support_entry": "https://business.facebook.com/business-support-home/",
+    "support_access_or_human_agent_guaranteed": false,
+    "sent": false,
+    "draft": "CONECTATECH operates an existing external sales assistant named Alex in Cloudflare. We need to receive buyer messages and send automatic contextual text and approved product images within the same Facebook Marketplace threads of two consenting personal-profile sellers in Ecuador, later up to ten. This is not Page messaging, Instagram Creator Marketplace, listing syndication or WhatsApp redirection. Is there a currently authorized Meta API or private partner agreement for this exact use? If yes, provide the product name, documentation, inbound webhook object, read/send/image endpoints, permissions, token type, per-profile consent, Ecuador eligibility, request procedure and pricing/free limits. If unavailable, please confirm the restriction. We will not provide profile passwords or cookies or enable paid services."
+  },
+  "changes": {
+    "runtime_code_changed": false,
+    "worker_deployed": false,
+    "simulator_expanded": false,
+    "main_modified": false,
+    "master_data_or_banners_modified": false,
+    "external_automation_activated": false,
+    "credentials_requested": false,
+    "private_messages_accessed": false,
+    "new_systems_created": false,
+    "new_cost_usd": 0
+  }
+}
