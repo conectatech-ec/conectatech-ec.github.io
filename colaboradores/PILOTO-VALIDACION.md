@@ -1,26 +1,22 @@
 AVANCE — RED COMERCIAL CONECTATECH
 
-**Piloto técnico listo para validar con Rafa Valderrama como único colaborador activo existente. COL002 reservado, sin nombre ni cuenta. Capacidad: 10. Sin activaciones ni publicaciones.**
+**Resultado: ensayo local parcial; activación bloqueada por evidencia real.** Rafa/COL001 es el único activo existente; COL002 reservado e inactivo; capacidad 10. Cero publicaciones, mensajes externos, ventas registradas en 593 o comisiones. Main, producción y las otras ramas intactas.
 
-| Componente | Resultado |
+| Tramo probado | Resultado |
 |---|---|
-| Autenticación, roles, firma de referencias | Reutilizados del piloto anterior |
-| Anuncios | Código único, deduplicación y asociación al anuncio real de Rafa ya registrado por la sesión ALEX; no duplica Work |
-| Fuente comercial | Adaptadores del contrato central existente y de sourceToAlex; presentación conectatech.alex.presentation.v1 |
-| Material | Foto/ficha/precio existentes; sin fábrica, catálogo ni Hub nuevos |
-| Seguimiento | Referencia firmada → consulta con consentimiento → etapas → comprobante confirmado; aislamiento y revocación |
-| Registro | Adaptador probado contra la tabla eventos_canal del DB existente, sin DDL ni otra base; cifrado del host obligatorio |
-| Comisiones | Estructura preparada, política/importe nulos; no porcentajes inventados |
-| ALEX | Contexto de atribución separado de autorización para enviar; sin acceso al Marketplace personal |
+| Anuncio existente de Rafa → consulta local → COL001 | Referencia firmada y aislamiento comprobados; no se duplica Work |
+| Biblioteca SIGNATURE real | Manifiesto y PNG leídos; entrega bloqueada: corte anterior, SHA diferente y no-enviar activo |
+| ALEX existente | Motor generateAlex probado localmente, respuesta de respaldo; sin inferencia pagada ni envío. Permisos actuales del canal no releídos |
+| Venta 593 → atribución | Bloqueado: falta lector acreditado de ventas confirmadas y comprobante real correlacionado. No se sustituyó con una venta ficticia |
 
-**Validar:** desde colaboradores, ejecutar `npm run validate:pilot`, `npm test`, `npm run check`. Abrir [pilot/validacion.html](pilot/validacion.html) desde los archivos descargados. El anuncio de referencia de Rafa existe según la confirmación del propietario conservada en `marketplace-telf017/association.json`; su ID canónico independiente no está acreditado. La consulta y venta del caso ejecutado son **datos controlados, no ventas reales**. COL002 no recibe materiales ni operaciones en el escenario de validación. GitHub muestra HTML como código; no se ha desplegado el visor ni probado visualmente en navegador.
+[Resultado del ensayo](pilot/integration-result.json). Los archivos reales de Drive y del Hub se capturaron mediante lectores autorizados y se reprodujeron localmente con el motor existente; no es una prueba de entrega en Meta ni de una venta real. Solo el ensayo de consulta usa memoria efímera. Los dobles de ventas de las pruebas unitarias no salen de esas pruebas. La generación de validate:pilot ahora registra **cero ventas de control**.
 
-**Rutas localizadas, sin pedirlas al propietario:** [contratos y ramas](pilot/existing-integration-refs.json). Data Hub/ALEX están en `automatizacion/piloto-cloud-3sku-20261015`: shared-hub.mjs, central-source.mjs, marketplace-telf017/lead.mjs y alex-channel-readiness.mjs. SIGNATURE: `integracion/signature-pdf-banners-593-20261023`, generador generar-materiales-593.py, insumos y manifiestos existentes. Se mantienen sus ramas intactas; no se afirma haber contactado otras conversaciones de Codex.
+**Cambios mínimos para activar, todavía NO aplicados:**
 
-La vigencia del Hub se conserva: corte 02/11; generación original 02/11 22:48:22 UTC y caducidad 03/11 22:48:22 UTC. El snapshot de prueba no es una fuente maestra y no contiene cantidades de stock ni costos. Leer o probar no renueva esa fecha. Las pruebas usan reloj fijo para ser reproducibles; producción debe usar su reloj real.
+1. La Fábrica debe reconciliar el manifiesto existente con el corte vigente y el SHA del banner actual de TELF017, revisar el material y resolver su bloqueo de entrega. No basta cambiar un SHA o una bandera. No se actualizó ese archivo compartido.
+2. Enlazar readConfirmed593Sale(id) a una fuente de ventas real de 593, autorizada y sin costo, mediante el host existente. La interfaz normalizada del consumidor exige {id,status:'CONFIRMADA',currency:'USD',totalCents,evidenceDigest,lines:[{sku,quantity,amountCents}]}. Es un contrato interno del piloto, **no una API oficial de 593 descubierta**. Faltan ese binding y un comprobante real con evidencia de atribución a Rafa; no faltan rutas del inventario.
+3. Montar wireExistingHost() en el host existente con su autenticación, env.DB/eventos_canal, cifrado y lectores; conectar signatureLibraryReaders a los accesos ya autorizados de la biblioteca. Validar identidad individual, ruta de referencias y permiso del canal ALEX. Mantener ownerAuthorizedPilotWrites:false hasta aprobación del despliegue.
 
-**Bloqueos concretos pendientes:** (1) la biblioteca SIGNATURE encontrada conserva `live_registry_connection_verified:false`, `no_send_to_buyers:true` y `messaging_enabled:false`: no se envían borradores; (2) el Hub acreditado publica inventario/precios, pero los contratos encontrados no acreditan lectura de ventas confirmadas de 593; el adaptador no inventa esa API. El acceso y despliegue privados permanecen como están. No se solicitaron credenciales.
+El lector SIGNATURE usa el formato real de prototipos/banners-pro-movil/Code.gs en codex/banners-pro-publico-20261027, mediante BANNERS_PRO_CONFIG.manifestId y carpetas existentes. Revalida bytes, aprobación, precios, vigencia, carpeta y versión; no exporta enlaces/IDs privados. El validador de ventas solo lee, descarta datos personales y rechaza pendientes/anuladas. preview-sale no escribe; confirm-sale vuelve a leer la fuente. Comisiones siguen nulas.
 
-`src/pilot/existing-events-ledger.mjs` reutiliza la tabla eventos_canal de automatizacion/schema.sql mediante CAS y cifrado proporcionado por el host. No crea tablas; no modifica registros de otros canales. `wireExistingHost()` conecta el lector real de ALEX, env.DB/eventos_canal, seal/unseal y la autenticación del host; `mountInExistingHub()` prepara el manejador en el mismo host; por defecto solo revisión, sin escrituras. No ejecutar las migraciones D1 ni desplegar el Worker de la propuesta histórica de esta carpeta.
-
-**Conservación:** 0 cambios en main, Data Hub, fuente 593, catálogo maestro, SIGNATURE, Worker ALEX, operativo de Rafa o cuentas adicionales. COL002 sigue inactivo. Costo adicional $0.
+Pruebas: npm test (52 Node + 3 Python), npm run check, npm run validate:pilot. Abrir pilot/validacion.html desde archivos descargados. Para repetir el ensayo con lectores del host: npm run verify:integration -- --host-module /ruta/local/lectores-existentes.mjs --require-ready; devuelve código 2 mientras haya bloqueos. Sin lectores devuelve bloqueo explícito. No se versionan entradas privadas ni credenciales. No desplegar el Worker ni ejecutar las migraciones D1 de la propuesta histórica.

@@ -2,7 +2,7 @@
 import {createNetworkPilot} from './network.mjs';
 export function existingHubAdapter(s){
  for(const name of ['readCommercialProduct','listCollaboratorSlots','collaboratorTransaction','readConfirmed593Sale'])if(typeof s?.[name]!=='function')throw Error('Conectar servicio existente: '+name);
- return {catalogProduct:s.readCommercialProduct,roster:s.listCollaboratorSlots,transaction:s.collaboratorTransaction,readConfirmed593Sale:s.readConfirmed593Sale,signatureAsset:s.readSignatureApprovedAsset,authorizedAlexChannels:s.authorizedAlexChannels||[],referralSecret:s.referralSecret,referenceLandingUrl:s.referenceLandingUrl,existingInfrastructure:true,productionWritesAuthorized:s.ownerAuthorizedPilotWrites===true};
+ return {catalogProduct:s.readCommercialProduct,roster:s.listCollaboratorSlots,transaction:s.collaboratorTransaction,readConfirmed593Sale:s.readConfirmed593Sale,signatureAsset:s.readSignatureApprovedAsset,signatureReview:s.readSignatureReview,authorizedAlexChannels:s.authorizedAlexChannels||[],referralSecret:s.referralSecret,referenceLandingUrl:s.referenceLandingUrl,existingInfrastructure:true,productionWritesAuthorized:s.ownerAuthorizedPilotWrites===true};
 }
 export function mountInExistingHub(services){
  if(typeof services?.authenticateExistingSession!=='function')throw Error('Falta autenticación individual del Hub existente');
@@ -13,7 +13,7 @@ export function mountInExistingHub(services){
   if(request.method!=='POST')return Response.json({error:'NOT_FOUND'},{status:404});
   if(request.headers.get('Origin')!==url.origin||!request.headers.get('Content-Type')?.startsWith('application/json'))return Response.json({error:'ORIGIN'},{status:403});
   const raw=await request.text();if(raw.length>8192)return Response.json({error:'TOO_LARGE'},{status:413});let body;try{body=JSON.parse(raw);}catch{return Response.json({error:'JSON'},{status:400});}
-  const methods={advertisements:()=>pilot.prepareAdvertisement(actor,body),material:()=>pilot.material(actor,body.adId),references:()=>pilot.reference(actor,body.adId),'confirm-sale':()=>pilot.confirmSale(actor,body),opportunity:()=>pilot.advanceOpportunity(actor,body)};const action=methods[url.pathname.split('/').pop()];if(!action)return Response.json({error:'NOT_FOUND'},{status:404});
+  const methods={advertisements:()=>pilot.prepareAdvertisement(actor,body),material:()=>pilot.material(actor,body.adId),references:()=>pilot.reference(actor,body.adId),'preview-sale':()=>pilot.previewSaleAttribution(actor,body),'confirm-sale':()=>pilot.confirmSale(actor,body),opportunity:()=>pilot.advanceOpportunity(actor,body)};const action=methods[url.pathname.split('/').pop()];if(!action)return Response.json({error:'NOT_FOUND'},{status:404});
   try{return Response.json(await action(),{headers:{'Cache-Control':'no-store'}});}catch(e){return Response.json({error:e.code||'INTERNAL',message:e.code?e.message:'Error interno'},{status:e.code==='REVIEW_ONLY'?409:e.code==='FORBIDDEN'?403:400,headers:{'Cache-Control':'no-store'}});}
  }};
 }

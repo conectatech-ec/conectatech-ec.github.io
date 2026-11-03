@@ -53,16 +53,51 @@ export function createNetworkPilot(host,{mode='REVIEW_ONLY',clock=()=>Date.now()
  async function interest({token,consent,consultationCode}){writable();if(consent!==true||!/^Q-[A-Z0-9_-]{1,30}$/.test(consultationCode||''))error('CONSENT','Consentimiento y código comercial, sin datos personales, requeridos');const {ref}=await resolve(token);const dedupe=ref.id+':'+consultationCode;
   return host.transaction(async tx=>{const prior=(await tx.list('opportunities')).find(o=>o.dedupe===dedupe);if(prior)return prior;const id='CT-OP-'+crypto.randomUUID();const o={id,adId:ref.adId,referenceId:ref.id,memberId:ref.memberId,sku:ref.sku,dedupe,state:'NUEVA CONSULTA',attribution:'SIGNED_REFERENCE_CONFIRMED',saleId:null,commission:{policy:null,amountCents:null,state:'SIN_POLITICA'},validationOnly:mode==='VALIDATION'};await tx.put('opportunities',id,o);await tx.audit({actor:'CONSENTED_CUSTOMER',action:'CONSULTATION_REGISTERED',entity:id});return o;});
  }
- async function confirmSale(a,{opportunityId,saleId,attributionVerified}){admin(a);writable();if(attributionVerified!==true)error('ATTRIBUTION','Confirmar la atribución con evidencia, no solo clic o mensaje');const sale=await host.readConfirmed593Sale(saleId);if(!sale||sale.id!==saleId||sale.status!=='CONFIRMADA'||sale.currency!=='USD'||!Number.isSafeInteger(sale.totalCents)||sale.totalCents<=0||!sale.evidenceDigest)error('SALE','Venta no confirmada por la fuente 593 existente');
-  return host.transaction(async tx=>{const o=await tx.get('opportunities',opportunityId);if(!o)error('NOT_FOUND','Consulta no encontrada');if(o.saleId===saleId)return o;if(o.saleId)error('SALE_CONFLICT','Consulta ya confirmada');if(!(sale.lines||[]).some(l=>l.sku===o.sku&&l.quantity>0))error('SALE_PRODUCT','La venta no contiene el producto atribuido');const used=(await tx.list('opportunities')).find(x=>x.saleId===saleId);if(used)error('SALE_DUPLICATE','Venta ya atribuida a otra consulta');
-   if(o.state==='CANCELADA')error('SALE_STATE','Consulta cancelada');
-   const matching=sale.lines.filter(l=>l.sku===o.sku);if(matching.some(l=>!Number.isSafeInteger(l.amountCents)||l.amountCents<=0))error('SALE_AMOUNT','Falta importe verificado de la línea atribuida');
-   const attributed=matching.reduce((n,l)=>n+l.amountCents,0);if(attributed>sale.totalCents)error('SALE_AMOUNT','Importe atribuido supera comprobante');
-   const saved={...o,state:'VENTA CONFIRMADA',saleId:sale.id,amountCents:attributed,sourceEvidence:sale.evidenceDigest};await tx.put('opportunities',o.id,saved);await tx.audit({actor:a.id,action:'EXISTING_593_SALE_LINKED',entity:o.id});return saved;
+ async function confirmedSale(saleId) {
+  const sale = await host.readConfirmed593Sale(saleId);
+  if (!sale || sale.id !== saleId || sale.status !== 'CONFIRMADA' || sale.currency !== 'USD' || !Number.isSafeInteger(sale.totalCents) || sale.totalCents <= 0 || !sale.evidenceDigest) error('SALE','Venta no confirmada por la fuente 593 existente');
+  return sale;
+ }
+ async function saleProjection(tx, opportunityId, sale) {
+  const o = await tx.get('opportunities', opportunityId);
+  if (!o) error('NOT_FOUND','Consulta no encontrada');
+  validateMember(await member(o.memberId));
+  if (o.saleId && o.saleId !== sale.id) error('SALE_CONFLICT','Consulta ya confirmada');
+  if (o.state === 'CANCELADA') error('SALE_STATE','Consulta cancelada');
+  if (!(sale.lines || []).some(l => l.sku === o.sku && l.quantity > 0)) error('SALE_PRODUCT','La venta no contiene el producto atribuido');
+  const used = (await tx.list('opportunities')).find(x => x.saleId === sale.id && x.id !== o.id);
+  if (used) error('SALE_DUPLICATE','Venta ya atribuida a otra consulta');
+  const matching = sale.lines.filter(l => l.sku === o.sku);
+  if (matching.some(l => !Number.isFinite(l.quantity) || l.quantity <= 0 || !Number.isSafeInteger(l.amountCents) || l.amountCents <= 0)) error('SALE_AMOUNT','Falta importe verificado de la línea atribuida');
+  const attributed = matching.reduce((n,l) => n + l.amountCents, 0);
+  if (attributed > sale.totalCents) error('SALE_AMOUNT','Importe atribuido supera comprobante');
+  return {o, attributed};
+ }
+ async function previewSaleAttribution(a,{opportunityId,saleId,attributionVerified}) {
+  admin(a);
+  if (attributionVerified !== true) error('ATTRIBUTION','Confirmar la atribución con evidencia, no solo clic o mensaje');
+  const sale = await confirmedSale(saleId);
+  return host.transaction(async tx => {
+   const {o,attributed} = await saleProjection(tx, opportunityId, sale);
+   return {write:false, attributionReady:true, opportunityId:o.id, memberId:o.memberId, sku:o.sku, saleId:sale.id, amountCents:attributed, evidenceDigest:sale.evidenceDigest, alreadyAttributed:o.saleId === sale.id, commission:null};
+  });
+ }
+ async function confirmSale(a,{opportunityId,saleId,attributionVerified}) {
+  admin(a); writable();
+  if (attributionVerified !== true) error('ATTRIBUTION','Confirmar la atribución con evidencia, no solo clic o mensaje');
+  // Re-read the source at confirmation; never promote a stored preview into a sale.
+  const sale = await confirmedSale(saleId);
+  return host.transaction(async tx => {
+   const {o,attributed} = await saleProjection(tx, opportunityId, sale);
+   if (o.saleId === sale.id) return o;
+   const saved = {...o,state:'VENTA CONFIRMADA',saleId:sale.id,amountCents:attributed,sourceEvidence:sale.evidenceDigest};
+   await tx.put('opportunities',o.id,saved);
+   await tx.audit({actor:a.id,action:'EXISTING_593_SALE_LINKED',entity:o.id});
+   return saved;
   });
  }
  async function advanceOpportunity(a,{id,state}){actor(a);writable();return host.transaction(async tx=>{const o=await tx.get('opportunities',id);if(!o)error('NOT_FOUND','Consulta no encontrada');access(a,o.memberId);const stages=['NUEVA CONSULTA','CONTACTADO','INTERESADO','RESERVA PENDIENTE'];if(!stages.includes(o.state)||state!=='CANCELADA'&&state!==stages[stages.indexOf(o.state)+1])error('STATE','Transición no permitida; venta solo con comprobante 593');const updated={...o,state};await tx.put('opportunities',id,updated);await tx.audit({actor:a.id,action:'OPPORTUNITY_'+state,entity:id});return updated;});}
  async function results(a){actor(a);return host.transaction(async tx=>{const opportunities=(await tx.list('opportunities')).filter(o=>a.role==='ADMINISTRADOR'||a.role==='COLABORADOR'&&o.memberId===a.memberId||a.role==='SUPERVISOR'&&a.supervisedMembers?.includes(o.memberId));return {consultations:opportunities.length,confirmedSales:opportunities.filter(o=>o.saleId).length,amountCents:opportunities.reduce((n,o)=>n+(o.amountCents||0),0),commissions:{policy:null,pendingCents:null,approvedCents:null,paidCents:null},opportunities};});}
  async function alexContext({token,channel}){if(!['MESSENGER_PAGE','INSTAGRAM_BUSINESS','WHATSAPP_BUSINESS'].includes(channel)||!host.authorizedAlexChannels?.includes(channel))error('ALEX_CHANNEL','Canal no autorizado; Marketplace personal permanece separado');const {ref,product:p}=await resolve(token);return {internal:{adId:ref.adId,memberId:ref.memberId,referenceId:ref.id,sku:ref.sku},buyer:{title:p.title,description:p.description,priceCents:p.priceCents,image:p.approvedMedia,url:p.url},saleConfirmed:false,humanHandoff:true,personalMarketplaceMessages:false};}
- return {roster,prepareAdvertisement,material,reference,resolve,interest,confirmSale,advanceOpportunity,results,alexContext,mode,maxCollaborators:MAX,externalPublicationEnabled:false};
+ return {roster,prepareAdvertisement,material,reference,resolve,interest,previewSaleAttribution,confirmSale,advanceOpportunity,results,alexContext,mode,maxCollaborators:MAX,externalPublicationEnabled:false};
 }

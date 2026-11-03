@@ -1,0 +1,100 @@
+{
+  "mode": "READ_ONLY_INTEGRATION",
+  "observedAt": "2026-11-03T17:39:28.253Z",
+  "outcome": "BLOCKED_WITH_VERIFIED_REASONS",
+  "activeCollaborators": [
+    "COL001"
+  ],
+  "reservedInactive": [
+    "COL002"
+  ],
+  "maxCollaborators": 10,
+  "productionWrites": 0,
+  "externalMessages": 0,
+  "externalPublications": 0,
+  "salesWrittenTo593": 0,
+  "confirmedSalesRecorded": 0,
+  "realCommissionsGenerated": 0,
+  "simulationSalesCreated": 0,
+  "steps": [
+    {
+      "name": "EXISTING_RAFA_MARKETPLACE_AD",
+      "state": "OWNER_CONFIRMED_EXISTING",
+      "sku": "TELF017",
+      "associationId": "marketplace-redmi15c-128-01",
+      "independentVerification": false
+    },
+    {
+      "name": "CONSULTATION_AND_COLLABORATOR",
+      "state": "LOCAL_REHEARSAL_PASSED",
+      "memberId": "COL001",
+      "signedReferenceVerified": true,
+      "customerContacted": false
+    },
+    {
+      "name": "EXISTING_SIGNATURE_LIBRARY",
+      "state": "READ_CONNECTED_DELIVERY_BLOCKED"
+    },
+    {
+      "name": "ALEX_MESSENGER_PAGE",
+      "state": "EXISTING_ENGINE_LOCAL_REPLY",
+      "externalSend": false,
+      "channelAuthorizationVerified": false,
+      "generative": false,
+      "memberId": "COL001"
+    },
+    {
+      "name": "CONFIRMED_593_SALE_AND_ATTRIBUTION",
+      "state": "BLOCKED_NO_VERIFIED_SALES_SOURCE"
+    }
+  ],
+  "blockers": [
+    "SIGNATURE_SOURCE_MISMATCH",
+    "SIGNATURE_FACTORY_NO_SEND",
+    "SIGNATURE_FILE_SHA_MISMATCH",
+    "CURRENT_ALEX_TESTER_PERMISSION_NOT_READ_BACK",
+    "EXISTING_593_SALES_BINDING_NOT_VERIFIED"
+  ],
+  "evidenceMode": "ACTUAL_PROVIDER_READBACKS_REPLAYED_LOCALLY",
+  "source": {
+    "cutDate": "2026-11-02",
+    "sha256": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
+    "expiresAt": "2026-11-03T22:48:22.000Z"
+  },
+  "signature": {
+    "sku": "TELF017",
+    "visualApproved": true,
+    "integrityVerified": false,
+    "currentSource": false,
+    "deliveryAllowed": false,
+    "reasons": [
+      "SOURCE_MISMATCH",
+      "FACTORY_NO_SEND",
+      "FILE_SHA_MISMATCH"
+    ],
+    "expectedSha256": "f93111ef2785304656bbe214cf2bdf7c1c142e28bd1b481f0eaef46e1df11ce0",
+    "observedSha256": "0d9f2fcb6dff2132a831d329d4e8e9e340889a9fe7346128fab2962c49573160",
+    "manifestSourceDigest": "f37f364dfb30f005bf07f5fb0d7052e8f1dad7e1ae73a9baeacc2ce88aa5eadc"
+  },
+  "channelAssessment": {
+    "channel": "messenger_page",
+    "tester_ready": false,
+    "external_send_enabled": false,
+    "blocked_by": [
+      "ACCOUNT_IDENTITY_NOT_VERIFIED",
+      "MESSAGING_PERMISSION_NOT_VERIFIED",
+      "ACCOUNT_MESSAGES_SUBSCRIPTION_NOT_VERIFIED",
+      "EXTERNAL_ACCESS_NOT_VERIFIED",
+      "APP_LIVE_NOT_VERIFIED",
+      "CURRENT_COMMERCIAL_SOURCE_REQUIRED",
+      "REAL_CHANNEL_DELIVERY_REQUIRED",
+      "EXTERNAL_ACTIVATION_REQUIRES_OWNER_APPROVAL_AND_CONTROLLED_DEPLOYMENT"
+    ]
+  },
+  "salesReader": {
+    "connected": false,
+    "readOnly": true,
+    "system": "593",
+    "reason": "EXISTING_593_SALES_BINDING_NOT_VERIFIED"
+  }
+}
