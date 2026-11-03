@@ -233,7 +233,11 @@ function searchRelevance(p,q){
  const primary=tokens([p.sku,p.name,p.category,e?.titulo||"",e?.nombre593||"",e?.marca||"",e?.modelo||"",brand].join(" "));
  const matched=words.filter(t=>[t,...(aliases[t]||[])].some(x=>{const nx=norm(x);return primary.some(w=>w===nx||(nx.length>=4&&w.startsWith(nx)))})).length;
  const phrase=norm(q)&&[p.name,e?.titulo||""].some(text=>norm(text).includes(norm(q)));
- return (norm(p.sku)===norm(q)?1000:0)+(matched===words.length?100:0)+matched*10+(phrase?20:0);
+ // Ante coincidencias completas, priorizar el tipo buscado sobre una mención incidental.
+ // «cable Andowl» debe ordenar cables antes de adaptadores con cable integrado.
+ const category=tokens(p.category).filter(t=>t.length>=4);
+ const productType=matched===words.length&&words.some(t=>[t,...(aliases[t]||[])].some(x=>{const nx=norm(x);return nx.length>=4&&category.some(w=>w===nx||w.startsWith(nx));}));
+ return (norm(p.sku)===norm(q)?1000:0)+(matched===words.length?100:0)+matched*10+(phrase?20:0)+(productType?30:0);
 }
 searchBox.addEventListener("input",()=>{currentPage=1;render()});
 searchBox.addEventListener("search",()=>{currentPage=1;render()});
