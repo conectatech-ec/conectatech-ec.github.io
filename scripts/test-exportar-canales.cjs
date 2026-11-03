@@ -14,7 +14,18 @@ function generate(master,change=()=>{}){
  change(input);
  const output=new Map();
  const fakeFS={existsSync:p=>p in input,readFileSync:p=>{assert(p in input,p);return input[p];},mkdirSync:()=>{},writeFileSync:(p,v)=>output.set(p,v)};
- try{vm.runInNewContext(source,{require:n=>n==='fs'?fakeFS:['./validar-exportacion-593.cjs','./categorias-meta-web.cjs'].includes(n)?require(n):assert.fail(n),URL,console:{log:()=>{}}});}catch(e){assert.equal(output.size,0,'Un error de validación no debe escribir un lote parcial');throw e;}
+ const modules=new Map();
+ function fixtureRequire(n){
+  if(n==='fs')return fakeFS;
+  if(['crypto','node:util'].includes(n))return require(n);
+  if(['./editorial-fotografia-efectiva.cjs','./fotografia-direccion.cjs'].includes(n)){
+   if(!modules.has(n)){const mod={exports:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/'+n,'utf8'),{module:mod,exports:mod.exports,require:fixtureRequire,console,process});modules.set(n,mod.exports);}
+   return modules.get(n);
+  }
+  if(['./validar-exportacion-593.cjs','./categorias-meta-web.cjs','../assets/editorial-titulos.js'].includes(n))return require(n);
+  assert.fail(n);
+ }
+ try{vm.runInNewContext(source,{require:fixtureRequire,URL,console:{log:()=>{}}});}catch(e){assert.equal(output.size,0,'Un error de validación no debe escribir un lote parcial');throw e;}
  return output;
 }
 const files=generate(inventory),lines=files.get('exportaciones/meta-catalogo-piloto.csv').trimEnd().split('\n');
@@ -57,3 +68,68 @@ assert.equal(added.get('exportaciones/meta-catalogo-piloto.csv').trimEnd().split
 const newPlan=JSON.parse(added.get('exportaciones/whatsapp-organizacion-pendiente.json'));
 assert(newPlan.colecciones['Tablets'].includes('NUEVO001'));
 assert.equal(newPlan.publicacion_habilitada,false);
+
+// Consumir títulos vigentes de la Web sin tocar descripción, reglas ni finanzas.
+const withTitle=(overrides={})=>generate(inventory,input=>{
+ input['importacion/editorial/publicados.json']=JSON.stringify({activo:true,productos:{AUDI999:{titulo:'Audio aprobado en Web',subtitulo:'',mostrarTituloEnFicha:true}},...overrides});
+});
+const titled=withTitle(),metaFile='exportaciones/meta-catalogo-piloto.csv';
+assert.equal(titled.get(metaFile).replace('"Audio aprobado en Web"','"Audio"'),files.get(metaFile));
+assert(titled.get('exportaciones/contenido-multicanal.csv').includes('"AUDI999","Audio aprobado en Web","Audio"'));
+assert.equal(JSON.parse(titled.get('exportaciones/catalogo-ventas.json')).productos.find(p=>p.sku==='AUDI999').nombre,'Audio aprobado en Web');
+assert.equal(withTitle({activo:false}).get(metaFile),files.get(metaFile));
+assert.equal(withTitle({excluirPrefijos:['AUDI']}).get(metaFile),files.get(metaFile));
+assert.equal(withTitle().get(metaFile),titled.get(metaFile),'Mismo título aprobado: mismo feed');
+
+// Ejecutar el controlador fotográfico oficial con SHA-256 reales y archivos aislados.
+const crypto=require('crypto'),sha=value=>crypto.createHash('sha256').update(value).digest('hex');
+const oldImage='/imagenes/audi044/AUDI044-01.webp',newImage='/imagenes/audi044/AUDI044-r2026102709-01.webp';
+const originalBytes='original aprobado',newBytes='portada revisada aprobada';
+function photoFeed(change=()=>{}){
+ return generate(inventory.replace('TELF001,','AUDI044,'),input=>{
+  const productRows=JSON.parse(input['index.html'].match(/const products=(\[[\s\S]*?\]);/)[1]);
+  productRows[0]={...productRows[0],sku:'AUDI044',imageUrl:oldImage};
+  input['index.html']='const products='+JSON.stringify(productRows)+';\nconst categoryFamilies={"Tablets":"Tablets"};\n';
+  const state=JSON.parse(input['datos-593/corte-comercial-publico-validado.json']);state.productos.AUDI044=state.productos.TELF001;delete state.productos.TELF001;input['datos-593/corte-comercial-publico-validado.json']=JSON.stringify(state);
+  input['seo-pages.json']=JSON.stringify(Object.fromEntries(productRows.map(p=>[p.sku,p.sku.toLowerCase()])));
+  const before={original:oldImage,sha256_original:sha(originalBytes),versiones:{'1200':{url:oldImage,sha256:sha(originalBytes)}}};
+  const after={original:oldImage,sha256_original:sha(originalBytes),versiones:{'1200':{url:newImage,sha256:sha(newBytes)}}};
+  input['seo-contenido.json']=JSON.stringify({AUDI044:{imagen:oldImage,imagenProfesional:before,imagenPendiente:false,nombre:'Título base intacto',descripcion:'Descripción aprobada intacta'}});
+  input['.'+oldImage]=originalBytes;input['.'+newImage]=newBytes;
+  input['importacion/fotografia-publicada/direccion-20261026-05.json']=JSON.stringify({productos:{AUDI044:{sku:'AUDI044',revisado_visual:true,portada_anterior:{url:oldImage,sha256:sha(originalBytes)},imagenProfesional:after}}});
+  change(input);
+ });
+}
+const approvedPhoto=photoFeed(),approvedFeed=approvedPhoto.get(metaFile),basePhoto=photoFeed(input=>delete input['importacion/fotografia-publicada/direccion-20261026-05.json']).get(metaFile);
+assert(approvedFeed.includes(newImage));
+assert.equal(approvedFeed.replace(newImage,oldImage),basePhoto,'Solo image_link cambia; IDs, descripción y todos los campos comerciales idénticos');
+assert.equal(photoFeed().get(metaFile),approvedFeed,'Misma foto y SHA: feed idéntico, sin versión por tiempo');
+assert.notEqual(sha(approvedFeed),sha(basePhoto),'Foto aprobada nueva: cambia SHA del feed para deduplicación existente');
+assert.equal(photoFeed(input=>input['.'+newImage]='bytes distintos sin aprobación').get(metaFile),basePhoto,'SHA incorrecto: conservar portada anterior');
+assert.equal(photoFeed(input=>{
+ const key='importacion/fotografia-publicada/direccion-20261026-05.json',registry=JSON.parse(input[key]);registry.productos.AUDI044.revisado_visual=false;input[key]=JSON.stringify(registry);
+}).get(metaFile),basePhoto,'Foto bloqueada/no revisada: conservar portada anterior');
+assert.equal(photoFeed(input=>{
+ const seo=JSON.parse(input['seo-contenido.json']);seo.AUDI044.imagenProfesional.versiones['1200'].sha256='f'.repeat(64);input['seo-contenido.json']=JSON.stringify(seo);
+}).get(metaFile),basePhoto,'Una portada anterior sin autorización compatible no admite sustitución');
+assert(approvedPhoto.get('exportaciones/contenido-multicanal.csv').includes(newImage));
+assert([...approvedPhoto.keys()].every(p=>p.startsWith('exportaciones/')),'No escribir imágenes, Web, reglas ni inventario');
+assert.throws(()=>photoFeed(input=>input['importacion/fotografia-publicada/direccion-20261026-05.json']='{'),/JSON|Unexpected|Expected/);
+console.log('Sincronización Web: títulos oficiales, exclusiones, fotos aprobadas, repetidas, SHA incorrecto y bloqueadas; solo campos editoriales autorizados cambian.');
+
+// Misma entrada + exportaciones previas: cero escrituras y fechas conservadas.
+const noOp=generate(inventory,input=>{
+ for(const [path,value] of files)input[path]=value;
+ const sales=JSON.parse(input['exportaciones/catalogo-ventas.json']);sales.fechaCatalogo='2020-01-01T00:00:00.000Z';input['exportaciones/catalogo-ventas.json']=JSON.stringify(sales)+'\n';
+ const summary=JSON.parse(input['exportaciones/resumen-canales.json']);summary.generated_at='2020-01-01T00:00:00.000Z';input['exportaciones/resumen-canales.json']=JSON.stringify(summary,null,2)+'\n';
+});
+assert.equal(noOp.size,0,'Un reintento idéntico no escribe archivos ni renueva fechas');
+const changedAfterPrevious=generate(inventory,input=>{
+ for(const [path,value] of files)input[path]=value;
+ input['importacion/editorial/publicados.json']=JSON.stringify({activo:true,productos:{AUDI999:{titulo:'Audio aprobado en Web',subtitulo:''}}});
+});
+assert(changedAfterPrevious.has(metaFile));
+assert(changedAfterPrevious.has('exportaciones/catalogo-ventas.json'));
+assert(!changedAfterPrevious.has('exportaciones/resumen-canales.json'),'Resumen semánticamente idéntico conserva fecha');
+console.log('Reintento idéntico: 0 escrituras; cambios aprobados regeneran únicamente los archivos afectados.');
+
