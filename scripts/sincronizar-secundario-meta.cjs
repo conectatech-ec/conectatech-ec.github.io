@@ -65,8 +65,14 @@ async function syncSecondary({config,plan,api,...options}){
  if(!config.enabled)return {estado:'SECUNDARIO_PENDIENTE_CONFIGURACION',phone:PHONE,colecciones_whatsapp_verificadas:false};
  if(plan?.catalog_id!==MASTER)throw Error('FUENTE_MAESTRA_INVALIDA');
  if(!(api instanceof SecondaryGraph)||api.catalogId!==config.catalog_id)throw Error('ADAPTADOR_SECUNDARIO_INVALIDO');
- return synchronizeCatalog({...options,plan:{...plan,catalog_id:config.catalog_id},api,
+ const result=await synchronizeCatalog({...options,plan:{...plan,catalog_id:config.catalog_id},api,
   target:{id:config.catalog_id,name:NAME,selectFeed}});
+ const products=await api.list(config.catalog_id+'/products','id,retailer_id,availability');
+ const available=p=>String(p.availability).toLowerCase().replace(/_/g,' ')==='in stock';
+ const out=p=>String(p.availability).toLowerCase().replace(/_/g,' ')==='out of stock';
+ const expected=plan.groups.reduce((n,g)=>n+g.sku.length,0);
+ if(products.length!==plan.productos_meta||products.filter(available).length!==expected||products.some(p=>!available(p)&&!out(p)))throw Error('TOTALES_SECUNDARIOS_NO_COINCIDEN');
+ return {...result,phone:PHONE,productos_verificados:products.length,disponibles:expected,agotados:products.filter(out).length};
 }
 function save(path,data){fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync(path,JSON.stringify(data,null,2)+'\n');}
 async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,inspect=false,write=save,log=console.log}={}){

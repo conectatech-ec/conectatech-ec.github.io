@@ -7,7 +7,7 @@ const plan={catalog_id:MASTER,productos_meta:2,fuente_sha256:'a'.repeat(64),grou
  name:'CONECTATECH | TABLETS',retailer_id:'conectatech-web:tablets',family:'Tablets',label:'ct-web:tablets',
  filter:{and:[{custom_label_0:{eq:'ct-web:tablets'}},{availability:{eq:'in stock'}}]},sku:['TABL001']
 }]};
-function fixture({badName=false,badMembers=false,badImport=false,scheduled=false,duplicate=false,badFeedId=false}={}){
+function fixture({badName=false,badMembers=false,badImport=false,scheduled=false,duplicate=false,badFeedId=false,extraProducts=false}={}){
  const calls=[],sets=[],feeds=[],uploads=[];
  let seq=200;
  if(scheduled)feeds.push({id:'20',name:FEED_NAME,schedule:{url:'https://example.test/duplicado.csv'}});
@@ -15,6 +15,7 @@ function fixture({badName=false,badMembers=false,badImport=false,scheduled=false
  if(badFeedId)feeds.push({id:'974449225015463',name:FEED_NAME});
  const remote=[{id:'31',retailer_id:'TABL001',custom_label_0:'ct-web:tablets',availability:'in stock'},
   {id:'32',retailer_id:'TABL002',custom_label_0:'',availability:'out of stock'}];
+ if(extraProducts)remote.push({id:'33',retailer_id:'AJENO',custom_label_0:'',availability:'out of stock'});
  const transport=async(url,options)=>{
   assert.equal(url.origin,'https://graph.facebook.com');assert.equal(options.redirect,'error');
   assert.equal(options.headers.Authorization,'Bearer SECONDARY_FAKE');assert.equal(url.searchParams.has('access_token'),false);
@@ -65,6 +66,7 @@ test('sincroniza otra identidad con los mismos SKU, verifica pertenencia y conse
  const f=fixture(),original=JSON.stringify(plan),checkpoints=[];
  const result=await syncSecondary({config,plan,csv:'csv-publico',api:f.api,wait:async()=>{},attempts:1,onCheckpoint:c=>checkpoints.push(c)});
  assert.equal(result.catalog_id,config.catalog_id);assert.equal(result.estado,'META_SINCRONIZADO');
+ assert.equal(result.productos_verificados,2);assert.equal(result.disponibles,1);assert.equal(result.agotados,1);
  assert.equal(result.colecciones_whatsapp_verificadas,false);assert.equal(result.conjuntos[0].sku,1);
  assert.equal(JSON.stringify(plan),original);assert.equal(checkpoints[0].catalog_id,config.catalog_id);
  assert.equal(f.feeds.length,1);assert.deepEqual(Object.keys(f.feeds[0]).sort(),['id','name']);
@@ -90,6 +92,10 @@ test('una importación incompleta o pertenencia incorrecta nunca acredita sincro
   const f=fixture(option);
   await assert.rejects(syncSecondary({config,plan,csv:'csv-publico',api:f.api,wait:async()=>{},attempts:1}),/IMPORTACION_CON_ERRORES|PERTENENCIA_NO_VERIFICADA/);
  }
+});
+test('una importación que reporta éxito no acredita catálogo con productos adicionales',async()=>{
+ const f=fixture({extraProducts:true});
+ await assert.rejects(syncSecondary({config,plan,csv:'csv-publico',api:f.api,wait:async()=>{},attempts:1}),/TOTALES_SECUNDARIOS_NO_COINCIDEN/);
 });
 test('secreto principal nunca sirve de reserva y config inactiva no solicita nada',async()=>{
  let calls=0;const transport=async()=>{calls++;throw Error('no');};
