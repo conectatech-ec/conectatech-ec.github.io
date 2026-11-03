@@ -1,0 +1,64 @@
+name: Publicar solo HTML del simulador Alex en piloto existente
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['automatizacion/alex-ui.mjs', 'automatizacion/tests/alex-simulator.test.mjs', '.github/alex-simulator.json', '.github/scripts/deploy_alex_ui.py', '.github/scripts/test_deploy_alex_ui.py', '.github/scripts/alex_simulator_https.mjs', '.github/workflows/alex-simulador.yml']
+permissions:
+  contents: read
+concurrency:
+  group: comercial-cloud-piloto
+  cancel-in-progress: false
+jobs:
+  interfaz:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    environment: conectatech-piloto-gratis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: node automatizacion/tests/alex-simulator.test.mjs
+      - run: python .github/scripts/test_deploy_alex_ui.py
+      - id: control
+        run: |
+          python - <<'PY'
+          import json,os
+          c=json.load(open('.github/alex-simulator.json'))
+          assert c['worker']=='conectatech-comercial-piloto' and c['module']=='alex-ui.mjs' and c['cost_max_usd']==0
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              out.write('deploy='+str(c['deploy']).lower()+'\n')
+              out.write('engine='+c['expected_engine_release']+'\n')
+          PY
+      - name: Reemplazar solo alex-ui; preservar íntegros motor, fuente, secretos y configuración
+        if: steps.control.outputs.deploy == 'true'
+        run: python .github/scripts/deploy_alex_ui.py
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          EXPECTED_ENGINE_RELEASE: ${{ steps.control.outputs.engine }}
+      - name: Comprobar HTML protegido, respuesta generativa real, contexto, imagen y reinicio
+        if: steps.control.outputs.deploy == 'true'
+        run: node .github/scripts/alex_simulator_https.mjs
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          EXPECTED_ENGINE_RELEASE: ${{ steps.control.outputs.engine }}
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.control.outputs.deploy == 'true'
+        with:
+          name: alex-simulador-html-verificado
+          path: |
+            automatizacion/generated/fase2/alex-simulator-deploy.json
+            automatizacion/generated/fase2/alex-simulator-https.json
+          retention-days: 7
