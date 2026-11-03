@@ -61,6 +61,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: python automatizacion/tests/scoped_content_test.py
+      - run: node automatizacion/tests/scoped-http.test.mjs
+      - name: Inspeccionar bundle real del Worker sin publicar codigo ni datos
+        if: steps.config.outputs.activar == 'false' && steps.config.outputs.sincronizar_meta == 'false'
+        run: python automatizacion/scoped_content.py --inspect
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - name: Comprobar token de Pagina y permisos Meta sin enviar mensajes
         run: node automatizacion/meta-account-check.mjs
         env:
