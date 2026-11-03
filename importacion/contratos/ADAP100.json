@@ -144,9 +144,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap100-adaptador-usb-c-a-3-5mnm-usb-c/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Adaptador con cable integrado y conector USB-C, con salidas jack de 3,5 mm y USB-C. Permite disponer de conexiones de audio y carga en un solo accesorio; verifica la compatibilidad de tu equipo antes de comprar.",
   "contenido_venta": "Un adaptador USB-C con salidas para jack de 3,5 mm y USB-C.",
   "presentacion": "sin caja",
@@ -255,7 +255,7 @@
       "solicitado": "ADAP100",
       "sku": "ADAP100",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:14.375Z",
+      "fecha": "2026-11-03T03:08:31.937Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -280,7 +280,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap100-adaptador-usb-c-a-3-5mnm-usb-c/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/adap100-adaptador-usb-c-a-3-5mnm-usb-c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap100-adaptador-usb-c-a-3-5mnm-usb-c/",
       "archivo_html": "productos/adap100-adaptador-usb-c-a-3-5mnm-usb-c/index.html",
       "http": 200,
       "sha256_html": "e01879ce7a2fa3a2b3ef045d885e31bd81d3f790986bd4de990a19bececc6e58",
@@ -290,7 +290,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap100/ADAP100-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/adap100/ADAP100-01-600.webp?v=566f78beb9af166d",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap100/ADAP100-01-600.webp?v=566f78beb9af166d",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -299,41 +299,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/adap100-adaptador-usb-c-a-3-5mnm-usb-c/",
+          "url": "https://conectatech-ec.github.io/productos/adap100-adaptador-usb-c-a-3-5mnm-usb-c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/adap100/ADAP100-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap100/ADAP100-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/ADAP100-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/ADAP100-390.png",
       "sha256": "efe58188ce44c93ecb005b93d64dab65480c008baed2e761da0c8cc9871c7acc",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/ADAP100-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/ADAP100-1280.png",
         "sha256": "fd319c54af1565201ac0f2cd1e3f5576064d3a924d4775a62eb69f38c8b6506d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "ADAP100"
     }
   }
 }

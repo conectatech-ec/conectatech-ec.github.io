@@ -212,9 +212,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/powe022-powerbank-10000mah-klipxtreme-con-soporte/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Powerbank magnética Klip Xtreme PowerMag Ultra de capacidad nominal 10.000 mAh. El empaque indica carga inalámbrica y por cable; incorpora una pata abatible de soporte. Referencia fotografiada en azul oscuro.",
   "contenido_venta": "Una powerbank Klip Xtreme PowerMag Ultra de 10.000 mAh con soporte integrado.",
   "presentacion": "sin caja",
@@ -335,7 +335,7 @@
       "solicitado": "POWE022",
       "sku": "POWE022",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:31.619Z",
+      "fecha": "2026-11-03T03:09:08.599Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -360,7 +360,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/powe022-powerbank-10000mah-klipxtreme-con-soporte/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/powe022-powerbank-10000mah-klipxtreme-con-soporte/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/powe022-powerbank-10000mah-klipxtreme-con-soporte/",
       "archivo_html": "productos/powe022-powerbank-10000mah-klipxtreme-con-soporte/index.html",
       "http": 200,
       "sha256_html": "8d57b66b16000eb0e7f5637c7b951bfedcee75b0d82a8c1f1cd764c18918da38",
@@ -370,7 +370,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/powe022/POWE022-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/powe022/POWE022-01-600.webp?v=d433cb8cd807e828",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/powe022/POWE022-01-600.webp?v=d433cb8cd807e828",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -379,41 +379,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/powe022-powerbank-10000mah-klipxtreme-con-soporte/",
+          "url": "https://conectatech-ec.github.io/productos/powe022-powerbank-10000mah-klipxtreme-con-soporte/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/powe022/POWE022-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/powe022/POWE022-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/POWE022-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/POWE022-390.png",
       "sha256": "450f41e6bb0e5cdaa768763ca137688b713dcb06d0246756cc6f23f79c05e111",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/POWE022-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/POWE022-1280.png",
         "sha256": "24b36571d522f8ccb3af95aeb9d49b711cb39351cd56aaffb61594bf852074c5",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "POWE022"
     }
   }
 }

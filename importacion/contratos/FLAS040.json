@@ -131,9 +131,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/flas040-flash-memory-4gb-kingston-datatraveler/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Memoria USB Kingston DataTraveler de capacidad nominal 4 GB, con conector USB-A y cuerpo metálico compacto. Incorpora una abertura para llavero. No se anuncian velocidades de transferencia medidas.",
   "contenido_venta": "Una memoria USB Kingston DataTraveler de 4 GB.",
   "presentacion": "sin caja",
@@ -234,7 +234,7 @@
       "solicitado": "FLAS040",
       "sku": "FLAS040",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:28.474Z",
+      "fecha": "2026-11-03T03:09:02.106Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -259,7 +259,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/flas040-flash-memory-4gb-kingston-datatraveler/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/flas040-flash-memory-4gb-kingston-datatraveler/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/flas040-flash-memory-4gb-kingston-datatraveler/",
       "archivo_html": "productos/flas040-flash-memory-4gb-kingston-datatraveler/index.html",
       "http": 200,
       "sha256_html": "be32cf22af20158e486f8cf6929b0c358518ae713a4df7e79ba3582651cac44d",
@@ -269,7 +269,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/flas040/FLAS040-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/flas040/FLAS040-01-600.webp?v=64a7a7840a0dc412",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/flas040/FLAS040-01-600.webp?v=64a7a7840a0dc412",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -278,41 +278,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/flas040-flash-memory-4gb-kingston-datatraveler/",
+          "url": "https://conectatech-ec.github.io/productos/flas040-flash-memory-4gb-kingston-datatraveler/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/flas040/FLAS040-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/flas040/FLAS040-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/FLAS040-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/FLAS040-390.png",
       "sha256": "fb309300126becf72f0a9671bc7f08e49bc81a5598e0fc4f11b61726bf87af1e",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/FLAS040-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/FLAS040-1280.png",
         "sha256": "7eca3ff20130469d82b706638818e4985d4de8214879ceb5ce7fbed4610f0e78",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "FLAS040"
     }
   }
 }

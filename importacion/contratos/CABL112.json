@@ -144,9 +144,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl112-cable-convertidor-de-usb-c-a-hdmi-4k/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Cable con entrada USB-C y salida HDMI, con conector HDMI azul. El empaque indica resolución de hasta 4K a 30 Hz. La salida de vídeo requiere un equipo USB-C compatible con vídeo; no se promete compatibilidad universal.",
   "contenido_venta": "Un cable convertidor USB-C a HDMI.",
   "presentacion": "sin caja",
@@ -255,7 +255,7 @@
       "solicitado": "CABL112",
       "sku": "CABL112",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:22.100Z",
+      "fecha": "2026-11-03T03:08:47.918Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -280,7 +280,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl112-cable-convertidor-de-usb-c-a-hdmi-4k/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/cabl112-cable-convertidor-de-usb-c-a-hdmi-4k/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl112-cable-convertidor-de-usb-c-a-hdmi-4k/",
       "archivo_html": "productos/cabl112-cable-convertidor-de-usb-c-a-hdmi-4k/index.html",
       "http": 200,
       "sha256_html": "b36a9f013093419dd6ef49895e414d693576135b1e21979a2aa8bf154aa84419",
@@ -290,7 +290,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl112/CABL112-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/cabl112/CABL112-01-600.webp?v=e0c575ba4719e371",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl112/CABL112-01-600.webp?v=e0c575ba4719e371",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -299,41 +299,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/cabl112-cable-convertidor-de-usb-c-a-hdmi-4k/",
+          "url": "https://conectatech-ec.github.io/productos/cabl112-cable-convertidor-de-usb-c-a-hdmi-4k/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/cabl112/CABL112-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl112/CABL112-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/CABL112-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/CABL112-390.png",
       "sha256": "c4f3f5b12f9a2a0cd629a7dd24732509d345426d68e65896d9605e35bdaca406",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/CABL112-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/CABL112-1280.png",
         "sha256": "0db577bbe6c385094bfa1cf2781d7642adc0778c758e29c6e827a1842ec9274f",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "CABL112"
     }
   }
 }

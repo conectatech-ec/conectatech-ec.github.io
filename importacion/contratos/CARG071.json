@@ -131,9 +131,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Base circular de carga inalámbrica compatible con formato MagSafe, cable integrado y alimentación USB-C. Producto compatible; no es fabricado por Apple. No se declara una potencia no confirmada.",
   "contenido_venta": "Un cargador inalámbrico circular con cable USB-C integrado; sin adaptador de pared declarado.",
   "presentacion": "sin caja",
@@ -234,7 +234,7 @@
       "solicitado": "CARG071",
       "sku": "CARG071",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:25.473Z",
+      "fecha": "2026-11-03T03:08:54.902Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -259,7 +259,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/carg071-cargador-usb-c-a-magsafe/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
       "archivo_html": "productos/carg071-cargador-usb-c-a-magsafe/index.html",
       "http": 200,
       "sha256_html": "99d3499df64b7f9d7ed835bb429942c67c8759a951be116b7552932e2a40e87f",
@@ -269,7 +269,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/carg071/CARG071-01-600.webp?v=ee44ecf40db92279",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01-600.webp?v=ee44ecf40db92279",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -278,41 +278,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/carg071-cargador-usb-c-a-magsafe/",
+          "url": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/carg071/CARG071-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/CARG071-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/CARG071-390.png",
       "sha256": "ac7df86002f9ee325b30ef26a15ae99c71ea807cd71123f7253d480074923e2b",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/CARG071-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/CARG071-1280.png",
         "sha256": "a3e77ea4344f9caa6296c41e71dac3398ed8232a604feade13e7689487c8b759",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "CARG071"
     }
   }
 }

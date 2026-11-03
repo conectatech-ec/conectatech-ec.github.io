@@ -132,9 +132,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/lect006-lector-de-memorias-microsd-conector-usb-c/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Lector compacto de tarjetas microSD con conexión USB-C indicada en el inventario y cuerpo con pieza metálica giratoria. La tarjeta de memoria no está incluida.",
   "contenido_venta": "Un lector de tarjetas microSD con conector USB-C; tarjeta de memoria no incluida.",
   "presentacion": "sin caja",
@@ -239,7 +239,7 @@
       "solicitado": "LECT006",
       "sku": "LECT006",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:30.857Z",
+      "fecha": "2026-11-03T03:09:07.382Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -264,7 +264,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/lect006-lector-de-memorias-microsd-conector-usb-c/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/lect006-lector-de-memorias-microsd-conector-usb-c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/lect006-lector-de-memorias-microsd-conector-usb-c/",
       "archivo_html": "productos/lect006-lector-de-memorias-microsd-conector-usb-c/index.html",
       "http": 200,
       "sha256_html": "ffda7cac045d95c7490f113b28179f815b2d939c170b27a11848a7e1c602118b",
@@ -274,7 +274,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/lect006/LECT006-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/lect006/LECT006-01-600.webp?v=31954d307eab034a",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/lect006/LECT006-01-600.webp?v=31954d307eab034a",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -283,41 +283,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/lect006-lector-de-memorias-microsd-conector-usb-c/",
+          "url": "https://conectatech-ec.github.io/productos/lect006-lector-de-memorias-microsd-conector-usb-c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/lect006/LECT006-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/lect006/LECT006-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/LECT006-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/LECT006-390.png",
       "sha256": "32a3a56102e8dc436db33e11d584c6f1d9f2c4f51938ef741572d94b0d1b7afd",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/LECT006-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/LECT006-1280.png",
         "sha256": "0c41c30d1a9b54e79e5835653d7ba514d72a1dad3f07f55c10df44080fe79fd0",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "LECT006"
     }
   }
 }

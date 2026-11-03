@@ -131,9 +131,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi056-audifonos-deportivos-saiva-herofit-pro/",
-  "fecha_verificacion": "2026-11-03T02:28:44.259624+00:00",
+  "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
   "descripcion": "Audífonos deportivos Herofit Pro con ganchos que rodean las orejas y estuche de carga. El conjunto incluye dos auriculares y su estuche. Conexión inalámbrica indicada en el empaque.",
   "contenido_venta": "Un par de audífonos deportivos Herofit Pro y un estuche de carga, según el empaque.",
   "presentacion": "sin caja",
@@ -234,7 +234,7 @@
       "solicitado": "AUDI056",
       "sku": "AUDI056",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-03T02:37:19.473Z",
+      "fecha": "2026-11-03T03:08:42.099Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -259,7 +259,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi056-audifonos-deportivos-saiva-herofit-pro/",
-      "url_comprobada": "http://127.0.0.1:8872/productos/audi056-audifonos-deportivos-saiva-herofit-pro/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi056-audifonos-deportivos-saiva-herofit-pro/",
       "archivo_html": "productos/audi056-audifonos-deportivos-saiva-herofit-pro/index.html",
       "http": 200,
       "sha256_html": "b4e44f0ad340b8277acffbb42854d69da97420fe7a7be0a7154a53339ad16c2e",
@@ -269,7 +269,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi056/AUDI056-01.webp",
-        "url_cargada": "http://127.0.0.1:8872/imagenes/audi056/AUDI056-01-600.webp?v=2c6c132b40358301",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi056/AUDI056-01-600.webp?v=2c6c132b40358301",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -278,41 +278,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8872/productos/audi056-audifonos-deportivos-saiva-herofit-pro/",
+          "url": "https://conectatech-ec.github.io/productos/audi056-audifonos-deportivos-saiva-herofit-pro/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8872/imagenes/audi056/AUDI056-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi056/AUDI056-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-118/qa-final-local/movil/AUDI056-390.png",
+      "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI056-390.png",
       "sha256": "41473bc4269cc1f43ddfc33695743c482b72dedb3b621eb8acc7d3064a9e3f7f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-final-local/movil/AUDI056-1280.png",
+        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI056-1280.png",
         "sha256": "2fa6958246b4f00b37a21295aca476e78172b4b7f7949fcdd0ca377818bcc827",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-03T03:07:57.709464+00:00",
+      "archivo": "reportes/continuacion-118/http-publicacion.json",
+      "reporte": "reportes/continuacion-118/http-publicacion.json",
+      "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
+      "sku": "AUDI056"
     }
   }
 }
