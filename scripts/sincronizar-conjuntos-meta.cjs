@@ -74,7 +74,7 @@ async function synchronize(options){
  }}});
 }
 // Motor compartido; el adaptador secundario valida identidad, descendientes y credencial propios.
-async function synchronizeCatalog({plan,csv,api,target,wait=pause,attempts=40,onProgress=()=>{},checkpoint=null,onCheckpoint=()=>{}}){
+async function synchronizeCatalog({plan,csv,api,target,wait=pause,attempts=40,uploadAttempts=attempts,onProgress=()=>{},checkpoint=null,onCheckpoint=()=>{}}){
  const catalogId=target?.id;
  if(!/^\d+$/.test(catalogId||'')||!target.name||typeof target.selectFeed!=='function')throw Error('Destino Meta inválido');
  if(plan.catalog_id!==catalogId||!plan.groups.length||!plan.productos_meta)throw Error('Plan Meta inválido');
@@ -90,7 +90,7 @@ async function synchronizeCatalog({plan,csv,api,target,wait=pause,attempts=40,on
  const poll=async current=>{
   if(current.end_time)return current;
   onProgress('META_IMPORTACION_EN_CURSO_ID_'+current.id);
-  for(let i=0;i<attempts;i++){
+  for(let i=0;i<uploadAttempts;i++){
    current=await api.request('GET',current.id,{fields:'id,end_time,error_count,num_invalid_items,num_persisted_items'});
    if(current.end_time)return current;
    if(i%2===0)onProgress('META_IMPORTACION_EN_CURSO_PERSISTIDOS_'+(current.num_persisted_items??0));

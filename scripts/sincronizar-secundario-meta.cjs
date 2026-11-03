@@ -97,7 +97,8 @@ async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,
   plan=plan||JSON.parse(fs.readFileSync('exportaciones/meta-conjuntos-web.json','utf8'));
   csv=csv??fs.readFileSync('exportaciones/meta-catalogo-piloto.csv','utf8');
   checkpoint=checkpoint??(fs.existsSync(CHECKPOINT)?JSON.parse(fs.readFileSync(CHECKPOINT,'utf8')):null);
-  receipt=await syncSecondary({config,plan,csv,checkpoint,api,onCheckpoint:c=>write('work/auto-meta/importacion-secundario.json',c),onProgress:log});
+  // Una carga pendiente se reanuda en la siguiente ejecución; no retener el flujo principal 20 minutos.
+  receipt=await syncSecondary({config,plan,csv,checkpoint,api,uploadAttempts:1,onCheckpoint:c=>write('work/auto-meta/importacion-secundario.json',c),onProgress:log});
   }
  }
  write('work/auto-meta/resultado-secundario.json',receipt);log('META_SECUNDARIO: '+JSON.stringify(receipt));
