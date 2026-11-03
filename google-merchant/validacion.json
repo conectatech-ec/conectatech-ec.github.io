@@ -6,7 +6,7 @@
   "costo_autorizado": 0,
   "publicacion_habilitada": false,
   "estado": "SOLO_VALIDACION_COMERCIAL_PENDIENTE",
-  "source_commit": "7adf0f7dff9e9733e7645fdb5315204ba01361c1",
+  "source_commit": "5131e09133336a996c810cb68fcdcfc9ebd08204",
   "validacion": "local_y_http_publico",
   "inventario_corregido": {
     "fecha_corte": "2026-11-02",
@@ -14,7 +14,7 @@
     "sha256_xlsx_privado": "265843da6b15038d055535ecdd9ed0b421c947caad27e52c584f16e8bbc6fc80",
     "fuente_publica": "datos-593/corte-comercial-publico-validado.json",
     "fuente_publica_sha256": "fbd358ac0cf0aa278c0067eda88a3845e3457f2b742e8f5d776dab1c2ab9a3b8",
-    "fuente_commit": "7adf0f7dff9e9733e7645fdb5315204ba01361c1",
+    "fuente_commit": "5131e09133336a996c810cb68fcdcfc9ebd08204",
     "alcance": "Solo SKU del catálogo web presentes en el corte comercial público validado; disponibilidad binaria y precios ya públicos. Sin cantidades.",
     "stock_tiempo_real": false,
     "referencias_exportadas": 1198,
@@ -34,18 +34,19 @@
     "sha256_productos": "d7cb7fd2b43dca947cccf3551ce19b162c034b5ae875c02bb2f27076b579e11e"
   },
   "productos_origen": 1198,
-  "incluidos": 365,
-  "excluidos": 833,
+  "incluidos": 370,
+  "excluidos": 828,
   "motivos": {
     "enlaces_ficha_no_coinciden": 1,
+    "fotografia_no_aprobada": 1,
     "identidad_pendiente": 4,
     "imagen_no_coincide": 370,
-    "producto_no_aprobado": 203,
-    "publicacion_no_verificada": 253,
+    "producto_no_aprobado": 201,
+    "publicacion_no_verificada": 249,
     "sin_contrato": 1,
     "titulo_catalogo_no_coincide": 1
   },
-  "feed_sha256": "145094f3367038e7a17b8dc3a011a1686a022b7ef152bcf9d2104e6325976e80",
+  "feed_sha256": "dd9e188add0555910ca703a9aa223019f3882bccacf4a61a71bf9fa9e9d1fb84",
   "advertencias": [
     "Stock registrado: no implica inventario en tiempo real.",
     "Faltan verificar compra online, precio final, envíos y devoluciones; XML válido no garantiza aprobación de Google.",
