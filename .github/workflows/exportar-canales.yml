@@ -47,6 +47,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validar diagnóstico de vínculo sin acceso a Meta
+        run: node --test scripts/test-diagnostico-vinculo-meta.cjs
       - name: Comprobar credencial existente sin modificar activos
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
@@ -83,6 +85,10 @@ jobs:
             fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nAcceso Meta (solo lectura): '+result.estado+'\n');
           })().catch(()=>{console.error('No se pudo completar la comprobación de acceso');process.exitCode=1});
           JS
+      - name: Consultar vínculo WhatsApp con la credencial existente (sólo lectura)
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: node scripts/diagnosticar-vinculo-whatsapp-meta.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
