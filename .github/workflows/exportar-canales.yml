@@ -81,21 +81,29 @@ jobs:
               }};
               const digest=crypto.createHash('sha256').update(csv).digest('hex');
               result.expected_feed_sha256=digest;result.expected_items=plan.productos_meta;
-              const uploads=await api.request('GET',checkpoint.feed_id+'/uploads',{fields:'id,filename,end_time,error_count,num_invalid_items,num_persisted_items',limit:100});
+              const uploads=await api.request('GET',checkpoint.feed_id+'/uploads',{fields:'id,filename,start_time,end_time,error_count,num_invalid_items,num_persisted_items',limit:100});
               if(!Array.isArray(uploads.data))throw Error('IMPORT_RESPONSE_INVALID');
               const matches=uploads.data.filter(u=>String(u.filename||'').endsWith('ct-'+digest+'.csv'));
               result.target_uploads_found=matches.length;
-              result.observed_pending_uploads=uploads.data.filter(u=>!u.end_time&&!u.error_count).length;
+              const pending=uploads.data.filter(u=>!u.end_time&&!u.error_count);
+              result.observed_pending_uploads=pending.length;
+              result.pending_details=pending.slice(0,5).map(u=>({
+                age_seconds:Number.isFinite(Date.parse(u.start_time))?Math.max(0,Math.floor((Date.now()-Date.parse(u.start_time))/1000)):null,
+                expected_digest_in_filename:String(u.filename||'').includes(digest),
+                previous_checkpoint_digest_in_filename:String(u.filename||'').includes(checkpoint.feed_sha256),
+                persisted_items:Number.isSafeInteger(u.num_persisted_items)?u.num_persisted_items:null,
+                invalid_items:Number.isSafeInteger(u.num_invalid_items)?u.num_invalid_items:null,
+                error_count:Number.isSafeInteger(u.error_count)?u.error_count:null
+              }));
               const upload=matches.length===1?matches[0]:null;
               result.import_complete=!!upload?.end_time;
               result.import_error_count=Number.isSafeInteger(upload?.error_count)?upload.error_count:null;
               result.invalid_items=Number.isSafeInteger(upload?.num_invalid_items)?upload.num_invalid_items:null;
               result.persisted_items=Number.isSafeInteger(upload?.num_persisted_items)?upload.num_persisted_items:null;
               result.import_verified=!!upload?.end_time&&result.import_error_count===0&&result.invalid_items===0&&result.persisted_items>=plan.productos_meta;
-              if(result.import_verified){
-                result.postimport=await verifyPostImport({csv,api,catalogId:String(plan.catalog_id),maxRequests:19});
-                result.state='IMPORT_VERIFIED_EDITORIAL_READ_COMPLETE';
-              }else result.state='IMPORT_STATUS_READ_ONLY_PENDING_OR_UNKNOWN';
+              result.postimport=await verifyPostImport({csv,api,catalogId:String(plan.catalog_id),maxRequests:19});
+              result.metadata_observed_while_import_pending=!result.import_verified;
+              result.state=result.import_verified?'IMPORT_VERIFIED_EDITORIAL_READ_COMPLETE':'IMPORT_PENDING_WITH_SEPARATE_METADATA_OBSERVATION';
             }catch{result.state='READ_ONLY_STATUS_UNAVAILABLE';}
             fs.writeFileSync(path.join(process.env.RUNNER_TEMP,'meta-postimport-read-only.json'),JSON.stringify(result,null,2)+'\n');
             console.log('META_IMPORT_EDITORIAL_READ_ONLY '+JSON.stringify(result));
