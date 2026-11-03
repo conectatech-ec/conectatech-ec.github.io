@@ -39,8 +39,9 @@ try{
   const amounts=[...d.text.matchAll(/\$(\d+(?:\.\d{2})?)/g)].map(x=>Math.round(Number(x[1])*100));
   // An exact selection may also display verified sibling offers. Validate each
   // sibling against the same Hub; never allow arbitrary catalogue amounts.
+  const expectedCatalog=await refreshAlexCatalog(alexBaseline,fetch,Date.now(),{input:message,focus:d.focus},hub);
   for(const option of d.variant_options||[]){
-   const p=hub.products.find(p=>p.sku===option.sku),identity=phoneVariant(p);assert.ok(identity?.verified_identity);
+   const p=hub.products.find(p=>p.sku===option.sku),identity=phoneVariant(expectedCatalog.productos.find(p=>p.sku===option.sku));assert.ok(identity?.verified_identity);
    for(const key of ['storage_gb','ram_physical_gb','ram_virtual_gb','connectivity'])assert.equal(option[key],identity[key]);
    if(d.source_fresh){assert.equal(p.availability,'in_stock');assert.ok(p.prices);assert.equal(Math.round(option.cash*100),p.prices.promo_cash_cents);assert.equal(Math.round(option.card*100),p.prices.pvp_card_cents);}
    else {assert.equal(option.cash,null);assert.equal(option.card,null);}
