@@ -2678,3 +2678,65 @@ jobs:
           curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-lote100-42-qa.cjs" -o "$RUNNER_TEMP/foto-qa42/qa.cjs"
           NODE_PATH="$RUNNER_TEMP/foto-qa42/node_modules" node "$RUNNER_TEMP/foto-qa42/qa.cjs"
 
+
+  mejoras_lote100_43:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Verificar imágenes corregidas y originales conservados
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json,os,time,hashlib,re
+          from datetime import datetime
+          from urllib.request import urlopen,Request
+          origin='https://conectatech-ec.github.io';raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA']
+          def get(u):
+              for a in range(4):
+                  try:
+                      with urlopen(Request(u,headers={'Cache-Control':'no-cache'}),timeout=30) as r:return r.read()
+                  except Exception:
+                      if a==3:raise
+                      time.sleep(2+a)
+          rec=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261103-43.json'));assert len(rec['productos'])==10 and rec['imagenes_corregidas']==10 and rec['total_evaluado']==100 and len(rec['conservados_en_lote'])==90 and len(rec['aprobados_preservados'])==7 and rec['maestros_nuevos']==0
+          pub=os.environ['PHOTO_REF']=='refs/heads/main'
+          if pub:
+              for a in range(300):
+                  try:
+                      root=get(origin+'/').decode();products={p['sku']:p for p in json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',root)[1])}
+                      for s,row in rec['productos'].items():
+                          ph=row.get('imagenProfesional');expected=ph['versiones']['1200']['url'] if ph else row['portada_anterior']['url'];assert products[s]['imageUrl']==expected
+                          page=get(origin+row['pagina']).decode()
+                          for v in ([ph] if ph else [])+row.get('vistas',[])+row.get('mantener_vistas',[]):assert v['versiones']['300']['url'] in page
+                      if rec['publicacion_verificada']:
+                          ref=re.search(r'src="(/assets/catalogo-publicado[.]js[?]v=[^"]+)"',root)[1];metadata=json.loads(get(origin+ref).decode().split('=',1)[1].strip().removesuffix(';'))['productos']
+                          for s,row in rec['productos'].items():
+                              assert metadata[s]['imagen']['src']==(row['imagenProfesional']['versiones']['1200']['url'] if 'imagenProfesional' in row else row['portada_anterior']['url'])
+                              assert datetime.fromisoformat(metadata[s]['actualizadoEn'])>=datetime.fromisoformat(rec['fecha_primera_verificacion_publica'])
+                      break
+                  except Exception:
+                      if a==299:raise
+                      time.sleep(5)
+          cache={}
+          for s,row in rec['productos'].items():
+              assert row['revisado_visual']
+              files=list(row['archivos_originales_conservados'])
+              for ph in ([row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas'])+row.get('mantener_vistas',[]):files += [{'url':ph['original'],'sha256':ph['sha256_original']},*ph['versiones'].values()]
+              for v in files:
+                  assert v['url'].startswith('/imagenes/'+s.lower()+'/') and '..' not in v['url']
+                  if v['url'] not in cache:cache[v['url']]=hashlib.sha256(get((origin if pub else raw)+v['url'])).hexdigest()
+                  assert cache[v['url']]==v['sha256']
+          print('LOTE43',len(rec['productos']),'HASHES',len(cache),'PUBLICO',pub)
+      - name: Verificar presentación pública en móvil y escritorio
+        if: github.ref == 'refs/heads/main'
+        env:
+          PHOTO_SHA: ${{ github.sha }}
+          PHOTO_PUBLIC: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/foto-qa43"
+          npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa43" playwright@1.51.1
+          curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-lote100-43-qa.cjs" -o "$RUNNER_TEMP/foto-qa43/qa.cjs"
+          NODE_PATH="$RUNNER_TEMP/foto-qa43/node_modules" node "$RUNNER_TEMP/foto-qa43/qa.cjs"
+
