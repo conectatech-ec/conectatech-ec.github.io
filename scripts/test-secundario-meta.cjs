@@ -7,7 +7,7 @@ const plan={catalog_id:MASTER,productos_meta:2,fuente_sha256:'a'.repeat(64),grou
  name:'CONECTATECH | TABLETS',retailer_id:'conectatech-web:tablets',family:'Tablets',label:'ct-web:tablets',
  filter:{and:[{custom_label_0:{eq:'ct-web:tablets'}},{availability:{eq:'in stock'}}]},sku:['TABL001']
 }]};
-function fixture({badName=false,badMembers=false,badImport=false,scheduled=false,duplicate=false,badFeedId=false,extraProducts=false,pendingUpload=false}={}){
+function fixture({badName=false,badMembers=false,badImport=false,scheduled=false,duplicate=false,badFeedId=false,extraProducts=false,pendingUpload=false,apiFailure=null}={}){
  const calls=[],sets=[],feeds=[],uploads=[];
  let seq=200;
  if(scheduled)feeds.push({id:'20',name:FEED_NAME,schedule:{url:'https://example.test/duplicado.csv'}});
@@ -23,6 +23,7 @@ function fixture({badName=false,badMembers=false,badImport=false,scheduled=false
   assert.equal(path.includes(MASTER),false,'ninguna operación dirigida al Maestro');
   const params=options.body instanceof FormData?Object.fromEntries(options.body):options.body?Object.fromEntries(options.body):{};
   calls.push({method:options.method,path,params});
+  if(apiFailure)return new Response(JSON.stringify({error:{code:apiFailure.code,error_subcode:apiFailure.subcode,message:'Bearer SECONDARY_FAKE https://private.example/photo?signature=NEVER_DISCLOSE'}}),{status:apiFailure.status});
   let data;
   if(path===config.catalog_id)data={id:config.catalog_id,name:badName?'OTRO':NAME};
   else if(path===config.catalog_id+'/product_feeds'){
@@ -44,7 +45,7 @@ function fixture({badName=false,badMembers=false,badImport=false,scheduled=false
   return new Response(JSON.stringify(data));
  };
  const api=new SecondaryGraph({config,token:'SECONDARY_FAKE',version:'v26.0',transport});
- return {api,calls,feeds,sets,uploads,transport};
+ return {api,calls,feeds,sets,uploads,remote,transport};
 }
 test('conserva la fijación del sincronizador principal al Maestro',async()=>{
  let calls=0;const api={request:async()=>{calls++;}};
@@ -151,4 +152,37 @@ test('la espera de importación secundaria se acota sin repetir la carga ni camb
  assert.equal(f.uploads.length,1);assert.equal(waits,2);
  f.uploads[0].end_time='done';
  const result=await syncSecondary({...opts,checkpoint});assert.equal(result.productos_verificados,2);assert.equal(f.uploads.length,1);
+});
+test('clasifica HTTP/Graph sin revelar mensajes, URLs, headers ni credencial',async()=>{
+ for(const [status,code,category]of [[429,4,'rate_limit'],[403,200,'permission_denied'],[400,100,'unsupported_or_invalid_request'],[503,2,'transport'],[400,42,'graph_api']]){
+  const f=fixture({apiFailure:{status,code,subcode:999}});let error;
+  try{await main({config,plan,csv:'csv-publico',checkpoint:null,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:f.transport,write:()=>{},log:()=>{}});}catch(e){error=e;}
+  assert(error);const result=failureReceipt(error),text=JSON.stringify(result);
+  assert.equal(result.estado,'ERROR_SECUNDARIO');assert.equal(result.diagnostico.category,category);assert.equal(result.diagnostico.stage,'verify_catalog_identity');assert.equal(result.diagnostico.http_status,status);assert.equal(result.diagnostico.graph_code,code);assert.equal(result.diagnostico.graph_subcode,999);assert.equal(result.diagnostico.feed_submission_attempts,0);
+  for(const secret of ['SECONDARY_FAKE','NEVER_DISCLOSE','https://','Bearer','headers','reason'])assert(!text.includes(secret));
+  assert.equal(f.calls.filter(c=>c.method==='POST').length,0);
+ }
+});
+test('error de pertenencia o identidad devuelve etapa y código seguros, nunca el ID del conjunto',()=>{
+ for(const [raw,code,stage]of [['PERTENENCIA_NO_VERIFICADA_123456789123456789','PERTENENCIA_NO_VERIFICADA','verify_set_membership'],['CONJUNTO_NO_COINCIDE_123456789123456789','CONJUNTO_NO_COINCIDE','verify_set_identity']]){
+  const error=Error(raw);error.meta={reason:'https://private.example/?access_token=NEVER_DISCLOSE',headers:{Authorization:'Bearer NEVER_DISCLOSE'}};const result=failureReceipt(error),text=JSON.stringify(result);
+  assert.equal(result.codigo,code);assert.equal(result.diagnostico.category,'validation');assert.equal(result.diagnostico.stage,stage);assert.equal(result.diagnostico.graph_code,null);
+  for(const secret of ['123456789123456789','NEVER_DISCLOSE','https://','Authorization','reason'])assert(!text.includes(secret));
+ }
+});
+test('clasificador rechaza datos libres y números inválidos en metadatos desconocidos',()=>{
+ const error=Error('PRIVATE MESSAGE https://private.example/?secret=NEVER_DISCLOSE');error.meta={code:'NEVER_DISCLOSE',subcode:Infinity,reason:'NEVER_DISCLOSE'};error.stage='https://private.example';
+ const result=failureReceipt(error);assert.equal(result.codigo,'VALIDACION_SECUNDARIA_NO_CONFIRMADA');assert.equal(result.diagnostico.stage,'unknown');assert.equal(result.diagnostico.graph_code,null);assert.equal(result.diagnostico.graph_subcode,null);assert(!JSON.stringify(result).includes('NEVER_DISCLOSE'));assert(!JSON.stringify(result).includes('https://'));
+});
+test('código HTTP malformado no puede transportar un ID numérico privado en el recibo',()=>{
+ const result=failureReceipt(Error('META_HTTP_400_CODIGO_123456789123456789'));assert.equal(result.codigo,'META_HTTP_400_CODIGO_NO_DISPONIBLE');assert.equal(result.diagnostico.http_status,400);assert.equal(result.diagnostico.graph_code,null);assert(!JSON.stringify(result).includes('123456789123456789'));
+ const invalid=failureReceipt(Error('META_HTTP_999_CODIGO_123456789123456789'));assert.equal(invalid.codigo,'VALIDACION_SECUNDARIA_NO_CONFIRMADA');assert.equal(invalid.diagnostico.http_status,null);assert(!JSON.stringify(invalid).includes('123456789123456789'));
+});
+test('reverificación fallida cuenta conjuntos y conserva último éxito/checkpoint sin nueva carga',async()=>{
+ const f=fixture(),checkpoints=[];const previous=await syncSecondary({config,plan,csv:'csv-publico',api:f.api,wait:async()=>{},attempts:1,onCheckpoint:c=>checkpoints.push(c)}),snapshot=JSON.stringify(previous),checkpoint=checkpoints[0],checkpointBytes=JSON.stringify(checkpoint),posts=f.calls.filter(c=>c.method==='POST').length;
+ f.remote.push({id:'44',retailer_id:'EXTRA',custom_label_0:'',availability:'out of stock'});const writes=[];let error;
+ try{await main({config,plan,csv:'csv-publico',checkpoint,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:f.transport,write:(p,d)=>writes.push([p,d]),log:()=>{}});}catch(e){error=e;}
+ assert(error);const result=failureReceipt(error);assert.equal(result.codigo,'TOTALES_SECUNDARIOS_NO_COINCIDEN');assert.equal(result.diagnostico.stage,'verify_catalog_totals');assert.equal(result.diagnostico.sets_verified,1);assert.equal(result.diagnostico.feed_submission_attempts,0);assert.equal(result.diagnostico.pending_upload_polls,0);assert.equal(result.estado,'ERROR_SECUNDARIO');assert.equal(result.colecciones_whatsapp_verificadas,false);
+ assert.equal(f.uploads.length,1);assert.equal(f.calls.filter(c=>c.method==='POST').length,posts);assert.equal(JSON.stringify(previous),snapshot);assert.equal(JSON.stringify(checkpoint),checkpointBytes);
+ const resumed=writes.find(([p])=>p==='work/auto-meta/importacion-secundario.json');assert(resumed);assert.equal(JSON.stringify(resumed[1]),checkpointBytes,'checkpoint idéntico: ningún delta funcional que pueda crear un commit');assert(!writes.some(([p])=>p==='work/auto-meta/resultado-secundario.json'),'no emitir falso éxito después del error');
 });
