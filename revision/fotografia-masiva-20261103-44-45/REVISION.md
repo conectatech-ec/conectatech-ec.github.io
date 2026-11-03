@@ -1,6 +1,8 @@
 # CONECTATECH ·56 mejoras de encuadre
 
-**Galería de revisión.** Las dos tandas están integradas en main; la publicación en la web sigue pendiente de comprobar mientras termina GitHub Pages.
+**56 portadas publicadas y verificadas.** Se comprobaron482 archivos porSHA enHTTP y112 casos enChromium público, en móvil y escritorio. El parche de fechas reales y prioridad ya está integrado y está pendiente de su comprobación final enPages.
+
+[Ver la galería web](https://conectatech-ec.github.io/revision/fotografia-masiva-20261103-44-45/)
 
 126 fotografías revisadas:56 propuestas y70 conservadas. Dos imágenes externas sin acceso visual. Se reutilizan los maestros completos, sin modificar marcas, modelo, unidades, terminales ni proporciones.
 
