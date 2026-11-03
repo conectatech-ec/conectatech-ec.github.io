@@ -1,0 +1,268 @@
+{
+  "schema": "conectatech.alex.contextual-private-verified.v1",
+  "at": "2026-11-03T23:41:53.551Z",
+  "passed": true,
+  "scope": "private_simulator_only",
+  "simulator_url": "https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/alex",
+  "deployment": {
+    "schema": "conectatech.alex.conversation-deploy.v1",
+    "passed": true,
+    "revision": "1c2b2307c3bc5a673dad845ba21d1c852f62b8eb",
+    "changed_modules": [
+      "alex-store.mjs",
+      "alex-ui.mjs",
+      "alex.mjs"
+    ],
+    "worker_puts": 1,
+    "worker_and_unowned_modules_preserved": true,
+    "settings_secrets_and_quotas_preserved": true,
+    "source_and_banners_preserved": true,
+    "external_customers_enabled": false,
+    "new_cost_usd": 0,
+    "private_content_recorded": false,
+    "workflow_run": 41741025949
+  },
+  "verification": {
+    "workflow_run": 41741164734,
+    "normal_UI_messages": 13,
+    "privacy_resets": 1,
+    "profiles": [
+      {
+        "id": "COL001",
+        "turns": [
+          {
+            "question": "Busco un Samsung A17, tengo un presupuesto de 250 dólares",
+            "text": "Aquí van las dos 😎. Una cuida más el bolsillo y la otra te da más espacio para fotos y aplicaciones.",
+            "suggestions": [
+              "🤔 ¿Cuál conviene?",
+              "🔥 ¿Qué cambia?",
+              "💳 ¿Con tarjeta?",
+              "🛵 ¿Llega hoy?"
+            ],
+            "HTTP": 200,
+            "generative": true,
+            "loaded_images": 2,
+            "checks": {
+              "both_banners_rendered": true,
+              "compact_only_after_load": true,
+              "personality_differentiated": true
+            }
+          },
+          {
+            "question": "¿Cuánto cuesta con tarjeta?",
+            "text": "Samsung A17 · 💳 con tarjeta (PVP)\n• 128 GB · 4 GB RAM física · 4G: $232.38\n• 256 GB · 8 GB RAM física: $299.88",
+            "suggestions": [
+              "💳 Revisar cuotas",
+              "Condiciones vigentes",
+              "💵 Comparar costos",
+              "💵 Ver contado"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "direct_verified_prices": true,
+              "buttons_evolved": true,
+              "no_repeated_banners": true
+            }
+          },
+          {
+            "question": "Revisar cuotas",
+            "text": "💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.\n¿De qué banco es la tarjeta que quieres usar?",
+            "suggestions": [
+              "Condiciones vigentes",
+              "💵 Comparar costos",
+              "💵 Ver contado",
+              "Elegir 128 GB"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "installments_not_repeated": true,
+              "no_unconfirmed_bank_offer": true
+            }
+          },
+          {
+            "question": "¿Qué cámara tienen ambos?",
+            "text": "Samsung Galaxy A17 128 GB: cámara principal 50 MP con OIS.\nTelefono Samsung A17 8GB+256GB: falta confirmar la característica de la cámara de esta versión.",
+            "suggestions": [
+              "¿Qué fotos tomarás?",
+              "Otras opciones 📷",
+              "Elegir 128 GB",
+              "Revisar otro detalle"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "direct_camera_facts": true,
+              "buttons_evolved": true
+            }
+          },
+          {
+            "question": "Prefiero contraentrega en Quito",
+            "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.\n¿En qué sector necesitas la entrega?",
+            "suggestions": [
+              "Cobertura y costo",
+              "📍 Retiro en tienda",
+              "💵 Ver contado",
+              "Confirmar con person"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "product_budget_delivery_remembered": true,
+              "buttons_evolved": true
+            }
+          },
+          {
+            "question": "Cobertura y costo",
+            "text": "Confirmamos cobertura, costo y fecha antes de comprar.",
+            "suggestions": [
+              "📍 Retiro en tienda",
+              "💵 Ver contado",
+              "Confirmar con person"
+            ],
+            "HTTP": 200,
+            "generative": true,
+            "loaded_images": 0,
+            "checks": {
+              "no_delivery_promise": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "COL002",
+        "turns": [
+          {
+            "question": "Busco un Samsung A17, tengo un presupuesto de 250 dólares",
+            "text": "Te muestro ambas 😊. Una favorece el ahorro y la otra te da más espacio para fotos y aplicaciones.",
+            "suggestions": [
+              "🤔 ¿Cuál conviene?",
+              "🔥 ¿Qué cambia?",
+              "💳 ¿Con tarjeta?",
+              "🛵 ¿Llega hoy?"
+            ],
+            "HTTP": 200,
+            "generative": true,
+            "loaded_images": 2,
+            "checks": {
+              "both_banners_rendered": true,
+              "compact_only_after_load": true,
+              "personality_differentiated": true
+            }
+          },
+          {
+            "question": "¿Cuánto cuesta con tarjeta?",
+            "text": "Samsung A17 · 💳 con tarjeta (PVP)\n• 128 GB · 4 GB RAM física · 4G: $232.38\n• 256 GB · 8 GB RAM física: $299.88",
+            "suggestions": [
+              "💳 Revisar cuotas",
+              "Condiciones vigentes",
+              "💵 Comparar costos",
+              "💵 Ver contado"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "direct_verified_prices": true,
+              "buttons_evolved": true,
+              "no_repeated_banners": true
+            }
+          },
+          {
+            "question": "Revisar cuotas",
+            "text": "💳 Los plazos y condiciones vigentes de esa tarjeta requieren confirmación.\n¿De qué banco es la tarjeta que quieres usar?",
+            "suggestions": [
+              "Condiciones vigentes",
+              "💵 Comparar costos",
+              "💵 Ver contado",
+              "Elegir 128 GB"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "installments_not_repeated": true,
+              "no_unconfirmed_bank_offer": true
+            }
+          },
+          {
+            "question": "¿Qué cámara tienen ambos?",
+            "text": "Samsung Galaxy A17 128 GB: cámara principal 50 MP con OIS.\nTelefono Samsung A17 8GB+256GB: falta confirmar la característica de la cámara de esta versión.",
+            "suggestions": [
+              "¿Qué fotos tomarás?",
+              "Otras opciones 📷",
+              "Elegir 128 GB",
+              "Revisar otro detalle"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "direct_camera_facts": true,
+              "buttons_evolved": true
+            }
+          },
+          {
+            "question": "Prefiero contraentrega en Quito",
+            "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.\n¿En qué sector necesitas la entrega?",
+            "suggestions": [
+              "Cobertura y costo",
+              "📍 Retiro en tienda",
+              "💵 Ver contado",
+              "Confirmar con person"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "product_budget_delivery_remembered": true,
+              "buttons_evolved": true
+            }
+          },
+          {
+            "question": "Cobertura y costo",
+            "text": "🛵 Contraentrega en Quito: confirmamos cobertura, costo y fecha antes de comprar.",
+            "suggestions": [
+              "📍 Retiro en tienda",
+              "💵 Ver contado",
+              "Confirmar con person"
+            ],
+            "HTTP": 200,
+            "generative": false,
+            "loaded_images": 0,
+            "checks": {
+              "no_delivery_promise": true
+            }
+          }
+        ]
+      }
+    ],
+    "image_failure": {
+      "HTTP": 200,
+      "controlled_browser_only": true,
+      "full_verified_text_preserved": true,
+      "loaded_images": 1,
+      "no_assets_modified": true
+    },
+    "checks": {
+      "both_profiles_verified": true,
+      "contextual_buttons_clicked": true,
+      "no_external_sends": true,
+      "quota_limits_preserved": true,
+      "banners_and_source_unchanged": true,
+      "failed_image_keeps_verified_text": true
+    }
+  },
+  "limitations": [
+    "The exact camera specification for the 256 GB variant is not verified; Alex states this instead of copying its sibling's specification.",
+    "Verification covers the authenticated HTML simulator, not an external Messenger customer conversation."
+  ],
+  "external_customers_enabled": false,
+  "private_image_metadata_recorded": false,
+  "new_cost_usd": 0
+}
