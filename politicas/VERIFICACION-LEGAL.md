@@ -4,7 +4,7 @@ Fecha de revisión: **16 de octubre de 2026**, zona America/Guayaquil. Documento
 
 ## Resultado que cambia la implementación
 
-La versión histórica del artículo 45 que hablaba de tres días y ciertos canales de compra fue sustituida en 2022. La regla comprobada es un **término de quince días desde la recepción**, aplicable a **cualquier medio de compra**, condicionado por naturaleza y estado del bien. No se utiliza el plazo comercial 1–3/7 días para limitarla. Tampoco se impone crédito de tienda como sustituto obligatorio del dinero.
+La versión histórica del artículo 45 que hablaba de tres días y ciertos canales de compra fue sustituida en 2022. La regla comprobada es un **término de quince días desde la recepción**, aplicable a **cualquier medio de compra**, condicionado por naturaleza y estado del bien. La instrucción final03/11 retira los plazos voluntarios1–3/7; no modifica este término legal. Tampoco se impone crédito de tienda como sustituto obligatorio del dinero.
 
 ## Fuentes y comprobaciones
 
@@ -36,4 +36,6 @@ Se realizaron búsquedas dirigidas en Asamblea, Registro Oficial y portales de e
 
 ## Trazabilidad de decisiones
 
-Plazos comerciales 1año/30días y 1–3/7días: instrucción expresa del propietario en esta conversación. Inicio desde entrega: redacción propuesta favorable al comprador, pendiente de aprobación de esta política. Dirección y WhatsApp: datos ya utilizados en las fichas públicas. Razón social recuperada el03/11 de instrucciones para593: VELASCO VALDERRAMA JOSE RAFAEL. Plazos de otras categorías/SKU y logística/reembolsos: sin valores inventados.
+Garantías comerciales1año/30días: conservadas. La instrucción final03/11 elimina cambios por cortesía y plazos voluntarios1–3/7. Inicio desde entrega: redacción propuesta favorable al comprador, pendiente de aprobación de esta política. Dirección y WhatsApp: datos ya utilizados en las fichas públicas. Razón social recuperada el03/11 de instrucciones para593: VELASCO VALDERRAMA JOSE RAFAEL. Plazos de otras categorías/SKU y logística/reembolsos: sin valores inventados.
+
+Verificación interna03/11: artículo45 en el texto consolidado del Ministerio de Producción (https://www.produccion.gob.ec/wp-content/uploads/2025/03/LEY-ORGANICA-DE-DEFENSA-DEL-CONSUMIDOR_2022_02_11.pdf). La página pública conserva únicamente plazo, condiciones básicas y derechos; las fuentes y explicación jurídica permanecen aquí. Google pide política clara en web con medios/plazos/gastos; su configuración adicional en Merchant es recomendada (https://support.google.com/merchants/answer/13889434?hl=en). No se presenta la revisión breve como operativamente completa mientras falten recepción/gastos/reembolso.

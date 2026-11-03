@@ -6,5 +6,22 @@
   "apiBase": null,
   "productionDeliveries": [],
   "bankTransferEnabled": false,
-  "returnsOperationallyComplete": false
+  "returnsOperationallyComplete": false,
+  "launchScope": {
+    "city": "Quito",
+    "payments": [
+      "cod"
+    ],
+    "nationalShippingEnabled": false,
+    "pickupEnabled": false
+  },
+  "quitoRateEvidence": {
+    "customerCents": 350,
+    "taxIncluded": true,
+    "date": "2026-10-01",
+    "scope": "venta_concreta",
+    "approvedForGeneralCoverage": false,
+    "coverage": null,
+    "deliveryPromise": null
+  }
 }

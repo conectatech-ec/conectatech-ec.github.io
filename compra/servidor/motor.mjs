@@ -2,14 +2,10 @@ import {createHash, randomUUID} from 'node:crypto';
 export {loadCatalog, createCatalogProvider} from './catalogo.mjs';
 export {createFileLedger} from './registro-prueba.mjs';
 
-export class CheckoutError extends Error {
-  constructor(code, status = 400) { super(code); this.code = code; this.status = status; }
-}
-const fail = (code, status) => { throw new CheckoutError(code, status); };
+import {CheckoutError, fail, clean, only, calculate, customer} from './checkout-core.mjs';
+export {CheckoutError} from './checkout-core.mjs';
 const copy = value => structuredClone(value);
 const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const clean = (value, min, max) => typeof value === 'string' && value.trim().length >= min && value.trim().length <= max && !/[\u0000-\u001f\u007f]/.test(value);
-const only = (obj, keys) => obj && Object.getPrototypeOf(obj) === Object.prototype && Object.keys(obj).every(k => keys.includes(k));
 
 export const TEST_DELIVERIES = Object.freeze([Object.freeze({
   id: 'quito-prueba', label: 'Quito · entrega de prueba (zona ficticia)', costCents: 290,
@@ -17,9 +13,9 @@ export const TEST_DELIVERIES = Object.freeze([Object.freeze({
   payments: Object.freeze(['cod']), testOnly: true
 })]);
 
-/** Default is closed. This implementation can record test orders only.
- * Production must implement the existing Data Hub's atomic reservation/order contract;
- * an offline snapshot or /interesados must never be treated as that contract.
+/** Default is closed. This local implementation records test orders only.
+ * The prepared checkout-store adapter receives COD orders in the existing Data Hub
+ * and counts pending web quantities; neither implementation claims a native 593 reservation.
  */
 export function createCheckout({catalogProvider, ledger, deliveries = [], mode = 'disabled', clock = Date.now, quoteTtlMs = 900_000} = {}) {
   if (typeof catalogProvider !== 'function') throw Error('CATALOG_PROVIDER_REQUERIDO');
@@ -43,27 +39,7 @@ export function createCheckout({catalogProvider, ledger, deliveries = [], mode =
     if (!c || !Array.isArray(c.products) || !c.version || !c.sourceHash) fail('CATALOGO_NO_DISPONIBLE', 503);
     return c;
   }
-  function calculate(items, data, orders = []) {
-    if (!Array.isArray(items) || !items.length || items.length > 20) fail('PRODUCTOS_INVALIDOS');
-    const seen = new Set();
-    return items.map(i => {
-      if (!only(i, ['sku', 'quantity']) || typeof i.sku !== 'string' || seen.has(i.sku) || !Number.isSafeInteger(i.quantity) || i.quantity < 1 || i.quantity > 99) fail('CANTIDAD_INVALIDA');
-      seen.add(i.sku);
-      const p = data.products.find(p => p.sku === i.sku);
-      if (!p) fail('PRODUCTO_DESCONOCIDO');
-      if (!Number.isSafeInteger(p.priceCents) || p.priceCents <= 0 || !Number.isSafeInteger(p.stock) || p.stock < 0 || !p.url || !p.image) fail('PRODUCTO_NO_COMPRABLE', 409);
-      const pending = orders.reduce((sum, order) => sum + order.receipt.items.filter(line => line.sku === p.sku).reduce((n, line) => n + line.quantity, 0), 0);
-      if (i.quantity > p.stock - pending) fail('CANTIDAD_NO_DISPONIBLE', 409);
-      return {sku: p.sku, name: p.name, image: p.image, url: p.url, quantity: i.quantity, unitPriceCents: p.priceCents, lineTotalCents: p.priceCents * i.quantity};
-    });
-  }
-  function customer(input) {
-    if (!only(input, ['name', 'phone', 'email', 'address', 'city']) ||
-      !clean(input.name, 2, 100) || !clean(input.phone, 7, 25) || !/^[+\d ()-]+$/.test(input.phone) ||
-      typeof input.email !== 'string' || (input.email !== '' && (!clean(input.email, 3, 150) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email))) ||
-      !clean(input.address, 5, 250) || !clean(input.city, 2, 80)) fail('DATOS_ENTREGA_INVALIDOS');
-    return Object.fromEntries(['name', 'phone', 'email', 'address', 'city'].map(k => [k, input[k].trim()]));
-  }
+
   return {
     async catalog() {
       const c = await current();

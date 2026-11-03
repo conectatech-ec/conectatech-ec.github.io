@@ -4,7 +4,7 @@ Estado: **BORRADOR NO PUBLICADO**. Rama preparada separadamente; no modifica mai
 
 ## Archivos de revisión
 
-- `POLITICA-COMPLETA.md`: texto completo generado para lectura y aprobación.
+- `POLITICA-COMPLETA.md`: texto público breve generado para lectura y aprobación; la revisión final03/11 sustituye la redacción extensa y retira cortesías1–3/7.
 - `../cambios-devoluciones-garantias/index.html`: página estática móvil/escritorio; navegación, pie y canal oficial. URL permanente prevista: `https://conectatech-ec.github.io/cambios-devoluciones-garantias/`. No presentarla como pública antes de aprobación y despliegue.
 - `politica.json`: única fuente de condiciones, contactos, reglas por categoría y excepciones SKU; incluye las condiciones de envíos/pagos recuperadas el03/11.
 - `../compra/envios-pagos.html`: vista de revisión generada con tarifa nacional, sobrecostos a cargo de tienda, contraentrega Quito y anticipo nacional. Enlazada desde la compra.

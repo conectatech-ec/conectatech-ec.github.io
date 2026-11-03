@@ -11,8 +11,10 @@ process.chdir(root);
 const require=createRequire(import.meta.url),links=require('../scripts/compra-enlaces.cjs');
 const ledgerFile=path.join(os.tmpdir(),'conectatech-compra-'+path.basename(path.dirname(root)),'pedidos-prueba.json');
 const provider=createCatalogProvider(root);
-const checkout=createCheckout({catalogProvider:provider,ledger:createFileLedger(ledgerFile,{repoRoot:root}),deliveries:TEST_DELIVERIES,mode:'test'});
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.svg':'image/svg+xml','.json':'application/json; charset=utf-8'};
+// Historical customer charge, only to demonstrate totals. No general Quito coverage is approved.
+const qaDeliveries=TEST_DELIVERIES.map(d=>({...d,costCents:350,label:'Quito · zona ficticia de prueba ($3,50 de referencia)'}));
+const checkout=createCheckout({catalogProvider:provider,ledger:createFileLedger(ledgerFile,{repoRoot:root}),deliveries:qaDeliveries,mode:'test'});
+const mime={'.mjs':'text/javascript; charset=utf-8','.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.svg':'image/svg+xml','.json':'application/json; charset=utf-8'};
 function json(res,status,value){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(value));}
 async function body(req){let str='';for await(const chunk of req){str+=chunk;if(Buffer.byteLength(str)>8192)throw Object.assign(Error('PAYLOAD_SIZE'),{status:413});}try{return JSON.parse(str);}catch{throw Object.assign(Error('INVALID_JSON'),{status:400});}}
 const server=http.createServer(async(req,res)=>{
@@ -34,7 +36,7 @@ const server=http.createServer(async(req,res)=>{
     let pathname=decodeURIComponent(u.pathname);
     if(pathname.includes('..')||pathname.includes('\\')||pathname.includes('\0'))return json(res,404,{error:'NOT_FOUND'});
     if(pathname.endsWith('/'))pathname+='index.html';
-    const permitted=['/index.html','/logo-conectatech.png','/compra/index.html','/compra/compra.css','/compra/compra.js','/compra/privacidad.html','/compra/envios-pagos.html','/cambios-devoluciones-garantias/index.html'];
+    const permitted=['/index.html','/logo-conectatech.png','/compra/index.html','/compra/compra.css','/compra/compra.js','/compra/cliente-contrato.mjs','/compra/privacidad.html','/compra/envios-pagos.html','/cambios-devoluciones-garantias/index.html'];
     if(!permitted.includes(pathname)&&!/^\/(assets|imagenes|productos)\/[a-zA-Z0-9_./-]+\.(html|js|css|png|webp|jpg|svg)$/.test(pathname))return json(res,404,{error:'NOT_FOUND'});
     if(pathname.split('/').some(s=>s.startsWith('.')))return json(res,404,{error:'NOT_FOUND'});
     const file=path.join(root,pathname);

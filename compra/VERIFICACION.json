@@ -7,16 +7,19 @@
     "integracion_preservacion": 3,
     "politicas_reutilizadas": 10,
     "fallos": 0,
-    "repetidas_tras_revision_comercial": true
+    "repetidas_tras_revision_comercial": true,
+    "adaptador_datahub_y_parche": 18,
+    "contrato_cliente": 4,
+    "total": 55
   },
   "navegador": {
     "registro_pedido_prueba": true,
-    "id": "PRUEBA-c50ac024-6d50-4b55-9600-ce1f2c998cfe",
+    "id": "PRUEBA-61ce14ce-2fda-421a-95ef-3320b767481e",
     "sku": "ADAP004",
     "cantidad": 2,
     "producto_centavos": 700,
-    "envio_fixture_centavos": 290,
-    "total_centavos": 990,
+    "envio_fixture_centavos": 350,
+    "total_centavos": 1050,
     "pago": "contraentrega_sin_cobro",
     "fixture_no_tarifa_comercial": true,
     "ancho_marco_qa_px": 390,
@@ -25,7 +28,9 @@
     "ficha_enlaza_compra": true,
     "politica_accesible_sin_login": true,
     "politica_razon_social_y_error_tienda_verificados": true,
-    "pagina_envios_pagos_verificada": true
+    "pagina_envios_pagos_verificada": true,
+    "nacional_no_se_ofrece": true,
+    "politica_breve_sin_cortesias_verificada": true
   },
   "fuentes": {
     "sku_catalogo": 1198,
@@ -46,10 +51,10 @@
     "costo_adicional": 0
   },
   "pendientes_tecnicos": [
-    "Transaccion atomica de pedido/reserva dentro del DataHub existente",
-    "Persistencia operativa privada y controles de acceso/abuso",
-    "HTTPS y validacion integral en entorno aprobado",
-    "Revisar textos sujetos a confirmacion al habilitar compra firme"
+    "Aplicar parche verificado al Worker existente tras autorización de publicación",
+    "Configurar cobertura y fecha estimada aprobadas; conectar URL pública del cliente",
+    "Verificar integración real HTTPS y comportamiento de cobertura en Merchant",
+    "Completar aviso de datos conforme almacenamiento operativo"
   ],
   "merchant_observado": {
     "cuenta": "5874003439",
@@ -76,5 +81,31 @@
     "cuenta_bancaria_completa": false,
     "zonas_quito": false,
     "operativa_reembolsos": false
+  },
+  "alcance_mvp": {
+    "ciudad": "Quito",
+    "pago": "cod",
+    "nacional_habilitado": false,
+    "tarifa_350_general_verificada": false
+  },
+  "politica_publica": {
+    "version": "2026-11-03.revision-4",
+    "apartados": 4,
+    "cortesias": false,
+    "plazos_voluntarios_adicionales": false,
+    "plazo_legal_conservado": true,
+    "cargos_nuevos": false,
+    "operativa_completa": false
+  },
+  "datahub_preparado": {
+    "worker_base_sha": "747291490f6cd836ec06d14dcb252e53a8a5e02d",
+    "mismo_worker_y_do": true,
+    "sqlite_real_pruebas_locales": true,
+    "parche_verificado": true,
+    "parche_aplicado_a_rama_operativa": false,
+    "desplegado": false,
+    "reserva_nativa_593": false,
+    "registro_durable_implementado": true,
+    "api_publica_cliente_configurada": false
   }
 }

@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "node compra/preview.mjs",
-    "test:compra": "node --test compra/tests/*.test.mjs",
+    "test:compra": "node --test compra/tests/*.test.mjs compra/cliente-contrato.test.mjs",
     "test:politicas": "node --test politicas/test-politica.mjs"
   }
 }

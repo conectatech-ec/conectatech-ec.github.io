@@ -7,14 +7,15 @@
   <title>Tu compra | CONECTATECH</title>
   <link rel="icon" href="/logo-conectatech.png">
   <link rel="stylesheet" href="/compra/compra.css">
-  <script src="/compra/compra.js" defer></script>
+  <meta name="conectatech-compra-api" content="">
+  <script type="module" src="/compra/compra.js"></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Ir a la compra</a>
-  <div class="review" role="note">Vista de prueba · No realiza cobros ni pedidos comerciales. Usa únicamente datos ficticios.</div>
+  <div id="aviso-entorno" class="review" role="note">Vista de prueba · No realiza cobros ni pedidos comerciales. Usa únicamente datos ficticios.</div>
   <header><nav aria-label="Principal"><a class="brand" href="/"><span>CONECTA</span>TECH</a><a href="/#catalogo">Volver al catálogo →</a></nav></header>
   <main id="contenido">
-    <div class="intro"><p class="eyebrow">QUITO · ECUADOR</p><h1>Tu compra, paso a paso.</h1><p>Elige tus productos, revisa la entrega y conoce el total antes de confirmar.</p></div>
+    <div class="intro"><p class="eyebrow">QUITO · ECUADOR</p><h1>Tu compra, paso a paso.</h1><p>Compra con contraentrega en Quito. Revisa los productos, la entrega y el total antes de confirmar.</p></div>
     <p id="global-status" role="status" aria-live="polite">Cargando catálogo…</p>
     <div id="checkout" class="layout" hidden>
       <div class="steps">
@@ -31,7 +32,7 @@
           <label for="entrega">Forma de entrega</label><select id="entrega"></select>
           <p id="entrega-detalle" class="small"></p>
           <label for="pago">Método de pago</label><select id="pago"></select>
-          <p class="small">Esta demostración utiliza contraentrega y no solicita pagos. <a href="/compra/envios-pagos.html">Consulta las condiciones de envío y pago</a>.</p>
+          <p id="pago-nota" class="small">Esta demostración utiliza contraentrega y no solicita pagos. <a href="/compra/envios-pagos.html">Consulta las condiciones de envío y pago</a>.</p>
         </section>
         <section class="panel" aria-labelledby="datos-titulo">
           <h2 id="datos-titulo"><span class="step">3</span> Datos de entrega</h2>
@@ -39,6 +40,7 @@
           <form id="datos" autocomplete="off">
             <div class="fields"><div><label for="nombre">Nombre</label><input id="nombre" name="name" required maxlength="100" autocomplete="name"></div><div><label for="telefono">Teléfono</label><input id="telefono" name="phone" type="tel" required maxlength="25" autocomplete="tel"></div></div>
             <label for="correo">Correo electrónico <span class="optional">(opcional)</span></label><input id="correo" name="email" type="email" maxlength="150" autocomplete="email">
+            <div id="campo-postal" hidden><label for="codigo-postal">Código postal de entrega</label><input id="codigo-postal" name="postalCode" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="postal-code"><p class="small">Permite comprobar la cobertura y el costo para tu dirección en Quito.</p></div>
             <label for="ciudad">Ciudad</label><input id="ciudad" name="city" required maxlength="80" autocomplete="address-level2">
             <label for="direccion">Dirección de entrega</label><textarea id="direccion" name="address" required maxlength="250" rows="2" autocomplete="street-address"></textarea>
             <label class="consent"><input id="consentimiento" type="checkbox" required><span>He revisado las <a href="/compra/envios-pagos.html" target="_blank" rel="noopener">condiciones de envío y pago</a>, las <a href="/cambios-devoluciones-garantias/" target="_blank" rel="noopener">condiciones de cambios, devoluciones y garantías</a> y el <a href="/compra/privacidad.html" target="_blank" rel="noopener">uso de datos del pedido</a>.</span></label>

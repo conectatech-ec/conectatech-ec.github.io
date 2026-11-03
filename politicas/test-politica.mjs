@@ -36,6 +36,11 @@ test('no acortar derecho legal a ventana comercial',()=>{
   assert.throws(()=>validar(c),/Derechos legales/);
   assert.match(respuestaAlex(config,'devolucion_legal'),/quince/);
   assert.match(respuestaAlex(config,'cambio_voluntario'),/derecho legal/);
+  assert.equal(config.cambios_voluntarios.ofrecidos,false);
+  const visible=fs.readFileSync(new URL('../cambios-devoluciones-garantias/index.html',import.meta.url),'utf8');
+  assert.ok(!/De 1 a 3 días|hasta 7|excepcionalmente/.test(visible));
+  assert.match(visible,/No ofrecemos cambios ni devoluciones por cortesía/);
+  assert.match(visible,/quince \(15\) días/);
 });
 test('Alex evalúa daños y deriva errores sin prometer plazos',()=>{
   assert.match(respuestaAlex(config,'danio_o_exclusion'),/no elimina automáticamente/);
