@@ -19,7 +19,7 @@ class VariantScopeTests(unittest.TestCase):
         desired['alex-ui.mjs']=b'export function alexPage(){return "new variant display";}\n'+padding+privacy
         parts=[Part(name,name,'application/javascript+module',body,(('Content-Length',str(len(body))),('X-Fixture-Keep','owned-header'))) for name,body in sorted(baselines.items())]
         worker=b'// independently edited live host preserved\n'+module.WORKER_AUTH+b'\n  try {\n'+module.WORKER_ANCHOR+b'\n    return "live marketplace route";\n   }\n   // unowned banner preview remains intact\n'
-        for name in ('worker.mjs','central-source.mjs','central-data.mjs','commercial-reception.mjs','alex-collaborators.mjs','marketplace-library.mjs'):
+        for name in ('worker.mjs','central-source.mjs','central-data.mjs','source-attestations.mjs','commercial-reception.mjs','alex-collaborators.mjs','marketplace-library.mjs'):
             parts.append(Part(name,name,'application/javascript+module',worker if name=='worker.mjs' else b'opaque synthetic unowned module '+name.encode(),
                               (('X-Fixture-Keep','unowned-header'),('Content-Length','UNCHANGED-FIXTURE-HEADER'))))
         return Bundle('worker.mjs',tuple(parts)),desired,baselines
@@ -104,17 +104,12 @@ class VariantScopeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'VAR_UNSUPPORTED_JSON_IMPORT'):
             module.compiled('alex-store.mjs',b"import unknown from './unreviewed.json' with {type:'json'};")
 
-    def test_only_the_authorized_attestation_json_is_packaged_without_reserializing(self):
-        raw=b'{\n  "'+b'a'*64+b'": {"cut_date": "2026-11-03", "identity_verified_skus": []}\n}\n'
-        self.assertEqual(module.SOURCE_PATHS,{'source-attestations.mjs':'central/source-attestations.json','alex-signature-release.mjs':'alex-signature-release.json'})
-        self.assertEqual(module.compiled('source-attestations.mjs',raw),b'export default '+raw+b';\n')
-        self.assertIn('source-attestations.mjs',module.REPLACED)
-        self.assertNotIn('central-data.mjs',module.OWNED)
-        self.assertNotIn('central-source.mjs',module.OWNED)
-        self.assertNotIn('marketplace-library.mjs',module.OWNED)
-        for value in (b'[]',b'null',b'"not an evidence object"'):
-            with self.subTest(value=value),self.assertRaisesRegex(ValueError,'VAR_ATTESTATIONS_OBJECT_REQUIRED'):
-                module.compiled('source-attestations.mjs',value)
+    def test_other_sessions_attestations_and_the_financial_source_are_preserved(self):
+        self.assertNotIn('source-attestations.mjs',module.OWNED)
+        for name in ['source-attestations.mjs','central-data.mjs','central-source.mjs','marketplace-library.mjs']:
+            with self.subTest(module=name),self.assertRaisesRegex(ValueError,'VAR_COMPILE_SCOPE_INVALID'):
+                module.compiled(name,b'{}')
+        self.assertEqual(module.SOURCE_PATHS,{'alex-signature-release.mjs':'alex-signature-release.json'})
 
     def test_signature_release_is_the_only_added_json_module_and_uses_exact_packaging(self):
         raw=b'{\n  "scope": "owner_private_only", "products": {}\n}\n'

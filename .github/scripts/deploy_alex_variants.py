@@ -10,11 +10,11 @@ from scoped_policy import closed_health,tester_scope
 
 BASE_RELEASE='acfc00763dfbc7ac34c2c62f9ccecea4f613c870'
 CODE_REVISION='97c9c54c78203bd618c0a1ce048bc9d597237d8a'
-REPLACED=frozenset({'alex.mjs','alex-context.mjs','alex-store.mjs','alex-ui.mjs','alex-catalog.mjs','channels.mjs','phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs','source-attestations.mjs'})
+REPLACED=frozenset({'alex.mjs','alex-context.mjs','alex-store.mjs','alex-ui.mjs','alex-catalog.mjs','channels.mjs','phone-variants.mjs','alex-variant-sales.mjs','alex-media.mjs'})
 ADDED=frozenset({'alex-signature-release.mjs','alex-signature-store.mjs'})
 OWNED=REPLACED|ADDED
 PATCHED=frozenset({'worker.mjs'})
-SOURCE_PATHS={'source-attestations.mjs':'central/source-attestations.json','alex-signature-release.mjs':'alex-signature-release.json'}
+SOURCE_PATHS={'alex-signature-release.mjs':'alex-signature-release.json'}
 CONTROL='https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/contents/.github/alex-variants.json?ref=automatizacion%2Fpiloto-cloud-3sku-20261015'
 RAW='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'
 PRIVACY=b'export function privacyPage'
