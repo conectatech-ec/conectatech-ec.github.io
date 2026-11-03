@@ -46,7 +46,7 @@ main>.notice{font-size:10px;line-height:1.7;color:#496078;background:#eaf1f7;bor
 .pw-stars{display:none;position:absolute;right:5%;top:25px;color:var(--pw-season);font-size:40px;letter-spacing:25px;opacity:.3}
 [data-ct-temporada=halloween] .pw-moon,
 [data-ct-temporada=navidad] .pw-stars{display:block}
-[data-ct-temporada=black-month] .pw-hero,[data-ct-temporada=black-friday] .pw-hero{background:radial-gradient(ellipse at 100% 0%,color-mix(in srgb,var(--pw-season) 12%,transparent),transparent 60%),linear-gradient(120deg,#060e19,#142536)}
+[data-ct-temporada=black-month] .pw-hero,:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero{background:radial-gradient(ellipse at 100% 0%,color-mix(in srgb,var(--pw-season) 12%,transparent),transparent 60%),linear-gradient(120deg,#060e19,#142536)}
 [data-ct-temporada=navidad] .pw-hero{background:radial-gradient(ellipse at 100% 0%,#8f2e452e,transparent 58%),linear-gradient(120deg,#051f27,#0c3732)}
 .pw-showcase{display:block;min-width:0;position:relative;z-index:2;margin:0}
 .pw-showcase-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#d7e7f1;font-size:8px;letter-spacing:1.4px;font-weight:700;margin-bottom:12px}
@@ -501,23 +501,44 @@ footer{background:linear-gradient(110deg,#082235,#0a3a42)}
 @media(max-width:600px){.pw-campaign--compact .pw-campaign-heading{display:block;padding:17px 15px}.pw-campaign--compact .pw-store-label{position:static;margin-top:10px}.pw-campaign--compact .pw-campaign-lead{padding-right:0}.pw-campaign--compact .pw-campaign-content{padding:11px;gap:13px}.pw-campaign-footer{grid-template-columns:1fr;gap:14px;padding:13px 4px 5px}.pw-campaign-footer .pw-campaign-address,.pw-campaign-footer summary{font-size:10px}.pw-campaign-footer [data-pw-contact]>a{width:100%;font-size:11px}}
 
 /* Black Friday: ambientación estacional; precios, fotografías y marca originales. */
-[data-ct-temporada=black-friday] header{background:radial-gradient(ellipse at 100% 100%,#145b4633,transparent 58%),linear-gradient(105deg,#05080c,#10171d);border-bottom-color:#8bd12f}
-[data-ct-temporada=black-friday] .pw-hero{background:radial-gradient(ellipse at 100% 0,#d9b9662b,transparent 58%),radial-gradient(ellipse at 0 100%,#168bc41c,transparent 58%),repeating-linear-gradient(115deg,#e0c37b05 0 1px,transparent 1px 22px),linear-gradient(125deg,#07090c,#171b20 64%,#0b1718);border-color:#c4a46199;box-shadow:0 18px 45px #06090d38}
-[data-ct-temporada=black-friday] .pw-hero .pw-season-label{display:inline-flex!important;max-width:100%;margin:12px 0 0;padding:9px 14px;border-color:#d8bc797a;border-radius:8px;background:linear-gradient(110deg,#f5dda518,#b28c3910);color:#f1d797;font-size:24px;font-weight:800;line-height:1.2;letter-spacing:2.2px;text-transform:uppercase}
-[data-ct-temporada=black-friday] .pw-hero h1 strong{color:#f0d68d;text-shadow:0 0 25px #e4c47a18}
-[data-ct-temporada=black-friday] .pw-showcase-heading{color:#e5d6b7}
-[data-ct-temporada=black-friday] .pw-slide-photo{border-color:#e0c68b80;box-shadow:0 12px 30px #0004,0 0 0 1px #dab56a26}
-[data-ct-temporada=black-friday] .pw-slide-prices strong{color:#f2d78f}
-[data-ct-temporada=black-friday] .pw-slide{--pw-season:#e8cb84;--pw-season-secondary:#8bd12f}
-[data-ct-temporada=black-friday] .pw-daily-featured{border-color:#cba969;background:radial-gradient(ellipse at 50% -20%,#d4ab4b2b,transparent 65%),linear-gradient(115deg,#080b10,#1b1d20 55%,#0a1718);box-shadow:0 14px 34px #07090c26,0 0 0 1px #c19a4f42}
-[data-ct-temporada=black-friday] .pw-featured-heading>p{color:#e8dfcb}
-[data-ct-temporada=black-friday] .pw-featured-heading>a{background:#ffffff08;border-color:#d7b46b80;color:#f4dfab}
-[data-ct-temporada=black-friday] .pw-daily-featured .pw-featured-card .promo{color:#79521b}
-[data-ct-temporada=black-friday] .pw-daily-featured .pw-featured-card .promo-badge{color:#79521b}
-[data-ct-temporada=black-friday] .pw-campaign{border-color:#c7a569}
-[data-ct-temporada=black-friday] .pw-campaign--compact .pw-campaign-heading{background:linear-gradient(110deg,#090d12,#21221e);border-bottom-color:#c6a66599}
-[data-ct-temporada=black-friday] .pw-campaign--compact .pw-campaign-heading h2{color:#fff6e7}
-[data-ct-temporada=black-friday] .pw-campaign--compact .pw-campaign-message strong{color:#f0d58b;text-decoration-color:#b79750}
-[data-ct-temporada=black-friday] .pw-campaign--compact .pw-campaign-lead{color:#d9c9a6}
-[data-ct-temporada=black-friday] .pw-campaign--compact .pw-store-label{background:#ffffff08;border-color:#b99a5d;color:#f1dba5}
-@media(max-width:600px){[data-ct-temporada=black-friday] .pw-hero .pw-season-label{font-size:18px;letter-spacing:1.6px;padding:8px 12px;margin-top:11px}}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) header{background:radial-gradient(ellipse at 100% 100%,#145b4633,transparent 58%),linear-gradient(105deg,#05080c,#10171d);border-bottom-color:#8bd12f}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero{background:radial-gradient(ellipse at 100% 0,#d9b9662b,transparent 58%),radial-gradient(ellipse at 0 100%,#168bc41c,transparent 58%),repeating-linear-gradient(115deg,#e0c37b05 0 1px,transparent 1px 22px),linear-gradient(125deg,#07090c,#171b20 64%,#0b1718);border-color:#c4a46199;box-shadow:0 18px 45px #06090d38}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .pw-season-label{display:inline-flex!important;max-width:100%;margin:12px 0 0;padding:9px 14px;border-color:#d8bc797a;border-radius:8px;background:linear-gradient(110deg,#f5dda518,#b28c3910);color:#f1d797;font-size:24px;font-weight:800;line-height:1.2;letter-spacing:2.2px;text-transform:uppercase}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero h1 strong{color:#f0d68d;text-shadow:0 0 25px #e4c47a18}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-showcase-heading{color:#e5d6b7}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-photo{border-color:#e0c68b80;box-shadow:0 12px 30px #0004,0 0 0 1px #dab56a26}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-prices strong{color:#f2d78f}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide{--pw-season:#e8cb84;--pw-season-secondary:#8bd12f}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-daily-featured{border-color:#cba969;background:radial-gradient(ellipse at 50% -20%,#d4ab4b2b,transparent 65%),linear-gradient(115deg,#080b10,#1b1d20 55%,#0a1718);box-shadow:0 14px 34px #07090c26,0 0 0 1px #c19a4f42}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-featured-heading>p{color:#e8dfcb}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-featured-heading>a{background:#ffffff08;border-color:#d7b46b80;color:#f4dfab}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-daily-featured .pw-featured-card .promo{color:#79521b}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-daily-featured .pw-featured-card .promo-badge{color:#79521b}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-campaign{border-color:#c7a569}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-campaign--compact .pw-campaign-heading{background:linear-gradient(110deg,#090d12,#21221e);border-bottom-color:#c6a66599}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-campaign--compact .pw-campaign-heading h2{color:#fff6e7}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-campaign--compact .pw-campaign-message strong{color:#f0d58b;text-decoration-color:#b79750}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-campaign--compact .pw-campaign-lead{color:#d9c9a6}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-campaign--compact .pw-store-label{background:#ffffff08;border-color:#b99a5d;color:#f1dba5}
+@media(max-width:600px){:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .pw-season-label{font-size:18px;letter-spacing:1.6px;padding:8px 12px;margin-top:11px}}
+
+/* Vitrina Black Month: escenario propio, titular en relieve y foto elevada. */
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero{background:linear-gradient(90deg,#050709bf,#05070966 42%,#05070924 80%),url('/assets/presentacion-web/black-month-escenario-premium-20261103.webp') center 62%/cover no-repeat,#080a0c;border-color:#d6b46c99;box-shadow:0 18px 42px #05070938,inset 0 1px 0 #ffe0a137}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .ct-hero-copy{position:relative;z-index:2}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .eyebrow{color:#e8d9b7;letter-spacing:1.6px}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .pw-bf-title{max-width:7ch;margin:15px 0 22px;color:#f1d797;font-size:clamp(54px,5.8vw,84px);line-height:1.01;letter-spacing:-3.5px;font-weight:850;text-transform:uppercase;text-wrap:balance;text-shadow:0 1px 0 #fff0c7,0 3px 0 #bb8d3d,0 5px 0 #76511e,0 15px 24px #0009}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .pw-bf-intro{max-width:390px;margin:0;color:#e1e8ea;font-size:12px;line-height:1.8}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-bf-intro strong{display:block;color:#fff4d8;font-size:17px;font-weight:700;line-height:1.5;margin-bottom:7px;letter-spacing:-.3px}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-bf-intro span{display:block}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .ct-hero-actions{margin-top:22px}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-showcase-heading{color:#f2dfb0;text-shadow:0 2px 7px #000b}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide{background:linear-gradient(125deg,#14191eea,#071014ed);border-color:#cda95f94;box-shadow:0 22px 42px #0007,inset 0 1px 0 #ffe5b333}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-photo{position:relative;transform:translateY(-7px);border:1px solid #d9bb7c;border-radius:13px;background:#fff;box-shadow:0 4px 0 #c5a05c,0 8px 0 #5c4424,0 19px 27px #0007,0 0 21px #e8c16c21}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-photo img{object-fit:contain}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-copy{position:relative;z-index:1}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-prices strong{text-shadow:0 2px 12px #e7ba4a16}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-buy{box-shadow:0 5px 0 #295f2d,0 11px 20px #0004}
+:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-carousel-controls button{border-color:#c4a16466;background:#080d12cf;box-shadow:0 3px 10px #0004}
+@media(max-width:900px){:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero{background-position:center,65% bottom;background-size:100% 100%,auto 72%;background-repeat:no-repeat}:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .pw-bf-title{font-size:64px;max-width:100%;text-wrap:initial}}
+@media(max-width:600px){:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero{background-size:100% 100%,auto 570px;background-position:center,65% bottom}:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .pw-bf-title{max-width:100%;font-size:clamp(44px,12vw,58px);line-height:1.08;letter-spacing:-2px;margin:13px 0 20px;text-shadow:0 1px 0 #fff0c7,0 2px 0 #bb8d3d,0 4px 0 #76511e,0 10px 18px #0009}:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-hero .pw-bf-intro{font-size:11px;line-height:1.75}:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-bf-intro strong{font-size:15px;margin-bottom:5px}:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-photo{transform:translateY(-4px);border-radius:10px;box-shadow:0 3px 0 #c5a05c,0 6px 0 #5c4424,0 12px 19px #0006}:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-buy{box-shadow:0 3px 0 #295f2d,0 7px 12px #0004}}
+@media(prefers-reduced-motion:reduce){:is([data-ct-temporada=black-friday],[data-ct-temporada=black-month]) .pw-slide-photo{transform:none}}
