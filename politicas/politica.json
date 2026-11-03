@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03.revision-5",
+  "version": "2026-11-03.revision-6",
   "estado": "APROBADA_PENDIENTE_OPERATIVA",
   "publicar": false,
   "titulo": "Garantías, cambios y devoluciones — CONECTATECH",
@@ -82,14 +82,20 @@
     "computo_para_campo_numerico_google_confirmado": false
   },
   "operativa_pendiente": {
-    "metodos_recepcion_devoluciones": null,
+    "metodos_recepcion_devoluciones": [
+      "local_preferente",
+      "envio_previamente_coordinado"
+    ],
     "etiqueta_o_transportista": null,
-    "coste_sin_error_tienda": null,
-    "tarifa_reposicion": null,
-    "metodo_reembolso": null,
+    "coste_sin_error_tienda": "A cargo del comprador cuando la devolución sea por su decisión y legalmente proceda.",
+    "tarifa_reposicion": 0,
+    "metodo_reembolso": [
+      "medio_original_si_es_posible",
+      "transferencia_acordada"
+    ],
     "plazo_operativo_reembolso": null,
     "plazos_diagnostico_reparacion": null,
-    "nota": "Los campos no definidos permanecen pendientes. La revisión no introduce cargos, plazos de reembolso ni medios de recepción nuevos."
+    "nota": "Operativa aprobada. Plazo máximo general de reembolso pendiente de decisión."
   },
   "secciones": [
     {
@@ -104,7 +110,10 @@
       "titulo": "2. Cambios y devoluciones",
       "parrafos": [
         "No ofrecemos cambios ni devoluciones voluntarias por preferencias personales. En teléfonos y tablets utilizados o activados, no realizamos cambios voluntarios por modelo, color o características.",
-        "Las solicitudes de devolución legalmente procedentes serán atendidas conforme a la normativa ecuatoriana, considerando el estado y la naturaleza del producto, dentro del término legal de quince (15) días desde la recepción."
+        "Las solicitudes de devolución legalmente procedentes serán atendidas conforme a la normativa ecuatoriana, considerando el estado y la naturaleza del producto, dentro del término legal de quince (15) días desde la recepción.",
+        "Recibimos devoluciones preferentemente en nuestro local. Cuando corresponda, coordina el envío con nosotros antes de despacharlo.",
+        "Si la devolución es por decisión del comprador, este cubre los gastos de envío cuando legalmente proceda. Si la responsabilidad corresponde a CONECTATECH, se aplican las obligaciones legales correspondientes. No cobramos cargos de reposición.",
+        "Los reembolsos procedentes se realizan por el medio de pago original cuando sea posible, o mediante transferencia acordada."
       ]
     },
     {

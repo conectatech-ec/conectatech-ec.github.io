@@ -1,6 +1,6 @@
 # Garantías, cambios y devoluciones — CONECTATECH
 
-Política aprobada · operativa pendiente · no publicada · versión 2026-11-03.revision-5.
+Política aprobada · operativa pendiente · no publicada · versión 2026-11-03.revision-6.
 
 En CONECTATECH queremos que compres con tranquilidad. Todos nuestros productos cuentan con respaldo y atención posventa.
 
@@ -13,6 +13,12 @@ Te recomendamos verificar el modelo, las características, los accesorios y el e
 No ofrecemos cambios ni devoluciones voluntarias por preferencias personales. En teléfonos y tablets utilizados o activados, no realizamos cambios voluntarios por modelo, color o características.
 
 Las solicitudes de devolución legalmente procedentes serán atendidas conforme a la normativa ecuatoriana, considerando el estado y la naturaleza del producto, dentro del término legal de quince (15) días desde la recepción.
+
+Recibimos devoluciones preferentemente en nuestro local. Cuando corresponda, coordina el envío con nosotros antes de despacharlo.
+
+Si la devolución es por decisión del comprador, este cubre los gastos de envío cuando legalmente proceda. Si la responsabilidad corresponde a CONECTATECH, se aplican las obligaciones legales correspondientes. No cobramos cargos de reposición.
+
+Los reembolsos procedentes se realizan por el medio de pago original cuando sea posible, o mediante transferencia acordada.
 
 ## 3. Garantías
 

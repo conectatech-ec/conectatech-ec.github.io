@@ -18,10 +18,8 @@
   "campos_google_no_confirmados": {
     "return_window_days": null,
     "item_condition": null,
-    "return_methods": null,
     "return_shipping_fee": null,
     "return_label": null,
-    "restocking_fee": null,
     "refund_processing_days": null
   },
   "no_usar": {
@@ -34,14 +32,12 @@
   "costos_responsabilidad": {
     "error_tienda": "La tienda asume los gastos que legalmente le correspondan; no trasladar costos improcedentes al cliente.",
     "defecto": "Aplicar responsabilidades legales y evaluar el caso; sin tarifa inventada.",
-    "no_defectuoso": null
+    "no_defectuoso": "A cargo del comprador cuando la devolución sea por su decisión y legalmente proceda."
   },
   "bloqueos": [
-    "Completar la operativa y autorizar la publicación HTTPS real; redacción comercial aprobada el 03/11/2026",
-    "Cómputo del término legal y correspondencia exacta con días del campo Google",
-    "Estado del producto y métodos reales de recepción",
-    "Transporte/etiquetas/costos por supuesto y eventual tarifa de reposición",
-    "Método y plazo real de procesamiento del reembolso"
+    "Aprobación del plazo operativo de reembolso y autorización de publicación HTTPS",
+    "Correspondencia del término legal y del estado del producto con las opciones de Google",
+    "Correspondencia de costos y etiqueta para envío coordinado con las opciones de Google"
   ],
   "configuracion_cuenta_modificada": false,
   "feed_modificado": false,
@@ -78,7 +74,7 @@
   "politica_comercial": "SIN_CAMBIOS_NI_DEVOLUCIONES_VOLUNTARIAS_POR_PREFERENCIAS_PERSONALES",
   "nota_cambios": "Sin cambios ni devoluciones voluntarias por preferencias personales en ninguna categoría. Se mantienen devoluciones y cambios legalmente procedentes; no configurar una exclusión absoluta.",
   "redaccion_comercial_aprobada": true,
-  "version_politica": "2026-11-03.revision-5",
+  "version_politica": "2026-11-03.revision-6",
   "publicacion_autorizada": false,
   "contacto_atencion": {
     "nombre_comercial": "CONECTATECH",
@@ -86,5 +82,23 @@
     "telefono": "+593 99 857 6759",
     "whatsapp": "https://wa.me/593998576759",
     "nota": "WhatsApp y atención en local aprobados; no equivalen a confirmar todos los métodos de recepción física de devoluciones."
+  },
+  "campos_google_preparados": {
+    "return_methods": [
+      "IN_STORE",
+      "BY_MAIL"
+    ],
+    "restocking_fee": 0
+  },
+  "metodo_reembolso": [
+    "medio_original_si_es_posible",
+    "transferencia_acordada"
+  ],
+  "propuesta_plazo_reembolso": {
+    "dias": 30,
+    "unidad": "dias_calendario",
+    "inicio_propuesto": "recepcion_del_producto_devuelto",
+    "estado": "PENDIENTE_APROBACION_Y_CAPACIDAD_OPERATIVA",
+    "nota": "Tope operativo propuesto, sujeto a plazos legales aplicables más breves y a que el cliente reciba el dinero dentro del plazo. El artículo 71 fija 30 días solo para los supuestos que regula. El artículo 45 regula el término para ejercer la devolución y no fija un plazo general de reembolso."
   }
 }
