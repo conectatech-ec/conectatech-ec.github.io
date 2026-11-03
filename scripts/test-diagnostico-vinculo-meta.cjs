@@ -110,3 +110,31 @@ test('el workflow reserva el secreto secundario a la comprobación y conserva el
  assert.equal(production.includes('META_WHATSAPP_SECONDARY_TOKEN'),false);
  assert.equal((production.match(/secrets\.META_ACCESS_TOKEN/g)||[]).length,2);
 });
+
+test('la referencia de cuenta se limita a identidad y no acredita vinculación del catálogo',async()=>{
+ const request=REQUESTS.find(r=>r.key==='cuenta_del_numero_secundario');
+ const r=await readAsset({token,request,transport:async()=>response({
+  id:'105264852297951',whatsapp_business_account:{id:'123456789012345',name:'CONECTATECH',access_token:token}
+ })});
+ assert.deepEqual(r.datos.whatsapp_business_account,{id:'123456789012345',name:'CONECTATECH'});
+ assert.equal(JSON.stringify(r).includes(token),false);
+});
+test('la introspección no sigue ni imprime URLs de conexiones y valida el parámetro metadata',async()=>{
+ const request=REQUESTS.find(r=>r.key==='estructura_numero_secundario');
+ let calls=0;
+ const transport=async(url,options)=>{
+  calls++;assert.equal(url.searchParams.get('metadata'),'1');
+  assert.equal(options.method,'GET');
+  return response({id:'105264852297951',metadata:{
+   type:'whatsapp_business_phone_number',fields:[{name:'id'},{name:'whatsapp_business_account'}],
+   connections:{private_edge:'https://other.test/?access_token='+token}
+  }});
+ };
+ await assert.rejects(readAsset({token,request:{...request,metadata:'2'},transport}),/FUERA_DE_ALCANCE/);
+ assert.equal(calls,0);
+ const r=await readAsset({token,request,transport});
+ assert.equal(calls,1);
+ assert.deepEqual(r.datos.estructura,{tipo:'whatsapp_business_phone_number',campos:['id','whatsapp_business_account'],conexiones:['private_edge']});
+ assert.equal(JSON.stringify(r).includes('other.test'),false);
+ assert.equal(JSON.stringify(r).includes(token),false);
+});

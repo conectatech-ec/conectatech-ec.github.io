@@ -9,6 +9,8 @@ const REQUESTS=Object.freeze([
  {key:'catalogos_principal',path:'2639516313038513/product_catalogs',fields:'id,name'},
  {key:'catalogos_secundario',path:'100630632770993/product_catalogs',fields:'id,name'},
  {key:'telefono_secundario',path:'105264852297951',fields:'id,display_phone_number,verified_name'},
+ {key:'cuenta_del_numero_secundario',path:'105264852297951',fields:'id,whatsapp_business_account'},
+ {key:'estructura_numero_secundario',path:'105264852297951',fields:'id',metadata:'1'},
  {key:'perfil_principal',path:'291534458544743',fields:'id,display_phone_number,verified_name'}
 ].map(Object.freeze));
 const CATALOG='1036301566100990';
@@ -24,14 +26,27 @@ function project(item,token){
  for(const key of ['name','display_phone_number','verified_name']){
   if(typeof item?.[key]==='string')out[key]=redact(item[key],token);
  }
+ if(/^\d+$/.test(String(item?.whatsapp_business_account?.id||''))){
+  out.whatsapp_business_account={id:String(item.whatsapp_business_account.id)};
+  if(typeof item.whatsapp_business_account.name==='string')out.whatsapp_business_account.name=redact(item.whatsapp_business_account.name,token);
+ }
+ if(item?.metadata&&typeof item.metadata==='object'){
+  const meta=item.metadata;
+  out.estructura={
+   tipo:typeof meta.type==='string'?redact(meta.type,token):null,
+   campos:Array.isArray(meta.fields)?meta.fields.map(f=>redact(f.name,token)).filter(Boolean):[],
+   conexiones:meta.connections&&typeof meta.connections==='object'?Object.keys(meta.connections).map(k=>redact(k,token)):[]
+  };
+ }
  return out;
 }
 async function readAsset({token,request,transport=fetch}){
  if(!token)throw Error('FALTA_CREDENCIAL_EXISTENTE');
- const allowed=REQUESTS.find(r=>r.key===request?.key&&r.path===request?.path&&r.fields===request?.fields);
+ const allowed=REQUESTS.find(r=>r.key===request?.key&&r.path===request?.path&&r.fields===request?.fields&&(r.metadata||null)===(request?.metadata||null));
  if(!allowed)throw Error('CONSULTA_FUERA_DE_ALCANCE');
  const url=new URL('https://graph.facebook.com/v26.0/'+allowed.path);
  url.searchParams.set('fields',allowed.fields);
+ if(allowed.metadata)url.searchParams.set('metadata',allowed.metadata);
  if(allowed.path.includes('/'))url.searchParams.set('limit','100');
  let response,data;
  try{
@@ -68,8 +83,10 @@ async function diagnose({token,transport=fetch}){
  const results=await Promise.all(REQUESTS.map(request=>readAsset({token,request,transport})));
  const master=results.find(r=>r.consulta==='catalogo_maestro');
  const secondary=results.find(r=>r.consulta==='catalogos_secundario');
+ const reference=results.find(r=>r.consulta==='cuenta_del_numero_secundario');
  return {estado:'DIAGNOSTICO_REAL_SOLO_LECTURA',solo_lectura:true,
   catalogo_maestro_accesible:master.estado==='LEIDO'&&master.datos?.id===CATALOG,
+  cuenta_referenciada_por_numero_secundario:reference?.datos?.whatsapp_business_account?.id||null,
   maestro_en_catalogos_secundario:secondary.estado==='LEIDO'?
    secondary.datos.some(c=>c.id===CATALOG):null,
   visibilidad_cliente_whatsapp_verificada:false,resultados:results};
