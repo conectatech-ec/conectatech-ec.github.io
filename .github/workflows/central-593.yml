@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }}
+          ref: automatizacion/piloto-cloud-3sku-20261015
           sparse-checkout: automatizacion
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -26,15 +26,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - id: identity_audit
-        name: Auditar identidad privada sin procesar ni publicar inventario
-        if: contains(github.event.head_commit.message, '[identity-audit-only]')
-        run: python automatizacion/audit_private_source.py
-        env:
-          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - id: reporte
         name: Leer una fuente privada y normalizar con reglas unicas
-        if: steps.identity_audit.outputs.audit_only != 'true'
         run: python automatizacion/process_pending_593.py
         env:
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
@@ -84,5 +77,4 @@ jobs:
             automatizacion/central/
             automatizacion/generated/fase2/central-processing.json
             automatizacion/generated/fase2/central-cloud.json
-            automatizacion/generated/fase2/central-identity-audit.json
           retention-days: 7
