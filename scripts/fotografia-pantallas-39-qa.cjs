@@ -6,6 +6,8 @@ async function decodePhoto(img){for(let attempt=0;attempt<3;attempt++){await img
  const manifest=pub?await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261031-39.json')).json():JSON.parse(fs.readFileSync(path.join(root,'importacion/fotografia-publicada/direccion-20261031-39.json')));
  for(const row of Object.values(manifest.productos))if(!row.imagenProfesional)row.imagenProfesional={versiones:row.versiones_anteriores};
  const successor40=pub?await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261102-40.json')).json():JSON.parse(fs.readFileSync(path.join(root,'importacion/fotografia-publicada/direccion-20261102-40.json')));
+ const successor41=pub?await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261102-41.json')).json():JSON.parse(fs.readFileSync(path.join(root,'importacion/fotografia-publicada/direccion-20261102-41.json')));
+ Object.assign(successor40.productos,successor41.productos);
  for(const[s,r]of Object.entries(successor40.productos))if(manifest.productos[s])manifest.productos[s]={...manifest.productos[s],...r};
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||(process.env.GITHUB_ACTIONS?'/usr/bin/google-chrome':'/usr/bin/chromium'),headless:true,args:['--no-sandbox'],...(process.env.PHOTO_PROXY==='1'?{proxy:{server:process.env.HTTPS_PROXY}}:{})}),results=[];
  for(const width of [1280,390]){
