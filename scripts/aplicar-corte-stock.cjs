@@ -43,7 +43,8 @@ function planificar(html,source,prior){
   const a=Object.assign({},original[i]),b=Object.assign({},updated[i]);delete a.stock;delete b.stock;
   if(JSON.stringify(a)!==JSON.stringify(b))throw Error('Cambio no autorizado: '+original[i].sku);
  }
- const summary={fecha_corte:source.fecha_corte,origen_sha256:source.sha256,sku_fuente:sku.length,sku_web:updated.length,cambios_stock:changes.length,cambios_disponibilidad:availability.length,con_stock:positives,stock_cero:zeros,stock_negativo:negatives,precios_y_demas_atributos_intactos:true};
+ const complete=prior?.fecha_corte===source.fecha_corte&&prior?.origen_sha256===source.sha256&&prior?.referencia==='datos-593/corte-comercial-publico-validado.json'&&prior?.precios_y_demas_atributos_intactos!==true;
+ const summary=complete?{...prior}:{referencia:input,tipo_corte:'stock',fecha_corte:source.fecha_corte,origen_sha256:source.sha256,sku_fuente:sku.length,sku_web:updated.length,cambios_stock:changes.length,cambios_disponibilidad:availability.length,con_stock:positives,stock_cero:zeros,stock_negativo:negatives,precios_y_demas_atributos_intactos:true};
  const rendered=html.replace(match[0],'const products='+JSON.stringify(updated)+';\n');
  return {summary,rendered,changes};
 }
@@ -51,6 +52,16 @@ function run(){
  const source=JSON.parse(fs.readFileSync(input,'utf8'));
  const prior=fs.existsSync(output)?JSON.parse(fs.readFileSync(output,'utf8')):null;
  const html=fs.readFileSync(catalog,'utf8');
+ // Un disparador heredado no debe degradar el corte comercial ya aplicado.
+ // Reutilizar el contrato íntegro existente; no publicar otro extracto de cantidades.
+ if(prior&&source.fecha_corte<prior.fecha_corte&&prior.referencia==='datos-593/corte-comercial-publico-validado.json'){
+  const cut=JSON.parse(fs.readFileSync(prior.referencia,'utf8'));
+  if(cut.fecha_corte!==prior.fecha_corte||cut.sha256_original!==prior.origen_sha256)throw Error('Referencia comercial inconsistente');
+  const checked=require('./aplicar-corte-comercial-593.cjs').prepare(html,cut,prior);
+  if(checked.changed.length)throw Error('Corte comercial todavía no aplicado íntegramente');
+  console.log(JSON.stringify({modo:'SIN_CAMBIOS',motivo:'CORTE_STOCK_ANTERIOR_IGNORADO',...prior},null,2));
+  return {summary:prior,rendered:html,changes:[],ignored:true};
+ }
  const result=planificar(html,source,prior);
  const apply=process.env.APLICAR_STOCK_593==='SI';
  if(apply){

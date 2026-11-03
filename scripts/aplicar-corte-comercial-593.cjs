@@ -37,12 +37,20 @@ function prepare(html,cut,prior){
  const changedPromo=updated.filter(p=>Math.round(p.promo*100)!==Math.round(before.get(p.sku).promo*100)).length;
  const changedPvp=updated.filter(p=>Math.round(p.pvp*100)!==Math.round(before.get(p.sku).pvp*100)).length;
  const changedPrice=updated.filter(p=>Math.round(p.promo*100)!==Math.round(before.get(p.sku).promo*100)||Math.round(p.pvp*100)!==Math.round(before.get(p.sku).pvp*100)).length;
- const already=prior?.origen_sha256===cut.sha256_original&&prior?.fecha_corte===cut.fecha_corte;
+ const sameSource=prior?.origen_sha256===cut.sha256_original&&prior?.fecha_corte===cut.fecha_corte;
+ const stockOnly=prior?.tipo_corte==='stock'||prior?.precios_y_demas_atributos_intactos===true;
+ if(sameSource&&!stockOnly&&prior?.referencia!==INPUT)throw Error('Modalidad del corte previo no verificada');
+ const already=sameSource&&!stockOnly;
  if(already&&diff.length)throw Error('Corte ya aplicado pero hay diferencias en web; no revertir');
  if(!already){
   const v=cut.verificacion||{};
-  for(const [k,n] of Object.entries({stock_cambiado:changedStock,disponibilidad_cambiada:changedAvailability,promo_cambiado:changedPromo,pvp_cambiado:changedPvp,precios_productos_cambiados:changedPrice}))
-   if(v[k]!==n)throw Error('Control incorrecto '+k+': '+n+' != '+v[k]);
+  for(const [k,n] of Object.entries({stock_cambiado:changedStock,disponibilidad_cambiada:changedAvailability,promo_cambiado:changedPromo,pvp_cambiado:changedPvp,precios_productos_cambiados:changedPrice})){
+   const historical={stock_cambiado:'cambios_stock',disponibilidad_cambiada:'cambios_disponibilidad'}[k];
+   const completingStock=sameSource&&stockOnly&&historical;
+   if(completingStock&&n!==0)throw Error('Stock ya aplicado difiere del corte comercial');
+   const checked=completingStock?prior[historical]:n;
+   if(!Number.isSafeInteger(checked)||v[k]!==checked)throw Error('Control incorrecto '+k+': '+checked+' != '+v[k]);
+  }
  }
  for(let i=0;i<all.length;i++){
   const a={...all[i]},b={...updated[i]};
@@ -50,9 +58,9 @@ function prepare(html,cut,prior){
   if(JSON.stringify(a)!==JSON.stringify(b))throw Error('Campo no comercial alterado '+all[i].sku);
  }
  const summary={
-  fecha_corte:cut.fecha_corte,origen_sha256:cut.sha256_original,sku_fuente:cut.cantidad_sku_original,
-  sku_web:updated.length,cambios_stock:already?prior.cambios_stock:changedStock,
-  cambios_disponibilidad:already?prior.cambios_disponibilidad:changedAvailability,
+  tipo_corte:'comercial',fecha_corte:cut.fecha_corte,origen_sha256:cut.sha256_original,sku_fuente:cut.cantidad_sku_original,
+  sku_web:updated.length,cambios_stock:sameSource?prior.cambios_stock:changedStock,
+  cambios_disponibilidad:sameSource?prior.cambios_disponibilidad:changedAvailability,
   cambios_promo:already?prior.cambios_promo:changedPromo,
   cambios_pvp:already?prior.cambios_pvp:changedPvp,
   cambios_productos_precio:already?prior.cambios_productos_precio:changedPrice,
