@@ -1,5 +1,5 @@
 {
-  "estado": "REGISTRO_PREPARADO_TRAS_HTTP_CHROMIUM",
+  "estado": "REGISTRO_PUBLICO_CATALOGO_VERIFICADO",
   "correcciones": 3,
   "fichasCompletadasConPrimeraPortada": 1,
   "nuevosSKU": 0,
@@ -8,7 +8,13 @@
     "sha256": "c080ddc5af44e2d771942856a78a7c03aadea5118323e5a2efc710013dacf81d"
   },
   "fechaReal": "2026-11-03T06:08:33.316872+00:00",
-  "noEsCierreHastaCatalogoPublicoVerificado": true,
+  "noEsCierreHastaCatalogoPublicoVerificado": false,
   "registrosFotograficosAjenosConservados": true,
-  "costoAdicional": 0
+  "costoAdicional": 0,
+  "validacionFinal": {
+    "reporte": "reportes/continuacion-119/qa-registro-publico/catalogo.json",
+    "sha256": "e47d004e611ac873c6748db0ff9a04a48d3a5d5e3b026e9d41325c2a2a9fba0b",
+    "vistasVerificadas": 2,
+    "errores": 0
+  }
 }

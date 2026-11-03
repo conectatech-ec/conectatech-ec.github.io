@@ -15,6 +15,7 @@ import subprocess
 from urllib.parse import urlparse, urljoin, unquote
 from PIL import Image
 from reglas_sku import rule, compatible, source_resolution_allowed
+from presentacion_sellada import box_photo_allowed
 
 ROOT = Path(__file__).resolve().parents[1]
 CAMPOS = ('sku nombre_original titulo_comercial tipo marca modelo variante categoria_original '
@@ -75,7 +76,18 @@ def context(root):
     data = (root / BASE_593).read_bytes()
     rows = list(csv.DictReader(io.StringIO(data.decode('utf-8-sig'))))
     counts_593 = Counter(r['sku'] for r in rows)
-    return {'productos': {p['sku']: p for p in products}, 'duplicados': {s for s, n in counts.items() if n > 1},
+    current_cut = root / 'datos-593/corte-comercial-publico-validado.json'
+    current_state = root / 'datos-593/estado-ultimo-corte.json'
+    commercial = None
+    if current_cut.exists() or current_state.exists():
+        # Reutilizar el validador financiero vigente; nunca aceptar una discrepancia sin cotejo íntegro.
+        cut = json.loads(current_cut.read_text()); state = json.loads(current_state.read_text())
+        subprocess.run(['node', '-e', "const fs=require('fs');const x=JSON.parse(fs.readFileSync(0,'utf8'));require(process.argv[1]).validar(x)",
+                        str(ROOT / 'scripts/validar-exportacion-593.cjs')],
+                       input=json.dumps({'products': products, 'inventoryState': state, 'cut': cut}), text=True, check=True, capture_output=True)
+        commercial = {'archivo': 'datos-593/corte-comercial-publico-validado.json', 'sha256': sha(current_cut.read_bytes()),
+                      'fecha': cut['fecha_corte'], 'productos': cut['productos']}
+    return {'corte_comercial': commercial, 'productos': {p['sku']: p for p in products}, 'duplicados': {s for s, n in counts.items() if n > 1},
             'base_593': {r['sku']: r for r in rows}, 'duplicados_593': {s for s, n in counts_593.items() if n > 1},
             'sha256_593': sha(data), 'slugs': json.loads((root / 'seo-pages.json').read_text()),
             'categorias': {p.get('category') for p in products if p.get('category')}}
@@ -156,7 +168,11 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
     if base:
         try:
             if number(contract.get('stock')) != number(base['stock']):
-                fail('stock_593', 'Stock del catálogo y corte 593 discrepantes; requiere validación comercial')
+                commercial = ctx.get('corte_comercial')
+                evidence = validation.get('corte_comercial')
+                expected = ({k: commercial[k] for k in ('archivo', 'sha256', 'fecha')} | {'fila': commercial['productos'].get(sku)}) if commercial else None
+                if not commercial or evidence != expected or number(contract.get('stock')) != number(commercial['productos'][sku]['stock']) or contract.get('stock_fecha_corte') != commercial['fecha']:
+                    fail('stock_593', 'Stock discrepante sin evidencia íntegra del corte comercial vigente')
         except (ValueError, KeyError):
             fail('stock_593', 'Stock de 593 inválido')
     for key in ('nombre_original', 'titulo_comercial', 'categoria_original', 'categoria_comercial'):
@@ -181,7 +197,8 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
         fail('calidad', 'Estado de calidad aún no APROBADO')
     if contract.get('estado_publicacion') not in ('PENDIENTE', 'APROBADO_LOCAL', 'PUBLICADO_VERIFICADO', 'REVISAR', 'BLOQUEADO'):
         fail('estado', 'Estado de publicación desconocido')
-    if r.get('presentacion') != 'sin caja' or any(i.get('contiene_caja') is not False for i in candidates):
+    if (r.get('presentacion') != 'sin caja' or any(i.get('contiene_caja') is not False for i in candidates)) and not (
+            r.get('presentacion')=='con caja' and candidates and all(box_photo_allowed(root,sku,i,r,contract)for i in candidates)):
         fail('caja', 'Toda fotografía comercial debe estar verificada SIN CAJA')
     expected_type = {'original verificado': 'original', 'genérico/compatible': 'generico'}.get(r.get('autenticidad'))
     if not expected_type or contract.get('tipo') != expected_type or not nonempty(r.get('evidencia_autenticidad')):
@@ -426,7 +443,7 @@ def validate_images(root, contract, photos, writes=None):
             raise ValueError('Debe existir exactamente una portada')
         actual_paths = []
         for photo in photos:
-            if photo.get('contiene_caja') is not False:
+            if photo.get('contiene_caja') is not False and not box_photo_allowed(root,contract['sku'],photo,r,contract):
                 raise ValueError('Caja en una imagen comercial')
             original_path = photo['original'].lstrip('/')
             original_data = writes[original_path] if original_path in writes else safe(root, original_path).read_bytes()

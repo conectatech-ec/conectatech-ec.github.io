@@ -9,7 +9,7 @@ module.exports=function(){
  const products=JSON.parse(html.match(rx)[1]);const seo=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
  for(const p of products){
   const r=registry.productos[p.sku];if(!r)throw Error('Falta registro de reglas para '+p.sku);
-  if(registry.politica_general?.presentacion_obligatoria==='sin caja')r.presentacion='sin caja';
+  if(registry.politica_general?.presentacion_obligatoria==='sin caja'&&!(r.presentacion==='con caja'&&require('./presentacion-sellada.cjs')(p.sku)))r.presentacion='sin caja';
   const c=seo[p.sku]||(seo[p.sku]={});
   c.reglaSKU=r;
   if(registry.politica_general?.titulos_comerciales?.condicion_en_titulo===false){

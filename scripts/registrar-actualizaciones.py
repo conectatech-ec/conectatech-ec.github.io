@@ -13,6 +13,8 @@ from pathlib import Path
 import re
 import unicodedata
 from urllib.parse import urljoin
+from presentacion_sellada import box_photo_allowed
+from reglas_sku import rule
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://conectatech-ec.github.io'
@@ -132,7 +134,8 @@ def inspect_sku(root, sku, product, custom, slug, row):
     verified = {(v.get('tamano'), v.get('sha256')) for v in actual_http if v.get('http') == 200}
     expected = set(); image_semantics = []
     for photo in sorted(photos, key=lambda p: p['posicion']):
-        if photo.get('contiene_caja') is not False:
+        if photo.get('contiene_caja') is not False and not box_photo_allowed(root,sku,photo,rule(sku,Path(root)),
+                json.loads((Path(root)/'importacion/contratos'/f'{sku}.json').read_text())):
             raise ValueError('Medio no aprobado SIN CAJA')
         if set(photo.get('versiones', {})) != {'1200', '600', '300'}:
             raise ValueError('Faltan versiones 1200/600/300')

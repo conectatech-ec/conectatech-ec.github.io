@@ -4,6 +4,8 @@ import copy
 import csv
 import importlib.util
 import json
+import hashlib
+import subprocess
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
@@ -33,6 +35,23 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(validator.active_cover(self.root,contract,{'productos':ctx['productos']}),legacy)
         file.write_bytes(b'bytes modificados tras seleccion')
         self.assertEqual(validator.active_cover(self.root,contract,ctx),legacy)
+
+    def test_stock_actual_exige_corte_comercial_validado_y_evidencia(self):
+        s='TEST001'; c=self.contracts[s]; self.products[0]['stock']=2
+        (self.root/'index.html').write_text('const products='+json.dumps(self.products)+';\n')
+        cut={'fecha_corte':'2026-11-02','sha256_original':'a'*64,'productos':{p['sku']:{'stock':p['stock'],'promo_centavos':round(p['promo']*100),'pvp_centavos':round(p['pvp']*100)}for p in self.products}}
+        state={'fecha_corte':cut['fecha_corte'],'origen_sha256':cut['sha256_original'],'sku_web':2}
+        for name,d in [('corte-comercial-publico-validado.json',cut),('estado-ultimo-corte.json',state)]:
+            (self.root/'datos-593'/name).write_text(json.dumps(d))
+        self.ctx=validator.context(self.root); c['stock']=2; c['stock_fecha_corte']=cut['fecha_corte']
+        self.assertIn('stock_593',{e['codigo']for e in self.errors()})
+        actual=self.ctx['corte_comercial'];c['validaciones']['corte_comercial']={k:actual[k]for k in ('archivo','sha256','fecha')}|{'fila':actual['productos'][s]}
+        self.assertNotIn('stock_593',{e['codigo']for e in self.errors()})
+        c['validaciones']['corte_comercial']['sha256']='0'*64
+        self.assertIn('stock_593',{e['codigo']for e in self.errors()})
+        cut['productos'][s]['stock']=9
+        (self.root/'datos-593/corte-comercial-publico-validado.json').write_text(json.dumps(cut))
+        with self.assertRaises(subprocess.CalledProcessError): validator.context(self.root)
 
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
@@ -251,6 +270,54 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(self.runjob()['productos'][0]['estado'], 'pendiente')
         self.assertEqual(before, (self.root / 'index.html').read_bytes())
 
+
+class SealedUnitPresentationTests(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
+        (self.root/'importacion').mkdir();(self.root/'reportes').mkdir()
+        self.proof={'origen':'CONFIRMACION_PROPIETARIO_CHAT','excepciones_presentacion_sellada':{'JUGU142':{'autorizada':True,'mostrar_empaque':True,'unidad_sellada':True}}}
+        self.data={'version':1,'productos':{'JUGU142':{'aprobado_por_propietario':True,'tipo':'UNIDAD_SORPRESA_SELLADA'}}}
+        self.write_proof();self.sealed=__import__('presentacion_sellada')
+    def write_proof(self):
+        p=self.root/'reportes/owner.json';p.write_text(json.dumps(self.proof));self.data['evidencia']={'archivo':'reportes/owner.json','sha256':hashlib.sha256(p.read_bytes()).hexdigest()};self.write_data()
+    def write_data(self):
+        (self.root/'importacion/excepciones-presentacion-sellada.json').write_text(json.dumps(self.data))
+    def js(self,sku='JUGU142'):
+        code='console.log(require('+json.dumps(str(ROOT/'scripts/presentacion-sellada.cjs'))+')(process.argv[1],process.argv[2]));'
+        return subprocess.check_output(['node','-e',code,sku,str(self.root)],text=True).strip()=='true'
+    def test_only_named_sku_has_matching_python_and_js_authorization(self):
+        self.assertTrue(self.sealed.authorized(self.root,'JUGU142'));self.assertTrue(self.js())
+        self.assertFalse(self.sealed.authorized(self.root,'OTHER001'));self.assertFalse(self.js('OTHER001'))
+    def test_changed_proof_bytes_revoke_both_readers(self):
+        (self.root/'reportes/owner.json').write_text('{}');self.assertFalse(self.sealed.authorized(self.root,'JUGU142'));self.assertFalse(self.js())
+    def test_truth_like_flags_do_not_authorize(self):
+        self.data['productos']['JUGU142']['aprobado_por_propietario']='true';self.write_data();self.assertFalse(self.sealed.authorized(self.root,'JUGU142'));self.assertFalse(self.js())
+    def test_valid_hash_without_explicit_sku_claim_does_not_authorize(self):
+        self.proof['excepciones_presentacion_sellada']={};self.write_proof();self.assertFalse(self.sealed.authorized(self.root,'JUGU142'));self.assertFalse(self.js())
+    def test_path_outside_reports_is_rejected(self):
+        self.data['evidencia']['archivo']='../owner.json';self.write_data();self.assertFalse(self.sealed.authorized(self.root,'JUGU142'));self.assertFalse(self.js())
+    def test_box_photo_requires_sealed_single_unit_and_same_evidence(self):
+        c={'unidad_venta':{'verificada':True,'sellada':True,'cantidad':1,'fuente':'reportes/owner.json'}};p={'contiene_caja':True};r={'presentacion':'con caja'}
+        self.assertTrue(self.sealed.box_photo_allowed(self.root,'JUGU142',p,r,c))
+        for k,v in [('verificada',False),('sellada',False),('cantidad',2),('cantidad',True),('fuente','reportes/other.json')]:
+            bad=copy.deepcopy(c);bad['unidad_venta'][k]=v;self.assertFalse(self.sealed.box_photo_allowed(self.root,'JUGU142',p,r,bad))
+        self.assertFalse(self.sealed.box_photo_allowed(self.root,'OTHER001',p,r,c))
+        self.assertFalse(self.sealed.box_photo_allowed(self.root,'JUGU142',p,{'presentacion':'sin caja'},c))
+    def test_global_sin_caja_is_kept_for_every_other_sku(self):
+        rules=__import__('reglas_sku');row={'autenticidad':'original verificado','presentacion':'con caja','instrucciones':'','evidencia_autenticidad':'fixture','revision':1};registry={'politica_general':{'presentacion_obligatoria':'sin caja'},'productos':{'JUGU142':row,'OTHER001':row}}
+        (self.root/'importacion/reglas-sku.json').write_text(json.dumps(registry))
+        self.assertEqual(rules.rule('JUGU142',self.root)['presentacion'],'con caja');self.assertEqual(rules.rule('OTHER001',self.root)['presentacion'],'sin caja')
+    def test_queue_refresh_preserves_only_confirmed_sealed_presentation(self):
+        sync=module('sealed_queue_test','sincronizar-cola-drive.py');state={'productos':{'JUGU142':{},'OTHER001':{}},'resumen':{}};registry={'productos':{s:{'presentacion':'con caja','revision':3}for s in state['productos']}}
+        sync.refresh_rule_revisions(state,registry,self.root)
+        self.assertEqual(state['productos']['JUGU142']['presentacion'],'con caja');self.assertEqual(state['productos']['OTHER001']['presentacion'],'sin caja')
+    def test_rule_update_accepts_confirmed_sku_and_rejects_other_box(self):
+        rules=__import__('reglas_sku');row={'autenticidad':'original verificado','presentacion':'sin caja','instrucciones':'','evidencia_autenticidad':'fixture','revision':2};registry={'politica_general':{'presentacion_obligatoria':'sin caja'},'productos':{'JUGU142':row,'OTHER001':copy.deepcopy(row)}}
+        file=self.root/'importacion/reglas-sku.json';file.write_text(json.dumps(registry));(self.root/'importacion/alias-sku.json').write_text('{}')
+        update={'sku':'JUGU142','autenticidad':'','presentacion':'con caja','instrucciones':'Unidad sellada confirmada','evidencia_autenticidad':''};changed=rules.apply_rows([update],True,self.root);self.assertEqual(len(changed),1);self.assertEqual(rules.rule('JUGU142',self.root)['revision'],3)
+        before=file.read_bytes();update['sku']='OTHER001'
+        with self.assertRaises(ValueError):rules.apply_rows([update],True,self.root)
+        self.assertEqual(file.read_bytes(),before)
 
 if __name__ == '__main__':
     unittest.main()
