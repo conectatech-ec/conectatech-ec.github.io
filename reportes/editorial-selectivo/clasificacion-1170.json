@@ -3,10 +3,10 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 1113,
+    "MEJORAR TÍTULO": 1114,
     "OMITIDO POR PROPIETARIO": 5,
     "REVISAR IDENTIDAD": 1,
-    "CORRECTO": 51
+    "CORRECTO": 50
   },
   "aplicados": 1113,
   "cola": [
@@ -12351,17 +12351,18 @@
     },
     {
       "sku": "CHIP003",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Chip Simcard Tuenti",
-      "propuesta": "Chip Simcard Tuenti",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "propuesta": "Chip SIM Tigo",
+      "causa": "Cambio expreso del operador Tuenti aTigo; mantener identificada la presentación física anterior sin alterar su imagen.",
       "prioridad": 2,
       "evidencia": [
         "index.html#CHIP003",
-        "datos593: identidad por completar"
+        "datos593: identidad por completar",
+        "reportes/continuacion-123/instrucciones-propietario.json"
       ],
-      "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "verificacionEditorialNecesaria": true,
+      "aplicar": true
     },
     {
       "sku": "CHIP004",
@@ -28249,5 +28250,23 @@
     "ESTU088",
     "ESTU090"
   ],
-  "pendientesIdentidadActivosSinAnuladosNiOmitidos": []
+  "pendientesIdentidadActivosSinAnuladosNiOmitidos": [],
+  "correccionOperadorCHIP003Produccion123": {
+    "clasificacionAnterior": {
+      "sku": "CHIP003",
+      "estado": "CORRECTO",
+      "tituloActual": "Chip Simcard Tuenti",
+      "propuesta": "Chip Simcard Tuenti",
+      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "prioridad": 2,
+      "evidencia": [
+        "index.html#CHIP003",
+        "datos593: identidad por completar"
+      ],
+      "verificacionEditorialNecesaria": false,
+      "aplicar": false
+    },
+    "motivo": "Cambio expreso del operador Tuenti aTigo; mantener identificada la presentación física anterior sin alterar su imagen.",
+    "evidencia": "reportes/continuacion-123/instrucciones-propietario.json"
+  }
 }

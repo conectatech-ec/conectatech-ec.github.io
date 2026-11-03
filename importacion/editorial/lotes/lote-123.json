@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "lote": "editorial-123",
+  "base": "5702dad61608d17264761dfe58cc485d8832d8f2",
+  "maximo": 30,
+  "estado": "APROBADO_LOCAL_PENDIENTE_PUBLICACION",
+  "skus": [
+    "CHIP003"
+  ],
+  "productos": {
+    "CHIP003": {
+      "titulo": "Chip SIM Tigo",
+      "subtitulo": "Empaque Tuenti",
+      "tituloAnterior": "Chip Simcard Tuenti",
+      "nombre593": "CHIP SIMCARD TUENTI",
+      "marca": "Tigo",
+      "modelo": "",
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "condicionTarjeta": "",
+      "fuentes": [
+        "reportes/continuacion-123/instrucciones-propietario.json",
+        "https://drive.google.com/file/d/1qRLj82oh16xV7lUYpB6LL3FB2K9iZ0po/view"
+      ],
+      "evidenciaAtributos": {
+        "Operador actual": "Tigo, confirmado por el propietario.",
+        "Empaque entregado": "El propietario todavía entrega el sobre anterior Tuenti.",
+        "Presentación": "Unidad comercial sellada, sin seriales visibles."
+      },
+      "clasificacionReal": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas sin fila AAA aplicable; Tipo: sin registro. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+      "url": "https://conectatech-ec.github.io/productos/chip003-chip-simcard-tuenti/",
+      "foto": "/imagenes/chip003/CHIP003-r123-01.webp",
+      "sha256Foto": "9d0a4afb4d4398e73eb0913b24ca8a73e15797e3f0e1ee27b51e6daf2d8467a6",
+      "causa": "Cambio expreso del operador Tuenti aTigo; mantener identificada la presentación física anterior sin alterar su imagen.",
+      "lote": "editorial-123",
+      "mostrarTituloEnFicha": true
+    }
+  },
+  "modelosTrasladadosAEspecificaciones": {},
+  "modelosClasificacionHistorica": {},
+  "noSonSKUNuevos": true,
+  "nuevasPresentaciones": 1,
+  "autorizacion": {
+    "sku": "CHIP003",
+    "operadorAnterior": "Tuenti",
+    "operadorActualConfirmado": "Tigo",
+    "fuente": "ORDEN_EXPRESA_PROPIETARIO_CHAT",
+    "texto": "los chip de tuenti cambian a tigo",
+    "conservarSKUPreciosStockURL": true,
+    "nombreOriginal593SeConserva": true,
+    "presentacionFotografica": "CONFIRMADA",
+    "noReetiquetarFotoTuentiComoEmpaqueTigo": true,
+    "continuarOtrosTres": true,
+    "respuestaEmpaque": "todavia no tenemos el nuevo empaque,",
+    "mostrarEmpaqueAnteriorTuenti": true
+  },
+  "restricciones": "SóloCHIP003por ordenexpresa; conservar todas las demás presentaciones, nombres593, SKU, precios, stock yURLs. La fotografía representa el sobreTuenti aún entregado."
+}

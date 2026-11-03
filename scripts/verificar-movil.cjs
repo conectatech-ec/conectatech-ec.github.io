@@ -8,6 +8,7 @@ const potencia=require('../assets/formato-potencia.js').text;
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const priceChecks = require('./validar-precios-ficha.cjs');
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC = 'https://conectatech-ec.github.io';
 const sha = data => crypto.createHash('sha256').update(data).digest('hex');
@@ -145,6 +146,8 @@ async function main() {
           return {ancho_viewport: window.innerWidth, ancho_documento: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth),
             titulo: text('h1'), titulo_visible: visible('h1'), sku_visible: text('.sku'), precio: text('.price'), pvp: text('.pvp'),
             precio_visible: visible('.price'), pvp_visible: visible('.pvp'), etiqueta_contado: text('.promo-label'),
+            precio_archivado: Boolean(price?.closest('[data-availability-historical-price]')?.hidden && pvp?.closest('[data-availability-historical-price]')?.hidden),
+            agotado_visible: (()=>{const el=document.querySelector('.ct-availability');if(!el||el.dataset.availability!=='out_of_stock')return false;const r=el.getBoundingClientRect(),s=getComputedStyle(el);return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&/Agotado|No disponible/i.test(el.innerText);})(),
             promo_tamano: price ? parseFloat(getComputedStyle(price).fontSize) : 0, pvp_tamano: pvp ? parseFloat(getComputedStyle(pvp).fontSize) : 0,
             pvp_tachado: pvp ? [pvp, ...pvp.querySelectorAll('*')].some(el => getComputedStyle(el).textDecorationLine.includes('line-through') || ['S', 'DEL', 'STRIKE'].includes(el.tagName)) : null,
             canonical: document.querySelector('link[rel="canonical"]')?.href || '', schema: product || null,
@@ -160,8 +163,10 @@ async function main() {
         check('titulo', data.titulo_visible && data.titulo === potencia(expectedHeading) && data.schema?.name === expectedName, 'Título visible/schema distinto de la ficha local.');
         check('sku', new RegExp('(^|[^A-Z0-9])' + sku + '([^A-Z0-9]|$)').test(data.sku_visible) && data.schema?.sku === sku, 'SKU visible/schema incorrecto.');
         check('canonical', data.canonical === canonical, 'Canonical distinto de la URL estable.');
-        check('promo_contado', data.precio_visible && money(data.precio) === Math.round(p.promo * 100) && Math.round(Number(data.schema?.offers?.price) * 100) === Math.round(p.promo * 100) && data.schema?.offers?.priceCurrency === 'USD', 'Promo contado visible/schema distinta del catálogo.');
-        check('pvp', data.pvp_visible && money(data.pvp) === Math.round(p.pvp * 100), 'PVP visible distinto del catálogo.');
+        const prices=priceChecks(p,data,money);row.precio_archivado_por_stock_cero=prices.archived;
+        check('promo_contado', prices.promo, 'Promo contado/schema distinta del catálogo o visibilidad incorrecta.');
+        check('pvp', prices.pvp, 'PVP distinto del catálogo o visibilidad incorrecta.');
+        if(p.stock===0)check('estado_agotado_visible',prices.stockCeroVisible,'El estado agotado debe ser visible cuando el stock es0.');
         check('jerarquia_precio', /PROMO\s+CONTADO/i.test(data.etiqueta_contado) && data.promo_tamano > data.pvp_tamano && data.pvp_tachado === false, 'Promo contado sin jerarquía o PVP tachado.');
         check('disponibilidad', data.schema?.offers?.availability === 'https://schema.org/' + (p.stock > 0 ? 'InStock' : 'OutOfStock'), 'Disponibilidad schema distinta del último catálogo local.');
         const expectedImage = effectivePhotos[sku]?.imagen || content.imagen || p.imageUrl;
