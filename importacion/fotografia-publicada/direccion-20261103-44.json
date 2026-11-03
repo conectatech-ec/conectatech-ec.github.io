@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publicacion_verificada": false,
+  "publicacion_verificada": true,
   "total_evaluado": 29,
   "auditoria_id": "fotografia-masiva-44-45",
   "auditoria_general": "importacion/fotografia-publicada/evaluacion-20261103-44-45.json",
@@ -4814,8 +4814,19 @@
     }
   },
   "comprobaciones_prepublicacion": {
-    "prueba_publica_pendiente": true,
+    "prueba_publica_pendiente": false,
     "titulos_precios_pvp_stock_sku_urls_sin_modificar": true,
     "originales_sin_sobrescribir": true
+  },
+  "fecha_primera_verificacion_publica": "2026-11-03T18:38:19.138625+00:00",
+  "verificacion": {
+    "hashes_http_auditoria": 482,
+    "casos_chromium": 58,
+    "anchos": [
+      1280,
+      390
+    ],
+    "sha256_informe_http": "b4638fc55cebd852090977fb538087283ae81faf23fb3c8786cd6f71a92ec70e",
+    "sha256_informe_chromium": "987ce3f7195dc14dec10a659097530645e935ba9c329fd010019e953b799db80"
   }
 }
