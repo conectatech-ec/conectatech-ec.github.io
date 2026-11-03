@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "estado": "PROTOTIPO_NO_IMPLEMENTADO",
+  "zona_horaria": "America/Guayaquil",
+  "fecha_trabajo": "2026-11-03",
+  "alcance": {
+    "categorias": [
+      "Telefonos y Tablets",
+      "Audifonos",
+      "Televisores y Monitores"
+    ],
+    "solo_portadas": true,
+    "modificar_banners_individuales": false,
+    "regenerar_catalogos_completos": false,
+    "modificar_aprobados": false,
+    "publicacion_automatica": false,
+    "requiere_aprobacion_creativa": true
+  },
+  "recursos": {
+    "motor": "Reutilizar la Fabrica SIGNATURE existente; no crear otro motor ni Data Hub",
+    "logo": "PNG original independiente; sin generacion IA, redibujo, deformacion ni cambios de color",
+    "encabezado": "Reutilizar encabezado SIGNATURE aprobado",
+    "tipografia": "Heredar exactamente las fuentes y pesos del motor vigente",
+    "fotografias": "Solo recursos reales ya aprobados y verificados por SKU; conservar originales"
+  },
+  "composicion": {
+    "lienzo": [
+      1200,
+      1200
+    ],
+    "marca_destacada": true,
+    "contraste_movil": true,
+    "textos_breves": true,
+    "variacion": "Ambientacion sutil por categoria, con identidad azul/verde",
+    "prohibir_recuadros_repetitivos_de_servicios": true,
+    "mostrar_precio_en_portada": false,
+    "contacto_whatsapp": "0998576759",
+    "eslogan": "Tu mundo mas conectado"
+  },
+  "comparativa": {
+    "antes": "Portada realmente vigente cuando se pueda extraer; identificar expresamente cualquier referencia archivada",
+    "despues": "Una propuesta por categoria",
+    "aplicar_a_produccion": false
+  },
+  "regla_definitiva_importante": {
+    "prioridad": "OBLIGATORIA_ANTES_DE_ENTREGAR",
+    "estado_integracion_motor": "PENDIENTE_ENTORNO",
+    "contorno_exterior": "Continuo, nitido, sin dientes, halos blancos, pixeles sueltos ni fondo residual",
+    "huecos_interiores": "Eliminar fondo ajeno dentro de asas, correas y separaciones entre piezas",
+    "transparencia": "Preservar acrilico y vidrio propios del producto, con reflejos naturales; no confundirlos con empaque",
+    "fidelidad": "No inventar, desplazar ni eliminar conectores, controles, formas, accesorios o colores reales",
+    "dimensiones": "Proporcion y escala coherentes con la familia; producto completo y centrado",
+    "validacion": "Inspeccionar sobre fondo oscuro y a ampliacion; no aprobar por dimensiones o canal alfa solamente",
+    "reutilizacion": "El resultado refinado debe persistirse como recurso con procedencia, hash y revision; no repetir el retoque si no cambia",
+    "logo": "Intacto y fuera del area de retoque; comparar region fija antes/despues",
+    "generador": "Integrar en el motor existente cuando vuelva a estar disponible; este archivo no acredita que ya este activo"
+  },
+  "disponibilidad": {
+    "carpetas_de_banners": "Conservar imagenes aprobadas aunque no haya stock; no moverlas ni eliminarlas por agotamiento",
+    "pdf": "Excluir sin stock; reincorporar al recuperar disponibilidad si datos e imagen siguen aprobados",
+    "mostrar_cantidades_stock": false
+  },
+  "corte": {
+    "fuente": "Data Hub existente",
+    "estado_publico": "datos-593/estado-ultimo-corte.json",
+    "fecha_validada_observada": "2026-11-03",
+    "origen_sha256": "756693acd771ee3ae6c0881d173c802be18b82c2ccae2957d61189b5d01384f0",
+    "nota": "Solo actualizar la fecha impresa despues de regenerar y verificar; no declarar vigente un archivo antiguo"
+  },
+  "seguridad": {
+    "costo_adicional": 0,
+    "modificar_main": false,
+    "modificar_produccion": false,
+    "modificar_componentes_compartidos": false,
+    "publicar_recursos_privados_en_github": false,
+    "priorizar_fabrica": true
+  }
+}
