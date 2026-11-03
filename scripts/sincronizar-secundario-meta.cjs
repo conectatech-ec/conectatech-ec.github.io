@@ -85,6 +85,14 @@ async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,
    const identity=await api.request('GET',config.catalog_id,{fields:'id,name'});
    if(identity.id!==config.catalog_id||identity.name!==NAME)throw Error('IDENTIDAD_SECUNDARIA_NO_COINCIDE');
    receipt={estado:'CATALOGO_SECUNDARIO_ACCESIBLE_SOLO_LECTURA',phone:PHONE,catalog_id:identity.id,solo_lectura:true,colecciones_whatsapp_verificadas:false};
+   const feeds=await api.list(config.catalog_id+'/product_feeds','id,name');
+   const imports=[];
+   for(const feed of feeds.filter(f=>f.name===FEED_NAME)){
+    const uploads=await api.list(feed.id+'/uploads','id,start_time,end_time,error_count,num_invalid_items,num_persisted_items');
+    imports.push({feed_id:feed.id,cargas:uploads.slice(0,3).map(u=>({id:u.id,inicio:u.start_time,fin:u.end_time||null,errores:u.error_count,invalidos:u.num_invalid_items,persistidos:u.num_persisted_items}))});
+   }
+   const products=await api.list(config.catalog_id+'/products','id,retailer_id,availability');
+   receipt={...receipt,productos_leidos:products.length,disponibles:products.filter(p=>String(p.availability).replace(/_/g,' ')==='in stock').length,agotados:products.filter(p=>String(p.availability).replace(/_/g,' ')==='out of stock').length,importaciones:imports};
   }else{
   plan=plan||JSON.parse(fs.readFileSync('exportaciones/meta-conjuntos-web.json','utf8'));
   csv=csv??fs.readFileSync('exportaciones/meta-catalogo-piloto.csv','utf8');
@@ -96,10 +104,15 @@ async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,
  if(env.GITHUB_STEP_SUMMARY)fs.appendFileSync(env.GITHUB_STEP_SUMMARY,'\nWhatsApp secundario 0964206977: '+receipt.estado+'\nVisibilidad en WhatsApp: pendiente de conexión nativa y comprobación.\n');
  return receipt;
 }
-module.exports={MASTER,PHONE,NAME,FEED_NAME,CHECKPOINT,validateConfig,SecondaryGraph,syncSecondary,main};
+function failureReceipt(e){
+ const known=new Set(['META_IMPORTACION_PENDIENTE','META_IMPORTACION_PREVIA_EN_CURSO','META_IMPORTACION_CON_ERRORES_O_INCOMPLETA','META_IMPORTACION_NO_VERIFICADA','TOTALES_SECUNDARIOS_NO_COINCIDEN']);
+ const pending=['META_IMPORTACION_PENDIENTE','META_IMPORTACION_PREVIA_EN_CURSO'].includes(e.message);
+ return {estado:pending?'SECUNDARIO_IMPORTACION_PENDIENTE':'ERROR_SECUNDARIO',codigo:/^META_HTTP_\d+_CODIGO_[A-Z0-9_]+$/.test(e.message)||known.has(e.message)?e.message:'VALIDACION_SECUNDARIA_NO_CONFIRMADA',...(e.meta?{meta:e.meta}:{}),colecciones_whatsapp_verificadas:false};
+}
+module.exports={MASTER,PHONE,NAME,FEED_NAME,CHECKPOINT,validateConfig,SecondaryGraph,syncSecondary,main,failureReceipt};
 if(require.main===module)main({inspect:process.argv.includes('--inspect')}).catch(e=>{
- const receipt={estado:'ERROR_SECUNDARIO',codigo:e.message.startsWith('META_HTTP_')?e.message:'VALIDACION_SECUNDARIA_NO_CONFIRMADA',...(e.meta?{meta:e.meta}:{}),colecciones_whatsapp_verificadas:false};
+ const receipt=failureReceipt(e);
  save('work/auto-meta/resultado-secundario.json',receipt);console.error('META_SECUNDARIO: '+JSON.stringify(receipt));
- if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nWhatsApp secundario: ERROR. Sincronización no confirmada; consultar resultado-secundario.json.\n');
+ if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\nWhatsApp secundario: '+receipt.estado+'. Sincronización no confirmada; consultar resultado-secundario.json.\n');
  process.exitCode=1;
 });
