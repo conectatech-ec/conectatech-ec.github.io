@@ -377,6 +377,7 @@ jobs:
           overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-10.json'))['productos'])
           overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261027-11.json'))['productos'])
           overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261103-42.json'))['productos'])
+          overrides.update(json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261104-52.json'))['productos'])
           published=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(300 if published else 1):
               try:
@@ -2935,3 +2936,64 @@ jobs:
           npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa51" playwright@1.51.1
           curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-publicacion-51-qa.cjs" -o "$RUNNER_TEMP/foto-qa51/qa.cjs"
           NODE_PATH="$RUNNER_TEMP/foto-qa51/node_modules" node "$RUNNER_TEMP/foto-qa51/qa.cjs"
+
+  publicacion_autorizada_52:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Verificar las 2 imágenes autorizadas y preservar originales
+        shell: python
+        env:
+          PHOTO_REF: ${{ github.ref }}
+          PHOTO_SHA: ${{ github.sha }}
+        run: |
+          import json,os,re,hashlib,time,concurrent.futures,tempfile,subprocess
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA'];origin='https://conectatech-ec.github.io'
+          def get(u):
+              with urlopen(Request(u,headers={'Cache-Control':'no-cache'}),timeout=40) as response:
+                  assert response.status==200
+                  return response.read()
+          rec=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261104-52.json'))
+          assert len(rec['productos'])==2 and rec['portadas']==1 and rec['secundarias']==1 and 'CARG069' not in rec['productos']
+          fixture=Path(tempfile.mkdtemp(prefix="foto52-"));files={}
+          for sku,row in rec['productos'].items():
+              assert row['revisado_visual'] and row['autorizacion'] and row['miniaturas_esperadas'] in [1,2]
+              for ph in ([row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas'])+row.get('mantener_vistas',[]):
+                  for v in [{'url':ph['original'],'sha256':ph['sha256_original']},*ph['versiones'].values()]:files[v['url']]=v['sha256']
+              for v in row['archivos_originales_conservados']+row.get('portadas_previas_autorizadas',[]):files[v['url']]=v['sha256']
+          for v in rec['aprobados_preservados'].values():files[v['url']]=v['sha256']
+          def check(pair):
+              url,sha=pair
+              assert url.startswith('/imagenes/') and '..' not in url
+              data=get(raw+url);assert hashlib.sha256(data).hexdigest()==sha,url
+              f=fixture/url.lstrip('/');f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(data)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:list(pool.map(check,files.items()))
+          for name in ['index.html','seo-contenido.json','scripts/fotografia-direccion.cjs','scripts/fotografia-persistencia-52-test.cjs','importacion/fotografia-publicada/direccion-20261104-52.json']:
+              f=fixture/name;f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(get(raw+'/'+name))
+          subprocess.run(['node','scripts/fotografia-persistencia-52-test.cjs'],cwd=fixture,check=True)
+          public=os.environ['PHOTO_REF']=='refs/heads/main'
+          for attempt in range(180 if public else 1):
+              try:
+                  root=get((origin if public else raw)+'/index.html').decode();products={p['sku']:p for p in json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',root)[1])}
+                  for s,row in rec['productos'].items():
+                      assert products[s]['imageUrl']==(row['imagenProfesional']['versiones']['1200']['url'] if 'imagenProfesional' in row else row['portada_anterior']['url']),s
+                      page=get((origin if public else raw)+row['pagina']+'index.html').decode()
+                      for ph in ([row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas'])+row.get('mantener_vistas',[]):assert ph['versiones']['1200']['url'] in page and ph['versiones']['300']['url'] in page,s
+                  for s,v in rec['aprobados_preservados'].items():assert products[s]['imageUrl']==v['url'],s
+                  break
+              except Exception:
+                  if not public or attempt==179:raise
+                  time.sleep(5)
+          print(json.dumps({'sku':2,'archivos_sha256':len(files),'publico':public,'originales_intactos':True}))
+      - name: Verificar publicación en escritorio y móvil
+        if: github.ref == 'refs/heads/main'
+        env:
+          PHOTO_SHA: ${{ github.sha }}
+          PHOTO_PUBLIC: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/foto-qa52"
+          npm install --no-audit --no-fund --prefix "$RUNNER_TEMP/foto-qa52" playwright@1.51.1
+          curl --fail --silent --show-error "https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/$PHOTO_SHA/scripts/fotografia-publicacion-52-qa.cjs" -o "$RUNNER_TEMP/foto-qa52/qa.cjs"
+          NODE_PATH="$RUNNER_TEMP/foto-qa52/node_modules" node "$RUNNER_TEMP/foto-qa52/qa.cjs"
