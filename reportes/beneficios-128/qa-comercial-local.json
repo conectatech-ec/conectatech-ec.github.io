@@ -19,6 +19,7 @@
     "AUDI053",
     "AUDI061",
     "AUDI062",
+    "AUDI063",
     "AUDI064",
     "AUDI065",
     "AUDI073",
@@ -40,6 +41,10 @@
     "CARG071",
     "CUBO026",
     "CUBO027",
+    "FLAS003",
+    "FLAS004",
+    "FLAS005",
+    "FLAS016",
     "MICR03",
     "REL001",
     "REL006",
@@ -49,12 +54,13 @@
     "REL031",
     "REL047",
     "REL059",
-    "TARJ001"
+    "TARJ001",
+    "TARJ002"
   ],
-  "cantidad": 48,
+  "cantidad": 54,
   "descripcion": "Copia comercial, precios, disponibilidad, títulos, URLs y fotos conservadas; móvil390 y escritorio1280. No es una nueva auditoría de identidad fotográfica.",
   "validacionGeneral": {
-    "verificados": 47,
+    "verificados": 53,
     "revisarGaleriaHeredada": 1
   },
   "incidenciasPreexistentes": [
@@ -68,5 +74,10 @@
     }
   ],
   "informeGeneral": "reportes/beneficios-128/movil-local.json",
-  "sha256InformeGeneral": "ce933833861d84b6e6b9b0482d4c0a37e5f5f9dc4fab680b74d6839fb33dff98"
+  "sha256InformeGeneral": "ce933833861d84b6e6b9b0482d4c0a37e5f5f9dc4fab680b74d6839fb33dff98",
+  "complemento": {
+    "informe": "reportes/beneficios-128/movil-local-complemento.json",
+    "sha256": "47e6f3c399f1444713fefea987e1467058c09fc92aa01ce5abe5be7fab6a83e1"
+  },
+  "notaCorte593": "La primera captura local precede al nuevo corte automático593; la integridad HTML final conserva los precios, stock y fecha del main fresco. Se exige HTML exacto en comprobación pública antes de fechas."
 }

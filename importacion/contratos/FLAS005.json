@@ -43,7 +43,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1zvIho_7iPP0DQ3yFC0mNzmdTer7VWzFn/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
-    "importacion/reglas-sku.json"
+    "importacion/reglas-sku.json",
+    "reportes/beneficios-128/fuentes/FLAS005.json"
   ],
   "imagen_principal": "/imagenes/flas005/FLAS005-01.webp",
   "imagenes_secundarias": [],
@@ -112,7 +113,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
   "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
-  "descripcion": "Capacidad nominal para almacenar y transportar documentos y contenido. Carcasa metálica plateada con aro de llavero. Para equipos con puerto USB-A compatible.",
+  "descripcion": "Transporta tus archivos en una memoria USB de 128 GB nominales con carcasa metálica plateada. Su aro de llavero permite llevarla junto a tus llaves y usarla en equipos con puerto USB-A compatible.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -198,8 +199,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1zvIho_7iPP0DQ3yFC0mNzmdTer7VWzFn/view?usp=drivesdk",
-      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
+      "fuente": "reportes/beneficios-128/fuentes/FLAS005.json",
+      "evidencia": "Descripción comercial autorizada, basada en atributos ya verificados; condición junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -207,103 +208,114 @@
       "sha256_maestro": "4e0c522ae00539b5ea1b87bd516d339430bcb119d5153bd34035ef352d9cf80f",
       "evidencia": "Edición de fotografía propia: limpieza, iluminación y fondo blanco. Forma, color y controles cotejados contra fotos reales; pantalla apagada; sin hardware añadido. Inscripción Kingston añadida por petición expresa del propietario, como FLAS004; no prueba de fabricación grabada en la unidad."
     },
-    "movil": {
-      "solicitado": "FLAS005",
-      "sku": "FLAS005",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:59:25.047Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
-      "archivo_html": "productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/index.html",
-      "http": 200,
-      "sha256_html": "c51f4259fa3537892f4b0edeeb342b6e3265f3f1d71d74d70ba3921bdbc6df87",
-      "sha256_html_local": "c51f4259fa3537892f4b0edeeb342b6e3265f3f1d71d74d70ba3921bdbc6df87",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/flas005/FLAS005-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/flas005/FLAS005-01-600.webp?v=949a553088f1ce4c",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/flas005/FLAS005-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/disc005-disco-duro-externo-adata-1tb-antishock/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/FLAS005-390.png",
-      "sha256": "4403b68090e09075febbce5c7e92bc7ee65b57cad225d6f81b42acc3d76994b8",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/FLAS005-1280.png",
-        "sha256": "2708a57761cd19684d9433f13c8afbe08f096812d24346f49725afdc47f54b1d",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
       "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
+  },
+  "descripcion_seo": "Transporta tus archivos en una memoria USB de 128 GB nominales con carcasa metálica plateada. Su aro de llavero permite llevarla junto a tus llaves y usarla.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "FLAS005",
+        "sku": "FLAS005",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-13T02:59:25.047Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
+        "archivo_html": "productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/index.html",
+        "http": 200,
+        "sha256_html": "c51f4259fa3537892f4b0edeeb342b6e3265f3f1d71d74d70ba3921bdbc6df87",
+        "sha256_html_local": "c51f4259fa3537892f4b0edeeb342b6e3265f3f1d71d74d70ba3921bdbc6df87",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/flas005/FLAS005-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/flas005/FLAS005-01-600.webp?v=949a553088f1ce4c",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/flas005-flash-memory-128gb-2-0-kingston-tipo-llavero/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/flas005/FLAS005-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/disc003-disco-duro-externo-adata-2tb-antishock/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/disc004-disco-solido-externo-ssd-adata-500gb/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/disc005-disco-duro-externo-adata-1tb-antishock/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/FLAS005-390.png",
+        "sha256": "4403b68090e09075febbce5c7e92bc7ee65b57cad225d6f81b42acc3d76994b8",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-067/qa-publica-recuperada/movil/FLAS005-1280.png",
+          "sha256": "2708a57761cd19684d9433f13c8afbe08f096812d24346f49725afdc47f54b1d",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/FLAS005.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }
