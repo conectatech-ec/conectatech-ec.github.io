@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('fs'),crypto=require('node:crypto');
-const {Graph}=require('./sincronizar-conjuntos-meta.cjs');
+const {Graph,parseGraphData}=require('./sincronizar-conjuntos-meta.cjs');
 const CATALOG='1668633188201887';
 const CATALOG_NAME='CONECTATECH | Catálogo WhatsApp 0964206977';
 const FAMILIES=['Celulares y Smartphones','Tablets','Televisores','Monitores','Smartwatches y Wearables','Almacenamiento'];
@@ -10,6 +10,13 @@ const stable=x=>JSON.stringify(canonical(typeof x==='string'?JSON.parse(x):x));
 const hash=x=>crypto.createHash('sha256').update(stable(x)).digest('hex');
 const filter=x=>typeof x==='string'?JSON.parse(x):x;
 const sorted=rows=>[...rows].sort((a,b)=>a.id.localeCompare(b.id));
+const recoveryNeeded=s=>!!s&&s.catalog_id===CATALOG&&s.estado!=='ORDEN_SECUNDARIO_META_VERIFICADO'&&!!s.resultado;
+const creationPending=s=>['CREANDO','RESTAURACION_PENDIENTE'].includes(s);
+function creationParams(s){
+ const p={name:s.name,filter:filter(s.filter),retailer_id:s.retailer_id};
+ if(s.ordering_info?.length)p.ordering_info='['+s.ordering_info.map(String).join(',')+']';
+ return p;
+}
 function validate(request,backup){
  const copy={...backup};delete copy.respaldo_sha256;
  const digest=crypto.createHash('sha256').update(JSON.stringify(copy)).digest('hex');
@@ -45,8 +52,8 @@ async function recreate({request,backup,plan,api,state=null,onState=()=>{},onPro
   if(!g||!g.sku.length||matches.length>1)throw Error('REORDEN_CONJUNTO_AUSENTE_O_DUPLICADO');
   const s=matches[0];
   if(previous&&(previous.retailer_id!==t.retailer_id||previous.snapshot?.id!==t.old_id||stable(previous.snapshot.filter)!==stable(g.filter)||stable([...previous.sku].sort())!==stable([...g.sku].sort())))throw Error('REORDEN_RESPALDO_EN_CURSO_DISTINTO');
-  if(!s&&!['ELIMINANDO','ELIMINADO','CREANDO'].includes(previous?.estado))throw Error('REORDEN_IDENTIDAD_AUSENTE');
-  if(s&&s.id!==t.old_id&&s.id!==previous?.new_id&&previous?.estado!=='CREANDO')throw Error('REORDEN_IDENTIDAD_NO_RECONOCIDA');
+  if(!s&&!['ELIMINANDO','ELIMINADO','CREANDO','RESTAURACION_PENDIENTE'].includes(previous?.estado))throw Error('REORDEN_IDENTIDAD_AUSENTE');
+  if(s&&s.id!==t.old_id&&s.id!==previous?.new_id&&!creationPending(previous?.estado))throw Error('REORDEN_IDENTIDAD_NO_RECONOCIDA');
   if(s){
    const original=backup.colecciones.find(c=>c.familia===t.familia)?.conjunto_original;
    if(s.id===t.old_id&&(!original||s.name!==original.name||stable(s.filter)!==stable(original.filter)||stable((s.ordering_info||[]).map(String))!==stable((original.ordering_info||[]).map(String))))throw Error('REORDEN_RESPALDO_DESACTUALIZADO');
@@ -56,6 +63,8 @@ async function recreate({request,backup,plan,api,state=null,onState=()=>{},onPro
   }
   records.push(previous||{...t,estado:'PREPARADO',snapshot:s,sku:[...g.sku]});
  }
+ // Validar también cada solicitud de creación antes de eliminar cualquier contenedor.
+ for(const r of records)api.validateCreation?.(creationParams(r.snapshot));
  state=state||{version:1,request_id:request.id,request_sha256:requestHash,estado:'RESPALDADO',catalog_id:CATALOG,fecha_corte:plan.fecha_corte,productos:products.length,productos_sha256:baseline,otros_conjuntos_sha256:others,registros:records,orden_whatsapp_verificado:false};
  const save=()=>onState(structuredClone(state));save();
  const verify=async(r,id)=>{
@@ -84,13 +93,12 @@ async function recreate({request,backup,plan,api,state=null,onState=()=>{},onPro
    if(deleted.success!==true)throw Error('REORDEN_ELIMINACION_NO_CONFIRMADA');
    r.estado='ELIMINADO';save();
   }else if(current[0]){
-   if(!r.new_id&&r.estado==='CREANDO')r.new_id=current[0].id;
+   if(!r.new_id&&creationPending(r.estado))r.new_id=current[0].id;
    else if(current[0].id!==r.new_id)throw Error('REORDEN_IDENTIDAD_CAMBIO');
   }
   if(!r.new_id){
    r.estado='CREANDO';save();
-   const params={name:r.snapshot.name,filter:filter(r.snapshot.filter),retailer_id:r.retailer_id};
-   if(r.snapshot.ordering_info?.length)params.ordering_info='['+r.snapshot.ordering_info.map(String).join(',')+']';
+   const params=creationParams(r.snapshot);
    try{const created=await api.request('POST',CATALOG+'/product_sets',params);r.new_id=created.id;}
    catch(e){
     // Una respuesta perdida puede haber creado el conjunto: recuperar por retailer_id antes de reintentar.
@@ -109,7 +117,7 @@ async function recreate({request,backup,plan,api,state=null,onState=()=>{},onPro
  let finalSets;
  for(let i=0;i<attempts;i++){
   finalSets=await api.list(CATALOG+'/product_sets',fields);
-  if(finalSets.length===all.length&&hash(sorted(finalSets.filter(s=>!retailers.has(s.retailer_id))))===others)break;
+  if(finalSets.length===request.targets.length+all.filter(s=>!retailers.has(s.retailer_id)).length&&hash(sorted(finalSets.filter(s=>!retailers.has(s.retailer_id))))===others)break;
   if(i===attempts-1)throw Error('REORDEN_OTROS_CONJUNTOS_CAMBIARON');
   await wait(3000);
  }
@@ -131,6 +139,10 @@ class ReorderGraph extends Graph{
   this.names=new Map(names.map(n=>[n.retailer_id,n.name]));this.sets=new Map();this.parents=new Set();this.catalogVerified=false;
   this.creations=new Map((request?.targets||[]).map(t=>[t.retailer_id,backup.colecciones.find(c=>c.familia===t.familia).conjunto_original]));
  }
+ validateCreation(params){
+  const expected=this.creations.get(params.retailer_id),keys=Object.keys(params).sort().join(',');
+  if(!expected||!['filter,name,retailer_id','filter,name,ordering_info,retailer_id'].includes(keys)||params.name!==expected.name||stable(params.filter)!==stable(expected.filter)||stable(parseGraphData('{"ordering_info":'+(params.ordering_info||'[]')+'}').ordering_info.map(String))!==stable((expected.ordering_info||[]).map(String)))throw Error('REORDEN_CREACION_FUERA_DE_ALCANCE');
+ }
  async request(method,path,params={},file=null){
   const [id,edge,...rest]=String(path).split('/'),root=id===CATALOG,known=this.sets.get(id);
   if(rest.length||file||(!root&&!known)||edge&&!(root?['product_sets','products']:['products']).includes(edge))throw Error('REORDEN_SECUNDARIO_FUERA_DE_ALCANCE');
@@ -141,8 +153,7 @@ class ReorderGraph extends Graph{
     if(edge||!this.parents.has(id)||!this.deletableProductSetIds.has(id)||keys!=='allow_live_product_set_deletion'||params.allow_live_product_set_deletion!==false)throw Error('REORDEN_ELIMINACION_FUERA_DE_ALCANCE');
     this.parents.delete(id);
    }else if(method==='POST'&&root&&edge==='product_sets'){
-    const expected=this.creations.get(params.retailer_id);
-    if(!expected||!['filter,name,retailer_id','filter,name,ordering_info,retailer_id'].includes(keys)||params.name!==expected.name||stable(params.filter)!==stable(expected.filter)||stable(JSON.parse(params.ordering_info||'[]').map(String))!==stable((expected.ordering_info||[]).map(String)))throw Error('REORDEN_CREACION_FUERA_DE_ALCANCE');
+    this.validateCreation(params);
    }else if(method==='POST'&&known&&!edge){
     if(!this.parents.has(id)||keys!=='name'||params.name!==this.names.get(known.retailer_id))throw Error('REORDEN_NOMBRE_FUERA_DE_ALCANCE');
     this.parents.delete(id);
@@ -235,6 +246,6 @@ async function main({env=process.env,scope,apply=process.argv.includes('--apply'
  const result=await execute({snapshot,plan,api,state,onState:s=>{fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync('work/auto-meta/orden-secundario.json',JSON.stringify(s,null,2)+'\n');},onProgress:console.log});
  console.log('ORDEN_SECUNDARIO_RESULTADO: '+JSON.stringify({estado:result.estado,catalog_id:CATALOG,productos:result.productos,orden:result.orden,orden_whatsapp_verificado:false}));return result;
 }
-module.exports={CATALOG,FAMILIES,validate,recreate,ReorderGraph,prepare,execute,main};
+module.exports={CATALOG,FAMILIES,validate,recreate,ReorderGraph,prepare,execute,main,recoveryNeeded};
 if(require.main===module)main().catch(e=>{const code=e.message.startsWith('REORDEN_')?e.message:'REORDEN_META_NO_COMPLETADO';console.error('ORDEN_SECUNDARIO_ERROR: '+JSON.stringify({codigo:code,...(e.meta?{meta:e.meta}:{})}));process.exitCode=1;});
 

@@ -206,14 +206,24 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           META_GRAPH_VERSION: 'v26.0'
         run: node scripts/reordenar-seis-colecciones-meta.cjs --apply
+      - name: Detectar reanudación pendiente del orden secundario
+        id: estado-orden-secundario
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),{recoveryNeeded}=require('./scripts/reordenar-categorias-secundario-meta.cjs');
+          const path='reportes/integracion-whatsapp/resultado-orden-secundario.json';
+          const state=fs.existsSync(path)?JSON.parse(fs.readFileSync(path,'utf8')):null;
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'reanudar='+recoveryNeeded(state)+'\n');
+          JS
       - name: Sincronizar catálogo independiente de WhatsApp secundario
         id: sync-secundario
+        if: ${{ steps.estado-orden-secundario.outputs.reanudar != 'true' }}
         continue-on-error: true
         env:
           META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
         run: node scripts/sincronizar-secundario-meta.cjs
       - name: Aplicar una vez orden autorizado del catálogo secundario
-        if: ${{ steps.sync-secundario.outcome == 'success' }}
+        if: ${{ steps.sync-secundario.outcome == 'success' || steps.estado-orden-secundario.outputs.reanudar == 'true' }}
         continue-on-error: true
         env:
           META_ORDER_SECONDARY_ENABLED: 'true'

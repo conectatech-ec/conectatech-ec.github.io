@@ -1,22 +1,24 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {CATALOG,FAMILIES,prepare,execute,recreate,ReorderGraph,main}=require('./reordenar-categorias-secundario-meta.cjs');
+const {CATALOG,FAMILIES,prepare,execute,recreate,ReorderGraph,main,recoveryNeeded}=require('./reordenar-categorias-secundario-meta.cjs');
+const {parseGraphData}=require('./sincronizar-conjuntos-meta.cjs');
+const productId=i=>(29513533084919997n+BigInt(i)).toString();
 const {priority}=require('./prioridad-comercial-meta.cjs');
 const desired=[...FAMILIES,'TV y Entretenimiento','Soportes y Accesorios','Seguridad y Cámaras','Redes e Internet','Protección para Dispositivos','Juguetes y Coleccionables','Iluminación','Hogar y Accesorios','Gaming y Videojuegos','Fotografía y Creación de Contenido','Deportes','Computación y Periféricos','Cargadores y Energía','Cables y Conectividad','Audio y Audífonos'];
 function fixture(){
  const groups=priority.map((family,i)=>({family,retailer_id:'conectatech-web:'+i,name:family,filter:{custom_label_0:{eq:'label'+i}},sku:['SKU'+i]}));
- const make=(family,offset)=>{const i=priority.indexOf(family),g=groups[i];return {id:String(offset+i),name:family===FAMILIES[0]?'CONECTATECH | CELULARES':'CONECTATECH | '+family.toUpperCase(),retailer_id:g.retailer_id,filter:g.filter,ordering_info:[String(900+i)]};};
+ const make=(family,offset)=>{const i=priority.indexOf(family),g=groups[i];return {id:String(offset+i),name:family===FAMILIES[0]?'CONECTATECH | CELULARES':'CONECTATECH | '+family.toUpperCase(),retailer_id:g.retailer_id,filter:g.filter,ordering_info:[productId(i)]};};
  const masterSets=desired.map(f=>make(f,1000)),sets=[...priority].reverse().map(f=>make(f,2000));sets.find(s=>s.retailer_id===groups[0].retailer_id).name='CONECTATECH | CELULARES Y SMARTPHONES';
  const general={id:'8000',name:'All Products',filter:{}};sets.push(general);
- const products=groups.map((g,i)=>({id:String(900+i),retailer_id:'SKU'+i,price:'10.00 USD',availability:'in stock'}));
+ const products=groups.map((g,i)=>({id:productId(i),retailer_id:'SKU'+i,price:'10.00 USD',availability:'in stock'}));
  const master={catalog:{id:'1036301566100990'},sets:masterSets,products:products.map((p,i)=>({...p,id:String(1900+i)}))};
- const calls=[];let seq=3000,deleteFail=null,loseReply=false;
- const api={sets,products,calls,forRequest(){return this;},set deleteFail(v){deleteFail=v;},set loseReply(v){loseReply=v;},
+ const calls=[];let seq=3000,deleteFail=null,loseReply=false,createFail=false;
+ const api={sets,products,calls,forRequest(){return this;},set deleteFail(v){deleteFail=v;},set loseReply(v){loseReply=v;},set createFail(v){createFail=v;},
   async list(path){calls.push({method:'GET',path});if(path===CATALOG+'/product_sets')return structuredClone([general,...sets.filter(s=>s!==general)]);if(path===CATALOG+'/products')return structuredClone(products);const s=sets.find(s=>s.id===path.split('/')[0]);if(!s)throw Error('SET_AUSENTE');const i=Number(s.retailer_id.split(':')[1]);return [structuredClone(products[i])];},
   async request(method,path,params={}){calls.push({method,path,params});
    if(path===CATALOG&&method==='GET')return {id:CATALOG,name:'CONECTATECH | Catálogo WhatsApp 0964206977'};
    if(method==='DELETE'){if(path===deleteFail)throw Error('BORRADO_DENEGADO');const i=sets.findIndex(s=>s.id===path);assert.ok(i>=0);sets.splice(i,1);return {success:true};}
-   if(method==='POST'&&path===CATALOG+'/product_sets'){const s={id:String(seq++),...structuredClone(params),ordering_info:JSON.parse(params.ordering_info||'[]').map(String)};sets.unshift(s);if(loseReply){loseReply=false;throw Error('RESPUESTA_PERDIDA');}return {id:s.id};}
+   if(method==='POST'&&path===CATALOG+'/product_sets'){if(createFail)throw Error('CREACION_DENEGADA');const s={id:String(seq++),...structuredClone(params),ordering_info:parseGraphData('{"ordering_info":'+(params.ordering_info||'[]')+'}').ordering_info.map(String)};sets.unshift(s);if(loseReply){loseReply=false;throw Error('RESPUESTA_PERDIDA');}return {id:s.id};}
    const s=sets.find(s=>s.id===path);if(!s)throw Error('SET_AUSENTE');if(method==='POST'){assert.deepEqual(Object.keys(params),['name']);s.name=params.name;return {success:true};}return {...structuredClone(s),product_catalog:{id:CATALOG}};
   }};
  const snapshot=()=>({master:structuredClone(master),secondary:{catalog:{id:CATALOG},sets:structuredClone(sets),products:structuredClone(products)}});
@@ -41,6 +43,19 @@ test('un reintento continúa la operación parcial sin repetir las categorías y
 });
 test('recupera una creación cuya respuesta se perdió sin duplicarla',async()=>{
  const f=fixture();f.api.loseReply=true;await execute({snapshot:f.snapshot(),plan:f.plan,api:f.api,wait:async()=>{}});assert.equal(f.api.calls.filter(c=>c.method==='POST'&&c.path===CATALOG+'/product_sets').length,19);
+});
+test('recupera una categoría ausente después de fallar creación y restauración, sin repetir eliminaciones',async()=>{
+ const f=fixture(),products=JSON.stringify(f.api.products);let saved;f.api.createFail=true;
+ await assert.rejects(execute({snapshot:f.snapshot(),plan:f.plan,api:f.api,wait:async()=>{},onState:s=>saved=s}),/CREACION_DENEGADA/);
+ assert.equal(saved.resultado.estado,'REQUIERE_RECUPERACION');assert.equal(saved.resultado.registros[0].estado,'RESTAURACION_PENDIENTE');assert.equal(f.api.sets.length,21);assert.equal(recoveryNeeded(saved),true);
+ f.api.createFail=false;
+ const result=await execute({snapshot:f.snapshot(),plan:f.plan,api:f.api,state:saved,wait:async()=>{}});
+ assert.equal(result.estado,'ORDEN_SECUNDARIO_META_VERIFICADO');assert.equal(f.api.sets.length,22);assert.equal(f.api.calls.filter(c=>c.method==='DELETE').length,19);assert.equal(JSON.stringify(f.api.products),products);assert.equal(recoveryNeeded(result),false);
+});
+test('prevalida todas las creaciones antes de la primera eliminación',async()=>{
+ const f=fixture();let checked=0;f.api.validateCreation=()=>{if(++checked===19)throw Error('REORDEN_CREACION_FUERA_DE_ALCANCE');};
+ await assert.rejects(execute({snapshot:f.snapshot(),plan:f.plan,api:f.api,wait:async()=>{}}),/REORDEN_CREACION_FUERA_DE_ALCANCE/);
+ assert.equal(checked,19);assert.equal(f.api.calls.filter(c=>c.method==='DELETE').length,0);
 });
 test('rechaza diferencias de inventario o filtro antes de modificar categorías',async()=>{
  for(const kind of ['price','filter']){const f=fixture(),s=f.snapshot();if(kind==='price')s.secondary.products[0].price='otro';else s.secondary.sets.find(s=>s.retailer_id).filter={otro:true};await assert.rejects(execute({snapshot:s,plan:f.plan,api:f.api}),/REORDEN_/);assert.equal(f.api.calls.filter(c=>c.method!=='GET').length,0);}
@@ -72,7 +87,8 @@ test('el adaptador sólo permite reemplazos exactos y exige verificar el catálo
  await api.request('GET',old.id,{fields:'id,product_catalog'});
  await assert.rejects(api.request('DELETE',old.id,{allow_live_product_set_deletion:true}),/FUERA_DE_ALCANCE/);
  await api.request('DELETE',old.id,{allow_live_product_set_deletion:false});
- const params={name:old.name,retailer_id:old.retailer_id,filter:old.filter,ordering_info:JSON.stringify(old.ordering_info)};
+ const params={name:old.name,retailer_id:old.retailer_id,filter:old.filter,ordering_info:'['+old.ordering_info.join(',')+']'};
+ await assert.rejects(api.request('POST',CATALOG+'/product_sets',{...params,ordering_info:JSON.stringify(JSON.parse(params.ordering_info))}),/FUERA_DE_ALCANCE/);
  await assert.rejects(api.request('POST',CATALOG+'/product_sets',{...params,name:'OTRO'}),/FUERA_DE_ALCANCE/);
  const created=await api.request('POST',CATALOG+'/product_sets',params);assert.equal(created.id,'7777');
  assert.equal(calls.filter(c=>c.opt.method==='DELETE').length,1);assert.equal(calls.filter(c=>c.opt.method==='POST').length,1);
