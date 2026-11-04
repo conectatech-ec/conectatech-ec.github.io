@@ -1,7 +1,8 @@
 /* Mejora incremental de la portada existente. No escribe ni modifica productos. */
 (function(){
   'use strict';
-  const config=window.CONECTATECH_PRESENTACION,calendar=window.CONECTATECH_TEMPORADAS;
+  const config=window.CONECTATECH_PRESENTACION,calendar=window.CONECTATECH_TEMPORADAS,commercial=window.CONECTATECH_COMERCIAL;
+  const commercialPriority=Boolean(config?.prioridadComercial?.activa&&commercial);
   if(!config||!calendar||typeof products==='undefined')return;
   if(window.CONECTATECH_PRESENTACION_ESTADO?.version===3)return;
   const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -135,10 +136,11 @@
     featured.innerHTML=items.map(p=>`<article class="featured-card pw-featured-card" data-sku="${escape(p.sku)}"><a class="product-img product-link" href="${escape(productHref(p))}" aria-label="Ver ${escape(p.name)}">${productImage(p)}</a><div class="pw-featured-content"><div class="cat">${escape(p.commercialCategory||p.category)}</div>${window.CONECTATECH_TITULOS_PRO?.nameHTML(p,productHref(p))||`<a class="name product-link" href="${escape(productHref(p))}">${escape(p.name)}</a>`}${statusHTML(availabilityFor(p))}<div class="pw-featured-commerce"><div class="promo-badge">PROMO CONTADO</div><div class="promo">${money(p.promo)}</div><div class="pvp">PVP ${money(p.pvp)}</div><a class="wa" href="${escape(availabilityContact(p))}" target="_blank" rel="noopener" aria-label="Consultar ${escape(p.name)} por WhatsApp">Consultar por WhatsApp</a><a class="pw-featured-detail" href="${escape(productHref(p))}">Ver ficha <span aria-hidden="true">→</span></a></div></div></article>`).join('');
   }
   function refreshSelection(){
-    const date=calendar.fechaLocal(new Date(),config.zonaHoraria),candidates=products.filter(eligible).map(p=>({sku:p.sku,commercialCategory:p.commercialCategory||p.category,promo:p.promo,pvp:p.pvp,imagen:imageSource(p),actualizadoEn:updatedAt(p)}));
-    const key=JSON.stringify([date,config.rotacionDiaria,candidates]);if(key===selectionKey)return;selectionKey=key;
+    const date=calendar.fechaLocal(new Date(),config.zonaHoraria),rotationOptions={...config.rotacionDiaria,...(commercialPriority?config.prioridadComercial.rotacion:{})},pins=[...(rotationOptions.fijadosVitrina||[]),...(rotationOptions.fijadosDestacados||[])],candidates=products.filter(eligible).filter(p=>!commercialPriority||commercial.protagonista(p)||pins.includes(p.sku)).map(p=>({sku:p.sku,commercialCategory:p.commercialCategory||p.category,familiaPrioritaria:commercialPriority?commercial.familia(p):undefined,promo:p.promo,pvp:p.pvp,imagen:imageSource(p),actualizadoEn:updatedAt(p)}));
+    const key=JSON.stringify([date,rotationOptions,candidates]);if(key===selectionKey)return;selectionKey=key;
     const automatic=config.rotacionDiaria?.activa!==false&&window.CONECTATECH_ROTACION;
-    const plan=automatic?window.CONECTATECH_ROTACION.resolver(candidates,config.rotacionDiaria,date):{fecha:date,vitrina:[...new Set(config.productosPortada||[])].filter(s=>eligible(bySku.get(s))),destacados:[]};
+    const resolveRotation=commercialPriority?(window.CONECTATECH_ROTACION?.resolverPrioritario||window.CONECTATECH_ROTACION?.resolver):window.CONECTATECH_ROTACION?.resolver;
+    const plan=automatic?resolveRotation(candidates,rotationOptions,date):{fecha:date,vitrina:[...new Set(config.productosPortada||[])].filter(s=>eligible(bySku.get(s))),destacados:[]};
     const selected=plan.vitrina.map(s=>bySku.get(s)).filter(eligible),extra=automatic?plan.destacados.map(s=>bySku.get(s)).filter(eligible):products.filter(p=>eligible(p)&&!plan.vitrina.includes(p.sku)).slice(0,5);
     state.fechaSeleccion=date;state.destacados=extra.map(p=>p.sku);renderShowcase(selected);renderFeaturedSelection(extra);
     document.dispatchEvent(new CustomEvent('conectatech:seleccion-diaria',{detail:{fecha:date,vitrina:state.productos.slice(),destacados:state.destacados.slice()}}));
@@ -147,6 +149,20 @@
   showcase?.addEventListener('error',replaceBrokenImage,true);featured?.addEventListener('error',replaceBrokenImage,true);
   state.revalidar=refreshSelection;
   refreshSelection();
+  if(commercialPriority&&typeof orderedProducts==='function'&&typeof render==='function'){
+    const selector=document.getElementById('catalogSort'),originalOrder=orderedProducts;
+    if(selector&&!selector.querySelector('[value="recomendados"]')){
+      const option=document.createElement('option');option.value='recomendados';option.textContent='Recomendados';selector.prepend(option);
+      orderedProducts=function(list){
+        const query=document.getElementById('q').value.trim();option.textContent=query?'Relevancia':'Recomendados';
+        if(selector.value!=='recomendados')return originalOrder(list);
+        // La búsqueda mantiene íntegra la relevancia existente, incluido SKU exacto.
+        if(query){selector.value='recientes';try{return originalOrder(list)}finally{selector.value='recomendados'}}
+        return commercial.ordenar(originalOrder(list.slice()),eligible,config.prioridadComercial.paginasIniciales);
+      };
+      selector.value='recomendados';currentPage=1;render();
+    }
+  }
   // Agrupa los nodos existentes sin recrear fichas, controles ni sus listeners.
   const catalogHeading=document.getElementById('catalogo'),catalogEnd=document.getElementById('empty');
   if(catalogHeading&&catalogEnd&&catalogHeading.parentNode===catalogEnd.parentNode&&!catalogHeading.closest('.pw-catalog-frame')){
