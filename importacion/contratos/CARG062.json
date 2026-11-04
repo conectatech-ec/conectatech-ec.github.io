@@ -31,8 +31,8 @@
       "mime": "image/jpeg",
       "sha256": "e1b4c99921f014f800cfbf2608604ec3ac6d2cb21b040e91bd03fd7823955b1c",
       "resolucion": [
-        1800,
-        1350
+        1350,
+        1800
       ]
     },
     {
@@ -42,8 +42,8 @@
       "mime": "image/jpeg",
       "sha256": "29d90c4abc12fbc098e397a88f04a4a2c38139cb4fe0ea15d0117ba92ac520fd",
       "resolucion": [
-        1800,
-        1350
+        1350,
+        1800
       ]
     },
     {
@@ -53,8 +53,8 @@
       "mime": "image/jpeg",
       "sha256": "1107e6ee84254d7ccc88bb6d95b05ea596dc8a68cb595fb5b49784a360a3fe8a",
       "resolucion": [
-        1800,
-        1350
+        1350,
+        1800
       ]
     }
   ],
@@ -162,9 +162,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg062-cargador-universal-para-laptop-65w/",
-  "fecha_verificacion": "2026-11-04T03:20:00.768313+00:00",
+  "fecha_verificacion": "2026-11-04T03:52:56.276561+00:00",
   "descripcion": "Cargador universal para laptop con potencia máxima de 65W, vendido completo con su juego de puntas DC intercambiables. Utiliza adaptación USB-C a DC. La compatibilidad depende del voltaje, la polaridad y el conector de cada laptop; confirmar estos datos antes de conectar.",
   "contenido_venta": "Un cargador universal para laptop de hasta 65W con su juego de puntas intercambiables.",
   "compatibilidad": "Sujeta a coincidencia de voltaje, polaridad y conector con la laptop; confirmar antes de conectar.",
@@ -279,7 +279,7 @@
       "solicitado": "CARG062",
       "sku": "CARG062",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-04T03:25:55.572Z",
+      "fecha": "2026-11-04T03:53:25.558Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -304,7 +304,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg062-cargador-universal-para-laptop-65w/",
-      "url_comprobada": "http://127.0.0.1:8881/productos/carg062-cargador-universal-para-laptop-65w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/carg062-cargador-universal-para-laptop-65w/",
       "archivo_html": "productos/carg062-cargador-universal-para-laptop-65w/index.html",
       "http": 200,
       "sha256_html": "18ec904e7741eab172d37343caad97a55170f4ac0201fbbe40194ec8da48a3e6",
@@ -314,7 +314,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/carg062/CARG062-r127-01.webp",
-        "url_cargada": "http://127.0.0.1:8881/imagenes/carg062/CARG062-r127-01-600.webp?v=214be8749187d064",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg062/CARG062-r127-01-600.webp?v=214be8749187d064",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -324,41 +324,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8881/productos/carg062-cargador-universal-para-laptop-65w/",
+          "url": "https://conectatech-ec.github.io/productos/carg062-cargador-universal-para-laptop-65w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8881/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8881/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8881/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8881/imagenes/carg062/CARG062-r127-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/carg062/CARG062-r127-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-127/qa-local/movil-final/CARG062-390.png",
+      "archivo": "reportes/continuacion-127/qa-publica/movil/CARG062-390.png",
       "sha256": "a6c9421ee283d072dd639292b29c656c1934ed527e3524d647ead73aa1bec20f",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-127/qa-local/movil-final/CARG062-1280.png",
+        "archivo": "reportes/continuacion-127/qa-publica/movil/CARG062-1280.png",
         "sha256": "1ca805977c090b9134457c65bb74a0828508f328fedf31a3d7e7960f10e497cf",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-04T03:52:56.276561+00:00",
+      "archivo": "reportes/continuacion-127/http-publicacion.json",
+      "reporte": "reportes/continuacion-127/http-publicacion.json",
+      "sha256": "d0878f5c239f871a961ef826886310eb5451ef340c6c212c1cc8b8d2d2dab6b8",
+      "sku": "CARG062"
     }
   }
 }
