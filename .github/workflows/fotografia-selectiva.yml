@@ -2885,7 +2885,8 @@ jobs:
           PHOTO_REF: ${{ github.ref }}
           PHOTO_SHA: ${{ github.sha }}
         run: |
-          import json,os,re,hashlib,time,concurrent.futures
+          import json,os,re,hashlib,time,concurrent.futures,tempfile,subprocess
+          from pathlib import Path
           from urllib.request import Request,urlopen
           raw='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+os.environ['PHOTO_SHA'];origin='https://conectatech-ec.github.io'
           def get(u):
@@ -2894,18 +2895,22 @@ jobs:
                   return response.read()
           rec=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261103-51.json'))
           assert len(rec['productos'])==21 and rec['portadas']==8 and rec['secundarias']==13 and 'CARG069' not in rec['productos']
-          files={}
+          fixture=Path(tempfile.mkdtemp(prefix="foto51-"));files={}
           for sku,row in rec['productos'].items():
               assert row['revisado_visual'] and row['autorizacion'] and row['miniaturas_esperadas'] in [0,1]
               for ph in ([row['imagenProfesional']] if 'imagenProfesional' in row else row['vistas'])+row.get('mantener_vistas',[]):
                   for v in [{'url':ph['original'],'sha256':ph['sha256_original']},*ph['versiones'].values()]:files[v['url']]=v['sha256']
-              for v in row['archivos_originales_conservados']:files[v['url']]=v['sha256']
+              for v in row['archivos_originales_conservados']+row.get('portadas_previas_autorizadas',[]):files[v['url']]=v['sha256']
           for v in rec['aprobados_preservados'].values():files[v['url']]=v['sha256']
           def check(pair):
               url,sha=pair
               assert url.startswith('/imagenes/') and '..' not in url
-              assert hashlib.sha256(get(raw+url)).hexdigest()==sha,url
+              data=get(raw+url);assert hashlib.sha256(data).hexdigest()==sha,url
+              f=fixture/url.lstrip('/');f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(data)
           with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:list(pool.map(check,files.items()))
+          for name in ['index.html','seo-contenido.json','scripts/fotografia-direccion.cjs','scripts/fotografia-persistencia-51-test.cjs','importacion/fotografia-publicada/direccion-20261103-51.json']:
+              f=fixture/name;f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(get(raw+'/'+name))
+          subprocess.run(['node','scripts/fotografia-persistencia-51-test.cjs'],cwd=fixture,check=True)
           public=os.environ['PHOTO_REF']=='refs/heads/main'
           for attempt in range(180 if public else 1):
               try:
