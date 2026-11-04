@@ -4,6 +4,7 @@ on:
     branches: ['banners/campanas-20261103']
     paths:
       - 'banner-factory/revision-premium/signature-v2-20261018/tema_campana.py'
+      - 'banner-factory/revision-premium/signature-v2-20261018/emblema_web.py'
       - 'banner-factory/revision-premium/signature-v2-20261018/campana-tematica.json'
       - 'banner-factory/revision-premium/signature-v2-20261018/tests/test*.py'
       - 'banner-factory/revision-premium/signature-v2-20261018/assets/campaigns/**'
@@ -26,6 +27,8 @@ jobs:
           fetch-depth: 1
           sparse-checkout: |
             /banner-factory/revision-premium/signature-v2-20261018/
+            /assets/presentacion-web/black-month-emblema-negro-dorado-rojo-20261103-original.png
+            /logo-conectatech.png
           sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
@@ -37,69 +40,3 @@ jobs:
       - name: Medicion sintetica de la capa
         run: python 'banner-factory/revision-premium/signature-v2-20261018/tests/benchmark_tema_campana.py'
 
-  recuperar-recursos-web-oficiales:
-    if: github.repository == 'conectatech-ec/conectatech-ec.github.io' && github.ref == 'refs/heads/banners/campanas-20261103'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: python -m pip install --disable-pip-version-check 'Pillow==11.3.0'
-      - name: Reutilizar emblema y logo exactos; no cargar banners privados
-        run: |
-          python - <<'PY'
-          import base64,hashlib,io,json,urllib.request
-          from PIL import Image,ImageDraw,ImageChops,ImageOps
-          commit="fd38e24a866a81809202f31b72d7b0b1836ccb22"
-          def get(path,expected):
-            url="https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/"+commit+"/"+path
-            with urllib.request.urlopen(url,timeout=60) as r:data=r.read()
-            if hashlib.sha256(data).hexdigest()!=expected:raise RuntimeError("Hash de recurso oficial no coincide")
-            return Image.open(io.BytesIO(data)).convert("RGBA"),data
-          art,raw=get("assets/presentacion-web/black-month-emblema-negro-dorado-rojo-20261103-original.png","6314a18024e6d12b7d8c9c6f3f23a5349d5aeb797cea4c8b34b55d90ba3de26a")
-          logo,lr=get("logo-conectatech.png","6ecaa45557e92b263c46f39143481d037a78362a4764012793ff828ae4d9c24d")
-          if art.size!=(1254,1254) or art.getextrema()[3][0]!=0:raise RuntimeError("Emblema sin transparencia nativa")
-          S=118;x=57;y=33
-          mark=ImageOps.contain(logo,(S,S),Image.Resampling.LANCZOS)
-          # Mismo recorte circular de la web; no regenerar ni recolorear el logo.
-          roundmask=Image.new("L",(S*4,S*4));ImageDraw.Draw(roundmask).ellipse((0,0,S*4-1,S*4-1),fill=255)
-          roundmask=roundmask.resize((S,S),Image.Resampling.LANCZOS)
-          mark.putalpha(ImageChops.multiply(mark.getchannel("A"),roundmask))
-          tile=Image.new("RGBA",(215,190))
-          tile.alpha_composite(mark,(x,y))
-          expected=tile.copy()
-          fw,fh=round(S*1.27),round(S*1.34)
-          frame=art.resize((fw,fh),Image.Resampling.LANCZOS)
-          fx,fy=round(x-S*.1284),round(y-S*.0513)
-          # El aro decorativo nunca pinta sobre los píxeles del logo original.
-          for py in range(fh):
-            for px in range(fw):
-              dx=px+fx-(x+S/2);dy=py+fy-(y+S/2)
-              tx=px+fx-x;ty=py+fy-y
-              if 0<=tx<S and 0<=ty<S and mark.getpixel((tx,ty))[3]>0:frame.putpixel((px,py),(0,0,0,0))
-          tile.alpha_composite(frame,(fx,fy))
-          protected=mark.getchannel("A")
-          after=tile.crop((x,y,x+S,y+S))
-          for k in range(3):
-            d=ImageChops.difference(after.getchannel(k),expected.crop((x,y,x+S,y+S)).getchannel(k))
-            if ImageChops.multiply(d,protected).getbbox():raise RuntimeError("Decoración altera el logo")
-          if tile.getbbox()[3]>188:raise RuntimeError("Emblema invade zona de títulos")
-          def emit(kind,img,extra=None):
-            b=io.BytesIO();img.save(b,format="PNG",optimize=True)
-            result={"kind":kind,"size":img.size,"sha256":hashlib.sha256(b.getvalue()).hexdigest(),"png_base64":base64.b64encode(b.getvalue()).decode(),**(extra or {})}
-            print("CT_PUBLIC_RESOURCE_JSON="+json.dumps(result,separators=(",",":")))
-          emit("emblema_header",tile,{"official_emblem_sha256":hashlib.sha256(raw).hexdigest(),"official_logo_sha256":hashlib.sha256(lr).hexdigest(),"logo_scale":[S,S],"decor_bbox":tile.getbbox(),"transparencia":True})
-          photos={
-            "REL046":("imagenes/rel046/REL046-r2026103138-01.webp","d604cd98f416586c6d74044d819cfac359fb9d7c746987622422fb759e9d7496"),
-            "TELE002":("imagenes/tele002/TELE002-r2026103139-01.webp","1008452e41850d5cf7c94174a603c38688726551ae3283f272fa6a9de83c49a2"),
-            "TELF011":("imagenes/telf011/TELF011-01.webp","0da0539d03def77d3149db2bbef57793ab120533af855049a896c60303eee4ec"),
-            "AUDI091":("imagenes/audi091/AUDI091-01.webp","24374a93a8b213a5265742f1c5631dffc9a3d551a8729d6b246a605213002017")
-          }
-          for sku,(path,expected_hash) in photos.items():
-            im,data=get(path,expected_hash)
-            im.thumbnail((900,900),Image.Resampling.LANCZOS)
-            emit(sku,im,{"public_image_sha256":hashlib.sha256(data).hexdigest(),"public_path":path})
-          PY

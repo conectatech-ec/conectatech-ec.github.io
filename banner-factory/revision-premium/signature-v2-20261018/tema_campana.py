@@ -22,7 +22,7 @@ LAYOUT = "signature_1200_header_v1"
 CANVAS = (1200, 1200)
 COLORS = re.compile(r"^#[0-9a-fA-F]{6}$")
 POSITIONS = {"top_right", "top_left", "bottom_right", "bottom_left", "below_logo"}
-STYLES = {"compact_ribbon", "compact_badge", "black_gold_red_asset"}
+STYLES = {"compact_ribbon", "compact_badge", "black_gold_red_asset", "official_web_emblem"}
 PHONE_LAYOUT = "signature_1200_phone_centered_v1"
 DYNAMIC_LAYOUT = "signature_1200_dynamic_bboxes_v1"
 HERE = Path(__file__).resolve().parent
@@ -92,6 +92,8 @@ class Campaign:
     layout: str
     asset_path: str = ""
     asset_sha256: str = ""
+    logo_path: str = ""
+    logo_sha256: str = ""
 
     @classmethod
     def from_mapping(cls, cfg):
@@ -127,14 +129,24 @@ class Campaign:
                 raise CampaignError("Recurso de campaña fuera del directorio autorizado.")
             if not isinstance(asset_sha256, str) or not re.fullmatch(r"[a-f0-9]{64}", asset_sha256):
                 raise CampaignError("Huella SHA256 del recurso aprobado requerida.")
+        logo_path, logo_sha256 = cfg.get("campaign_logo", ""), cfg.get("campaign_logo_sha256", "")
+        if style == "official_web_emblem":
+            if (not isinstance(asset_path,str) or not asset_path.startswith("assets/presentacion-web/")
+                    or ".." in Path(asset_path).parts or Path(asset_path).is_absolute()):
+                raise CampaignError("Usar el recurso oficial de presentación web.")
+            if logo_path != "logo-conectatech.png":
+                raise CampaignError("Usar el PNG original independiente.")
+            for digest in (asset_sha256, logo_sha256):
+                if not isinstance(digest,str) or not re.fullmatch(r"[a-f0-9]{64}",digest):
+                    raise CampaignError("Huella oficial requerida.")
         return cls(
             cfg["campaign_enabled"], identity, label.strip(), start, end, style, position,
             *[c.lower() for c in colors],
             _integer(cfg.get("campaign_width", 224), "campaign_width", 80, 360),
-            _integer(cfg.get("campaign_height", 32), "campaign_height", 24, 144),
+            _integer(cfg.get("campaign_height", 32), "campaign_height", 24, 190),
             _integer(cfg.get("campaign_margin_x", 24), "campaign_margin_x", 0, 200),
             _integer(cfg.get("campaign_margin_y", 12), "campaign_margin_y", 0, 300),
-            timezone, cfg.get("campaign_layout", LAYOUT), asset_path, asset_sha256,
+            timezone, cfg.get("campaign_layout", LAYOUT), asset_path, asset_sha256, logo_path, logo_sha256,
         )
 
     def local_day(self, generated_at=None):
@@ -166,6 +178,7 @@ class Campaign:
             "size": [self.width, self.height], "margin": [self.margin_x, self.margin_y],
             "timezone": self.timezone, "layout": self.layout,
             "asset": self.asset_path, "asset_sha256": self.asset_sha256,
+            "logo": self.logo_path, "logo_sha256": self.logo_sha256,
         }
 
     def fingerprint(self, generated_at=None):
@@ -178,7 +191,14 @@ class Campaign:
 def placement(campaign, size, protected_regions=()):
     if tuple(size) != CANVAS:
         raise CampaignPlacementError("Formato sin zona segura validada; revisar solo esta pieza.")
-    if campaign.position == "below_logo":
+    if campaign.style == "official_web_emblem":
+        if (campaign.layout != "signature_1200_official_emblem_header_v1"
+                or campaign.position != "below_logo"
+                or (campaign.width,campaign.height,campaign.margin_x,campaign.margin_y)!=(215,190,0,0)):
+            raise CampaignPlacementError("Geometría del emblema no validada.")
+        fixed=((216,0,1200,190),(0,190,1200,1200))
+        x,y=0,0
+    elif campaign.position == "below_logo":
         if campaign.layout == PHONE_LAYOUT:
             fixed = ((0, 0, 1200, 176), (350, 180, 1180, 285),
                      (0, 290, 1200, 1200))
@@ -287,7 +307,7 @@ def _read_marker(image):
 
 
 def apply_campaign(image, campaign, *, generated_at=None, font=None,
-                   font_revision=None, protected_regions=(), clean_base=None):
+                   font_revision=None, protected_regions=(), clean_base=None, repo_root=None):
     """Devuelve (imagen, registro). No guarda archivos ni modifica la entrada.
 
     campaign puede construirse una vez por lote. font debe proceder de la misma
@@ -305,7 +325,7 @@ def apply_campaign(image, campaign, *, generated_at=None, font=None,
                 raise CleanBaseRequired("Campaña terminada/desactivada: requiere la base limpia.")
             return restore_campaign(image, clean_base), None
         return image, None
-    if campaign.style == "black_gold_red_asset":
+    if campaign.style in {"black_gold_red_asset","official_web_emblem"}:
         font_revision = "asset:" + campaign.asset_sha256
     rect = placement(campaign, image.size, protected_regions)
     if marker:
@@ -319,9 +339,14 @@ def apply_campaign(image, campaign, *, generated_at=None, font=None,
             raise CleanBaseRequired("Sello alterado después de generarlo.")
         return image, dict(marker, already_applied=True)
 
-    badge = _badge(campaign, font, font_revision)
-    out = image.copy() if image.mode == "RGBA" else image.convert("RGBA")
-    out.alpha_composite(badge, (rect[0], rect[1]))
+    if campaign.style == "official_web_emblem":
+        from emblema_web import tile_from_repository, decorate_header
+        badge = tile_from_repository(repo_root or HERE.parents[2],campaign)
+        out = decorate_header(image,badge)
+    else:
+        badge = _badge(campaign, font, font_revision)
+        out = image.copy() if image.mode == "RGBA" else image.convert("RGBA")
+        out.alpha_composite(badge, (rect[0], rect[1]))
     record = {
         "schema": SCHEMA_VERSION, "campaign_id": campaign.campaign_id,
         "campaign_label": campaign.label, "fingerprint": fingerprint,
