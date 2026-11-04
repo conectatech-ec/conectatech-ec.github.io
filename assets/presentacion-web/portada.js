@@ -26,7 +26,20 @@
   if(brandRow)brandRow.insertAdjacentHTML('beforeend','<img class="pw-logo-season" src="/assets/presentacion-web/halloween-calabaza-corona.webp?v=7" alt="" aria-hidden="true" width="160" height="160" decoding="async">');
   if(brandRow)brandRow.insertAdjacentHTML('beforeend','<span class="pw-brand-campaign" role="img" aria-label="Black Month: regalos por tus compras"><img src="/assets/presentacion-web/black-month-emblema-negro-dorado-rojo-20261103.webp" width="1254" height="1254" alt="" aria-hidden="true" decoding="async" fetchpriority="high"></span>');
   const presentationHeader=document.querySelector('header');
-  const syncHeaderOffset=()=>{if(presentationHeader)document.documentElement.style.setProperty('--pw-header-height',Math.ceil(presentationHeader.getBoundingClientRect().height)+'px')};
+  const syncHeaderOffset=()=>{
+    if(!presentationHeader)return;
+    const values=brand?.querySelector('.pw-brand-values'),text=values?.firstChild;
+    if(brandSubtitle&&text?.nodeType===Node.TEXT_NODE){
+      const start=text.textContent.search(/\S/);
+      if(start>=0){
+        const letter=document.createRange();letter.setStart(text,start);letter.setEnd(text,start+1);
+        const inset=letter.getBoundingClientRect().left-values.getBoundingClientRect().left;
+        brandSubtitle.style.setProperty('--pw-motto-inset',Math.max(0,inset)+'px');
+      }
+    }
+    document.documentElement.style.setProperty('--pw-header-height',Math.ceil(presentationHeader.getBoundingClientRect().height)+'px');
+  };
+  document.fonts?.ready.then(syncHeaderOffset);
   if(presentationHeader&&typeof ResizeObserver!=='undefined')new ResizeObserver(syncHeaderOffset).observe(presentationHeader);
   else window.addEventListener('resize',syncHeaderOffset,{passive:true});
   document.addEventListener('conectatech:temporada',syncHeaderOffset);
