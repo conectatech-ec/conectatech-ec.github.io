@@ -583,3 +583,9 @@ header .brand .ct-header-subtitle span{display:block;margin:3px 0 0}
 /* Ajuste fino del lema: ligeramente más abajo y hacia la derecha. */
 header .brand .ct-header-subtitle{transform:translate(14px,6px)}
 @media(max-width:600px){header .brand .ct-header-subtitle{transform:translate(6px,4px)}}
+
+
+/* El lema parte de la T de Tecnología; la ubicación acompaña cuando hay espacio. */
+header .brand .ct-header-subtitle{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:flex-start;column-gap:8px;row-gap:3px;min-height:calc(1.35em + 15.825px);padding-left:var(--pw-motto-inset,0px);text-align:left;transform:translateY(6px)}
+header .brand .ct-header-subtitle span{margin:0}
+@media(max-width:600px){header .brand .ct-header-subtitle{min-height:calc(1.35em + 13.8px);column-gap:6px;transform:translateY(4px)}}
