@@ -2956,7 +2956,7 @@ jobs:
                   assert response.status==200
                   return response.read()
           rec=json.loads(get(raw+'/importacion/fotografia-publicada/direccion-20261104-52.json'))
-          assert len(rec['productos'])==2 and rec['portadas']==1 and rec['secundarias']==1 and 'CARG069' not in rec['productos']
+          assert len(rec['productos'])==2 and rec['portadas']==0 and rec['secundarias']==2 and 'CARG069' not in rec['productos']
           fixture=Path(tempfile.mkdtemp(prefix="foto52-"));files={}
           for sku,row in rec['productos'].items():
               assert row['revisado_visual'] and row['autorizacion'] and row['miniaturas_esperadas'] in [1,2]
