@@ -1,0 +1,30 @@
+{
+  "type": "imagen_web_aprobada",
+  "publicacion_verificada": true,
+  "skus": [
+    "REL046",
+    "TELE002",
+    "TELF011",
+    "AUDI091"
+  ],
+  "consumidor": "fuente_visual_web.batch",
+  "modo_actual": "PILOTO_NO_CONECTADO",
+  "origen": "Misma publicación de fotografía web aprobada y mismo Data Hub",
+  "no_requiere_nuevo_excel": true,
+  "no_nuevo_cron": true,
+  "main_modificado": false,
+  "habilitar_toda_biblioteca": false,
+  "garantias": [
+    "Maestro y principal verificados por SHA256 de bytes; sin fallback a fuente vieja",
+    "Renderer SIGNATURE original y una selección de un SKU",
+    "Manifiesto existente: fuente_visual_web y estado de publicación",
+    "Publicación y ALEX sólo tras verificación real Drive",
+    "Un fallo no detiene otros SKU"
+  ],
+  "dependencias": [
+    "Restablecer materialización de archivos del conector Drive o ejecución privada del motor original",
+    "Conectar el evento del publicador fotográfico existente al consumidor en la Fábrica",
+    "Conservar el render aprobado y validar BLACK MONTH sin colisiones en los cuatro pilotos",
+    "Verificar archivo nuevo y manifiesto por readback Drive antes de habilitar rollout"
+  ]
+}
