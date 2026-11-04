@@ -113,12 +113,19 @@ jobs:
         env:
           META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
         run: node scripts/sincronizar-secundario-meta.cjs --inspect
+      - name: Comparar categorías entre Maestro y secundario (sólo GET)
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: |
+          node scripts/test-categorias-secundario-meta.cjs
+          node scripts/comparar-categorias-secundario-meta.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
           path: |
             work/auto-meta/acceso-meta.json
             work/auto-meta/resultado-secundario.json
+            work/auto-meta/respaldo-categorias-secundario.json
           retention-days: 7
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
