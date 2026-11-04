@@ -1,0 +1,2475 @@
+{
+  "estado": "CORRECTO",
+  "publicacionVerificada": true,
+  "fecha": "2026-11-04T01:59:07.327Z",
+  "motor": "154.0.8037.57",
+  "commitCorreccion": "742a91ac4fe2bc0e9238513ca9e70ca85b45ae50",
+  "commitPublicacion": "4944cf14097bb9b3276dd2c342defee3dc45c1dc",
+  "desplieguePages": "41756541270",
+  "fuentesPublicas": [
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/estilos.css?v=24",
+      "sha256": "2c515fcdf5f365b120eb2c7219a7c05d45dea6fb70518f65f424a09adee66978",
+      "bytes": 80313
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/config.js?v=12",
+      "sha256": "4a82ee6a61b55dd1e87ad22555e7d7b1b5517b1ecec33ba9eb7160ea1dbe63d0",
+      "bytes": 2120
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/rotacion.js?v=10",
+      "sha256": "5d58cac5ef8a87ed137d0cc7b832549c0606b52a5ae74c3c977986e774c2a0bc",
+      "bytes": 5493
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/comercial.js?v=1",
+      "sha256": "21a3f848c4045ffdd1f1e480f0e7fe168dd900f58a79ad204d666974fc0e40d4",
+      "bytes": 3442
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/portada.js?v=19",
+      "sha256": "05e5ad98390068d049088b64af85470cb546393f17049abd14cddee0e7cda69b",
+      "bytes": 24800
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/marca-trazos-originales.svg",
+      "sha256": "2330f72d9edc8b4863c272939ff9c56c1798ebee447eee66411b4e1a81e5e3a6",
+      "bytes": 14886
+    },
+    {
+      "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+      "sha256": "6ecaa45557e92b263c46f39143481d037a78362a4764012793ff828ae4d9c24d",
+      "bytes": 9409726
+    },
+    {
+      "url": "https://conectatech-ec.github.io/",
+      "sha256": "8bc6c4467149062d190e9001b11328f5a8ab0ebbf1644fdbaff0fb69b10d3d00",
+      "bytes": 893472
+    }
+  ],
+  "comprobaciones": [
+    {
+      "prueba": "HTTP SHA /assets/presentacion-web/estilos.css?v=24",
+      "correcto": true
+    },
+    {
+      "prueba": "HTTP SHA /assets/presentacion-web/config.js?v=12",
+      "correcto": true
+    },
+    {
+      "prueba": "HTTP SHA /assets/presentacion-web/rotacion.js?v=10",
+      "correcto": true
+    },
+    {
+      "prueba": "HTTP SHA /assets/presentacion-web/comercial.js?v=1",
+      "correcto": true
+    },
+    {
+      "prueba": "HTTP SHA /assets/presentacion-web/portada.js?v=19",
+      "correcto": true
+    },
+    {
+      "prueba": "HTTP SHA /assets/presentacion-web/marca-trazos-originales.svg",
+      "correcto": true
+    },
+    {
+      "prueba": "HTTP SHA /logo-conectatech.png",
+      "correcto": true
+    },
+    {
+      "prueba": "Todos los objetos comerciales públicos intactos",
+      "correcto": true
+    },
+    {
+      "prueba": "Página 1 encabezado del catálogo visible",
+      "correcto": true
+    },
+    {
+      "prueba": "Página 2 encabezado del catálogo visible",
+      "correcto": true
+    },
+    {
+      "prueba": "Página 3 encabezado del catálogo visible",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 Recomendados público",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 lema blanco",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 cinco/tres/dos columnas",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 diez destacados únicos",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 teléfono inicial vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 productos estratégicos vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 teléfono inicial destacados",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 productos estratégicos destacados",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 72 SKU diferentes",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 1 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 1 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 1 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 2 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 2 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 2 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 3 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 3 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 página 3 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 categoría preservada",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 WhatsApp vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 ficha vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "Rotación diaria pública",
+      "correcto": true
+    },
+    {
+      "prueba": "Teléfono sigue primero al día siguiente",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado meta",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado logoWidth",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado lema",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado mode",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado plan",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado sorts",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado queries",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado pages",
+      "correcto": true
+    },
+    {
+      "prueba": "768 Recomendados público",
+      "correcto": true
+    },
+    {
+      "prueba": "768 lema blanco",
+      "correcto": true
+    },
+    {
+      "prueba": "768 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "768 cinco/tres/dos columnas",
+      "correcto": true
+    },
+    {
+      "prueba": "768 diez destacados únicos",
+      "correcto": true
+    },
+    {
+      "prueba": "768 teléfono inicial vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "768 productos estratégicos vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "768 teléfono inicial destacados",
+      "correcto": true
+    },
+    {
+      "prueba": "768 productos estratégicos destacados",
+      "correcto": true
+    },
+    {
+      "prueba": "768 72 SKU diferentes",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 1 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 1 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 1 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 2 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 2 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 2 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 3 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 3 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "768 página 3 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "768 categoría preservada",
+      "correcto": true
+    },
+    {
+      "prueba": "768 WhatsApp vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "768 ficha vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado meta",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado logoWidth",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado lema",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado mode",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado plan",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado sorts",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado queries",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado pages",
+      "correcto": true
+    },
+    {
+      "prueba": "390 Recomendados público",
+      "correcto": true
+    },
+    {
+      "prueba": "390 lema blanco",
+      "correcto": true
+    },
+    {
+      "prueba": "390 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "390 cinco/tres/dos columnas",
+      "correcto": true
+    },
+    {
+      "prueba": "390 diez destacados únicos",
+      "correcto": true
+    },
+    {
+      "prueba": "390 teléfono inicial vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "390 productos estratégicos vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "390 teléfono inicial destacados",
+      "correcto": true
+    },
+    {
+      "prueba": "390 productos estratégicos destacados",
+      "correcto": true
+    },
+    {
+      "prueba": "390 72 SKU diferentes",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 1 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 1 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 1 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 2 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 2 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 2 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 3 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 3 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "390 página 3 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "390 categoría preservada",
+      "correcto": true
+    },
+    {
+      "prueba": "390 WhatsApp vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "390 ficha vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado meta",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado logoWidth",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado lema",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado mode",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado plan",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado sorts",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado queries",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado pages",
+      "correcto": true
+    },
+    {
+      "prueba": "320 Recomendados público",
+      "correcto": true
+    },
+    {
+      "prueba": "320 lema blanco",
+      "correcto": true
+    },
+    {
+      "prueba": "320 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "320 cinco/tres/dos columnas",
+      "correcto": true
+    },
+    {
+      "prueba": "320 diez destacados únicos",
+      "correcto": true
+    },
+    {
+      "prueba": "320 teléfono inicial vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "320 productos estratégicos vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "320 teléfono inicial destacados",
+      "correcto": true
+    },
+    {
+      "prueba": "320 productos estratégicos destacados",
+      "correcto": true
+    },
+    {
+      "prueba": "320 72 SKU diferentes",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 1 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 1 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 1 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 2 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 2 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 2 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 3 disponibles y fotografías cargadas",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 3 teléfonos",
+      "correcto": true
+    },
+    {
+      "prueba": "320 página 3 sin marginales",
+      "correcto": true
+    },
+    {
+      "prueba": "320 categoría preservada",
+      "correcto": true
+    },
+    {
+      "prueba": "320 WhatsApp vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "320 ficha vitrina",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado meta",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado logoWidth",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado lema",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado mode",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado plan",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado sorts",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado queries",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado pages",
+      "correcto": true
+    }
+  ],
+  "resultados": [
+    {
+      "width": 1440,
+      "mode": "recomendados",
+      "plan": {
+        "vitrina": [
+          "TELF011",
+          "MONI005",
+          "DISC009",
+          "REL065",
+          "AUDI044"
+        ],
+        "destacados": [
+          "TELF019",
+          "TABL004",
+          "REL046",
+          "AUDI110",
+          "DISC004"
+        ]
+      },
+      "pages": [
+        [
+          {
+            "sku": "TELF018",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF037",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL001",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MONI005",
+            "category": "Monitores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC003",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL069",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI044",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF020",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TECL012",
+            "category": "Teclados",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "POWE020",
+            "category": "Powerbanks",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL065",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI123",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF019",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL002",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELE001",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC005",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL041",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI097",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF011",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS029",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG061",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL031",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI001",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF022",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ],
+        [
+          {
+            "sku": "TELF025",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF036",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL004",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AROD001",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC009",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL059",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI082",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF002",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TECL020",
+            "category": "Teclados",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG066",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL050",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI055",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF003",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL003",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CAPT003",
+            "category": "Capturadoras",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC004",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL016",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI063",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF010",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS009",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG018",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL060",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI016",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF017",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ],
+        [
+          {
+            "sku": "TELF008",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF034",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CAPT004",
+            "category": "Capturadoras",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TRIP014",
+            "category": "Tripodes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "FLAS014",
+            "category": "Flash",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL011",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI003",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF023",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS037",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG029",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL023",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI091",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF026",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TVBO002",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TVBO007",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TARJ010",
+            "category": "Tarjetas",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL062",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI062",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF027",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS031",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG037",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL014",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI007",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF016",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ]
+      ]
+    },
+    {
+      "width": 768,
+      "mode": "recomendados",
+      "plan": {
+        "vitrina": [
+          "TELF011",
+          "MONI005",
+          "DISC009",
+          "REL065",
+          "AUDI044"
+        ],
+        "destacados": [
+          "TELF019",
+          "TABL004",
+          "REL046",
+          "AUDI110",
+          "DISC004"
+        ]
+      },
+      "pages": [
+        [
+          {
+            "sku": "TELF018",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF037",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL001",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MONI005",
+            "category": "Monitores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC003",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL069",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI044",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF020",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TECL012",
+            "category": "Teclados",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "POWE020",
+            "category": "Powerbanks",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL065",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI123",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF019",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL002",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELE001",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC005",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL041",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI097",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF011",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS029",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG061",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL031",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI001",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF022",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ],
+        [
+          {
+            "sku": "TELF025",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF036",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL004",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AROD001",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC009",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL059",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI082",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF002",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TECL020",
+            "category": "Teclados",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG066",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL050",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI055",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF003",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL003",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CAPT003",
+            "category": "Capturadoras",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC004",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL016",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI063",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF010",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS009",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG018",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL060",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI016",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF017",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ],
+        [
+          {
+            "sku": "TELF008",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF034",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CAPT004",
+            "category": "Capturadoras",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TRIP014",
+            "category": "Tripodes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "FLAS014",
+            "category": "Flash",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL011",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI003",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF023",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS037",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG029",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL023",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI091",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF026",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TVBO002",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TVBO007",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TARJ010",
+            "category": "Tarjetas",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL062",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI062",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF027",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS031",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG037",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL014",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI007",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF016",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ]
+      ]
+    },
+    {
+      "width": 390,
+      "mode": "recomendados",
+      "plan": {
+        "vitrina": [
+          "TELF011",
+          "MONI005",
+          "DISC009",
+          "REL065",
+          "AUDI044"
+        ],
+        "destacados": [
+          "TELF019",
+          "TABL004",
+          "REL046",
+          "AUDI110",
+          "DISC004"
+        ]
+      },
+      "pages": [
+        [
+          {
+            "sku": "TELF018",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF037",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL001",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MONI005",
+            "category": "Monitores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC003",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL069",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI044",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF020",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TECL012",
+            "category": "Teclados",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "POWE020",
+            "category": "Powerbanks",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL065",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI123",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF019",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL002",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELE001",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC005",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL041",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI097",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF011",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS029",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG061",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL031",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI001",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF022",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ],
+        [
+          {
+            "sku": "TELF025",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF036",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL004",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AROD001",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC009",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL059",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI082",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF002",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TECL020",
+            "category": "Teclados",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG066",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL050",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI055",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF003",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL003",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CAPT003",
+            "category": "Capturadoras",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC004",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL016",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI063",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF010",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS009",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG018",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL060",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI016",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF017",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ],
+        [
+          {
+            "sku": "TELF008",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF034",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CAPT004",
+            "category": "Capturadoras",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TRIP014",
+            "category": "Tripodes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "FLAS014",
+            "category": "Flash",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL011",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI003",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF023",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS037",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG029",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL023",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI091",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF026",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TVBO002",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TVBO007",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TARJ010",
+            "category": "Tarjetas",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL062",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI062",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF027",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS031",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG037",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL014",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI007",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF016",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ]
+      ]
+    },
+    {
+      "width": 320,
+      "mode": "recomendados",
+      "plan": {
+        "vitrina": [
+          "TELF011",
+          "MONI005",
+          "DISC009",
+          "REL065",
+          "AUDI044"
+        ],
+        "destacados": [
+          "TELF019",
+          "TABL004",
+          "REL046",
+          "AUDI110",
+          "DISC004"
+        ]
+      },
+      "pages": [
+        [
+          {
+            "sku": "TELF018",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF037",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL001",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MONI005",
+            "category": "Monitores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC003",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL069",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI044",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF020",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TECL012",
+            "category": "Teclados",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "POWE020",
+            "category": "Powerbanks",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL065",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI123",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF019",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL002",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELE001",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC005",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL041",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI097",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF011",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS029",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG061",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL031",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI001",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF022",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ],
+        [
+          {
+            "sku": "TELF025",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF036",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL004",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AROD001",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC009",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL059",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI082",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF002",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TECL020",
+            "category": "Teclados",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG066",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL050",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI055",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF003",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TABL003",
+            "category": "Tablets",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CAPT003",
+            "category": "Capturadoras",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "DISC004",
+            "category": "Discos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL016",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI063",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF010",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS009",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG018",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL060",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI016",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF017",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ],
+        [
+          {
+            "sku": "TELF008",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF034",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CAPT004",
+            "category": "Capturadoras",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TRIP014",
+            "category": "Tripodes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "FLAS014",
+            "category": "Flash",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL011",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI003",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF023",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS037",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG029",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL023",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI091",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF026",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TVBO002",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TVBO007",
+            "category": "Tv",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TARJ010",
+            "category": "Tarjetas",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL062",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI062",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF027",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "MOUS031",
+            "category": "Mouse",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "CARG037",
+            "category": "Cargadores",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "REL014",
+            "category": "Relojes",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "AUDI007",
+            "category": "Audifonos",
+            "eligible": true,
+            "loaded": true
+          },
+          {
+            "sku": "TELF016",
+            "category": "Telefonos",
+            "eligible": true,
+            "loaded": true
+          }
+        ]
+      ]
+    }
+  ]
+}
