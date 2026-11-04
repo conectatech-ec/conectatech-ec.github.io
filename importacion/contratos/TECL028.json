@@ -214,9 +214,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
-  "fecha_verificacion": "2026-11-04T00:34:32.437067+00:00",
+  "fecha_verificacion": "2026-11-04T01:13:45.699820+00:00",
   "descripcion": "Teclado ergonómico inalámbrico Klip Xtreme Transcend Wireless, con distribución en español latinoamericano, diseño dividido y reposamanos integrado. Incorpora rueda de desplazamiento y 16 accesos multimedia. Se conecta por interfaz USB de 2,4GHz y funciona con 2 pilas AAA. Algunas funciones multimedia no operan en macOS.",
   "contenido_venta": "Un teclado inalámbrico ergonómico Klip Xtreme KBK-530S.",
   "compatibilidad": "Windows 7/8/10/11, macOS y Linux; algunas teclas multimedia no funcionan en macOS",
@@ -336,7 +336,7 @@
       "solicitado": "TECL028",
       "sku": "TECL028",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-04T00:35:48.914Z",
+      "fecha": "2026-11-04T01:14:14.208Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -361,7 +361,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
-      "url_comprobada": "http://127.0.0.1:8877/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
       "archivo_html": "productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/index.html",
       "http": 200,
       "sha256_html": "f21e10a860e471d9c5e91d9b157f568b2b567ed64d7681f92293985a0a03054d",
@@ -371,7 +371,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tecl028/TECL028-r125-01.webp",
-        "url_cargada": "http://127.0.0.1:8877/imagenes/tecl028/TECL028-r125-01-600.webp?v=ac9684371e25d76e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tecl028/TECL028-r125-01-600.webp?v=ac9684371e25d76e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -381,41 +381,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8877/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
+          "url": "https://conectatech-ec.github.io/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8877/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8877/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8877/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8877/imagenes/tecl028/TECL028-r125-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tecl028/TECL028-r125-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-125/qa-local/movil/TECL028-390.png",
+      "archivo": "reportes/continuacion-125/qa-publica/movil/TECL028-390.png",
       "sha256": "0d6423294994044019c1ec2028e930160703b3b625e8aef6b550f540f19ca535",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-125/qa-local/movil/TECL028-1280.png",
+        "archivo": "reportes/continuacion-125/qa-publica/movil/TECL028-1280.png",
         "sha256": "9debcdf87fd1b0d70bca9bfc144ba933cff66d68908ba664230072282c73bf05",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-04T01:13:45.699820+00:00",
+      "archivo": "reportes/continuacion-125/http-publicacion.json",
+      "reporte": "reportes/continuacion-125/http-publicacion.json",
+      "sha256": "65f3bbe0f44223cc4a4181de19d5f8ad0c295ba09ca1f736c0adbb9b262efa87",
+      "sku": "TECL028"
     }
   }
 }
