@@ -1,0 +1,1036 @@
+{
+  "estado": "CORRECTO",
+  "publicacionVerificada": true,
+  "fecha": "2026-11-04T19:50:29.936Z",
+  "motor": "154.0.8037.57",
+  "commitCorreccion": "a0b27e6f2454323e0b99c45f990574f4f71bac3a",
+  "commitPublicacion": "cc71c0f3b356148fe410c9766a90c4060ba7f197",
+  "desplieguePages": "41894988228",
+  "referenciaAprobada": {
+    "commit": "cc71c0f3b356148fe410c9766a90c4060ba7f197",
+    "sha256Index": "6005c100ed41732c8db7408e4410e6ff6fcc5c1d17c6edcf3e506230716af06f",
+    "integracionSoloCambiaVersionesDePresentacion": true,
+    "mainPrevio": "2d41b31303840a1f45e3ffb28ec5046cc2ab15be"
+  },
+  "incidenciaPrevia": {
+    "workflowAntes": 41891503171,
+    "workflowDespues": 41892030829,
+    "prueba": "scripts/test-orden-categorias-secundario-meta.cjs:63",
+    "error": "Missing expected rejection.",
+    "archivosDeIntegracionSinModificar": true
+  },
+  "fuentesPublicas": [
+    {
+      "url": "https://conectatech-ec.github.io/",
+      "sha256": "6005c100ed41732c8db7408e4410e6ff6fcc5c1d17c6edcf3e506230716af06f"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/estilos.css?v=31",
+      "sha256": "cdc71bf36e3bc8ebdd8acacff8cd7f64938ea321407f639efab25060c9d08355"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/config.js?v=13",
+      "sha256": "53f4025723284de1578dc6d35e6038f07863b9d5d457d778f67be8d6607b0153"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/portada.js?v=23",
+      "sha256": "8d8771385931e31aa9353c1c95581a3028f331a43dc18aa4fa6c054c2f785f4b"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/marca-trazos-originales.svg",
+      "sha256": "2330f72d9edc8b4863c272939ff9c56c1798ebee447eee66411b4e1a81e5e3a6"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+      "sha256": "6ecaa45557e92b263c46f39143481d037a78362a4764012793ff828ae4d9c24d"
+    }
+  ],
+  "comprobaciones": [
+    {
+      "prueba": "HTML público conserva el main publicado",
+      "correcto": true
+    },
+    {
+      "prueba": "SHA público /assets/presentacion-web/estilos.css?v=31",
+      "correcto": true
+    },
+    {
+      "prueba": "SHA público /assets/presentacion-web/config.js?v=13",
+      "correcto": true
+    },
+    {
+      "prueba": "SHA público /assets/presentacion-web/portada.js?v=23",
+      "correcto": true
+    },
+    {
+      "prueba": "SHA público /assets/presentacion-web/marca-trazos-originales.svg",
+      "correcto": true
+    },
+    {
+      "prueba": "SHA público /logo-conectatech.png",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 pie de confianza visible",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 dos números oficiales",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 cinco accesos directos",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 botones táctiles",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 envíos nacionales",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 costo y tiempo por destino",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 Instagram oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 Facebook oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 TikTok oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 cinco accesos directos",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 clic 0 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 clic 1 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 clic 2 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 clic 3 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 clic 4 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 volver al catálogo",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado header",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado subtitle",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado subtitleHTML",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado font",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado logo",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado mark",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado badge",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado hero",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado featured",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado grid",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado footer",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 pie de confianza visible",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 dos números oficiales",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 cinco accesos directos",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 botones táctiles",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 envíos nacionales",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 costo y tiempo por destino",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 Instagram oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 Facebook oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 TikTok oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 volver al catálogo",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado header",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado subtitle",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado subtitleHTML",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado font",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado logo",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado mark",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado badge",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado hero",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado featured",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado grid",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado footer",
+      "correcto": true
+    },
+    {
+      "prueba": "900 pie de confianza visible",
+      "correcto": true
+    },
+    {
+      "prueba": "900 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "900 dos números oficiales",
+      "correcto": true
+    },
+    {
+      "prueba": "900 cinco accesos directos",
+      "correcto": true
+    },
+    {
+      "prueba": "900 botones táctiles",
+      "correcto": true
+    },
+    {
+      "prueba": "900 envíos nacionales",
+      "correcto": true
+    },
+    {
+      "prueba": "900 costo y tiempo por destino",
+      "correcto": true
+    },
+    {
+      "prueba": "900 Instagram oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "900 Facebook oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "900 TikTok oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "900 volver al catálogo",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado header",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado subtitle",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado subtitleHTML",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado font",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado logo",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado mark",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado badge",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado hero",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado featured",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado grid",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado footer",
+      "correcto": true
+    },
+    {
+      "prueba": "768 pie de confianza visible",
+      "correcto": true
+    },
+    {
+      "prueba": "768 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "768 dos números oficiales",
+      "correcto": true
+    },
+    {
+      "prueba": "768 cinco accesos directos",
+      "correcto": true
+    },
+    {
+      "prueba": "768 botones táctiles",
+      "correcto": true
+    },
+    {
+      "prueba": "768 envíos nacionales",
+      "correcto": true
+    },
+    {
+      "prueba": "768 costo y tiempo por destino",
+      "correcto": true
+    },
+    {
+      "prueba": "768 Instagram oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "768 Facebook oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "768 TikTok oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "768 volver al catálogo",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado header",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado subtitle",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado subtitleHTML",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado font",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado logo",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado mark",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado badge",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado hero",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado featured",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado grid",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado footer",
+      "correcto": true
+    },
+    {
+      "prueba": "390 pie de confianza visible",
+      "correcto": true
+    },
+    {
+      "prueba": "390 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "390 dos números oficiales",
+      "correcto": true
+    },
+    {
+      "prueba": "390 cinco accesos directos",
+      "correcto": true
+    },
+    {
+      "prueba": "390 botones táctiles",
+      "correcto": true
+    },
+    {
+      "prueba": "390 envíos nacionales",
+      "correcto": true
+    },
+    {
+      "prueba": "390 costo y tiempo por destino",
+      "correcto": true
+    },
+    {
+      "prueba": "390 Instagram oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "390 Facebook oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "390 TikTok oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "390 cinco accesos directos",
+      "correcto": true
+    },
+    {
+      "prueba": "390 clic 0 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "390 clic 1 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "390 clic 2 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "390 clic 3 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "390 clic 4 abre destino correcto",
+      "correcto": true
+    },
+    {
+      "prueba": "390 volver al catálogo",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado header",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado subtitle",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado subtitleHTML",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado font",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado logo",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado mark",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado badge",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado hero",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado featured",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado grid",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado footer",
+      "correcto": true
+    },
+    {
+      "prueba": "320 pie de confianza visible",
+      "correcto": true
+    },
+    {
+      "prueba": "320 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "320 dos números oficiales",
+      "correcto": true
+    },
+    {
+      "prueba": "320 cinco accesos directos",
+      "correcto": true
+    },
+    {
+      "prueba": "320 botones táctiles",
+      "correcto": true
+    },
+    {
+      "prueba": "320 envíos nacionales",
+      "correcto": true
+    },
+    {
+      "prueba": "320 costo y tiempo por destino",
+      "correcto": true
+    },
+    {
+      "prueba": "320 Instagram oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "320 Facebook oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "320 TikTok oficial",
+      "correcto": true
+    },
+    {
+      "prueba": "320 volver al catálogo",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado header",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado subtitle",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado subtitleHTML",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado font",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado background",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado logo",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado mark",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado badge",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado brand",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado products",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado hero",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado featured",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado grid",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado footer",
+      "correcto": true
+    }
+  ],
+  "resultados": [
+    {
+      "width": 1440,
+      "altoPie": 638.703125,
+      "enlaces": [
+        {
+          "text": "WhatsApp oficial\n099 857 6759",
+          "href": "https://wa.me/593998576759?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 099 857 6759",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "WhatsApp oficial\n096 420 6977",
+          "href": "https://wa.me/593964206977?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 096 420 6977",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Instagram\n@conectatech.ec",
+          "href": "https://www.instagram.com/conectatech.ec/",
+          "label": "Instagram oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Facebook\nconectatech.ec",
+          "href": "https://www.facebook.com/conectatech.ec/",
+          "label": "Facebook oficial de CONECTATECH: conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "TikTok\n@conectatech.ec",
+          "href": "https://www.tiktok.com/@conectatech.ec",
+          "label": "TikTok oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Volver al catálogo",
+          "href": "#catalogo",
+          "label": null,
+          "target": "",
+          "rel": ""
+        }
+      ]
+    },
+    {
+      "width": 1100,
+      "altoPie": 740.140625,
+      "enlaces": [
+        {
+          "text": "WhatsApp oficial\n099 857 6759",
+          "href": "https://wa.me/593998576759?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 099 857 6759",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "WhatsApp oficial\n096 420 6977",
+          "href": "https://wa.me/593964206977?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 096 420 6977",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Instagram\n@conectatech.ec",
+          "href": "https://www.instagram.com/conectatech.ec/",
+          "label": "Instagram oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Facebook\nconectatech.ec",
+          "href": "https://www.facebook.com/conectatech.ec/",
+          "label": "Facebook oficial de CONECTATECH: conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "TikTok\n@conectatech.ec",
+          "href": "https://www.tiktok.com/@conectatech.ec",
+          "label": "TikTok oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Volver al catálogo",
+          "href": "#catalogo",
+          "label": null,
+          "target": "",
+          "rel": ""
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "altoPie": 725.265625,
+      "enlaces": [
+        {
+          "text": "WhatsApp oficial\n099 857 6759",
+          "href": "https://wa.me/593998576759?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 099 857 6759",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "WhatsApp oficial\n096 420 6977",
+          "href": "https://wa.me/593964206977?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 096 420 6977",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Instagram\n@conectatech.ec",
+          "href": "https://www.instagram.com/conectatech.ec/",
+          "label": "Instagram oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Facebook\nconectatech.ec",
+          "href": "https://www.facebook.com/conectatech.ec/",
+          "label": "Facebook oficial de CONECTATECH: conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "TikTok\n@conectatech.ec",
+          "href": "https://www.tiktok.com/@conectatech.ec",
+          "label": "TikTok oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Volver al catálogo",
+          "href": "#catalogo",
+          "label": null,
+          "target": "",
+          "rel": ""
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "altoPie": 828.8125,
+      "enlaces": [
+        {
+          "text": "WhatsApp oficial\n099 857 6759",
+          "href": "https://wa.me/593998576759?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 099 857 6759",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "WhatsApp oficial\n096 420 6977",
+          "href": "https://wa.me/593964206977?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 096 420 6977",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Instagram\n@conectatech.ec",
+          "href": "https://www.instagram.com/conectatech.ec/",
+          "label": "Instagram oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Facebook\nconectatech.ec",
+          "href": "https://www.facebook.com/conectatech.ec/",
+          "label": "Facebook oficial de CONECTATECH: conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "TikTok\n@conectatech.ec",
+          "href": "https://www.tiktok.com/@conectatech.ec",
+          "label": "TikTok oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Volver al catálogo",
+          "href": "#catalogo",
+          "label": null,
+          "target": "",
+          "rel": ""
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "altoPie": 1068.53125,
+      "enlaces": [
+        {
+          "text": "WhatsApp oficial\n099 857 6759",
+          "href": "https://wa.me/593998576759?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 099 857 6759",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "WhatsApp oficial\n096 420 6977",
+          "href": "https://wa.me/593964206977?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 096 420 6977",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Instagram\n@conectatech.ec",
+          "href": "https://www.instagram.com/conectatech.ec/",
+          "label": "Instagram oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Facebook\nconectatech.ec",
+          "href": "https://www.facebook.com/conectatech.ec/",
+          "label": "Facebook oficial de CONECTATECH: conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "TikTok\n@conectatech.ec",
+          "href": "https://www.tiktok.com/@conectatech.ec",
+          "label": "TikTok oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Volver al catálogo",
+          "href": "#catalogo",
+          "label": null,
+          "target": "",
+          "rel": ""
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "altoPie": 1156.875,
+      "enlaces": [
+        {
+          "text": "WhatsApp oficial\n099 857 6759",
+          "href": "https://wa.me/593998576759?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 099 857 6759",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "WhatsApp oficial\n096 420 6977",
+          "href": "https://wa.me/593964206977?text=Hola%2C%20CONECTATECH.%20Quiero%20informaci%C3%B3n%20sobre%20un%20producto%20y%20el%20env%C3%ADo%20a%20mi%20ciudad.",
+          "label": "Escribir por WhatsApp al 096 420 6977",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Instagram\n@conectatech.ec",
+          "href": "https://www.instagram.com/conectatech.ec/",
+          "label": "Instagram oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Facebook\nconectatech.ec",
+          "href": "https://www.facebook.com/conectatech.ec/",
+          "label": "Facebook oficial de CONECTATECH: conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "TikTok\n@conectatech.ec",
+          "href": "https://www.tiktok.com/@conectatech.ec",
+          "label": "TikTok oficial de CONECTATECH: @conectatech.ec",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "text": "Volver al catálogo",
+          "href": "#catalogo",
+          "label": null,
+          "target": "",
+          "rel": ""
+        }
+      ]
+    }
+  ]
+}
