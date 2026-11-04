@@ -48,6 +48,8 @@ async function recreate({request,backup,plan,api,state=null,onState=()=>{},onPro
   if(!s&&!['ELIMINANDO','ELIMINADO','CREANDO'].includes(previous?.estado))throw Error('REORDEN_IDENTIDAD_AUSENTE');
   if(s&&s.id!==t.old_id&&s.id!==previous?.new_id&&previous?.estado!=='CREANDO')throw Error('REORDEN_IDENTIDAD_NO_RECONOCIDA');
   if(s){
+   const original=backup.colecciones.find(c=>c.familia===t.familia)?.conjunto_original;
+   if(s.id===t.old_id&&(!original||s.name!==original.name||stable(s.filter)!==stable(original.filter)||stable((s.ordering_info||[]).map(String))!==stable((original.ordering_info||[]).map(String))))throw Error('REORDEN_RESPALDO_DESACTUALIZADO');
    if(stable(s.filter)!==stable(g.filter))throw Error('REORDEN_FILTRO_DISTINTO');
    const members=await api.list(s.id+'/products','id,retailer_id');
    if(stable(members.map(p=>p.retailer_id).sort())!==stable([...g.sku].sort()))throw Error('REORDEN_MIEMBROS_DISTINTOS');

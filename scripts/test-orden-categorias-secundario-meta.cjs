@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {CATALOG,FAMILIES,prepare,execute,ReorderGraph,main}=require('./reordenar-categorias-secundario-meta.cjs');
+const {CATALOG,FAMILIES,prepare,execute,recreate,ReorderGraph,main}=require('./reordenar-categorias-secundario-meta.cjs');
 const {priority}=require('./prioridad-comercial-meta.cjs');
 const desired=[...FAMILIES,'TV y Entretenimiento','Soportes y Accesorios','Seguridad y Cámaras','Redes e Internet','Protección para Dispositivos','Juguetes y Coleccionables','Iluminación','Hogar y Accesorios','Gaming y Videojuegos','Fotografía y Creación de Contenido','Deportes','Computación y Periféricos','Cargadores y Energía','Cables y Conectividad','Audio y Audífonos'];
 function fixture(){
@@ -76,4 +76,15 @@ test('el adaptador sólo permite reemplazos exactos y exige verificar el catálo
  await assert.rejects(api.request('POST',CATALOG+'/product_sets',{...params,name:'OTRO'}),/FUERA_DE_ALCANCE/);
  const created=await api.request('POST',CATALOG+'/product_sets',params);assert.equal(created.id,'7777');
  assert.equal(calls.filter(c=>c.opt.method==='DELETE').length,1);assert.equal(calls.filter(c=>c.opt.method==='POST').length,1);
+});
+test('un nombre u orden cambiado desde el respaldo bloquea todas las eliminaciones',async()=>{
+ for(const change of ['name','ordering_info']){
+  const f=fixture(),p=prepare(f.snapshot(),f.plan);
+  const backup={catalogo:{id:CATALOG},colecciones:p.targets.map(g=>({familia:g.family,conjunto_original:structuredClone(f.api.sets.find(s=>s.retailer_id===g.retailer_id))}))};
+  backup.respaldo_sha256=require('node:crypto').createHash('sha256').update(JSON.stringify(backup)).digest('hex');
+  const request={id:'test',autorizado:true,catalog_id:CATALOG,respaldo_sha256:backup.respaldo_sha256,targets:backup.colecciones.map((c,i)=>({familia:c.familia,prioridad:i+1,old_id:c.conjunto_original.id,retailer_id:c.conjunto_original.retailer_id}))};
+  const target=f.api.sets.find(s=>s.id===request.targets[18].old_id);target[change]=change==='name'?'CAMBIO_AJENO':['9000'];
+  await assert.rejects(recreate({request,backup,plan:{...f.plan,catalog_id:CATALOG},api:f.api,wait:async()=>{}}),/RESPALDO_DESACTUALIZADO/);
+  assert.equal(f.api.calls.filter(c=>c.method==='DELETE').length,0);
+ }
 });
