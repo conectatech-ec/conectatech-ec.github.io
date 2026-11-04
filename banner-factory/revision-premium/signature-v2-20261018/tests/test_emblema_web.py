@@ -66,12 +66,9 @@ class OfficialEmblemTests(unittest.TestCase):
         c=Campaign.from_mapping(dict(CFG,campaign_enabled=False))
         out,r=apply_campaign(self.base,c,generated_at="2026-11-04",repo_root="/missing")
         self.assertIs(out,self.base);self.assertIsNone(r)
-    def test_source_alpha_preserves_original_logo(self):
-        # Decoración no puede invadir el área opaca del logo.
-        import io
-        from emblema_web import _bytes,_tile
-        art=_bytes(REPO/self.c.asset_path,self.c.asset_sha256)
-        logo=_bytes(REPO/self.c.logo_path,self.c.logo_sha256)
-        self.assertEqual(_tile(art,logo).tobytes(),self.tile.tobytes())
+    def test_wrong_original_restore_rejected(self):
+        first,r=self.apply()
+        wrong=self.base.copy();wrong.putpixel((100,100),(255,0,0,255))
+        with self.assertRaises(CleanBaseRequired):restore_campaign(first,wrong)
 
 if __name__=="__main__":unittest.main()

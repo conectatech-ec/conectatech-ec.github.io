@@ -35,6 +35,23 @@ jobs:
           python-version: '3.12'
       - name: Instalar dependencia ya utilizada por la fabrica
         run: python -m pip install --disable-pip-version-check 'Pillow==11.3.0'
+      - name: Recuperar PNG publicos oficiales existentes por hash
+        run: |
+          python - <<'PY'
+          import hashlib,urllib.request
+          from pathlib import Path
+          pin="fd38e24a866a81809202f31b72d7b0b1836ccb22"
+          assets={
+            "assets/presentacion-web/black-month-emblema-negro-dorado-rojo-20261103-original.png":"6314a18024e6d12b7d8c9c6f3f23a5349d5aeb797cea4c8b34b55d90ba3de26a",
+            "logo-conectatech.png":"6ecaa45557e92b263c46f39143481d037a78362a4764012793ff828ae4d9c24d"
+          }
+          for path,sha in assets.items():
+            if Path(path).exists() and hashlib.sha256(Path(path).read_bytes()).hexdigest()==sha:continue
+            with urllib.request.urlopen("https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/"+pin+"/"+path,timeout=60) as response:data=response.read()
+            if hashlib.sha256(data).hexdigest()!=sha:raise RuntimeError("Recurso oficial cambiado")
+            Path(path).parent.mkdir(parents=True,exist_ok=True)
+            Path(path).write_bytes(data)
+          PY
       - name: Pruebas de fechas, geometria, fidelidad y cache
         run: python -m unittest discover -s 'banner-factory/revision-premium/signature-v2-20261018/tests' -p 'test*.py' -v
       - name: Medicion sintetica de la capa

@@ -10,7 +10,9 @@ HERE=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(HERE))
 from tema_campana import (Campaign,CampaignError,CampaignPlacementError,CleanBaseRequired,
  apply_campaign,restore_campaign,needs_campaign_refresh,clear_cache,cache_size,METADATA_KEY)
-CFG=json.loads((HERE/"campana-tematica.json").read_text())
+# Fixture histórica: prueba del sello anterior y de su retirada.
+CFG="{\"campaign_enabled\":true,\"campaign_id\":\"black_month_2026\",\"campaign_label\":\"BLACK MONTH\",\"campaign_start\":\"2026-11-01\",\"campaign_end\":\"2026-11-30\",\"campaign_style\":\"black_gold_red_asset\",\"campaign_position\":\"below_logo\",\"campaign_secondary_color\":\"#d6a83d\",\"campaign_background_color\":\"#080808\",\"campaign_foreground_color\":\"#f9d976\",\"campaign_border_color\":\"#c91723\",\"campaign_width\":300,\"campaign_height\":101,\"campaign_margin_x\":24,\"campaign_margin_y\":185,\"campaign_timezone\":\"America/Guayaquil\",\"campaign_layout\":\"signature_1200_phone_centered_v1\",\"campaign_asset\":\"assets/campaigns/black-month-2026.png\",\"campaign_asset_sha256\":\"e053e2d9524385c8c95d911974b5aa82d268d7417ffe39e2bccba080b9114734\",\"campaign_approved\":true,\"campaign_approval_source\":\"Aprobación explícita del propietario: APROBADO, procede con todos de acuerdo a lo ya conversado.\",\"campaign_expiry_action\":\"restore_original_patch_using_verified_clean_base\",\"campaign_end_inclusive\":true,\"campaign_restore_from\":\"2026-12-01T00:00:00-05:00\",\"campaign_rollout_scope\":\"approved_library_and_new\",\"campaign_no_independent_cron\":true}"
+CFG=json.loads(CFG)
 
 class ApprovedBlackMonth(unittest.TestCase):
  def setUp(self):
