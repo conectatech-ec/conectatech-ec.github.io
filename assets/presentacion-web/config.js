@@ -16,6 +16,15 @@ window.CONECTATECH_PRESENTACION = {
     fijadosVitrina: [],
     fijadosDestacados: []
   },
+  // Presentación comercial: prioridad del propietario; no son estadísticas de ventas.
+  prioridadComercial: {
+    activa: true,
+    paginasIniciales: 3,
+    rotacion: {
+      puestosVitrina: [['celulares'], ['tablets', 'pantallas'], ['pantallas', 'almacenamiento', 'tablets'], ['smartwatch'], ['audio']],
+      puestosDestacados: [['celulares'], ['almacenamiento', 'pantallas', 'tablets'], ['smartwatch'], ['audio'], ['tablets', 'pantallas', 'almacenamiento']]
+    }
+  },
   productosPortada: ['TELF036', 'PALA001', 'REL042', 'PARL001', 'TECL032'],
   marca: '/assets/presentacion-web/marca-trazos-originales.svg',
   banner: '/assets/presentacion-web/banner-regalos-original.png',

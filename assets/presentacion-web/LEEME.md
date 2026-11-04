@@ -64,3 +64,14 @@ Destacados conserva los componentes `productImage`, `nameHTML`, `statusHTML`, `p
 ## Fondo del catálogo
 
 La presentación agrupa los nodos existentes desde `#catalogo` hasta `#empty` en `.pw-catalog-frame`, sin recrearlos: se conservan IDs, fichas, enlaces, orden y eventos de búsqueda, categorías, ordenación y paginación. El contenedor usa un degradado azul profundo hacia verde CONECTATECH; las fichas conservan su fondo blanco, fotografías y tipografía. Los controles mantienen contraste claro y el ancla conserva el margen del encabezado. No se escriben productos ni fechas.
+
+
+## Prioridad comercial de la portada
+
+Por instrucción del propietario, `prioridadComercial.activa:true` da entrada con **Recomendados**. La vista distribuye 72 productos disponibles, con foto local publicada, ficha y precios válidos en tres páginas de 24: celulares/tablets, pantallas, almacenamiento, smartwatches, audio y una presencia medida de carga/periféricos. Reutiliza la prioridad y el rol ya registrados dentro de cada familia y respeta `importacion/prioridades-comerciales.json`. No afirma ventas ni popularidad; no modifica prioridades, objetos, títulos, fotografías, stock, precios o fechas de publicación. El resto del listado conserva su orden recibido. Los filtros siguen delimitando el conjunto y las búsquedas delegan en la relevancia existente. **Nuevos y actualizados**, nombre, precio y orden del catálogo conservan sus algoritmos originales.
+
+Vitrina y Destacados usan los puestos comerciales de `prioridadComercial.rotacion`, con teléfono de apertura y familias estratégicas. La rotación sigue siendo diaria, determinista y sin duplicados entre ambas secciones. Respeta siete días cuando hay suficientes candidatos por familia; en una familia pequeña prefiere alternativas estratégicas y, si también están en espera, repite primero el producto menos reciente. No rellena un puesto de teléfono con pilas, chips o llaveros por el mero paso de los días. Las fijaciones explícitas válidas conservan prioridad. Agotados, fotos ausentes y fichas inexistentes se excluyen mediante el mismo motor de disponibilidad. `activa:false` restaura la selección general y la entrada previa.
+
+El lema bajo el rótulo original usa la fuente de interfaz existente, blanco y tres columnas equilibradas. El rótulo Ethnocentric RG, la esfera, su marco de Black Month y la paleta azul/verde del encabezado permanecen iguales.
+
+El envoltorio editorial de novedades se conserva sin editar. `resolverPrioritario` ofrece el plan comercial antes de dicho envoltorio, exclusivamente para esta presentación; `resolver` mantiene la compatibilidad del proyecto editorial. Las categorías comerciales explícitamente verificadas prevalecen sobre la clasificación original del proveedor.
