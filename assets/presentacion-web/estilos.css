@@ -544,8 +544,9 @@ footer{background:linear-gradient(110deg,#082235,#0a3a42)}
 
 /* Encabezado: conservar su paleta azul/verde original en todas las campañas.
    Black Month sólo añade un distintivo junto al logo, sin cambiar su tamaño ni arte. */
-.pw-brand-campaign{display:none;position:absolute;left:calc(var(--pw-logo-size) / 2 - 39px);top:-10px;z-index:5;align-items:center;gap:5px;width:78px;box-sizing:border-box;padding:3px 6px 3px 4px;border:1px solid #dbba70;border-radius:8px;background:linear-gradient(135deg,#123348,#071b2c);box-shadow:0 3px 9px #0005,inset 0 1px 0 #ffefc633;transform:rotate(-7deg);pointer-events:none}
-[data-ct-temporada=black-month] .pw-brand-campaign{display:inline-flex}
-.pw-brand-campaign svg{display:block;width:25px;height:28px;flex:none;filter:drop-shadow(0 2px 2px #0005)}
-.pw-brand-campaign-label{display:block;color:#f3d89a;font-family:var(--ct-font-ui);font-size:8px;font-weight:700;letter-spacing:.7px;line-height:1.2;text-align:left}
-.pw-brand-campaign-label b{display:block;font-size:9px;letter-spacing:.2px}
+/* Marco estacional centrado en la esfera: el archivo de marca y su tamaño se conservan. */
+.pw-brand-campaign{display:none;position:absolute;left:calc(var(--pw-logo-size) * -.1383);top:calc(var(--pw-logo-size) * -.0596);z-index:3;width:calc(var(--pw-logo-size) * 1.29);height:calc(var(--pw-logo-size) * 1.36);pointer-events:none;mask-image:radial-gradient(circle at 49.48% 41.145%,transparent calc(var(--pw-logo-size) * .4),#000 calc(var(--pw-logo-size) * .405))}
+[data-ct-temporada=black-month] header .brandrow{padding-bottom:calc(var(--pw-logo-size) * .32)}
+[data-ct-temporada=black-month] .pw-brand-campaign{display:block}
+.pw-brand-campaign img{display:block;width:100%;height:100%;object-fit:fill}
+@media(max-width:359px){.pw-brand-campaign{left:calc(var(--pw-logo-size) * -.1284);top:calc(var(--pw-logo-size) * -.0513);width:calc(var(--pw-logo-size) * 1.27);height:calc(var(--pw-logo-size) * 1.34)}}
