@@ -13,6 +13,7 @@ on:
       - 'assets/editorial-titulos*.js'
       - '.github/workflows/exportar-canales.yml'
       - 'integraciones/whatsapp-secundario.json'
+      - 'integraciones/orden-categorias-secundario.json'
   workflow_run:
     workflows:
       - 'Publicar corte comercial 593 validado'
@@ -38,6 +39,7 @@ on:
       - 'scripts/sincronizar-conjuntos-meta.cjs'
       - 'scripts/sincronizar-secundario-meta.cjs'
       - 'integraciones/whatsapp-secundario.json'
+      - 'integraciones/orden-categorias-secundario.json'
       - 'scripts/prioridad-comercial-meta.cjs'
       - 'scripts/reordenar-seis-colecciones-meta.cjs'
       - '.github/workflows/exportar-canales.yml'
@@ -113,12 +115,20 @@ jobs:
         env:
           META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
         run: node scripts/sincronizar-secundario-meta.cjs --inspect
+      - name: Comparar categorías entre Maestro y secundario (sólo GET)
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: |
+          node scripts/test-categorias-secundario-meta.cjs
+          node scripts/test-orden-categorias-secundario-meta.cjs
+          node scripts/comparar-categorias-secundario-meta.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: comprobacion-acceso-meta
           path: |
             work/auto-meta/acceso-meta.json
             work/auto-meta/resultado-secundario.json
+            work/auto-meta/respaldo-categorias-secundario.json
           retention-days: 7
   validar-integracion:
     if: ${{ github.event_name == 'pull_request' }}
@@ -134,6 +144,8 @@ jobs:
           node-version: '22'
       - run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-categorias-secundario-meta.cjs
+          node scripts/test-orden-categorias-secundario-meta.cjs
           node scripts/test-secundario-meta.cjs
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
@@ -158,6 +170,8 @@ jobs:
       - name: Generar archivos CSV
         run: |
           node scripts/test-meta-web.cjs
+          node scripts/test-categorias-secundario-meta.cjs
+          node scripts/test-orden-categorias-secundario-meta.cjs
           node scripts/test-secundario-meta.cjs
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
@@ -198,14 +212,22 @@ jobs:
         env:
           META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
         run: node scripts/sincronizar-secundario-meta.cjs
+      - name: Aplicar una vez orden autorizado del catálogo secundario
+        if: ${{ steps.sync-secundario.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          META_ORDER_SECONDARY_ENABLED: 'true'
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: node scripts/reordenar-categorias-secundario-meta.cjs --apply
       - name: Conservar puntos de reanudación de Meta
         if: always()
         run: |
-          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ] && [ ! -f work/auto-meta/importacion-secundario.json ]; then exit 0; fi
+          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ] && [ ! -f work/auto-meta/importacion-secundario.json ] && [ ! -f work/auto-meta/orden-secundario.json ]; then exit 0; fi
           mkdir -p /tmp/conectatech-meta-puntos
           if [ -f work/auto-meta/importacion.json ]; then cp work/auto-meta/importacion.json /tmp/conectatech-meta-puntos/importacion.json; fi
           if [ -f work/auto-meta/reordenacion.json ]; then cp work/auto-meta/reordenacion.json /tmp/conectatech-meta-puntos/reordenacion.json; fi
           if [ -f work/auto-meta/importacion-secundario.json ]; then cp work/auto-meta/importacion-secundario.json /tmp/conectatech-meta-puntos/importacion-secundario.json; fi
+          if [ -f work/auto-meta/orden-secundario.json ]; then cp work/auto-meta/orden-secundario.json /tmp/conectatech-meta-puntos/orden-secundario.json; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for intento in 1 2 3 4; do
@@ -224,6 +246,10 @@ jobs:
               cp /tmp/conectatech-meta-puntos/importacion-secundario.json reportes/integracion-whatsapp/ultima-importacion-secundario.json
               git add reportes/integracion-whatsapp/ultima-importacion-secundario.json
             fi
+            if [ -f /tmp/conectatech-meta-puntos/orden-secundario.json ]; then
+              cp /tmp/conectatech-meta-puntos/orden-secundario.json reportes/integracion-whatsapp/resultado-orden-secundario.json
+              git add reportes/integracion-whatsapp/resultado-orden-secundario.json
+            fi
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "Conservar referencia de importación Meta para reanudación"
             if git push origin HEAD:main; then exit 0; fi
@@ -239,8 +265,10 @@ jobs:
             work/auto-meta/resultado.json
             work/auto-meta/reordenacion.json
             work/auto-meta/importacion-secundario.json
+            work/auto-meta/orden-secundario.json
             work/auto-meta/resultado-secundario.json
           retention-days: 7
           if-no-files-found: warn
+
 
 
