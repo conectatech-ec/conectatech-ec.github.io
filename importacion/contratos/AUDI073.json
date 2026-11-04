@@ -126,7 +126,8 @@
     "https://drive.google.com/file/d/1SR_T46WFeQTRTmr3HkX-Intje8rW-3I2/view?usp=drivesdk",
     "https://drive.google.com/file/d/1XjRQPDT_kJUfExYWdr6pRS23_jrqxAqN/view?usp=drivesdk",
     "https://drive.google.com/file/d/1bz7IAvPsNuleM2jaYVwcH_iSFlfFhXuR/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI073.json"
   ],
   "imagen_principal": "/imagenes/audi073/AUDI073-01.webp",
   "imagenes_secundarias": [],
@@ -182,13 +183,32 @@
     },
     {
       "nombre": "Diseño",
-      "valor": "versión AAA negra",
+      "valor": "Acabado negro",
       "fuentes": [
         "https://drive.google.com/file/d/17pU8etkRjIPfwh_Mx8o6xLTUQjNfqCK2/view?usp=drivesdk",
         "https://drive.google.com/file/d/1G_bSf3Aw0VyEfvJBMIs10TeTvp1xfPcr/view?usp=drivesdk",
         "https://drive.google.com/file/d/1SR_T46WFeQTRTmr3HkX-Intje8rW-3I2/view?usp=drivesdk",
         "https://drive.google.com/file/d/1XjRQPDT_kJUfExYWdr6pRS23_jrqxAqN/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1bz7IAvPsNuleM2jaYVwcH_iSFlfFhXuR/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1bz7IAvPsNuleM2jaYVwcH_iSFlfFhXuR/view?usp=drivesdk",
+        "reportes/beneficios-128/fuentes/AUDI073.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Conexión de audio",
+      "valor": "Inalámbrica",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI073.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Contenido de venta",
+      "valor": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI073.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -198,7 +218,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
-  "descripcion": "Audífonos inalámbricos Buds 6 Pro. Variante negro, con diseño y presentación cotejados con las fotografías del SKU. Versión AAA / genérica; no es un producto original de Apple, Samsung o JBL. Versión AAA genérica/compatible; no es un producto original de la marca de referencia.",
+  "descripcion": "Lleva los Buds 6 Pro de acabado negro con su estuche de carga. El conjunto incluye el par de audífonos inalámbricos para escuchar sin un cable conectado al equipo.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -217,34 +237,38 @@
   "contenido_venta": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
   "beneficios": [
     {
-      "valor": "Diseño",
-      "titulo": "Presentación y comodidad",
-      "descripcion": "versión AAA negra.",
+      "valor": "Inalámbricos",
+      "titulo": "Escucha sin cables",
+      "descripcion": "Escucha audio sin un cable conectado al equipo.",
       "especificaciones": [
-        "Diseño"
+        "Conexión de audio"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/17pU8etkRjIPfwh_Mx8o6xLTUQjNfqCK2/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1G_bSf3Aw0VyEfvJBMIs10TeTvp1xfPcr/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1SR_T46WFeQTRTmr3HkX-Intje8rW-3I2/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1XjRQPDT_kJUfExYWdr6pRS23_jrqxAqN/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1bz7IAvPsNuleM2jaYVwcH_iSFlfFhXuR/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI073.json"
       ],
       "estado": "VERIFICADO"
     },
     {
-      "valor": "Variante",
+      "valor": "Con estuche",
+      "titulo": "Guarda tu conjunto",
+      "descripcion": "Incluye el par de auriculares y su estuche de carga.",
+      "especificaciones": [
+        "Contenido de venta"
+      ],
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI073.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Negro",
       "titulo": "Elige tu estilo",
-      "descripcion": "Negro.",
+      "descripcion": "Acabado negro.",
       "especificaciones": [
         "Color y variante"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/17pU8etkRjIPfwh_Mx8o6xLTUQjNfqCK2/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1G_bSf3Aw0VyEfvJBMIs10TeTvp1xfPcr/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1SR_T46WFeQTRTmr3HkX-Intje8rW-3I2/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1XjRQPDT_kJUfExYWdr6pRS23_jrqxAqN/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1bz7IAvPsNuleM2jaYVwcH_iSFlfFhXuR/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI073.json"
       ],
       "estado": "VERIFICADO"
     }
@@ -284,8 +308,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/17pU8etkRjIPfwh_Mx8o6xLTUQjNfqCK2/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI073.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -293,103 +317,114 @@
       "sha256_maestro": "421f63a13eb419b74c5aaffc4b2710ea3ca19ba2602022658d07a5f2dc8e4ffd",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
     },
-    "movil": {
-      "solicitado": "AUDI073",
-      "sku": "AUDI073",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:45.553Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/",
-      "archivo_html": "productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/index.html",
-      "http": 200,
-      "sha256_html": "b95bf205a07a1836871c050ad1ddc19cc39bd8c04e8c49f9bafe7d9b3593b763",
-      "sha256_html_local": "b95bf205a07a1836871c050ad1ddc19cc39bd8c04e8c49f9bafe7d9b3593b763",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi073/AUDI073-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/audi073/AUDI073-01-600.webp?v=c29bccb45f136c29",
-        "naturalWidth": 405,
-        "naturalHeight": 405,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/audi073/AUDI073-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-066/qa-local/movil/AUDI073-390.png",
-      "sha256": "0031260c307507534710a6b14e788b2e4ea6f075ed8d41f19cc99b0d4e133317",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/AUDI073-1280.png",
-        "sha256": "b8e0e5a6f18fa7c2102bc8f5d73f76ebaebc70f0c18f676fce7fee62ce074a13",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
       "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
+  },
+  "descripcion_seo": "Lleva los Buds 6 Pro de acabado negro con su estuche de carga. El conjunto incluye el par de audífonos inalámbricos para escuchar sin un cable conectado al.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI073",
+        "sku": "AUDI073",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-12T03:59:45.553Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/",
+        "url_comprobada": "http://127.0.0.1:8765/productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/",
+        "archivo_html": "productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/index.html",
+        "http": 200,
+        "sha256_html": "b95bf205a07a1836871c050ad1ddc19cc39bd8c04e8c49f9bafe7d9b3593b763",
+        "sha256_html_local": "b95bf205a07a1836871c050ad1ddc19cc39bd8c04e8c49f9bafe7d9b3593b763",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi073/AUDI073-01.webp",
+          "url_cargada": "http://127.0.0.1:8765/imagenes/audi073/AUDI073-01-600.webp?v=c29bccb45f136c29",
+          "naturalWidth": 405,
+          "naturalHeight": 405,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "http://127.0.0.1:8765/productos/audi073-audifonos-inalambricos-galaxy-buds-6-pro/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/imagenes/audi073/AUDI073-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-066/qa-local/movil/AUDI073-390.png",
+        "sha256": "0031260c307507534710a6b14e788b2e4ea6f075ed8d41f19cc99b0d4e133317",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-066/qa-local/movil/AUDI073-1280.png",
+          "sha256": "b8e0e5a6f18fa7c2102bc8f5d73f76ebaebc70f0c18f676fce7fee62ce074a13",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI073.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

@@ -126,7 +126,8 @@
     "https://drive.google.com/file/d/1ddIeCl1apeX8sX7GSQKZgWooADywkohP/view?usp=drivesdk",
     "https://drive.google.com/file/d/1eN-P1CSUmZYGwcDOPfWohaP04htkOlb-/view?usp=drivesdk",
     "https://drive.google.com/file/d/1gY6x13MkKGi_lLc14h5wj8xv-bNwDbpi/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI123.json"
   ],
   "imagen_principal": "/imagenes/audi123/AUDI123-01.webp",
   "imagenes_secundarias": [],
@@ -182,13 +183,14 @@
     },
     {
       "nombre": "Diseño",
-      "valor": "versión AAA",
+      "valor": "Formato compacto con estuche blanco",
       "fuentes": [
         "https://drive.google.com/file/d/12Jc4q05cMZ-XdVaauvoAbXnvLO3FK66d/view?usp=drivesdk",
         "https://drive.google.com/file/d/1MHXBPzQRAiKFPQLzK_ZEBkR-Lgz6Eyrk/view?usp=drivesdk",
         "https://drive.google.com/file/d/1ddIeCl1apeX8sX7GSQKZgWooADywkohP/view?usp=drivesdk",
         "https://drive.google.com/file/d/1eN-P1CSUmZYGwcDOPfWohaP04htkOlb-/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1gY6x13MkKGi_lLc14h5wj8xv-bNwDbpi/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1gY6x13MkKGi_lLc14h5wj8xv-bNwDbpi/view?usp=drivesdk",
+        "reportes/beneficios-128/fuentes/AUDI123.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -212,13 +214,22 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "Contenido de venta",
+      "valor": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI123.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi123-airpods-pro-3-con-ai/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
-  "descripcion": "Audífonos inalámbricos versión AAA / genérica estilo AirPods Pro 3, con estuche blanco y formato compacto. No son Apple originales. Versión AAA genérica/compatible; no es un producto original de la marca de referencia.",
+  "descripcion": "Escucha tu audio con audífonos inalámbricos con ANC y estuche de carga blanco. Su formato compacto permite llevar el par de auriculares y su estuche juntos.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -237,34 +248,38 @@
   "contenido_venta": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
   "beneficios": [
     {
-      "valor": "Diseño",
-      "titulo": "Presentación y comodidad",
-      "descripcion": "versión AAA.",
+      "valor": "ANC",
+      "titulo": "Cancelación activa de ruido",
+      "descripcion": "Función ANC para la escucha de audio.",
       "especificaciones": [
-        "Diseño"
+        "Cancelación de ruido"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/12Jc4q05cMZ-XdVaauvoAbXnvLO3FK66d/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1MHXBPzQRAiKFPQLzK_ZEBkR-Lgz6Eyrk/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1ddIeCl1apeX8sX7GSQKZgWooADywkohP/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1eN-P1CSUmZYGwcDOPfWohaP04htkOlb-/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1gY6x13MkKGi_lLc14h5wj8xv-bNwDbpi/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI123.json"
       ],
       "estado": "VERIFICADO"
     },
     {
-      "valor": "Variante",
+      "valor": "Con estuche",
+      "titulo": "Guarda tu conjunto",
+      "descripcion": "Incluye el par de auriculares y su estuche de carga.",
+      "especificaciones": [
+        "Contenido de venta"
+      ],
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI123.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Blanco",
       "titulo": "Elige tu estilo",
-      "descripcion": "Blanco.",
+      "descripcion": "Acabado blanco.",
       "especificaciones": [
         "Color y variante"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/12Jc4q05cMZ-XdVaauvoAbXnvLO3FK66d/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1MHXBPzQRAiKFPQLzK_ZEBkR-Lgz6Eyrk/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1ddIeCl1apeX8sX7GSQKZgWooADywkohP/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1eN-P1CSUmZYGwcDOPfWohaP04htkOlb-/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1gY6x13MkKGi_lLc14h5wj8xv-bNwDbpi/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI123.json"
       ],
       "estado": "VERIFICADO"
     }
@@ -304,108 +319,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/12Jc4q05cMZ-XdVaauvoAbXnvLO3FK66d/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI123.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-10-11T22:34:26.108292+00:00",
       "sha256_maestro": "5abd52ada64ef03fd31ea290f9b62f83549223e19c77aeedfdffefd3132ab07e",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
-    },
-    "movil": {
-      "solicitado": "AUDI123",
-      "sku": "AUDI123",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:22.780Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi123-airpods-pro-3-con-ai/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/audi123-airpods-pro-3-con-ai/",
-      "archivo_html": "productos/audi123-airpods-pro-3-con-ai/index.html",
-      "http": 200,
-      "sha256_html": "33d8301ad0ac259257b29b98c4e363737500b30e183fa15f360066e94c29ee66",
-      "sha256_html_local": "33d8301ad0ac259257b29b98c4e363737500b30e183fa15f360066e94c29ee66",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi123/AUDI123-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/audi123/AUDI123-01-600.webp?v=c90f01fb83c57943",
-        "naturalWidth": 378,
-        "naturalHeight": 378,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/audi123-airpods-pro-3-con-ai/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/audi123/AUDI123-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-066/qa-local/movil/AUDI123-390.png",
-      "sha256": "d93047f9628d8a61936af4f0efbe3ea31c69311e6feee4605bd6f1bab6264fde",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/AUDI123-1280.png",
-        "sha256": "89f8ab8909af7dbcdc7cefd5f3e3e101cd740f78c97101c235ecaf80e7583a01",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
@@ -420,5 +341,110 @@
     "ANC": true,
     "IA": true,
     "ENC": false
+  },
+  "descripcion_seo": "Escucha tu audio con audífonos inalámbricos con ANC y estuche de carga blanco. Su formato compacto permite llevar el par de auriculares y su estuche juntos.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI123",
+        "sku": "AUDI123",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-12T03:59:22.780Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi123-airpods-pro-3-con-ai/",
+        "url_comprobada": "http://127.0.0.1:8765/productos/audi123-airpods-pro-3-con-ai/",
+        "archivo_html": "productos/audi123-airpods-pro-3-con-ai/index.html",
+        "http": 200,
+        "sha256_html": "33d8301ad0ac259257b29b98c4e363737500b30e183fa15f360066e94c29ee66",
+        "sha256_html_local": "33d8301ad0ac259257b29b98c4e363737500b30e183fa15f360066e94c29ee66",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi123/AUDI123-01.webp",
+          "url_cargada": "http://127.0.0.1:8765/imagenes/audi123/AUDI123-01-600.webp?v=c90f01fb83c57943",
+          "naturalWidth": 378,
+          "naturalHeight": 378,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "http://127.0.0.1:8765/productos/audi123-airpods-pro-3-con-ai/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/imagenes/audi123/AUDI123-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-066/qa-local/movil/AUDI123-390.png",
+        "sha256": "d93047f9628d8a61936af4f0efbe3ea31c69311e6feee4605bd6f1bab6264fde",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-066/qa-local/movil/AUDI123-1280.png",
+          "sha256": "89f8ab8909af7dbcdc7cefd5f3e3e101cd740f78c97101c235ecaf80e7583a01",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI123.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

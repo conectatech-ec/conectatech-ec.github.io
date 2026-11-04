@@ -44,7 +44,8 @@
     "https://drive.google.com/file/d/15Mld-_GwNT1j5mfFAQxXCdMhWehLhJcV/view?usp=drivesdk",
     "https://drive.google.com/file/d/1cJBZ3kCXDtUTEI545Tur_w_fyJJ_xlQr/view?usp=drivesdk",
     "reportes/continuacion-118/orden-y-fuentes.json",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/CARG071.json"
   ],
   "imagen_principal": "/imagenes/carg071/CARG071-01.webp",
   "imagenes_secundarias": [],
@@ -134,7 +135,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
   "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
-  "descripcion": "Base circular de carga inalámbrica compatible con formato MagSafe, cable integrado y alimentación USB-C. Producto compatible; no es fabricado por Apple. No se declara una potencia no confirmada.",
+  "descripcion": "Carga tu equipo compatible colocándolo sobre una base circular de formato MagSafe. La base incorpora cable integrado y alimentación USB-C, sin conectar un cable directamente al teléfono.",
   "contenido_venta": "Un cargador inalámbrico circular con cable USB-C integrado; sin adaptador de pared declarado.",
   "presentacion": "sin caja",
   "revision_regla": 1,
@@ -174,8 +175,8 @@
     },
     {
       "valor": "MagSafe",
-      "titulo": "Formato compatible",
-      "descripcion": "Producto compatible con el formato de la referencia comercial.",
+      "titulo": "Formato de carga",
+      "descripcion": "Base circular para equipos compatibles con este formato de carga.",
       "especificaciones": [
         "Referencia comercial"
       ],
@@ -221,98 +222,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-118/orden-y-fuentes.json",
-      "evidencia": "Nombre593 conservado. Título y atributos contrastados en fotos propias e inventario vigente. Clasificación según orden del propietario, sin inferir originalidad por logotipo."
+      "fuente": "reportes/beneficios-128/fuentes/CARG071.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-11-03T02:28:44.259624+00:00",
       "sha256_maestro": "51669806fdda289da3e6e9d2a0b878480c93a47debbe91ceed9abc5b3102025e",
       "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados."
-    },
-    "movil": {
-      "solicitado": "CARG071",
-      "sku": "CARG071",
-      "estado": "VERIFICADO",
-      "fecha": "2026-11-03T03:08:54.902Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
-      "archivo_html": "productos/carg071-cargador-usb-c-a-magsafe/index.html",
-      "http": 200,
-      "sha256_html": "99d3499df64b7f9d7ed835bb429942c67c8759a951be116b7552932e2a40e87f",
-      "sha256_html_local": "99d3499df64b7f9d7ed835bb429942c67c8759a951be116b7552932e2a40e87f",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01-600.webp?v=ee44ecf40db92279",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-118/qa-publica/movil/CARG071-390.png",
-      "sha256": "ac7df86002f9ee325b30ef26a15ae99c71ea807cd71123f7253d480074923e2b",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-publica/movil/CARG071-1280.png",
-        "sha256": "a3e77ea4344f9caa6296c41e71dac3398ed8232a604feade13e7689487c8b759",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "estado": "VERIFICADO",
@@ -322,5 +239,100 @@
       "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
       "sku": "CARG071"
     }
+  },
+  "descripcion_seo": "Carga tu equipo compatible colocándolo sobre una base circular de formato MagSafe. La base incorpora cable integrado y alimentación USB-C, sin conectar un.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "CARG071",
+        "sku": "CARG071",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T03:08:54.902Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
+        "archivo_html": "productos/carg071-cargador-usb-c-a-magsafe/index.html",
+        "http": 200,
+        "sha256_html": "99d3499df64b7f9d7ed835bb429942c67c8759a951be116b7552932e2a40e87f",
+        "sha256_html_local": "99d3499df64b7f9d7ed835bb429942c67c8759a951be116b7552932e2a40e87f",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01-600.webp?v=ee44ecf40db92279",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/carg071-cargador-usb-c-a-magsafe/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/carg071/CARG071-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-118/qa-publica/movil/CARG071-390.png",
+        "sha256": "ac7df86002f9ee325b30ef26a15ae99c71ea807cd71123f7253d480074923e2b",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-118/qa-publica/movil/CARG071-1280.png",
+          "sha256": "a3e77ea4344f9caa6296c41e71dac3398ed8232a604feade13e7689487c8b759",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/CARG071.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

@@ -127,7 +127,8 @@
     "https://drive.google.com/file/d/1w7rW1XK_roo7dqfVpV2xDmXIJl-l1S3c/view?usp=drivesdk",
     "https://drive.google.com/file/d/1z9HaBYzUSOkYqZzWHOFx204oExjdcXSZ/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
-    "importacion/reglas-sku.json"
+    "importacion/reglas-sku.json",
+    "reportes/beneficios-128/fuentes/REL031.json"
   ],
   "imagen_principal": "/imagenes/rel031/REL031-01.webp",
   "imagenes_secundarias": [],
@@ -196,13 +197,14 @@
     },
     {
       "nombre": "Modelo",
-      "valor": "Ultra 9 / AAA",
+      "valor": "Ultra 9",
       "fuentes": [
         "https://drive.google.com/file/d/1KU0z3qy--X3E80mToJttIwX2i_9BBinE/view?usp=drivesdk",
         "https://drive.google.com/file/d/1bKVZyqz64bCvIXEZ7UpmkdB6eRFNYjy-/view?usp=drivesdk",
         "https://drive.google.com/file/d/1f859WxwhPTsb-1bVnPhWkomw1qcGaVKy/view?usp=drivesdk",
         "https://drive.google.com/file/d/1w7rW1XK_roo7dqfVpV2xDmXIJl-l1S3c/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1z9HaBYzUSOkYqZzWHOFx204oExjdcXSZ/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1z9HaBYzUSOkYqZzWHOFx204oExjdcXSZ/view?usp=drivesdk",
+        "reportes/beneficios-128/fuentes/REL031.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -221,7 +223,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel031-reloj-smartwatch-ultra-9/",
   "fecha_verificacion": "2026-10-11T21:09:24.641263+00:00",
-  "descripcion": "Smartwatch Ultra 9 con diseño rectangular con esquinas redondeadas y silicona acanalada. Presentación comercial basada en las fotografías reales del SKU. Consulta compatibilidad y disponibilidad antes de comprar. producto; no es un Apple Watch original.",
+  "descripcion": "Completa tu estilo con el smartwatch Ultra 9: diseño rectangular de esquinas redondeadas y correa de silicona acanalada.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -307,8 +309,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1KU0z3qy--X3E80mToJttIwX2i_9BBinE/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
+      "fuente": "reportes/beneficios-128/fuentes/REL031.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -316,103 +318,114 @@
       "sha256_maestro": "638cc9ec9bf14651f7590a9e8c692e35aeef2f0cc43e8bf59405c6f27e586072",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
     },
-    "movil": {
-      "solicitado": "REL031",
-      "sku": "REL031",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-12T04:37:15.401Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/rel031-reloj-smartwatch-ultra-9/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/rel031-reloj-smartwatch-ultra-9/",
-      "archivo_html": "productos/rel031-reloj-smartwatch-ultra-9/index.html",
-      "http": 200,
-      "sha256_html": "5d92d3a882e7f6537a5d0bebaa452f307099bbd34656920a48e07a69e0d8d0cc",
-      "sha256_html_local": "5d92d3a882e7f6537a5d0bebaa452f307099bbd34656920a48e07a69e0d8d0cc",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/rel031/REL031-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/rel031/REL031-01-600.webp?v=44d62b7015f5045a",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/rel031-reloj-smartwatch-ultra-9/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/rel031/REL031-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/rel069-reloj-smartwatch-series-11-mini/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/rel046-reloj-smarwatch-infinix-h4/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/rel065-reloj-smartwatch-s11-pro/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-066/qa-local/movil/REL031-390.png",
-      "sha256": "7dfc41ade4eda593641d2b497548b407b187b4d1b48aa60493da040fc476f45e",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/REL031-1280.png",
-        "sha256": "f5a69f3f94f69e19580c6ca088528153bbe3c3ec21e9f3455c661967759deff6",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
       "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
+  },
+  "descripcion_seo": "Completa tu estilo con el smartwatch Ultra 9: diseño rectangular de esquinas redondeadas y correa de silicona acanalada.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "REL031",
+        "sku": "REL031",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-12T04:37:15.401Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/rel031-reloj-smartwatch-ultra-9/",
+        "url_comprobada": "http://127.0.0.1:8765/productos/rel031-reloj-smartwatch-ultra-9/",
+        "archivo_html": "productos/rel031-reloj-smartwatch-ultra-9/index.html",
+        "http": 200,
+        "sha256_html": "5d92d3a882e7f6537a5d0bebaa452f307099bbd34656920a48e07a69e0d8d0cc",
+        "sha256_html_local": "5d92d3a882e7f6537a5d0bebaa452f307099bbd34656920a48e07a69e0d8d0cc",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/rel031/REL031-01.webp",
+          "url_cargada": "http://127.0.0.1:8765/imagenes/rel031/REL031-01-600.webp?v=44d62b7015f5045a",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "http://127.0.0.1:8765/productos/rel031-reloj-smartwatch-ultra-9/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/imagenes/rel031/REL031-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/rel069-reloj-smartwatch-series-11-mini/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/rel046-reloj-smarwatch-infinix-h4/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/rel065-reloj-smartwatch-s11-pro/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-066/qa-local/movil/REL031-390.png",
+        "sha256": "7dfc41ade4eda593641d2b497548b407b187b4d1b48aa60493da040fc476f45e",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-066/qa-local/movil/REL031-1280.png",
+          "sha256": "f5a69f3f94f69e19580c6ca088528153bbe3c3ec21e9f3455c661967759deff6",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/REL031.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

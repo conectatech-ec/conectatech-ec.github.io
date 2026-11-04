@@ -106,7 +106,8 @@
     "https://drive.google.com/file/d/1p5ptmAipHvhRBgLM4hxPiTktAHdy0wAw/view?usp=drivesdk",
     "https://drive.google.com/file/d/1wfmmqjqYnzqMh23a3xN9QDXvAooVihIy/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
-    "importacion/lotes/continuacion-078/instrucciones-propietario.json"
+    "importacion/lotes/continuacion-078/instrucciones-propietario.json",
+    "reportes/beneficios-128/fuentes/AUDI100.json"
   ],
   "imagen_principal": "/imagenes/audi100/AUDI100-01.webp",
   "imagenes_secundarias": [],
@@ -175,7 +176,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
   "fecha_verificacion": "2026-10-14T01:41:14.079760+00:00",
-  "descripcion": "Audífonos de diadema inalámbricos AAA / genéricos de diseño plegable negro, con almohadillas acolchadas. Clasificación AAA confirmada por el propietario; no es un producto original Sony.",
+  "descripcion": "Elige una diadema inalámbrica de diseño plegable, acabado negro y almohadillas acolchadas para tu audio diario.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -258,8 +259,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1gJ8O9ATxm-LU3hmT8fQk7OKP6EC8ToQ7/view?usp=drivesdk",
-      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI100.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -274,100 +275,111 @@
       "archivo": "reportes/continuacion-078/http-publicacion.json",
       "sha256": "2ec92453c920e79b39b7d021557db4b3b3d9b6105115d1aa9c4b0757b02abf8c",
       "sku": "AUDI100"
-    },
-    "movil": {
-      "solicitado": "AUDI100",
-      "sku": "AUDI100",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-14T01:39:58.406Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
-      "archivo_html": "productos/audi100-audifonos-de-diadema-ult-powersound/index.html",
-      "http": 200,
-      "sha256_html": "635f03e280bbcca5fc7a7ccdea801a7a60a6860703c0f39b9fb522a2934f21b1",
-      "sha256_html_local": "635f03e280bbcca5fc7a7ccdea801a7a60a6860703c0f39b9fb522a2934f21b1",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01-600.webp?v=01d6065ce69830fe",
-        "naturalWidth": 335,
-        "naturalHeight": 335,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-078/qa-publica/movil/AUDI100-390.png",
-      "sha256": "c40135e4a84d18cecf0433a0ac60eb83fc747884326dfdeaa6a7c74d71f34097",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-078/qa-publica/movil/AUDI100-1280.png",
-        "sha256": "4e7282d88d63687db2a681936e85184bba9df7f25a408a21938857653f8eb621",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     }
+  },
+  "descripcion_seo": "Elige una diadema inalámbrica de diseño plegable, acabado negro y almohadillas acolchadas para tu audio diario.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI100",
+        "sku": "AUDI100",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-14T01:39:58.406Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
+        "archivo_html": "productos/audi100-audifonos-de-diadema-ult-powersound/index.html",
+        "http": 200,
+        "sha256_html": "635f03e280bbcca5fc7a7ccdea801a7a60a6860703c0f39b9fb522a2934f21b1",
+        "sha256_html_local": "635f03e280bbcca5fc7a7ccdea801a7a60a6860703c0f39b9fb522a2934f21b1",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01-600.webp?v=01d6065ce69830fe",
+          "naturalWidth": 335,
+          "naturalHeight": 335,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi100-audifonos-de-diadema-ult-powersound/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi100/AUDI100-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-078/qa-publica/movil/AUDI100-390.png",
+        "sha256": "c40135e4a84d18cecf0433a0ac60eb83fc747884326dfdeaa6a7c74d71f34097",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-078/qa-publica/movil/AUDI100-1280.png",
+          "sha256": "4e7282d88d63687db2a681936e85184bba9df7f25a408a21938857653f8eb621",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI100.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

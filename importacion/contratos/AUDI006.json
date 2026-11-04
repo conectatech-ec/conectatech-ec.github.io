@@ -44,7 +44,8 @@
     "https://drive.google.com/file/d/16Qs3w-61gjsG15zPTUXEGIxpFLWarosv/view?usp=drivesdk",
     "https://drive.google.com/file/d/1rrRHuKBFvf7PVExFN1ZecGc1viBKiXjq/view?usp=drivesdk",
     "reportes/continuacion-118/orden-y-fuentes.json",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI006.json"
   ],
   "imagen_principal": "/imagenes/audi006/AUDI006-01.webp",
   "imagenes_secundarias": [],
@@ -120,11 +121,12 @@
     },
     {
       "nombre": "Contenido de venta",
-      "valor": "Unos audífonos de diadema Marshall Major IV; condición AAA confirmada por el propietario, accesorios adicionales no declarados.",
+      "valor": "Unos audífonos de diadema Marshall Major IV; accesorios adicionales no declarados.",
       "fuentes": [
         "https://drive.google.com/file/d/16Qs3w-61gjsG15zPTUXEGIxpFLWarosv/view?usp=drivesdk",
         "https://drive.google.com/file/d/1rrRHuKBFvf7PVExFN1ZecGc1viBKiXjq/view?usp=drivesdk",
-        "reportes/continuacion-118/orden-y-fuentes.json"
+        "reportes/continuacion-118/orden-y-fuentes.json",
+        "reportes/beneficios-128/fuentes/AUDI006.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -134,8 +136,8 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi006-audifonos-diadema-marshall/",
   "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
-  "descripcion": "Audífonos de terceros con referencia comercial Marshall Major IV, diadema ajustable y articulaciones plegables. Producto compatible (AAA); no se atribuye fabricación Marshall. La referencia fotografiada es negra con detalles dorados.",
-  "contenido_venta": "Unos audífonos de diadema Marshall Major IV; condición AAA confirmada por el propietario, accesorios adicionales no declarados.",
+  "descripcion": "Lleva tu audio con una diadema ajustable y plegable de referencia comercial Marshall Major IV. La presentación combina negro y detalles dorados.",
+  "contenido_venta": "Unos audífonos de diadema Marshall Major IV; accesorios adicionales no declarados.",
   "presentacion": "sin caja",
   "revision_regla": 1,
   "evidencia_clasificacion": "Propietario: «ok todos esos son AAA»; confirmación expresa para AUDI006, AUDI129 y AUDI130.",
@@ -221,98 +223,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-118/orden-y-fuentes.json",
-      "evidencia": "Nombre593 conservado. Título y atributos contrastados en fotos propias e inventario vigente. Clasificación según orden del propietario, sin inferir originalidad por logotipo."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI006.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-11-03T02:28:44.259624+00:00",
       "sha256_maestro": "edae8177d052e65431f6d5b5f3df727fecc5ac5ac011c9627b937013126a5af3",
       "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados."
-    },
-    "movil": {
-      "solicitado": "AUDI006",
-      "sku": "AUDI006",
-      "estado": "VERIFICADO",
-      "fecha": "2026-11-03T03:08:44.444Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi006-audifonos-diadema-marshall/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi006-audifonos-diadema-marshall/",
-      "archivo_html": "productos/audi006-audifonos-diadema-marshall/index.html",
-      "http": 200,
-      "sha256_html": "45bcdba4f6a651e20eddf613bc1b513a42fdd6060e82e8eeac2bd94008337fbf",
-      "sha256_html_local": "45bcdba4f6a651e20eddf613bc1b513a42fdd6060e82e8eeac2bd94008337fbf",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi006/AUDI006-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi006/AUDI006-01-600.webp?v=e526380f2a71c2e4",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi006-audifonos-diadema-marshall/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi006/AUDI006-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI006-390.png",
-      "sha256": "7b02276c323983e4dcb8390f91b9e95fbc87be41584c3f240ebcbda631f4e19f",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI006-1280.png",
-        "sha256": "5ba2a4e4d756f7e4d7cd869da49a74953149d8273e795649f6dc54c6463ac1ad",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "estado": "VERIFICADO",
@@ -322,5 +240,100 @@
       "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
       "sku": "AUDI006"
     }
+  },
+  "descripcion_seo": "Lleva tu audio con una diadema ajustable y plegable de referencia comercial Marshall Major IV. La presentación combina negro y detalles dorados.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI006",
+        "sku": "AUDI006",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T03:08:44.444Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi006-audifonos-diadema-marshall/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi006-audifonos-diadema-marshall/",
+        "archivo_html": "productos/audi006-audifonos-diadema-marshall/index.html",
+        "http": 200,
+        "sha256_html": "45bcdba4f6a651e20eddf613bc1b513a42fdd6060e82e8eeac2bd94008337fbf",
+        "sha256_html_local": "45bcdba4f6a651e20eddf613bc1b513a42fdd6060e82e8eeac2bd94008337fbf",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi006/AUDI006-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi006/AUDI006-01-600.webp?v=e526380f2a71c2e4",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi006-audifonos-diadema-marshall/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi006/AUDI006-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI006-390.png",
+        "sha256": "7b02276c323983e4dcb8390f91b9e95fbc87be41584c3f240ebcbda631f4e19f",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI006-1280.png",
+          "sha256": "5ba2a4e4d756f7e4d7cd869da49a74953149d8273e795649f6dc54c6463ac1ad",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI006.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

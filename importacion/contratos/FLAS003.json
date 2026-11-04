@@ -43,7 +43,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1hR-iE87I8wS_StYegNps_QGOMJhwDkgH/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
-    "importacion/reglas-sku.json"
+    "importacion/reglas-sku.json",
+    "reportes/beneficios-128/fuentes/FLAS003.json"
   ],
   "imagen_principal": "/imagenes/flas003/FLAS003-01.webp",
   "imagenes_secundarias": [],
@@ -112,7 +113,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
   "fecha_verificacion": "2026-10-11T19:45:50.021056+00:00",
-  "descripcion": "Memoria USB de 64 GB nominales, producto según clasificación comercial del propietario. Para guardar archivos en equipos con USB-A compatible. Incluye el llavero visible en la referencia.",
+  "descripcion": "Lleva tus archivos contigo en esta memoria USB de 64 GB nominales. Su acabado plateado con llavero permite llevarla junto a tus llaves y conectarla a equipos que admitan almacenamiento USB-A.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -186,8 +187,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1hR-iE87I8wS_StYegNps_QGOMJhwDkgH/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
+      "fuente": "reportes/beneficios-128/fuentes/FLAS003.json",
+      "evidencia": "Descripción comercial autorizada, basada en atributos ya verificados; condición junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -195,103 +196,114 @@
       "sha256_maestro": "6d762a83749a18e5c9621eaea3b16b1b8ae0db372ecd09b0968876f3b12d1b91",
       "evidencia": "Representación comercial asistida por IA desde todas las fotografías propias del SKU; el artículo físico visible en blíster o fotografía directa es la referencia de silueta, proporciones, color y marcas. Sin caja, blíster, etiquetas, puertos o mecanismos no observados. Se conserva la posición cerrada en las memorias cuyo conector está oculto. Fondo blanco, luz de estudio y sombra suave; no es recuperación óptica ni prueba de capacidad/rendimiento."
     },
-    "movil": {
-      "solicitado": "FLAS003",
-      "sku": "FLAS003",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-12T04:37:13.791Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
-      "archivo_html": "productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/index.html",
-      "http": 200,
-      "sha256_html": "8adfe11db4fec6552da22c180670b59e94b7acc0b5e06c5405c3327cd0d7fe8a",
-      "sha256_html_local": "8adfe11db4fec6552da22c180670b59e94b7acc0b5e06c5405c3327cd0d7fe8a",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/flas003/FLAS003-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/flas003/FLAS003-01-600.webp?v=c6df26e193d108d8",
-        "naturalWidth": 335,
-        "naturalHeight": 335,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/flas003/FLAS003-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-066/qa-local/movil/FLAS003-390.png",
-      "sha256": "8b968d8ae27505317b0cac42b716ff461b1b0003445a4c520719c9fa512307d4",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/FLAS003-1280.png",
-        "sha256": "08c0bbb64dec05333345bffe9e05cca9cc166aa1b0fa5333e00b2380695ac367",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
       "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
+  },
+  "descripcion_seo": "Lleva tus archivos contigo en esta memoria USB de 64 GB nominales. Su acabado plateado con llavero permite llevarla junto a tus llaves y conectarla a.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "FLAS003",
+        "sku": "FLAS003",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-12T04:37:13.791Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
+        "url_comprobada": "http://127.0.0.1:8765/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
+        "archivo_html": "productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/index.html",
+        "http": 200,
+        "sha256_html": "8adfe11db4fec6552da22c180670b59e94b7acc0b5e06c5405c3327cd0d7fe8a",
+        "sha256_html_local": "8adfe11db4fec6552da22c180670b59e94b7acc0b5e06c5405c3327cd0d7fe8a",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/flas003/FLAS003-01.webp",
+          "url_cargada": "http://127.0.0.1:8765/imagenes/flas003/FLAS003-01-600.webp?v=c6df26e193d108d8",
+          "naturalWidth": 335,
+          "naturalHeight": 335,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "http://127.0.0.1:8765/productos/flas003-flash-memory-64gb-2-0-kingston-tipo-llavero/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/imagenes/flas003/FLAS003-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/flas038-flash-memory-128gb-sandisk-3-2-100mb/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/flas037-flash-memory-16gb-sandisk-16gb-2-0/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/flas013-flash-memory-128gb-steren-usb-c-usb-a/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-066/qa-local/movil/FLAS003-390.png",
+        "sha256": "8b968d8ae27505317b0cac42b716ff461b1b0003445a4c520719c9fa512307d4",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-066/qa-local/movil/FLAS003-1280.png",
+          "sha256": "08c0bbb64dec05333345bffe9e05cca9cc166aa1b0fa5333e00b2380695ac367",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/FLAS003.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

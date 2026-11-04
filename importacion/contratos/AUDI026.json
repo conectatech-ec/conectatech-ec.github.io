@@ -126,7 +126,8 @@
     "https://drive.google.com/file/d/1F1CiLxPcsnITsUEe2BdKNYo88hOSqJ1m/view?usp=drivesdk",
     "https://drive.google.com/file/d/1blcHzgGwBiGkRLI6f11BSIaMhjhMAhN7/view?usp=drivesdk",
     "https://drive.google.com/file/d/1vsFEf7JGoMh2Syp98oCjkagzpO9jtcPr/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI026.json"
   ],
   "imagen_principal": "/imagenes/audi026/AUDI026-01.webp",
   "imagenes_secundarias": [],
@@ -284,8 +285,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/18dxz2yUPX7egnoC6nezq-XJjpPAySczI/view?usp=drivesdk",
-      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI026.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -293,103 +294,114 @@
       "sha256_maestro": "6c112e6902b6a2c4e04a68f55fee3d09cf5443bcc0ed802acd6d8990ad2bde6e",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas. Un audífono alojado y el segundo fuera, almohadillas, tallos, estuche y tapa cotejados."
     },
-    "movil": {
-      "solicitado": "AUDI026",
-      "sku": "AUDI026",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:59:55.711Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi026-audifonos-inalambricosthinkplus-lp1s/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi026-audifonos-inalambricosthinkplus-lp1s/",
-      "archivo_html": "productos/audi026-audifonos-inalambricosthinkplus-lp1s/index.html",
-      "http": 200,
-      "sha256_html": "8508be79fd8c42bf7b5251d8d2810555f36a9ba5cc66bec8c6f3aadc75d1f3df",
-      "sha256_html_local": "8508be79fd8c42bf7b5251d8d2810555f36a9ba5cc66bec8c6f3aadc75d1f3df",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi026/AUDI026-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi026/AUDI026-01-600.webp?v=64df50bd84cfe53c",
-        "naturalWidth": 366,
-        "naturalHeight": 366,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi026-audifonos-inalambricosthinkplus-lp1s/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi026/AUDI026-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/parl016-parlante-bluetooth-rca-rgb-53hsrcr/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/parl043-parlante-mini-xtech-halen/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI026-390.png",
-      "sha256": "649b7804fc6eb8ed6ec7d51c890d520cb8f2c90d47b9a2a525a7976d7d0ea5e6",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI026-1280.png",
-        "sha256": "1b6a4e52dcdaacd70ca85eacce080c5a351c8a72953bd8ecaf2df790a6c4fab1",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
       "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
+  },
+  "descripcion_seo": "Negro. Un acabado que combina con tu estilo. Audífonos con almohadillas de silicona y estuche de carga. Conserva el conjunto en su estuche cuando no lo uses.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI026",
+        "sku": "AUDI026",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-13T02:59:55.711Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi026-audifonos-inalambricosthinkplus-lp1s/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi026-audifonos-inalambricosthinkplus-lp1s/",
+        "archivo_html": "productos/audi026-audifonos-inalambricosthinkplus-lp1s/index.html",
+        "http": 200,
+        "sha256_html": "8508be79fd8c42bf7b5251d8d2810555f36a9ba5cc66bec8c6f3aadc75d1f3df",
+        "sha256_html_local": "8508be79fd8c42bf7b5251d8d2810555f36a9ba5cc66bec8c6f3aadc75d1f3df",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi026/AUDI026-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi026/AUDI026-01-600.webp?v=64df50bd84cfe53c",
+          "naturalWidth": 366,
+          "naturalHeight": 366,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi026-audifonos-inalambricosthinkplus-lp1s/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi026/AUDI026-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/parl016-parlante-bluetooth-rca-rgb-53hsrcr/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/parl043-parlante-mini-xtech-halen/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI026-390.png",
+        "sha256": "649b7804fc6eb8ed6ec7d51c890d520cb8f2c90d47b9a2a525a7976d7d0ea5e6",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI026-1280.png",
+          "sha256": "1b6a4e52dcdaacd70ca85eacce080c5a351c8a72953bd8ecaf2df790a6c4fab1",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI026.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

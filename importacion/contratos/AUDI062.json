@@ -39,7 +39,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1KMNyVZwjKEhQ8osUbEJJ2fsE8B-1_aAk/view?usp=drivesdk",
     "https://drive.google.com/file/d/1YUEYq_31CpmT2qWK5wbScud3PtcJ6UVT/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI062.json"
   ],
   "imagen_principal": "/imagenes/audi062/AUDI062-01.webp",
   "imagenes_secundarias": [],
@@ -107,7 +108,7 @@
   "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Audífonos inalámbricos XFT-01 | con estuche. Formato: Audífonos in-ear con puntas de silicona. Presentación: 2 auriculares y 1 estuche. Diseño: Estuche con cinco botones frontales documentados.",
   "contenido_venta": "1 par de audífonos y 1 estuche. No incluye teléfono.",
-  "compatibilidad": "Producto AAA según clasificación comercial. Comprueba soporte de audio inalámbrico y tipo de carga de la presentación; funciones y compatibilidad corresponden a esta referencia.",
+  "compatibilidad": "Comprueba el soporte de audio inalámbrico y el tipo de carga de la presentación. Las funciones y la compatibilidad corresponden a esta referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -185,8 +186,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1YUEYq_31CpmT2qWK5wbScud3PtcJ6UVT/view?usp=drivesdk",
-      "evidencia": "Revisión del título, descripción, unidad y beneficios contra todas las fuentes del SKU; no se trasladan afirmaciones del empaque no comprobadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI062.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -201,85 +202,95 @@
       "archivo": "reportes/continuacion-086/http-publicacion.json",
       "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
       "sku": "AUDI062"
-    },
-    "movil": {
-      "solicitado": "AUDI062",
-      "sku": "AUDI062",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:53:46.349Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi062-audifonos-inalambricos-airpods-xft-01/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi062-audifonos-inalambricos-airpods-xft-01/",
-      "archivo_html": "productos/audi062-audifonos-inalambricos-airpods-xft-01/index.html",
-      "http": 200,
-      "sha256_html": "fb3465082da6dfc9c2ddd189fec33926ec52cabff11a6b2b776832743433e2db",
-      "sha256_html_local": "fb3465082da6dfc9c2ddd189fec33926ec52cabff11a6b2b776832743433e2db",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi062/AUDI062-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi062/AUDI062-01-600.webp?v=9ddef23041117213",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi062-audifonos-inalambricos-airpods-xft-01/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi062/AUDI062-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI062-390.png",
-      "sha256": "05933ee57a392060f5a789537c03b849915893c58b79d2489fa02618525c1917",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI062-1280.png",
-        "sha256": "6383267975102fc2570b776dd4b5484056f101c90f0e83ce12585e159ed3b917",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     }
+  },
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI062",
+        "sku": "AUDI062",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-15T00:53:46.349Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi062-audifonos-inalambricos-airpods-xft-01/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi062-audifonos-inalambricos-airpods-xft-01/",
+        "archivo_html": "productos/audi062-audifonos-inalambricos-airpods-xft-01/index.html",
+        "http": 200,
+        "sha256_html": "fb3465082da6dfc9c2ddd189fec33926ec52cabff11a6b2b776832743433e2db",
+        "sha256_html_local": "fb3465082da6dfc9c2ddd189fec33926ec52cabff11a6b2b776832743433e2db",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi062/AUDI062-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi062/AUDI062-01-600.webp?v=9ddef23041117213",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi062-audifonos-inalambricos-airpods-xft-01/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi062/AUDI062-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI062-390.png",
+        "sha256": "05933ee57a392060f5a789537c03b849915893c58b79d2489fa02618525c1917",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI062-1280.png",
+          "sha256": "6383267975102fc2570b776dd4b5484056f101c90f0e83ce12585e159ed3b917",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI062.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

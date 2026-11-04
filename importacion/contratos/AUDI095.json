@@ -126,7 +126,8 @@
     "https://drive.google.com/file/d/12sPb8l-aeeQMmV1qEaxnH4ktIMpBBv96/view?usp=drivesdk",
     "https://drive.google.com/file/d/16uHiyRA9AavFG6sfYT0zs03D23l5ksNd/view?usp=drivesdk",
     "https://drive.google.com/file/d/1CzC13d1km9x7W-GjbPM-tgx3iAcnYw40/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI095.json"
   ],
   "imagen_principal": "/imagenes/audi095/AUDI095-01.webp",
   "imagenes_secundarias": [
@@ -204,7 +205,7 @@
   "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
   "fecha_verificacion": "2026-10-11T23:30:50.325055+00:00",
-  "descripcion": "Audífonos deportivos AAA con diseño de gancho y estuche de carga ovalado negro. La vista principal conserva el estuche cerrado con su tapa translúcida. Producto genérico/compatible, no Lenovo original. No se declara resistencia al agua ni autonomía sin verificación adicional.",
+  "descripcion": "Completa tu audio con audífonos de diseño de gancho y estuche ovalado negro con tapa translúcida. Guarda el conjunto en su estuche cuando no lo estés usando.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -290,28 +291,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1-WL_bCuXarAWfdvqBHurFVj5AX51zyP5/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI095.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-10-11T23:30:50.325055+00:00",
       "sha256_maestro": "d9ef8eebb2b4203f437f7e5c877351eaa7a33af510ddb72526193a60f6bcc029",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas. Estuche cerrado, tapa translúcida, silueta ovalada y ganchos internos cotejados; no se generan vistas ocultas."
-    },
-    "movil": {
-      "sku": "AUDI095",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-27T03:08:18.505Z",
-      "url": "https://conectatech-ec.github.io/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
-      "url_comprobada": "http://127.0.0.1:8768/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "archivo": "reportes/correccion-audio-20261026/qa/AUDI095-390.png",
-      "sha256": "70c17c901891c4f761d2e9dd3693d4f5bc92ea98717e26c6fee5b33ddea9a881",
-      "archivo_html": "productos/audi095-audifonos-deportivos-thinkplus-x15pro/index.html",
-      "sha256_html": "3cb1c64d9dcf6561da03451f59ce393ed252735262552553210321bc27f9d01b",
-      "revision_visual_producto": "COTEJADA_MANUALMENTE_CON_FOTOGRAFIAS_FISICAS_PROPIAS"
     },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
@@ -363,5 +350,30 @@
     "sha256_maestro": "cb6c6eb11ad3f852d29f47c7ac22101503c1a64809ed04cd994d787f9316dee4",
     "estado": "APROBADO_LOCAL",
     "fecha_revision": "2026-10-27T03:02:28.368895+00:00"
+  },
+  "descripcion_seo": "Completa tu audio con audífonos de diseño de gancho y estuche ovalado negro con tapa translúcida. Guarda el conjunto en su estuche cuando no lo estés usando.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "sku": "AUDI095",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-27T03:08:18.505Z",
+        "url": "https://conectatech-ec.github.io/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
+        "url_comprobada": "http://127.0.0.1:8768/productos/audi095-audifonos-deportivos-thinkplus-x15pro/",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "archivo": "reportes/correccion-audio-20261026/qa/AUDI095-390.png",
+        "sha256": "70c17c901891c4f761d2e9dd3693d4f5bc92ea98717e26c6fee5b33ddea9a881",
+        "archivo_html": "productos/audi095-audifonos-deportivos-thinkplus-x15pro/index.html",
+        "sha256_html": "3cb1c64d9dcf6561da03451f59ce393ed252735262552553210321bc27f9d01b",
+        "revision_visual_producto": "COTEJADA_MANUALMENTE_CON_FOTOGRAFIAS_FISICAS_PROPIAS"
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI095.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

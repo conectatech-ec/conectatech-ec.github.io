@@ -57,7 +57,8 @@
     "https://drive.google.com/file/d/1DVyLhFe8Xpk9NrMnXJjGCvmEOcFcpfKh/view?usp=drivesdk",
     "https://drive.google.com/file/d/1RJbrliagdPGxmKcblJ6Lbi94uEL4Q-w0/view?usp=drivesdk",
     "https://drive.google.com/file/d/1nv4iDR7rFUex5U_ymYXYr59VF0fqQUYI/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI016.json"
   ],
   "imagen_principal": "/imagenes/audi016/AUDI016-01.webp",
   "imagenes_secundarias": [],
@@ -133,7 +134,7 @@
   "fecha_verificacion": "2026-10-15T00:52:59.700219+00:00",
   "descripcion": "Audífonos Tune A6 | diadema inalámbrica. Formato: Audífonos de diadema. Conexiones: Audio inalámbrico del modelo. Diseño: Diadema y almohadillas acolchadas.",
   "contenido_venta": "1 audífono de diadema. No incluye dispositivo de reproducción.",
-  "compatibilidad": "Producto AAA según clasificación comercial. Confirma protocolo, funciones y color disponible; no se garantizan ANC, autonomía ni funciones de un original de otra referencia.",
+  "compatibilidad": "Confirma el protocolo, las funciones y el color disponibles para esta referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -219,8 +220,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1DVyLhFe8Xpk9NrMnXJjGCvmEOcFcpfKh/view?usp=drivesdk",
-      "evidencia": "Revisión del título, descripción, unidad y beneficios contra todas las fuentes del SKU; no se trasladan afirmaciones del empaque no comprobadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI016.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -235,85 +236,95 @@
       "archivo": "reportes/continuacion-086/http-publicacion.json",
       "sha256": "df112b0d8986a557e6de6c5d9c4e324803c0f2d4a990e4a2078c6fd87b8f0855",
       "sku": "AUDI016"
-    },
-    "movil": {
-      "solicitado": "AUDI016",
-      "sku": "AUDI016",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-15T00:53:45.076Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi016-audifonos-de-diadema-tune-a6/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi016-audifonos-de-diadema-tune-a6/",
-      "archivo_html": "productos/audi016-audifonos-de-diadema-tune-a6/index.html",
-      "http": 200,
-      "sha256_html": "e60c2c917d7cd6aea6856d4c49ae5f2562699accf7e14b418277c4419dd10662",
-      "sha256_html_local": "e60c2c917d7cd6aea6856d4c49ae5f2562699accf7e14b418277c4419dd10662",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi016/AUDI016-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi016/AUDI016-01-600.webp?v=86c091c700ac09be",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi016-audifonos-de-diadema-tune-a6/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi016/AUDI016-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI016-390.png",
-      "sha256": "3b11a3e25a71c964218fc0677aaf0ca00da3b7aa5c4f04b0d210189160acd74a",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI016-1280.png",
-        "sha256": "2d8dd98771a57e9f70e9236384ef054b10c4fb02c2a8a3cd412672cd480c62da",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     }
+  },
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI016",
+        "sku": "AUDI016",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-15T00:53:45.076Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi016-audifonos-de-diadema-tune-a6/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi016-audifonos-de-diadema-tune-a6/",
+        "archivo_html": "productos/audi016-audifonos-de-diadema-tune-a6/index.html",
+        "http": 200,
+        "sha256_html": "e60c2c917d7cd6aea6856d4c49ae5f2562699accf7e14b418277c4419dd10662",
+        "sha256_html_local": "e60c2c917d7cd6aea6856d4c49ae5f2562699accf7e14b418277c4419dd10662",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi016/AUDI016-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi016/AUDI016-01-600.webp?v=86c091c700ac09be",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi016-audifonos-de-diadema-tune-a6/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi016/AUDI016-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI016-390.png",
+        "sha256": "3b11a3e25a71c964218fc0677aaf0ca00da3b7aa5c4f04b0d210189160acd74a",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-086/qa-publica/movil/AUDI016-1280.png",
+          "sha256": "2d8dd98771a57e9f70e9236384ef054b10c4fb02c2a8a3cd412672cd480c62da",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI016.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

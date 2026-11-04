@@ -1,3 +1,7 @@
+## Descripciones comerciales — orden de Dirección General, 4nov2026
+
+Siempre descripciones comerciales y vendedoras: utilidad y atributos comprobados, sin repetir la clasificación AAA/genérica o avisos de no originalidad en los beneficios. La condición real conserva su rótulo junto al SKU, visible antes de comprar. No inventar características ni suprimir datos importantes de contenido o compatibilidad. Las pilas AAA/AAAA son formatos reales y se conservan. Aplicar `politica-beneficios-comerciales.json` y comprobar `scripts/test-copy-comercial.cjs` antes de generar fichas nuevas o corregidas.
+
 ## Instrucción posterior del propietario — 13oct2026,Guayaquil
 
 Para imágenes ya proporcionadas en este proyecto, autoriza usar la foto vigente y el modelo/caja como referencia de una nueva representación comercial asistida o retoque premium, con una pequeña variación de posición. No pedir de nuevo permiso del distribuidor para ese flujo autorizado. No afirmar que esa autorización equivale a licencia de la fotografía externa. Registrar `edicion_autorizada_propietario` vinculada a la instrucción y referencia porSHA cuando la fuente externa histórica no tenga permiso documentado. Las fotos nuevas de Drive siguen siendo propias; indicar si muestran producto físico o empaque. Las instrucciones posteriores prevalecen sobre las exclusiones históricas de referencia de empaque y bloqueo de ese recurso existente. SIN CAJA se refiere a la imagen final, no prohíbe usar caja/modelo para identificar la representación. Persisten fidelidad y controles comerciales.

@@ -44,7 +44,8 @@
     "https://drive.google.com/file/d/1MLUlTHvM93NR329XRKb4_pT3hHfc95zR/view?usp=drivesdk",
     "https://drive.google.com/file/d/1bwsUlLN7Hcb-7OlKuVGrYulnDk4yJzfb/view?usp=drivesdk",
     "reportes/continuacion-118/orden-y-fuentes.json",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/CUBO027.json"
   ],
   "imagen_principal": "/imagenes/cubo027/CUBO027-01.webp",
   "imagenes_secundarias": [],
@@ -134,7 +135,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
   "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
-  "descripcion": "Cargador compatible para iPhone con dos puertos USB-C y potencia declarada de 50W. Este valor corresponde al cargador y no se anuncia para cada puerto. Producto compatible; no es fabricado por Apple.",
+  "descripcion": "Organiza tu conjunto de carga con dos puertos USB-C en un cargador de potencia declarada total de 50W. Los 50W corresponden al cargador y no a cada puerto por separado.",
   "contenido_venta": "Un adaptador de pared de 50W con dos puertos USB-C; sin cables adicionales declarados.",
   "presentacion": "sin caja",
   "revision_regla": 1,
@@ -221,98 +222,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-118/orden-y-fuentes.json",
-      "evidencia": "Nombre593 conservado. Título y atributos contrastados en fotos propias e inventario vigente. Clasificación según orden del propietario, sin inferir originalidad por logotipo."
+      "fuente": "reportes/beneficios-128/fuentes/CUBO027.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-11-03T02:28:44.259624+00:00",
       "sha256_maestro": "a7143020a6ce39510d4fabd1f90f008bd7c17da90d5f44c7635c4bef7db7f997",
       "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados."
-    },
-    "movil": {
-      "solicitado": "CUBO027",
-      "sku": "CUBO027",
-      "estado": "VERIFICADO",
-      "fecha": "2026-11-03T03:09:00.225Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
-      "archivo_html": "productos/cubo027-cubo-iph-50w-usb-c-usb-c/index.html",
-      "http": 200,
-      "sha256_html": "85a7d19113f9d91fe3fd8a0fba4fccebf0cc0302ba37e73b4ab67d9aab4939c0",
-      "sha256_html_local": "85a7d19113f9d91fe3fd8a0fba4fccebf0cc0302ba37e73b4ab67d9aab4939c0",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01-600.webp?v=349c8a9ef88b1b95",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO027-390.png",
-      "sha256": "7a4cadec7f51198308a019cb54e572474f5ac7f11e07ad3693eaae2f8af70f90",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO027-1280.png",
-        "sha256": "4e82a5609011eeec62cc7076dcbbbfb980b536bfa34ec065015b37a7f4dbdcac",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "estado": "VERIFICADO",
@@ -322,5 +239,100 @@
       "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
       "sku": "CUBO027"
     }
+  },
+  "descripcion_seo": "Organiza tu conjunto de carga con dos puertos USB-C en un cargador de potencia declarada total de 50W. Los 50W corresponden al cargador y no a cada puerto.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "CUBO027",
+        "sku": "CUBO027",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T03:09:00.225Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
+        "archivo_html": "productos/cubo027-cubo-iph-50w-usb-c-usb-c/index.html",
+        "http": 200,
+        "sha256_html": "85a7d19113f9d91fe3fd8a0fba4fccebf0cc0302ba37e73b4ab67d9aab4939c0",
+        "sha256_html_local": "85a7d19113f9d91fe3fd8a0fba4fccebf0cc0302ba37e73b4ab67d9aab4939c0",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01-600.webp?v=349c8a9ef88b1b95",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/cubo027-cubo-iph-50w-usb-c-usb-c/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/cubo027/CUBO027-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO027-390.png",
+        "sha256": "7a4cadec7f51198308a019cb54e572474f5ac7f11e07ad3693eaae2f8af70f90",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO027-1280.png",
+          "sha256": "4e82a5609011eeec62cc7076dcbbbfb980b536bfa34ec065015b37a7f4dbdcac",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/CUBO027.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

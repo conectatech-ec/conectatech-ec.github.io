@@ -67,6 +67,7 @@ for(const p of products){
  }
 
  photoDirection.overlay(p,custom,photoSelection);
+ require('./copy-comercial.cjs').exigir(p,custom);
  const displayName=custom.nombre||p.name;
  const productImage=custom.imagen||p.imageUrl||'';
  const title=custom.tituloSeo||displayName+' en Quito | ConectaTech';

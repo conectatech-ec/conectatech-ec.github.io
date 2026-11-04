@@ -149,7 +149,8 @@
     "https://drive.google.com/file/d/1uL8kgPoyiJSA8JKAF13LkyaZsKvmCwul/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "importacion/reglas-sku.json",
-    "importacion/lotes/correcciones-069/instrucciones-propietario.json"
+    "importacion/lotes/correcciones-069/instrucciones-propietario.json",
+    "reportes/beneficios-128/fuentes/AUDI017.json"
   ],
   "imagen_principal": "/imagenes/audi017/AUDI017-01.webp",
   "imagenes_secundarias": [],
@@ -205,13 +206,31 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "Conexión de audio",
+      "valor": "Inalámbrica",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI017.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Contenido de venta",
+      "valor": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI017.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi017-audifonos-inalambricos-signature/",
   "fecha_verificacion": "2026-10-13T04:28:24.715621+00:00",
-  "descripcion": "Audífonos inalámbricos negro y dorado con estuche de carga. Producto AAA / genérico.",
+  "descripcion": "Combina negro y dorado en tu conjunto de audio inalámbrico. Incluye el par de auriculares y su estuche de carga para guardar ambos en un solo lugar.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -230,37 +249,38 @@
   "contenido_venta": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
   "beneficios": [
     {
-      "valor": "Negro y dorado",
-      "titulo": "Elige el acabado que te gusta",
-      "descripcion": "Negro y dorado. Un acabado que combina con tu estilo.",
+      "valor": "Inalámbricos",
+      "titulo": "Escucha sin cables",
+      "descripcion": "Escucha audio sin un cable conectado al equipo.",
       "especificaciones": [
-        "Color y variante"
+        "Conexión de audio"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/1FHSa15QHn5zZVJqXYL9S88Jwc8ohX9Lr/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1OTiaCJrptAYtXeApYmy8fHOJzTK7XwTT/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1ZSIhbsE909MoeTbZrYr6sbIeL3CuVBzb/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1cerIqiUskQ3oftTM6tN24a8AxoMCFmTK/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1ea6sp5fnFNyywyy08EIPJjaZY1nb7nam/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1uL8kgPoyiJSA8JKAF13LkyaZsKvmCwul/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI017.json"
       ],
       "estado": "VERIFICADO"
     },
     {
-      "valor": "negro y dorado",
-      "titulo": "Diseño",
-      "descripcion": "negro y dorado. Una característica para comparar al elegir este modelo.",
+      "valor": "Con estuche",
+      "titulo": "Guarda tu conjunto",
+      "descripcion": "Incluye el par de auriculares y su estuche de carga.",
       "especificaciones": [
-        "Diseño"
+        "Contenido de venta"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/1FHSa15QHn5zZVJqXYL9S88Jwc8ohX9Lr/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1OTiaCJrptAYtXeApYmy8fHOJzTK7XwTT/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1ZSIhbsE909MoeTbZrYr6sbIeL3CuVBzb/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1cerIqiUskQ3oftTM6tN24a8AxoMCFmTK/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1ea6sp5fnFNyywyy08EIPJjaZY1nb7nam/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1uL8kgPoyiJSA8JKAF13LkyaZsKvmCwul/view?usp=drivesdk",
-        "importacion/reglas-sku.json"
+        "reportes/beneficios-128/fuentes/AUDI017.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Negro y dorado",
+      "titulo": "Elige tu estilo",
+      "descripcion": "Acabado negro y dorado.",
+      "especificaciones": [
+        "Color y variante"
+      ],
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI017.json"
       ],
       "estado": "VERIFICADO"
     }
@@ -301,8 +321,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1FHSa15QHn5zZVJqXYL9S88Jwc8ohX9Lr/view?usp=drivesdk",
-      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI017.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -316,101 +336,112 @@
       "estado": "VERIFICADO",
       "sku": "AUDI017",
       "fecha": "2026-10-13T19:50:33.477266+00:00"
-    },
-    "movil": {
-      "solicitado": "AUDI017",
-      "sku": "AUDI017",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-13T04:34:37.295Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi017-audifonos-inalambricos-signature/",
-      "url_comprobada": "http://127.0.0.1:8767/productos/audi017-audifonos-inalambricos-signature/",
-      "archivo_html": "productos/audi017-audifonos-inalambricos-signature/index.html",
-      "http": 200,
-      "sha256_html": "c768ff27f70553de436be6a05d319b0a0a17e78932b834c71dc7c87611dae5c7",
-      "sha256_html_local": "c768ff27f70553de436be6a05d319b0a0a17e78932b834c71dc7c87611dae5c7",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi017/AUDI017-01.webp",
-        "url_cargada": "http://127.0.0.1:8767/imagenes/audi017/AUDI017-01-600.webp?v=5ba4baef213279a2",
-        "naturalWidth": 362,
-        "naturalHeight": 362,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8767/productos/audi017-audifonos-inalambricos-signature/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8767/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8767/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8767/imagenes/audi017/AUDI017-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8767/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8767/productos/audi005-audifonos-diadema-airpods-max/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8767/productos/audi008-audifonos-alambricos-earpods-lightning/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/correcciones-069/qa-local/movil/AUDI017-390.png",
-      "sha256": "8eafd0cfc448184ed07f2d3140e0bd01ca37010044bfc13f3d0fc4dc932f6d50",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-069/qa-local/movil/AUDI017-1280.png",
-        "sha256": "c811ef33d7153995491fd9195c121dece32908e7fdb0ca3b693f59b42ae2e152",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     }
   },
-  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00"
+  "fecha_publicacion_verificada": "2026-10-13T19:50:33.477266+00:00",
+  "descripcion_seo": "Combina negro y dorado en tu conjunto de audio inalámbrico. Incluye el par de auriculares y su estuche de carga para guardar ambos en un solo lugar.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI017",
+        "sku": "AUDI017",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-13T04:34:37.295Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi017-audifonos-inalambricos-signature/",
+        "url_comprobada": "http://127.0.0.1:8767/productos/audi017-audifonos-inalambricos-signature/",
+        "archivo_html": "productos/audi017-audifonos-inalambricos-signature/index.html",
+        "http": 200,
+        "sha256_html": "c768ff27f70553de436be6a05d319b0a0a17e78932b834c71dc7c87611dae5c7",
+        "sha256_html_local": "c768ff27f70553de436be6a05d319b0a0a17e78932b834c71dc7c87611dae5c7",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi017/AUDI017-01.webp",
+          "url_cargada": "http://127.0.0.1:8767/imagenes/audi017/AUDI017-01-600.webp?v=5ba4baef213279a2",
+          "naturalWidth": 362,
+          "naturalHeight": 362,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "http://127.0.0.1:8767/productos/audi017-audifonos-inalambricos-signature/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8767/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8767/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8767/imagenes/audi017/AUDI017-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8767/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8767/productos/audi005-audifonos-diadema-airpods-max/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8767/productos/audi008-audifonos-alambricos-earpods-lightning/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/correcciones-069/qa-local/movil/AUDI017-390.png",
+        "sha256": "8eafd0cfc448184ed07f2d3140e0bd01ca37010044bfc13f3d0fc4dc932f6d50",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/correcciones-069/qa-local/movil/AUDI017-1280.png",
+          "sha256": "c811ef33d7153995491fd9195c121dece32908e7fdb0ca3b693f59b42ae2e152",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI017.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
+  }
 }
