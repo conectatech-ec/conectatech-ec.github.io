@@ -1,56 +1,36 @@
 {
-  "estado": "MODULO_VALIDADO_PENDIENTE_INTEGRACION_EN_MOTOR_EXISTENTE",
-  "rama": "banners/campanas-20261103",
-  "main_modificado": false,
-  "publicacion_real": false,
-  "modulo": "tema_campana.py",
-  "configuracion": "campana-tematica.json",
-  "punto_integracion": "Al terminar la composición en memoria, antes del guardado PNG y del QA final del motor original",
-  "requisitos": [
-    "Cargar Campaign.from_mapping una vez por lote.",
-    "Suministrar font usando el fontbank original; font_revision debe incluir hash/tamaño/peso. No cambiar fuentes.",
-    "Pasar la fecha real de generación, nunca la fecha de inventario, para activar la campaña.",
-    "Añadir las regiones protegidas reales del SKU a las regiones de la plantilla.",
-    "Aplicar apply_campaign y registrar su resultado en la trazabilidad del SKU.",
-    "Conservar el PngInfo original y llamar add_png_metadata; un solo guardado de la imagen.",
-    "Comprobar intactos logo, rótulo, eslogan, producto, precios y servicios; permitir la modificación únicamente en rect del sello.",
-    "Si existe colisión o un formato no validado, marcar solo la pieza REVISAR y continuar el lote; no entregar sin sello durante campaña.",
-    "La Regla Definitiva de contornos y fidelidad se mantiene antes de entregar.",
-    "Los PDF reutilizan las imágenes nuevas aprobadas; no estampar otra vez las páginas ni reconstruir catálogos por activar la configuración."
+  "estado": "APROBACION_CREATIVA_REGISTRADA_PENDIENTE_CONEXION_AL_RENDERER_Y_PUBLICACION_DRIVE",
+  "campaign_id": "black_month_2026",
+  "campaign_start": "2026-11-01",
+  "campaign_end": "2026-11-30",
+  "horario": "America/Guayaquil",
+  "retirada_desde": "2026-12-01T00:00:00-05:00",
+  "diseno_aprobado": "Negro, dorado y rojo; debajo del logo. Aprobación explícita en este chat.",
+  "recurso_sha256": "e053e2d9524385c8c95d911974b5aa82d268d7417ffe39e2bccba080b9114734",
+  "posicion_validada": [
+    24,
+    185,
+    324,
+    286
   ],
-  "seleccion_incremental": {
-    "regenerar_toda_biblioteca_solo_por_activar": false,
-    "aplicar_a": "Banners nuevos y regeneraciones autorizadas que ya seleccione el motor durante la vigencia.",
-    "mensajeria_otros_canales": "Derivados de esos PNG heredan la capa; no se modifica ni se publica en Meta, web o WhatsApp desde este módulo.",
-    "sincronizacion": "Mismo Data Hub, mismas cuotas y eventos existentes; sin cron ni nuevo sincronizador."
+  "aplica_a": "Banners aprobados existentes y nuevos; conservar agotados en carpetas PNG; PDF excluye agotados.",
+  "flujo": "La selección incremental existente debe evaluar needs_campaign_refresh en cada ciclo, aun sin cambio de precios.",
+  "retirada": "Restaurar sólo el recorte original verificado. Conservar precios, fecha comercial y píxeles fuera del sello.",
+  "guardas": [
+    "No reutilizar la posición centrada de teléfonos para otras categorías sin bboxes reales.",
+    "No cubrir logo, título, producto, beneficios, precios o servicios.",
+    "Colisión: sólo el SKU queda REVISAR; continuar los demás.",
+    "No usar IA por SKU para el sello; un PNG aprobado cacheado."
+  ],
+  "fuentes": "Último corte validado del Data Hub; no inventar otra fecha ni recalcular precios.",
+  "publicacion": {
+    "main_modificado": false,
+    "archivos_drive_sustituidos": 0,
+    "estado": "BLOQUEADA_ENTORNO_NO_DISPONIBLE",
+    "limite": "El conector de sustitución requiere un archivo local. No hay credencial persistente de escritura Drive comprobada para Actions."
   },
-  "campanas_futuras": {
-    "campos": [
-      "campaign_label",
-      "campaign_start",
-      "campaign_end",
-      "campaign_style",
-      "campaign_position",
-      "campaign_secondary_color"
-    ],
-    "nota": "La posición debe pasar el control de no solapamiento. Cambiar de campaña sobre una imagen sellada exige base limpia, no sobrepintar."
-  },
-  "portadas_v2": "Siguen sin generarse ni subirse; no hay enlace visual de revisión. Este módulo no reemplaza ese pendiente.",
-  "validacion": {
-    "estado": "24_PRUEBAS_SUPERADAS_EN_GITHUB_ACTIONS",
-    "commit_codigo_probado": "88ea1c5620beee78af93e6809d63ee69bcffe300",
-    "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41738156481",
-    "fecha": "2026-11-03",
-    "pruebas": 24,
-    "duracion_pruebas_segundos": 0.523,
-    "medicion_sintetica": {
-      "iteraciones": 120,
-      "primera_aplicacion_ms": 6.4579,
-      "cache_mediana_ms": 0.3358,
-      "cache_p95_ms": 0.4036,
-      "cache_entradas": 1
-    },
-    "limites": "Prueba sintética del módulo. No acredita integración, publicación, rendimiento integral ni cambio de archivos comerciales.",
-    "entorno_original": "No disponible; sin herramienta de reinicio en esta sesión."
-  }
+  "dependencia_central": "No se modificaron cron/triggers. La aplicación y retirada real necesitan que el controlador existente invoque el módulo. La expiración configurada no es una retirada desplegada.",
+  "portadas_v2": "Propuestas rechazadas; no implementar.",
+  "rama": "banners/campanas-20261103",
+  "validacion_nueva": "Pendiente de resultado Actions después de este commit."
 }

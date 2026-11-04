@@ -5,7 +5,8 @@ on:
     paths:
       - 'banner-factory/revision-premium/signature-v2-20261018/tema_campana.py'
       - 'banner-factory/revision-premium/signature-v2-20261018/campana-tematica.json'
-      - 'banner-factory/revision-premium/signature-v2-20261018/tests/test_tema_campana.py'
+      - 'banner-factory/revision-premium/signature-v2-20261018/tests/test*.py'
+      - 'banner-factory/revision-premium/signature-v2-20261018/assets/campaigns/**'
       - 'banner-factory/revision-premium/signature-v2-20261018/tests/benchmark_tema_campana.py'
       - '.github/workflows/qa-campana-signature.yml'
   workflow_dispatch:
@@ -32,6 +33,6 @@ jobs:
       - name: Instalar dependencia ya utilizada por la fabrica
         run: python -m pip install --disable-pip-version-check 'Pillow==11.3.0'
       - name: Pruebas de fechas, geometria, fidelidad y cache
-        run: python -m unittest discover -s 'banner-factory/revision-premium/signature-v2-20261018/tests' -p 'test_tema_campana.py' -v
+        run: python -m unittest discover -s 'banner-factory/revision-premium/signature-v2-20261018/tests' -p 'test*.py' -v
       - name: Medicion sintetica de la capa
         run: python 'banner-factory/revision-premium/signature-v2-20261018/tests/benchmark_tema_campana.py'

@@ -12,6 +12,7 @@ from datetime import date, datetime
 import hashlib
 import json
 import re
+from pathlib import Path
 from threading import RLock
 from zoneinfo import ZoneInfo
 
@@ -20,8 +21,11 @@ METADATA_KEY = "conectatech.campaign"
 LAYOUT = "signature_1200_header_v1"
 CANVAS = (1200, 1200)
 COLORS = re.compile(r"^#[0-9a-fA-F]{6}$")
-POSITIONS = {"top_right", "top_left", "bottom_right", "bottom_left"}
-STYLES = {"compact_ribbon", "compact_badge"}
+POSITIONS = {"top_right", "top_left", "bottom_right", "bottom_left", "below_logo"}
+STYLES = {"compact_ribbon", "compact_badge", "black_gold_red_asset"}
+PHONE_LAYOUT = "signature_1200_phone_centered_v1"
+DYNAMIC_LAYOUT = "signature_1200_dynamic_bboxes_v1"
+HERE = Path(__file__).resolve().parent
 # Regiones del encabezado y de la plantilla ya aprobada, en coordenadas 1200.
 # El sello (952,12)-(1176,44) queda sobre el eslogan, sin cubrir sus trazos.
 PROTECTED = (
@@ -86,6 +90,8 @@ class Campaign:
     margin_y: int
     timezone: str
     layout: str
+    asset_path: str = ""
+    asset_sha256: str = ""
 
     @classmethod
     def from_mapping(cls, cfg):
@@ -113,14 +119,22 @@ class Campaign:
         timezone = cfg.get("campaign_timezone", "America/Guayaquil")
         if timezone != "America/Guayaquil":
             raise CampaignError("La fábrica utiliza America/Guayaquil.")
+        asset_path = cfg.get("campaign_asset", "")
+        asset_sha256 = cfg.get("campaign_asset_sha256", "")
+        if style == "black_gold_red_asset":
+            if (not isinstance(asset_path, str) or not asset_path.startswith("assets/campaigns/")
+                    or ".." in Path(asset_path).parts or Path(asset_path).is_absolute()):
+                raise CampaignError("Recurso de campaña fuera del directorio autorizado.")
+            if not isinstance(asset_sha256, str) or not re.fullmatch(r"[a-f0-9]{64}", asset_sha256):
+                raise CampaignError("Huella SHA256 del recurso aprobado requerida.")
         return cls(
             cfg["campaign_enabled"], identity, label.strip(), start, end, style, position,
             *[c.lower() for c in colors],
             _integer(cfg.get("campaign_width", 224), "campaign_width", 80, 360),
-            _integer(cfg.get("campaign_height", 32), "campaign_height", 24, 72),
+            _integer(cfg.get("campaign_height", 32), "campaign_height", 24, 144),
             _integer(cfg.get("campaign_margin_x", 24), "campaign_margin_x", 0, 200),
-            _integer(cfg.get("campaign_margin_y", 12), "campaign_margin_y", 0, 200),
-            timezone, cfg.get("campaign_layout", LAYOUT),
+            _integer(cfg.get("campaign_margin_y", 12), "campaign_margin_y", 0, 300),
+            timezone, cfg.get("campaign_layout", LAYOUT), asset_path, asset_sha256,
         )
 
     def local_day(self, generated_at=None):
@@ -151,6 +165,7 @@ class Campaign:
             "colors": [self.secondary, self.background, self.foreground, self.border],
             "size": [self.width, self.height], "margin": [self.margin_x, self.margin_y],
             "timezone": self.timezone, "layout": self.layout,
+            "asset": self.asset_path, "asset_sha256": self.asset_sha256,
         }
 
     def fingerprint(self, generated_at=None):
@@ -161,24 +176,37 @@ class Campaign:
 
 
 def placement(campaign, size, protected_regions=()):
-    if campaign.layout != LAYOUT or tuple(size) != CANVAS:
+    if tuple(size) != CANVAS:
         raise CampaignPlacementError("Formato sin zona segura validada; revisar solo esta pieza.")
-    w, h = size
-    x = w - campaign.margin_x - campaign.width if campaign.position.endswith("right") else campaign.margin_x
-    y = campaign.margin_y if campaign.position.startswith("top") else h - campaign.margin_y - campaign.height
+    if campaign.position == "below_logo":
+        if campaign.layout == PHONE_LAYOUT:
+            fixed = ((0, 0, 1200, 176), (350, 180, 1180, 285),
+                     (0, 290, 1200, 1200))
+        elif campaign.layout == DYNAMIC_LAYOUT and protected_regions:
+            # El renderer original aporta bboxes reales de título, foto y beneficios.
+            fixed = ((0, 0, 1200, 176), (0, 900, 1200, 1200))
+        else:
+            raise CampaignPlacementError(
+                "Debajo del logo requiere plantilla centrada validada o bboxes del renderer; no tapar títulos.")
+        x, y = campaign.margin_x, campaign.margin_y
+    elif campaign.layout == LAYOUT:
+        fixed = PROTECTED
+        x = size[0] - campaign.margin_x - campaign.width if campaign.position.endswith("right") else campaign.margin_x
+        y = campaign.margin_y if campaign.position.startswith("top") else size[1] - campaign.margin_y - campaign.height
+    else:
+        raise CampaignPlacementError("Plantilla de campaña no validada.")
     rect = (x, y, x + campaign.width, y + campaign.height)
-    if min(x, y) < 0 or rect[2] > w or rect[3] > h:
+    if min(x, y) < 0 or rect[2] > size[0] or rect[3] > size[1]:
         raise CampaignPlacementError("El sello sale del lienzo.")
-    for protected in tuple(PROTECTED) + tuple(protected_regions):
+    for protected in tuple(fixed) + tuple(protected_regions):
         if len(protected) != 4:
             raise CampaignPlacementError("Región protegida inválida.")
-        a, b, c, d = protected
-        if a > c or b > d:
+        a, b, cc, d = protected
+        if a > cc or b > d:
             raise CampaignPlacementError("Región protegida invertida.")
-        if x < c and rect[2] > a and y < d and rect[3] > b:
+        if x < cc and rect[2] > a and y < d and rect[3] > b:
             raise CampaignPlacementError("El sello se cruza con una región protegida.")
     return rect
-
 
 def clear_cache():
     with _CACHE_LOCK:
@@ -196,7 +224,7 @@ def _color(value, alpha=255):
 
 def _badge(campaign, font, font_revision):
     from PIL import Image, ImageDraw
-    if font is None or not font_revision:
+    if campaign.style != "black_gold_red_asset" and (font is None or not font_revision):
         raise CampaignError("Usar la fuente original del motor y su revisión; no hay sustitución.")
     key = (json.dumps(campaign.payload(), sort_keys=True), str(font_revision),
            str(getattr(font, "path", "")), getattr(font, "size", None), tuple(font.getname()) if font else ())
@@ -205,6 +233,23 @@ def _badge(campaign, font, font_revision):
             _CACHE.move_to_end(key)
             return _CACHE[key]
         w, h = campaign.width, campaign.height
+        if campaign.style == "black_gold_red_asset":
+            path = (HERE / campaign.asset_path).resolve()
+            if not path.is_relative_to(HERE.resolve()):
+                raise CampaignError("Recurso de campaña fuera del motor.")
+            data = path.read_bytes()
+            if hashlib.sha256(data).hexdigest() != campaign.asset_sha256:
+                raise CampaignError("El recurso difiere del diseño aprobado.")
+            with Image.open(path) as approved:
+                if approved.format != "PNG" or approved.size != (w, h):
+                    raise CampaignPlacementError("El PNG aprobado no coincide en formato o dimensiones.")
+                if approved.info.get("conectatech.campaign_label") != campaign.label:
+                    raise CampaignError("La etiqueta del PNG aprobado no coincide con la campaña.")
+                tile = approved.convert("RGBA")
+            _CACHE[key] = tile
+            while len(_CACHE) > _CACHE_LIMIT:
+                _CACHE.popitem(last=False)
+            return tile
         tile = Image.new("RGBA", (w, h))
         draw = ImageDraw.Draw(tile)
         bbox = font.getbbox(campaign.label, anchor="lt")
@@ -242,7 +287,7 @@ def _read_marker(image):
 
 
 def apply_campaign(image, campaign, *, generated_at=None, font=None,
-                   font_revision=None, protected_regions=()):
+                   font_revision=None, protected_regions=(), clean_base=None):
     """Devuelve (imagen, registro). No guarda archivos ni modifica la entrada.
 
     campaign puede construirse una vez por lote. font debe proceder de la misma
@@ -256,8 +301,12 @@ def apply_campaign(image, campaign, *, generated_at=None, font=None,
     marker = _read_marker(image)
     if fingerprint is None:
         if marker:
-            raise CleanBaseRequired("Campaña terminada/desactivada: regenerar desde base sin sello.")
+            if clean_base is None:
+                raise CleanBaseRequired("Campaña terminada/desactivada: requiere la base limpia.")
+            return restore_campaign(image, clean_base), None
         return image, None
+    if campaign.style == "black_gold_red_asset":
+        font_revision = "asset:" + campaign.asset_sha256
     rect = placement(campaign, image.size, protected_regions)
     if marker:
         if marker.get("font_revision") != str(font_revision):
@@ -282,6 +331,7 @@ def apply_campaign(image, campaign, *, generated_at=None, font=None,
         "font_revision": str(font_revision),
         "patch_sha256": hashlib.sha256(out.crop(rect).tobytes()).hexdigest(),
         "already_applied": False,
+        "base_patch_sha256": hashlib.sha256(image.convert("RGBA").crop(rect).tobytes()).hexdigest(),
     }
     out.info[METADATA_KEY] = json.dumps(record, sort_keys=True)
     return out, record
@@ -292,3 +342,37 @@ def add_png_metadata(png_info, record):
     if record is not None:
         png_info.add_text(METADATA_KEY, json.dumps(record, sort_keys=True))
     return png_info
+
+
+def restore_campaign(image, clean_base):
+    """Retira sólo el sello usando píxeles originales, sin tocar precios/fecha/foto.
+    clean_base es un original verificado; su región debe coincidir con la huella
+    guardada antes de estampar. Nunca reconstruir el fondo con IA ni pintar encima.
+    """
+    marker = _read_marker(image)
+    if marker is None:
+        return image
+    if clean_base.size != image.size or _read_marker(clean_base):
+        raise CleanBaseRequired("La base de retirada no es un original limpio compatible.")
+    rect = tuple(marker["rect"])
+    clean_patch = clean_base.convert("RGBA").crop(rect)
+    if hashlib.sha256(clean_patch.tobytes()).hexdigest() != marker.get("base_patch_sha256"):
+        raise CleanBaseRequired("El recorte limpio no coincide con el original archivado.")
+    if hashlib.sha256(image.convert("RGBA").crop(rect).tobytes()).hexdigest() != marker["patch_sha256"]:
+        raise CleanBaseRequired("El área temática fue modificada; regenerar con el renderer original.")
+    out = image.copy() if image.mode == "RGBA" else image.convert("RGBA")
+    out.paste(clean_patch, rect[:2])
+    out.info.pop(METADATA_KEY, None)
+    return out
+
+
+def needs_campaign_refresh(record, campaign, generated_at=None):
+    """Incluir altas/retirada en el ciclo existente, incluso sin cambios de precio.
+    No crea cron ni dispara una publicación; el controlador original debe llamarla.
+    """
+    if not isinstance(campaign, Campaign):
+        campaign = Campaign.from_mapping(campaign)
+    wanted = campaign.fingerprint(generated_at)
+    if wanted is None:
+        return bool(record)
+    return not record or record.get("fingerprint") != wanted

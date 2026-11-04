@@ -16,7 +16,8 @@ from tema_campana import (
     apply_campaign, placement, clear_cache, cache_size, add_png_metadata, METADATA_KEY,
 )
 
-CFG = json.loads((HERE / "campana-tematica.json").read_text())
+CFG = json.loads("{\"campaign_enabled\":true,\"campaign_id\":\"black_month_2026\",\"campaign_label\":\"BLACK MONTH\",\"campaign_start\":\"2026-11-01\",\"campaign_end\":\"2026-11-30\",\"campaign_style\":\"compact_ribbon\",\"campaign_position\":\"top_right\",\"campaign_secondary_color\":\"#a4f232\",\"campaign_background_color\":\"#041021\",\"campaign_foreground_color\":\"#f3f8ff\",\"campaign_border_color\":\"#35c8ff\",\"campaign_width\":224,\"campaign_height\":32,\"campaign_margin_x\":24,\"campaign_margin_y\":12,\"campaign_timezone\":\"America/Guayaquil\",\"campaign_layout\":\"signature_1200_header_v1\"}")
+# Fixture de regresión del sello mínimo anterior; nunca es configuración productiva.
 # Fuente exclusivamente para las pruebas sintéticas. Producción debe suministrar
 # la fuente original del motor, sin cambiar familia ni peso.
 FONT = ImageFont.truetype("DejaVuSans.ttf", 18)

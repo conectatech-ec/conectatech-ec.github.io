@@ -33,7 +33,7 @@ ordered = sorted(times)
 print(json.dumps({
     "tipo": "MEDICION_SINTETICA_NO_LOTE_PRODUCTIVO",
     "lienzo": [1200, 1200], "iteraciones": len(times),
-    "sello_pixeles": 224 * 32, "fraccion_lienzo": (224 * 32) / (1200 * 1200),
+    "sello_pixeles": campaign.width * campaign.height, "fraccion_lienzo": (campaign.width * campaign.height) / (1200 * 1200),
     "primer_sello_ms": round(cold_ms, 4),
     "capa_cache_mediana_ms": round(statistics.median(times), 4),
     "capa_cache_p95_ms": round(ordered[int(len(ordered) * .95) - 1], 4),
