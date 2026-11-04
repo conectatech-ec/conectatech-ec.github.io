@@ -169,12 +169,15 @@ async function main() {
             })};
         });
         // La disponibilidad central ya filtra agotados por defecto y los precios sólo son de elegibles.
-        const order = mode => {
-          const list=catalogProducts.filter(p=>availabilityCore.forProduct(p).main_catalog);
+        const presentation=await page.evaluate(()=>window.CONECTATECH_PRESENTACION||null);
+        const commercialOrder=presentation?.prioridadComercial?.activa
+          ? require('../assets/presentacion-web/comercial.js') : null;
+        const order = (mode, selectedCategory = null) => {
+          const list=catalogProducts.filter(p=>availabilityCore.forProduct(p).main_catalog&&(!selectedCategory||category(p)===selectedCategory));
           const updatedTime=p=>Date.parse(editorialDate(p,payload)||payload.productos[p.sku]?.actualizadoEn||'')||0;
           const hasPhoto=p=>Boolean(p.imageUrl||payload.productos[p.sku]?.imagen?.src);
           const priority=p=>editorialDate(p,payload)?1:({nuevo:0,actualizado:1}[payload.productos[p.sku]?.tipoCambio]??2);
-          return list.sort((a,b)=>{
+          const sorted=list.sort((a,b)=>{
             const eligible=Number(availabilityCore.forProduct(b).commercial_eligible)-Number(availabilityCore.forProduct(a).commercial_eligible);if(eligible)return eligible;
             const photo=Number(hasPhoto(b))-Number(hasPhoto(a));if(photo)return photo;
             if(mode==='nombre')return a.name.localeCompare(b.name,'es',{sensitivity:'base',numeric:true});
@@ -182,9 +185,15 @@ async function main() {
             if(mode==='catalogo')return 0;
             return Number(priority(a)===2)-Number(priority(b)===2)||updatedTime(b)-updatedTime(a)||priority(a)-priority(b);
           });
+          if(mode==='recomendados'&&commercialOrder){
+            const eligible=p=>Boolean(availabilityCore.forProduct(p).commercial_eligible&&String(payload.productos[p.sku]?.imagen?.src||p.imageUrl||'').startsWith('/imagenes/')&&slugs[p.sku]&&Number.isFinite(p.promo)&&p.promo>0&&Number.isFinite(p.pvp)&&p.pvp>0);
+            return commercialOrder.ordenar(sorted,eligible,presentation.prioridadComercial.paginasIniciales);
+          }
+          return sorted;
         };
-        const defaultMode = payload.ordenPredeterminado || 'recientes';
-        check('orden_inicial', await page.locator('#catalogSort').inputValue() === defaultMode && equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Orden inicial distinto de las novedades publicadas.');
+        const defaultMode = commercialOrder ? 'recomendados' : payload.ordenPredeterminado || 'recientes';
+        row.modo_inicial_esperado=defaultMode;
+        check('orden_inicial', await page.locator('#catalogSort').inputValue() === defaultMode && equals(await ids(), order(defaultMode).slice(0, pageSize).map(p => p.sku)), 'Orden inicial distinto del modo configurado: '+defaultMode);
         row.ordenes = {};
         for (const mode of ['fotos', 'recientes', 'catalogo', 'nombre', 'precio-asc', 'precio-desc']) {
           await page.locator('#catalogSort').selectOption(mode);
@@ -230,7 +239,7 @@ async function main() {
         const categoryName = [...new Set(catalogProducts.map(category))].find(name => catalogProducts.filter(p => category(p) === name).length > pageSize) || category(catalogProducts[0]);
         const chip = page.locator('#chips .chip').filter({hasText: categoryName});
         await chip.first().click();
-        const expectedCategory = order(defaultMode).filter(p => category(p) === categoryName).slice(0, pageSize).map(p => p.sku);
+        const expectedCategory = order(defaultMode,categoryName).slice(0, pageSize).map(p => p.sku);
         check('categoria', equals(await ids(), expectedCategory), 'Filtro de categoría no corresponde a los productos de ' + categoryName);
         await page.locator('#chips .chip[data-cat="TODOS"]').click();
         for (const sku of skus) {

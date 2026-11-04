@@ -1,0 +1,87 @@
+{
+  "estado": "CANDIDATO_LOCAL_NO_PUBLICADO",
+  "productos": {
+    "CARG062": {
+      "item": {
+        "archivo": "importacion/lotes/continuacion-127/editorial-imagenes/CARG062.png",
+        "sha256": "ca4468d82c8919cfedc1ddf5f78f065941c80056d9b32a5a011734089fead121",
+        "posicion": 1,
+        "revision_regla": 2,
+        "revision_publicacion": 127,
+        "modelo_revisado": true,
+        "calidad_revisada": true,
+        "sin_datos_privados": true,
+        "fuente": "https://drive.google.com/file/d/1DgJ4205VKLzaZg3bmDDMyPmMt8xYqmk4/view",
+        "contiene_caja": false,
+        "fondo_aprobado": true,
+        "referencia_fabricante": false,
+        "nota_revision": "Representación asistida autorizada078. Cargador negro completo y cable USB-C según diagrama propio; adaptador corto USB-C hembra a DC macho cotejado con textoType-C toUniversalDCinterface;14puntas enL cotejadas con foto física,13cilíndricas y1rectangularamarilla. Fondo blanco,sincaja,sin etiquetas,100W,marca,puertos ocultos o cableACinventado. No es captura física directa del cargador. Primera propuesta descartada por bocaDCfemaleerrónea en cablecorto; maestro final corrige aUSB-Cfemale.",
+        "ajustes": {}
+      },
+      "proceso": {
+        "posicion": 1,
+        "contiene_caja": false,
+        "referencia_fabricante": false,
+        "referencia_distribuidor": false,
+        "fuente": "https://drive.google.com/file/d/1DgJ4205VKLzaZg3bmDDMyPmMt8xYqmk4/view",
+        "original": "/imagenes/carg062/original-ca4468d82c8919cf.png",
+        "sha256_original": "ca4468d82c8919cfedc1ddf5f78f065941c80056d9b32a5a011734089fead121",
+        "resolucion_original": [
+          1254,
+          1254
+        ],
+        "resolucion_util": [
+          1008,
+          1008
+        ],
+        "versiones": {
+          "1200": {
+            "url": "/imagenes/carg062/CARG062-r127-01.webp",
+            "sha256": "88af6a209dee563f16188ae48b7071c555a4770ba4f028ec304591f9f1549b89",
+            "bytes": 59822,
+            "ancho": 1200,
+            "alto": 1200
+          },
+          "600": {
+            "url": "/imagenes/carg062/CARG062-r127-01-600.webp",
+            "sha256": "214be8749187d06403b1d7a31b994ace77c4fd4b2b15db8fa10217d1805cdb3c",
+            "bytes": 21786,
+            "ancho": 600,
+            "alto": 600
+          },
+          "300": {
+            "url": "/imagenes/carg062/CARG062-r127-01-300.webp",
+            "sha256": "b0cc773dc70c94bff13adbfde9a08184b80df2aa5e82b351410aada039473a0a",
+            "bytes": 8560,
+            "ancho": 300,
+            "alto": 300
+          }
+        },
+        "revision_regla": 2,
+        "revision_visual": "Representación asistida autorizada078. Cargador negro completo y cable USB-C según diagrama propio; adaptador corto USB-C hembra a DC macho cotejado con textoType-C toUniversalDCinterface;14puntas enL cotejadas con foto física,13cilíndricas y1rectangularamarilla. Fondo blanco,sincaja,sin etiquetas,100W,marca,puertos ocultos o cableACinventado. No es captura física directa del cargador. Primera propuesta descartada por bocaDCfemaleerrónea en cablecorto; maestro final corrige aUSB-Cfemale.",
+        "recorte": null,
+        "silueta_revisada": null,
+        "ajustes": {},
+        "dhash": "0974734567737305",
+        "huella_proceso": "46992e9a853a812bfc8c1e466385e9e1c766295b2c88fb273eb9a08eba30922e",
+        "version_proceso": 2,
+        "revision_publicacion": 127
+      },
+      "reglaProyectada": {
+        "autenticidad": "original verificado",
+        "presentacion": "sin caja",
+        "instrucciones": "",
+        "evidencia_autenticidad": "Instrucción comercial explícita del propietario (2026-10-11): original por defecto; excepción AAA sólo JBL, SAMSUNG, APPLE, BOSE y LENOVO. Marca de referencia: fuera de las cinco excepciones; https://docs.google.com/spreadsheets/d/1ojxVboQxWpmm8m4nyp7TDoWRSvhzymYjjTCUY_3iG4I/edit — Registro, filas 2099,2100,2101; Tipo: Caja original. No acredita derechos de fotografías externas ni especificaciones técnicas.",
+        "revision": 2
+      }
+    }
+  },
+  "primerasPortadas": 1,
+  "altasCodigo": 0,
+  "requiere": [
+    "QA local",
+    "CI cabeza final",
+    "3recursos HTTP",
+    "activación yHTTP/Chromium públicos"
+  ]
+}
