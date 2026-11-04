@@ -76,3 +76,38 @@ jobs:
           # Solo pixeles ya publicados en la web; nunca se accede a Drive ni a credenciales.
           print("CT_PUBLIC_PHOTO_JSON="+json.dumps(payload,separators=(",",":")))
           PY
+
+  verificar-identidad-drive-existente:
+    if: github.repository == 'conectatech-ec/conectatech-ec.github.io' && github.ref == 'refs/heads/banners/campanas-20261103'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+    steps:
+      - name: Probar solo lectura con identidad documentada del motor original
+        env:
+          CONECTATECH_DRIVE_ACCESS_TOKEN: ${{ secrets.CONECTATECH_DRIVE_ACCESS_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json,os,urllib.request,urllib.error
+          token=os.environ.get("CONECTATECH_DRIVE_ACCESS_TOKEN","").strip()
+          if not token:
+            print("CT_DRIVE_DIAGNOSTICO="+json.dumps({"estado":"IDENTIDAD_DOCUMENTADA_NO_CONFIGURADA_EN_ACTIONS","solicitudes_drive":0}))
+            raise SystemExit(0)
+          def get(path):
+            req=urllib.request.Request("https://www.googleapis.com/drive/v3/"+path,headers={"Authorization":"Bearer "+token})
+            with urllib.request.urlopen(req,timeout=30) as r:return json.load(r)
+          try:
+            identity=get("about?fields=user(emailAddress)")
+            owner=identity.get("user",{}).get("emailAddress","").lower()
+            if owner!="conectatech.ecu@gmail.com":
+              print("CT_DRIVE_DIAGNOSTICO="+json.dumps({"estado":"IDENTIDAD_NO_CORRESPONDE_A_CUENTA_EMPRESARIAL","escrituras":0}))
+              raise SystemExit(0)
+            ids=["1kCbsenZas7F_Jq0Nvy3kbLQvHg1BmgUO","1ReRNdApH5smbaQmhIcL1i2sKxumle0LI","1jm2Q5S7fSnGqwiJO6PKlb6iAGM2xKNzi","1iNNrD3y5cBJAQoFN7LQJzYxCid3TvDs6"]
+            files=[get("files/"+i+"?fields=id,mimeType,size,capabilities(canEdit)&supportsAllDrives=true") for i in ids]
+            print("CT_DRIVE_DIAGNOSTICO="+json.dumps({"estado":"IDENTIDAD_EMPRESARIAL_VALIDADA","pilotos_accesibles":len(files),"pilotos_editables":sum(f.get("capabilities",{}).get("canEdit",False) for f in files),"escrituras":0}))
+          except urllib.error.HTTPError as e:
+            try:body=json.loads(e.read());reason=body.get("error",{}).get("errors",[{}])[0].get("reason","sin_reason")
+            except Exception:reason="respuesta_no_json"
+            print("CT_DRIVE_DIAGNOSTICO="+json.dumps({"estado":"ERROR_HTTP_IDENTIDAD_EXISTENTE","http":e.code,"reason":reason,"escrituras":0}))
+          PY
