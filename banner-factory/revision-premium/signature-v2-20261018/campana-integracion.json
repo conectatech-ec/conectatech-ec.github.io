@@ -1,5 +1,5 @@
 {
-  "estado": "APROBACION_CREATIVA_REGISTRADA_PENDIENTE_CONEXION_AL_RENDERER_Y_PUBLICACION_DRIVE",
+  "estado": "CODIGO_Y_RECURSO_APROBADO_VALIDADOS_PENDIENTE_RENDERER_Y_DRIVE",
   "campaign_id": "black_month_2026",
   "campaign_start": "2026-11-01",
   "campaign_end": "2026-11-30",
@@ -32,5 +32,34 @@
   "dependencia_central": "No se modificaron cron/triggers. La aplicación y retirada real necesitan que el controlador existente invoque el módulo. La expiración configurada no es una retirada desplegada.",
   "portadas_v2": "Propuestas rechazadas; no implementar.",
   "rama": "banners/campanas-20261103",
-  "validacion_nueva": "Pendiente de resultado Actions después de este commit."
+  "validacion_nueva": {
+    "pruebas": 38,
+    "resultado": "success",
+    "run": 41746616378,
+    "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/41746616378",
+    "commit_probado": "298456db71afcfe08bfb4e8ff825daea7f9b96e7",
+    "retirada_desde_guayaquil": "2026-12-01T00:00:00-05:00",
+    "equivalente_utc": "2026-12-01T05:00:00Z",
+    "prueba_restaura_region_original": true,
+    "prueba_preserva_precios_fuera_region": true,
+    "limite": "QA sintético; no acredita conexión al motor ni publicación o retirada real en Drive."
+  },
+  "biblioteca_observada": {
+    "banners": 289,
+    "categorias": 11,
+    "por_categoria": {
+      "telefonos_tablets": 24,
+      "smartwatch": 28,
+      "almacenamiento": 37,
+      "pantallas": 4,
+      "audifonos": 51,
+      "cables": 58,
+      "cargadores": 34,
+      "microfonos": 23,
+      "parlantes": 14,
+      "powerbanks": 8,
+      "computacion": 8
+    },
+    "actualizados_en_drive": 0
+  }
 }
