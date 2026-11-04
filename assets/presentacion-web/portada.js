@@ -37,6 +37,19 @@
         brandSubtitle.style.setProperty('--pw-motto-inset',Math.max(0,inset)+'px');
       }
     }
+    if(brand&&brandSubtitle){
+      let drop=0;
+      const explore=presentationHeader.querySelector('.ct-topnav a[href="#catalogo"]');
+      if(matchMedia('(min-width:901px)').matches&&explore){
+        const bottom=element=>{
+          const text=element.firstChild,start=text.textContent.search(/\S/),letter=document.createRange();
+          letter.setStart(text,start);letter.setEnd(text,start+1);return letter.getBoundingClientRect().bottom;
+        };
+        const current=parseFloat(brand.style.getPropertyValue('--pw-brand-drop'))||0;
+        drop=Math.max(0,current+bottom(explore)-bottom(brandSubtitle));
+      }
+      brand.style.setProperty('--pw-brand-drop',drop+'px');
+    }
     document.documentElement.style.setProperty('--pw-header-height',Math.ceil(presentationHeader.getBoundingClientRect().height)+'px');
   };
   document.fonts?.ready.then(syncHeaderOffset);
