@@ -578,3 +578,8 @@ header .brand .ct-header-subtitle{padding-left:6px}
 header .brand .ct-header-subtitle{text-align:center;padding-left:0;margin-top:13px}
 header .brand .ct-header-subtitle span{display:block;margin:3px 0 0}
 @media(max-width:600px){header .brand .ct-header-subtitle{margin-top:11px}}
+
+
+/* Ajuste fino del lema: ligeramente más abajo y hacia la derecha. */
+header .brand .ct-header-subtitle{transform:translate(14px,6px)}
+@media(max-width:600px){header .brand .ct-header-subtitle{transform:translate(6px,4px)}}
