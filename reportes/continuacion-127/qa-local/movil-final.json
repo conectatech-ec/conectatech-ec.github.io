@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "fecha": "2026-11-04T03:25:55.386Z",
+  "base": "http://127.0.0.1:8881",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "CARG062",
+      "sku": "CARG062",
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-04T03:25:55.572Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/carg062-cargador-universal-para-laptop-65w/",
+      "url_comprobada": "http://127.0.0.1:8881/productos/carg062-cargador-universal-para-laptop-65w/",
+      "archivo_html": "productos/carg062-cargador-universal-para-laptop-65w/index.html",
+      "http": 200,
+      "sha256_html": "18ec904e7741eab172d37343caad97a55170f4ac0201fbbe40194ec8da48a3e6",
+      "sha256_html_local": "18ec904e7741eab172d37343caad97a55170f4ac0201fbbe40194ec8da48a3e6",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/carg062/CARG062-r127-01.webp",
+        "url_cargada": "http://127.0.0.1:8881/imagenes/carg062/CARG062-r127-01-600.webp?v=214be8749187d064",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "precio_archivado_por_stock_cero": false,
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8881/productos/carg062-cargador-universal-para-laptop-65w/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8881/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8881/assets/disponibilidad-web.css?v=1",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8881/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8881/imagenes/carg062/CARG062-r127-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/continuacion-127/qa-local/movil-final/CARG062-390.png",
+      "sha256": "a6c9421ee283d072dd639292b29c656c1934ed527e3524d647ead73aa1bec20f",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/continuacion-127/qa-local/movil-final/CARG062-1280.png",
+        "sha256": "1ca805977c090b9134457c65bb74a0828508f328fedf31a3d7e7960f10e497cf",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
