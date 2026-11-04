@@ -78,12 +78,13 @@ jobs:
           for py in range(fh):
             for px in range(fw):
               dx=px+fx-(x+S/2);dy=py+fy-(y+S/2)
-              if dx*dx+dy*dy<=(S/2+1)**2:frame.putpixel((px,py),(0,0,0,0))
+              tx=px+fx-x;ty=py+fy-y
+              if 0<=tx<S and 0<=ty<S and mark.getpixel((tx,ty))[3]>0:frame.putpixel((px,py),(0,0,0,0))
           tile.alpha_composite(frame,(fx,fy))
           protected=mark.getchannel("A")
           after=tile.crop((x,y,x+S,y+S))
           for k in range(3):
-            d=ImageChops.difference(after.getchannel(k),mark.getchannel(k))
+            d=ImageChops.difference(after.getchannel(k),expected.crop((x,y,x+S,y+S)).getchannel(k))
             if ImageChops.multiply(d,protected).getbbox():raise RuntimeError("Decoración altera el logo")
           if tile.getbbox()[3]>188:raise RuntimeError("Emblema invade zona de títulos")
           def emit(kind,img,extra=None):
@@ -99,5 +100,6 @@ jobs:
           }
           for sku,(path,expected_hash) in photos.items():
             im,data=get(path,expected_hash)
+            im.thumbnail((900,900),Image.Resampling.LANCZOS)
             emit(sku,im,{"public_image_sha256":hashlib.sha256(data).hexdigest(),"public_path":path})
           PY

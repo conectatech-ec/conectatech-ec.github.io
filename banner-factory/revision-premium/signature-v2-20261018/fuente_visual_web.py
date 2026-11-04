@@ -55,8 +55,8 @@ class WebPhoto:
     descriptor:dict
 
     def signature_descriptor(self,repo):
-        return {**self.descriptor,"original":"/"+self.master.relative_to(repo.resolve()).as_posix(),
-            "sha256_original":self.master_sha256,"revision_visual":True,
+        return {**self.descriptor,"original":"/"+self.primary.relative_to(repo.resolve()).as_posix(),
+            "sha256_original":self.primary_sha256,"revision_visual":True,
             "fuente":"https://conectatech-ec.github.io/"+self.primary.relative_to(repo.resolve()).as_posix()}
 
     def manifest_fields(self,repo):
@@ -132,7 +132,7 @@ def _same_renderer_source(factory,source,repo):
         # Volver a verificar justo antes del render evita un archivo cambiado en paralelo.
         if sha256_file(source.master)!=source.master_sha256 or sha256_file(source.primary)!=source.primary_sha256:
             raise VisualSourceError("Imagen cambió después de seleccionar; volver a resolver")
-        return c,source.signature_descriptor(Path(repo).resolve()),source.master,specs
+        return c,source.signature_descriptor(Path(repo).resolve()),source.primary,specs
     factory.verified=selected
     try:yield
     finally:factory.verified=original
@@ -161,7 +161,7 @@ def regenerate_sku(factory,repo,hub_snapshot,out,sku,source,*,allow_all=False):
     if entry.get("estado") in {"BLOQUEADO","DESACTUALIZADO"}:
         return {"sku":sku,"estado":entry["estado"],"motivo":entry.get("motivo"),"publicado":False}
     observed=(entry.get("fotografia_fuente") or {}).get("maestro_sha256")
-    if observed!=source.master_sha256:
+    if observed!=source.primary_sha256:
         raise VisualSourceError("Renderer no utilizó el maestro vigente")
     entry["fuente_visual_web"]=source.manifest_fields(repo)
     entry["foto_web_actualizada"]=True
