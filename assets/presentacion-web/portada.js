@@ -18,6 +18,8 @@
     brand.appendChild(original);brand.insertAdjacentHTML('beforeend',mark());
     brand.insertAdjacentHTML('beforeend','<span class="pw-brand-values" aria-hidden="true">TECNOLOGÍA <i>·</i> CONECTIVIDAD <i>·</i> INNOVACIÓN</span>');
   }
+  const brandSubtitle=document.querySelector('header .ct-header-subtitle');
+  if(brand&&brandSubtitle)brand.appendChild(brandSubtitle);
   const footerBrand=document.querySelector('footer>b');
   if(footerBrand)footerBrand.innerHTML=mark();
   const brandRow=document.querySelector('header .brandrow');

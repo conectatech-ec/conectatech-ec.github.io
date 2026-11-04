@@ -558,3 +558,12 @@ header .brand .pw-brand-values i{font-size:10px;line-height:1;color:#b5ed77;text
 @media(max-width:359px){header .brand .pw-brand-values{font-size:7px;letter-spacing:.05px;gap:3px}}
 /* Los destinos del catálogo quedan visibles bajo el encabezado de cada temporada. */
 @media(min-width:601px){:is(#catalogo,#destacados,#beneficios){scroll-margin-top:calc(var(--pw-header-height,206px) + 18px)}}
+
+/* Frase de marca dentro del bloque original: más visible y sin una fila inferior vacía. */
+header{padding-bottom:8px}
+header .brand .ct-header-subtitle{position:static;margin:6px 0 0;color:#a4da7d;font-family:var(--ct-font-ui)!important;font-size:14px;font-weight:700;letter-spacing:.55px;line-height:1.35;white-space:nowrap;text-align:left}
+header .brand .ct-header-subtitle span{display:inline;margin-left:6px;font-family:var(--ct-font-ui)!important;font-size:9.5px;font-weight:500;letter-spacing:.15px;color:#d2e1eb}
+[data-ct-temporada=black-month] .pw-brand-campaign{top:calc(50% - var(--pw-logo-size) * .7196)}
+@media(max-width:900px){header .search{grid-row:2}header .ct-topnav{grid-row:3}header .brand .ct-header-subtitle{font-size:13px;margin-top:4px;letter-spacing:.4px}}
+@media(max-width:600px){header .wrap{row-gap:7px}header .brand .ct-header-subtitle{font-size:13px;margin-top:5px;letter-spacing:.2px}header .brand .ct-header-subtitle span{display:block;margin:2px 0 0;font-size:9px;line-height:1.2}}
+@media(max-width:359px){header .brand .ct-header-subtitle{font-size:12px;margin-top:4px;letter-spacing:.05px}[data-ct-temporada=black-month] .pw-brand-campaign{top:calc(50% - var(--pw-logo-size) * .7113)}}
