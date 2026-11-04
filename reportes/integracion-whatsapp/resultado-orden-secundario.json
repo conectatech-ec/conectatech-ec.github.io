@@ -960,7 +960,7 @@
     "version": 1,
     "request_id": "direccion-2026-11-04-secundario-igual-al-maestro",
     "request_sha256": "caca0bd1ba4710ff1f07c761827247f031d178c0278e219084a4892feecfbd62",
-    "estado": "REQUIERE_RECUPERACION",
+    "estado": "RECREACION_META_VERIFICADA",
     "catalog_id": "1668633188201887",
     "fecha_corte": "2026-11-03",
     "productos": 1005,
@@ -972,7 +972,7 @@
         "familia": "Cargadores y Energía",
         "old_id": "29549347661339996",
         "retailer_id": "conectatech-web:cargadores-y-energia",
-        "estado": "RESTAURACION_PENDIENTE",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29549347661339996",
           "name": "CONECTATECH | CARGADORES Y ENERGÍA",
@@ -1230,14 +1230,15 @@
           "POWE022",
           "UPS001",
           "UPS002"
-        ]
+        ],
+        "new_id": "29571887582419337"
       },
       {
         "prioridad": 18,
         "familia": "Computación y Periféricos",
         "old_id": "29281031271531985",
         "retailer_id": "conectatech-web:computacion-y-perifericos",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29281031271531985",
           "name": "CONECTATECH | COMPUTACIÓN Y PERIFÉRICOS",
@@ -1365,14 +1366,15 @@
           "TECL030",
           "TECL031",
           "TECL032"
-        ]
+        ],
+        "new_id": "29303417089293403"
       },
       {
         "prioridad": 17,
         "familia": "Deportes",
         "old_id": "28992894360369668",
         "retailer_id": "conectatech-web:deportes",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "28992894360369668",
           "name": "CONECTATECH | DEPORTES",
@@ -1384,14 +1386,15 @@
         },
         "sku": [
           "GANC001"
-        ]
+        ],
+        "new_id": "29015096734816097"
       },
       {
         "prioridad": 16,
         "familia": "Fotografía y Creación de Contenido",
         "old_id": "28795721156786951",
         "retailer_id": "conectatech-web:fotografia-y-creacion-de-contenido",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "28795721156786951",
           "name": "CONECTATECH | FOTOGRAFÍA Y CREACIÓN DE CONTENIDO",
@@ -1445,14 +1448,15 @@
           "WEBC002",
           "WEBC003",
           "WEBC004"
-        ]
+        ],
+        "new_id": "28817723151253418"
       },
       {
         "prioridad": 15,
         "familia": "Gaming y Videojuegos",
         "old_id": "28221948667480708",
         "retailer_id": "conectatech-web:gaming-y-videojuegos",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "28221948667480708",
           "name": "CONECTATECH | GAMING Y VIDEOJUEGOS",
@@ -1464,14 +1468,15 @@
         },
         "sku": [
           "PALA001"
-        ]
+        ],
+        "new_id": "28243697251972516"
       },
       {
         "prioridad": 14,
         "familia": "Hogar y Accesorios",
         "old_id": "28559665173729521",
         "retailer_id": "conectatech-web:hogar-y-accesorios",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "28559665173729521",
           "name": "CONECTATECH | HOGAR Y ACCESORIOS",
@@ -1561,14 +1566,15 @@
           "VENT003",
           "VENT006",
           "VENT008"
-        ]
+        ],
+        "new_id": "28581702351525803"
       },
       {
         "prioridad": 13,
         "familia": "Iluminación",
         "old_id": "29213705631559499",
         "retailer_id": "conectatech-web:iluminacion",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29213705631559499",
           "name": "CONECTATECH | ILUMINACIÓN",
@@ -1610,14 +1616,15 @@
           "LINT010",
           "PANE002",
           "PANE003"
-        ]
+        ],
+        "new_id": "29236083322655063"
       },
       {
         "prioridad": 12,
         "familia": "Juguetes y Coleccionables",
         "old_id": "29273431145625408",
         "retailer_id": "conectatech-web:juguetes-y-coleccionables",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29273431145625408",
           "name": "CONECTATECH | JUGUETES Y COLECCIONABLES",
@@ -1832,14 +1839,15 @@
           "JUGU166",
           "JUGU167",
           "JUGU168"
-        ]
+        ],
+        "new_id": "29295807340054455"
       },
       {
         "prioridad": 11,
         "familia": "Protección para Dispositivos",
         "old_id": "29414756581469961",
         "retailer_id": "conectatech-web:proteccion-para-dispositivos",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29414756581469961",
           "name": "CONECTATECH | PROTECCIÓN PARA DISPOSITIVOS",
@@ -1869,14 +1877,15 @@
           "PROT003",
           "PROT004",
           "PROT005"
-        ]
+        ],
+        "new_id": "29437251875887098"
       },
       {
         "prioridad": 10,
         "familia": "Redes e Internet",
         "old_id": "28911540815169756",
         "retailer_id": "conectatech-web:redes-e-internet",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "28911540815169756",
           "name": "CONECTATECH | REDES E INTERNET",
@@ -1898,14 +1907,15 @@
           "ROUT002",
           "SWIT001",
           "SWIT002"
-        ]
+        ],
+        "new_id": "28933728902950947"
       },
       {
         "prioridad": 9,
         "familia": "Seguridad y Cámaras",
         "old_id": "28800956076200001",
         "retailer_id": "conectatech-web:seguridad-y-camaras",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "28800956076200001",
           "name": "CONECTATECH | SEGURIDAD Y CÁMARAS",
@@ -1933,14 +1943,15 @@
           "CAMA009",
           "SENS001",
           "TIMB001"
-        ]
+        ],
+        "new_id": "28823055347323407"
       },
       {
         "prioridad": 8,
         "familia": "Soportes y Accesorios",
         "old_id": "28994443486871888",
         "retailer_id": "conectatech-web:soportes-y-accesorios",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "28994443486871888",
           "name": "CONECTATECH | SOPORTES Y ACCESORIOS",
@@ -2054,14 +2065,15 @@
           "STYL005",
           "STYL006",
           "VENT009"
-        ]
+        ],
+        "new_id": "29016780301304873"
       },
       {
         "prioridad": 7,
         "familia": "TV y Entretenimiento",
         "old_id": "29182685414683972",
         "retailer_id": "conectatech-web:tv-y-entretenimiento",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29182685414683972",
           "name": "CONECTATECH | TV Y ENTRETENIMIENTO",
@@ -2099,14 +2111,15 @@
           "TVBO007",
           "TVBO008",
           "TVBO010"
-        ]
+        ],
+        "new_id": "29205073245778522"
       },
       {
         "prioridad": 6,
         "familia": "Almacenamiento",
         "old_id": "40900167666249052",
         "retailer_id": "conectatech-web:almacenamiento",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "40900167666249052",
           "name": "CONECTATECH | ALMACENAMIENTO",
@@ -2196,14 +2209,15 @@
           "TARJ017",
           "TARJ018",
           "TARJ019"
-        ]
+        ],
+        "new_id": "40943098275289324"
       },
       {
         "prioridad": 5,
         "familia": "Smartwatches y Wearables",
         "old_id": "29192534027098006",
         "retailer_id": "conectatech-web:smartwatches-y-wearables",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29192534027098006",
           "name": "CONECTATECH | SMARTWATCHES Y WEARABLES",
@@ -2277,14 +2291,15 @@
           "REL067",
           "REL069",
           "REL070"
-        ]
+        ],
+        "new_id": "29218573797827362"
       },
       {
         "prioridad": 4,
         "familia": "Monitores",
         "old_id": "28794680266857348",
         "retailer_id": "conectatech-web:monitores",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "28794680266857348",
           "name": "CONECTATECH | MONITORES",
@@ -2296,14 +2311,15 @@
         },
         "sku": [
           "MONI005"
-        ]
+        ],
+        "new_id": "28816827724642602"
       },
       {
         "prioridad": 3,
         "familia": "Televisores",
         "old_id": "29427980286807132",
         "retailer_id": "conectatech-web:televisores",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29427980286807132",
           "name": "CONECTATECH | TELEVISORES",
@@ -2319,14 +2335,15 @@
           "TELE001",
           "TELE002",
           "TELE003"
-        ]
+        ],
+        "new_id": "29450531844551976"
       },
       {
         "prioridad": 2,
         "familia": "Tablets",
         "old_id": "29402498082770780",
         "retailer_id": "conectatech-web:tablets",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "29402498082770780",
           "name": "CONECTATECH | TABLETS",
@@ -2344,14 +2361,15 @@
           "TABL002",
           "TABL003",
           "TABL004"
-        ]
+        ],
+        "new_id": "29428680100152578"
       },
       {
         "prioridad": 1,
         "familia": "Celulares y Smartphones",
         "old_id": "27465301609834786",
         "retailer_id": "conectatech-web:celulares-y-smartphones",
-        "estado": "PREPARADO",
+        "estado": "VERIFICADO",
         "snapshot": {
           "id": "27465301609834786",
           "name": "CONECTATECH | CELULARES",
@@ -2401,9 +2419,81 @@
           "TELF034",
           "TELF036",
           "TELF037"
-        ]
+        ],
+        "new_id": "27486906171007663"
       }
     ],
-    "orden_whatsapp_verificado": false
-  }
+    "orden_whatsapp_verificado": false,
+    "orden_solicitado": [
+      "Celulares y Smartphones",
+      "Tablets",
+      "Televisores",
+      "Monitores",
+      "Smartwatches y Wearables",
+      "Almacenamiento",
+      "TV y Entretenimiento",
+      "Soportes y Accesorios",
+      "Seguridad y Cámaras",
+      "Redes e Internet",
+      "Protección para Dispositivos",
+      "Juguetes y Coleccionables",
+      "Iluminación",
+      "Hogar y Accesorios",
+      "Gaming y Videojuegos",
+      "Fotografía y Creación de Contenido",
+      "Deportes",
+      "Computación y Periféricos",
+      "Cargadores y Energía"
+    ],
+    "orden_lista_meta": [
+      "conectatech-web:celulares-y-smartphones",
+      "conectatech-web:tablets",
+      "conectatech-web:televisores",
+      "conectatech-web:monitores",
+      "conectatech-web:smartwatches-y-wearables",
+      "conectatech-web:almacenamiento",
+      "conectatech-web:tv-y-entretenimiento",
+      "conectatech-web:soportes-y-accesorios",
+      "conectatech-web:seguridad-y-camaras",
+      "conectatech-web:redes-e-internet",
+      "conectatech-web:proteccion-para-dispositivos",
+      "conectatech-web:juguetes-y-coleccionables",
+      "conectatech-web:iluminacion",
+      "conectatech-web:hogar-y-accesorios",
+      "conectatech-web:gaming-y-videojuegos",
+      "conectatech-web:fotografia-y-creacion-de-contenido",
+      "conectatech-web:deportes",
+      "conectatech-web:computacion-y-perifericos",
+      "conectatech-web:cargadores-y-energia"
+    ],
+    "orden_lista_meta_coincide": true,
+    "productos_sin_cambios": 1005,
+    "finalizado_utc": "2026-11-04T17:23:11.771Z"
+  },
+  "estado": "ORDEN_SECUNDARIO_META_VERIFICADO",
+  "orden": [
+    "CONECTATECH | CELULARES",
+    "CONECTATECH | TABLETS",
+    "CONECTATECH | TELEVISORES",
+    "CONECTATECH | MONITORES",
+    "CONECTATECH | SMARTWATCHES Y WEARABLES",
+    "CONECTATECH | ALMACENAMIENTO",
+    "CONECTATECH | TV Y ENTRETENIMIENTO",
+    "CONECTATECH | SOPORTES Y ACCESORIOS",
+    "CONECTATECH | SEGURIDAD Y CÁMARAS",
+    "CONECTATECH | REDES E INTERNET",
+    "CONECTATECH | PROTECCIÓN PARA DISPOSITIVOS",
+    "CONECTATECH | JUGUETES Y COLECCIONABLES",
+    "CONECTATECH | ILUMINACIÓN",
+    "CONECTATECH | HOGAR Y ACCESORIOS",
+    "CONECTATECH | GAMING Y VIDEOJUEGOS",
+    "CONECTATECH | FOTOGRAFÍA Y CREACIÓN DE CONTENIDO",
+    "CONECTATECH | DEPORTES",
+    "CONECTATECH | COMPUTACIÓN Y PERIFÉRICOS",
+    "CONECTATECH | CARGADORES Y ENERGÍA",
+    "CONECTATECH | CABLES Y CONECTIVIDAD",
+    "CONECTATECH | AUDIO Y AUDÍFONOS"
+  ],
+  "productos": 1005,
+  "orden_whatsapp_verificado": false
 }
