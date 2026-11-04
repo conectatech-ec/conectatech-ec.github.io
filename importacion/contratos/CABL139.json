@@ -39,7 +39,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1RIC6UmXAaJpbFDnR9l3AcFVmDpahwJwd/view?usp=drivesdk",
     "https://drive.google.com/file/d/1dIEn7F2XTUjdsdMxPITk2hr_mnwx6Him/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/CABL139.json"
   ],
   "imagen_principal": "/imagenes/cabl139/CABL139-01.webp",
   "imagenes_secundarias": [],
@@ -97,7 +98,7 @@
   "fecha_verificacion": "2026-10-14T14:35:03.809564+00:00",
   "descripcion": "Cable compatible USB-C a USB-C | 2 m. USB-C macho a USB-C macho. Longitud nominal de 2 m. Cubierta trenzada.",
   "contenido_venta": "1 cable. No incluye equipos ni adaptadores adicionales.",
-  "compatibilidad": "Comprueba protocolo, potencia y datos admitidos por el equipo. Producto compatible/AAA; no se garantiza la potencia de un cable original de otra marca.",
+  "compatibilidad": "Comprueba el protocolo, la potencia y los datos admitidos por tu equipo.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -175,8 +176,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1dIEn7F2XTUjdsdMxPITk2hr_mnwx6Him/view?usp=drivesdk",
-      "evidencia": "Revisión del título, descripción, unidad y beneficios contra todas las fuentes del SKU; no se trasladan afirmaciones del empaque no comprobadas. Título comercial sin condición compatible por regla persistente; autenticidad/compatibilidad permanecen en sus propios atributos."
+      "fuente": "reportes/beneficios-128/fuentes/CABL139.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -191,85 +192,95 @@
       "archivo": "reportes/continuacion-082/http-publicacion.json",
       "sha256": "7a2f8b1ab01d6fb0debd726af946235163cd96ed54a912548da08adab68471ca",
       "sku": "CABL139"
-    },
-    "movil": {
-      "solicitado": "CABL139",
-      "sku": "CABL139",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-14T14:34:58.063Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/cabl139-cable-iph-usb-c-a-usb-c-2m-240w/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl139-cable-iph-usb-c-a-usb-c-2m-240w/",
-      "archivo_html": "productos/cabl139-cable-iph-usb-c-a-usb-c-2m-240w/index.html",
-      "http": 200,
-      "sha256_html": "add4dbd9d9457c58bc5b71dd9d5d59e079f10764ee408ace5d7b47c609146a0e",
-      "sha256_html_local": "add4dbd9d9457c58bc5b71dd9d5d59e079f10764ee408ace5d7b47c609146a0e",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/cabl139/CABL139-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl139/CABL139-01-600.webp?v=c1fa86ae512b5993",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/cabl139-cable-iph-usb-c-a-usb-c-2m-240w/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/cabl139/CABL139-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL139-390.png",
-      "sha256": "542298016ad06ed30e569e25b0c7a9841ca9b37460552517789a0279f5dfedbf",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL139-1280.png",
-        "sha256": "bcc96255bd2acdf5b8ec5948a07a613dc0a8c44eed1ac0fa89b0c346efad87f1",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     }
+  },
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "CABL139",
+        "sku": "CABL139",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-14T14:34:58.063Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/cabl139-cable-iph-usb-c-a-usb-c-2m-240w/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/cabl139-cable-iph-usb-c-a-usb-c-2m-240w/",
+        "archivo_html": "productos/cabl139-cable-iph-usb-c-a-usb-c-2m-240w/index.html",
+        "http": 200,
+        "sha256_html": "add4dbd9d9457c58bc5b71dd9d5d59e079f10764ee408ace5d7b47c609146a0e",
+        "sha256_html_local": "add4dbd9d9457c58bc5b71dd9d5d59e079f10764ee408ace5d7b47c609146a0e",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/cabl139/CABL139-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl139/CABL139-01-600.webp?v=c1fa86ae512b5993",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/cabl139-cable-iph-usb-c-a-usb-c-2m-240w/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/cabl139/CABL139-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL139-390.png",
+        "sha256": "542298016ad06ed30e569e25b0c7a9841ca9b37460552517789a0279f5dfedbf",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-082/qa-publica/fichas/CABL139-1280.png",
+          "sha256": "bcc96255bd2acdf5b8ec5948a07a613dc0a8c44eed1ac0fa89b0c346efad87f1",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/CABL139.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

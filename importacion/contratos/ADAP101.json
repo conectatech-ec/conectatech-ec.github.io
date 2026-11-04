@@ -44,7 +44,8 @@
     "https://drive.google.com/file/d/13WSyEsb14fO9kV4W7yS9tElNNXCOCAQW/view?usp=drivesdk",
     "https://drive.google.com/file/d/1nt0CSRXIDhMeyJMeVoCnV1Nsa76N_tsO/view?usp=drivesdk",
     "reportes/continuacion-118/orden-y-fuentes.json",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/ADAP101.json"
   ],
   "imagen_principal": "/imagenes/adap101/ADAP101-01.webp",
   "imagenes_secundarias": [],
@@ -134,7 +135,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap101-adaptador-usb-c-a-3-5mm-premium/",
   "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
-  "descripcion": "Adaptador de audio USB-C a jack de 3,5 mm, con cable corto blanco. Producto compatible de calidad Premium; no es fabricado por Apple.",
+  "descripcion": "Conecta tus audífonos con jack de 3,5 mm a un equipo USB-C compatible mediante este adaptador de calidad Premium. Su cable corto y acabado blanco completan una presentación sencilla para tu conjunto de audio.",
   "contenido_venta": "Un adaptador blanco USB-C a jack de 3,5 mm.",
   "presentacion": "sin caja",
   "revision_regla": 1,
@@ -174,7 +175,7 @@
     },
     {
       "valor": "Premium",
-      "titulo": "Versión compatible",
+      "titulo": "Calidad Premium",
       "descripcion": "Calidad Premium en presentación blanca.",
       "especificaciones": [
         "Versión en inventario"
@@ -221,98 +222,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-118/orden-y-fuentes.json",
-      "evidencia": "Nombre593 conservado. Título y atributos contrastados en fotos propias e inventario vigente. Clasificación según orden del propietario, sin inferir originalidad por logotipo."
+      "fuente": "reportes/beneficios-128/fuentes/ADAP101.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-11-03T02:28:44.259624+00:00",
       "sha256_maestro": "6ea1a3dfc293c75ef866dcbe60f363dc1cada8c619029a507a080568e377a646",
       "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados."
-    },
-    "movil": {
-      "solicitado": "ADAP101",
-      "sku": "ADAP101",
-      "estado": "VERIFICADO",
-      "fecha": "2026-11-03T03:08:30.433Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/adap101-adaptador-usb-c-a-3-5mm-premium/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/adap101-adaptador-usb-c-a-3-5mm-premium/",
-      "archivo_html": "productos/adap101-adaptador-usb-c-a-3-5mm-premium/index.html",
-      "http": 200,
-      "sha256_html": "e5748ff57cefeab91f454d246046c78af7ccc308f6b570efc2b96760c1fe0fe2",
-      "sha256_html_local": "e5748ff57cefeab91f454d246046c78af7ccc308f6b570efc2b96760c1fe0fe2",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/adap101/ADAP101-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap101/ADAP101-01-600.webp?v=39674fb107326f1f",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/adap101-adaptador-usb-c-a-3-5mm-premium/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/adap101/ADAP101-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-118/qa-publica/movil/ADAP101-390.png",
-      "sha256": "769cda93f1094a7f6017213df95452b33ad26c49242bd84ec6113c5ae972a5ab",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-publica/movil/ADAP101-1280.png",
-        "sha256": "2bfa6cc3192d0da5b156f3e92951cb766c9b0f6b1adbfd097448f71670d13c45",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "estado": "VERIFICADO",
@@ -322,5 +239,100 @@
       "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
       "sku": "ADAP101"
     }
+  },
+  "descripcion_seo": "Conecta tus audífonos con jack de 3,5 mm a un equipo USB-C compatible mediante este adaptador de calidad Premium. Su cable corto y acabado blanco completan.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "ADAP101",
+        "sku": "ADAP101",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T03:08:30.433Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/adap101-adaptador-usb-c-a-3-5mm-premium/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/adap101-adaptador-usb-c-a-3-5mm-premium/",
+        "archivo_html": "productos/adap101-adaptador-usb-c-a-3-5mm-premium/index.html",
+        "http": 200,
+        "sha256_html": "e5748ff57cefeab91f454d246046c78af7ccc308f6b570efc2b96760c1fe0fe2",
+        "sha256_html_local": "e5748ff57cefeab91f454d246046c78af7ccc308f6b570efc2b96760c1fe0fe2",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/adap101/ADAP101-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/adap101/ADAP101-01-600.webp?v=39674fb107326f1f",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/adap101-adaptador-usb-c-a-3-5mm-premium/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/adap101/ADAP101-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-118/qa-publica/movil/ADAP101-390.png",
+        "sha256": "769cda93f1094a7f6017213df95452b33ad26c49242bd84ec6113c5ae972a5ab",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-118/qa-publica/movil/ADAP101-1280.png",
+          "sha256": "2bfa6cc3192d0da5b156f3e92951cb766c9b0f6b1adbfd097448f71670d13c45",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/ADAP101.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

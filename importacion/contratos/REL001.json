@@ -86,7 +86,8 @@
     "https://drive.google.com/file/d/1TxDwCuKYwKMtsgCVUXZQU8lgW3LTquAO/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "importacion/reglas-sku.json",
-    "importacion/lotes/correcciones-076/instrucciones-propietario.json"
+    "importacion/lotes/correcciones-076/instrucciones-propietario.json",
+    "reportes/beneficios-128/fuentes/REL001.json"
   ],
   "imagen_principal": "/imagenes/rel001/REL001-01.webp",
   "imagenes_secundarias": [],
@@ -145,7 +146,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
   "fecha_verificacion": "2026-10-14T00:22:28.045074+00:00",
-  "descripcion": "Despertador digital DCX-670 con pantalla de hora, fecha y temperatura indicada en su empaque. producto; no es un producto original de la marca de referencia.",
+  "descripcion": "Ten a la vista la hora, la fecha y la temperatura en el despertador digital DCX-670. Un conjunto de información útil para organizar tu espacio y tu día.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -225,8 +226,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1JrWndhHVwBznzhGvI2VIEzfW_cm4l1hl/view?usp=drivesdk",
-      "evidencia": "Revisada contra fuentes existentes y la corrección expresa del propietario; finanzas y unidad de venta conservadas."
+      "fuente": "reportes/beneficios-128/fuentes/REL001.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -241,100 +242,111 @@
       "archivo": "reportes/correcciones-076/http-publicacion.json",
       "sha256": "a1eac62a1470948f7f528d22796b76d9ebf17e3a1b76b22d5ca2640388665a67",
       "sku": "REL001"
-    },
-    "movil": {
-      "solicitado": "REL001",
-      "sku": "REL001",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-14T00:13:41.176Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
-      "archivo_html": "productos/rel001-reloj-despertador-modelo-dcx-670/index.html",
-      "http": 200,
-      "sha256_html": "ad15059d7179b4130441419bcd98a8f304d62d00cb2156504a083ff226495f40",
-      "sha256_html_local": "ad15059d7179b4130441419bcd98a8f304d62d00cb2156504a083ff226495f40",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01-600.webp?v=5bbe3198adace927",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/rel011-reloj-smartwatch-caja-flashlight/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/rel013-reloj-smartwatch-para-iphone-watch-series-10-46mm/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/correcciones-076/qa-publica/movil/REL001-390.png",
-      "sha256": "9861a2c4481839c6c93dc2891e9755a6714f1ef92c886c2a5feb3f7edff4edfa",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-076/qa-publica/movil/REL001-1280.png",
-        "sha256": "1220e3eae4801dc80c4174ddcbdbcd23efcbeb44305c660355201df4a52315e1",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     }
+  },
+  "descripcion_seo": "Ten a la vista la hora, la fecha y la temperatura en el despertador digital DCX-670. Un conjunto de información útil para organizar tu espacio y tu día.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "REL001",
+        "sku": "REL001",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-14T00:13:41.176Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
+        "archivo_html": "productos/rel001-reloj-despertador-modelo-dcx-670/index.html",
+        "http": 200,
+        "sha256_html": "ad15059d7179b4130441419bcd98a8f304d62d00cb2156504a083ff226495f40",
+        "sha256_html_local": "ad15059d7179b4130441419bcd98a8f304d62d00cb2156504a083ff226495f40",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01-600.webp?v=5bbe3198adace927",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/rel001-reloj-despertador-modelo-dcx-670/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/rel001/REL001-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/rel011-reloj-smartwatch-caja-flashlight/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/rel013-reloj-smartwatch-para-iphone-watch-series-10-46mm/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/correcciones-076/qa-publica/movil/REL001-390.png",
+        "sha256": "9861a2c4481839c6c93dc2891e9755a6714f1ef92c886c2a5feb3f7edff4edfa",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/correcciones-076/qa-publica/movil/REL001-1280.png",
+          "sha256": "1220e3eae4801dc80c4174ddcbdbcd23efcbeb44305c660355201df4a52315e1",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/REL001.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

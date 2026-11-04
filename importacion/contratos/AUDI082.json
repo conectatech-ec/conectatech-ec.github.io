@@ -126,7 +126,8 @@
     "https://drive.google.com/file/d/1VuaGFzV1pd42EcbtlkL7q8Xt8fkIMEfZ/view?usp=drivesdk",
     "https://drive.google.com/file/d/1t63KX1vmJMzARjR_IrOyj-3fXCTrDUZ0/view?usp=drivesdk",
     "https://drive.google.com/file/d/1vElGhxVMcPlAamsI46Dt5dH1oJ922YK-/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI082.json"
   ],
   "imagen_principal": "/imagenes/audi082/AUDI082-01.webp",
   "imagenes_secundarias": [],
@@ -182,13 +183,32 @@
     },
     {
       "nombre": "Diseño",
-      "valor": "versión AAA lila",
+      "valor": "Acabado lila",
       "fuentes": [
         "https://drive.google.com/file/d/10BLbMCyVHQTF4goGWHZXJIqgAJkKFFJa/view?usp=drivesdk",
         "https://drive.google.com/file/d/18-e041vFHJrDjvFn-YwIjbd0Gjw1pEn9/view?usp=drivesdk",
         "https://drive.google.com/file/d/1VuaGFzV1pd42EcbtlkL7q8Xt8fkIMEfZ/view?usp=drivesdk",
         "https://drive.google.com/file/d/1t63KX1vmJMzARjR_IrOyj-3fXCTrDUZ0/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1vElGhxVMcPlAamsI46Dt5dH1oJ922YK-/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1vElGhxVMcPlAamsI46Dt5dH1oJ922YK-/view?usp=drivesdk",
+        "reportes/beneficios-128/fuentes/AUDI082.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Conexión de audio",
+      "valor": "Inalámbrica",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI082.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Contenido de venta",
+      "valor": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI082.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -198,7 +218,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi082-audifonos-galaxy-buds-pro-9/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
-  "descripcion": "Audífonos inalámbricos Buds Pro9. Variante lila, con diseño y presentación cotejados con las fotografías del SKU. Versión AAA / genérica; no es un producto original de Apple, Samsung o JBL. Versión AAA genérica/compatible; no es un producto original de la marca de referencia.",
+  "descripcion": "Dale un toque de color a tu audio con los Buds Pro9 lila. Escucha sin un cable conectado al equipo y guarda el par de auriculares en su estuche de carga al terminar.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -217,34 +237,38 @@
   "contenido_venta": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
   "beneficios": [
     {
-      "valor": "Diseño",
-      "titulo": "Presentación y comodidad",
-      "descripcion": "versión AAA lila.",
+      "valor": "Inalámbricos",
+      "titulo": "Escucha sin cables",
+      "descripcion": "Escucha audio sin un cable conectado al equipo.",
       "especificaciones": [
-        "Diseño"
+        "Conexión de audio"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/10BLbMCyVHQTF4goGWHZXJIqgAJkKFFJa/view?usp=drivesdk",
-        "https://drive.google.com/file/d/18-e041vFHJrDjvFn-YwIjbd0Gjw1pEn9/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1VuaGFzV1pd42EcbtlkL7q8Xt8fkIMEfZ/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1t63KX1vmJMzARjR_IrOyj-3fXCTrDUZ0/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1vElGhxVMcPlAamsI46Dt5dH1oJ922YK-/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI082.json"
       ],
       "estado": "VERIFICADO"
     },
     {
-      "valor": "Variante",
+      "valor": "Con estuche",
+      "titulo": "Guarda tu conjunto",
+      "descripcion": "Incluye el par de auriculares y su estuche de carga.",
+      "especificaciones": [
+        "Contenido de venta"
+      ],
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI082.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Lila",
       "titulo": "Elige tu estilo",
-      "descripcion": "Lila.",
+      "descripcion": "Acabado lila.",
       "especificaciones": [
         "Color y variante"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/10BLbMCyVHQTF4goGWHZXJIqgAJkKFFJa/view?usp=drivesdk",
-        "https://drive.google.com/file/d/18-e041vFHJrDjvFn-YwIjbd0Gjw1pEn9/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1VuaGFzV1pd42EcbtlkL7q8Xt8fkIMEfZ/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1t63KX1vmJMzARjR_IrOyj-3fXCTrDUZ0/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1vElGhxVMcPlAamsI46Dt5dH1oJ922YK-/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI082.json"
       ],
       "estado": "VERIFICADO"
     }
@@ -284,8 +308,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/10BLbMCyVHQTF4goGWHZXJIqgAJkKFFJa/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI082.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -293,103 +317,114 @@
       "sha256_maestro": "1be7046e902fa9732bc53cde64195c4ed26e4263c09d392c385d414994d976c2",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
     },
-    "movil": {
-      "solicitado": "AUDI082",
-      "sku": "AUDI082",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-12T03:59:38.700Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi082-audifonos-galaxy-buds-pro-9/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/audi082-audifonos-galaxy-buds-pro-9/",
-      "archivo_html": "productos/audi082-audifonos-galaxy-buds-pro-9/index.html",
-      "http": 200,
-      "sha256_html": "cd4787f85f38da2ba7187c26d237b3ded674ebcc560d6ece859e92cede333307",
-      "sha256_html_local": "cd4787f85f38da2ba7187c26d237b3ded674ebcc560d6ece859e92cede333307",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi082/AUDI082-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/audi082/AUDI082-01-600.webp?v=3ea7239d7f5b350e",
-        "naturalWidth": 374,
-        "naturalHeight": 374,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/audi082-audifonos-galaxy-buds-pro-9/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/audi082/AUDI082-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-066/qa-local/movil/AUDI082-390.png",
-      "sha256": "e5db30e9f8299341506c4c57270180b74fee29b2035954a8b4b3b381f2a8c613",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/AUDI082-1280.png",
-        "sha256": "7bc371e6904818dfd1a3e30697ccbf32b947669bfa6d8947cae3431512aa8a74",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
       "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
+  },
+  "descripcion_seo": "Dale un toque de color a tu audio con los Buds Pro9 lila. Escucha sin un cable conectado al equipo y guarda el par de auriculares en su estuche de carga al.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI082",
+        "sku": "AUDI082",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-12T03:59:38.700Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi082-audifonos-galaxy-buds-pro-9/",
+        "url_comprobada": "http://127.0.0.1:8765/productos/audi082-audifonos-galaxy-buds-pro-9/",
+        "archivo_html": "productos/audi082-audifonos-galaxy-buds-pro-9/index.html",
+        "http": 200,
+        "sha256_html": "cd4787f85f38da2ba7187c26d237b3ded674ebcc560d6ece859e92cede333307",
+        "sha256_html_local": "cd4787f85f38da2ba7187c26d237b3ded674ebcc560d6ece859e92cede333307",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi082/AUDI082-01.webp",
+          "url_cargada": "http://127.0.0.1:8765/imagenes/audi082/AUDI082-01-600.webp?v=3ea7239d7f5b350e",
+          "naturalWidth": 374,
+          "naturalHeight": 374,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "http://127.0.0.1:8765/productos/audi082-audifonos-galaxy-buds-pro-9/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/imagenes/audi082/AUDI082-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi005-audifonos-diadema-airpods-max/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/audi008-audifonos-alambricos-earpods-lightning/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-066/qa-local/movil/AUDI082-390.png",
+        "sha256": "e5db30e9f8299341506c4c57270180b74fee29b2035954a8b4b3b381f2a8c613",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-066/qa-local/movil/AUDI082-1280.png",
+          "sha256": "7bc371e6904818dfd1a3e30697ccbf32b947669bfa6d8947cae3431512aa8a74",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI082.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

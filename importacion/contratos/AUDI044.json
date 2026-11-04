@@ -84,7 +84,8 @@
     "https://drive.google.com/file/d/1UVhQKUY8qOIU40uiXE2oCm_jpyOTmyYe/view?usp=drivesdk",
     "https://drive.google.com/file/d/1VAdZ9FEPjweWwo3ckmsA9JhMwUdsAVx8/view?usp=drivesdk",
     "https://drive.google.com/file/d/1foTOEjBLCqIEiBi2fBCRWmm-1hRXedVu/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI044.json"
   ],
   "imagen_principal": "/imagenes/audi044/AUDI044-01.webp",
   "imagenes_secundarias": [],
@@ -136,11 +137,30 @@
     },
     {
       "nombre": "Diseño",
-      "valor": "violeta AAA",
+      "valor": "Acabado violeta",
       "fuentes": [
         "https://drive.google.com/file/d/1UVhQKUY8qOIU40uiXE2oCm_jpyOTmyYe/view?usp=drivesdk",
         "https://drive.google.com/file/d/1VAdZ9FEPjweWwo3ckmsA9JhMwUdsAVx8/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1foTOEjBLCqIEiBi2fBCRWmm-1hRXedVu/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1foTOEjBLCqIEiBi2fBCRWmm-1hRXedVu/view?usp=drivesdk",
+        "reportes/beneficios-128/fuentes/AUDI044.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Conexión de audio",
+      "valor": "Inalámbrica",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI044.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
+    },
+    {
+      "nombre": "Contenido de venta",
+      "valor": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI044.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -150,7 +170,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi044-audifonos-galaxy-buds-pro-akg/",
   "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
-  "descripcion": "Violeta. Un acabado que combina con tu estilo. violeta AAA. Una característica para comparar al elegir este modelo.",
+  "descripcion": "Disfruta tu audio sin un cable conectado al equipo con estos audífonos inalámbricos de acabado violeta. Recibes el par de auriculares con su estuche de carga para guardar el conjunto en un solo lugar.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -169,30 +189,38 @@
   "contenido_venta": "Par de audífonos y estuche de carga del mismo SKU; venta por unidad comercial.",
   "beneficios": [
     {
-      "valor": "Violeta",
-      "titulo": "Elige el acabado que te gusta",
-      "descripcion": "Violeta. Un acabado que combina con tu estilo.",
+      "valor": "Inalámbricos",
+      "titulo": "Escucha sin cables",
+      "descripcion": "Escucha audio sin un cable conectado al equipo.",
       "especificaciones": [
-        "Color y variante"
+        "Conexión de audio"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/1UVhQKUY8qOIU40uiXE2oCm_jpyOTmyYe/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1VAdZ9FEPjweWwo3ckmsA9JhMwUdsAVx8/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1foTOEjBLCqIEiBi2fBCRWmm-1hRXedVu/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI044.json"
       ],
       "estado": "VERIFICADO"
     },
     {
-      "valor": "violeta AAA",
-      "titulo": "Diseño",
-      "descripcion": "violeta AAA. Una característica para comparar al elegir este modelo.",
+      "valor": "Con estuche",
+      "titulo": "Guarda tu conjunto",
+      "descripcion": "Incluye el par de auriculares y su estuche de carga.",
       "especificaciones": [
-        "Diseño"
+        "Contenido de venta"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/1UVhQKUY8qOIU40uiXE2oCm_jpyOTmyYe/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1VAdZ9FEPjweWwo3ckmsA9JhMwUdsAVx8/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1foTOEjBLCqIEiBi2fBCRWmm-1hRXedVu/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI044.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Violeta",
+      "titulo": "Elige tu estilo",
+      "descripcion": "Acabado violeta.",
+      "especificaciones": [
+        "Color y variante"
+      ],
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI044.json"
       ],
       "estado": "VERIFICADO"
     }
@@ -230,8 +258,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1UVhQKUY8qOIU40uiXE2oCm_jpyOTmyYe/view?usp=drivesdk",
-      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI044.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -239,103 +267,114 @@
       "sha256_maestro": "0ebcca1a26d389a1e0bc606aead5153cc3ed20fae58c88542faa9d02b9c16183",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
     },
-    "movil": {
-      "solicitado": "AUDI044",
-      "sku": "AUDI044",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:59:58.079Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi044-audifonos-galaxy-buds-pro-akg/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi044-audifonos-galaxy-buds-pro-akg/",
-      "archivo_html": "productos/audi044-audifonos-galaxy-buds-pro-akg/index.html",
-      "http": 200,
-      "sha256_html": "b35cd7d91c8ba65481c0ce105c88a12defb4b951fd99d79ce80be23be0ab6cda",
-      "sha256_html_local": "b35cd7d91c8ba65481c0ce105c88a12defb4b951fd99d79ce80be23be0ab6cda",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi044/AUDI044-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi044/AUDI044-01-600.webp?v=9edca7391e7fd3d3",
-        "naturalWidth": 327,
-        "naturalHeight": 327,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi044-audifonos-galaxy-buds-pro-akg/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi044/AUDI044-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI044-390.png",
-      "sha256": "6615b27eca232e9e033e9cb0c6358eb09bf1f536935bb7c49cce385c5c34dccf",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI044-1280.png",
-        "sha256": "c9b96148331cb876109c6a54bb8483532a57f481c7a97d535f68f3c6d813e951",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
       "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
+  },
+  "descripcion_seo": "Disfruta tu audio sin un cable conectado al equipo con estos audífonos inalámbricos de acabado violeta. Recibes el par de auriculares con su estuche de.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI044",
+        "sku": "AUDI044",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-13T02:59:58.079Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi044-audifonos-galaxy-buds-pro-akg/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi044-audifonos-galaxy-buds-pro-akg/",
+        "archivo_html": "productos/audi044-audifonos-galaxy-buds-pro-akg/index.html",
+        "http": 200,
+        "sha256_html": "b35cd7d91c8ba65481c0ce105c88a12defb4b951fd99d79ce80be23be0ab6cda",
+        "sha256_html_local": "b35cd7d91c8ba65481c0ce105c88a12defb4b951fd99d79ce80be23be0ab6cda",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi044/AUDI044-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi044/AUDI044-01-600.webp?v=9edca7391e7fd3d3",
+          "naturalWidth": 327,
+          "naturalHeight": 327,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi044-audifonos-galaxy-buds-pro-akg/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi044/AUDI044-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI044-390.png",
+        "sha256": "6615b27eca232e9e033e9cb0c6358eb09bf1f536935bb7c49cce385c5c34dccf",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI044-1280.png",
+          "sha256": "c9b96148331cb876109c6a54bb8483532a57f481c7a97d535f68f3c6d813e951",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI044.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

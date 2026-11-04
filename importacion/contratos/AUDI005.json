@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/1hOfnvC3a1GuwPYShNm-hdjUz7McMHSe7/view?usp=drivesdk",
     "https://drive.google.com/file/d/1jt3bl_xCfO9B5NIZQGcaQGuEVpvNt3vE/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI005.json"
   ],
   "imagen_principal": "/imagenes/audi005/AUDI005-01.webp",
   "imagenes_secundarias": [],
@@ -113,10 +114,11 @@
     },
     {
       "nombre": "Diseño",
-      "valor": "AAA plateados",
+      "valor": "Diadema de acabado plateado y gris",
       "fuentes": [
         "https://drive.google.com/file/d/1hOfnvC3a1GuwPYShNm-hdjUz7McMHSe7/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1jt3bl_xCfO9B5NIZQGcaQGuEVpvNt3vE/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1jt3bl_xCfO9B5NIZQGcaQGuEVpvNt3vE/view?usp=drivesdk",
+        "reportes/beneficios-128/fuentes/AUDI005.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -126,7 +128,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
   "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
-  "descripcion": "Plateado y gris. Un acabado que combina con tu estilo. AAA plateados. Una característica para comparar al elegir este modelo.",
+  "descripcion": "Dale a tu audio un formato de diadema con acabado plateado y gris. Una combinación de color para completar tu estilo diario.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -145,28 +147,26 @@
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
   "beneficios": [
     {
-      "valor": "Plateado y gris",
-      "titulo": "Elige el acabado que te gusta",
-      "descripcion": "Plateado y gris. Un acabado que combina con tu estilo.",
-      "especificaciones": [
-        "Color y variante"
-      ],
-      "fuentes": [
-        "https://drive.google.com/file/d/1hOfnvC3a1GuwPYShNm-hdjUz7McMHSe7/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1jt3bl_xCfO9B5NIZQGcaQGuEVpvNt3vE/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO"
-    },
-    {
-      "valor": "AAA plateados",
-      "titulo": "Diseño",
-      "descripcion": "AAA plateados. Una característica para comparar al elegir este modelo.",
+      "valor": "Diadema",
+      "titulo": "Tu formato de audio",
+      "descripcion": "Audífonos de diadema para tu audio diario.",
       "especificaciones": [
         "Diseño"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/1hOfnvC3a1GuwPYShNm-hdjUz7McMHSe7/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1jt3bl_xCfO9B5NIZQGcaQGuEVpvNt3vE/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI005.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Plateado y gris",
+      "titulo": "Elige tu estilo",
+      "descripcion": "Acabado plateado y gris.",
+      "especificaciones": [
+        "Color y variante"
+      ],
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI005.json"
       ],
       "estado": "VERIFICADO"
     }
@@ -203,8 +203,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1hOfnvC3a1GuwPYShNm-hdjUz7McMHSe7/view?usp=drivesdk",
-      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI005.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -212,103 +212,114 @@
       "sha256_maestro": "eb0c4e457b11b47c1a33a9a4ccc6384652f09d6e745cdc03598fecf35a33b356",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
     },
-    "movil": {
-      "solicitado": "AUDI005",
-      "sku": "AUDI005",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-13T02:59:49.484Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
-      "archivo_html": "productos/audi005-audifonos-diadema-airpods-max/index.html",
-      "http": 200,
-      "sha256_html": "cf0256265c0e8468cffd37f1348085cbca73f79da31c66c77e084a5fd0f2ed8a",
-      "sha256_html_local": "cf0256265c0e8468cffd37f1348085cbca73f79da31c66c77e084a5fd0f2ed8a",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi005/AUDI005-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi005/AUDI005-01-600.webp?v=4e7b1f7fafe47d11",
-        "naturalWidth": 343,
-        "naturalHeight": 343,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi005/AUDI005-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi009-audifonos-alambricos-earpods-tipo-usb-c/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI005-390.png",
-      "sha256": "7e7eb3b4675c868562b04da58571f8179fdc7197e2d0ac4e133affad1e126210",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI005-1280.png",
-        "sha256": "b00aa06d58c263a128d1971c92c88004dbbb4bcadcf2eb7dd5c936e8b822e686",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
       "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
+  },
+  "descripcion_seo": "Dale a tu audio un formato de diadema con acabado plateado y gris. Una combinación de color para completar tu estilo diario.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI005",
+        "sku": "AUDI005",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-13T02:59:49.484Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
+        "archivo_html": "productos/audi005-audifonos-diadema-airpods-max/index.html",
+        "http": 200,
+        "sha256_html": "cf0256265c0e8468cffd37f1348085cbca73f79da31c66c77e084a5fd0f2ed8a",
+        "sha256_html_local": "cf0256265c0e8468cffd37f1348085cbca73f79da31c66c77e084a5fd0f2ed8a",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi005/AUDI005-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi005/AUDI005-01-600.webp?v=4e7b1f7fafe47d11",
+          "naturalWidth": 343,
+          "naturalHeight": 343,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi005/AUDI005-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi009-audifonos-alambricos-earpods-tipo-usb-c/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI005-390.png",
+        "sha256": "7e7eb3b4675c868562b04da58571f8179fdc7197e2d0ac4e133affad1e126210",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI005-1280.png",
+          "sha256": "b00aa06d58c263a128d1971c92c88004dbbb4bcadcf2eb7dd5c936e8b822e686",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI005.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

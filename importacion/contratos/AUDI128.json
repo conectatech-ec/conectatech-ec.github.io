@@ -44,7 +44,8 @@
     "https://drive.google.com/file/d/1u95cnAqse3pi44eAAvk1knaPzK4NuPGe/view?usp=drivesdk",
     "https://drive.google.com/file/d/1-ayxVe1azy_GsvSUiTgPGoUKABVzrVIg/view?usp=drivesdk",
     "reportes/continuacion-118/orden-y-fuentes.json",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI128.json"
   ],
   "imagen_principal": "/imagenes/audi128/AUDI128-01.webp",
   "imagenes_secundarias": [],
@@ -134,7 +135,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi128-audifonos-de-diadema-live86-nc/",
   "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
-  "descripcion": "Audífonos de diadema de terceros con referencia comercial JBL Live86 NC y conexión Bluetooth indicada en el empaque. Producto compatible (AAA); no se atribuye fabricación JBL ni se anuncia ANC o IA sin verificar.",
+  "descripcion": "Escucha mediante Bluetooth con los audífonos de diadema de referencia comercial JBL Live86 NC. La presentación fotografiada es beige; las variantes dependen de la disponibilidad.",
   "contenido_venta": "Unos audífonos de diadema JBL Live86; accesorios adicionales no declarados.",
   "presentacion": "sin caja",
   "revision_regla": 1,
@@ -221,98 +222,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-118/orden-y-fuentes.json",
-      "evidencia": "Nombre593 conservado. Título y atributos contrastados en fotos propias e inventario vigente. Clasificación según orden del propietario, sin inferir originalidad por logotipo."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI128.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-11-03T02:28:44.259624+00:00",
       "sha256_maestro": "b634f287d75c915d3bd9cd48fe42d90deb2800c317920162a72dab17555ad94c",
       "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados."
-    },
-    "movil": {
-      "solicitado": "AUDI128",
-      "sku": "AUDI128",
-      "estado": "VERIFICADO",
-      "fecha": "2026-11-03T03:08:39.440Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi128-audifonos-de-diadema-live86-nc/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi128-audifonos-de-diadema-live86-nc/",
-      "archivo_html": "productos/audi128-audifonos-de-diadema-live86-nc/index.html",
-      "http": 200,
-      "sha256_html": "e39da046841de6ee21bfe15729c3e6e55e6da7179db8dc6454edf1632a76a8e4",
-      "sha256_html_local": "e39da046841de6ee21bfe15729c3e6e55e6da7179db8dc6454edf1632a76a8e4",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi128/AUDI128-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi128/AUDI128-01-600.webp?v=85ed497aa610c2b7",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi128-audifonos-de-diadema-live86-nc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi128/AUDI128-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI128-390.png",
-      "sha256": "716bfafdc137325bc350074aae51293cfa859a293b16b9d209f45204e3a01ae6",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI128-1280.png",
-        "sha256": "616a6f9773f7a253839b6ca746279cfa4b4159d0ceb35c9409f8c4c49a0b9209",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "estado": "VERIFICADO",
@@ -322,5 +239,100 @@
       "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
       "sku": "AUDI128"
     }
+  },
+  "descripcion_seo": "Escucha mediante Bluetooth con los audífonos de diadema de referencia comercial JBL Live86 NC. La presentación fotografiada es beige; las variantes dependen.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI128",
+        "sku": "AUDI128",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T03:08:39.440Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi128-audifonos-de-diadema-live86-nc/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi128-audifonos-de-diadema-live86-nc/",
+        "archivo_html": "productos/audi128-audifonos-de-diadema-live86-nc/index.html",
+        "http": 200,
+        "sha256_html": "e39da046841de6ee21bfe15729c3e6e55e6da7179db8dc6454edf1632a76a8e4",
+        "sha256_html_local": "e39da046841de6ee21bfe15729c3e6e55e6da7179db8dc6454edf1632a76a8e4",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi128/AUDI128-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi128/AUDI128-01-600.webp?v=85ed497aa610c2b7",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi128-audifonos-de-diadema-live86-nc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi128/AUDI128-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI128-390.png",
+        "sha256": "716bfafdc137325bc350074aae51293cfa859a293b16b9d209f45204e3a01ae6",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-118/qa-publica/movil/AUDI128-1280.png",
+          "sha256": "616a6f9773f7a253839b6ca746279cfa4b4159d0ceb35c9409f8c4c49a0b9209",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI128.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

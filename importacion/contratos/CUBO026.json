@@ -44,7 +44,8 @@
     "https://drive.google.com/file/d/1MJ9RAXUm9Ra4CLU90DvsP-RKUdhAsWup/view?usp=drivesdk",
     "https://drive.google.com/file/d/14kYjhw-GHxBTxrawxofrYpRllSF84G9e/view?usp=drivesdk",
     "reportes/continuacion-118/orden-y-fuentes.json",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/CUBO026.json"
   ],
   "imagen_principal": "/imagenes/cubo026/CUBO026-01.webp",
   "imagenes_secundarias": [],
@@ -134,7 +135,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo026-cubo-de-carga-iph-40w-premium/",
   "fecha_verificacion": "2026-11-03T03:07:57.709464+00:00",
-  "descripcion": "Cargador compatible para iPhone con puerto USB-C y potencia nominal declarada de 40W. Calidad Premium. Producto compatible; no es fabricado por Apple. Se vende un cargador, sin cable.",
+  "descripcion": "Prepara tu conjunto de carga con un cargador de calidad Premium, potencia nominal declarada de 40W y puerto USB-C. Elige por separado el cable adecuado para tu equipo.",
   "contenido_venta": "Un adaptador de corriente de pared USB-C de 40W, sin cable adicional declarado.",
   "presentacion": "sin caja",
   "revision_regla": 1,
@@ -174,7 +175,7 @@
     },
     {
       "valor": "Premium",
-      "titulo": "Versión compatible",
+      "titulo": "Calidad Premium",
       "descripcion": "Calidad Premium en color blanco.",
       "especificaciones": [
         "Versión en inventario"
@@ -221,98 +222,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-118/orden-y-fuentes.json",
-      "evidencia": "Nombre593 conservado. Título y atributos contrastados en fotos propias e inventario vigente. Clasificación según orden del propietario, sin inferir originalidad por logotipo."
+      "fuente": "reportes/beneficios-128/fuentes/CUBO026.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-11-03T02:28:44.259624+00:00",
       "sha256_maestro": "85c6f9e5ae2a46b332895003d8ac2ebcbe20656c1e39447fbdb3fbdd43b4c81d",
       "evidencia": "Producto completo y conjunto verificado contra referencias propias del Drive empresarial. Fondo blanco, sin caja, sin precios ni accesorios extra. Geometría y conectores observados conservados."
-    },
-    "movil": {
-      "solicitado": "CUBO026",
-      "sku": "CUBO026",
-      "estado": "VERIFICADO",
-      "fecha": "2026-11-03T03:08:58.432Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/cubo026-cubo-de-carga-iph-40w-premium/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo026-cubo-de-carga-iph-40w-premium/",
-      "archivo_html": "productos/cubo026-cubo-de-carga-iph-40w-premium/index.html",
-      "http": 200,
-      "sha256_html": "8547e5ca4cd8008a94fa5a6f32f1bafc2fa94d2f3454cac1967ae0ad20c6637b",
-      "sha256_html_local": "8547e5ca4cd8008a94fa5a6f32f1bafc2fa94d2f3454cac1967ae0ad20c6637b",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/cubo026/CUBO026-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo026/CUBO026-01-600.webp?v=297b38a2cf3ee94e",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/cubo026-cubo-de-carga-iph-40w-premium/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/cubo026/CUBO026-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO026-390.png",
-      "sha256": "43c9ccbd706d81bb85dfa6f1209f6820055fb22aa69ec9cf38724cece780f791",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO026-1280.png",
-        "sha256": "4b79aaef3f2486c25862a87b9d09137784cb0d208c65365dd7dcd708d34cda66",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "estado": "VERIFICADO",
@@ -322,5 +239,100 @@
       "sha256": "23d5761325472c863955a6c802ec238a719f728b23db651cbbe804f526ae013d",
       "sku": "CUBO026"
     }
+  },
+  "descripcion_seo": "Prepara tu conjunto de carga con un cargador de calidad Premium, potencia nominal declarada de 40W y puerto USB-C. Elige por separado el cable adecuado para.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "CUBO026",
+        "sku": "CUBO026",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-03T03:08:58.432Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/cubo026-cubo-de-carga-iph-40w-premium/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/cubo026-cubo-de-carga-iph-40w-premium/",
+        "archivo_html": "productos/cubo026-cubo-de-carga-iph-40w-premium/index.html",
+        "http": 200,
+        "sha256_html": "8547e5ca4cd8008a94fa5a6f32f1bafc2fa94d2f3454cac1967ae0ad20c6637b",
+        "sha256_html_local": "8547e5ca4cd8008a94fa5a6f32f1bafc2fa94d2f3454cac1967ae0ad20c6637b",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/cubo026/CUBO026-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo026/CUBO026-01-600.webp?v=297b38a2cf3ee94e",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/cubo026-cubo-de-carga-iph-40w-premium/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/cubo026/CUBO026-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO026-390.png",
+        "sha256": "43c9ccbd706d81bb85dfa6f1209f6820055fb22aa69ec9cf38724cece780f791",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-118/qa-publica/movil/CUBO026-1280.png",
+          "sha256": "4b79aaef3f2486c25862a87b9d09137784cb0d208c65365dd7dcd708d34cda66",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/CUBO026.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

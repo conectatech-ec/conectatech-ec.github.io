@@ -32,7 +32,8 @@
     "https://drive.google.com/file/d/1QBH-0WLYiaYV96j2LRR2xJoEtyEQ3Bps/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
-    "importacion/politica-variantes-surtidas.json"
+    "importacion/politica-variantes-surtidas.json",
+    "reportes/beneficios-128/fuentes/AUDI111.json"
   ],
   "imagen_principal": "/imagenes/audi111/AUDI111-01.webp",
   "imagenes_secundarias": [],
@@ -52,9 +53,10 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Un par de audífonos inalámbricos AAA genéricos. No se declara marca ni modelo. La imagen muestra los dos audífonos.",
+      "valor": "Un par de audífonos inalámbricos . No se declara marca ni modelo. La imagen muestra los dos audífonos.",
       "fuentes": [
-        "https://drive.google.com/file/d/1QBH-0WLYiaYV96j2LRR2xJoEtyEQ3Bps/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1QBH-0WLYiaYV96j2LRR2xJoEtyEQ3Bps/view?usp=drivesdk",
+        "reportes/beneficios-128/fuentes/AUDI111.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -64,8 +66,8 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi111-audifonos-inalambricos-airpods/",
   "fecha_verificacion": "2026-10-16T05:56:36.742098+00:00",
-  "descripcion": "Audífonos inalámbricos AAA genéricos blancos. Presentación de venta: Un par de audífonos inalámbricos AAA genéricos. No se declara marca ni modelo. La imagen muestra los dos audífonos..",
-  "contenido_venta": "Un par de audífonos inalámbricos AAA genéricos. No se declara marca ni modelo. La imagen muestra los dos audífonos.",
+  "descripcion": "Disfruta tu audio sin un cable conectado al equipo con este par de audífonos inalámbricos blancos.",
+  "contenido_venta": "Un par de audífonos inalámbricos . La imagen muestra los dos audífonos.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -102,105 +104,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/1QBH-0WLYiaYV96j2LRR2xJoEtyEQ3Bps/view?usp=drivesdk",
-      "evidencia": "Texto cotejado con fuentes; sin autonomía, garantía ni compatibilidad universal no comprobadas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI111.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-10-16T05:29:19.245695+00:00",
       "sha256_maestro": "046324d29fbd109b631631f5b656f99bc0d18fff9f68677a03d74b3ea6804171",
       "evidencia": "Caja propia ampliada cotejada: dos audífonos blancos con puntas y rejillas, misma orientación y tallos. Portada sin estuche no documentado ni marca añadida. ClasificaciónAAA/genérica conservada; modelo no declarado."
-    },
-    "movil": {
-      "solicitado": "AUDI111",
-      "sku": "AUDI111",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-16T05:56:58.404Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi111-audifonos-inalambricos-airpods/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi111-audifonos-inalambricos-airpods/",
-      "archivo_html": "productos/audi111-audifonos-inalambricos-airpods/index.html",
-      "http": 200,
-      "sha256_html": "2fd2af8433e8737ac816032b9b48ab9dbd00d82e377eebfb5500875ac3b58f1e",
-      "sha256_html_local": "2fd2af8433e8737ac816032b9b48ab9dbd00d82e377eebfb5500875ac3b58f1e",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi111/AUDI111-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi111/AUDI111-01-600.webp?v=2d9f77951ec5e66b",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi111-audifonos-inalambricos-airpods/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi111/AUDI111-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI111-390.png",
-      "sha256": "dca149f4f092ab7e32008fc98fe731f28dd13d9d3372c8dc10a5243c926a8bc1",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI111-1280.png",
-        "sha256": "31eb4ab459bff307addf0aede6102a705f20dc615108781535e78cbd3ca7aeaf",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "estado": "VERIFICADO",
@@ -210,5 +121,107 @@
       "sha256": "e5063fe534c89dd6cfb591315e9f99f0f340de3b5c06b112dd89584a1fe470dc",
       "sku": "AUDI111"
     }
+  },
+  "descripcion_seo": "Disfruta tu audio sin un cable conectado al equipo con este par de audífonos inalámbricos blancos.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI111",
+        "sku": "AUDI111",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-16T05:56:58.404Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi111-audifonos-inalambricos-airpods/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi111-audifonos-inalambricos-airpods/",
+        "archivo_html": "productos/audi111-audifonos-inalambricos-airpods/index.html",
+        "http": 200,
+        "sha256_html": "2fd2af8433e8737ac816032b9b48ab9dbd00d82e377eebfb5500875ac3b58f1e",
+        "sha256_html_local": "2fd2af8433e8737ac816032b9b48ab9dbd00d82e377eebfb5500875ac3b58f1e",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi111/AUDI111-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi111/AUDI111-01-600.webp?v=2d9f77951ec5e66b",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi111-audifonos-inalambricos-airpods/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi111/AUDI111-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi110-audifonos-tipo-arete-ht-10/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/parl028-parlante-monster-project-1/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/parl033-parlantes-para-pc-laptop-env-thunder-1306/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI111-390.png",
+        "sha256": "dca149f4f092ab7e32008fc98fe731f28dd13d9d3372c8dc10a5243c926a8bc1",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-097/qa-publica/movil/AUDI111-1280.png",
+          "sha256": "31eb4ab459bff307addf0aede6102a705f20dc615108781535e78cbd3ca7aeaf",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI111.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

@@ -85,7 +85,8 @@
     "https://drive.google.com/file/d/19pBJmD8kEmQKnXbxQ1mRB-XlcaOeEmVd/view?usp=drivesdk",
     "https://drive.google.com/file/d/1XObaW0fR9lvcvuSTKbvbYXoXsAhEikPj/view?usp=drivesdk",
     "datos-593/inventario-publico.csv",
-    "importacion/reglas-sku.json"
+    "importacion/reglas-sku.json",
+    "reportes/beneficios-128/fuentes/REL047.json"
   ],
   "imagen_principal": "/imagenes/rel047/REL047-01.webp",
   "imagenes_secundarias": [],
@@ -140,7 +141,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
   "fecha_verificacion": "2026-10-11T22:34:26.108292+00:00",
-  "descripcion": "Reloj digital GH8018 de dígitos grandes LED; el empaque indica funciones de alarma, calendario y temperatura interior. producto; no es un producto original de la marca de referencia.",
+  "descripcion": "Consulta la hora en una pantalla LED de dígitos grandes. El reloj digital GH8018 también incorpora alarma, calendario y lectura de temperatura interior, según las funciones indicadas para esta referencia.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -220,8 +221,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/11uXsEO2ykqfay2EX4AWtAh4STQKiChPH/view?usp=drivesdk",
-      "evidencia": "Datos contrastados con 593, Registro y fotografías propias del SKU; no se publican capacidades, resoluciones ni compatibilidad universal no comprobadas. Clasificación armonizada con la regla explícita del propietario; fotografías y hardware intactos."
+      "fuente": "reportes/beneficios-128/fuentes/REL047.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -229,103 +230,114 @@
       "sha256_maestro": "e19f47c1da80231ebd860a786d8af77adaa1cf25be90c10723dbb216a0302cfb",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
     },
-    "movil": {
-      "solicitado": "REL047",
-      "sku": "REL047",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-12T04:42:08.410Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
-      "url_comprobada": "http://127.0.0.1:8765/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
-      "archivo_html": "productos/rel047-reloj-de-pared-o-mesa-led-gh8018/index.html",
-      "http": 200,
-      "sha256_html": "33cc8e34c9b07e55f4f7b0dfc3a643e91a8d49b5129706fd4296ff387082e347",
-      "sha256_html_local": "33cc8e34c9b07e55f4f7b0dfc3a643e91a8d49b5129706fd4296ff387082e347",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/rel047/REL047-01.webp",
-        "url_cargada": "http://127.0.0.1:8765/imagenes/rel047/REL047-01-600.webp?v=93afca096868fa70",
-        "naturalWidth": 323,
-        "naturalHeight": 323,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "http://127.0.0.1:8765/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/imagenes/rel047/REL047-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/rel011-reloj-smartwatch-caja-flashlight/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/rel001-reloj-despertador-modelo-dcx-670/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "http://127.0.0.1:8765/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-066/qa-local/movil/REL047-390.png",
-      "sha256": "5a886014b698e518d66cf5ce3f11649438e312ca33febbc3de4f7e32707b8c50",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-066/qa-local/movil/REL047-1280.png",
-        "sha256": "ebf67b61968eb3c94c407f347f893dec4b5223452c480fcd5059ca62148a5df5",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-066/http-publicacion.json",
       "sha256": "3861647e307201d5c1ac2fef69e98b1e74f4a3b754afb8e1389e7d922e5e0c4f"
     }
+  },
+  "descripcion_seo": "Consulta la hora en una pantalla LED de dígitos grandes. El reloj digital GH8018 también incorpora alarma, calendario y lectura de temperatura interior.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "REL047",
+        "sku": "REL047",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-12T04:42:08.410Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
+        "url_comprobada": "http://127.0.0.1:8765/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
+        "archivo_html": "productos/rel047-reloj-de-pared-o-mesa-led-gh8018/index.html",
+        "http": 200,
+        "sha256_html": "33cc8e34c9b07e55f4f7b0dfc3a643e91a8d49b5129706fd4296ff387082e347",
+        "sha256_html_local": "33cc8e34c9b07e55f4f7b0dfc3a643e91a8d49b5129706fd4296ff387082e347",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/rel047/REL047-01.webp",
+          "url_cargada": "http://127.0.0.1:8765/imagenes/rel047/REL047-01-600.webp?v=93afca096868fa70",
+          "naturalWidth": 323,
+          "naturalHeight": 323,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "http://127.0.0.1:8765/productos/rel047-reloj-de-pared-o-mesa-led-gh8018/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/imagenes/rel047/REL047-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/rel011-reloj-smartwatch-caja-flashlight/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/rel001-reloj-despertador-modelo-dcx-670/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "http://127.0.0.1:8765/productos/rel006-reloj-smartwatch-big-ultra-7-en-1/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-066/qa-local/movil/REL047-390.png",
+        "sha256": "5a886014b698e518d66cf5ce3f11649438e312ca33febbc3de4f7e32707b8c50",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-066/qa-local/movil/REL047-1280.png",
+          "sha256": "ebf67b61968eb3c94c407f347f893dec4b5223452c480fcd5059ca62148a5df5",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/REL047.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }

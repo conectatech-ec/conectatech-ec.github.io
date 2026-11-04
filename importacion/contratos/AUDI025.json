@@ -69,7 +69,8 @@
     "datos-593/inventario-publico.csv",
     "importacion/politica-unidades-venta.json",
     "importacion/politica-variantes-surtidas.json",
-    "reportes/correcciones-106/orden-propietario.json"
+    "reportes/correcciones-106/orden-propietario.json",
+    "reportes/beneficios-128/fuentes/AUDI025.json"
   ],
   "imagen_principal": "/imagenes/audi025/AUDI025-r106-01.webp",
   "imagenes_secundarias": [],
@@ -89,10 +90,11 @@
   "especificaciones": [
     {
       "nombre": "Presentación de venta",
-      "valor": "Un par de audífonos con estuche de carga. Producto genérico AAA.",
+      "valor": "Un par de audífonos con estuche de carga.",
       "fuentes": [
         "https://drive.google.com/file/d/13BD7bhkYQy37NnHJzT6bNqFG4mc5RaLZ/view?usp=drivesdk",
-        "reportes/correcciones-106/orden-propietario.json"
+        "reportes/correcciones-106/orden-propietario.json",
+        "reportes/beneficios-128/fuentes/AUDI025.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -135,8 +137,8 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
   "fecha_verificacion": "2026-10-17T02:13:50.629043+00:00",
-  "descripcion": "Audifonos Inalambricos Thinkplus X15 II. Presentación de venta: Un par de audífonos con estuche de carga. Producto genérico AAA. Contenido de venta: Dos auriculares y un estuche. Presentación del conjunto: Par de auriculares con su estuche de carga.",
-  "contenido_venta": "Un par de audífonos con estuche de carga. Producto genérico AAA.",
+  "descripcion": "Lleva tu audio inalámbrico con el conjunto Thinkplus X15 II: dos auriculares y un estuche de carga para guardarlos juntos.",
+  "contenido_venta": "Un par de audífonos con estuche de carga.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -177,93 +179,14 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/13BD7bhkYQy37NnHJzT6bNqFG4mc5RaLZ/view?usp=drivesdk",
-      "evidencia": "Se retiran aclaraciones de portadas parciales; contenido comercial y beneficios cotejados con las referencias. Precios, stock, identidad y URLs conservados."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI025.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
       "fecha": "2026-10-17T01:44:32.550978+00:00",
       "sha256_maestro": "f450d5f4e9f7bd8664dddcf6f112b11079d37978954e6d4e95bc606ad06f0b57",
       "evidencia": "Sustituye auricular único por par lila con estuche transparente. Referencias propias0/1/4 acreditan carcasa lila, cubierta transparente y ventana de circuito; fuente3 acredita par con estuche. No se sustituye ventana por pantalla inventada ni se afirma originalidad Lenovo; clasificación genérico AAA conservada."
-    },
-    "movil": {
-      "solicitado": "AUDI025",
-      "sku": "AUDI025",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-17T02:13:53.095Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
-      "archivo_html": "productos/audi025-audifonos-inalambricos-thinkplus-x15ii/index.html",
-      "http": 200,
-      "sha256_html": "0a81ac0d71758af48e62f22a3f600d072b34486ffbe13bcb5ce855041e136128",
-      "sha256_html_local": "0a81ac0d71758af48e62f22a3f600d072b34486ffbe13bcb5ce855041e136128",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01-600.webp?v=016f7cb039b29e15",
-        "naturalWidth": 351,
-        "naturalHeight": 351,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01.webp",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/correcciones-106/qa-publica/movil/AUDI025-390.png",
-      "sha256": "28f43b0beae34ed49612e14d370272451a044e525a7c62bf147bba28c9a19382",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/correcciones-106/qa-publica/movil/AUDI025-1280.png",
-        "sha256": "4ae5f4c585a987c36cf2254519e96683ce4ebbb4dddd4a9d9f80b61706d10eea",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
     },
     "publicacion_http": {
       "estado": "VERIFICADO",
@@ -285,30 +208,118 @@
   ],
   "beneficios": [
     {
-      "valor": "Contenido de venta",
-      "titulo": "Producto completo",
-      "descripcion": "Un par de audífonos con estuche de carga. Producto genérico AAA.",
+      "valor": "Dos auriculares",
+      "titulo": "Tu conjunto de audio",
+      "descripcion": "La unidad de venta incluye dos auriculares.",
       "especificaciones": [
-        "Presentación de venta"
+        "Contenido de venta"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/13BD7bhkYQy37NnHJzT6bNqFG4mc5RaLZ/view?usp=drivesdk",
-        "reportes/correcciones-106/orden-propietario.json"
+        "reportes/beneficios-128/fuentes/AUDI025.json"
       ],
       "estado": "VERIFICADO"
     },
     {
-      "valor": "Diseño verificado",
-      "titulo": "Referencias del producto",
-      "descripcion": "Un par de audífonos con estuche de carga. Producto genérico AAA.",
+      "valor": "Estuche de carga",
+      "titulo": "Guárdalos juntos",
+      "descripcion": "Incluye un estuche para los dos auriculares.",
       "especificaciones": [
-        "Presentación de venta"
+        "Presentación del conjunto"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/13BD7bhkYQy37NnHJzT6bNqFG4mc5RaLZ/view?usp=drivesdk",
-        "reportes/correcciones-106/orden-propietario.json"
+        "reportes/beneficios-128/fuentes/AUDI025.json"
       ],
       "estado": "VERIFICADO"
     }
-  ]
+  ],
+  "descripcion_seo": "Lleva tu audio inalámbrico con el conjunto Thinkplus X15 II: dos auriculares y un estuche de carga para guardarlos juntos.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI025",
+        "sku": "AUDI025",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-17T02:13:53.095Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
+        "archivo_html": "productos/audi025-audifonos-inalambricos-thinkplus-x15ii/index.html",
+        "http": 200,
+        "sha256_html": "0a81ac0d71758af48e62f22a3f600d072b34486ffbe13bcb5ce855041e136128",
+        "sha256_html_local": "0a81ac0d71758af48e62f22a3f600d072b34486ffbe13bcb5ce855041e136128",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01-600.webp?v=016f7cb039b29e15",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi025-audifonos-inalambricos-thinkplus-x15ii/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi025/AUDI025-r106-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/correcciones-106/qa-publica/movil/AUDI025-390.png",
+        "sha256": "28f43b0beae34ed49612e14d370272451a044e525a7c62bf147bba28c9a19382",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/correcciones-106/qa-publica/movil/AUDI025-1280.png",
+          "sha256": "4ae5f4c585a987c36cf2254519e96683ce4ebbb4dddd4a9d9f80b61706d10eea",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI025.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
+  }
 }

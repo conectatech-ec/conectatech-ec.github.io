@@ -63,7 +63,8 @@
   "fuentes_tecnicas": [
     "https://drive.google.com/file/d/16k0Dsy9XFU6PiEzijN1OAOYHTMTQT_cy/view?usp=drivesdk",
     "https://drive.google.com/file/d/1fdJ1exN4ddoAa-RTl2EOgSLPh9QZ2Bf-/view?usp=drivesdk",
-    "datos-593/inventario-publico.csv"
+    "datos-593/inventario-publico.csv",
+    "reportes/beneficios-128/fuentes/AUDI047.json"
   ],
   "imagen_principal": "/imagenes/audi047/AUDI047-01.webp",
   "imagenes_secundarias": [],
@@ -113,10 +114,11 @@
     },
     {
       "nombre": "Diseño",
-      "valor": "diadema negra AAA",
+      "valor": "Diadema negra",
       "fuentes": [
         "https://drive.google.com/file/d/16k0Dsy9XFU6PiEzijN1OAOYHTMTQT_cy/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1fdJ1exN4ddoAa-RTl2EOgSLPh9QZ2Bf-/view?usp=drivesdk"
+        "https://drive.google.com/file/d/1fdJ1exN4ddoAa-RTl2EOgSLPh9QZ2Bf-/view?usp=drivesdk",
+        "reportes/beneficios-128/fuentes/AUDI047.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -126,7 +128,7 @@
   "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi047-audifonos-de-diadema-tune-760/",
   "fecha_verificacion": "2026-10-13T02:58:16.017687+00:00",
-  "descripcion": "Negro. Un acabado que combina con tu estilo. diadema negra AAA. Escoge el formato que prefieres para tu audio diario.",
+  "descripcion": "Dale a tu audio diario un formato de diadema con acabado negro y referencia comercial Tune 760BT.",
   "presentacion": "sin caja",
   "stock_fecha_corte": "2026-10-10",
   "stock_tiempo_real": false,
@@ -145,28 +147,26 @@
   "contenido_venta": "Una unidad del producto descrito. Consulta el contenido exacto y la compatibilidad antes de comprar.",
   "beneficios": [
     {
-      "valor": "Negro",
-      "titulo": "Elige el acabado que te gusta",
-      "descripcion": "Negro. Un acabado que combina con tu estilo.",
-      "especificaciones": [
-        "Color y variante"
-      ],
-      "fuentes": [
-        "https://drive.google.com/file/d/16k0Dsy9XFU6PiEzijN1OAOYHTMTQT_cy/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1fdJ1exN4ddoAa-RTl2EOgSLPh9QZ2Bf-/view?usp=drivesdk"
-      ],
-      "estado": "VERIFICADO"
-    },
-    {
-      "valor": "diadema negra AAA",
-      "titulo": "Elige tu forma de escuchar",
-      "descripcion": "diadema negra AAA. Escoge el formato que prefieres para tu audio diario.",
+      "valor": "Diadema",
+      "titulo": "Tu formato de audio",
+      "descripcion": "Audífonos de diadema para tu audio diario.",
       "especificaciones": [
         "Diseño"
       ],
       "fuentes": [
-        "https://drive.google.com/file/d/16k0Dsy9XFU6PiEzijN1OAOYHTMTQT_cy/view?usp=drivesdk",
-        "https://drive.google.com/file/d/1fdJ1exN4ddoAa-RTl2EOgSLPh9QZ2Bf-/view?usp=drivesdk"
+        "reportes/beneficios-128/fuentes/AUDI047.json"
+      ],
+      "estado": "VERIFICADO"
+    },
+    {
+      "valor": "Negro",
+      "titulo": "Elige tu estilo",
+      "descripcion": "Acabado negro.",
+      "especificaciones": [
+        "Color y variante"
+      ],
+      "fuentes": [
+        "reportes/beneficios-128/fuentes/AUDI047.json"
       ],
       "estado": "VERIFICADO"
     }
@@ -203,8 +203,8 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "https://drive.google.com/file/d/16k0Dsy9XFU6PiEzijN1OAOYHTMTQT_cy/view?usp=drivesdk",
-      "evidencia": "Mejora de beneficios comerciales basada en especificaciones y fuentes existentes: conexiones, uso, diseño y variantes; sin prestaciones adicionales. Fotografías correctas intactas."
+      "fuente": "reportes/beneficios-128/fuentes/AUDI047.json",
+      "evidencia": "Limpieza comercial autorizada por Dirección General: beneficios y descripción basados sólo en atributos ya verificados; clasificación visible junto al SKU conservada."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
@@ -212,103 +212,114 @@
       "sha256_maestro": "110afe7c3e1fd4f39fc9d7a6cfbb3faf685d787bfd34e78a7b5148363d0d5c1b",
       "evidencia": "Edición/representación comercial asistida por IA desde todas las fotografías propias del SKU. Acabado de producto nuevo: superficies limpias sin rayas, polvo o desgaste, luz de estudio, fondo blanco y sombra natural. Geometría, colores y hardware cotejados contra vistas propias; no se publican cajas ni se inventan caras ocultas."
     },
-    "movil": {
-      "solicitado": "AUDI047",
-      "sku": "AUDI047",
-      "estado": "VERIFICADO",
-      "fecha": "2026-10-13T03:00:00.229Z",
-      "errores": [],
-      "verificaciones": {
-        "http": true,
-        "html_coincide_local": true,
-        "sin_desbordamiento_horizontal": true,
-        "titulo": true,
-        "sku": true,
-        "canonical": true,
-        "promo_contado": true,
-        "pvp": true,
-        "jerarquia_precio": true,
-        "disponibilidad": true,
-        "imagen_principal": true,
-        "imagenes_cargadas": true,
-        "galeria_del_contrato": true,
-        "javascript": true,
-        "beneficios_verificados": true,
-        "detalles_cerrados": true,
-        "detalles_accesibles": true,
-        "enlaces_internos": true,
-        "escritorio": true
-      },
-      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
-      "url": "https://conectatech-ec.github.io/productos/audi047-audifonos-de-diadema-tune-760/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/audi047-audifonos-de-diadema-tune-760/",
-      "archivo_html": "productos/audi047-audifonos-de-diadema-tune-760/index.html",
-      "http": 200,
-      "sha256_html": "d7dcce52cd6a183b9ff2b6b677c09782dcd00751994a3cb18e4a5e7ce10d9638",
-      "sha256_html_local": "d7dcce52cd6a183b9ff2b6b677c09782dcd00751994a3cb18e4a5e7ce10d9638",
-      "ancho_viewport": 390,
-      "ancho_documento": 390,
-      "alto_viewport": 844,
-      "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/audi047/AUDI047-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi047/AUDI047-01-600.webp?v=7e6251b14224bf84",
-        "naturalWidth": 339,
-        "naturalHeight": 339,
-        "completa": true,
-        "visible": true
-      },
-      "galeria": [],
-      "enlaces_internos": [
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi047-audifonos-de-diadema-tune-760/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/imagenes/audi047/AUDI047-01.webp",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
-          "http": 200,
-          "ok": true
-        },
-        {
-          "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
-          "http": 200,
-          "ok": true
-        }
-      ],
-      "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI047-390.png",
-      "sha256": "39482e80f26dd2b20eaa8913bc2a1bcb559e7f5c6e466fad8f41578801a43915",
-      "escritorio": {
-        "ancho_viewport": 1280,
-        "ancho_documento": 1280,
-        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI047-1280.png",
-        "sha256": "74cd91d578b68be3451e49c19e31d22f3489b6db097d6da5daaee711f5557de0",
-        "sin_desbordamiento_horizontal": true,
-        "imagen_cargada": true
-      }
-    },
     "publicacion_http": {
       "archivo": "reportes/lote-067/http-publicacion-recuperada.json",
       "sha256": "b6e1251059fc78e8bad4105069c0d3425737a1119734cb1c48e547148f340953"
     }
+  },
+  "descripcion_seo": "Dale a tu audio diario un formato de diadema con acabado negro y referencia comercial Tune 760BT.",
+  "historial_validaciones_editoriales": [
+    {
+      "movil_anterior": {
+        "solicitado": "AUDI047",
+        "sku": "AUDI047",
+        "estado": "VERIFICADO",
+        "fecha": "2026-10-13T03:00:00.229Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/audi047-audifonos-de-diadema-tune-760/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/audi047-audifonos-de-diadema-tune-760/",
+        "archivo_html": "productos/audi047-audifonos-de-diadema-tune-760/index.html",
+        "http": 200,
+        "sha256_html": "d7dcce52cd6a183b9ff2b6b677c09782dcd00751994a3cb18e4a5e7ce10d9638",
+        "sha256_html_local": "d7dcce52cd6a183b9ff2b6b677c09782dcd00751994a3cb18e4a5e7ce10d9638",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/audi047/AUDI047-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/audi047/AUDI047-01-600.webp?v=7e6251b14224bf84",
+          "naturalWidth": 339,
+          "naturalHeight": 339,
+          "completa": true,
+          "visible": true
+        },
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi047-audifonos-de-diadema-tune-760/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/audi047/AUDI047-01.webp",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi001-audifonos-airpods-pro-2-anc/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi005-audifonos-diadema-airpods-max/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/productos/audi008-audifonos-alambricos-earpods-lightning/",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI047-390.png",
+        "sha256": "39482e80f26dd2b20eaa8913bc2a1bcb559e7f5c6e466fad8f41578801a43915",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/lote-067/qa-publica-recuperada/movil/AUDI047-1280.png",
+          "sha256": "74cd91d578b68be3451e49c19e31d22f3489b6db097d6da5daaee711f5557de0",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "motivo": "Nueva descripción comercial; requiere comprobar el texto nuevo."
+    }
+  ],
+  "correccion_comercial_128": {
+    "fuente": "reportes/beneficios-128/fuentes/AUDI047.json",
+    "nuevasCaracteristicas": false,
+    "clasificacionConservada": true
   }
 }
