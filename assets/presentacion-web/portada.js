@@ -22,6 +22,29 @@
   if(brand&&brandSubtitle)brand.appendChild(brandSubtitle);
   const footerBrand=document.querySelector('footer>b');
   if(footerBrand)footerBrand.innerHTML=mark();
+  const footer=document.querySelector('footer'),official=config.contactoOficial;
+  if(footer&&footerBrand&&official){
+    const logo=footer.querySelector(':scope > img');
+    const icon=type=>{
+      const paths={
+        envio:'<path d="M3 6h11v11H3zM14 10h4l3 4v3h-7M7 6v5M5 11h4"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/>',
+        whatsapp:'<path d="M20.3 11.7a8.3 8.3 0 0 1-12.2 7.4L3 20.5l1.4-5.1A8.3 8.3 0 1 1 20.3 11.7Z"/><path d="M8 7.5c.3-.3 1.2 1.6 1.2 1.9s-.7.8-.7 1.1c.4 1 1.8 2.5 2.9 2.9.3 0 .9-.8 1.2-.7s2.1 1 2.1 1.3-.3 1.5-1.7 1.5c-2.8-.1-6.1-3.6-6.2-6.1 0-1 .5-1.5 1.2-1.9Z"/>',
+        Instagram:'<rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.1"/>',
+        Facebook:'<path d="M14.5 21v-8h3l.5-4h-3.5V7c0-1 .5-1.5 1.5-1.5h2V2.2A22 22 0 0 0 15 2c-3 0-4.5 1.8-4.5 4.5V9H8v4h2.5v8"/>',
+        TikTok:'<path d="M14 3v12a4 4 0 1 1-4-4M14 3c1 3.5 2.7 5 6 5"/>',
+        externo:'<path d="M7 17 17 7M7 7h10v10"/>',
+        arriba:'<path d="M12 19V5M6 11l6-6 6 6"/>',
+        lugar:'<path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/>'
+      };
+      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths[type]||paths.lugar}</svg>`;
+    };
+    const contacts=official.telefonos.filter(p=>/^593\d{9}$/.test(p.numero)).map(p=>`<a class="pw-footer-wa" href="https://wa.me/${p.numero}?text=${encodeURIComponent('Hola, CONECTATECH. Quiero información sobre un producto y el envío a mi ciudad.')}" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp al ${escape(p.etiqueta)}">${icon('whatsapp')}<span><small>WhatsApp oficial</small><strong>${escape(p.etiqueta)}</strong></span><span aria-hidden="true">${icon('externo')}</span></a>`).join('');
+    const social=official.redes.filter(r=>r.url&&r.cuenta).map(r=>`<a class="pw-footer-social" href="${escape(r.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(r.canal)} oficial de CONECTATECH: ${escape(r.cuenta)}">${icon(r.canal)}<span><strong>${escape(r.canal)}</strong><small>${escape(r.cuenta)}</small></span><span aria-hidden="true">${icon('externo')}</span></a>`).join('');
+    footer.classList.add('pw-footer');footer.id='contacto-oficial';
+    footer.innerHTML=`<div class="pw-footer-wrap"><div class="pw-footer-main"><div class="pw-footer-brand"><div data-pw-footer-brand></div><p>Tecnología · Conectividad · Innovación</p><span>Tu mundo más conectado.</span></div><section class="pw-footer-shipping" aria-labelledby="pw-shipping-title"><div class="pw-footer-kicker">${icon('envio')} ENVÍOS A NIVEL NACIONAL</div><h2 id="pw-shipping-title">Desde Quito,<br>para todo el <em>Ecuador.</em></h2><p>Enviamos tu tecnología desde Quito a tu ciudad. Escríbenos y coordinamos la entrega contigo.</p><p class="pw-footer-delivery-note">Te confirmamos cobertura, costo y tiempo de entrega según tu destino.</p><div class="pw-footer-contacts" aria-label="Los dos números oficiales de CONECTATECH">${contacts}</div><p class="pw-footer-official-note">Atención directa en nuestros dos números oficiales.</p></section></div><div class="pw-footer-details"><section class="pw-footer-location" aria-labelledby="pw-location-title"><h3 id="pw-location-title">${icon('lugar')} También tenemos tienda física</h3><address>${escape(official.direccion)}</address><div class="pw-footer-assurances"><span>Compra con factura</span><span>Retiro en tienda</span></div></section><section class="pw-footer-channels" aria-labelledby="pw-channels-title"><h3 id="pw-channels-title">Nuestros canales oficiales</h3><div class="pw-footer-socials">${social}</div></section></div><div class="pw-footer-bottom"><span>CONECTATECH · Quito, Ecuador</span><a href="#catalogo">Volver al catálogo ${icon('arriba')}</a></div></div>`;
+    const brandSlot=footer.querySelector('[data-pw-footer-brand]');
+    if(logo)brandSlot.appendChild(logo);brandSlot.appendChild(footerBrand);
+  }
   const brandRow=document.querySelector('header .brandrow');
   if(brandRow)brandRow.insertAdjacentHTML('beforeend','<img class="pw-logo-season" src="/assets/presentacion-web/halloween-calabaza-corona.webp?v=7" alt="" aria-hidden="true" width="160" height="160" decoding="async">');
   if(brandRow)brandRow.insertAdjacentHTML('beforeend','<span class="pw-brand-campaign" role="img" aria-label="Black Month: regalos por tus compras"><img src="/assets/presentacion-web/black-month-emblema-negro-dorado-rojo-20261103.webp" width="1254" height="1254" alt="" aria-hidden="true" decoding="async" fetchpriority="high"></span>');

@@ -28,6 +28,18 @@ window.CONECTATECH_PRESENTACION = {
   productosPortada: ['TELF036', 'PALA001', 'REL042', 'PARL001', 'TECL032'],
   marca: '/assets/presentacion-web/marca-trazos-originales.svg',
   banner: '/assets/presentacion-web/banner-regalos-original.png',
+  contactoOficial: {
+    telefonos: [
+      { numero: '593998576759', etiqueta: '099 857 6759' },
+      { numero: '593964206977', etiqueta: '096 420 6977' }
+    ],
+    direccion: 'Av. 6 de Diciembre y La Niña · C.C. Multicentro Shopping · Subsuelo, local 3 · Quito, Ecuador',
+    redes: [
+      { canal: 'Instagram', cuenta: '@conectatech.ec', url: 'https://www.instagram.com/conectatech.ec/' },
+      { canal: 'Facebook', cuenta: 'conectatech.ec', url: 'https://www.facebook.com/conectatech.ec/' },
+      { canal: 'TikTok', cuenta: '@conectatech.ec', url: 'https://www.tiktok.com/@conectatech.ec' }
+    ]
+  },
   calendario: [
     { desde: '10-01', hasta: '10-31', tema: 'halloween' },
     { desde: '11-01', hasta: '11-30', tema: 'black-month' },
