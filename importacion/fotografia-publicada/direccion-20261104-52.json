@@ -1,8 +1,8 @@
 {
   "version": 1,
   "lote": 52,
-  "estado": "ACTIVACION_PENDIENTE_VERIFICACION_PUBLICA",
-  "publicacion_verificada": false,
+  "estado": "PUBLICADO_VERIFICADO",
+  "publicacion_verificada": true,
   "base": "d7a54ca3d895caf8e05e20c75c707c7e1e4ef41a",
   "sku": 2,
   "portadas": 0,
@@ -137,7 +137,7 @@
         "panel_MicroUSB_izquierdo_y_USB_C_derecho": "Comprobado en foto física adicional; portada de detalle anterior conservada",
         "hardware_o_texto_reconstruido": false
       },
-      "publicacion_real_verificada": false,
+      "publicacion_real_verificada": true,
       "edicion_asistida": false,
       "portada_conservada_profesional": {
         "posicion": 1,
@@ -282,7 +282,9 @@
         "motivo": "La foto física acredita negro y texto frontal; no declarar terminada la representación verde del empaque.",
         "publicacion_verificada": false
       },
-      "todas_las_fotos_propias_disponibles_revisadas": 4
+      "todas_las_fotos_propias_disponibles_revisadas": 4,
+      "fecha_primera_verificacion_publica": "2026-11-04T01:42:50.194356+00:00",
+      "huella_fotografica": "6f2c906819342c5d7278a76ec06f69d430429a5416398da7878fc2ba043353c9"
     },
     "TECL029": {
       "sku": "TECL029",
@@ -373,7 +375,7 @@
         "teclado_numerico_o_touchpad_anadido": false,
         "portada_plegada_conservada": true
       },
-      "publicacion_real_verificada": false,
+      "publicacion_real_verificada": true,
       "edicion_asistida": true,
       "portada_conservada_profesional": {
         "posicion": 1,
@@ -459,7 +461,9 @@
           "descripcion": "Vista abierta del Meetion BTK001 rosa: sus 67teclas y la bisagra central visibles. Conserva la portada plegada; distribución US cotejada con los dos diagramas propios.",
           "edicion_asistida": true
         }
-      ]
+      ],
+      "fecha_primera_verificacion_publica": "2026-11-04T01:42:50.194356+00:00",
+      "huella_fotografica": "dde12132d5207078a8e0382eca0b91424ed61ed6e9240593a6b6e1261888d228"
     }
   },
   "costo_adicional": 0,
@@ -494,5 +498,17 @@
     }
   },
   "base_vista_fisica": "f71ae890dca402d6d5a91beb28c232ff39dce712",
-  "base_integracion_final_vista_fisica": "fd38e24a866a81809202f31b72d7b0b1836ccb22"
+  "base_integracion_final_vista_fisica": "fd38e24a866a81809202f31b72d7b0b1836ccb22",
+  "fecha_primera_verificacion_publica": "2026-11-04T01:42:50.194356+00:00",
+  "verificacion": {
+    "HTTP_y_SHA256": true,
+    "Chromium_escritorio_movil": true,
+    "casos_Chromium": 4,
+    "anchos": [
+      1280,
+      390
+    ],
+    "sha256_informe_http": "baae977da19e63b8c55fd30715eab4814e39840b1d589e22a1217d98f7a2e771",
+    "sha256_informe_chromium": "1c32cc2cfd42fdd61b6dd0eb80927d33e42633cd5fd2a01c5fe5cd3f869588f1"
+  }
 }
