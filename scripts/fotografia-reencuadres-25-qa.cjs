@@ -9,6 +9,8 @@ const fs=require('fs'),path=require('path'),assert=require('assert'),{chromium}=
  Object.assign(successor41.productos,successor42.productos);
  Object.assign(successor40.productos,successor41.productos);
  for(const[s,r]of Object.entries(successor40.productos))if(manifest.productos[s])manifest.productos[s]={...manifest.productos[s],...r};
+ const successors51=pub?await(await fetch('https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+process.env.PHOTO_SHA+'/importacion/fotografia-publicada/direccion-20261103-51.json')).json():JSON.parse(fs.readFileSync(path.join(root,'importacion/fotografia-publicada/direccion-20261103-51.json')));
+ for(const [s,r]of Object.entries(successors51.productos))if(manifest.productos[s])manifest.productos[s]={...manifest.productos[s],...r};
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||(process.env.GITHUB_ACTIONS?'/usr/bin/google-chrome':'/usr/bin/chromium'),headless:true,args:['--no-sandbox'],...(process.env.PHOTO_PROXY==='1'?{proxy:{server:process.env.HTTPS_PROXY}}:{})}),results=[];
  for(const width of [1280,390]){
   const page=await browser.newPage({viewport:{width,height:950}});
