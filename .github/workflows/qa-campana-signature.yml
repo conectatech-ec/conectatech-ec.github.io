@@ -36,3 +36,43 @@ jobs:
         run: python -m unittest discover -s 'banner-factory/revision-premium/signature-v2-20261018/tests' -p 'test*.py' -v
       - name: Medicion sintetica de la capa
         run: python 'banner-factory/revision-premium/signature-v2-20261018/tests/benchmark_tema_campana.py'
+
+  recuperar-fotos-publicas:
+    if: github.repository == 'conectatech-ec/conectatech-ec.github.io' && github.ref == 'refs/heads/banners/campanas-20261103'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        sku: [TELF023, TABL004]
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow==11.3.0'
+      - name: Recuperar solo imagen ya publica y verificar su maestro
+        env:
+          PHOTO_SKU: ${{ matrix.sku }}
+        run: |
+          python - <<'PY'
+          import base64,hashlib,io,json,os,urllib.request
+          from PIL import Image
+          sources={
+            "TELF023":("imagenes/telf023/original-bfbe080b08b2a2a3.png","bfbe080b08b2a2a3fbadfde5d6223f2d40d6598b10729d60444192794240ce0c"),
+            "TABL004":("imagenes/tabl004/original-78ee8f53f2b962e2.png","78ee8f53f2b962e242bc4be7d7feb6308f577f926364d6b543347de412faba5c")
+          }
+          sku=os.environ["PHOTO_SKU"];path,expected=sources[sku]
+          url="https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/f71ae890dca402d6d5a91beb28c232ff39dce712/"+path
+          with urllib.request.urlopen(url,timeout=45) as response:data=response.read()
+          actual=hashlib.sha256(data).hexdigest()
+          if actual!=expected:raise RuntimeError("Maestro publico no coincide")
+          with Image.open(io.BytesIO(data)) as im:
+            native=im.size
+            im=im.convert("RGBA");im.thumbnail((900,900),Image.Resampling.LANCZOS)
+            b=io.BytesIO();im.save(b,format="PNG",optimize=True)
+            payload={"sku":sku,"source_sha256":actual,"source_public_path":path,"native_size":native,"transfer_size":im.size,"format":"PNG","png_base64":base64.b64encode(b.getvalue()).decode()}
+          # Solo pixeles ya publicados en la web; nunca se accede a Drive ni a credenciales.
+          print("CT_PUBLIC_PHOTO_JSON="+json.dumps(payload,separators=(",",":")))
+          PY
