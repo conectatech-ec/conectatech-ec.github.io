@@ -46,17 +46,18 @@ const allowed=new Set(['HUB027','HUB015','HUB030','HUB012','ROUT002','ADAP092','
 function rows(){return Object.assign({},... [file,secondFile,thirdFile,fourthFile,fifthFile,sixthFile,seventhFile,eighthFile,ninthFile,tenthFile,eleventhFile,twelfthFile,thirteenthFile,fourteenthFile,fifteenthFile,sixteenthFile,seventeenthFile,eighteenthFile,nineteenthFile,twentiethFile,twentyFirstFile,twentySecondFile,twentyThirdFile,twentyFourthFile,twentyFifthFile,twentySixthFile,twentySeventhFile,twentyEighthFile,twentyNinthFile,thirtiethFile,thirtyFirstFile,thirtySecondFile,thirtyThirdFile,thirtyFourthFile,thirtyFifthFile,thirtySixthFile,thirtySeventhFile,thirtyEighthFile,thirtyNinthFile,fortiethFile,fortyFirstFile,publication51File].map(f=>fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')).productos:{}));}
 function premium(){return fs.existsSync(secondFile)?JSON.parse(fs.readFileSync(secondFile,'utf8')).ajuste_titulo:null;}
 function hash(url){const f='.'+url;return fs.existsSync(f)?crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'):null;}
+function photo(r){return r.imagenProfesional||r.portada_conservada_profesional;}
 function valid(r){return r&&allowed.has(r.sku)&&r.revisado_visual===true&&
  hash(r.portada_anterior.url)===r.portada_anterior.sha256&&
  (r.mantener_vistas||[]).every(p=>hash(p.original)===p.sha256_original&&Object.values(p.versiones).every(v=>hash(v.url)===v.sha256))&&
  (r.portadas_previas_autorizadas||[]).every(p=>hash(p.url)===p.sha256)&&
  (r.archivos_originales_conservados||[]).every(p=>hash(p.url)===p.sha256)&&
  (r.vistas_retira_archivos_conservados||[]).every(p=>hash(p.url)===p.sha256)&&
- (r.imagenProfesional?[r.imagenProfesional]:r.vistas||[]).every(p=>hash(p.original)===p.sha256_original&&Object.values(p.versiones).every(v=>hash(v.url)===v.sha256));}
+ [...(photo(r)?[photo(r)]:[]),...(r.vistas||[])].every(p=>hash(p.original)===p.sha256_original&&Object.values(p.versiones).every(v=>hash(v.url)===v.sha256));}
 function capture(){
  const products=JSON.parse(fs.readFileSync('index.html','utf8').match(/const products=(\[[\s\S]*?\]);\s*\n/)[1]);
  const registry=rows();
- return new Set(products.filter(p=>{const r=registry[p.sku];return valid(r)&&[r.portada_anterior.url,r.imagenProfesional?.versiones['1200'].url,...(r.portadas_previas_autorizadas||[]).map(v=>v.url)].includes(p.imageUrl);}).map(p=>p.sku));
+ return new Set(products.filter(p=>{const r=registry[p.sku];return valid(r)&&[r.portada_anterior.url,photo(r)?.versiones['1200'].url,...(r.portadas_previas_autorizadas||[]).map(v=>v.url)].includes(p.imageUrl);}).map(p=>p.sku));
 }
 function patchObjects(source,selected){
  // Sólo cambia imageUrl dentro del objeto de cada SKU; conserva los demás bytes.
@@ -69,8 +70,8 @@ function patchObjects(source,selected){
   if(c==='{'){if(depth===0)start=i;depth++;}
   if(c==='}'&&--depth===0&&start>=0){
    const original=text.slice(start,i+1),p=JSON.parse(original),r=registry[p.sku];let updated=original;
-   if(selected.has(p.sku)&&valid(r)&&r.imagenProfesional&&[r.portada_anterior.url,r.imagenProfesional.versiones['1200'].url,...(r.portadas_previas_autorizadas||[]).map(v=>v.url)].includes(p.imageUrl)){
-    updated=original.replace(/("imageUrl"\s*:\s*)"(?:\\.|[^"\\])*"/,(_,key)=>key+JSON.stringify(r.imagenProfesional.versiones['1200'].url));
+   if(selected.has(p.sku)&&valid(r)&&photo(r)&&[r.portada_anterior.url,photo(r).versiones['1200'].url,...(r.portadas_previas_autorizadas||[]).map(v=>v.url)].includes(p.imageUrl)){
+    updated=original.replace(/("imageUrl"\s*:\s*)"(?:\\.|[^"\\])*"/,(_,key)=>key+JSON.stringify(photo(r).versiones['1200'].url));
    }
    const title=premium();
    if(p.sku==='CUBO024'&&title?.sku==='CUBO024'&&title.autorizado_por_propietario===true&&[title.anterior,title.nuevo].includes(p.name))updated=updated.replace(/("name"\s*:\s*)"(?:\\.|[^"\\])*"/,(_,key)=>key+JSON.stringify(title.nuevo));
@@ -89,11 +90,11 @@ function overlay(p,custom,selected){
  const old=custom.imagenProfesional?.versiones?.['1200'];
  const next=r.imagenProfesional?.versiones['1200'];
  if(!old||![[r.portada_anterior.url,r.portada_anterior.sha256],...(next?[[next.url,next.sha256]]:[]),...(r.portadas_previas_autorizadas||[]).map(p=>[p.url,p.sha256])].some(([url,sha])=>old.url===url&&old.sha256===sha))return;
- if(r.vistas){const kept=(custom.galeria||[]).filter(i=>!(r.retirar_vistas||[]).includes(i.versiones['1200'].url));const urls=new Set(kept.map(i=>i.versiones['1200'].url));custom.galeria=[...kept,...r.vistas.filter(i=>!urls.has(i.versiones['1200'].url))];return;}
- const secondary=(custom.galeria||[]).filter(i=>i.posicion!==1&&!(r.retirar_vistas||[]).includes(i.versiones['1200'].url)&&i.versiones['1200'].url!==r.imagenProfesional.versiones['1200'].url&&(!r.excluir_portada_anterior_de_secundarias||![old.url,r.portada_anterior.url].includes(i.versiones['1200'].url)));
+ if(r.vistas){if(r.portada_conservada_profesional){custom.imagen=r.portada_conservada_profesional.versiones['1200'].url;custom.imagenProfesional=r.portada_conservada_profesional;custom.galeria=[r.portada_conservada_profesional,...(custom.galeria||[]).filter(i=>i.posicion!==1)];}const kept=(custom.galeria||[]).filter(i=>!(r.retirar_vistas||[]).includes(i.versiones['1200'].url));const urls=new Set(kept.map(i=>i.versiones['1200'].url));custom.galeria=[...kept,...r.vistas.filter(i=>!urls.has(i.versiones['1200'].url))];return;}
+ const secondary=(custom.galeria||[]).filter(i=>i.posicion!==1&&!(r.retirar_vistas||[]).includes(i.versiones['1200'].url)&&i.versiones['1200'].url!==photo(r).versiones['1200'].url&&(!r.excluir_portada_anterior_de_secundarias||![old.url,r.portada_anterior.url].includes(i.versiones['1200'].url)));
  const urls=new Set(secondary.map(i=>i.versiones['1200'].url));
  secondary.push(...(r.mantener_vistas||[]).filter(i=>!urls.has(i.versiones['1200'].url)));
- custom.imagen=r.imagenProfesional.versiones['1200'].url;custom.imagenProfesional=r.imagenProfesional;
+ custom.imagen=photo(r).versiones['1200'].url;custom.imagenProfesional=r.imagenProfesional;
  custom.galeria=[r.imagenProfesional,...secondary];custom.imagenPendiente=false;
 }
 module.exports={capture,restore,overlay,patchObjects,valid};
