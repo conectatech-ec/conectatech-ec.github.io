@@ -5,14 +5,14 @@
   "publicacion_verificada": false,
   "base": "d7a54ca3d895caf8e05e20c75c707c7e1e4ef41a",
   "sku": 2,
-  "portadas": 1,
-  "secundarias": 1,
+  "portadas": 0,
+  "secundarias": 2,
   "productos": {
     "POWE015": {
       "sku": "POWE015",
       "lote": 52,
       "pagina": "/productos/powe015-powerbank-treqa-multiples-cables/",
-      "uso": "PORTADA",
+      "uso": "SECUNDARIA",
       "revisado_visual": true,
       "autorizacion": "Publicación selectiva expresa del propietario: publica estas y las que falten. Representación asistida autorizada078 desde fuentes propias del SKU exacto; no acredita originalidad por logotipo.",
       "portada_anterior": {
@@ -86,59 +86,110 @@
         {
           "url": "/imagenes/powe015/POWE015-01.webp",
           "sha256": "c8ccdfc13f6536414b3c476bcc74ff8d373ffe61c2eedcc179a98af1a987155a"
-        }
-      ],
-      "mantener_vistas": [
-        {
-          "posicion": 2,
-          "contiene_caja": false,
-          "referencia_fabricante": false,
-          "referencia_distribuidor": false,
-          "fuente": "https://drive.google.com/file/d/1j09VKcvGv1If3gXRSUokuBkQc1cVMfqv/view?usp=drivesdk",
-          "original": "/imagenes/powe015/original-bacc026ec64a6fac.png",
-          "sha256_original": "bacc026ec64a6fac038647b546eb9b6c55ef4171c41020eede7eb53b53b1c673",
-          "resolucion_original": [
-            1774,
-            887
-          ],
-          "resolucion_util": [
-            1008,
-            504
-          ],
-          "versiones": {
-            "300": {
-              "url": "/imagenes/powe015/POWE015-01-300.webp",
-              "sha256": "8abf666904a9f41fb10856f0ca1a0965cb96f9853a7483e3ba92b29f12f6c722",
-              "bytes": 5082,
-              "ancho": 300,
-              "alto": 300
-            },
-            "600": {
-              "url": "/imagenes/powe015/POWE015-01-600.webp",
-              "sha256": "6e21fa364a874a8e82e919ea5cbcd618c3e44db5e27f2796e80654275caa8ea5",
-              "bytes": 19648,
-              "ancho": 600,
-              "alto": 600
-            },
-            "1200": {
-              "url": "/imagenes/powe015/POWE015-01.webp",
-              "sha256": "c8ccdfc13f6536414b3c476bcc74ff8d373ffe61c2eedcc179a98af1a987155a",
-              "bytes": 83492,
-              "ancho": 1200,
-              "alto": 1200
-            }
-          },
-          "revision_regla": 2,
-          "revision_visual": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Vista superior propia completa: pantalla apagada con FAST CHARGING, dos LED, entradas MICRO/TYPE-C, dos salidas USB-A (naranja/negro) y botón, conservados; no se inventa porcentaje de carga. El maestro de cuerpo/cables se reserva por microtextos insuficientemente fieles.",
-          "recorte": null,
-          "silueta_revisada": null,
-          "ajustes": {},
-          "dhash": "00002f3b2b270000",
-          "huella_proceso": "e9d767a86dc17460aad08fdb66bccedbf13324c7a45e0f69127fabf45a61f4e6",
-          "version_proceso": 2
         },
         {
-          "posicion": 3,
+          "url": "/imagenes/powe015/POWE015-r2026110452b-01.webp",
+          "sha256": "824f3d7865aad23fabd5b1828a0caf3ff2bd83c69bf6cce33b6ec8d456df4651",
+          "ancho": 1200,
+          "alto": 1200,
+          "solo_transicion_de_referencia": true,
+          "motivo": "Sustituir la representación de empaque por evidencia física del ejemplar negro; no se acredita identidad por la ilustración."
+        }
+      ],
+      "mantener_vistas": [],
+      "miniaturas_esperadas": 2,
+      "beneficio": "Vista física frontal completa del TR-967 negro: cuatro cables integrados y serigrafía real, sin reconstrucción. Se conserva la portada de detalle y la vista secundaria anterior.",
+      "referencias": [
+        {
+          "id": "18g8-ntYki07k2BU92VXt_dRXaCG-oAGk",
+          "url": "https://drive.google.com/file/d/18g8-ntYki07k2BU92VXt_dRXaCG-oAGk/view",
+          "tipo": "FOTO_FISICA_PANEL",
+          "sha256": "0cc6346735bbadf128537a904148482befd87ad5de973ffb165d1f24eceb2372",
+          "bytes": 394131
+        },
+        {
+          "id": "1RcP_pFemFt81WfGjXfPe90PIjgtUWQFU",
+          "url": "https://drive.google.com/file/d/1RcP_pFemFt81WfGjXfPe90PIjgtUWQFU/view",
+          "tipo": "REVERSO_EMPAQUE_MODELO",
+          "sha256": "da609bb1b61e9d0e93c1265154497851c08c3ee0acd4832c575b13133aa3fae6",
+          "bytes": 476907
+        },
+        {
+          "id": "1Syw9irL2ok6gnevVUAXOG_aG3MlFjWKn",
+          "url": "https://drive.google.com/file/d/1Syw9irL2ok6gnevVUAXOG_aG3MlFjWKn/view",
+          "tipo": "FOTO_FISICA_COMPLETA_NEGRA",
+          "sha256": "7306c1ccf33bedbfdd1b96fec4c46e7589c6a00fbf7c2d3d962adeadaff544aa",
+          "bytes": 601896
+        },
+        {
+          "tipo": "EMPAQUE_PROPIO_IDENTIFICACION_MODELO",
+          "url": "https://drive.google.com/file/d/1vzcROxZyHXB7Av86nr-ZtnYpzGXSKHth/view",
+          "sha256": "2a7036ad857b66b78d00cdae8dd4db2e25ced469e8ea67848a9013f6e483a72e"
+        }
+      ],
+      "referencia_web_solo_cotejo": "https://dook.gr/treqa/treqa-tr-967-power-bank-20000mah-me-2-thires-usb-a-kai-thira-usb-c-33375-01-treqa?page=2",
+      "comprobacion_visual": {
+        "color_fisico": "negro/dark charcoal",
+        "modelo_impreso": "TR-967",
+        "capacidad_impresa": "20000mAh",
+        "cables_integrados_guardados": 4,
+        "texto_del_master_igual_a_pixeles_de_foto_real": true,
+        "panel_MicroUSB_izquierdo_y_USB_C_derecho": "Comprobado en foto física adicional; portada de detalle anterior conservada",
+        "hardware_o_texto_reconstruido": false
+      },
+      "publicacion_real_verificada": false,
+      "edicion_asistida": false,
+      "portada_conservada_profesional": {
+        "posicion": 1,
+        "contiene_caja": false,
+        "referencia_fabricante": false,
+        "referencia_distribuidor": false,
+        "fuente": "https://drive.google.com/file/d/1j09VKcvGv1If3gXRSUokuBkQc1cVMfqv/view?usp=drivesdk",
+        "original": "/imagenes/powe015/original-bacc026ec64a6fac.png",
+        "sha256_original": "bacc026ec64a6fac038647b546eb9b6c55ef4171c41020eede7eb53b53b1c673",
+        "resolucion_original": [
+          1774,
+          887
+        ],
+        "resolucion_util": [
+          1008,
+          504
+        ],
+        "versiones": {
+          "300": {
+            "url": "/imagenes/powe015/POWE015-01-300.webp",
+            "sha256": "8abf666904a9f41fb10856f0ca1a0965cb96f9853a7483e3ba92b29f12f6c722",
+            "bytes": 5082,
+            "ancho": 300,
+            "alto": 300
+          },
+          "600": {
+            "url": "/imagenes/powe015/POWE015-01-600.webp",
+            "sha256": "6e21fa364a874a8e82e919ea5cbcd618c3e44db5e27f2796e80654275caa8ea5",
+            "bytes": 19648,
+            "ancho": 600,
+            "alto": 600
+          },
+          "1200": {
+            "url": "/imagenes/powe015/POWE015-01.webp",
+            "sha256": "c8ccdfc13f6536414b3c476bcc74ff8d373ffe61c2eedcc179a98af1a987155a",
+            "bytes": 83492,
+            "ancho": 1200,
+            "alto": 1200
+          }
+        },
+        "revision_regla": 2,
+        "revision_visual": "Retoque asistido de fotografía propia: fondo blanco, limpieza y luz; sin sustituir modelo, variante, hardware ni microtextos. Vista superior propia completa: pantalla apagada con FAST CHARGING, dos LED, entradas MICRO/TYPE-C, dos salidas USB-A (naranja/negro) y botón, conservados; no se inventa porcentaje de carga. El maestro de cuerpo/cables se reserva por microtextos insuficientemente fieles.",
+        "recorte": null,
+        "silueta_revisada": null,
+        "ajustes": {},
+        "dhash": "00002f3b2b270000",
+        "huella_proceso": "e9d767a86dc17460aad08fdb66bccedbf13324c7a45e0f69127fabf45a61f4e6",
+        "version_proceso": 2
+      },
+      "vistas": [
+        {
+          "posicion": 2,
           "contiene_caja": false,
           "fuente": "Fotografías propias y corrección expresa del propietario; edición comercial asistida contrastada visualmente.",
           "original": "/imagenes/powe015/POWE015-r2026102606-maestro.png",
@@ -164,48 +215,50 @@
               "alto": 300
             }
           }
-        }
-      ],
-      "miniaturas_esperadas": 2,
-      "beneficio": "Producto completo TREQA TR-967 verde con sus cuatro cables integrados guardados y panel real de conexiones; se conserva además la vista de detalle anterior.",
-      "referencias": [
-        {
-          "tipo": "FOTO_PROPIA_DE_EMPAQUE_MODELO_EXACTO",
-          "url": "https://drive.google.com/file/d/1j09VKcvGv1If3gXRSUokuBkQc1cVMfqv/view?usp=drivesdk",
-          "sha256": "2a7036ad857b66b78d00cdae8dd4db2e25ced469e8ea67848a9013f6e483a72e"
         },
         {
-          "tipo": "DETALLE_PREVIO_CONSERVADO_PARA_COTEJAR_POSICIONES",
-          "url": "/imagenes/powe015/POWE015-01.webp",
-          "sha256": "c8ccdfc13f6536414b3c476bcc74ff8d373ffe61c2eedcc179a98af1a987155a"
+          "posicion": 3,
+          "contiene_caja": false,
+          "fuente": "https://drive.google.com/file/d/1Syw9irL2ok6gnevVUAXOG_aG3MlFjWKn/view",
+          "original": "/imagenes/powe015/original-r2026110452c-POWE015.png",
+          "sha256_original": "1f60e68b3f1c8c7b8627c3662fcfb6534fab9274d8e4796a483be406656bec1d",
+          "resolucion_original": [
+            1350,
+            1800
+          ],
+          "versiones": {
+            "1200": {
+              "url": "/imagenes/powe015/POWE015-r2026110452c-03.webp",
+              "sha256": "f9e92bd52d26ce5c8b423ef3935b7ffc244a40e5b480741729cb6d851e7dfc3e",
+              "ancho": 1200,
+              "alto": 1600
+            },
+            "600": {
+              "url": "/imagenes/powe015/POWE015-r2026110452c-03-600.webp",
+              "sha256": "5175baffd7484278de17f3e51771748b29cfb421cd41d0d03c84984d850c43b4",
+              "ancho": 600,
+              "alto": 800
+            },
+            "300": {
+              "url": "/imagenes/powe015/POWE015-r2026110452c-03-300.webp",
+              "sha256": "be87cb637055b6e4633f2bd23ca9ad09146325b3edc4410368bec3eaadf01aa1",
+              "ancho": 300,
+              "alto": 400
+            }
+          },
+          "revision_visual": true,
+          "revision_regla": 2,
+          "descripcion": "Vista física frontal del TR-967 negro, completo, con sus cuatro cables guardados y serigrafía original íntegra.",
+          "edicion_asistida": false,
+          "transformacion": "Sólo conversión PNG/WebP y tamaños responsivos. Ningún retoque del artículo ni de sus inscripciones.",
+          "miniaturaAncho": 83,
+          "miniaturaAlto": 110,
+          "nueva_en_lote": true
         }
       ],
-      "referencia_web_solo_cotejo": "https://dook.gr/treqa/treqa-tr-967-power-bank-20000mah-me-2-thires-usb-a-kai-thira-usb-c-33375-01-treqa?page=2",
-      "comprobacion_visual": {
-        "producto_completo": true,
-        "cables_integrados_guardados": 4,
-        "USB_A_panel": 2,
-        "USB_C_panel": 1,
-        "MicroUSB_panel": 1,
-        "luces_panel": 2,
-        "color": "verde del empaque propio",
-        "caras_ocultas_reconstruidas": false,
-        "MicroUSB": "arriba del USB-A izquierdo",
-        "USB_C": "arriba del USB-A derecho",
-        "cotejo_panel_con_detalle_vigente": true
-      },
-      "publicacion_real_verificada": false,
-      "edicion_asistida": true,
-      "imagenProfesional": {
-        "posicion": 1,
-        "contiene_caja": false,
-        "fuente": "https://drive.google.com/file/d/1j09VKcvGv1If3gXRSUokuBkQc1cVMfqv/view?usp=drivesdk",
+      "propuesta_descartada_por_mejor_referencia": {
         "original": "/imagenes/powe015/original-r2026110452b-POWE015.png",
         "sha256_original": "6ca2bc6bcfed8ea6afce7867c4b2c2599018b74860ccf2ad587e93661cd15fe6",
-        "resolucion_original": [
-          1254,
-          1254
-        ],
         "versiones": {
           "1200": {
             "url": "/imagenes/powe015/POWE015-r2026110452b-01.webp",
@@ -226,11 +279,10 @@
             "alto": 300
           }
         },
-        "revision_visual": true,
-        "revision_regla": 2,
-        "descripcion": "Producto completo TREQA TR-967 verde con sus cuatro cables integrados guardados y panel real de conexiones; se conserva además la vista de detalle anterior.",
-        "edicion_asistida": true
-      }
+        "motivo": "La foto física acredita negro y texto frontal; no declarar terminada la representación verde del empaque.",
+        "publicacion_verificada": false
+      },
+      "todas_las_fotos_propias_disponibles_revisadas": 4
     },
     "TECL029": {
       "sku": "TECL029",
@@ -440,5 +492,7 @@
       "url": "/imagenes/cabl044/CABL044-01.webp",
       "sha256": "d3467449d489680962bf5e8dd91c66da9e085d77c35005560ccfaf59d477054a"
     }
-  }
+  },
+  "base_vista_fisica": "f71ae890dca402d6d5a91beb28c232ff39dce712",
+  "base_integracion_final_vista_fisica": "fd38e24a866a81809202f31b72d7b0b1836ccb22"
 }
