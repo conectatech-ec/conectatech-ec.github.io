@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "fecha": "2026-11-04T00:35:48.712Z",
+  "base": "http://127.0.0.1:8877",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "TECL028",
+      "sku": "TECL028",
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-04T00:35:48.914Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
+      "url_comprobada": "http://127.0.0.1:8877/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
+      "archivo_html": "productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/index.html",
+      "http": 200,
+      "sha256_html": "f21e10a860e471d9c5e91d9b157f568b2b567ed64d7681f92293985a0a03054d",
+      "sha256_html_local": "f21e10a860e471d9c5e91d9b157f568b2b567ed64d7681f92293985a0a03054d",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/tecl028/TECL028-r125-01.webp",
+        "url_cargada": "http://127.0.0.1:8877/imagenes/tecl028/TECL028-r125-01-600.webp?v=ac9684371e25d76e",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "precio_archivado_por_stock_cero": false,
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8877/productos/tecl028-teclado-ergonomico-klipxtreme-kbk-530s/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8877/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8877/assets/disponibilidad-web.css?v=1",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8877/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8877/imagenes/tecl028/TECL028-r125-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/continuacion-125/qa-local/movil/TECL028-390.png",
+      "sha256": "0d6423294994044019c1ec2028e930160703b3b625e8aef6b550f540f19ca535",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/continuacion-125/qa-local/movil/TECL028-1280.png",
+        "sha256": "9debcdf87fd1b0d70bca9bfc144ba933cff66d68908ba664230072282c73bf05",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
