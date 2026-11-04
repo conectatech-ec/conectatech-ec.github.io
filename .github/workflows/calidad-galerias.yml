@@ -1,0 +1,34 @@
+name: Verificar calidad de galerías comerciales
+on:
+  push:
+    branches: [main, 'calidad-web/**']
+    paths:
+      - 'assets/presentacion-web/*galerias*'
+      - 'scripts/ficha-comercial.cjs'
+      - 'productos/**'
+      - '.github/workflows/calidad-galerias.yml'
+  pull_request:
+    paths:
+      - 'assets/presentacion-web/*galerias*'
+      - 'scripts/ficha-comercial.cjs'
+      - 'productos/**'
+      - '.github/workflows/calidad-galerias.yml'
+permissions:
+  contents: read
+jobs:
+  galerias:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Impedir referencias sin revisión comercial y conservar las imágenes aprobadas
+        run: node assets/presentacion-web/galerias-calidad-pruebas.cjs
+      - name: Conservar condiciones comerciales y sintaxis
+        run: |
+          node scripts/test-condicion-ficha.cjs
+          node --check scripts/ficha-comercial.cjs
+          node --check assets/presentacion-web/galerias-calidad.cjs
+          git diff --check

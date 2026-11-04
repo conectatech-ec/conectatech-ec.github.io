@@ -3,6 +3,7 @@ const editorialFile=path.join(__dirname,'../importacion/editorial/publicados.jso
 const editorialMap=fs.existsSync(editorialFile)?JSON.parse(fs.readFileSync(editorialFile,'utf8')):null;
 const renderBeneficios=require('./ficha-beneficios.cjs');
 const condicion=require('./condicion-ficha.cjs');
+const calidadGalerias=require('../assets/presentacion-web/galerias-calidad.cjs');
 const origin='https://conectatech-ec.github.io';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>'$'+Number(n).toFixed(2).replace('.',',');
@@ -11,6 +12,7 @@ module.exports=function ficha(p,c,url){
  const presentation=editorial?.mostrarTituloEnFicha?editorial:null;
  const name=c.nombre||p.name, img=c.imagen?new URL(c.imagen,origin).href:'';
  const cover=c.imagenProfesional;
+ const gallery=calidadGalerias.secundarias(p.sku,c.galeria||[]);
  const frame=c.encuadreProducto;
  const frameStyle=frame&&frame.url===cover?.versiones?.['1200']?.url&&frame.sha256===cover.versiones['1200'].sha256?`transform:translate(-50%,-50%) scale(${frame.escala}) translate(${frame.dx}%,${frame.dy}%);transform-origin:center;`:'';
  const responsiveSizes=frameStyle?`(max-width:750px) ${Math.ceil(90*frame.escala)}vw, ${Math.ceil(490*frame.escala)}px`:'(max-width:750px) 90vw, 490px';
@@ -31,7 +33,7 @@ module.exports=function ficha(p,c,url){
 </style></head><body>
 <header><nav aria-label="Principal"><a href="/" aria-label="ConectaTech, inicio"><img src="/logo-conectatech.png" alt="ConectaTech"></a><a href="/#catalogo">Ver catálogo →</a></nav></header>
 <main><div class="crumb"><a href="/">Catálogo</a> / ${esc(c.categoriaComercial||p.category)} / ${esc(p.sku)}</div>
-<article class="product"><div class="visual">${photo}${(c.galeria||[]).filter(i=>i.posicion!==1).length?`<div class="gallery">${c.galeria.filter(i=>i.posicion!==1).map(i=>`<a href="${esc(versionUrl(i.versiones['1200']))}" target="_blank" rel="noopener"><img src="${esc(versionUrl(i.versiones['300']))}" alt="Vista adicional de ${esc(name)}" width="${i.miniaturaAncho||110}" height="${i.miniaturaAlto||110}" loading="lazy"></a>`).join('')}</div>`:''}</div>
+<article class="product"><div class="visual">${photo}${gallery.length?`<div class="gallery">${gallery.map(i=>`<a href="${esc(versionUrl(i.versiones['1200']))}" target="_blank" rel="noopener"><img src="${esc(versionUrl(i.versiones['300']))}" alt="Vista adicional de ${esc(name)}" width="${i.miniaturaAncho||110}" height="${i.miniaturaAlto||110}" loading="lazy"></a>`).join('')}</div>`:''}</div>
 <div><div class="eyebrow">ConectaTech · ${esc(specs.Marca||c.categoriaEncabezado||p.category)}</div><h1>${esc(presentation?.titulo||name)}</h1>${presentation?.subtitulo.trim()?`<p class="ct-editorial-subtitle" style="color:#68788b;margin:-6px 0 16px;font-size:15px;line-height:1.4">${esc(presentation.subtitulo)}</p>`:''}<div class="sku">Código ${esc(p.sku)}${classification?' · '+esc(classification):''}</div><div class="status ${available?'':'unavailable'}"${available?'':' style="border:1px solid #fecaca;font-weight:800"'}>${esc(availability)}</div>
 <div class="pricing"><div class="promo-label">PROMO CONTADO</div><div class="price">${money(p.promo)}</div><div class="pvp">PVP ${money(p.pvp)}</div></div>
 <ul class="quick">${Object.entries(specs).filter(([k,v])=>!['Marca','Modelo','Modelo técnico','Marca de referencia'].includes(k)&&(!presentation||!editorialMap.criterioCodigosTecnicosFueraDeTitulos?.some(code=>String(v).toLowerCase().includes(code.toLowerCase())))).slice(0,3).map(([k,v])=>`<li><strong>${esc(k)}:</strong> ${esc(v)}</li>`).join('')}</ul>
