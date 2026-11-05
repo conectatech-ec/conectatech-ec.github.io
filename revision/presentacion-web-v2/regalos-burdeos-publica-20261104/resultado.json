@@ -1,0 +1,1531 @@
+{
+  "estado": "CORRECTO",
+  "publicacionVerificada": true,
+  "fecha": "2026-11-05T04:15:42.876Z",
+  "fuenteAprobada": "ea1e049ecce8a00aab974d46fe3fb13edbfd262d",
+  "integracion": "b80e6544a389e7f96fd3bddddf793fb3d98b2fc5",
+  "publicacion": "8b72b3009738988f3d29fc2be7ab472faceb3954",
+  "desplieguePages": "41965706618",
+  "motor": "154.0.8037.57",
+  "incidenciaPrevia": {
+    "workflowAntes": 41900348206,
+    "workflowDespues": 41965565386,
+    "prueba": "scripts/test-orden-categorias-secundario-meta.cjs:63",
+    "error": "Missing expected rejection.",
+    "integracionSinModificar": true
+  },
+  "fuentes": [
+    {
+      "url": "https://conectatech-ec.github.io/?revision=regalos-burdeos-publica-1793852117295",
+      "archivo": "index.html",
+      "sha256": "5761d93242a909d67e744ab7180c22e607e49892ff309beef833bad4d2671742"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/estilos.css?v=32",
+      "archivo": "assets/presentacion-web/estilos.css",
+      "sha256": "096cbcdc923ad3c3a6eff159a7f2de34b7b9c9c652fe28748f620b62283a8c4f"
+    },
+    {
+      "url": "https://conectatech-ec.github.io/assets/presentacion-web/banner-regalos-original.png",
+      "archivo": "assets/presentacion-web/banner-regalos-original.png",
+      "sha256": "d591b685fe8b5829966ffeee59e408baac453010303e30e7f4e7cbba7ea95a47"
+    }
+  ],
+  "comprobaciones": [
+    {
+      "prueba": "SHA público de index.html",
+      "correcto": true
+    },
+    {
+      "prueba": "SHA público de assets/presentacion-web/estilos.css",
+      "correcto": true
+    },
+    {
+      "prueba": "SHA público de assets/presentacion-web/banner-regalos-original.png",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 banner completo cargado",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 sólo degradado exterior, sin adornos",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 botón de consulta accesible",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 condiciones abren",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 condiciones abiertas sin recortar",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 ampliación original abre",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 ampliación usa la misma imagen",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 ampliación cierra",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 WhatsApp conserva destino",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: height",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: width",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: banner",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: heading",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: content",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: footer",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: background",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: html",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: text",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: links",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: images",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: conditions",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: products",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 público idéntico a aprobado: outside",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 reducción mínima 20%",
+      "correcto": true
+    },
+    {
+      "prueba": "1440 reducción máxima 25%",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 banner completo cargado",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 sólo degradado exterior, sin adornos",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 botón de consulta accesible",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: height",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: width",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: banner",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: heading",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: content",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: footer",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: background",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: html",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: text",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: links",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: images",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: conditions",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: products",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 público idéntico a aprobado: outside",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 reducción mínima 20%",
+      "correcto": true
+    },
+    {
+      "prueba": "1100 reducción máxima 25%",
+      "correcto": true
+    },
+    {
+      "prueba": "900 banner completo cargado",
+      "correcto": true
+    },
+    {
+      "prueba": "900 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "900 sólo degradado exterior, sin adornos",
+      "correcto": true
+    },
+    {
+      "prueba": "900 botón de consulta accesible",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: height",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: width",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: banner",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: heading",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: content",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: footer",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: background",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: html",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: text",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: links",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: images",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: conditions",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: products",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "900 público idéntico a aprobado: outside",
+      "correcto": true
+    },
+    {
+      "prueba": "900 reducción mínima 20%",
+      "correcto": true
+    },
+    {
+      "prueba": "900 reducción máxima 25%",
+      "correcto": true
+    },
+    {
+      "prueba": "768 banner completo cargado",
+      "correcto": true
+    },
+    {
+      "prueba": "768 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "768 sólo degradado exterior, sin adornos",
+      "correcto": true
+    },
+    {
+      "prueba": "768 botón de consulta accesible",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: height",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: width",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: banner",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: heading",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: content",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: footer",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: background",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: html",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: text",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: links",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: images",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: conditions",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: products",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "768 público idéntico a aprobado: outside",
+      "correcto": true
+    },
+    {
+      "prueba": "768 reducción mínima 20%",
+      "correcto": true
+    },
+    {
+      "prueba": "768 reducción máxima 25%",
+      "correcto": true
+    },
+    {
+      "prueba": "600 banner completo cargado",
+      "correcto": true
+    },
+    {
+      "prueba": "600 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "600 sólo degradado exterior, sin adornos",
+      "correcto": true
+    },
+    {
+      "prueba": "600 botón de consulta accesible",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: height",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: width",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: banner",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: heading",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: content",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: footer",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: background",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: html",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: text",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: links",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: images",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: conditions",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: products",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "600 público idéntico a aprobado: outside",
+      "correcto": true
+    },
+    {
+      "prueba": "600 reducción mínima 20%",
+      "correcto": true
+    },
+    {
+      "prueba": "600 reducción máxima 25%",
+      "correcto": true
+    },
+    {
+      "prueba": "390 banner completo cargado",
+      "correcto": true
+    },
+    {
+      "prueba": "390 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "390 sólo degradado exterior, sin adornos",
+      "correcto": true
+    },
+    {
+      "prueba": "390 botón de consulta accesible",
+      "correcto": true
+    },
+    {
+      "prueba": "390 condiciones abren",
+      "correcto": true
+    },
+    {
+      "prueba": "390 condiciones abiertas sin recortar",
+      "correcto": true
+    },
+    {
+      "prueba": "390 ampliación original abre",
+      "correcto": true
+    },
+    {
+      "prueba": "390 ampliación usa la misma imagen",
+      "correcto": true
+    },
+    {
+      "prueba": "390 ampliación cierra",
+      "correcto": true
+    },
+    {
+      "prueba": "390 WhatsApp conserva destino",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: height",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: width",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: banner",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: heading",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: content",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: footer",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: background",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: html",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: text",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: links",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: images",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: conditions",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: products",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "390 público idéntico a aprobado: outside",
+      "correcto": true
+    },
+    {
+      "prueba": "390 reducción mínima 20%",
+      "correcto": true
+    },
+    {
+      "prueba": "390 reducción máxima 25%",
+      "correcto": true
+    },
+    {
+      "prueba": "360 banner completo cargado",
+      "correcto": true
+    },
+    {
+      "prueba": "360 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "360 sólo degradado exterior, sin adornos",
+      "correcto": true
+    },
+    {
+      "prueba": "360 botón de consulta accesible",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: height",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: width",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: banner",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: heading",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: content",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: footer",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: background",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: html",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: text",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: links",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: images",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: conditions",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: products",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "360 público idéntico a aprobado: outside",
+      "correcto": true
+    },
+    {
+      "prueba": "360 reducción mínima 20%",
+      "correcto": true
+    },
+    {
+      "prueba": "360 reducción máxima 25%",
+      "correcto": true
+    },
+    {
+      "prueba": "320 banner completo cargado",
+      "correcto": true
+    },
+    {
+      "prueba": "320 sin desbordamiento",
+      "correcto": true
+    },
+    {
+      "prueba": "320 sólo degradado exterior, sin adornos",
+      "correcto": true
+    },
+    {
+      "prueba": "320 botón de consulta accesible",
+      "correcto": true
+    },
+    {
+      "prueba": "320 condiciones abren",
+      "correcto": true
+    },
+    {
+      "prueba": "320 condiciones abiertas sin recortar",
+      "correcto": true
+    },
+    {
+      "prueba": "320 ampliación original abre",
+      "correcto": true
+    },
+    {
+      "prueba": "320 ampliación usa la misma imagen",
+      "correcto": true
+    },
+    {
+      "prueba": "320 ampliación cierra",
+      "correcto": true
+    },
+    {
+      "prueba": "320 WhatsApp conserva destino",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: height",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: width",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: banner",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: heading",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: content",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: footer",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: background",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: html",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: text",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: links",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: images",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: conditions",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: products",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: metadata",
+      "correcto": true
+    },
+    {
+      "prueba": "320 público idéntico a aprobado: outside",
+      "correcto": true
+    },
+    {
+      "prueba": "320 reducción mínima 20%",
+      "correcto": true
+    },
+    {
+      "prueba": "320 reducción máxima 25%",
+      "correcto": true
+    }
+  ],
+  "resultados": [
+    {
+      "width": 1440,
+      "reduccion": 0.20103142940546848,
+      "aprobada": {
+        "height": 641.484375,
+        "width": 1312,
+        "banner": {
+          "width": 658,
+          "height": 466.296875
+        },
+        "heading": {
+          "width": 1310,
+          "height": 58.390625
+        },
+        "content": {
+          "width": 1310,
+          "height": 581.09375
+        },
+        "footer": {
+          "width": 660,
+          "height": 54
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "2b1fcc996446002230269b354b0286e4b8cb1f0a300c8400e06a83c2952b981c"
+        }
+      },
+      "publica": {
+        "height": 641.484375,
+        "width": 1312,
+        "banner": {
+          "width": 658,
+          "height": 466.296875
+        },
+        "heading": {
+          "width": 1310,
+          "height": 58.390625
+        },
+        "content": {
+          "width": 1310,
+          "height": 581.09375
+        },
+        "footer": {
+          "width": 660,
+          "height": 54
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "2b1fcc996446002230269b354b0286e4b8cb1f0a300c8400e06a83c2952b981c"
+        }
+      }
+    },
+    {
+      "width": 1100,
+      "reduccion": 0.20103142940546848,
+      "aprobada": {
+        "height": 641.484375,
+        "width": 1052,
+        "banner": {
+          "width": 658,
+          "height": 466.296875
+        },
+        "heading": {
+          "width": 1050,
+          "height": 58.390625
+        },
+        "content": {
+          "width": 1050,
+          "height": 581.09375
+        },
+        "footer": {
+          "width": 660,
+          "height": 54
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "dc5f04f47d1613a6239fc5fb89a4262502c94cf5b2a5cd245947c0c8a15132b7"
+        }
+      },
+      "publica": {
+        "height": 641.484375,
+        "width": 1052,
+        "banner": {
+          "width": 658,
+          "height": 466.296875
+        },
+        "heading": {
+          "width": 1050,
+          "height": 58.390625
+        },
+        "content": {
+          "width": 1050,
+          "height": 581.09375
+        },
+        "footer": {
+          "width": 660,
+          "height": 54
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "dc5f04f47d1613a6239fc5fb89a4262502c94cf5b2a5cd245947c0c8a15132b7"
+        }
+      }
+    },
+    {
+      "width": 900,
+      "reduccion": 0.20103142940546848,
+      "aprobada": {
+        "height": 641.484375,
+        "width": 852,
+        "banner": {
+          "width": 658,
+          "height": 466.296875
+        },
+        "heading": {
+          "width": 850,
+          "height": 58.390625
+        },
+        "content": {
+          "width": 850,
+          "height": 581.09375
+        },
+        "footer": {
+          "width": 660,
+          "height": 54
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "3a79469634b6dbedcd3a9adb18663f8c0b35568518e40d9871c3ebda8a5ae5e6"
+        }
+      },
+      "publica": {
+        "height": 641.484375,
+        "width": 852,
+        "banner": {
+          "width": 658,
+          "height": 466.296875
+        },
+        "heading": {
+          "width": 850,
+          "height": 58.390625
+        },
+        "content": {
+          "width": 850,
+          "height": 581.09375
+        },
+        "footer": {
+          "width": 660,
+          "height": 54
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "3a79469634b6dbedcd3a9adb18663f8c0b35568518e40d9871c3ebda8a5ae5e6"
+        }
+      }
+    },
+    {
+      "width": 768,
+      "reduccion": 0.2071149469706729,
+      "aprobada": {
+        "height": 577.046875,
+        "width": 720,
+        "banner": {
+          "width": 567.078125,
+          "height": 401.859375
+        },
+        "heading": {
+          "width": 718,
+          "height": 58.390625
+        },
+        "content": {
+          "width": 718,
+          "height": 516.65625
+        },
+        "footer": {
+          "width": 660,
+          "height": 54
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "3b5ab5559b68616d3d7c055290c588887e4f4336a68b63906dbd1c4ed03bb491"
+        }
+      },
+      "publica": {
+        "height": 577.046875,
+        "width": 720,
+        "banner": {
+          "width": 567.078125,
+          "height": 401.859375
+        },
+        "heading": {
+          "width": 718,
+          "height": 58.390625
+        },
+        "content": {
+          "width": 718,
+          "height": 516.65625
+        },
+        "footer": {
+          "width": 660,
+          "height": 54
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "3b5ab5559b68616d3d7c055290c588887e4f4336a68b63906dbd1c4ed03bb491"
+        }
+      }
+    },
+    {
+      "width": 600,
+      "reduccion": 0.23110429032476476,
+      "aprobada": {
+        "height": 532.328125,
+        "width": 576,
+        "banner": {
+          "width": 489.03125,
+          "height": 346.546875
+        },
+        "heading": {
+          "width": 574,
+          "height": 56.984375
+        },
+        "content": {
+          "width": 574,
+          "height": 473.34375
+        },
+        "footer": {
+          "width": 558,
+          "height": 76
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "874f4d0a7059184cd74366155fff6a0ee15adbdc9c3b9060d36e742273524d0f"
+        }
+      },
+      "publica": {
+        "height": 532.328125,
+        "width": 576,
+        "banner": {
+          "width": 489.03125,
+          "height": 346.546875
+        },
+        "heading": {
+          "width": 574,
+          "height": 56.984375
+        },
+        "content": {
+          "width": 574,
+          "height": 473.34375
+        },
+        "footer": {
+          "width": 558,
+          "height": 76
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "874f4d0a7059184cd74366155fff6a0ee15adbdc9c3b9060d36e742273524d0f"
+        }
+      }
+    },
+    {
+      "width": 390,
+      "reduccion": 0.20435982493797566,
+      "aprobada": {
+        "height": 445.96875,
+        "width": 366,
+        "banner": {
+          "width": 346,
+          "height": 245.1875
+        },
+        "heading": {
+          "width": 364,
+          "height": 56.984375
+        },
+        "content": {
+          "width": 364,
+          "height": 386.984375
+        },
+        "footer": {
+          "width": 348,
+          "height": 91
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "448c6e559db47a646aedb198678fb77c8f24e7d3c779252c86cb127aa03f36c0"
+        }
+      },
+      "publica": {
+        "height": 445.96875,
+        "width": 366,
+        "banner": {
+          "width": 346,
+          "height": 245.1875
+        },
+        "heading": {
+          "width": 364,
+          "height": 56.984375
+        },
+        "content": {
+          "width": 364,
+          "height": 386.984375
+        },
+        "footer": {
+          "width": 348,
+          "height": 91
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "448c6e559db47a646aedb198678fb77c8f24e7d3c779252c86cb127aa03f36c0"
+        }
+      }
+    },
+    {
+      "width": 360,
+      "reduccion": 0.2124188687992582,
+      "aprobada": {
+        "height": 424.703125,
+        "width": 336,
+        "banner": {
+          "width": 316,
+          "height": 223.921875
+        },
+        "heading": {
+          "width": 334,
+          "height": 56.984375
+        },
+        "content": {
+          "width": 334,
+          "height": 365.71875
+        },
+        "footer": {
+          "width": 318,
+          "height": 91
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "41e31dbbe301b68144a6150a08d3a6d6ef59a24bf4eb661333ad98028386e41d"
+        }
+      },
+      "publica": {
+        "height": 424.703125,
+        "width": 336,
+        "banner": {
+          "width": 316,
+          "height": 223.921875
+        },
+        "heading": {
+          "width": 334,
+          "height": 56.984375
+        },
+        "content": {
+          "width": 334,
+          "height": 365.71875
+        },
+        "footer": {
+          "width": 318,
+          "height": 91
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "41e31dbbe301b68144a6150a08d3a6d6ef59a24bf4eb661333ad98028386e41d"
+        }
+      }
+    },
+    {
+      "width": 320,
+      "reduccion": 0.20631535899982478,
+      "aprobada": {
+        "height": 424.546875,
+        "width": 296,
+        "banner": {
+          "width": 276,
+          "height": 195.578125
+        },
+        "heading": {
+          "width": 294,
+          "height": 84.171875
+        },
+        "content": {
+          "width": 294,
+          "height": 338.375
+        },
+        "footer": {
+          "width": 278,
+          "height": 92
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "4603cb3279029fae771298c0c83f9e399d8f13d477fe5828829b3f23fce2a542"
+        }
+      },
+      "publica": {
+        "height": 424.546875,
+        "width": 296,
+        "banner": {
+          "width": 276,
+          "height": 195.578125
+        },
+        "heading": {
+          "width": 294,
+          "height": 84.171875
+        },
+        "content": {
+          "width": 294,
+          "height": 338.375
+        },
+        "footer": {
+          "width": 278,
+          "height": 92
+        },
+        "background": "linear-gradient(125deg, rgb(69, 19, 33), rgb(38, 14, 24) 44%, rgb(12, 11, 16))",
+        "links": [
+          {
+            "href": "https://wa.me/593998576759?text=Hola%20ConectaTech%2C%20quiero%20consultar%20la%20promoci%C3%B3n%20de%20regalos%20en%20tienda",
+            "text": "Consultar promoción ↗"
+          }
+        ],
+        "images": [
+          {
+            "src": "/assets/presentacion-web/banner-regalos-original.png",
+            "width": 1016,
+            "height": 720,
+            "loaded": true
+          }
+        ],
+        "overflow": false,
+        "huellasConservacion": {
+          "html": "61e9651efb1a59597e409c4d23b30404e200869c6359f93dd45aee26f6e23659",
+          "text": "4bf4642c2823438ed88307aeb0485fcbc0e63765c8044187d76a115752690917",
+          "conditions": "f8a2b893fc9bc0304b70fbcbf77ec9f5407e93de478cff451a78cb9b14934625",
+          "products": "a4508a611301f9ed71f5f917ebe82820d8339da32dedbeebda2330647006bba6",
+          "metadata": "672300fcbb54b0956c0604332b23785882b1cc7e75ccaabcfe94a93642d5cd83",
+          "outside": "4603cb3279029fae771298c0c83f9e399d8f13d477fe5828829b3f23fce2a542"
+        }
+      }
+    }
+  ],
+  "descargasFallidas": []
+}
