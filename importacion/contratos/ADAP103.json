@@ -202,9 +202,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PENDIENTE",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/adap103-adaptador-otg-usb-c-earldom/",
-  "fecha_verificacion": "2026-11-05T17:06:07.742643+00:00",
+  "fecha_verificacion": "2026-11-05T17:40:34.851615+00:00",
   "descripcion": "Conecta memorias USB, teclados o mouse USB-A a un equipo USB-C con función OTG compatible. Su formato compacto, agarre texturizado y cordón incluido te permiten tener el adaptador a mano junto a tus accesorios.",
   "descripcion_seo": "Conecta memorias USB, teclados o mouse USB-A a un equipo USB-C con función OTG compatible. Su formato compacto, agarre texturizado y cordón incluido te.",
   "contenido_venta": "Un adaptador OTG Earldom con su cordón.",
@@ -323,7 +323,7 @@
       "solicitado": "ADAP103",
       "sku": "ADAP103",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-05T17:08:11.844Z",
+      "fecha": "2026-11-05T17:42:11.135Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -348,7 +348,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/adap103-adaptador-otg-usb-c-earldom/",
-      "url_comprobada": "http://127.0.0.1:8883/productos/adap103-adaptador-otg-usb-c-earldom/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/adap103-adaptador-otg-usb-c-earldom/",
       "archivo_html": "productos/adap103-adaptador-otg-usb-c-earldom/index.html",
       "http": 200,
       "sha256_html": "44e4eff469bbb065cc9b38fe57721641ef7ce5c2071dfe88eb09fb485745a71d",
@@ -358,7 +358,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/adap103/ADAP103-r129-01.webp",
-        "url_cargada": "http://127.0.0.1:8883/imagenes/adap103/ADAP103-r129-01-600.webp?v=3972b44fd96e9773",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/adap103/ADAP103-r129-01-600.webp?v=3972b44fd96e9773",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -368,41 +368,49 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8883/productos/adap103-adaptador-otg-usb-c-earldom/",
+          "url": "https://conectatech-ec.github.io/productos/adap103-adaptador-otg-usb-c-earldom/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8883/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8883/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8883/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8883/imagenes/adap103/ADAP103-r129-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/adap103/ADAP103-r129-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-129/qa-local/capturas/ADAP103-390.png",
+      "archivo": "reportes/continuacion-129/qa-publica/capturas/ADAP103-390.png",
       "sha256": "dcda1644173008803a46c1114910974a9dd47651770a20e363aaae198551d5a6",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-129/qa-local/capturas/ADAP103-1280.png",
+        "archivo": "reportes/continuacion-129/qa-publica/capturas/ADAP103-1280.png",
         "sha256": "552788e2a76acefb0a6b428637dc9d1bdc24f1499ba682fdd06d68fce6b9f969",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-05T17:40:34.851615+00:00",
+      "archivo": "reportes/continuacion-129/http-publicacion.json",
+      "reporte": "reportes/continuacion-129/http-publicacion.json",
+      "sha256": "90ce3d6145202884d1c30e2251adca068392d3e73226b07527a83343e5545b8e",
+      "sku": "ADAP103"
     }
   }
 }
