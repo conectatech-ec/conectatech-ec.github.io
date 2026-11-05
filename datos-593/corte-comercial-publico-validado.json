@@ -3,7 +3,7 @@
   "fuente": "Reporte-Inventario.xlsx",
   "sha256_original": "1fb7bb08807f11163b1d5aac1d27d2238cddc58fc043f7837be35dfb20f01417",
   "cantidad_sku_original": 1573,
-  "cantidad_sku_web": 1198,
+  "cantidad_sku_web": 1199,
   "productos": {
     "AROD001": {
       "stock": 8,
@@ -5994,6 +5994,11 @@
       "stock": 1,
       "promo_centavos": 2136,
       "pvp_centavos": 2456
+    },
+    "ADAP103": {
+      "stock": 1,
+      "promo_centavos": 873,
+      "pvp_centavos": 1091
     }
   },
   "verificacion": {
@@ -6002,5 +6007,13 @@
     "promo_cambiado": 1,
     "pvp_cambiado": 1,
     "precios_productos_cambiados": 1
+  },
+  "alta_publicacion_129": {
+    "skus": [
+      "ADAP103"
+    ],
+    "mismoCorteOriginal": true,
+    "fuente": "reportes/continuacion-129/base-593.json",
+    "productosPreviosIntactos": true
   }
 }
