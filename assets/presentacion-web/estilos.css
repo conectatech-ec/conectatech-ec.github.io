@@ -611,3 +611,35 @@ footer.pw-footer{padding:40px 24px 18px;text-align:left;font-family:var(--ct-fon
 @media(min-width:701px) and (max-width:1100px){.pw-footer-wa>span:last-child{display:none}}
 @media(min-width:701px) and (max-width:800px){.pw-footer-contacts{grid-template-columns:1fr}}
 @media(max-width:600px){.pw-footer-main{gap:22px}.pw-footer-details{margin-top:24px;padding-top:19px}.pw-footer-social{min-height:49px}.pw-footer-bottom{margin-top:22px}}
+
+/* Propuesta de regalos: el banner original conserva todo el protagonismo. */
+.pw-campaign.pw-campaign--compact{border-color:#9e8051;background:linear-gradient(125deg,#310d19,#160d12 58%,#09090c);box-shadow:0 10px 28px #210a161a}
+.pw-campaign.pw-campaign--compact .pw-campaign-heading{padding:8px 20px;gap:6px 16px;background:linear-gradient(110deg,#280f19,#100e12);border-bottom-color:#b89a5b45}
+.pw-campaign.pw-campaign--compact .pw-campaign-heading h2{font-size:24px;line-height:1.2;color:#fff6ed}
+.pw-campaign.pw-campaign--compact .pw-campaign-lead{font-size:8px;letter-spacing:1.4px;margin-bottom:3px;color:#d2bd94}
+.pw-campaign.pw-campaign--compact .pw-campaign-message strong{color:#efd69b;text-decoration:none}
+.pw-campaign.pw-campaign--compact .pw-store-label{background:#ffffff04;border-color:#b89a5b70;color:#e2cea5}
+.pw-campaign.pw-campaign--compact .pw-campaign-content{padding:12px;gap:10px;background:linear-gradient(125deg,#451321,#260e18 44%,#0c0b10);box-shadow:inset 0 1px 0 #d1ae6520}
+.pw-campaign.pw-campaign--compact .pw-banner-open{width:82%;max-width:660px;border-color:#c3a266;border-radius:11px;box-shadow:0 10px 24px #0005}
+.pw-campaign.pw-campaign--compact .pw-banner-open>span{padding:7px 10px;font:9px/1.2 Arial,sans-serif;background:#230e16;color:#f0dec0}
+.pw-campaign.pw-campaign--compact .pw-campaign-footer{max-width:660px;padding-top:9px;gap:8px 16px;align-items:center;border-top-color:#b89a5b40}
+.pw-campaign.pw-campaign--compact .pw-campaign-address{font-size:11px;line-height:1.5;margin-bottom:4px;color:#eee1dc;text-shadow:none}
+.pw-campaign.pw-campaign--compact .pw-campaign-footer details{line-height:1.5;text-shadow:none;color:#eee1dc}
+.pw-campaign.pw-campaign--compact .pw-campaign-footer summary{color:#e4c995}
+.pw-campaign.pw-campaign--compact [data-pw-contact]>a{font-family:Arial,sans-serif;background:linear-gradient(110deg,#eddbaf,#d9ba78);border-color:#e6cd99;color:#30121c;box-shadow:none}
+@media(max-width:600px){
+ .pw-campaign.pw-campaign--compact .pw-campaign-heading{position:relative;padding:8px 12px}
+ .pw-campaign.pw-campaign--compact .pw-campaign-heading h2{font-size:23px;line-height:1.2;letter-spacing:-.8px}
+ .pw-campaign.pw-campaign--compact .pw-campaign-lead{padding-right:124px;font-size:7px;letter-spacing:1px;margin-bottom:4px}
+ .pw-campaign.pw-campaign--compact .pw-store-label{position:absolute;right:12px;top:7px;margin:0;padding:4px 6px;font-size:6px}
+ .pw-campaign.pw-campaign--compact .pw-campaign-content{padding:8px;gap:8px}
+ .pw-campaign.pw-campaign--compact .pw-banner-open{width:100%}
+ .pw-campaign.pw-campaign--compact .pw-campaign-footer{grid-template-columns:minmax(0,1fr) auto;padding:8px 2px 0;gap:8px 12px}
+ .pw-campaign.pw-campaign--compact .pw-campaign-info{display:contents}
+ .pw-campaign.pw-campaign--compact .pw-campaign-address{grid-column:1/-1;font-size:10px;line-height:1.5;margin:0}
+ .pw-campaign.pw-campaign--compact .pw-campaign-footer summary{font-size:10px;line-height:1.5}
+ .pw-campaign.pw-campaign--compact [data-pw-contact]>a{font-size:10px;padding:10px 12px;min-height:44px;width:auto}
+ .pw-campaign.pw-campaign--compact .pw-campaign-footer:has(details[open]){grid-template-columns:1fr}
+}
+@media(min-width:440px) and (max-width:600px){.pw-campaign.pw-campaign--compact .pw-banner-open{width:88%}}
+@media(max-width:359px){.pw-campaign.pw-campaign--compact .pw-campaign-heading{padding-top:9px;padding-bottom:9px}.pw-campaign.pw-campaign--compact .pw-store-label{top:8px}.pw-campaign.pw-campaign--compact .pw-campaign-heading h2{font-size:22px}}
