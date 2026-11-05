@@ -1,6 +1,6 @@
 # Regalos — propuesta burdeos, negro y dorado
 
-**Pendiente de aprobación visual del propietario. No fusionar ni desplegar.** Orden expresa: preparar la comparación y conservar producción hasta su aprobación.
+**Aprobada por el propietario:** «si apruebo y aplica». Se autoriza aplicar la propuesta y publicarla. La comparación conserva el archivo presentado a aprobación; el resultado público se verifica por separado después del despliegue.
 
 Abrir `comparacion.html` en el navegador. Es un archivo autónomo: incorpora capturas reales de escritorio, móvil y móvil pequeño, la marca original y una prueba interactiva de la sección con el banner y las condiciones existentes. Funciona sin conexión y no requiere servicios ni costo adicional. Los botones del selector muestran ambas capturas a la misma escala; se pueden ampliar. «Probar propuesta» permite abrir el banner original y desplegar las condiciones. Su acceso a WhatsApp conserva el destino oficial y, si se pulsa, requiere conexión.
 
@@ -23,4 +23,4 @@ Base: `93eb7760ef7852a38538d5a9bcb0479552d101e5`. El HTML público, CSS v31 y PN
 
 Validación: 114 comprobaciones Chromium 154 en ocho anchos. Integridad de HTML, textos, condiciones, imágenes, URLs, productos, metadatos y secciones ajenas; carga del banner completo, ausencia de desbordamientos, condiciones desplegables, ampliación/cierre y destino de consulta WhatsApp. El enlace externo se comprueba con navegación interceptada, sin enviar mensajes. `resultado.json` conserva medidas, comprobaciones y huellas SHA de datos comparados, evitando duplicar el catálogo. `comparacion-verificada.json` documenta controles del archivo entregable sin peticiones externas.
 
-El encabezado, logo original, fuente Ethnocentric, vitrina, destacados, catálogo, fotografías promocionales originales, montos, regalos, condiciones comerciales, SIGNATURE, Data Hub, 593 y automatizaciones no se modifican. `index.html` permanece intacto; no hay nueva versión pública del CSS. Tras aprobación, integrar sobre main actualizado y hacer únicamente el cambio selectivo de versión necesario para la caché, manteniendo avances de otras sesiones.
+El encabezado, logo original, fuente Ethnocentric, vitrina, destacados, catálogo, fotografías promocionales originales, montos, regalos, condiciones comerciales, SIGNATURE, Data Hub, 593 y automatizaciones no se modifican. Tras aprobación se comprobó que main seguía en `93eb7760ef7852a38538d5a9bcb0479552d101e5`. El único cambio de `index.html` es la versión del CSS de presentación, de v31 a v32, para actualizar la caché. El CSS aprobado permanece idéntico a `076d30ae59ff52ef15256af7e0f9b7c01e2622f4`; no se renuevan fechas de productos.
