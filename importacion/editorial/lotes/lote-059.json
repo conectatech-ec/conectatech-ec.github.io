@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "lote": "editorial-059",
+  "base": "06382680a358eceac531c78c53db4977c44a8acc",
+  "maximo": 30,
+  "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM",
+  "skus": [
+    "JUGU155"
+  ],
+  "fichasConPresentacionComercial": [
+    "JUGU155"
+  ],
+  "modelosTrasladadosAEspecificaciones": {},
+  "noSonSKUNuevos": true,
+  "nuevasPresentaciones": 0,
+  "revisionesPrevias": [
+    "JUGU155"
+  ],
+  "autorizacion": "Se venden ambas versiones surtidas; aplicar lo que esté en cola ysea posible publicar.",
+  "restricciones": "Sólo texto verificado. Mantener1199SKU,precios,stock,URLs,fotos,clasificación ydatos593. No reintentar imagen rechazada.",
+  "productos": {
+    "JUGU155": {
+      "tituloAnterior": "Juguete Pista DE Mario 60 Piezas",
+      "nombre593": "JUGUETE PISTA DE MARIO 60 PIEZAS",
+      "marca": "",
+      "modelo": "",
+      "fuentes": [
+        "datos-593/inventario-publico.csv#JUGU155",
+        "importacion/editorial/identidad-jugu155-059.json#JUGU155",
+        "reportes/continuacion-122/confirmaciones-propietario.json#JUGU155"
+      ],
+      "url": "https://conectatech-ec.github.io/productos/jugu155-juguete-pista-de-mario-60-piezas/",
+      "modeloNoDeclaradoVerificado": true,
+      "modelosBusquedaVerificados": [],
+      "titulo": "Pista armable de Mario",
+      "subtitulo": "57 o 60 piezas · surtida",
+      "condicionTarjeta": "",
+      "clasificacionReal": "original verificado",
+      "foto": "",
+      "sha256Foto": "",
+      "lote": "editorial-059",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "causa": "Corregir promesa fija de60 piezas: propietario confirma venta surtida de57 o60; conserva foto pendiente ydatos593.",
+      "evidenciaAtributos": {
+        "atributos": {
+          "Versiones de venta": "57 o 60 piezas",
+          "Presentación de venta": "Una pista; no ambas versiones juntas",
+          "Variante": "Surtida según disponibilidad"
+        }
+      },
+      "verificacionReferenciaPropia": {
+        "modo": "FOTOS_PROPIAS_IDENTIDAD_SIN_PORTADA",
+        "evidencia": "importacion/editorial/identidad-jugu155-059.json",
+        "sha256Evidencia": "ad9087ba95d86906d52c2ba0a495fa8281db4ecb70ba1ff2b0528c7996379892",
+        "noApruebaFotografiaComercial": true
+      },
+      "publicacionAnterior": {
+        "estado": "VERIFICADO_HTTP_CHROMIUM",
+        "fecha": "2026-10-29T15:15:26.782Z",
+        "informe": "reportes/editorial-selectivo/lote-042/publicacion-http-chromium.json",
+        "sha256Informe": "e1b75657c2b8084bf8b4eea998cc02bb0eeb2c277d92350cfc2f9b7132d11a3d",
+        "huellaTitulo": "6a167a1b2eea5e4d9e0c2af90ac197c9fcef3b5d52cde9696ec974169c57abaf"
+      }
+    }
+  }
+}
