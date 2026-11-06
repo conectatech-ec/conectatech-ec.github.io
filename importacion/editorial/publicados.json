@@ -30575,34 +30575,41 @@
       "modelo": "",
       "fuentes": [
         "datos-593/inventario-publico.csv#JUGU155",
-        "reportes/editorial-selectivo/tanda-042-043/fuente-593.json#JUGU155"
+        "importacion/editorial/identidad-jugu155-059.json#JUGU155",
+        "reportes/continuacion-122/confirmaciones-propietario.json#JUGU155"
       ],
       "url": "https://conectatech-ec.github.io/productos/jugu155-juguete-pista-de-mario-60-piezas/",
-      "modeloNoDeclaradoVerificado": false,
+      "modeloNoDeclaradoVerificado": true,
       "modelosBusquedaVerificados": [],
-      "titulo": "Pista de Mario de 60 piezas",
-      "subtitulo": "",
+      "titulo": "Pista armable de Mario",
+      "subtitulo": "57 o 60 piezas · surtida",
       "condicionTarjeta": "",
       "clasificacionReal": "original verificado",
       "foto": "",
       "sha256Foto": "",
-      "lote": "editorial-042",
-      "publicacionVerificada": {
+      "lote": "editorial-059",
+      "publicacionVerificada": null,
+      "mostrarTituloEnFicha": true,
+      "causa": "Corregir promesa fija de60 piezas: propietario confirma venta surtida de57 o60; conserva foto pendiente ydatos593.",
+      "evidenciaAtributos": {
+        "atributos": {
+          "Versiones de venta": "57 o 60 piezas",
+          "Presentación de venta": "Una pista; no ambas versiones juntas",
+          "Variante": "Surtida según disponibilidad"
+        }
+      },
+      "verificacionReferenciaPropia": {
+        "modo": "FOTOS_PROPIAS_IDENTIDAD_SIN_PORTADA",
+        "evidencia": "importacion/editorial/identidad-jugu155-059.json",
+        "sha256Evidencia": "ad9087ba95d86906d52c2ba0a495fa8281db4ecb70ba1ff2b0528c7996379892",
+        "noApruebaFotografiaComercial": true
+      },
+      "publicacionAnterior": {
         "estado": "VERIFICADO_HTTP_CHROMIUM",
         "fecha": "2026-10-29T15:15:26.782Z",
         "informe": "reportes/editorial-selectivo/lote-042/publicacion-http-chromium.json",
         "sha256Informe": "e1b75657c2b8084bf8b4eea998cc02bb0eeb2c277d92350cfc2f9b7132d11a3d",
         "huellaTitulo": "6a167a1b2eea5e4d9e0c2af90ac197c9fcef3b5d52cde9696ec974169c57abaf"
-      },
-      "mostrarTituloEnFicha": true,
-      "causa": "Mejorar redacción y jerarquía del nombre593 ya publicado; no añadir atributos ni esperar producción fotográfica independiente.",
-      "verificacionTexto593": {
-        "modo": "NOMBRE_593_SIN_ATRIBUTOS_NUEVOS",
-        "sinAtributosAdicionales": true,
-        "snapshot": "reportes/editorial-selectivo/tanda-042-043/fuente-593.json",
-        "sha256Snapshot": "de557236b7aa376850584a943c9d348ad15f647eb65f8e72baa2e0c712ac1473",
-        "sha256Identidad": "02738f8360262273683cfd02123c26edb75a075af8da6ecb0205f45aad31489b",
-        "fotoPendienteAlEditar": true
       }
     },
     "JUGU156": {
@@ -44503,7 +44510,7 @@
       }
     }
   },
-  "loteActual": "058",
+  "loteActual": "059",
   "escaladoMasivo": "AUTORIZADO_EN_LOTES_HASTA_30_EXCLUYENDO_CELULARES_TABLETS",
   "criterioCodigosTecnicosFueraDeTitulos": [
     "UID-10",
@@ -44855,26 +44862,18 @@
     "Jiabao"
   ],
   "tandaActual": {
-    "id": "058-ram-cables-tomatodo",
+    "id": "059-jugu155-variantes-confirmadas",
     "lotes": [
-      "058"
+      "059"
     ],
     "skus": [
-      "TELF010",
-      "TELF011",
-      "TABL004",
-      "CABL166",
-      "CABL030",
-      "TOMA001"
+      "JUGU155"
     ],
-    "cantidad": 6,
-    "presentacionesAdicionales": 2,
+    "cantidad": 1,
     "revisionesPrevias": [
-      "TELF010",
-      "TELF011",
-      "TABL004",
-      "CABL166"
+      "JUGU155"
     ],
+    "presentacionesAdicionales": 0,
     "fichasCondicionActualizadas": []
   },
   "aliasMarcasConfirmadasPorPropietario": {
