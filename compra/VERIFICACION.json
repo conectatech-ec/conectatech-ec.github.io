@@ -1,0 +1,142 @@
+{
+  "fecha": "2026-11-06",
+  "base_commit": "5131e09133336a996c810cb68fcdcfc9ebd08204",
+  "estado": "PREPARACION_NO_PUBLICADA",
+  "pruebas": {
+    "motor": 20,
+    "integracion_preservacion": 3,
+    "politicas_reutilizadas": 11,
+    "fallos": 0,
+    "repetidas_tras_revision_comercial": true,
+    "adaptador_datahub_y_parche": 18,
+    "contrato_cliente": 4,
+    "total": 56,
+    "revision_7_repetida": true
+  },
+  "navegador": {
+    "registro_pedido_prueba": true,
+    "id": "PRUEBA-61ce14ce-2fda-421a-95ef-3320b767481e",
+    "sku": "ADAP004",
+    "cantidad": 2,
+    "producto_centavos": 700,
+    "envio_fixture_centavos": 350,
+    "total_centavos": 1050,
+    "pago": "contraentrega_sin_cobro",
+    "fixture_no_tarifa_comercial": true,
+    "ancho_marco_qa_px": 390,
+    "ancho_util_px": 375,
+    "desbordamiento_horizontal": false,
+    "ficha_enlaza_compra": true,
+    "politica_accesible_sin_login": true,
+    "politica_razon_social_y_error_tienda_verificados": true,
+    "pagina_envios_pagos_verificada": true,
+    "nacional_no_se_ofrece": true,
+    "politica_breve_sin_cortesias_verificada": true
+  },
+  "fuentes": {
+    "sku_catalogo": 1198,
+    "fecha_corte_593": "2026-11-02",
+    "inventario_tiempo_real": false,
+    "feed_remoto_items": 370,
+    "feed_sha256": "dd9e188add0555910ca703a9aa223019f3882bccacf4a61a71bf9fa9e9d1fb84",
+    "feed_regenerado": false,
+    "recepcion_merchant_370_verificada": true
+  },
+  "protecciones": {
+    "produccion_modificada": false,
+    "worker_modificado": false,
+    "ads_activados": false,
+    "fichas_gratuitas_habilitadas": false,
+    "nuevo_data_hub": false,
+    "nuevo_inventario": false,
+    "costo_adicional": 0
+  },
+  "pendientes_tecnicos": [
+    "Aplicar parche verificado al Worker existente tras autorización de publicación",
+    "Configurar cobertura y fecha estimada aprobadas; conectar URL pública del cliente",
+    "Verificar integración real HTTPS y comportamiento de cobertura en Merchant",
+    "Completar aviso de datos conforme almacenamiento operativo",
+    "Recuperar sesión empresarial de Merchant Center para comprobar estado actual"
+  ],
+  "merchant_observado": {
+    "cuenta": "5874003439",
+    "fuente": "10791678121",
+    "ultima_actualizacion_visible": "November 3, 2026 10:00 AM",
+    "productos_actualizados": 370,
+    "productos_nuevos": 5,
+    "atributos": "All recognized",
+    "archivo": "No issues found",
+    "diagnosticos_productos": "No se muestran incidencias",
+    "diagnosticos_cuenta": "No issues for you to fix",
+    "actualizacion_forzada": false,
+    "configuracion_modificada": false,
+    "aprobacion_fichas_gratuitas_acreditada": false,
+    "url_fuente": "https://merchants.google.com/mc/products/sources/detail?a=5874003439&afmDataSourceId=10791678121&tab=processing&hl=en",
+    "url_diagnosticos_cuenta": "https://merchants.google.com/mc/products/diagnostics/accountissues?a=5874003439&hl=en"
+  },
+  "condiciones_comerciales_recuperadas": {
+    "razon_social": true,
+    "tarifa_nacional_y_sobrecosto_tienda": true,
+    "plazo_nacional_informado": true,
+    "garantias_y_cambios": true,
+    "aceptacion_devolucion_error_tienda": true,
+    "cuenta_bancaria_completa": false,
+    "zonas_quito": false,
+    "operativa_reembolsos": false
+  },
+  "alcance_mvp": {
+    "ciudad": "Quito",
+    "pago": "cod",
+    "nacional_habilitado": false,
+    "tarifa_350_general_verificada": false
+  },
+  "politica_publica": {
+    "version": "2026-11-06.revision-7",
+    "apartados": null,
+    "cortesias": false,
+    "plazos_voluntarios_adicionales": false,
+    "plazo_legal_conservado": true,
+    "cargos_nuevos": false,
+    "operativa_completa": false,
+    "redaccion_comercial_aprobada": true,
+    "publicacion_autorizada": false,
+    "garantia_celulares_tablets": "1 año",
+    "garantia_accesorios_demas": "30 días",
+    "cobertura_comercial": "defectos de fabricación y funcionamiento en condiciones normales de uso",
+    "pruebas_repetidas_revision_5": {
+      "aprobadas": 10,
+      "fallidas": 0,
+      "pagina_local_verificada": true
+    },
+    "plazo_reembolso_confirmado": false,
+    "paginas_independientes": 2,
+    "texto_comercial_exacto_verificado": true,
+    "garantias_url": "/garantias/",
+    "devoluciones_url": "/cambios-devoluciones-garantias/",
+    "estructura_aprobada": true,
+    "plazos_devolucion_en_comercial": false,
+    "revision_7_navegador_local": true,
+    "pruebas_repetidas_revision_7": {
+      "aprobadas": 11,
+      "fallidas": 0
+    }
+  },
+  "datahub_preparado": {
+    "worker_base_sha": "c92ed56ca378e950babbb38d078d29f442ff78c9",
+    "mismo_worker_y_do": true,
+    "sqlite_real_pruebas_locales": true,
+    "parche_verificado": true,
+    "parche_aplicado_a_rama_operativa": false,
+    "desplegado": false,
+    "reserva_nativa_593": false,
+    "registro_durable_implementado": true,
+    "api_publica_cliente_configurada": false,
+    "actualizacion_base_preserva_signature": true
+  },
+  "merchant_comprobacion_06_11": {
+    "cuenta": "5874003439",
+    "estado": "SESION_EMPRESARIAL_CERRADA",
+    "recuento_actual_verificado": false,
+    "configuracion_modificada": false
+  }
+}

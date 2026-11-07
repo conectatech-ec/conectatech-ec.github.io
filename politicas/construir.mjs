@@ -1,0 +1,59 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {garantia, respuestaAlex, validar} from './garantias.mjs';
+const dir = path.dirname(fileURLToPath(import.meta.url)), root = path.dirname(dir);
+const config = JSON.parse(fs.readFileSync(path.join(dir,'politica.json'),'utf8'));
+validar(config);
+if (config.publicar || !['PENDIENTE_APROBACION','APROBADA_PENDIENTE_OPERATIVA','ESTRUCTURA_APROBADA_PENDIENTE_OPERATIVA'].includes(config.estado)) throw Error('Este constructor solo prepara la revisión, no publica');
+const phone = garantia(config,{categoriaGarantia:'celulares'}).etiqueta;
+const accessory = garantia(config,{categoriaGarantia:'accesorios'}).etiqueta;
+const expand = p=>p.replaceAll('{{celulares_garantia}}',phone).replaceAll('{{accesorios_garantia}}',accessory);
+const expanded = config.secciones.map(s=>({...s,parrafos:s.parrafos.map(expand),lista:(s.lista||[]).map(item=>({...item,texto:expand(item.texto)}))}));
+const review = 'Estructura aprobada · operativa pendiente · no publicada';
+const esc = s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const responsible = config.contacto.responsable_legal || 'El proveedor identificado en el comprobante de compra; identificación legal pendiente antes de publicar';
+const markdown = '# '+config.comercial.titulo+'\n\n'+review+' · versión '+config.version+'.\n\n'+config.comercial.parrafos.join('\n\n')+'\n\n'+expanded.map(s=>'## '+s.titulo+'\n\n'+s.parrafos.join('\n\n')).join('\n\n')+'\n\n## Atención oficial\n\n'+config.contacto.direccion+'\n\nWhatsApp y teléfono: '+config.contacto.telefono+' · '+config.contacto.whatsapp+'\n\nProveedor responsable: '+responsible+' · nombre comercial CONECTATECH.\n';
+fs.writeFileSync(path.join(dir,'POLITICA-COMPLETA.md'),markdown);
+const rows = Object.keys(config.garantias.reglas_categoria).map(category=>garantia(config,{categoriaGarantia:category}));
+const csv = 'categoria,plazo,cobertura,nota_legal\n'+rows.map(r=>[r.categoria,r.etiqueta,r.cobertura,r.derechos_legales].map(v=>'"'+v.replaceAll('"','""')+'"').join(',')).join('\n')+'\n';
+fs.writeFileSync(path.join(dir,'garantias-catalogos.csv'),csv);
+const alex = {version:config.version,estado:'FUENTE_PREPARADA_NO_INTEGRADA',worker_modificado:false,requiere_coordinacion_sesion_alex:true,alcance:config.alcance_politica,politica_url_prevista:config.url_prevista,reglas_seguridad:['No rechazar automáticamente por daño externo o manipulación: evaluar causalidad.','No ofrecer cortesías ni plazos voluntarios adicionales. No limitar los derechos legales ni imponer notas de crédito.','No prometer diagnóstico, reparación, reembolso o transporte no confirmado.','No solicitar claves; pedir datos personales solo si son necesarios para identificar la compra o gestionar la reclamación.','No inferir categoría ni garantía desde un prefijo SKU.'],respuestas:{celulares:respuestaAlex(config,'garantia',{categoriaGarantia:'celulares'}),tablets:respuestaAlex(config,'garantia',{categoriaGarantia:'tablets'}),accesorios:respuestaAlex(config,'garantia',{categoriaGarantia:'accesorios'}),otros:respuestaAlex(config,'garantia',{}),cambio_voluntario:respuestaAlex(config,'cambio_voluntario'),devolucion_legal:respuestaAlex(config,'devolucion_legal'),error_tienda:respuestaAlex(config,'error_tienda'),danio:respuestaAlex(config,'danio_o_exclusion')},escalamiento:['defecto o no conformidad','devolución legal','error de despacho','desacuerdo sobre cobertura','producto sin plazo documentado','reembolso o costos de transporte']};
+fs.writeFileSync(path.join(dir,'alex-fuente.json'),JSON.stringify(alex,null,2)+'\n');
+const details = expanded.map(section => '<section id="' + section.id + '">' + section.parrafos.map(paragraph => '<p>' + esc(paragraph) + '</p>').join('') + '</section>').join('\n');
+const commercialContent = config.comercial.parrafos.map(paragraph => {
+  const text = esc(paragraph).replace(esc(config.comercial.enlace_devoluciones), '<a href="/cambios-devoluciones-garantias/">' + esc(config.comercial.enlace_devoluciones) + '</a>');
+  return '<p>' + text + '</p>';
+}).join('\n');
+function policyPage(title, url, content) {
+  return `<!doctype html>
+<html lang="es-EC"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${esc(title)}</title><meta name="description" content="Atención de garantías, cambios y devoluciones de CONECTATECH."><link rel="canonical" href="${url}"><link rel="icon" href="/logo-conectatech.png"><link rel="stylesheet" href="/compra/compra.css"><style>.policy{max-width:880px;margin:auto}.policy section{margin:26px 0}.policy h2{margin-bottom:10px;font-size:20px}.policy p{line-height:1.6;margin:10px 0}.policy .contact{border-top:1px solid #dce5ec;padding-top:18px;font-size:14px}.policy h1{font-size:clamp(27px,4vw,36px)}</style></head>
+<body><a class="skip" href="#contenido">Ir al contenido</a><div class="review" role="note">${esc(review)} · versión ${esc(config.version)}</div><header><nav aria-label="Principal"><a class="brand" href="/"><span>CONECTA</span>TECH</a><a href="/compra/">Volver a la compra →</a></nav></header>
+<main id="contenido"><article class="panel policy"><p class="eyebrow">Atención al cliente · Quito, Ecuador</p><h1>${esc(title)}</h1>${content}
+<div class="contact"><p><strong>Atención:</strong> <a href="${config.contacto.whatsapp}">${esc(config.contacto.telefono)}</a> · ${esc(config.contacto.direccion)}</p><p>${esc(responsible)} · CONECTATECH.</p></div></article></main>
+<footer><a href="/compra/">Compra contraentrega Quito</a><a href="/garantias/">Garantía y atención posventa</a><a href="/cambios-devoluciones-garantias/">Política de devoluciones y reembolsos</a><a href="/compra/envios-pagos.html">Envíos y pagos</a><a href="${config.contacto.whatsapp}">Atención oficial</a></footer></body></html>`;
+}
+
+fs.mkdirSync(path.join(root, 'garantias'), {recursive: true});
+fs.writeFileSync(path.join(root, 'garantias/index.html'), policyPage(config.comercial.titulo, config.comercial.url_prevista, commercialContent) + '\n');
+fs.mkdirSync(path.join(root, 'cambios-devoluciones-garantias'), {recursive: true});
+fs.writeFileSync(path.join(root, 'cambios-devoluciones-garantias/index.html'), policyPage(config.titulo, config.url_prevista, details) + '\n');
+const commercial = config.condiciones_recuperadas;
+if (commercial) {
+  const national = commercial.envio_nacional;
+  const cost = '$'+(national.tarifa_cliente_centavos/100).toFixed(2).replace('.',',');
+  const eta = national.plazo_informado_dias_habiles;
+  const shippingPage = `<!doctype html>
+<html lang="es-EC"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Envíos y pagos | CONECTATECH</title><link rel="stylesheet" href="/compra/compra.css"></head>
+<body><a class="skip" href="#contenido">Ir al contenido</a><div class="review" role="note">Vista de revisión · No publicada · No recibe pagos ni pedidos comerciales.</div>
+<header><nav aria-label="Principal"><a class="brand" href="/"><span>CONECTA</span>TECH</a><a href="/compra/">Volver a la compra →</a></nav></header>
+<main id="contenido"><div class="intro"><p class="eyebrow">QUITO · ECUADOR</p><h1>Envíos y pagos.</h1><p>Conoce cómo recibir tu compra y qué incluye el importe final.</p></div>
+<section class="panel"><h2>Compra directa con contraentrega en Quito</h2><p>Esta es la modalidad prevista para la primera etapa. Se paga en efectivo al recibir el pedido.</p><p>La entrega se limita a las zonas con tarifa y plazo confirmados. El costo exacto para la dirección y la fecha estimada se muestran antes de confirmar; no se aplica una tarifa general a todo Quito.</p><p>El código postal permite comprobar la zona declarada. Si la dirección no tiene cobertura o falta una tarifa, no se confirma la compra.</p></section>
+<section class="panel"><h2>Envíos nacionales preparados · no habilitados</h2><p>La primera etapa de compra directa se limita a contraentrega en Quito. El envío nacional y el pago anticipado permanecen deshabilitados.</p><p>Envíos por ${esc(national.transportista)}. La tarifa inicial de ${esc(cost)} se aplica a todos los productos. CONECTATECH asume inicialmente cualquier sobrecosto del transporte, incluidos los productos pesados; no se cobra ese excedente al comprador.</p><p>El plazo de envío informado es de ${eta.desde} a ${eta.hasta} días hábiles. La fecha estimada de entrega debe indicarse antes de confirmar la compra.</p><p>Se paga anticipadamente el producto más el envío mediante transferencia o depósito. El despacho se coordina después de verificar el abono. Esta vista de prueba no habilita transferencias ni solicita dinero.</p></section>
+<section class="panel"><h2>Tu total, antes de confirmar</h2><p>El resumen muestra los productos, sus cantidades, el envío y el total en dólares. No se añaden recargos de transporte después de confirmar. Los cambios futuros de tarifa se aplican a compras posteriores.</p><p>En la demostración, la zona de Quito, su tarifa y su plazo están marcados como datos de prueba. No representan una entrega disponible.</p><p>WhatsApp sigue disponible para ayuda; el proceso de compra debe poder completarse dentro de la web.</p></section>
+<section class="panel"><h2>Atención posventa</h2><p><a href="/garantias/">Garantía y atención posventa</a>.</p><p><a href="/cambios-devoluciones-garantias/">Política de devoluciones y reembolsos</a>.</p></section>
+<section class="panel"><h2>Atención oficial</h2><p>${esc(responsible)} · CONECTATECH.</p><p>${esc(config.contacto.direccion)}</p><p><a href="${esc(config.contacto.whatsapp)}">WhatsApp ${esc(config.contacto.telefono)}</a></p></section></main>
+<footer><a href="/compra/">Volver a la compra</a><a href="/cambios-devoluciones-garantias/">Devoluciones y garantías</a><a href="/compra/privacidad.html">Datos del pedido</a></footer></body></html>`;
+  fs.writeFileSync(path.join(root,'compra/envios-pagos.html'),shippingPage+'\n');
+}
+console.log('Preparados: políticas, envíos y pagos, CSV de garantías y fuente de Alex. Sin publicación.');

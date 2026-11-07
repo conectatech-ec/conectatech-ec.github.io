@@ -84,7 +84,7 @@ for(const p of products){
  if(!custom.comercialVerificado&&(textualEditorial?.verificacionTexto593||textualEditorial?.verificacionReferenciaPropia)&&textualEditorial.mostrarTituloEnFicha){publicContent=publicContent.replace(/<h1>[\s\S]*?<\/h1>/,'<h1>'+esc(textualEditorial.titulo)+'</h1>'+(textualEditorial.subtitulo?'<p class="ct-editorial-subtitle" style="color:#68788b;margin:-6px 0 16px;font-size:15px;line-height:1.4">'+esc(textualEditorial.subtitulo)+'</p>':''));}
  const visibleContent=publicContent.slice(0,publicContent.indexOf('</head>'))+condicionFicha.visible(p,custom,publicContent.slice(publicContent.indexOf('</head>')));
  const contentFecha=fechaPublicada&&!custom.comercialVerificado?visibleContent.replace('<h2>Consulta y compra</h2>','<p class="muted">'+(p.stock>0?'Inventario actualizado al ':'Stock: 0 · No disponible · Corte: ')+fechaPublicada+' · confirma disponibilidad</p><h2>Consulta y compra</h2>'):visibleContent;
- const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),formatoPotencia.html(disponibilidadWeb.renderPage(ventaCruzada.inyectar(contentFecha,p,products,stable).replace(/^[ \t]+$/gm,''),p,fechaPublicada)));
+ const dir=path.join(out,id);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),require('./compra-enlaces.cjs')(formatoPotencia.html(disponibilidadWeb.renderPage(ventaCruzada.inyectar(contentFecha,p,products,stable).replace(/^[ \t]+$/gm,''),p,fechaPublicada)),p,require('../compra/config.json')));
 }
 const xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(u=>'  <url><loc>'+u+'</loc></url>').join('\n')+'\n</urlset>\n';
 fs.writeFileSync('sitemap.xml',xml);
