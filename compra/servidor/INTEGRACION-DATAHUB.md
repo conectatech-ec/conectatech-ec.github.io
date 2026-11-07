@@ -2,7 +2,7 @@
 
 Código ejecutable para recibir pedidos contraentrega en el **Worker existente** y el mismo Durable Object `MESSENGER_TEST_INBOX` / `messenger-development`. No se creó otro Worker, D1, binding, Data Hub ni inventario. La demostración local conserva sus pedidos de prueba.
 
-Base exacta del parche: `automatizacion/piloto-cloud-3sku-20261015`, SHA **747291490f6cd836ec06d14dcb252e53a8a5e02d**, observado el 03/11/2026. Conserva los cambios actuales de Alex; no sustituye el Worker por la rama de corrección anterior.
+Base exacta del parche: `automatizacion/piloto-cloud-3sku-20261015`, SHA **c92ed56ca378e950babbb38d078d29f442ff78c9**, observado el 03/11/2026. Conserva los cambios actuales de Alex; no sustituye el Worker por la rama de corrección anterior.
 
 ## Conexión implementada
 

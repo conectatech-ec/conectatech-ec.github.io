@@ -43,8 +43,8 @@ test('no acortar derecho legal a ventana comercial',()=>{
   assert.equal(config.cambios_voluntarios.ofrecidos,false);
   const visible=fs.readFileSync(new URL('../cambios-devoluciones-garantias/index.html',import.meta.url),'utf8');
   assert.ok(!/De 1 a 3 días|hasta 7|excepcionalmente/.test(visible));
-  assert.match(visible,/No ofrecemos cambios ni devoluciones voluntarias por preferencias personales/);
-  assert.match(visible,/quince \(15\) días/);
+  assert.match(visible,/término de 15 días/);
+  assert.ok(!visible.includes('asumimos los gastos'));
 });
 test('Alex evalúa daños y deriva errores sin prometer plazos',()=>{
   assert.match(respuestaAlex(config,'danio_o_exclusion'),/no elimina automáticamente/);
@@ -71,11 +71,30 @@ test('Merchant no contiene tarifas, plazos de pago ni publicación inventados',(
 });
 test('página y texto completo generados, sin publicar ni datos estructurados de devolución incompletos',()=>{
   const page=fs.readFileSync(new URL('../cambios-devoluciones-garantias/index.html',import.meta.url),'utf8');
-  assert.match(page,/noindex,nofollow/);assert.match(page,/Política aprobada · operativa pendiente · no publicada/);
+  assert.match(page,/noindex,nofollow/);assert.match(page,/Estructura aprobada · operativa pendiente · no publicada/);
   assert.equal(config.aprobacion.redaccion_comercial_aprobada,true);
   assert.equal(config.aprobacion.publicacion_autorizada,false);
-  assert.match(page,/<strong>Celulares y tablets:<\/strong> 1 año de garantía/);
-  assert.match(page,/<strong>Accesorios y demás productos:<\/strong> 30 días de garantía/);
   assert.ok(!page.includes('MerchantReturnPolicy'));assert.ok(!page.includes('{{'));
+  assert.match(page,/\[plazo aprobado\]/);
+  assert.equal(config.publicar,false);
   for(const section of config.secciones) assert.ok(page.includes('id="'+section.id+'"'));
+});
+
+test('el contenido comercial aprobado se conserva exactamente y enlaza condiciones independientes',()=>{
+  const approved = [
+    'Al recibir tu compra, revisa el modelo, los accesorios y el estado del producto. Si detectas alguna novedad, escríbenos por WhatsApp o acércate al local con tu comprobante de compra.',
+    'Los celulares y tablets tienen 1 año de garantía. Los accesorios y demás productos tienen 30 días de garantía comercial. La cobertura incluye defectos de fabricación y funcionamiento en condiciones normales de uso. Si detectas un defecto después del plazo de garantía, puedes comunicarte con nosotros para revisar qué atención corresponde.',
+    'Para solicitudes por preferencia, consulta la Política de devoluciones y reembolsos.'
+  ];
+  assert.deepEqual(config.comercial.parrafos,approved);
+  const page=fs.readFileSync(new URL('../garantias/index.html',import.meta.url),'utf8');
+  const body=page.split('<h1>Garantía y atención posventa</h1>')[1].split('<div class="contact">')[0];
+  const paragraphs=[...body.matchAll(/<p>(.*?)<\/p>/gs)].map(match=>match[1].replace(/<[^>]+>/g,''));
+  assert.deepEqual(paragraphs,approved);
+  assert.ok(!/15 días|7 días|30 días calendario|ley|artículo|gratuito/i.test(body));
+  assert.match(body,/href="\/cambios-devoluciones-garantias\/"/);
+  for(const filename of ['../index.html','../compra/index.html']) {
+    const html=fs.readFileSync(new URL(filename,import.meta.url),'utf8');
+    assert.match(html,/<footer[\s\S]*href="\/garantias\/"[\s\S]*href="\/cambios-devoluciones-garantias\/"[\s\S]*<\/footer>/);
+  }
 });

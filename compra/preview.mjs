@@ -36,7 +36,7 @@ const server=http.createServer(async(req,res)=>{
     let pathname=decodeURIComponent(u.pathname);
     if(pathname.includes('..')||pathname.includes('\\')||pathname.includes('\0'))return json(res,404,{error:'NOT_FOUND'});
     if(pathname.endsWith('/'))pathname+='index.html';
-    const permitted=['/index.html','/logo-conectatech.png','/compra/index.html','/compra/compra.css','/compra/compra.js','/compra/cliente-contrato.mjs','/compra/privacidad.html','/compra/envios-pagos.html','/cambios-devoluciones-garantias/index.html'];
+    const permitted=['/index.html','/logo-conectatech.png','/compra/index.html','/compra/compra.css','/compra/compra.js','/compra/cliente-contrato.mjs','/compra/privacidad.html','/compra/envios-pagos.html','/garantias/index.html','/cambios-devoluciones-garantias/index.html'];
     if(!permitted.includes(pathname)&&!/^\/(assets|imagenes|productos)\/[a-zA-Z0-9_./-]+\.(html|js|css|png|webp|jpg|svg)$/.test(pathname))return json(res,404,{error:'NOT_FOUND'});
     if(pathname.split('/').some(s=>s.startsWith('.')))return json(res,404,{error:'NOT_FOUND'});
     const file=path.join(root,pathname);

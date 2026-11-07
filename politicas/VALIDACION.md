@@ -1,5 +1,7 @@
 # Validación de la entrega
 
+Revisión7 del06/11: estructura aprobada, texto comercial exacto y dos páginas independientes con enlaces de pie. Once pruebas de políticas y45 de compra aprobadas. Navegador local comprobado para ambas páginas y navegación. El parche del Data Hub se regeneró sobrec92ed56ca378e950babbb38d078d29f442ff78c9 y sus dos pruebas se repitieron con éxito. La sesión empresarial de Merchant está cerrada. No se acredita un nuevo recuento ni aprobación de fichas.
+
 Revisión 5, 03/11/2026: redacción comercial aprobada, celulares/tablets 1 año y accesorios/demás productos 30 días. Diez pruebas de políticas repetidas y aprobadas; página local comprobada en navegador. La evidencia histórica siguiente no equivale a un despliegue de esta revisión. Publicación no autorizada.
 
 - Base de revisión: main `428927813d794aaa1d1a37886327d326100e33a8`.

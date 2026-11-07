@@ -1,8 +1,8 @@
 {
-  "version": "2026-11-03.revision-6",
-  "estado": "APROBADA_PENDIENTE_OPERATIVA",
+  "version": "2026-11-06.revision-7",
+  "estado": "ESTRUCTURA_APROBADA_PENDIENTE_OPERATIVA",
   "publicar": false,
-  "titulo": "Garantías, cambios y devoluciones — CONECTATECH",
+  "titulo": "Devoluciones y reembolsos",
   "url_prevista": "https://conectatech-ec.github.io/cambios-devoluciones-garantias/",
   "pais": "EC",
   "contacto": {
@@ -79,7 +79,9 @@
     "naturaleza_debe_permitirlo": true,
     "estado": "mismo estado en que se recibió",
     "notas_credito_forzadas": false,
-    "computo_para_campo_numerico_google_confirmado": false
+    "computo_para_campo_numerico_google_confirmado": false,
+    "computo_confirmado": false,
+    "nota_computo": "No equiparar automáticamente el término de 15 días con 15 periodos de 24 horas. Interpretación específica y equivalencia no confirmadas."
   },
   "operativa_pendiente": {
     "metodos_recepcion_devoluciones": [
@@ -99,47 +101,12 @@
   },
   "secciones": [
     {
-      "id": "recepcion",
-      "titulo": "1. Revisión al recibir tu compra",
+      "id": "devoluciones",
+      "titulo": "Devoluciones y reembolsos",
       "parrafos": [
-        "Te recomendamos verificar el modelo, las características, los accesorios y el estado del producto al momento de recibirlo. Si detectas alguna novedad, comunícanosla oportunamente para brindarte una solución."
-      ]
-    },
-    {
-      "id": "cambios",
-      "titulo": "2. Cambios y devoluciones",
-      "parrafos": [
-        "No ofrecemos cambios ni devoluciones voluntarias por preferencias personales. En teléfonos y tablets utilizados o activados, no realizamos cambios voluntarios por modelo, color o características.",
-        "Las solicitudes de devolución legalmente procedentes serán atendidas conforme a la normativa ecuatoriana, considerando el estado y la naturaleza del producto, dentro del término legal de quince (15) días desde la recepción.",
-        "Recibimos devoluciones preferentemente en nuestro local. Cuando corresponda, coordina el envío con nosotros antes de despacharlo.",
-        "Si la devolución es por decisión del comprador, este cubre los gastos de envío cuando legalmente proceda. Si la responsabilidad corresponde a CONECTATECH, se aplican las obligaciones legales correspondientes. No cobramos cargos de reposición.",
-        "Los reembolsos procedentes se realizan por el medio de pago original cuando sea posible, o mediante transferencia acordada."
-      ]
-    },
-    {
-      "id": "garantias",
-      "titulo": "3. Garantías",
-      "lista": [
-        {
-          "etiqueta": "Celulares y tablets",
-          "texto": "{{celulares_garantia}}."
-        },
-        {
-          "etiqueta": "Accesorios y demás productos",
-          "texto": "{{accesorios_garantia}}."
-        }
-      ],
-      "parrafos": [
-        "La garantía cubre defectos de fabricación y funcionamiento en condiciones normales de uso, conforme a sus condiciones y a la normativa aplicable.",
-        "Los inconvenientes serán evaluados mediante el procedimiento de garantía correspondiente."
-      ]
-    },
-    {
-      "id": "solicitud",
-      "titulo": "4. Atención posventa",
-      "parrafos": [
-        "Para solicitar atención, comunícate con CONECTATECH por WhatsApp o visítanos en nuestro local, presentando tu factura o comprobante de compra y los detalles del inconveniente.",
-        "Nuestro equipo revisará tu solicitud y te informará los pasos correspondientes."
+        "Para solicitar atención, contáctanos con tu comprobante de compra. Las solicitudes de cambio o devolución por preferencia pueden presentarse dentro del término de 15 días posteriores a la recepción, cuando la naturaleza del producto lo permita y se conserve en el estado en que se recibió. Si el producto presenta una falla o no coincide con tu pedido, contáctanos para revisar el caso.",
+        "Recibimos devoluciones preferentemente en el local. Cuando corresponda enviarlas, coordina con nosotros antes del despacho. En devoluciones por decisión del comprador, el costo del envío queda a su cargo cuando corresponda. En casos de falla o error en el pedido, te indicaremos antes del despacho a quién corresponde el costo. No hay cargo de reposición.",
+        "Cuando proceda un reembolso, lo recibirás por el medio de pago original, si es posible, o mediante una transferencia acordada, dentro de [plazo aprobado] desde que recibamos el producto devuelto."
       ]
     }
   ],
@@ -208,14 +175,31 @@
     "preserva_condiciones_previamente_ofrecidas": true
   },
   "aprobacion": {
-    "fecha": "2026-11-03",
+    "fecha": "2026-11-06",
     "zona_horaria": "America/Guayaquil",
-    "referencia": "Dirección General — Aprobación de política CONECTATECH; solicitud a959b050-b1f4-4032-9ade-f1c56dc8a9c6",
+    "referencia": "Dirección General — Aprobación de estructura y continuidad Merchant Center",
     "redaccion_comercial_aprobada": true,
     "publicacion_autorizada": false,
     "operativa_completa": false,
-    "precision_informativa": "Se explicita el término legal de quince (15) días desde la recepción, sin añadir un plazo voluntario."
+    "precision_informativa": "Texto comercial conservado exactamente desde la última propuesta aprobada como estructura. Plazo de reembolso y cómputo del término permanecen pendientes.",
+    "estructura_aprobada": true,
+    "texto_comercial_exacto": true,
+    "redaccion_detallada_sujeta_a_pendientes": true
   },
-  "introduccion": "En CONECTATECH queremos que compres con tranquilidad. Todos nuestros productos cuentan con respaldo y atención posventa.",
-  "cierre": "En todos los casos se respetarán los derechos establecidos por la legislación ecuatoriana."
+  "comercial": {
+    "titulo": "Garantía y atención posventa",
+    "url_prevista": "https://conectatech-ec.github.io/garantias/",
+    "enlace_devoluciones": "Política de devoluciones y reembolsos",
+    "parrafos": [
+      "Al recibir tu compra, revisa el modelo, los accesorios y el estado del producto. Si detectas alguna novedad, escríbenos por WhatsApp o acércate al local con tu comprobante de compra.",
+      "Los celulares y tablets tienen 1 año de garantía. Los accesorios y demás productos tienen 30 días de garantía comercial. La cobertura incluye defectos de fabricación y funcionamiento en condiciones normales de uso. Si detectas un defecto después del plazo de garantía, puedes comunicarte con nosotros para revisar qué atención corresponde.",
+      "Para solicitudes por preferencia, consulta la Política de devoluciones y reembolsos."
+    ]
+  },
+  "pendientes_publicacion": [
+    "Confirmar cómputo aplicable del término de devolución",
+    "Aprobar plazo operativo de reembolso y retirar el marcador del borrador",
+    "Precisar gastos obligatorios por causa antes de publicar",
+    "Autorizar publicación HTTPS e integración comercial"
+  ]
 }

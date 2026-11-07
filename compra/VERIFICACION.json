@@ -1,16 +1,17 @@
 {
-  "fecha": "2026-11-03",
+  "fecha": "2026-11-06",
   "base_commit": "5131e09133336a996c810cb68fcdcfc9ebd08204",
   "estado": "PREPARACION_NO_PUBLICADA",
   "pruebas": {
     "motor": 20,
     "integracion_preservacion": 3,
-    "politicas_reutilizadas": 10,
+    "politicas_reutilizadas": 11,
     "fallos": 0,
     "repetidas_tras_revision_comercial": true,
     "adaptador_datahub_y_parche": 18,
     "contrato_cliente": 4,
-    "total": 55
+    "total": 56,
+    "revision_7_repetida": true
   },
   "navegador": {
     "registro_pedido_prueba": true,
@@ -54,7 +55,8 @@
     "Aplicar parche verificado al Worker existente tras autorización de publicación",
     "Configurar cobertura y fecha estimada aprobadas; conectar URL pública del cliente",
     "Verificar integración real HTTPS y comportamiento de cobertura en Merchant",
-    "Completar aviso de datos conforme almacenamiento operativo"
+    "Completar aviso de datos conforme almacenamiento operativo",
+    "Recuperar sesión empresarial de Merchant Center para comprobar estado actual"
   ],
   "merchant_observado": {
     "cuenta": "5874003439",
@@ -89,8 +91,8 @@
     "tarifa_350_general_verificada": false
   },
   "politica_publica": {
-    "version": "2026-11-03.revision-6",
-    "apartados": 4,
+    "version": "2026-11-06.revision-7",
+    "apartados": null,
     "cortesias": false,
     "plazos_voluntarios_adicionales": false,
     "plazo_legal_conservado": true,
@@ -106,10 +108,21 @@
       "fallidas": 0,
       "pagina_local_verificada": true
     },
-    "plazo_reembolso_confirmado": false
+    "plazo_reembolso_confirmado": false,
+    "paginas_independientes": 2,
+    "texto_comercial_exacto_verificado": true,
+    "garantias_url": "/garantias/",
+    "devoluciones_url": "/cambios-devoluciones-garantias/",
+    "estructura_aprobada": true,
+    "plazos_devolucion_en_comercial": false,
+    "revision_7_navegador_local": true,
+    "pruebas_repetidas_revision_7": {
+      "aprobadas": 11,
+      "fallidas": 0
+    }
   },
   "datahub_preparado": {
-    "worker_base_sha": "747291490f6cd836ec06d14dcb252e53a8a5e02d",
+    "worker_base_sha": "c92ed56ca378e950babbb38d078d29f442ff78c9",
     "mismo_worker_y_do": true,
     "sqlite_real_pruebas_locales": true,
     "parche_verificado": true,
@@ -117,6 +130,13 @@
     "desplegado": false,
     "reserva_nativa_593": false,
     "registro_durable_implementado": true,
-    "api_publica_cliente_configurada": false
+    "api_publica_cliente_configurada": false,
+    "actualizacion_base_preserva_signature": true
+  },
+  "merchant_comprobacion_06_11": {
+    "cuenta": "5874003439",
+    "estado": "SESION_EMPRESARIAL_CERRADA",
+    "recuento_actual_verificado": false,
+    "configuracion_modificada": false
   }
 }

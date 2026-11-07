@@ -35,9 +35,9 @@
     "no_defectuoso": "A cargo del comprador cuando la devolución sea por su decisión y legalmente proceda."
   },
   "bloqueos": [
-    "Aprobación del plazo operativo de reembolso y autorización de publicación HTTPS",
-    "Correspondencia del término legal y del estado del producto con las opciones de Google",
-    "Correspondencia de costos y etiqueta para envío coordinado con las opciones de Google"
+    "Publicar condiciones completas solo después de aprobar cómputo y reembolso",
+    "Precisar reparto de gastos por causa y reflejar la operativa real",
+    "Autorizar publicación e integración comercial"
   ],
   "configuracion_cuenta_modificada": false,
   "feed_modificado": false,
@@ -74,7 +74,7 @@
   "politica_comercial": "SIN_CAMBIOS_NI_DEVOLUCIONES_VOLUNTARIAS_POR_PREFERENCIAS_PERSONALES",
   "nota_cambios": "Sin cambios ni devoluciones voluntarias por preferencias personales en ninguna categoría. Se mantienen devoluciones y cambios legalmente procedentes; no configurar una exclusión absoluta.",
   "redaccion_comercial_aprobada": true,
-  "version_politica": "2026-11-03.revision-6",
+  "version_politica": "2026-11-06.revision-7",
   "publicacion_autorizada": false,
   "contacto_atencion": {
     "nombre_comercial": "CONECTATECH",
@@ -95,10 +95,35 @@
     "transferencia_acordada"
   ],
   "propuesta_plazo_reembolso": {
-    "dias": 30,
+    "dias": 7,
     "unidad": "dias_calendario",
     "inicio_propuesto": "recepcion_del_producto_devuelto",
+    "fin": "cliente_recibe_el_dinero",
     "estado": "PENDIENTE_APROBACION_Y_CAPACIDAD_OPERATIVA",
-    "nota": "Tope operativo propuesto, sujeto a plazos legales aplicables más breves y a que el cliente reciba el dinero dentro del plazo. El artículo 71 fija 30 días solo para los supuestos que regula. El artículo 45 regula el término para ejercer la devolución y no fija un plazo general de reembolso."
+    "nota": "Propuesta operativa sin aprobación. La propuesta de 30 días fue rechazada. No aplicar una ventana nueva ni reiniciar un plazo legal cuando resulte improcedente."
+  },
+  "estrategia_devoluciones": "POLITICA_WEB_PRIMERO_CONFIGURACION_CUENTA_RECOMENDADA",
+  "url_comercial_prevista": "https://conectatech-ec.github.io/garantias/",
+  "configuracion_automatica_permitida": false,
+  "correspondencia_google": {
+    "policy_days_unidad": "24 horas desde la marca temporal de entrega",
+    "policy_days_valor": null,
+    "equivalencia_confirmada": false,
+    "formulario_opcional_para_fichas_gratuitas": true,
+    "politica_web_completa_obligatoria": true,
+    "no_crear_politica_parcial": true,
+    "documentacion": [
+      "https://support.google.com/merchants/answer/13889434?hl=en",
+      "https://developers.google.com/merchant/api/reference/rest/accounts_v1/accounts.onlineReturnPolicies"
+    ]
+  },
+  "verificacion_cuenta_actual": {
+    "fecha": "2026-11-06",
+    "estado": "SESION_CERRADA",
+    "cuenta_objetivo": "5874003439",
+    "sesion_empresarial_identificada": true,
+    "recuento_actual_no_verificado": true,
+    "ultimo_recuento_verificado_historico": 370,
+    "configuracion_modificada": false
   }
 }

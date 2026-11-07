@@ -1,41 +1,20 @@
-# Garantías, cambios y devoluciones — CONECTATECH
+# Garantía y atención posventa
 
-Política aprobada · operativa pendiente · no publicada · versión 2026-11-03.revision-6.
+Estructura aprobada · operativa pendiente · no publicada · versión 2026-11-06.revision-7.
 
-En CONECTATECH queremos que compres con tranquilidad. Todos nuestros productos cuentan con respaldo y atención posventa.
+Al recibir tu compra, revisa el modelo, los accesorios y el estado del producto. Si detectas alguna novedad, escríbenos por WhatsApp o acércate al local con tu comprobante de compra.
 
-## 1. Revisión al recibir tu compra
+Los celulares y tablets tienen 1 año de garantía. Los accesorios y demás productos tienen 30 días de garantía comercial. La cobertura incluye defectos de fabricación y funcionamiento en condiciones normales de uso. Si detectas un defecto después del plazo de garantía, puedes comunicarte con nosotros para revisar qué atención corresponde.
 
-Te recomendamos verificar el modelo, las características, los accesorios y el estado del producto al momento de recibirlo. Si detectas alguna novedad, comunícanosla oportunamente para brindarte una solución.
+Para solicitudes por preferencia, consulta la Política de devoluciones y reembolsos.
 
-## 2. Cambios y devoluciones
+## Devoluciones y reembolsos
 
-No ofrecemos cambios ni devoluciones voluntarias por preferencias personales. En teléfonos y tablets utilizados o activados, no realizamos cambios voluntarios por modelo, color o características.
+Para solicitar atención, contáctanos con tu comprobante de compra. Las solicitudes de cambio o devolución por preferencia pueden presentarse dentro del término de 15 días posteriores a la recepción, cuando la naturaleza del producto lo permita y se conserve en el estado en que se recibió. Si el producto presenta una falla o no coincide con tu pedido, contáctanos para revisar el caso.
 
-Las solicitudes de devolución legalmente procedentes serán atendidas conforme a la normativa ecuatoriana, considerando el estado y la naturaleza del producto, dentro del término legal de quince (15) días desde la recepción.
+Recibimos devoluciones preferentemente en el local. Cuando corresponda enviarlas, coordina con nosotros antes del despacho. En devoluciones por decisión del comprador, el costo del envío queda a su cargo cuando corresponda. En casos de falla o error en el pedido, te indicaremos antes del despacho a quién corresponde el costo. No hay cargo de reposición.
 
-Recibimos devoluciones preferentemente en nuestro local. Cuando corresponda, coordina el envío con nosotros antes de despacharlo.
-
-Si la devolución es por decisión del comprador, este cubre los gastos de envío cuando legalmente proceda. Si la responsabilidad corresponde a CONECTATECH, se aplican las obligaciones legales correspondientes. No cobramos cargos de reposición.
-
-Los reembolsos procedentes se realizan por el medio de pago original cuando sea posible, o mediante transferencia acordada.
-
-## 3. Garantías
-
-- **Celulares y tablets:** 1 año de garantía.
-- **Accesorios y demás productos:** 30 días de garantía.
-
-La garantía cubre defectos de fabricación y funcionamiento en condiciones normales de uso, conforme a sus condiciones y a la normativa aplicable.
-
-Los inconvenientes serán evaluados mediante el procedimiento de garantía correspondiente.
-
-## 4. Atención posventa
-
-Para solicitar atención, comunícate con CONECTATECH por WhatsApp o visítanos en nuestro local, presentando tu factura o comprobante de compra y los detalles del inconveniente.
-
-Nuestro equipo revisará tu solicitud y te informará los pasos correspondientes.
-
-_En todos los casos se respetarán los derechos establecidos por la legislación ecuatoriana._
+Cuando proceda un reembolso, lo recibirás por el medio de pago original, si es posible, o mediante una transferencia acordada, dentro de [plazo aprobado] desde que recibamos el producto devuelto.
 
 ## Atención oficial
 

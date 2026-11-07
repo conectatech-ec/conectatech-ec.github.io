@@ -1,10 +1,11 @@
 # Política aprobada — garantías, cambios y devoluciones
 
-Estado: **REDACCIÓN COMERCIAL APROBADA; OPERATIVA PENDIENTE; NO PUBLICADA**. Rama preparada separadamente; no modifica main, producción, feed Merchant, datos593, fotos, banners ni Worker de Alex. Costo adicional $0.
+Estado: **ESTRUCTURA APROBADA; OPERATIVA PENDIENTE; NO PUBLICADA**. Rama preparada separadamente; no modifica main, producción, feed Merchant, datos593, fotos, banners ni Worker de Alex. Costo adicional $0.
 
 ## Archivos de revisión
 
-- `POLITICA-COMPLETA.md`: texto público breve aprobado el 03/11; el término legal de quince días se explicita para informar al comprador.
+- `POLITICA-COMPLETA.md`: texto comercial exacto y condiciones detalladas, generados desde la misma fuente.
+- `../garantias/index.html`: contenido comercial principal aprobado, sin término de devolución.
 - `../cambios-devoluciones-garantias/index.html`: página estática móvil/escritorio; navegación, pie y canal oficial. URL permanente prevista: `https://conectatech-ec.github.io/cambios-devoluciones-garantias/`. No presentarla como pública antes de aprobación y despliegue.
 - `politica.json`: única fuente de condiciones, contactos, reglas por categoría y excepciones SKU; incluye las condiciones de envíos/pagos recuperadas el03/11.
 - `../compra/envios-pagos.html`: vista de revisión generada con tarifa nacional, sobrecostos a cargo de tienda, contraentrega Quito y anticipo nacional. Enlazada desde la compra.
@@ -36,8 +37,8 @@ Las fichas actuales se mantienen intactas durante esta revisión. `preparar-enla
 
 ## Pendientes imprescindibles antes de publicación
 
-1. Redacción comercial aprobada: completar únicamente datos operativos y autorizar la publicación posterior. La razón social recuperada de593 es VELASCO VALDERRAMA JOSE RAFAEL: ya está incorporada, no volver a solicitarla.
-2. Confirmar recepción de devoluciones en local y/o transporte, gastos cuando no hay defecto/error, etiqueta/transportista si aplica, si existe tarifa de reposición, y método/plazo operativo real del reembolso. No se inventó ninguno.
+1. Estructura aprobada el06/11: texto comercial exacto en garantías y página independiente de devoluciones. Completar operativa y autorización posterior. La razón social recuperada de593 es VELASCO VALDERRAMA JOSE RAFAEL: ya está incorporada, no volver a solicitarla.
+2. Recepción local preferente, envío coordinado, gastos del comprador cuando proceda, ausencia de cargo de reposición y medio de reembolso ya aprobados. Falta plazo operativo y correspondencia de gastos/etiqueta por causa. La propuesta de 7 días sigue pendiente; la de 30 días fue rechazada.
 3. Cerrar el cómputo del término legal de15 días para su correspondencia exacta con Google. La página conserva el texto legal; no se reemplazó por3/7 días ni se aseguró sin evidencia que los días sean naturales/hábiles.
 
 Garantías aprobadas el 03/11: celulares y tablets, 1 año; accesorios y demás productos, 30 días. Cobertura de fabricación y funcionamiento en condiciones normales de uso. Se conservan los derechos legales y las ampliaciones o condiciones previamente ofrecidas. No aplicar retroactivamente plazos más cortos.
