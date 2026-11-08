@@ -1,6 +1,14 @@
 'use strict';
 // Proyección opcional exclusivamente pública. Nunca decide identidad ni valores comerciales.
 const crypto=require('node:crypto');
+const sealedApproval=require('./presentacion-sellada.cjs');
+// Exact sealed covers already reviewed in PR #364. A new cover needs its own approval.
+const sealedCovers=new Map([
+ ['CHIP001','4bdeffda8222f01ac20cda4c1d2237e97a43f8c8dc204adf89d11120223319f1'],
+ ['CHIP002','a03e1ad9bdafd9ab1af9880035c30789f4030cc045a6d4c6873677fc44beefdb'],
+ ['CHIP004','e775011b48827a399cbf864b592343ea646ade5fb827b1eca7d4ba10eb8fd7c1'],
+ ['JUGU142','41f3562afd7875b6b4c70e378dc91f3a9d92afe444f37bf11f3f69ea10047466'],
+]);
 const ORIGIN='https://conectatech-ec.github.io',SCHEMA='conectatech.alex.presentation.v1',HEX=/^[a-f0-9]{64}$/;
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const stable=value=>JSON.stringify(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
@@ -41,7 +49,7 @@ function csvRows(text,required){
  const header=rows.shift();if(!header||new Set(header).size!==header.length||required.some(k=>!header.includes(k))||!rows.length||rows.length>5000)throw Error('PRESENTATION_CSV');
  const seen=new Set();return rows.map(row=>{if(row.length!==header.length)throw Error('PRESENTATION_CSV');const r=Object.fromEntries(header.map((k,i)=>[k,row[i]])),sku=r.sku||r.id;if(!/^[A-Z0-9_-]{3,40}$/.test(sku)||seen.has(sku))throw Error('PRESENTATION_CSV');seen.add(sku);return {sku,title:r.title,image_link:r.image_link};});
 }
-function preparePresentation({source_sha256,cut_date,multichannel,meta,webProducts,photos,previous,readAsset,now=()=>new Date().toISOString()}={}){
+function preparePresentation({source_sha256,cut_date,multichannel,meta,webProducts,photos,previous,readAsset,approvalRoot,now=()=>new Date().toISOString()}={}){
  const prior=validPresentation(previous)?previous:null;
  try{
   if(!HEX.test(source_sha256||'')||!/^\d{4}-\d{2}-\d{2}$/.test(cut_date||''))throw Error('PRESENTATION_SOURCE');
@@ -50,10 +58,12 @@ function preparePresentation({source_sha256,cut_date,multichannel,meta,webProduc
   for(const row of rows){
    if(!known.has(row.sku)||!title(row.title))throw Error('PRESENTATION_PUBLIC_SCOPE');
    let approved_media=null;const professional=photos[row.sku]?.imagenProfesional;
-   if(row.image_link&&professional?.contiene_caja===false&&(professional.revision_visual===true||typeof professional.revision_visual==='string'&&professional.revision_visual.trim())){
+   const sealed=professional?.contiene_caja===true&&sealedCovers.has(row.sku)&&
+    sealedApproval(row.sku,approvalRoot,row.sku==='JUGU142'?'UNIDAD_SORPRESA_SELLADA':'UNIDAD_COMERCIAL_SELLADA');
+   if(row.image_link&&(professional?.contiene_caja===false||sealed)&&(professional.revision_visual===true||typeof professional.revision_visual==='string'&&professional.revision_visual.trim())){
     const versions=Object.values(professional.versiones||{}),match=versions.find(v=>assetURL(v?.url)&&ORIGIN+v.url===row.image_link);
     const descriptors=[{url:professional.original,sha256:professional.sha256_original},...versions];
-    if(match&&descriptors.every(v=>assetURL(v?.url)&&HEX.test(v?.sha256||''))){for(const v of descriptors)verify(v.url,v.sha256);approved_media={url:row.image_link,sha256:match.sha256};}
+    if(match&&(!sealed||match.sha256===sealedCovers.get(row.sku))&&descriptors.every(v=>assetURL(v?.url)&&HEX.test(v?.sha256||''))){for(const v of descriptors)verify(v.url,v.sha256);approved_media={url:row.image_link,sha256:match.sha256};}
    }
    const record={display_title:row.title,approved_media};if(products[row.sku]&&stable(products[row.sku])!==stable(record))throw Error('PRESENTATION_CSV_CONFLICT');products[row.sku]=record;
   }
