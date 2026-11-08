@@ -35,7 +35,7 @@
     "no_defectuoso": "A cargo del comprador cuando la devolución sea por su decisión y legalmente proceda."
   },
   "bloqueos": [
-    "Publicar condiciones completas solo después de aprobar cómputo y reembolso",
+    "Publicar condiciones completas solo después de verificar el cómputo y la capacidad de reembolso",
     "Precisar reparto de gastos por causa y reflejar la operativa real",
     "Autorizar publicación e integración comercial"
   ],
@@ -97,10 +97,10 @@
   "propuesta_plazo_reembolso": {
     "dias": 7,
     "unidad": "dias_calendario",
-    "inicio_propuesto": "recepcion_del_producto_devuelto",
+    "inicio": "recepcion_del_producto_devuelto",
     "fin": "cliente_recibe_el_dinero",
-    "estado": "PENDIENTE_APROBACION_Y_CAPACIDAD_OPERATIVA",
-    "nota": "Propuesta operativa sin aprobación. La propuesta de 30 días fue rechazada. No aplicar una ventana nueva ni reiniciar un plazo legal cuando resulte improcedente."
+    "estado": "APROBADO_CONDICIONADO_A_CAPACIDAD_OPERATIVA",
+    "nota": "Aprobación de Dirección General condicionada a confirmar capacidad de acreditación y respetar plazos obligatorios menores. No aplicar una ventana nueva ni reiniciar un plazo legal cuando resulte improcedente."
   },
   "estrategia_devoluciones": "POLITICA_WEB_PRIMERO_CONFIGURACION_CUENTA_RECOMENDADA",
   "url_comercial_prevista": "https://conectatech-ec.github.io/garantias/",

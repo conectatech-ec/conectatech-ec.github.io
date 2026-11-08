@@ -75,7 +75,8 @@ test('página y texto completo generados, sin publicar ni datos estructurados de
   assert.equal(config.aprobacion.redaccion_comercial_aprobada,true);
   assert.equal(config.aprobacion.publicacion_autorizada,false);
   assert.ok(!page.includes('MerchantReturnPolicy'));assert.ok(!page.includes('{{'));
-  assert.match(page,/\[plazo aprobado\]/);
+  assert.match(page,/máximo de 7 días calendario desde que recibamos el producto devuelto, o antes si corresponde un plazo obligatorio menor/);
+  assert.equal(config.operativa_pendiente.plazo_operativo_reembolso.dias_calendario,7);
   assert.equal(config.publicar,false);
   for(const section of config.secciones) assert.ok(page.includes('id="'+section.id+'"'));
 });

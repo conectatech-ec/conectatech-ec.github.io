@@ -14,7 +14,7 @@ Para solicitar atención, contáctanos con tu comprobante de compra. Las solicit
 
 Recibimos devoluciones preferentemente en el local. Cuando corresponda enviarlas, coordina con nosotros antes del despacho. En devoluciones por decisión del comprador, el costo del envío queda a su cargo cuando corresponda. En casos de falla o error en el pedido, te indicaremos antes del despacho a quién corresponde el costo. No hay cargo de reposición.
 
-Cuando proceda un reembolso, lo recibirás por el medio de pago original, si es posible, o mediante una transferencia acordada, dentro de [plazo aprobado] desde que recibamos el producto devuelto.
+Cuando proceda un reembolso, lo recibirás por el medio de pago original, si es posible, o mediante una transferencia acordada, en un máximo de 7 días calendario desde que recibamos el producto devuelto, o antes si corresponde un plazo obligatorio menor.
 
 ## Atención oficial
 

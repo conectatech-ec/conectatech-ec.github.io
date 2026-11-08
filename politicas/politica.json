@@ -95,9 +95,15 @@
       "medio_original_si_es_posible",
       "transferencia_acordada"
     ],
-    "plazo_operativo_reembolso": null,
+    "plazo_operativo_reembolso": {
+      "dias_calendario": 7,
+      "inicio": "recepcion_del_producto_devuelto",
+      "fin": "cliente_recibe_el_abono",
+      "respetar_plazo_obligatorio_menor": true,
+      "estado": "APROBADO_CONDICIONADO_A_CAPACIDAD_OPERATIVA"
+    },
     "plazos_diagnostico_reparacion": null,
-    "nota": "Operativa aprobada. Plazo máximo general de reembolso pendiente de decisión."
+    "nota": "Plazo operativo aprobado por Dirección General, condicionado a verificar la capacidad de acreditación antes de publicar."
   },
   "secciones": [
     {
@@ -106,7 +112,7 @@
       "parrafos": [
         "Para solicitar atención, contáctanos con tu comprobante de compra. Las solicitudes de cambio o devolución por preferencia pueden presentarse dentro del término de 15 días posteriores a la recepción, cuando la naturaleza del producto lo permita y se conserve en el estado en que se recibió. Si el producto presenta una falla o no coincide con tu pedido, contáctanos para revisar el caso.",
         "Recibimos devoluciones preferentemente en el local. Cuando corresponda enviarlas, coordina con nosotros antes del despacho. En devoluciones por decisión del comprador, el costo del envío queda a su cargo cuando corresponda. En casos de falla o error en el pedido, te indicaremos antes del despacho a quién corresponde el costo. No hay cargo de reposición.",
-        "Cuando proceda un reembolso, lo recibirás por el medio de pago original, si es posible, o mediante una transferencia acordada, dentro de [plazo aprobado] desde que recibamos el producto devuelto."
+        "Cuando proceda un reembolso, lo recibirás por el medio de pago original, si es posible, o mediante una transferencia acordada, en un máximo de 7 días calendario desde que recibamos el producto devuelto, o antes si corresponde un plazo obligatorio menor."
       ]
     }
   ],
@@ -181,7 +187,7 @@
     "redaccion_comercial_aprobada": true,
     "publicacion_autorizada": false,
     "operativa_completa": false,
-    "precision_informativa": "Texto comercial conservado exactamente desde la última propuesta aprobada como estructura. Plazo de reembolso y cómputo del término permanecen pendientes.",
+    "precision_informativa": "Texto comercial conservado exactamente desde la última propuesta aprobada como estructura. El plazo de reembolso está aprobado con condición operativa. El cómputo del término de devolución sigue pendiente.",
     "estructura_aprobada": true,
     "texto_comercial_exacto": true,
     "redaccion_detallada_sujeta_a_pendientes": true
@@ -198,7 +204,7 @@
   },
   "pendientes_publicacion": [
     "Confirmar cómputo aplicable del término de devolución",
-    "Aprobar plazo operativo de reembolso y retirar el marcador del borrador",
+    "Verificar que el cliente pueda recibir el abono dentro del plazo operativo aprobado",
     "Precisar gastos obligatorios por causa antes de publicar",
     "Autorizar publicación HTTPS e integración comercial"
   ]
