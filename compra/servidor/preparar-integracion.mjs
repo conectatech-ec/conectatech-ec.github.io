@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import os from 'node:os';
 import {CHECKOUT_CONFIG} from './checkout-config.mjs';
 
-export const BASE_SHA = 'c92ed56ca378e950babbb38d078d29f442ff78c9';
+export const BASE_SHA = 'acfc00763dfbc7ac34c2c62f9ccecea4f613c870';
 const sourceDir = import.meta.dirname;
 const root = path.resolve(sourceDir, '../..');
 const modules = ['checkout-config.mjs', 'checkout-core.mjs', 'checkout-edge.mjs', 'checkout-shared-source.mjs', 'checkout-store.mjs', 'checkout-entry.mjs'];

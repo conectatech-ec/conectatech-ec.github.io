@@ -2,7 +2,7 @@
 
 Código ejecutable para recibir pedidos contraentrega en el **Worker existente** y el mismo Durable Object `MESSENGER_TEST_INBOX` / `messenger-development`. No se creó otro Worker, D1, binding, Data Hub ni inventario. La demostración local conserva sus pedidos de prueba.
 
-Base exacta del parche: `automatizacion/piloto-cloud-3sku-20261015`, SHA **c92ed56ca378e950babbb38d078d29f442ff78c9**, observado el 03/11/2026. Conserva los cambios actuales de Alex; no sustituye el Worker por la rama de corrección anterior.
+Base exacta del parche: **acfc00763dfbc7ac34c2c62f9ccecea4f613c870**, revisión de código observada en `/health`. El parche incorpora únicamente los ganchos de checkout al Worker, el objeto de almacenamiento y el empaquetador de esa revisión. La revisión declarada por `/health` no acredita que el bundle activo carezca de cambios posteriores de alcance limitado.
 
 ## Conexión implementada
 
@@ -68,3 +68,9 @@ node compra/tests/ensayo-https.mjs SNAPSHOT LLAVE_TLS CERT_TLS MODULO_CIFRADO SK
 El snapshot es la salida local de `readCheckoutSource`. El certificado local debe incluir 127.0.0.1 y el módulo debe exportar el cifrado `seal/unseal` del Worker. Con ADAP004 se verificaron catálogo y cotización (200), confirmación (201), consulta sin autorización (401), consulta autorizada después de reabrir SQLite (200) y reintento idempotente. El ensayo usa TLS de loopback, envío sintético y almacenamiento desechable. No cambia la fuente, las tarifas ni la configuración activa.
 
 Para cerrar la prueba contra el Worker existente, falta contrastar la fecha y el hash de la fuente privada mediante el GET autenticado de catálogo ya disponible. Si está desactualizada, preparar la normalización 593 existente en una rama independiente con el XLSX exacto y verificar de nuevo las 31 exclusiones antes de considerar la activación.
+
+## Prueba aislada sobre el código de la revisión en servicio
+
+Se aplicó el parche sobre una rama temporal del código `acfc0076`. El ensayo HTTPS pasó por `worker.fetch`, el binding simulado y la clase real `MessengerTestInbox` con SQLite en disco. Solo en esa copia se activó una zona sintética y se interceptaron las tres lecturas web del corte del 06/11. Con ADAP004 se obtuvieron catálogo y cotización 200, confirmación 201, consulta sin clave 401 y consulta autorizada 200 tras reabrir SQLite. El reintento devolvió el mismo recibo y quedó una sola fila de pedido. El parche del PR sigue con el checkout deshabilitado.
+
+Antes de cualquier despliegue, usar la inspección autenticada existente para contrastar el bundle y sus ajustes activos y leer `GET /commercial/catalog/status`. Registrar únicamente metadatos de fuente y revisión. Comparar los módulos afectados contra el manifiesto y conservar cualquier módulo o ajuste activo adicional. La prueba local no valida el bundle privado actual ni autoriza un despliegue completo con la copia de GitHub.
