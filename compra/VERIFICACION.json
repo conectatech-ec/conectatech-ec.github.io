@@ -55,8 +55,7 @@
     "Aplicar parche verificado al Worker existente tras autorización de publicación",
     "Configurar cobertura y fecha estimada aprobadas; conectar URL pública del cliente",
     "Verificar integración real HTTPS y comportamiento de cobertura en Merchant",
-    "Completar aviso de datos conforme almacenamiento operativo",
-    "Recuperar sesión empresarial de Merchant Center para comprobar estado actual"
+    "Completar aviso de datos conforme almacenamiento operativo"
   ],
   "merchant_observado": {
     "cuenta": "5874003439",
@@ -138,5 +137,479 @@
     "estado": "SESION_EMPRESARIAL_CERRADA",
     "recuento_actual_verificado": false,
     "configuracion_modificada": false
+  },
+  "merchant_comprobacion_07_11": {
+    "fecha": "2026-11-07",
+    "cuenta": "5874003439",
+    "fuente_id": "10791678121",
+    "hora_panel": "10:00 AM",
+    "fuente_actualizada": 315,
+    "errores_archivo_reportados": 0,
+    "fichas_gratuitas_cuenta_activa": true,
+    "productos_no_mostrados_panel": 315,
+    "productos_habilitados_para_fichas_gratuitas_segun_xml": 0,
+    "alcance_elegibilidad": "Se comprobaron las exclusiones por SKU en los 315 registros del XML y el agregado del panel. No se certifica decisión de revisión por separado para cada oferta. SOPO012 figura en revisión de políticas.",
+    "xml_anterior": {
+      "commit": "8692be0",
+      "sha256": "dd9e188add0555910ca703a9aa223019f3882bccacf4a61a71bf9fa9e9d1fb84",
+      "productos": 370,
+      "corte_593": "2026-11-02"
+    },
+    "xml_actual": {
+      "commit": "3b0b943009d65f3031b47f8b1ba23e5c1c8d3d7e",
+      "sha256": "8dd8104f81b38892eaabd7abdbce0622fd746cbd1ea2f37e0480d9c32eecbb37",
+      "productos": 315,
+      "corte_593": "2026-11-06",
+      "commit_fuente": "9f702e4231d2642c1e4760b1e3cd5494cf75a89e",
+      "disponibles": 307,
+      "agotados": 8,
+      "precios_y_disponibilidad_coinciden_con_corte_593": 315,
+      "ids_duplicados": 0,
+      "campos_basicos_ausentes": {
+        "id": 0,
+        "title": 0,
+        "description": 0,
+        "link": 0,
+        "image_link": 0,
+        "price": 0,
+        "availability": 0,
+        "condition": 0
+      },
+      "destinos_excluidos": [
+        "Free_listings",
+        "Shopping_ads"
+      ]
+    },
+    "conciliacion": {
+      "conservados": 311,
+      "altas": [
+        "ADAP034",
+        "ADAP103",
+        "CARG062",
+        "TECL028"
+      ],
+      "bajas": [
+        {
+          "sku": "CAMA010",
+          "motivo_generador": "sin_revision_limitada_corte16",
+          "disponibilidad_corte_593": "out_of_stock",
+          "imagen_feed_anterior": "/imagenes/cama010/CAMA010-01.webp",
+          "imagen_catalogo_actual": "/imagenes/cama010/CAMA010-01.webp"
+        },
+        {
+          "sku": "HUB026",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/hub026/HUB026-01.webp",
+          "imagen_catalogo_actual": "/imagenes/hub026/HUB026-r2026110351-01.webp"
+        },
+        {
+          "sku": "JUGU034",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/jugu034/JUGU034-01.webp",
+          "imagen_catalogo_actual": "/imagenes/jugu034/JUGU034-r2026110351-01.webp"
+        },
+        {
+          "sku": "PILA001",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila001/PILA001-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila001/PILA001-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA003",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila003/PILA003-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila003/PILA003-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA004",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila004/PILA004-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila004/PILA004-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA005",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila005/PILA005-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila005/PILA005-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA007",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila007/PILA007-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila007/PILA007-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA010",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila010/PILA010-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila010/PILA010-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA011",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila011/PILA011-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila011/PILA011-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA013",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila013/PILA013-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila013/PILA013-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA015",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila015/PILA015-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila015/PILA015-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA016",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila016/PILA016-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila016/PILA016-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA017",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila017/PILA017-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila017/PILA017-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA018",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila018/PILA018-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila018/PILA018-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA019",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila019/PILA019-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila019/PILA019-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA021",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila021/PILA021-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila021/PILA021-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA022",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila022/PILA022-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila022/PILA022-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA023",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila023/PILA023-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila023/PILA023-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA026",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila026/PILA026-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila026/PILA026-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA027",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila027/PILA027-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila027/PILA027-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA028",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila028/PILA028-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila028/PILA028-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA030",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila030/PILA030-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila030/PILA030-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA031",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila031/PILA031-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila031/PILA031-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA033",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila033/PILA033-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila033/PILA033-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA034",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila034/PILA034-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila034/PILA034-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA036",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila036/PILA036-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila036/PILA036-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA037",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila037/PILA037-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila037/PILA037-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA038",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila038/PILA038-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila038/PILA038-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA039",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila039/PILA039-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila039/PILA039-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA040",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila040/PILA040-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila040/PILA040-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA041",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila041/PILA041-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila041/PILA041-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA042",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila042/PILA042-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila042/PILA042-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA043",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila043/PILA043-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila043/PILA043-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA046",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila046/PILA046-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila046/PILA046-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA047",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila047/PILA047-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila047/PILA047-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA048",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "out_of_stock",
+          "imagen_feed_anterior": "/imagenes/pila048/PILA048-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila048/PILA048-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA049",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila049/PILA049-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila049/PILA049-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA050",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila050/PILA050-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila050/PILA050-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA052",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila052/PILA052-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila052/PILA052-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA053",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila053/PILA053-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila053/PILA053-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA054",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila054/PILA054-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila054/PILA054-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA055",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila055/PILA055-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila055/PILA055-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA056",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila056/PILA056-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila056/PILA056-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA057",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila057/PILA057-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila057/PILA057-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA059",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila059/PILA059-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila059/PILA059-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA060",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila060/PILA060-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila060/PILA060-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA062",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila062/PILA062-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila062/PILA062-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA063",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila063/PILA063-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila063/PILA063-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA064",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila064/PILA064-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila064/PILA064-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA065",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila065/PILA065-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila065/PILA065-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA066",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila066/PILA066-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila066/PILA066-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA067",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila067/PILA067-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila067/PILA067-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA068",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila068/PILA068-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila068/PILA068-r2026110345-01.webp"
+        },
+        {
+          "sku": "PILA069",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila069/PILA069-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila069/PILA069-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA070",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila070/PILA070-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila070/PILA070-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA071",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila071/PILA071-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila071/PILA071-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA074",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila074/PILA074-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila074/PILA074-r2026110344-01.webp"
+        },
+        {
+          "sku": "PILA075",
+          "motivo_generador": "imagen_no_coincide",
+          "disponibilidad_corte_593": "in_stock",
+          "imagen_feed_anterior": "/imagenes/pila075/PILA075-01.webp",
+          "imagen_catalogo_actual": "/imagenes/pila075/PILA075-r2026110345-01.webp"
+        }
+      ],
+      "diferencia_neta": -55
+    },
+    "validacion_pr": {
+      "pruebas_compra": 45,
+      "pruebas_politicas": 11,
+      "worker_base_revalidada": "c92ed56ca378e950babbb38d078d29f442ff78c9",
+      "desplegado": false
+    }
   }
 }
