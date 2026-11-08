@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: REVIEWED_STATUS_COMMIT_REPLACE_AFTER_APPROVAL
+          ref: 26d699298a2a9c470b64811c3a0684da1e8c2932
           path: verifier
           persist-credentials: false
           sparse-checkout: compra/servidor
