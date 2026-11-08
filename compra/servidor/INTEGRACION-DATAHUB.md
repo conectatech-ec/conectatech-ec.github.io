@@ -56,3 +56,15 @@ Se ejecutó localmente `readSharedHub` y el lector de checkout del PR, usando lo
 El lector reconoció el corte y la presentación. La base compilada del 21/10 contiene 1.556 SKU. De estos, 375 no están en el corte web y los otros 1.181 carecen de verificación de identidad aceptada para ese hash. El corte web no aporta `source_name` y el Worker no tiene una atestación aplicable para esas identidades en el corte probado. El checkout devolvió `CHECKOUT_SOURCE_EMPTY`. Este resultado describe la combinación de artefactos de GitHub ensayada. El empaquetador puede conservar una fuente privada vigente distinta, que aún debe verificarse en el Worker real.
 
 Usar la actualización de fuente existente del Data Hub, con el reporte 593 verificado y su evidencia de identidad, o acreditar que la fuente privada vigente ya coincide. Repetir el cruce con los 307 candidatos y comprobar catálogo, cotización, pedido sintético y lectura administrativa en una prueba HTTPS autorizada. Conservar el bloqueo de identidad y no utilizar la presentación web como sustituto de 593. La compatibilidad sintáctica del parche y las pruebas SQLite no cierran este punto.
+
+## Reproducción HTTPS aislada con el corte del 06/11
+
+Se recuperó la revisión de 593 de las 20:59 de Quito. Los 1.199 SKU del corte público coincidieron con esa revisión en stock y precios. El conector entregó una transcripción, por lo que queda pendiente comprobar el hash binario del XLSX original. En una copia local se incorporó únicamente el nombre original de las filas coincidentes. Con la base compilada del 21/10 y los controles intactos, el lector admitió 957 SKU (923 con stock). De los 307 candidatos, 276 pasaron el cruce y 31 quedaron bloqueados: 18 ausentes en esa base, 11 con `web.price_matches=false` y 2 con diferencia de identidad.
+
+```sh
+node compra/tests/ensayo-https.mjs SNAPSHOT LLAVE_TLS CERT_TLS MODULO_CIFRADO SKU
+```
+
+El snapshot es la salida local de `readCheckoutSource`. El certificado local debe incluir 127.0.0.1 y el módulo debe exportar el cifrado `seal/unseal` del Worker. Con ADAP004 se verificaron catálogo y cotización (200), confirmación (201), consulta sin autorización (401), consulta autorizada después de reabrir SQLite (200) y reintento idempotente. El ensayo usa TLS de loopback, envío sintético y almacenamiento desechable. No cambia la fuente, las tarifas ni la configuración activa.
+
+Para cerrar la prueba contra el Worker existente, falta contrastar la fecha y el hash de la fuente privada mediante el GET autenticado de catálogo ya disponible. Si está desactualizada, preparar la normalización 593 existente en una rama independiente con el XLSX exacto y verificar de nuevo las 31 exclusiones antes de considerar la activación.
