@@ -83,6 +83,8 @@ La inspección autenticada de Actions [41731714022](https://github.com/conectate
 
 ## Preparación de la presentación y del piloto
 
+Verificación privada aislada preparada el 08/11: [ruta y limitaciones](VERIFICAR-STATUS-DATAHUB.md). Usa exclusivamente `GET /commercial/catalog/status` mediante el transporte original, sin `/health`, despliegue o sincronización. El workflow propuesto es inerte y no se ha ejecutado; no hay resultado autenticado actual. El registro manual de Actions requiere aprobación posterior porque actualmente no existe en main y el entorno solo permite la rama piloto.
+
 El exportador reconoce las cuatro portadas selladas del PR #364 por SKU y hash exacto, usando el registro de excepciones y la confirmación del propietario. Se siguen comprobando el enlace del CSV, la revisión visual y los hashes del original y sus variantes. La excepción no cambia los CSV, los datos 593 ni los criterios de identidad del checkout.
 
 Para los 36 pendientes, validar primero las 18 ausencias y las 15 marcas de precio contra el catálogo privado vigente. Para las tres diferencias de identidad, exigir evidencia vinculada al corte antes de considerar el SKU. Mantenerlos fuera de la compra mientras no pasen los controles.

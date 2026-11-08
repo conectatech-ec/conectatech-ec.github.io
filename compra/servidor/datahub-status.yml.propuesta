@@ -1,0 +1,34 @@
+# Propuesta inerte: NO está en .github/workflows y NO se ha ejecutado.
+# Registrar e instalar solo tras aprobación específica; ver VERIFICAR-STATUS-DATAHUB.md.
+name: Verificar únicamente status privado Data Hub
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  status:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: REVIEWED_STATUS_COMMIT_REPLACE_AFTER_APPROVAL
+          path: verifier
+          persist-credentials: false
+          sparse-checkout: compra/servidor
+      - uses: actions/checkout@v4
+        with:
+          ref: c92ed56ca378e950babbb38d078d29f442ff78c9
+          path: transport
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /automatizacion/central-http.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Único GET autenticado y metadatos filtrados
+        run: node verifier/compra/servidor/verificar-status-datahub.mjs transport/automatizacion/central-http.mjs
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
