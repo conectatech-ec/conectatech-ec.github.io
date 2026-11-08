@@ -58,6 +58,27 @@ test('SQLite real guarda pedido durable cifrado y conserva recibo al reiniciar',
   const admin = await s.call('admin/pedidos'); assert.deepEqual(admin.body.orders[0].customer, contact);
 });
 
+test('la limpieza conserva pedidos abiertos y elimina contacto de cerrados después del plazo', async t => {
+  const s = await setup(t);
+  const closed = (await s.order(await s.quote())).body;
+  assert.equal((await s.call('admin/actualizar', {
+    id: closed.id, action: 'cancelar', reference: 'prueba-de-retencion'
+  })).status, 200);
+  const open = (await s.order(await s.quote(), 'datahub-test-key-open')).body;
+
+  s.setNow('2026-12-02T16:00:00Z');
+  const before = (await s.call('admin/pedidos')).body.orders;
+  assert.deepEqual(before.find(order => order.id === closed.id).customer, contact);
+
+  s.setNow('2026-12-04T16:00:00Z');
+  const after = (await s.call('admin/pedidos')).body.orders;
+  const retained = after.find(order => order.id === closed.id);
+  assert.equal(retained.customer, null);
+  assert.equal(retained.totalCents, closed.totalCents);
+  assert.deepEqual(after.find(order => order.id === open.id).customer, contact);
+  assert.equal(s.rows('SELECT id FROM checkout_quotes').length, 0);
+});
+
 test('concurrencia y replay usan claves únicas reales en SQLite', async t => {
   const s = await setup(t); const q = await s.quote();
   const results = await Promise.all([s.order(q), s.order(q)]);

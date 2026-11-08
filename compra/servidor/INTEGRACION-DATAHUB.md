@@ -48,3 +48,11 @@ node compra/servidor/preparar-integracion.mjs --check /ruta/a/rama-independiente
 El parche y manifiesto SHA son revisables. `--check` rechaza cambios concurrentes en Worker, DO o empaquetador. `--apply-local` solo escribe en rama independiente que supere hashes y no contenga módulos checkout; no hace commit/push/deploy ni admite main. Preparación siempre deshabilitada. No se ha ejecutado sobre la rama operativa.
 
 Referencia técnica contrastada: [Cloudflare SQLite Durable Objects: SQL y transactionSync](https://developers.cloudflare.com/durable-objects/api/sqlite-storage-api/). Las transacciones de producción usan transactionSync; BEGIN/COMMIT solo aparecen en el adaptador de pruebas Node SQLite.
+
+## Prueba de compatibilidad con el corte real del piloto
+
+Se ejecutó localmente `readSharedHub` y el lector de checkout del PR, usando los módulos y la base compilada de la rama operativa `c92ed56` y los archivos reales de `main` en `9f702e4`: puntero, corte del 06/11 y presentación del catálogo. Se sirvieron copias exactas al lector mediante un transporte local, sin escribir datos comerciales.
+
+El lector reconoció el corte y la presentación. La base compilada del 21/10 contiene 1.556 SKU. De estos, 375 no están en el corte web y los otros 1.181 carecen de verificación de identidad aceptada para ese hash. El corte web no aporta `source_name` y el Worker no tiene una atestación aplicable para esas identidades en el corte probado. El checkout devolvió `CHECKOUT_SOURCE_EMPTY`. Este resultado describe la combinación de artefactos de GitHub ensayada. El empaquetador puede conservar una fuente privada vigente distinta, que aún debe verificarse en el Worker real.
+
+Usar la actualización de fuente existente del Data Hub, con el reporte 593 verificado y su evidencia de identidad, o acreditar que la fuente privada vigente ya coincide. Repetir el cruce con los 307 candidatos y comprobar catálogo, cotización, pedido sintético y lectura administrativa en una prueba HTTPS autorizada. Conservar el bloqueo de identidad y no utilizar la presentación web como sustituto de 593. La compatibilidad sintáctica del parche y las pruebas SQLite no cierran este punto.
