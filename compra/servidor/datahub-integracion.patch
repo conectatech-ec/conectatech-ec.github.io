@@ -1,0 +1,447 @@
+diff --git a/automatizacion/checkout-config.mjs b/automatizacion/checkout-config.mjs
+new file mode 100644
+index 0000000..ea33aa3
+--- /dev/null
++++ b/automatizacion/checkout-config.mjs
+@@ -0,0 +1,16 @@
++// Preparation only. The existing Worker's deployer must carry this file unchanged
++// until coverage, price, delivery estimate and publication are actually approved.
++export const CHECKOUT_CONFIG = Object.freeze({
++  enabled: false,
++  storefrontOrigin: 'https://conectatech-ec.github.io',
++  objectName: 'messenger-development',
++  deliveries: [],
++  payment: 'cod',
++  nationalShippingEnabled: false,
++  maxRequestsPerDay: 1000,
++  maxRequestsPerClientHour: 30,
++  maxOrdersPerDay: 30,
++  maxOpenOrders: 300,
++  quoteTtlMs: 900000,
++  customerRetentionDays: 30
++});
+diff --git a/automatizacion/checkout-core.mjs b/automatizacion/checkout-core.mjs
+new file mode 100644
+index 0000000..3ab3efa
+--- /dev/null
++++ b/automatizacion/checkout-core.mjs
+@@ -0,0 +1,29 @@
++// Shared validation used by the local demonstration and the existing Data Hub adapter.
++export class CheckoutError extends Error {
++  constructor(code, status = 400) { super(code); this.code = code; this.status = status; }
++}
++export const fail = (code, status) => { throw new CheckoutError(code, status); };
++export const clean = (value, min, max) => typeof value === 'string' && value.trim().length >= min && value.trim().length <= max && !/[\u0000-\u001f\u007f]/.test(value);
++export const only = (obj, keys) => obj && Object.getPrototypeOf(obj) === Object.prototype && Object.keys(obj).every(k => keys.includes(k));
++
++export function calculate(items, data, orders = []) {
++    if (!Array.isArray(items) || !items.length || items.length > 20) fail('PRODUCTOS_INVALIDOS');
++    const seen = new Set();
++    return items.map(i => {
++      if (!only(i, ['sku', 'quantity']) || typeof i.sku !== 'string' || seen.has(i.sku) || !Number.isSafeInteger(i.quantity) || i.quantity < 1 || i.quantity > 99) fail('CANTIDAD_INVALIDA');
++      seen.add(i.sku);
++      const p = data.products.find(p => p.sku === i.sku);
++      if (!p) fail('PRODUCTO_DESCONOCIDO');
++      if (!Number.isSafeInteger(p.priceCents) || p.priceCents <= 0 || !Number.isSafeInteger(p.stock) || p.stock < 0 || !p.url || !p.image) fail('PRODUCTO_NO_COMPRABLE', 409);
++      const pending = orders.reduce((sum, order) => sum + order.receipt.items.filter(line => line.sku === p.sku).reduce((n, line) => n + line.quantity, 0), 0);
++      if (i.quantity > p.stock - pending) fail('CANTIDAD_NO_DISPONIBLE', 409);
++      return {sku: p.sku, name: p.name, image: p.image, url: p.url, quantity: i.quantity, unitPriceCents: p.priceCents, lineTotalCents: p.priceCents * i.quantity};
++    });
++  }
++export function customer(input) {
++    if (!only(input, ['name', 'phone', 'email', 'address', 'city']) ||
++      !clean(input.name, 2, 100) || !clean(input.phone, 7, 25) || !/^[+\d ()-]+$/.test(input.phone) ||
++      typeof input.email !== 'string' || (input.email !== '' && (!clean(input.email, 3, 150) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email))) ||
++      !clean(input.address, 5, 250) || !clean(input.city, 2, 80)) fail('DATOS_ENTREGA_INVALIDOS');
++    return Object.fromEntries(['name', 'phone', 'email', 'address', 'city'].map(k => [k, input[k].trim()]));
++  }
+diff --git a/automatizacion/checkout-edge.mjs b/automatizacion/checkout-edge.mjs
+new file mode 100644
+index 0000000..75859c6
+--- /dev/null
++++ b/automatizacion/checkout-edge.mjs
+@@ -0,0 +1,53 @@
++const json = (data, status = 200) => Response.json(data, {status, headers: {'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer'}});
++export async function checkoutDigest(value, secret) {
++  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(secret), {name: 'HMAC', hash: 'SHA-256'}, false, ['sign']);
++  return [...new Uint8Array(await crypto.subtle.sign('HMAC', key, new TextEncoder().encode('checkout:' + value)))].map(n => n.toString(16).padStart(2, '0')).join('');
++}
++export async function checkoutBody(req) {
++  if (!/^application\/json(?:;|$)/i.test(req.headers.get('Content-Type') || '')) throw Error('CONTENT_TYPE');
++  if (Number(req.headers.get('Content-Length')) > 12000) throw Error('BODY_SIZE');
++  const reader = req.body?.getReader(); let size = 0, text = '';
++  if (!reader) throw Error('BODY_EMPTY');
++  const decoder = new TextDecoder('utf-8', {fatal: true});
++  for (;;) { const {value, done} = await reader.read(); if (done) break; size += value.byteLength;
++    if (size > 12000) { await reader.cancel(); throw Error('BODY_SIZE'); } text += decoder.decode(value, {stream: true}); }
++  return JSON.parse(text + decoder.decode());
++}
++const publicPaths = new Map([['/api/compra/catalogo', 'GET'], ['/api/compra/cotizacion', 'POST'], ['/api/compra/pedidos', 'POST']]);
++export async function checkoutPublic(req, env, config) {
++  const url = new URL(req.url);
++  if (!url.pathname.startsWith('/api/compra/') || url.pathname.startsWith('/api/compra/admin/')) return null;
++  const origin = req.headers.get('Origin');
++  if (url.protocol !== 'https:' || origin !== config.storefrontOrigin || origin !== 'https://conectatech-ec.github.io') return json({error: 'ORIGEN_NO_AUTORIZADO'}, 403);
++  const headers = {'Access-Control-Allow-Origin': origin, 'Vary': 'Origin', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
++    'Access-Control-Allow-Headers': 'Content-Type, Idempotency-Key', 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer'};
++  const reply = response => { const out = new Response(response.body, response); for (const [k, v] of Object.entries(headers)) out.headers.set(k, v); return out; };
++  if (!publicPaths.has(url.pathname)) return reply(json({error: 'RUTA_NO_DISPONIBLE'}, 404));
++  if (req.method === 'OPTIONS') return new Response(null, {status: 204, headers});
++  if (req.method !== publicPaths.get(url.pathname)) return reply(json({error: 'METODO_NO_DISPONIBLE'}, 405));
++  if (!config.enabled || env.FREE_TIER_VERIFIED !== 'true' || !env.PILOT_TOKEN || !env.MESSENGER_TEST_INBOX || config.objectName !== 'messenger-development') return reply(json({error: 'COMPRA_NO_HABILITADA'}, 503));
++  try {
++    const body = req.method === 'POST' ? await checkoutBody(req) : null;
++    // CF-Connecting-IP is supplied by the existing Cloudflare ingress, not forwarded from client JSON.
++    const ip = req.headers.get('CF-Connecting-IP');
++    if (!ip) return reply(json({error: 'INGRESO_NO_VERIFICADO'}, 503));
++    const client = await checkoutDigest(new Date().toISOString().slice(0, 10) + ':' + ip, env.PILOT_TOKEN);
++    const stub = env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName(config.objectName));
++    return reply(await stub.fetch('https://inbox/web-checkout/' + url.pathname.split('/').pop(), {method: 'POST',
++      headers: {'Content-Type': 'application/json'}, body: JSON.stringify({body, key: req.headers.get('Idempotency-Key'), client})}));
++  } catch { return reply(json({error: 'SOLICITUD_NO_PROCESADA'}, 503)); }
++}
++
++// Called only AFTER the existing Worker's PILOT_TOKEN authentication.
++export async function checkoutAdmin(req, env, config) {
++  const url = new URL(req.url);
++  if (!['/api/compra/admin/pedidos', '/api/compra/admin/actualizar'].includes(url.pathname)) return null;
++  if (url.protocol !== 'https:' || !env.PILOT_TOKEN || req.headers.get('Authorization') !== 'Bearer ' + env.PILOT_TOKEN) return json({error: 'Unauthorized'}, 401);
++  if (!config.enabled || !env.MESSENGER_TEST_INBOX || config.objectName !== 'messenger-development') return json({error: 'COMPRA_NO_HABILITADA'}, 503);
++  if (req.method !== (url.pathname.endsWith('/pedidos') ? 'GET' : 'POST')) return json({error: 'METODO_NO_DISPONIBLE'}, 405);
++  try {
++    const stub = env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName(config.objectName));
++    return await stub.fetch('https://inbox/web-checkout/admin/' + url.pathname.split('/').pop(), {method: 'POST', headers: {'Content-Type': 'application/json'},
++      body: JSON.stringify({body: req.method === 'POST' ? await checkoutBody(req) : null})});
++  } catch { return json({error: 'SOLICITUD_NO_PROCESADA'}, 503); }
++}
+diff --git a/automatizacion/checkout-entry.mjs b/automatizacion/checkout-entry.mjs
+new file mode 100644
+index 0000000..7e4069e
+--- /dev/null
++++ b/automatizacion/checkout-entry.mjs
+@@ -0,0 +1,14 @@
++// Copied by the verified integration patch beside the existing Worker modules.
++// These imports deliberately resolve to the existing Data Hub, not a second source.
++import {central} from './central-source.mjs';
++import {readSharedHub} from './shared-hub.mjs';
++import {seal, unseal} from './messenger-control.mjs';
++import {CHECKOUT_CONFIG as config} from './checkout-config.mjs';
++import {readCheckoutSource} from './checkout-shared-source.mjs';
++import {checkoutPublic, checkoutAdmin} from './checkout-edge.mjs';
++import {checkoutInit, checkoutFetch} from './checkout-store.mjs';
++const sourceProvider = () => readCheckoutSource({readSharedHub, central});
++export const handleCheckoutPublic = (req, env) => checkoutPublic(req, env, config);
++export const handleCheckoutAdmin = (req, env) => checkoutAdmin(req, env, config);
++export const initCheckoutStore = box => checkoutInit(box, config);
++export const handleCheckoutStore = (path, req, box) => checkoutFetch(path, req, box, {config, sourceProvider, seal, unseal});
+diff --git a/automatizacion/checkout-shared-source.mjs b/automatizacion/checkout-shared-source.mjs
+new file mode 100644
+index 0000000..4dfd34b
+--- /dev/null
++++ b/automatizacion/checkout-shared-source.mjs
+@@ -0,0 +1,42 @@
++const origin = 'https://conectatech-ec.github.io';
++const sha = async text => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)))].map(n => n.toString(16).padStart(2, '0')).join('');
++
++// Joins the existing verified Data Hub to the exact published 593 cut, in memory.
++// Quantities are neither imported nor persisted in the checkout database.
++export async function readCheckoutSource({readSharedHub, central, fetcher = fetch}) {
++  const hub = await readSharedHub(central, fetcher);
++  if (hub.shared_hub_status?.state !== 'verified') throw Error('CHECKOUT_SOURCE_UNVERIFIED');
++  const get = async file => {
++    const response = await fetcher(origin + '/' + file, {redirect: 'manual', cache: 'no-store', signal: AbortSignal.timeout(10000)});
++    if (!response.ok) throw Error('CHECKOUT_SOURCE_UNAVAILABLE');
++    const text = await response.text();
++    if (text.length > 1500000) throw Error('CHECKOUT_SOURCE_SIZE');
++    return JSON.parse(text);
++  };
++  const [pointer, cut] = await Promise.all([get('datos-593/estado-ultimo-corte.json'), get('datos-593/corte-comercial-publico-validado.json')]);
++  if (pointer.referencia !== 'datos-593/corte-comercial-publico-validado.json' ||
++      pointer.origen_sha256 !== cut.sha256_original || cut.sha256_original !== hub.source.sha256 ||
++      pointer.fecha_corte !== cut.fecha_corte || cut.fecha_corte !== hub.source.cut_date ||
++      !cut.productos || Array.isArray(cut.productos) || Object.keys(cut.productos).length !== pointer.sku_web ||
++      cut.cantidad_sku_web !== pointer.sku_web) throw Error('CHECKOUT_SOURCE_VERSION_MISMATCH');
++  const products = [];
++  for (const p of hub.products) {
++    const row = cut.productos[p.sku];
++    if (!row || p.availability === 'blocked' || p.blocked_reasons.length || !p.web?.price_matches) continue;
++    if (!Number.isSafeInteger(row.stock) || row.stock < 0 ||
++        row.promo_centavos !== p.prices?.promo_cash_cents || row.pvp_centavos !== p.prices?.pvp_card_cents ||
++        (row.stock > 0) !== (p.availability === 'in_stock')) throw Error('CHECKOUT_SOURCE_PRODUCT_MISMATCH');
++    const presentation = hub.presentation?.products?.[p.sku];
++    const image = presentation?.approved_media?.url || p.web.image_url;
++    const name = presentation?.display_title || p.name;
++    if (!p.web.url?.startsWith(origin + '/productos/') || !image?.startsWith(origin + '/imagenes/')) continue;
++    products.push({sku: p.sku, name, image, url: p.web.url, stock: row.stock,
++      priceCents: row.promo_centavos, pvpCents: row.pvp_centavos});
++  }
++  if (!products.length) throw Error('CHECKOUT_SOURCE_EMPTY');
++  return {cutDate: cut.fecha_corte, sourceHash: cut.sha256_original,
++    sourceGeneratedAt: hub.source.generated_at,
++    sourceTimestampBasis: hub.source.timestamp_basis || 'validated_central_source',
++    version: await sha(JSON.stringify([cut.sha256_original, products.map(p => [p.sku, p.stock, p.priceCents])])),
++    source: 'Corte validado de 593 compartido con el Data Hub', products};
++}
+diff --git a/automatizacion/checkout-store.mjs b/automatizacion/checkout-store.mjs
+new file mode 100644
+index 0000000..e1a94c3
+--- /dev/null
++++ b/automatizacion/checkout-store.mjs
+@@ -0,0 +1,195 @@
++import {CheckoutError, fail, only, clean, calculate, customer} from './checkout-core.mjs';
++import {checkoutDigest} from './checkout-edge.mjs';
++const json = (data, status = 200) => Response.json(data, {status, headers: {'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer'}});
++const row = (box, sql, ...args) => box.sql.exec(sql, ...args).toArray()[0];
++const clone = value => structuredClone(value);
++const pending = box => box.sql.exec("SELECT receipt FROM checkout_orders WHERE allocation='pending_web'").toArray().map(r => ({receipt: JSON.parse(r.receipt)}));
++
++export function checkoutInit(box, config) {
++  // Reuses the existing singleton and its SQLite binding. Nothing is allocated
++  // in other objects, and the prepared/default-disabled integration writes nothing.
++  if (!config.enabled || box.name !== 'messenger-development') return;
++  box.sql.exec('CREATE TABLE IF NOT EXISTS checkout_quotes (id TEXT PRIMARY KEY, payload TEXT NOT NULL, expires INTEGER NOT NULL)');
++  box.sql.exec('CREATE TABLE IF NOT EXISTS checkout_orders (id TEXT PRIMARY KEY, request_key TEXT UNIQUE NOT NULL, digest TEXT NOT NULL, quote_id TEXT UNIQUE NOT NULL, receipt TEXT NOT NULL, customer_sealed TEXT, created INTEGER NOT NULL, allocation TEXT NOT NULL, reconciled_sha TEXT, reconciliation_ref TEXT, closed INTEGER)');
++  box.sql.exec('CREATE INDEX IF NOT EXISTS checkout_orders_allocation ON checkout_orders(allocation)');
++  box.sql.exec('CREATE TABLE IF NOT EXISTS checkout_rate (scope TEXT PRIMARY KEY, n INTEGER NOT NULL, expires INTEGER NOT NULL)');
++  box.sql.exec('CREATE TABLE IF NOT EXISTS checkout_sources (version TEXT PRIMARY KEY, source_sha TEXT NOT NULL, cut_date TEXT NOT NULL, generated_ms INTEGER NOT NULL, timestamp_basis TEXT NOT NULL, latest INTEGER NOT NULL)');
++}
++function settings(box, config) {
++  if (!config.enabled || box.name !== 'messenger-development' || config.objectName !== box.name || box.env.FREE_TIER_VERIFIED !== 'true' || !box.env.PILOT_TOKEN) fail('COMPRA_NO_HABILITADA', 503);
++  const bounds = [['maxRequestsPerDay', 1, 1000], ['maxRequestsPerClientHour', 1, 100], ['maxOrdersPerDay', 1, 100], ['maxOpenOrders', 1, 1000], ['quoteTtlMs', 1000, 900000], ['customerRetentionDays', 1, 90]];
++  if (bounds.some(([k, min, max]) => !Number.isInteger(config[k]) || config[k] < min || config[k] > max) || config.nationalShippingEnabled !== false) fail('CONFIGURACION_NO_APROBADA', 503);
++  if (!config.deliveries.length || config.deliveries.some(d => !validDelivery(d))) fail('ENVIO_NO_CONFIGURADO', 503);
++}
++function validDelivery(d) {
++  return d?.approved === true && clean(d.approvalReference, 3, 200) && d.kind === 'quito_cod' && d.city === 'Quito' &&
++    clean(d.id, 3, 60) && clean(d.label, 3, 150) && Number.isSafeInteger(d.costCents) && d.costCents >= 0 &&
++    Array.isArray(d.postalCodes) && d.postalCodes.length > 0 && d.postalCodes.every(p => /^\d{6}$/.test(p)) &&
++    Array.isArray(d.allowedSkus) && d.allowedSkus.length > 0 && d.allowedSkus.every(s => /^[A-Z0-9_-]{3,40}$/.test(s)) &&
++    d.payments?.length === 1 && d.payments[0] === 'cod' &&
++    Number.isInteger(d.minBusinessDays) && d.minBusinessDays >= 1 && Number.isInteger(d.maxBusinessDays) &&
++    d.maxBusinessDays >= d.minBusinessDays && d.maxBusinessDays <= 30 &&
++    d.calendarApproved === true && clean(d.calendarApprovalReference, 3, 200) &&
++    Array.isArray(d.deliveryWeekdays) && d.deliveryWeekdays.length > 0 && new Set(d.deliveryWeekdays).size === d.deliveryWeekdays.length && d.deliveryWeekdays.every(v => Number.isInteger(v) && v >= 0 && v <= 6) &&
++    Array.isArray(d.holidays) && d.holidays.length <= 366 && d.holidays.every(v => /^\d{4}-\d{2}-\d{2}$/.test(v) && Number.isFinite(Date.parse(v)) && new Date(v).toISOString().slice(0, 10) === v);
++}
++function estimate(d, now) {
++  function advance(days) {
++    const date = new Date(new Date(now - 5 * 3600000).toISOString().slice(0, 10) + 'T12:00:00Z');
++    let scanned = 0;
++    while (days > 0) { date.setUTCDate(date.getUTCDate() + 1); if (++scanned > 600) fail('CALENDARIO_NO_DISPONIBLE', 503); if (d.deliveryWeekdays.includes(date.getUTCDay()) && !d.holidays.includes(date.toISOString().slice(0, 10))) days--; }
++    return date.toISOString().slice(0, 10);
++  }
++  const earliest = advance(d.minBusinessDays), latest = advance(d.maxBusinessDays);
++  return {earliest, latest, eta: 'Entrega estimada: ' + earliest + (earliest === latest ? '' : ' a ' + latest)};
++}
++function delivery(config, id, payment, postalCode, items, now) {
++  const d = config.deliveries.find(d => d.id === id);
++  if (!validDelivery(d) || payment !== 'cod') fail('ENVIO_O_PAGO_NO_DISPONIBLE', 409);
++  if (!/^\d{6}$/.test(postalCode || '') || !d.postalCodes.includes(postalCode)) fail('CODIGO_POSTAL_FUERA_COBERTURA', 409);
++  if (!Array.isArray(d.allowedSkus) || !d.allowedSkus.length || items.some(i => !d.allowedSkus.includes(i.sku))) fail('ENVIO_NO_APROBADO_PARA_PRODUCTO', 409);
++  return {id: d.id, label: d.label, city: d.city, costCents: d.costCents, postalCode,
++    postalCodes: clone(d.postalCodes), payments: ['cod'], ...estimate(d, now)};
++}
++function sourceTime(data) {
++  const time = Date.parse(data?.sourceGeneratedAt);
++  if (!Number.isFinite(time) || !['original_workbook_core', 'validated_central_source', 'conservative_Quito_day_start'].includes(data.sourceTimestampBasis) ||
++    new Date(time - 5 * 3600000).toISOString().slice(0, 10) !== data.cutDate) fail('FECHA_FUENTE_NO_VERIFICADA', 503);
++  return time;
++}
++function sourceFence(box, data, now) {
++  if (!/^[a-f0-9]{64}$/.test(data?.sourceHash || '') || !/^[a-f0-9]{64}$/.test(data?.version || '') || !/^\d{4}-\d{2}-\d{2}$/.test(data?.cutDate || '')) fail('FUENTE_NO_VERIFICADA', 503);
++  const generated = sourceTime(data);
++  if (generated > now) fail('FECHA_FUENTE_NO_VERIFICADA', 503);
++  const last = row(box, 'SELECT version,source_sha,cut_date,generated_ms,timestamp_basis FROM checkout_sources WHERE latest=1');
++  const seen = row(box, 'SELECT latest FROM checkout_sources WHERE version=?', data.version);
++  if (last && (data.cutDate < last.cut_date || (seen && seen.latest !== 1))) fail('FUENTE_ANTERIOR_RECHAZADA', 409);
++  if (last && last.version !== data.version) {
++    // Report hashes are identities, never sortable version numbers. Without two
++    // exact timestamps, different reports on the same Quito day are unordered.
++    if (last.source_sha === data.sourceHash || generated <= last.generated_ms ||
++      (data.cutDate === last.cut_date && [data.sourceTimestampBasis, last.timestamp_basis].includes('conservative_Quito_day_start'))) fail('FUENTE_ANTERIOR_O_AMBIGUA', 409);
++  }
++  if (last?.version === data.version && (last.generated_ms !== generated || last.timestamp_basis !== data.sourceTimestampBasis)) fail('FECHA_FUENTE_CAMBIADA', 409);
++  if (!seen) { box.sql.exec('UPDATE checkout_sources SET latest=0'); box.sql.exec('INSERT INTO checkout_sources VALUES (?,?,?,?,?,1)', data.version, data.sourceHash, data.cutDate, generated, data.sourceTimestampBasis); }
++}
++function limit(box, config, client, now) {
++  if (!/^[a-f0-9]{64}$/.test(client || '')) fail('INGRESO_NO_VERIFICADO', 503);
++  const scopes = [['day:' + Math.floor(now / 86400000), config.maxRequestsPerDay], ['client:' + client + ':' + Math.floor(now / 3600000), config.maxRequestsPerClientHour]];
++  box.state.storage.transactionSync(() => {
++    box.sql.exec('DELETE FROM checkout_rate WHERE expires<=?', now);
++    for (const [scope, max] of scopes) if ((row(box, 'SELECT n FROM checkout_rate WHERE scope=?', scope)?.n || 0) >= max) fail('LIMITE_TEMPORAL_ALCANZADO', 429);
++    for (const [scope] of scopes) box.sql.exec('INSERT INTO checkout_rate VALUES (?,1,?) ON CONFLICT(scope) DO UPDATE SET n=n+1', scope, now + 2 * 86400000);
++  });
++}
++function checkoutCustomer(input) {
++  if (!only(input, ['name', 'phone', 'email', 'address', 'city', 'postalCode']) || !/^\d{6}$/.test(input.postalCode || '')) fail('DATOS_ENTREGA_INVALIDOS');
++  const {postalCode, ...rest} = input;
++  return {...customer(rest), postalCode};
++}
++
++export async function checkoutFetch(path, req, box, {config, sourceProvider, seal, unseal, clock = Date.now}) {
++  if (!path.startsWith('/web-checkout/')) return null;
++  try {
++    settings(box, config);
++    if (req.method !== 'POST') fail('METODO_NO_DISPONIBLE', 405);
++    const envelope = await req.json(), now = clock();
++    if (!path.startsWith('/web-checkout/admin/')) limit(box, config, envelope.client, now);
++    // Cleanup never releases active order quantities implicitly, even after a new cut.
++    box.sql.exec('DELETE FROM checkout_quotes WHERE expires<=?', now);
++    box.sql.exec('UPDATE checkout_orders SET customer_sealed=NULL WHERE closed IS NOT NULL AND closed<?', now - config.customerRetentionDays * 86400000);
++    if (path === '/web-checkout/catalogo') {
++      const data = await sourceProvider();
++      box.state.storage.transactionSync(() => sourceFence(box, data, clock()));
++      const pendingOrders = pending(box);
++      const products = data.products.map(p => ({...p, stock: Math.max(0, p.stock - pendingOrders.reduce((n, o) => n + o.receipt.items.filter(i => i.sku === p.sku).reduce((m, i) => m + i.quantity, 0), 0))}));
++      return json({mode: 'datahub', enabled: true, cutDate: data.cutDate, products,
++        deliveries: config.deliveries.map(d => ({id: d.id, label: d.label, costCents: d.costCents, postalCodes: d.postalCodes, payments: ['cod'], ...estimate(d, now)}))});
++    }
++    if (path === '/web-checkout/cotizacion') {
++      const b = envelope.body;
++      if (!only(b, ['items', 'deliveryId', 'payment', 'postalCode'])) fail('COTIZACION_INVALIDA');
++      const data = await sourceProvider();
++      const quote = box.state.storage.transactionSync(() => {
++        sourceFence(box, data, clock());
++        const items = calculate(b.items, data, pending(box));
++        const shipping = delivery(config, b.deliveryId, b.payment, b.postalCode, items, now);
++        const subtotalCents = items.reduce((n, i) => n + i.lineTotalCents, 0);
++        const totalCents = subtotalCents + shipping.costCents;
++        if (!Number.isSafeInteger(totalCents) || totalCents <= 0) fail('IMPORTE_INVALIDO');
++        if (row(box, 'SELECT COUNT(*) AS n FROM checkout_quotes').n >= 1000) fail('LIMITE_TEMPORAL_ALCANZADO', 429);
++        const q = {quoteId: crypto.randomUUID(), mode: 'datahub', items, delivery: shipping, payment: 'cod',
++          subtotalCents, shippingCents: shipping.costCents, totalCents, currency: 'USD',
++          sourceHash: data.sourceHash, version: data.version, cutDate: data.cutDate,
++          sourceGeneratedAt: data.sourceGeneratedAt, sourceTimestampBasis: data.sourceTimestampBasis,
++          expiresAt: new Date(now + config.quoteTtlMs).toISOString()};
++        box.sql.exec('INSERT INTO checkout_quotes VALUES (?,?,?)', q.quoteId, JSON.stringify(q), now + config.quoteTtlMs);
++        return q;
++      });
++      return json(quote);
++    }
++    if (path === '/web-checkout/pedidos') {
++      const b = envelope.body, key = envelope.key;
++      if (!only(b, ['quoteId', 'customer', 'consent']) || b.consent !== true || !clean(b.quoteId, 16, 80) || !/^[A-Za-z0-9_-]{16,80}$/.test(key || '')) fail('CONFIRMACION_INVALIDA');
++      const contact = checkoutCustomer(b.customer);
++      const digest = await checkoutDigest(JSON.stringify({quoteId: b.quoteId, customer: contact, consent: true}), box.env.PILOT_TOKEN);
++      const replay = row(box, 'SELECT digest,receipt FROM checkout_orders WHERE request_key=?', key);
++      if (replay) { if (replay.digest !== digest) fail('CLAVE_REINTENTO_CONFLICTO', 409); return json(JSON.parse(replay.receipt)); }
++      const data = await sourceProvider();
++      const sealed = await seal(JSON.stringify(contact), box.env.PILOT_TOKEN);
++      const receipt = box.state.storage.transactionSync(() => {
++        const commitNow = clock();
++        const again = row(box, 'SELECT digest,receipt FROM checkout_orders WHERE request_key=?', key);
++        if (again) { if (again.digest !== digest) fail('CLAVE_REINTENTO_CONFLICTO', 409); return JSON.parse(again.receipt); }
++        sourceFence(box, data, commitNow);
++        if (row(box, 'SELECT id FROM checkout_orders WHERE quote_id=?', b.quoteId)) fail('COTIZACION_YA_CONFIRMADA', 409);
++        const stored = row(box, 'SELECT payload,expires FROM checkout_quotes WHERE id=?', b.quoteId);
++        if (!stored || stored.expires <= commitNow) fail('COTIZACION_VENCIDA', 409);
++        const q = JSON.parse(stored.payload);
++        if (q.sourceHash !== data.sourceHash || q.version !== data.version) fail('CATALOGO_CAMBIO_COTIZAR_NUEVAMENTE', 409);
++        if (contact.city.toLocaleLowerCase('es') !== 'quito' || contact.postalCode !== q.delivery.postalCode) fail('DESTINO_NO_COTIZADO', 409);
++        const items = calculate(q.items.map(i => ({sku: i.sku, quantity: i.quantity})), data, pending(box));
++        const shipping = delivery(config, q.delivery.id, q.payment, contact.postalCode, items, commitNow);
++        const subtotal = items.reduce((n, i) => n + i.lineTotalCents, 0);
++        if (subtotal !== q.subtotalCents || shipping.costCents !== q.shippingCents || shipping.earliest !== q.delivery.earliest || shipping.latest !== q.delivery.latest) fail('CONDICIONES_CAMBIARON_COTIZAR_NUEVAMENTE', 409);
++        if (row(box, 'SELECT COUNT(*) AS n FROM checkout_orders WHERE created>=?', Math.floor(commitNow / 86400000) * 86400000).n >= config.maxOrdersPerDay || row(box, "SELECT COUNT(*) AS n FROM checkout_orders WHERE allocation='pending_web'").n >= config.maxOpenOrders) fail('LIMITE_TEMPORAL_ALCANZADO', 429);
++        const r = {...q, id: 'CT-' + crypto.randomUUID(), createdAt: new Date(commitNow).toISOString(), status: 'pedido_recibido_contraentrega',
++          paymentStatus: 'pending_cod', liveOrder: true, paid: false, stockReservedIn593: false, estimatedDelivery: q.delivery.eta};
++        box.sql.exec('INSERT INTO checkout_orders (id,request_key,digest,quote_id,receipt,customer_sealed,created,allocation) VALUES (?,?,?,?,?,?,?,?)', r.id, key, digest, q.quoteId, JSON.stringify(r), sealed, commitNow, 'pending_web');
++        return r;
++      });
++      return json(receipt, 201);
++    }
++    if (path === '/web-checkout/admin/pedidos') {
++      const orders = box.sql.exec('SELECT id,receipt,customer_sealed,allocation,reconciled_sha,reconciliation_ref FROM checkout_orders ORDER BY created DESC LIMIT 50').toArray();
++      return json({orders: await Promise.all(orders.map(async r => ({...JSON.parse(r.receipt), allocation: r.allocation,
++        reconciledSourceHash: r.reconciled_sha, reconciliationReference: r.reconciliation_ref,
++        customer: r.customer_sealed ? JSON.parse(await unseal(r.customer_sealed, box.env.PILOT_TOKEN)) : null})))});
++    }
++    if (path === '/web-checkout/admin/actualizar') {
++      const b = envelope.body;
++      if (!only(b, ['id', 'action', 'sourceHash', 'reference']) || !clean(b.id, 16, 80) || !clean(b.reference, 3, 150) || !['cancelar', 'conciliar_593', 'entregado'].includes(b.action)) fail('ACTUALIZACION_INVALIDA');
++      const data = b.action === 'conciliar_593' ? await sourceProvider() : null;
++      const result = box.state.storage.transactionSync(() => {
++        const order = row(box, 'SELECT receipt,allocation,created FROM checkout_orders WHERE id=?', b.id);
++        if (!order) fail('PEDIDO_NO_ENCONTRADO', 404);
++        if (b.action === 'conciliar_593') {
++          sourceFence(box, data, clock());
++          if (b.sourceHash !== data.sourceHash || order.allocation !== 'pending_web') fail('CONCILIACION_INVALIDA', 409);
++          if (data.sourceHash === JSON.parse(order.receipt).sourceHash || sourceTime(data) <= order.created) fail('CONCILIACION_REQUIERE_CORTE_POSTERIOR', 409);
++          box.sql.exec("UPDATE checkout_orders SET allocation='accounted_in_593',reconciled_sha=?,reconciliation_ref=? WHERE id=?", data.sourceHash, b.reference, b.id);
++        } else {
++          if (order.allocation === 'cancelled' || order.allocation === 'delivered') fail('PEDIDO_YA_CERRADO', 409);
++          if (b.action === 'entregado' && order.allocation !== 'accounted_in_593') fail('CONCILIAR_593_ANTES_DE_CERRAR', 409);
++          box.sql.exec('UPDATE checkout_orders SET allocation=?,reconciliation_ref=?,closed=? WHERE id=?', b.action === 'cancelar' ? 'cancelled' : 'delivered', b.reference, now, b.id);
++        }
++        return {id: b.id, operationRecorded: true};
++      });
++      return json(result);
++    }
++    return json({error: 'RUTA_NO_DISPONIBLE'}, 404);
++  } catch (error) {
++    // No customer body, token, address, phone or private provider exception is logged or returned.
++    return json({error: error instanceof CheckoutError ? error.code : 'PEDIDO_NO_PROCESADO'}, error instanceof CheckoutError ? error.status : 503);
++  }
++}
+diff --git a/automatizacion/deploy_free.py b/automatizacion/deploy_free.py
+index 3f850a9..c3d2fc9 100644
+--- a/automatizacion/deploy_free.py
++++ b/automatizacion/deploy_free.py
+@@ -156,7 +156,7 @@ def main():
+     if sync_only:
+         sync_meta_verify_token(api,existing,settings['CLOUDFLARE_PILOT_URL'],os.environ.get('META_VERIFY_TOKEN',''));return
+     metadata=worker_metadata(config);files=[]
+-    for name in ['worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','alex-context.mjs','alex-catalog.mjs','central-source.mjs','commercial-reception.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs','shared-hub.mjs','marketplace-pilot.mjs']:
++    for name in ['checkout-config.mjs','checkout-core.mjs','checkout-edge.mjs','checkout-shared-source.mjs','checkout-store.mjs','checkout-entry.mjs','worker.mjs','live.mjs','channels.mjs','banner.mjs','commerce.mjs','messenger.mjs','messenger-store.mjs','messenger-control.mjs','messenger-setup.mjs','messenger-graph.mjs','messenger-seller.mjs','alex.mjs','alex-context.mjs','alex-catalog.mjs','central-source.mjs','commercial-reception.mjs','alex-store.mjs','alex-ui.mjs','alex-review.mjs','shared-hub.mjs','marketplace-pilot.mjs']:
+         source=(ROOT/name).read_text()
+         source=source.replace("import catalog from './generated/catalogo.json' with {type:'json'};","import catalog from './catalog.mjs';")
+         source=source.replace("import baseline from './generated/catalogo.json' with {type:'json'};","import baseline from './catalog.mjs';")
+diff --git a/automatizacion/messenger-store.mjs b/automatizacion/messenger-store.mjs
+index ebf6a9a..4669bea 100644
+--- a/automatizacion/messenger-store.mjs
++++ b/automatizacion/messenger-store.mjs
+@@ -1,3 +1,4 @@
++import {initCheckoutStore,handleCheckoutStore} from './checkout-entry.mjs';
+ import catalog from './generated/catalogo.json' with {type:'json'};
+ import {answer} from './commerce.mjs';
+ import {alexInit,alexCleanup,alexNext,alexFetch} from './alex-store.mjs';
+@@ -24,12 +25,13 @@ export class MessengerTestInbox {
+   this.sql.exec('CREATE INDEX IF NOT EXISTS events_day ON events(day)');
+   this.sql.exec('CREATE TABLE IF NOT EXISTS reviews (k TEXT PRIMARY KEY, decision TEXT, digest TEXT, reviewed_at INTEGER)');
+   this.sql.exec('CREATE TABLE IF NOT EXISTS counters (day INTEGER PRIMARY KEY, duplicates INTEGER NOT NULL DEFAULT 0)');
+-  controlInit(this);sellerInit(this);alexInit(this);commercialInit(this);
++  controlInit(this);sellerInit(this);alexInit(this);commercialInit(this);initCheckoutStore(this);
+  }
+  cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);controlCleanup(this,now);sellerCleanup(this,now);alexCleanup(this,now);commercialCleanup(this,now);}
+  async fetch(req) {
+   const path=new URL(req.url).pathname;
+   this.cleanup(Date.now());
++  const checkout=await handleCheckoutStore(path,req,this);if(checkout)return checkout;
+   const commercial=await commercialFetch(path,req,this);if(commercial)return commercial;
+   const alex=await alexFetch(path,req,this);if(alex)return alex;
+   const seller=await sellerFetch(path,req,this);if(seller)return seller;
+diff --git a/automatizacion/worker.mjs b/automatizacion/worker.mjs
+index 723e488..64155c4 100644
+--- a/automatizacion/worker.mjs
++++ b/automatizacion/worker.mjs
+@@ -1,3 +1,4 @@
++import {handleCheckoutPublic,handleCheckoutAdmin} from './checkout-entry.mjs';
+ import {central} from './central-source.mjs';
+ import {uploadPage,centralStatus} from './commercial-reception.mjs';
+ import catalog from './generated/catalogo.json' with {type:'json'};
+@@ -30,6 +31,7 @@ async function body(req) {return JSON.parse(await limitedText(req,8000));}
+ export default {
+  async fetch(req,env,ctx) {
+   const path=new URL(req.url).pathname;
++  const checkoutPublic=await handleCheckoutPublic(req,env);if(checkoutPublic)return checkoutPublic;
+   if(path==='/health') {
+    let seller=null;try{if(env.MESSENGER_TEST_INBOX&&env.META_PAGE_ACCESS_TOKEN)seller=await (await env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox/seller/status')).json();}catch{return json({ok:false},503);}
+    return json({ok:true,pilot:true,seller_transport_implementation:'official_graph_v1',cloud_bindings:!!env.DB,ai_binding:!!env.AI,alex_generative:env.ALEX_ENABLED==='true',catalog_first:env.CATALOG_FIRST==='true',release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&(env.META_TEST_SENDER_IDS||seller?.testers_configured)),messenger_outbound:!!seller?.enabled,meta_ingress_enabled:env.META_INGRESS_ENABLED==='true'});
+@@ -42,6 +44,7 @@ export default {
+   if(path==='/commercial/upload'&&req.method==='GET')return uploadPage();
+   if(path==='/marketplace/pilot'&&req.method==='GET')return marketplacePage();
+   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
++  const checkoutAdmin=await handleCheckoutAdmin(req,env);if(checkoutAdmin)return checkoutAdmin;
+   try {
+    if(path==='/marketplace/preview'&&req.method==='POST'){
+     const b=await body(req);if(!['marketplace_personal','messenger_page','whatsapp_business'].includes(b.channel)||!/^[a-zA-Z0-9_-]{16,64}$/.test(b.session_id||'')||typeof b.message!=='string'||b.message.length>1000)return json({error:'Invalid preview'},400);
