@@ -6,15 +6,15 @@
   "costo_autorizado": 0,
   "publicacion_habilitada": false,
   "estado": "SOLO_VALIDACION_COMERCIAL_PENDIENTE",
-  "source_commit": "520b67a93f7c530ba6fb13dc35865a9ebc1cc70b",
+  "source_commit": "2563fd0c3e587b91d7b4963a05da291e4038626d",
   "validacion": "local_y_http_publico",
   "inventario_corregido": {
-    "fecha_corte": "2026-11-07",
+    "fecha_corte": "2026-11-09",
     "archivo_origen": "Reporte-Inventario.xlsx",
-    "sha256_xlsx_privado": "89a458afe443d1537721351b45b5cccd305d6c694663e92484fc347bf6cad3c5",
+    "sha256_xlsx_privado": "e0b07f3af80ecf6302ea34b96bd69040236feedfb53fc73e4e4d9cb450556955",
     "fuente_publica": "datos-593/corte-comercial-publico-validado.json",
-    "fuente_publica_sha256": "748ae7a051884f11190425d361fbce7805ecc7b37c3b4b5b954147817b052b64",
-    "fuente_commit": "520b67a93f7c530ba6fb13dc35865a9ebc1cc70b",
+    "fuente_publica_sha256": "394d3f3ad042885899c64a2011f15b33a4ddb1a6e902829fc675fae15284898b",
+    "fuente_commit": "2563fd0c3e587b91d7b4963a05da291e4038626d",
     "alcance": "Solo SKU del catálogo web presentes en el corte comercial público validado; disponibilidad binaria y precios ya públicos. Sin cantidades.",
     "stock_tiempo_real": false,
     "referencias_exportadas": 1198,
@@ -31,14 +31,15 @@
       "costos",
       "márgenes"
     ],
-    "sha256_productos": "7b193ab55f1a7547a6886a7348a1c0e299f2bdde3456b5bd437a6d0af24cbcc3"
+    "sha256_productos": "445dd51075c50089fddecf3be18d7c0723e34415de13eb1e55564c0ea108dea6"
   },
   "productos_origen": 1199,
-  "incluidos": 315,
-  "excluidos": 884,
+  "incluidos": 314,
+  "excluidos": 885,
   "motivos": {
     "enlaces_ficha_no_coinciden": 1,
     "fotografia_no_aprobada": 4,
+    "http_publico: HTTP Error 503: Service Unavailable": 1,
     "identidad_pendiente": 4,
     "imagen_no_coincide": 428,
     "producto_no_aprobado": 194,
@@ -47,7 +48,7 @@
     "sin_revision_limitada_corte16": 1,
     "titulo_catalogo_no_coincide": 2
   },
-  "feed_sha256": "8dd8104f81b38892eaabd7abdbce0622fd746cbd1ea2f37e0480d9c32eecbb37",
+  "feed_sha256": "fdada505da17a456cefa73e44d612e248a19569df215ae2a815aa11f3c9686f3",
   "advertencias": [
     "Stock registrado: no implica inventario en tiempo real.",
     "Faltan verificar compra online, precio final, envíos y devoluciones; XML válido no garantiza aprobación de Google.",
