@@ -7,10 +7,20 @@ const INPUT='datos-593/corte-comercial-publico-validado.json';
 const STATE='datos-593/estado-ultimo-corte.json';
 const WEB='index.html';
 const RX=/const products=(\[[\s\S]*?\]);\s*\n/;
+// Revision expresa de Direccion General, 09/11/2026: exclusivamente este par de
+// archivos y esta proyeccion comercial verificada. No habilita cortes intradia
+// generales, no cambia la fecha ni omite cobertura, valores o controles de diff.
+function revisionExpresa0911(cut,prior){
+ if(cut.fecha_corte!=='2026-11-09'||prior?.fecha_corte!==cut.fecha_corte||
+    prior.origen_sha256!=='9b977202fb8cd99ba904fa9cea8d66690903ba0547112c9cb066a5c44114fac3'||
+    cut.sha256_original!=='e0b07f3af80ecf6302ea34b96bd69040236feedfb53fc73e4e4d9cb450556955')return false;
+ const data=Object.keys(cut.productos||{}).sort().map(s=>[s,cut.productos[s].stock,cut.productos[s].promo_centavos,cut.productos[s].pvp_centavos]);
+ return require('crypto').createHash('sha256').update(JSON.stringify(data)).digest('hex')==='27628e3a5ba93c5eca07b68037c569166f51fb3709b6c718a8bf2224d37e163f';
+}
 function prepare(html,cut,prior){
  if(!cut||!/^20\d{2}-\d{2}-\d{2}$/.test(cut.fecha_corte)||!/^[a-f0-9]{64}$/.test(cut.sha256_original))throw Error('Fuente o fecha invalida');
  if(prior?.fecha_corte>cut.fecha_corte)throw Error('Retroceso de fecha de inventario');
- if(prior?.fecha_corte===cut.fecha_corte&&prior?.origen_sha256!==cut.sha256_original)throw Error('Corte con igual fecha y distinta fuente: revision necesaria');
+ if(prior?.fecha_corte===cut.fecha_corte&&prior?.origen_sha256!==cut.sha256_original&&!revisionExpresa0911(cut,prior))throw Error('Corte con igual fecha y distinta fuente: revision necesaria');
  const m=html.match(RX);if(!m)throw Error('No se encontro array de productos');
  const all=JSON.parse(m[1]);
  const by=Object.keys(cut.productos||{});
