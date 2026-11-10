@@ -2,7 +2,7 @@
   "version": 1,
   "catalog_id": "1036301566100990",
   "fecha_corte": "2026-11-09",
-  "fuente_sha256": "9b977202fb8cd99ba904fa9cea8d66690903ba0547112c9cb066a5c44114fac3",
+  "fuente_sha256": "e0b07f3af80ecf6302ea34b96bd69040236feedfb53fc73e4e4d9cb450556955",
   "fuente_categorias": "index.html: categoriaComercial || categoryFamilies[category] || Hogar y Accesorios",
   "groups": [
     {
@@ -29,7 +29,6 @@
         ]
       },
       "sku": [
-        "TELF001",
         "TELF002",
         "TELF003",
         "TELF008",
@@ -57,7 +56,6 @@
         "TELF020",
         "TELF037",
         "TELF027",
-        "TELF001",
         "TELF022",
         "TELF026",
         "TELF034",
@@ -1548,7 +1546,6 @@
         "CABL076",
         "CABL078",
         "CABL079",
-        "CABL080",
         "CABL082",
         "CABL083",
         "CABL084",
@@ -1856,7 +1853,6 @@
         "ADAP096",
         "CABL174",
         "CABL154",
-        "CABL080",
         "CABL079",
         "ADAP090",
         "CABL090",
@@ -2583,6 +2579,10 @@
   ],
   "exclusions": [
     {
+      "sku": "TELF001",
+      "motivo": "AGOTADO"
+    },
+    {
       "sku": "PILA048",
       "motivo": "AGOTADO"
     },
@@ -2664,6 +2664,10 @@
     },
     {
       "sku": "BILL002",
+      "motivo": "AGOTADO"
+    },
+    {
+      "sku": "CABL080",
       "motivo": "AGOTADO"
     },
     {
