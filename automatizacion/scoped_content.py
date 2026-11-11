@@ -24,6 +24,10 @@ CRITICAL_FILES=('automatizacion/commercial-reception.mjs','automatizacion/normal
 MODULE=re.compile(r'[A-Za-z0-9_./-]{1,200}\Z')
 SHA=re.compile(r'[a-f0-9]{64}\Z')
 RELEASE=re.compile(r'[a-f0-9]{40}\Z')
+# Public artifacts, not fingerprints of a private deployment. Unknown live code
+# must be reviewed separately; never infer it from missing version stamps.
+LEGACY_RECEIVER_SHA256='c51cf151763663cd7df94b94c5bde641eff82ceeaf56894d5943de59777ae195'
+REVIEWED_RECEIVER_SHA256='c0975c3d31421ce91d147c84f2c80e85523bd40ae540a2595530826e9eb53845'
 
 class ScopedError(RuntimeError):pass
 def fail(code):raise ScopedError(code) from None
@@ -57,6 +61,25 @@ class Part:
 class Bundle:
     entrypoint:str
     parts:tuple
+
+@dataclass(frozen=True,repr=False)
+class ReceiverPlan:
+    # Private captures remain in RAM and are never the CLI output/artifact.
+    before:Bundle
+    after:Bundle
+    settings:dict
+
+    def __repr__(self):return '<ReceiverPlan: contents withheld>'
+
+def receiver_rollback_candidate(plan,current,settings):
+    """Build an inverse in RAM only; never perform a provider operation."""
+    if not isinstance(plan,ReceiverPlan):fail('RECEIVER_PLAN_REQUIRED')
+    if not same_bundle(current,plan.after) or not same_json(settings,plan.settings):
+        fail('RECEIVER_ROLLBACK_RUNTIME_CHANGED')
+    original=next(p.body for p in plan.before.parts if p.name=='commercial-reception.mjs')
+    candidate=replace_part(current,'commercial-reception.mjs',original)
+    if not same_bundle(candidate,plan.before):fail('RECEIVER_ROLLBACK_NOT_EXACT')
+    return candidate
 
 def safe_name(name):
     return isinstance(name,str) and MODULE.fullmatch(name) and not name.startswith('/') and '..' not in name.split('/')
@@ -315,6 +338,28 @@ class ScopedDeployer:
         if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('INSPECT_RUNTIME_CHANGED')
         return self.receipt(capture,'check_ingest',read_only=True,ready=True,worker_puts=0,
             receiver_body_matches=True,processor_release=release)
+    def plan_receiver(self,receiver_text,processor_release,code_sha):
+        """Plan the existing one-module adaptation. No commit/PUT/lease/dispatch."""
+        if not isinstance(processor_release,str) or not RELEASE.fullmatch(processor_release):fail('PROCESSOR_RELEASE_REQUIRED')
+        if not isinstance(code_sha,str) or not SHA.fullmatch(code_sha):fail('PUBLIC_CODE_HASH_REQUIRED')
+        if (not isinstance(receiver_text,str) or hashlib.sha256(receiver_text.encode()).hexdigest()!=REVIEWED_RECEIVER_SHA256 or
+            receiver_text.count(PLACEHOLDER)!=1 or receiver_text.count(CODE_PLACEHOLDER)!=1):fail('REVIEWED_RECEIVER_TEMPLATE_REQUIRED')
+        capture=self.capture()
+        actual=next(p.body for p in capture['bundle'].parts if p.name=='commercial-reception.mjs')
+        # This baseline is the public original at cc05f6d77adef1ff36f3b9d0e6f75d801517553b.
+        # Both missing stamps alone are deliberately insufficient authorization.
+        if hashlib.sha256(actual).hexdigest()!=LEGACY_RECEIVER_SHA256:fail('RECEIVER_BASELINE_NOT_REVIEWED')
+        rendered=receiver_text.replace(PLACEHOLDER,processor_release).replace(CODE_PLACEHOLDER,code_sha).encode()
+        expected=replace_part(capture['bundle'],'commercial-reception.mjs',rendered)
+        plan=ReceiverPlan(capture['bundle'],expected,capture['settings'])
+        receiver_rollback_candidate(plan,expected,capture['settings'])
+        if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('INSPECT_RUNTIME_CHANGED')
+        report=self.receipt(capture,'plan_receiver',read_only=True,ready=False,plan_ready=True,ingest_ready=False,
+            worker_puts=0,source_preserved=True,rollback_candidate_exact=True,
+            public_baseline_sha256=LEGACY_RECEIVER_SHA256,public_template_sha256=REVIEWED_RECEIVER_SHA256,
+            target_processor_release=processor_release,target_processor_code_sha256=code_sha,
+            changed_modules=['commercial-reception.mjs'],deployment_authorized=False)
+        return plan,report
     def check_before_put(self,capture):
         if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('RUNTIME_CHANGED_BEFORE_PUT')
         closed_health(self.private_get('/health'),capture['health']['messenger_outbound'],capture['health']['release'])
@@ -386,17 +431,18 @@ class ScopedDeployer:
         return self.commit(capture,expected,{'central-data.mjs'},selected,processor_release)
 
 def main():
-    if len(sys.argv)!=2 or sys.argv[1] not in {'--inspect','--check-ingest','--bootstrap','--ingest'}:fail('SCOPED_CLI_INVALID')
+    if len(sys.argv)!=2 or sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver','--bootstrap','--ingest'}:fail('SCOPED_CLI_INVALID')
     if os.environ.get('GITHUB_REF')!=BRANCH:fail('PILOT_BRANCH_REQUIRED')
     if os.environ.get('CF_FREE_ONLY_CONFIRMED')!='true':fail('FREE_ONLY_CONFIRMATION_REQUIRED')
     config=strict_json((ROOT/'activar-cloud.json').read_bytes())
     if config.get('activar') is not False or config.get('sincronizar_meta_verify_token') is True:fail('FULL_DEPLOY_MUST_STAY_DISABLED')
-    if sys.argv[1] not in {'--inspect','--check-ingest'} and config.get('datahub_scoped_content_enabled') is not True:fail('SCOPED_WRITES_NOT_PROMOTED')
-    if sys.argv[1] not in {'--inspect','--check-ingest'}:require_latest_promotion()
+    if sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver'} and config.get('datahub_scoped_content_enabled') is not True:fail('SCOPED_WRITES_NOT_PROMOTED')
+    if sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver'}:require_latest_promotion()
     api=CFClient(os.environ.get('CLOUDFLARE_ACCOUNT_ID'),os.environ.get('CLOUDFLARE_API_TOKEN'))
     client=ScopedDeployer(api,authorize=require_latest_promotion,revision_check=require_latest_revision);mode=sys.argv[1];release=os.environ.get('GITHUB_SHA','')
     if mode=='--inspect':report=client.inspect()
     elif mode=='--check-ingest':report=client.check_ingest((ROOT/'commercial-reception.mjs').read_text())
+    elif mode=='--plan-receiver':_plan,report=client.plan_receiver((ROOT/'commercial-reception.mjs').read_text(),release,public_code_hash())
     elif mode=='--bootstrap':report=client.bootstrap((ROOT/'commercial-reception.mjs').read_text(),release,public_code_hash())
     else:
         import processing_lease
@@ -416,6 +462,12 @@ def main():
     if mode=='--check-ingest':
         receipt={key:report[key] for key in ('ready','read_only','worker_puts','runtime_release','processor_release','receiver_body_matches')}
         print('::notice title=DataHub receptor lectura::'+json.dumps(receipt,separators=(',',':')))
+    if mode=='--plan-receiver':
+        receipt={key:report[key] for key in ('mode','ready','plan_ready','read_only','ingest_ready','worker_puts',
+            'settings_preserved','unowned_modules_preserved','source_preserved','rollback_candidate_exact',
+            'public_baseline_sha256','public_template_sha256','target_processor_release',
+            'target_processor_code_sha256','changed_modules','deployment_authorized')}
+        print('::notice title=DataHub receptor plan::'+json.dumps(receipt,separators=(',',':')))
 
 if __name__=='__main__':
     try:main()
@@ -423,4 +475,5 @@ if __name__=='__main__':
         code=str(error).split(';',1)[0] if isinstance(error,(ScopedError,ValueError)) and re.fullmatch(r'[A-Z0-9_]+(?:; [a-z ]+)?',str(error)) else 'SCOPED_CONTENT_FAILED'
         print(json.dumps({'schema':'conectatech.scoped-content.v1','ok':False,'error':code,'private_values_recorded':False}))
         if sys.argv[1:]==['--check-ingest']:print('::error title=DataHub receptor lectura::'+code)
+        if sys.argv[1:]==['--plan-receiver']:print('::error title=DataHub receptor plan::'+code)
         sys.exit(1)

@@ -36,6 +36,7 @@ jobs:
           python automatizacion/tests/scoped_integration_test.py
           python automatizacion/tests/scoped_content_test.py
           python automatizacion/tests/ingest_receiver_test.py
+          python automatizacion/tests/receiver_plan_test.py
           python automatizacion/tests/generic_receiver_guard_test.py
           node automatizacion/tests/scoped-http.test.mjs
       - id: scoped_mode
@@ -48,9 +49,9 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('authorized='+str(allowed).lower()+'\n')
           PY
       - id: receiver
-        # Lectura focalizada: distingue marcas ausentes de formatos no reconocidos.
-        name: Comprobar compatibilidad del receptor sin modificarlo
-        run: python automatizacion/scoped_content.py --check-ingest
+        # Etapa autorizada: plan en RAM; ready=false impide los pasos comerciales.
+        name: Planificar adaptacion del receptor sin modificarlo
+        run: python automatizacion/scoped_content.py --plan-receiver
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
