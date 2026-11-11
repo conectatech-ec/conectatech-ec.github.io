@@ -14,8 +14,6 @@ jobs:
     environment: conectatech-piloto-gratis
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    env:
-      CENTRAL_AUTHORIZED_SOURCE_SHA256: 46eb92aa817c4f8dafe27b65fcc96280e90901cef0c1d2ba9ec2d7d763746f7f
     steps:
       - uses: actions/checkout@v4
         with:
@@ -63,6 +61,7 @@ jobs:
         name: Leer una fuente privada y normalizar con reglas unicas
         run: python automatizacion/process_pending_593.py
         env:
+          CENTRAL_AUTHORIZED_SOURCE_SHA256: 46eb92aa817c4f8dafe27b65fcc96280e90901cef0c1d2ba9ec2d7d763746f7f
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - id: revision
         if: steps.reporte.outputs.ready == 'true'
