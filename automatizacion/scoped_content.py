@@ -1,5 +1,5 @@
 """Patch DataHub-owned modules in the live Worker bundle. All content stays in RAM."""
-import base64, hashlib, json, os, re, secrets, subprocess, sys, time, urllib.error, urllib.request
+import base64, gzip, hashlib, json, os, re, secrets, subprocess, sys, time, urllib.error, urllib.request
 from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from email import policy
@@ -28,6 +28,10 @@ RELEASE=re.compile(r'[a-f0-9]{40}\Z')
 # must be reviewed separately; never infer it from missing version stamps.
 LEGACY_RECEIVER_SHA256='c51cf151763663cd7df94b94c5bde641eff82ceeaf56894d5943de59777ae195'
 REVIEWED_RECEIVER_SHA256='c0975c3d31421ce91d147c84f2c80e85523bd40ae540a2595530826e9eb53845'
+APPROVED_RECEIVER_RELEASE='e5ac06df086130a6776205250dd4d96c65882797'
+APPROVED_RECEIVER_CODE='6287802a95e7cb1ecc86316ff5f7de24f9c29dcf856388ecda4e0193d37e3e76'
+APPROVED_RECEIVER_BODY='699ac61bcf8311ac72bdf56c723e3c562882517909c443d9521d5b132624b869'
+RECEIVER_INSTALL_AUTHORIZATION='DG-593-INSTALL-e5ac06df-ONCE'
 
 class ScopedError(RuntimeError):pass
 def fail(code):raise ScopedError(code) from None
@@ -220,6 +224,53 @@ def require_latest_revision(expected,getter=None):
     if not isinstance(expected,str) or not RELEASE.fullmatch(expected) or (getter or read_latest_revision)()!=expected:
         fail('BOOTSTRAP_REVISION_NOT_CURRENT')
 
+def approved_receiver_artifacts(repository=None):
+    """Recover the approved PUBLIC package; never re-stamp different code."""
+    repository=Path(repository) if repository is not None else ROOT.parent
+    digest=hashlib.sha256();receiver=None
+    try:
+        for name in CRITICAL_FILES:
+            result=subprocess.run(['git','show',APPROVED_RECEIVER_RELEASE+':'+name],cwd=repository,capture_output=True,timeout=20)
+            value=result.stdout
+            if result.returncode or not 1<=len(value)<=2_000_000:fail('APPROVED_PUBLIC_PACKAGE_REQUIRED')
+            digest.update(name.encode()+b'\0'+len(value).to_bytes(8,'big')+value)
+            if name=='automatizacion/commercial-reception.mjs':receiver=value.decode('utf-8')
+    except ScopedError:raise
+    except Exception:fail('APPROVED_PUBLIC_PACKAGE_REQUIRED')
+    if digest.hexdigest()!=APPROVED_RECEIVER_CODE or hashlib.sha256(receiver.encode()).hexdigest()!=REVIEWED_RECEIVER_SHA256:
+        fail('APPROVED_PUBLIC_PACKAGE_MISMATCH')
+    return receiver
+
+def require_receiver_installation():
+    """Single authorized push directly after #368; no general write promotion."""
+    revision=os.environ.get('GITHUB_SHA','')
+    workflow='conectatech-ec/conectatech-ec.github.io/.github/workflows/central-593.yml@'+BRANCH
+    if (os.environ.get('CENTRAL_RECEIVER_INSTALL_AUTHORIZATION')!=RECEIVER_INSTALL_AUTHORIZATION or
+        os.environ.get('GITHUB_REF')!=BRANCH or os.environ.get('GITHUB_EVENT_NAME')!='push' or
+        os.environ.get('GITHUB_RUN_ATTEMPT')!='1' or os.environ.get('GITHUB_WORKFLOW_REF')!=workflow or
+        os.environ.get('GITHUB_WORKFLOW_SHA')!=revision or not RELEASE.fullmatch(revision) or
+        os.environ.get('CF_FREE_ONLY_CONFIRMED')!='true'):fail('RECEIVER_INSTALLATION_NOT_AUTHORIZED')
+    try:
+        head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT.parent,text=True,stderr=subprocess.DEVNULL).strip()
+        parent=subprocess.check_output(['git','rev-parse','HEAD^'],cwd=ROOT.parent,text=True,stderr=subprocess.DEVNULL).strip()
+    except Exception:fail('RECEIVER_INSTALLATION_HISTORY_REQUIRED')
+    if head!=revision or parent!=APPROVED_RECEIVER_RELEASE:fail('RECEIVER_INSTALLATION_REVISION_NOT_AUTHORIZED')
+    config=read_latest_config()
+    if (config.get('activar') is not False or config.get('datahub_scoped_content_enabled') is not False or
+        config.get('sincronizar_meta_verify_token') is not False or type(config.get('costo_maximo_usd')) is not int or
+        config['costo_maximo_usd']!=0):fail('RECEIVER_INSTALLATION_REQUIRES_CLOSED_FLAGS')
+    require_latest_revision(revision)
+
+class ReceiverPutBudget:
+    """Wrap the original transport; count attempts even if its response is lost."""
+    def __init__(self,api):self.api=api;self.phase='install';self.attempts={'install':0,'recovery':0}
+    def get_bundle(self):return self.api.get_bundle()
+    def get_settings(self):return self.api.get_settings()
+    def put_bundle(self,bundle):
+        if self.phase not in self.attempts or self.attempts[self.phase]:fail('RECEIVER_PUT_BUDGET_EXHAUSTED')
+        self.attempts[self.phase]+=1
+        return self.api.put_bundle(bundle)
+
 class CFClient:
     def __init__(self,account,token,opener=None):
         if not re.fullmatch(r'[a-f0-9]{32}',account or '') or not token:fail('CF_CONFIGURATION_REQUIRED')
@@ -377,6 +428,7 @@ class ScopedDeployer:
         self.authorize() # Re-read current public control, including on an old-job rerun.
         no_change=same_bundle(before,expected)
         if allowed=={'commercial-reception.mjs'} and not no_change:self.revision_check(processor_release)
+        if allowed=={'commercial-reception.mjs'} and not no_change:self.check_before_put(capture)
         provider={} if no_change else self.api.put_bundle(expected) # Exactly one mutation; never retried.
         for attempt in range(1,13):
             actual=self.api.get_bundle()
@@ -415,6 +467,61 @@ class ScopedDeployer:
         receipt=self.commit(capture,expected,{'commercial-reception.mjs'},capture['source'],processor_release)
         if code_sha is not None:receipt['processor_code_sha256']=code_sha
         return receipt
+    def install_receiver(self,receiver_text):
+        """Install the approved plan once; recovery is a separately fenced inverse."""
+        self.authorize()
+        capture=self.capture()
+        plan,_=self.plan_receiver(receiver_text,APPROVED_RECEIVER_RELEASE,APPROVED_RECEIVER_CODE)
+        if not same_bundle(plan.before,capture['bundle']) or not same_json(plan.settings,capture['settings']):fail('INSTALL_PLAN_RUNTIME_CHANGED')
+        body=next(p.body for p in plan.after.parts if p.name=='commercial-reception.mjs')
+        if hashlib.sha256(body).hexdigest()!=APPROVED_RECEIVER_BODY:fail('APPROVED_RECEIVER_BODY_MISMATCH')
+        # Conservative compressed Free bundle budget, including spare overhead.
+        if sum(len(gzip.compress(p.body)) for p in plan.after.parts)>2_990_000:fail('FREE_BUNDLE_BUDGET_EXCEEDED')
+        original_api=self.api;budget=ReceiverPutBudget(original_api);self.api=budget
+        expected_capture={**capture,'bundle':plan.after}
+        def result(ok,status,**extra):
+            report=self.receipt(capture,'install_receiver',ok_installation=ok,status=status,ready=False,
+                ingest_ready=False,source_preserved=True,free_bundle_within_limit=True,
+                installation_puts=budget.attempts['install'],recovery_puts=budget.attempts['recovery'],
+                worker_puts=sum(budget.attempts.values()),**extra)
+            report['ok']=ok
+            if not ok and status!='BLOCKED_RECOVERED':
+                report.update(settings_preserved=None,unowned_modules_preserved=None,source_preserved=None)
+            return report
+        try:
+            self.commit(capture,plan.after,{'commercial-reception.mjs'},capture['source'],APPROVED_RECEIVER_RELEASE)
+            # The exact same read-only implementation used by --check-ingest.
+            check=self.check_ingest(receiver_text)
+            if check.get('ready') is not True or check.get('worker_puts')!=0:fail('POST_INSTALL_CHECK_REQUIRED')
+            self.check_before_put(expected_capture)
+            return result(True,'INSTALLED_VERIFIED',check_ingest_satisfactory=True,receiver_body_matches=True,
+                processor_release=APPROVED_RECEIVER_RELEASE,processor_code_sha256=APPROVED_RECEIVER_CODE,
+                receiver_module_sha256=APPROVED_RECEIVER_BODY,rollback_candidate_exact=True,recovery_performed=False)
+        except Exception:
+            if not budget.attempts['install']:raise
+            try:
+                current=self.api.get_bundle();settings=self.api.get_settings()
+                if same_bundle(current,plan.before) and same_json(settings,plan.settings):
+                    return result(False,'BLOCKED_INSTALL_UNCONFIRMED',recovery_performed=False)
+                inverse=receiver_rollback_candidate(plan,current,settings)
+                self.check_before_put(expected_capture)
+                self.authorize();self.revision_check(APPROVED_RECEIVER_RELEASE)
+                self.check_before_put(expected_capture)
+                budget.phase='recovery';self.api.put_bundle(inverse)
+                for attempt in range(12):
+                    actual=self.api.get_bundle()
+                    if not same_json(self.api.get_settings(),capture['settings']):fail('RECOVERY_SETTINGS_CHANGED')
+                    closed_health(self.private_get('/health'),capture['health']['messenger_outbound'],capture['health']['release'])
+                    tester_scope(self.private_get,capture['health']['messenger_outbound'])
+                    if not same_json(self.private_get('/commercial/catalog'),capture['source']):fail('RECOVERY_SOURCE_CHANGED')
+                    if same_bundle(actual,plan.before):
+                        return result(False,'BLOCKED_RECOVERED',recovery_performed=True,original_receiver_restored=True)
+                    if not same_bundle(actual,plan.after):fail('RECOVERY_RUNTIME_CHANGED')
+                    if attempt<11:self.sleep(2)
+                fail('RECOVERY_NOT_VERIFIED')
+            except Exception:
+                return result(False,'BLOCKED_RECOVERY_UNSAFE_OR_UNVERIFIED',recovery_performed=bool(budget.attempts['recovery']))
+        finally:self.api=original_api
     def ingest(self,compiled,expected_sha,lease,processor_release=None,receiver_text=None):
         if processor_release is not None and (not isinstance(processor_release,str) or not RELEASE.fullmatch(processor_release)):fail('PROCESSOR_RELEASE_REQUIRED')
         capture=self.capture()
@@ -431,18 +538,25 @@ class ScopedDeployer:
         return self.commit(capture,expected,{'central-data.mjs'},selected,processor_release)
 
 def main():
-    if len(sys.argv)!=2 or sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver','--bootstrap','--ingest'}:fail('SCOPED_CLI_INVALID')
+    if len(sys.argv)!=2 or sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver','--install-receiver','--bootstrap','--ingest'}:fail('SCOPED_CLI_INVALID')
     if os.environ.get('GITHUB_REF')!=BRANCH:fail('PILOT_BRANCH_REQUIRED')
     if os.environ.get('CF_FREE_ONLY_CONFIRMED')!='true':fail('FREE_ONLY_CONFIRMATION_REQUIRED')
     config=strict_json((ROOT/'activar-cloud.json').read_bytes())
     if config.get('activar') is not False or config.get('sincronizar_meta_verify_token') is True:fail('FULL_DEPLOY_MUST_STAY_DISABLED')
-    if sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver'} and config.get('datahub_scoped_content_enabled') is not True:fail('SCOPED_WRITES_NOT_PROMOTED')
-    if sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver'}:require_latest_promotion()
+    installation=sys.argv[1]=='--install-receiver'
+    if installation:
+        if config.get('datahub_scoped_content_enabled') is not False:fail('RECEIVER_INSTALLATION_REQUIRES_CLOSED_FLAGS')
+        require_receiver_installation()
+    elif sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver'}:
+        if config.get('datahub_scoped_content_enabled') is not True:fail('SCOPED_WRITES_NOT_PROMOTED')
+        require_latest_promotion()
     api=CFClient(os.environ.get('CLOUDFLARE_ACCOUNT_ID'),os.environ.get('CLOUDFLARE_API_TOKEN'))
-    client=ScopedDeployer(api,authorize=require_latest_promotion,revision_check=require_latest_revision);mode=sys.argv[1];release=os.environ.get('GITHUB_SHA','')
+    client=ScopedDeployer(api,authorize=require_receiver_installation if installation else require_latest_promotion,
+        revision_check=(lambda _:require_latest_revision(os.environ['GITHUB_SHA'])) if installation else require_latest_revision);mode=sys.argv[1];release=os.environ.get('GITHUB_SHA','')
     if mode=='--inspect':report=client.inspect()
     elif mode=='--check-ingest':report=client.check_ingest((ROOT/'commercial-reception.mjs').read_text())
     elif mode=='--plan-receiver':_plan,report=client.plan_receiver((ROOT/'commercial-reception.mjs').read_text(),release,public_code_hash())
+    elif mode=='--install-receiver':report=client.install_receiver(approved_receiver_artifacts())
     elif mode=='--bootstrap':report=client.bootstrap((ROOT/'commercial-reception.mjs').read_text(),release,public_code_hash())
     else:
         import processing_lease
@@ -459,6 +573,13 @@ def main():
             for key in ('ready','runtime_release','processor_release'):
                 if key in report and report[key] is not None:output.write(key+'='+str(report[key]).lower()+'\n')
     print(json.dumps(report,separators=(',',':')))
+    if mode=='--install-receiver':
+        fields=('status','ok_installation','ready','ingest_ready','installation_puts','recovery_puts','worker_puts',
+            'settings_preserved','unowned_modules_preserved','source_preserved','free_bundle_within_limit',
+            'check_ingest_satisfactory','receiver_body_matches','processor_release','processor_code_sha256',
+            'receiver_module_sha256','rollback_candidate_exact','recovery_performed','original_receiver_restored')
+        print('::notice title=DataHub receptor instalacion::'+json.dumps({k:report[k] for k in fields if k in report},separators=(',',':')))
+        if not report['ok_installation']:fail(report['status'])
     if mode=='--check-ingest':
         receipt={key:report[key] for key in ('ready','read_only','worker_puts','runtime_release','processor_release','receiver_body_matches')}
         print('::notice title=DataHub receptor lectura::'+json.dumps(receipt,separators=(',',':')))
@@ -476,4 +597,5 @@ if __name__=='__main__':
         print(json.dumps({'schema':'conectatech.scoped-content.v1','ok':False,'error':code,'private_values_recorded':False}))
         if sys.argv[1:]==['--check-ingest']:print('::error title=DataHub receptor lectura::'+code)
         if sys.argv[1:]==['--plan-receiver']:print('::error title=DataHub receptor plan::'+code)
+        if sys.argv[1:]==['--install-receiver']:print('::error title=DataHub receptor instalacion::'+code)
         sys.exit(1)
