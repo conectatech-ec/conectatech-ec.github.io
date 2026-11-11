@@ -106,9 +106,29 @@ class ReceiverPlanning(unittest.TestCase):
             output=io.StringIO()
             with patch.object(scoped,'ROOT',root),patch.dict(os.environ,environment,clear=True),patch.object(sys,'argv',['scoped_content.py','--plan-receiver']),patch.object(scoped,'public_code_hash',return_value=fixtures.CODE_HASH),patch.object(scoped,'require_latest_promotion',side_effect=AssertionError('promotion')),patch.object(scoped,'CFClient',return_value=r),patch.object(scoped,'ScopedDeployer',return_value=client),contextlib.redirect_stdout(output):
                 scoped.main()
-            report=json.loads(output.getvalue());self.assertEqual(report['worker_puts'],0)
+            report=json.loads(output.getvalue().splitlines()[0]);self.assertEqual(report['worker_puts'],0)
             self.assertFalse(report['ready']);self.assertNotIn(fixtures.PRIVATE,output.getvalue())
             self.assertIn('ready=false',(root/'output').read_text());self.assertEqual(r.puts,[])
+            annotation=next(line for line in output.getvalue().splitlines() if line.startswith('::notice title=DataHub receptor plan::'))
+            evidence=json.loads(annotation.split('::',2)[2])
+            self.assertFalse(evidence['ready']);self.assertFalse(evidence['deployment_authorized'])
+            self.assertEqual(evidence['worker_puts'],0);self.assertTrue(evidence['settings_preserved'])
+            self.assertTrue(evidence['unowned_modules_preserved']);self.assertTrue(evidence['source_preserved'])
+            self.assertNotIn('runtime_release',evidence)
+    def test_original_workflow_calls_one_plan_with_guarded_commercial_steps(self):
+        text=(ROOT.parent/'.github/workflows/central-593.yml').read_text()
+        self.assertEqual(text.count('run: python automatizacion/scoped_content.py --plan-receiver'),1)
+        self.assertNotIn('scoped_content.py --bootstrap',text)
+        self.assertNotIn('scoped_content.py --check-ingest',text)
+        self.assertIn("if: steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'",text)
+        self.assertEqual(text.count("if: steps.reporte.outputs.ready == 'true'"),4)
+        self.assertIn('environment: conectatech-piloto-gratis',text)
+        self.assertIn('permissions:\n  contents: read',text)
+    def test_closing_without_reservation_never_calls_private_request(self):
+        import processing_lease
+        with tempfile.TemporaryDirectory() as folder,patch.dict(os.environ,{'RUNNER_TEMP':folder,'GITHUB_RUN_ID':'offline-plan','GITHUB_RUN_ATTEMPT':'1'}):
+            def forbidden(*args,**kwargs):self.fail('no lease: HTTP is forbidden')
+            self.assertIsNone(processing_lease.finish(forbidden,'release'))
     def test_precise_diagnostic_distinguishes_each_missing_or_unrecognized_stamp(self):
         release="const COMMERCIAL_PROCESSOR_RELEASE='"+fixtures.PROCESSOR_RELEASE+"';"
         code="const COMMERCIAL_PROCESSOR_CODE_SHA256='"+fixtures.CODE_HASH+"';"

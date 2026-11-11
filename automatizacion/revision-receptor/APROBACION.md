@@ -1,6 +1,6 @@
 # Receptor privado 593: cambio propuesto, pendiente de aprobación
 
-Preparación del 11-11-2026. Sin despliegue, `bootstrap`, `ingest`, PUT al Worker ni cambios en `main`. No habilita checkout, Merchant Center ni anuncios. No cambia ni suspende Sincronización multicanal 593. Costo adicional: USD 0; no incorpora servicios, recursos ni dependencias.
+Preparación del 11-11-2026; continuación autorizada de validación real. Se autoriza integrar exclusivamente en la rama piloto y ejecutar una sola planificación autenticada de lectura por el flujo original. Sin despliegue, `bootstrap`, `ingest`, PUT al Worker ni cambios en `main`. No habilita checkout, Merchant Center ni anuncios. No cambia ni suspende Sincronización multicanal 593. Costo adicional: USD 0; no incorpora servicios, recursos ni dependencias.
 
 ## Evidencia autenticada y límite de la conclusión
 
@@ -24,7 +24,7 @@ Artefactos públicos fijados:
 | Original conocido | `cc05f6d77adef1ff36f3b9d0e6f75d801517553b:automatizacion/commercial-reception.mjs` |
 | SHA-256 del original | `c51cf151763663cd7df94b94c5bde641eff82ceeaf56894d5943de59777ae195` |
 | Plantilla revisada, con placeholders | `c0975c3d31421ce91d147c84f2c80e85523bd40ae540a2595530826e9eb53845` |
-| Paquete público de esta preparación (`public_code_hash`) | `f46b10caf872d4d262f668e0c2827273bbd7a0e0098039fda8b2f3ed544fd66d` |
+| Paquete público antes de conectar el workflow (`public_code_hash`) | `f46b10caf872d4d262f668e0c2827273bbd7a0e0098039fda8b2f3ed544fd66d` |
 
 El diff completo está en [adaptacion-publica.patch](adaptacion-publica.patch): **110 líneas añadidas y 20 eliminadas** respecto de ese original conocido. No se presenta como una modificación de sólo dos constantes. Además de las marcas, contiene controles ya existentes en la plantilla revisada: historial por SHA, reservas con caducidad, comprobación de contenedor XLSX, nombres históricos/original y disparo fijado al commit del procesador. Conserva cifrado, bandeja única, retención de 24 horas, exportaciones originales y las mismas rutas/métodos. No añade rutas, permisos ni planificador.
 
@@ -34,7 +34,7 @@ El receptor adaptado crea, cuando se inicializa en una ejecución futura autoriz
 
 ## Preparación en el mecanismo original
 
-Se añade a `automatizacion/scoped_content.py` el modo **`--plan-receiver`**. No hay workflow nuevo ni cambios en los workflows existentes en este borrador. El modo:
+Se añade a `automatizacion/scoped_content.py` el modo **`--plan-receiver`**. No hay workflow nuevo. Para la validación real autorizada se conecta este modo al paso `receiver` del workflow original `central-593.yml`, sustituyendo exclusivamente `--check-ingest`. Se añade su prueba local previa y una anotación con campos seguros para recoger evidencia sin descargar registros privados. Las condiciones comerciales y el entorno original permanecen intactos. El modo:
 
 1. Exige la rama piloto original, la declaración Free y `activar: false`.
 2. Funciona con `datahub_scoped_content_enabled: false`; no promueve la bandera ni llama a autorización de escritura.
@@ -43,7 +43,7 @@ Se añade a `automatizacion/scoped_content.py` el modo **`--plan-receiver`**. No
 5. Construye en memoria el bundle candidato, comprueba la inversa y vuelve a comparar bundle/settings para detectar cambios concurrentes.
 6. Emite únicamente un recibo de planificación, hashes de artefactos públicos y `worker_puts: 0`, `ready: false`, `ingest_ready: false`, `deployment_authorized: false`. No serializa la captura ni los módulos privados. El objeto de planificación oculta su contenido en `repr`.
 
-No llama a `bootstrap`, `commit`, `ingest`, reservas, recepción de archivos ni dispatch. No se ha conectado este nuevo modo a un disparador. Los modos de escritura originales siguen requiriendo promoción expresa; este PR no les añade permisos ni excepciones.
+No llama a `bootstrap`, `commit`, `ingest`, reservas, recepción de archivos ni dispatch. La integración autorizada en la rama piloto disparará una sola ejecución del workflow original con el plan conectado. Los modos de escritura originales siguen requiriendo promoción expresa; este PR no les añade permisos ni excepciones. El plan devuelve `ready:false`; por ello reporte, ingestión, verificación comercial y eliminación del Excel no pueden ejecutarse. El cierre sin reserva no llama a HTTP. El workflow `comercial-cloud.yml` no se modifica ni coincide con las rutas cambiadas.
 
 ## Pruebas locales
 
@@ -57,10 +57,12 @@ Incluyen aplicación y reversión del parche público byte por byte; preservaci�
 
 La protección de checkout y otros módulos se fundamenta en la conservación byte por byte del bundle ajeno y en las regresiones del Worker; no se afirma haber probado una instalación real ni haber ejecutado el checkout publicado.
 
+Para conectar esta etapa se actualizan las dos expectativas de pruebas que nombraban `--check-ingest` como comando del workflow. Se conservan sus controles de orden, permisos, cierre y promoción. Se añaden dos contratos: una sola invocación de plan con los pasos comerciales condicionados, y cierre sin reserva que no puede llamar al transporte. La validación afectada comprende 78 pruebas: 45 del actualizador, 8 de integración, 11 del receptor y 14 de planificación. El resto de las regresiones anteriores no se repite como auditoría.
+
 ## Ruta de aprobación e instalación posterior
 
-1. Revisar y aprobar este borrador contra la rama piloto; no fusionar a `main`. Mantener ambas banderas en `false` y el entorno `conectatech-piloto-gratis`.
-2. Antes de autorizar una escritura, obtener **un plan autenticado focalizado** con `python automatizacion/scoped_content.py --plan-receiver` en el paso de lectura del workflow original y el commit fijado. Ese cambio de comando debe quedar revisado en el mismo flujo de desarrollo; no está instalado ni ejecutado aquí. El recibo debe confirmar la base conocida y cero escrituras. Si no coincide, detenerse: el parche adjunto no está aprobado para otra base. No repetir auditorías generales.
+1. Dirección General ha autorizado la integración de este PR exclusivamente en la rama piloto y una planificación real de lectura, condicionadas al cierre de escrituras. No fusionar a `main`. Mantener ambas banderas en `false` y el entorno `conectatech-piloto-gratis`.
+2. Obtener **un plan autenticado focalizado** con `python automatizacion/scoped_content.py --plan-receiver` en el paso de lectura del workflow original y el commit fijado por `github.sha`. El recibo debe confirmar la base conocida y cero escrituras. Si no coincide, detenerse: el parche adjunto no está aprobado para otra base. No repetir ni reintentar la ejecución y no repetir auditorías generales. La huella pública vigente del paquete se calculará en ese commit; la anotación sólo expone campos seguros.
 3. Dirección General debe autorizar por separado una instalación única del receptor y su transición de almacenamiento. La invocación de escritura aún no se prepara como ejecución habilitada. **No basta cambiar la bandera a `true` ni ejecutar el workflow completo:** eso puede habilitar la ingestión. Cualquier adaptación del workflow original para instalar el receptor deberá omitir expresamente reporte, ingestión, verificación comercial y eliminación del Excel, y conservar el cierre sin reserva.
 4. En esa instalación futura, recapturar/comparar bundle, settings y fuente inmediatamente antes del único PUT; conservar el control de revisión y las verificaciones del actualizador original. Detenerse ante deriva o incompatibilidad, sin reintentos de escritura.
 5. Confirmar con `--check-ingest` cuerpo completo, ambas marcas y su concordancia con `/commercial/catalog/status`, preservación de fuente, Messenger y restantes módulos. La ingestión seguirá cerrada. La aprobación/vigencia del Excel deberá comprobarse antes de una autorización posterior de ingestión; este trabajo no renueva ni altera esa evidencia.
