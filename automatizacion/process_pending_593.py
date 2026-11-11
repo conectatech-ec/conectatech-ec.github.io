@@ -28,7 +28,10 @@ def main():
   raise
  if not state.get('pending'):output(False);print('No pending report; no deployment or source change.');return
  lease_acquired=False
- sha=state['file_sha256'];report={'at':iso(stamp()),'source_sha256':sha,'raw_source_public':False,'stock_quantities_public':False,'production_channels_changed':False}
+ sha=state['file_sha256']
+ expected=os.environ.get('CENTRAL_AUTHORIZED_SOURCE_SHA256')
+ if expected is not None and (not re.fullmatch(r'[a-f0-9]{64}',expected) or sha!=expected):raise ValueError('SOURCE_NOT_AUTHORIZED')
+ report={'at':iso(stamp()),'source_sha256':sha,'raw_source_public':False,'stock_quantities_public':False,'production_channels_changed':False}
  try:
   with request('/commercial/complete',{'sha256':sha,'status':'claim'}) as r:claim=json.load(r)
   processing_lease.save(sha,claim['lease_token']);lease_acquired=True
