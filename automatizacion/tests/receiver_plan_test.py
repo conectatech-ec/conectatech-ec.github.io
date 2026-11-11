@@ -115,12 +115,12 @@ class ReceiverPlanning(unittest.TestCase):
             self.assertEqual(evidence['worker_puts'],0);self.assertTrue(evidence['settings_preserved'])
             self.assertTrue(evidence['unowned_modules_preserved']);self.assertTrue(evidence['source_preserved'])
             self.assertNotIn('runtime_release',evidence)
-    def test_original_workflow_calls_one_plan_with_guarded_commercial_steps(self):
+    def test_original_workflow_calls_one_installation_with_disabled_commercial_steps(self):
         text=(ROOT.parent/'.github/workflows/central-593.yml').read_text()
-        self.assertEqual(text.count('run: python automatizacion/scoped_content.py --plan-receiver'),1)
+        self.assertEqual(text.count('run: python automatizacion/scoped_content.py --install-receiver'),1)
         self.assertNotIn('scoped_content.py --bootstrap',text)
         self.assertNotIn('scoped_content.py --check-ingest',text)
-        self.assertIn("if: steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'",text)
+        self.assertIn("if: false && steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'",text)
         self.assertEqual(text.count("if: steps.reporte.outputs.ready == 'true'"),4)
         self.assertIn('environment: conectatech-piloto-gratis',text)
         self.assertIn('permissions:\n  contents: read',text)

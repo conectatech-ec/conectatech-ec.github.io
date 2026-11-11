@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
+          fetch-depth: 2
           sparse-checkout: |
             automatizacion
             .github/workflows
@@ -37,6 +38,7 @@ jobs:
           python automatizacion/tests/scoped_content_test.py
           python automatizacion/tests/ingest_receiver_test.py
           python automatizacion/tests/receiver_plan_test.py
+          python automatizacion/tests/receiver_install_test.py
           python automatizacion/tests/generic_receiver_guard_test.py
           node automatizacion/tests/scoped-http.test.mjs
       - id: scoped_mode
@@ -49,17 +51,19 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('authorized='+str(allowed).lower()+'\n')
           PY
       - id: receiver
-        # Etapa autorizada: plan en RAM; ready=false impide los pasos comerciales.
-        name: Planificar adaptacion del receptor sin modificarlo
-        run: python automatizacion/scoped_content.py --plan-receiver
+        # Autorizacion unica: solo primer intento del sucesor directo de PR #368.
+        if: github.event_name == 'push' && github.run_attempt == '1'
+        name: Instalar una vez el receptor aprobado y verificarlo sin ingestion
+        run: python automatizacion/scoped_content.py --install-receiver
         env:
+          CENTRAL_RECEIVER_INSTALL_AUTHORIZATION: DG-593-INSTALL-e5ac06df-ONCE
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - id: reporte
-        if: steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'
+        if: false && steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'
         name: Leer una fuente privada y normalizar con reglas unicas
         run: python automatizacion/process_pending_593.py
         env:

@@ -65,10 +65,10 @@ class ReceiverContract(unittest.TestCase):
         root=Path(__file__).resolve().parents[2];text=(root/'.github/workflows/central-593.yml').read_text()
         config=json.loads((root/'automatizacion/activar-cloud.json').read_text())
         self.assertIs(config['datahub_scoped_content_enabled'],False);self.assertIs(config['activar'],False)
-        self.assertNotIn('scoped_content.py --bootstrap',text);self.assertIn('scoped_content.py --plan-receiver',text)
+        self.assertNotIn('scoped_content.py --bootstrap',text);self.assertIn('scoped_content.py --install-receiver',text)
         self.assertNotIn('run: node automatizacion/central-e2e.mjs',text)
         self.assertIn('CENTRAL_AUTHORIZED_SOURCE_SHA256:',text)
-        self.assertIn("steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'",text)
+        self.assertIn("if: false && steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'",text)
         self.assertIn('  push:',text);self.assertNotIn('workflow_dispatch:',text)
     def test_closed_read_only_cli_emits_only_safe_annotation_and_never_puts(self):
         r=self.runtime()
