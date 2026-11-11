@@ -1,0 +1,176 @@
+diff --git a/automatizacion/commercial-reception.mjs b/automatizacion/commercial-reception.mjs
+index a89652340..d69bf1739 100644
+--- a/automatizacion/commercial-reception.mjs
++++ b/automatizacion/commercial-reception.mjs
+@@ -1,45 +1,117 @@
+-// Private single-file inbox. No raw workbook, costs or stock quantities enter GitHub logs/artifacts.
++// Same private single-file receiver. SHA ledger and fenced leases have no scheduler.
+ import {seal,unseal} from './messenger-control.mjs';
+ import {central,validateCentral} from './central-source.mjs';
+ const repo='conectatech-ec/conectatech-ec.github.io',branch='automatizacion/piloto-cloud-3sku-20261015';
++const COMMERCIAL_PROCESSOR_RELEASE='__COMMERCIAL_PROCESSOR_RELEASE__';
++const COMMERCIAL_PROCESSOR_CODE_SHA256='__COMMERCIAL_PROCESSOR_CODE_SHA256__';
++const LEASE_MS=15*60*1000,MAX_TRIGGERS=8;
+ const json=(d,s=200)=>Response.json(d,{status:s,headers:{'Cache-Control':'no-store'}});
+-export function commercialInit(box){box.sql.exec('CREATE TABLE IF NOT EXISTS commercial_inbox (id INTEGER PRIMARY KEY CHECK(id=1), sha TEXT, filename TEXT, sealed TEXT, status TEXT, received INTEGER, expires INTEGER, error TEXT)');}
+-export function commercialCleanup(box,now){box.sql.exec('DELETE FROM commercial_inbox WHERE expires<=?',now);}
++const query=(box,sql,...args)=>box.sql.exec(sql,...args).toArray()[0];
++export function validReportName(name){
++ const m=/^Reporte-Inventario(?: (?:al )?(\d{2})-(\d{2})-(\d{4}))?\.xlsx$/.exec(name);
++ if(!m)return false;if(!m[1])return true;
++ const date=new Date(Date.UTC(Number(m[3]),Number(m[2])-1,Number(m[1])));
++ return date.getUTCFullYear()===Number(m[3])&&date.getUTCMonth()===Number(m[2])-1&&date.getUTCDate()===Number(m[1]);
++}
++export function validateXlsxContainer(bytes){
++ // Cheap ZIP-directory check only. The existing Python normalizer is the sole
++ // schema/date/business validator; HTTP 202 never means inventory accepted.
++ const view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);
++ let end=-1;
++ for(let i=bytes.length-22;i>=Math.max(0,bytes.length-65557);i--)if(view.getUint32(i,true)===0x06054b50){end=i;break;}
++ if(end<0||view.getUint16(end+4,true)||view.getUint16(end+6,true)||end+22+view.getUint16(end+20,true)!==bytes.length)throw Error('XLSX_STRUCTURE');
++ const count=view.getUint16(end+10,true),size=view.getUint32(end+12,true),start=view.getUint32(end+16,true);
++ if(count<3||count>1000||view.getUint16(end+8,true)!==count||start+size!==end)throw Error('XLSX_STRUCTURE');
++ let at=start,total=0;const names=new Set();
++ for(let i=0;i<count;i++){
++  if(at+46>end||view.getUint32(at,true)!==0x02014b50)throw Error('XLSX_STRUCTURE');
++  const flags=view.getUint16(at+8,true),method=view.getUint16(at+10,true),nameLen=view.getUint16(at+28,true),extra=view.getUint16(at+30,true),comment=view.getUint16(at+32,true),local=view.getUint32(at+42,true);
++  if(at+46+nameLen+extra+comment>end||local+30>start||flags&1||![0,8].includes(method))throw Error('XLSX_STRUCTURE');
++  const name=new TextDecoder('utf-8',{fatal:true}).decode(bytes.subarray(at+46,at+46+nameLen));
++  if(names.has(name)||name.startsWith('/')||name.includes('..')||name.includes('\\')||name.includes('vbaProject')||name.includes('externalLinks/'))throw Error('UNSAFE_WORKBOOK');
++  if(view.getUint32(local,true)!==0x04034b50||local+30+view.getUint16(local+26,true)+view.getUint16(local+28,true)+view.getUint32(at+20,true)>start)throw Error('XLSX_STRUCTURE');
++  names.add(name);total+=view.getUint32(at+24,true);at+=46+nameLen+extra+comment;
++ }
++ if(at!==end||total>16000000||!['xl/workbook.xml','xl/worksheets/sheet1.xml','docProps/core.xml'].every(n=>names.has(n)))throw Error('XLSX_STRUCTURE');
++}
++export function commercialInit(box){
++ box.sql.exec('CREATE TABLE IF NOT EXISTS commercial_inbox (id INTEGER PRIMARY KEY CHECK(id=1), sha TEXT, filename TEXT, sealed TEXT, status TEXT, received INTEGER, expires INTEGER, error TEXT)');
++ if(!box.name.startsWith('commercial-source'))return;
++ box.sql.exec('CREATE TABLE IF NOT EXISTS commercial_receipts (sha TEXT PRIMARY KEY, filename TEXT, received INTEGER, status TEXT, cut_date TEXT, generated_at TEXT, error TEXT, lease TEXT, lease_until INTEGER NOT NULL DEFAULT 0, attempts INTEGER NOT NULL DEFAULT 0, last_trigger INTEGER NOT NULL DEFAULT 0, trigger_state TEXT)');
++ box.sql.exec('INSERT OR IGNORE INTO commercial_receipts(sha,filename,received,status,error) SELECT sha,filename,received,status,error FROM commercial_inbox');
++}
++export function commercialCleanup(box,now){
++ if(box.name.startsWith('commercial-source'))box.sql.exec("UPDATE commercial_receipts SET status='expired',error='RAW_REPORT_EXPIRED',lease=NULL,lease_until=0 WHERE sha IN (SELECT sha FROM commercial_inbox WHERE expires<=? AND status='received')",now);
++ box.sql.exec('DELETE FROM commercial_inbox WHERE expires<=?',now);
++}
+ async function dispatch(env){
+  if(!env.COMMERCIAL_ACTIONS_TOKEN)return 'needs_actions_token';
++ const release=COMMERCIAL_PROCESSOR_RELEASE;
++ if(!/^[a-f0-9]{40}$/.test(release||''))return 'processor_release_unverified';
+  const headers={Authorization:'Bearer '+env.COMMERCIAL_ACTIONS_TOKEN,Accept:'application/vnd.github+json','User-Agent':'CONECTATECH-pilot'};
+  try{
+-  const r=await fetch('https://api.github.com/repos/'+repo+'/actions/workflows/central-593.yml/runs?branch='+encodeURIComponent(branch)+'&status=completed&per_page=5',{headers,signal:AbortSignal.timeout(10000)});if(!r.ok)return 'dispatch_denied';
+-  const run=(await r.json()).workflow_runs?.find(r=>r.head_branch===branch&&r.path==='.github/workflows/central-593.yml');if(!run)return 'bootstrap_workflow_required';
++  const r=await fetch('https://api.github.com/repos/'+repo+'/actions/workflows/central-593.yml/runs?branch='+encodeURIComponent(branch)+'&head_sha='+release+'&status=completed&per_page=5',{headers,signal:AbortSignal.timeout(10000)});if(!r.ok)return 'dispatch_denied';
++  const run=(await r.json()).workflow_runs?.find(r=>r.head_branch===branch&&r.head_sha===release&&r.path==='.github/workflows/central-593.yml');if(!run)return 'bootstrap_workflow_required';
+   const jobs=await fetch('https://api.github.com/repos/'+repo+'/actions/runs/'+run.id+'/jobs',{headers,signal:AbortSignal.timeout(10000)});if(!jobs.ok)return 'dispatch_denied';
+   const job=(await jobs.json()).jobs?.find(j=>j.name==='ingresar');if(!job)return 'bootstrap_workflow_required';
+   const retry=await fetch('https://api.github.com/repos/'+repo+'/actions/jobs/'+job.id+'/rerun',{method:'POST',headers,signal:AbortSignal.timeout(10000)});return retry.status===201?'triggered':'dispatch_denied';
+  }catch{return 'dispatch_unavailable';}
+ }
++async function triggerPending(box,sha){
++ const r=query(box,'SELECT * FROM commercial_receipts WHERE sha=?',sha),now=Date.now();
++ if(!r||r.status!=='received')return 'not_pending';
++ if(r.lease_until>now)return 'processing';
++ if(r.attempts>=MAX_TRIGGERS)return 'retry_limit';
++ const delay=r.trigger_state==='triggered'?LEASE_MS:Math.min(LEASE_MS,120000*2**Math.max(0,r.attempts-1));
++ if(r.last_trigger&&now-r.last_trigger<delay)return 'retry_deferred';
++ // Reservation is synchronous, before any external await; duplicate requests
++ // cannot dispatch the same pending version concurrently in this Durable Object.
++ box.sql.exec('UPDATE commercial_receipts SET attempts=attempts+1,last_trigger=?,trigger_state=? WHERE sha=?',now,'dispatching',sha);
++ const result=box.name==='commercial-source-ci'?'ci_no_dispatch':await dispatch(box.env);
++ box.sql.exec('UPDATE commercial_receipts SET trigger_state=? WHERE sha=?',result,sha);
++ return result;
++}
++function receiptJSON(r){return {processor_code_sha256:COMMERCIAL_PROCESSOR_CODE_SHA256,processor_release:COMMERCIAL_PROCESSOR_RELEASE,sha256:r.sha,original_name:r.filename,received_at:new Date(r.received).toISOString(),status:r.status,cut_date:r.cut_date,generated_at:r.generated_at,error_code:r.error,validated:r.status==='processed'&&!!r.cut_date&&!!r.generated_at,lease_active:r.lease_until>Date.now()};}
+ export async function commercialFetch(path,req,box){
+  if(!path.startsWith('/commercial/'))return null;
+  if(!box.name.startsWith('commercial-source'))return json({error:'Source scope'},409);
+- const row=box.sql.exec('SELECT * FROM commercial_inbox WHERE id=1').toArray()[0];
+- if(path==='/commercial/status'&&req.method==='GET')return json({pending:row?.status==='received',status:row?.status||'empty',file_sha256:row?.sha||null,error_code:row?.error||null,automatic_trigger_configured:!!box.env.COMMERCIAL_ACTIONS_TOKEN,retention_hours:24,live_customers_enabled:false});
++ const row=query(box,'SELECT * FROM commercial_inbox WHERE id=1');
++ if(path==='/commercial/status'&&req.method==='GET'){
++  const sha=new URL(req.url).searchParams.get('sha256');
++  if(sha){if(!/^[a-f0-9]{64}$/.test(sha))return json({error:'REPORT_HASH'},400);const r=query(box,'SELECT * FROM commercial_receipts WHERE sha=?',sha);return r?json(receiptJSON(r)):json({error:'REPORT_UNKNOWN'},404);}
++  return json({processor_code_sha256:COMMERCIAL_PROCESSOR_CODE_SHA256,processor_release:COMMERCIAL_PROCESSOR_RELEASE,pending:row?.status==='received',status:row?.status||'empty',file_sha256:row?.sha||null,received_at:row?new Date(row.received).toISOString():null,error_code:row?.error||null,automatic_trigger_configured:!!box.env.COMMERCIAL_ACTIONS_TOKEN,retention_hours:24,live_customers_enabled:false});
++ }
+  if(path==='/commercial/report'&&req.method==='POST'){
++  let filename;try{filename=decodeURIComponent(req.headers.get('X-Report-Filename')||'');}catch{return json({error:'FILENAME'},400);}
++  if(!validReportName(filename))return json({error:'REPORT_FILENAME'},400);
+   if(Number(req.headers.get('content-length')||0)>1000000)return json({error:'FILE_SIZE_LIMIT'},413);
+   const reader=req.body?.getReader();if(!reader)return json({error:'EMPTY_FILE'},400);const chunks=[];let size=0;
+   for(;;){const {done,value}=await reader.read();if(done)break;size+=value.length;if(size>1000000){await reader.cancel();return json({error:'FILE_SIZE_LIMIT'},413);}chunks.push(value);}
+   const bytes=new Uint8Array(size);let at=0;for(const c of chunks){bytes.set(c,at);at+=c.length;}
+-  if(size<100||bytes[0]!==80||bytes[1]!==75)return json({error:'XLSX_REQUIRED'},400);
++  if(size<100)return json({error:'XLSX_REQUIRED'},400);
+   const sha=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(b=>b.toString(16).padStart(2,'0')).join('');
+-  if(row?.sha===sha)return json({received:true,duplicate:true,sha256:sha,status:row.status});
+-  if(row?.status==='received')return json({error:'PREVIOUS_REPORT_PENDING'},409);
+-  let filename;try{filename=decodeURIComponent(req.headers.get('X-Report-Filename')||'');}catch{return json({error:'FILENAME'},400);}
+-  if(!/^Reporte-Inventario \d{2}-\d{2}-\d{4}\.xlsx$/.test(filename))return json({error:'REPORT_FILENAME'},400);
++  const expected=req.headers.get('X-Report-SHA256');if(expected&&expected!==sha)return json({error:'SOURCE_INTEGRITY'},409);
++  const duplicate=async()=>{
++   const found=query(box,'SELECT * FROM commercial_receipts WHERE sha=?',sha);if(!found)return null;
++   const trigger=found.status==='received'?await triggerPending(box,sha):'not_pending';
++   return json({received:true,duplicate:true,...receiptJSON(found),trigger});
++  };
++  const known=await duplicate();if(known)return known;
++  try{validateXlsxContainer(bytes);}catch{
++   box.sql.exec('INSERT OR IGNORE INTO commercial_receipts(sha,filename,received,status,error) VALUES(?,?,?,?,?)',sha,filename,Date.now(),'rejected','XLSX_STRUCTURE');
++   return json({error:'XLSX_STRUCTURE',sha256:sha,validated:false},400);
++  }
++  if(query(box,"SELECT id FROM commercial_inbox WHERE status='received'"))return json({error:'PREVIOUS_REPORT_PENDING'},409);
+   let raw='';for(let i=0;i<bytes.length;i+=8192)raw+=String.fromCharCode(...bytes.subarray(i,i+8192));
+   const sealed=await seal(btoa(raw),box.env.PILOT_TOKEN),now=Date.now();
+-  // Recheck after encryption; concurrent uploads may not replace a pending file.
+-  if(box.sql.exec("SELECT id FROM commercial_inbox WHERE status='received'").toArray().length)return json({error:'PREVIOUS_REPORT_PENDING'},409);
++  const raced=await duplicate();if(raced)return raced;
++  // Recheck after encryption. No await between this check and both writes.
++  if(query(box,"SELECT id FROM commercial_inbox WHERE status='received'"))return json({error:'PREVIOUS_REPORT_PENDING'},409);
+   box.sql.exec('INSERT INTO commercial_inbox VALUES(1,?,?,?,?,?,?,NULL) ON CONFLICT(id) DO UPDATE SET sha=excluded.sha,filename=excluded.filename,sealed=excluded.sealed,status=excluded.status,received=excluded.received,expires=excluded.expires,error=NULL',sha,filename,sealed,'received',now,now+86400000);
++  box.sql.exec('INSERT INTO commercial_receipts(sha,filename,received,status) VALUES(?,?,?,?)',sha,filename,now,'received');
+   await box.state.storage.setAlarm(now+86400000);
+-  const trigger=box.name==='commercial-source-ci'?'ci_no_dispatch':await dispatch(box.env);
+-  return json({received:true,sha256:sha,status:'awaiting_validation',trigger,raw_file_public:false},202);
++  const trigger=await triggerPending(box,sha);
++  return json({received:true,validated:false,sha256:sha,original_name:filename,received_at:new Date(now).toISOString(),cut_date:null,status:'awaiting_validation',trigger,raw_file_public:false},202);
+  }
+  if(path==='/commercial/report'&&req.method==='GET'){
+   if(!row||row.status!=='received')return json({error:'NO_PENDING_REPORT'},404);
+@@ -47,15 +119,33 @@ export async function commercialFetch(path,req,box){
+   const raw=atob(await unseal(row.sealed,box.env.PILOT_TOKEN));return new Response(Uint8Array.from(raw,c=>c.charCodeAt(0)),{headers:{'Content-Type':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','Cache-Control':'no-store','X-Report-Filename':encodeURIComponent(row.filename)}});
+  }
+  if(path==='/commercial/complete'&&req.method==='POST'){
+-  const b=await req.json();if(!row||row.sha!==b.sha256||!['processed','rejected'].includes(b.status))return json({error:'REPORT_CHANGED'},409);
++  let b;try{b=await req.json();}catch{return json({error:'REPORT_OPERATION'},400);}
++  if(!row||row.sha!==b.sha256||row.status!=='received')return json({error:'REPORT_CHANGED'},409);
++  const now=Date.now(),r=query(box,'SELECT * FROM commercial_receipts WHERE sha=?',row.sha);
++  if(b.status==='retry')return json({sha256:row.sha,trigger:await triggerPending(box,row.sha)});
++  if(b.status==='claim'){
++   if(r.lease_until>now)return json({error:'REPORT_BUSY'},409);
++   const lease=crypto.randomUUID();box.sql.exec('UPDATE commercial_receipts SET lease=?,lease_until=? WHERE sha=?',lease,now+LEASE_MS,row.sha);
++   return json({sha256:row.sha,lease_token:lease,lease_until:now+LEASE_MS});
++  }
++  if(!b.lease_token||b.lease_token!==r.lease||r.lease_until<=now)return json({error:'REPORT_LEASE'},409);
++  if(b.status==='release'){
++   box.sql.exec('UPDATE commercial_receipts SET lease=NULL,lease_until=0 WHERE sha=?',row.sha);return json({released:true});
++  }
++  if(!['processed','rejected'].includes(b.status))return json({error:'REPORT_OPERATION'},400);
+   const error=b.status==='rejected'&&/^[A-Z0-9_]{1,80}$/.test(b.error_code||'')?b.error_code:null;
+-  box.sql.exec('UPDATE commercial_inbox SET status=?,sealed=?,error=? WHERE sha=?',b.status,'',error,row.sha);return json({completed:true,raw_file_erased:true,status:b.status});
++  const v=b.validation||{};
++  if(b.status==='processed'&&(!/^\d{4}-\d{2}-\d{2}$/.test(v.cut_date||'')||!Number.isFinite(Date.parse(v.generated_at))||v.cut_date!==new Date(Date.parse(v.generated_at)-5*3600000).toISOString().slice(0,10)))return json({error:'REPORT_VALIDATION_REQUIRED'},400);
++  box.sql.exec('UPDATE commercial_receipts SET status=?,cut_date=?,generated_at=?,error=?,lease=NULL,lease_until=0 WHERE sha=?',b.status,b.status==='processed'?v.cut_date:null,b.status==='processed'?v.generated_at:null,error,row.sha);
++  box.sql.exec('UPDATE commercial_inbox SET status=?,sealed=?,error=? WHERE sha=?',b.status,'',error,row.sha);
++  return json({completed:true,raw_file_erased:true,status:b.status});
+  }
+  return json({error:'Not found'},404);
+ }
++
+ export function centralStatus(){
+- try{validateCentral(central);return {schema:central.schema,source_sha256:central.source.sha256,cut_date:central.source.cut_date,generated_at:central.source.generated_at,normalized_at:central.normalized_at,published_at:central.published_at||null,expires_at:central.expires_at,current:Date.parse(central.expires_at)>=Date.now(),products:central.products.length,blocked:central.products.filter(p=>p.availability==='blocked').length};}catch{return {current:false,error:'CENTRAL_INVALID'};}
++ try{validateCentral(central);return {processor_code_sha256:COMMERCIAL_PROCESSOR_CODE_SHA256,processor_release:COMMERCIAL_PROCESSOR_RELEASE,schema:central.schema,source_sha256:central.source.sha256,cut_date:central.source.cut_date,generated_at:central.source.generated_at,normalized_at:central.normalized_at,published_at:central.published_at||null,expires_at:central.expires_at,current:Date.parse(central.expires_at)>=Date.now(),products:central.products.length,blocked:central.products.filter(p=>p.availability==='blocked').length};}catch{return {current:false,error:'CENTRAL_INVALID'};}
+ }
+ export function uploadPage(){
+- const nonce=crypto.randomUUID();return new Response(`<!doctype html><html lang="es"><meta charset="utf-8"><title>CONECTATECH · Fuente comercial</title><style>body{font:17px system-ui;max-width:720px;margin:3em auto;padding:1em}input,button{font:inherit;margin:1em 0;display:block}pre{white-space:pre-wrap}</style><h1>CONECTATECH · Reporte único 593</h1><p>Acceso privado del propietario. El Excel se cifra y se elimina al terminar su procesamiento; nunca se publica completo. Los canales de producción siguen sujetos a aprobación.</p><label>Clave privada del piloto<input id="key" type="password" autocomplete="off"></label><label>Reporte-Inventario DD-MM-AAAA.xlsx<input id="file" type="file" accept=".xlsx"></label><button id="send">Enviar para validación</button><button id="status">Consultar estado</button><pre id="result"></pre><script nonce="${nonce}">const el=id=>document.getElementById(id);async function call(path,options={}){const r=await fetch(path,{...options,headers:{Authorization:'Bearer '+el('key').value,...options.headers}});const d=await r.json();el('result').textContent=JSON.stringify(d,null,2);if(!r.ok)throw Error(d.error);return d;}el('send').onclick=async()=>{try{const f=el('file').files[0];if(!f||f.size>1000000)throw Error('Selecciona un XLSX de hasta un millón de bytes.');await call('/commercial/report',{method:'POST',headers:{'X-Report-Filename':encodeURIComponent(f.name)},body:f});el('file').value='';}catch(e){el('result').textContent=e.message;}};el('status').onclick=()=>call('/commercial/status').catch(e=>el('result').textContent=e.message);setTimeout(()=>{el('key').value='';},600000);</script></html>`,{headers:{'Content-Type':'text/html;charset=utf-8','Cache-Control':'no-store','Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; script-src 'nonce-"+nonce+"'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",'Referrer-Policy':'no-referrer'}});
++ const nonce=crypto.randomUUID();return new Response(`<!doctype html><html lang="es"><meta charset="utf-8"><title>CONECTATECH · Fuente comercial</title><style>body{font:17px system-ui;max-width:720px;margin:3em auto;padding:1em}input,button{font:inherit;margin:1em 0;display:block}pre{white-space:pre-wrap}</style><h1>CONECTATECH · Reporte único 593</h1><p>Acceso privado del propietario. El Excel se cifra y se elimina al terminar su procesamiento; nunca se publica completo. Los canales de producción siguen sujetos a aprobación.</p><label>Clave privada del piloto<input id="key" type="password" autocomplete="off"></label><label>Reporte-Inventario.xlsx (también se aceptan los nombres anteriores con fecha)<input id="file" type="file" accept=".xlsx"></label><button id="send">Enviar para validación</button><button id="status">Consultar estado</button><pre id="result"></pre><script nonce="${nonce}">const el=id=>document.getElementById(id);async function call(path,options={}){const r=await fetch(path,{...options,headers:{Authorization:'Bearer '+el('key').value,...options.headers}});const d=await r.json();el('result').textContent=JSON.stringify(d,null,2);if(!r.ok)throw Error(d.error);return d;}el('send').onclick=async()=>{try{const f=el('file').files[0];if(!f||f.size>1000000)throw Error('Selecciona un XLSX de hasta un millón de bytes.');await call('/commercial/report',{method:'POST',headers:{'X-Report-Filename':encodeURIComponent(f.name)},body:f});el('file').value='';}catch(e){el('result').textContent=e.message;}};el('status').onclick=()=>call('/commercial/status').catch(e=>el('result').textContent=e.message);setTimeout(()=>{el('key').value='';},600000);</script></html>`,{headers:{'Content-Type':'text/html;charset=utf-8','Cache-Control':'no-store','Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; script-src 'nonce-"+nonce+"'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",'Referrer-Policy':'no-referrer'}});
+ }
