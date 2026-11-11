@@ -26,19 +26,19 @@ class ScopedIntegration(unittest.TestCase):
         self.assertIn('  contents: read',text)
         self.assertIn('    timeout-minutes: 10',text)
         self.assertNotIn('run: python automatizacion/deploy_free.py',text)
+        self.assertNotIn('scoped_content.py --bootstrap',text)
+        self.assertNotIn('run: node automatizacion/central-e2e.mjs',text)
         positions=[text.index(s) for s in ('python automatizacion/tests/sync_593_test.py',
-            'python automatizacion/scoped_content.py --bootstrap','python automatizacion/process_pending_593.py',
+            'python automatizacion/scoped_content.py --check-ingest','python automatizacion/process_pending_593.py',
             'python automatizacion/scoped_content.py --ingest')]
         self.assertEqual(positions,sorted(positions))
 
     def test_workflow_binds_only_validated_same_job_sha_and_separate_releases(self):
         text=(ROOT.parent/'.github/workflows/central-593.yml').read_text()
         self.assertIn('CENTRAL_EXPECTED_SOURCE_SHA256: ${{ steps.reporte.outputs.validated_source_sha256 }}',text)
-        self.assertIn('EXPECTED_RELEASE: ${{ steps.bootstrap.outputs.runtime_release }}',text)
-        self.assertIn('EXPECTED_PROCESSOR_RELEASE: ${{ steps.bootstrap.outputs.processor_release }}',text)
-        self.assertIn('COMMERCIAL_PROCESSOR_EXPECTED_RELEASE: ${{ steps.bootstrap.outputs.processor_release }}',text)
+        self.assertIn('COMMERCIAL_PROCESSOR_EXPECTED_RELEASE: ${{ steps.receiver.outputs.processor_release }}',text)
         self.assertNotIn('PILOT_DEPLOY_RELEASE:',text)
-        self.assertIn("if: steps.bootstrap.outputs.ready == 'true'",text)
+        self.assertIn("if: steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'",text)
         self.assertNotIn('automatizacion/central/',text.split('actions/upload-artifact@v4')[1])
 
     def test_processor_output_is_after_validation_and_never_arms_full_upload(self):

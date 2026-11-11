@@ -35,6 +35,7 @@ jobs:
           node automatizacion/tests/sync-receiver.test.mjs
           python automatizacion/tests/scoped_integration_test.py
           python automatizacion/tests/scoped_content_test.py
+          python automatizacion/tests/ingest_receiver_test.py
           python automatizacion/tests/generic_receiver_guard_test.py
           node automatizacion/tests/scoped-http.test.mjs
       - id: scoped_mode
@@ -46,10 +47,9 @@ jobs:
           allowed=c.get('datahub_scoped_content_enabled') is True and c.get('activar') is False and c.get('sincronizar_meta_verify_token',False) is False
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('authorized='+str(allowed).lower()+'\n')
           PY
-      - id: bootstrap
-        if: steps.scoped_mode.outputs.authorized == 'true'
-        name: Actualizar solo receptor DataHub conservando el Worker realmente activo
-        run: python automatizacion/scoped_content.py --bootstrap
+      - id: receiver
+        name: Comprobar compatibilidad del receptor sin modificarlo
+        run: python automatizacion/scoped_content.py --check-ingest
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
@@ -57,10 +57,11 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - id: reporte
-        if: steps.bootstrap.outputs.ready == 'true'
+        if: steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'
         name: Leer una fuente privada y normalizar con reglas unicas
         run: python automatizacion/process_pending_593.py
         env:
+          CENTRAL_AUTHORIZED_SOURCE_SHA256: 46eb92aa817c4f8dafe27b65fcc96280e90901cef0c1d2ba9ec2d7d763746f7f
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - id: revision
         if: steps.reporte.outputs.ready == 'true'
@@ -70,20 +71,12 @@ jobs:
         run: python automatizacion/scoped_content.py --ingest
         env:
           CENTRAL_EXPECTED_SOURCE_SHA256: ${{ steps.reporte.outputs.validated_source_sha256 }}
-          COMMERCIAL_PROCESSOR_EXPECTED_RELEASE: ${{ steps.bootstrap.outputs.processor_release }}
+          COMMERCIAL_PROCESSOR_EXPECTED_RELEASE: ${{ steps.receiver.outputs.processor_release }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
-      - name: Comprobar importes y protecciones del piloto por HTTPS
-        if: steps.reporte.outputs.ready == 'true'
-        run: node automatizacion/central-e2e.mjs
-        env:
-          PILOT_BASE_URL: https://conectatech-comercial-piloto.conectatech-ecu.workers.dev
-          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
-          EXPECTED_RELEASE: ${{ steps.bootstrap.outputs.runtime_release }}
-          EXPECTED_PROCESSOR_RELEASE: ${{ steps.bootstrap.outputs.processor_release }}
       - name: Verificar version comercial recibida por Alex y registrar destinos pendientes
         if: steps.reporte.outputs.ready == 'true'
         run: python automatizacion/data_hub_593.py --verify-alex

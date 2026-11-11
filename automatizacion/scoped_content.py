@@ -296,6 +296,21 @@ class ScopedDeployer:
         return self.receipt(capture,'inspect',read_only=True,ready=True,worker_puts=0,module_count=len(capture['bundle'].parts),processor_release=processor_release_of(capture['bundle']),processor_code_sha256=processor_code_of(capture['bundle']),
             observed_at=observed.isoformat().replace('+00:00','Z'),source_fresh=source_time(capture['source']['expires_at'])>=observed,
             runtime_bundle_readable=True,provider_version_observed=False)
+    def require_ingest_receiver(self,capture,receiver_text):
+        release=processor_release_of(capture['bundle']);code=processor_code_of(capture['bundle'])
+        if not release or not code:fail('INGEST_RECEIVER_STAMPS_REQUIRED')
+        if receiver_text.count(PLACEHOLDER)!=1 or receiver_text.count(CODE_PLACEHOLDER)!=1:fail('RECEIVER_TEMPLATE_REQUIRED')
+        expected=receiver_text.replace(PLACEHOLDER,release).replace(CODE_PLACEHOLDER,code).encode()
+        actual=next(p.body for p in capture['bundle'].parts if p.name=='commercial-reception.mjs')
+        if actual!=expected:fail('INGEST_RECEIVER_INCOMPATIBLE')
+        status=self.private_get('/commercial/catalog/status')
+        if status.get('processor_release')!=release or status.get('processor_code_sha256')!=code:fail('INGEST_RECEIVER_STATUS_MISMATCH')
+        return release
+    def check_ingest(self,receiver_text):
+        capture=self.capture();release=self.require_ingest_receiver(capture,receiver_text)
+        if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('INSPECT_RUNTIME_CHANGED')
+        return self.receipt(capture,'check_ingest',read_only=True,ready=True,worker_puts=0,
+            receiver_body_matches=True,processor_release=release)
     def check_before_put(self,capture):
         if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('RUNTIME_CHANGED_BEFORE_PUT')
         closed_health(self.private_get('/health'),capture['health']['messenger_outbound'],capture['health']['release'])
@@ -351,9 +366,11 @@ class ScopedDeployer:
         receipt=self.commit(capture,expected,{'commercial-reception.mjs'},capture['source'],processor_release)
         if code_sha is not None:receipt['processor_code_sha256']=code_sha
         return receipt
-    def ingest(self,compiled,expected_sha,lease,processor_release=None):
+    def ingest(self,compiled,expected_sha,lease,processor_release=None,receiver_text=None):
         if processor_release is not None and (not isinstance(processor_release,str) or not RELEASE.fullmatch(processor_release)):fail('PROCESSOR_RELEASE_REQUIRED')
-        capture=self.capture();validate_update(compiled,capture['source'],expected_sha,lease,self.timestamp())
+        capture=self.capture()
+        if receiver_text is not None:self.require_ingest_receiver(capture,receiver_text)
+        validate_update(compiled,capture['source'],expected_sha,lease,self.timestamp())
         if processor_release and processor_release_of(capture['bundle'])!=processor_release:fail('BUNDLED_PROCESSOR_RELEASE_DIFFER')
         if processor_release and self.private_get('/commercial/catalog/status').get('processor_release')!=processor_release:fail('PROCESSOR_RELEASE_NOT_VERIFIED')
         selected={**compiled,'published_at':self.timestamp().isoformat().replace('+00:00','Z')}
@@ -365,16 +382,17 @@ class ScopedDeployer:
         return self.commit(capture,expected,{'central-data.mjs'},selected,processor_release)
 
 def main():
-    if len(sys.argv)!=2 or sys.argv[1] not in {'--inspect','--bootstrap','--ingest'}:fail('SCOPED_CLI_INVALID')
+    if len(sys.argv)!=2 or sys.argv[1] not in {'--inspect','--check-ingest','--bootstrap','--ingest'}:fail('SCOPED_CLI_INVALID')
     if os.environ.get('GITHUB_REF')!=BRANCH:fail('PILOT_BRANCH_REQUIRED')
     if os.environ.get('CF_FREE_ONLY_CONFIRMED')!='true':fail('FREE_ONLY_CONFIRMATION_REQUIRED')
     config=strict_json((ROOT/'activar-cloud.json').read_bytes())
     if config.get('activar') is not False or config.get('sincronizar_meta_verify_token') is True:fail('FULL_DEPLOY_MUST_STAY_DISABLED')
-    if sys.argv[1]!='--inspect' and config.get('datahub_scoped_content_enabled') is not True:fail('SCOPED_WRITES_NOT_PROMOTED')
-    if sys.argv[1]!='--inspect':require_latest_promotion()
+    if sys.argv[1] not in {'--inspect','--check-ingest'} and config.get('datahub_scoped_content_enabled') is not True:fail('SCOPED_WRITES_NOT_PROMOTED')
+    if sys.argv[1] not in {'--inspect','--check-ingest'}:require_latest_promotion()
     api=CFClient(os.environ.get('CLOUDFLARE_ACCOUNT_ID'),os.environ.get('CLOUDFLARE_API_TOKEN'))
     client=ScopedDeployer(api,authorize=require_latest_promotion,revision_check=require_latest_revision);mode=sys.argv[1];release=os.environ.get('GITHUB_SHA','')
     if mode=='--inspect':report=client.inspect()
+    elif mode=='--check-ingest':report=client.check_ingest((ROOT/'commercial-reception.mjs').read_text())
     elif mode=='--bootstrap':report=client.bootstrap((ROOT/'commercial-reception.mjs').read_text(),release,public_code_hash())
     else:
         import processing_lease
@@ -384,15 +402,21 @@ def main():
         if len(data)>2_000_000:fail('COMPILED_SOURCE_TOO_LARGE')
         expected_processor=os.environ.get('COMMERCIAL_PROCESSOR_EXPECTED_RELEASE','')
         if not RELEASE.fullmatch(expected_processor):fail('PROCESSOR_RELEASE_REQUIRED')
-        report=client.ingest(strict_json(data),os.environ.get('CENTRAL_EXPECTED_SOURCE_SHA256'),strict_json(path.read_bytes()),expected_processor)
+        report=client.ingest(strict_json(data),os.environ.get('CENTRAL_EXPECTED_SOURCE_SHA256'),strict_json(path.read_bytes()),expected_processor,
+            receiver_text=(ROOT/'commercial-reception.mjs').read_text())
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'],'a') as output:
             for key in ('ready','runtime_release','processor_release'):
                 if key in report and report[key] is not None:output.write(key+'='+str(report[key]).lower()+'\n')
     print(json.dumps(report,separators=(',',':')))
+    if mode=='--check-ingest':
+        receipt={key:report[key] for key in ('ready','read_only','worker_puts','runtime_release','processor_release','receiver_body_matches')}
+        print('::notice title=DataHub receptor lectura::'+json.dumps(receipt,separators=(',',':')))
 
 if __name__=='__main__':
     try:main()
     except Exception as error:
         code=str(error).split(';',1)[0] if isinstance(error,(ScopedError,ValueError)) and re.fullmatch(r'[A-Z0-9_]+(?:; [a-z ]+)?',str(error)) else 'SCOPED_CONTENT_FAILED'
-        print(json.dumps({'schema':'conectatech.scoped-content.v1','ok':False,'error':code,'private_values_recorded':False}));sys.exit(1)
+        print(json.dumps({'schema':'conectatech.scoped-content.v1','ok':False,'error':code,'private_values_recorded':False}))
+        if sys.argv[1:]==['--check-ingest']:print('::error title=DataHub receptor lectura::'+code)
+        sys.exit(1)

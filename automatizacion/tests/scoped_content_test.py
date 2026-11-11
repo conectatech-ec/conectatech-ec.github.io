@@ -480,6 +480,7 @@ class PublicCodeFingerprintContract(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);(root/'central').mkdir()
             (root/'activar-cloud.json').write_text(json.dumps({'activar':False,'datahub_scoped_content_enabled':True}))
+            (root/'commercial-reception.mjs').write_text(CODE_TEMPLATE)
             (root/'central/current.json').write_text(json.dumps(source('b',2)));lease_path=root/'lease.json';lease_path.write_text(json.dumps(lease()))
             environment={**CLIPromotionContract().environment(),'GITHUB_SHA':REPOSITORY_RELEASE,'COMMERCIAL_PROCESSOR_EXPECTED_RELEASE':PROCESSOR_RELEASE,'CENTRAL_EXPECTED_SOURCE_SHA256':'b'*64}
             client=Mock();client.ingest.return_value={'ok':True,'ready':True,'runtime_release':ALEX_RELEASE,'processor_release':PROCESSOR_RELEASE}
