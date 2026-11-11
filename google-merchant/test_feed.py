@@ -51,6 +51,63 @@ class FeedTest(unittest.TestCase):
             self.assertNotIn(key, row)
         self.assertEqual(before, self.p)
 
+    def test_preview_only_changes_free_listings_for_selected_skus(self):
+        row, _ = self.run_candidate()
+        rows = [row, dict(row, id='TEST2')]
+        before = copy.deepcopy(rows)
+        prepared = feed.preview_free_listings(rows, ['TEST1'])
+        self.assertEqual(rows, before)
+        for original, changed in zip(rows, prepared):
+            self.assertEqual({k: v for k, v in original.items() if k != 'excluded_destination'},
+                             {k: v for k, v in changed.items() if k != 'excluded_destination'})
+        doc = ET.fromstring(feed.xml_feed(prepared))
+        destinations = [[node.text for node in item.findall('{' + feed.NS + '}excluded_destination')]
+                        for item in doc.findall('./channel/item')]
+        self.assertEqual(destinations, [['Shopping_ads'], ['Shopping_ads', 'Free_listings']])
+
+    def test_preview_rejects_unknown_duplicate_or_empty_scope(self):
+        row, _ = self.run_candidate()
+        for skus in [None, [], ['UNKNOWN'], ['TEST1', 'TEST1'], 'TEST1', [True], ['']]:
+            with self.subTest(skus=skus), self.assertRaises(ValueError):
+                feed.preview_free_listings([row], skus)
+
+    def test_preview_cannot_remove_ads_block_or_bypass_bad_product(self):
+        row, _ = self.run_candidate()
+        with self.assertRaisesRegex(ValueError, 'Shopping_ads'):
+            feed.preview_free_listings([dict(row, excluded_destination=['Free_listings'])], ['TEST1'])
+        self.contract['unidad_venta']['verificada'] = False
+        self.save()
+        with self.assertRaisesRegex(ValueError, 'ficha_o_unidad_pendiente'):
+            self.run_candidate()
+
+    def test_preview_keeps_soldout_excluded_without_changing_availability(self):
+        row, _ = self.run_candidate()
+        soldout = dict(row, id='TEST2', availability='out_of_stock')
+        prepared = feed.preview_free_listings([row, soldout], ['TEST1'])
+        self.assertEqual(prepared[1], soldout)
+        with self.assertRaisesRegex(ValueError, 'agotados'):
+            feed.preview_free_listings([row, soldout], ['TEST2'])
+
+    def test_generation_preview_cannot_replace_published_xml(self):
+        from unittest.mock import patch
+        (self.root / 'index.html').write_text('const products=' + json.dumps([self.p]) + ';\n')
+        (self.root / 'seo-contenido.json').write_text(json.dumps({'TEST1': self.o}))
+        (self.root / 'seo-pages.json').write_text(json.dumps({'TEST1': 'test1-producto'}))
+        (self.root / 'datos-593').mkdir()
+        (self.root / 'datos-593/inventario-publico.csv').write_text('sku,categoria\nTEST1,ACCESORIOS\n')
+        out = self.root / 'salida'
+        out.mkdir()
+        (out / 'productos-ec.xml').write_bytes(b'FEED EXISTENTE')
+        with patch.object(feed, 'load_inventory', return_value=([dict(self.master, sku='TEST1')], {})), \
+             patch.object(feed.subprocess, 'check_output', return_value='commit-prueba\n'):
+            summary = feed.generate(self.root, out, preview_skus=['TEST1'])
+        self.assertEqual((out / 'productos-ec.xml').read_bytes(), b'FEED EXISTENTE')
+        self.assertFalse(summary['publicacion_habilitada'])
+        self.assertEqual(summary['estado'], 'SIMULACION_FICHAS_GRATUITAS_NO_PUBLICAR')
+        self.assertFalse(summary['simulacion_fichas_gratuitas']['aprobacion_comercial_acreditada'])
+        doc = ET.fromstring((out / 'productos-ec.preview.xml').read_bytes())
+        self.assertEqual([node.text for node in doc.findall('.//{' + feed.NS + '}excluded_destination')], ['Shopping_ads'])
+
     def test_bad_prices_rejected(self):
         for price in [0, -1, True, 'NaN', 'Infinity', 1.234, None]:
             with self.subTest(price=price), self.assertRaises((ValueError, TypeError)):
