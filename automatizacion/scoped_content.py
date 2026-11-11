@@ -298,7 +298,11 @@ class ScopedDeployer:
             runtime_bundle_readable=True,provider_version_observed=False)
     def require_ingest_receiver(self,capture,receiver_text):
         release=processor_release_of(capture['bundle']);code=processor_code_of(capture['bundle'])
-        if not release or not code:fail('INGEST_RECEIVER_STAMPS_REQUIRED')
+        if not release or not code:
+            body=next(p.body for p in capture['bundle'].parts if p.name=='commercial-reception.mjs')
+            release_state='VALID' if release else 'UNRECOGNIZED' if b'COMMERCIAL_PROCESSOR_RELEASE' in body else 'ABSENT'
+            code_state='VALID' if code else 'UNRECOGNIZED' if b'COMMERCIAL_PROCESSOR_CODE_SHA256' in body else 'ABSENT'
+            fail('INGEST_RECEIVER_STAMPS_REQUIRED_RELEASE_'+release_state+'_CODE_'+code_state)
         if receiver_text.count(PLACEHOLDER)!=1 or receiver_text.count(CODE_PLACEHOLDER)!=1:fail('RECEIVER_TEMPLATE_REQUIRED')
         expected=receiver_text.replace(PLACEHOLDER,release).replace(CODE_PLACEHOLDER,code).encode()
         actual=next(p.body for p in capture['bundle'].parts if p.name=='commercial-reception.mjs')
