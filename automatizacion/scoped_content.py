@@ -409,9 +409,14 @@ def main():
             for key in ('ready','runtime_release','processor_release'):
                 if key in report and report[key] is not None:output.write(key+'='+str(report[key]).lower()+'\n')
     print(json.dumps(report,separators=(',',':')))
+    if mode=='--check-ingest':
+        receipt={key:report[key] for key in ('ready','read_only','worker_puts','runtime_release','processor_release','receiver_body_matches')}
+        print('::notice title=DataHub receptor lectura::'+json.dumps(receipt,separators=(',',':')))
 
 if __name__=='__main__':
     try:main()
     except Exception as error:
         code=str(error).split(';',1)[0] if isinstance(error,(ScopedError,ValueError)) and re.fullmatch(r'[A-Z0-9_]+(?:; [a-z ]+)?',str(error)) else 'SCOPED_CONTENT_FAILED'
-        print(json.dumps({'schema':'conectatech.scoped-content.v1','ok':False,'error':code,'private_values_recorded':False}));sys.exit(1)
+        print(json.dumps({'schema':'conectatech.scoped-content.v1','ok':False,'error':code,'private_values_recorded':False}))
+        if sys.argv[1:]==['--check-ingest']:print('::error title=DataHub receptor lectura::'+code)
+        sys.exit(1)

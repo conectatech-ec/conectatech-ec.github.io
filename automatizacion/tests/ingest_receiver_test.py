@@ -1,5 +1,5 @@
 """Offline receiver compatibility and ingest-only contracts; no real credentials."""
-import contextlib,copy,io,json,os,sys,unittest
+import contextlib,copy,io,json,os,sys,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
@@ -70,5 +70,18 @@ class ReceiverContract(unittest.TestCase):
         self.assertIn('CENTRAL_AUTHORIZED_SOURCE_SHA256:',text)
         self.assertIn("steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'",text)
         self.assertIn('  push:',text);self.assertNotIn('workflow_dispatch:',text)
+    def test_closed_read_only_cli_emits_only_safe_annotation_and_never_puts(self):
+        r=self.runtime()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'activar-cloud.json').write_text('{"activar":false,"datahub_scoped_content_enabled":false}')
+            (root/'commercial-reception.mjs').write_text(fixtures.CODE_TEMPLATE)
+            output=io.StringIO()
+            with patch.object(scoped,'ROOT',root),patch.dict(os.environ,fixtures.CLIPromotionContract().environment(),clear=True),patch.object(sys,'argv',['scoped_content.py','--check-ingest']),patch.object(scoped,'CFClient',return_value=r),patch.object(scoped,'ScopedDeployer',return_value=r.client()),contextlib.redirect_stdout(output):
+                scoped.main()
+            line=next(x for x in output.getvalue().splitlines() if x.startswith('::notice'))
+            receipt=json.loads(line.split('::',2)[2])
+            self.assertEqual(receipt['worker_puts'],0);self.assertTrue(receipt['read_only'])
+            self.assertEqual(receipt['processor_release'],fixtures.PROCESSOR_RELEASE)
+            self.assertNotIn(fixtures.PRIVATE,line);self.assertEqual(r.puts,[])
 
 if __name__=='__main__':unittest.main()
