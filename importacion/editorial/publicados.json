@@ -44832,9 +44832,16 @@
       "sha256Foto": "eaa43e4eee7177ee6671d7f05907b0e5e26977e5c7a8ff60b05c28a4a5293d71",
       "causa": "Alta nueva solicitada por el propietario, con referencias propias, atributos y datos comerciales verificados.",
       "lote": "editorial-131",
-      "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM",
+      "estado": "PUBLICADO_VERIFICADO",
       "publicacionVerificada": null,
-      "mostrarTituloEnFicha": true
+      "mostrarTituloEnFicha": true,
+      "verificacionAltaSKU": {
+        "fecha": "2026-11-12T20:52:01.360833+00:00",
+        "reporteHTTP": "reportes/continuacion-131/http-publicacion.json",
+        "sha256InformeHTTP": "9958de41ac8bd647f74e7c242729c795a2121220da3d133f0205ad0ac031c634",
+        "reporteChromium": "reportes/continuacion-131/qa-publica/movil.json",
+        "esAltaNueva": true
+      }
     },
     "TABL006": {
       "titulo": "Tablet infantil Modio de 7″",
@@ -44882,7 +44889,7 @@
       "sha256Foto": "1d31cd7efb796073c21a8dcba54a08296c96d4a1eda4fd4512b57d66067679bb",
       "causa": "Alta nueva solicitada por el propietario, con referencias propias, atributos y datos comerciales verificados.",
       "lote": "editorial-131r1",
-      "estado": "ACTUALIZACION_RAM_PENDIENTE_HTTP",
+      "estado": "PUBLICADO_VERIFICADO",
       "publicacionVerificada": null,
       "mostrarTituloEnFicha": true,
       "historialEditorial": [
@@ -44937,6 +44944,19 @@
       "confirmacionMemoriaPropietario": {
         "archivo": "reportes/continuacion-131/confirmacion-ram-modio.json",
         "sha256": "84dbf172ceb01560d2301570118e702de3dded6d29f897f64859dc2fbc9bef40"
+      },
+      "verificacionAltaSKU": {
+        "fecha": "2026-11-12T20:52:01.360833+00:00",
+        "reporteHTTP": "reportes/continuacion-131/http-publicacion.json",
+        "sha256InformeHTTP": "9958de41ac8bd647f74e7c242729c795a2121220da3d133f0205ad0ac031c634",
+        "reporteChromium": "reportes/continuacion-131/qa-publica/movil.json",
+        "esAltaNueva": true
+      },
+      "verificacionMemoriaConfirmada": {
+        "fecha": "2026-11-12T21:20:43.325383+00:00",
+        "reporteHTTP": "reportes/continuacion-131/ram-modio/http-publicacion.json",
+        "sha256InformeHTTP": "55a8cb1ddb9a95eea857a57f5dc30a178898f1a8e39d56af9f3d2c45746d54ee",
+        "reporteChromium": "reportes/continuacion-131/ram-modio/qa-publica.json"
       }
     }
   },
