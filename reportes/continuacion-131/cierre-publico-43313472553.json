@@ -1,0 +1,204 @@
+{
+  "estado": "CERRADO_PUBLICADO_VERIFICADO",
+  "fechaCierreUTC": "2026-11-12 21:55:26 UTC",
+  "altasNuevasReales": 2,
+  "totalProductosWeb": 1201,
+  "otros1199ProductosConservados": true,
+  "sku": [
+    {
+      "sku": "TABL005",
+      "url": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
+      "titulo": "TABLET HYUNDAI 10.1 PULGADAS 64GB 4GB+4GB",
+      "promo": 119.9,
+      "pvp": 149.88,
+      "stock": 2,
+      "imagen": "/imagenes/tabl005/TABL005-r131-01.webp",
+      "pruebaHTTP": {
+        "archivo": "reportes/continuacion-131/http-publicacion.json",
+        "sha256": "9958de41ac8bd647f74e7c242729c795a2121220da3d133f0205ad0ac031c634"
+      },
+      "fechaVerificacion": "2026-11-12T20:52:01.360833+00:00"
+    },
+    {
+      "sku": "TABL006",
+      "url": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+      "titulo": "TABLET MODIO M2 KIDS 7 PULGADAS",
+      "promo": 99.9,
+      "pvp": 124.88,
+      "stock": 1,
+      "imagen": "/imagenes/tabl006/TABL006-r131-01.webp",
+      "pruebaHTTP": {
+        "archivo": "reportes/continuacion-131/ram-modio/http-publicacion.json",
+        "sha256": "55a8cb1ddb9a95eea857a57f5dc30a178898f1a8e39d56af9f3d2c45746d54ee"
+      },
+      "fechaVerificacion": "2026-11-12T21:20:43.325383+00:00"
+    }
+  ],
+  "primeraPublicacion": {
+    "estado": "DOS_ALTAS_PUBLICADAS_VERIFICADAS",
+    "fechaPrimeraVerificacion": "2026-11-12T20:52:01.360833+00:00",
+    "skuNuevos": [
+      "TABL005",
+      "TABL006"
+    ],
+    "cantidadNuevos": 2,
+    "commitPrimeraPublicacion": "32f1d924c457ea6193a29d8395df8b1d4a9bbb97",
+    "informeHTTP": "reportes/continuacion-131/http-publicacion.json",
+    "sha256HTTP": "9958de41ac8bd647f74e7c242729c795a2121220da3d133f0205ad0ac031c634",
+    "informeChromium": "reportes/continuacion-131/qa-publica/movil.json",
+    "sha256Chromium": "a07b42f8d5b064dff02a18611c4f9fcaaab02d97cb8acd285ad8342cb21c1b27",
+    "posteriorConfirmacionRAMModio": "La información de6GB físicos y256GB se incorpora en una revisión posterior del mismo SKU. No cuenta como otro SKU nuevo."
+  },
+  "revisionMemoriaModio": {
+    "esNuevoSKU": false,
+    "RAMFisicaGB": 6,
+    "almacenamientoGB": 256,
+    "fechaHTTP": "2026-11-12T21:20:43.325383+00:00",
+    "sha256Ficha": "4e551a33aa2163c63feab7e0c2398347473ae5f7eb3c3661e3310ade70eda837",
+    "fuente": "reportes/continuacion-131/confirmacion-ram-modio.json"
+  },
+  "integraciones": [
+    {
+      "pr": 374,
+      "tipo": "Recursos"
+    },
+    {
+      "pr": 375,
+      "tipo": "Dos altas"
+    },
+    {
+      "pr": 376,
+      "tipo": "Memoria confirmada"
+    },
+    {
+      "pr": 377,
+      "tipo": "Cierre y prioridad",
+      "sha": "e7e7b509b91c8c7c4a67c34b83afe79ad0782944"
+    }
+  ],
+  "pages": {
+    "id": 43311264058,
+    "conclusion": "success",
+    "sha": "e2699413f918f7fe7fe4a7e33ed3ddbdeb05ae6a"
+  },
+  "QApublica": {
+    "run": 43313472553,
+    "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/43313472553",
+    "sha": "49f2b71ded1347770cb436368694376f34f0bc40",
+    "base": "https://conectatech-ec.github.io",
+    "conclusion": "success",
+    "servidorLocalOmitido": true,
+    "vistas": [
+      390,
+      1280
+    ],
+    "fichasVerificadas": 2,
+    "catalogoSKUVerificados": 6,
+    "catalogoVistasVerificadas": 2,
+    "errores": 0,
+    "pruebasOrden": "Comparación exacta de tarjetas con el orden esperado, incluido recientes, en las dos vistas del catálogo.",
+    "prioridadConfigurada": [
+      "TABL006",
+      "TABL005"
+    ],
+    "resumenesLiterales": [
+      "2026-11-12T21:49:58.6430267Z   BASE_QA: https://conectatech-ec.github.io",
+      "2026-11-12T21:50:30.7001656Z   BASE_QA: https://conectatech-ec.github.io",
+      "2026-11-12T21:51:10.1330925Z {\"solicitados\":2,\"comprobados\":2,\"sin_comprobar\":0,\"verificados\":2,\"revisar\":0,\"errores_herramienta\":0,\"reporte\":\"reportes/movil-lote-activo.json\",\"diagnostico\":[]}",
+      "2026-11-12T21:51:10.1601085Z   BASE_QA: https://conectatech-ec.github.io",
+      "2026-11-12T21:51:57.7142132Z {\"vistas_comprobadas\":2,\"vistas_verificadas\":2,\"sku_solicitados\":6,\"errores\":0,\"reporte\":\"reportes/catalogo-lote-activo.json\"}",
+      "2026-11-12T21:51:57.7409448Z   BASE_QA: https://conectatech-ec.github.io",
+      "2026-11-12T21:53:46.0658362Z   BASE_QA: https://conectatech-ec.github.io",
+      "2026-11-12T21:53:46.1131848Z   BASE_QA: https://conectatech-ec.github.io",
+      "2026-11-12T21:54:21.5236664Z   BASE_QA: https://conectatech-ec.github.io",
+      "2026-11-12T21:54:24.1857454Z   BASE_QA: https://conectatech-ec.github.io"
+    ],
+    "artifact": {
+      "id": 13988180571,
+      "name": "conectatech-lote-qa-43313472553",
+      "size_in_bytes": 35905676,
+      "url": "https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/actions/artifacts/13988180571",
+      "archive_download_url": "https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/actions/artifacts/13988180571/zip",
+      "expired": false,
+      "created_at": "2026-11-12T21:54:24Z",
+      "expires_at": "2026-11-26T21:54:21Z",
+      "updated_at": "2026-11-12T21:54:24Z",
+      "digest": "sha256:72dfa63aff53465a0c6a1ba85ed1277598b490f998793876c6a6a5f13fe04eb4",
+      "workflow_run": {
+        "id": 43313472553,
+        "repository_id": 1409304241,
+        "head_repository_id": 1409304241,
+        "head_branch": "catalogo/nuevos-131-qa-publica-20261112",
+        "head_sha": "49f2b71ded1347770cb436368694376f34f0bc40"
+      }
+    },
+    "ramaQA": "catalogo/nuevos-131-qa-publica-20261112",
+    "noFusionarRamaQA": true,
+    "nota": "Sólo modifica el selector de la rama de QA para comprobar Pages. No fusionar ese cambio en producción."
+  },
+  "pendientesConStockSinFotografiaLocalizada": [
+    {
+      "sku": "CAPT001",
+      "titulo": "CAPTURADORA DE VIDEO USB-C + USB-A ADAPTER A HDMI",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "CASE001",
+      "titulo": "CASE PARA DISCO DURO 2.5 ALUMINIO",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "CUBO017",
+      "titulo": "CUBO CARGADOR SAMSUNG 45W VER.2",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "DISC010",
+      "titulo": "DISCO EXTERNO HDD SEAGATE 1TB",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "DISC011",
+      "titulo": "DISCO SOLIDO SSD KINGSTON XS1000R",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "AUDI131",
+      "titulo": "EARPODS TIPO-C ALAMBRICOS",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "FLAS026",
+      "titulo": "FLASH MEMORY 16GB KINGSTON 3.2 DATATRAVELER",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "HUB031",
+      "titulo": "HUB 5 EN 1 USB-C A ETHERNET + HDMI + USB-C + USB-A x2",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "KIT004",
+      "titulo": "KIT LIMPIADOR PANTALLAS",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "PARL045",
+      "titulo": "PARLANTE KARAOKE MINI TOY STORY",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    },
+    {
+      "sku": "TABL007",
+      "titulo": "TABLET REDMI PAD 2 11 PULGADAS 256GB 4GB+4GB",
+      "motivo": "Sin nueva fotografía propia localizada para este código en las fuentes revisadas; permanece pendiente de creación."
+    }
+  ],
+  "estuchesExcluidos": [
+    "FUND003",
+    "FUND004"
+  ],
+  "maestrosConservadosSinRegenerar": true,
+  "ningunSKUExistenteRetiradoOBloqueado": true,
+  "costoAdicional": 0,
+  "notaRecuperacion": "Las dos altas están cerradas en contratos y cola compartida. El selector heredado lote-activo.json no indica ausencia de publicación. Conservar los informes primarios; la revisión de memoria no cuenta como tercer SKU."
+}
