@@ -3,7 +3,7 @@
   "fuente": "Reporte-Inventario.xlsx",
   "sha256_original": "103ebb500adf561269ede55bd829005d509b7cd0c5c0bde1d3aa319c8db047e3",
   "cantidad_sku_original": 1578,
-  "cantidad_sku_web": 1199,
+  "cantidad_sku_web": 1201,
   "productos": {
     "AROD001": {
       "stock": 8,
@@ -5999,6 +5999,16 @@
       "stock": 1,
       "promo_centavos": 873,
       "pvp_centavos": 1091
+    },
+    "TABL005": {
+      "stock": 2,
+      "promo_centavos": 11990,
+      "pvp_centavos": 14988
+    },
+    "TABL006": {
+      "stock": 1,
+      "promo_centavos": 9990,
+      "pvp_centavos": 12488
     }
   },
   "verificacion": {
@@ -6007,5 +6017,18 @@
     "pvp_cambiado": 2,
     "disponibilidad_cambiada": 7,
     "precios_productos_cambiados": 2
-  }
+  },
+  "altas_validadas": [
+    {
+      "fecha": "2026-11-12",
+      "skus": [
+        "TABL005",
+        "TABL006"
+      ],
+      "fuente": "Reporte-Inventario.xlsx",
+      "sha256_original": "f4e2263d28841abb297436b521f0b9d9f3249e1abe601c89ad36f1bf2ce1e4d9",
+      "evidencia": "reportes/continuacion-131/base-593.json",
+      "alcance": "Sólo las dos altas; 1199 registros anteriores conservados desde el corte vigente de la automatización comercial."
+    }
+  ]
 }
