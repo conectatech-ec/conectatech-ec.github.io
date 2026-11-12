@@ -56,8 +56,37 @@ Las nuevas cubren: respuestas de escritura perdidas antes/después de aplicar; t
 
 Se ejecutaron exclusivamente suites locales con transportes falsos y SQLite/fixtures previos. La reproducción histórica requiere los objetos Git públicos `d8725238...` y `e5ac06df...`, disponibles en este checkout. No se ejecutó ningún workflow ni petición autenticada al Worker, ni `bootstrap`, `ingest`, instalación o recuperación real.
 
-## Estado para aprobación
+## Integración autorizada del diagnóstico
 
-Parche preparado en rama independiente, sin fusionar ni desplegar. El permiso de instalación de PR #369 sigue consumido: exige un sucesor directo de PR #368 e intento 1; este parche **no lo renueva**. No procede usarlo para otro intento bajo la autorización anterior. Una eventual nueva operación necesitaría autorización específica y revisión de su contexto de ejecución.
+Dirección General autoriza integrar PR #370 exclusivamente en la rama piloto, condicionado al cierre de escrituras. El permiso de instalación de PR #369 sigue consumido: exige un sucesor directo de PR #368 e intento 1; este parche **no lo renueva**. No procede usarlo para otro intento bajo la autorización anterior.
 
-`main`, rama piloto publicada, Worker, receptor vigente recuperado, fuente, configuración y procesos de Sincronización multicanal 593 permanecen sin cambios por esta preparación. No se activan checkout ni sistemas comerciales. **Costo adicional USD 0**, sin infraestructura, dependencias ni servicios nuevos.
+Comprobación específica de esta integración: los tres archivos del PR no coinciden con las rutas de `central-593.yml`, `comercial-cloud.yml` ni los demás workflows de escritura. Sólo coincide el QA sintético `comercial-piloto.yml`, sin entorno privado y con `contents:read`. No hay workflows asociados mediante `workflow_run` o `pull_request_target`. La integración omite CI mediante el mensaje del commit; se conserva además el bloqueo independiente por rutas y autorización consumida.
+
+El workflow original, la configuración y la función `require_receiver_installation()` permanecen idénticos a la rama piloto previa. `activar:false`, `datahub_scoped_content_enabled:false` y costo máximo cero. El reporte conserva `if:false`; los pasos comerciales dependientes no pueden avanzar.
+
+Cuatro comprobaciones sintéticas dirigidas, con cero construcciones de `CFClient` y cero peticiones remotas, acreditan:
+
+- El sucesor del padre actual `d8725238f620e2a78c4328e8547031d2911d97d2` recibe `RECEIVER_INSTALLATION_REVISION_NOT_AUTHORIZED`.
+- Repetir la ejecución consumida con intento 2 recibe `RECEIVER_INSTALLATION_NOT_AUTHORIZED`.
+- `bootstrap` e `ingest` con las banderas cerradas reciben `SCOPED_WRITES_NOT_PROMOTED` antes del transporte.
+
+Se conservan las 117 pruebas ya aceptadas y los registros diferenciados `initial_failure` y `recovery_failure`, con fases de propagación, marcas, comprobación posterior y recuperación. No se repiten las auditorías ni la instalación.
+
+## Preparación mínima de una futura instalación, sin habilitarla
+
+Una futura operación necesita una autorización nueva y específica. La intervención pendiente se limita a separar el ancla de autorización de instalación del commit de los artefactos aprobados: actualmente `APPROVED_RECEIVER_RELEASE` también fija el padre autorizado, por lo que no se debe cambiar ese valor para rearmar el permiso y terminar alterando la identidad del receptor.
+
+El cambio futuro deberá presentar para aprobación un padre autorizado fijado al commit vigente tras PR #370, un identificador nuevo de permiso de un solo uso y el primer intento del workflow original. Esos valores no se configuran ni activan en este PR. Deben continuar las verificaciones de revisión vigente, origen de workflow y checkout, entorno original y plan Free, junto con ambas banderas y reporte deshabilitados.
+
+Artefactos que se conservan como propuesta pendiente de esa autorización:
+
+| Elemento | Valor fijado |
+| --- | --- |
+| Base del receptor que debe seguir activa antes de escribir | `c51cf151763663cd7df94b94c5bde641eff82ceeaf56894d5943de59777ae195` |
+| Commit del paquete público aprobado | `e5ac06df086130a6776205250dd4d96c65882797` |
+| SHA-256 de ese paquete | `6287802a95e7cb1ecc86316ff5f7de24f9c29dcf856388ecda4e0193d37e3e76` |
+| SHA-256 del módulo renderizado objetivo | `699ac61bcf8311ac72bdf56c723e3c562882517909c443d9521d5b132624b869` |
+
+La preparación futura deberá validar el nuevo permiso con pruebas sintéticas, conservar los objetos Git públicos necesarios para recuperar esos artefactos y garantizar la captura/comparación inmediata del bundle/settings/fuente antes de un máximo de un intento de instalación. Mantendrá la verificación completa en lectura, el límite compartido de 12 lecturas de propagación y la reversión específica condicionada a ausencia de concurrencia, con un máximo de un intento de recuperación. No autoriza ingestión ni borrado del Excel. Si la base o los artefactos cambian, detenerse y revisar el alcance antes de escribir.
+
+La integración actual sólo incorpora el diagnóstico, sus pruebas y esta preparación documental. `main`, Worker, receptor vigente recuperado, fuente, configuración y procesos de Sincronización multicanal 593 no se modifican ni suspenden. No se activan checkout ni sistemas comerciales. **Costo adicional USD 0**, sin infraestructura, dependencias ni servicios nuevos.
