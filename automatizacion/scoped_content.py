@@ -36,6 +36,93 @@ RECEIVER_INSTALL_AUTHORIZATION='DG-593-INSTALL-e5ac06df-ONCE'
 class ScopedError(RuntimeError):pass
 def fail(code):raise ScopedError(code) from None
 
+# Only public protocol codes may enter a diagnostic. A regex alone would also
+# accept a secret made solely of uppercase letters, digits or underscores.
+RECEIVER_ERROR_CODES=frozenset('''
+CF_REDIRECT_DENIED CF_REQUEST_FAILED CF_RESPONSE_INVALID CF_SETTINGS_INVALID CF_UPLOAD_REJECTED
+CF_SCOPE_DENIED CF_BINDINGS_REQUIRED CF_RUNTIME_RELEASE_MISMATCH CF_CONFIGURATION_REQUIRED
+BUNDLE_CONTENT_TYPE_INVALID BUNDLE_ENCODING_UNSUPPORTED BUNDLE_ENTRYPOINT_INVALID
+BUNDLE_HEADER_AMBIGUOUS BUNDLE_HEADER_INVALID BUNDLE_LAYOUT_CHANGED BUNDLE_MODULES_INVALID
+BUNDLE_MULTIPART_REQUIRED BUNDLE_MULTIPART_TRUNCATED BUNDLE_PARSE_FAILED BUNDLE_PART_BODY_INVALID
+BUNDLE_PART_INVALID BUNDLE_PART_TYPE_INVALID BUNDLE_SIZE_INVALID BUNDLE_UPLOAD_SIZE_INVALID
+BUNDLED_AND_HTTP_SOURCE_DIFFER BUNDLED_SOURCE_REQUIRED BUNDLED_SOURCE_WRAPPER_INVALID
+JSON_CONSTANT_INVALID JSON_DUPLICATE_KEY JSON_INVALID
+PRIVATE_BODY_INVALID PRIVATE_BODY_TOO_LARGE PRIVATE_HTTP_200_REQUIRED PRIVATE_READ_FAILED PRIVATE_READ_SCOPE_DENIED
+MODULE_SCOPE_DENIED UNOWNED_MODULE_CHANGED EXPECTED_SOURCE_BUNDLE_MISMATCH BOOTSTRAP_CANNOT_CHANGE_SOURCE
+RUNTIME_CHANGED_BEFORE_PUT SOURCE_CHANGED_BEFORE_PUT SETTINGS_CHANGED_AFTER_PUT
+UNEXPECTED_BUNDLE_AFTER_PUT UNEXPECTED_SOURCE_AFTER_PUT SCOPED_PROPAGATION_FAILED
+PROCESSOR_RELEASE_NOT_VERIFIED PROCESSOR_CODE_NOT_VERIFIED RECEIVER_HTTP_PROPAGATION_TIMEOUT
+INGEST_RECEIVER_INCOMPATIBLE INGEST_RECEIVER_STATUS_MISMATCH INSPECT_RUNTIME_CHANGED
+RECEIVER_TEMPLATE_REQUIRED RECEIVER_PLAN_REQUIRED RECEIVER_PUT_BUDGET_EXHAUSTED
+RECEIVER_ROLLBACK_NOT_EXACT RECEIVER_ROLLBACK_RUNTIME_CHANGED POST_INSTALL_CHECK_REQUIRED
+RECOVERY_NOT_VERIFIED RECOVERY_RUNTIME_CHANGED RECOVERY_SETTINGS_CHANGED RECOVERY_SOURCE_CHANGED
+RECEIVER_INSTALLATION_HISTORY_REQUIRED RECEIVER_INSTALLATION_NOT_AUTHORIZED
+RECEIVER_INSTALLATION_REQUIRES_CLOSED_FLAGS RECEIVER_INSTALLATION_REVISION_NOT_AUTHORIZED
+BOOTSTRAP_REVISION_NOT_CURRENT LATEST_PUBLIC_CONFIG_INVALID LATEST_PUBLIC_CONFIG_READ_FAILED
+LATEST_PUBLIC_REVISION_INVALID LATEST_PUBLIC_REVISION_READ_FAILED
+SOURCE_SCHEMA_INVALID SOURCE_METADATA_INVALID SOURCE_DATE_INVALID SOURCE_CUT_DATE_INVALID
+SOURCE_PRODUCTS_INVALID SOURCE_PRODUCT_INVALID SOURCE_PRIVATE_FIELD SOURCE_PRICE_INVALID
+SOURCE_HEALTH_OR_INGRESS_INVALID SOURCE_HEALTH_INVALID SOURCE_TESTER_TRANSPORT_CHANGED
+SOURCE_RELEASE_CHANGED SOURCE_TESTER_SCOPE_CHANGED RUNTIME_RELEASE_SHA_REQUIRED
+FREE_BUNDLE_BUDGET_EXCEEDED FREE_ONLY_CONFIRMATION_REQUIRED FULL_DEPLOY_MUST_STAY_DISABLED
+PILOT_BRANCH_REQUIRED SCOPED_CLI_INVALID APPROVED_PUBLIC_PACKAGE_REQUIRED APPROVED_PUBLIC_PACKAGE_MISMATCH
+APPROVED_RECEIVER_BODY_MISMATCH RECEIVER_BASELINE_NOT_REVIEWED REVIEWED_RECEIVER_TEMPLATE_REQUIRED
+INSTALL_PLAN_RUNTIME_CHANGED PROCESSOR_RELEASE_REQUIRED PUBLIC_CODE_HASH_REQUIRED TARGET_MODULE_REQUIRED
+BLOCKED_INSTALL_UNCONFIRMED BLOCKED_RECOVERED BLOCKED_RECOVERY_UNSAFE_OR_UNVERIFIED
+'''.split()) | frozenset('INGEST_RECEIVER_STAMPS_REQUIRED_RELEASE_'+r+'_CODE_'+c
+    for r in ('VALID','UNRECOGNIZED','ABSENT') for c in ('VALID','UNRECOGNIZED','ABSENT'))
+
+def receiver_error_code(error):
+    if type(error) not in (ScopedError,ValueError) or len(error.args)!=1 or type(error.args[0]) is not str:
+        return 'SCOPED_CONTENT_FAILED'
+    code=error.args[0].split(';',1)[0]
+    return code if code in RECEIVER_ERROR_CODES or re.fullmatch(r'CF_HTTP_[1-5][0-9]{2}',code) else 'SCOPED_CONTENT_FAILED'
+
+RECEIVER_PHASES=frozenset('''pre_install_check pre_write_check installation_write bundle_propagation
+receiver_http_stamps http_propagation postcheck_capture receiver_bundle_stamps receiver_body
+postcheck_http_stamps postcheck_fence postcheck_result post_install_fence recovery_inspect
+recovery_precheck recovery_authorize recovery_write recovery_verify'''.split())
+
+def receiver_failure_record(phase,error,stamps=None):
+    record={'phase':phase if type(phase) is str and phase in RECEIVER_PHASES else 'unknown',
+        'code':receiver_error_code(error)}
+    for key in ('release_state','code_state'):
+        value=(stamps or {}).get(key)
+        if type(value) is str and value in {'absent','invalid','match','mismatch'}:record[key]=value
+    return record
+
+def installation_error_diagnostic(error):
+    if receiver_error_code(error) in {'BLOCKED_INSTALL_UNCONFIRMED','BLOCKED_RECOVERED','BLOCKED_RECOVERY_UNSAFE_OR_UNVERIFIED'}:
+        return None # The structured result already contains the original failure.
+    failure=getattr(error,'receiver_failure',None) if type(error) is ScopedError else None
+    if type(failure) is dict:
+        return receiver_failure_record(failure.get('phase'),ScopedError(failure.get('code')),failure)
+    return receiver_failure_record('pre_install_check',error)
+
+class ReceiverDiagnostic:
+    """Enums/codes only: never retain an exception, response, hash or traceback."""
+    def __init__(self):self.at('pre_write_check')
+    def at(self,phase):self.phase=phase;self.stamps={}
+    def observe_stamps(self,status,release,code):
+        def state(value,expected,pattern):
+            if value is None:return 'absent'
+            if not isinstance(value,str) or not pattern.fullmatch(value):return 'invalid'
+            return 'match' if value==expected else 'mismatch'
+        self.stamps={'release_state':state(status.get('processor_release'),release,RELEASE),
+            'code_state':state(status.get('processor_code_sha256'),code,SHA)}
+    def failure(self,error):return receiver_failure_record(self.phase,error,self.stamps)
+
+def known_legacy_status(status,source,now):
+    # Status of the verified original module, derived from the private source in
+    # RAM. Reject foreign metadata/extra keys: absence of stamps alone is not proof.
+    if type(status.get('current')) is not bool:return False
+    expected={'schema':source['schema'],'source_sha256':source['source']['sha256'],
+        'cut_date':source['source']['cut_date'],'generated_at':source['source']['generated_at'],
+        'normalized_at':source['normalized_at'],'published_at':source.get('published_at'),
+        'expires_at':source['expires_at'],'current':source_time(source['expires_at'])>=now,'products':len(source['products']),
+        'blocked':sum(p['availability']=='blocked' for p in source['products'])}
+    return same_json(status,expected)
+
 def strict_json(raw):
     def pairs(values):
         result={}
@@ -370,7 +457,8 @@ class ScopedDeployer:
         return self.receipt(capture,'inspect',read_only=True,ready=True,worker_puts=0,module_count=len(capture['bundle'].parts),processor_release=processor_release_of(capture['bundle']),processor_code_sha256=processor_code_of(capture['bundle']),
             observed_at=observed.isoformat().replace('+00:00','Z'),source_fresh=source_time(capture['source']['expires_at'])>=observed,
             runtime_bundle_readable=True,provider_version_observed=False)
-    def require_ingest_receiver(self,capture,receiver_text):
+    def require_ingest_receiver(self,capture,receiver_text,diagnostic=None):
+        if diagnostic is not None:diagnostic.at('receiver_bundle_stamps')
         release=processor_release_of(capture['bundle']);code=processor_code_of(capture['bundle'])
         if not release or not code:
             body=next(p.body for p in capture['bundle'].parts if p.name=='commercial-reception.mjs')
@@ -380,12 +468,17 @@ class ScopedDeployer:
         if receiver_text.count(PLACEHOLDER)!=1 or receiver_text.count(CODE_PLACEHOLDER)!=1:fail('RECEIVER_TEMPLATE_REQUIRED')
         expected=receiver_text.replace(PLACEHOLDER,release).replace(CODE_PLACEHOLDER,code).encode()
         actual=next(p.body for p in capture['bundle'].parts if p.name=='commercial-reception.mjs')
+        if diagnostic is not None:diagnostic.at('receiver_body')
         if actual!=expected:fail('INGEST_RECEIVER_INCOMPATIBLE')
+        if diagnostic is not None:diagnostic.at('postcheck_http_stamps')
         status=self.private_get('/commercial/catalog/status')
+        if diagnostic is not None:diagnostic.observe_stamps(status,release,code)
         if status.get('processor_release')!=release or status.get('processor_code_sha256')!=code:fail('INGEST_RECEIVER_STATUS_MISMATCH')
         return release
-    def check_ingest(self,receiver_text):
-        capture=self.capture();release=self.require_ingest_receiver(capture,receiver_text)
+    def check_ingest(self,receiver_text,diagnostic=None):
+        if diagnostic is not None:diagnostic.at('postcheck_capture')
+        capture=self.capture();release=self.require_ingest_receiver(capture,receiver_text,diagnostic)
+        if diagnostic is not None:diagnostic.at('postcheck_fence')
         if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('INSPECT_RUNTIME_CHANGED')
         return self.receipt(capture,'check_ingest',read_only=True,ready=True,worker_puts=0,
             receiver_body_matches=True,processor_release=release)
@@ -416,7 +509,8 @@ class ScopedDeployer:
         closed_health(self.private_get('/health'),capture['health']['messenger_outbound'],capture['health']['release'])
         tester_scope(self.private_get,capture['health']['messenger_outbound'])
         if not same_json(self.private_get('/commercial/catalog'),capture['source']):fail('SOURCE_CHANGED_BEFORE_PUT')
-    def commit(self,capture,expected,allowed,selected,processor_release=None):
+    def commit(self,capture,expected,allowed,selected,processor_release=None,diagnostic=None):
+        if diagnostic is not None:diagnostic.at('pre_write_check')
         before=capture['bundle'];enabled=capture['health']['messenger_outbound'];release=capture['health']['release']
         if allowed not in ({'commercial-reception.mjs'},{'central-data.mjs'}):fail('MODULE_SCOPE_DENIED')
         if before.entrypoint!=expected.entrypoint or {p.name for p in before.parts}!={p.name for p in expected.parts}:fail('BUNDLE_LAYOUT_CHANGED')
@@ -429,8 +523,11 @@ class ScopedDeployer:
         no_change=same_bundle(before,expected)
         if allowed=={'commercial-reception.mjs'} and not no_change:self.revision_check(processor_release)
         if allowed=={'commercial-reception.mjs'} and not no_change:self.check_before_put(capture)
+        if diagnostic is not None:diagnostic.at('installation_write')
         provider={} if no_change else self.api.put_bundle(expected) # Exactly one mutation; never retried.
         for attempt in range(1,13):
+            if diagnostic is not None:diagnostic.at('bundle_propagation')
+            legacy_http_pending=False
             actual=self.api.get_bundle()
             if not same_json(self.api.get_settings(),capture['settings']):fail('SETTINGS_CHANGED_AFTER_PUT')
             closed_health(self.private_get('/health'),enabled,release);tester_scope(self.private_get,enabled)
@@ -441,12 +538,26 @@ class ScopedDeployer:
             if same_bundle(actual,expected) and source_matches:
                 closed_health(self.private_get('/health'),enabled,release)
                 if processor_release:
+                    if diagnostic is not None:diagnostic.at('receiver_http_stamps')
                     status=self.private_get('/commercial/catalog/status')
-                    if status.get('processor_release')!=processor_release:fail('PROCESSOR_RELEASE_NOT_VERIFIED')
-                return self.receipt(capture,'bootstrap' if allowed=={'commercial-reception.mjs'} else 'ingest',
-                    ready=True,processor_release=processor_release,worker_puts=0 if no_change else 1,
-                    full_comparison_in_memory=True,equal_except_published_at=allowed=={'central-data.mjs'},
-                    original_expiry_preserved=True,health_attempts=attempt,provider_version_observed=bool(provider),**provider)
+                    if diagnostic is not None:
+                        diagnostic.observe_stamps(status,processor_release,processor_code_of(expected))
+                        original=next(p.body for p in before.parts if p.name=='commercial-reception.mjs')
+                        legacy_http_pending=(allowed=={'commercial-reception.mjs'} and processor_release==APPROVED_RECEIVER_RELEASE and
+                            processor_code_of(expected)==APPROVED_RECEIVER_CODE and
+                            hashlib.sha256(original).hexdigest()==LEGACY_RECEIVER_SHA256 and
+                            known_legacy_status(status,capture['source'],self.timestamp()))
+                    if not legacy_http_pending:
+                        if status.get('processor_release')!=processor_release:fail('PROCESSOR_RELEASE_NOT_VERIFIED')
+                        if diagnostic is not None and status.get('processor_code_sha256')!=processor_code_of(expected):fail('PROCESSOR_CODE_NOT_VERIFIED')
+                if not legacy_http_pending:
+                    return self.receipt(capture,'bootstrap' if allowed=={'commercial-reception.mjs'} else 'ingest',
+                        ready=True,processor_release=processor_release,worker_puts=0 if no_change else 1,
+                        full_comparison_in_memory=True,equal_except_published_at=allowed=={'central-data.mjs'},
+                        original_expiry_preserved=True,health_attempts=attempt,provider_version_observed=bool(provider),**provider)
+            if legacy_http_pending:
+                diagnostic.at('http_propagation');diagnostic.observe_stamps(status,processor_release,processor_code_of(expected))
+                if attempt==12:fail('RECEIVER_HTTP_PROPAGATION_TIMEOUT')
             if attempt==12:fail('SCOPED_PROPAGATION_FAILED; no repeated upload')
             self.sleep(2)
     def bootstrap(self,receiver_text,processor_release,code_sha=None):
@@ -479,35 +590,47 @@ class ScopedDeployer:
         if sum(len(gzip.compress(p.body)) for p in plan.after.parts)>2_990_000:fail('FREE_BUNDLE_BUDGET_EXCEEDED')
         original_api=self.api;budget=ReceiverPutBudget(original_api);self.api=budget
         expected_capture={**capture,'bundle':plan.after}
+        diagnostic=ReceiverDiagnostic();initial_failure=None;recovery_failure=None
         def result(ok,status,**extra):
             report=self.receipt(capture,'install_receiver',ok_installation=ok,status=status,ready=False,
                 ingest_ready=False,source_preserved=True,free_bundle_within_limit=True,
                 installation_puts=budget.attempts['install'],recovery_puts=budget.attempts['recovery'],
-                worker_puts=sum(budget.attempts.values()),**extra)
+                worker_puts=sum(budget.attempts.values()),initial_failure=initial_failure,recovery_failure=recovery_failure,**extra)
             report['ok']=ok
             if not ok and status!='BLOCKED_RECOVERED':
                 report.update(settings_preserved=None,unowned_modules_preserved=None,source_preserved=None)
             return report
         try:
-            self.commit(capture,plan.after,{'commercial-reception.mjs'},capture['source'],APPROVED_RECEIVER_RELEASE)
+            self.commit(capture,plan.after,{'commercial-reception.mjs'},capture['source'],APPROVED_RECEIVER_RELEASE,diagnostic)
             # The exact same read-only implementation used by --check-ingest.
-            check=self.check_ingest(receiver_text)
+            check=self.check_ingest(receiver_text,diagnostic)
+            diagnostic.at('postcheck_result')
             if check.get('ready') is not True or check.get('worker_puts')!=0:fail('POST_INSTALL_CHECK_REQUIRED')
+            diagnostic.at('post_install_fence')
             self.check_before_put(expected_capture)
             return result(True,'INSTALLED_VERIFIED',check_ingest_satisfactory=True,receiver_body_matches=True,
                 processor_release=APPROVED_RECEIVER_RELEASE,processor_code_sha256=APPROVED_RECEIVER_CODE,
                 receiver_module_sha256=APPROVED_RECEIVER_BODY,rollback_candidate_exact=True,recovery_performed=False)
-        except Exception:
-            if not budget.attempts['install']:raise
+        except Exception as initial_error:
+            initial_failure=diagnostic.failure(initial_error)
+            if not budget.attempts['install']:
+                error=ScopedError(initial_failure['code']);error.receiver_failure=initial_failure
+                raise error from None
             try:
+                diagnostic.at('recovery_inspect')
                 current=self.api.get_bundle();settings=self.api.get_settings()
                 if same_bundle(current,plan.before) and same_json(settings,plan.settings):
                     return result(False,'BLOCKED_INSTALL_UNCONFIRMED',recovery_performed=False)
+                diagnostic.at('recovery_precheck')
                 inverse=receiver_rollback_candidate(plan,current,settings)
                 self.check_before_put(expected_capture)
+                diagnostic.at('recovery_authorize')
                 self.authorize();self.revision_check(APPROVED_RECEIVER_RELEASE)
+                diagnostic.at('recovery_precheck')
                 self.check_before_put(expected_capture)
+                diagnostic.at('recovery_write')
                 budget.phase='recovery';self.api.put_bundle(inverse)
+                diagnostic.at('recovery_verify')
                 for attempt in range(12):
                     actual=self.api.get_bundle()
                     if not same_json(self.api.get_settings(),capture['settings']):fail('RECOVERY_SETTINGS_CHANGED')
@@ -519,7 +642,8 @@ class ScopedDeployer:
                     if not same_bundle(actual,plan.after):fail('RECOVERY_RUNTIME_CHANGED')
                     if attempt<11:self.sleep(2)
                 fail('RECOVERY_NOT_VERIFIED')
-            except Exception:
+            except Exception as recovery_error:
+                recovery_failure=diagnostic.failure(recovery_error)
                 return result(False,'BLOCKED_RECOVERY_UNSAFE_OR_UNVERIFIED',recovery_performed=bool(budget.attempts['recovery']))
         finally:self.api=original_api
     def ingest(self,compiled,expected_sha,lease,processor_release=None,receiver_text=None):
@@ -578,6 +702,7 @@ def main():
             'settings_preserved','unowned_modules_preserved','source_preserved','free_bundle_within_limit',
             'check_ingest_satisfactory','receiver_body_matches','processor_release','processor_code_sha256',
             'receiver_module_sha256','rollback_candidate_exact','recovery_performed','original_receiver_restored')
+        fields+=('initial_failure','recovery_failure')
         print('::notice title=DataHub receptor instalacion::'+json.dumps({k:report[k] for k in fields if k in report},separators=(',',':')))
         if not report['ok_installation']:fail(report['status'])
     if mode=='--check-ingest':
@@ -593,8 +718,13 @@ def main():
 if __name__=='__main__':
     try:main()
     except Exception as error:
-        code=str(error).split(';',1)[0] if isinstance(error,(ScopedError,ValueError)) and re.fullmatch(r'[A-Z0-9_]+(?:; [a-z ]+)?',str(error)) else 'SCOPED_CONTENT_FAILED'
+        installation=sys.argv[1:]==['--install-receiver']
+        if installation:code=receiver_error_code(error)
+        else:code=str(error).split(';',1)[0] if isinstance(error,(ScopedError,ValueError)) and re.fullmatch(r'[A-Z0-9_]+(?:; [a-z ]+)?',str(error)) else 'SCOPED_CONTENT_FAILED'
         print(json.dumps({'schema':'conectatech.scoped-content.v1','ok':False,'error':code,'private_values_recorded':False}))
+        if installation:
+            failure=installation_error_diagnostic(error)
+            if failure is not None:print('::notice title=DataHub receptor instalacion::'+json.dumps({'initial_failure':failure},separators=(',',':')))
         if sys.argv[1:]==['--check-ingest']:print('::error title=DataHub receptor lectura::'+code)
         if sys.argv[1:]==['--plan-receiver']:print('::error title=DataHub receptor plan::'+code)
         if sys.argv[1:]==['--install-receiver']:print('::error title=DataHub receptor instalacion::'+code)
