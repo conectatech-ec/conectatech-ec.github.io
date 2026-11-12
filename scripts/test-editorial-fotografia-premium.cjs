@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+const {premiumPublicado}=require('./editorial-fotografia-efectiva.cjs');
+const sku='SOPO009',url='/imagenes/sopo009/SOPO009-premium-v1.png',digest='a'.repeat(64);
+const product={sku,imageUrl:url};
+const record={ruta_publicada:url,sha256_maestro:digest,aprobacion_visual:{aprobado_por_propietario:true},fidelidad_resuelta:false};
+const registry=r=>({productos:{[sku]:r}});
+assert.equal(premiumPublicado(product,registry(record),()=>digest),url,'Conserva la publicación aprobada, sin resolver su observación');
+assert.equal(premiumPublicado(product,registry({...record,aprobacion_visual:{aprobado_por_propietario:false}}),()=>digest),null,'No aprueba propuestas');
+assert.equal(premiumPublicado(product,registry(record),()=>'b'.repeat(64)),null,'Rechaza bytes distintos');
+assert.equal(premiumPublicado(product,registry(record),()=>null),null,'No admite archivo ausente');
+assert.equal(premiumPublicado({...product,imageUrl:'/imagenes/sopo009/SOPO009-01.webp'},registry(record),()=>digest),null,'No cambia una portada vigente por la propuesta PNG');
+assert.equal(premiumPublicado({...product,sku:'SOPO010'},registry(record),()=>digest),null,'No usa aprobación de otro SKU');
+assert.equal(premiumPublicado(product,registry({...record,ruta_publicada:'/imagenes/otro.png'}),()=>digest),null,'No acepta una ruta ajena');
+assert.equal(record.fidelidad_resuelta,false,'No altera la observación de fidelidad');
+console.log('Portadas premium publicadas: aprobación, ruta, SKU y SHA verificados; propuestas y bytes distintos rechazados.');

@@ -3,10 +3,10 @@
   "alcance": 1170,
   "metodo": "Clasificación automática conservadora por identidad insuficiente,duplicados,redacción y extensión. No certifica físicamente cada producto ni aplica cambios. Revisión humana dirigida antes de cada lote.",
   "resumen": {
-    "MEJORAR TÍTULO": 1114,
+    "MEJORAR TÍTULO": 1115,
     "OMITIDO POR PROPIETARIO": 5,
     "REVISAR IDENTIDAD": 1,
-    "CORRECTO": 50
+    "CORRECTO": 49
   },
   "aplicados": 1113,
   "cola": [
@@ -20282,16 +20282,30 @@
     },
     {
       "sku": "PARL002",
-      "estado": "CORRECTO",
+      "estado": "MEJORAR TÍTULO",
       "tituloActual": "Parlante portátil | doble altavoz gris",
-      "propuesta": "Parlante portátil | doble altavoz gris",
-      "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+      "propuesta": "Parlante portátil de doble altavoz",
+      "causa": "Añadir la medida solicitada expresamente el12nov2026; no retirar exposición.",
       "prioridad": 2,
       "evidencia": [
-        "seo-contenido.json#PARL002"
+        "seo-contenido.json#PARL002",
+        "importacion/editorial/medidas-altavoces-060.json#PARL002"
       ],
-      "verificacionEditorialNecesaria": false,
-      "aplicar": false
+      "verificacionEditorialNecesaria": true,
+      "aplicar": true,
+      "clasificacionAnteriorA060": {
+        "sku": "PARL002",
+        "estado": "CORRECTO",
+        "tituloActual": "Parlante portátil | doble altavoz gris",
+        "propuesta": "Parlante portátil | doble altavoz gris",
+        "causa": "No se detecta un defecto editorial concreto con estas reglas; conservar.",
+        "prioridad": 2,
+        "evidencia": [
+          "seo-contenido.json#PARL002"
+        ],
+        "verificacionEditorialNecesaria": false,
+        "aplicar": false
+      }
     },
     {
       "sku": "PARL006",

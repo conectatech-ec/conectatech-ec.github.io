@@ -9,7 +9,7 @@ assert cfg['criterioAprobado'] and cfg['excluirPrefijos']==['TELF','TABL']
 norm=lambda s:re.sub('[^a-z0-9]','',unicodedata.normalize('NFD',s.lower()).encode('ascii','ignore').decode())
 final=cfg.get('faseFinalCelularesTablets',{});permitidos=set(final.get('skus',[]))if final.get('autorizada')is True else set();assert all(s.startswith(('TELF','TABL'))for s in permitidos)
 seen={};seo=json.loads(Path('seo-contenido.json').read_text())
-effectivePhotos=json.loads(subprocess.check_output(['node','scripts/editorial-fotografia-efectiva.cjs'],text=True))
+effectivePhotos=json.loads(subprocess.check_output(['node','scripts/editorial-fotografia-efectiva.cjs','--conservar-premium-publicado'],text=True))
 for sku,e in cfg['productos'].items():
  assert sku in by and (not sku.startswith(('TELF','TABL'))or sku in permitidos),sku
  lot=Path('importacion/editorial/lotes/lote-'+e['lote'].split('-')[-1]+'.json');m=json.loads(lot.read_text());assert len(m['skus'])<=30 and sku in m['skus'],sku

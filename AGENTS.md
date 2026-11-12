@@ -1,3 +1,9 @@
+## Corrección puntual de tamaños y exposición — 12nov2026, Guayaquil
+
+Dirección General solicita pulgadas en título o subtítulo de PARL002, PARL044, PARL011 y PARL031, con prioridad; los otros21SKU indicados son adicionales. Verificar el diámetro del altavoz con evidencia propia, distinguirlo de las dimensiones del cuerpo, impedancia o canales. Si se convierte desde mm, indicar que es aproximado y conservar los mm en ficha. Mantener títulos vendedores y tarjetas compactas, sin inventar medidas ni sumar diámetros.
+
+Orden expresa: no bloquear, retirar, ocultar ni reducir la exposición de ningún SKU por novedades de esta revisión. Conservar fotos, precios, stock, estado comercial, búsqueda y URLs de todos los productos. Una medida no comprobada queda sólo en informe de novedades, sin despublicar ni alterar disponibilidad. Mantener ramas independientes y controles de publicación vigentes; fecha efectiva sólo tras HTTP/Chromium públicos. Costo adicional0; no modificar automatización cloud24/7. Evidencia: importacion/editorial/medidas-altavoces-060.json.
+
 ## Descripciones comerciales permanentes — 4nov2026, Guayaquil
 
 Orden expresa de Dirección General: «SIEMPRE DEBEN SER DESCRIPCIONES COMERCIALES Y VENDEDORAS». En AUDI082 y todos los casos equivalentes, explicar utilidad, presentación y beneficios verificados. No repetir «AAA», «genérico», «no es original» ni avisos de fabricación como descripción comercial o tarjeta de beneficios. Conservar la condición real visible junto al SKU antes de comprar, sin cambiar clasificación ni evidencia. No inventar ANC, IA, autonomía, potencia, capacidad, conexiones o accesorios. Preservar formatos de pilas AAA/AAAA, contenido de venta, surtidos y restricciones técnicas reales. Política: `importacion/politica-beneficios-comerciales.json`. Mantener fotos, nombres593, títulos aprobados, precios, stock y URLs. Publicar las correcciones verificadas sin pedir pilotos nuevos. Costo adicional0.
