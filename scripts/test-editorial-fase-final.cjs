@@ -5,3 +5,4 @@ const disabled=structuredClone(c);disabled.faseFinalCelularesTablets.autorizada=
 const legacy=structuredClone(c);delete legacy.faseFinalCelularesTablets;assert.equal(api.entry({sku:s},legacy),null);
 const ordinary=Object.keys(c.productos).find(x=>!x.startsWith('TELF')&&!x.startsWith('TABL'));assert.equal(api.entry({sku:ordinary},c),c.productos[ordinary]);
 console.log('Fase final: lista explícita, exclusión exterior y reversión verificadas; accesorios conservados.');
+require('./test-editorial-fotografia-premium.cjs');
