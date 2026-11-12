@@ -2,7 +2,7 @@
   "version": 1,
   "lote": "editorial-131",
   "maximo": 30,
-  "estado": "PREPARADO_PENDIENTE_PUBLICACION",
+  "estado": "PUBLICADO_VERIFICADO",
   "skus": [
     "TABL005",
     "TABL006"
@@ -106,5 +106,9 @@
       "publicacionVerificada": null,
       "mostrarTituloEnFicha": true
     }
+  },
+  "evidenciaPublicacion": {
+    "TABL005": "reportes/continuacion-131/http-publicacion.json",
+    "TABL006": "reportes/continuacion-131/ram-modio/http-publicacion.json"
   }
 }
