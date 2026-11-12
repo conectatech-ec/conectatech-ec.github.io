@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "fecha": "2026-11-12T21:01:38.222Z",
+  "base": "http://127.0.0.1:8891",
+  "alcance": "Validación técnica de navegador y captura. No certifica fidelidad fotográfica, derechos ni publicación.",
+  "resultados": [
+    {
+      "solicitado": "TABL006",
+      "sku": "TABL006",
+      "estado": "VERIFICADO",
+      "fecha": "2026-11-12T21:01:39.170Z",
+      "errores": [],
+      "verificaciones": {
+        "http": true,
+        "html_coincide_local": true,
+        "sin_desbordamiento_horizontal": true,
+        "titulo": true,
+        "sku": true,
+        "canonical": true,
+        "promo_contado": true,
+        "pvp": true,
+        "jerarquia_precio": true,
+        "disponibilidad": true,
+        "imagen_principal": true,
+        "imagenes_cargadas": true,
+        "galeria_del_contrato": true,
+        "javascript": true,
+        "beneficios_verificados": true,
+        "detalles_cerrados": true,
+        "detalles_accesibles": true,
+        "enlaces_internos": true,
+        "escritorio": true
+      },
+      "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+      "url": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+      "url_comprobada": "http://127.0.0.1:8891/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+      "archivo_html": "productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/index.html",
+      "http": 200,
+      "sha256_html": "4e551a33aa2163c63feab7e0c2398347473ae5f7eb3c3661e3310ade70eda837",
+      "sha256_html_local": "4e551a33aa2163c63feab7e0c2398347473ae5f7eb3c3661e3310ade70eda837",
+      "ancho_viewport": 390,
+      "ancho_documento": 390,
+      "alto_viewport": 844,
+      "imagen": {
+        "src": "https://conectatech-ec.github.io/imagenes/tabl006/TABL006-r131-01.webp",
+        "url_cargada": "http://127.0.0.1:8891/imagenes/tabl006/TABL006-r131-01-600.webp?v=4dc0da607c5585ea",
+        "naturalWidth": 351,
+        "naturalHeight": 351,
+        "completa": true,
+        "visible": true
+      },
+      "precio_archivado_por_stock_cero": false,
+      "galeria": [],
+      "enlaces_internos": [
+        {
+          "url": "http://127.0.0.1:8891/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8891/logo-conectatech.png",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8891/assets/disponibilidad-web.css?v=1",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8891/",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8891/imagenes/tabl006/TABL006-r131-01.webp",
+          "http": 200,
+          "ok": true
+        }
+      ],
+      "archivo": "reportes/continuacion-131/ram-modio/capturas-locales/TABL006-390.png",
+      "sha256": "09811995398fb1ae78446c333af6776fe7a9745b31723744e74a01bb415029b1",
+      "escritorio": {
+        "ancho_viewport": 1280,
+        "ancho_documento": 1280,
+        "archivo": "reportes/continuacion-131/ram-modio/capturas-locales/TABL006-1280.png",
+        "sha256": "d0ee21a7ddb72aca22dd53f8fea8e7c0da531ecaf3ee995b43f1f6f7c7d926b2",
+        "sin_desbordamiento_horizontal": true,
+        "imagen_cargada": true
+      }
+    }
+  ],
+  "errores_herramienta": [],
+  "motor": {
+    "nombre": "Chromium",
+    "playwright": "playwright",
+    "ejecutable_instalado": true,
+    "version": "154.0.8037.57"
+  },
+  "resumen": {
+    "solicitados": 1,
+    "comprobados": 1,
+    "sin_comprobar": 0,
+    "verificados": 1,
+    "revisar": 0,
+    "errores_herramienta": 0
+  }
+}
