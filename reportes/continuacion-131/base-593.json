@@ -1,0 +1,31 @@
+{
+  "fecha_corte": "2026-11-12",
+  "archivo": "Reporte-Inventario.xlsx",
+  "sha256_original": "f4e2263d28841abb297436b521f0b9d9f3249e1abe601c89ad36f1bf2ce1e4d9",
+  "productos": {
+    "TABL005": {
+      "nombre": "TABLET HYUNDAI 10.1 PULGADAS 64GB 4GB+4GB",
+      "stock": 2,
+      "promo_contado": 119.9,
+      "pvp_final": 149.88,
+      "pvp_neto": 130.33,
+      "iva_pvp_importe": 19.55,
+      "precio_general_publico": 104.26,
+      "iva_porcentaje": 15.0,
+      "categoria593Original": null
+    },
+    "TABL006": {
+      "nombre": "TABLET MODIO M2 KIDS 7 PULGADAS",
+      "stock": 1,
+      "promo_contado": 99.9,
+      "pvp_final": 124.88,
+      "pvp_neto": 108.59,
+      "iva_pvp_importe": 16.29,
+      "precio_general_publico": 86.87,
+      "iva_porcentaje": 15.0,
+      "categoria593Original": null
+    }
+  },
+  "regla_precios": "Promo=columnaQ V.TOTAL. PVP=columnaX PVP+importeIVA columnaY. No se usa costo ni se recalcula desde contado.",
+  "alcance": "Dos altas nuevas exclusivamente; conservar los1199 registros existentes y la automatización cloud."
+}

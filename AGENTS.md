@@ -1,3 +1,9 @@
+## Nuevas altas131 — 12nov2026, Guayaquil
+
+El propietario ordena «hay nuevos SKU, crealos». Crear TABL005 (Hyundai HYTAB 10WC1, 10,1 pulgadas, 64GB, 4GB RAM física) y TABL006 (Modio M2 Kids, 7 pulgadas) desde las referencias nuevas de Drive CONECTATECH. No inventar RAM ni almacenamiento de M2 mientras no haya confirmación. Dos maestros premium revisados conservados; no regenerarlos. Clasificación original según política comercial vigente fuera de las cinco excepciones. Fuentes privadas permanecen fuera de Git; reportes públicos sólo con hashes y observaciones.
+
+Conservar los1199 productos existentes, sus fotografías, precios, stock, títulos y URLs. Añadir únicamente las dos filas comerciales verificadas de Reporte-Inventario.xlsx 12nov; fuente adicional documentada porSHA, sin reaplicar diferencias de otros SKU ni alterar la automatización cloud. Recursos públicos HTTP/SHA primero, activación con contrato v3 y CI de cabeza final, HTTP/Chromium antes de fechas y prioridad en Nuevos y actualizados. Conservar selección comercial inicial Recomendados. Estuches excluidos, ninguna retirada ni bloqueo nuevo de exposición. Costo adicional0.
+
 ## Corrección puntual de tamaños y exposición — 12nov2026, Guayaquil
 
 Dirección General solicita pulgadas en título o subtítulo de PARL002, PARL044, PARL011 y PARL031, con prioridad; los otros21SKU indicados son adicionales. Verificar el diámetro del altavoz con evidencia propia, distinguirlo de las dimensiones del cuerpo, impedancia o canales. Si se convierte desde mm, indicar que es aproximado y conservar los mm en ficha. Mantener títulos vendedores y tarjetas compactas, sin inventar medidas ni sumar diámetros.
