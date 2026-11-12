@@ -1,3 +1,7 @@
+## Confirmación posterior TABL006 — 12nov2026, Guayaquil
+
+El propietario confirma expresamente: «ES DE 6 RAM FICIAS Y 256 DE ALMACENAMIENTO». TABL006 tiene6GB de RAM física y256GB de almacenamiento; añadirlos a subtítulo, beneficios y especificaciones, sin Total ni suma virtual. Conservar maestro, imagen, precio, PVP, stock, SKU y URL. Fuente: reportes/continuacion-131/confirmacion-ram-modio.json. La primera publicación real de TABL005/TABL006 ya está verificada en http-publicacion.json y qa-publica/movil.json; conservar esas evidencias inmutables. La revisión de RAM de Modio se verifica en ram-modio y lote131r1; no contarla como tercer SKU nuevo ni fecharla antes de HTTP/Chromium. Costo adicional0.
+
 ## Nuevas altas131 — 12nov2026, Guayaquil
 
 El propietario ordena «hay nuevos SKU, crealos». Crear TABL005 (Hyundai HYTAB 10WC1, 10,1 pulgadas, 64GB, 4GB RAM física) y TABL006 (Modio M2 Kids, 7 pulgadas) desde las referencias nuevas de Drive CONECTATECH. No inventar RAM ni almacenamiento de M2 mientras no haya confirmación. Dos maestros premium revisados conservados; no regenerarlos. Clasificación original según política comercial vigente fuera de las cinco excepciones. Fuentes privadas permanecen fuera de Git; reportes públicos sólo con hashes y observaciones.
