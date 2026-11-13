@@ -404,9 +404,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
-  "fecha_verificacion": "2026-11-12T20:52:01.360833+00:00",
+  "fecha_verificacion": "2026-11-13T03:39:25.866218+00:00",
   "descripcion": "Disfruta tus vídeos, lecturas y aplicaciones en la pantalla IPS de 10,1 pulgadas de esta Hyundai HYTAB. Sus 64 GB permiten guardar fotos y archivos, mientras sus 4 GB de RAM física acompañan las tareas del día a día. Conéctate por Wi-Fi y usa sus cámaras frontal y trasera para tus comunicaciones.",
   "descripcion_seo": "Disfruta tus vídeos, lecturas y aplicaciones en la pantalla IPS de 10,1 pulgadas de esta Hyundai HYTAB. Sus 64 GB permiten guardar fotos y archivos, mientr",
   "contenido_venta": "Una tablet Hyundai HYTAB 10WC1.",
@@ -561,7 +561,7 @@
       "solicitado": "TABL005",
       "sku": "TABL005",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-13T03:13:56.614Z",
+      "fecha": "2026-11-13T03:40:28.061Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -586,7 +586,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
-      "url_comprobada": "http://127.0.0.1:8903/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
       "archivo_html": "productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/index.html",
       "http": 200,
       "sha256_html": "54c4b4207f52e64a70740daf6bfaffc8850fe12aac51ef414bac1e94aaf53f01",
@@ -596,7 +596,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r132-01.webp",
-        "url_cargada": "http://127.0.0.1:8903/imagenes/tabl005/TABL005-r132-01-600.webp?v=8ee08dd86fc140a5",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r132-01-600.webp?v=8ee08dd86fc140a5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -606,41 +606,45 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8903/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
+          "url": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8903/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8903/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8903/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8903/imagenes/tabl005/TABL005-r132-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r132-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-132/qa-local/capturas/TABL005-390.png",
+      "archivo": "reportes/continuacion-132/qa-publica/capturas/TABL005-390.png",
       "sha256": "61c09db36d34974b837e8e5377fbf9dcf31a4f5a6beaeccf982a6de40261643a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-132/qa-local/capturas/TABL005-1280.png",
+        "archivo": "reportes/continuacion-132/qa-publica/capturas/TABL005-1280.png",
         "sha256": "c7e404e8d669abdb6e94d4430a98915a1453aea5dc5dc30a809c79d63e22872d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "archivo": "reportes/continuacion-132/http-publicacion.json",
+      "sha256": "596f90bdac44099ce53f84759ce366bbbaeef67bba1df5da37f3d143d9eb6223"
     }
   },
   "historialPublicacion": [
