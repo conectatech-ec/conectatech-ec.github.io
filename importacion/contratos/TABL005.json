@@ -111,7 +111,7 @@
     "reportes/continuacion-131/base-593.json",
     "reportes/continuacion-131/revision-visual.json"
   ],
-  "imagen_principal": "/imagenes/tabl005/TABL005-r131-01.webp",
+  "imagen_principal": "/imagenes/tabl005/TABL005-r132-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
@@ -124,6 +124,10 @@
       {
         "sha256": "cd1ffaaa23c1358d6b1030b2d165bae96ef10e83e002b5d49b72ce1d685d5d3d",
         "fuente": "reportes/continuacion-131/fuentes-verificadas.json#TABL005"
+      },
+      {
+        "sha256": "ba9491080c0c4b571174e3a36f343ad902527652cafb111af3f9f661db573e6c",
+        "fuente": "reportes/continuacion-132/fuentes-verificadas.json#TABL005"
       }
     ]
   },
@@ -400,7 +404,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
   "fecha_verificacion": "2026-11-12T20:52:01.360833+00:00",
   "descripcion": "Disfruta tus vídeos, lecturas y aplicaciones en la pantalla IPS de 10,1 pulgadas de esta Hyundai HYTAB. Sus 64 GB permiten guardar fotos y archivos, mientras sus 4 GB de RAM física acompañan las tareas del día a día. Conéctate por Wi-Fi y usa sus cámaras frontal y trasera para tus comunicaciones.",
@@ -408,7 +412,7 @@
   "contenido_venta": "Una tablet Hyundai HYTAB 10WC1.",
   "compatibilidad": "Uso de aplicaciones sujeto a los requisitos de cada app y a la configuración del equipo.",
   "presentacion": "sin caja",
-  "revision_regla": 1,
+  "revision_regla": 2,
   "evidencia_clasificacion": "Política comercial expresa del propietario 11oct2026: original por defecto, salvo JBL/Samsung/Apple/Bose/Lenovo. Hyundai y Modio quedan fuera de esas excepciones; la clasificación no se infiere del logotipo.",
   "stock_fecha_corte": "2026-11-12",
   "stock_tiempo_real": false,
@@ -523,13 +527,13 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-11-12T20:16:57.189989+00:00",
-      "sha256_maestro": "cd1ffaaa23c1358d6b1030b2d165bae96ef10e83e002b5d49b72ce1d685d5d3d",
-      "evidencia": "Producto físico cotejado con referencias propias: tablet completa, forma y proporciones conservadas, vista frontal, pantalla apagada, fondo blanco, sin caja ni datos privados. Representación asistida autorizada desde fotos propias."
+      "fecha": "2026-11-13T03:11:12.988536+00:00",
+      "sha256_maestro": "ba9491080c0c4b571174e3a36f343ad902527652cafb111af3f9f661db573e6c",
+      "evidencia": "Edición solicitada por el propietario: sólo se ilumina el área activa de pantalla con papel tapiz abstracto. Producto completo, cámara, marcos, carcasa, fondo blanco y proporciones cotejados con maestro131; sin interfaces ni funciones inventadas."
     },
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "700862dca6e20de1a720b10343a71fd690eecf61f66bec35ae210b9344adeb87",
+      "sha256": "d9b57d04ffe9afd1411e6e4a48068c45de318bda335841d6f6ab71a14657d829",
       "fila": {
         "sku": "TABL005",
         "nombre": "TABLET HYUNDAI 10.1 PULGADAS 64GB 4GB+4GB",
@@ -545,7 +549,7 @@
     },
     "corte_comercial": {
       "archivo": "datos-593/corte-comercial-publico-validado.json",
-      "sha256": "b840d85d93f69c4927efb06a4059f79754ffce4d17983a7f419df44d247f363e",
+      "sha256": "767335590b99760653fdbeae5065c7e9d1faae3283157f45e01a241c4e38a539",
       "fecha": "2026-11-12",
       "fila": {
         "stock": 2,
@@ -557,7 +561,7 @@
       "solicitado": "TABL005",
       "sku": "TABL005",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-12T20:53:07.413Z",
+      "fecha": "2026-11-13T03:13:56.614Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -582,17 +586,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
+      "url_comprobada": "http://127.0.0.1:8903/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
       "archivo_html": "productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/index.html",
       "http": 200,
-      "sha256_html": "a14f206b74544b9ded8bdb0f91bfb1dc213b34da0f95eb54ecf56733a2649d1c",
-      "sha256_html_local": "a14f206b74544b9ded8bdb0f91bfb1dc213b34da0f95eb54ecf56733a2649d1c",
+      "sha256_html": "54c4b4207f52e64a70740daf6bfaffc8850fe12aac51ef414bac1e94aaf53f01",
+      "sha256_html_local": "54c4b4207f52e64a70740daf6bfaffc8850fe12aac51ef414bac1e94aaf53f01",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r131-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r131-01-600.webp?v=c6d49a3040975001",
+        "src": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r132-01.webp",
+        "url_cargada": "http://127.0.0.1:8903/imagenes/tabl005/TABL005-r132-01-600.webp?v=8ee08dd86fc140a5",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -602,45 +606,136 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
+          "url": "http://127.0.0.1:8903/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8903/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+          "url": "http://127.0.0.1:8903/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8903/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r131-01.webp",
+          "url": "http://127.0.0.1:8903/imagenes/tabl005/TABL005-r132-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-131/qa-publica/capturas/TABL005-390.png",
-      "sha256": "cdf01a0a23ea1b4e9f9859d82bebbe002cc7cabe996c5b97b57dcbb184cb58c8",
+      "archivo": "reportes/continuacion-132/qa-local/capturas/TABL005-390.png",
+      "sha256": "61c09db36d34974b837e8e5377fbf9dcf31a4f5a6beaeccf982a6de40261643a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-131/qa-publica/capturas/TABL005-1280.png",
-        "sha256": "b16028acf1f27748a2a13a0fc1fbf1dd96573cc6fc30f1dde888cf972cb88219",
+        "archivo": "reportes/continuacion-132/qa-local/capturas/TABL005-1280.png",
+        "sha256": "c7e404e8d669abdb6e94d4430a98915a1453aea5dc5dc30a809c79d63e22872d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/continuacion-131/http-publicacion.json",
-      "sha256": "9958de41ac8bd647f74e7c242729c795a2121220da3d133f0205ad0ac031c634"
     }
-  }
+  },
+  "historialPublicacion": [
+    {
+      "estado": "PUBLICADO_VERIFICADO",
+      "evidenciaHTTP": {
+        "archivo": "reportes/continuacion-131/http-publicacion.json",
+        "sha256": "9958de41ac8bd647f74e7c242729c795a2121220da3d133f0205ad0ac031c634"
+      },
+      "evidenciaMovil": {
+        "solicitado": "TABL005",
+        "sku": "TABL005",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-12T20:53:07.413Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
+        "archivo_html": "productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/index.html",
+        "http": 200,
+        "sha256_html": "a14f206b74544b9ded8bdb0f91bfb1dc213b34da0f95eb54ecf56733a2649d1c",
+        "sha256_html_local": "a14f206b74544b9ded8bdb0f91bfb1dc213b34da0f95eb54ecf56733a2649d1c",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r131-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r131-01-600.webp?v=c6d49a3040975001",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "precio_archivado_por_stock_cero": false,
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/tabl005-tablet-hyundai-hytab-10wc1-101-64gb/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/tabl005/TABL005-r131-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-131/qa-publica/capturas/TABL005-390.png",
+        "sha256": "cdf01a0a23ea1b4e9f9859d82bebbe002cc7cabe996c5b97b57dcbb184cb58c8",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-131/qa-publica/capturas/TABL005-1280.png",
+          "sha256": "b16028acf1f27748a2a13a0fc1fbf1dd96573cc6fc30f1dde888cf972cb88219",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "imagen": "/imagenes/tabl005/TABL005-r131-01.webp"
+    }
+  ]
 }

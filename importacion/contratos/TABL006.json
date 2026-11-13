@@ -102,7 +102,7 @@
     "reportes/continuacion-131/revision-visual.json",
     "reportes/continuacion-131/confirmacion-ram-modio.json"
   ],
-  "imagen_principal": "/imagenes/tabl006/TABL006-r131-01.webp",
+  "imagen_principal": "/imagenes/tabl006/TABL006-r132-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
@@ -115,6 +115,10 @@
       {
         "sha256": "13a285ba0fca7f0fab9a368725cf8afed6fd7436f489e1e66d4b19c8529fc148",
         "fuente": "reportes/continuacion-131/fuentes-verificadas.json#TABL006"
+      },
+      {
+        "sha256": "1295e83773919224ecfd603bdf16403036aabf05683f8c390b3918686606a1bd",
+        "fuente": "reportes/continuacion-132/fuentes-verificadas.json#TABL006"
       }
     ]
   },
@@ -343,7 +347,7 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
   "fecha_verificacion": "2026-11-12T21:20:43.325383+00:00",
   "descripcion": "Disfruta contenidos y actividades en una tablet compacta de 7 pulgadas con 6 GB de RAM física y 256 GB de almacenamiento. Su carcasa infantil con esquinas reforzadas y soporte integrado facilita apoyarla durante el uso. Incluye cargador, cable USB y un kit creativo para complementar sus actividades. Colores y diseños surtidos según disponibilidad.",
@@ -351,7 +355,7 @@
   "contenido_venta": "Una tablet Modio M2 con carcasa y soporte, cargador, cable USB, dos lápices, goma y kit creativo.",
   "compatibilidad": "Uso de aplicaciones sujeto a los requisitos de cada app y a la configuración del equipo.",
   "presentacion": "sin caja",
-  "revision_regla": 1,
+  "revision_regla": 2,
   "evidencia_clasificacion": "Política comercial expresa del propietario 11oct2026: original por defecto, salvo JBL/Samsung/Apple/Bose/Lenovo. Hyundai y Modio quedan fuera de esas excepciones; la clasificación no se infiere del logotipo.",
   "stock_fecha_corte": "2026-11-12",
   "stock_tiempo_real": false,
@@ -445,13 +449,13 @@
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-11-12T20:16:57.189989+00:00",
-      "sha256_maestro": "13a285ba0fca7f0fab9a368725cf8afed6fd7436f489e1e66d4b19c8529fc148",
-      "evidencia": "Producto físico cotejado con referencias propias: tablet completa, forma y proporciones conservadas, vista frontal, pantalla apagada, fondo blanco, sin caja ni datos privados. Representación asistida autorizada desde fotos propias."
+      "fecha": "2026-11-13T03:11:12.990189+00:00",
+      "sha256_maestro": "1295e83773919224ecfd603bdf16403036aabf05683f8c390b3918686606a1bd",
+      "evidencia": "Edición solicitada por el propietario: sólo se ilumina el área activa de pantalla con papel tapiz abstracto. Producto completo, cámara, marcos, carcasa, fondo blanco y proporciones cotejados con maestro131; sin interfaces ni funciones inventadas."
     },
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "700862dca6e20de1a720b10343a71fd690eecf61f66bec35ae210b9344adeb87",
+      "sha256": "d9b57d04ffe9afd1411e6e4a48068c45de318bda335841d6f6ab71a14657d829",
       "fila": {
         "sku": "TABL006",
         "nombre": "TABLET MODIO M2 KIDS 7 PULGADAS",
@@ -467,7 +471,7 @@
     },
     "corte_comercial": {
       "archivo": "datos-593/corte-comercial-publico-validado.json",
-      "sha256": "b840d85d93f69c4927efb06a4059f79754ffce4d17983a7f419df44d247f363e",
+      "sha256": "767335590b99760653fdbeae5065c7e9d1faae3283157f45e01a241c4e38a539",
       "fecha": "2026-11-12",
       "fila": {
         "stock": 1,
@@ -479,7 +483,7 @@
       "solicitado": "TABL006",
       "sku": "TABL006",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-12T21:21:48.025Z",
+      "fecha": "2026-11-13T03:13:57.923Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -504,17 +508,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+      "url_comprobada": "http://127.0.0.1:8903/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
       "archivo_html": "productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/index.html",
       "http": 200,
-      "sha256_html": "4e551a33aa2163c63feab7e0c2398347473ae5f7eb3c3661e3310ade70eda837",
-      "sha256_html_local": "4e551a33aa2163c63feab7e0c2398347473ae5f7eb3c3661e3310ade70eda837",
+      "sha256_html": "6674ca3f829701a4a04bef16b5c0dd2c6fdbc18ecfb847e0420cd653cc42b1d6",
+      "sha256_html_local": "6674ca3f829701a4a04bef16b5c0dd2c6fdbc18ecfb847e0420cd653cc42b1d6",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/tabl006/TABL006-r131-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/tabl006/TABL006-r131-01-600.webp?v=4dc0da607c5585ea",
+        "src": "https://conectatech-ec.github.io/imagenes/tabl006/TABL006-r132-01.webp",
+        "url_cargada": "http://127.0.0.1:8903/imagenes/tabl006/TABL006-r132-01-600.webp?v=ec867fa758dbaa99",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -524,45 +528,41 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+          "url": "http://127.0.0.1:8903/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8903/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+          "url": "http://127.0.0.1:8903/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8903/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/tabl006/TABL006-r131-01.webp",
+          "url": "http://127.0.0.1:8903/imagenes/tabl006/TABL006-r132-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-131/ram-modio/capturas-publicas/TABL006-390.png",
-      "sha256": "09811995398fb1ae78446c333af6776fe7a9745b31723744e74a01bb415029b1",
+      "archivo": "reportes/continuacion-132/qa-local/capturas/TABL006-390.png",
+      "sha256": "a69c73cbba39442928f420342503929b5646a289382d61cd2c37b9fb05655b58",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-131/ram-modio/capturas-publicas/TABL006-1280.png",
-        "sha256": "d0ee21a7ddb72aca22dd53f8fea8e7c0da531ecaf3ee995b43f1f6f7c7d926b2",
+        "archivo": "reportes/continuacion-132/qa-local/capturas/TABL006-1280.png",
+        "sha256": "12c2f5934ca1ac4fe99a57538922e53676e9817e5aeee2b433cde79fb979614d",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/continuacion-131/ram-modio/http-publicacion.json",
-      "sha256": "55a8cb1ddb9a95eea857a57f5dc30a178898f1a8e39d56af9f3d2c45746d54ee"
     }
   },
   "actualizacion_memoria_131": {
@@ -570,5 +570,100 @@
     "ramFisicaGb": 6,
     "almacenamientoGb": 256,
     "sinRenovarFechaAntesDeHTTP": true
-  }
+  },
+  "historialPublicacion": [
+    {
+      "estado": "PUBLICADO_VERIFICADO",
+      "evidenciaHTTP": {
+        "archivo": "reportes/continuacion-131/ram-modio/http-publicacion.json",
+        "sha256": "55a8cb1ddb9a95eea857a57f5dc30a178898f1a8e39d56af9f3d2c45746d54ee"
+      },
+      "evidenciaMovil": {
+        "solicitado": "TABL006",
+        "sku": "TABL006",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-12T21:21:48.025Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+        "archivo_html": "productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/index.html",
+        "http": 200,
+        "sha256_html": "4e551a33aa2163c63feab7e0c2398347473ae5f7eb3c3661e3310ade70eda837",
+        "sha256_html_local": "4e551a33aa2163c63feab7e0c2398347473ae5f7eb3c3661e3310ade70eda837",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/tabl006/TABL006-r131-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/tabl006/TABL006-r131-01-600.webp?v=4dc0da607c5585ea",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "precio_archivado_por_stock_cero": false,
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/tabl006-tablet-infantil-modio-m2-kids-7-pulgadas/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/tabl006/TABL006-r131-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-131/ram-modio/capturas-publicas/TABL006-390.png",
+        "sha256": "09811995398fb1ae78446c333af6776fe7a9745b31723744e74a01bb415029b1",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-131/ram-modio/capturas-publicas/TABL006-1280.png",
+          "sha256": "d0ee21a7ddb72aca22dd53f8fea8e7c0da531ecaf3ee995b43f1f6f7c7d926b2",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      },
+      "imagen": "/imagenes/tabl006/TABL006-r131-01.webp"
+    }
+  ]
 }
