@@ -44851,7 +44851,13 @@
       "actualizacionFotografica132": {
         "motivo": "Pantalla encendida solicitada por propietario",
         "fuente": "reportes/continuacion-132/fuentes-verificadas.json#TABL005",
-        "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM"
+        "estado": "PUBLICADO_VERIFICADO",
+        "verificacion": {
+          "fecha": "2026-11-13T03:39:25.866218+00:00",
+          "reporteHTTP": "reportes/continuacion-132/http-publicacion.json",
+          "sha256InformeHTTP": "596f90bdac44099ce53f84759ce366bbbaeef67bba1df5da37f3d143d9eb6223",
+          "reporteChromium": "reportes/continuacion-132/qa-publica/movil.json"
+        }
       }
     },
     "TABL006": {
@@ -44978,7 +44984,13 @@
       "actualizacionFotografica132": {
         "motivo": "Pantalla encendida solicitada por propietario",
         "fuente": "reportes/continuacion-132/fuentes-verificadas.json#TABL006",
-        "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM"
+        "estado": "PUBLICADO_VERIFICADO",
+        "verificacion": {
+          "fecha": "2026-11-13T03:39:25.866218+00:00",
+          "reporteHTTP": "reportes/continuacion-132/http-publicacion.json",
+          "sha256InformeHTTP": "596f90bdac44099ce53f84759ce366bbbaeef67bba1df5da37f3d143d9eb6223",
+          "reporteChromium": "reportes/continuacion-132/qa-publica/movil.json"
+        }
       }
     },
     "TABL007": {
@@ -45013,9 +45025,16 @@
       "sha256Foto": "272be372e6e10e1d9d25250bab42bcc84b93ed346d935f8e877bd03110df5f63",
       "causa": "Alta nueva solicitada por el propietario, con referencias propias, atributos y datos comerciales verificados.",
       "lote": "editorial-132",
-      "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM",
+      "estado": "PUBLICADO_VERIFICADO",
       "publicacionVerificada": null,
-      "mostrarTituloEnFicha": true
+      "mostrarTituloEnFicha": true,
+      "verificacionAltaSKU": {
+        "fecha": "2026-11-13T03:39:25.866218+00:00",
+        "reporteHTTP": "reportes/continuacion-132/http-publicacion.json",
+        "sha256InformeHTTP": "596f90bdac44099ce53f84759ce366bbbaeef67bba1df5da37f3d143d9eb6223",
+        "reporteChromium": "reportes/continuacion-132/qa-publica/movil.json",
+        "esAltaNueva": true
+      }
     }
   },
   "loteActual": "060",
@@ -47397,6 +47416,12 @@
       "TABL007"
     ],
     "fuente": "reportes/continuacion-132/orden-y-fuentes.json",
-    "noModificaLosOtros1199Productos": true
+    "noModificaLosOtros1199Productos": true,
+    "datosComercialesPrevios1201Conservados": true,
+    "otros1199ProductosIntactos": true,
+    "correccionesFotograficas": [
+      "TABL005",
+      "TABL006"
+    ]
   }
 }
