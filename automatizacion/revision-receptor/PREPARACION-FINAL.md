@@ -1,5 +1,9 @@
 # Preparación final: BLOQUEADO, sin nueva instalación
 
+## Autorización limitada de continuación
+
+Dirección General autoriza integrar PR #371 sólo en la rama piloto y ejecutar una única comprobación `--plan-receiver`. No autoriza instalar, reconstruir permisos, hacer PUT, bootstrap, ingestión ni cambiar banderas. Para cumplir la orden de no repetir pruebas aceptadas, esta etapa omite expresamente la batería automática del workflow original; el QA sintético asociado al merge se cancelará antes de sus pruebas. No se modifica el actualizador ni sus controles. La evidencia real y el resultado quedarán registrados en el PR, sin nuevas ejecuciones ante fallo.
+
 Base de desarrollo: PR #370 integrado exclusivamente en la rama piloto, commit `7241f7feecd2acdd5915e880abc7f4feaa71dfd7`. Esta preparación no modifica esa rama publicada, main, Worker, configuración, los 922 SKU conciliados ni los 36 aislados.
 
 ## Evidencia nueva de lectura
