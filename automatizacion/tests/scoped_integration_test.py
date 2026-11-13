@@ -29,7 +29,7 @@ class ScopedIntegration(unittest.TestCase):
         self.assertNotIn('scoped_content.py --bootstrap',text)
         self.assertNotIn('run: node automatizacion/central-e2e.mjs',text)
         positions=[text.index(s) for s in ('python automatizacion/tests/sync_593_test.py',
-            'python automatizacion/scoped_content.py --install-receiver','python automatizacion/process_pending_593.py',
+            'python automatizacion/scoped_content.py --plan-receiver','python automatizacion/process_pending_593.py',
             'python automatizacion/scoped_content.py --ingest')]
         self.assertEqual(positions,sorted(positions))
 

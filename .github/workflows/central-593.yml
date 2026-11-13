@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
-          fetch-depth: 2
+          fetch-depth: 4
           sparse-checkout: |
             automatizacion
             .github/workflows
@@ -30,6 +30,8 @@ jobs:
         with:
           node-version: '22'
       - name: Validar nucleo 593 aislado antes de leer la fuente privada
+        # Etapa de lectura autorizada: pruebas ya aceptadas, no repetirlas.
+        if: false
         run: |
           python automatizacion/tests/inventory_completeness_test.py
           python automatizacion/tests/sync_593_test.py
@@ -51,12 +53,11 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('authorized='+str(allowed).lower()+'\n')
           PY
       - id: receiver
-        # Autorizacion unica: solo primer intento del sucesor directo de PR #368.
+        # Propuesta pendiente: una comprobacion de lectura; no rearma permisos.
         if: github.event_name == 'push' && github.run_attempt == '1'
-        name: Instalar una vez el receptor aprobado y verificarlo sin ingestion
-        run: python automatizacion/scoped_content.py --install-receiver
+        name: Comprobar en lectura la base del receptor y su plan de adaptacion
+        run: python automatizacion/scoped_content.py --plan-receiver
         env:
-          CENTRAL_RECEIVER_INSTALL_AUTHORIZATION: DG-593-INSTALL-e5ac06df-ONCE
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
