@@ -1,4 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+require('./test-politica-publicacion-web.cjs');
 const source=fs.readFileSync(__dirname+'/exportar-canales.cjs','utf8');
 const products=[
  {sku:'TELF001',name:'Teléfono',category:'Etiqueta de web distinta',stock:1,promo:100,pvp:110,imageUrl:'/a.webp'},
