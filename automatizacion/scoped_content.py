@@ -31,7 +31,10 @@ REVIEWED_RECEIVER_SHA256='c0975c3d31421ce91d147c84f2c80e85523bd40ae540a259553082
 APPROVED_RECEIVER_RELEASE='e5ac06df086130a6776205250dd4d96c65882797'
 APPROVED_RECEIVER_CODE='6287802a95e7cb1ecc86316ff5f7de24f9c29dcf856388ecda4e0193d37e3e76'
 APPROVED_RECEIVER_BODY='699ac61bcf8311ac72bdf56c723e3c562882517909c443d9521d5b132624b869'
-RECEIVER_INSTALL_AUTHORIZATION='DG-593-INSTALL-e5ac06df-ONCE'
+CONSUMED_RECEIVER_INSTALL_AUTHORIZATION='DG-593-INSTALL-e5ac06df-ONCE'
+RECEIVER_INSTALL_AUTHORIZATION='DG-593-RECEPTOR-POST371-UNICO'
+RECEIVER_INSTALL_PARENT='2df80f8db06b0eb1663342f4eda6f9b2f948cc4e'
+RECEIVER_INSTALL_PERMISSION_ENABLED=True # Single execution explicitly authorized.
 
 class ScopedError(RuntimeError):pass
 def fail(code):raise ScopedError(code) from None
@@ -57,6 +60,7 @@ RECEIVER_TEMPLATE_REQUIRED RECEIVER_PLAN_REQUIRED RECEIVER_PUT_BUDGET_EXHAUSTED
 RECEIVER_ROLLBACK_NOT_EXACT RECEIVER_ROLLBACK_RUNTIME_CHANGED POST_INSTALL_CHECK_REQUIRED
 RECOVERY_NOT_VERIFIED RECOVERY_RUNTIME_CHANGED RECOVERY_SETTINGS_CHANGED RECOVERY_SOURCE_CHANGED
 RECEIVER_INSTALLATION_HISTORY_REQUIRED RECEIVER_INSTALLATION_NOT_AUTHORIZED
+RECEIVER_INSTALLATION_DISABLED
 RECEIVER_INSTALLATION_REQUIRES_CLOSED_FLAGS RECEIVER_INSTALLATION_REVISION_NOT_AUTHORIZED
 BOOTSTRAP_REVISION_NOT_CURRENT LATEST_PUBLIC_CONFIG_INVALID LATEST_PUBLIC_CONFIG_READ_FAILED
 LATEST_PUBLIC_REVISION_INVALID LATEST_PUBLIC_REVISION_READ_FAILED
@@ -329,7 +333,8 @@ def approved_receiver_artifacts(repository=None):
     return receiver
 
 def require_receiver_installation():
-    """Single authorized push directly after #368; no general write promotion."""
+    """Inactive proposal: installation parent is independent of artifact identity."""
+    if RECEIVER_INSTALL_PERMISSION_ENABLED is not True:fail('RECEIVER_INSTALLATION_DISABLED')
     revision=os.environ.get('GITHUB_SHA','')
     workflow='conectatech-ec/conectatech-ec.github.io/.github/workflows/central-593.yml@'+BRANCH
     if (os.environ.get('CENTRAL_RECEIVER_INSTALL_AUTHORIZATION')!=RECEIVER_INSTALL_AUTHORIZATION or
@@ -341,7 +346,7 @@ def require_receiver_installation():
         head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT.parent,text=True,stderr=subprocess.DEVNULL).strip()
         parent=subprocess.check_output(['git','rev-parse','HEAD^'],cwd=ROOT.parent,text=True,stderr=subprocess.DEVNULL).strip()
     except Exception:fail('RECEIVER_INSTALLATION_HISTORY_REQUIRED')
-    if head!=revision or parent!=APPROVED_RECEIVER_RELEASE:fail('RECEIVER_INSTALLATION_REVISION_NOT_AUTHORIZED')
+    if head!=revision or parent!=RECEIVER_INSTALL_PARENT:fail('RECEIVER_INSTALLATION_REVISION_NOT_AUTHORIZED')
     config=read_latest_config()
     if (config.get('activar') is not False or config.get('datahub_scoped_content_enabled') is not False or
         config.get('sincronizar_meta_verify_token') is not False or type(config.get('costo_maximo_usd')) is not int or

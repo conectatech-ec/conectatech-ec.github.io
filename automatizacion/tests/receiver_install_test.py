@@ -142,9 +142,10 @@ class Authorization(unittest.TestCase):
             'GITHUB_EVENT_NAME':'push','GITHUB_RUN_ATTEMPT':'1','CF_FREE_ONLY_CONFIRMED':'true',
             'CENTRAL_RECEIVER_INSTALL_AUTHORIZATION':scoped.RECEIVER_INSTALL_AUTHORIZATION}
     def config(self):return {'activar':False,'datahub_scoped_content_enabled':False,'sincronizar_meta_verify_token':False,'costo_maximo_usd':0}
-    def test_exact_single_push_is_authorized_with_both_flags_closed(self):
-        with patch.dict(os.environ,self.environment(),clear=True),patch.object(scoped.subprocess,'check_output',side_effect=['d'*40,scoped.APPROVED_RECEIVER_RELEASE]),patch.object(scoped,'read_latest_config',return_value=self.config()),patch.object(scoped,'require_latest_revision') as revision:
-            scoped.require_receiver_installation();revision.assert_called_once_with('d'*40)
+    def test_proposed_permission_is_disabled_even_with_valid_context(self):
+        with patch.dict(os.environ,self.environment(),clear=True),patch.object(scoped.subprocess,'check_output') as history,patch.object(scoped,'read_latest_config') as config:
+            with self.assertRaisesRegex(scoped.ScopedError,'RECEIVER_INSTALLATION_DISABLED'):scoped.require_receiver_installation()
+            history.assert_not_called();config.assert_not_called()
     def test_reruns_other_workflows_events_and_missing_free_attestation_are_denied(self):
         for key,value in [('GITHUB_RUN_ATTEMPT','2'),('GITHUB_EVENT_NAME','workflow_dispatch'),('GITHUB_REF','refs/heads/main'),('GITHUB_WORKFLOW_REF','another'),('GITHUB_WORKFLOW_SHA','f'*40),('CF_FREE_ONLY_CONFIRMED','false'),('CENTRAL_RECEIVER_INSTALL_AUTHORIZATION','')]:
             with patch.dict(os.environ,{**self.environment(),key:value},clear=True),patch.object(scoped,'read_latest_config') as network:
