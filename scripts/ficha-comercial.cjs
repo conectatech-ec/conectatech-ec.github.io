@@ -8,6 +8,8 @@ const origin='https://conectatech-ec.github.io';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>'$'+Number(n).toFixed(2).replace('.',',');
 module.exports=function ficha(p,c,url){
+ const policy=require('./politica-publicacion-web.cjs');
+ c={...c,relacionados:(c.relacionados||[]).filter(r=>!policy.deniedSku(r.sku)&&!policy.excluded(r))};
  const editorial=require('../assets/editorial-titulos.js').entry(p,editorialMap);
  const presentation=editorial?.mostrarTituloEnFicha?editorial:null;
  const name=c.nombre||p.name, img=c.imagen?new URL(c.imagen,origin).href:'';
