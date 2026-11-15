@@ -5,7 +5,7 @@ const fs=require('fs');
 const input='datos-593/corte-stock-validado.json';
 const output='datos-593/estado-ultimo-corte.json';
 const catalog='index.html';
-function planificar(html,source,prior){
+function planificar(html,source,prior,baseline=null){
  const rx=/const products=(\[[\s\S]*?\]);\s*\n/;
  const match=html.match(rx);
  if(!match)throw Error('No se encuentra el catálogo web');
@@ -16,7 +16,8 @@ function planificar(html,source,prior){
  const sku=Object.keys(inventory);
  if(sku.length!==source.cantidad_sku||sku.length<1000)throw Error('Corte parcial o incompleto');
  if(sku.some(s=>!/^[A-Z0-9_-]{3,40}$/.test(s)||!Number.isInteger(inventory[s])||inventory[s]<-10000||inventory[s]>1000000))throw Error('SKU o stock inválidos');
- const products=JSON.parse(match[1]);
+ const policy=require('./politica-publicacion-web.cjs');
+ const products=policy.completeForValidation(JSON.parse(match[1]),source,baseline||(prior?.origen_sha256===source.sha256?source:null));
  const expected=source.validacion_web||{};
  if(expected.sku_web_esperados && products.length!==expected.sku_web_esperados)throw Error('Cantidad web no coincide con corte');
  const seen=new Set();
@@ -38,14 +39,14 @@ function planificar(html,source,prior){
  if(alreadyPublished&&changes.length!==0)throw Error('Corte ya publicado pero cantidades cambiaron: no revertir una sincronización posterior');
  for(const [key,value] of checks)if((!alreadyPublished||!key.startsWith('cambios_'))&&expected[key]!==undefined&&expected[key]!==value)throw Error('No coincide la validación '+key+': '+value+' vs '+expected[key]);
  // Descartar incluso cambios accidentales fuera de .stock
- const original=JSON.parse(match[1]);
+ const original=products;
  for(let i=0;i<original.length;i++){
   const a=Object.assign({},original[i]),b=Object.assign({},updated[i]);delete a.stock;delete b.stock;
   if(JSON.stringify(a)!==JSON.stringify(b))throw Error('Cambio no autorizado: '+original[i].sku);
  }
  const complete=prior?.fecha_corte===source.fecha_corte&&prior?.origen_sha256===source.sha256&&prior?.referencia==='datos-593/corte-comercial-publico-validado.json'&&prior?.precios_y_demas_atributos_intactos!==true;
  const summary=complete?{...prior}:{referencia:input,tipo_corte:'stock',fecha_corte:source.fecha_corte,origen_sha256:source.sha256,sku_fuente:sku.length,sku_web:updated.length,cambios_stock:changes.length,cambios_disponibilidad:availability.length,con_stock:positives,stock_cero:zeros,stock_negativo:negatives,precios_y_demas_atributos_intactos:true};
- const rendered=html.replace(match[0],'const products='+JSON.stringify(updated)+';\n');
+ const rendered=html.replace(match[0],'const products='+JSON.stringify(policy.visible(updated))+';\n');
  return {summary,rendered,changes};
 }
 function run(){
@@ -62,7 +63,7 @@ function run(){
   console.log(JSON.stringify({modo:'SIN_CAMBIOS',motivo:'CORTE_STOCK_ANTERIOR_IGNORADO',...prior},null,2));
   return {summary:prior,rendered:html,changes:[],ignored:true};
  }
- const result=planificar(html,source,prior);
+ const result=planificar(html,source,prior,require('./politica-publicacion-web.cjs').previousCut(prior,source));
  const apply=process.env.APLICAR_STOCK_593==='SI';
  if(apply){
   if(result.rendered!==html)fs.writeFileSync(catalog,result.rendered);

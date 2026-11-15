@@ -1,4 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+require('./test-politica-publicacion-web.cjs');
 const source=fs.readFileSync(__dirname+'/exportar-canales.cjs','utf8');
 const products=[
  {sku:'TELF001',name:'Teléfono',category:'Etiqueta de web distinta',stock:1,promo:100,pvp:110,imageUrl:'/a.webp'},
@@ -19,6 +20,7 @@ function generate(master,change=()=>{}){
   if(n==='fs')return fakeFS;
   if(['crypto','node:crypto','node:util'].includes(n))return require(n);
   if(n==='./presentacion-publica-alex.cjs')return require(n);
+  if(n==='./politica-publicacion-web.cjs')return require(n);
   if(['./editorial-fotografia-efectiva.cjs','./fotografia-direccion.cjs'].includes(n)){
    if(!modules.has(n)){const mod={exports:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/'+n,'utf8'),{module:mod,exports:mod.exports,require:fixtureRequire,console,process});modules.set(n,mod.exports);}
    return modules.get(n);

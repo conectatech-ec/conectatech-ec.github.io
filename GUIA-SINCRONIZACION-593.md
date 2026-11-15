@@ -1,3 +1,9 @@
+## Exclusión de publicación por marca — orden15nov2026
+
+STEREN está excluida de la web, sus fichas, sitemap y exportaciones. Aplicar `scripts/politica-publicacion-web.cjs` en los generadores existentes. ENCH003, FLAS013, FLAS014, FLAS017, FLAS033 y FOCO004 no se publican, aunque tengan stock o aparezcan en un Excel posterior.
+
+El corte validado del Hub conserva su inventario completo y los SKU históricos: al preparar un corte nuevo, cubrir la unión de sus SKU canónicos anteriores y los SKU web actuales; no obtener la cobertura únicamente del catálogo visible. Conservar los valores593 de los excluidos. El publicador reconstruye su comparación desde el histórico Git existente; no modificar el inventario para retirar productos de la web. SIGNATURE y originales permanecen intactos.
+
 # CONECTATECH — Sincronización autorizada desde 593
 
 Fuente vigente: `datos-593/REFERENCIA-OFICIAL.md`.
