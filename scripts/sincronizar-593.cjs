@@ -1,4 +1,5 @@
 const fs=require('fs');
+const protection=require('./proteger-inventario-593.cjs');
 const source='datos-593/inventario-publico.csv';
 const apply=process.env.APLICAR_CAMBIOS==='SI';
 const confirm=process.env.CONFIRMAR==='APLICAR';
@@ -30,6 +31,9 @@ const html=fs.readFileSync('index.html','utf8');
 const match=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
 if(!match)throw Error('No se encontró array de productos');
 const original=JSON.parse(match[1]);
+const before=JSON.parse(match[1]);
+const sourceSkus=input.filter(r=>r.tipo.toUpperCase()==='PRODUCTO').map(r=>r.sku.trim().toUpperCase());
+protection.ejecutar(()=>protection.comprobar({before,after:before,sourceSkus,sourceCount:sourceSkus.length}));
 const bySKU=new Map(original.map(p=>[p.sku,p]));
 if(bySKU.size!==original.length)throw Error('SKU duplicado en web');
 const existingSKU=new Set(),seen=new Set(),added=[],updated=[],outOfStock=[],warnings=[];
@@ -61,6 +65,7 @@ for(const raw of input){
  }
 }
 const notInExport=[...existingSKU].length;
+protection.ejecutar(()=>protection.comprobar({before,after:original,sourceSkus,sourceCount:sourceSkus.length}));
 const missing=[...new Set(JSON.parse(match[1]).map(p=>p.sku))].filter(sku=>!seen.has(sku));
 if(missing.length>10)throw Error('Exportación incompleta o incompatible: '+missing.length+' SKU anteriores ausentes');
 if(missing.length)warnings.push('SKU anteriores ausentes en exportación: '+missing.join(', '));
@@ -76,3 +81,4 @@ if(apply){
  fs.writeFileSync('index.html',rendered);
 }
 console.log(JSON.stringify({modo:report.modo,filas593:input.length,nuevos:added.length,modificados:updated.length,agotados:outOfStock.length,ausentes:missing.length},null,2));
+
