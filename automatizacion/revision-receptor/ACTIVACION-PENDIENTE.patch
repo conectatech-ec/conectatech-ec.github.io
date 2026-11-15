@@ -1,0 +1,35 @@
+--- a/automatizacion/scoped_content.py
++++ b/automatizacion/scoped_content.py
+@@ -34,7 +34,7 @@
+ CONSUMED_RECEIVER_INSTALL_AUTHORIZATION='DG-593-INSTALL-e5ac06df-ONCE'
+ RECEIVER_INSTALL_AUTHORIZATION='DG-593-RECEPTOR-POST371-UNICO'
+ RECEIVER_INSTALL_PARENT='2df80f8db06b0eb1663342f4eda6f9b2f948cc4e'
+-RECEIVER_INSTALL_PERMISSION_ENABLED=False # Proposal only; explicit approval required.
++RECEIVER_INSTALL_PERMISSION_ENABLED=True # Single execution explicitly authorized.
+ 
+ class ScopedError(RuntimeError):pass
+ def fail(code):raise ScopedError(code) from None
+--- a/.github/workflows/central-593.yml
++++ b/.github/workflows/central-593.yml
+@@ -18,7 +18,7 @@
+       - uses: actions/checkout@v4
+         with:
+           ref: ${{ github.sha }}
+-          fetch-depth: 4
++          fetch-depth: 5
+           sparse-checkout: |
+             automatizacion
+             .github/workflows
+@@ -55,9 +55,10 @@
+       - id: receiver
+         # Propuesta pendiente: una comprobacion de lectura; no rearma permisos.
+         if: github.event_name == 'push' && github.run_attempt == '1'
+-        name: Comprobar en lectura la base del receptor y su plan de adaptacion
+-        run: python automatizacion/scoped_content.py --plan-receiver
++        name: Instalar exclusivamente el receptor aprobado y verificar con recuperacion
++        run: python automatizacion/scoped_content.py --install-receiver
+         env:
++          CENTRAL_RECEIVER_INSTALL_AUTHORIZATION: DG-593-RECEPTOR-POST371-UNICO
+           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+           CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
+           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
