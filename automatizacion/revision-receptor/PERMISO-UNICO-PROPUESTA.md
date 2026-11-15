@@ -1,5 +1,9 @@
 # Propuesta final de permiso único — INACTIVO
 
+## Activación específica autorizada posteriormente
+
+Dirección General ha autorizado ahora aplicar exactamente `ACTIVACION-PENDIENTE.patch` en este mismo PR e integrarlo una vez desde el padre fijado `2df80f8db06b0eb1663342f4eda6f9b2f948cc4e`, para instalar exclusivamente el artefacto seleccionado `e5ac06df...` / módulo `699ac61b...624b869`. La descripción inactiva que sigue conserva el estado revisado previo. El parche ya está aplicado en la rama de revisión; todavía no acredita instalación. No se repiten las pruebas concluidas: la batería original queda omitida y el QA asociado se cancelará antes de sus pruebas. El resultado real, intento, hashes, verificaciones y recuperación se conservarán en el PR. No se modifica la autorización de fuentes ni las banderas comerciales.
+
 Preparación exclusiva desde PR #371, commit piloto `2df80f8db06b0eb1663342f4eda6f9b2f948cc4e`. No se instala, no se hace PUT, no se ejecutan workflows ni se fusiona este borrador. Las banderas comerciales permanecen false y Sincronización multicanal 593 no se modifica ni suspende.
 
 ## Identidad exacta propuesta para instalar
