@@ -47,29 +47,36 @@ jobs:
         name: Mantener escrituras cerradas hasta promocion expresa tras inspeccion
         run: |
           python - <<'PY'
-          import json,os
-          c=json.load(open('automatizacion/activar-cloud.json'))
-          allowed=c.get('datahub_scoped_content_enabled') is True and c.get('activar') is False and c.get('sincronizar_meta_verify_token',False) is False
-          with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('authorized='+str(allowed).lower()+'\n')
+          import os,sys
+          sys.path.insert(0,'automatizacion')
+          from scoped_content import require_ingest_once,receiver_error_code
+          try:require_ingest_once()
+          except Exception as error:
+              print('::error title=DataHub ingestion privada::'+receiver_error_code(error))
+              raise SystemExit(1)
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('authorized=true\n')
           PY
+        env:
+          CENTRAL_INGEST_AUTHORIZATION: DG-593-INGEST-ebfc3f30-ONCE
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
       - id: receiver
         # Propuesta pendiente: una comprobacion de lectura; no rearma permisos.
         if: github.event_name == 'push' && github.run_attempt == '1'
-        name: Instalar exclusivamente el receptor aprobado y verificar con recuperacion
-        run: python automatizacion/scoped_content.py --install-receiver
+        name: Verificar receptor aprobado en lectura antes de ingestion unica
+        run: python automatizacion/scoped_content.py --check-ingest
         env:
-          CENTRAL_RECEIVER_INSTALL_AUTHORIZATION: DG-593-RECEPTOR-POST371-UNICO
+          CENTRAL_EXPECTED_RECEIVER_SHA256: 699ac61bcf8311ac72bdf56c723e3c562882517909c443d9521d5b132624b869
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - id: reporte
-        if: false && steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'
+        if: steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'
         name: Leer una fuente privada y normalizar con reglas unicas
         run: python automatizacion/process_pending_593.py
         env:
-          CENTRAL_AUTHORIZED_SOURCE_SHA256: 46eb92aa817c4f8dafe27b65fcc96280e90901cef0c1d2ba9ec2d7d763746f7f
+          CENTRAL_AUTHORIZED_SOURCE_SHA256: ebfc3f30ffda69ce6c819c81b5c1cb3408c0fb6ee65b3c15f95c75ceebf77516
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
       - id: revision
         if: steps.reporte.outputs.ready == 'true'
@@ -78,6 +85,7 @@ jobs:
         if: steps.reporte.outputs.ready == 'true'
         run: python automatizacion/scoped_content.py --ingest
         env:
+          CENTRAL_INGEST_AUTHORIZATION: DG-593-INGEST-ebfc3f30-ONCE
           CENTRAL_EXPECTED_SOURCE_SHA256: ${{ steps.reporte.outputs.validated_source_sha256 }}
           COMMERCIAL_PROCESSOR_EXPECTED_RELEASE: ${{ steps.receiver.outputs.processor_release }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
