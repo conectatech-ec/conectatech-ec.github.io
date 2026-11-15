@@ -17,6 +17,9 @@ const PHONE_BRANDS=/\b(SAMSUNG|GALAXY|HONOR|REDMI|POCO|ZTE|NUBIA|INFINIX|TECNO)\
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>'$'+Number(n).toFixed(2);
 function sugerencias(phone,products,slugs){
+ const policy=require('./politica-publicacion-web.cjs');
+ if(policy.excluded(phone))return [];
+ products=policy.visible(products);
  if(!phone||!/^TELF/.test(phone.sku)||!(phone.stock>0)||!PHONE_BRANDS.test(phone.name))return [];
  const rules=phone.sku==='TELF011'||phone.sku==='TELF012'?RULES.samsungA17:RULES.generic;
  const bySku=new Map(products.map(p=>[p.sku,p]));

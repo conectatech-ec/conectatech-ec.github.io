@@ -19,6 +19,7 @@ function generate(master,change=()=>{}){
   if(n==='fs')return fakeFS;
   if(['crypto','node:crypto','node:util'].includes(n))return require(n);
   if(n==='./presentacion-publica-alex.cjs')return require(n);
+  if(n==='./politica-publicacion-web.cjs')return require(n);
   if(['./editorial-fotografia-efectiva.cjs','./fotografia-direccion.cjs'].includes(n)){
    if(!modules.has(n)){const mod={exports:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/'+n,'utf8'),{module:mod,exports:mod.exports,require:fixtureRequire,console,process});modules.set(n,mod.exports);}
    return modules.get(n);

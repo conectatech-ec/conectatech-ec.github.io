@@ -17,12 +17,13 @@ function revisionExpresa0911(cut,prior){
  const data=Object.keys(cut.productos||{}).sort().map(s=>[s,cut.productos[s].stock,cut.productos[s].promo_centavos,cut.productos[s].pvp_centavos]);
  return require('crypto').createHash('sha256').update(JSON.stringify(data)).digest('hex')==='27628e3a5ba93c5eca07b68037c569166f51fb3709b6c718a8bf2224d37e163f';
 }
-function prepare(html,cut,prior){
+function prepare(html,cut,prior,baseline=null){
  if(!cut||!/^20\d{2}-\d{2}-\d{2}$/.test(cut.fecha_corte)||!/^[a-f0-9]{64}$/.test(cut.sha256_original))throw Error('Fuente o fecha invalida');
  if(prior?.fecha_corte>cut.fecha_corte)throw Error('Retroceso de fecha de inventario');
  if(prior?.fecha_corte===cut.fecha_corte&&prior?.origen_sha256!==cut.sha256_original&&!revisionExpresa0911(cut,prior))throw Error('Corte con igual fecha y distinta fuente: revision necesaria');
  const m=html.match(RX);if(!m)throw Error('No se encontro array de productos');
- const all=JSON.parse(m[1]);
+ const policy=require('./politica-publicacion-web.cjs');
+ const all=policy.completeForValidation(JSON.parse(m[1]),cut,baseline||(prior?.origen_sha256===cut.sha256_original?cut:null));
  const by=Object.keys(cut.productos||{});
  if(all.length!==cut.cantidad_sku_web||all.length!==by.length||all.length<1000)throw Error('Cobertura de SKU insuficiente');
  if(cut.cantidad_sku_original<cut.cantidad_sku_web||cut.cantidad_sku_original<1000)throw Error('Excel no completo');
@@ -78,13 +79,13 @@ function prepare(html,cut,prior){
   stock_negativo:updated.filter(p=>p.stock<0).length,fecha_precios:cut.fecha_corte,
   demas_atributos_intactos:true,referencia:'datos-593/corte-comercial-publico-validado.json'
  };
- return {summary,html:html.replace(m[0],'const products='+JSON.stringify(updated)+';\n'),changed:diff};
+ return {summary,html:html.replace(m[0],'const products='+JSON.stringify(policy.visible(updated))+';\n'),changed:diff};
 }
 function run(){
  const cut=JSON.parse(fs.readFileSync(INPUT,'utf8'));
  const prior=fs.existsSync(STATE)?JSON.parse(fs.readFileSync(STATE,'utf8')):null;
  const previous=fs.readFileSync(WEB,'utf8');
- const result=prepare(previous,cut,prior);
+ const result=prepare(previous,cut,prior,require('./politica-publicacion-web.cjs').previousCut(prior,cut));
  if(process.env.APLICAR_COMERCIAL_593==='SI'){
   if(previous!==result.html)fs.writeFileSync(WEB,result.html);
   fs.writeFileSync(STATE,JSON.stringify(result.summary,null,2)+'\n');

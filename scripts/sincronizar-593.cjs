@@ -29,7 +29,8 @@ if(input.length<1000)throw Error('Exportación aparentemente incompleta: '+input
 const html=fs.readFileSync('index.html','utf8');
 const match=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
 if(!match)throw Error('No se encontró array de productos');
-const original=JSON.parse(match[1]);
+const policy=require('./politica-publicacion-web.cjs');
+const original=policy.visible(JSON.parse(match[1]));
 const bySKU=new Map(original.map(p=>[p.sku,p]));
 if(bySKU.size!==original.length)throw Error('SKU duplicado en web');
 const existingSKU=new Set(),seen=new Set(),added=[],updated=[],outOfStock=[],warnings=[];
@@ -41,6 +42,7 @@ for(const raw of input){
  seen.add(sku);
  const stock=Number(raw.stock),base=Number(raw.precio_general),iva=Number(raw.iva);
  if(![stock,base,iva].every(Number.isFinite)||stock<-10000||stock>1000000||base<0||base>100000)throw Error('Cantidad o precio inválido: '+sku);
+ if(policy.excluded({sku,name:raw.nombre}))continue;
  const current=bySKU.get(sku);
  const sellable=raw.tipo.toUpperCase()==='PRODUCTO'&&base>0;
  if(current){

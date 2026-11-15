@@ -3,7 +3,7 @@ const fs=require('fs'),{isDeepStrictEqual}=require('node:util');
 const html=fs.readFileSync('index.html','utf8');
 const m=html.match(/const products=(\[[\s\S]*?\]);\s*\n/);
 if(!m)throw Error('No se encontró el catálogo');
-const products=JSON.parse(m[1]);
+const products=require('./politica-publicacion-web.cjs').visible(JSON.parse(m[1]));
 const content=JSON.parse(fs.readFileSync('seo-contenido.json','utf8'));
 const urls=JSON.parse(fs.readFileSync('seo-pages.json','utf8'));
 const base='https://conectatech-ec.github.io';

@@ -1,3 +1,5 @@
+const publicPolicy=require('./politica-publicacion-web.cjs');
+publicPolicy.apply();
 const photoDirection=require('./fotografia-direccion.cjs');
 const photoSelection=photoDirection.capture();
 require('./aplicar-reglas-medios.cjs')();
@@ -6,6 +8,7 @@ const frameFs=require('fs');
 const frameFile='importacion/encuadres-producto.json';
 if(frameFs.existsSync(frameFile)){const frames=JSON.parse(frameFs.readFileSync(frameFile)).productos;let page=frameFs.readFileSync('index.html','utf8');const line='const productFrames='+JSON.stringify(frames)+';\n';page=/const productFrames=.*?;\n/.test(page)?page.replace(/const productFrames=.*?;\n/,()=>line):page.replace('const products=',line+'const products=');frameFs.writeFileSync('index.html',page);}
 
+publicPolicy.apply();
 const fs=require('fs'),path=require('path');
 const estadoStock=fs.existsSync('datos-593/estado-ultimo-corte.json')?JSON.parse(fs.readFileSync('datos-593/estado-ultimo-corte.json','utf8')):null;
 const fechaPublicada=estadoStock&&/^\d{4}-\d{2}-\d{2}$/.test(estadoStock.fecha_corte)?estadoStock.fecha_corte.split('-').reverse().join('/'):null;

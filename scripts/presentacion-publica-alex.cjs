@@ -5,7 +5,9 @@ const ORIGIN='https://conectatech-ec.github.io',SCHEMA='conectatech.alex.present
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const stable=value=>JSON.stringify(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
 function buildPresentation({source_sha256,cut_date,published_at,multichannel,meta,products}){
- const body={schema:SCHEMA,source_sha256,cut_date,published_at,inputs:{multichannel_sha256:sha(multichannel),meta_sha256:sha(meta)},products};
+ const policy=require('./politica-publicacion-web.cjs');
+ const accepted=Object.fromEntries(Object.entries(products).filter(([sku,p])=>!policy.deniedSku(sku)&&!policy.excluded({sku,name:p.display_title})));
+ const body={schema:SCHEMA,source_sha256,cut_date,published_at,inputs:{multichannel_sha256:sha(multichannel),meta_sha256:sha(meta)},products:accepted};
  return {...body,version:'alex-presentation-v1-'+sha(stable(body))};
 }
 const own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
@@ -22,6 +24,7 @@ function validPresentation(document){
   if(!document.products||Object.prototype.toString.call(document.products)!=='[object Object]')return false;
   const entries=Object.entries(document.products);if(!entries.length||entries.length>5000)return false;
   for(const [sku,entry]of entries){
+   if(require('./politica-publicacion-web.cjs').deniedSku(sku)||require('./politica-publicacion-web.cjs').excluded({sku,name:entry.display_title}))return false;
    if(!/^[A-Z0-9_-]{3,40}$/.test(sku)||!keys(entry,['display_title','approved_media'])||!title(entry.display_title))return false;
    if(entry.approved_media!==null){const m=entry.approved_media;if(!keys(m,['url','sha256'])||typeof m.url!=='string'||!m.url.startsWith(ORIGIN+'/imagenes/')||!assetURL(m.url.slice(ORIGIN.length))||!HEX.test(m.sha256))return false;}
   }
