@@ -26,11 +26,15 @@ def main():
  except urllib.error.HTTPError as error:
   if error.code==404:output(False);print('Receiver bootstrap pending deployment; no source changed.');return
   raise
- if not state.get('pending'):output(False);print('No pending report; no deployment or source change.');return
+ if not state.get('pending'):
+  if os.environ.get('CENTRAL_AUTHORIZED_SOURCE_SHA256'):
+   print('::error title=DataHub ingestion privada::APPROVED_REPORT_NOT_PENDING');raise ValueError('APPROVED_REPORT_NOT_PENDING')
+  output(False);print('No pending report; no deployment or source change.');return
  lease_acquired=False
  sha=state['file_sha256']
  expected=os.environ.get('CENTRAL_AUTHORIZED_SOURCE_SHA256')
- if expected is not None and (not re.fullmatch(r'[a-f0-9]{64}',expected) or sha!=expected):raise ValueError('SOURCE_NOT_AUTHORIZED')
+ if expected is not None and (not re.fullmatch(r'[a-f0-9]{64}',expected) or sha!=expected):
+  print('::error title=DataHub ingestion privada::SOURCE_NOT_AUTHORIZED');raise ValueError('SOURCE_NOT_AUTHORIZED')
  report={'at':iso(stamp()),'source_sha256':sha,'raw_source_public':False,'stock_quantities_public':False,'production_channels_changed':False}
  try:
   with request('/commercial/complete',{'sha256':sha,'status':'claim'}) as r:claim=json.load(r)
@@ -72,5 +76,6 @@ def main():
    if lease_acquired:processing_lease.finish(request,'release')
   output(False)
  (ROOT/'generated/fase2').mkdir(parents=True,exist_ok=True);(ROOT/'generated/fase2/central-processing.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))
- if not report.get('validated'):raise SystemExit(1)
+ if not report.get('validated'):
+  print('::error title=DataHub ingestion privada::'+report['error_code']);raise SystemExit(1)
 if __name__=='__main__':main()

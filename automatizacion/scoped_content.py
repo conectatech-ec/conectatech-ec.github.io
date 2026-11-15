@@ -35,6 +35,11 @@ CONSUMED_RECEIVER_INSTALL_AUTHORIZATION='DG-593-INSTALL-e5ac06df-ONCE'
 RECEIVER_INSTALL_AUTHORIZATION='DG-593-RECEPTOR-POST371-UNICO'
 RECEIVER_INSTALL_PARENT='2df80f8db06b0eb1663342f4eda6f9b2f948cc4e'
 RECEIVER_INSTALL_PERMISSION_ENABLED=True # Single execution explicitly authorized.
+INGEST_ONCE_PARENT='bcff613e3c99c1b83a0febe07f4e96f1459aee59'
+INGEST_ONCE_AUTHORIZATION='DG-593-INGEST-ebfc3f30-ONCE'
+INGEST_ONCE_SHA='ebfc3f30ffda69ce6c819c81b5c1cb3408c0fb6ee65b3c15f95c75ceebf77516'
+INGEST_ONCE_GENERATED='2026-11-15T00:40:08Z'
+INGEST_ONCE_EXPIRES='2026-11-16T00:40:08Z'
 
 class ScopedError(RuntimeError):pass
 def fail(code):raise ScopedError(code) from None
@@ -61,6 +66,9 @@ RECEIVER_ROLLBACK_NOT_EXACT RECEIVER_ROLLBACK_RUNTIME_CHANGED POST_INSTALL_CHECK
 RECOVERY_NOT_VERIFIED RECOVERY_RUNTIME_CHANGED RECOVERY_SETTINGS_CHANGED RECOVERY_SOURCE_CHANGED
 RECEIVER_INSTALLATION_HISTORY_REQUIRED RECEIVER_INSTALLATION_NOT_AUTHORIZED
 RECEIVER_INSTALLATION_DISABLED
+INGEST_ONCE_NOT_AUTHORIZED INGEST_ONCE_HISTORY_REQUIRED INGEST_ONCE_REVISION_NOT_AUTHORIZED
+INGEST_ONCE_REQUIRES_CLOSED_FLAGS SOURCE_APPROVED_IDENTITY_MISMATCH RECEIVER_APPROVED_HASH_REQUIRED
+RECEIVER_APPROVED_HASH_MISMATCH POST_INGEST_SOURCE_NOT_CURRENT
 RECEIVER_INSTALLATION_REQUIRES_CLOSED_FLAGS RECEIVER_INSTALLATION_REVISION_NOT_AUTHORIZED
 BOOTSTRAP_REVISION_NOT_CURRENT LATEST_PUBLIC_CONFIG_INVALID LATEST_PUBLIC_CONFIG_READ_FAILED
 LATEST_PUBLIC_REVISION_INVALID LATEST_PUBLIC_REVISION_READ_FAILED
@@ -353,6 +361,35 @@ def require_receiver_installation():
         config['costo_maximo_usd']!=0):fail('RECEIVER_INSTALLATION_REQUIRES_CLOSED_FLAGS')
     require_latest_revision(revision)
 
+def require_ingest_once():
+    revision=os.environ.get('GITHUB_SHA','')
+    workflow='conectatech-ec/conectatech-ec.github.io/.github/workflows/central-593.yml@'+BRANCH
+    if (os.environ.get('CENTRAL_INGEST_AUTHORIZATION')!=INGEST_ONCE_AUTHORIZATION or
+        os.environ.get('GITHUB_REF')!=BRANCH or os.environ.get('GITHUB_EVENT_NAME')!='push' or
+        os.environ.get('GITHUB_RUN_ATTEMPT')!='1' or os.environ.get('GITHUB_WORKFLOW_REF')!=workflow or
+        os.environ.get('GITHUB_WORKFLOW_SHA')!=revision or not RELEASE.fullmatch(revision) or
+        os.environ.get('CF_FREE_ONLY_CONFIRMED')!='true'):fail('INGEST_ONCE_NOT_AUTHORIZED')
+    if datetime.now(timezone.utc)>=source_time(INGEST_ONCE_EXPIRES):fail('SOURCE_UPDATE_EXPIRED')
+    try:
+        head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT.parent,text=True,stderr=subprocess.DEVNULL).strip()
+        parent=subprocess.check_output(['git','rev-parse','HEAD^'],cwd=ROOT.parent,text=True,stderr=subprocess.DEVNULL).strip()
+    except Exception:fail('INGEST_ONCE_HISTORY_REQUIRED')
+    if head!=revision or parent!=INGEST_ONCE_PARENT:fail('INGEST_ONCE_REVISION_NOT_AUTHORIZED')
+    c=read_latest_config()
+    if (c.get('activar') is not False or c.get('datahub_scoped_content_enabled') is not False or
+        c.get('sincronizar_meta_verify_token') is not False or type(c.get('costo_maximo_usd')) is not int or c['costo_maximo_usd']!=0):fail('INGEST_ONCE_REQUIRES_CLOSED_FLAGS')
+    require_latest_revision(revision)
+
+def approved_ingest_source(data):
+    if (data['source']['sha256']!=INGEST_ONCE_SHA or data['source']['cut_date']!='2026-11-14' or
+        source_time(data['source']['generated_at'])!=source_time(INGEST_ONCE_GENERATED) or
+        source_time(data['expires_at'])!=source_time(INGEST_ONCE_EXPIRES)):fail('SOURCE_APPROVED_IDENTITY_MISMATCH')
+
+def require_receiver_hash(bundle,expected):
+    if expected!=APPROVED_RECEIVER_BODY:fail('RECEIVER_APPROVED_HASH_REQUIRED')
+    body=next(p.body for p in bundle.parts if p.name=='commercial-reception.mjs')
+    if hashlib.sha256(body).hexdigest()!=expected:fail('RECEIVER_APPROVED_HASH_MISMATCH')
+
 class ReceiverPutBudget:
     """Wrap the original transport; count attempts even if its response is lost."""
     def __init__(self,api):self.api=api;self.phase='install';self.attempts={'install':0,'recovery':0}
@@ -482,7 +519,9 @@ class ScopedDeployer:
         return release
     def check_ingest(self,receiver_text,diagnostic=None):
         if diagnostic is not None:diagnostic.at('postcheck_capture')
-        capture=self.capture();release=self.require_ingest_receiver(capture,receiver_text,diagnostic)
+        capture=self.capture()
+        if os.environ.get('CENTRAL_EXPECTED_RECEIVER_SHA256'):require_receiver_hash(capture['bundle'],os.environ['CENTRAL_EXPECTED_RECEIVER_SHA256'])
+        release=self.require_ingest_receiver(capture,receiver_text,diagnostic)
         if diagnostic is not None:diagnostic.at('postcheck_fence')
         if not same_bundle(self.api.get_bundle(),capture['bundle']) or not same_json(self.api.get_settings(),capture['settings']):fail('INSPECT_RUNTIME_CHANGED')
         return self.receipt(capture,'check_ingest',read_only=True,ready=True,worker_puts=0,
@@ -527,7 +566,7 @@ class ScopedDeployer:
         self.authorize() # Re-read current public control, including on an old-job rerun.
         no_change=same_bundle(before,expected)
         if allowed=={'commercial-reception.mjs'} and not no_change:self.revision_check(processor_release)
-        if allowed=={'commercial-reception.mjs'} and not no_change:self.check_before_put(capture)
+        if not no_change:self.check_before_put(capture)
         if diagnostic is not None:diagnostic.at('installation_write')
         provider={} if no_change else self.api.put_bundle(expected) # Exactly one mutation; never retried.
         for attempt in range(1,13):
@@ -654,6 +693,10 @@ class ScopedDeployer:
     def ingest(self,compiled,expected_sha,lease,processor_release=None,receiver_text=None):
         if processor_release is not None and (not isinstance(processor_release,str) or not RELEASE.fullmatch(processor_release)):fail('PROCESSOR_RELEASE_REQUIRED')
         capture=self.capture()
+        if os.environ.get('CENTRAL_INGEST_AUTHORIZATION')==INGEST_ONCE_AUTHORIZATION:
+            require_receiver_hash(capture['bundle'],APPROVED_RECEIVER_BODY)
+            approved_ingest_source(compiled)
+            if expected_sha!=INGEST_ONCE_SHA:fail('SOURCE_EXPECTED_SHA_MISMATCH')
         if receiver_text is not None:self.require_ingest_receiver(capture,receiver_text)
         validate_update(compiled,capture['source'],expected_sha,lease,self.timestamp())
         if processor_release and processor_release_of(capture['bundle'])!=processor_release:fail('BUNDLED_PROCESSOR_RELEASE_DIFFER')
@@ -673,14 +716,16 @@ def main():
     config=strict_json((ROOT/'activar-cloud.json').read_bytes())
     if config.get('activar') is not False or config.get('sincronizar_meta_verify_token') is True:fail('FULL_DEPLOY_MUST_STAY_DISABLED')
     installation=sys.argv[1]=='--install-receiver'
+    ingestion=sys.argv[1]=='--ingest' and os.environ.get('CENTRAL_INGEST_AUTHORIZATION')==INGEST_ONCE_AUTHORIZATION
     if installation:
         if config.get('datahub_scoped_content_enabled') is not False:fail('RECEIVER_INSTALLATION_REQUIRES_CLOSED_FLAGS')
         require_receiver_installation()
+    elif ingestion:require_ingest_once()
     elif sys.argv[1] not in {'--inspect','--check-ingest','--plan-receiver'}:
         if config.get('datahub_scoped_content_enabled') is not True:fail('SCOPED_WRITES_NOT_PROMOTED')
         require_latest_promotion()
     api=CFClient(os.environ.get('CLOUDFLARE_ACCOUNT_ID'),os.environ.get('CLOUDFLARE_API_TOKEN'))
-    client=ScopedDeployer(api,authorize=require_receiver_installation if installation else require_latest_promotion,
+    client=ScopedDeployer(api,authorize=require_receiver_installation if installation else require_ingest_once if ingestion else require_latest_promotion,
         revision_check=(lambda _:require_latest_revision(os.environ['GITHUB_SHA'])) if installation else require_latest_revision);mode=sys.argv[1];release=os.environ.get('GITHUB_SHA','')
     if mode=='--inspect':report=client.inspect()
     elif mode=='--check-ingest':report=client.check_ingest((ROOT/'commercial-reception.mjs').read_text())
@@ -697,6 +742,12 @@ def main():
         if not RELEASE.fullmatch(expected_processor):fail('PROCESSOR_RELEASE_REQUIRED')
         report=client.ingest(strict_json(data),os.environ.get('CENTRAL_EXPECTED_SOURCE_SHA256'),strict_json(path.read_bytes()),expected_processor,
             receiver_text=(ROOT/'commercial-reception.mjs').read_text())
+        if ingestion:
+            status=client.private_get('/commercial/catalog/status')
+            approved_ingest_source({'source':{'sha256':status.get('source_sha256'),'cut_date':status.get('cut_date'),'generated_at':status.get('generated_at')},'expires_at':status.get('expires_at')})
+            if status.get('current') is not True or client.timestamp()>=source_time(status['expires_at']):fail('POST_INGEST_SOURCE_NOT_CURRENT')
+            report.update(source_sha256=INGEST_ONCE_SHA,cut_date=status['cut_date'],generated_at=status['generated_at'],expires_at=status['expires_at'],current=True,receiver_module_sha256=APPROVED_RECEIVER_BODY)
+            print('::notice title=DataHub ingestion privada::'+json.dumps({k:report[k] for k in ('worker_puts','settings_preserved','unowned_modules_preserved','source_sha256','cut_date','generated_at','expires_at','current','receiver_module_sha256')},separators=(',',':')))
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'],'a') as output:
             for key in ('ready','runtime_release','processor_release'):
@@ -733,4 +784,6 @@ if __name__=='__main__':
         if sys.argv[1:]==['--check-ingest']:print('::error title=DataHub receptor lectura::'+code)
         if sys.argv[1:]==['--plan-receiver']:print('::error title=DataHub receptor plan::'+code)
         if sys.argv[1:]==['--install-receiver']:print('::error title=DataHub receptor instalacion::'+code)
+        if sys.argv[1:]==['--ingest'] and os.environ.get('CENTRAL_INGEST_AUTHORIZATION')==INGEST_ONCE_AUTHORIZATION:
+            print('::error title=DataHub ingestion privada::'+receiver_error_code(error))
         sys.exit(1)
