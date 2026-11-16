@@ -17,10 +17,20 @@ function revisionExpresa0911(cut,prior){
  const data=Object.keys(cut.productos||{}).sort().map(s=>[s,cut.productos[s].stock,cut.productos[s].promo_centavos,cut.productos[s].pvp_centavos]);
  return require('crypto').createHash('sha256').update(JSON.stringify(data)).digest('hex')==='27628e3a5ba93c5eca07b68037c569166f51fb3709b6c718a8bf2224d37e163f';
 }
+// Revision puntual propuesta para la carga DG del16/11 a las16:46 Ecuador.
+// Unicamente origen previo, origen nuevo, fecha y proyeccion completos exactos.
+// La integracion de este cambio constituye la autorizacion de la revision;
+// conserva cobertura, controles de diferencias, precios y exclusiones vigentes.
+function revisionExpresa1611(cut,prior){
+ if(cut.fecha_corte!=='2026-11-16'||prior?.fecha_corte!==cut.fecha_corte||
+    prior.origen_sha256!=="2c061524b0468c7012bd456c2ac2cca388aacb48a34df854bebfba1aae0b56ff"||cut.sha256_original!=="e6f4770fedd8d06f50012a839023a9665148972f6998b79c7f7f0b9d13590bdc")return false;
+ const data=Object.keys(cut.productos||{}).sort().map(s=>[s,cut.productos[s].stock,cut.productos[s].promo_centavos,cut.productos[s].pvp_centavos]);
+ return require('crypto').createHash('sha256').update(JSON.stringify(data)).digest('hex')==="dd44d1a6a1fb3eab937bdec2bcaa6daa7fc4e0dc184f952ec8adc3f9901e7f46";
+}
 function prepare(html,cut,prior,baseline=null){
  if(!cut||!/^20\d{2}-\d{2}-\d{2}$/.test(cut.fecha_corte)||!/^[a-f0-9]{64}$/.test(cut.sha256_original))throw Error('Fuente o fecha invalida');
  if(prior?.fecha_corte>cut.fecha_corte)throw Error('Retroceso de fecha de inventario');
- if(prior?.fecha_corte===cut.fecha_corte&&prior?.origen_sha256!==cut.sha256_original&&!revisionExpresa0911(cut,prior))throw Error('Corte con igual fecha y distinta fuente: revision necesaria');
+ if(prior?.fecha_corte===cut.fecha_corte&&prior?.origen_sha256!==cut.sha256_original&&!revisionExpresa0911(cut,prior)&&!revisionExpresa1611(cut,prior))throw Error('Corte con igual fecha y distinta fuente: revision necesaria');
  const m=html.match(RX);if(!m)throw Error('No se encontro array de productos');
  const policy=require('./politica-publicacion-web.cjs');
  const all=policy.completeForValidation(JSON.parse(m[1]),cut,baseline||(prior?.origen_sha256===cut.sha256_original?cut:null));
