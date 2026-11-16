@@ -109,7 +109,7 @@ def check_page(document, row):
     return obj
 
 
-def candidate(root, p, o, slug, master):
+def candidate(root, p, o, slug, master, *, reconciler=None):
     sku = p.get('sku')
     if not isinstance(sku, str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,50}', sku):
         raise ValueError('sku_no_valido')
@@ -119,6 +119,8 @@ def candidate(root, p, o, slug, master):
     if not cp.is_file():
         raise ValueError('sin_contrato')
     contract = json.loads(cp.read_text())
+    if reconciler is not None:
+        p, o, contract = reconciler.reconcile(p, o, contract, slug)
     checks = contract.get('validaciones', {})
     identity = checks.get('identidad', {})
     if contract.get('sku') != sku or identity.get('sku_verificado') is not True or identity.get('discrepancias_pendientes'):
@@ -150,7 +152,9 @@ def candidate(root, p, o, slug, master):
         raise ValueError('imagen_no_coincide')
     info = o.get('imagenProfesional', {})
     version = next((v for v in info.get('versiones', {}).values() if local_url(v.get('url')) == image), None)
-    if info.get('contiene_caja') is not False or not info.get('revision_visual') or not version:
+    sealed = reconciler is not None and reconciler.sealed(sku, contract)
+    visual = bool(info.get('revision_visual')) or (reconciler is not None and reconciler.visual(sku, info))
+    if (info.get('contiene_caja') is not False and not sealed) or not visual or not version:
         raise ValueError('fotografia_no_aprobada')
     image_bytes = (root / urlsplit(image).path.lstrip('/')).read_bytes()
     if hashlib.sha256(image_bytes).hexdigest() != version.get('sha256'):
