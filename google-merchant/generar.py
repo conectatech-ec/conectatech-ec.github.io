@@ -224,7 +224,28 @@ def xml_feed(rows):
     return data
 
 
-def generate(root, out, public=False, inventory=None):
+def preview_free_listings(rows, skus):
+    """Preparar el cambio de destino sin aprobar productos ni mutar sus datos."""
+    if not isinstance(skus, list) or not skus or any(not isinstance(sku, str) or not sku for sku in skus):
+        raise ValueError('La simulación requiere una lista explícita de SKU')
+    selected = set(skus)
+    if len(selected) != len(skus) or selected - {row['id'] for row in rows}:
+        raise ValueError('SKU duplicado o no elegible en la simulación')
+    if any(row['id'] in selected and row['availability'] != 'in_stock' for row in rows):
+        raise ValueError('No se simula habilitación de SKU agotados')
+    result = []
+    for row in rows:
+        destinations = row['excluded_destination']
+        if not isinstance(destinations, list) or 'Shopping_ads' not in destinations:
+            raise ValueError('Shopping_ads debe permanecer excluido')
+        result.append(dict(row, excluded_destination=[
+            destination for destination in destinations
+            if destination != 'Free_listings' or row['id'] not in selected
+        ]))
+    return result
+
+
+def generate(root, out, public=False, inventory=None, preview_skus=None):
     products = json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n', (root / 'index.html').read_text())[1])
     seo = json.loads((root / 'seo-contenido.json').read_text())
     urls = json.loads((root / 'seo-pages.json').read_text())
@@ -258,6 +279,8 @@ def generate(root, out, public=False, inventory=None):
     if not pairs:
         raise ValueError('Cero productos verificables; no se reemplaza el feed anterior')
     rows = [pair[0] for pair in pairs]
+    if preview_skus is not None:
+        rows = preview_free_listings(rows, preview_skus)
     data = xml_feed(rows)
     out.mkdir(parents=True, exist_ok=True)
     source_commit = subprocess.check_output(['git', '-C', str(root), 'rev-parse', 'HEAD'], text=True).strip()
@@ -272,7 +295,17 @@ def generate(root, out, public=False, inventory=None):
                                  'Faltan verificar compra online, precio final, envíos y devoluciones; XML válido no garantiza aprobación de Google.',
                                  'GTIN/MPN ausentes se omiten; no se declara identifier_exists=no.',
                                  'País e idioma se configuran también en Merchant Center.'])
-    (out / 'productos-ec.xml').write_bytes(data)
+    filename = 'productos-ec.xml'
+    if preview_skus is not None:
+        filename = 'productos-ec.preview.xml'
+        summary.update(estado='SIMULACION_FICHAS_GRATUITAS_NO_PUBLICAR',
+                       simulacion_fichas_gratuitas=dict(
+                           sku=sorted(preview_skus), sin_exclusion_free_listings=len(preview_skus),
+                           conservan_exclusion_free_listings=len(rows) - len(preview_skus),
+                           shopping_ads_excluidos=len(rows),
+                           aprobacion_comercial_acreditada=False,
+                           nota='Escenario condicionado a cierre comercial y autorización posterior; no es un feed activado.'))
+    (out / filename).write_bytes(data)
     for name, value in [('validacion.json', summary), ('exclusiones.json', sorted(exclusions, key=lambda e: e['sku'])), ('evidencias.json', [pair[1] for pair in pairs])]:
         (out / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k: summary[k] for k in ('productos_origen', 'incluidos', 'excluidos', 'validacion')}, ensure_ascii=False))
@@ -285,5 +318,12 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path)
     parser.add_argument('--verify-public', action='store_true')
     parser.add_argument('--inventory', type=Path)
+    parser.add_argument('--preview-free-listings', type=Path,
+                        help='JSON con lista explícita de SKU para simular; no habilita el flujo de publicación')
     args = parser.parse_args()
-    generate(args.root.resolve(), args.output or args.root / 'google-merchant', args.verify_public, args.inventory)
+    if args.preview_free_listings and not args.output:
+        parser.error('--preview-free-listings requiere --output explícito para separar la simulación')
+    preview_skus = json.loads(args.preview_free_listings.read_text()) if args.preview_free_listings else None
+    if args.preview_free_listings and not isinstance(preview_skus, list):
+        parser.error('--preview-free-listings requiere una lista JSON de SKU')
+    generate(args.root.resolve(), args.output or args.root / 'google-merchant', args.verify_public, args.inventory, preview_skus)
