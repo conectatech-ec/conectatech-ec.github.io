@@ -2,7 +2,7 @@ name: Normalizar reporte 593 aislado
 on:
   push:
     branches: ['automatizacion/piloto-cloud-3sku-20261015']
-    paths: ['.github/workflows/central-593.yml', 'automatizacion/process_pending_593.py', 'automatizacion/data_hub_593.py', 'automatizacion/activar-cloud.json']
+    paths: ['.github/workflows/central-593.yml', '.github/checkout-install-once.json', 'automatizacion/process_pending_593.py', 'automatizacion/data_hub_593.py', 'automatizacion/activar-cloud.json']
 permissions:
   contents: read
 concurrency:
@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   ingresar:
-    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]')
     environment: conectatech-piloto-gratis
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -131,3 +131,54 @@ jobs:
             automatizacion/generated/fase2/central-processing.json
             automatizacion/generated/fase2/central-cloud.json
           retention-days: 7
+  instalar_checkout_inactivo:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-install-388]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar delta aprobado y respaldo cifrado reversible en solo lectura
+        run: python automatizacion/install_checkout.py --prepare
+        env:
+          CHECKOUT_INSTALL_AUTHORIZATION: DG-CHECKOUT-PR388-INACTIVO-ONCE
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar respaldo privado cifrado antes de permitir el unico PUT
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr388-respaldo-cifrado
+          path: automatizacion/generated/fase2/checkout-install/receiver-and-worker-backup.sealed.json
+          retention-days: 1
+          compression-level: 9
+          if-no-files-found: error
+      - name: Instalar delta inactivo una vez y verificar o recuperar su inversa exacta
+        run: python automatizacion/install_checkout.py --install
+        env:
+          CHECKOUT_INSTALL_AUTHORIZATION: DG-CHECKOUT-PR388-INACTIVO-ONCE
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar recibo sin datos privados incluso si se bloquea
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr388-recibo
+          path: automatizacion/generated/fase2/checkout-install/receipt.json
+          retention-days: 1
