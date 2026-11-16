@@ -21,3 +21,16 @@ test('transport errors and oversized private bodies produce fixed codes without 
  const oversized=await readPrivate('/commercial/catalog',{token:'fixture',fetcher:async()=>new Response('x'.repeat(2_000_001))});
  assert.deepEqual(oversized,{status:0,error:'SCOPED_PRIVATE_TRANSPORT_FAILED'});
 });
+test('checkout closure probes are fixed GETs; public Origin and anonymous admin are strictly bounded',async()=>{
+ const calls=[];const fetcher=async(url,options)=>{calls.push({url,...options});return Response.json({error:'COMPRA_NO_HABILITADA'},{status:503});};
+ assert.equal((await readPrivate('/api/compra/catalogo',{token:'fixture',fetcher})).status,503);
+ await readPrivate('/api/compra/admin/pedidos',{token:'fixture',fetcher,anonymous:true});
+ await readPrivate('/api/compra/admin/pedidos',{token:'fixture',fetcher});
+ assert.equal(calls[0].headers.Origin,'https://conectatech-ec.github.io');
+ assert.equal(calls[1].headers.Authorization,undefined);
+ assert.equal(calls[2].headers.Authorization,'Bearer fixture');
+ assert.ok(calls.every(x=>x.method==='GET'&&x.redirect==='error'&&!x.body));
+ await assert.rejects(readPrivate('/health',{token:'fixture',fetcher,anonymous:true}),/READ_REJECTED/);
+ await assert.rejects(readPrivate('/api/compra/pedidos',{token:'fixture',fetcher}),/READ_REJECTED/);
+ assert.equal(calls.length,3);
+});
