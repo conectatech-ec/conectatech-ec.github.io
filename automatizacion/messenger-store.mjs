@@ -1,3 +1,4 @@
+import {initCheckoutStore,handleCheckoutStore} from './checkout-entry.mjs';
 import catalog from './generated/catalogo.json' with {type:'json'};
 import {answer} from './commerce.mjs';
 import {alexInit,alexCleanup,alexNext,alexFetch} from './alex-store.mjs';
@@ -24,12 +25,13 @@ export class MessengerTestInbox {
   this.sql.exec('CREATE INDEX IF NOT EXISTS events_day ON events(day)');
   this.sql.exec('CREATE TABLE IF NOT EXISTS reviews (k TEXT PRIMARY KEY, decision TEXT, digest TEXT, reviewed_at INTEGER)');
   this.sql.exec('CREATE TABLE IF NOT EXISTS counters (day INTEGER PRIMARY KEY, duplicates INTEGER NOT NULL DEFAULT 0)');
-  controlInit(this);sellerInit(this);alexInit(this);commercialInit(this);
+  controlInit(this);sellerInit(this);alexInit(this);commercialInit(this);initCheckoutStore(this);
  }
  cleanup(now){this.sql.exec('DELETE FROM events WHERE expires <= ?',now);this.sql.exec('DELETE FROM reviews WHERE k NOT IN (SELECT k FROM events)');this.sql.exec('DELETE FROM counters WHERE day < ?',Math.floor(now/86400000)-6);controlCleanup(this,now);sellerCleanup(this,now);alexCleanup(this,now);commercialCleanup(this,now);}
  async fetch(req) {
   const path=new URL(req.url).pathname;
   this.cleanup(Date.now());
+  const checkout=await handleCheckoutStore(path,req,this);if(checkout)return checkout;
   const commercial=await commercialFetch(path,req,this);if(commercial)return commercial;
   const alex=await alexFetch(path,req,this);if(alex)return alex;
   const seller=await sellerFetch(path,req,this);if(seller)return seller;

@@ -1,3 +1,4 @@
+import {handleCheckoutPublic,handleCheckoutAdmin} from './checkout-entry.mjs';
 import {central} from './central-source.mjs';
 import {uploadPage,centralStatus} from './commercial-reception.mjs';
 import catalog from './generated/catalogo.json' with {type:'json'};
@@ -32,6 +33,7 @@ async function body(req) {return JSON.parse(await limitedText(req,8000));}
 export default {
  async fetch(req,env,ctx) {
   const path=new URL(req.url).pathname;
+  const checkoutPublic=await handleCheckoutPublic(req,env);if(checkoutPublic)return checkoutPublic;
   if(path==='/health') {
    let seller=null;try{if(env.MESSENGER_TEST_INBOX&&env.META_PAGE_ACCESS_TOKEN)seller=await (await env.MESSENGER_TEST_INBOX.get(env.MESSENGER_TEST_INBOX.idFromName('messenger-development')).fetch('https://inbox/seller/status')).json();}catch{return json({ok:false},503);}
    return json({ok:true,pilot:true,seller_transport_implementation:'official_graph_v1',cloud_bindings:!!env.DB,ai_binding:!!env.AI,alex_generative:env.ALEX_ENABLED==='true',catalog_first:env.CATALOG_FIRST==='true',release:env.PILOT_RELEASE||null,messenger_test_storage:!!env.MESSENGER_TEST_INBOX,messenger_configured:!!(env.META_APP_SECRET&&env.META_VERIFY_TOKEN&&env.META_PAGE_ID&&(env.META_TEST_SENDER_IDS||seller?.testers_configured)),messenger_outbound:!!seller?.enabled,meta_ingress_enabled:env.META_INGRESS_ENABLED==='true'});
@@ -44,6 +46,7 @@ export default {
   if(path==='/commercial/upload'&&req.method==='GET')return uploadPage();
   if(path==='/marketplace/pilot'&&req.method==='GET')return marketplacePage();
   if(!await authorized(req,env)) return json({error:'Unauthorized'},401);
+  const checkoutAdmin=await handleCheckoutAdmin(req,env);if(checkoutAdmin)return checkoutAdmin;
   try {
    if(/^\/alex\/signature\/(?:upload\/)?(?:TELF011|TELF012|REL046)(?:\/[a-f0-9]{64}\.png)?$/.test(path)){
     if(!env.MESSENGER_TEST_INBOX)return json({error:'Private image storage unavailable'},503);
