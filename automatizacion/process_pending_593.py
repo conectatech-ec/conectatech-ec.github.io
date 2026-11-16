@@ -35,6 +35,7 @@ def main():
  expected=os.environ.get('CENTRAL_AUTHORIZED_SOURCE_SHA256')
  if expected is not None and (not re.fullmatch(r'[a-f0-9]{64}',expected) or sha!=expected):
   print('::error title=DataHub ingestion privada::SOURCE_NOT_AUTHORIZED');raise ValueError('SOURCE_NOT_AUTHORIZED')
+ if expected:print('::notice title=DataHub reporte pendiente::'+json.dumps({'source_sha256':sha,'pending':True,'status':state.get('status')}))
  report={'at':iso(stamp()),'source_sha256':sha,'raw_source_public':False,'stock_quantities_public':False,'production_channels_changed':False}
  try:
   with request('/commercial/complete',{'sha256':sha,'status':'claim'}) as r:claim=json.load(r)
@@ -45,6 +46,9 @@ def main():
    output(False);print('Same validated version already deployed; receipt recovered without redeployment.');return
   with request('/commercial/report?sha256='+sha) as r:raw=r.read(1000001);filename=urllib.parse.unquote(r.headers['X-Report-Filename'])
   if len(raw)>1000000 or hashlib.sha256(raw).hexdigest()!=sha:raise ValueError('SOURCE_INTEGRITY')
+  expected_size=os.environ.get('CENTRAL_AUTHORIZED_SOURCE_BYTES')
+  if expected_size is not None and len(raw)!=int(expected_size):raise ValueError('SOURCE_SIZE_MISMATCH')
+  if expected:print('::notice title=DataHub integridad Excel::'+json.dumps({'source_sha256':sha,'bytes':len(raw),'integrity_verified':True}))
   report_name(filename)
   report.update(original_name=filename,received_at=state.get('received_at'))
   prefix='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/main/'

@@ -33,7 +33,7 @@ class Once(unittest.TestCase):
   r=f.Runtime();template=(s.ROOT/'commercial-reception.mjs').read_text();body=template.replace(s.PLACEHOLDER,s.APPROVED_RECEIVER_RELEASE).replace(s.CODE_PLACEHOLDER,s.APPROVED_RECEIVER_CODE).encode()
   r.bundle=s.replace_part(r.bundle,'commercial-reception.mjs',body);r.original_bundle=copy.deepcopy(r.bundle)
   r.on_private_read=lambda rt,path:{'processor_release':s.APPROVED_RECEIVER_RELEASE,'processor_code_sha256':s.APPROVED_RECEIVER_CODE} if path=='/commercial/catalog/status' else None
-  data=f.source('b',14);data['source'].update(sha256=s.INGEST_ONCE_SHA,cut_date='2026-11-14',generated_at=s.INGEST_ONCE_GENERATED);data['expires_at']=s.INGEST_ONCE_EXPIRES
+  data=f.source('b',15);data['source'].update(sha256=s.INGEST_ONCE_SHA,cut_date='2026-11-15',generated_at=s.INGEST_ONCE_GENERATED);data['expires_at']=s.INGEST_ONCE_EXPIRES
   lease={**f.lease(),'sha256':s.INGEST_ONCE_SHA}
   return r,template,data,lease
  def test_only_central_data_changes_once(self):

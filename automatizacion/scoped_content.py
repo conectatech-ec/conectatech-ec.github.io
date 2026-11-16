@@ -35,11 +35,11 @@ CONSUMED_RECEIVER_INSTALL_AUTHORIZATION='DG-593-INSTALL-e5ac06df-ONCE'
 RECEIVER_INSTALL_AUTHORIZATION='DG-593-RECEPTOR-POST371-UNICO'
 RECEIVER_INSTALL_PARENT='2df80f8db06b0eb1663342f4eda6f9b2f948cc4e'
 RECEIVER_INSTALL_PERMISSION_ENABLED=True # Single execution explicitly authorized.
-INGEST_ONCE_PARENT='bcff613e3c99c1b83a0febe07f4e96f1459aee59'
-INGEST_ONCE_AUTHORIZATION='DG-593-INGEST-ebfc3f30-ONCE'
-INGEST_ONCE_SHA='ebfc3f30ffda69ce6c819c81b5c1cb3408c0fb6ee65b3c15f95c75ceebf77516'
-INGEST_ONCE_GENERATED='2026-11-15T00:40:08Z'
-INGEST_ONCE_EXPIRES='2026-11-16T00:40:08Z'
+INGEST_ONCE_PARENT='94364da412fcb55f5f449c4c26c0a8e8bd8c0b23'
+INGEST_ONCE_AUTHORIZATION='DG-593-INGEST-caaa9a78-ONCE'
+INGEST_ONCE_SHA='caaa9a78fe8479f87197005e352489b65230c174d79401ed7bbe4febbcc7de76'
+INGEST_ONCE_GENERATED='2026-11-16T01:49:34Z'
+INGEST_ONCE_EXPIRES='2026-11-17T01:49:34Z'
 
 class ScopedError(RuntimeError):pass
 def fail(code):raise ScopedError(code) from None
@@ -381,7 +381,7 @@ def require_ingest_once():
     require_latest_revision(revision)
 
 def approved_ingest_source(data):
-    if (data['source']['sha256']!=INGEST_ONCE_SHA or data['source']['cut_date']!='2026-11-14' or
+    if (data['source']['sha256']!=INGEST_ONCE_SHA or data['source']['cut_date']!='2026-11-15' or
         source_time(data['source']['generated_at'])!=source_time(INGEST_ONCE_GENERATED) or
         source_time(data['expires_at'])!=source_time(INGEST_ONCE_EXPIRES)):fail('SOURCE_APPROVED_IDENTITY_MISMATCH')
 
