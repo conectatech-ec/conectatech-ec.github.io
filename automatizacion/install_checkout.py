@@ -9,6 +9,7 @@ from pathlib import Path
 from scoped_content import (CFClient,ScopedDeployer,Bundle,Part,ScopedError,receiver_error_code,
     same_bundle,same_json,bundled_source,encode_bundle,read_latest_revision)
 from scoped_policy import closed_health,tester_scope
+from github_revision_read import read_authenticated_revision,RevisionReadError
 
 ROOT=Path(__file__).resolve().parent
 ARTIFACT_COMMIT='1567ea58d12e698691889ca164cf8398616807ca'
@@ -104,7 +105,9 @@ def require_permission():
         fail('CHECKOUT_PERMISSION_PARENT_CHANGED')
     if git('diff-tree','--no-commit-id','--name-only','-r','HEAD').splitlines()!=['.github/checkout-install-once.json']:
         fail('CHECKOUT_ACTIVATION_SCOPE_CHANGED')
-    if read_latest_revision()!=os.environ['GITHUB_SHA']:fail('CHECKOUT_REVISION_NO_LONGER_CURRENT')
+    try:latest=read_authenticated_revision()
+    except RevisionReadError as error:fail(error.code)
+    if latest!=os.environ['GITHUB_SHA']:fail('CHECKOUT_REVISION_NO_LONGER_CURRENT')
     return c
 
 def pack_capture(capture):
