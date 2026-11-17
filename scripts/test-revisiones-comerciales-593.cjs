@@ -1,0 +1,30 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('fs'),os=require('os'),path=require('path'),cp=require('child_process');
+const revisions=require('./revisiones-comerciales-593.cjs');
+const apply=require('./aplicar-corte-comercial-593.cjs').prepare;
+const a='a'.repeat(64),b='b'.repeat(64),c='c'.repeat(64),day='2026-11-16';
+const receipt={version:1,anterior_sha256:a,secuencia:1,generado_en:day+'T16:00:00.000Z',recibido_en:day+'T16:02:00.000Z',evidencia:'XLSX_CORE_CREATED_EQUALS_MODIFIED',anterior_confirmado:{sha256:a,generado_en:day+'T15:00:00.000Z',evidencia:'XLSX_CORE_CREATED_EQUALS_MODIFIED'}};
+const old={tipo_corte:'comercial',fecha_corte:day,origen_sha256:a,referencia:'datos-593/corte-comercial-publico-validado.json'};
+const cut={fecha_corte:day,sha256_original:b,revision_fuente:receipt};
+let count=0;function check(name,fn){fn();count++;console.log('OK '+name);}
+check('revisión posterior mismo día sin SHA en código',()=>assert.equal(revisions.validar(cut,old).secuencia,1));
+check('segunda revisión conserva cadena y orden',()=>{const first=revisions.validar(cut,old);const r={...receipt,anterior_sha256:b,secuencia:2,generado_en:day+'T17:00:00.000Z',recibido_en:day+'T17:02:00.000Z'};assert.equal(revisions.validar({...cut,sha256_original:c,revision_fuente:r},{...old,origen_sha256:b,revision_fuente:first}).secuencia,2);});
+check('archivo idéntico idempotente sin renovar horas',()=>assert.equal(revisions.validar({...cut,sha256_original:a,revision_fuente:{...receipt,recibido_en:'invalid'}},old),null));
+check('sin recibo no acepta fuente distinta mismo día',()=>assert.throws(()=>revisions.validar({...cut,revision_fuente:undefined},old),/FALTA_RECIBO/));
+check('fecha imposible rechazada sin normalizarla',()=>assert.throws(()=>revisions.validar({...cut,revision_fuente:{...receipt,generado_en:'2026-02-30T16:00:00.000Z'}},old),/HORA_CONFIRMADA_INVALIDA/));
+check('recepción futura rechazada',()=>assert.throws(()=>revisions.validar({...cut,revision_fuente:{...receipt,recibido_en:'2099-11-16T17:00:00.000Z'}},old),/RECEPCION_FUTURA/));
+check('SHA base concurrente rechazada',()=>assert.throws(()=>revisions.validar({...cut,revision_fuente:{...receipt,anterior_sha256:c}},old),/BASE_CAMBIO/));
+check('exportación antigua subida después sigue rechazada',()=>assert.throws(()=>revisions.validar({...cut,revision_fuente:{...receipt,generado_en:day+'T14:00:00.000Z',recibido_en:day+'T18:00:00.000Z'}},old),/RETROCESO_HORA/));
+check('hora de recepción no sustituye hora real de corte',()=>assert.throws(()=>revisions.validar({...cut,revision_fuente:{...receipt,evidencia:'DRIVE_MODIFIED_TIME'}},old),/ORIGEN_HORA/));
+check('bootstrap no inventa hora anterior',()=>assert.throws(()=>revisions.validar({...cut,revision_fuente:{...receipt,anterior_confirmado:undefined}},old),/FALTA_ORDEN/));
+check('recibo no admite retroceder secuencia',()=>assert.throws(()=>revisions.validar({...cut,sha256_original:c,revision_fuente:{...receipt,secuencia:1,anterior_sha256:b}},{...old,origen_sha256:b,revision_fuente:revisions.validar(cut,old)}),/SECUENCIA/));
+const products=Array.from({length:1200},(_,i)=>({sku:'TEST'+String(i).padStart(4,'0'),stock:1,promo:10,pvp:12,imageUrl:'/same.webp'}));
+const html='const products='+JSON.stringify(products)+';\n';
+function complete(stock=0){return {...cut,cantidad_sku_web:products.length,cantidad_sku_original:1579,productos:Object.fromEntries(products.map((p,i)=>[p.sku,{stock:i<stock?0:1,promo_centavos:i===0?1100:1000,pvp_centavos:1200}])),verificacion:{stock_cambiado:stock,disponibilidad_cambiada:stock,promo_cambiado:1,pvp_cambiado:0,precios_productos_cambiados:1}};}
+check('publicador real acepta cadena y sólo cambia precio autorizado',()=>{const r=apply(html,complete(),old);assert.equal(r.summary.revision_fuente.secuencia,1);assert.deepEqual(r.summary.sku_modificados_comerciales,['TEST0000']);assert.equal(JSON.parse(r.html.match(/const products=(.*);/)[1])[0].promo,11);assert.equal(r.changed[0].imageUrl,products[0].imageUrl);});
+check('500 bajas rechazadas y entrada conservada',()=>{const before=JSON.stringify(complete(500));assert.throws(()=>apply(html,complete(500),old),/REPORT_MASS_UNAVAILABILITY/);assert.equal(JSON.stringify(complete(500)),before);});
+check('cobertura exacta anterior no se relaja',()=>{const x=complete();delete x.productos.TEST0100;assert.throws(()=>apply(html,x,old),/Cobertura|Falta SKU/);});
+check('contadores falsos rechazados',()=>{const x=complete();x.verificacion.promo_cambiado=0;assert.throws(()=>apply(html,x,old),/Control incorrecto/);});
+check('retroceso de fecha rechazado',()=>assert.throws(()=>apply(html,{...complete(),fecha_corte:'2026-11-15'},old),/Retroceso/));
+check('SHA histórico no puede reintroducir corte viejo',()=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'revision593-'));try{cp.execFileSync('git',['init','-q'],{cwd:dir});cp.execFileSync('git',['config','user.name','Fixture'],{cwd:dir});cp.execFileSync('git',['config','user.email','fixture@example.invalid'],{cwd:dir});fs.mkdirSync(path.join(dir,'datos-593'));const file=path.join(dir,'datos-593/estado-ultimo-corte.json');for(const sha of [c,a]){fs.writeFileSync(file,JSON.stringify({...old,origen_sha256:sha}));cp.execFileSync('git',['add','.'],{cwd:dir});cp.execFileSync('git',['commit','-qm','cut'],{cwd:dir});}assert.throws(()=>revisions.comprobarHistorial({...cut,sha256_original:c},old,dir),/SHA_HISTORICO/);}finally{fs.rmSync(dir,{recursive:true,force:true});}});
+console.log(count+' pruebas nuevas de revisión comercial593 aprobadas');
