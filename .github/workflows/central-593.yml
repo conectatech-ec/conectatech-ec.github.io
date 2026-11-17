@@ -2,7 +2,7 @@ name: Normalizar reporte 593 aislado
 on:
   push:
     branches: ['automatizacion/piloto-cloud-3sku-20261015']
-    paths: ['.github/workflows/central-593.yml', '.github/checkout-install-once.json', 'automatizacion/process_pending_593.py', 'automatizacion/data_hub_593.py', 'automatizacion/activar-cloud.json']
+    paths: ['.github/workflows/central-593.yml', '.github/checkout-install-once.json', '.github/checkout-base-read.json', 'automatizacion/process_pending_593.py', 'automatizacion/data_hub_593.py', 'automatizacion/activar-cloud.json']
 permissions:
   contents: read
 concurrency:
@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   ingresar:
-    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]')
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]')
     environment: conectatech-piloto-gratis
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -181,4 +181,38 @@ jobs:
         with:
           name: checkout-pr388-recibo
           path: automatizacion/generated/fase2/checkout-install/receipt.json
+          retention-days: 1
+  conciliar_base_checkout_lectura:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-install-388]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Leer dos modulos, identificar fuente publica exacta y planear delta sin PUT
+        run: python automatizacion/checkout_active_base.py
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar SHA, diferencias y codigo solo si coincide con fuentes publicas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr388-conciliacion-base-lectura
+          path: automatizacion/generated/fase2/checkout-base-read/
           retention-days: 1
