@@ -1,0 +1,41 @@
+{
+  "schema": "conectatech.github-revision-read.v1",
+  "status": "AUTHENTICATED_REMOTE_REVISION_VERIFIED",
+  "run_id": "44154502551",
+  "execution_commit": "e53cb57b40e4e8bc2aad952e20780d2ca2ad0aa7",
+  "remote_sha": "e53cb57b40e4e8bc2aad952e20780d2ca2ad0aa7",
+  "sha_matches_execution": true,
+  "strict_original_validator": true,
+  "anonymous_probe": {
+    "status": "ok",
+    "authentication": "anonymous_probe",
+    "http_status": 200,
+    "rate_limit": 60,
+    "rate_remaining": 59,
+    "requests": 1
+  },
+  "authenticated_reads": [
+    {
+      "authentication": "github_actions_token",
+      "http_status": 200,
+      "rate_limit": 5000,
+      "rate_remaining": 4995,
+      "requests": 1
+    },
+    {
+      "authentication": "github_actions_token",
+      "http_status": 200,
+      "rate_limit": 5000,
+      "rate_remaining": 4994,
+      "requests": 1
+    }
+  ],
+  "github_permissions": "contents:read",
+  "worker_requests": 0,
+  "worker_puts": 0,
+  "installation_permission_enabled": false,
+  "checkout_delta_sha256": "30230fcaacec6af22f2f642bf6175f03f7c316488bc57af6b4c363475d028d35",
+  "activar": false,
+  "datahub_scoped_content_enabled": false,
+  "cost_additional_usd": 0
+}
