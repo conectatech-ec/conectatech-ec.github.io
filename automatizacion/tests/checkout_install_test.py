@@ -10,7 +10,7 @@ class Installation(unittest.TestCase):
     def setUp(self):
         self.manifest,self.artifacts=m.approved_artifacts()
         self.before=m.Bundle('worker.mjs',tuple(m.Part(n,n,'application/javascript+module',
-            m.compiled(subprocess.check_output(['git','show',m.BASE_RELEASE+':automatizacion/'+n],cwd=m.ROOT)))
+            (m.ROOT/'revision-checkout/base-activa'/n).read_bytes())
             for n in ['worker.mjs','messenger-store.mjs'])+(m.Part('central-data.mjs','central-data.mjs',
             'application/javascript+module',b'export default {"private":"synthetic-preserve"};\n'),
             m.Part('commercial-reception.mjs','commercial-reception.mjs','application/javascript+module',b'synthetic-unchanged')))
@@ -39,6 +39,17 @@ class Installation(unittest.TestCase):
         changed=m.Bundle(self.before.entrypoint,(replace(self.before.parts[0],body=self.before.parts[0].body+b'// drift'),*self.before.parts[1:]))
         with self.assertRaisesRegex(m.CheckoutError,'BASE_NOT_APPROVED'):m.prepare_bundle(changed,self.manifest,self.artifacts)
         self.api.put_bundle.assert_not_called()
+
+    def test_only_authenticated_base_and_pinned_candidate_are_accepted(self):
+        for name in ('worker.mjs','messenger-store.mjs'):
+            expected=next(p for p in self.after.parts if p.name==name)
+            self.assertEqual(m.sha(expected.body),m.PINNED_AFTER[name])
+            self.assertEqual(m.KNOWN_BASES[name],{m.sha(next(p for p in self.before.parts if p.name==name).body)})
+        damaged=json.loads(json.dumps(self.manifest))
+        worker=next(x for x in damaged['runtime_modules'] if x['path']=='automatizacion/worker.mjs')
+        worker['replacements'][0]['after']+='\n// unintended change'
+        with self.assertRaisesRegex(m.CheckoutError,'CANDIDATE_NOT_PINNED'):
+            m.prepare_bundle(self.before,damaged,self.artifacts)
 
     def test_success_has_exactly_one_installation_put_and_no_recovery(self):
         result=self.run_install()

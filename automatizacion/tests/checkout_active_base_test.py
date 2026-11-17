@@ -40,10 +40,11 @@ class ActiveBase(unittest.TestCase):
         for item in self.manifest['runtime_modules']:
             if item['operation']=='add':self.assertEqual(read.sha(modules[Path(item['path']).name]),item['after_sha256'])
 
-    def test_original_installer_rejection_reproduces_without_broadening_its_allowlist(self):
+    def test_original_rejection_is_resolved_by_pinning_only_authenticated_active_base(self):
         manifest,artifacts=install.approved_artifacts()
-        with self.assertRaisesRegex(install.CheckoutError,'LIVE_BASE_NOT_APPROVED'):
-            install.prepare_bundle(self.before,manifest,artifacts)
+        adapted=install.prepare_bundle(self.before,manifest,artifacts)
+        self.assertTrue(read.same_bundle(install.rollback_candidate(self.before,adapted,adapted,{},{}),self.before))
+        self.assertEqual(install.KNOWN_BASES['worker.mjs'],{self.worker['sha256']})
 
     def test_unknown_private_body_is_not_exported_or_included_in_diagnostic(self):
         from dataclasses import replace
@@ -63,6 +64,8 @@ class ActiveBase(unittest.TestCase):
         self.assertIn('environment: conectatech-piloto-gratis',block)
         self.assertIn("!contains(github.event.head_commit.message, '[checkout-install-388]')",block)
         old=json.loads((read.ROOT.parent/'.github/checkout-install-once.json').read_text())
-        self.assertIs(old['enabled'],False);self.assertEqual(old['closed_after_run'],'43939141450')
+        self.assertIs(old['enabled'],False)
+        consumed=old.get('previous_permission',old)
+        self.assertIs(consumed['enabled'],False);self.assertEqual(consumed['closed_after_run'],'43939141450')
 
 if __name__=='__main__':unittest.main()
