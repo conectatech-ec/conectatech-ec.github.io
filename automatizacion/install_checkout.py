@@ -18,11 +18,14 @@ RECEIVER_SHA='699ac61bcf8311ac72bdf56c723e3c562882517909c443d9521d5b132624b869'
 SOURCE_SHA='caaa9a78fe8479f87197005e352489b65230c174d79401ed7bbe4febbcc7de76'
 CONTROL=ROOT.parent/'.github/checkout-install-once.json'
 TARGET=ROOT/'generated/fase2/checkout-install'
-AUTHORIZATION='DG-CHECKOUT-PR388-INACTIVO-ONCE'
+AUTHORIZATION='DG-CHECKOUT-ACTIVE-44006715609-ONCE'
+ACTIVE_BASE_RUN='44006715609'
+ACTIVE_DELTA_SHA='30230fcaacec6af22f2f642bf6175f03f7c316488bc57af6b4c363475d028d35'
 BRANCH='refs/heads/automatizacion/piloto-cloud-3sku-20261015'
-KNOWN_BASES={'worker.mjs':{'c942a922316834ceb06e7a102169cad0c723a8eeabb2670b20ae669ab65a161e',
-    '80b542ce2c643783cac0ffbeebd4a73fc9d473e1a3c23846de98443606dcfe7e'},
+KNOWN_BASES={'worker.mjs':{'d16c5fe25fe0288a6835da8510b88c4239a18f6ff82979d24d018d335f15dc62'},
     'messenger-store.mjs':{'07238457b4a0c272cb62db7389ff1eb042ee987df56900529c4705e2e2673cae'}}
+PINNED_AFTER={'worker.mjs':'57226559e6ab2a151e2ff9297a6dea0805bd3fbbbf7126716c0a298efa55794e',
+    'messenger-store.mjs':'f77dd1a5e253beef8a52fdd3a43b01f4e995c68953566f7c3052c6eb099c3047'}
 
 class CheckoutError(RuntimeError):pass
 def fail(code):raise CheckoutError(code) from None
@@ -70,6 +73,7 @@ def prepare_bundle(before,manifest,replacements):
             old,new=compiled(change['before'].encode()),compiled(change['after'].encode())
             if body.count(old)!=1 or new in body:fail('CHECKOUT_HOOK_ANCHOR_CHANGED')
             body=body.replace(old,new,1)
+        if sha(body)!=PINNED_AFTER[part.name]:fail('CHECKOUT_CANDIDATE_NOT_PINNED')
         headers=tuple((k,str(len(body)) if k.lower()=='content-length' else v) for k,v in part.headers)
         result.append(replace(part,body=body,headers=headers))
     for name in sorted(additions):result.append(Part(name,name,'application/javascript+module',replacements[name]))
@@ -90,6 +94,7 @@ def rollback_candidate(before,after,actual,settings,expected_settings):
 def require_permission():
     c=json.loads(CONTROL.read_bytes())
     if (c.get('enabled') is not True or c.get('authorization')!=AUTHORIZATION or
+        c.get('active_base_run')!=ACTIVE_BASE_RUN or c.get('delta_sha256')!=ACTIVE_DELTA_SHA or
         c.get('artifact_commit')!=ARTIFACT_COMMIT or c.get('manifest_sha256')!=MANIFEST_SHA or
         c.get('cost_max_usd')!=0 or os.environ.get('GITHUB_REF')!=BRANCH or
         os.environ.get('GITHUB_EVENT_NAME')!='push' or os.environ.get('GITHUB_RUN_ATTEMPT')!='1' or

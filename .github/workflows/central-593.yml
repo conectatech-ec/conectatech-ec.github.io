@@ -154,7 +154,7 @@ jobs:
       - name: Preparar delta aprobado y respaldo cifrado reversible en solo lectura
         run: python automatizacion/install_checkout.py --prepare
         env:
-          CHECKOUT_INSTALL_AUTHORIZATION: DG-CHECKOUT-PR388-INACTIVO-ONCE
+          CHECKOUT_INSTALL_AUTHORIZATION: DG-CHECKOUT-ACTIVE-44006715609-ONCE
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
@@ -170,7 +170,7 @@ jobs:
       - name: Instalar delta inactivo una vez y verificar o recuperar su inversa exacta
         run: python automatizacion/install_checkout.py --install
         env:
-          CHECKOUT_INSTALL_AUTHORIZATION: DG-CHECKOUT-PR388-INACTIVO-ONCE
+          CHECKOUT_INSTALL_AUTHORIZATION: DG-CHECKOUT-ACTIVE-44006715609-ONCE
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
