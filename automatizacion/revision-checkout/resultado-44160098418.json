@@ -1,0 +1,44 @@
+{
+  "schema": "conectatech.checkout-install.v1",
+  "worker": "conectatech-comercial-piloto",
+  "artifact_commit": "1567ea58d12e698691889ca164cf8398616807ca",
+  "execution_commit": "a5efe11c6cc9a88973b24aeb291c4383afc82434",
+  "run_id": "44160098418",
+  "checkout_enabled": false,
+  "deliveries": [],
+  "activar": false,
+  "datahub_scoped_content_enabled": false,
+  "cost_additional_usd": 0,
+  "status": "INSTALLED_VERIFIED",
+  "worker_puts": {
+    "installation": 1,
+    "recovery": 0
+  },
+  "provider": {
+    "provider_deployment_id": "04bcde75839e44558b38f5cbfd4de42e"
+  },
+  "settings_preserved": true,
+  "source_preserved": true,
+  "receiver_preserved": true,
+  "other_modules_preserved": true,
+  "previous_services_verified": true,
+  "public_checkout_http": 503,
+  "admin_unauthorized_http": 401,
+  "admin_disabled_http": 503,
+  "recovery": "not_needed",
+  "delta_sha256": {
+    "messenger-store.mjs": "f77dd1a5e253beef8a52fdd3a43b01f4e995c68953566f7c3052c6eb099c3047",
+    "worker.mjs": "57226559e6ab2a151e2ff9297a6dea0805bd3fbbbf7126716c0a298efa55794e",
+    "checkout-config.mjs": "291531ae313419e9f897fe639df956590d1c04490eafc17cbc4ec0f8965241c6",
+    "checkout-core.mjs": "79294c3015090dea5bf5d8592e06476878e562e4cd23124daaa78fbabe963def",
+    "checkout-edge.mjs": "587ea5b9e1c0f13d7962d6ee6a11521c7a4761e63229f85aca8fbd5c5a2d8af0",
+    "checkout-entry.mjs": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+    "checkout-shared-source.mjs": "f6d547e6fcce84747dcd70f5e72d9c69c10226791892e5ab724d8c3076f86d6f",
+    "checkout-store.mjs": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea"
+  },
+  "changed_existing_before_sha256": {
+    "messenger-store.mjs": "07238457b4a0c272cb62db7389ff1eb042ee987df56900529c4705e2e2673cae",
+    "worker.mjs": "d16c5fe25fe0288a6835da8510b88c4239a18f6ff82979d24d018d335f15dc62"
+  },
+  "backup_sealed_sha256": "d7b1296a6ec09a54246cf035e57dccfe78fbcb490dcf51f6a66c81d47fdce24a"
+}
