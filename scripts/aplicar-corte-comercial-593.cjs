@@ -30,7 +30,8 @@ function revisionExpresa1611(cut,prior){
 function prepare(html,cut,prior,baseline=null){
  if(!cut||!/^20\d{2}-\d{2}-\d{2}$/.test(cut.fecha_corte)||!/^[a-f0-9]{64}$/.test(cut.sha256_original))throw Error('Fuente o fecha invalida');
  if(prior?.fecha_corte>cut.fecha_corte)throw Error('Retroceso de fecha de inventario');
- if(prior?.fecha_corte===cut.fecha_corte&&prior?.origen_sha256!==cut.sha256_original&&!revisionExpresa0911(cut,prior)&&!revisionExpresa1611(cut,prior))throw Error('Corte con igual fecha y distinta fuente: revision necesaria');
+ const legacy=revisionExpresa0911(cut,prior)||revisionExpresa1611(cut,prior);
+ const revision=legacy?null:require('./revisiones-comerciales-593.cjs').validar(cut,prior,baseline);
  const m=html.match(RX);if(!m)throw Error('No se encontro array de productos');
  const policy=require('./politica-publicacion-web.cjs');
  const all=policy.completeForValidation(JSON.parse(m[1]),cut,baseline||(prior?.origen_sha256===cut.sha256_original?cut:null));
@@ -50,6 +51,7 @@ function prepare(html,cut,prior,baseline=null){
   before.set(p.sku,p);
   updated.push({...p,stock,promo:promo_centavos/100,pvp:pvp_centavos/100});
  }
+ require('./proteger-inventario-593.cjs').comprobar({before:all,after:updated,sourceSkus:by,sourceCount:cut.cantidad_sku_original});
  const diff=updated.filter(p=>p.stock!==before.get(p.sku).stock||
     Math.round(p.promo*100)!==Math.round(before.get(p.sku).promo*100)||
     Math.round(p.pvp*100)!==Math.round(before.get(p.sku).pvp*100));
@@ -89,11 +91,15 @@ function prepare(html,cut,prior,baseline=null){
   stock_negativo:updated.filter(p=>p.stock<0).length,fecha_precios:cut.fecha_corte,
   demas_atributos_intactos:true,referencia:'datos-593/corte-comercial-publico-validado.json'
  };
+ if(revision)summary.revision_fuente=revision;
+ if(!already)summary.sku_modificados_comerciales=diff.map(p=>p.sku).sort();
+ else if(prior.sku_modificados_comerciales)summary.sku_modificados_comerciales=prior.sku_modificados_comerciales;
  return {summary,html:html.replace(m[0],'const products='+JSON.stringify(policy.visible(updated))+';\n'),changed:diff};
 }
 function run(){
  const cut=JSON.parse(fs.readFileSync(INPUT,'utf8'));
  const prior=fs.existsSync(STATE)?JSON.parse(fs.readFileSync(STATE,'utf8')):null;
+ require('./revisiones-comerciales-593.cjs').comprobarHistorial(cut,prior);
  const previous=fs.readFileSync(WEB,'utf8');
  const result=prepare(previous,cut,prior,require('./politica-publicacion-web.cjs').previousCut(prior,cut));
  if(process.env.APLICAR_COMERCIAL_593==='SI'){
