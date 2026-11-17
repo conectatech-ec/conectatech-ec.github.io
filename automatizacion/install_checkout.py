@@ -19,7 +19,9 @@ RECEIVER_SHA='699ac61bcf8311ac72bdf56c723e3c562882517909c443d9521d5b132624b869'
 SOURCE_SHA='caaa9a78fe8479f87197005e352489b65230c174d79401ed7bbe4febbcc7de76'
 CONTROL=ROOT.parent/'.github/checkout-install-once.json'
 TARGET=ROOT/'generated/fase2/checkout-install'
-AUTHORIZATION='DG-CHECKOUT-ACTIVE-44006715609-ONCE'
+AUTHORIZATION='DG-CHECKOUT-GHREV-44154502551-ONCE'
+GITHUB_REVISION_VERIFIED_RUN='44154502551'
+GITHUB_REVISION_TRANSPORT_SHA='a58b1131759f079633c653341603f493bce0ef2b73f9fa8ea346b6196455da95'
 ACTIVE_BASE_RUN='44006715609'
 ACTIVE_DELTA_SHA='30230fcaacec6af22f2f642bf6175f03f7c316488bc57af6b4c363475d028d35'
 BRANCH='refs/heads/automatizacion/piloto-cloud-3sku-20261015'
@@ -95,6 +97,9 @@ def rollback_candidate(before,after,actual,settings,expected_settings):
 def require_permission():
     c=json.loads(CONTROL.read_bytes())
     if (c.get('enabled') is not True or c.get('authorization')!=AUTHORIZATION or
+        c.get('github_revision_verified_run')!=GITHUB_REVISION_VERIFIED_RUN or
+        c.get('github_revision_transport_sha256')!=GITHUB_REVISION_TRANSPORT_SHA or
+        sha((ROOT/'github_revision_read.py').read_bytes())!=GITHUB_REVISION_TRANSPORT_SHA or
         c.get('active_base_run')!=ACTIVE_BASE_RUN or c.get('delta_sha256')!=ACTIVE_DELTA_SHA or
         c.get('artifact_commit')!=ARTIFACT_COMMIT or c.get('manifest_sha256')!=MANIFEST_SHA or
         c.get('cost_max_usd')!=0 or os.environ.get('GITHUB_REF')!=BRANCH or

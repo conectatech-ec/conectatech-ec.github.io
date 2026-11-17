@@ -83,7 +83,9 @@ class RemoteRevision(unittest.TestCase):
         import install_checkout as install
         install.approved_artifacts()
         old=json.loads((install.ROOT.parent/'.github/checkout-install-once.json').read_text())
-        self.assertIs(old['enabled'],False);self.assertEqual(old['closed_after_run'],'44146619274')
+        self.assertIs(old['enabled'],False)
+        consumed=old if 'closed_after_run' in old else old['previous_permission']
+        self.assertIs(consumed['enabled'],False);self.assertEqual(consumed['closed_after_run'],'44146619274')
 
     def test_read_job_skips_writes_uses_only_official_contents_read_and_no_worker_credentials(self):
         root=Path(__file__).resolve().parents[2];workflow=(root/'.github/workflows/central-593.yml').read_text()
