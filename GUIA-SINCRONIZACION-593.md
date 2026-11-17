@@ -31,3 +31,25 @@ El estado registra `sku_modificados_comerciales`: sólo stock, Promo Contado o P
 Mediciones16nov: publicador2:06–3:01; GitHub Pages añade aproximadamente8–10min. Totales observados desde commit/merge del corte hasta Pages10:22–13:11. No hay timestamp de detección/validación suficiente para atribuir una latencia real desde Drive. Cinco minutos de detección no garantizan cinco minutos de publicación.
 
 Rollback: revertir este cambio mediante PR normal. Conservar recibos y cortes actuales, no promover XLSX antiguo ni retirar exclusiones. El workflow y su mutex originales se mantienen; no se modificaron Cloudflare, triggers, Fábrica, Merchant ni Compras Inteligentes. La restauración del bloqueo anterior volvería a exigir revisión para nuevos SHA intradía, no autoriza restituir precios viejos.
+
+### Integración del validador original — activación controlada PR391
+
+La supervisión existente debe invocar `scripts/preparar-revision-comercial-593.py` después de recuperar el XLSX privado y releer el estado, corte canónico y exportación publicados. Ese adaptador importa y verifica por SHA los módulos originales `normalizar_593.py`, `report_identity.py` e `inventory_completeness.py` del commit `79f4e4fb77e30fd3a8a7ebac009cd8204a3b4c95`. Ejecuta `normalize()` completo y reutiliza sus filas/precios validados; no contiene otro parser ni publica archivos. Si los módulos ya están disponibles, `--validador` evita transferirlos otra vez. Los SHA del código se fijan por versión del validador, nunca por cada Excel.
+
+```sh
+python3 scripts/preparar-revision-comercial-593.py \
+  --excel /ruta/privada/Reporte-Inventario.xlsx \
+  --nombre-original Reporte-Inventario.xlsx \
+  --estado /ruta/estado-publicado.json \
+  --corte-anterior /ruta/corte-publicado.json \
+  --catalogo /ruta/catalogo-ventas-publicado.json \
+  --base-csv /ruta/inventario-publico.csv \
+  --recibido-en RECEPCION_REAL_ISO_UTC \
+  --excel-anterior /ruta/privada/ultimo-excel-publicado.xlsx \
+  --repo /ruta/checkout-existente \
+  --salida /ruta/privada/corte-validado-candidato.json
+```
+
+`--excel-anterior` se recupera por el SHA del último corte válido, desde los archivos/revisiones privados existentes. Además del primer recibo intradía, permite reconstruir la identidad anterior frente a un CSV histórico obsoleto. Debe coincidir íntegramente con los valores comerciales del corte previo; nunca se toma el nombre del candidato para fabricar su propia referencia. Si falta una prueba necesaria, se conserva el último inventario y se informa el bloqueo preciso. Igual SHA devuelve el mismo corte sin renovar fechas.
+
+El adaptador no toca el original, Drive, Git ni producción. `--salida` es local y atómica, y no permite sobrescribir ninguno de los archivos de entrada. `--repo` ejecuta la prevalidación del publicador original sin escrituras. Después la misma supervisión comprueba que `main`/estado no avanzaron y entrega ese JSON al mismo archivo canónico mediante el mecanismo CAS existente. Un conflicto obliga a recuperar la base vigente y volver a ejecutar el adaptador completo. No basta cambiar manualmente `anterior_sha256`. Tras workflow/Pages se verifica el resultado real, manteniendo el mutex y la recuperación originales. Ningún workflow, checkout o configuración de Merchant, Fábrica o Compras fue adaptado.
