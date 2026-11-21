@@ -15,7 +15,15 @@ test('rechaza categorías duplicadas y conserva los objetos de origen',()=>{
 test('diagnostica sólo los SKU estrictos exclusivos del secundario sin alterar inventarios',()=>{
  const master={sets,products:[{...products[0],retailer_id:'AUDI091'}]},extras=['FLAS013','FLAS014','FLAS017','FLAS033','FOCO004'];
  const secondary={sets,products:[...master.products,...[...extras,'FLAS013'].map((sku,i)=>({id:String(100+i),retailer_id:sku,price:'PRIVADO',availability:'in stock'}))]},before=JSON.stringify({master,secondary});
- const r=compare(master,secondary);assert.deepEqual(r.sku_extra_secundario,extras);assert.equal(r.sku_precio_disponibilidad_iguales,false);assert.equal(r.solo_lectura,true);assert.equal(JSON.stringify({master,secondary}),before);assert(!JSON.stringify(r.sku_extra_secundario).includes('PRIVADO'));
+ const r=compare(master,secondary);assert.deepEqual(r.sku_extra_secundario,extras);assert.equal(r.productos_maestro_coinciden_en_secundario,true);assert.equal(r.sku_precio_disponibilidad_iguales,false);assert.equal(r.solo_lectura,true);assert.equal(JSON.stringify({master,secondary}),before);assert(!JSON.stringify(r.sku_extra_secundario).includes('PRIVADO'));
+});
+test('detecta precio, disponibilidad o SKU Maestro ausente aunque existan extras',()=>{
+ const master={sets,products:[{...products[0],retailer_id:'AUDI091'}]};
+ for(const change of ['price','availability','missing']){
+  const secondary={sets,products:[{...master.products[0]},{id:'99',retailer_id:'FLAS014',price:'PRIVADO',availability:'in stock'}]};
+  if(change==='missing')secondary.products.shift();else secondary.products[0][change]=change==='price'?'11.00 USD':'out of stock';
+  const r=compare(master,secondary);assert.equal(r.productos_maestro_coinciden_en_secundario,false);assert.equal(r.sku_precio_disponibilidad_iguales,false);assert.deepEqual(r.sku_extra_secundario,['FLAS014']);
+ }
 });
 test('los SKU de diagnóstico no exponen URLs, tokens, IDs ni texto libre',()=>{
  const invalid=['https://private.example/TELF012?token=NEVER_DISCLOSE','Bearer SECONDARY_FAKE','NEVER_DISCLOSE','TELF012_EXTRA','123456789123456789','AB123456','ABCDEFG12',null];
@@ -29,5 +37,5 @@ test('la comparación usa exclusivamente GET y el secreto secundario sin reserva
   const path=url.pathname.replace('/v26.0/','');assert.ok([MASTER,SECONDARY,MASTER+'/product_sets',SECONDARY+'/product_sets',MASTER+'/products',SECONDARY+'/products'].includes(path));
   const data=path.includes('/product_sets')?{data:sets}:path.includes('/products')?{data:path===SECONDARY+'/products'?[...products,{id:'88',retailer_id:'FLAS014',price:'PRIVADO',availability:'in stock'}]:products}:{id:path,name:path===MASTER?'CONECTATECH | Catálogo Maestro':'CONECTATECH | Catálogo WhatsApp 0964206977'};
   return new Response(JSON.stringify(data));
- }});assert.equal(n,6);assert.equal(result.comparison.orden_igual,true);assert.deepEqual(result.comparison.sku_extra_secundario,['FLAS014']);
+ }});assert.equal(n,6);assert.equal(result.comparison.orden_igual,true);assert.deepEqual(result.comparison.sku_extra_secundario,['FLAS014']);assert.equal(result.comparison.productos_maestro_coinciden_en_secundario,true);assert.equal(result.comparison.sku_precio_disponibilidad_iguales,false);
 });

@@ -12,9 +12,10 @@ function compare(master,secondary){
  if(!desired.length||new Set(desired.map(s=>s.retailer_id)).size!==desired.length||new Set(actual.map(s=>s.retailer_id)).size!==actual.length)throw Error('CATEGORIAS_VACIAS_O_DUPLICADAS');
  const mp=new Map(master.products.map(p=>[p.retailer_id,p])),sp=new Map(secondary.products.map(p=>[p.retailer_id,p]));
  const extraSku=[...sp.keys()].filter(sku=>typeof sku==='string'&&/^[A-Z]{2,6}[0-9]{2,5}$/.test(sku)&&!mp.has(sku)).sort();
- const sameProducts=mp.size===master.products.length&&sp.size===secondary.products.length&&mp.size===sp.size&&[...mp].every(([sku,p])=>{const q=sp.get(sku);return q&&p.price===q.price&&p.availability===q.availability;});
+ const masterMatches=[...mp].every(([sku,p])=>{const q=sp.get(sku);return !!q&&p.price===q.price&&p.availability===q.availability;});
+ const sameProducts=mp.size===master.products.length&&sp.size===secondary.products.length&&mp.size===sp.size&&masterMatches;
  const categories=desired.map((m,index)=>{const s=actual.find(s=>s.retailer_id===m.retailer_id);return {posicion:index+1,retailer_id:m.retailer_id,nombre_maestro:m.name,nombre_secundario:s?.name||null,id_maestro:m.id,id_secundario:s?.id||null,filtro_igual:!!s&&stable(filter(m.filter))===stable(filter(s.filter)),nombre_igual:s?.name===m.name};});
- return {estado:'COMPARACION_CATEGORIAS_SOLO_LECTURA',solo_lectura:true,catalogo_maestro:MASTER,catalogo_secundario:SECONDARY,productos_maestro:master.products.length,productos_secundario:secondary.products.length,sku_precio_disponibilidad_iguales:sameProducts,sku_extra_secundario:extraSku,
+ return {estado:'COMPARACION_CATEGORIAS_SOLO_LECTURA',solo_lectura:true,catalogo_maestro:MASTER,catalogo_secundario:SECONDARY,productos_maestro:master.products.length,productos_secundario:secondary.products.length,sku_precio_disponibilidad_iguales:sameProducts,productos_maestro_coinciden_en_secundario:masterMatches,sku_extra_secundario:extraSku,
   categorias:categories,orden_maestro:desired.map(s=>s.retailer_id),orden_secundario:actual.map(s=>s.retailer_id),orden_igual:stable(desired.map(s=>s.retailer_id))===stable(actual.map(s=>s.retailer_id)),
   categorias_extra_secundario:actual.filter(s=>!desired.some(m=>m.retailer_id===s.retailer_id)).map(s=>s.retailer_id),
   maestro_productos_sha256:hash([...master.products].sort((a,b)=>a.id.localeCompare(b.id))),secundario_productos_sha256:hash([...secondary.products].sort((a,b)=>a.id.localeCompare(b.id))),
