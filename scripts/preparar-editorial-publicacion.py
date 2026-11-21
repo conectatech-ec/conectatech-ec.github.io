@@ -4,6 +4,15 @@ from pathlib import Path
 from editorial_texto593 import validate as validate_text593
 from editorial_referencia_propia import validate as validate_reference
 cfg=json.loads(Path('importacion/editorial/publicados.json').read_text());manifest=json.loads(Path('importacion/editorial/lotes/lote-'+cfg['loteActual']+'.json').read_text());html=Path('index.html').read_text();products=json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n',html)[1]);by={p['sku']:p for p in products};queue=json.loads(Path('reportes/editorial-selectivo/clasificacion-1170.json').read_text());states={e['sku']:e['estado'] for e in queue['cola']}
+def validar_cobertura_editorial(productos_por_sku,config,excluidos):
+ # Una retirada expresa conserva su historial, pero no valida ni reactiva su tarjeta.
+ assert not set(productos_por_sku).intersection(excluidos),'SKU excluido por política presente en catálogo'
+ for grupo in ('productos','actualizacionesFicha'):
+  for sku in config.get(grupo,{}):
+   assert sku in productos_por_sku or sku in excluidos,('SKU editorial ausente sin exclusión expresa',sku)
+policySkus=set(by)|set(cfg['productos'])|set(cfg.get('actualizacionesFicha',{}))
+excludedSkus=set(json.loads(subprocess.check_output(['node','-e',"const fs=require('fs'),p=require('./scripts/politica-publicacion-web.cjs');console.log(JSON.stringify(JSON.parse(fs.readFileSync(0,'utf8')).filter(s=>p.deniedSku(s))))"],input=json.dumps(sorted(policySkus)),text=True)))
+validar_cobertura_editorial(by,cfg,excludedSkus)
 assert len(manifest['skus'])<=30 and len(set(manifest['skus']))==len(manifest['skus'])
 assert cfg['criterioAprobado'] and cfg['excluirPrefijos']==['TELF','TABL']
 norm=lambda s:re.sub('[^a-z0-9]','',unicodedata.normalize('NFD',s.lower()).encode('ascii','ignore').decode())
@@ -11,6 +20,7 @@ final=cfg.get('faseFinalCelularesTablets',{});permitidos=set(final.get('skus',[]
 seen={};seo=json.loads(Path('seo-contenido.json').read_text())
 effectivePhotos=json.loads(subprocess.check_output(['node','scripts/editorial-fotografia-efectiva.cjs','--conservar-premium-publicado'],text=True))
 for sku,e in cfg['productos'].items():
+ if sku in excludedSkus:continue
  assert sku in by and (not sku.startswith(('TELF','TABL'))or sku in permitidos),sku
  lot=Path('importacion/editorial/lotes/lote-'+e['lote'].split('-')[-1]+'.json');m=json.loads(lot.read_text());assert len(m['skus'])<=30 and sku in m['skus'],sku
  assert e['titulo']==m['productos'][sku]['titulo'] and e['subtitulo']==m['productos'][sku]['subtitulo'],sku
@@ -51,6 +61,7 @@ for sku,e in cfg['productos'].items():
   data=json.loads(report.read_text());assert data['estado']=='VERIFICADO_HTTP_CHROMIUM' and sku in data['skus'],sku
 # Cambios de ficha separados: no crean títulos ni resuelven la cola editorial.
 for sku,u in cfg.get('actualizacionesFicha',{}).items():
+ if sku in excludedSkus:continue
  assert sku in by and not sku.startswith(('TELF','TABL')),sku
  assert u['autenticidad']==seo[sku]['reglaSKU']['autenticidad'],sku
  assert u['condicionTarjeta']==('De terceros' if u['autenticidad']=='genérico/compatible' else ''),sku
@@ -61,6 +72,7 @@ for sku,u in cfg.get('actualizacionesFicha',{}).items():
   assert hashlib.sha256(raw).hexdigest()==v['sha256Informe'] and r['estado']=='VERIFICADO_HTTP_CHROMIUM' and sku in r['skus'],sku
 # Regla expresa de marca: sólo títulos/subtítulos/tooltip; originales y búsqueda se conservan.
 for sku,e in cfg['productos'].items():
+ if sku in excludedSkus:continue
  for brand in cfg.get('marcasOmitidasEnTitulosSubtitulos',[]):assert norm(brand) not in norm(e['titulo']+' '+e['subtitulo']),(sku,brand)
 for p in products:
  if any(norm(brand) in norm(p['name']) for brand in cfg.get('marcasOmitidasEnTitulosSubtitulos',[])):
