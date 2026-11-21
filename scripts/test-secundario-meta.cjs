@@ -153,6 +153,26 @@ test('la espera de importación secundaria se acota sin repetir la carga ni camb
  f.uploads[0].end_time='done';
  const result=await syncSecondary({...opts,checkpoint});assert.equal(result.productos_verificados,2);assert.equal(f.uploads.length,1);
 });
+test('el punto de entrada espera la misma carga hasta completarla y repetir no crea otro POST',async()=>{
+ const f=fixture({pendingUpload:true}),writes=[];let waits=0;
+ const options={config,plan,csv:'csv-publico',checkpoint:null,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:f.transport,write:(p,d)=>writes.push([p,d]),log:()=>{},wait:async ms=>{assert.equal(ms,30000);waits++;f.uploads[0].end_time='done';}};
+ const result=await main(options);assert.equal(result.estado,'META_SINCRONIZADO');assert.equal(waits,1);assert.equal(f.uploads.length,1);assert.equal(result.productos_verificados,2);
+ const checkpoint=writes.find(([p])=>p==='work/auto-meta/importacion-secundario.json')[1],posts=f.calls.filter(c=>c.method==='POST').length;
+ const repeated=await main({...options,checkpoint,wait:async()=>assert.fail('Una carga terminada no debe volver a esperar')});
+ assert.equal(repeated.importacion_id,result.importacion_id);assert.equal(f.uploads.length,1);assert.equal(f.calls.filter(c=>c.method==='POST').length,posts);
+});
+test('el punto de entrada agota el límite original, conserva checkpoint y reanuda sin nueva carga',async()=>{
+ const f=fixture({pendingUpload:true}),writes=[];let waits=0,error;
+ const options={config,plan,csv:'csv-publico',checkpoint:null,env:{META_WHATSAPP_SECONDARY_TOKEN:'SECONDARY_FAKE'},transport:f.transport,write:(p,d)=>writes.push([p,d]),log:()=>{},wait:async ms=>{assert.equal(ms,30000);waits++;}};
+ try{await main(options);}catch(e){error=e;}
+ assert(error);assert.equal(failureReceipt(error).estado,'SECUNDARIO_IMPORTACION_PENDIENTE');assert.equal(waits,40);assert.equal(f.uploads.length,1);assert.equal(f.sets.length,0);
+ const checkpoint=writes.find(([p])=>p==='work/auto-meta/importacion-secundario.json')[1],saved=JSON.stringify(checkpoint);
+ assert(!writes.some(([p])=>p==='work/auto-meta/resultado-secundario.json'),'No publicar un recibo de éxito durante la espera agotada');
+ f.uploads[0].filename='';
+ const result=await main({...options,checkpoint,wait:async ms=>{assert.equal(ms,30000);f.uploads[0].end_time='done';}});
+ assert.equal(result.estado,'META_SINCRONIZADO');assert.equal(result.importacion_id,checkpoint.upload_id);assert.equal(f.uploads.length,1);assert.equal(JSON.stringify(checkpoint),saved);
+ assert.equal(f.calls.filter(c=>c.method==='POST'&&c.path.endsWith('/uploads')).length,1,'El checkpoint recupera incluso una carga sin nombre devuelto por Meta');
+});
 test('clasifica HTTP/Graph sin revelar mensajes, URLs, headers ni credencial',async()=>{
  for(const [status,code,category]of [[429,4,'rate_limit'],[403,200,'permission_denied'],[400,100,'unsupported_or_invalid_request'],[503,2,'transport'],[400,42,'graph_api']]){
   const f=fixture({apiFailure:{status,code,subcode:999}});let error;

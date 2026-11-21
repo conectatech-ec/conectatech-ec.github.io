@@ -78,7 +78,7 @@ async function syncSecondary({config,plan,api,...options}){
  return {...result,phone:PHONE,productos_verificados:products.length,disponibles:expected,agotados:products.filter(out).length};
 }
 function save(path,data){fs.mkdirSync('work/auto-meta',{recursive:true});fs.writeFileSync(path,JSON.stringify(data,null,2)+'\n');}
-async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,inspect=false,write=save,log=console.log}={}){
+async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,inspect=false,wait,write=save,log=console.log}={}){
  config=validateConfig(config||JSON.parse(fs.readFileSync('integraciones/whatsapp-secundario.json','utf8')));
  let receipt={estado:'SECUNDARIO_PENDIENTE_CONFIGURACION',phone:PHONE,colecciones_whatsapp_verificadas:false};
  if(config.enabled||inspect&&config.catalog_id){
@@ -100,10 +100,10 @@ async function main({env=process.env,transport=fetch,config,plan,csv,checkpoint,
   plan=plan||JSON.parse(fs.readFileSync('exportaciones/meta-conjuntos-web.json','utf8'));
   csv=csv??fs.readFileSync('exportaciones/meta-catalogo-piloto.csv','utf8');
   checkpoint=checkpoint??(fs.existsSync(CHECKPOINT)?JSON.parse(fs.readFileSync(CHECKPOINT,'utf8')):null);
-  // Una carga pendiente se reanuda en la siguiente ejecución; no retener el flujo principal 20 minutos.
+  // Completar la carga existente en este mismo job, con espera acotada y sin otra subida.
   const observed={sets_verified:0,feed_submission_attempts:0,pending_upload_polls:0};
   try{
-   receipt=await syncSecondary({config,plan,csv,checkpoint,api,uploadAttempts:1,onCheckpoint:c=>write('work/auto-meta/importacion-secundario.json',c),onProgress:message=>{
+   receipt=await syncSecondary({config,plan,csv,checkpoint,api,wait,onCheckpoint:c=>write('work/auto-meta/importacion-secundario.json',c),onProgress:message=>{
     if(message==='CONJUNTO_META_VERIFICADO')observed.sets_verified++;
     if(message==='IMPORTANDO_FEED_EXISTENTE')observed.feed_submission_attempts++;
     if(/^META_IMPORTACION_EN_CURSO_ID_\d+$/.test(message))observed.pending_upload_polls++;
