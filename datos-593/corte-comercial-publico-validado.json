@@ -3,7 +3,7 @@
   "fuente": "Reporte-Inventario.xlsx",
   "sha256_original": "9814ec30aee0c7d20a999f69808e05e40cd460e7db4b5fe049fa07bffa2e0d96",
   "cantidad_sku_original": 1579,
-  "cantidad_sku_web": 1202,
+  "cantidad_sku_web": 1215,
   "productos": {
     "ADAP002": {
       "stock": 3,
@@ -6014,6 +6014,71 @@
       "stock": 1,
       "promo_centavos": 3631,
       "pvp_centavos": 4176
+    },
+    "AUDI132": {
+      "stock": 1,
+      "promo_centavos": 4415,
+      "pvp_centavos": 5500
+    },
+    "CARG072": {
+      "stock": 1,
+      "promo_centavos": 5914,
+      "pvp_centavos": 7394
+    },
+    "CUBO028": {
+      "stock": 2,
+      "promo_centavos": 2055,
+      "pvp_centavos": 2569
+    },
+    "HUB034": {
+      "stock": 1,
+      "promo_centavos": 1979,
+      "pvp_centavos": 2474
+    },
+    "LECT007": {
+      "stock": 1,
+      "promo_centavos": 1973,
+      "pvp_centavos": 2466
+    },
+    "MOUSE046": {
+      "stock": 1,
+      "promo_centavos": 2985,
+      "pvp_centavos": 3731
+    },
+    "CASE005": {
+      "stock": 1,
+      "promo_centavos": 2213,
+      "pvp_centavos": 2750
+    },
+    "SOPO062": {
+      "stock": 1,
+      "promo_centavos": 4330,
+      "pvp_centavos": 5413
+    },
+    "CABL175": {
+      "stock": 2,
+      "promo_centavos": 1855,
+      "pvp_centavos": 2319
+    },
+    "CABL177": {
+      "stock": 2,
+      "promo_centavos": 769,
+      "pvp_centavos": 961
+    },
+    "CABL178": {
+      "stock": 2,
+      "promo_centavos": 1153,
+      "pvp_centavos": 1441
+    },
+    "CABL179": {
+      "stock": 4,
+      "promo_centavos": 1569,
+      "pvp_centavos": 1961
+    },
+    "CABL180": {
+      "stock": 2,
+      "promo_centavos": 2369,
+      "pvp_centavos": 2961
     }
   },
   "verificacion": {
@@ -6052,6 +6117,28 @@
       "sha256_original": "f4e2263d28841abb297436b521f0b9d9f3249e1abe601c89ad36f1bf2ce1e4d9",
       "evidencia": "reportes/continuacion-132/base-593.json",
       "alcance": "Sólo las dos altas; 1201 registros anteriores conservados desde el corte vigente de la automatización comercial."
+    },
+    {
+      "fecha": "2026-11-21",
+      "skus": [
+        "AUDI132",
+        "CARG072",
+        "CUBO028",
+        "HUB034",
+        "LECT007",
+        "MOUSE046",
+        "CASE005",
+        "SOPO062",
+        "CABL175",
+        "CABL177",
+        "CABL178",
+        "CABL179",
+        "CABL180"
+      ],
+      "fuente": "Reporte-Inventario.xlsx",
+      "sha256_original": "d4bb0760688158e297ddc0187ed830b6c5173ca49d98c8d85005a5cb8982cfb7",
+      "evidencia": "reportes/continuacion-133/base-593.json",
+      "alcance": "Sólo altas nuevas. Todos los registros anteriores y exclusiones vigentes se conservan; no es una sincronización global."
     }
   ]
 }
