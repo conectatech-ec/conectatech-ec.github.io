@@ -1,5 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const {CATALOG,FAMILIES,prepare,execute,recreate,ReorderGraph,main,recoveryNeeded}=require('./reordenar-categorias-secundario-meta.cjs');
 const {parseGraphData}=require('./sincronizar-conjuntos-meta.cjs');
 const productId=i=>(29513533084919997n+BigInt(i)).toString();
@@ -60,9 +61,33 @@ test('prevalida todas las creaciones antes de la primera eliminación',async()=>
 test('rechaza diferencias de inventario o filtro antes de modificar categorías',async()=>{
  for(const kind of ['price','filter']){const f=fixture(),s=f.snapshot();if(kind==='price')s.secondary.products[0].price='otro';else s.secondary.sets.find(s=>s.retailer_id).filter={otro:true};await assert.rejects(execute({snapshot:s,plan:f.plan,api:f.api}),/REORDEN_/);assert.equal(f.api.calls.filter(c=>c.method!=='GET').length,0);}
 });
+// Las guardas se prueban con recibos propios, nunca con el estado productivo del checkout.
+async function withState(state,run){
+ const previous=process.cwd(),dir=fs.mkdtempSync(path.join(os.tmpdir(),'meta-orden-test-'));
+ try{
+  if(state){const target=path.join(dir,'reportes/integracion-whatsapp');fs.mkdirSync(target,{recursive:true});fs.writeFileSync(path.join(target,'resultado-orden-secundario.json'),JSON.stringify(state));}
+  process.chdir(dir);return await run();
+ }finally{process.chdir(previous);fs.rmSync(dir,{recursive:true,force:true});}
+}
 test('sin autorización explícita, el punto de entrada no usa credenciales ni accede a Meta',async()=>{
- const r=await main({env:{META_ACCESS_TOKEN:'PRINCIPAL_NO_USAR'},scope:{autorizado:false}});assert.equal(r.estado,'PENDIENTE_AUTORIZACION');
- await assert.rejects(main({env:{META_ORDER_SECONDARY_ENABLED:'true',META_ACCESS_TOKEN:'PRINCIPAL_NO_USAR'},scope:{autorizado:true,catalog_id:CATALOG,reference_catalog_id:'1036301566100990'},apply:true}),/FALTA_SECRETO_SECUNDARIO/);
+ await withState(null,async()=>{
+  const r=await main({env:{META_ACCESS_TOKEN:'PRINCIPAL_NO_USAR'},scope:{autorizado:false}});assert.equal(r.estado,'PENDIENTE_AUTORIZACION');
+  await assert.rejects(main({env:{META_ORDER_SECONDARY_ENABLED:'true',META_ACCESS_TOKEN:'PRINCIPAL_NO_USAR'},scope:{autorizado:true,catalog_id:CATALOG,reference_catalog_id:'1036301566100990'},apply:true}),/FALTA_SECRETO_SECUNDARIO/);
+ });
+});
+test('un recibo verificado conserva el no-op sin credenciales y no omite autorización',async()=>{
+ const f=fixture(),state=await execute({snapshot:f.snapshot(),plan:f.plan,api:f.api,wait:async()=>{}});
+ await withState(state,async()=>{
+  const scope={autorizado:true,catalog_id:CATALOG,reference_catalog_id:'1036301566100990'};
+  assert.deepEqual(await main({env:{},scope,apply:true}),state);
+  assert.equal((await main({env:{},scope:{autorizado:false},apply:true})).estado,'PENDIENTE_AUTORIZACION');
+ });
+});
+test('un recibo parcial no sustituye el secreto secundario ni habilita escrituras',async()=>{
+ const f=fixture(),state=await execute({snapshot:f.snapshot(),plan:f.plan,api:f.api,wait:async()=>{}});state.estado='REQUIERE_RECUPERACION';
+ await withState(state,async()=>{
+  await assert.rejects(main({env:{META_ORDER_SECONDARY_ENABLED:'true',META_ACCESS_TOKEN:'PRINCIPAL_NO_USAR'},scope:{autorizado:true,catalog_id:CATALOG,reference_catalog_id:'1036301566100990'},apply:true}),/FALTA_SECRETO_SECUNDARIO/);
+ });
 });
 test('el adaptador restringe las escrituras al secundario e impide DELETE sin IDs autorizados',async()=>{
  const calls=[];const api=new ReorderGraph({token:'SECONDARY_FAKE',names:[],transport:async(url,opt)=>{calls.push({url,opt});return new Response(JSON.stringify({id:CATALOG,name:'CONECTATECH | Catálogo WhatsApp 0964206977'}));}});
