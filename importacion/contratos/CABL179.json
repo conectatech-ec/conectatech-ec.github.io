@@ -69,21 +69,27 @@
     "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
     "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
     "reportes/continuacion-133/base-593.json",
-    "reportes/continuacion-133/revision-visual.json"
+    "reportes/continuacion-133/revision-visual.json",
+    "reportes/continuacion-134/fuentes-verificadas.json#CABL179",
+    "reportes/continuacion-134/revision-visual.json#CABL179"
   ],
-  "imagen_principal": "/imagenes/cabl179/CABL179-r133-01.webp",
+  "imagen_principal": "/imagenes/cabl179/CABL179-r134-01.webp",
   "imagenes_secundarias": [],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
-    "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CABL179",
+    "fuente": "reportes/continuacion-134/fuentes-verificadas.json#CABL179",
     "evidencia": "Referencias propias del propietario en Drive CONECTATECH y autorización vigente de representación comercial asistida. reportes/continuacion-133/orden-y-fuentes.json",
-    "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+    "fecha_verificacion": "2026-11-22T02:53:04.415390+00:00",
     "edicion_asistida_ia": true,
     "archivos": [
       {
         "sha256": "b047d6417112848f9feb40a7350d2fc54f480fc38e2f06dc6bbcc774486a90e4",
         "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CABL179"
+      },
+      {
+        "sha256": "aaf880bfc652cedaac4c2b39ff94c64a20999a1ab0d0cb670d5f6657c97db352",
+        "fuente": "reportes/continuacion-134/fuentes-verificadas.json#CABL179"
       }
     ]
   },
@@ -230,15 +236,15 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
-  "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
+  "fecha_verificacion": "2026-11-22T02:53:04.415390+00:00",
   "descripcion": "Carga tus equipos USB-C y sincroniza tus archivos con un solo cable de 2 metros. Este Ugreen USB-C a USB-C admite carga Power Delivery de hasta 60W y transferencia de datos de hasta 480 Mbps, según su empaque. Su longitud permite acomodar tu dispositivo con mayor libertad mientras permanece conectado.",
   "descripcion_seo": "Carga tus equipos USB-C y sincroniza tus archivos con un solo cable de 2 metros. Este Ugreen USB-C a USB-C admite carga Power Delivery de hasta 60W y trans",
   "contenido_venta": "Un cable Ugreen USB-C a USB-C de 2 metros.",
   "compatibilidad": "Requiere puertos USB-C. Los 60W y Power Delivery dependen del cargador y dispositivo compatibles. No incluye cargador. No se atribuye salida de vídeo a este cable USB 2.0.",
   "presentacion": "sin caja",
-  "revision_regla": 1,
+  "revision_regla": 2,
   "evidencia_clasificacion": "Política expresa del propietario: original por defecto fuera de JBL, Samsung, Apple, Bose y Lenovo. Marca de este producto fuera de esas excepciones; no se infiere originalidad del logotipo.",
   "stock_fecha_corte": "2026-11-21",
   "stock_tiempo_real": false,
@@ -313,18 +319,25 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-133/revision-visual.json",
-      "evidencia": "Identidad y afirmaciones contrastadas por el operador con referencias propias y fila exacta593; sin atributos inferidos de un modelo parecido."
+      "fuente": "reportes/continuacion-134/revision-visual.json",
+      "evidencia": "Datos comerciales y títulos conservados; nuevas fotografías y conjunto vendido revisados contra referencias propias y confirmaciones vigentes."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-11-21T23:25:20.107267+00:00",
-      "sha256_maestro": "b047d6417112848f9feb40a7350d2fc54f480fc38e2f06dc6bbcc774486a90e4",
-      "evidencia": "Producto completo y ambos conectores cotejados, forma ycolorcomercial conservados, fondoblancolimpio; noaccesoriosnidatosprivados. Detallesgenerativosno seafirmancomorecuperaciónóptica."
+      "fecha": "2026-11-22T02:53:04.415390+00:00",
+      "sha256_maestro": "aaf880bfc652cedaac4c2b39ff94c64a20999a1ab0d0cb670d5f6657c97db352",
+      "evidencia": "Cable completo con ambos conectores y geometría conservados; retirados únicamente los alambritos temporales de amarre por orden expresa del propietario. Fondo blanco, iluminación y presentación comercial revisados.",
+      "vistas": [
+        {
+          "posicion": 1,
+          "sha256_maestro": "aaf880bfc652cedaac4c2b39ff94c64a20999a1ab0d0cb670d5f6657c97db352",
+          "evidencia": "Cable completo con ambos conectores y geometría conservados; retirados únicamente los alambritos temporales de amarre por orden expresa del propietario. Fondo blanco, iluminación y presentación comercial revisados."
+        }
+      ]
     },
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "833e7c683dc39cfab23baa00a9baffe0813c0c48bdee8c9abef49429128a370e",
+      "sha256": "b8a80441dd0c30b4f93e1c0460c565328841b41e444480d6129967c5a7a8221f",
       "fila": {
         "sku": "CABL179",
         "nombre": "CABLE USB-C A USB-C 60W UGREEN",
@@ -340,7 +353,7 @@
     },
     "corte_comercial": {
       "archivo": "datos-593/corte-comercial-publico-validado.json",
-      "sha256": "a001df7a1bc42432cf3a01762729494f85acec7811aba2fdd587ae9888d19489",
+      "sha256": "8dcb30d96ee4fde571fcd16ccc5f7e4a77ace128cd5471ac3314efdca4a64355",
       "fecha": "2026-11-20",
       "fila": {
         "stock": 4,
@@ -352,7 +365,7 @@
       "solicitado": "CABL179",
       "sku": "CABL179",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-22T00:13:24.376Z",
+      "fecha": "2026-11-22T02:55:45.761Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -377,17 +390,17 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+      "url_comprobada": "http://127.0.0.1:8907/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
       "archivo_html": "productos/cabl179-cable-usb-c-ugreen-2m-60w/index.html",
       "http": 200,
-      "sha256_html": "8d452e03e1009536f872621280925d6110999a49737c475873864e73010fc91c",
-      "sha256_html_local": "8d452e03e1009536f872621280925d6110999a49737c475873864e73010fc91c",
+      "sha256_html": "b058a08349f6131e1f6d506be4813fd4f2e1f79f27f5a6ce560374df08b6a483",
+      "sha256_html_local": "b058a08349f6131e1f6d506be4813fd4f2e1f79f27f5a6ce560374df08b6a483",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01-600.webp?v=577cda6a81cc4729",
+        "src": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r134-01.webp",
+        "url_cargada": "http://127.0.0.1:8907/imagenes/cabl179/CABL179-r134-01-600.webp?v=ff81763be6ba7dd7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -397,45 +410,359 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+          "url": "http://127.0.0.1:8907/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8907/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+          "url": "http://127.0.0.1:8907/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8907/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01.webp",
+          "url": "http://127.0.0.1:8907/imagenes/cabl179/CABL179-r134-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-133/qa-publica/capturas/CABL179-390.png",
-      "sha256": "bb5fae9e10bf097eb9186a5b5b616428aa598aae35718ac20364b1622a6aa2fd",
+      "archivo": "reportes/continuacion-134/qa-local/capturas/CABL179-390.png",
+      "sha256": "c87fe88513ff028a9b68ec47e024a5f5d286bb9136841f37a85b4b03018b73ef",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-133/qa-publica/capturas/CABL179-1280.png",
-        "sha256": "ae585a12d94f84e9611bf56fe6464bc3c3b3b294fcf353248959d96a050961c1",
+        "archivo": "reportes/continuacion-134/qa-local/capturas/CABL179-1280.png",
+        "sha256": "39dcbdc9e4793e0875a3b3481708fc4c4f2c8e879357d952aadccef842b8f9e1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/continuacion-133/http-publicacion.json",
-      "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
     }
-  }
+  },
+  "historialPublicacion": [
+    {
+      "lote": "continuacion-133",
+      "estado": "PUBLICADO_VERIFICADO",
+      "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
+      "revision_regla": 1,
+      "imagen_principal": "/imagenes/cabl179/CABL179-r133-01.webp",
+      "imagenes_secundarias": [],
+      "derechos_imagen": {
+        "estado": "AUTORIZADO",
+        "tipo": "propia",
+        "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CABL179",
+        "evidencia": "Referencias propias del propietario en Drive CONECTATECH y autorización vigente de representación comercial asistida. reportes/continuacion-133/orden-y-fuentes.json",
+        "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+        "edicion_asistida_ia": true,
+        "archivos": [
+          {
+            "sha256": "b047d6417112848f9feb40a7350d2fc54f480fc38e2f06dc6bbcc774486a90e4",
+            "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CABL179"
+          }
+        ]
+      },
+      "unidad_venta": {
+        "descripcion": "Un cable Ugreen USB-C a USB-C de 2 metros.",
+        "cantidad": 1,
+        "verificada": true,
+        "fuente": "reportes/continuacion-133/revision-visual.json"
+      },
+      "contenido_venta": "Un cable Ugreen USB-C a USB-C de 2 metros.",
+      "descripcion": "Carga tus equipos USB-C y sincroniza tus archivos con un solo cable de 2 metros. Este Ugreen USB-C a USB-C admite carga Power Delivery de hasta 60W y transferencia de datos de hasta 480 Mbps, según su empaque. Su longitud permite acomodar tu dispositivo con mayor libertad mientras permanece conectado.",
+      "especificaciones": [
+        {
+          "nombre": "Marca",
+          "valor": "Ugreen",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Modelo",
+          "valor": "US286",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Referencia de fabricante",
+          "valor": "10306",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Conectores",
+          "valor": "USB-C macho a USB-C macho",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Longitud",
+          "valor": "2 m",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Potencia de carga indicada",
+          "valor": "Hasta 60W con Power Delivery, según empaque",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Corriente indicada",
+          "valor": "Hasta 3 A, según empaque",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Transferencia de datos indicada",
+          "valor": "Hasta 480 Mbps; USB 2.0, según empaque",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Color",
+          "valor": "Negro",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Contenido de venta",
+          "valor": "Un cable Ugreen USB-C a USB-C de 2 metros.",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        }
+      ],
+      "beneficios": [
+        {
+          "valor": "Hasta 60W",
+          "titulo": "Carga tus equipos USB-C",
+          "descripcion": "Admite carga Power Delivery con cargador y dispositivo compatibles.",
+          "especificaciones": [
+            "Potencia de carga indicada",
+            "Conectores"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        },
+        {
+          "valor": "2 metros",
+          "titulo": "Usa tu equipo con comodidad",
+          "descripcion": "Una longitud de 2 m para acomodar la carga en tu escritorio o junto a tu asiento.",
+          "especificaciones": [
+            "Longitud"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        },
+        {
+          "valor": "Carga y datos",
+          "titulo": "Conecta y sincroniza",
+          "descripcion": "Sirve para carga y transferencia de archivos por USB-C, hasta 480 Mbps según empaque.",
+          "especificaciones": [
+            "Transferencia de datos indicada",
+            "Conectores"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CABL179-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        }
+      ],
+      "evidenciaHTTP": {
+        "archivo": "reportes/continuacion-133/http-publicacion.json",
+        "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
+      },
+      "evidenciaMovil": {
+        "solicitado": "CABL179",
+        "sku": "CABL179",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-22T00:13:24.376Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+        "archivo_html": "productos/cabl179-cable-usb-c-ugreen-2m-60w/index.html",
+        "http": 200,
+        "sha256_html": "8d452e03e1009536f872621280925d6110999a49737c475873864e73010fc91c",
+        "sha256_html_local": "8d452e03e1009536f872621280925d6110999a49737c475873864e73010fc91c",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01-600.webp?v=577cda6a81cc4729",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "precio_archivado_por_stock_cero": false,
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-133/qa-publica/capturas/CABL179-390.png",
+        "sha256": "bb5fae9e10bf097eb9186a5b5b616428aa598aae35718ac20364b1622a6aa2fd",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-133/qa-publica/capturas/CABL179-1280.png",
+          "sha256": "ae585a12d94f84e9611bf56fe6464bc3c3b3b294fcf353248959d96a050961c1",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      }
+    }
+  ]
 }

@@ -3,7 +3,7 @@
   "fuente": "Reporte-Inventario.xlsx",
   "sha256_original": "9814ec30aee0c7d20a999f69808e05e40cd460e7db4b5fe049fa07bffa2e0d96",
   "cantidad_sku_original": 1579,
-  "cantidad_sku_web": 1215,
+  "cantidad_sku_web": 1216,
   "productos": {
     "ADAP002": {
       "stock": 3,
@@ -6079,6 +6079,11 @@
       "stock": 2,
       "promo_centavos": 2369,
       "pvp_centavos": 2961
+    },
+    "CABL176": {
+      "stock": 2,
+      "promo_centavos": 613,
+      "pvp_centavos": 766
     }
   },
   "verificacion": {
@@ -6138,6 +6143,16 @@
       "fuente": "Reporte-Inventario.xlsx",
       "sha256_original": "d4bb0760688158e297ddc0187ed830b6c5173ca49d98c8d85005a5cb8982cfb7",
       "evidencia": "reportes/continuacion-133/base-593.json",
+      "alcance": "Sólo altas nuevas. Todos los registros anteriores y exclusiones vigentes se conservan; no es una sincronización global."
+    },
+    {
+      "fecha": "2026-11-21",
+      "skus": [
+        "CABL176"
+      ],
+      "fuente": "Reporte-Inventario.xlsx",
+      "sha256_original": "d4bb0760688158e297ddc0187ed830b6c5173ca49d98c8d85005a5cb8982cfb7",
+      "evidencia": "reportes/continuacion-134/base-593.json",
       "alcance": "Sólo altas nuevas. Todos los registros anteriores y exclusiones vigentes se conservan; no es una sincronización global."
     }
   ]

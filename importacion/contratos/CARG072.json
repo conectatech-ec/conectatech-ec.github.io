@@ -69,21 +69,33 @@
     "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
     "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
     "reportes/continuacion-133/base-593.json",
-    "reportes/continuacion-133/revision-visual.json"
+    "reportes/continuacion-133/revision-visual.json",
+    "reportes/continuacion-134/fuentes-verificadas.json#CARG072",
+    "reportes/continuacion-134/revision-visual.json#CARG072"
   ],
-  "imagen_principal": "/imagenes/carg072/CARG072-r133-01.webp",
-  "imagenes_secundarias": [],
+  "imagen_principal": "/imagenes/carg072/CARG072-r134-01.webp",
+  "imagenes_secundarias": [
+    "/imagenes/carg072/CARG072-r134-02.webp"
+  ],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
-    "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CARG072",
+    "fuente": "reportes/continuacion-134/fuentes-verificadas.json#CARG072",
     "evidencia": "Referencias propias del propietario en Drive CONECTATECH y autorización vigente de representación comercial asistida. reportes/continuacion-133/orden-y-fuentes.json",
-    "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+    "fecha_verificacion": "2026-11-22T02:53:04.415390+00:00",
     "edicion_asistida_ia": true,
     "archivos": [
       {
         "sha256": "b116697a10387ee6d77c27c46f19abdded64b1bf4d9440fd007632fb4acb1178",
         "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CARG072"
+      },
+      {
+        "sha256": "5ef98b0ba8198ba7dd401046c60d8a12fd2c9247f8b9af46ee5fae3a9e8c9129",
+        "fuente": "reportes/continuacion-134/fuentes-verificadas.json#CARG072"
+      },
+      {
+        "sha256": "91f3608510dbcdb9188d53bad550511c2c6b103ef82596a06c9660ecdbd9b17a",
+        "fuente": "reportes/continuacion-134/fuentes-verificadas.json#CARG072"
       }
     ]
   },
@@ -188,15 +200,15 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
-  "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
+  "fecha_verificacion": "2026-11-22T02:53:04.415390+00:00",
   "descripcion": "Lleva tu carga diaria en un solo cargador UGREEN Nexode Pro de 45W. Su cable USB-C integrado se guarda en el propio cuerpo y se complementa con puertos USB-C y USB-A para conectar tus dispositivos con el cable adecuado. El formato compacto y la clavija de dos patas planas facilitan llevarlo contigo.",
   "descripcion_seo": "Lleva tu carga diaria en un solo cargador UGREEN Nexode Pro de 45W. Su cable USB-C integrado se guarda en el propio cuerpo y se complementa con puertos USB",
   "contenido_venta": "Un cargador de pared con cable USB-C integrado",
   "compatibilidad": "Dispositivos con carga por USB-C o USB-A, utilizando una conexión y un cable compatibles. La potencia de carga depende del dispositivo conectado.",
   "presentacion": "sin caja",
-  "revision_regla": 1,
+  "revision_regla": 2,
   "evidencia_clasificacion": "Política expresa del propietario: original por defecto fuera de JBL, Samsung, Apple, Bose y Lenovo. Marca de este producto fuera de esas excepciones; no se infiere originalidad del logotipo.",
   "stock_fecha_corte": "2026-11-21",
   "stock_tiempo_real": false,
@@ -270,18 +282,30 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-133/revision-visual.json",
-      "evidencia": "Identidad y afirmaciones contrastadas por el operador con referencias propias y fila exacta593; sin atributos inferidos de un modelo parecido."
+      "fuente": "reportes/continuacion-134/revision-visual.json",
+      "evidencia": "Datos comerciales y títulos conservados; nuevas fotografías y conjunto vendido revisados contra referencias propias y confirmaciones vigentes."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-11-21T23:25:20.107267+00:00",
-      "sha256_maestro": "b116697a10387ee6d77c27c46f19abdded64b1bf4d9440fd007632fb4acb1178",
-      "evidencia": "APROBADO: producto completo, dos patas planas, cable USB-C guardado y dos puertos separados fieles; sin caja, etiqueta temporal retirada, fondo blanco, acabado grafito. Vista comparada con las cuatro referencias propias."
+      "fecha": "2026-11-22T02:53:04.415390+00:00",
+      "sha256_maestro": "5ef98b0ba8198ba7dd401046c60d8a12fd2c9247f8b9af46ee5fae3a9e8c9129",
+      "evidencia": "Ángulo cotejado con fotografía física172828: cara45W superior, cavidad USB-C integrada vertical a izquierda, puertos separados, dos patas planas en cara derecha de especificaciones. Corrige salida errónea de patas por cara45W del maestro133.",
+      "vistas": [
+        {
+          "posicion": 1,
+          "sha256_maestro": "5ef98b0ba8198ba7dd401046c60d8a12fd2c9247f8b9af46ee5fae3a9e8c9129",
+          "evidencia": "Ángulo cotejado con fotografía física172828: cara45W superior, cavidad USB-C integrada vertical a izquierda, puertos separados, dos patas planas en cara derecha de especificaciones. Corrige salida errónea de patas por cara45W del maestro133."
+        },
+        {
+          "posicion": 2,
+          "sha256_maestro": "91f3608510dbcdb9188d53bad550511c2c6b103ef82596a06c9660ecdbd9b17a",
+          "evidencia": "Vista frontal cotejada con fotografía172824: cable integrado guardado, USB-C y USB-A separados y rotulados, círculo UGREEN arriba; patas ocultas como en referencia. Sin funciones ni conectores añadidos."
+        }
+      ]
     },
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "833e7c683dc39cfab23baa00a9baffe0813c0c48bdee8c9abef49429128a370e",
+      "sha256": "b8a80441dd0c30b4f93e1c0460c565328841b41e444480d6129967c5a7a8221f",
       "fila": {
         "sku": "CARG072",
         "nombre": "CARGADOR 45W UGREEN NEXODE PRO",
@@ -297,7 +321,7 @@
     },
     "corte_comercial": {
       "archivo": "datos-593/corte-comercial-publico-validado.json",
-      "sha256": "a001df7a1bc42432cf3a01762729494f85acec7811aba2fdd587ae9888d19489",
+      "sha256": "8dcb30d96ee4fde571fcd16ccc5f7e4a77ace128cd5471ac3314efdca4a64355",
       "fecha": "2026-11-20",
       "fila": {
         "stock": 1,
@@ -309,7 +333,7 @@
       "solicitado": "CARG072",
       "sku": "CARG072",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-22T00:13:03.304Z",
+      "fecha": "2026-11-22T02:55:44.078Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -334,65 +358,347 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
+      "url_comprobada": "http://127.0.0.1:8907/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
       "archivo_html": "productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/index.html",
       "http": 200,
-      "sha256_html": "a5de438b90dca02201694f316989ec713305bfef15aca1b548b0bbaa6d66ce9b",
-      "sha256_html_local": "a5de438b90dca02201694f316989ec713305bfef15aca1b548b0bbaa6d66ce9b",
+      "sha256_html": "05fd692dfc329d3b688c0c3e1a2ec4f3d10113940a023a0209d12381702cc60f",
+      "sha256_html_local": "05fd692dfc329d3b688c0c3e1a2ec4f3d10113940a023a0209d12381702cc60f",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/carg072/CARG072-r133-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/carg072/CARG072-r133-01-600.webp?v=c996716e69171569",
+        "src": "https://conectatech-ec.github.io/imagenes/carg072/CARG072-r134-01.webp",
+        "url_cargada": "http://127.0.0.1:8907/imagenes/carg072/CARG072-r134-01-600.webp?v=4d182727c505637f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "precio_archivado_por_stock_cero": false,
-      "galeria": [],
+      "galeria": [
+        {
+          "ruta": "/imagenes/carg072/CARG072-r134-02.webp",
+          "miniatura": "/imagenes/carg072/CARG072-r134-02-300.webp",
+          "cargada": true
+        }
+      ],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
+          "url": "http://127.0.0.1:8907/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8907/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+          "url": "http://127.0.0.1:8907/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8907/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/carg072/CARG072-r133-01.webp",
+          "url": "http://127.0.0.1:8907/imagenes/carg072/CARG072-r134-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8907/imagenes/carg072/CARG072-r134-02.webp?v=0248375b3e2bcacc",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-133/qa-publica/capturas/CARG072-390.png",
-      "sha256": "24b9af094379277f82f3d944b048963ae5709b54556295fa640b09803ff91e4b",
+      "archivo": "reportes/continuacion-134/qa-local/capturas/CARG072-390.png",
+      "sha256": "973610e83df4a4c93e05c689e9a2ffe5da0cdc288797fbb74868062e2042c0b5",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-133/qa-publica/capturas/CARG072-1280.png",
-        "sha256": "a43a0d50518a84ababbed0ffd4a1f2ec2cef4fa0ed617f696ebbe3260c4cc224",
+        "archivo": "reportes/continuacion-134/qa-local/capturas/CARG072-1280.png",
+        "sha256": "6017a5d3e8172106bdbb009c612c4b16de29c7af7d58046201552c8a08c65271",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/continuacion-133/http-publicacion.json",
-      "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
     }
-  }
+  },
+  "historialPublicacion": [
+    {
+      "lote": "continuacion-133",
+      "estado": "PUBLICADO_VERIFICADO",
+      "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
+      "revision_regla": 1,
+      "imagen_principal": "/imagenes/carg072/CARG072-r133-01.webp",
+      "imagenes_secundarias": [],
+      "derechos_imagen": {
+        "estado": "AUTORIZADO",
+        "tipo": "propia",
+        "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CARG072",
+        "evidencia": "Referencias propias del propietario en Drive CONECTATECH y autorización vigente de representación comercial asistida. reportes/continuacion-133/orden-y-fuentes.json",
+        "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+        "edicion_asistida_ia": true,
+        "archivos": [
+          {
+            "sha256": "b116697a10387ee6d77c27c46f19abdded64b1bf4d9440fd007632fb4acb1178",
+            "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CARG072"
+          }
+        ]
+      },
+      "unidad_venta": {
+        "descripcion": "Un cargador de pared con cable USB-C integrado",
+        "cantidad": 1,
+        "verificada": true,
+        "fuente": "reportes/continuacion-133/revision-visual.json"
+      },
+      "contenido_venta": "Un cargador de pared con cable USB-C integrado",
+      "descripcion": "Lleva tu carga diaria en un solo cargador UGREEN Nexode Pro de 45W. Su cable USB-C integrado se guarda en el propio cuerpo y se complementa con puertos USB-C y USB-A para conectar tus dispositivos con el cable adecuado. El formato compacto y la clavija de dos patas planas facilitan llevarlo contigo.",
+      "especificaciones": [
+        {
+          "nombre": "Marca",
+          "valor": "UGREEN",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Línea",
+          "valor": "Nexode Pro",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Potencia nominal",
+          "valor": "45W",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Conexiones",
+          "valor": "Cable USB-C integrado; un puerto USB-C y un puerto USB-A",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Clavija",
+          "valor": "Dos patas planas",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Color",
+          "valor": "Gris grafito",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Contenido de venta",
+          "valor": "Un cargador con cable USB-C integrado",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        }
+      ],
+      "beneficios": [
+        {
+          "valor": "USB-C",
+          "titulo": "Cable siempre a mano",
+          "descripcion": "El cable USB-C integrado queda guardado en el cuerpo del cargador para llevarlo de forma ordenada.",
+          "especificaciones": [
+            "Conexiones"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        },
+        {
+          "valor": "USB-C + USB-A",
+          "titulo": "Elige tu conexión",
+          "descripcion": "Los puertos USB-C y USB-A te permiten elegir la conexión adecuada para tus dispositivos.",
+          "especificaciones": [
+            "Conexiones"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        },
+        {
+          "valor": "Compacto",
+          "titulo": "Listo para llevar",
+          "descripcion": "Su formato compacto con clavija de dos patas planas resulta práctico para llevar en el bolso.",
+          "especificaciones": [
+            "Clavija",
+            "Color"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CARG072-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        }
+      ],
+      "evidenciaHTTP": {
+        "archivo": "reportes/continuacion-133/http-publicacion.json",
+        "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
+      },
+      "evidenciaMovil": {
+        "solicitado": "CARG072",
+        "sku": "CARG072",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-22T00:13:03.304Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
+        "archivo_html": "productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/index.html",
+        "http": 200,
+        "sha256_html": "a5de438b90dca02201694f316989ec713305bfef15aca1b548b0bbaa6d66ce9b",
+        "sha256_html_local": "a5de438b90dca02201694f316989ec713305bfef15aca1b548b0bbaa6d66ce9b",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/carg072/CARG072-r133-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/carg072/CARG072-r133-01-600.webp?v=c996716e69171569",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "precio_archivado_por_stock_cero": false,
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/carg072-cargador-ugreen-nexode-pro-45w-usb-c-usb-a/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/carg072/CARG072-r133-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-133/qa-publica/capturas/CARG072-390.png",
+        "sha256": "24b9af094379277f82f3d944b048963ae5709b54556295fa640b09803ff91e4b",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-133/qa-publica/capturas/CARG072-1280.png",
+          "sha256": "a43a0d50518a84ababbed0ffd4a1f2ec2cef4fa0ed617f696ebbe3260c4cc224",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      }
+    }
+  ]
 }
