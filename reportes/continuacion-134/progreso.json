@@ -1,5 +1,5 @@
 {
-  "estado": "PUBLICADO_VERIFICADO",
+  "estado": "CERRADO_PUBLICADO_VERIFICADO",
   "fecha": "2026-11-22T02:53:47.279180+00:00",
   "altasNuevas": 1,
   "correccionesFotograficas": 3,
@@ -43,8 +43,8 @@
     "fichas": 4,
     "capturas": 8
   },
-  "prioridadPublicaVerificada": false,
-  "estadoPrioridad": "REGISTRADA_PENDIENTE_DESPLIEGUE",
+  "prioridadPublicaVerificada": true,
+  "estadoPrioridad": "VERIFICADA_HTTP_CHROMIUM",
   "sincronizacionParalela593": {
     "corte": "2026-11-21",
     "stocksAjenosActualizados": 20,
@@ -53,5 +53,9 @@
     "evidencia": "vinculo-corte-actual.json"
   },
   "fotografiasHistoricasPendientes": 118,
-  "colaHistoricaSeparada": "pendientes-fotografia-historica.csv"
+  "colaHistoricaSeparada": "pendientes-fotografia-historica.csv",
+  "evidenciaCierre": {
+    "archivo": "reportes/continuacion-134/cierre.json",
+    "sha256": "3ecad298360792588b6dade28790278f57b6fd0ec0e743eaac49754e606dce21"
+  }
 }
