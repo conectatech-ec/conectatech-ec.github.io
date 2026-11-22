@@ -79,6 +79,7 @@
     "Almacenamiento": [
       "CASE002",
       "CASE004",
+      "CASE005",
       "DISC003",
       "DISC004",
       "DISC005",
@@ -187,6 +188,7 @@
       "AUDI128",
       "AUDI129",
       "AUDI130",
+      "AUDI132",
       "BARR002",
       "MICR01",
       "MICR02",
@@ -297,6 +299,7 @@
       "CARG068",
       "CARG069",
       "CARG071",
+      "CARG072",
       "CORT01",
       "CORT04",
       "CORT06",
@@ -318,6 +321,7 @@
       "CUBO025",
       "CUBO026",
       "CUBO027",
+      "CUBO028",
       "ESTAB002",
       "ESTAB006",
       "ESTAB007",
@@ -427,6 +431,7 @@
       "MOUS041",
       "MOUS043",
       "MOUS045",
+      "MOUSE046",
       "PADM001",
       "PADM002",
       "PRES001",
@@ -728,6 +733,11 @@
       "CABL172",
       "CABL173",
       "CABL174",
+      "CABL175",
+      "CABL177",
+      "CABL178",
+      "CABL179",
+      "CABL180",
       "HUB001",
       "HUB004",
       "HUB005",
@@ -754,11 +764,13 @@
       "HUB030",
       "HUB032",
       "HUB033",
+      "HUB034",
       "LECT001",
       "LECT002",
       "LECT004",
       "LECT005",
-      "LECT006"
+      "LECT006",
+      "LECT007"
     ],
     "Soportes y Accesorios": [
       "AIRT001",
@@ -805,6 +817,7 @@
       "SOPO059",
       "SOPO060",
       "SOPO061",
+      "SOPO062",
       "STYL001",
       "STYL002",
       "STYL003",
@@ -14421,6 +14434,149 @@
       "sku": "TABL007",
       "categoria_web": "Tablets",
       "familia_web": "Tablets",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "AUDI132",
+      "categoria_web": "Audifonos",
+      "familia_web": "Audio y Audífonos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CARG072",
+      "categoria_web": "Cargadores",
+      "familia_web": "Cargadores y Energía",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CUBO028",
+      "categoria_web": "Cubos",
+      "familia_web": "Cargadores y Energía",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "HUB034",
+      "categoria_web": "Hub",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "LECT007",
+      "categoria_web": "Lectores",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "MOUSE046",
+      "categoria_web": "Mouse",
+      "familia_web": "Computación y Periféricos",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CASE005",
+      "categoria_web": "Case",
+      "familia_web": "Almacenamiento",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "SOPO062",
+      "categoria_web": "Soportes",
+      "familia_web": "Soportes y Accesorios",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL175",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL177",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL178",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL179",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
+      "aprobacion_editorial": true,
+      "estados": [
+        "PENDIENTE_APROBACIÓN"
+      ],
+      "verificacion_meta_pendiente": true,
+      "visible_whatsapp": null
+    },
+    {
+      "sku": "CABL180",
+      "categoria_web": "Cables",
+      "familia_web": "Cables y Conectividad",
       "aprobacion_editorial": true,
       "estados": [
         "PENDIENTE_APROBACIÓN"
