@@ -38,6 +38,8 @@ on:
       - 'scripts/categorias-meta-web.cjs'
       - 'scripts/sincronizar-conjuntos-meta.cjs'
       - 'scripts/sincronizar-secundario-meta.cjs'
+      - 'scripts/retirar-exclusiones-secundario-meta.cjs'
+      - 'scripts/test-retirar-exclusiones-secundario-meta.cjs'
       - 'integraciones/whatsapp-secundario.json'
       - 'integraciones/orden-categorias-secundario.json'
       - 'scripts/prioridad-comercial-meta.cjs'
@@ -147,6 +149,7 @@ jobs:
           node scripts/test-categorias-secundario-meta.cjs
           node scripts/test-orden-categorias-secundario-meta.cjs
           node scripts/test-secundario-meta.cjs
+          node scripts/test-retirar-exclusiones-secundario-meta.cjs
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
           node scripts/test-exportar-canales.cjs
@@ -173,6 +176,7 @@ jobs:
           node scripts/test-categorias-secundario-meta.cjs
           node scripts/test-orden-categorias-secundario-meta.cjs
           node scripts/test-secundario-meta.cjs
+          node scripts/test-retirar-exclusiones-secundario-meta.cjs
           node scripts/test-prioridad-meta.cjs
           node scripts/test-reordenar-meta.cjs
           node scripts/test-validar-exportacion-593.cjs
@@ -215,9 +219,33 @@ jobs:
           const state=fs.existsSync(path)?JSON.parse(fs.readFileSync(path,'utf8')):null;
           fs.appendFileSync(process.env.GITHUB_OUTPUT,'reanudar='+recoveryNeeded(state)+'\n');
           JS
+      - name: Preparar exclusiones públicas autorizadas del catálogo secundario
+        id: preparar-exclusion
+        if: ${{ steps.estado-orden-secundario.outputs.reanudar != 'true' }}
+        continue-on-error: true
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+        run: node scripts/retirar-exclusiones-secundario-meta.cjs --prepare
+      - name: Preservar respaldo antes de retirar productos públicos
+        id: respaldar-exclusion
+        if: ${{ steps.preparar-exclusion.outcome == 'success' && steps.preparar-exclusion.outputs.needs_apply == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: respaldo-exclusiones-secundario-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/auto-meta/respaldo-exclusiones-secundario.json
+          retention-days: 7
+          if-no-files-found: error
+      - name: Retirar sólo los cinco productos públicos STEREN autorizados
+        id: aplicar-exclusion
+        if: ${{ steps.preparar-exclusion.outputs.needs_apply == 'true' && steps.respaldar-exclusion.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
+          META_RETIREMENT_BACKUP_ARTIFACT_ID: ${{ steps.respaldar-exclusion.outputs.artifact-id }}
+        run: node scripts/retirar-exclusiones-secundario-meta.cjs --apply
       - name: Sincronizar catálogo independiente de WhatsApp secundario
         id: sync-secundario
-        if: ${{ steps.estado-orden-secundario.outputs.reanudar != 'true' }}
+        if: ${{ steps.estado-orden-secundario.outputs.reanudar != 'true' && steps.preparar-exclusion.outcome == 'success' && (steps.preparar-exclusion.outputs.needs_apply != 'true' || steps.aplicar-exclusion.outcome == 'success') }}
         continue-on-error: true
         env:
           META_WHATSAPP_SECONDARY_TOKEN: ${{ secrets.META_WHATSAPP_SECONDARY_TOKEN }}
@@ -232,12 +260,13 @@ jobs:
       - name: Conservar puntos de reanudación de Meta
         if: always()
         run: |
-          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ] && [ ! -f work/auto-meta/importacion-secundario.json ] && [ ! -f work/auto-meta/orden-secundario.json ]; then exit 0; fi
+          if [ ! -f work/auto-meta/importacion.json ] && [ ! -f work/auto-meta/reordenacion.json ] && [ ! -f work/auto-meta/importacion-secundario.json ] && [ ! -f work/auto-meta/orden-secundario.json ] && [ ! -f work/auto-meta/resultado-exclusiones-secundario.json ]; then exit 0; fi
           mkdir -p /tmp/conectatech-meta-puntos
           if [ -f work/auto-meta/importacion.json ]; then cp work/auto-meta/importacion.json /tmp/conectatech-meta-puntos/importacion.json; fi
           if [ -f work/auto-meta/reordenacion.json ]; then cp work/auto-meta/reordenacion.json /tmp/conectatech-meta-puntos/reordenacion.json; fi
           if [ -f work/auto-meta/importacion-secundario.json ]; then cp work/auto-meta/importacion-secundario.json /tmp/conectatech-meta-puntos/importacion-secundario.json; fi
           if [ -f work/auto-meta/orden-secundario.json ]; then cp work/auto-meta/orden-secundario.json /tmp/conectatech-meta-puntos/orden-secundario.json; fi
+          if [ -f work/auto-meta/resultado-exclusiones-secundario.json ]; then cp work/auto-meta/resultado-exclusiones-secundario.json /tmp/conectatech-meta-puntos/resultado-exclusiones-secundario.json; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for intento in 1 2 3 4; do
@@ -260,6 +289,10 @@ jobs:
               cp /tmp/conectatech-meta-puntos/orden-secundario.json reportes/integracion-whatsapp/resultado-orden-secundario.json
               git add reportes/integracion-whatsapp/resultado-orden-secundario.json
             fi
+            if [ -f /tmp/conectatech-meta-puntos/resultado-exclusiones-secundario.json ]; then
+              cp /tmp/conectatech-meta-puntos/resultado-exclusiones-secundario.json reportes/integracion-whatsapp/resultado-exclusiones-secundario.json
+              git add reportes/integracion-whatsapp/resultado-exclusiones-secundario.json
+            fi
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "Conservar referencia de importación Meta para reanudación"
             if git push origin HEAD:main; then exit 0; fi
@@ -277,6 +310,7 @@ jobs:
             work/auto-meta/importacion-secundario.json
             work/auto-meta/orden-secundario.json
             work/auto-meta/resultado-secundario.json
+            work/auto-meta/resultado-exclusiones-secundario.json
           retention-days: 7
           if-no-files-found: warn
 
