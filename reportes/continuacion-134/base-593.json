@@ -1,0 +1,21 @@
+{
+  "fecha_corte": "2026-11-21",
+  "archivo": "Reporte-Inventario.xlsx",
+  "sha256_original": "d4bb0760688158e297ddc0187ed830b6c5173ca49d98c8d85005a5cb8982cfb7",
+  "productos": {
+    "CABL176": {
+      "fila": 320,
+      "nombre": "CABLE DE RED 1M CAT6 UGREEN",
+      "stock": 2,
+      "promo_contado": 6.13,
+      "pvp_final": 7.66,
+      "pvp_neto": 6.66,
+      "iva_pvp_importe": 1.0,
+      "precio_general_publico": 5.33,
+      "iva_porcentaje": 15.0,
+      "categoria593Original": null
+    }
+  },
+  "regla_precios": "Promo=columnaQ V.TOTAL. PVP=columnaX PVP+importeIVA columnaY. No se recalcula desde contado ni se publican costos.",
+  "alcance": "Únicamente altas nuevas; se preserva el corte comercial anterior para todos los SKU existentes."
+}

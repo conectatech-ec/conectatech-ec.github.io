@@ -20,10 +20,10 @@
   "pvp": 27.5,
   "stock": 1,
   "unidad_venta": {
-    "descripcion": "Un case para disco SATA de 2,5 pulgadas. No incluye disco.",
+    "descripcion": "Un case UGREEN para disco SATA de 2,5 pulgadas y un cable USB-A a USB-C de 50 cm. No incluye disco.",
     "cantidad": 1,
     "verificada": true,
-    "fuente": "reportes/continuacion-133/revision-visual.json"
+    "fuente": "reportes/continuacion-134/confirmacion-case005.json"
   },
   "fotografias_fuente": [
     {
@@ -69,21 +69,34 @@
     "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
     "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
     "reportes/continuacion-133/base-593.json",
-    "reportes/continuacion-133/revision-visual.json"
+    "reportes/continuacion-133/revision-visual.json",
+    "reportes/continuacion-134/fuentes-verificadas.json#CASE005",
+    "reportes/continuacion-134/revision-visual.json#CASE005",
+    "reportes/continuacion-134/confirmacion-case005.json"
   ],
-  "imagen_principal": "/imagenes/case005/CASE005-r133-01.webp",
-  "imagenes_secundarias": [],
+  "imagen_principal": "/imagenes/case005/CASE005-r134-01.webp",
+  "imagenes_secundarias": [
+    "/imagenes/case005/CASE005-r134-02.webp"
+  ],
   "derechos_imagen": {
     "estado": "AUTORIZADO",
     "tipo": "propia",
-    "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CASE005",
+    "fuente": "reportes/continuacion-134/fuentes-verificadas.json#CASE005",
     "evidencia": "Referencias propias del propietario en Drive CONECTATECH y autorización vigente de representación comercial asistida. reportes/continuacion-133/orden-y-fuentes.json",
-    "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+    "fecha_verificacion": "2026-11-22T02:53:04.415390+00:00",
     "edicion_asistida_ia": true,
     "archivos": [
       {
         "sha256": "1226a9347cc2f0246fcfdfa9d750f388076c08aa1113ce05462480ad4c592639",
         "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CASE005"
+      },
+      {
+        "sha256": "627c4b07e53ab222e5aa87f29febe3df78655687e277e61852c7cadde510e508",
+        "fuente": "reportes/continuacion-134/fuentes-verificadas.json#CASE005"
+      },
+      {
+        "sha256": "596ff385f58c6e878c4e0353724319c4012d7489e29cc2869349148055adfac8",
+        "fuente": "reportes/continuacion-134/fuentes-verificadas.json#CASE005"
       }
     ]
   },
@@ -229,7 +242,7 @@
       "publicar": true
     },
     {
-      "nombre": "Cable indicado en el empaque",
+      "nombre": "Cable incluido",
       "valor": "USB-A a USB-C, 50 cm",
       "fuentes": [
         "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
@@ -237,7 +250,10 @@
         "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
         "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
         "reportes/continuacion-133/base-593.json",
-        "reportes/continuacion-133/revision-visual.json"
+        "reportes/continuacion-133/revision-visual.json",
+        "reportes/continuacion-134/fuentes-verificadas.json#CASE005",
+        "reportes/continuacion-134/revision-visual.json#CASE005",
+        "reportes/continuacion-134/confirmacion-case005.json"
       ],
       "estado": "VERIFICADO",
       "publicar": true
@@ -269,18 +285,35 @@
       ],
       "estado": "VERIFICADO",
       "publicar": true
+    },
+    {
+      "nombre": "Contenido de venta",
+      "valor": "Un case UGREEN para disco SATA de 2,5 pulgadas y un cable USB-A a USB-C de 50 cm. No incluye disco.",
+      "fuentes": [
+        "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+        "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+        "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+        "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+        "reportes/continuacion-133/base-593.json",
+        "reportes/continuacion-133/revision-visual.json",
+        "reportes/continuacion-134/fuentes-verificadas.json#CASE005",
+        "reportes/continuacion-134/revision-visual.json#CASE005",
+        "reportes/continuacion-134/confirmacion-case005.json"
+      ],
+      "estado": "VERIFICADO",
+      "publicar": true
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "PUBLICADO_VERIFICADO",
+  "estado_publicacion": "APROBADO_LOCAL",
   "url_publica": "https://conectatech-ec.github.io/productos/case005-case-ugreen-disco-25-usb-c/",
-  "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
-  "descripcion": "Dale un uso externo a tu disco SATA de 2,5 pulgadas con este case UGREEN. Su conexión USB-C y la interfaz USB 3.0 facilitan el acceso a tus archivos desde equipos compatibles, mientras su cuerpo compacto permite llevar la unidad de forma práctica. La venta corresponde al case; el disco se adquiere por separado.",
-  "descripcion_seo": "Dale un uso externo a tu disco SATA de 2,5 pulgadas con este case UGREEN. Su conexión USB-C y la interfaz USB 3.0 facilitan el acceso a tus archivos desde ",
-  "contenido_venta": "Un case para disco SATA de 2,5 pulgadas. No incluye disco.",
+  "fecha_verificacion": "2026-11-22T02:53:04.415390+00:00",
+  "descripcion": "Dale un uso externo a tu HDD o SSD SATA de 2,5 pulgadas con este case UGREEN. Conecta el puerto USB-C del case a tu equipo mediante el cable USB-A a USB-C de 50 cm incluido y accede a tus archivos por USB 3.0. Su carcasa compacta permite llevar la unidad de forma práctica. Incluye el case y el cable; el disco se adquiere por separado.",
+  "descripcion_seo": "Dale un uso externo a tu HDD o SSD SATA de 2,5 pulgadas con este case UGREEN. Conecta el puerto USB-C del case a tu equipo mediante el cable USB-A a USB-C ",
+  "contenido_venta": "Un case UGREEN para disco SATA de 2,5 pulgadas y un cable USB-A a USB-C de 50 cm. No incluye disco.",
   "compatibilidad": "Discos SATA HDD o SSD de 2,5 pulgadas y hasta 9,5 mm de grosor. Sistemas Windows, macOS y Linux según el empaque.",
   "presentacion": "sin caja",
-  "revision_regla": 1,
+  "revision_regla": 2,
   "evidencia_clasificacion": "Política expresa del propietario: original por defecto fuera de JBL, Samsung, Apple, Bose y Lenovo. Marca de este producto fuera de esas excepciones; no se infiere originalidad del logotipo.",
   "stock_fecha_corte": "2026-11-21",
   "stock_tiempo_real": false,
@@ -303,12 +336,13 @@
       "estado": "VERIFICADO"
     },
     {
-      "valor": "USB-C",
-      "titulo": "Conecta tus archivos",
-      "descripcion": "Accede a la unidad mediante el puerto USB-C del case y su interfaz USB 3.0.",
+      "valor": "Cable incluido",
+      "titulo": "Conecta tu disco al equipo",
+      "descripcion": "Utiliza el cable USB-A a USB-C de 50 cm incluido para conectar el case a un puerto USB-A compatible.",
       "especificaciones": [
         "Puerto del case",
-        "Interfaz USB"
+        "Interfaz USB",
+        "Cable incluido"
       ],
       "fuentes": [
         "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
@@ -316,7 +350,10 @@
         "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
         "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
         "reportes/continuacion-133/base-593.json",
-        "reportes/continuacion-133/revision-visual.json"
+        "reportes/continuacion-133/revision-visual.json",
+        "reportes/continuacion-134/fuentes-verificadas.json#CASE005",
+        "reportes/continuacion-134/revision-visual.json#CASE005",
+        "reportes/continuacion-134/confirmacion-case005.json"
       ],
       "estado": "VERIFICADO"
     },
@@ -354,18 +391,30 @@
     },
     "ficha": {
       "verificada": true,
-      "fuente": "reportes/continuacion-133/revision-visual.json",
-      "evidencia": "Identidad y afirmaciones contrastadas por el operador con referencias propias y fila exacta593; sin atributos inferidos de un modelo parecido."
+      "fuente": "reportes/continuacion-134/revision-visual.json",
+      "evidencia": "Datos comerciales y títulos conservados; nuevas fotografías y conjunto vendido revisados contra referencias propias y confirmaciones vigentes."
     },
     "revision_visual": {
       "estado": "VERIFICADO",
-      "fecha": "2026-11-21T23:25:20.107267+00:00",
-      "sha256_maestro": "1226a9347cc2f0246fcfdfa9d750f388076c08aa1113ce05462480ad4c592639",
-      "evidencia": "Casecompletocerradonegro, divisiónfranjaazullogo ygrabadofielesareferenciareal; nodisco,nocables,nohardwareañadido. Mantieneproporcionesrectangulares, limpioy nítido."
+      "fecha": "2026-11-22T02:53:04.415390+00:00",
+      "sha256_maestro": "627c4b07e53ab222e5aa87f29febe3df78655687e277e61852c7cadde510e508",
+      "evidencia": "Producto completo y un único cable USB-A a USB-C negro incluido, confirmado por el propietario; conectores y diseño del cable cotejados con empaque exacto50743. Conservar frontal aprobado, sin disco ni caja.",
+      "vistas": [
+        {
+          "posicion": 1,
+          "sha256_maestro": "627c4b07e53ab222e5aa87f29febe3df78655687e277e61852c7cadde510e508",
+          "evidencia": "Producto completo y un único cable USB-A a USB-C negro incluido, confirmado por el propietario; conectores y diseño del cable cotejados con empaque exacto50743. Conservar frontal aprobado, sin disco ni caja."
+        },
+        {
+          "posicion": 2,
+          "sha256_maestro": "596ff385f58c6e878c4e0353724319c4012d7489e29cc2869349148055adfac8",
+          "evidencia": "Producto completo desde extremo negro brillante, un único puerto USB-C centrado cotejado con fotografía física propia. Fondo limpio, foco y proporciones revisados; sin disco ni accesorios inventados."
+        }
+      ]
     },
     "base_593": {
       "archivo": "datos-593/inventario-publico.csv",
-      "sha256": "833e7c683dc39cfab23baa00a9baffe0813c0c48bdee8c9abef49429128a370e",
+      "sha256": "b8a80441dd0c30b4f93e1c0460c565328841b41e444480d6129967c5a7a8221f",
       "fila": {
         "sku": "CASE005",
         "nombre": "CASE PARA DISCO 2.5 UGREEN SUPERSPEED",
@@ -381,7 +430,7 @@
     },
     "corte_comercial": {
       "archivo": "datos-593/corte-comercial-publico-validado.json",
-      "sha256": "a001df7a1bc42432cf3a01762729494f85acec7811aba2fdd587ae9888d19489",
+      "sha256": "8dcb30d96ee4fde571fcd16ccc5f7e4a77ace128cd5471ac3314efdca4a64355",
       "fecha": "2026-11-20",
       "fila": {
         "stock": 1,
@@ -393,7 +442,7 @@
       "solicitado": "CASE005",
       "sku": "CASE005",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-22T00:13:13.463Z",
+      "fecha": "2026-11-22T02:55:42.319Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -418,65 +467,431 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/case005-case-ugreen-disco-25-usb-c/",
-      "url_comprobada": "https://conectatech-ec.github.io/productos/case005-case-ugreen-disco-25-usb-c/",
+      "url_comprobada": "http://127.0.0.1:8907/productos/case005-case-ugreen-disco-25-usb-c/",
       "archivo_html": "productos/case005-case-ugreen-disco-25-usb-c/index.html",
       "http": 200,
-      "sha256_html": "4b82d3a652f4ff9da866e8aaf7dc4ae2aac548fff620dad02162e9a82e708a12",
-      "sha256_html_local": "4b82d3a652f4ff9da866e8aaf7dc4ae2aac548fff620dad02162e9a82e708a12",
+      "sha256_html": "22464d83402aa67b20d47d88e0f0fc148907b8a030169672cfc2d2281a3a8bf4",
+      "sha256_html_local": "22464d83402aa67b20d47d88e0f0fc148907b8a030169672cfc2d2281a3a8bf4",
       "ancho_viewport": 390,
       "ancho_documento": 390,
       "alto_viewport": 844,
       "imagen": {
-        "src": "https://conectatech-ec.github.io/imagenes/case005/CASE005-r133-01.webp",
-        "url_cargada": "https://conectatech-ec.github.io/imagenes/case005/CASE005-r133-01-600.webp?v=4117e8fa9e9da450",
+        "src": "https://conectatech-ec.github.io/imagenes/case005/CASE005-r134-01.webp",
+        "url_cargada": "http://127.0.0.1:8907/imagenes/case005/CASE005-r134-01-600.webp?v=a4f263b0de1f3d52",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
         "visible": true
       },
       "precio_archivado_por_stock_cero": false,
-      "galeria": [],
+      "galeria": [
+        {
+          "ruta": "/imagenes/case005/CASE005-r134-02.webp",
+          "miniatura": "/imagenes/case005/CASE005-r134-02-300.webp",
+          "cargada": true
+        }
+      ],
       "enlaces_internos": [
         {
-          "url": "https://conectatech-ec.github.io/productos/case005-case-ugreen-disco-25-usb-c/",
+          "url": "http://127.0.0.1:8907/productos/case005-case-ugreen-disco-25-usb-c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+          "url": "http://127.0.0.1:8907/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+          "url": "http://127.0.0.1:8907/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/",
+          "url": "http://127.0.0.1:8907/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "https://conectatech-ec.github.io/imagenes/case005/CASE005-r133-01.webp",
+          "url": "http://127.0.0.1:8907/imagenes/case005/CASE005-r134-01.webp",
+          "http": 200,
+          "ok": true
+        },
+        {
+          "url": "http://127.0.0.1:8907/imagenes/case005/CASE005-r134-02.webp?v=7d7f3d5e62cd8bc1",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-133/qa-publica/capturas/CASE005-390.png",
-      "sha256": "224e3f7edf2a31c29ae458317907776fcec284fe8a00a03ca28d7a9dc999088b",
+      "archivo": "reportes/continuacion-134/qa-local/capturas/CASE005-390.png",
+      "sha256": "c813a3800148a23ae657129c7a58ee623878f54952397f276fdc60da5f57af1a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-133/qa-publica/capturas/CASE005-1280.png",
-        "sha256": "0f9924143ed5b99957817eb1ed44706dfd270187fc4612f6d85b6b5343871513",
+        "archivo": "reportes/continuacion-134/qa-local/capturas/CASE005-1280.png",
+        "sha256": "c681d754040adb6fcb684cfd8acdc2629e14ba2088b8b93dbf40955872467239",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
-    },
-    "publicacion_http": {
-      "archivo": "reportes/continuacion-133/http-publicacion.json",
-      "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
     }
-  }
+  },
+  "historialPublicacion": [
+    {
+      "lote": "continuacion-133",
+      "estado": "PUBLICADO_VERIFICADO",
+      "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
+      "revision_regla": 1,
+      "imagen_principal": "/imagenes/case005/CASE005-r133-01.webp",
+      "imagenes_secundarias": [],
+      "derechos_imagen": {
+        "estado": "AUTORIZADO",
+        "tipo": "propia",
+        "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CASE005",
+        "evidencia": "Referencias propias del propietario en Drive CONECTATECH y autorización vigente de representación comercial asistida. reportes/continuacion-133/orden-y-fuentes.json",
+        "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+        "edicion_asistida_ia": true,
+        "archivos": [
+          {
+            "sha256": "1226a9347cc2f0246fcfdfa9d750f388076c08aa1113ce05462480ad4c592639",
+            "fuente": "reportes/continuacion-133/fuentes-verificadas.json#CASE005"
+          }
+        ]
+      },
+      "unidad_venta": {
+        "descripcion": "Un case para disco SATA de 2,5 pulgadas. No incluye disco.",
+        "cantidad": 1,
+        "verificada": true,
+        "fuente": "reportes/continuacion-133/revision-visual.json"
+      },
+      "contenido_venta": "Un case para disco SATA de 2,5 pulgadas. No incluye disco.",
+      "descripcion": "Dale un uso externo a tu disco SATA de 2,5 pulgadas con este case UGREEN. Su conexión USB-C y la interfaz USB 3.0 facilitan el acceso a tus archivos desde equipos compatibles, mientras su cuerpo compacto permite llevar la unidad de forma práctica. La venta corresponde al case; el disco se adquiere por separado.",
+      "especificaciones": [
+        {
+          "nombre": "Marca",
+          "valor": "UGREEN",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Modelo",
+          "valor": "50743",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Tipo de producto",
+          "valor": "Case externo para disco SATA de 2,5 pulgadas",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Discos compatibles",
+          "valor": "HDD o SSD SATA de 2,5 pulgadas y hasta 9,5 mm de grosor",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Puerto del case",
+          "valor": "USB-C",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Interfaz USB",
+          "valor": "USB 3.0; hasta 5 Gbps",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Interfaz del disco",
+          "valor": "SATA III (6 Gbps), compatible con SATA II (3 Gbps) y SATA I (1,5 Gbps)",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Protocolo",
+          "valor": "UASP",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Sistemas indicados",
+          "valor": "Windows, macOS y Linux",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Dimensiones declaradas",
+          "valor": "128,5 × 82 × 14 mm",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Cable indicado en el empaque",
+          "valor": "USB-A a USB-C, 50 cm",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Color fotografiado",
+          "valor": "Negro",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        },
+        {
+          "nombre": "Disco incluido",
+          "valor": "No",
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO",
+          "publicar": true
+        }
+      ],
+      "beneficios": [
+        {
+          "valor": "2,5″",
+          "titulo": "Aprovecha tu disco SATA",
+          "descripcion": "Utiliza un HDD o SSD SATA de 2,5 pulgadas y hasta 9,5 mm de grosor como unidad externa.",
+          "especificaciones": [
+            "Discos compatibles"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        },
+        {
+          "valor": "USB-C",
+          "titulo": "Conecta tus archivos",
+          "descripcion": "Accede a la unidad mediante el puerto USB-C del case y su interfaz USB 3.0.",
+          "especificaciones": [
+            "Puerto del case",
+            "Interfaz USB"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        },
+        {
+          "valor": "Compacto",
+          "titulo": "Fácil de llevar",
+          "descripcion": "Guarda tu disco dentro de una carcasa de 128,5 × 82 × 14 mm para transportarlo con comodidad.",
+          "especificaciones": [
+            "Dimensiones declaradas"
+          ],
+          "fuentes": [
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-01",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-02",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-03",
+            "reportes/continuacion-133/fuentes-verificadas.json#CASE005-04",
+            "reportes/continuacion-133/base-593.json",
+            "reportes/continuacion-133/revision-visual.json"
+          ],
+          "estado": "VERIFICADO"
+        }
+      ],
+      "evidenciaHTTP": {
+        "archivo": "reportes/continuacion-133/http-publicacion.json",
+        "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
+      },
+      "evidenciaMovil": {
+        "solicitado": "CASE005",
+        "sku": "CASE005",
+        "estado": "VERIFICADO",
+        "fecha": "2026-11-22T00:13:13.463Z",
+        "errores": [],
+        "verificaciones": {
+          "http": true,
+          "html_coincide_local": true,
+          "sin_desbordamiento_horizontal": true,
+          "titulo": true,
+          "sku": true,
+          "canonical": true,
+          "promo_contado": true,
+          "pvp": true,
+          "jerarquia_precio": true,
+          "disponibilidad": true,
+          "imagen_principal": true,
+          "imagenes_cargadas": true,
+          "galeria_del_contrato": true,
+          "javascript": true,
+          "beneficios_verificados": true,
+          "detalles_cerrados": true,
+          "detalles_accesibles": true,
+          "enlaces_internos": true,
+          "escritorio": true
+        },
+        "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
+        "url": "https://conectatech-ec.github.io/productos/case005-case-ugreen-disco-25-usb-c/",
+        "url_comprobada": "https://conectatech-ec.github.io/productos/case005-case-ugreen-disco-25-usb-c/",
+        "archivo_html": "productos/case005-case-ugreen-disco-25-usb-c/index.html",
+        "http": 200,
+        "sha256_html": "4b82d3a652f4ff9da866e8aaf7dc4ae2aac548fff620dad02162e9a82e708a12",
+        "sha256_html_local": "4b82d3a652f4ff9da866e8aaf7dc4ae2aac548fff620dad02162e9a82e708a12",
+        "ancho_viewport": 390,
+        "ancho_documento": 390,
+        "alto_viewport": 844,
+        "imagen": {
+          "src": "https://conectatech-ec.github.io/imagenes/case005/CASE005-r133-01.webp",
+          "url_cargada": "https://conectatech-ec.github.io/imagenes/case005/CASE005-r133-01-600.webp?v=4117e8fa9e9da450",
+          "naturalWidth": 351,
+          "naturalHeight": 351,
+          "completa": true,
+          "visible": true
+        },
+        "precio_archivado_por_stock_cero": false,
+        "galeria": [],
+        "enlaces_internos": [
+          {
+            "url": "https://conectatech-ec.github.io/productos/case005-case-ugreen-disco-25-usb-c/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/logo-conectatech.png",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/",
+            "http": 200,
+            "ok": true
+          },
+          {
+            "url": "https://conectatech-ec.github.io/imagenes/case005/CASE005-r133-01.webp",
+            "http": 200,
+            "ok": true
+          }
+        ],
+        "archivo": "reportes/continuacion-133/qa-publica/capturas/CASE005-390.png",
+        "sha256": "224e3f7edf2a31c29ae458317907776fcec284fe8a00a03ca28d7a9dc999088b",
+        "escritorio": {
+          "ancho_viewport": 1280,
+          "ancho_documento": 1280,
+          "archivo": "reportes/continuacion-133/qa-publica/capturas/CASE005-1280.png",
+          "sha256": "0f9924143ed5b99957817eb1ed44706dfd270187fc4612f6d85b6b5343871513",
+          "sin_desbordamiento_horizontal": true,
+          "imagen_cargada": true
+        }
+      }
+    }
+  ]
 }
