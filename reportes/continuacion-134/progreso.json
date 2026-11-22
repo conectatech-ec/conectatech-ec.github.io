@@ -1,26 +1,57 @@
 {
-  "estado": "PREPARADO_PENDIENTE_PUBLICACION",
+  "estado": "PUBLICADO_VERIFICADO",
   "fecha": "2026-11-22T02:53:47.279180+00:00",
   "altasNuevas": 1,
   "correccionesFotograficas": 3,
   "productos": {
     "CABL176": {
-      "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM",
-      "tipo": "ALTA_NUEVA"
+      "estado": "PUBLICADO_VERIFICADO",
+      "tipo": "ALTA_NUEVA",
+      "fechaVerificacionHTTP": "2026-11-22T03:47:14.556958+00:00"
     },
     "CASE005": {
-      "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM",
-      "tipo": "CORRECCION_FOTOGRAFICA"
+      "estado": "PUBLICADO_VERIFICADO",
+      "tipo": "CORRECCION_FOTOGRAFICA",
+      "fechaVerificacionHTTP": "2026-11-22T03:47:14.556958+00:00"
     },
     "CARG072": {
-      "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM",
-      "tipo": "CORRECCION_FOTOGRAFICA"
+      "estado": "PUBLICADO_VERIFICADO",
+      "tipo": "CORRECCION_FOTOGRAFICA",
+      "fechaVerificacionHTTP": "2026-11-22T03:47:14.556958+00:00"
     },
     "CABL179": {
-      "estado": "PREPARADO_PENDIENTE_HTTP_CHROMIUM",
-      "tipo": "CORRECCION_FOTOGRAFICA"
+      "estado": "PUBLICADO_VERIFICADO",
+      "tipo": "CORRECCION_FOTOGRAFICA",
+      "fechaVerificacionHTTP": "2026-11-22T03:47:14.556958+00:00"
     }
   },
   "pendientesConocidos": 12,
-  "costoAdicional": 0
+  "costoAdicional": 0,
+  "fechaContenidoVerificadoHTTP": "2026-11-22T03:47:14.556958+00:00",
+  "altasNuevasPublicadas": 1,
+  "correccionesPublicadas": 3,
+  "totalProductosWeb": 1211,
+  "totalPortadas": 1019,
+  "publicacionVerificada": {
+    "http": "reportes/continuacion-134/http-publicacion.json",
+    "sha256HTTP": "980a774c9aae485eaccd9df5677c147107f91dc720cf63dd46aa3bd9eba3f2ef",
+    "chromium": "reportes/continuacion-134/qa-publica/movil.json",
+    "vistas": [
+      390,
+      1280
+    ],
+    "fichas": 4,
+    "capturas": 8
+  },
+  "prioridadPublicaVerificada": false,
+  "estadoPrioridad": "REGISTRADA_PENDIENTE_DESPLIEGUE",
+  "sincronizacionParalela593": {
+    "corte": "2026-11-21",
+    "stocksAjenosActualizados": 20,
+    "preciosCambiados": 0,
+    "cuatroSKUDelLoteConValoresIntactos": true,
+    "evidencia": "vinculo-corte-actual.json"
+  },
+  "fotografiasHistoricasPendientes": 118,
+  "colaHistoricaSeparada": "pendientes-fotografia-historica.csv"
 }

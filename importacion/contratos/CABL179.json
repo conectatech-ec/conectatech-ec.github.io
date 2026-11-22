@@ -236,9 +236,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
-  "fecha_verificacion": "2026-11-22T02:53:04.415390+00:00",
+  "fecha_verificacion": "2026-11-22T03:47:14.556958+00:00",
   "descripcion": "Carga tus equipos USB-C y sincroniza tus archivos con un solo cable de 2 metros. Este Ugreen USB-C a USB-C admite carga Power Delivery de hasta 60W y transferencia de datos de hasta 480 Mbps, según su empaque. Su longitud permite acomodar tu dispositivo con mayor libertad mientras permanece conectado.",
   "descripcion_seo": "Carga tus equipos USB-C y sincroniza tus archivos con un solo cable de 2 metros. Este Ugreen USB-C a USB-C admite carga Power Delivery de hasta 60W y trans",
   "contenido_venta": "Un cable Ugreen USB-C a USB-C de 2 metros.",
@@ -353,8 +353,8 @@
     },
     "corte_comercial": {
       "archivo": "datos-593/corte-comercial-publico-validado.json",
-      "sha256": "8dcb30d96ee4fde571fcd16ccc5f7e4a77ace128cd5471ac3314efdca4a64355",
-      "fecha": "2026-11-20",
+      "sha256": "34bd13b88ae0fb7dc7f126c9aac6246bce383a03a210ed16b8ee6ab8f372bcad",
+      "fecha": "2026-11-21",
       "fila": {
         "stock": 4,
         "promo_centavos": 1569,
@@ -365,7 +365,7 @@
       "solicitado": "CABL179",
       "sku": "CABL179",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-22T02:55:45.761Z",
+      "fecha": "2026-11-22T03:51:16.165Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -390,7 +390,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
-      "url_comprobada": "http://127.0.0.1:8907/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
       "archivo_html": "productos/cabl179-cable-usb-c-ugreen-2m-60w/index.html",
       "http": 200,
       "sha256_html": "b058a08349f6131e1f6d506be4813fd4f2e1f79f27f5a6ce560374df08b6a483",
@@ -400,7 +400,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r134-01.webp",
-        "url_cargada": "http://127.0.0.1:8907/imagenes/cabl179/CABL179-r134-01-600.webp?v=ff81763be6ba7dd7",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r134-01-600.webp?v=ff81763be6ba7dd7",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -410,41 +410,45 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8907/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+          "url": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8907/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8907/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8907/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8907/imagenes/cabl179/CABL179-r134-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r134-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-134/qa-local/capturas/CABL179-390.png",
+      "archivo": "reportes/continuacion-134/qa-publica/capturas/CABL179-390.png",
       "sha256": "c87fe88513ff028a9b68ec47e024a5f5d286bb9136841f37a85b4b03018b73ef",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-134/qa-local/capturas/CABL179-1280.png",
+        "archivo": "reportes/continuacion-134/qa-publica/capturas/CABL179-1280.png",
         "sha256": "39dcbdc9e4793e0875a3b3481708fc4c4f2c8e879357d952aadccef842b8f9e1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "archivo": "reportes/continuacion-134/http-publicacion.json",
+      "sha256": "980a774c9aae485eaccd9df5677c147107f91dc720cf63dd46aa3bd9eba3f2ef"
     }
   },
   "historialPublicacion": [
