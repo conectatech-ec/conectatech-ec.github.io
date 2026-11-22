@@ -202,9 +202,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/hub034-hub-usb-c-cudy-5-en-1-hdmi-4k/",
-  "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+  "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
   "descripcion": "Conecta tu pantalla y tus periféricos desde un solo puerto USB-C. Este hub Cudy reúne HDMI, tres puertos USB-A y una entrada USB-C para alimentación PD en un cuerpo compacto con cable integrado. Disfruta de salida de video hasta 4K a 30 Hz cuando tu equipo y pantalla sean compatibles.",
   "descripcion_seo": "Conecta tu pantalla y tus periféricos desde un solo puerto USB-C. Este hub Cudy reúne HDMI, tres puertos USB-A y una entrada USB-C para alimentación PD en ",
   "contenido_venta": "Un hub con cable USB-C integrado.",
@@ -331,7 +331,7 @@
       "solicitado": "HUB034",
       "sku": "HUB034",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-21T23:43:03.883Z",
+      "fecha": "2026-11-22T00:13:07.414Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -356,7 +356,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/hub034-hub-usb-c-cudy-5-en-1-hdmi-4k/",
-      "url_comprobada": "http://127.0.0.1:8905/productos/hub034-hub-usb-c-cudy-5-en-1-hdmi-4k/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/hub034-hub-usb-c-cudy-5-en-1-hdmi-4k/",
       "archivo_html": "productos/hub034-hub-usb-c-cudy-5-en-1-hdmi-4k/index.html",
       "http": 200,
       "sha256_html": "43fa4f3cd562f5e95ece609b1f4d6c7a7cc520be1dacb72b2d23d617f5c78ad2",
@@ -366,7 +366,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/hub034/HUB034-r133-01.webp",
-        "url_cargada": "http://127.0.0.1:8905/imagenes/hub034/HUB034-r133-01-600.webp?v=7f1148d9f047a435",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/hub034/HUB034-r133-01-600.webp?v=7f1148d9f047a435",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -376,41 +376,45 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8905/productos/hub034-hub-usb-c-cudy-5-en-1-hdmi-4k/",
+          "url": "https://conectatech-ec.github.io/productos/hub034-hub-usb-c-cudy-5-en-1-hdmi-4k/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/imagenes/hub034/HUB034-r133-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/hub034/HUB034-r133-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-133/qa-local/capturas/HUB034-390.png",
+      "archivo": "reportes/continuacion-133/qa-publica/capturas/HUB034-390.png",
       "sha256": "571636f853c5d39a56f87715f4d4b03b9c87639aa0177c6cb8d5bbd03f134d08",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-133/qa-local/capturas/HUB034-1280.png",
+        "archivo": "reportes/continuacion-133/qa-publica/capturas/HUB034-1280.png",
         "sha256": "7e37b3e49cbd9f3092fceb8b8b485e17950af5928421672ddc24694a2abad92a",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "archivo": "reportes/continuacion-133/http-publicacion.json",
+      "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
     }
   }
 }

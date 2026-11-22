@@ -355,9 +355,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/audi132-audifonos-inalambricos-ugreen-dots-ws220/",
-  "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+  "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
   "descripcion": "Disfruta tu música sin cables con los UGREEN Dots y lleva ambos audífonos protegidos en su estuche de carga. Su diseño intrauditivo con puntas de silicón acompaña tu rutina con comodidad, mientras la resistencia IPX5 ayuda frente a salpicaduras. El fabricante indica hasta 7 h de reproducción por carga y hasta 35 h al utilizar el estuche.",
   "descripcion_seo": "Disfruta tu música sin cables con los UGREEN Dots y lleva ambos audífonos protegidos en su estuche de carga. Su diseño intrauditivo con puntas de silicón a",
   "contenido_venta": "Un par de audífonos con un estuche de carga",
@@ -481,7 +481,7 @@
       "solicitado": "AUDI132",
       "sku": "AUDI132",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-21T23:42:57.320Z",
+      "fecha": "2026-11-22T00:12:59.526Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -506,7 +506,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/audi132-audifonos-inalambricos-ugreen-dots-ws220/",
-      "url_comprobada": "http://127.0.0.1:8905/productos/audi132-audifonos-inalambricos-ugreen-dots-ws220/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/audi132-audifonos-inalambricos-ugreen-dots-ws220/",
       "archivo_html": "productos/audi132-audifonos-inalambricos-ugreen-dots-ws220/index.html",
       "http": 200,
       "sha256_html": "4b392dc90ff859488cf83e94e9956a8fc9512244fe2564da5e98595a81c02272",
@@ -516,7 +516,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/audi132/AUDI132-r133-01.webp",
-        "url_cargada": "http://127.0.0.1:8905/imagenes/audi132/AUDI132-r133-01-600.webp?v=e4db45dfd5da2c52",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/audi132/AUDI132-r133-01-600.webp?v=e4db45dfd5da2c52",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -526,41 +526,45 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8905/productos/audi132-audifonos-inalambricos-ugreen-dots-ws220/",
+          "url": "https://conectatech-ec.github.io/productos/audi132-audifonos-inalambricos-ugreen-dots-ws220/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/imagenes/audi132/AUDI132-r133-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/audi132/AUDI132-r133-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-133/qa-local/capturas/AUDI132-390.png",
+      "archivo": "reportes/continuacion-133/qa-publica/capturas/AUDI132-390.png",
       "sha256": "5c19f4e0adb2348ac0a74ed2f85cb0490235d1b9f5ef0bdb4741ec59bf3b476a",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-133/qa-local/capturas/AUDI132-1280.png",
+        "archivo": "reportes/continuacion-133/qa-publica/capturas/AUDI132-1280.png",
         "sha256": "6420634810cf6fc1dc4fa5dfb531add075198accd3d91444aaf4f2176b39c4a8",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "archivo": "reportes/continuacion-133/http-publicacion.json",
+      "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
     }
   }
 }
