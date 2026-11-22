@@ -216,9 +216,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cubo028-cargador-ugreen-gan-30w-usb-c/",
-  "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+  "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
   "descripcion": "Carga tus dispositivos con un cargador UGREEN USB-C de hasta 30W y tecnología GaN. Su cuerpo compacto ocupa poco espacio al transportarlo y la entrada de 100–240V permite usarlo en redes eléctricas dentro de ese rango. Conecta un cable adecuado a su único puerto USB-C y aprovecha una solución sencilla para la carga diaria.",
   "descripcion_seo": "Carga tus dispositivos con un cargador UGREEN USB-C de hasta 30W y tecnología GaN. Su cuerpo compacto ocupa poco espacio al transportarlo y la entrada de 1",
   "contenido_venta": "Un cubo cargador de pared USB-C de 30W",
@@ -338,7 +338,7 @@
       "solicitado": "CUBO028",
       "sku": "CUBO028",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-21T23:43:02.313Z",
+      "fecha": "2026-11-22T00:13:05.394Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -363,7 +363,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cubo028-cargador-ugreen-gan-30w-usb-c/",
-      "url_comprobada": "http://127.0.0.1:8905/productos/cubo028-cargador-ugreen-gan-30w-usb-c/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cubo028-cargador-ugreen-gan-30w-usb-c/",
       "archivo_html": "productos/cubo028-cargador-ugreen-gan-30w-usb-c/index.html",
       "http": 200,
       "sha256_html": "03c5fa698f4ab88c6461c0c7c8f7fa894b29db46ada3de93c2e15f5448dc4462",
@@ -373,7 +373,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cubo028/CUBO028-r133-01.webp",
-        "url_cargada": "http://127.0.0.1:8905/imagenes/cubo028/CUBO028-r133-01-600.webp?v=33f60646b8e91e0f",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cubo028/CUBO028-r133-01-600.webp?v=33f60646b8e91e0f",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -383,41 +383,45 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8905/productos/cubo028-cargador-ugreen-gan-30w-usb-c/",
+          "url": "https://conectatech-ec.github.io/productos/cubo028-cargador-ugreen-gan-30w-usb-c/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/imagenes/cubo028/CUBO028-r133-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cubo028/CUBO028-r133-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-133/qa-local/capturas/CUBO028-390.png",
+      "archivo": "reportes/continuacion-133/qa-publica/capturas/CUBO028-390.png",
       "sha256": "8001d4f07a9d33a63db8267c3af56fd2c7180c492671334c410c04534fcb55e3",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-133/qa-local/capturas/CUBO028-1280.png",
+        "archivo": "reportes/continuacion-133/qa-publica/capturas/CUBO028-1280.png",
         "sha256": "74010876b20b21a168bea5848600cfdb3af968d0189a367cb9f943218ff1f108",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "archivo": "reportes/continuacion-133/http-publicacion.json",
+      "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
     }
   }
 }

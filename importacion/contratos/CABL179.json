@@ -230,9 +230,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
-  "fecha_verificacion": "2026-11-21T23:25:20.107267+00:00",
+  "fecha_verificacion": "2026-11-22T00:11:37.372268+00:00",
   "descripcion": "Carga tus equipos USB-C y sincroniza tus archivos con un solo cable de 2 metros. Este Ugreen USB-C a USB-C admite carga Power Delivery de hasta 60W y transferencia de datos de hasta 480 Mbps, según su empaque. Su longitud permite acomodar tu dispositivo con mayor libertad mientras permanece conectado.",
   "descripcion_seo": "Carga tus equipos USB-C y sincroniza tus archivos con un solo cable de 2 metros. Este Ugreen USB-C a USB-C admite carga Power Delivery de hasta 60W y trans",
   "contenido_venta": "Un cable Ugreen USB-C a USB-C de 2 metros.",
@@ -352,7 +352,7 @@
       "solicitado": "CABL179",
       "sku": "CABL179",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-21T23:43:15.246Z",
+      "fecha": "2026-11-22T00:13:24.376Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -377,7 +377,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
-      "url_comprobada": "http://127.0.0.1:8905/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
       "archivo_html": "productos/cabl179-cable-usb-c-ugreen-2m-60w/index.html",
       "http": 200,
       "sha256_html": "8d452e03e1009536f872621280925d6110999a49737c475873864e73010fc91c",
@@ -387,7 +387,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01.webp",
-        "url_cargada": "http://127.0.0.1:8905/imagenes/cabl179/CABL179-r133-01-600.webp?v=577cda6a81cc4729",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01-600.webp?v=577cda6a81cc4729",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -397,41 +397,45 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8905/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
+          "url": "https://conectatech-ec.github.io/productos/cabl179-cable-usb-c-ugreen-2m-60w/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8905/imagenes/cabl179/CABL179-r133-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl179/CABL179-r133-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-133/qa-local/capturas/CABL179-390.png",
+      "archivo": "reportes/continuacion-133/qa-publica/capturas/CABL179-390.png",
       "sha256": "bb5fae9e10bf097eb9186a5b5b616428aa598aae35718ac20364b1622a6aa2fd",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-133/qa-local/capturas/CABL179-1280.png",
+        "archivo": "reportes/continuacion-133/qa-publica/capturas/CABL179-1280.png",
         "sha256": "ae585a12d94f84e9611bf56fe6464bc3c3b3b294fcf353248959d96a050961c1",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "archivo": "reportes/continuacion-133/http-publicacion.json",
+      "sha256": "649873c24de34be7bc36fa7f2aa0d7f7f0a1597c0ea0cc1aa53e66cc700af361"
     }
   }
 }

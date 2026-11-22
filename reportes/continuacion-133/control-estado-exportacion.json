@@ -1,0 +1,19 @@
+{
+  "estado": "ESTADO_CANONICO_VALIDADO",
+  "fecha": "2026-11-22T00:07:19.708369+00:00",
+  "incidencia": "El campo redundante altas_133 introducido por este lote no formaba parte del resumen canónico del exportador.",
+  "resolucion": "El publicador habitual normalizó el estado en el commit f005db884fb0089acd68ab97f7d2cd2a59c21ada; se conserva esa corrección y se corrige el preparador privado para no añadir campos ad hoc.",
+  "provenanciaConservada": [
+    "reportes/continuacion-133/base-593.json",
+    "datos-593/corte-comercial-publico-validado.json#altas_validadas"
+  ],
+  "prueba": "node scripts/test-politica-publicacion-web.cjs",
+  "resultado": "17 controles aprobados; cobertura canónica1215, pública1210; datos de origen conservados.",
+  "sinCambiosEnCodigoDeAutomatizacion": true,
+  "sinCambiosFinancieros": true,
+  "exportacionesFallidasPrevias": [
+    44964236858,
+    44964337481
+  ],
+  "verificacionExportacionPosterior": 44964589489
+}
