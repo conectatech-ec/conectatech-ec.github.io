@@ -23,7 +23,10 @@ function validateBackup(backup){
 function publicItem(row,feedId){
  if(!/^\d+$/.test(row.id||'')||!SKUS.includes(row.retailer_id)||ref(row.product_catalog)!==CATALOG||ref(row.product_feed)!==feedId)fail('PRODUCTO_PADRE_O_FUENTE_DISTINTOS');
  if(row.brand&&String(row.brand).trim().toUpperCase()!=='STEREN')fail('MARCA_DISTINTA');
- if(typeof row.price!=='string'||!/^\d+(?:[.,]\d{1,2})?(?: [A-Z]{3})?$/.test(row.price)||!['in stock','out of stock'].includes(String(row.availability).replace(/_/g,' ')))fail('DATOS_PUBLICOS_NO_CONFIRMADOS');
+ // Graph devuelve también el precio público localizado: «22,30\u00a0$».
+ // Validar su forma y conservar la cadena exacta; nunca convertir ni recalcular importes.
+ const validPrice=typeof row.price==='string'&&!/[\r\n]/.test(row.price)&&(/^\d+(?:[.,]\d{1,2})?(?: [A-Z]{3})?$/.test(row.price)||/^\d+,\d{2}[ \u00a0]\$$/.test(row.price));
+ if(!validPrice||!['in stock','out of stock'].includes(String(row.availability).replace(/_/g,' ')))fail('DATOS_PUBLICOS_NO_CONFIRMADOS');
  // El respaldo de Actions se trata como público: esquema cerrado, sin URL,
  // descripciones, cantidades, costos, headers ni respuestas Graph completas.
  return {id:row.id,retailer_id:row.retailer_id,catalog_id:CATALOG,feed_id:feedId,brand:row.brand?'STEREN':null,price:row.price,availability:row.availability};
