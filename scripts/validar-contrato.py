@@ -344,7 +344,21 @@ def validate(root, contract, sku, r, candidates, ctx, categories=None, require_m
     cover_pattern = re.escape('/imagenes/' + sku.lower() + '/' + sku) + r'(?:-r[1-9][0-9]*)?-01\.webp'
     if not isinstance(principal, str) or not re.fullmatch(cover_pattern, principal):
         fail('portada', 'Ruta de portada no corresponde al SKU/posición 01')
-    expected_secondary = ['/imagenes/' + sku.lower() + '/' + sku + '-' + str(i.get('posicion')).zfill(2) + '.webp' for i in candidates if i.get('posicion') != 1]
+    expected_secondary = []; secondary_slots = set()
+    for item in candidates:
+        slot = item.get('posicion')
+        if slot == 1:
+            continue
+        revision = item.get('revision_publicacion')
+        if type(slot) is not int or slot not in (2, 3, 4) or slot in secondary_slots:
+            fail('galeria', 'Posición secundaria inválida o duplicada en el manifiesto')
+            continue
+        secondary_slots.add(slot)
+        if revision is not None and (type(revision) is not int or revision < 1):
+            fail('galeria', 'Revisión de publicación secundaria debe ser un entero positivo')
+            continue
+        suffix = '-r' + str(revision) if revision is not None else ''
+        expected_secondary.append('/imagenes/' + sku.lower() + '/' + sku + suffix + '-' + str(slot).zfill(2) + '.webp')
     if contract.get('imagenes_secundarias') != expected_secondary:
         fail('galeria', 'Galería no coincide con las vistas auténticas del manifiesto')
     # Aplicar localmente permite generar HTML/medios de revisión. Publicar exige la captura.
