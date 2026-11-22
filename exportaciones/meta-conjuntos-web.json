@@ -1,8 +1,8 @@
 {
   "version": 1,
   "catalog_id": "1036301566100990",
-  "fecha_corte": "2026-11-20",
-  "fuente_sha256": "9814ec30aee0c7d20a999f69808e05e40cd460e7db4b5fe049fa07bffa2e0d96",
+  "fecha_corte": "2026-11-21",
+  "fuente_sha256": "d4bb0760688158e297ddc0187ed830b6c5173ca49d98c8d85005a5cb8982cfb7",
   "fuente_categorias": "index.html: categoriaComercial || categoryFamilies[category] || Hogar y Accesorios",
   "groups": [
     {
@@ -57,7 +57,6 @@
         "TELF001",
         "TELF025",
         "TELF034",
-        "TELF019",
         "TELF020",
         "TELF037",
         "TELF027",
@@ -67,6 +66,7 @@
         "TELF010",
         "TELF003",
         "TELF024",
+        "TELF019",
         "TELF002",
         "TELF014",
         "TELF012"
@@ -107,15 +107,15 @@
       "prioridad": 2,
       "ordered_sku": [
         "TABL001",
-        "TABL003",
         "TABL005",
+        "TABL003",
         "TABL006",
         "TABL007"
       ],
       "featured_sku": [
         "TABL001",
-        "TABL003",
-        "TABL005"
+        "TABL005",
+        "TABL003"
       ]
     },
     {
@@ -930,7 +930,6 @@
         "CARG048",
         "CARG040",
         "CARG015",
-        "POWE008",
         "CARG068",
         "PILA004",
         "PILA070",
@@ -940,7 +939,6 @@
         "PILA043",
         "CARG035",
         "CORT04",
-        "CUBO018",
         "CARG071",
         "CARG019",
         "CUBO003",
@@ -952,6 +950,7 @@
         "POWE001",
         "CARG051",
         "POWE010",
+        "POWE008",
         "POWE004",
         "CUBO026",
         "PILA001",
@@ -968,6 +967,7 @@
         "CARG069",
         "CORT06",
         "CUBO023",
+        "CUBO018",
         "CARG025",
         "CUBO002",
         "CARG006",
@@ -1044,6 +1044,7 @@
         "MOUS003",
         "MOUS005",
         "MOUS009",
+        "MOUS011",
         "MOUS013",
         "MOUS014",
         "MOUS017",
@@ -1099,6 +1100,7 @@
         "LASE002",
         "PADM002",
         "MOUS031",
+        "MOUS003",
         "LASE001",
         "PRES002",
         "TECL013",
@@ -1135,9 +1137,9 @@
         "MOUS035",
         "TECL011",
         "TECL021",
+        "MOUS011",
         "PRES003",
         "TECL023",
-        "MOUS003",
         "TECL029",
         "TECL032",
         "TECL030",
@@ -1332,7 +1334,6 @@
         "TRIP002",
         "TRIP010",
         "TRIP011",
-        "TRIP016",
         "TRIP017",
         "TRIP018",
         "TRIP019",
@@ -1364,7 +1365,6 @@
         "CAPT002",
         "TRIP018",
         "BINO001",
-        "TRIP016",
         "TRIP002",
         "WEBC004"
       ],
@@ -1947,6 +1947,7 @@
         "SOPO001",
         "SOPO002",
         "SOPO005",
+        "SOPO006",
         "SOPO007",
         "SOPO009",
         "SOPO011",
@@ -2023,6 +2024,7 @@
         "STYL003",
         "SOPO037",
         "SOPO048",
+        "SOPO006",
         "SOPO051",
         "SOPO052",
         "SOPO058",
@@ -2253,8 +2255,8 @@
         "LED003",
         "FOCO001",
         "PANE003",
-        "LINT007",
         "LINT001",
+        "LINT007",
         "LINT008",
         "FOCO002",
         "LINT005",
@@ -2365,7 +2367,6 @@
         "JUGU082",
         "JUGU087",
         "JUGU088",
-        "JUGU089",
         "JUGU090",
         "JUGU091",
         "JUGU092",
@@ -2497,7 +2498,6 @@
         "JUGU067",
         "JUGU061",
         "JUGU105",
-        "JUGU089",
         "JUGU153",
         "JUGU106",
         "JUGU148",
@@ -2725,6 +2725,10 @@
       "motivo": "AGOTADO"
     },
     {
+      "sku": "JUGU089",
+      "motivo": "AGOTADO"
+    },
+    {
       "sku": "JUGU116",
       "motivo": "AGOTADO"
     },
@@ -2761,10 +2765,6 @@
       "motivo": "AGOTADO"
     },
     {
-      "sku": "MOUS011",
-      "motivo": "AGOTADO"
-    },
-    {
       "sku": "MOUS010",
       "motivo": "AGOTADO"
     },
@@ -2777,15 +2777,15 @@
       "motivo": "AGOTADO"
     },
     {
-      "sku": "SOPO006",
-      "motivo": "AGOTADO"
-    },
-    {
       "sku": "TECL010",
       "motivo": "AGOTADO"
     },
     {
       "sku": "TECL033",
+      "motivo": "AGOTADO"
+    },
+    {
+      "sku": "TRIP016",
       "motivo": "AGOTADO"
     },
     {
