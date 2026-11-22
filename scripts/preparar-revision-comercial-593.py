@@ -62,14 +62,74 @@ def original_name(path,name,normalizer):
         target=Path(temporary)/name;target.write_bytes(path.read_bytes());target.chmod(0o600)
         yield target
 
-def previous_report(path,cut,normalizer,now):
+def approved_missing_rows(cut,prior_rows,normalizer,now,*,repo,supplemental_excel,supplemental_name):
+    """Sólo altas ya aprobadas: recibo previo + evidencia local + XLSX auténtico.
+
+    No se infiere una aprobación desde el candidato. El SHA del recibo vigente
+    debe identificar exactamente el original que respalda la fila ausente.
+    """
+    missing=set(cut['productos'])-set(prior_rows)
+    receipts=[];approved=set()
+    for receipt in cut.get('altas_validadas',[]):
+        skus=receipt.get('skus',[])
+        if not isinstance(skus,list) or any(not isinstance(s,str) for s in skus) or len(skus)!=len(set(skus)):
+            raise ValueError('APPROVED_ALTA_RECEIPT_INVALID')
+        selected=set(skus)
+        if not selected&missing:continue
+        if selected&set(prior_rows):raise ValueError('APPROVED_ALTA_PREVIOUS_ROW_OVERRIDE')
+        if selected-set(cut['productos']) or selected&approved:raise ValueError('APPROVED_ALTA_RECEIPT_INVALID')
+        approved.update(selected);receipts.append(receipt)
+    if approved!=missing:raise ValueError('APPROVED_ALTA_RECEIPT_MISSING')
+    if not repo or not supplemental_excel:raise ValueError('APPROVED_ALTA_ORIGINAL_AND_REPO_REQUIRED')
+    root=Path(repo).resolve(strict=True)
+    if not root.is_dir():raise ValueError('APPROVED_ALTA_EVIDENCE_PATH_INVALID')
+    original_sha=digest(supplemental_excel)
+    if any(r.get('sha256_original')!=original_sha for r in receipts):raise ValueError('APPROVED_ALTA_SOURCE_SHA_MISMATCH')
+    with original_name(supplemental_excel,supplemental_name or Path(supplemental_excel).name,normalizer) as named:
+        source,rows=normalizer.read_xlsx(named,now=now)
+    if source['sha256']!=original_sha:raise ValueError('SOURCE_CHANGED_DURING_VALIDATION')
+    if source['cut_date_evidence']!='593_matching_created_modified':raise ValueError('APPROVED_ALTA_EXPORT_TIME_NOT_CONFIRMED')
+    counts=collections.Counter(r['values']['D'] for r in rows)
+    by={r['values']['D']:r for r in rows};result={}
+    for receipt in receipts:
+        evidence_name=receipt.get('evidencia')
+        if not isinstance(evidence_name,str):raise ValueError('APPROVED_ALTA_EVIDENCE_PATH_INVALID')
+        relative=Path(evidence_name)
+        if relative.is_absolute() or '..' in relative.parts or '\\' in evidence_name:raise ValueError('APPROVED_ALTA_EVIDENCE_PATH_INVALID')
+        evidence_path=(root/relative).resolve(strict=True)
+        if not evidence_path.is_relative_to(root) or not evidence_path.is_file():raise ValueError('APPROVED_ALTA_EVIDENCE_PATH_INVALID')
+        evidence=read_json(evidence_path)
+        if (receipt.get('fecha')!=source['cut_date'] or receipt.get('fuente')!=source['original_name'] or
+            evidence.get('fecha_corte')!=receipt['fecha'] or evidence.get('archivo')!=receipt['fuente'] or
+            evidence.get('sha256_original')!=original_sha):raise ValueError('APPROVED_ALTA_EVIDENCE_SOURCE_MISMATCH')
+        products=evidence.get('productos',{})
+        if not isinstance(products,dict) or set(products)!=set(receipt['skus']):raise ValueError('APPROVED_ALTA_EVIDENCE_SKUS_MISMATCH')
+        for sku in receipt['skus']:
+            row=by.get(sku);p=products[sku]
+            if not row or counts[sku]!=1 or row['formulas'] or row['values'].get('F')!='PRODUCTO':raise ValueError('APPROVED_ALTA_EVIDENCE_ROW_MISMATCH '+sku)
+            values=row['values']
+            if (not isinstance(p,dict) or type(p.get('fila')) is not int or p['fila']!=row['row'] or p.get('nombre')!=values.get('C') or
+                p.get('categoria593Original') is not None and p['categoria593Original']!=values.get('J')):raise ValueError('APPROVED_ALTA_EVIDENCE_ROW_MISMATCH '+sku)
+            stock=Decimal(values['B']);evidence_stock=Decimal(str(p.get('stock')))
+            if not stock.is_finite() or stock<0 or stock!=stock.to_integral_value() or stock!=evidence_stock:raise ValueError('APPROVED_ALTA_EVIDENCE_ROW_MISMATCH '+sku)
+            cash=normalizer.cents(values['Q']);base=normalizer.cents(values['X']);tax=normalizer.cents(values['Y'])
+            if (cash,base,tax,base+tax)!=(normalizer.cents(p.get('promo_contado')),normalizer.cents(p.get('pvp_neto')),normalizer.cents(p.get('iva_pvp_importe')),normalizer.cents(p.get('pvp_final'))):raise ValueError('APPROVED_ALTA_EVIDENCE_ROW_MISMATCH '+sku)
+            canonical=cut['productos'][sku]
+            if (int(stock),cash,base+tax)!=(canonical['stock'],canonical['promo_centavos'],canonical['pvp_centavos']):raise ValueError('APPROVED_ALTA_CANONICAL_VALUES_MISMATCH '+sku)
+            result[sku]=row
+    return result
+
+def previous_report(path,cut,normalizer,now,*,repo=None,supplemental_excel=None,supplemental_name=None):
     if digest(path)!=cut['sha256_original']:raise ValueError('PREVIOUS_XLSX_SHA_MISMATCH')
     with original_name(path,'Reporte-Inventario.xlsx',normalizer) as named:
         source,rows=normalizer.read_xlsx(named,now=now,historical=True)
+    if source['sha256']!=cut['sha256_original']:raise ValueError('PREVIOUS_XLSX_SHA_MISMATCH')
     if source['cut_date']!=cut['fecha_corte'] or source['cut_date_evidence']!='593_matching_created_modified':raise ValueError('PREVIOUS_EXPORT_TIME_NOT_CONFIRMED')
     counts=collections.Counter(r['values']['D'] for r in rows)
     if any(v!=1 for v in counts.values()):raise ValueError('PREVIOUS_DUPLICATE_SKU')
     by={r['values']['D']:r for r in rows}
+    if set(cut['productos'])-set(by):
+        by.update(approved_missing_rows(cut,by,normalizer,now,repo=repo,supplemental_excel=supplemental_excel,supplemental_name=supplemental_name))
     for sku,p in cut['productos'].items():
         r=by.get(sku)
         if not r or r['formulas'] or r['values'].get('F')!='PRODUCTO':raise ValueError('PREVIOUS_SOURCE_CANONICAL_COVERAGE_INVALID')
@@ -110,8 +170,10 @@ def prepare(excel,state,previous,catalog,baseline_csv,received_at,*,normalizer,n
         # vuelve a validar identidades contra un CSV histórico obsoleto.
         return copy.deepcopy(previous)
     previous_source=None;prior_rows={}
+    if not previous_excel and any(r.get('fecha','')>previous['fecha_corte'] for r in previous.get('altas_validadas',[])):
+        raise ValueError('PREVIOUS_XLSX_REQUIRED_FOR_APPROVED_ALTAS')
     if previous_excel:
-        previous_source,prior_rows=previous_report(previous_excel,previous,normalizer,now)
+        previous_source,prior_rows=previous_report(previous_excel,previous,normalizer,now,repo=repo,supplemental_excel=excel,supplemental_name=name)
     baseline=baseline_for_normalizer(baseline_csv,previous,prior_rows,normalizer)
     published=copy.deepcopy(catalog);published['fechaCatalogo']=catalog.get('fechaCatalogo') or catalog['fecha_corte']
     with original_name(excel,name or Path(excel).name,normalizer) as named:
