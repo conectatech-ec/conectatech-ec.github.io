@@ -133,3 +133,16 @@ test('success:false nunca se acredita como retirada',async()=>{
  await assert.rejects(apply(applyOptions(f,backup,{onReceipt:r=>receipts.push(clone(r))})),retirementError);
  assert.equal(f.items.length,6);assert.equal(receipts.at(-1).estado,'BLOQUEADO');assert.deepEqual(receipts.at(-1).retirados,[]);
 });
+test('acepta los cinco precios públicos localizados reales y conserva sus bytes en el respaldo',async()=>{
+ const f=fixture(),prices={FLAS013:'22,30\u00a0$',FLAS014:'29,15\u00a0$',FLAS017:'13,00\u00a0$',FLAS033:'16,91\u00a0$',FOCO004:'13,50\u00a0$'};
+ for(const item of f.items)if(Object.hasOwn(prices,item.retailer_id)){item.price=prices[item.retailer_id];item.availability=item.retailer_id==='FOCO004'?'out of stock':'in stock';}
+ const other=clone(f.items.at(-1)),backup=await prepare({api:f.api});
+ for(const row of backup.targets){assert.equal(row.price,prices[row.retailer_id]);assert.equal(Buffer.from(row.price).toString('hex'),Buffer.from(prices[row.retailer_id]).toString('hex'));}
+ const r=await apply(applyOptions(f,backup));assert.equal(r.estado,'VERIFICADO');assert.equal(f.deleted().length,5);assert.deepEqual(f.items,[other]);assert.equal(f.writes().some(c=>c.method==='POST'),false);
+});
+test('rechaza precios malformados o datos libres antes de permitir cualquier DELETE',async()=>{
+ for(const price of [null,22.30,'22,300\u00a0$','-22,30\u00a0$','22,30\u00a0$ token=NEVER_DISCLOSE','https://private.example/22,30$','22,30\u00a0$\n','22.30 USD\n','22,30\t$','1e2\u00a0$','22,30\u202f$','22,30\u00a0$ ']){
+  const f=fixture();f.items[0].price=price;
+  await assert.rejects(prepare({api:f.api}),/RETIRADA_DATOS_PUBLICOS_NO_CONFIRMADOS/);assert.equal(f.deleted().length,0);assert.equal(f.items.length,6);
+ }
+});
