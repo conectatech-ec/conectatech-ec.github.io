@@ -273,9 +273,9 @@
     }
   ],
   "estado_calidad": "APROBADO",
-  "estado_publicacion": "APROBADO_LOCAL",
+  "estado_publicacion": "PUBLICADO_VERIFICADO",
   "url_publica": "https://conectatech-ec.github.io/productos/cabl176-cable-red-plano-ugreen-cat6-1m/",
-  "fecha_verificacion": "2026-11-22T02:51:46.068465+00:00",
+  "fecha_verificacion": "2026-11-22T03:47:14.556958+00:00",
   "descripcion": "Conecta tu computadora, router u otro equipo con puerto Ethernet mediante este cable UGREEN Cat6 de 1 metro. Su diseño plano facilita acomodarlo junto al escritorio, y sus conectores RJ45 en ambos extremos permiten completar la conexión entre equipos cercanos. Una opción práctica para mantener tu espacio de conexión ordenado.",
   "descripcion_seo": "Conecta tu computadora, router u otro equipo con puerto Ethernet mediante este cable UGREEN Cat6 de 1 metro. Su diseño plano facilita acomodarlo junto al e",
   "contenido_venta": "Un cable de red UGREEN Cat6 plano de 1 metro.",
@@ -403,8 +403,8 @@
     },
     "corte_comercial": {
       "archivo": "datos-593/corte-comercial-publico-validado.json",
-      "sha256": "8dcb30d96ee4fde571fcd16ccc5f7e4a77ace128cd5471ac3314efdca4a64355",
-      "fecha": "2026-11-20",
+      "sha256": "34bd13b88ae0fb7dc7f126c9aac6246bce383a03a210ed16b8ee6ab8f372bcad",
+      "fecha": "2026-11-21",
       "fila": {
         "stock": 2,
         "promo_centavos": 613,
@@ -415,7 +415,7 @@
       "solicitado": "CABL176",
       "sku": "CABL176",
       "estado": "VERIFICADO",
-      "fecha": "2026-11-22T02:55:40.345Z",
+      "fecha": "2026-11-22T03:51:06.430Z",
       "errores": [],
       "verificaciones": {
         "http": true,
@@ -440,7 +440,7 @@
       },
       "revision_visual_producto": "NO_REALIZADA_POR_ESTA_HERRAMIENTA",
       "url": "https://conectatech-ec.github.io/productos/cabl176-cable-red-plano-ugreen-cat6-1m/",
-      "url_comprobada": "http://127.0.0.1:8907/productos/cabl176-cable-red-plano-ugreen-cat6-1m/",
+      "url_comprobada": "https://conectatech-ec.github.io/productos/cabl176-cable-red-plano-ugreen-cat6-1m/",
       "archivo_html": "productos/cabl176-cable-red-plano-ugreen-cat6-1m/index.html",
       "http": 200,
       "sha256_html": "7a76e1ca79047d5342f8ef9a04775ee7c27ed1315da127f7fe07f91ca0e257b3",
@@ -450,7 +450,7 @@
       "alto_viewport": 844,
       "imagen": {
         "src": "https://conectatech-ec.github.io/imagenes/cabl176/CABL176-r134-01.webp",
-        "url_cargada": "http://127.0.0.1:8907/imagenes/cabl176/CABL176-r134-01-600.webp?v=acd0eab7b71dd48e",
+        "url_cargada": "https://conectatech-ec.github.io/imagenes/cabl176/CABL176-r134-01-600.webp?v=acd0eab7b71dd48e",
         "naturalWidth": 351,
         "naturalHeight": 351,
         "completa": true,
@@ -460,41 +460,45 @@
       "galeria": [],
       "enlaces_internos": [
         {
-          "url": "http://127.0.0.1:8907/productos/cabl176-cable-red-plano-ugreen-cat6-1m/",
+          "url": "https://conectatech-ec.github.io/productos/cabl176-cable-red-plano-ugreen-cat6-1m/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8907/logo-conectatech.png",
+          "url": "https://conectatech-ec.github.io/logo-conectatech.png",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8907/assets/disponibilidad-web.css?v=1",
+          "url": "https://conectatech-ec.github.io/assets/disponibilidad-web.css?v=1",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8907/",
+          "url": "https://conectatech-ec.github.io/",
           "http": 200,
           "ok": true
         },
         {
-          "url": "http://127.0.0.1:8907/imagenes/cabl176/CABL176-r134-01.webp",
+          "url": "https://conectatech-ec.github.io/imagenes/cabl176/CABL176-r134-01.webp",
           "http": 200,
           "ok": true
         }
       ],
-      "archivo": "reportes/continuacion-134/qa-local/capturas/CABL176-390.png",
+      "archivo": "reportes/continuacion-134/qa-publica/capturas/CABL176-390.png",
       "sha256": "e1047eea707b588d5160ab4233afe5bf0eddd091f54358027e05970db26201f9",
       "escritorio": {
         "ancho_viewport": 1280,
         "ancho_documento": 1280,
-        "archivo": "reportes/continuacion-134/qa-local/capturas/CABL176-1280.png",
+        "archivo": "reportes/continuacion-134/qa-publica/capturas/CABL176-1280.png",
         "sha256": "c197e994b8b5377f60d21e8a4b52ae04b20ae245e1eb678bf2fbb8426216d3ef",
         "sin_desbordamiento_horizontal": true,
         "imagen_cargada": true
       }
+    },
+    "publicacion_http": {
+      "archivo": "reportes/continuacion-134/http-publicacion.json",
+      "sha256": "980a774c9aae485eaccd9df5677c147107f91dc720cf63dd46aa3bd9eba3f2ef"
     }
   }
 }
