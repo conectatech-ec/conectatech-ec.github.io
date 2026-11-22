@@ -4,6 +4,8 @@ const {Graph,synchronizeCatalog}=require('./sincronizar-conjuntos-meta.cjs');
 const MASTER='1036301566100990',PHONE='593964206977';
 const NAME='CONECTATECH | Catálogo WhatsApp 0964206977';
 const FEED_NAME='CONECTATECH | Fuente 593 WhatsApp 0964206977';
+const PUBLIC_EXCLUSION_SKUS=Object.freeze(['FLAS013','FLAS014','FLAS017','FLAS033','FOCO004']);
+const RETIREMENT_CATALOG='1668633188201887';
 const protectedIds=new Set([MASTER,'974449225015463','2639516313038513','291534458544743','100630632770993','105264852297951','61595580884742']);
 const CHECKPOINT='reportes/integracion-whatsapp/ultima-importacion-secundario.json';
 const failureObservations=new WeakMap();
@@ -14,22 +16,32 @@ function validateConfig(c){
  return c;
 }
 // La credencial sólo puede escribir en descendientes obtenidos desde el catálogo secundario.
-// No hay DELETE, mensajes, teléfonos, páginas, ni recurso de reserva a la credencial principal.
+// DELETE sólo para las cinco exclusiones públicas expresas y con prueba fresca de pertenencia/fuente.
 class SecondaryGraph extends Graph{
  constructor({config,...options}){
   validateConfig(config);
   if(!config.catalog_id)throw Error('FALTA_CATALOGO_SECUNDARIO');
   super(options);this.catalogId=config.catalog_id;this.known=new Map([[config.catalog_id,'catalog']]);
+  this.retirementCatalogVerified=false;this.retirementFeedIds=new Set();this.retirementProofs=new Map();this.retirementGrants=new Set();
  }
  register(id,type){
   if(!/^\d+$/.test(id||'')||protectedIds.has(id)||this.known.has(id)&&this.known.get(id)!==type)throw Error('DESCENDIENTE_SECUNDARIO_INVALIDO');
   this.known.set(id,type);
  }
+ authorizeProductRetirement(id){
+  const proof=this.retirementProofs.get(id);
+  if(this.catalogId!==RETIREMENT_CATALOG||!this.retirementCatalogVerified||!proof||!PUBLIC_EXCLUSION_SKUS.includes(proof.sku)||!this.retirementFeedIds.has(proof.feedId))throw Error('RETIRADA_GRANT_FUERA_DE_ALCANCE');
+  this.retirementGrants.add(id);this.deletableProductItemIds.add(id);
+ }
  async request(method,path,params={},file=null){
   const [id,edge,...rest]=String(path).split('/'),type=this.known.get(id);
   const allowed=type==='catalog'?['product_feeds','product_sets','products']:
    type==='feed'?['uploads']:type==='set'?['products']:[];
-  if(rest.length||!type||edge&&!allowed.includes(edge)||!['GET','POST'].includes(method))throw Error('OPERACION_SECUNDARIA_FUERA_DE_ALCANCE');
+  if(rest.length||!type||edge&&!allowed.includes(edge)||!['GET','POST','DELETE'].includes(method))throw Error('OPERACION_SECUNDARIA_FUERA_DE_ALCANCE');
+  if(method==='DELETE'){
+   if(type!=='product'||edge||file||Object.keys(params).length||!this.retirementGrants.has(id)||!this.retirementProofs.has(id))throw Error('RETIRADA_DELETE_FUERA_DE_ALCANCE');
+   this.retirementGrants.delete(id);
+  }
   if(method==='POST'){
    const keys=Object.keys(params).sort().join(',');
    if(type==='catalog'&&edge==='product_feeds'){
@@ -44,8 +56,19 @@ class SecondaryGraph extends Graph{
   }
   this.observedStage=type==='catalog'?(edge==='products'?'verify_catalog_products':edge==='product_sets'?'catalog_sets':edge==='product_feeds'?'catalog_feeds':'verify_catalog_identity'):
    type==='feed'?(method==='POST'?'submit_upload':'list_uploads'):type==='upload'?'poll_upload':edge==='products'?'verify_set_membership':method==='POST'?'update_set':'read_set';
-  const data=await super.request(method,path,params,file);
-  const childType=edge==='product_feeds'?'feed':edge==='product_sets'?'set':edge==='uploads'?'upload':null;
+  let data;
+  try{data=await super.request(method,path,params,file);}finally{if(method==='DELETE'){this.deletableProductItemIds.delete(id);this.retirementProofs.delete(id);}}
+  if(method==='GET'&&type==='catalog'&&!edge)this.retirementCatalogVerified=data.id===this.catalogId&&data.name===NAME;
+  if(method==='GET'&&type==='catalog'&&edge==='product_feeds'){
+   const sources=(data.data||[]).filter(f=>f.name===FEED_NAME);
+   this.retirementFeedIds=new Set(sources.length===1&&(!sources[0].schedule||!Object.keys(sources[0].schedule).length)?[sources[0].id]:[]);
+  }
+  if(method==='GET'&&type==='product'&&!edge){
+   this.retirementProofs.delete(id);
+   const catalog=typeof data.product_catalog==='object'?data.product_catalog?.id:data.product_catalog,feed=typeof data.product_feed==='object'?data.product_feed?.id:data.product_feed;
+   if(data.id===id&&catalog===this.catalogId&&PUBLIC_EXCLUSION_SKUS.includes(data.retailer_id)&&this.retirementFeedIds.has(feed))this.retirementProofs.set(id,{sku:data.retailer_id,feedId:feed});
+  }
+  const childType=edge==='product_feeds'?'feed':edge==='product_sets'?'set':edge==='uploads'?'upload':type==='catalog'&&edge==='products'?'product':null;
   if(childType){
    if(method==='GET'&&Array.isArray(data.data))for(const child of data.data)this.register(child.id,childType);
    if(method==='POST')this.register(data.id,childType);
@@ -133,7 +156,7 @@ function failureReceipt(e){
  const count=value=>Number.isSafeInteger(value)&&value>=0&&value<=1000000?value:0;
  return {estado:pending?'SECUNDARIO_IMPORTACION_PENDIENTE':'ERROR_SECUNDARIO',codigo,diagnostico:{category,stage,http_status:status,graph_code:code,graph_subcode:subcode,sets_verified:count(observation.sets_verified),feed_submission_attempts:count(observation.feed_submission_attempts),pending_upload_polls:count(observation.pending_upload_polls)},colecciones_whatsapp_verificadas:false};
 }
-module.exports={MASTER,PHONE,NAME,FEED_NAME,CHECKPOINT,validateConfig,SecondaryGraph,syncSecondary,main,failureReceipt};
+module.exports={MASTER,PHONE,NAME,FEED_NAME,CHECKPOINT,validateConfig,SecondaryGraph,syncSecondary,main,failureReceipt,PUBLIC_EXCLUSION_SKUS,RETIREMENT_CATALOG};
 if(require.main===module)main({inspect:process.argv.includes('--inspect')}).catch(e=>{
  const receipt=failureReceipt(e);
  save('work/auto-meta/resultado-secundario.json',receipt);console.error('META_SECUNDARIO: '+JSON.stringify(receipt));
