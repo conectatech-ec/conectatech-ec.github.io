@@ -142,6 +142,59 @@ class ContractTests(unittest.TestCase):
             with self.subTest(revision=invalid), self.assertRaises(ValueError):
                 pipeline.process(self.root, 'TEST001', item, self.rule)
 
+    def test_secondary_revision_matches_exact_pipeline_sku_slot_and_revision(self):
+        sku = 'TEST001'; contract = self.contracts[sku]
+        secondary = {**self.items[sku][0], 'posicion': 2, 'revision_publicacion': 134}
+        self.items[sku].append(secondary)
+        expected = '/imagenes/test001/TEST001-r134-02.webp'
+        contract['imagenes_secundarias'] = [expected]
+        self.assertEqual(self.errors(), [])
+        photo, _ = pipeline.process(self.root, sku, secondary, self.rule)
+        self.assertEqual(photo['versiones']['1200']['url'], expected)
+        for invalid in ['/imagenes/test002/TEST002-r134-02.webp',
+                        '/imagenes/test001/TEST001-r134-03.webp',
+                        '/imagenes/test001/TEST001-r135-02.webp',
+                        '/imagenes/test001/TEST001-02.webp',
+                        '/imagenes/test001/../TEST001-r134-02.webp',
+                        expected + '?revision=134']:
+            with self.subTest(path=invalid):
+                contract['imagenes_secundarias'] = [invalid]
+                self.assertIn('galeria', {e['codigo'] for e in self.errors()})
+        contract['imagenes_secundarias'] = [expected]
+        self.assertEqual(self.runjob()['productos'][0]['estado'], 'aplicado_local')
+        self.assertTrue((self.root / expected.lstrip('/')).is_file())
+
+    def test_secondary_without_revision_preserves_legacy_paths(self):
+        sku = 'TEST001'; secondary = {**self.items[sku][0], 'posicion': 2}
+        self.items[sku].append(secondary)
+        expected = '/imagenes/test001/TEST001-02.webp'
+        self.contracts[sku]['imagenes_secundarias'] = [expected]
+        self.assertEqual(self.errors(), [])
+        photo, _ = pipeline.process(self.root, sku, secondary, self.rule)
+        self.assertEqual(photo['versiones']['1200']['url'], expected)
+        self.contracts[sku]['imagenes_secundarias'] = ['/imagenes/test001/TEST001-r134-02.webp']
+        self.assertIn('galeria', {e['codigo'] for e in self.errors()})
+
+    def test_secondary_revision_and_position_reject_invalid_manifest_values(self):
+        sku = 'TEST001'; secondary = {**self.items[sku][0], 'posicion': 2, 'revision_publicacion': 134}
+        self.items[sku].append(secondary)
+        self.contracts[sku]['imagenes_secundarias'] = ['/imagenes/test001/TEST001-r134-02.webp']
+        for invalid in ['../otro', '134', 0, -1, True, False, 1.5]:
+            with self.subTest(revision=invalid):
+                secondary['revision_publicacion'] = invalid
+                self.assertIn('galeria', {e['codigo'] for e in self.errors()})
+                with self.assertRaises(ValueError):
+                    pipeline.process(self.root, sku, secondary, self.rule)
+        secondary['revision_publicacion'] = 134
+        for invalid in [0, 5, -1, 2.0, '2', '../2', None]:
+            with self.subTest(position=invalid):
+                secondary['posicion'] = invalid
+                self.assertIn('galeria', {e['codigo'] for e in self.errors()})
+        secondary['posicion'] = 2
+        self.items[sku].append(copy.deepcopy(secondary))
+        self.contracts[sku]['imagenes_secundarias'] *= 2
+        self.assertIn('galeria', {e['codigo'] for e in self.errors()})
+
     def test_verified_contract_and_idempotence(self):
         self.assertEqual(self.errors(), [])
         report = self.runjob(); self.assertEqual(report['productos'][0]['estado'], 'aplicado_local')
