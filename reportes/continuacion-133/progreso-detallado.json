@@ -1,5 +1,5 @@
 {
-  "estado": "PUBLICADO_VERIFICADO",
+  "estado": "CERRADO_PUBLICADO_VERIFICADO",
   "fechaContenidoVerificado": "2026-11-22T00:11:37.372268+00:00",
   "fechaCorteNuevosSKU": "2026-11-21",
   "altasNuevasReales": 13,
@@ -780,5 +780,31 @@
       "archivo": "reportes/continuacion-133/pendientes.json",
       "sha256": "157589dfcc67f71579311df118cc74ba5a1c27a6d440defb8f8a74ed8a020e5d"
     }
+  },
+  "prioridadPublicaVerificada": true,
+  "evidenciaCierre": {
+    "archivo": "reportes/continuacion-133/cierre.json",
+    "sha256": "92ec3536eae11efdebd4a027c35bd990ee7f33c203185cbb4bc9bba231398afc"
+  },
+  "integracionMeta": {
+    "ejecucion": 44966520051,
+    "resultadoGlobal": "success",
+    "principal": {
+      "estado": "META_SINCRONIZADO_VERIFICADO_API",
+      "conjuntosVerificados": 21,
+      "skuSeleccionados": 1018,
+      "fechaUTC": "2026-11-22T00:28:04Z"
+    },
+    "secundario": {
+      "estado": "REVISAR",
+      "error": "META_SKU_FUERA_DE_SELECCION",
+      "etapa": "verify_catalog_products",
+      "fechaUTC": "2026-11-22T00:32:08Z"
+    },
+    "whatsapp": {
+      "visibilidadClienteVerificada": false,
+      "estado": "PENDIENTE_EVIDENCIA_DE_CLIENTE_Y_ORDEN_EN_APLICACION"
+    },
+    "automatizacionCloudSinEdiciones": true
   }
 }
