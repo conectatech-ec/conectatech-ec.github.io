@@ -3,7 +3,7 @@
   "fuente": "Reporte-Inventario.xlsx",
   "sha256_original": "4b1b392666d193fd82d7c36466598e4d781c9c0137801956ccbb1fb4c6d19532",
   "cantidad_sku_original": 1596,
-  "cantidad_sku_web": 1216,
+  "cantidad_sku_web": 1217,
   "productos": {
     "ADAP002": {
       "stock": 3,
@@ -6084,6 +6084,11 @@
       "stock": 1,
       "promo_centavos": 3631,
       "pvp_centavos": 4176
+    },
+    "TELF038": {
+      "stock": 1,
+      "promo_centavos": 18590,
+      "pvp_centavos": 23238
     }
   },
   "verificacion": {
@@ -6153,6 +6158,16 @@
       "fuente": "Reporte-Inventario.xlsx",
       "sha256_original": "d4bb0760688158e297ddc0187ed830b6c5173ca49d98c8d85005a5cb8982cfb7",
       "evidencia": "reportes/continuacion-134/base-593.json",
+      "alcance": "Sólo altas nuevas. Todos los registros anteriores y exclusiones vigentes se conservan; no es una sincronización global."
+    },
+    {
+      "fecha": "2026-11-23",
+      "skus": [
+        "TELF038"
+      ],
+      "fuente": "Reporte-Inventario.xlsx",
+      "sha256_original": "4b1b392666d193fd82d7c36466598e4d781c9c0137801956ccbb1fb4c6d19532",
+      "evidencia": "reportes/continuacion-135/base-593.json",
       "alcance": "Sólo altas nuevas. Todos los registros anteriores y exclusiones vigentes se conservan; no es una sincronización global."
     }
   ]
