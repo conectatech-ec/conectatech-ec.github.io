@@ -160,9 +160,9 @@ class FeedTest(unittest.TestCase):
             'archivo': 'reportes/publicacion.json', 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
         self.save()
 
-    def source_commit(self):
-        (self.root / 'index.html').write_text('const products=' + json.dumps([self.p]) + ';\n')
-        (self.root / 'seo-contenido.json').write_text(json.dumps({'TEST1': self.o}))
+    def source_commit(self, products=None, seo=None):
+        (self.root / 'index.html').write_text('const products=' + json.dumps(products if products is not None else [self.p]) + ';\n')
+        (self.root / 'seo-contenido.json').write_text(json.dumps(seo if seo is not None else {'TEST1': self.o}))
         subprocess.run(['git', 'init', '--quiet', str(self.root)], check=True, capture_output=True)
         subprocess.run(['git', '-C', str(self.root), 'add', '.'], check=True, capture_output=True)
         subprocess.run(['git', '-C', str(self.root), '-c', 'user.name=Test', '-c', 'user.email=test@example.invalid',
@@ -300,9 +300,91 @@ class FeedTest(unittest.TestCase):
         self.save()
         self.source_commit()
         (self.root / 'reportes/publicacion.json').unlink()
-        with self.assertRaisesRegex(ValueError, 'hash_publicacion'):
-            feed.materialize_publication_evidence(self.root)
+        result = feed.materialize_publication_evidence(self.root)
+        self.assertEqual(result['rejected_publication'], [{'sku': 'TEST1', 'motivo': 'hash_publicacion_no_coincide'}])
         self.assertFalse((self.root / 'reportes/publicacion.json').exists())
+        with self.assertRaises((ValueError, OSError)):
+            self.run_candidate()
+
+    def test_mixed_bad_references_do_not_block_valid_publication(self):
+        self.referenced()
+        products, contents, contracts, slugs = [self.p], {'TEST1': self.o}, {}, {'TEST1': 'test1-producto'}
+        bad_ids = ['BAD_HASH', 'BAD_PNG', 'BAD_MISSING_SHA', 'BAD_MISSING_FILE', 'BAD_NO_PATH']
+        for sku in bad_ids:
+            product, content, contract = copy.deepcopy(self.p), copy.deepcopy(self.o), copy.deepcopy(self.contract)
+            product['sku'] = sku
+            slug = sku.lower() + '-producto'
+            schema = copy.deepcopy(self.schema)
+            schema['sku'] = sku
+            schema['offers']['url'] = feed.BASE + '/productos/' + slug + '/'
+            path = self.root / 'productos' / slug / 'index.html'
+            path.parent.mkdir(parents=True)
+            path.write_text('<script type="application/ld+json">' + json.dumps(schema) + '</script><div class="price">$12,34</div>')
+            contract.update(sku=sku, url_publica=schema['offers']['url'])
+            contract['validaciones']['movil'].update(sku=sku, url=contract['url_publica'],
+                sha256_html=hashlib.sha256(path.read_bytes()).hexdigest())
+            row = copy.deepcopy(self.report['resultados'][0])
+            row.update(sku=sku, url=contract['url_publica'], sha256_ficha=contract['validaciones']['movil']['sha256_html'])
+            self.report['resultados'].append(row)
+            products.append(product); contents[sku] = content; contracts[sku] = contract; slugs[sku] = slug
+        self.save_report()
+        for sku, contract in contracts.items():
+            contract['validaciones']['publicacion_http'] = copy.deepcopy(self.contract['validaciones']['publicacion_http'])
+            if sku == 'BAD_HASH':
+                contract['validaciones']['publicacion_http']['sha256'] = '0' * 64
+            elif sku == 'BAD_PNG':
+                contract['validaciones']['movil']['sha256'] = '0' * 64
+            elif sku == 'BAD_MISSING_SHA':
+                del contract['validaciones']['publicacion_http']['sha256']
+            elif sku == 'BAD_MISSING_FILE':
+                contract['validaciones']['publicacion_http']['archivo'] = 'reportes/not-in-source.json'
+            elif sku == 'BAD_NO_PATH':
+                del contract['validaciones']['publicacion_http']['archivo']
+            (self.root / 'importacion/contratos' / (sku + '.json')).write_text(json.dumps(contract))
+        (self.root / 'seo-pages.json').write_text(json.dumps(slugs))
+        (self.root / 'datos-593').mkdir()
+        (self.root / 'datos-593/inventario-publico.csv').write_text('sku,categoria\n' + ''.join(p['sku'] + ',ACCESORIOS\n' for p in products))
+        rows = [{'sku': p['sku'], 'availability': 'in_stock', 'precio_coincide_corte': True,
+                 'precio_publico_validado': '12.34'} for p in products]
+        inventory = {'fecha_corte': '2026-11-23', 'referencias_exportadas': len(rows), 'productos': rows,
+                     'sha256_productos': hashlib.sha256(json.dumps(rows, sort_keys=True, separators=(',', ':')).encode()).hexdigest()}
+        inventory_path = self.root / 'vigente.json'
+        inventory_path.write_text(json.dumps(inventory))
+        # An invalid reference to the shared report is encountered BEFORE the valid owner.
+        self.source_commit(products=list(reversed(products)), seo=contents)
+        (self.root / 'reportes/publicacion.json').unlink()
+        (self.root / 'reportes/movil.png').unlink()
+        result = feed.materialize_publication_evidence(self.root)
+        self.assertEqual({x['sku'] for x in result['rejected_publication']}, set(bad_ids))
+        self.assertEqual(result['reports'], ['reportes/movil.png', 'reportes/publicacion.json'])
+        self.assertTrue(all(set(row) == {'sku', 'motivo'} for row in result['rejected_publication']))
+        summary = feed.generate(self.root, self.root / 'output', inventory=inventory_path)
+        self.assertEqual(summary['incluidos'], 1)
+        self.assertEqual(summary['excluidos'], len(bad_ids))
+        xml = ET.fromstring((self.root / 'output/productos-ec.xml').read_bytes())
+        self.assertEqual([item.text for item in xml.findall('.//{' + feed.NS + '}id')], ['TEST1'])
+        self.assertFalse(summary['publicacion_habilitada'])
+        self.assertEqual([item.text for item in xml.findall('.//{' + feed.NS + '}excluded_destination')],
+                         ['Shopping_ads', 'Free_listings'])
+
+    def test_modified_source_report_remains_a_global_failure(self):
+        self.referenced()
+        self.source_commit()
+        path = self.root / 'reportes/publicacion.json'
+        path.write_bytes(path.read_bytes() + b' ')
+        before = path.read_bytes()
+        with self.assertRaisesRegex(feed.SourceIntegrityError, 'fuente_local_modificada'):
+            feed.materialize_publication_evidence(self.root)
+        self.assertEqual(path.read_bytes(), before)
+
+    def test_missing_official_helper_remains_a_global_failure(self):
+        self.referenced()
+        self.source_commit()
+        subprocess.run(['git', '-C', str(self.root), 'rm', '--quiet', feed.PUBLICATION_HELPERS[0]], check=True)
+        subprocess.run(['git', '-C', str(self.root), '-c', 'user.name=Test', '-c', 'user.email=test@example.invalid',
+                        'commit', '--quiet', '-m', 'Fixture without official dependency'], check=True)
+        with self.assertRaisesRegex(feed.SourceIntegrityError, 'dependencia_original_no_disponible'):
+            feed.materialize_publication_evidence(self.root)
 
 
 if __name__ == '__main__':

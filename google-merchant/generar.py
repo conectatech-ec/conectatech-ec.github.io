@@ -43,32 +43,54 @@ def publication_reference(root, evidence, suffixes=('.json',)):
     return relative, evidence['sha256']
 
 
+class SourceIntegrityError(ValueError):
+    """Global failure: the isolated source checkout no longer matches its commit."""
+
+
+class PublicationDataError(ValueError):
+    """A source report for one candidate cannot establish publication."""
+
+
 def materialize_publication_evidence(root):
-    """Read original helpers and eligible reports from one immutable source commit."""
+    """Read pinned evidence; isolate invalid candidates before materializing files."""
     root = Path(root).resolve()
     commit = subprocess.check_output(['git', '-C', str(root), 'rev-parse', '--verify', 'HEAD^{commit}'], text=True).strip()
     if not re.fullmatch(r'[a-f0-9]{40}', commit):
-        raise ValueError('fuente_commit_no_valido')
+        raise SourceIntegrityError('fuente_commit_no_valido')
+    blob_cache = {}
 
-    def source_file(relative, expected=None):
+    def source_bytes(relative):
         dest = root / relative
         if dest.resolve() != dest:
-            raise ValueError('ruta_fuente_no_admitida')
-        payload = subprocess.check_output(['git', '-C', str(root), 'show', commit + ':' + relative])
-        if expected is not None and hashlib.sha256(payload).hexdigest() != expected:
-            raise ValueError('hash_publicacion_no_coincide')
-        if dest.exists():
-            if not dest.is_file() or dest.read_bytes() != payload:
-                raise ValueError('fuente_local_modificada: ' + relative)
-        else:
+            raise SourceIntegrityError('ruta_fuente_no_admitida')
+        if relative not in blob_cache:
+            try:
+                blob_cache[relative] = subprocess.check_output(
+                    ['git', '-C', str(root), 'show', commit + ':' + relative], stderr=subprocess.DEVNULL)
+            except subprocess.CalledProcessError as exc:
+                if dest.exists():
+                    raise SourceIntegrityError('fuente_local_no_registrada') from exc
+                raise PublicationDataError('informe_fuente_ausente') from exc
+        payload = blob_cache[relative]
+        if dest.exists() and (not dest.is_file() or dest.read_bytes() != payload):
+            raise SourceIntegrityError('fuente_local_modificada: ' + relative)
+        return payload
+
+    def materialize(relative, payload):
+        dest = root / relative
+        if not dest.exists():
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(payload)
 
     for helper in PUBLICATION_HELPERS:
-        source_file(helper)
+        try:
+            payload = source_bytes(helper)
+        except PublicationDataError as exc:
+            raise SourceIntegrityError('dependencia_original_no_disponible') from exc
+        materialize(helper, payload)
     products = json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n', (root / 'index.html').read_text())[1])
     seo = json.loads((root / 'seo-contenido.json').read_text())
-    references = {}
+    references, rejected = set(), []
     for product in products:
         sku = product.get('sku')
         if not isinstance(sku, str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,50}', sku):
@@ -76,26 +98,38 @@ def materialize_publication_evidence(root):
         path = root / 'importacion/contratos' / (sku + '.json')
         if not path.is_file():
             continue
-        contract = json.loads(path.read_text())
+        try:
+            contract = json.loads(path.read_text())
+            approved_contract(root, product, seo.get(sku, {}))
+        except (ValueError, OSError, KeyError, TypeError, AttributeError):
+            continue
         evidence = contract.get('validaciones', {}).get('publicacion_http', {})
-        if not isinstance(evidence, dict) or evidence.get('estado') == 'VERIFICADO' or 'archivo' not in evidence:
+        if isinstance(evidence, dict) and evidence.get('estado') == 'VERIFICADO':
             continue
         try:
-            approved_contract(root, product, seo.get(sku, {}))
-        except (ValueError, OSError, KeyError, TypeError):
+            mobile = contract.get('validaciones', {}).get('movil', {})
+            artifacts = [(evidence, ('.json',)), (mobile, ('.png',))]
+            if isinstance(mobile, dict) and mobile.get('escritorio'):
+                artifacts.append((mobile['escritorio'], ('.png',)))
+            pending = {}
+            for artifact_evidence, suffixes in artifacts:
+                relative, expected = publication_reference(root, artifact_evidence, suffixes)
+                payload = source_bytes(relative)
+                if hashlib.sha256(payload).hexdigest() != expected:
+                    raise PublicationDataError('hash_publicacion_no_coincide')
+                pending[relative] = payload
+        except SourceIntegrityError:
+            raise
+        except (ValueError, OSError, KeyError, TypeError, AttributeError) as exc:
+            reason = str(exc) if isinstance(exc, PublicationDataError) else 'referencia_publicacion_invalida'
+            rejected.append({'sku': sku, 'motivo': reason})
             continue
-        mobile = contract.get('validaciones', {}).get('movil', {})
-        artifacts = [(evidence, ('.json',)), (mobile, ('.png',))]
-        if mobile.get('escritorio'):
-            artifacts.append((mobile['escritorio'], ('.png',)))
-        for artifact_evidence, suffixes in artifacts:
-            relative, expected = publication_reference(root, artifact_evidence, suffixes)
-            if relative in references and references[relative] != expected:
-                raise ValueError('referencias_publicacion_contradictorias')
-            references[relative] = expected
-    for relative, expected in sorted(references.items()):
-        source_file(relative, expected)
-    return {'source_commit': commit, 'helpers': list(PUBLICATION_HELPERS), 'reports': sorted(references)}
+        # Every artifact of this SKU has passed before any of its files is written.
+        for relative, payload in pending.items():
+            materialize(relative, payload)
+            references.add(relative)
+    return {'source_commit': commit, 'helpers': list(PUBLICATION_HELPERS),
+            'reports': sorted(references), 'rejected_publication': rejected}
 
 
 @contextmanager
@@ -243,6 +277,8 @@ def approved_contract(root, p, o):
     if not cp.is_file():
         raise ValueError('sin_contrato')
     contract = json.loads(cp.read_text())
+    if not isinstance(contract, dict):
+        raise ValueError('contrato_no_valido')
     checks = contract.get('validaciones', {})
     identity = checks.get('identidad', {})
     if contract.get('sku') != sku or identity.get('sku_verificado') is not True or identity.get('discrepancias_pendientes'):
@@ -375,7 +411,7 @@ def generate(root, out, public=False, inventory=None):
     for p in sorted(products, key=lambda p: p['sku']):
         try:
             pairs.append(candidate(root, p, seo.get(p['sku'], {}), urls.get(p['sku']), master.get(p['sku'])))
-        except (ValueError, OSError, KeyError, TypeError) as exc:
+        except (ValueError, OSError, KeyError, TypeError, AttributeError) as exc:
             exclusions.append(dict(sku=p['sku'], motivo=str(exc)))
     if public:
         verified = []
