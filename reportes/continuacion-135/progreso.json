@@ -1,5 +1,5 @@
 {
-  "estado": "PUBLICADO_VERIFICADO",
+  "estado": "CERRADO_PUBLICADO_VERIFICADO",
   "fechaContenidoVerificadoHTTP": "2026-11-23T23:21:03.462902+00:00",
   "altasNuevas": 1,
   "altasNuevasReales": 1,
@@ -9,8 +9,8 @@
   "totalProductosWeb": 1212,
   "totalPortadas": 1020,
   "pendientesConocidos": 12,
-  "prioridadPublicaVerificada": false,
-  "estadoPrioridad": "REGISTRADA_PENDIENTE_DESPLIEGUE",
+  "prioridadPublicaVerificada": true,
+  "estadoPrioridad": "VERIFICADA_HTTP_CHROMIUM",
   "costoAdicional": 0,
   "productos": {
     "TELF038": {
@@ -37,5 +37,9 @@
     ],
     "fichas": 1,
     "capturas": 2
+  },
+  "evidenciaCierre": {
+    "archivo": "reportes/continuacion-135/cierre.json",
+    "sha256": "c41a9a8a3014f80bece7876d699ae802f803eb0a052fa3cbe47ed2b696710171"
   }
 }
