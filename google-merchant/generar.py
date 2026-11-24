@@ -6,11 +6,14 @@ import csv
 import hashlib
 import html
 import io
+import importlib.util
 import json
 import re
 import subprocess
+import sys
 import urllib.request
 import xml.etree.ElementTree as ET
+from contextlib import contextmanager
 from collections import Counter
 from decimal import Decimal, InvalidOperation
 from datetime import date
@@ -22,6 +25,127 @@ from PIL import Image
 BASE = 'https://conectatech-ec.github.io'
 NS = 'http://base.google.com/ns/1.0'
 ET.register_namespace('g', NS)
+PUBLICATION_HELPERS = ('scripts/validar-contrato.py', 'scripts/reglas_sku.py', 'scripts/presentacion_sellada.py')
+
+
+def publication_reference(root, evidence, suffixes=('.json',)):
+    """Accept only hashed report artifacts inside the source checkout."""
+    if not isinstance(evidence, dict) or not re.fullmatch(r'[a-f0-9]{64}', str(evidence.get('sha256', ''))):
+        raise ValueError('publicacion_sin_hash_valido')
+    relative = evidence.get('archivo')
+    if (not isinstance(relative, str) or not re.fullmatch(r'reportes/[A-Za-z0-9_./-]+', relative)
+            or Path(relative).suffix not in suffixes
+            or any(part in ('', '.', '..') for part in relative.split('/'))):
+        raise ValueError('ruta_publicacion_no_admitida')
+    dest = Path(root).resolve() / relative
+    if dest.resolve() != dest:
+        raise ValueError('ruta_publicacion_no_admitida')
+    return relative, evidence['sha256']
+
+
+def materialize_publication_evidence(root):
+    """Read original helpers and eligible reports from one immutable source commit."""
+    root = Path(root).resolve()
+    commit = subprocess.check_output(['git', '-C', str(root), 'rev-parse', '--verify', 'HEAD^{commit}'], text=True).strip()
+    if not re.fullmatch(r'[a-f0-9]{40}', commit):
+        raise ValueError('fuente_commit_no_valido')
+
+    def source_file(relative, expected=None):
+        dest = root / relative
+        if dest.resolve() != dest:
+            raise ValueError('ruta_fuente_no_admitida')
+        payload = subprocess.check_output(['git', '-C', str(root), 'show', commit + ':' + relative])
+        if expected is not None and hashlib.sha256(payload).hexdigest() != expected:
+            raise ValueError('hash_publicacion_no_coincide')
+        if dest.exists():
+            if not dest.is_file() or dest.read_bytes() != payload:
+                raise ValueError('fuente_local_modificada: ' + relative)
+        else:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(payload)
+
+    for helper in PUBLICATION_HELPERS:
+        source_file(helper)
+    products = json.loads(re.search(r'const products=(\[[\s\S]*?\]);\s*\n', (root / 'index.html').read_text())[1])
+    seo = json.loads((root / 'seo-contenido.json').read_text())
+    references = {}
+    for product in products:
+        sku = product.get('sku')
+        if not isinstance(sku, str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,50}', sku):
+            continue
+        path = root / 'importacion/contratos' / (sku + '.json')
+        if not path.is_file():
+            continue
+        contract = json.loads(path.read_text())
+        evidence = contract.get('validaciones', {}).get('publicacion_http', {})
+        if not isinstance(evidence, dict) or evidence.get('estado') == 'VERIFICADO' or 'archivo' not in evidence:
+            continue
+        try:
+            approved_contract(root, product, seo.get(sku, {}))
+        except (ValueError, OSError, KeyError, TypeError):
+            continue
+        mobile = contract.get('validaciones', {}).get('movil', {})
+        artifacts = [(evidence, ('.json',)), (mobile, ('.png',))]
+        if mobile.get('escritorio'):
+            artifacts.append((mobile['escritorio'], ('.png',)))
+        for artifact_evidence, suffixes in artifacts:
+            relative, expected = publication_reference(root, artifact_evidence, suffixes)
+            if relative in references and references[relative] != expected:
+                raise ValueError('referencias_publicacion_contradictorias')
+            references[relative] = expected
+    for relative, expected in sorted(references.items()):
+        source_file(relative, expected)
+    return {'source_commit': commit, 'helpers': list(PUBLICATION_HELPERS), 'reports': sorted(references)}
+
+
+@contextmanager
+def original_publication_validator(root):
+    """Load the authoritative source helpers without leaking import state."""
+    scripts = Path(root).resolve() / 'scripts'
+    module_name = '_merchant_source_publication_validator'
+    names = ('reglas_sku', 'presentacion_sellada', module_name)
+    previous = {name: sys.modules.get(name) for name in names}
+    search_path = sys.path[:]
+    try:
+        for name in names:
+            sys.modules.pop(name, None)
+        sys.path.insert(0, str(scripts))
+        spec = importlib.util.spec_from_file_location(module_name, scripts / 'validar-contrato.py')
+        validator = importlib.util.module_from_spec(spec)
+        sys.modules[module_name] = validator
+        spec.loader.exec_module(validator)
+        yield validator
+    finally:
+        sys.path[:] = search_path
+        for name, module in previous.items():
+            if module is None:
+                sys.modules.pop(name, None)
+            else:
+                sys.modules[name] = module
+
+
+def publication_verified(root, contract, photos):
+    """Reuse the source validator for its canonical file/hash evidence format."""
+    if contract.get('estado_calidad') != 'APROBADO' or contract.get('estado_publicacion') != 'PUBLICADO_VERIFICADO':
+        raise ValueError('publicacion_no_verificada')
+    evidence = contract.get('validaciones', {}).get('publicacion_http', {})
+    if isinstance(evidence, dict) and evidence.get('estado') == 'VERIFICADO':
+        return  # Preserve the existing inline format.
+    publication_reference(root, evidence)
+    mobile = contract.get('validaciones', {}).get('movil', {})
+    publication_reference(root, mobile, ('.png',))
+    if (mobile.get('estado') != 'VERIFICADO' or mobile.get('sku') != contract.get('sku')
+            or mobile.get('url') != contract.get('url_publica')):
+        raise ValueError('revision_movil_no_verificada')
+    if mobile.get('escritorio'):
+        publication_reference(root, mobile['escritorio'], ('.png',))
+    with original_publication_validator(root) as validator:
+        validator.artifact(Path(root), mobile)
+        if mobile.get('escritorio'):
+            validator.artifact(Path(root), mobile['escritorio'])
+        errors = validator.validate_publication(Path(root), contract, photos)
+        if errors:
+            raise ValueError('publicacion_no_verificada: ' + json.dumps(errors, ensure_ascii=False))
 
 
 def load_inventory(path):
@@ -109,7 +233,7 @@ def check_page(document, row):
     return obj
 
 
-def candidate(root, p, o, slug, master):
+def approved_contract(root, p, o):
     sku = p.get('sku')
     if not isinstance(sku, str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,50}', sku):
         raise ValueError('sku_no_valido')
@@ -125,13 +249,33 @@ def candidate(root, p, o, slug, master):
         raise ValueError('identidad_pendiente')
     if checks.get('ficha', {}).get('verificada') is not True or contract.get('unidad_venta', {}).get('verificada') is not True:
         raise ValueError('ficha_o_unidad_pendiente')
-    if contract.get('estado_calidad') != 'APROBADO' or contract.get('estado_publicacion') != 'PUBLICADO_VERIFICADO' or checks.get('publicacion_http', {}).get('estado') != 'VERIFICADO':
+    if contract.get('estado_calidad') != 'APROBADO' or contract.get('estado_publicacion') != 'PUBLICADO_VERIFICADO':
         raise ValueError('publicacion_no_verificada')
     title, description = o.get('nombre'), o.get('descripcion')
     if not title or not description or len(title) > 150 or len(description) > 5000 or re.search('<[^>]+>', title + description):
         raise ValueError('texto_incompleto_o_no_valido')
     if p.get('name') != title:
         raise ValueError('titulo_catalogo_no_coincide')
+    image = local_url(o.get('imagen'))
+    if not o.get('imagen') or image != local_url(p.get('imageUrl')) or image != local_url(contract.get('imagen_principal')):
+        raise ValueError('imagen_no_coincide')
+    info = o.get('imagenProfesional', {})
+    version = next((v for v in info.get('versiones', {}).values() if local_url(v.get('url')) == image), None)
+    if info.get('contiene_caja') is not False or not info.get('revision_visual') or not version:
+        raise ValueError('fotografia_no_aprobada')
+    image_bytes = (root / urlsplit(image).path.lstrip('/')).read_bytes()
+    if hashlib.sha256(image_bytes).hexdigest() != version.get('sha256'):
+        raise ValueError('hash_fotografia_no_coincide')
+    picture(image_bytes)
+    return contract, image, image_bytes
+
+
+def candidate(root, p, o, slug, master):
+    contract, image, image_bytes = approved_contract(root, p, o)
+    sku = p['sku']
+    cp = root / 'importacion/contratos' / (sku + '.json')
+    title, description = o['nombre'], o['descripcion']
+    publication_verified(root, contract, o.get('galeria') or [o.get('imagenProfesional', {})])
     if not master:
         raise ValueError('sin_revision_limitada_corte16')
     price = money(p.get('promo'))
@@ -145,17 +289,6 @@ def candidate(root, p, o, slug, master):
         raise ValueError('disponibilidad_corregida_no_confiable')
     if not slug or not re.fullmatch(r'[a-z0-9-]+', slug):
         raise ValueError('sin_url_estable')
-    image = local_url(o.get('imagen'))
-    if not o.get('imagen') or image != local_url(p.get('imageUrl')) or image != local_url(contract.get('imagen_principal')):
-        raise ValueError('imagen_no_coincide')
-    info = o.get('imagenProfesional', {})
-    version = next((v for v in info.get('versiones', {}).values() if local_url(v.get('url')) == image), None)
-    if info.get('contiene_caja') is not False or not info.get('revision_visual') or not version:
-        raise ValueError('fotografia_no_aprobada')
-    image_bytes = (root / urlsplit(image).path.lstrip('/')).read_bytes()
-    if hashlib.sha256(image_bytes).hexdigest() != version.get('sha256'):
-        raise ValueError('hash_fotografia_no_coincide')
-    picture(image_bytes)
     row = dict(id=sku, title=title, description=description, link=BASE + '/productos/' + slug + '/',
                image_link=image, availability=availability, price=f'{price:.2f} USD',
                excluded_destination=['Shopping_ads', 'Free_listings'])
