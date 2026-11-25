@@ -3,7 +3,7 @@
   "fuente": "Corrección expresa del propietario en este chat",
   "cita": "se debe colocar siempre la ram total hasta XXGB, salvo las excepciones que te haya indicado",
   "regla": "Título comercial: Hasta XXGB RAM total cuando la suma física+ampliada está verificada. Desglose físico y ampliado claramente en ficha. Nunca inventar la ampliación ni presentar RAM total como física.",
-  "aplicacion": "Incremental: se corrigen únicamente los tres Redmi15C de este lote; conservar excepciones y demás SKU.",
+  "aplicacion": "Se corrigen3Redmi15C y2NubiaV80Max con el mismo error, sin cambios en excepciones ni otrosSKU.",
   "productos": {
     "TELF017": {
       "ramTotalMaxGB": 8,
@@ -19,6 +19,16 @@
       "ramTotalMaxGB": 16,
       "ramFisicaGB": 8,
       "ramAmpliadaMaxGB": 8
+    },
+    "TELF003": {
+      "ramTotalMaxGB": 14,
+      "ramFisicaGB": 4,
+      "ramAmpliadaMaxGB": 10
+    },
+    "TELF004": {
+      "ramTotalMaxGB": 20,
+      "ramFisicaGB": 8,
+      "ramAmpliadaMaxGB": 12
     }
   },
   "excepcionesConservadas": [
