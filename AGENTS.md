@@ -2,7 +2,7 @@
 
 En los Redmi 15C y en futuras presentaciones con ampliación verificada, anunciar «Hasta XXGB RAM total». Conservar el desglose de RAM física y ampliada en la ficha. No usar sólo la RAM física como diferenciador comercial sin una excepción expresa del propietario. Mantener las excepciones físicas ya indicadas para Samsung, K2 Mario y Modio; no inventar ampliación cuando no esté acreditada.
 
-Corrección editorial062: TELF017 hasta8GB(4+4), TELF018 hasta8GB(4+4), TELF019 hasta16GB(8+8), según los contratos y lecturas de empaque ya verificadas. Conservar nombres593, valores RAM, fotografías, precios, stock, URLs, SEO y datos estructurados. No reescribir056 ni su prueba histórica. Sólo títulos/subtítulos y H1 derivados, publicación por rama independiente con CI de cabeza exacta. Fecha y prioridad sólo tras HTTP/Chromium públicos; no regenerar imágenes. Costo0. Política: importacion/editorial/reglas-ram-comercial-062.json.
+Corrección editorial062: TELF017 hasta8GB(4+4), TELF018 hasta8GB(4+4), TELF019 hasta16GB(8+8), según los contratos y lecturas de empaque ya verificadas. Conservar nombres593, valores RAM, fotografías, precios, stock, URLs, SEO y datos estructurados. No reescribir056 ni su prueba histórica. Casos equivalentes añadidos: TELF003 hasta14GB(4+10) yTELF004 hasta20GB(8+12), contratos ya verificados. Son cinco correcciones, ceroSKU nuevos. Sólo títulos/subtítulos y H1 derivados, publicación por rama independiente con CI de cabeza exacta. Fecha y prioridad sólo tras HTTP/Chromium públicos; no regenerar imágenes. Costo0. Política: importacion/editorial/reglas-ram-comercial-062.json.
 
 ## Alta TELF038135 — 23nov2026, Guayaquil
 
