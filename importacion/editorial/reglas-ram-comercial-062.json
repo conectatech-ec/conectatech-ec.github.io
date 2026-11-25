@@ -1,0 +1,31 @@
+{
+  "fechaGuayaquil": "2026-11-25",
+  "fuente": "Corrección expresa del propietario en este chat",
+  "cita": "se debe colocar siempre la ram total hasta XXGB, salvo las excepciones que te haya indicado",
+  "regla": "Título comercial: Hasta XXGB RAM total cuando la suma física+ampliada está verificada. Desglose físico y ampliado claramente en ficha. Nunca inventar la ampliación ni presentar RAM total como física.",
+  "aplicacion": "Incremental: se corrigen únicamente los tres Redmi15C de este lote; conservar excepciones y demás SKU.",
+  "productos": {
+    "TELF017": {
+      "ramTotalMaxGB": 8,
+      "ramFisicaGB": 4,
+      "ramAmpliadaMaxGB": 4
+    },
+    "TELF018": {
+      "ramTotalMaxGB": 8,
+      "ramFisicaGB": 4,
+      "ramAmpliadaMaxGB": 4
+    },
+    "TELF019": {
+      "ramTotalMaxGB": 16,
+      "ramFisicaGB": 8,
+      "ramAmpliadaMaxGB": 8
+    }
+  },
+  "excepcionesConservadas": [
+    "importacion/editorial/reglas-ram-fisica-058.json",
+    "reportes/continuacion-131/confirmacion-ram-modio.json"
+  ],
+  "excepcionesExpresasSamsungK2ModioIntactas": true,
+  "noModificarCapacidadesPreciosStockFotografiasURLs": true,
+  "costoAdicional": 0
+}

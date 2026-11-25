@@ -1,3 +1,9 @@
+## RAM comercial por defecto — corrección del propietario, 25nov2026
+
+En los Redmi 15C y en futuras presentaciones con ampliación verificada, anunciar «Hasta XXGB RAM total». Conservar el desglose de RAM física y ampliada en la ficha. No usar sólo la RAM física como diferenciador comercial sin una excepción expresa del propietario. Mantener las excepciones físicas ya indicadas para Samsung, K2 Mario y Modio; no inventar ampliación cuando no esté acreditada.
+
+Corrección editorial062: TELF017 hasta8GB(4+4), TELF018 hasta8GB(4+4), TELF019 hasta16GB(8+8), según los contratos y lecturas de empaque ya verificadas. Conservar nombres593, valores RAM, fotografías, precios, stock, URLs, SEO y datos estructurados. No reescribir056 ni su prueba histórica. Sólo títulos/subtítulos y H1 derivados, publicación por rama independiente con CI de cabeza exacta. Fecha y prioridad sólo tras HTTP/Chromium públicos; no regenerar imágenes. Costo0. Política: importacion/editorial/reglas-ram-comercial-062.json.
+
 ## Alta TELF038135 — 23nov2026, Guayaquil
 
 Crear y publicar TELF038 HONOR Play20A128GB desde dos referencias propias de Drive CONECTATECH y fila1510 del Reporte-Inventario.xlsx23nov, SHA4b1b392666d193fd82d7c36466598e4d781c9c0137801956ccbb1fb4c6d19532. Variante física MLD-LX3 Negro Medianoche:4GB físicos y hasta4GB virtuales, máximo8GB RAM total, corroborado por HONOR LATAM8(4+4)+128GB. Nunca anunciar8GB físicos. Pantalla6,9pulgadas, batería6000mAh yDualSIM4G cotejados; omitir megapíxeles yversión Android por diferencias regionales. No prometer accesorios no verificados.
