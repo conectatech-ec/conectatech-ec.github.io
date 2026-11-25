@@ -1,5 +1,5 @@
 diff --git a/automatizacion/checkout-entry.mjs b/automatizacion/checkout-entry.mjs
-index 7e4069ee..694bcedf 100644
+index 7e4069ee..a0f5ff08 100644
 --- a/automatizacion/checkout-entry.mjs
 +++ b/automatizacion/checkout-entry.mjs
 @@ -5,10 +5,117 @@ import {readSharedHub} from './shared-hub.mjs';
@@ -15,7 +15,7 @@ index 7e4069ee..694bcedf 100644
 +const privatePath = '/api/compra/admin/prueba';
 +const privateStorePath = '/web-checkout/private-test/';
 +const testKey = 'CT_PRIVATE_TEST_20261119_V1';
-+const testUntil = Date.parse('2026-11-21T04:59:59Z');
++const testUntil = Date.parse('2026-11-26T04:27:09Z');
 +const json = (value, status = 200) => Response.json(value, {status, headers: {'Cache-Control': 'no-store'}});
 +const contact = Object.freeze({name: 'Cliente sintético prueba privada', phone: '0000000000', email: '',
 +  city: 'Quito', address: 'Dirección sintética sin entrega', postalCode: '000000'});

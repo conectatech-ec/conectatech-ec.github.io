@@ -6,7 +6,7 @@
     {
       "module": "checkout-entry.mjs",
       "before_sha256": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
-      "candidate_sha256": "d0d7531a6659eb2f3fd6a0c12a2bfec9d1b34d099e83b5f831dc63779dd8158d"
+      "candidate_sha256": "f1d0ef26b4fab7278504f957934fd39b6de00c96dec85502f83e2a6d7361bcf1"
     },
     {
       "module": "checkout-store.mjs",
@@ -14,8 +14,8 @@
       "candidate_sha256": "ff71a6caa354900b742c5b4be0a2f9c06ed2116b4b64f9947ddceaa9de4a295d"
     }
   ],
-  "patch_sha256": "b5a7810dd9cac8a177c56a8463c5876a1d34b721a1a79b742e486f2317884a67",
-  "expiry_utc": "2026-11-21T04:59:59Z",
+  "patch_sha256": "c6303584db58397793bccaa9670a7f722829806e9653da8b4c6ca4e36bcac4ae",
+  "expiry_utc": "2026-11-26T04:27:09Z",
   "public_checkout_enabled": false,
   "public_deliveries": [],
   "new_permissions": false,
@@ -30,5 +30,13 @@
   },
   "cost_additional_usd": 0,
   "remote_test_executed": false,
-  "new_targeted_checks_passed": 4
+  "new_targeted_checks_passed": 4,
+  "source_preflight": {
+    "official_cut": "2026-11-24",
+    "sequence": 5,
+    "source_sha256": "c269ee41eda90fa3b7c6b6ddf0fcb012a803ddff3c7ac25ee2c113af730549a9",
+    "generated_at": "2026-11-25T04:27:09Z",
+    "expires_at": "2026-11-26T04:27:09Z",
+    "effective_worker_source_check_required_before_put": true
+  }
 }

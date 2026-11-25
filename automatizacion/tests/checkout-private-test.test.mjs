@@ -79,7 +79,7 @@ test('fuente caducada bloquea antes de crear tablas y no se sustituye por fixtur
 
 test('caducidad del acceso privado cierra el ensayo sin escribir', async t => {
   const s = await fixture(t);
-  s.deps.clock = () => Date.parse('2026-11-21T05:00:00Z');
+  s.deps.clock = () => Date.parse('2026-11-26T04:27:09Z');
   assert.equal((await s.call('run')).status, 503);
   assert.equal(s.rows("SELECT name FROM sqlite_master WHERE name LIKE 'checkout_%'").length, 0);
 });
