@@ -495,3 +495,5 @@ jobs:
           CT593_PROBE_RUN: ''
           CT593_PROBE_HEAD: ''
         run: python scripts/observador-593/configure-dispatch.py "$CT593_ACTION" --probe-run "$CT593_PROBE_RUN" --probe-head "$CT593_PROBE_HEAD"
+
+# Coordinacion #396/#416: consulta posterior a instalacion; este commit solo solicita lectura.
