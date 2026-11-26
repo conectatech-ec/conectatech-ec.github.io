@@ -491,7 +491,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           COMMERCIAL_ACTIONS_TOKEN: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
-          CT593_ACTION: ${{ contains(github.event.head_commit.message, '[observer593-credential]') && 'credential' || 'ready' }}
+          CT593_ACTION: inspect
           CT593_PROBE_RUN: ''
           CT593_PROBE_HEAD: ''
         run: python scripts/observador-593/configure-dispatch.py "$CT593_ACTION" --probe-run "$CT593_PROBE_RUN" --probe-head "$CT593_PROBE_HEAD"
