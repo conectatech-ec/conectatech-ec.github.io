@@ -4,8 +4,18 @@ on:
     branches: [main]
     paths:
       - 'datos-593/corte-comercial-publico-validado.json'
-      - '.github/workflows/publicar-corte-comercial-593.yml'
   workflow_dispatch:
+    inputs:
+      source_sha256:
+        description: SHA del reporte pendiente en el receptor original
+        required: false
+        default: ''
+        type: string
+      verify_only:
+        description: Comprobar transporte sin reservar, validar ni publicar
+        required: false
+        default: false
+        type: boolean
 permissions:
   contents: write
 concurrency:
@@ -13,6 +23,11 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publicar:
+    if: inputs.source_sha256 == '' || github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015'
+    environment: ${{ inputs.source_sha256 != '' && 'conectatech-piloto-gratis' || '' }}
+    timeout-minutes: 12
+    env:
+      SOURCE_SHA256: ${{ inputs.source_sha256 }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,32 +38,107 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/checkout@v4
+        if: inputs.source_sha256 != ''
+        with:
+          ref: ${{ github.sha }}
+          path: integration
+          persist-credentials: false
+          sparse-checkout: scripts/observador-593
+      - uses: actions/checkout@v4
+        if: inputs.source_sha256 != ''
+        with:
+          ref: 1e9cd86b3954d6abf2ad01f26854c586d4d6f3bc
+          path: transport
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /automatizacion/central-http.mjs
+      - uses: actions/checkout@v4
+        if: inputs.source_sha256 != ''
+        with:
+          ref: 79f4e4fb77e30fd3a8a7ebac009cd8204a3b4c95
+          path: original-validator
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /automatizacion/normalizar_593.py
+            /automatizacion/report_identity.py
+            /automatizacion/inventory_completeness.py
+      - uses: actions/setup-python@v5
+        if: inputs.source_sha256 != ''
+        with:
+          python-version: '3.12'
+      - name: Comprobar transporte autorizado sin escrituras
+        if: inputs.source_sha256 != '' && inputs.verify_only
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+        run: >-
+          python integration/scripts/observador-593/publisher-entry.py probe
+          --repo "$GITHUB_WORKSPACE" --work "$RUNNER_TEMP/ct593-input"
+          --transport transport/automatizacion/central-http.mjs
+          --validator original-validator/automatizacion --sha "$SOURCE_SHA256"
+      - id: source
+        name: Reservar fuente exacta en el receptor original
+        if: inputs.source_sha256 != '' && !inputs.verify_only
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+        run: >-
+          python integration/scripts/observador-593/publisher-entry.py begin
+          --repo "$GITHUB_WORKSPACE" --work "$RUNNER_TEMP/ct593-input"
+          --transport transport/automatizacion/central-http.mjs
+          --validator original-validator/automatizacion --sha "$SOURCE_SHA256"
       - name: Aplicar corte exacto, regenerar fichas y exportaciones
+        if: inputs.source_sha256 == '' || steps.source.outputs.ready == 'true'
+        env:
+          PILOT_TOKEN: ${{ inputs.source_sha256 != '' && secrets.PILOT_TOKEN || '' }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/test-revisiones-comerciales-593.cjs
           python3 scripts/test-preparar-revision-comercial-593.py
+          entry() {
+            python integration/scripts/observador-593/publisher-entry.py "$1" \
+              --repo "$GITHUB_WORKSPACE" --work "$RUNNER_TEMP/ct593-input" \
+              --transport transport/automatizacion/central-http.mjs \
+              --validator original-validator/automatizacion --sha "$SOURCE_SHA256"
+          }
           for intento in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
+            if [ -n "$SOURCE_SHA256" ]; then entry prepare; fi
             node scripts/aplicar-corte-comercial-593.cjs
             APLICAR_COMERCIAL_593=SI node scripts/aplicar-corte-comercial-593.cjs
             node scripts/generar-seo.cjs
             node scripts/test-venta-cruzada.cjs
             node scripts/exportar-canales.cjs
+            if [ -n "$SOURCE_SHA256" ]; then git add datos-593/corte-comercial-publico-validado.json; fi
             git add index.html datos-593/estado-ultimo-corte.json productos sitemap.xml seo-pages.json exportaciones
             if git diff --cached --quiet; then
               echo "Web y exportaciones ya actualizadas al corte comercial validado."
+              if [ -n "$SOURCE_SHA256" ]; then entry complete; fi
               exit 0
             fi
             git commit -m "Sincronizar web y feeds comerciales con corte 593"
             if git push origin HEAD:main; then
               echo "Web y exportaciones publicadas en GitHub; verificar Pages despues."
+              if [ -n "$SOURCE_SHA256" ]; then entry complete; fi
               exit 0
             fi
             echo "Revalidando contra main actualizado (${intento}/5)"
           done
           echo "Publicacion no terminada; sin push forzado"
           exit 1
+      - name: Liberar reserva tras fallo sin cambiar el corte publicado
+        if: always() && inputs.source_sha256 != '' && !inputs.verify_only
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+        run: >-
+          python integration/scripts/observador-593/publisher-entry.py release
+          --repo "$GITHUB_WORKSPACE" --work "$RUNNER_TEMP/ct593-input"
+          --transport transport/automatizacion/central-http.mjs
+          --validator original-validator/automatizacion --sha "$SOURCE_SHA256"

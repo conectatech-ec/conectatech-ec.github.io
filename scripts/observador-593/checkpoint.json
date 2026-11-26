@@ -1,0 +1,58 @@
+{
+  "status": "GOOGLE_AND_RECEIVER_VERIFIED_DISPATCH_CREDENTIAL_PENDING",
+  "script_id": "1fVduRW85WiM9ynx34FEqFZB2TE_WmF-ANgjAD1TPPmM-vDOcfByhtJuW",
+  "pull_request": 416,
+  "head": "fba553f16b4f5a20fd3476d3d5a6dbecfc9563a7",
+  "tests_local_passed": 69,
+  "trigger_created": false,
+  "worker_changed": true,
+  "sources": {
+    "drive-change-detection.gs": "2ae01bb4a83ad611da05abfda281553a977be592eab0898ed937130b93abb8c4",
+    "appsscript.json": "094bba61cbf85671cb9222f19f5cf8ff1243b667aff8644ba786018cc1bc48e2",
+    "observer-auth.mjs": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+    "observer-dispatch.mjs": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+    "publisher-entry.py": "787aa0b16b46aefc6b4e0afcc43cd4f01d188701da0df4d71adebd499ceb4c50",
+    "publicar-corte-comercial-593.yml": "c07d5c9ec1d6f23a4dd2217bd0837e787199907caa7cb2cea5c3186c30264612"
+  },
+  "google_authorized": true,
+  "dispatch_credential_available": false,
+  "real_executions": [
+    {
+      "function": "comprobar593",
+      "started_local": "2026-11-26T16:07:45-05:00",
+      "finished_local": "2026-11-26T16:07:46-05:00",
+      "account_verified": true,
+      "folder_verified": true,
+      "own_triggers": 0
+    },
+    {
+      "function": "observar593",
+      "started_at": "2026-11-26T21:08:08.922Z",
+      "detected_at": "2026-11-26T21:08:09.468Z",
+      "download_ms": 1341,
+      "finished_at": "2026-11-26T21:08:10.981Z",
+      "duration_ms": 2059,
+      "mode": "OBSERVE",
+      "automatic": false,
+      "candidates": 1,
+      "downloaded": 1,
+      "submitted": 0,
+      "stage": "already_published",
+      "sha256": "a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4"
+    },
+    {
+      "function": "comprobarReceptor593",
+      "at": "2026-11-26T21:37:11.083Z",
+      "duration_ms": 633,
+      "stage": "receiver_identity_verified",
+      "contract": "CT593_OBSERVER_V1",
+      "automatic_trigger_configured": false,
+      "pending": false
+    }
+  ],
+  "receiver_installation_run": 45897858422,
+  "ci_run": 45899335780,
+  "ci_head": "fba553f16b4f5a20fd3476d3d5a6dbecfc9563a7",
+  "tests_ci_passed": 69,
+  "receiver_repair_run": 45899331248
+}

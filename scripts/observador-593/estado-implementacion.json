@@ -1,0 +1,43 @@
+{
+  "status": "GOOGLE_AUTHORIZED_INTEGRATION_PREPARED",
+  "script_id": "1fVduRW85WiM9ynx34FEqFZB2TE_WmF-ANgjAD1TPPmM-vDOcfByhtJuW",
+  "pull_request": 416,
+  "head": "e340a024ac6ba1d95db6fe7c21634595e2087688",
+  "tests_local_passed": 64,
+  "trigger_created": false,
+  "worker_changed": false,
+  "sources": {
+    "drive-change-detection.gs": "7e26be189d7559ed5e4dce9b540735627b4dd96c27064ba53952a89335d6ca88",
+    "appsscript.json": "094bba61cbf85671cb9222f19f5cf8ff1243b667aff8644ba786018cc1bc48e2",
+    "test-observer.cjs": "942fe75f344b8f014553e941b2e34451f9cd9f4ef790b9318ab4c05b9818705f",
+    "observer-auth.mjs": "c6c6b93ca7f6a7a203ad843db4d5cde7199db6eb75df393603fe5970b1949960",
+    "test-observer-auth.mjs": "2f338663ab0153d94a514995708a26fb7bda672b9834ba4ac4fc7ed44b624f7f"
+  },
+  "google_authorized": true,
+  "dispatch_credential_available": false,
+  "real_executions": [
+    {
+      "function": "comprobar593",
+      "started_local": "2026-11-26T16:07:45-05:00",
+      "finished_local": "2026-11-26T16:07:46-05:00",
+      "account_verified": true,
+      "folder_verified": true,
+      "own_triggers": 0
+    },
+    {
+      "function": "observar593",
+      "started_at": "2026-11-26T21:08:08.922Z",
+      "detected_at": "2026-11-26T21:08:09.468Z",
+      "download_ms": 1341,
+      "finished_at": "2026-11-26T21:08:10.981Z",
+      "duration_ms": 2059,
+      "mode": "OBSERVE",
+      "automatic": false,
+      "candidates": 1,
+      "downloaded": 1,
+      "submitted": 0,
+      "stage": "already_published",
+      "sha256": "a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4"
+    }
+  ]
+}

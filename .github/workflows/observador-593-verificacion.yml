@@ -1,0 +1,30 @@
+name: Verificar integración del observador 593
+on:
+  pull_request:
+    paths: ['scripts/observador-593/**', '.github/workflows/observador-593-verificacion.yml', '.github/workflows/publicar-corte-comercial-593.yml']
+permissions:
+  contents: read
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/observador-593
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probar delta y controles con datos sintéticos
+        working-directory: scripts/observador-593
+        run: |
+          python patch-receiver.py
+          node test-observer.cjs
+          node test-observer-auth.mjs
+          node test-integration.mjs
+          python test-publisher-entry.py
+          python test-install-receiver.py
+          python test-repair-auth.py
