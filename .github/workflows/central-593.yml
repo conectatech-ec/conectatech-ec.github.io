@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   ingresar:
-    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-revision-read]') && !contains(github.event.head_commit.message, '[checkout-private-396]') && !contains(github.event.head_commit.message, '[observer593-read]') && !contains(github.event.head_commit.message, '[observer593-install]')
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-revision-read]') && !contains(github.event.head_commit.message, '[checkout-private-396]') && !contains(github.event.head_commit.message, '[observer593-read]') && !contains(github.event.head_commit.message, '[observer593-install]') && !contains(github.event.head_commit.message, '[observer593-probe]')
     environment: conectatech-piloto-gratis
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -432,3 +432,28 @@ jobs:
         run: |
           python integration/scripts/observador-593/test-repair-auth.py
           python integration/scripts/observador-593/repair-auth.py
+
+  comprobar_publicador_593:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[observer593-probe]')
+    permissions:
+      contents: read
+      actions: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Solicitar sonda de lectura al publicador original
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node --input-type=module <<'NODE'
+          const result=await fetch('https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/actions/workflows/publicar-corte-comercial-593.yml/dispatches',{
+            method:'POST',redirect:'error',signal:AbortSignal.timeout(10000),
+            headers:{Authorization:'Bearer '+process.env.GH_TOKEN,Accept:'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'},
+            body:JSON.stringify({ref:'automatizacion/piloto-cloud-3sku-20261015',inputs:{source_sha256:'a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4',verify_only:true}})
+          });
+          console.log(JSON.stringify({stage:'publisher_probe_dispatch',at:new Date().toISOString(),http_status:result.status,publication_requested:false}));
+          if(result.status!==204)process.exit(1);
+          NODE
