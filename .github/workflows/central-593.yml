@@ -369,3 +369,29 @@ jobs:
                   report['receiver']={k:status.get(k) for k in ('pending','status','automatic_trigger_configured','retention_hours','processor_release','processor_code_sha256')}
               except urllib.error.HTTPError as e:report['receiver_http_status']=e.code
           print('OBSERVER593_READ='+json.dumps(report,separators=(',',':')))
+
+      - uses: actions/checkout@v4
+        with:
+          ref: 1e9cd86b3954d6abf2ad01f26854c586d4d6f3bc
+          path: transport
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /automatizacion/central-http.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Leer status con transporte original y comprobar credencial de despacho
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          COMMERCIAL_ACTIONS_TOKEN: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
+        run: |
+          node --input-type=module <<'NODE'
+          import {privateRequest} from './transport/automatizacion/central-http.mjs';
+          const response=await privateRequest({path:'/commercial/status'});
+          const out={operation:'observer-593-status',http_status:response.status,dispatch_secret_available:!!process.env.COMMERCIAL_ACTIONS_TOKEN};
+          if(response.status===200){
+            const status=JSON.parse(Buffer.from(response.bytes_b64,'base64').toString('utf8'));
+            out.receiver=Object.fromEntries(['pending','status','automatic_trigger_configured','retention_hours','processor_release','processor_code_sha256'].map(k=>[k,status[k]??null]));
+          }
+          console.log('OBSERVER593_STATUS='+JSON.stringify(out));
+          NODE
