@@ -1,20 +1,11 @@
 {
-  "status": "GOOGLE_AUTHORIZED_INTEGRATION_PREPARED",
+  "status": "ACTIVE_THREE_AUTOMATIC_CYCLES_VERIFIED",
   "script_id": "1fVduRW85WiM9ynx34FEqFZB2TE_WmF-ANgjAD1TPPmM-vDOcfByhtJuW",
   "pull_request": 416,
-  "head": "e340a024ac6ba1d95db6fe7c21634595e2087688",
-  "tests_local_passed": 64,
-  "trigger_created": false,
-  "worker_changed": false,
-  "sources": {
-    "drive-change-detection.gs": "7e26be189d7559ed5e4dce9b540735627b4dd96c27064ba53952a89335d6ca88",
-    "appsscript.json": "094bba61cbf85671cb9222f19f5cf8ff1243b667aff8644ba786018cc1bc48e2",
-    "test-observer.cjs": "942fe75f344b8f014553e941b2e34451f9cd9f4ef790b9318ab4c05b9818705f",
-    "observer-auth.mjs": "c6c6b93ca7f6a7a203ad843db4d5cde7199db6eb75df393603fe5970b1949960",
-    "test-observer-auth.mjs": "2f338663ab0153d94a514995708a26fb7bda672b9834ba4ac4fc7ed44b624f7f"
-  },
+  "trigger_created": true,
+  "worker_changed": true,
   "google_authorized": true,
-  "dispatch_credential_available": false,
+  "dispatch_credential_available": true,
   "real_executions": [
     {
       "function": "comprobar593",
@@ -39,5 +30,166 @@
       "stage": "already_published",
       "sha256": "a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4"
     }
-  ]
+  ],
+  "merged_commit": "d01b1fdb550d46c32599b5c46c31fbded641c0a8",
+  "tests": {
+    "ci_passed": 69,
+    "ci_run": 45899624048,
+    "ci_head": "32ee93658bf226cc50feea2fa4917bf1d130a685",
+    "configuration_passed": 4,
+    "configuration_run": 45909948587
+  },
+  "mode": "LIVE",
+  "automatic_trigger_configured": true,
+  "trigger": {
+    "handler": "observar593",
+    "id": "1371424341912190976",
+    "minutes": 5,
+    "created_at": "2026-11-26T23:20:29.793Z",
+    "count_verified": 1
+  },
+  "credential": {
+    "scope": "Actions read/write, repository only",
+    "expires_on": "2027-02-24",
+    "value_recorded": false,
+    "initial_install_run": 45909324793,
+    "readback_run": 45909502939,
+    "initial_install_result": "Initial helper returned BINDING_INSTALL_FAILED, but independent readback confirmed the credential binding. It was not reinstalled. The helper was corrected to accept HTTP200 or201 with success=true; readiness later returned HTTP201 success."
+  },
+  "receiver": {
+    "contract": "CT593_OBSERVER_V1",
+    "install_run": 45897858422,
+    "repair_run": 45899331248,
+    "auth_sha256": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+    "dispatch_sha256": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+    "ready_run": 45909948587,
+    "ready_at": "2026-11-26T23:16:37.392741Z",
+    "modules_preserved_at_ready": 42,
+    "other_settings_preserved": true
+  },
+  "publisher_probe": {
+    "request_at": "2026-11-26T23:13:48.774743Z",
+    "request_status": 204,
+    "run_id": 45909678099,
+    "head": "5203c74d6dd49fa0bf761c67ba76063ebf409ada",
+    "at": "2026-11-26T23:15:10.473Z",
+    "status": "success",
+    "writes": 0,
+    "pending": false
+  },
+  "live_preflight": {
+    "started_at": "2026-11-26T23:20:28.458Z",
+    "finished_at": "2026-11-26T23:20:28.841Z",
+    "duration_ms": 383,
+    "automatic": false,
+    "candidates": 1,
+    "downloaded": 0,
+    "submitted": 0,
+    "unchanged": 1
+  },
+  "live_receiver_check": {
+    "at": "2026-11-26T23:20:09.230Z",
+    "duration_ms": 363,
+    "contract": "CT593_OBSERVER_V1",
+    "automatic_trigger_configured": true,
+    "pending": false
+  },
+  "automatic_executions": [
+    {
+      "function": "observar593",
+      "type": "time_driven",
+      "platform_started_local": "2026-11-26T18:21:18-05:00",
+      "platform_duration_ms": 2769,
+      "status": "completed",
+      "contract": "CT593_OBSERVER_V1",
+      "started_at": "2026-11-26T23:21:20.382Z",
+      "finished_at": "2026-11-26T23:21:20.765Z",
+      "duration_ms": 383,
+      "mode": "LIVE",
+      "automatic": true,
+      "candidates": 1,
+      "downloaded": 0,
+      "submitted": 0,
+      "unchanged": 1,
+      "events": []
+    },
+    {
+      "function": "observar593",
+      "type": "time_driven",
+      "platform_started_local": "2026-11-26T18:26:18-05:00",
+      "platform_duration_ms": 3072,
+      "status": "completed",
+      "contract": "CT593_OBSERVER_V1",
+      "started_at": "2026-11-26T23:26:20.241Z",
+      "finished_at": "2026-11-26T23:26:21.134Z",
+      "duration_ms": 893,
+      "mode": "LIVE",
+      "automatic": true,
+      "candidates": 1,
+      "downloaded": 0,
+      "submitted": 0,
+      "unchanged": 1,
+      "events": []
+    },
+    {
+      "function": "observar593",
+      "type": "time_driven",
+      "platform_started_local": "2026-11-26T18:31:18-05:00",
+      "platform_duration_ms": 2092,
+      "status": "completed",
+      "contract": "CT593_OBSERVER_V1",
+      "started_at": "2026-11-26T23:31:20.097Z",
+      "finished_at": "2026-11-26T23:31:20.386Z",
+      "duration_ms": 289,
+      "mode": "LIVE",
+      "automatic": true,
+      "candidates": 1,
+      "downloaded": 0,
+      "submitted": 0,
+      "unchanged": 1,
+      "events": []
+    }
+  ],
+  "supervisor": {
+    "id": "6adad3f094348191a06cddc02be4686c",
+    "is_enabled": true,
+    "schedule_unchanged": true,
+    "coordination_updated": true,
+    "common_receiver": true,
+    "common_publisher": "publicar-corte-comercial-593.yml",
+    "common_concurrency_group": "publicacion-stock-593-web"
+  },
+  "additional_cost_usd": 0,
+  "new_report_end_to_end_verified": false,
+  "limitation": "No new authentic report during activation; R6 unchanged, not reprocessed. New-source detection/validation/publication timings must be recorded on next authentic upload.",
+  "original_preparation_sources": {
+    "drive-change-detection.gs": "7e26be189d7559ed5e4dce9b540735627b4dd96c27064ba53952a89335d6ca88",
+    "appsscript.json": "094bba61cbf85671cb9222f19f5cf8ff1243b667aff8644ba786018cc1bc48e2",
+    "test-observer.cjs": "942fe75f344b8f014553e941b2e34451f9cd9f4ef790b9318ab4c05b9818705f",
+    "observer-auth.mjs": "c6c6b93ca7f6a7a203ad843db4d5cde7199db6eb75df393603fe5970b1949960",
+    "test-observer-auth.mjs": "2f338663ab0153d94a514995708a26fb7bda672b9834ba4ac4fc7ed44b624f7f"
+  },
+  "code_hashes": {
+    "drive-change-detection.gs": "2ae01bb4a83ad611da05abfda281553a977be592eab0898ed937130b93abb8c4",
+    "appsscript.json": "094bba61cbf85671cb9222f19f5cf8ff1243b667aff8644ba786018cc1bc48e2",
+    "observer-auth.mjs": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+    "observer-dispatch.mjs": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+    "publisher-entry.py": "787aa0b16b46aefc6b4e0afcc43cd4f01d188701da0df4d71adebd499ceb4c50",
+    "configure-dispatch.py": "aaac76955ec47350fb437cf8c08f846e42db4f4feaa4e250e9f46112925f185e"
+  },
+  "code_hashes_provenance": {
+    "observer_source": "Reviewed Apps Script source and same merged repository code",
+    "worker_adapters": "Verified deployment adapter hashes",
+    "configure_dispatch": "Existing pilot branch setup helper"
+  },
+  "verified_at": "2026-11-26T23:32:02.383Z",
+  "automatic_execution_intervals_seconds": [
+    300,
+    300
+  ],
+  "observed_scan_intervals_seconds": [
+    299.859,
+    299.856
+  ],
+  "evidence_url": "https://script.google.com/home/projects/1fVduRW85WiM9ynx34FEqFZB2TE_WmF-ANgjAD1TPPmM-vDOcfByhtJuW/executions?type=5"
 }
