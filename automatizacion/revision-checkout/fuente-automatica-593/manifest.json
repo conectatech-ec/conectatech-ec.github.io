@@ -1,0 +1,47 @@
+{
+  "schema": "conectatech.checkout-source-auto-proposal.v1",
+  "status": "PREPARED_NOT_INSTALLED",
+  "pr": 396,
+  "pr_base_commit": "f177271abdd0dce6cd53e4df84c9fcb8805afd90",
+  "runtime_modules_changed": [
+    {
+      "module": "shared-hub.mjs",
+      "before_sha256_expected_public_baseline": "a6a54d835d734dddfb379bb04e87c90ff63eb61f0a0313d31f49e2e20ecbccd6",
+      "candidate_sha256": "10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9",
+      "active_hash_verification_required_before_put": true
+    }
+  ],
+  "source_attestations_mjs_changed": false,
+  "legacy_registry_sha256_expected": "e32bfd077dff91bca70e9fd80d434c94e5457d2848fda20719fda2609379e968",
+  "producer": {
+    "path": "scripts/preparar-revision-comercial-593.py",
+    "before_sha256": "944bfd31a1089469e6decdfd2d1a0249473e38a8d31e122ed2fa3ff7689e0cd7",
+    "candidate_sha256": "a72905cae20ec6cc6c39be178bbc5f587ef7d4a1b169bf5f70e5aa4446384cca",
+    "patch_sha256": "d57ad14e70b1bceba868a83dce34cc6eed8ddb7a495d020ef2ce2c5e9ee1e197",
+    "main_modified": false
+  },
+  "source_patch_sha256": "8a945aaa015c7895257dd27d55813fd876a52c279dea4553bc398209b1a53f89",
+  "public_evidence_field": "evidencia_checkout",
+  "source_validation": "Original 593 validator and existing Data Hub identity function pinned by commit and module SHA; official pointer/cut receipts, source SHA, all SKU identities and stock/prices must agree.",
+  "freshness_hours": 24,
+  "manual_sha_exceptions_added": 0,
+  "new_services": 0,
+  "new_inventory": false,
+  "source_private_mutations": false,
+  "commercial_activation": false,
+  "public_checkout_enabled": false,
+  "deployment_authorized": false,
+  "installed": false,
+  "synthetic_tests": {
+    "original_producer": 6,
+    "consumer_and_cross_language": 23,
+    "total_passed": 29,
+    "remote_test_executed": false
+  },
+  "source_repair_put_budget_proposed": {
+    "installation": 1,
+    "specific_recovery_on_failure": 1
+  },
+  "private_test_requires_valid_source_and_valid_window": true,
+  "cost_additional_usd": 0
+}
