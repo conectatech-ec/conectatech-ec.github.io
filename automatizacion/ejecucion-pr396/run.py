@@ -39,7 +39,7 @@ def permission(fresh=True):
         'APPROVED_COMMIT_MISMATCH')
     executor=Path(os.environ['CHECKOUT_EXECUTOR_REPO'])
     git=lambda *args: subprocess.check_output(['git',*args],cwd=executor,text=True).strip()
-    require(git('rev-parse','HEAD')==os.environ.get('GITHUB_SHA') and git('rev-parse','HEAD^')=='60f05e9f3c566a9f3b75193b2746b6cf4e194d3d',
+    require(git('rev-parse','HEAD')==os.environ.get('GITHUB_SHA') and git('rev-parse','HEAD^')=='2fa57ed32794ad6fbb24a480b519ed6e83338c35',
         'EXECUTION_COMMIT_OR_PARENT_CHANGED')
     require(set(git('diff-tree','--no-commit-id','--name-only','-r','HEAD').splitlines())=={
         '.github/workflows/central-593.yml','automatizacion/ejecucion-pr396/run.py'},'EXECUTION_WRAPPER_SCOPE_CHANGED')
@@ -113,8 +113,18 @@ def http(path,method='GET',anonymous=False):
         raw=response.read(50001);require(len(raw)<=50000,'HTTP_RESPONSE_TOO_LARGE')
         return response.status,json.loads(raw)
 def closure():
-    a,b=http('/api/compra/catalogo');require(a==503 and b.get('error')=='COMPRA_NO_HABILITADA','PUBLIC_CHECKOUT_NOT_CLOSED')
-    a,_=http('/api/compra/admin/pedidos',anonymous=True);require(a==401,'ADMIN_AUTH_NOT_CLOSED')
+    report=load(OUT/'receipt.json')
+    observed=[]
+    for path,anonymous,expected,code in [('/api/compra/catalogo',False,503,'COMPRA_NO_HABILITADA'),
+        ('/api/compra/admin/pedidos',True,401,'Unauthorized')]:
+        args=['node',str(ROOT/'automatizacion/scoped-http.mjs'),path]+(['--anonymous'] if anonymous else [])
+        child=subprocess.run(args,capture_output=True,text=True,timeout=55)
+        envelope=json.loads(child.stdout)
+        body=json.loads(base64.b64decode(envelope['bytes_b64']))
+        value=body.get('error'); allowed={'COMPRA_NO_HABILITADA','ORIGEN_NO_AUTORIZADO','Unauthorized','RUTA_NO_DISPONIBLE'}
+        observed.append({'path':path,'http_status':envelope.get('status'),'error_code':value if value in allowed else 'UNEXPECTED_RESPONSE'})
+        report['closure_preflight']=observed;save(report)
+        require(not child.returncode and envelope.get('status')==expected and value==code,'CHECKOUT_CLOSURE_RESPONSE_MISMATCH')
 def exact(api,bundle,settings):
     require(same_bundle(api.get_bundle(),bundle) and same_json(api.get_settings(),settings),'LIVE_RUNTIME_DRIFT')
 def settled(api,bundle,settings):

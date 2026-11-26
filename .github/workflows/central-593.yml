@@ -289,7 +289,7 @@ jobs:
           path: checkout-pr396-evidence/backup.sealed.json
           retention-days: 1
           if-no-files-found: error
-      - name: Una instalacion temporal, una prueba sintetica y reversion especifica
+      - name: Una instalacion temporal, una prueba sintetica y reversion especifica autorizadas
         run: python execution/automatizacion/ejecucion-pr396/run.py --run
         env:
           CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
