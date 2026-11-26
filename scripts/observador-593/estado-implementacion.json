@@ -1,0 +1,52 @@
+{
+  "schema": "conectatech.observer593.implementation.v1",
+  "date": "2026-11-26",
+  "status": "IMPLEMENTACION_PARCIAL_AUTORIZACIONES_PENDIENTES",
+  "script_id": "1fVduRW85WiM9ynx34FEqFZB2TE_WmF-ANgjAD1TPPmM-vDOcfByhtJuW",
+  "account": "conectatech.ecu@gmail.com",
+  "trigger_installed": false,
+  "mode": "OBSERVE",
+  "local_tests": {
+    "observer": 17,
+    "identity": 14,
+    "passed": 31,
+    "remote": false
+  },
+  "remote_checks": [
+    {
+      "run_id": 45883594316,
+      "result": "environment_branch_rejected",
+      "writes": 0
+    },
+    {
+      "run_id": 45883826949,
+      "result": "existing_receiver_read_success",
+      "writes": 0
+    },
+    {
+      "run_id": 45885272046,
+      "result": "authenticated_status_200",
+      "writes": 0
+    }
+  ],
+  "receiver": {
+    "sha256": "699ac61bcf8311ac72bdf56c723e3c562882517909c443d9521d5b132624b869",
+    "pending": false,
+    "status": "empty",
+    "automatic_trigger_configured": false,
+    "dispatch_secret_available": false,
+    "free_only_confirmed": true
+  },
+  "pending": [
+    "Google OAuth consent for dedicated enterprise observer",
+    "GitHub Actions dispatch credential absent in Worker and execution environment",
+    "Identity subject verification after Google consent",
+    "Receiver and publisher integration plus remote end-to-end tests before enabling trigger"
+  ],
+  "unchanged": [
+    "hourly supervisor cadence",
+    "canonical inventory",
+    "SIGNATURE",
+    "checkout"
+  ]
+}
