@@ -404,7 +404,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: d850dab53df1a217ae22b9558acb448473efc542
+          ref: fba553f16b4f5a20fd3476d3d5a6dbecfc9563a7
           path: integration
           persist-credentials: false
           sparse-checkout: scripts/observador-593
@@ -427,7 +427,8 @@ jobs:
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CT593_AUTH_EXPECTED_SHA: 762c8623e1d36e5037e3b61acbd1d59f20034c7b40392e7377b4be94a267613e
+          CT593_AUTH_EXPECTED_SHA: c1f79ddb221ad0496772207102a3261809d49a68e7721e5a3c6e381dd905d293
+          CT593_DISPATCH_EXPECTED_SHA: 5a01e4722c7473d63f459245c2cc43dd13d38aa794d4e83c94f132857ce3ee34
         run: |
           python integration/scripts/observador-593/test-repair-auth.py
           python integration/scripts/observador-593/repair-auth.py
