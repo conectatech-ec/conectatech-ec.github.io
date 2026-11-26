@@ -258,7 +258,7 @@ jobs:
           path: execution
           fetch-depth: 2
           persist-credentials: false
-          sparse-checkout: automatizacion/ejecucion-pr396
+          sparse-checkout: .github/scripts
       - uses: actions/checkout@v4
         with:
           ref: 01e1b03fb90d0feca007c76a298470cd9fffd803
@@ -272,7 +272,7 @@ jobs:
         with:
           node-version: '22'
       - name: Lectura autenticada y respaldo cifrado antes de cualquier PUT
-        run: python execution/automatizacion/ejecucion-pr396/run.py --prepare
+        run: python execution/.github/scripts/checkout-pr396-run.py --prepare
         env:
           CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
           GITHUB_TOKEN: ${{ github.token }}
@@ -290,7 +290,7 @@ jobs:
           retention-days: 1
           if-no-files-found: error
       - name: Una instalacion temporal, una prueba sintetica y reversion especifica autorizadas
-        run: python execution/automatizacion/ejecucion-pr396/run.py --run
+        run: python execution/.github/scripts/checkout-pr396-run.py --run
         env:
           CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
           GITHUB_TOKEN: ${{ github.token }}
@@ -302,7 +302,7 @@ jobs:
           CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
       - name: Verificar recuperacion incluso si falla el paso anterior
         if: always()
-        run: python execution/automatizacion/ejecucion-pr396/run.py --recover
+        run: python execution/.github/scripts/checkout-pr396-run.py --recover
         env:
           CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
           GITHUB_TOKEN: ${{ github.token }}
