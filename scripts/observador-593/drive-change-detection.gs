@@ -104,7 +104,7 @@ function ct593Http(path, method, bytes, headers) {
   try { body=JSON.parse(r.getContentText()); } catch(e) { throw Error('RECEIVER_RESPONSE_INVALID'); }
   if (status===404 && /^\/commercial\/status\?/.test(path)) return null;
   if (status===409 && body.error==='PREVIOUS_REPORT_PENDING') return {busy:true};
-  if (status===401 && ['IDENTITY','KEY_FETCH','KEY_MISSING','KEY_IMPORT','SIGNATURE'].indexOf(body.observer_auth)>=0) throw Error('RECEIVER_AUTH_'+body.observer_auth);
+  if (status===401 && /^(?:IDENTITY|KEY_(?:FETCH|MISSING|IMPORT|SIGNAL|BODY|JSON|SCHEMA|HTTP_[1-5][0-9]{2})|SIGNATURE)$/.test(body.observer_auth||'')) throw Error('RECEIVER_AUTH_'+body.observer_auth);
   if (status<200 || status>=300) throw Error('RECEIVER_HTTP_'+status);
   return body;
 }

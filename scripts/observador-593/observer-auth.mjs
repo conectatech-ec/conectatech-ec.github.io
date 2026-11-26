@@ -22,8 +22,11 @@ export async function verifyObserverIdentity(token,{now=Date.now(),fetcher=fetch
      claims.iat>second+60||claims.exp-claims.iat>7200)return reject(stage);
   stage='KEY_FETCH';
   if(keyCache.until<=now||(!keyCache.keys.some(k=>k.kid===header.kid)&&now-keyCache.checked>60000)){
-   const r=await fetcher(JWKS,{redirect:'error',signal:AbortSignal.timeout(10000)});if(!r.ok)return reject(stage);
-   const text=await r.text();if(text.length>50000)return reject(stage);const data=JSON.parse(text);
+   stage='KEY_SIGNAL';const signal=AbortSignal.timeout(10000);stage='KEY_FETCH';
+   const r=await fetcher(JWKS,{redirect:'error',signal});if(!r.ok)return reject('KEY_HTTP_'+r.status);
+   stage='KEY_BODY';const text=await r.text();if(text.length>50000)return reject(stage);
+   stage='KEY_JSON';const data=JSON.parse(text);
+   stage='KEY_SCHEMA';
    if(!Array.isArray(data.keys)||data.keys.length>20)return reject(stage);
    const maxAge=Math.min(3600,Number(/max-age=(\d+)/.exec(r.headers.get('Cache-Control')||'')?.[1]||300));
    keyCache={until:now+maxAge*1000,checked:now,keys:data.keys};
