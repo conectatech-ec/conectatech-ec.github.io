@@ -1,8 +1,5 @@
 name: Verificar integración del observador 593
 on:
-  push:
-    branches: ['sincronizacion/observador-593-20261126']
-    paths: ['scripts/observador-593/**', '.github/workflows/observador-593-verificacion.yml', '.github/workflows/publicar-corte-comercial-593.yml']
   pull_request:
     paths: ['scripts/observador-593/**', '.github/workflows/observador-593-verificacion.yml', '.github/workflows/publicar-corte-comercial-593.yml']
 permissions:
@@ -13,6 +10,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/observador-593
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -28,3 +27,4 @@ jobs:
           node test-integration.mjs
           python test-publisher-entry.py
           python test-install-receiver.py
+          python test-repair-auth.py

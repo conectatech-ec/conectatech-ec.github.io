@@ -8,6 +8,7 @@ const b64=x=>Buffer.from(JSON.stringify(x)).toString('base64url');
 const claims={iss:'https://accounts.google.com',aud:audience,sub:subject,email:'conectatech.ecu@gmail.com',email_verified:true,iat:Math.floor(now/1000),exp:Math.floor(now/1000)+3600};
 async function token(change={},header={}){let data=b64({alg:'RS256',kid:'fixture',...header})+'.'+b64({...claims,...change});return data+'.'+Buffer.from(await crypto.subtle.sign('RSASSA-PKCS1-v1_5',privateKey,Buffer.from(data))).toString('base64url');}
 let tests=0;async function test(name,fn){await fn();tests++;console.log('PASS '+name);}
+await test('fallo de claves expone sólo código fijo',async()=>{let reason;assert.equal(await verifyObserverIdentity(await token(),{...opts,fetcher:async()=>{throw Error('PRIVATE_RESPONSE');},onFailure:x=>reason=x}),false);assert.equal(reason,'KEY_FETCH');});
 await test('firma RSA e identidad empresarial correctas',async()=>assert.equal(await verifyObserverIdentity(await token(),opts),true));
 for(const [name,change] of Object.entries({audience:{aud:'other'},owner:{email:'other@gmail.com'},subject:{sub:'999999999999999999999'},expired:{exp:Math.floor(now/1000)-1},unverified:{email_verified:false},issuer:{iss:'https://attacker.example'}}))await test('rechaza '+name,async()=>assert.equal(await verifyObserverIdentity(await token(change),opts),false));
 await test('rechaza firma alterada',async()=>{let t=await token();const p=t.split('.');p[1]=b64({...claims,exp:claims.exp+1});assert.equal(await verifyObserverIdentity(p.join('.'),opts),false);});

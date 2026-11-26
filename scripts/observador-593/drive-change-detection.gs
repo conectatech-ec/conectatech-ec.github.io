@@ -104,6 +104,7 @@ function ct593Http(path, method, bytes, headers) {
   try { body=JSON.parse(r.getContentText()); } catch(e) { throw Error('RECEIVER_RESPONSE_INVALID'); }
   if (status===404 && /^\/commercial\/status\?/.test(path)) return null;
   if (status===409 && body.error==='PREVIOUS_REPORT_PENDING') return {busy:true};
+  if (status===401 && ['IDENTITY','KEY_FETCH','KEY_MISSING','KEY_IMPORT','SIGNATURE'].indexOf(body.observer_auth)>=0) throw Error('RECEIVER_AUTH_'+body.observer_auth);
   if (status<200 || status>=300) throw Error('RECEIVER_HTTP_'+status);
   return body;
 }
@@ -180,6 +181,16 @@ function comprobar593() {
   var result={contract:CT593_VERSION,mode:config.mode,owner:identity.claims.email,
     audience:identity.claims.aud,subject:identity.claims.sub,script_id:ScriptApp.getScriptId(),
     own_triggers:ScriptApp.getProjectTriggers().map(function(t){return {handler:t.getHandlerFunction(),id:t.getUniqueId()};})};
+  console.log(JSON.stringify(result));return result;
+}
+function comprobarReceptor593() {
+  ct593Config();
+  var started=Date.now(), status=ct593Http('/commercial/status');
+  if(status.observer_contract!==CT593_VERSION)throw Error('RECEIVER_CONTRACT_MISMATCH');
+  var result={stage:'receiver_identity_verified',at:new Date().toISOString(),
+    duration_ms:Date.now()-started,contract:status.observer_contract,
+    automatic_trigger_configured:status.automatic_trigger_configured===true,
+    pending:status.pending===true};
   console.log(JSON.stringify(result));return result;
 }
 function activar593() {

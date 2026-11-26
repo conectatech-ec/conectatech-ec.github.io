@@ -7,29 +7,35 @@ const JWKS='https://www.googleapis.com/oauth2/v3/certs';
 let keyCache={until:0,checked:0,keys:[]};
 const reply=(data,status)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 function decode(value){return Uint8Array.from(atob(value.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));}
-export async function verifyObserverIdentity(token,{now=Date.now(),fetcher=fetch,audience=AUDIENCE,subject=SUBJECT,owner=OWNER}={}){
+export async function verifyObserverIdentity(token,{now=Date.now(),fetcher=fetch,audience=AUDIENCE,subject=SUBJECT,owner=OWNER,onFailure=()=>{}}={}){
+ let stage='IDENTITY';
+ const reject=code=>{onFailure(code);return false;};
  try{
-  if(typeof token!=='string'||token.length>12000||!/^\d{10,30}$/.test(subject))return false;
-  const pieces=token.split('.');if(pieces.length!==3)return false;
+  if(typeof token!=='string'||token.length>12000||!/^\d{10,30}$/.test(subject))return reject(stage);
+  const pieces=token.split('.');if(pieces.length!==3)return reject(stage);
   const header=JSON.parse(new TextDecoder().decode(decode(pieces[0]))),claims=JSON.parse(new TextDecoder().decode(decode(pieces[1])));
   const second=Math.floor(now/1000);
   if(header.alg!=='RS256'||!/^[-A-Za-z0-9_]{1,128}$/.test(header.kid||'')||
      !['accounts.google.com','https://accounts.google.com'].includes(claims.iss)||claims.aud!==audience||
      claims.sub!==subject||claims.email!==owner||claims.email_verified!==true||
      !Number.isInteger(claims.exp)||claims.exp<=second||!Number.isInteger(claims.iat)||
-     claims.iat>second+60||claims.exp-claims.iat>7200)return false;
+     claims.iat>second+60||claims.exp-claims.iat>7200)return reject(stage);
+  stage='KEY_FETCH';
   if(keyCache.until<=now||(!keyCache.keys.some(k=>k.kid===header.kid)&&now-keyCache.checked>60000)){
-   const r=await fetcher(JWKS,{redirect:'error',signal:AbortSignal.timeout(10000)});if(!r.ok)return false;
-   const text=await r.text();if(text.length>50000)return false;const data=JSON.parse(text);
-   if(!Array.isArray(data.keys)||data.keys.length>20)return false;
+   const r=await fetcher(JWKS,{redirect:'error',signal:AbortSignal.timeout(10000)});if(!r.ok)return reject(stage);
+   const text=await r.text();if(text.length>50000)return reject(stage);const data=JSON.parse(text);
+   if(!Array.isArray(data.keys)||data.keys.length>20)return reject(stage);
    const maxAge=Math.min(3600,Number(/max-age=(\d+)/.exec(r.headers.get('Cache-Control')||'')?.[1]||300));
    keyCache={until:now+maxAge*1000,checked:now,keys:data.keys};
   }
   const jwk=keyCache.keys.find(k=>k.kid===header.kid&&k.kty==='RSA'&&(!k.alg||k.alg==='RS256'));
-  if(!jwk)return false;
+  if(!jwk)return reject('KEY_MISSING');
+  stage='KEY_IMPORT';
   const key=await crypto.subtle.importKey('jwk',jwk,{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
-  return await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,decode(pieces[2]),new TextEncoder().encode(pieces[0]+'.'+pieces[1]));
- }catch{return false;}
+  stage='SIGNATURE';
+  const valid=await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,decode(pieces[2]),new TextEncoder().encode(pieces[0]+'.'+pieces[1]));
+  return valid||reject(stage);
+ }catch{return reject(stage);}
 }
 export function observerRoute(url,method){
  const u=new URL(url);
@@ -42,7 +48,8 @@ export async function handleObserverRequest(req,env,{verify=verifyObserverIdenti
  const auth=req.headers.get('Authorization')||'';
  if(auth==='Bearer '+env.PILOT_TOKEN)return null; // Existing private operator path is untouched.
  if(!observerRoute(req.url,req.method))return null;
- if(!await verify(auth.startsWith('Bearer ')?auth.slice(7):''))return reply({error:'Unauthorized'},401);
+ let failure='IDENTITY';
+ if(!await verify(auth.startsWith('Bearer ')?auth.slice(7):'',{onFailure:code=>{failure=code;}}))return reply({error:'Unauthorized',observer_auth:failure},401);
  let body=req.body;
  const path=new URL(req.url).pathname;
  if(path==='/commercial/complete'){
