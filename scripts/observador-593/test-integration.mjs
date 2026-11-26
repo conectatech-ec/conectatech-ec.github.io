@@ -18,9 +18,10 @@ await test('despacho usa únicamente publicador y rama originales',async()=>{
  let got;assert.equal(await dispatchReport(env,sha,{fetcher:async(url,options)=>{got={url,options};return new Response(null,{status:204});}}),'triggered');
  assert.ok(got.url.endsWith('/actions/workflows/publicar-corte-comercial-593.yml/dispatches'));
  assert.deepEqual(JSON.parse(got.options.body),{ref:'automatizacion/piloto-cloud-3sku-20261015',inputs:{source_sha256:sha,verify_only:false}});
- assert.equal(got.options.redirect,'error');
+ assert.equal(got.options.redirect,'manual');
 });
 await test('errores de despacho no se presentan como éxito',async()=>{
+ assert.equal(await dispatchReport(env,sha,{fetcher:async()=>new Response(null,{status:302,headers:{Location:'https://untrusted.invalid'}})}),'dispatch_denied');
  assert.equal(await dispatchReport(env,sha,{fetcher:async()=>new Response(null,{status:403})}),'dispatch_denied');
  assert.equal(await dispatchReport(env,sha,{fetcher:async()=>{throw Error('timeout');}}),'dispatch_unavailable');
 });

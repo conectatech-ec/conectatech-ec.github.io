@@ -23,7 +23,7 @@ export async function verifyObserverIdentity(token,{now=Date.now(),fetcher=fetch
   stage='KEY_FETCH';
   if(keyCache.until<=now||(!keyCache.keys.some(k=>k.kid===header.kid)&&now-keyCache.checked>60000)){
    stage='KEY_SIGNAL';const signal=AbortSignal.timeout(10000);stage='KEY_FETCH';
-   const r=await fetcher(JWKS,{redirect:'error',signal});if(!r.ok)return reject('KEY_HTTP_'+r.status);
+   const r=await fetcher(JWKS,{redirect:'manual',signal});if(!r.ok)return reject('KEY_HTTP_'+r.status);
    stage='KEY_BODY';const text=await r.text();if(text.length>50000)return reject(stage);
    stage='KEY_JSON';const data=JSON.parse(text);
    stage='KEY_SCHEMA';

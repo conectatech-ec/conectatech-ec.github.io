@@ -10,7 +10,7 @@ export async function dispatchReport(env,sha,{fetcher=fetch}={}){
  if(!sha64(sha))return 'invalid_source';
  try{
   const r=await fetcher('https://api.github.com/repos/'+repo+'/actions/workflows/'+workflow+'/dispatches',{
-   method:'POST',redirect:'error',signal:AbortSignal.timeout(10000),
+   method:'POST',redirect:'manual',signal:AbortSignal.timeout(10000),
    headers:{Authorization:'Bearer '+env.COMMERCIAL_ACTIONS_TOKEN,Accept:'application/vnd.github+json',
     'Content-Type':'application/json','User-Agent':'CONECTATECH-593','X-GitHub-Api-Version':'2022-11-28'},
    body:JSON.stringify({ref:branch,inputs:{source_sha256:sha,verify_only:false}})});
@@ -19,7 +19,7 @@ export async function dispatchReport(env,sha,{fetcher=fetch}={}){
 }
 export async function verifyPublished593(sha,commit,validation,{fetcher=fetch}={}){
  if(!sha64(sha)||!/^([a-f0-9]{40})$/.test(commit||'')||!validation)return false;
- const options={redirect:'error',signal:AbortSignal.timeout(10000),headers:{Accept:'application/vnd.github+json','User-Agent':'CONECTATECH-593'}};
+ const options={redirect:'manual',signal:AbortSignal.timeout(10000),headers:{Accept:'application/vnd.github+json','User-Agent':'CONECTATECH-593'}};
  try{
   const [stateResponse,ancestryResponse]=await Promise.all([
    fetcher('https://raw.githubusercontent.com/'+repo+'/'+commit+'/datos-593/estado-ultimo-corte.json',options),
