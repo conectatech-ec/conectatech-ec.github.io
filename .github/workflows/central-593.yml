@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   ingresar:
-    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-revision-read]')
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-revision-read]') && !contains(github.event.head_commit.message, '[checkout-private-396]')
     environment: conectatech-piloto-gratis
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -246,3 +246,77 @@ jobs:
           name: checkout-github-revision-read
           path: automatizacion/generated/fase2/github-revision-read.json
           retention-days: 1
+
+  prueba_privada_checkout_396:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-private-396]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: execution
+          fetch-depth: 2
+          persist-credentials: false
+          sparse-checkout: automatizacion/ejecucion-pr396
+      - uses: actions/checkout@v4
+        with:
+          ref: 01e1b03fb90d0feca007c76a298470cd9fffd803
+          path: approved
+          persist-credentials: false
+          sparse-checkout: automatizacion
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Lectura autenticada y respaldo cifrado antes de cualquier PUT
+        run: python execution/automatizacion/ejecucion-pr396/run.py --prepare
+        env:
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          GITHUB_TOKEN: ${{ github.token }}
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_EXECUTION_OUTPUT: ${{ github.workspace }}/checkout-pr396-evidence
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar respaldo recuperable antes de la instalacion
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr396-backup-sealed
+          path: checkout-pr396-evidence/backup.sealed.json
+          retention-days: 1
+          if-no-files-found: error
+      - name: Una instalacion temporal, una prueba sintetica y reversion especifica
+        run: python execution/automatizacion/ejecucion-pr396/run.py --run
+        env:
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          GITHUB_TOKEN: ${{ github.token }}
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_EXECUTION_OUTPUT: ${{ github.workspace }}/checkout-pr396-evidence
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Verificar recuperacion incluso si falla el paso anterior
+        if: always()
+        run: python execution/automatizacion/ejecucion-pr396/run.py --recover
+        env:
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          GITHUB_TOKEN: ${{ github.token }}
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_EXECUTION_OUTPUT: ${{ github.workspace }}/checkout-pr396-evidence
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar recibo sin datos privados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr396-remote-receipt
+          path: checkout-pr396-evidence/receipt.json
+          retention-days: 7
+          if-no-files-found: error
