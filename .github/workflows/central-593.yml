@@ -271,7 +271,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Lectura autenticada y respaldo cifrado antes de cualquier PUT
+      - name: Lectura autenticada y diagnostico preciso antes de cualquier PUT
         run: python execution/.github/scripts/checkout-pr396-run.py --prepare
         env:
           CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
