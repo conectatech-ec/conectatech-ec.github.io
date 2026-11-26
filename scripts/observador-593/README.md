@@ -1,13 +1,21 @@
-# Observador 593 en implementación
+# Integración del observador empresarial 593
 
-Autorización del propietario: 26/11/2026. Cuenta exclusiva CONECTATECH; costo adicional máximo $0.
+Autorización del propietario: 26/11/2026. Cuenta exclusiva CONECTATECH. Costo adicional máximo $0.
 
-El observador faltante fue reconstruido y guardado en Apps Script, sin activador. Su modo inicial es OBSERVE. No interpreta XLSX ni publica inventario. El transporte de identidad está preparado pero no instalado en el Worker: el sujeto Google debe comprobarse y fijarse tras el consentimiento.
+Google ya autorizó lectura de Drive, identificación empresarial, solicitudes externas y activadores. La primera comprobación real terminó correctamente; una observación manual tardó 2059 ms, encontró el SHA vigente y no envió ni publicó nada. El modo permanece OBSERVE y no existe activador instalado.
 
-Pruebas locales: `node test-observer.cjs` (17) y `node test-observer-auth.mjs` (14), todas aprobadas. Son pruebas sintéticas; no equivalen a funcionamiento automático.
+El delta enlaza el observador reconstruido con el receptor original y el mismo workflow publicar-corte-comercial-593.yml, grupo publicacion-stock-593-web. Reutiliza el normalizador original, el adaptador vigente, el prepare del publicador, las reservas existentes, el CAS sin force y los pasos de exportación. Los originales privados sólo viven temporalmente fuera del checkout. Un recibo processed exige commit publicado, fuente exacta y ascendencia en main. Una falta de XLSX previo exigido por el validador deja el caso al supervisor, sin rebajar controles.
 
-La lectura autenticada del receptor existente terminó con HTTP 200 en el run 45885272046. Receptor vacío, despacho no configurado y credencial COMMERCIAL_ACTIONS_TOKEN ausente también en el entorno. La configuración CF_FREE_ONLY_CONFIRMED se mantiene true. No se modificaron módulos del Worker.
+Pruebas locales: 17 del observador, 14 de autenticación, 12 de recepción/despacho/concurrencia, 14 de entrada al publicador y 7 de instalación/reversión: 64 casos. Las pruebas nuevas usan datos sintéticos y no constituyen evidencia de ejecución automática.
 
-Pendiente: consentimiento OAuth de Google, credencial restringida de despacho, adaptación del receptor/publicador original y pruebas remotas. No fusionar ni activar este borrador hasta completar esos puntos. Mantener el supervisor horario con su entrada actual mientras se prepara el cambio a la recepción común.
+La instalación modifica dos módulos existentes (worker.mjs, exclusivamente dos inserciones de enrutamiento, y commercial-reception.mjs) y añade dos adaptadores. El transporte original /content conserva bindings y todos los demás módulos. Antes de escribir comprueba los hashes exactos de ambas bases y una segunda captura completa. La inversa sólo restaura el delta propio y conserva trabajo ajeno concurrente.
 
-El código no contiene credenciales ni IDs privados de carpetas. La configuración de carpeta permanece sólo en Script Properties. No modificar SIGNATURE ni checkout.
+Pendiente operativo: instalar/verificar integración, credencial empresarial restringida al repositorio con Actions escritura, sonda remota del publicador, habilitación controlada y tres ciclos temporizados reales. COMMERCIAL_ACTIONS_TOKEN no existe actualmente. COMMERCIAL_OBSERVER_READY debe establecerse en CT593_OBSERVER_V1 únicamente tras la sonda satisfactoria. Apps Script requiere asimismo CT593_MODE=LIVE y CT593_ACTIVATION_READY=CT593_OBSERVER_V1. No activar código incompleto.
+
+Supervisor horario original 6adad3f094348191a06cddc02be4686c conserva su entrada y horario hasta completar el enlace común. SIGNATURE y checkout no se modifican. No se extrae la credencial de la conexión GitHub y no se amplían los permisos de Google.
+
+## Pruebas
+
+Desde esta carpeta: python patch-receiver.py; node test-observer.cjs; node test-observer-auth.mjs; node test-integration.mjs; python test-publisher-entry.py; python test-install-receiver.py.
+
+Las dos bases públicas bajo base/ son fixtures del delta, verificadas contra los SHA del despliegue original. No son un despliegue paralelo ni un receptor ejecutable separado. candidate/ se genera sólo para pruebas. Los módulos privados ajenos nunca se guardan ni publican.

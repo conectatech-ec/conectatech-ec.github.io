@@ -2,7 +2,7 @@
 // No persistent Google access token and no access to other Worker routes.
 const OWNER='conectatech.ecu@gmail.com';
 const AUDIENCE='305117727240-us52oigt57o2sr79rdmubjl1flg60t97.apps.googleusercontent.com';
-const SUBJECT='__VERIFIED_ENTERPRISE_GOOGLE_SUBJECT__';
+const SUBJECT='111975171355729543543';
 const JWKS='https://www.googleapis.com/oauth2/v3/certs';
 let keyCache={until:0,checked:0,keys:[]};
 const reply=(data,status)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
