@@ -1,0 +1,63 @@
+{
+  "schema": "conectatech.checkout-observer-compatibility.v1",
+  "pr396_commit": "cfc7c9d2629f85faa37ee9fb590a81ed1697ce52",
+  "pr416_commit": "32ee93658bf226cc50feea2fa4917bf1d130a685",
+  "worker_read_run": 45900222616,
+  "worker_read_job": 140183904518,
+  "worker_writes": 0,
+  "active_modules_sha256": {
+    "worker.mjs": "e0dc4f7303447e45d57fb94933030597dbfda2dabfb0f2bb94ac85229f8393ec",
+    "checkout-store.mjs": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea",
+    "observer-dispatch.mjs": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+    "shared-hub.mjs": "a6a54d835d734dddfb379bb04e87c90ff63eb61f0a0313d31f49e2e20ecbccd6",
+    "source-attestations.mjs": "a8686008f2386c8839af0b90d3c408dffa932faf1e6803cec940404959148ece",
+    "checkout-config.mjs": "291531ae313419e9f897fe639df956590d1c04490eafc17cbc4ec0f8965241c6",
+    "checkout-entry.mjs": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+    "messenger-store.mjs": "f77dd1a5e253beef8a52fdd3a43b01f4e995c68953566f7c3052c6eb099c3047",
+    "observer-auth.mjs": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+    "commercial-reception.mjs": "10e5705d99c34fd98719f6ec19f2ae07d528e45fc3c18dcba8ac229c15653668"
+  },
+  "receiver": {
+    "pending": false,
+    "status": "empty",
+    "automatic_trigger_configured": false,
+    "retention_hours": 24,
+    "processor_release": "e5ac06df086130a6776205250dd4d96c65882797",
+    "processor_code_sha256": "6287802a95e7cb1ecc86316ff5f7de24f9c29dcf856388ecda4e0193d37e3e76"
+  },
+  "dispatch_secret_available": false,
+  "observer_install_run": 45897858422,
+  "observer_adapter_update_run": 45899331248,
+  "observer_publisher_probe_run": 45899753088,
+  "observer_ci_run": 45899624048,
+  "observer_ci_conclusion": "success",
+  "worker_write_concurrency": {
+    "group": "comercial-cloud-piloto",
+    "cancel_in_progress": false
+  },
+  "publisher_concurrency": {
+    "group": "publicacion-stock-593-web",
+    "cancel_in_progress": false
+  },
+  "new_compatibility_tests_passed": 6,
+  "previous_source_tests_preserved": 29,
+  "previous_tests_repeated": false,
+  "current_public_cut": {
+    "cut_date": "2026-11-25",
+    "sequence": 6,
+    "source_sha256": "a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4",
+    "generated_at": "2026-11-26T02:31:39.000Z",
+    "expires_at": "2026-11-27T02:31:39.000Z",
+    "checkout_evidence_present": false
+  },
+  "private_test_old_window_expired": true,
+  "checkout_public_enabled": false,
+  "source_fix_installed": false,
+  "approval_status": "PENDING_SPECIFIC_SOURCE_INSTALLATION",
+  "cost_additional_usd": 0,
+  "pr416_tested_module_reference": "fba553f16b4f5a20fd3476d3d5a6dbecfc9563a7",
+  "pr416_merged": true,
+  "pr416_merge_commit": "d01b1fdb550d46c32599b5c46c31fbded641c0a8",
+  "observer_ci_cases_reported": 69,
+  "final_416_delta_does_not_change_installer_or_worker_modules": true
+}

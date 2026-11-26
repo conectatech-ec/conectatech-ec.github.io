@@ -12,7 +12,7 @@
     }
   ],
   "source_attestations_mjs_changed": false,
-  "legacy_registry_sha256_expected": "e32bfd077dff91bca70e9fd80d434c94e5457d2848fda20719fda2609379e968",
+  "legacy_registry_sha256_expected": "a8686008f2386c8839af0b90d3c408dffa932faf1e6803cec940404959148ece",
   "producer": {
     "path": "scripts/preparar-revision-comercial-593.py",
     "before_sha256": "944bfd31a1089469e6decdfd2d1a0249473e38a8d31e122ed2fa3ff7689e0cd7",
@@ -43,5 +43,38 @@
     "specific_recovery_on_failure": 1
   },
   "private_test_requires_valid_source_and_valid_window": true,
-  "cost_additional_usd": 0
+  "cost_additional_usd": 0,
+  "legacy_registry_public_snapshot_sha256": "e32bfd077dff91bca70e9fd80d434c94e5457d2848fda20719fda2609379e968",
+  "active_baseline_verification": {
+    "run_id": 45900222616,
+    "observer_commit": "32ee93658bf226cc50feea2fa4917bf1d130a685",
+    "active_modules_sha256": {
+      "worker.mjs": "e0dc4f7303447e45d57fb94933030597dbfda2dabfb0f2bb94ac85229f8393ec",
+      "checkout-store.mjs": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea",
+      "observer-dispatch.mjs": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+      "shared-hub.mjs": "a6a54d835d734dddfb379bb04e87c90ff63eb61f0a0313d31f49e2e20ecbccd6",
+      "source-attestations.mjs": "a8686008f2386c8839af0b90d3c408dffa932faf1e6803cec940404959148ece",
+      "checkout-config.mjs": "291531ae313419e9f897fe639df956590d1c04490eafc17cbc4ec0f8965241c6",
+      "checkout-entry.mjs": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+      "messenger-store.mjs": "f77dd1a5e253beef8a52fdd3a43b01f4e995c68953566f7c3052c6eb099c3047",
+      "observer-auth.mjs": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+      "commercial-reception.mjs": "10e5705d99c34fd98719f6ec19f2ae07d528e45fc3c18dcba8ac229c15653668"
+    },
+    "writes": 0,
+    "revalidate_immediately_before_put": true,
+    "observer_merge_commit": "d01b1fdb550d46c32599b5c46c31fbded641c0a8"
+  },
+  "coordination": {
+    "workflow_patch": "../coordinacion-416/observador416-validadores.patch",
+    "apply_to": [
+      "main",
+      "automatizacion/piloto-cloud-3sku-20261015"
+    ],
+    "code_write_concurrency_group": "comercial-cloud-piloto",
+    "publisher_concurrency_group": "publicacion-stock-593-web",
+    "new_compatibility_tests_passed": 6,
+    "workflow_before_sha256": "c07d5c9ec1d6f23a4dd2217bd0837e787199907caa7cb2cea5c3186c30264612",
+    "workflow_candidate_sha256": "ee982017317151bd4e6d0dfd9028d6459f35302a22d77d07ddf8c387eec31736",
+    "workflow_patch_sha256": "6b6a5d2f9f357809eed2220dd50f882e08c9846e7599d15d0bbc86fd510497cb"
+  }
 }
