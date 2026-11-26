@@ -1,0 +1,55 @@
+name: Verificar integración del observador 593
+on:
+  push:
+    branches: ['sincronizacion/observador-593-20261126']
+    paths: ['.github/workflows/observador-593-verificacion.yml']
+permissions:
+  contents: read
+jobs:
+  comprobar_receptor:
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Leer receptor existente y emitir solamente metadatos seguros
+        env:
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+        shell: python
+        run: |
+          import os,json,urllib.request,urllib.error,hashlib
+          from email.parser import BytesParser
+          from email import policy
+          report={'operation':'observer-593-read-only','writes':0,'free_only_confirmed':os.environ.get('CF_FREE_ONLY_CONFIRMED')=='true'}
+          def read(url,token):
+              req=urllib.request.Request(url,headers={'Authorization':'Bearer '+token},method='GET')
+              with urllib.request.urlopen(req,timeout=25) as r:
+                  return r.read(20000001),r.headers.get('Content-Type','')
+          if not report['free_only_confirmed']:
+              print(json.dumps(report));raise SystemExit('FREE_ONLY_NOT_CONFIRMED')
+          account=os.environ.get('CLOUDFLARE_ACCOUNT_ID','')
+          token=os.environ.get('CLOUDFLARE_API_TOKEN','')
+          if not account or not token:raise SystemExit('CF_READ_CREDENTIAL_MISSING')
+          base='https://api.cloudflare.com/client/v4/accounts/'+account
+          script=base+'/workers/scripts/conectatech-comercial-piloto'
+          try:
+              raw,_=read(script+'/settings',token)
+              settings=json.loads(raw)['result']
+              report['usage_model']=settings.get('usage_model')
+              report['bindings']=[{'name':b.get('name'),'type':b.get('type')} for b in settings.get('bindings',[])]
+              raw,ct=read(script+'/content/v2',token)
+              if len(raw)>20000000:raise ValueError('BUNDLE_LIMIT')
+              message=BytesParser(policy=policy.default).parsebytes(('Content-Type: '+ct+'\r\nMIME-Version: 1.0\r\n\r\n').encode()+raw)
+              report['modules']=[{'name':p.get_filename() or p.get_param('name',header='content-disposition'),'sha256':hashlib.sha256(p.get_payload(decode=True)).hexdigest(),'bytes':len(p.get_payload(decode=True))} for p in message.iter_parts()]
+          except urllib.error.HTTPError as e:
+              report['cf_read_http_status']=e.code
+          pilot=os.environ.get('PILOT_TOKEN','')
+          if pilot:
+              try:
+                  raw,_=read('https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/commercial/status',pilot)
+                  status=json.loads(raw)
+                  report['receiver']={k:status.get(k) for k in ('pending','status','automatic_trigger_configured','retention_hours','processor_release','processor_code_sha256')}
+              except urllib.error.HTTPError as e:report['receiver_http_status']=e.code
+          print('OBSERVER593_READ='+json.dumps(report,separators=(',',':')))
