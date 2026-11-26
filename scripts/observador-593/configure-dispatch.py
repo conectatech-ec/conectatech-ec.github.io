@@ -27,7 +27,7 @@ def github(opener,token,path,body=None):
         if len(raw)>1000000:raise ValueError('GITHUB_RESPONSE_LIMIT')
         return response.status,json.loads(raw) if raw else None
 def main():
-    p=argparse.ArgumentParser();p.add_argument('action',choices=['credential','ready','inspect']);p.add_argument('--probe-run');p.add_argument('--probe-head');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('action',choices=['credential','ready','inspect','probe']);p.add_argument('--probe-run');p.add_argument('--probe-head');a=p.parse_args()
     if os.environ.get('GITHUB_REF')!='refs/heads/'+BRANCH or os.environ.get('GITHUB_RUN_ATTEMPT')!='1':raise ValueError('EXISTING_PILOT_ONCE_REQUIRED')
     if os.environ.get('CF_FREE_ONLY_CONFIRMED')!='true' or os.environ.get('CT593_INSTALL_AUTHORIZATION')!='DG26_OBSERVADOR_593_IMPLEMENTACION_AUTORIZADA_V1':raise ValueError('AUTHORIZATION_REQUIRED')
     sys.path.insert(0,os.environ['CT593_ORIGINAL_TRANSPORT'])
@@ -45,6 +45,11 @@ def main():
     if any(actual.get(n)!=v for n,v in EXPECTED.items()):raise ValueError('ADAPTER_VERSION_CHANGED')
     if a.action=='inspect':
         print(json.dumps({'stage':'observer_binding_inspected','at':datetime.now(timezone.utc).isoformat(),'bindings':[{'name':b.get('name'),'type':b.get('type')} for b in before.get('bindings',[]) if b.get('name') in NAMES],'adapters_verified':True,'writes':0}));return
+    if a.action=='probe':
+        if not any(b.get('name')=='COMMERCIAL_ACTIONS_TOKEN' and b.get('type')=='secret_text' for b in before.get('bindings',[])):raise ValueError('CREDENTIAL_NOT_INSTALLED')
+        status,_=github(opener,token,'/actions/workflows/'+WORKFLOW+'/dispatches',{'ref':BRANCH,'inputs':{'source_sha256':'a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4','verify_only':True}})
+        if status!=204:raise ValueError('CREDENTIAL_DISPATCH_FAILED')
+        print(json.dumps({'stage':'observer_credential_probe_requested','at':datetime.now(timezone.utc).isoformat(),'http_status':status,'worker_writes':0,'publication_requested':False}));return
     name='COMMERCIAL_ACTIONS_TOKEN' if a.action=='credential' else 'COMMERCIAL_OBSERVER_READY'
     if any(b.get('name')==name for b in before.get('bindings',[])):raise ValueError('BINDING_ALREADY_EXISTS')
     if a.action=='ready' and not any(b.get('name')=='COMMERCIAL_ACTIONS_TOKEN' and b.get('type')=='secret_text' for b in before.get('bindings',[])):raise ValueError('CREDENTIAL_NOT_INSTALLED')
@@ -54,7 +59,7 @@ def main():
     with opener.open(req,timeout=45) as response:
         result=json.loads(response.read(100000))
         print(json.dumps({'stage':'observer_binding_response','http_status':response.status,'success':result.get('success') is True,'error_codes':[x.get('code') for x in result.get('errors',[]) if isinstance(x.get('code'),int)]}))
-        if response.status!=200 or result.get('success') is not True:raise ValueError('BINDING_INSTALL_FAILED')
+        if response.status not in (200,201) or result.get('success') is not True:raise ValueError('BINDING_INSTALL_FAILED')
     if not same_bundle(bundle,api.get_bundle()) or not unchanged_settings(before,api.get_settings(),name):raise ValueError('BINDING_POSTCHECK_FAILED')
     if a.action=='credential':
         status,_=github(opener,token,'/actions/workflows/'+WORKFLOW+'/dispatches',{'ref':BRANCH,'inputs':{'source_sha256':'a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4','verify_only':True}})
