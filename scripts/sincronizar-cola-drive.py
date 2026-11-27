@@ -147,7 +147,7 @@ def synchronize(files, rows, catalog, aliases, previous, source593=None, delta=F
             errors.append({'archivo':name,'motivo':'ID de Drive ausente o repetido'});continue
         seen.add(fid)
         # SKU exacto; el sufijo de fecha no crea un SKU ni una vista inventada.
-        match=re.fullmatch(r'([A-Za-z]+\d+[A-Za-z]*)(?:_\d{8}_\d{6}(?:_\d{1,6}_[a-f0-9]{8,64})?|-0[1-4]|\s*(?:-\s*)?PRINCIPAL)?\.(?:jpe?g|png|webp)',name,re.I)
+        match=re.fullmatch(r'([A-Za-z]+\d+[A-Za-z]*)(?:_\d{8}_\d{6}(?:_\d{1,6}_[a-f0-9]{8,64})?|-0[1-4]|\s*(?:-\s*)?PRINCIPAL|\s+-\s+[^/]+)?\.(?:jpe?g|png|webp)',name,re.I)
         if not match:
             errors.append({'archivo':name,'id':fid,'motivo':'Nombre sin SKU exacto reconocido'});continue
         raw=match[1].upper();sku=aliases.get(raw,raw)

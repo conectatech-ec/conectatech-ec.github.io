@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "PREPARACION_ALTAS_WEB_EMPRESARIALES",
+  "estado": "ACTIVA_ALTAS_EMPRESARIALES_CON_VALIDACION",
   "automation_id": "6ac9dd11c30c8191acaedf24ef4ffea4",
   "titulo": "Continuar catálogo CONECTATECH",
   "frecuencia": "HOURLY",
@@ -28,9 +28,35 @@
     "registro_personal_retirado": true
   },
   "programacion_verificada": {
-    "habilitada": false,
+    "habilitada": true,
     "horario_original_conservado": true,
-    "nota": "Prompt modernizado en la misma tarea original; reactivación pendiente de integrar el código y registrar su lectura posterior. Configuración no acredita ejecución."
+    "actualizada_en": "2026-11-27T00:44:54.777268+00:00",
+    "proxima_ejecucion_local": "2026-11-26T20:38:00-05:00",
+    "prompt_sha256": "e50a6701960f054414754e8c2dddb67d9890eca72848bfad57ba08c2383c1db5",
+    "lectura_posterior_coincidente": true,
+    "ejecucion_programada_nueva_verificada": false,
+    "prueba_inmediata": {
+      "solicitada": true,
+      "invocada": false,
+      "error": "HTTP404_ACTION_NOT_FOUND",
+      "esEjecucionProgramada": false
+    },
+    "nota": "La misma tarea original está habilitada; el endpoint de prueba inmediata devolvió404 antes de invocar. No acredita una ejecución programada ni publicaciones integrales."
   },
-  "coordinacion": "Contrato CT_SIGNATURE_HANDOFF_V1 en issue91, sólo delta verificado. Observador593, supervisor, Fábrica y Merchant intactos."
+  "coordinacion": "Contrato CT_SIGNATURE_HANDOFF_V1 en issue91, sólo delta verificado. Observador593, supervisor, Fábrica y Merchant intactos.",
+  "recuperacion_altas136": {
+    "rama": "archivo/altas-136-preparacion-20261126",
+    "commit": "3710b78aea2e490e2aafe758cab1472713ae9322",
+    "archivo": "reportes/continuacion-136/recuperacion/README.md",
+    "sha256_facts": "a8e4ad47c05bb0f4cc9dfdf5ea8bce16b331031a91a48a6ac89746711a92e9b6",
+    "altas_preparadas": [
+      "PARL017",
+      "MOUS047",
+      "PET001"
+    ],
+    "pendiente_fidelidad": [
+      "TECL034"
+    ],
+    "condicion_activacion": "Corte593R7 auténtico validado/publicado por flujo original y recursos HTTP/SHA."
+  }
 }

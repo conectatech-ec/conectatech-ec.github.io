@@ -78,6 +78,18 @@ class QueueAltasTests(unittest.TestCase):
         self.files[0]['nombre']='MOUS047unknown_suffix.jpg'
         self.assertFalse(self.run_queue(source=source)['productos'])
 
+    def test_company_commercial_filename_keeps_sku_identity(self):
+        self.new_photo('NEW001')
+        self.files[0]['nombre']='NEW001 - Marca - 128 GB - RAM Hasta 8 GB.png'
+        source=queue.load_source593(self.root/'datos-593/cut.json',self.root)
+        result=self.run_queue(rows=[],source=source)
+        self.assertEqual(list(result['productos']),['NEW001'])
+        self.assertEqual(result['productos']['NEW001']['estado'],'REVISAR')
+        self.assertEqual(result['productos']['NEW001']['fotos'][0]['nombre'],self.files[0]['nombre'])
+        self.files[0]['nombre']='NEW001unknown - Marca.png'
+        result=self.run_queue(rows=[],source=source)
+        self.assertNotIn('NEW001',result['productos'])
+
     def test_source_rejects_mismatched_state_attestation_or_boolean_sequence(self):
         for field,value in [('source_sha256','d'*64),('cut_date','2026-11-26'),('revision_sequence',True)]:
             cut=copy.deepcopy(self.cut);cut['evidencia_checkout'][field]=value

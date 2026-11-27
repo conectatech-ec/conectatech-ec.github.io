@@ -1,0 +1,56 @@
+{
+  "fecha": "2026-11-27T00:51:36.859034+00:00",
+  "zonaHoraria": "America/Guayaquil",
+  "tareaOriginal": {
+    "id": "6ac9dd11c30c8191acaedf24ef4ffea4",
+    "habilitada": true,
+    "horario": "BEGIN:VEVENT\nDTSTART;TZID=America/Guayaquil:20261010T023800\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "proxima": "2026-11-26T20:38:00-05:00",
+    "actualizada": "2026-11-27T00:44:54.777268+00:00",
+    "promptChars": 8918,
+    "entorno": "inherited",
+    "detallesEntornoDisponibles": false,
+    "ejecucionInmediata": {
+      "solicitada": true,
+      "invocada": false,
+      "error": "HTTP404_ACTION_NOT_FOUND",
+      "esEjecucionProgramada": false
+    },
+    "ejecucionProgramadaNuevaVerificada": false
+  },
+  "colaOriginal": "importacion/cola-drive.json",
+  "registroPersonalRetirado": true,
+  "sinNuevosObservadoresCronReceptoresBasesPublicadores": true,
+  "pruebas": {
+    "colaAltas": 25,
+    "incrementalidad": 9,
+    "pipelineOriginalMain": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/45918462374",
+    "ciCabezaExacta": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/45917800746",
+    "deltaRealRepetido": {
+      "estado": "VERIFICADO",
+      "fotografias": 13,
+      "skuSinReencolarPorContenido": 4,
+      "cambios": 0,
+      "watermarkConservado": true,
+      "revisionMediosConservada": true,
+      "reglasComercialesSinCambios": true,
+      "repoSinEscrituras": true
+    }
+  },
+  "gateAltaR7": {
+    "estado": "GUARDA_CORRECTA",
+    "fecha": "2026-11-27T00:46:45.926756+00:00",
+    "motivo": "R7_PENDIENTE: el corte y el estado globales aún no corresponden al XLSX exacto",
+    "sinEscrituras": true,
+    "sinBackupActivacion": true,
+    "sinInvocar593": true,
+    "noCuentaComoAltaPublicada": true
+  },
+  "estadoCanales": {
+    "web_nuevas_fichas": "PENDIENTE_CORTE593_VALIDADO",
+    "sincronizacion_signature": "DEPENDENCIA_COMUNICADA_EN_CONTRATO_EXISTENTE_NO_HANDOFF_DE_PUBLICACION",
+    "merchant": "SIN_ACCIONES"
+  },
+  "coordinacion": "https://github.com/conectatech-ec/conectatech-ec.github.io/issues/91#issuecomment-7206458257",
+  "costoAdicional": 0
+}
