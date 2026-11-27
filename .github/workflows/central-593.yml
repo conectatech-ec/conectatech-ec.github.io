@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   ingresar:
-    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-revision-read]') && !contains(github.event.head_commit.message, '[checkout-private-396]') && !contains(github.event.head_commit.message, '[observer593-read]') && !contains(github.event.head_commit.message, '[observer593-install]') && !contains(github.event.head_commit.message, '[observer593-probe]') && !contains(github.event.head_commit.message, '[observer593-prepare]') && !contains(github.event.head_commit.message, '[observer593-credential]') && !contains(github.event.head_commit.message, '[observer593-ready]')
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-revision-read]') && !contains(github.event.head_commit.message, '[checkout-private-396]') && !contains(github.event.head_commit.message, '[observer593-read]') && !contains(github.event.head_commit.message, '[observer593-install]') && !contains(github.event.head_commit.message, '[observer593-probe]') && !contains(github.event.head_commit.message, '[observer593-prepare]') && !contains(github.event.head_commit.message, '[observer593-credential]') && !contains(github.event.head_commit.message, '[observer593-ready]') && !contains(github.event.head_commit.message, '[checkout-source-396]')
     environment: conectatech-piloto-gratis
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -501,3 +501,62 @@ jobs:
 # Observador 593: conectar credencial guardada por el titular; activar solo tras sonda.
 
 # Fuente #396: verificar identidades tras activacion de #416; solo lectura.
+
+  instalar_lector_fuente_396:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-source-396]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: execution
+          fetch-depth: 2
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+      - uses: actions/checkout@v4
+        with:
+          ref: bc581bf93ff39fcaff18863f91a5202a3325a8e8
+          path: approved
+          persist-credentials: false
+          sparse-checkout: automatizacion
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Capturar base vigente, validar evidencia y preparar respaldo cifrado sin PUT
+        run: python execution/.github/scripts/checkout-source-396.py --prepare
+        env: &source396_env
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_SOURCE_OUTPUT: ${{ github.workspace }}/checkout-source-evidence
+          CHECKOUT_SOURCE_INSTALL_AUTHORIZATION: DG-PR396-bc581bf9-SHARED-HUB-ONCE
+          GITHUB_TOKEN: ${{ github.token }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar respaldo recuperable antes del unico PUT autorizado
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-source396-backup-sealed
+          path: checkout-source-evidence/backup.sealed.json
+          retention-days: 1
+          if-no-files-found: error
+      - name: Sustituir solamente shared-hub.mjs y verificar preservacion integral
+        run: python execution/.github/scripts/checkout-source-396.py --install
+        env: *source396_env
+      - name: Recuperacion especifica ante fallo sin otro intento de instalacion
+        if: always()
+        run: python execution/.github/scripts/checkout-source-396.py --recover
+        env: *source396_env
+      - name: Conservar recibo tecnico sin datos privados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-source396-receipt
+          path: checkout-source-evidence/receipt.json
+          retention-days: 7
+          if-no-files-found: error
