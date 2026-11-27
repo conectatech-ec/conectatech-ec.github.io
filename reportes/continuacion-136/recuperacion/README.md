@@ -37,3 +37,5 @@ El helper exige la fuente R7 exacta, reproduce íntegra la atestación de checko
 Continuar con los mecanismos originales: compilar editorial, generar sólo los tres PDP seleccionados, validar contratos con el manifiesto136 y completar QA móvil, HTTP/Chromium públicos y CI de cabeza final. Registrar fechas o prioridad sólo después de esas pruebas. Conservar la selección comercial inicial de Recomendados. La preparación y el archivado no acreditan publicidad ni publicación.
 
 Esta activación136 es única: después de aplicarla, no reutilizar el helper para añadir TECL034 ni sobrescribir sus informes o backup. Mantener ese pendiente para un lote independiente revisado.
+
+Ajuste de precisión comercial: la referencia no confirma si se incluye un collar. La unidad descrita es un localizador; no afirmar inclusión ni exclusión de accesorios que no están documentados. La imagen aprobada muestra sólo el dispositivo.
