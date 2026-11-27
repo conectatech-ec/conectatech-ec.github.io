@@ -1,0 +1,85 @@
+{
+  "fecha": "2026-11-27T00:51:36.859034+00:00",
+  "zonaHoraria": "America/Guayaquil",
+  "tareaOriginal": {
+    "id": "6ac9dd11c30c8191acaedf24ef4ffea4",
+    "habilitada": true,
+    "horario": "BEGIN:VEVENT\nDTSTART;TZID=America/Guayaquil:20261010T023800\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "proxima": "2026-11-26T20:38:00-05:00",
+    "actualizada": "2026-11-27T00:56:27.198802+00:00",
+    "promptChars": 8918,
+    "entorno": "inherited",
+    "detallesEntornoDisponibles": false,
+    "ejecucionInmediata": {
+      "solicitada": true,
+      "invocada": false,
+      "error": "HTTP404_ACTION_NOT_FOUND",
+      "esEjecucionProgramada": false
+    },
+    "ejecucionProgramadaNuevaVerificada": false
+  },
+  "colaOriginal": "importacion/cola-drive.json",
+  "registroPersonalRetirado": true,
+  "sinNuevosObservadoresCronReceptoresBasesPublicadores": true,
+  "pruebas": {
+    "colaAltas": 25,
+    "incrementalidad": 9,
+    "pipelineOriginalMain": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/45918462374",
+    "ciCabezaExacta": "https://github.com/conectatech-ec/conectatech-ec.github.io/actions/runs/45917800746",
+    "deltaRealRepetido": {
+      "estado": "VERIFICADO",
+      "fotografias": 13,
+      "skuSinReencolarPorContenido": 4,
+      "cambios": 0,
+      "watermarkConservado": true,
+      "revisionMediosConservada": true,
+      "reglasComercialesSinCambios": true,
+      "repoSinEscrituras": true
+    }
+  },
+  "gateAltaR7": {
+    "estado": "GUARDA_CORRECTA",
+    "fecha": "2026-11-27T00:46:45.926756+00:00",
+    "motivo": "R7_PENDIENTE: el corte y el estado globales aún no corresponden al XLSX exacto",
+    "sinEscrituras": true,
+    "sinBackupActivacion": true,
+    "sinInvocar593": true,
+    "noCuentaComoAltaPublicada": true
+  },
+  "estadoCanales": {
+    "web_nuevas_fichas": "PENDIENTE_CORTE593_VALIDADO",
+    "sincronizacion_signature": "DEPENDENCIA_COMUNICADA_EN_CONTRATO_EXISTENTE_NO_HANDOFF_DE_PUBLICACION",
+    "merchant": "SIN_ACCIONES"
+  },
+  "coordinacion": "https://github.com/conectatech-ec/conectatech-ec.github.io/issues/91#issuecomment-7206458257",
+  "costoAdicional": 0,
+  "recuperacionPreparada": {
+    "commit": "f02eab7fc7f5d5d8da07e1bdd2deabe84bfcb845",
+    "lecturaHTTP_SHA": [
+      {
+        "archivo": "reportes/continuacion-136/recuperacion/facts.json",
+        "http": 200,
+        "sha256": "7db4db5aa5b0658d55471aab2c9f955fc4ab0f70ff20516e9091928b29ebe76a",
+        "coincide": true
+      },
+      {
+        "archivo": "reportes/continuacion-136/recuperacion/recursos-locales.json",
+        "http": 200,
+        "sha256": "9c486367d805f044d431eb1655416d65deee8bd78c94a6d7f9735303e7751f07",
+        "coincide": true
+      },
+      {
+        "archivo": "reportes/continuacion-136/recuperacion/preparar-alta136.py",
+        "http": 200,
+        "sha256": "1c5de11be32512ac9d42b4120783dfe3f04bdfddf65e6f10bcf62b38cf35929e",
+        "coincide": true
+      },
+      {
+        "archivo": "reportes/continuacion-136/recuperacion/README.md",
+        "http": 200,
+        "sha256": "e3506e2e318a4e9c1c7d17da40e1c844a6a445e46256648c244e6cb9d8d2f803",
+        "coincide": true
+      }
+    ]
+  }
+}
