@@ -1,0 +1,133 @@
+{
+  "fecha_verificacion": "2026-11-07T20:49:27.995231-05:00",
+  "estado": "PREPARADO_EN_DESARROLLO_NO_ACTIVAR",
+  "costo_adicional": 0,
+  "moneda": "USD",
+  "origen_bloqueo": {
+    "archivo": "google-merchant/generar.py",
+    "funcion": "candidate",
+    "commit": "e00c0f79e2fba5aa0a5ee29a0506a7f5b41f4548",
+    "fecha": "2026-10-16",
+    "motivo": "Bloqueo de seguridad por compra completa, precio final, envíos y devoluciones pendientes. Sigue pendiente de cierre comercial y autorización; no es un error de Merchant.",
+    "segunda_barrera": ".github/workflows/google-merchant.yml exige Free_listings en todos los artículos antes de escribir la rama del feed; se conserva sin cambios."
+  },
+  "fuentes": {
+    "main_solo_lectura": "9f702e4231d2642c1e4760b1e3cd5494cf75a89e",
+    "desarrollo_feed": "064b792687de07869b84cca653f476c03668d2f6",
+    "feed_publicado": "3b0b943009d65f3031b47f8b1ba23e5c1c8d3d7e",
+    "pr_313": "8ac3d8b5d7dc5ba74399895b2ac4c10ff2a47ef8",
+    "fecha_corte_593": "2026-11-06"
+  },
+  "resultado": {
+    "productos_origen": 1199,
+    "articulos_xml": 315,
+    "disponibles_tecnicos": 307,
+    "agotados": 8,
+    "sku_agotados_sin_habilitar": [
+      "AUDI103",
+      "CASE003",
+      "CORT03",
+      "ESTAB005",
+      "EXTE003",
+      "JUGU084",
+      "JUGU154",
+      "MOUS011"
+    ],
+    "omitidos_por_controles": 884,
+    "motivos_omitidos": {
+      "enlaces_ficha_no_coinciden": 1,
+      "fotografia_no_aprobada": 4,
+      "identidad_pendiente": 4,
+      "imagen_no_coincide": 428,
+      "producto_no_aprobado": 194,
+      "publicacion_no_verificada": 249,
+      "sin_contrato": 1,
+      "sin_revision_limitada_corte16": 1,
+      "titulo_catalogo_no_coincide": 2
+    },
+    "productos_autorizables_hoy": 0,
+    "motivo_no_activacion": "Condiciones comerciales globales y autorización pendientes en PR #313."
+  },
+  "xml_normal": {
+    "identico_byte_por_byte_al_publicado": true,
+    "sha256": "8dd8104f81b38892eaabd7abdbce0622fd746cbd1ea2f37e0480d9c32eecbb37",
+    "free_listings_excluidos": 315,
+    "shopping_ads_excluidos": 315,
+    "verificacion_https": "315 fichas e imágenes comprobadas de nuevo; sin redirección, precio/disponibilidad y SHA de imágenes coincidentes."
+  },
+  "xml_simulacion": {
+    "archivo": "productos-ec.preview.xml",
+    "publicacion_habilitada": false,
+    "aprobacion_comercial_acreditada": false,
+    "alcance_sku": "sku-simulacion-20261107.json",
+    "sha256": "029efed561e87e09417f5eaed1ebde6476b74085a60e11b7b9c6af9ad570d666",
+    "operacion_unica": "Retirar g:excluded_destination=Free_listings de los 307 SKU seleccionados, condicionado a cerrar requisitos y obtener autorización.",
+    "free_listings_excluidos": 8,
+    "shopping_ads_excluidos": 315,
+    "altas_bajas_ids": 0,
+    "cambios_otros_campos": 0,
+    "reservas_884_identicas": true,
+    "exclusiones_sha256": "6219fad21e7a86c113ebe35ab0f53aebbe5fecb3e39f037ef8075decefa68872",
+    "no_cambian": [
+      "SKU",
+      "títulos y descripciones",
+      "precios",
+      "disponibilidad",
+      "inventario",
+      "imágenes",
+      "URLs",
+      "marca",
+      "categoría",
+      "identificadores",
+      "configuraciones comerciales"
+    ]
+  },
+  "compatibilidad_pr_313": {
+    "url": "https://github.com/conectatech-ec/conectatech-ec.github.io/pull/313",
+    "sin_archivos_de_codigo_comunes": true,
+    "pr_313_no_modificado": true,
+    "pruebas_compra_politicas": 56,
+    "config_sin_cambios": {
+      "enabled": false,
+      "freeListingsEnabled": false,
+      "adsEnabled": false,
+      "productionDeliveries": [],
+      "returnsOperationallyComplete": false
+    },
+    "limite": "Pruebas locales y comparación de fuentes; no acreditan compra HTTPS desplegada ni aprobación de Google."
+  },
+  "pruebas": {
+    "merchant": 17,
+    "compra_y_politicas_pr_313": 56,
+    "total": 73,
+    "resultado": "APROBADAS",
+    "comandos": [
+      "python -m unittest discover -s google-merchant -p test_*.py -v",
+      "python google-merchant/generar.py --root /workspace/work/fichas-gratuitas --inventory work/qa/inventario-limitado.json --output work/qa/normal --verify-public",
+      "python google-merchant/generar.py --root /workspace/work/fichas-gratuitas --inventory work/qa/inventario-limitado.json --output work/qa/simulacion --preview-free-listings work/qa/sku-simulacion.json",
+      "node --test compra/tests/motor.test.mjs compra/tests/integracion.test.mjs compra/tests/datahub-sqlite.test.mjs compra/cliente-contrato.test.mjs politicas/test-politica.mjs",
+      "node --test compra/tests/datahub-patch.test.mjs"
+    ],
+    "comparacion_xml": "315 artículos comparados por ID y por todos sus nodos; únicamente 307 exclusiones Free_listings retiradas en simulación; ocho agotados intactos."
+  },
+  "condiciones_para_autorizar": [
+    "Aprobar y publicar el alcance Quito contraentrega del PR #313, con pedido completo persistido en el Data Hub existente y prueba HTTPS real de confirmación/recibo, revalidación de stock y precio. WhatsApp solo no acredita compra completa.",
+    "Definir zonas reales, tarifas finales, preparación, tránsito, días de despacho, hora de corte y calendario Quito; total y fecha estimada conocidos antes de confirmar. $3.50 es una venta concreta, no tarifa general. No asumir Quito=toda Pichincha. Nacional y transferencia siguen deshabilitados.",
+    "Cerrar cómputo del término legal, responsabilidades por causa y plazo operativo de reembolso; retirar el marcador [plazo aprobado]. Siete días sigue siendo propuesta, treinta fue rechazado. Publicar política completa enlazada y texto aprobado de garantías sin alterar los compromisos existentes. La configuración de devolución en Merchant es recomendada, no inventar equivalencia numérica de términos legales.",
+    "Completar aviso operativo de datos y comprobar la integración HTTPS real del mismo Worker/Data Hub a costo adicional cero, previa autorización separada de publicación. Esta entrega no aplica su parche ni despliega.",
+    "Confirmar en Merchant 5874003439 dominio verificado/reclamado, empresa/contacto y destino fichas gratuitas Ecuador/español/USD; cobertura coherente y diagnósticos sin impedimentos. No usar anuncios locales o Google Ads como sustitutos.",
+    "Repetir revisión contra main y corte593 vigentes, conservar las 884 reservas y los agotados mientras sus motivos persistan; revisar requisitos de identificadores/imágenes y reservas comerciales por SKU sin inventar datos. El conjunto final puede ser menor que 307.",
+    "Obtener autorización expresa de Dirección General para el conjunto final de SKU y SHA del XML. Preparar y revisar el cambio del guard del workflow para esa lista exacta (no eliminarlo globalmente), mantener Shopping_ads excluido en todos, y publicar únicamente en feeds/google-merchant-ec. Después comprobar lectura y diagnóstico de Merchant; retirar Free_listings no garantiza visibilidad ni aprobación."
+  ],
+  "acciones_no_ejecutadas": [
+    "Modificar main",
+    "Modificar rama operativa de integración",
+    "Actualizar XML del feed público",
+    "Modificar PR #313",
+    "Desplegar",
+    "Activar productos",
+    "Activar Google Ads",
+    "Configurar Merchant",
+    "Crear servicios o gastos"
+  ]
+}
