@@ -1,24 +1,36 @@
 {
   "version": 1,
-  "estado": "PRODUCCION_COMERCIAL_INCREMENTAL",
+  "estado": "PREPARACION_ALTAS_WEB_EMPRESARIALES",
   "automation_id": "6ac9dd11c30c8191acaedf24ef4ffea4",
   "titulo": "Continuar catálogo CONECTATECH",
   "frecuencia": "HOURLY",
   "zona_horaria": "America/Guayaquil",
   "inicio_local": "2026-10-10T02:38:00-05:00",
-  "modo": "Fuentes auténticas y retoque comercial; excepciones por SKU sin detener el lote",
+  "modo": "Altas empresariales verificadas por fuente593 y contrato v3, sin observadores paralelos",
   "origen": "Automations de ChatGPT con conectores Drive/Sheets/GitHub comprobados",
-  "ultima_revision_fuentes": "2026-10-10",
+  "ultima_revision_fuentes": "2026-11-26",
   "cola": "importacion/cola-drive.json",
   "reglas": "importacion/reglas-sku.json",
   "publicacion": "Solo SKU con identidad, fuentes, calidad y derechos resueltos; contrato v3, QA y HTTP obligatorios",
   "limitaciones": "La programación no equivale a una ejecución completada. Identidad, calidad y permisos exigen evidencia por SKU.",
-  "presentacion_vigente": "Tres columnas en escritorio y dos en móvil; foto protagonista, detalles al abrir y cambios reales publicados primero.",
+  "presentacion_vigente": "Arquitectura actual del catálogo, dos columnas en móvil y Recomendados inicial; altas verificadas primero en Nuevos y actualizados.",
   "registro_actualizaciones": "importacion/actualizaciones-sku.json",
   "lote_premium": "importacion/premium-activo.json",
   "cola_premium": "importacion/cola-premium.json",
-  "tamano_maximo_lote": 100,
+  "tamano_maximo_lote": 30,
   "escalado_automatico": false,
   "estrategia": "importacion/estrategia-comercial.json",
-  "evidencia_lote_100": "Instrucción expresa del propietario en esta conversación: avanzar con un lote de 100, teléfonos primero."
+  "evidencia_lote_100": "Histórica; el máximo operativo actual es30 candidatos, sin cuota forzada de publicaciones.",
+  "fuentes_vigentes": {
+    "referencias_drive": "1bKnkyfOUBM7HRzN9T3rDJUYjLicKns0z",
+    "comerciales_drive": "1ENKiA8WCtc-kCHFJX7xBqR_Nsz-DQqlz",
+    "inventario_drive": "1lclGRDnMld4s_IyBBlH7kQH604NAi3GL",
+    "registro_personal_retirado": true
+  },
+  "programacion_verificada": {
+    "habilitada": false,
+    "horario_original_conservado": true,
+    "nota": "Prompt modernizado en la misma tarea original; reactivación pendiente de integrar el código y registrar su lectura posterior. Configuración no acredita ejecución."
+  },
+  "coordinacion": "Contrato CT_SIGNATURE_HANDOFF_V1 en issue91, sólo delta verificado. Observador593, supervisor, Fábrica y Merchant intactos."
 }
