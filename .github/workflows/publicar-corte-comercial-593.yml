@@ -64,6 +64,7 @@ jobs:
             /automatizacion/normalizar_593.py
             /automatizacion/report_identity.py
             /automatizacion/inventory_completeness.py
+            /automatizacion/data_hub_593.py
       - uses: actions/setup-python@v5
         if: inputs.source_sha256 != ''
         with:
