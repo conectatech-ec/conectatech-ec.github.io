@@ -209,6 +209,14 @@ class QueueAltasTests(unittest.TestCase):
         self.assertNotIn('ausente_en_snapshot',back['productos']['TEST001'])
         self.assertFalse(queue.needs_work(back['productos']['TEST001']))
 
+    def test_delta_preserves_company_watermark_until_operator_advances_it(self):
+        first=self.run_queue()
+        first['fuentes_empresariales']={'referencias':{'watermark':'2026-11-26T18:07:19.953Z'}}
+        second=self.run_queue(files=[],previous=first,delta=True)
+        self.assertEqual(second['fuentes_empresariales'],first['fuentes_empresariales'])
+        second['fuentes_empresariales']['referencias']['watermark']='changed'
+        self.assertEqual(first['fuentes_empresariales']['referencias']['watermark'],'2026-11-26T18:07:19.953Z')
+
     def test_rename_to_other_sku_and_registry_conflict_are_not_silently_deduplicated(self):
         first=self.run_queue();self.catalog.append({'sku':'OTHER001'})
         self.files[0]['nombre']='OTHER001.jpg'

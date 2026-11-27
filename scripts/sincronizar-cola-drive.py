@@ -233,11 +233,14 @@ def synchronize(files, rows, catalog, aliases, previous, source593=None, delta=F
         for photo in entry.get('fotos',[]):
             if valid_sha(photo.get('sha256')):
                 duplicates.setdefault(photo['sha256'],[]).append({'sku':sku,'id':photo['id']})
-    return {'version':1,'productos':result,'cambios':changed,'sin_cambios':unchanged,
+    state={'version':1,'productos':result,'cambios':changed,'sin_cambios':unchanged,
             'ausentes_en_snapshot':absent,'errores':errors,
             'duplicados_exactos':[v for v in duplicates.values() if len(v)>1],
             'resumen':{'fotografias':len(seen),'sku_vinculados':len(groups),'nuevos_o_modificados':len(changed),
                        'sin_cambios':len(unchanged),'errores':len(errors)}}
+    if 'fuentes_empresariales' in previous:
+        state['fuentes_empresariales']=copy.deepcopy(previous['fuentes_empresariales'])
+    return state
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
