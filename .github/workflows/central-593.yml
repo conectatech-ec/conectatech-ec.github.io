@@ -560,3 +560,50 @@ jobs:
           path: checkout-source-evidence/receipt.json
           retention-days: 7
           if-no-files-found: error
+
+  diagnosticar_lector_fuente_396:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[source396-diagnose]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: execution
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+      - uses: actions/checkout@v4
+        with:
+          ref: bc581bf93ff39fcaff18863f91a5202a3325a8e8
+          path: approved
+          persist-credentials: false
+          sparse-checkout: automatizacion
+      - uses: actions/download-artifact@v4
+        with:
+          name: checkout-source396-backup-sealed
+          run-id: 45915507220
+          github-token: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
+          path: source-backup
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comparar metadatos y contenido con respaldo en RAM sin permitir PUT
+        run: python execution/.github/scripts/checkout-source-diagnose.py
+        env:
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_SOURCE_OUTPUT: ${{ github.workspace }}/source396-diagnostic
+          SOURCE396_BACKUP: ${{ github.workspace }}/source-backup/backup.sealed.json
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: checkout-source396-post-put-diagnostic
+          path: source396-diagnostic/diagnostic.json
+          retention-days: 7
