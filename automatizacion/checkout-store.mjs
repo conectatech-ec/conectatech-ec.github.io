@@ -154,7 +154,9 @@ export async function checkoutFetch(path, req, box, {config, sourceProvider, sea
         if (subtotal !== q.subtotalCents || shipping.costCents !== q.shippingCents || shipping.earliest !== q.delivery.earliest || shipping.latest !== q.delivery.latest) fail('CONDICIONES_CAMBIARON_COTIZAR_NUEVAMENTE', 409);
         if (row(box, 'SELECT COUNT(*) AS n FROM checkout_orders WHERE created>=?', Math.floor(commitNow / 86400000) * 86400000).n >= config.maxOrdersPerDay || row(box, "SELECT COUNT(*) AS n FROM checkout_orders WHERE allocation='pending_web'").n >= config.maxOpenOrders) fail('LIMITE_TEMPORAL_ALCANZADO', 429);
         const r = {...q, id: 'CT-' + crypto.randomUUID(), createdAt: new Date(commitNow).toISOString(), status: 'pedido_recibido_contraentrega',
-          paymentStatus: 'pending_cod', liveOrder: true, paid: false, stockReservedIn593: false, estimatedDelivery: q.delivery.eta};
+          paymentStatus: 'pending_cod', liveOrder: config.privateTest !== true,
+          ...(config.privateTest === true ? {syntheticTest: true} : {}),
+          paid: false, stockReservedIn593: false, estimatedDelivery: q.delivery.eta};
         box.sql.exec('INSERT INTO checkout_orders (id,request_key,digest,quote_id,receipt,customer_sealed,created,allocation) VALUES (?,?,?,?,?,?,?,?)', r.id, key, digest, q.quoteId, JSON.stringify(r), sealed, commitNow, 'pending_web');
         return r;
       });

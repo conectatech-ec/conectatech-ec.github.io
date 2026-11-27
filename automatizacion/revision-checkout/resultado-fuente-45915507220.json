@@ -1,0 +1,154 @@
+{
+  "schema": "conectatech.pr396.source-install.v1",
+  "approved_commit": "bc581bf93ff39fcaff18863f91a5202a3325a8e8",
+  "run_id": "45915507220",
+  "worker": "conectatech-comercial-piloto",
+  "installation_puts": 1,
+  "recovery_puts": 0,
+  "synthetic_orders": 0,
+  "public_checkout_enabled": false,
+  "cost_additional_usd": 0,
+  "effective_source": {
+    "cutDate": "2026-11-25",
+    "sourceHash": "a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4",
+    "generated_at": "2026-11-26T02:31:39.000Z",
+    "expires_at": "2026-11-27T02:31:39.000Z",
+    "timestamp_basis": "original_workbook_core",
+    "attestation_sha256": "1c19ca96d1bbb60702aa7fb14b92401067b3d099d4e49860f311beb76004d938",
+    "product": {
+      "sku": "ADAP004",
+      "stock": 11,
+      "priceCents": 350,
+      "pvpCents": 402
+    }
+  },
+  "status": "INSTALLED_VERIFIED_BY_INDEPENDENT_READ",
+  "backup_sealed_sha256": "1dbdc7d8ff0d606387e11bd84bbc796053c019dbac9139efbaa0097dce3751ca",
+  "module_count": 42,
+  "selected_before_sha256": {
+    "worker.mjs": "e0dc4f7303447e45d57fb94933030597dbfda2dabfb0f2bb94ac85229f8393ec",
+    "checkout-store.mjs": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea",
+    "observer-dispatch.mjs": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+    "shared-hub.mjs": "a6a54d835d734dddfb379bb04e87c90ff63eb61f0a0313d31f49e2e20ecbccd6",
+    "source-attestations.mjs": "a8686008f2386c8839af0b90d3c408dffa932faf1e6803cec940404959148ece",
+    "checkout-config.mjs": "291531ae313419e9f897fe639df956590d1c04490eafc17cbc4ec0f8965241c6",
+    "checkout-entry.mjs": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+    "messenger-store.mjs": "f77dd1a5e253beef8a52fdd3a43b01f4e995c68953566f7c3052c6eb099c3047",
+    "observer-auth.mjs": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+    "commercial-reception.mjs": "10e5705d99c34fd98719f6ec19f2ae07d528e45fc3c18dcba8ac229c15653668"
+  },
+  "candidate_sha256": "10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9",
+  "public_checkout_http": 503,
+  "admin_anonymous_http": 401,
+  "provider": {
+    "provider_deployment_id": "7b9e2dcee39a45bf8e8240ad745d5647"
+  },
+  "recovery": "not_required_after_diagnosis",
+  "installed_sha256": "10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9",
+  "verification_run": 45915784621,
+  "verification_job": 140234526238,
+  "other_modules_preserved": true,
+  "other_modules_count": 41,
+  "observer416_preserved": true,
+  "private_source_preserved": true,
+  "settings_exact": false,
+  "settings_operational_preserved": true,
+  "provider_annotation_changed": [
+    "/annotations/workers/triggered_by"
+  ],
+  "provider_annotation_reference": "https://developers.cloudflare.com/api/resources/workers/subresources/scripts/subresources/deployments/methods/list/",
+  "initial_verification_error": "RECOVERY_RUNTIME_DRIFT",
+  "post_install_diagnostic": {
+    "operation": "source396-post-put-read-only",
+    "writes": 0,
+    "original_run": 45915507220,
+    "module_count": 42,
+    "entire_candidate_bundle_exact": true,
+    "private_source_preserved": true,
+    "settings_exact": false,
+    "settings_binding_order_normalized_equal": false,
+    "settings_changed_paths_after_binding_sort": [
+      "/annotations/workers/triggered_by"
+    ],
+    "binding_names_before": [
+      "AI",
+      "ALEX_ENABLED",
+      "CATALOG_FIRST",
+      "COMMERCIAL_ACTIONS_TOKEN",
+      "COMMERCIAL_OBSERVER_READY",
+      "FREE_TIER_VERIFIED",
+      "LIVE_DATA",
+      "MESSENGER_TEST_INBOX",
+      "META_APP_SECRET",
+      "META_INGRESS_ENABLED",
+      "META_MODE",
+      "META_PAGE_ACCESS_TOKEN",
+      "META_PAGE_ID",
+      "META_VERIFY_TOKEN",
+      "PILOT_RELEASE",
+      "PILOT_TOKEN"
+    ],
+    "binding_names_after": [
+      "AI",
+      "ALEX_ENABLED",
+      "CATALOG_FIRST",
+      "COMMERCIAL_ACTIONS_TOKEN",
+      "COMMERCIAL_OBSERVER_READY",
+      "FREE_TIER_VERIFIED",
+      "LIVE_DATA",
+      "MESSENGER_TEST_INBOX",
+      "META_APP_SECRET",
+      "META_INGRESS_ENABLED",
+      "META_MODE",
+      "META_PAGE_ACCESS_TOKEN",
+      "META_PAGE_ID",
+      "META_VERIFY_TOKEN",
+      "PILOT_RELEASE",
+      "PILOT_TOKEN"
+    ],
+    "non_sensitive_settings_changes": {},
+    "selected_active_sha256": {
+      "worker.mjs": "e0dc4f7303447e45d57fb94933030597dbfda2dabfb0f2bb94ac85229f8393ec",
+      "checkout-store.mjs": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea",
+      "observer-dispatch.mjs": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+      "shared-hub.mjs": "10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9",
+      "source-attestations.mjs": "a8686008f2386c8839af0b90d3c408dffa932faf1e6803cec940404959148ece",
+      "checkout-config.mjs": "291531ae313419e9f897fe639df956590d1c04490eafc17cbc4ec0f8965241c6",
+      "checkout-entry.mjs": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+      "messenger-store.mjs": "f77dd1a5e253beef8a52fdd3a43b01f4e995c68953566f7c3052c6eb099c3047",
+      "observer-auth.mjs": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+      "commercial-reception.mjs": "10e5705d99c34fd98719f6ec19f2ae07d528e45fc3c18dcba8ac229c15653668"
+    },
+    "public_checkout_http": 503,
+    "admin_anonymous_http": 401,
+    "effective_source": {
+      "cutDate": "2026-11-25",
+      "sourceHash": "a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4",
+      "generated_at": "2026-11-26T02:31:39.000Z",
+      "expires_at": "2026-11-27T02:31:39.000Z",
+      "timestamp_basis": "original_workbook_core",
+      "attestation_sha256": "1c19ca96d1bbb60702aa7fb14b92401067b3d099d4e49860f311beb76004d938",
+      "product": {
+        "sku": "ADAP004",
+        "stock": 11,
+        "priceCents": 350,
+        "pvpCents": 402
+      }
+    },
+    "stable_during_read": true,
+    "health_and_existing_services_verified": true
+  },
+  "post_install_receiver": {
+    "operation": "observer-593-status",
+    "http_status": 200,
+    "dispatch_secret_available": true,
+    "receiver": {
+      "pending": true,
+      "status": "received",
+      "automatic_trigger_configured": true,
+      "retention_hours": 24,
+      "processor_release": "e5ac06df086130a6776205250dd4d96c65882797",
+      "processor_code_sha256": "6287802a95e7cb1ecc86316ff5f7de24f9c29dcf856388ecda4e0193d37e3e76"
+    }
+  }
+}

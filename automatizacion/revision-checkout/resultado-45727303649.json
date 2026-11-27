@@ -1,0 +1,83 @@
+{
+  "schema": "conectatech.pr396.remote.v1",
+  "approved_commit": "01e1b03fb90d0feca007c76a298470cd9fffd803",
+  "patch_sha256": "c6303584db58397793bccaa9670a7f722829806e9653da8b4c6ca4e36bcac4ae",
+  "run_id": "45727303649",
+  "worker": "conectatech-comercial-piloto",
+  "installation_puts": 0,
+  "reversion_puts": 0,
+  "synthetic_post_attempts": 0,
+  "public_checkout_enabled": false,
+  "cost_additional_usd": 0,
+  "original_module_sha256": {
+    "checkout-entry.mjs": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+    "checkout-store.mjs": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea"
+  },
+  "live_baseline_verified": true,
+  "closure_preflight": [
+    {
+      "path": "/api/compra/catalogo",
+      "http_status": 503,
+      "error_code": "COMPRA_NO_HABILITADA"
+    },
+    {
+      "path": "/api/compra/admin/pedidos",
+      "http_status": 401,
+      "error_code": "Unauthorized"
+    }
+  ],
+  "effective_source_preflight": {
+    "diagnostic": {
+      "source_sha256": "c269ee41eda90fa3b7c6b6ddf0fcb012a803ddff3c7ac25ee2c113af730549a9",
+      "cut_date": "2026-11-24",
+      "generated_at": "2026-11-24T05:00:00.000Z",
+      "expires_at": "2026-11-25T05:00:00.000Z",
+      "timestamp_basis": "conservative_Quito_day_start",
+      "shared_state": "verified",
+      "products": 1581,
+      "blocked_products": 1581,
+      "price_matches_true": 1128,
+      "adap004": {
+        "availability": "blocked",
+        "blocked_reasons": [
+          "SHARED_IDENTITY_NOT_VERIFIED"
+        ],
+        "web_price_matches": true,
+        "has_product_url": true,
+        "has_product_image": true
+      }
+    },
+    "error": "CHECKOUT_SOURCE_EMPTY",
+    "error_type": "Error",
+    "node_code": null
+  },
+  "status": "BLOCKED",
+  "error": "CHECKOUT_SOURCE_EMPTY",
+  "verdict": "PRE_INSTALL_BLOCKED_ORIGINAL_WORKER_UNCHANGED",
+  "authorized_source_expected": {
+    "sha256": "c269ee41eda90fa3b7c6b6ddf0fcb012a803ddff3c7ac25ee2c113af730549a9",
+    "cut_date": "2026-11-24",
+    "generated_at": "2026-11-25T04:27:09Z",
+    "expires_at": "2026-11-26T04:27:09Z"
+  },
+  "interpretation": {
+    "public_cut_fields": [
+      "stock",
+      "promo_centavos",
+      "pvp_centavos"
+    ],
+    "source_attestation_for_approved_sha_missing": true,
+    "adap004_rejected_reason": "SHARED_IDENTITY_NOT_VERIFIED",
+    "source_timestamp_is_conservative_fallback": true,
+    "original_report_expiry_not_reduced_by_this_result": true,
+    "reversion_required": false,
+    "reversion_reason": "No installation PUT occurred; original module identities read and verified.",
+    "required_scope_outside_current_authorization": "Reconcile ADAP004 identity and original generation in the existing source-attestations control before proposing any third-module data change."
+  },
+  "preceding_read_only_runs": [
+    "45726683807",
+    "45726903589",
+    "45727132378"
+  ],
+  "original_environment_branch_denial_run": "45726443703"
+}

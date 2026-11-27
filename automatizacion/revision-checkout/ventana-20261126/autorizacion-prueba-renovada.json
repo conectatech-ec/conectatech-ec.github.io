@@ -1,0 +1,57 @@
+{
+  "schema": "conectatech.checkout-private-execution-authorization.v1",
+  "status": "PENDING_SPECIFIC_AUTHORIZATION",
+  "artifact_commit": "e2b3237fd3709da3554081f5a0d026135e93bc54",
+  "execution_parent": "9dd6a9f2c8df5c508a8c128a13c798fa0e48abe7",
+  "expiry_utc": "2026-11-27T02:26:39Z",
+  "expiry_quito": "2026-11-26T21:26:39-05:00",
+  "window_does_not_extend_source_expiry": true,
+  "source": {
+    "official_cut": "2026-11-25",
+    "sequence": 6,
+    "source_sha256": "a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4",
+    "generated_at": "2026-11-26T02:31:39.000Z",
+    "expires_at": "2026-11-27T02:31:39.000Z",
+    "effective_worker_source_check_required_before_put": true,
+    "source_reader_installed_sha256": "10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9"
+  },
+  "modules": [
+    {
+      "module": "checkout-entry.mjs",
+      "before_sha256": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+      "candidate_sha256": "52f29578bf6b83f9da5bc4c2ab472b839f876c0688c213fbcbf449ee69efff53"
+    },
+    {
+      "module": "checkout-store.mjs",
+      "before_sha256": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea",
+      "candidate_sha256": "ff71a6caa354900b742c5b4be0a2f9c06ed2116b4b64f9947ddceaa9de4a295d"
+    }
+  ],
+  "patch_sha256": "99ae311573baba50540a84063b754310206e98221f8e5e5a40d55c7916581bc1",
+  "executor_sha256": "b2f2cc9c7b43eb3bf1947b9648032910d638c78ba1c75f1c69db108c8e3a2bb9",
+  "execution_patch_sha256": "4c8d3bd6431abd8e4a90992a2f2e66935ed6badea5bc9fad10743a2d7077537e",
+  "source_installation_run": 45915507220,
+  "source_verification_run": 45915784621,
+  "new_transport_scope_checks_passed": 4,
+  "local_historical_tests_repeated": false,
+  "max_installation_puts": 1,
+  "max_specific_reversion_puts": 1,
+  "max_authenticated_synthetic_post": 1,
+  "sku": "ADAP004",
+  "require_cancelled_and_separate_admin_verification": true,
+  "public_checkout_enabled": false,
+  "cost_additional_usd": 0,
+  "remote_test_executed": false,
+  "expected_selected_live_sha256": {
+    "worker.mjs": "e0dc4f7303447e45d57fb94933030597dbfda2dabfb0f2bb94ac85229f8393ec",
+    "checkout-store.mjs": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea",
+    "observer-dispatch.mjs": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+    "shared-hub.mjs": "10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9",
+    "source-attestations.mjs": "a8686008f2386c8839af0b90d3c408dffa932faf1e6803cec940404959148ece",
+    "checkout-config.mjs": "291531ae313419e9f897fe639df956590d1c04490eafc17cbc4ec0f8965241c6",
+    "checkout-entry.mjs": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+    "messenger-store.mjs": "f77dd1a5e253beef8a52fdd3a43b01f4e995c68953566f7c3052c6eb099c3047",
+    "observer-auth.mjs": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+    "commercial-reception.mjs": "10e5705d99c34fd98719f6ec19f2ae07d528e45fc3c18dcba8ac229c15653668"
+  }
+}

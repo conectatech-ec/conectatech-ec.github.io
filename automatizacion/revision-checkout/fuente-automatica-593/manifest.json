@@ -1,0 +1,94 @@
+{
+  "schema": "conectatech.checkout-source-auto-proposal.v1",
+  "status": "INSTALLED_VERIFIED_BY_INDEPENDENT_READ",
+  "pr": 396,
+  "pr_base_commit": "f177271abdd0dce6cd53e4df84c9fcb8805afd90",
+  "runtime_modules_changed": [
+    {
+      "module": "shared-hub.mjs",
+      "before_sha256_expected_public_baseline": "a6a54d835d734dddfb379bb04e87c90ff63eb61f0a0313d31f49e2e20ecbccd6",
+      "candidate_sha256": "10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9",
+      "active_hash_verification_required_before_put": true
+    }
+  ],
+  "source_attestations_mjs_changed": false,
+  "legacy_registry_sha256_expected": "a8686008f2386c8839af0b90d3c408dffa932faf1e6803cec940404959148ece",
+  "producer": {
+    "path": "scripts/preparar-revision-comercial-593.py",
+    "before_sha256": "944bfd31a1089469e6decdfd2d1a0249473e38a8d31e122ed2fa3ff7689e0cd7",
+    "candidate_sha256": "a72905cae20ec6cc6c39be178bbc5f587ef7d4a1b169bf5f70e5aa4446384cca",
+    "patch_sha256": "d57ad14e70b1bceba868a83dce34cc6eed8ddb7a495d020ef2ce2c5e9ee1e197",
+    "main_modified": true,
+    "integration_commit": "c74f8aae3d19794f95480ceb03ecee4fc009e160"
+  },
+  "source_patch_sha256": "8a945aaa015c7895257dd27d55813fd876a52c279dea4553bc398209b1a53f89",
+  "public_evidence_field": "evidencia_checkout",
+  "source_validation": "Original 593 validator and existing Data Hub identity function pinned by commit and module SHA; official pointer/cut receipts, source SHA, all SKU identities and stock/prices must agree.",
+  "freshness_hours": 24,
+  "manual_sha_exceptions_added": 0,
+  "new_services": 0,
+  "new_inventory": false,
+  "source_private_mutations": false,
+  "commercial_activation": false,
+  "public_checkout_enabled": false,
+  "deployment_authorized": true,
+  "installed": true,
+  "synthetic_tests": {
+    "original_producer": 6,
+    "consumer_and_cross_language": 23,
+    "total_passed": 29,
+    "remote_test_executed": false
+  },
+  "source_repair_put_budget_proposed": {
+    "installation": 1,
+    "specific_recovery_on_failure": 1
+  },
+  "private_test_requires_valid_source_and_valid_window": true,
+  "cost_additional_usd": 0,
+  "legacy_registry_public_snapshot_sha256": "e32bfd077dff91bca70e9fd80d434c94e5457d2848fda20719fda2609379e968",
+  "active_baseline_verification": {
+    "run_id": 45900222616,
+    "observer_commit": "32ee93658bf226cc50feea2fa4917bf1d130a685",
+    "active_modules_sha256": {
+      "worker.mjs": "e0dc4f7303447e45d57fb94933030597dbfda2dabfb0f2bb94ac85229f8393ec",
+      "checkout-store.mjs": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea",
+      "observer-dispatch.mjs": "2360a3a445c17bdab966b1d442f9eb12d57b739004e90afeaa3b1573c7008d78",
+      "shared-hub.mjs": "a6a54d835d734dddfb379bb04e87c90ff63eb61f0a0313d31f49e2e20ecbccd6",
+      "source-attestations.mjs": "a8686008f2386c8839af0b90d3c408dffa932faf1e6803cec940404959148ece",
+      "checkout-config.mjs": "291531ae313419e9f897fe639df956590d1c04490eafc17cbc4ec0f8965241c6",
+      "checkout-entry.mjs": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+      "messenger-store.mjs": "f77dd1a5e253beef8a52fdd3a43b01f4e995c68953566f7c3052c6eb099c3047",
+      "observer-auth.mjs": "a8a947ca7d6168d93b7738d949a7d4b143765475f16de2c6c3d2c5d4a8958723",
+      "commercial-reception.mjs": "10e5705d99c34fd98719f6ec19f2ae07d528e45fc3c18dcba8ac229c15653668"
+    },
+    "writes": 0,
+    "revalidate_immediately_before_put": true,
+    "observer_merge_commit": "d01b1fdb550d46c32599b5c46c31fbded641c0a8"
+  },
+  "coordination": {
+    "workflow_patch": "../coordinacion-416/observador416-validadores.patch",
+    "apply_to": [
+      "main",
+      "automatizacion/piloto-cloud-3sku-20261015"
+    ],
+    "code_write_concurrency_group": "comercial-cloud-piloto",
+    "publisher_concurrency_group": "publicacion-stock-593-web",
+    "new_compatibility_tests_passed": 6,
+    "workflow_before_sha256": "c07d5c9ec1d6f23a4dd2217bd0837e787199907caa7cb2cea5c3186c30264612",
+    "workflow_candidate_sha256": "ee982017317151bd4e6d0dfd9028d6459f35302a22d77d07ddf8c387eec31736",
+    "workflow_patch_sha256": "6b6a5d2f9f357809eed2220dd50f882e08c9846e7599d15d0bbc86fd510497cb",
+    "workflow_pilot_commit": "58628f56444ebff6e2b67d80144f6d5bac1ab92e"
+  },
+  "authorization_approved_commit": "bc581bf93ff39fcaff18863f91a5202a3325a8e8",
+  "installation_run": 45915507220,
+  "verification_run": 45915784621,
+  "installation_puts": 1,
+  "recovery_puts": 0,
+  "post_installation_result": "../resultado-fuente-45915507220.json",
+  "post_installation_settings": {
+    "operational_settings_preserved": true,
+    "exact_json_equal": false,
+    "only_changed_path": "/annotations/workers/triggered_by",
+    "classification": "provider deployment-origin annotation; not an operational binding or flag"
+  }
+}

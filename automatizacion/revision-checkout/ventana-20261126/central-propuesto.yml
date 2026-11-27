@@ -1,0 +1,609 @@
+name: Normalizar reporte 593 aislado
+on:
+  push:
+    branches: ['automatizacion/piloto-cloud-3sku-20261015']
+    paths: ['.github/workflows/central-593.yml', '.github/checkout-install-once.json', '.github/checkout-base-read.json', '.github/checkout-revision-read.json', 'automatizacion/process_pending_593.py', 'automatizacion/data_hub_593.py', 'automatizacion/activar-cloud.json']
+permissions:
+  contents: read
+concurrency:
+  group: comercial-cloud-piloto
+  cancel-in-progress: false
+jobs:
+  ingresar:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-revision-read]') && !contains(github.event.head_commit.message, '[checkout-private-396]') && !contains(github.event.head_commit.message, '[observer593-read]') && !contains(github.event.head_commit.message, '[observer593-install]') && !contains(github.event.head_commit.message, '[observer593-probe]') && !contains(github.event.head_commit.message, '[observer593-prepare]') && !contains(github.event.head_commit.message, '[observer593-credential]') && !contains(github.event.head_commit.message, '[observer593-ready]') && !contains(github.event.head_commit.message, '[checkout-source-396]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 5
+          sparse-checkout: |
+            automatizacion
+            .github/workflows
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar nucleo 593 aislado antes de leer la fuente privada
+        # Etapa de lectura autorizada: pruebas ya aceptadas, no repetirlas.
+        if: false
+        run: |
+          python automatizacion/tests/inventory_completeness_test.py
+          python automatizacion/tests/sync_593_test.py
+          node automatizacion/tests/sync-receiver.test.mjs
+          python automatizacion/tests/scoped_integration_test.py
+          python automatizacion/tests/scoped_content_test.py
+          python automatizacion/tests/ingest_receiver_test.py
+          python automatizacion/tests/receiver_plan_test.py
+          python automatizacion/tests/receiver_install_test.py
+          python automatizacion/tests/generic_receiver_guard_test.py
+          node automatizacion/tests/scoped-http.test.mjs
+      - id: scoped_mode
+        name: Mantener escrituras cerradas hasta promocion expresa tras inspeccion
+        run: |
+          python - <<'PY'
+          import os,sys
+          sys.path.insert(0,'automatizacion')
+          from scoped_content import require_ingest_once,receiver_error_code
+          try:require_ingest_once()
+          except Exception as error:
+              print('::error title=DataHub ingestion privada::'+receiver_error_code(error))
+              raise SystemExit(1)
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('authorized=true\n')
+          PY
+        env:
+          CENTRAL_INGEST_AUTHORIZATION: DG-593-INGEST-caaa9a78-ONCE
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - id: receiver
+        # Propuesta pendiente: una comprobacion de lectura; no rearma permisos.
+        if: github.event_name == 'push' && github.run_attempt == '1'
+        name: Verificar receptor aprobado en lectura antes de ingestion unica
+        run: python automatizacion/scoped_content.py --check-ingest
+        env:
+          CENTRAL_EXPECTED_RECEIVER_SHA256: 699ac61bcf8311ac72bdf56c723e3c562882517909c443d9521d5b132624b869
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - id: reporte
+        if: steps.scoped_mode.outputs.authorized == 'true' && steps.receiver.outputs.ready == 'true'
+        name: Leer una fuente privada y normalizar con reglas unicas
+        run: python automatizacion/process_pending_593.py
+        env:
+          CENTRAL_AUTHORIZED_SOURCE_BYTES: 179716
+          CENTRAL_AUTHORIZED_SOURCE_SHA256: caaa9a78fe8479f87197005e352489b65230c174d79401ed7bbe4febbcc7de76
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - id: revision
+        if: steps.reporte.outputs.ready == 'true'
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Actualizar solo fuente comercial validada con reserva del mismo job
+        if: steps.reporte.outputs.ready == 'true'
+        run: python automatizacion/scoped_content.py --ingest
+        env:
+          CENTRAL_INGEST_AUTHORIZATION: DG-593-INGEST-caaa9a78-ONCE
+          CENTRAL_EXPECTED_SOURCE_SHA256: ${{ steps.reporte.outputs.validated_source_sha256 }}
+          COMMERCIAL_PROCESSOR_EXPECTED_RELEASE: ${{ steps.receiver.outputs.processor_release }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_PILOT_URL: ${{ vars.CLOUDFLARE_PILOT_URL }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Verificar version comercial recibida por Alex y registrar destinos pendientes
+        if: steps.reporte.outputs.ready == 'true'
+        run: python automatizacion/data_hub_593.py --verify-alex
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Borrar el original privado tras procesamiento verificado
+        if: steps.reporte.outputs.ready == 'true'
+        run: |
+          python - <<'PY'
+          import json,sys
+          sys.path.insert(0,'automatizacion')
+          from process_pending_593 import request
+          from processing_lease import finish
+          d=json.load(open('automatizacion/central/current.json'))
+          result=finish(request,'processed',validation=d['source'])
+          assert result['raw_file_erased'] is True
+          with request('/commercial/status?sha256='+d['source']['sha256']) as r:receipt=json.load(r)
+          assert receipt['sha256']==d['source']['sha256'] and receipt['status']=='processed' and receipt['validated'] is True
+          assert receipt['cut_date']==d['source']['cut_date'] and receipt['generated_at']==d['source']['generated_at']
+          print('::notice title=DataHub recepcion procesada::'+json.dumps({k:receipt[k] for k in ('sha256','status','validated','cut_date','generated_at')},separators=(',',':')))
+          print('Report processed; encrypted original erased; production destinations unchanged.')
+          PY
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - name: Liberar reserva tras fallo o interrupcion controlada
+        if: always()
+        run: python automatizacion/processing_lease.py --release
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fuente-593-validada-sin-datos-privados
+          path: |
+            automatizacion/generated/fase2/central-processing.json
+            automatizacion/generated/fase2/central-cloud.json
+          retention-days: 7
+  instalar_checkout_inactivo:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-install-388]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar delta aprobado y respaldo cifrado reversible en solo lectura
+        run: python automatizacion/install_checkout.py --prepare
+        env:
+          CHECKOUT_INSTALL_AUTHORIZATION: DG-CHECKOUT-GHREV-44154502551-ONCE
+          GITHUB_TOKEN: ${{ github.token }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar respaldo privado cifrado antes de permitir el unico PUT
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr388-respaldo-cifrado
+          path: automatizacion/generated/fase2/checkout-install/receiver-and-worker-backup.sealed.json
+          retention-days: 1
+          compression-level: 9
+          if-no-files-found: error
+      - name: Instalar delta inactivo una vez y verificar o recuperar su inversa exacta
+        run: python automatizacion/install_checkout.py --install
+        env:
+          CHECKOUT_INSTALL_AUTHORIZATION: DG-CHECKOUT-GHREV-44154502551-ONCE
+          GITHUB_TOKEN: ${{ github.token }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar recibo sin datos privados incluso si se bloquea
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr388-recibo
+          path: automatizacion/generated/fase2/checkout-install/receipt.json
+          retention-days: 1
+  conciliar_base_checkout_lectura:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-compare-388]') && !contains(github.event.head_commit.message, '[checkout-install-388]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Leer dos modulos, identificar fuente publica exacta y planear delta sin PUT
+        run: python automatizacion/checkout_active_base.py
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar SHA, diferencias y codigo solo si coincide con fuentes publicas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr388-conciliacion-base-lectura
+          path: automatizacion/generated/fase2/checkout-base-read/
+          retention-days: 1
+  verificar_revision_github_lectura:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-revision-read]') && !contains(github.event.head_commit.message, '[checkout-install-388]') && !contains(github.event.head_commit.message, '[checkout-compare-388]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout: |
+            automatizacion
+            .github
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Comparar control anonimo y validar SHA remoto con token oficial de solo lectura
+        run: python automatizacion/verify_github_revision.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Conservar diagnostico publico sin credenciales ni acceso al Worker
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-github-revision-read
+          path: automatizacion/generated/fase2/github-revision-read.json
+          retention-days: 1
+
+  prueba_privada_checkout_396:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-private-396]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: execution
+          fetch-depth: 2
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+      - uses: actions/checkout@v4
+        with:
+          ref: e2b3237fd3709da3554081f5a0d026135e93bc54
+          path: approved
+          persist-credentials: false
+          sparse-checkout: automatizacion
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Lectura autenticada y diagnostico preciso antes de cualquier PUT
+        run: python execution/.github/scripts/checkout-pr396-run.py --prepare
+        env:
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          GITHUB_TOKEN: ${{ github.token }}
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_EXECUTION_OUTPUT: ${{ github.workspace }}/checkout-pr396-evidence
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar respaldo recuperable antes de la instalacion
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr396-backup-sealed
+          path: checkout-pr396-evidence/backup.sealed.json
+          retention-days: 1
+          if-no-files-found: error
+      - name: Una instalacion temporal, una prueba sintetica y reversion especifica autorizadas
+        run: python execution/.github/scripts/checkout-pr396-run.py --run
+        env:
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          GITHUB_TOKEN: ${{ github.token }}
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_EXECUTION_OUTPUT: ${{ github.workspace }}/checkout-pr396-evidence
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Verificar recuperacion incluso si falla el paso anterior
+        if: always()
+        run: python execution/.github/scripts/checkout-pr396-run.py --recover
+        env:
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          GITHUB_TOKEN: ${{ github.token }}
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_EXECUTION_OUTPUT: ${{ github.workspace }}/checkout-pr396-evidence
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar recibo sin datos privados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-pr396-remote-receipt
+          path: checkout-pr396-evidence/receipt.json
+          retention-days: 7
+          if-no-files-found: error
+
+  inspeccionar_observador_593:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[observer593-read]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Leer receptor existente y emitir solamente metadatos seguros
+        env:
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+        shell: python
+        run: |
+          import os,json,urllib.request,urllib.error,hashlib
+          from email.parser import BytesParser
+          from email import policy
+          report={'operation':'observer-593-read-only','writes':0,'free_only_confirmed':os.environ.get('CF_FREE_ONLY_CONFIRMED')=='true'}
+          def read(url,token):
+              req=urllib.request.Request(url,headers={'Authorization':'Bearer '+token},method='GET')
+              with urllib.request.urlopen(req,timeout=25) as r:
+                  return r.read(20000001),r.headers.get('Content-Type','')
+          if not report['free_only_confirmed']:
+              print(json.dumps(report));raise SystemExit('FREE_ONLY_NOT_CONFIRMED')
+          account=os.environ.get('CLOUDFLARE_ACCOUNT_ID','')
+          token=os.environ.get('CLOUDFLARE_API_TOKEN','')
+          if not account or not token:raise SystemExit('CF_READ_CREDENTIAL_MISSING')
+          base='https://api.cloudflare.com/client/v4/accounts/'+account
+          script=base+'/workers/scripts/conectatech-comercial-piloto'
+          try:
+              raw,_=read(script+'/settings',token)
+              settings=json.loads(raw)['result']
+              report['usage_model']=settings.get('usage_model')
+              report['bindings']=[{'name':b.get('name'),'type':b.get('type')} for b in settings.get('bindings',[])]
+              raw,ct=read(script+'/content/v2',token)
+              if len(raw)>20000000:raise ValueError('BUNDLE_LIMIT')
+              message=BytesParser(policy=policy.default).parsebytes(('Content-Type: '+ct+'\r\nMIME-Version: 1.0\r\n\r\n').encode()+raw)
+              report['modules']=[{'name':p.get_filename() or p.get_param('name',header='content-disposition'),'sha256':hashlib.sha256(p.get_payload(decode=True)).hexdigest(),'bytes':len(p.get_payload(decode=True))} for p in message.iter_parts()]
+          except urllib.error.HTTPError as e:
+              report['cf_read_http_status']=e.code
+          pilot=os.environ.get('PILOT_TOKEN','')
+          if pilot:
+              try:
+                  raw,_=read('https://conectatech-comercial-piloto.conectatech-ecu.workers.dev/commercial/status',pilot)
+                  status=json.loads(raw)
+                  report['receiver']={k:status.get(k) for k in ('pending','status','automatic_trigger_configured','retention_hours','processor_release','processor_code_sha256')}
+              except urllib.error.HTTPError as e:report['receiver_http_status']=e.code
+          print('OBSERVER593_READ='+json.dumps(report,separators=(',',':')))
+
+      - uses: actions/checkout@v4
+        with:
+          ref: 1e9cd86b3954d6abf2ad01f26854c586d4d6f3bc
+          path: transport
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /automatizacion/central-http.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Leer status con transporte original y comprobar credencial de despacho
+        env:
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          COMMERCIAL_ACTIONS_TOKEN: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
+        run: |
+          node --input-type=module <<'NODE'
+          import {privateRequest} from './transport/automatizacion/central-http.mjs';
+          const response=await privateRequest({path:'/commercial/status'});
+          const out={operation:'observer-593-status',http_status:response.status,dispatch_secret_available:!!process.env.COMMERCIAL_ACTIONS_TOKEN};
+          if(response.status===200){
+            const status=JSON.parse(Buffer.from(response.bytes_b64,'base64').toString('utf8'));
+            out.receiver=Object.fromEntries(['pending','status','automatic_trigger_configured','retention_hours','processor_release','processor_code_sha256'].map(k=>[k,status[k]??null]));
+          }
+          console.log('OBSERVER593_STATUS='+JSON.stringify(out));
+          NODE
+
+  instalar_observador_593:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[observer593-install]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fba553f16b4f5a20fd3476d3d5a6dbecfc9563a7
+          path: integration
+          persist-credentials: false
+          sparse-checkout: scripts/observador-593
+      - uses: actions/checkout@v4
+        with:
+          ref: 1e9cd86b3954d6abf2ad01f26854c586d4d6f3bc
+          path: original
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /automatizacion/scoped_content.py
+            /automatizacion/scoped_policy.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Actualizar diagnóstico de identidad preservando los demás módulos
+        env:
+          CT593_INSTALL_AUTHORIZATION: DG26_OBSERVADOR_593_IMPLEMENTACION_AUTORIZADA_V1
+          CT593_ORIGINAL_TRANSPORT: ${{ github.workspace }}/original/automatizacion
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CT593_AUTH_EXPECTED_SHA: c1f79ddb221ad0496772207102a3261809d49a68e7721e5a3c6e381dd905d293
+          CT593_DISPATCH_EXPECTED_SHA: 5a01e4722c7473d63f459245c2cc43dd13d38aa794d4e83c94f132857ce3ee34
+        run: |
+          python integration/scripts/observador-593/test-repair-auth.py
+          python integration/scripts/observador-593/repair-auth.py
+
+  comprobar_publicador_593:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[observer593-probe]')
+    permissions:
+      contents: read
+      actions: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Solicitar sonda de lectura al publicador original
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node --input-type=module <<'NODE'
+          const result=await fetch('https://api.github.com/repos/conectatech-ec/conectatech-ec.github.io/actions/workflows/publicar-corte-comercial-593.yml/dispatches',{
+            method:'POST',redirect:'error',signal:AbortSignal.timeout(10000),
+            headers:{Authorization:'Bearer '+process.env.GH_TOKEN,Accept:'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'},
+            body:JSON.stringify({ref:'automatizacion/piloto-cloud-3sku-20261015',inputs:{source_sha256:'a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4',verify_only:true}})
+          });
+          console.log(JSON.stringify({stage:'publisher_probe_dispatch',at:new Date().toISOString(),http_status:result.status,publication_requested:false}));
+          if(result.status!==204)process.exit(1);
+          NODE
+
+  configurar_despacho_observador_593:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && (contains(github.event.head_commit.message, '[observer593-credential]') || contains(github.event.head_commit.message, '[observer593-ready]'))
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: scripts/observador-593
+      - uses: actions/checkout@v4
+        with:
+          ref: 1e9cd86b3954d6abf2ad01f26854c586d4d6f3bc
+          path: original
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /automatizacion/scoped_content.py
+            /automatizacion/scoped_policy.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probar configuración acotada antes de escribir
+        run: python scripts/observador-593/test-configure-dispatch.py
+      - name: Configurar solamente la credencial o la habilitación del observador
+        env:
+          CT593_INSTALL_AUTHORIZATION: DG26_OBSERVADOR_593_IMPLEMENTACION_AUTORIZADA_V1
+          CT593_ORIGINAL_TRANSPORT: ${{ github.workspace }}/original/automatizacion
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          COMMERCIAL_ACTIONS_TOKEN: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
+          CT593_ACTION: ready
+          CT593_PROBE_RUN: '45909678099'
+          CT593_PROBE_HEAD: '5203c74d6dd49fa0bf761c67ba76063ebf409ada'
+        run: python scripts/observador-593/configure-dispatch.py "$CT593_ACTION" --probe-run "$CT593_PROBE_RUN" --probe-head "$CT593_PROBE_HEAD"
+
+# Coordinacion #396/#416: consulta posterior a instalacion; este commit solo solicita lectura.
+
+# Observador 593: conectar credencial guardada por el titular; activar solo tras sonda.
+
+# Fuente #396: verificar identidades tras activacion de #416; solo lectura.
+
+  instalar_lector_fuente_396:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[checkout-source-396]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: execution
+          fetch-depth: 2
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+      - uses: actions/checkout@v4
+        with:
+          ref: bc581bf93ff39fcaff18863f91a5202a3325a8e8
+          path: approved
+          persist-credentials: false
+          sparse-checkout: automatizacion
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Capturar base vigente, validar evidencia y preparar respaldo cifrado sin PUT
+        run: python execution/.github/scripts/checkout-source-396.py --prepare
+        env: &source396_env
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_SOURCE_OUTPUT: ${{ github.workspace }}/checkout-source-evidence
+          CHECKOUT_SOURCE_INSTALL_AUTHORIZATION: DG-PR396-bc581bf9-SHARED-HUB-ONCE
+          GITHUB_TOKEN: ${{ github.token }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - name: Conservar respaldo recuperable antes del unico PUT autorizado
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-source396-backup-sealed
+          path: checkout-source-evidence/backup.sealed.json
+          retention-days: 1
+          if-no-files-found: error
+      - name: Sustituir solamente shared-hub.mjs y verificar preservacion integral
+        run: python execution/.github/scripts/checkout-source-396.py --install
+        env: *source396_env
+      - name: Recuperacion especifica ante fallo sin otro intento de instalacion
+        if: always()
+        run: python execution/.github/scripts/checkout-source-396.py --recover
+        env: *source396_env
+      - name: Conservar recibo tecnico sin datos privados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkout-source396-receipt
+          path: checkout-source-evidence/receipt.json
+          retention-days: 7
+          if-no-files-found: error
+
+  diagnosticar_lector_fuente_396:
+    if: github.ref == 'refs/heads/automatizacion/piloto-cloud-3sku-20261015' && github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[source396-diagnose]')
+    environment: conectatech-piloto-gratis
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: execution
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+      - uses: actions/checkout@v4
+        with:
+          ref: bc581bf93ff39fcaff18863f91a5202a3325a8e8
+          path: approved
+          persist-credentials: false
+          sparse-checkout: automatizacion
+      - uses: actions/download-artifact@v4
+        with:
+          name: checkout-source396-backup-sealed
+          run-id: 45915507220
+          github-token: ${{ secrets.COMMERCIAL_ACTIONS_TOKEN }}
+          path: source-backup
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comparar metadatos y contenido con respaldo en RAM sin permitir PUT
+        run: python execution/.github/scripts/checkout-source-diagnose.py
+        env:
+          CHECKOUT_EXECUTOR_REPO: ${{ github.workspace }}/execution
+          CHECKOUT_APPROVED_REPO: ${{ github.workspace }}/approved
+          CHECKOUT_SOURCE_OUTPUT: ${{ github.workspace }}/source396-diagnostic
+          SOURCE396_BACKUP: ${{ github.workspace }}/source-backup/backup.sealed.json
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PILOT_TOKEN: ${{ secrets.PILOT_TOKEN }}
+          CF_FREE_ONLY_CONFIRMED: ${{ vars.CF_FREE_ONLY_CONFIRMED }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: checkout-source396-post-put-diagnostic
+          path: source396-diagnostic/diagnostic.json
+          retention-days: 7

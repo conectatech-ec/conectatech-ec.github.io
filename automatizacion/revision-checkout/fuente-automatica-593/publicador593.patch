@@ -1,0 +1,116 @@
+--- a/scripts/preparar-revision-comercial-593.py
++++ b/scripts/preparar-revision-comercial-593.py
+@@ -3,6 +3,7 @@
+ 
+ XLSX, identidades y columnas privadas permanecen locales. Los módulos originales
+ se importan por SHA; no se duplica el parser ni se crea otro inventario.
++Sólo se añaden compromisos técnicos de identidad, nunca nombres ERP ni costos.
+ """
+ import argparse,collections,contextlib,copy,csv,hashlib,importlib.util,io,json,os,subprocess,sys,tempfile,urllib.request
+ from datetime import datetime,timezone
+@@ -13,7 +14,8 @@
+ MODULES={
+  'report_identity.py':'d023d449cb7cec2bddfbfdbea89ad47881f9a765578e947bbfa191adcb3d955b',
+  'inventory_completeness.py':'fbe6f014868364f224fa2c7ac1189762375299feebff6c2c25e48714259bed6e',
+- 'normalizar_593.py':'8cac386759763e357100bbb683c2e6008528fcad517ee5b1ec4d4aa15d656a86'}
++ 'normalizar_593.py':'8cac386759763e357100bbb683c2e6008528fcad517ee5b1ec4d4aa15d656a86',
++ 'data_hub_593.py':'4072336099a31a81a64685b1e2c60b7354246721a815a3d73b1688e6bf0bb50d'}
+ BASE='https://raw.githubusercontent.com/conectatech-ec/conectatech-ec.github.io/'+PIN+'/automatizacion/'
+ 
+ def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+@@ -28,7 +30,7 @@
+ 
+ @contextlib.contextmanager
+ def original_validator(path=None):
+-    """Importar exactamente los tres módulos originales aprobados, una vez por proceso."""
++    """Importar exactamente los módulos originales aprobados, una vez por proceso."""
+     with tempfile.TemporaryDirectory(prefix='original-593-code-') as temporary:
+         folder=Path(path).resolve().parent if path else Path(temporary)
+         for name,expected in MODULES.items():
+@@ -38,12 +40,13 @@
+                 if hashlib.sha256(raw).hexdigest()!=expected:raise ValueError('ORIGINAL_VALIDATOR_SHA_MISMATCH '+name)
+                 file.write_bytes(raw)
+             if not file.is_file() or digest(file)!=expected:raise ValueError('ORIGINAL_VALIDATOR_SHA_MISMATCH '+name)
+-        names=['report_identity','inventory_completeness','normalizar_593']
++        names=['report_identity','inventory_completeness','normalizar_593','data_hub_593']
+         saved={name:sys.modules.get(name) for name in names}
+         try:
+             for name in names:
+                 spec=importlib.util.spec_from_file_location(name,folder/(name+'.py'))
+                 module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module)
++            sys.modules['normalizar_593'].identity_signature=sys.modules['data_hub_593'].identity
+             yield sys.modules['normalizar_593']
+         finally:
+             for name,value in saved.items():
+@@ -158,6 +161,47 @@
+     stream=io.StringIO();writer=csv.DictWriter(stream,fieldnames=fields,lineterminator='\n');writer.writeheader();writer.writerows(by.values())
+     return stream.getvalue()
+ 
++def checkout_evidence(cut,source,rows,normalizer):
++    """Evidence from the original validated rows, in the existing cut; no approval bypass."""
++    receipt=cut.get('revision_fuente') or {}
++    if (receipt.get('version')!=1 or receipt.get('evidencia')!='XLSX_CORE_CREATED_EQUALS_MODIFIED' or
++        type(receipt.get('secuencia')) is not int or receipt['secuencia']<1 or
++        source['sha256']!=cut['sha256_original'] or source['cut_date']!=cut['fecha_corte'] or
++        source['cut_date_evidence']!='593_matching_created_modified' or
++        milliseconds(source['generated_at'])!=milliseconds(receipt.get('generado_en'))):
++        raise ValueError('CHECKOUT_VALIDATION_RECEIPT_REQUIRED')
++    if not callable(getattr(normalizer,'identity_signature',None)):
++        raise ValueError('CHECKOUT_ORIGINAL_IDENTITY_MODULE_REQUIRED')
++    counts=collections.Counter(r['values']['D'] for r in rows)
++    if len(counts)!=cut['cantidad_sku_original'] or any(n!=1 for n in counts.values()):
++        raise ValueError('CHECKOUT_ORIGINAL_COVERAGE_INVALID')
++    by={r['values']['D']:r for r in rows};proofs={};projection=[]
++    if not 1000<=len(cut['productos'])<=5000 or len(cut['productos'])!=cut['cantidad_sku_web']:
++        raise ValueError('CHECKOUT_PUBLISHED_COVERAGE_INVALID')
++    for sku,price in sorted(cut['productos'].items()):
++        row=by.get(sku)
++        if not row or row['formulas'] or row['values'].get('F')!='PRODUCTO' or not row['values'].get('C'):
++            raise ValueError('CHECKOUT_ORIGINAL_IDENTITY_INVALID '+sku)
++        v=row['values'];stock=Decimal(v['B'])
++        if not stock.is_finite() or stock<0 or stock!=stock.to_integral_value():
++            raise ValueError('CHECKOUT_ORIGINAL_STOCK_INVALID '+sku)
++        values=(int(stock),normalizer.cents(v['Q']),normalizer.cents(v['X'])+normalizer.cents(v['Y']))
++        if values!=(price['stock'],price['promo_centavos'],price['pvp_centavos']):
++            raise ValueError('CHECKOUT_ORIGINAL_COMMERCIAL_MISMATCH '+sku)
++        proofs[sku]=normalizer.identity_signature({'source_name':v['C'],'variant_gb':normalizer.variants(v['C'])})
++        projection.append([sku,*values])
++    encode=lambda value:json.dumps(value,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()
++    generated=utc(source['generated_at'])
++    from datetime import timedelta
++    evidence={'schema':'conectatech.checkout-source-attestation.v1','source_sha256':source['sha256'],
++        'cut_date':source['cut_date'],'generated_at':milliseconds(source['generated_at']),
++        'expires_at':milliseconds((generated+timedelta(hours=24)).isoformat()),
++        'revision_sequence':receipt['secuencia'],'validator_commit':PIN,
++        'validator_modules_sha256':dict(MODULES),'projection_sha256':hashlib.sha256(encode(projection)).hexdigest(),
++        'identity_signatures':proofs}
++    evidence['attestation_sha256']=hashlib.sha256(encode(evidence)).hexdigest()
++    return evidence
++
+ def prepare(excel,state,previous,catalog,baseline_csv,received_at,*,normalizer,name=None,previous_excel=None,repo=None,now=None):
+     """Función sin escrituras. now sólo permite reloj fijo en pruebas aisladas."""
+     now=now or datetime.now(timezone.utc);received=utc(received_at)
+@@ -168,7 +212,14 @@
+     if candidate_sha==state['origen_sha256']:
+         # El mismo original ya validado no cambia recibos, fecha ni datos, y no
+         # vuelve a validar identidades contra un CSV histórico obsoleto.
+-        return copy.deepcopy(previous)
++        result=copy.deepcopy(previous)
++        # Metadata-only backfill of an already published SHA; preserve its receipt/time.
++        # A legacy cut without its confirmed receipt remains closed to checkout.
++        if 'evidencia_checkout' not in result and result.get('revision_fuente'):
++            with original_name(excel,name or Path(excel).name,normalizer) as named:
++                source,rows=normalizer.read_xlsx(named,now=now)
++            result['evidencia_checkout']=checkout_evidence(result,source,rows,normalizer)
++        return result
+     previous_source=None;prior_rows={}
+     if not previous_excel and any(r.get('fecha','')>previous['fecha_corte'] for r in previous.get('altas_validadas',[])):
+         raise ValueError('PREVIOUS_XLSX_REQUIRED_FOR_APPROVED_ALTAS')
+@@ -220,6 +271,7 @@
+     result={'fecha_corte':source['cut_date'],'fuente':name or Path(excel).name,'sha256_original':candidate_sha,
+             'cantidad_sku_original':validation['unique_sku'],'cantidad_sku_web':len(projected),'productos':projected,
+             'verificacion':counters,'revision_fuente':r}
++    result['evidencia_checkout']=checkout_evidence(result,source,rows,normalizer)
+     if previous.get('altas_validadas'):result['altas_validadas']=copy.deepcopy(previous['altas_validadas'])
+     if repo:
+         script="const fs=require('fs'),path=require('path');const repo=process.argv[1];const data=JSON.parse(fs.readFileSync(0,'utf8'));const result=require(path.join(repo,'scripts/aplicar-corte-comercial-593.cjs')).prepare(fs.readFileSync(path.join(repo,'index.html'),'utf8'),data.cut,data.state,data.previous);process.stdout.write(JSON.stringify(result.summary));"

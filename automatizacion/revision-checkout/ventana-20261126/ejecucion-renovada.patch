@@ -1,0 +1,93 @@
+--- a/.github/workflows/central-593.yml
++++ b/.github/workflows/central-593.yml
+@@ -261,7 +261,7 @@
+           sparse-checkout: .github/scripts
+       - uses: actions/checkout@v4
+         with:
+-          ref: 01e1b03fb90d0feca007c76a298470cd9fffd803
++          ref: e2b3237fd3709da3554081f5a0d026135e93bc54
+           path: approved
+           persist-credentials: false
+           sparse-checkout: automatizacion
+--- a/.github/scripts/checkout-pr396-run.py
++++ b/.github/scripts/checkout-pr396-run.py
+@@ -7,10 +7,11 @@
+ from dataclasses import replace
+ from pathlib import Path
+ 
+-APPROVED_COMMIT = '01e1b03fb90d0feca007c76a298470cd9fffd803'
+-PATCH_SHA = 'c6303584db58397793bccaa9670a7f722829806e9653da8b4c6ca4e36bcac4ae'
+-SOURCE_SHA = 'c269ee41eda90fa3b7c6b6ddf0fcb012a803ddff3c7ac25ee2c113af730549a9'
+-EXPIRY = 1795667229  # 2026-11-26T04:27:09Z
++APPROVED_COMMIT = 'e2b3237fd3709da3554081f5a0d026135e93bc54'
++PATCH_SHA = '99ae311573baba50540a84063b754310206e98221f8e5e5a40d55c7916581bc1'
++SOURCE_SHA = 'a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4'
++EXPIRY = 1795746399  # 2026-11-27T02:26:39Z
++SOURCE_GENERATED = '2026-11-26T02:31:39.000Z'
+ BASE = 'https://conectatech-comercial-piloto.conectatech-ecu.workers.dev'
+ ROOT = Path(os.environ.get('CHECKOUT_APPROVED_REPO', '.')).resolve()
+ OUT = Path(os.environ.get('CHECKOUT_EXECUTION_OUTPUT', 'checkout-pr396-evidence')).resolve()
+@@ -39,7 +40,7 @@
+         'APPROVED_COMMIT_MISMATCH')
+     executor=Path(os.environ['CHECKOUT_EXECUTOR_REPO'])
+     git=lambda *args: subprocess.check_output(['git',*args],cwd=executor,text=True).strip()
+-    require(git('rev-parse','HEAD')==os.environ.get('GITHUB_SHA') and git('rev-parse','HEAD^')=='eda403949436264f60a294434758a3c7613b9157',
++    require(git('rev-parse','HEAD')==os.environ.get('GITHUB_SHA') and git('rev-parse','HEAD^')=='9dd6a9f2c8df5c508a8c128a13c798fa0e48abe7',
+         'EXECUTION_COMMIT_OR_PARENT_CHANGED')
+     require(set(git('diff-tree','--no-commit-id','--name-only','-r','HEAD').splitlines())=={
+         '.github/workflows/central-593.yml','.github/scripts/checkout-pr396-run.py'},'EXECUTION_WRAPPER_SCOPE_CHANGED')
+@@ -91,10 +92,10 @@
+     except Exception: raise Blocked('LIVE_SOURCE_EVALUATION_FAILED') from None
+     report['effective_source_preflight']=observed;save(report)
+     require(result.returncode==0,observed.get('error','LIVE_SOURCE_EVALUATION_FAILED'))
+-    require(observed.get('cutDate')=='2026-11-24' and observed.get('sourceHash')==SOURCE_SHA,
++    require(observed.get('cutDate')=='2026-11-25' and observed.get('sourceHash')==SOURCE_SHA,
+         'EFFECTIVE_SOURCE_IDENTITY_MISMATCH')
+     from scoped_policy import source_time
+-    require(source_time(observed.get('sourceGeneratedAt')).timestamp()==EXPIRY-86400,
++    require(source_time(observed.get('sourceGeneratedAt'))==source_time(SOURCE_GENERATED),
+         'EFFECTIVE_SOURCE_GENERATION_NOT_ATTESTED')
+     require(observed.get('product')==dict(sku='ADAP004',stock=11,priceCents=350,pvpCents=402),
+         'ADAP004_AUTHORIZED_CONDITIONS_CHANGED')
+@@ -102,16 +103,20 @@
+ def http(path,method='GET',anonymous=False):
+     require(path in {'/api/compra/admin/prueba','/api/compra/catalogo','/api/compra/admin/pedidos'},'HTTP_SCOPE_CHANGED')
+     require(method=='GET' or path=='/api/compra/admin/prueba' and method=='POST','HTTP_METHOD_SCOPE_CHANGED')
+-    headers={'Accept':'application/json','Cache-Control':'no-cache'}
+-    if not anonymous: headers['Authorization']='Bearer '+os.environ['PILOT_TOKEN']
+-    if path=='/api/compra/catalogo': headers['Origin']='https://conectatech-ec.github.io'
+-    req=urllib.request.Request(BASE+path,method=method,headers=headers,data=b'{}' if method=='POST' else None)
+-    opener=urllib.request.build_opener(NoRedirect())
+-    try: response=opener.open(req,timeout=75)
+-    except urllib.error.HTTPError as error: response=error
+-    with response:
+-        raw=response.read(50001);require(len(raw)<=50000,'HTTP_RESPONSE_TOO_LARGE')
+-        return response.status,json.loads(raw)
++    # The existing GET transport uses Node fetch; retain the same authenticated HTTPS semantics.
++    # The Python urllib probe of /commercial/status returned 403 while the original Node transport returned 200.
++    code=r"""
++let text='';for await(const c of process.stdin)text+=c;const {path,method,anonymous}=JSON.parse(text);
++const paths=new Set(['/api/compra/admin/prueba','/api/compra/catalogo','/api/compra/admin/pedidos']);
++if(!paths.has(path)||!(method==='GET'||path==='/api/compra/admin/prueba'&&method==='POST')||anonymous&&path!=='/api/compra/admin/pedidos'||!process.env.PILOT_TOKEN)process.exit(2);
++try{const response=await fetch('https://conectatech-comercial-piloto.conectatech-ecu.workers.dev'+path,{method,redirect:'error',headers:{Accept:'application/json','Cache-Control':'no-cache',...(!anonymous?{Authorization:'Bearer '+process.env.PILOT_TOKEN}:{}),...(path==='/api/compra/catalogo'?{Origin:'https://conectatech-ec.github.io'}:{})},...(method==='POST'?{body:'{}'}:{}),signal:AbortSignal.timeout(75000)});
++const chunks=[];let n=0;for await(const part of response.body){n+=part.byteLength;if(n>50000)throw Error();chunks.push(part);}process.stdout.write(JSON.stringify({status:response.status,body:JSON.parse(Buffer.concat(chunks).toString('utf8'))}));}catch{process.exitCode=1;}
++"""
++    child=subprocess.run(['node','--input-type=module','-e',code],input=json.dumps({'path':path,'method':method,'anonymous':anonymous}),capture_output=True,text=True,timeout=85)
++    require(child.returncode==0,'PRIVATE_HTTPS_TRANSPORT_FAILED')
++    try:result=json.loads(child.stdout);return result['status'],result['body']
++    except Exception:raise Blocked('PRIVATE_HTTPS_RESPONSE_INVALID') from None
++
+ def closure():
+     report=load(OUT/'receipt.json')
+     observed=[]
+@@ -156,6 +161,10 @@
+     report=initial();save(report)
+     capture=guard.capture();candidate(capture['bundle'])
+     installed=load(ROOT/'automatizacion/revision-checkout/resultado-44160098418.json')['delta_sha256']
++    source_install=load(ROOT/'automatizacion/revision-checkout/resultado-fuente-45915507220.json')
++    require(source_install.get('status')=='INSTALLED_VERIFIED_BY_INDEPENDENT_READ' and source_install.get('installed_sha256')=='10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9','SOURCE_INSTALLATION_NOT_VERIFIED')
++    installed.update(source_install['selected_before_sha256'])
++    installed['shared-hub.mjs']=source_install['installed_sha256']
+     parts={p.name:p for p in capture['bundle'].parts}
+     require(all(name in parts and digest(parts[name].body)==value for name,value in installed.items()),
+         'INSTALLED_CHECKOUT_BASELINE_CHANGED')

@@ -1,0 +1,44 @@
+{
+  "schema": "conectatech.checkout-private-test-proposal.v1",
+  "status": "PREPARED_PENDING_SPECIFIC_AUTHORIZATION",
+  "base_commit": "60f05e9f3c566a9f3b75193b2746b6cf4e194d3d",
+  "modules": [
+    {
+      "module": "checkout-entry.mjs",
+      "before_sha256": "218f1495d3c1f4c03166bc3cfb9280810bfd088a23c45aab40e9f221351f7cb5",
+      "candidate_sha256": "52f29578bf6b83f9da5bc4c2ab472b839f876c0688c213fbcbf449ee69efff53"
+    },
+    {
+      "module": "checkout-store.mjs",
+      "before_sha256": "23a4fe7631fedee65fc487f773b7ca4d79386d61b0d2192a1d91caa154b732ea",
+      "candidate_sha256": "ff71a6caa354900b742c5b4be0a2f9c06ed2116b4b64f9947ddceaa9de4a295d"
+    }
+  ],
+  "patch_sha256": "99ae311573baba50540a84063b754310206e98221f8e5e5a40d55c7916581bc1",
+  "expiry_utc": "2026-11-27T02:26:39Z",
+  "public_checkout_enabled": false,
+  "public_deliveries": [],
+  "new_permissions": false,
+  "new_credentials": false,
+  "max_synthetic_orders": 1,
+  "sku": "ADAP004",
+  "synthetic_shipping_cents": 500,
+  "source": "existing_sourceProvider_without_bypass",
+  "required_puts_if_authorized": {
+    "installation": 1,
+    "specific_reversion": 1
+  },
+  "cost_additional_usd": 0,
+  "remote_test_executed": false,
+  "new_targeted_checks_passed": 4,
+  "source_preflight": {
+    "official_cut": "2026-11-25",
+    "sequence": 6,
+    "source_sha256": "a2609eff408b43fbecaf75dc2b4e04624154a448f5c8cd30192cdf348d8875f4",
+    "generated_at": "2026-11-26T02:31:39.000Z",
+    "expires_at": "2026-11-27T02:31:39.000Z",
+    "effective_worker_source_check_required_before_put": true,
+    "source_reader_installed_sha256": "10ebe491335d008fec039e43b1ce7547d9ed45c69f2b6230b92ff8125b7018a9"
+  },
+  "renewal_only_change": "checkout-entry.mjs testUntil; checkout-store.mjs identical; source and active Worker identities updated in execution wrapper"
+}
