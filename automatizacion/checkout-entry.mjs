@@ -12,7 +12,7 @@ export const handleCheckoutPublic = (req, env) => checkoutPublic(req, env, confi
 const privatePath = '/api/compra/admin/prueba';
 const privateStorePath = '/web-checkout/private-test/';
 const testKey = 'CT_PRIVATE_TEST_20261119_V1';
-const testUntil = Date.parse('2026-11-26T04:27:09Z');
+const testUntil = Date.parse('2026-11-27T02:26:39Z');
 const json = (value, status = 200) => Response.json(value, {status, headers: {'Cache-Control': 'no-store'}});
 const contact = Object.freeze({name: 'Cliente sintético prueba privada', phone: '0000000000', email: '',
   city: 'Quito', address: 'Dirección sintética sin entrega', postalCode: '000000'});

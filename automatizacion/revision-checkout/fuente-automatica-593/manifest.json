@@ -1,6 +1,6 @@
 {
   "schema": "conectatech.checkout-source-auto-proposal.v1",
-  "status": "PREPARED_NOT_INSTALLED",
+  "status": "INSTALLED_VERIFIED_BY_INDEPENDENT_READ",
   "pr": 396,
   "pr_base_commit": "f177271abdd0dce6cd53e4df84c9fcb8805afd90",
   "runtime_modules_changed": [
@@ -18,7 +18,8 @@
     "before_sha256": "944bfd31a1089469e6decdfd2d1a0249473e38a8d31e122ed2fa3ff7689e0cd7",
     "candidate_sha256": "a72905cae20ec6cc6c39be178bbc5f587ef7d4a1b169bf5f70e5aa4446384cca",
     "patch_sha256": "d57ad14e70b1bceba868a83dce34cc6eed8ddb7a495d020ef2ce2c5e9ee1e197",
-    "main_modified": false
+    "main_modified": true,
+    "integration_commit": "c74f8aae3d19794f95480ceb03ecee4fc009e160"
   },
   "source_patch_sha256": "8a945aaa015c7895257dd27d55813fd876a52c279dea4553bc398209b1a53f89",
   "public_evidence_field": "evidencia_checkout",
@@ -30,8 +31,8 @@
   "source_private_mutations": false,
   "commercial_activation": false,
   "public_checkout_enabled": false,
-  "deployment_authorized": false,
-  "installed": false,
+  "deployment_authorized": true,
+  "installed": true,
   "synthetic_tests": {
     "original_producer": 6,
     "consumer_and_cross_language": 23,
@@ -75,6 +76,19 @@
     "new_compatibility_tests_passed": 6,
     "workflow_before_sha256": "c07d5c9ec1d6f23a4dd2217bd0837e787199907caa7cb2cea5c3186c30264612",
     "workflow_candidate_sha256": "ee982017317151bd4e6d0dfd9028d6459f35302a22d77d07ddf8c387eec31736",
-    "workflow_patch_sha256": "6b6a5d2f9f357809eed2220dd50f882e08c9846e7599d15d0bbc86fd510497cb"
+    "workflow_patch_sha256": "6b6a5d2f9f357809eed2220dd50f882e08c9846e7599d15d0bbc86fd510497cb",
+    "workflow_pilot_commit": "58628f56444ebff6e2b67d80144f6d5bac1ab92e"
+  },
+  "authorization_approved_commit": "bc581bf93ff39fcaff18863f91a5202a3325a8e8",
+  "installation_run": 45915507220,
+  "verification_run": 45915784621,
+  "installation_puts": 1,
+  "recovery_puts": 0,
+  "post_installation_result": "../resultado-fuente-45915507220.json",
+  "post_installation_settings": {
+    "operational_settings_preserved": true,
+    "exact_json_equal": false,
+    "only_changed_path": "/annotations/workers/triggered_by",
+    "classification": "provider deployment-origin annotation; not an operational binding or flag"
   }
 }
