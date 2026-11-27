@@ -7,6 +7,7 @@ on:
       - 'scripts/reglas_sku.py'
       - 'scripts/sincronizar-cola-drive.py'
       - 'scripts/test-incremental.py'
+      - 'scripts/test-cola-drive-altas.py'
       - 'scripts/validar-contrato.py'
       - 'scripts/test-contrato.py'
       - 'scripts/registrar-resultados-lote.py'
@@ -51,6 +52,7 @@ jobs:
       - name: Probar protección e incrementalidad
         run: |
           python scripts/test-incremental.py
+          python scripts/test-cola-drive-altas.py
           python scripts/test-contrato.py
           python scripts/test-actualizaciones.py
           python scripts/test-premium.py
