@@ -9,6 +9,32 @@ concurrency:
   group: presentacion-web-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  origen-comercial:
+    if: startsWith(github.ref, 'refs/heads/presentacion-web/origen-consultas-')
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verificar referencia comercial y restricciones existentes
+        run: |
+          node scripts/test-origen-comercial.cjs
+          node scripts/test-venta-cruzada.cjs
+          node scripts/test-politica-publicacion-web.cjs
+          git diff --check
+      - name: Preparar Chromium de validación existente
+        run: |
+          npm install --prefix "$RUNNER_TEMP/conectatech-playwright" --ignore-scripts --no-audit --no-fund playwright@1.62.1
+          echo "CODEX_PRIMARY_RUNTIME_NODE_MODULES=$RUNNER_TEMP/conectatech-playwright/node_modules" >> "$GITHUB_ENV"
+          node "$RUNNER_TEMP/conectatech-playwright/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Verificar flujo real sin publicar ni contactar clientes
+        run: |
+          node scripts/test-origen-comercial.cjs --generate --browser
+
   integridad:
     runs-on: ubuntu-latest
     timeout-minutes: 10
